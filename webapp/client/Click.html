@@ -1,9 +1,11 @@
 <template name="Click">
-  <div id="container" style="height:600px; width:100%">
-
+  <div id="container">
+    <div class="instruction"></div>
+    <div class="timer"></div>
+    <div class="workspace"></div>
   </div>
 </template>
 
 <template name="Bubble">
-  <div class="bubble" style="height:100px; width:100px; border:1px solid black">{{index}}</div>
+  <div class="bubble" style="top:{{top}}; left:{{left}}; background:{{background}}; z-index:{{zIndex}}" data-index="{{index}}">{{value}}</div>
 </template>
