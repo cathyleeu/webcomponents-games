@@ -2,8 +2,12 @@ Router.route('/', function () {
   this.render('Home');
 });
 
-// counter starts at 0
-Session.setDefault('counter', 0);
+Template.Home.rendered = function() {
+  if(!this._rendered) {
+    this._rendered = true;
+
+  }
+};
 
 Template.Home.helpers({
   counter: function () {
