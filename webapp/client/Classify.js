@@ -196,6 +196,8 @@ function createBlock(type, color, label) {
             .appendField(new Blockly.FieldImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, "*"))
             .appendField(label);
         this.setNextStatement(true);
+        this.setDeletable(false);
+        this.setMovable(false);
         this.setTooltip('');
       }
     }
@@ -207,6 +209,7 @@ function createBlock(type, color, label) {
             .appendField(label);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setDeletable(false);
         this.setTooltip('');
       }
     }
@@ -272,7 +275,7 @@ function init() {
 
     Blockly.Blocks["base-" + axis] = createBlock("base", graph[axis].color, graph[axis].label);
     Blockly.Blocks["item-" + axis] = createBlock("item", graph[axis].color, axis);
-    $xml.append('<block type="base-' + axis + '" x="' + x + '" y="' + y + '" movable="false">');
+    $xml.append('<block type="base-' + axis + '" x="' + x + '" y="' + y + '">');
     for(var i = 0; i < graph[axis].freeBlocks; i++) {
       var xx = parseInt(Math.random() * (workspace_width - 100), 10),
           yy = parseInt(Math.random() * (workspace_height - 150), 10) + 100;
