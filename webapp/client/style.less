@@ -44,6 +44,10 @@
 
 /* Classify */
 .classify {
+  min-width: 640px;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+
   .instruction {
     position: relative;
     height: 50px;
@@ -54,12 +58,16 @@
 
   .wrapper {
     position: relative;
-    height: 300px;
-    width: 600px;
-    margin: 0 auto;
+    height: 400px;
+    width: 100%;
   }
   #blocklyDiv {
-    height: 300px;
-    width: 600px;
+    height: 100%;
+    width: 100%;
   }
+}
+
+body.classify-body {
+  background-color: #779ECB !important;
+  overflow: auto;
 }
