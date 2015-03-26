@@ -16,6 +16,7 @@ Template.Classify.rendered = function() {
   if(!this._rendered) {
     this._rendered = true;
     step = parseInt( $(".classify").attr("data-step"), 0) || 1;
+    $("body").addClass("classify-body");
     init();
   }
 };
