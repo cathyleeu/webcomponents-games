@@ -1,12 +1,10 @@
-Router.route('/dev', function () {
-  this.render('Dev');
+Router.route('/maze', function () {
+  this.render('Maze');
 });
 
-Template.Dev.rendered = function() {
+Template.Maze.rendered = function() {
   if(!this._rendered) {
     this._rendered = true;
-    step = parseInt( $(".dev").attr("data-step"), 0) || 1;
-    $("body").addClass("dev-body");
     $("#showCode").click(showCode);
     $("#runCode").click(runCode);
     init();
@@ -16,72 +14,56 @@ Template.Dev.rendered = function() {
 function init() {
   Blockly.Blocks['move_up'] = {
     init: function() {
-     // this.setHelpUrl('http://www.example.com/');
       this.setColour(260);
       this.appendDummyInput()
           .appendField("위로 이동");
-      //this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
-      //this.setTooltip('');
     }
   };
   Blockly.JavaScript['move_up'] = function(block) {
-    // TODO: Assemble JavaScript into code variable.
     var code = 'moveUp();\n';
     return code;
   };
 
   Blockly.Blocks['move_down'] = {
     init: function() {
-     // this.setHelpUrl('http://www.example.com/');
       this.setColour(260);
       this.appendDummyInput()
           .appendField("아래로 이동");
-      //this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
-      //this.setTooltip('');
     }
   };
   Blockly.JavaScript['move_down'] = function(block) {
-    // TODO: Assemble JavaScript into code variable.
     var code = 'moveDown();\n';
     return code;
   };
 
   Blockly.Blocks['move_right'] = {
     init: function() {
-     // this.setHelpUrl('http://www.example.com/');
       this.setColour(260);
       this.appendDummyInput()
           .appendField("오른쪽으로 이동");
-      //this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
-      //this.setTooltip('');
     }
   };
   Blockly.JavaScript['move_right'] = function(block) {
-    // TODO: Assemble JavaScript into code variable.
     var code = 'moveRight();\n';
     return code;
   };
 
   Blockly.Blocks['move_left'] = {
     init: function() {
-     // this.setHelpUrl('http://www.example.com/');
       this.setColour(260);
       this.appendDummyInput()
           .appendField("왼쪽으로 이동");
-      //this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
-      //this.setTooltip('');
     }
   };
   Blockly.JavaScript['move_left'] = function(block) {
-    // TODO: Assemble JavaScript into code variable.
     var code = 'moveLeft();\n';
     return code;
   };
@@ -99,7 +81,6 @@ function init() {
     }
   };
   Blockly.JavaScript['start'] = function(block) {
-    // TODO: Assemble JavaScript into code variable.
     var code = '';
     return code;
   };
