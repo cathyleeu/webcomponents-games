@@ -2,6 +2,24 @@ Router.route('/maze', function () {
   this.render('Maze');
 });
 
+var maze = null,
+    queue = [],
+    animation = null;
+var map = {
+  type: "maze",
+  imgs: {
+    background: "",
+    character: "/img/map/mouse.png",
+    goal: "/img/map/cheese.png",
+    objects: ["/img/map/box.png"]
+  },
+  coords: {
+    character: "3,4",
+    goal: "5,4",
+    roads: ["4,4"]
+  }
+};
+
 Template.Maze.rendered = function() {
   if(!this._rendered) {
     this._rendered = true;
@@ -97,8 +115,7 @@ function init() {
 	Blockly.Xml.domToWorkspace(Blockly.mainWorkspace,
 	    $(startblock).get(0));
 
-  drawMap();
-
+  maze = drawMaze(map);
 }
 
 
@@ -109,36 +126,34 @@ function showCode() {
   alert(code);
 }
 
-function runCode() {
-  // Generate JavaScript code and run it.
-  window.LoopTrap = 1000;
-  Blockly.JavaScript.INFINITE_LOOP_TRAP =
-      'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
-  var code = Blockly.JavaScript.workspaceToCode();
-  Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-  try {
-    eval(code);
-  } catch (e) {
-    alert(e);
+function runCode(e) {
+  if($(e.target).find("i").hasClass("fa-play")) {
+    $(e.target).html('<i class="fa fa-refresh"></i> 처음상태로');
+    // Generate JavaScript code and run it.
+    window.LoopTrap = 1000;
+    Blockly.JavaScript.INFINITE_LOOP_TRAP =
+        'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+    var code = Blockly.JavaScript.workspaceToCode();
+    Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+    try {
+      eval(code);
+      runQueue();
+    } catch (e) {
+      alert(e);
+    }
+  } else {
+    $(e.target).html('<i class="fa fa-play"></i> 시작');
+    resetMaze();
   }
 }
 
-function drawMap() {
-  var map = {
-    type: "maze",
-    imgs: {
-      background: "",
-      character: "/img/map/mouse.png",
-      goal: "/img/map/cheese.png",
-      objects: ["/img/map/box.png"]
-    },
-    coords: {
-      character: "3,4",
-      goal: "5,4",
-      roads: ["4,4"]
-    }
+function drawMaze(given_map) {
+  var map = extractMap(given_map);
+  var maze = {
+    given_map: given_map,
+    map: map,
+    hash: {}
   };
-  extractMap(map);
 
   var deferreds = [
     loadImg(map.imgs.character),
@@ -153,12 +168,24 @@ function drawMap() {
     var stage = new createjs.Stage("display");
     var character = new createjs.Bitmap(map.imgs.character);
     var goal = new createjs.Bitmap(map.imgs.goal);
-    character.x = map.coords.character.x * 50;
-    character.y = map.coords.character.y * 50;
-    stage.addChild(character);
+
     goal.x = map.coords.goal.x * 50;
     goal.y = map.coords.goal.y * 50;
     stage.addChild(goal);
+    maze.hash[map.coords.goal.x + "," + map.coords.goal.y] = goal;
+
+    character.x = map.coords.character.x * 50;
+    character.y = map.coords.character.y * 50;
+    stage.addChild(character);
+    maze.hash[map.coords.character.x + "," + map.coords.character.y] = character;
+
+    maze.canvasObjects = {
+      stage: stage,
+      character: character,
+      goal: goal,
+      objects: []
+    }
+
     for(var i = 0; i < map.coords.objects.length; i++) {
       var len = map.imgs.objects.length,
           idx = parseInt(Math.random() * len, 10),
@@ -167,11 +194,28 @@ function drawMap() {
       obj.x = map.coords.objects[i].x * 50;
       obj.y = map.coords.objects[i].y * 50;
       stage.addChild(obj);
+      maze.canvasObjects.objects.push(obj);
+      maze.hash[map.coords.objects[i].x + "," + map.coords.objects[i].y] = obj;
     }
     stage.update();
-
+    createjs.Ticker.addEventListener("tick", tick);
   });
+  return maze;
+}
 
+function resetMaze() {
+  var coord = maze.given_map.coords.character.split(","),
+      x = +coord[0],
+      y = +coord[1];
+  delete maze.hash[maze.map.coords.character.x + "," + maze.map.coords.character.y];
+  maze.map.coords.character = {
+    x: x,
+    y: y
+  };
+  maze.hash[x + "," + y] = maze.canvasObjects.character;
+  maze.canvasObjects.character.x = x * 50;
+  maze.canvasObjects.character.y = y * 50;
+  maze.canvasObjects.stage.update();
 }
 
 function loadImg(img_url) {
@@ -183,20 +227,21 @@ function loadImg(img_url) {
   return deferred;
 }
 
-function extractMap(map) {
-  var coords = {};
-  coords[map.coords.character] = 1;
-  coords[map.coords.goal] = 1;
+function extractMap(given_map) {
+  var map = JSON.parse(JSON.stringify(given_map)); // clone object
+  var hash = {};
+  hash[map.coords.character] = 1;
+  hash[map.coords.goal] = 1;
   map.coords.character = getCoord(map.coords.character);
   map.coords.goal = getCoord(map.coords.goal);
   for(var i = 0; i < map.coords.roads.length; i++) {
-    coords[map.coords.roads[i]] = 1;
+    hash[map.coords.roads[i]] = 1;
     map.coords.roads[i] = getCoord(map.coords.roads[i]);
   }
   map.coords.objects = [];
   for(var i = 0; i < 8; i++) {
     for(var j = 0; j < 8; j++) {
-      if(!coords[j+","+i]) {
+      if(!hash[j+","+i]) {
         map.coords.objects.push({
           x: j,
           y: i
@@ -204,11 +249,109 @@ function extractMap(map) {
       }
     }
   }
+
+  return map;
 }
 
 function getCoord(coord) {
   return {
     x: +coord.split(",")[0],
     y: +coord.split(",")[1]
+  }
+}
+
+function moveUp() {
+  queue.push({
+    type: "move",
+    args: [0, -1]
+  });
+}
+
+function moveDown() {
+  queue.push({
+    type: "move",
+    args: [0, 1]
+  });
+}
+
+function moveLeft() {
+  queue.push({
+    type: "move",
+    args: [-1, 0]
+  });
+}
+
+function moveRight() {
+  queue.push({
+    type: "move",
+    args: [1, 0]
+  });
+}
+
+function moveCharacter(x_disp, y_disp, callback) {
+  var character = maze.map.coords.character,
+      x_prev = character.x,
+      y_prev = character.y,
+      x_next = x_prev + x_disp,
+      y_next = y_prev + y_disp;
+  if(maze.map.coords.goal.x == x_next && maze.map.coords.goal.y == y_next) {
+    // proceed
+  } else if(maze.hash[x_next + "," + y_next]) {
+    callback("더이상 움직일 수 없어요");
+    return;
+  }
+  character.x = x_next;
+  character.y = y_next;
+  delete maze.hash[x_prev + "," + y_prev];
+  maze.hash[x_next + "," + y_next] = maze.canvasObjects.character;
+  setTimeout(function() {
+    animation = {
+      duration: 700,
+      start_time: createjs.Ticker.getTime(),
+      step: function(t) {
+        var r = t / animation.duration;
+        maze.canvasObjects.character.x = 50 * (x_prev + x_disp * r);
+        maze.canvasObjects.character.y = 50 * (y_prev + y_disp * r);
+        maze.canvasObjects.stage.update();
+        if(t == animation.duration) {
+          animation = null;
+          if(maze.map.coords.goal.x == x_next && maze.map.coords.goal.y == y_next) {
+            alert("성공!")
+          }
+          callback();
+        }
+      }
+    };
+  }, 300);
+}
+
+function tick(event) {
+  if(animation) {
+    var t = createjs.Ticker.getTime() - animation.start_time;
+    if(t > animation.duration) {
+      t = animation.duration;
+    }
+    animation.step(t);
+  }
+}
+
+function runQueue() {
+  var q_idx = 0;
+  function step() {
+    moveCharacter(queue[q_idx].args[0], queue[q_idx].args[1], function(err) {
+      if(err) {
+        alert(err);
+      } else {
+        q_idx++;
+        if(q_idx < queue.length) {
+          step();
+        } else {
+          queue = [];
+        }
+      }
+    });
+  }
+  if(q_idx < queue.length) {
+    step();
   }
 }
