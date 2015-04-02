@@ -13,6 +13,9 @@ var maze = null,
 Template.Maze.rendered = function() {
   if(!this._rendered) {
     this._rendered = true;
+    $(document).on("contextmenu", function(e) {
+      e.preventDefault();
+    });
     $("#showCode").click(showCode);
     $("#runCode").click(runCode);
     step = +Router.current().params.step || 1;
@@ -31,6 +34,7 @@ function init(map) {
           .appendField("위로 이동");
       this.setPreviousStatement(true);
       this.setNextStatement(true);
+      this.contextMenu = false;
     }
   };
   Blockly.JavaScript['move_up'] = function(block) {
@@ -45,6 +49,7 @@ function init(map) {
           .appendField("아래로 이동");
       this.setPreviousStatement(true);
       this.setNextStatement(true);
+      this.contextMenu = false;
     }
   };
   Blockly.JavaScript['move_down'] = function(block) {
@@ -59,6 +64,7 @@ function init(map) {
           .appendField("오른쪽으로 이동");
       this.setPreviousStatement(true);
       this.setNextStatement(true);
+      this.contextMenu = false;
     }
   };
   Blockly.JavaScript['move_right'] = function(block) {
@@ -73,6 +79,7 @@ function init(map) {
           .appendField("왼쪽으로 이동");
       this.setPreviousStatement(true);
       this.setNextStatement(true);
+      this.contextMenu = false;
     }
   };
   Blockly.JavaScript['move_left'] = function(block) {
@@ -82,14 +89,13 @@ function init(map) {
 
   Blockly.Blocks['start'] = {
     init: function() {
-      //this.setHelpUrl('http://www.example.com/');
       this.setColour(160);
       this.appendDummyInput()
           .appendField("시작하면");
       this.setNextStatement(true);
       this.setDeletable(false);
       this.setMovable(false);
-     // this.setTooltip('');
+      this.contextMenu = false;
     }
   };
   Blockly.JavaScript['start'] = function(block) {
@@ -357,7 +363,6 @@ function runQueue() {
 
 function showModal(msg, goNext) {
   if(goNext) {
-    debugger
     $("#modal-msg .go-next").show();
     $("#modal-msg .close-modal").hide();
   }
