@@ -316,7 +316,8 @@ function moveCharacter(x_disp, y_disp, callback) {
         if(t == animation.duration) {
           animation = null;
           if(maze.map.coords.goal.x == x_next && maze.map.coords.goal.y == y_next) {
-            alert("성공!")
+            $("#modal-msg .modal-body").text("성공!");
+            $('#modal-msg').modal('show');
           }
           callback();
         }
@@ -340,7 +341,8 @@ function runQueue() {
   function step() {
     moveCharacter(queue[q_idx].args[0], queue[q_idx].args[1], function(err) {
       if(err) {
-        alert(err);
+        $("#modal-msg .modal-body").text(err);
+        $('#modal-msg').modal('show');
       } else {
         q_idx++;
         if(q_idx < queue.length) {
