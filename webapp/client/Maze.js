@@ -2,34 +2,28 @@ Router.route('/maze', function () {
   this.render('Maze');
 });
 
+Router.route('/maze/:step', function () {
+  this.render('Maze');
+});
+
 var maze = null,
     queue = [],
     animation = null;
-var map = {
-  type: "maze",
-  imgs: {
-    background: "",
-    character: "/img/map/mouse.png",
-    goal: "/img/map/cheese.png",
-    objects: ["/img/map/box.png"]
-  },
-  coords: {
-    character: "3,4",
-    goal: "5,4",
-    roads: ["4,4"]
-  }
-};
 
 Template.Maze.rendered = function() {
   if(!this._rendered) {
     this._rendered = true;
     $("#showCode").click(showCode);
     $("#runCode").click(runCode);
-    init();
+    step = +Router.current().params.step || 1;
+    $("#modal-msg .go-next").click(function(e) {
+      location.pathname = "/maze/" + (step+1);
+    });
+    $.getJSON("/maps/maze" + step + ".json?"+Math.random(), init);
   }
 };
 
-function init() {
+function init(map) {
   Blockly.Blocks['move_up'] = {
     init: function() {
       this.setColour(260);
@@ -345,7 +339,7 @@ function runQueue() {
         } else {
           if (maze.map.coords.character.x == maze.map.coords.goal.x &&
               maze.map.coords.character.y == maze.map.coords.goal.y) {
-            showModal("성공!");
+            showModal("성공!", true);
           } else {
             showModal("블럭을 다 썼지만 치즈에 가지 못했어요");
           }
@@ -361,7 +355,12 @@ function runQueue() {
   }
 }
 
-function showModal(msg) {
+function showModal(msg, goNext) {
+  if(goNext) {
+    debugger
+    $("#modal-msg .go-next").show();
+    $("#modal-msg .close-modal").hide();
+  }
   $("#modal-msg .modal-body").text(msg);
   $('#modal-msg').modal('show');
 }

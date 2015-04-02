@@ -1,13 +1,9 @@
 Router.route('/classify', function () {
-  this.render('Classify', {
-    data: {step: 1}
-  });
+  this.render('Classify');
 });
 
 Router.route('/classify/:step', function () {
-  this.render('Classify', {
-    data: {step: this.params.step || 1}
-  });
+  this.render('Classify');
 });
 
 var step;
@@ -15,7 +11,7 @@ var step;
 Template.Classify.rendered = function() {
   if(!this._rendered) {
     this._rendered = true;
-    step = parseInt( $(".classify").attr("data-step"), 0) || 1;
+    step = +Router.current().params.step || 1;
     $("body").addClass("classify-body");
     init();
   }

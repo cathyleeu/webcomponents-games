@@ -1,0 +1,14 @@
+{
+  "type": "maze",
+  "imgs": {
+    "background": "",
+    "character": "/img/map/mouse.png",
+    "goal": "/img/map/cheese.png",
+    "objects": ["/img/map/box.png"]
+  },
+  "coords": {
+    "character": "4,3",
+    "goal": "4,5",
+    "roads": ["4,4"]
+  }
+}
