@@ -315,10 +315,6 @@ function moveCharacter(x_disp, y_disp, callback) {
         maze.canvasObjects.stage.update();
         if(t == animation.duration) {
           animation = null;
-          if(maze.map.coords.goal.x == x_next && maze.map.coords.goal.y == y_next) {
-            $("#modal-msg .modal-body").text("성공!");
-            $('#modal-msg').modal('show');
-          }
           callback();
         }
       }
@@ -341,19 +337,31 @@ function runQueue() {
   function step() {
     moveCharacter(queue[q_idx].args[0], queue[q_idx].args[1], function(err) {
       if(err) {
-        $("#modal-msg .modal-body").text(err);
-        $('#modal-msg').modal('show');
+        showModal(err);
       } else {
         q_idx++;
         if(q_idx < queue.length) {
           step();
         } else {
+          if (maze.map.coords.character.x == maze.map.coords.goal.x &&
+              maze.map.coords.character.y == maze.map.coords.goal.y) {
+            showModal("성공!");
+          } else {
+            showModal("블럭을 다 썼지만 치즈에 가지 못했어요");
+          }
           queue = [];
         }
       }
     });
   }
-  if(q_idx < queue.length) {
+  if(queue.length == 0) {
+    showModal("블럭이 하나도 없어요!");
+  } else if(q_idx < queue.length) {
     step();
   }
+}
+
+function showModal(msg) {
+  $("#modal-msg .modal-body").text(msg);
+  $('#modal-msg').modal('show');
 }
