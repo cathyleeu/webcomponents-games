@@ -1,11 +1,10 @@
 {
-  "type": "maze",
-  "imgs": {
-    "background": "",
-    "character": "/img/map/mouse.png",
-    "goal": "/img/map/cheese.png",
-    "objects": ["/img/map/box.png"]
-  },
+  "path": "/img/map/",
+  "manifest": [
+    {"id": "character", "src": "/img/map/mouse.png"},
+    {"id": "goal", "src": "/img/map/cheese.png"},
+    {"id": "box", "src": "/img/map/box.png"}
+  ],
   "coords": {
     "character": "3,4",
     "goal": "3,2",

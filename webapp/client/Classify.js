@@ -1,5 +1,5 @@
 Router.route('/classify', function () {
-  this.render('Classify');
+  this.redirect('/classify/1');
 });
 
 Router.route('/classify/:step', function () {
@@ -11,7 +11,7 @@ var step;
 Template.Classify.rendered = function() {
   if(!this._rendered) {
     this._rendered = true;
-    step = +Router.current().params.step || 1;
+    step = +Router.current().params.step;
     $("body").addClass("classify-body");
     init();
   }
