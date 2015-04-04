@@ -113,8 +113,6 @@ function drawMaze(loader) {
     }
   };
 
-  stage.addChild(goal);
-  stage.addChild(character);
   info.hash[goal.px + "," + goal.py] = goal;
   info.hash[character.px + "," + character.py] = character;
 
@@ -132,6 +130,8 @@ function drawMaze(loader) {
       }
     }
   }
+  stage.addChild(goal);
+  stage.addChild(character);
   stage.update();
   return info;
 }
@@ -140,8 +140,10 @@ function getBitmap(img, coord) {
   var bitmap = new createjs.Bitmap(img);
   bitmap.px = +coord.split(",")[0];
   bitmap.py = +coord.split(",")[1];
-  bitmap.x = 50 * bitmap.px;
-  bitmap.y = 50 * bitmap.py;
+  bitmap.x = 50 * bitmap.px + 25;
+  bitmap.y = 50 * bitmap.py + 25;
+  bitmap.regX = 25;
+  bitmap.regY = 25;
   return bitmap;
 }
 
@@ -204,19 +206,76 @@ function moveRight() {
 }
 
 function moveCharacter(mazeInfo, x_next, y_next, callback) {
-  var character = mazeInfo.canvas.character;
+  var character = mazeInfo.canvas.character,
+      tween = createjs.Tween.get(character),
+      rotation;
+  if(character.px == x_next) {
+    rotation = character.py - 1 == y_next? 0 : 180;
+  } else {
+    rotation = character.px - 1 == x_next ? 270 : 90;
+  }
+  if(character.rotation == 0 && rotation == 270) {
+    rotation = -90;
+  } else if(character.rotation == 270 && rotation == 0) {
+    rotation = 360;
+  }
+
   delete mazeInfo.hash[character.px + "," + character.py];
   character.px = x_next;
   character.py = y_next;
   mazeInfo.hash[x_next + "," + y_next] = character;
-  createjs.Tween
-          .get(character)
-          .wait(300)
-          .to({x:50*x_next, y: 50*y_next}, 700)
-          .call(callback)
-          .addEventListener("change", function() {
-            mazeInfo.canvas.stage.update();
-          });
+
+  if(character.rotation != rotation) {
+    tween.to({rotation: rotation}, 500);
+  }
+  tween.wait(300)
+       .to({x:50*x_next + 25, y: 50*y_next + 25}, 700)
+       .call(function() {
+         character.rotation = (character.rotation + 360) % 360;
+         callback();
+       })
+       .addEventListener("change", function() {
+         mazeInfo.canvas.stage.update();
+       });
+}
+
+function bounceCharacter(mazeInfo, x_next, y_next, callback) {
+  var character = mazeInfo.canvas.character,
+      tween = createjs.Tween.get(character),
+      rotation;
+  if(character.px == x_next) {
+    rotation = character.py - 1 == y_next? 0 : 180;
+  } else {
+    rotation = character.px - 1 == x_next ? 270 : 90;
+  }
+  if(rotation == 0) {
+    y_next += 0.5;
+  } else if(rotation == 180) {
+    y_next -= 0.5;
+  } else if(rotation == 90) {
+    x_next -= 0.5;
+  } else {
+    x_next += 0.5;
+  }
+  if(character.rotation == 0 && rotation == 270) {
+    rotation = -90;
+  } else if(character.rotation == 270 && rotation == 0) {
+    rotation = 360;
+  }
+  if(character.rotation != rotation) {
+    tween.to({rotation: rotation}, 500);
+  }
+  tween.wait(200)
+       .to({x:50*x_next + 25, y: 50*y_next + 25}, 350)
+       .to({x:50*character.px + 25, y: 50*character.py + 25}, 350)
+       .to({rotation: rotation+720}, 1000)
+       .call(function() {
+         character.rotation = (character.rotation + 360) % 360;
+         callback();
+       })
+       .addEventListener("change", function() {
+         mazeInfo.canvas.stage.update();
+       });
 }
 
 function popQueue(mazeInfo, q_idx) {
@@ -242,7 +301,9 @@ function popQueue(mazeInfo, q_idx) {
     });
   } else { // 이동할 수 없다면
     queue = [];
-    showModal("더 이상 이동할 수 없어요");
+    bounceCharacter(mazeInfo, x_next, y_next, function() {
+      showModal("더 이상 이동할 수 없어요");
+    });
   }
 }
 
@@ -255,8 +316,9 @@ function resetMaze(mazeInfo, coord) {
   mazeInfo.hash[x + "," + y] = character;
   character.px = x;
   character.py = y;
-  character.x = x * 50;
-  character.y = y * 50;
+  character.x = x * 50 + 25;
+  character.y = y * 50 + 25;
+  character.rotation = 0;
   mazeInfo.canvas.stage.update();
 }
 
