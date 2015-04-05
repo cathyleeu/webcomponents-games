@@ -101,29 +101,36 @@ function createBlock(id, options) {
 function drawMaze(loader) {
   var maze = loader.getResult("maze"),
       stage = new createjs.Stage("display"),
+      background = new createjs.Bitmap(loader.getResult("background")),
       goal = getBitmap(loader.getResult("goal"), maze.coords.goal),
       character = getBitmap(loader.getResult("character"), maze.coords.character);
   var info = {
     hash: {},
     canvas: {
       stage: stage,
+      background: background,
       goal: goal,
       character: character,
       obstacles: []
     }
   };
 
+  stage.addChild(background);
   info.hash[goal.px + "," + goal.py] = goal;
   info.hash[character.px + "," + character.py] = character;
 
+  var obstacle_ids = _.chain(maze.manifest)
+      .map(function(el) {
+        return el.id || el;
+      })
+      .difference(["background", "character", "goal"])
+      .value();
   for(var i = 0; i < 8; i++) {
     for(var j = 0; j < 8; j++) {
       var coord = j + "," + i;
       if(!info.hash[coord] && maze.coords.roads.indexOf(coord) < 0) {
-        var len = maze.manifest.length - 2,
-            idx = parseInt(Math.random() * len, 10),
-            id = maze.manifest[idx+2].id,
-            bitmap = getBitmap(loader.getResult(id), coord);
+        var idx = parseInt(Math.random() * obstacle_ids.length, 10),
+            bitmap = getBitmap(loader.getResult(obstacle_ids[idx]), coord);
         stage.addChild(bitmap);
         info.hash[coord] = bitmap;
         info.canvas.obstacles.push(bitmap);
