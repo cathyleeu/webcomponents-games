@@ -101,23 +101,22 @@ function createBlock(id, options) {
 function drawMaze(loader) {
   var maze = loader.getResult("maze"),
       stage = new createjs.Stage("display"),
-      background = new createjs.Bitmap(loader.getResult("background")),
-      goal = getBitmap(loader.getResult("goal"), maze.coords.goal),
-      character = getBitmap(loader.getResult("character"), maze.coords.character);
-  var info = {
-    hash: {},
+      background = new createjs.Bitmap(loader.getResult("background"));
+  var mazeInfo = {
+    map: _.map(maze.map, function(row) {
+      return _.map(row, function(item) {
+        return item;
+      })
+    }),
     canvas: {
       stage: stage,
       background: background,
-      goal: goal,
-      character: character,
+      character: new createjs.Bitmap(loader.getResult("character")),
+      goal: new createjs.Bitmap(loader.getResult("goal")),
       obstacles: []
     }
   };
-
   stage.addChild(background);
-  info.hash[goal.px + "," + goal.py] = goal;
-  info.hash[character.px + "," + character.py] = character;
 
   var obstacle_ids = _.chain(maze.manifest)
       .map(function(el) {
@@ -127,31 +126,40 @@ function drawMaze(loader) {
       .value();
   for(var i = 0; i < 8; i++) {
     for(var j = 0; j < 8; j++) {
-      var coord = j + "," + i;
-      if(!info.hash[coord] && maze.coords.roads.indexOf(coord) < 0) {
-        var idx = parseInt(Math.random() * obstacle_ids.length, 10),
-            bitmap = getBitmap(loader.getResult(obstacle_ids[idx]), coord);
-        stage.addChild(bitmap);
-        info.hash[coord] = bitmap;
-        info.canvas.obstacles.push(bitmap);
+      switch(mazeInfo.map[i][j]) {
+        case "@":
+          setBitmapCoord(mazeInfo.canvas.character, j, i);
+          mazeInfo.map[i][j] = ".";
+          break;
+        case ">":
+          setBitmapCoord(mazeInfo.canvas.goal, j, i);
+          mazeInfo.map[i][j] = ".";
+          break;
+        case "#":
+          var idx = parseInt(Math.random() * obstacle_ids.length, 10),
+              bitmap = new createjs.Bitmap(loader.getResult(obstacle_ids[idx]));
+          setBitmapCoord(bitmap, j, i);
+          stage.addChild(bitmap);
+          break;
+        case ".":
+        default:
+          break;
       }
     }
   }
-  stage.addChild(goal);
-  stage.addChild(character);
+  stage.addChild(mazeInfo.canvas.goal);
+  stage.addChild(mazeInfo.canvas.character);
   stage.update();
-  return info;
+  return mazeInfo;
 }
 
-function getBitmap(img, coord) {
-  var bitmap = new createjs.Bitmap(img);
-  bitmap.px = +coord.split(",")[0];
-  bitmap.py = +coord.split(",")[1];
-  bitmap.x = 50 * bitmap.px + 25;
-  bitmap.y = 50 * bitmap.py + 25;
+function setBitmapCoord(bitmap, px, py) {
+  bitmap.px = px;
+  bitmap.py = py;
+  bitmap.x = 50 * px + 25;
+  bitmap.y = 50 * py + 25;
   bitmap.regX = 25;
   bitmap.regY = 25;
-  return bitmap;
 }
 
 function addEvents(step, loader, mazeInfo) {
@@ -161,7 +169,8 @@ function addEvents(step, loader, mazeInfo) {
   $("#modal-msg .go-next").click(function(e) {
     location.pathname = "/maze/" + (step+1);
   });
-  var character_coord = loader.getResult("maze").coords.character;
+  var org_px = mazeInfo.canvas.character.px,
+      org_py = mazeInfo.canvas.character.py;
   $("#runCode").click(function(e) {
     if($(this).find("i").hasClass("fa-play")) {
       $(this).html('<i class="fa fa-refresh"></i> 처음상태로');
@@ -179,7 +188,7 @@ function addEvents(step, loader, mazeInfo) {
         }
     } else {
       $(this).html('<i class="fa fa-play"></i> 시작');
-      resetMaze(mazeInfo, character_coord);
+      resetMaze(mazeInfo, org_px, org_py);
     }
   });
 }
@@ -227,10 +236,8 @@ function moveCharacter(mazeInfo, x_next, y_next, callback) {
     rotation = 360;
   }
 
-  delete mazeInfo.hash[character.px + "," + character.py];
   character.px = x_next;
   character.py = y_next;
-  mazeInfo.hash[x_next + "," + y_next] = character;
 
   if(character.rotation != rotation) {
     tween.to({rotation: rotation}, 500);
@@ -291,13 +298,11 @@ function popQueue(mazeInfo, q_idx) {
       x_next = character.px + queue[q_idx].args[0],
       y_next = character.py + queue[q_idx].args[1];
 
-  if( (x_next == goal.px && y_next == goal.py) ||
-      (!mazeInfo.hash[x_next + "," + y_next]) ) {
-    // 이동했을때 goal 이거나 빈곳인 경우
+  if( mazeInfo.map[y_next][x_next] == "." ) {
     moveCharacter(mazeInfo, x_next, y_next, function() {
       if(q_idx + 1 == queue.length) {
         queue = [];
-        if(x_next == goal.px && y_next == goal.py) {
+        if(goal.px == x_next && goal.py == y_next) {
           showModal("성공!", true);
         } else {
           showModal("블럭을 다 썼지만 치즈에 가지 못했어요");
@@ -309,22 +314,17 @@ function popQueue(mazeInfo, q_idx) {
   } else { // 이동할 수 없다면
     queue = [];
     bounceCharacter(mazeInfo, x_next, y_next, function() {
-      showModal("더 이상 이동할 수 없어요");
+      showModal("벽에 부딪쳤어요");
     });
   }
 }
 
-function resetMaze(mazeInfo, coord) {
-  var coord = coord.split(","),
-      x = +coord[0],
-      y = +coord[1],
-      character = mazeInfo.canvas.character;
-  delete mazeInfo.hash[character.px + "," + character.py];
-  mazeInfo.hash[x + "," + y] = character;
-  character.px = x;
-  character.py = y;
-  character.x = x * 50 + 25;
-  character.y = y * 50 + 25;
+function resetMaze(mazeInfo, org_px, org_py) {
+  var character = mazeInfo.canvas.character;
+  character.px = org_px;
+  character.py = org_py;
+  character.x = org_px * 50 + 25;
+  character.y = org_py * 50 + 25;
   character.rotation = 0;
   mazeInfo.canvas.stage.update();
 }
