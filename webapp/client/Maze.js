@@ -33,22 +33,26 @@ function initBlockly() {
   createBlock("move_up", {
     label: "위로 이동",
     color: 260,
-    javascript: "moveUp();\n"
+    javascript: "moveUp();\n",
+    img: "/img/up.png"
   });
   createBlock("move_down", {
     label: "아래로 이동",
     color: 260,
-    javascript: "moveDown();\n"
+    javascript: "moveDown();\n",
+    img: "/img/down.png"
   });
   createBlock("move_left", {
     label: "왼쪽으로 이동",
     color: 260,
-    javascript: "moveLeft();\n"
+    javascript: "moveLeft();\n",
+    img: "/img/left.png"
   });
   createBlock("move_right", {
     label: "오른쪽으로 이동",
     color: 260,
-    javascript: "moveRight();\n"
+    javascript: "moveRight();\n",
+    img: "/img/right.png"
   });
   createBlock("start", {
     label: "시작하면",
@@ -76,6 +80,7 @@ function createBlock(id, options) {
     color: 0,
     label: "",
     javascript: "",
+    img: "",
     deletable: true,
     movable: true,
     previousStatement: true,
@@ -84,8 +89,11 @@ function createBlock(id, options) {
   Blockly.Blocks[id] = {
     init: function() {
       this.setColour(options.color);
-      this.appendDummyInput()
-          .appendField(options.label);
+      var dummyInput = this.appendDummyInput();
+      if(options.img) {
+        dummyInput.appendField(new Blockly.FieldImage(options.img, 15, 15, "*"));
+      }
+      dummyInput.appendField(options.label);
       this.setDeletable(!!options.deletable);
       this.setMovable(!!options.movable);
       this.setPreviousStatement(!!options.previousStatement);
