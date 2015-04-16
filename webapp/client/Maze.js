@@ -376,5 +376,8 @@ function showModal(msg, goNext) {
     $("#modal-msg .close-modal").show();
   }
   $("#modal-msg .modal-body").text(msg);
+  $('#modal-msg').modal({
+    backdrop: "static"
+  });
   $('#modal-msg').modal('show');
 }
