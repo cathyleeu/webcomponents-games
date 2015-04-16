@@ -206,6 +206,8 @@ function addEvents(step, loader, mazeInfo) {
         }
     } else {
       $(this).html('<i class="fa fa-play"></i> 시작');
+      createjs.Tween.removeAllTweens();
+      queue = [];
       resetMaze(mazeInfo, org_px, org_py);
     }
   });
