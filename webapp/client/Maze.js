@@ -176,7 +176,7 @@ function setBitmapCoord(bitmap, px, py) {
 }
 
 function addEvents(step, loader, mazeInfo) {
-  $(document).on("contextmenu", function(e) {
+  $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
   });
   $("#modal-msg .go-next").click(function(e) {
