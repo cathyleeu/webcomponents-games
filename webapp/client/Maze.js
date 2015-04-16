@@ -17,7 +17,7 @@ Router.route('/maze/:step', function() {
   Template.Maze.rendered = function() {
     d2.resolve();
   };
-  $.when( +this.params.step, loader, d1, d2 ).done(init);
+  $.when( this.params.step, loader, d1, d2 ).done(init);
   this.render("Maze");
 });
 
@@ -130,18 +130,23 @@ function drawMaze(loader) {
       .map(function(el) {
         return el.id || el;
       })
-      .difference(["background", "character", "goal"])
+      .difference(["background", "character", "goal", "trap"])
       .value();
   for(var i = 0; i < 8; i++) {
     for(var j = 0; j < 8; j++) {
       switch(mazeInfo.map[i][j]) {
-        case "@":
+        case "@": // character
           setBitmapCoord(mazeInfo.canvas.character, j, i);
           mazeInfo.map[i][j] = ".";
           break;
-        case ">":
+        case ">": // goal
           setBitmapCoord(mazeInfo.canvas.goal, j, i);
           mazeInfo.map[i][j] = ".";
+          break;
+        case "^": // trap
+          var trap = new createjs.Bitmap(loader.getResult("trap"));
+          setBitmapCoord(trap, j, i);
+          stage.addChild(trap);
           break;
         case "#":
           var idx = parseInt(Math.random() * obstacle_ids.length, 10),
@@ -175,7 +180,12 @@ function addEvents(step, loader, mazeInfo) {
     e.preventDefault();
   });
   $("#modal-msg .go-next").click(function(e) {
-    location.pathname = "/maze/" + (step+1);
+    var path = "/maze/";
+    if(step.substr(0, 1) == "t") {
+      path = path + "t";
+      step = step.substr(1);
+    }
+    location.pathname = path + (+step+1);
   });
   var org_px = mazeInfo.canvas.character.px,
       org_py = mazeInfo.canvas.character.py;
@@ -300,6 +310,21 @@ function bounceCharacter(mazeInfo, x_next, y_next, callback) {
        });
 }
 
+function trapCharacter(mazeInfo, x_next, y_next, callback) {
+  moveCharacter(mazeInfo, x_next, y_next, function() {
+    var character = mazeInfo.canvas.character,
+        tween = createjs.Tween.get(character);
+    tween.to({rotation: character.rotation+720}, 1000)
+         .call(function() {
+           character.rotation = (character.rotation + 360) % 360;
+           callback();
+         })
+         .addEventListener("change", function() {
+           mazeInfo.canvas.stage.update();
+         });
+  });
+}
+
 function popQueue(mazeInfo, q_idx) {
   var character = mazeInfo.canvas.character,
       goal = mazeInfo.canvas.goal,
@@ -318,6 +343,11 @@ function popQueue(mazeInfo, q_idx) {
       } else {
         popQueue(mazeInfo, q_idx + 1);
       }
+    });
+  } else if( mazeInfo.map[y_next][x_next] == "^" ) {
+    queue = [];
+    trapCharacter(mazeInfo, x_next, y_next, function() {
+      showModal("덫에 걸렸어요");
     });
   } else { // 이동할 수 없다면
     queue = [];
