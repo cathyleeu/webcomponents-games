@@ -17,21 +17,26 @@ Router.route('/maze/:step', function() {
   });
   loader.on("complete", function() {
     d1.resolve();
+    if(loader.getResult("maze").type == "game") {
+      createjs.Sound.registerSounds([
+        {id:"bgm_normal", src:"/sound/bgm_normal.mp3"},
+        {id:"bgm_coding", src:"/sound/bgm_coding.mp3"}
+      ]);
+      createjs.Sound.addEventListener("fileload", function(e) {
+        if(e.id == "bgm_normal") {
+          d3.resolve();
+        } else if(e.id == "bgm_coding") {
+          d4.resolve();
+        }
+      });
+    } else {
+      d3.resolve();
+      d4.resolve();
+    }
   });
   Template.Maze.rendered = function() {
     d2.resolve();
   };
-  createjs.Sound.registerSounds([
-    {id:"bgm_normal", src:"/sound/bgm_normal.mp3"},
-    {id:"bgm_coding", src:"/sound/bgm_coding.mp3"}
-  ]);
-  createjs.Sound.addEventListener("fileload", function(e) {
-    if(e.id == "bgm_normal") {
-      d3.resolve();
-    } else if(e.id == "bgm_coding") {
-      d4.resolve();
-    }
-  });
   $.when( this.params.step, loader, d1, d2, d3, d4 ).done(init);
   this.render("Maze");
 });
