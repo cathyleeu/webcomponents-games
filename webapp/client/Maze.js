@@ -6,6 +6,10 @@ Router.route('/maze/:step', function() {
   var loader = new createjs.LoadQueue();
   var d1 = $.Deferred();
   var d2 = $.Deferred();
+  var d3 = $.Deferred();
+  var d4 = $.Deferred();
+  createjs.Sound.alternateExtensions = ["mp3"];
+  loader.installPlugin(createjs.Sound);
   loader.loadManifest({
     id: "maze",
     src: "/maps/maze" + this.params.step + ".json",
@@ -17,7 +21,18 @@ Router.route('/maze/:step', function() {
   Template.Maze.rendered = function() {
     d2.resolve();
   };
-  $.when( this.params.step, loader, d1, d2 ).done(init);
+  createjs.Sound.registerSounds([
+    {id:"bgm_normal", src:"/sound/bgm_normal.mp3"},
+    {id:"bgm_coding", src:"/sound/bgm_coding.mp3"}
+  ]);
+  createjs.Sound.addEventListener("fileload", function(e) {
+    if(e.id == "bgm_normal") {
+      d3.resolve();
+    } else if(e.id == "bgm_coding") {
+      d4.resolve();
+    }
+  });
+  $.when( this.params.step, loader, d1, d2, d3, d4 ).done(init);
   this.render("Maze");
 });
 
@@ -120,7 +135,7 @@ function drawMaze(loader) {
       stage: stage,
       background: background,
       character: new createjs.Bitmap(loader.getResult("character")),
-      goal: new createjs.Bitmap(loader.getResult("goal")),
+      foods: [],
       obstacles: []
     }
   };
@@ -130,7 +145,7 @@ function drawMaze(loader) {
       .map(function(el) {
         return el.id || el;
       })
-      .difference(["background", "character", "goal", "trap"])
+      .difference(["background", "character", "food", "trap", "bgm_normal", "bgm_coding"])
       .value();
   for(var i = 0; i < 8; i++) {
     for(var j = 0; j < 8; j++) {
@@ -139,8 +154,11 @@ function drawMaze(loader) {
           setBitmapCoord(mazeInfo.canvas.character, j, i);
           mazeInfo.map[i][j] = ".";
           break;
-        case ">": // goal
-          setBitmapCoord(mazeInfo.canvas.goal, j, i);
+        case "%": // food
+          var bitmap = new createjs.Bitmap(loader.getResult("food"));
+          mazeInfo.canvas.foods.push(bitmap);
+          setBitmapCoord(bitmap, j, i);
+          stage.addChild(bitmap);
           mazeInfo.map[i][j] = ".";
           break;
         case "^": // trap
@@ -148,9 +166,10 @@ function drawMaze(loader) {
           setBitmapCoord(trap, j, i);
           stage.addChild(trap);
           break;
-        case "#":
+        case "#": // obstacles
           var idx = parseInt(Math.random() * obstacle_ids.length, 10),
               bitmap = new createjs.Bitmap(loader.getResult(obstacle_ids[idx]));
+          mazeInfo.canvas.obstacles.push(bitmap);
           setBitmapCoord(bitmap, j, i);
           stage.addChild(bitmap);
           break;
@@ -160,7 +179,6 @@ function drawMaze(loader) {
       }
     }
   }
-  stage.addChild(mazeInfo.canvas.goal);
   stage.addChild(mazeInfo.canvas.character);
   stage.update();
   return mazeInfo;
@@ -211,6 +229,17 @@ function addEvents(step, loader, mazeInfo) {
       resetMaze(mazeInfo, org_px, org_py);
     }
   });
+
+  if(loader.getResult("maze").type == "game") {
+    mazeInfo.score = 0;
+    addFood(loader, mazeInfo);
+    $("#scoreBox").show();
+    $("#runCode").hide();
+    createjs.Sound.play("bgm_normal");
+    $(document).keydown(function(e) {
+      gameMove(e, loader, mazeInfo);
+    });
+  }
 }
 
 function moveUp() {
@@ -329,17 +358,22 @@ function trapCharacter(mazeInfo, x_next, y_next, callback) {
 
 function popQueue(mazeInfo, q_idx) {
   var character = mazeInfo.canvas.character,
-      goal = mazeInfo.canvas.goal,
+      foods = mazeInfo.canvas.foods,
       x_next = character.px + queue[q_idx].args[0],
-      y_next = character.py + queue[q_idx].args[1];
+      y_next = character.py + queue[q_idx].args[1],
+      i = 0;
 
   if( mazeInfo.map[y_next][x_next] == "." ) {
     moveCharacter(mazeInfo, x_next, y_next, function() {
       if(q_idx + 1 == queue.length) {
         queue = [];
-        if(goal.px == x_next && goal.py == y_next) {
-          showModal("성공!", true);
-        } else {
+        for(i = 0; i < foods.length; i++) {
+          if(foods[i].px == x_next && foods[i].py == y_next) {
+            showModal("성공!", true);
+            break;
+          }
+        }
+        if(i == foods.length) {
           showModal("블럭을 다 썼지만 치즈에 가지 못했어요");
         }
       } else {
@@ -382,4 +416,93 @@ function showModal(msg, goNext) {
     backdrop: "static"
   });
   $('#modal-msg').modal('show');
+}
+
+function gameMove(e, loader, mazeInfo) {
+  var character = mazeInfo.canvas.character,
+      foods = mazeInfo.canvas.foods,
+      x_next = character.px,
+      y_next = character.py,
+      i = 0;
+  switch(e.keyCode) {
+    case 37: // left
+      x_next--;
+      break;
+    case 38: // up
+      y_next--;
+      break;
+    case 39: // right
+      x_next++;
+      break;
+    case 40: //down
+      y_next++;
+      break;
+    default:
+      return;
+  }
+  e.preventDefault();
+  if(createjs.Tween.hasActiveTweens()) {
+    return;
+  }
+
+  if( mazeInfo.map[y_next][x_next] == "." ) {
+    moveCharacter(mazeInfo, x_next, y_next, function() {
+      for(i = 0; i < foods.length; i++) {
+        if(foods[i].px == x_next && foods[i].py == y_next) {
+          $("#scoreBox .score").text(++mazeInfo.score);
+          removeFood(mazeInfo, x_next, y_next);
+          addFood(loader, mazeInfo);
+          break;
+        }
+      }
+    });
+  } else if( mazeInfo.map[y_next][x_next] == "^" ) {
+    trapCharacter(mazeInfo, x_next, y_next, function() {
+      // showModal("덫에 걸렸어요");
+    });
+  } else { // 이동할 수 없다면
+    bounceCharacter(mazeInfo, x_next, y_next, function() {
+      // showModal("벽에 부딪쳤어요");
+    });
+  }
+}
+
+function addFood(loader, mazeInfo) {
+  var character = mazeInfo.canvas.character,
+      foods = mazeInfo.canvas.foods;
+  var i, x, y;
+  while(true) {
+    x = parseInt(Math.random() * 6 + 1, 10);
+    y = parseInt(Math.random() * 6 + 1, 10);
+    if(character.px != x && character.py != y && mazeInfo.map[y][x] == ".") {
+      for(i = 0; i < foods.length; i++) {
+        if(foods[i].px == x && foods[i].py == y) {
+          break;
+        }
+      }
+      if(i == foods.length) {
+        break;
+      }
+    }
+  }
+  var bitmap = new createjs.Bitmap(loader.getResult("food"));
+  mazeInfo.canvas.foods.push(bitmap);
+  setBitmapCoord(bitmap, x, y);
+  mazeInfo.canvas.stage.addChild(bitmap);
+  mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
+  mazeInfo.canvas.stage.addChild(mazeInfo.canvas.character);
+  mazeInfo.canvas.stage.update();
+}
+
+function removeFood(mazeInfo, x, y) {
+  var foods = mazeInfo.canvas.foods;
+  var i;
+  for(i = 0; i < foods.length; i++) {
+    if(foods[i].px == x && foods[i].py == y) {
+      mazeInfo.canvas.stage.removeChild(foods[i]);
+      mazeInfo.canvas.stage.update();
+      foods.splice(i, 1);
+      break;
+    }
+  }
 }
