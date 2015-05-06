@@ -1,0 +1,21 @@
+{
+  "path": "/img/map/",
+  "manifest": [
+    {"id": "background", "src": "/img/map/background.png"},
+    {"id": "character", "src": "/img/map/mouse.png"},
+    {"id": "food", "src": "/img/map/cheese.png"},
+    {"id": "box", "src": "/img/map/box.png"},
+    {"id": "stone", "src": "/img/map/stone.png"},
+    {"id": "wall", "src": "/img/map/wall.png"}
+  ],
+  "map": [
+    "########",
+    "######%#",
+    "######.#",
+    "######.#",
+    "######.#",
+    "######.#",
+    "#@.....#",
+    "########"
+  ]
+}

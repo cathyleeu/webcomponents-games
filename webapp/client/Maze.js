@@ -74,6 +74,7 @@ function initBlockly() {
     javascript: "moveRight();\n",
     img: "/img/right.png"
   });
+  createBlock("repeat");
   createBlock("start", {
     label: "시작하면",
     color: 160,
@@ -87,6 +88,7 @@ function initBlockly() {
   	toolbox += '  <block type="move_down"></block>';
   	toolbox += '  <block type="move_right"></block>';
   	toolbox += '  <block type="move_left"></block>';
+    toolbox += '  <block type="repeat"></block>';
   	toolbox += '</xml>';
 	Blockly.inject(document.getElementById('blocklyDiv'),
       {toolbox: toolbox});
@@ -96,6 +98,30 @@ function initBlockly() {
 }
 
 function createBlock(id, options) {
+  if(id == "repeat") {
+    Blockly.Blocks['repeat'] = {
+      init: function() {
+        this.setColour(30);
+        this.appendDummyInput()
+            .appendField("반복")
+            .appendField(new Blockly.FieldDropdown([["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]]), "count");
+        this.appendStatementInput("statements");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip('');
+      }
+    };
+    Blockly.JavaScript['repeat'] = function(block) {
+      var count = +block.getFieldValue('count');
+      var statements = Blockly.JavaScript.statementToCode(block, 'statements');
+      var code = '';
+      for(var i = 0; i < count; i++) {
+        code += statements;
+      }
+      return code;
+    };
+    return;
+  }
   _.defaults(options, {
     color: 0,
     label: "",
@@ -204,8 +230,8 @@ function addEvents(step, loader, mazeInfo) {
   });
   $("#modal-msg .go-next").click(function(e) {
     var path = "/maze/";
-    if(step.substr(0, 1) == "t") {
-      path = path + "t";
+    if(step.substr(0, 1) == "t" || step.substr(0, 1) == "r") {
+      path = path + step.substr(0, 1);
       step = step.substr(1);
     }
     location.pathname = path + (+step+1);
