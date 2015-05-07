@@ -7,7 +7,8 @@
     {"id": "trap", "src": "/img/map/trap.png"},
     {"id": "box", "src": "/img/map/box.png"},
     {"id": "stone", "src": "/img/map/stone.png"},
-    {"id": "wall", "src": "/img/map/wall.png"}
+    {"id": "wall", "src": "/img/map/wall.png"},
+    {"id": "bgm", "src": "/sound/bgm_normal.mp3"}
   ],
   "type": "game",
   "map": [

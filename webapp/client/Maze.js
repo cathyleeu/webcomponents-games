@@ -6,8 +6,6 @@ Router.route('/maze/:step', function() {
   var loader = new createjs.LoadQueue();
   var d1 = $.Deferred();
   var d2 = $.Deferred();
-  var d3 = $.Deferred();
-  var d4 = $.Deferred();
   createjs.Sound.alternateExtensions = ["mp3"];
   loader.installPlugin(createjs.Sound);
   loader.loadManifest({
@@ -16,28 +14,22 @@ Router.route('/maze/:step', function() {
     type: "manifest"
   });
   loader.on("complete", function() {
-    d1.resolve();
-    if(loader.getResult("maze").type == "game") {
-      createjs.Sound.registerSounds([
-        {id:"bgm_normal", src:"/sound/bgm_normal.mp3"},
-        {id:"bgm_coding", src:"/sound/bgm_coding.mp3"}
-      ]);
-      createjs.Sound.addEventListener("fileload", function(e) {
-        if(e.id == "bgm_normal") {
-          d3.resolve();
-        } else if(e.id == "bgm_coding") {
-          d4.resolve();
-        }
+    var bgm = loader.getItem("bgm");
+    if(bgm) {
+      createjs.Sound.registerSound({
+        id: "bgm",
+        src: bgm.src
       });
-    } else {
-      d3.resolve();
-      d4.resolve();
+      createjs.Sound.addEventListener("fileload", function(e) {
+        createjs.Sound.play("bgm");
+      });
     }
+    d1.resolve();
   });
   Template.Maze.rendered = function() {
     d2.resolve();
   };
-  $.when( this.params.step, loader, d1, d2, d3, d4 ).done(init);
+  $.when( this.params.step, loader, d1, d2 ).done(init);
   this.render("Maze");
 });
 
@@ -176,7 +168,7 @@ function drawMaze(loader) {
       .map(function(el) {
         return el.id || el;
       })
-      .difference(["background", "character", "food", "trap", "bgm_normal", "bgm_coding"])
+      .difference(["background", "character", "food", "trap", "bgm"])
       .value();
   for(var i = 0; i < 8; i++) {
     for(var j = 0; j < 8; j++) {
@@ -266,7 +258,6 @@ function addEvents(step, loader, mazeInfo) {
     addFood(loader, mazeInfo);
     $("#scoreBox").show();
     $("#runCode").hide();
-    createjs.Sound.play("bgm_normal");
     $(document).keydown(function(e) {
       gameMove(e, loader, mazeInfo);
     });
@@ -405,7 +396,7 @@ function popQueue(mazeInfo, q_idx) {
           }
         }
         if(i == foods.length) {
-          showModal("블럭을 다 썼지만 치즈에 가지 못했어요");
+          showModal("블럭을 다 썼지만 목표에 도착하지 못했어요");
         }
       } else {
         popQueue(mazeInfo, q_idx + 1);
