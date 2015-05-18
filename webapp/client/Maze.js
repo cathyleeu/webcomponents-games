@@ -21,7 +21,7 @@ Router.route('/maze/:step', function() {
         src: bgm.src
       });
       createjs.Sound.addEventListener("fileload", function(e) {
-        createjs.Sound.play("bgm");
+        createjs.Sound.play("bgm", {loop: -1});
       });
     }
     d1.resolve();
@@ -39,6 +39,7 @@ function init(step, loader) {
   initBlockly();
   var mazeInfo = drawMaze(loader);
   addEvents(step, loader, mazeInfo);
+  runTutorial(loader);
 }
 
 function initBlockly() {
@@ -220,7 +221,7 @@ function addEvents(step, loader, mazeInfo) {
   $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
   });
-  $("#modal-msg .go-next").click(function(e) {
+  $("#modal .go-next").click(function(e) {
     var path = "/maze/";
     if(step.substr(0, 1) == "t" || step.substr(0, 1) == "r") {
       path = path + step.substr(0, 1);
@@ -262,6 +263,27 @@ function addEvents(step, loader, mazeInfo) {
       gameMove(e, loader, mazeInfo);
     });
   }
+}
+
+function runTutorial(loader) {
+  var maze = loader.getResult("maze"),
+      tutorial = maze.tutorial,
+      idx = 0;
+  showModal({
+    msg: tutorial[idx].msg,
+    tutorial: true
+  });
+  $("#modal .tutorial").click(function(e) {
+    idx++;
+    if(idx < tutorial.length) {
+      showModal({
+        msg: tutorial[idx].msg,
+        tutorial: true
+      });
+    } else {
+      $('#modal').modal('hide');
+    }
+  });
 }
 
 function moveUp() {
@@ -425,19 +447,27 @@ function resetMaze(mazeInfo, org_px, org_py) {
   mazeInfo.canvas.stage.update();
 }
 
-function showModal(msg, goNext) {
-  if(goNext) {
-    $("#modal-msg .go-next").show();
-    $("#modal-msg .close-modal").hide();
-  } else {
-    $("#modal-msg .go-next").hide();
-    $("#modal-msg .close-modal").show();
+function showModal(options) {
+  if(typeof options == "string") {
+    options = {
+      msg: options,
+      goNext: false,
+      tutorial: false
+    };
   }
-  $("#modal-msg .modal-body").text(msg);
-  $('#modal-msg').modal({
+  $("#modal .btn").hide();
+  if(options.goNext) {
+    $("#modal .go-next").show();
+  } else if(options.tutorial) {
+    $("#modal .tutorial").show();
+  } else {
+    $("#modal .close-modal").show();
+  }
+  $("#modal .modal-msg").text(options.msg);
+  $('#modal').modal({
     backdrop: "static"
   });
-  $('#modal-msg').modal('show');
+  $('#modal').modal('show');
 }
 
 function gameMove(e, loader, mazeInfo) {
