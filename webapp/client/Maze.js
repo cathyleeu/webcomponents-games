@@ -14,16 +14,22 @@ Router.route('/maze/:step', function() {
     type: "manifest"
   });
   loader.on("complete", function() {
-    var bgm = loader.getItem("bgm");
-    if(bgm) {
-      createjs.Sound.registerSound({
-        id: "bgm",
-        src: bgm.src
-      });
-      createjs.Sound.addEventListener("fileload", function(e) {
-        createjs.Sound.play("bgm", {loop: -1});
-      });
+    var manifest = loader.getResult("maze").manifest;
+    // register sound resources
+    for(var i = 0; i < manifest.length; i++) {
+      if(manifest[i].type == "sound") {
+        createjs.Sound.registerSound({
+          id: manifest[i].id,
+          src: manifest[i].src
+        });
+      }
     }
+    // play bgm if it exist
+    createjs.Sound.addEventListener("fileload", function(e) {
+      if(loader.getItem("bgm")) {
+        createjs.Sound.play("bgm", {loop: -1});
+      }
+    });
     d1.resolve();
   });
   Template.Maze.rendered = function() {
@@ -67,6 +73,18 @@ function initBlockly() {
     javascript: "moveRight();\n",
     img: "/img/right.png"
   });
+  createBlock("get_item", {
+    label: "아이템 가져오기",
+    color: 260,
+    javascript: "getItem();\n",
+    img: "/img/get_item.png"
+  });
+  createBlock("use_item", {
+    label: "아이템 사용하기",
+    color: 260,
+    javascript: "useItem();\n",
+    img: "/img/map/pick.png"
+  });
   createBlock("repeat");
   createBlock("start", {
     label: "시작하면",
@@ -81,6 +99,8 @@ function initBlockly() {
   	toolbox += '  <block type="move_down"></block>';
   	toolbox += '  <block type="move_right"></block>';
   	toolbox += '  <block type="move_left"></block>';
+    toolbox += '  <block type="get_item"></block>';
+    toolbox += '  <block type="use_item"></block>';
     toolbox += '  <block type="repeat"></block>';
   	toolbox += '</xml>';
 	Blockly.inject(document.getElementById('blocklyDiv'),
@@ -130,7 +150,7 @@ function createBlock(id, options) {
       this.setColour(options.color);
       var dummyInput = this.appendDummyInput();
       if(options.img) {
-        dummyInput.appendField(new Blockly.FieldImage(options.img, 15, 15, "*"));
+        dummyInput.appendField(new Blockly.FieldImage(options.img, 24, 24, "*"));
       }
       dummyInput.appendField(options.label);
       this.setDeletable(!!options.deletable);
@@ -169,21 +189,51 @@ function drawMaze(loader) {
       .map(function(el) {
         return el.id || el;
       })
-      .difference(["background", "character", "food", "trap", "bgm"])
+      .difference([
+        "background",
+        "character",
+        "food",
+        "item",
+        "rock5",
+        "rock4",
+        "rock3",
+        "rock2",
+        "rock1",
+        "trap",
+        "bgm",
+        "hammer"
+      ])
       .value();
   for(var i = 0; i < 8; i++) {
     for(var j = 0; j < 8; j++) {
       switch(mazeInfo.map[i][j]) {
         case "@": // character
           setBitmapCoord(mazeInfo.canvas.character, j, i);
-          mazeInfo.map[i][j] = ".";
           break;
         case "%": // food
           var bitmap = new createjs.Bitmap(loader.getResult("food"));
           mazeInfo.canvas.foods.push(bitmap);
           setBitmapCoord(bitmap, j, i);
           stage.addChild(bitmap);
-          mazeInfo.map[i][j] = ".";
+          break;
+        case ")": // item
+          var bitmap = new createjs.Bitmap(loader.getResult("item"));
+          mazeInfo.canvas.item = bitmap;
+          setBitmapCoord(bitmap, j, i);
+          stage.addChild(bitmap);
+          break;
+        case "5": // rock
+        case "4":
+        case "3":
+        case "2":
+        case "1":
+          var num = +mazeInfo.map[i][j];
+          var bitmap = new createjs.Bitmap(loader.getResult("rock" + num));
+          bitmap.type = "rock";
+          bitmap.num = num;
+          mazeInfo.canvas.obstacles.push(bitmap);
+          setBitmapCoord(bitmap, j, i);
+          stage.addChild(bitmap);
           break;
         case "^": // trap
           var trap = new createjs.Bitmap(loader.getResult("trap"));
@@ -223,7 +273,7 @@ function addEvents(step, loader, mazeInfo) {
   });
   $("#modal .go-next").click(function(e) {
     var path = "/maze/";
-    if(step.substr(0, 1) == "t" || step.substr(0, 1) == "r") {
+    if(step.substr(0, 1) == "t" || step.substr(0, 1) == "r" || step.substr(0, 1) == "i") {
       path = path + step.substr(0, 1);
       step = step.substr(1);
     }
@@ -244,13 +294,13 @@ function addEvents(step, loader, mazeInfo) {
         if(queue.length == 0) {
           showModal("블럭이 하나도 없어요!");
         } else {
-          popQueue(mazeInfo, 0);
+          popQueue(loader, mazeInfo, 0);
         }
     } else {
       $(this).html('<i class="fa fa-play"></i> 시작');
       createjs.Tween.removeAllTweens();
       queue = [];
-      resetMaze(mazeInfo, org_px, org_py);
+      resetMaze(loader, mazeInfo, org_px, org_py);
     }
   });
 
@@ -311,6 +361,20 @@ function moveRight() {
   queue.push({
     type: "move",
     args: [1, 0]
+  });
+}
+
+function getItem() {
+  queue.push({
+    type: "getItem",
+    args: []
+  });
+}
+
+function useItem() {
+  queue.push({
+    type: "useItem",
+    args: []
   });
 }
 
@@ -400,50 +464,176 @@ function trapCharacter(mazeInfo, x_next, y_next, callback) {
   });
 }
 
-function popQueue(mazeInfo, q_idx) {
+function popQueue(loader, mazeInfo, q_idx) {
   var character = mazeInfo.canvas.character,
-      foods = mazeInfo.canvas.foods,
-      x_next = character.px + queue[q_idx].args[0],
-      y_next = character.py + queue[q_idx].args[1],
-      i = 0;
-
-  if( mazeInfo.map[y_next][x_next] == "." ) {
-    moveCharacter(mazeInfo, x_next, y_next, function() {
-      if(q_idx + 1 == queue.length) {
-        queue = [];
-        for(i = 0; i < foods.length; i++) {
-          if(foods[i].px == x_next && foods[i].py == y_next) {
-            showModal("성공!", true);
-            break;
-          }
-        }
-        if(i == foods.length) {
-          showModal("블럭을 다 썼지만 목표에 도착하지 못했어요");
-        }
-      } else {
-        popQueue(mazeInfo, q_idx + 1);
+      foods = mazeInfo.canvas.foods;
+  if(q_idx == queue.length) {
+    queue = [];
+    for(var i = 0; i < foods.length; i++) {
+      if(foods[i].px == character.px && foods[i].py == character.py) {
+        showModal({
+          msg: "성공!",
+          goNext: true
+        });
+        break;
       }
-    });
-  } else if( mazeInfo.map[y_next][x_next] == "^" ) {
-    queue = [];
-    trapCharacter(mazeInfo, x_next, y_next, function() {
-      showModal("덫에 걸렸어요");
-    });
-  } else { // 이동할 수 없다면
-    queue = [];
-    bounceCharacter(mazeInfo, x_next, y_next, function() {
-      showModal("벽에 부딪쳤어요");
-    });
+    }
+    if(i == foods.length) {
+      showModal("블럭을 다 썼지만 끝나지 않았어요");
+    }
+    return;
   }
+
+  var type = queue[q_idx].type;
+  if(type == "move") {
+    var x_next = character.px + queue[q_idx].args[0],
+        y_next = character.py + queue[q_idx].args[1],
+        tile = mazeInfo.map[y_next][x_next];
+    if( tile == "." || tile == "@" || tile == "%" || tile == ")" ) {
+      moveCharacter(mazeInfo, x_next, y_next, function() {
+        popQueue(loader, mazeInfo, q_idx + 1);
+      });
+    } else if( tile == "5" || tile == "4" || tile == "3" || tile == "2" || tile == "1" ) {
+      for(var i = 0; i < mazeInfo.canvas.obstacles.length; i++) {
+        if( mazeInfo.canvas.obstacles[i].px == x_next &&
+            mazeInfo.canvas.obstacles[i].py == y_next) {
+          queue = [];
+          bounceCharacter(mazeInfo, x_next, y_next, function() {
+            showModal("바위에 막혔어요");
+          });
+        }
+      }
+      if(i == mazeInfo.canvas.obstacles.length) {
+        moveCharacter(mazeInfo, x_next, y_next, function() {
+          popQueue(loader, mazeInfo, q_idx + 1);
+        });
+      }
+    } else if( tile == "^" ) {
+      queue = [];
+      trapCharacter(mazeInfo, x_next, y_next, function() {
+        showModal("덫에 걸렸어요");
+      });
+    } else { // 이동할 수 없다면
+      queue = [];
+      bounceCharacter(mazeInfo, x_next, y_next, function() {
+        showModal("벽에 부딪쳤어요");
+      });
+    }
+  } else if(type == "getItem") {
+    if( character.px == mazeInfo.canvas.item.px &&
+        character.py == mazeInfo.canvas.item.py) {
+      character.item = true;
+      mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.item);
+      mazeInfo.canvas.stage.update();
+      setTimeout(function() {
+        popQueue(loader, mazeInfo, q_idx + 1);
+      }, 500);
+    } else { // 아이템을 가져올 수 없다면
+      queue = [];
+      showModal("아이템을 가져올 수 없어요");
+    }
+  } else if(type == "useItem") {
+    var x_next = character.px,
+        y_next = character.py,
+        rotation = character.rotation,
+        num;
+    if(!character.item) {
+      queue = [];
+      showModal("아이템을 가지고 있지 않아요");
+      return;
+    }
+    if(rotation == 0) {
+      y_next--;
+    } else if(rotation == 90) {
+      x_next++;
+    } else if(rotation == 180) {
+      y_next++;
+    } else if(rotation == 270) {
+      x_next--;
+    }
+    num = +mazeInfo.map[y_next][x_next];
+    if(!isNaN(num)) {
+      for(var i = 0; i < mazeInfo.canvas.obstacles.length; i++) {
+        if( mazeInfo.canvas.obstacles[i].px == x_next &&
+            mazeInfo.canvas.obstacles[i].py == y_next) {
+          num = mazeInfo.canvas.obstacles[i].num;
+
+          // remove rock
+          mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.obstacles[i]);
+          mazeInfo.canvas.obstacles.splice(i, 1);
+
+          // add rock
+          if(num > 1) {
+            var bitmap = new createjs.Bitmap(loader.getResult("rock" + (num-1)));
+            bitmap.type = "rock";
+            bitmap.num = num - 1;
+            mazeInfo.canvas.obstacles.push(bitmap);
+            setBitmapCoord(bitmap, x_next, y_next);
+            mazeInfo.canvas.stage.addChild(bitmap);
+          }
+
+          createjs.Sound.play("hammer");
+          mazeInfo.canvas.stage.update();
+          setTimeout(function() {
+            popQueue(loader, mazeInfo, q_idx + 1);
+          }, 1000);
+          return;
+        }
+      }
+      // 이미 바위가 없어져 아이템을 사용하지 않은 경우
+      queue = [];
+      showModal("아이템을 사용할 수 없어요");
+    } else {
+      queue = [];
+      showModal("아이템을 사용할 수 없어요");
+    }
+  }
+
 }
 
-function resetMaze(mazeInfo, org_px, org_py) {
+function resetMaze(loader, mazeInfo, org_px, org_py) {
   var character = mazeInfo.canvas.character;
   character.px = org_px;
   character.py = org_py;
   character.x = org_px * 50 + 25;
   character.y = org_py * 50 + 25;
   character.rotation = 0;
+  character.item = false;
+
+  if(mazeInfo.canvas.item) {
+    mazeInfo.canvas.stage.addChild(mazeInfo.canvas.item);
+  }
+
+  // reset rocks
+  for(var i = 0; i < mazeInfo.canvas.obstacles.length; i++) {
+    if(mazeInfo.canvas.obstacles[i].type == "rock") {
+      mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.obstacles[i]);
+      mazeInfo.canvas.obstacles.splice(i, 1);
+    }
+  }
+  for(var i = 0; i < 8; i++) {
+    for(var j = 0; j < 8; j++) {
+      switch(mazeInfo.map[i][j]) {
+        case "5": // rock
+        case "4":
+        case "3":
+        case "2":
+        case "1":
+          var num = +mazeInfo.map[i][j];
+          var bitmap = new createjs.Bitmap(loader.getResult("rock" + num));
+          bitmap.type = "rock";
+          bitmap.num = num;
+          mazeInfo.canvas.obstacles.push(bitmap);
+          setBitmapCoord(bitmap, j, i);
+          mazeInfo.canvas.stage.addChild(bitmap);
+          break;
+      }
+    }
+  }
+
+  // 캐릭터를 항상 위로
+  mazeInfo.canvas.stage.removeChild(character);
+  mazeInfo.canvas.stage.addChild(character);
   mazeInfo.canvas.stage.update();
 }
 
