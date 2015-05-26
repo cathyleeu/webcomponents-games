@@ -1,0 +1,34 @@
+{
+  "path": "/img/map/",
+  "manifest": [
+    {"id": "background", "src": "/img/map/background.png"},
+    {"id": "character", "src": "/img/map/ladybug.png"},
+    {"id": "food", "src": "/img/map/star.png"},
+    {"id": "item", "src": "/img/map/pick.png"},
+    {"id": "rock5", "src": "/img/map/rock5.png"},
+    {"id": "rock4", "src": "/img/map/rock4.png"},
+    {"id": "rock3", "src": "/img/map/rock3.png"},
+    {"id": "rock2", "src": "/img/map/rock2.png"},
+    {"id": "rock1", "src": "/img/map/rock1.png"},
+    {"id": "box", "src": "/img/map/box.png"},
+    {"id": "stone", "src": "/img/map/stone.png"},
+    {"id": "wall", "src": "/img/map/wall.png"},
+    {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
+    {"id": "hammer", "src": "/sound/hammer.wav", "type": "sound"}
+  ],
+  "map": [
+    "########",
+    "########",
+    "########",
+    "#####@##",
+    "#%.3).##",
+    "########",
+    "########",
+    "########"
+  ],
+  "tutorial": [{
+    "msg": "이번에는 아이템을 3번 사용해야되는 바위가 있어"
+  }, {
+    "msg": "반복 블럭 안에 아이템 사용하기 블럭을 넣어서 해볼까?"
+  }]
+}
