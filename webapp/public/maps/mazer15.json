@@ -9,6 +9,13 @@
     {"id": "wall", "src": "/img/map/wall.png"},
     {"id": "bgm", "src": "/sound/bgm_normal.mp3"}
   ],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
   "map": [
     "########",
     "#.######",

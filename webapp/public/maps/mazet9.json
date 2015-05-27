@@ -9,6 +9,12 @@
     {"id": "stone", "src": "/img/map/stone.png"},
     {"id": "wall", "src": "/img/map/wall.png"}
   ],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
   "map": [
     "########",
     "#%..^..#",

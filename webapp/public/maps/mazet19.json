@@ -11,6 +11,12 @@
     {"id": "bgm", "src": "/sound/bgm_normal.mp3"}
   ],
   "type": "game",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
   "map": [
     "########",
     "#......#",
