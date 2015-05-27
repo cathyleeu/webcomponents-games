@@ -42,13 +42,13 @@ Router.route('/maze/:step', function() {
 var queue = [];
 
 function init(step, loader) {
-  initBlockly();
+  initBlockly(loader);
   var mazeInfo = drawMaze(loader);
   addEvents(step, loader, mazeInfo);
   runTutorial(loader);
 }
 
-function initBlockly() {
+function initBlockly(loader) {
   createBlock("move_up", {
     label: "위로 이동",
     color: 260,
@@ -94,17 +94,11 @@ function initBlockly() {
     movable: false
   });
 
-	var toolbox = '<xml>';
-  	toolbox += '  <block type="move_up"></block>';
-  	toolbox += '  <block type="move_down"></block>';
-  	toolbox += '  <block type="move_right"></block>';
-  	toolbox += '  <block type="move_left"></block>';
-    toolbox += '  <block type="get_item"></block>';
-    toolbox += '  <block type="use_item"></block>';
-    toolbox += '  <block type="repeat"></block>';
-  	toolbox += '</xml>';
+	var toolbox = _(loader.getResult("maze").toolbox).map(function(i,j) {
+    return '<block type="' + i + '"></block>';
+  });
 	Blockly.inject(document.getElementById('blocklyDiv'),
-      {toolbox: toolbox});
+      {toolbox: '<xml>' + toolbox + '</xml>'});
   var startblock = '<xml><block type="start" x="20" y="20"></block></xml>';
 	Blockly.Xml.domToWorkspace(Blockly.mainWorkspace,
 	    $(startblock).get(0));
@@ -319,10 +313,12 @@ function runTutorial(loader) {
   var maze = loader.getResult("maze"),
       tutorial = maze.tutorial,
       idx = 0;
-  showModal({
-    msg: tutorial[idx].msg,
-    tutorial: true
-  });
+  if(tutorial) {
+    showModal({
+      msg: tutorial[idx].msg,
+      tutorial: true
+    });
+  }
   $("#modal .tutorial").click(function(e) {
     idx++;
     if(idx < tutorial.length) {
