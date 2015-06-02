@@ -1,0 +1,42 @@
+{
+  "path": "/img/map/",
+  "manifest": [
+    {"id": "background", "src": "/img/map/background.png"},
+    {"id": "character", "src": "/img/map/ladybug.png"},
+    {"id": "food", "src": "/img/map/star.png"},
+    {"id": "spider", "src": "/img/map/spider.png"},
+    {"id": "hand_rock", "src": "/img/hand_rock.png"},
+    {"id": "hand_paper", "src": "/img/hand_paper.png"},
+    {"id": "hand_scissors", "src": "/img/hand_scissors.png"},
+    {"id": "box", "src": "/img/map/box.png", "obstacle": true},
+    {"id": "stone", "src": "/img/map/stone.png", "obstacle": true},
+    {"id": "wall", "src": "/img/map/wall.png", "obstacle": true},
+    {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
+    {"id": "success", "src": "/sound/success.wav", "type": "sound"},
+    {"id": "fail", "src": "/sound/fail.wav", "type": "sound"}
+  ],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
+  ],
+  "map": [
+    "########",
+    "########",
+    "########",
+    "########",
+    "#%..S.@#",
+    "########",
+    "########",
+    "########"
+  ],
+  "tutorial": [{
+    "msg": "거미줄 때문에 지나가질 못하겠어. 어쩌지?"
+  }, {
+    "msg": "가위바위보로 거미를 이기면 길을 비켜줄꺼야."
+  }]
+}
