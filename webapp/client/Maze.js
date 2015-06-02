@@ -86,6 +86,24 @@ function initBlockly(loader) {
     img: "/img/map/pick.png"
   });
   createBlock("repeat");
+  createBlock("item_scissors", {
+    label: "가위",
+    color: 260,
+    javascript: "itemScissors();\n",
+    img: "/img/hand_scissors.png"
+  });
+  createBlock("item_rock", {
+    label: "바위",
+    color: 260,
+    javascript: "itemRock();\n",
+    img: "/img/hand_rock.png"
+  });
+  createBlock("item_paper", {
+    label: "보",
+    color: 260,
+    javascript: "itemPaper();\n",
+    img: "/img/hand_paper.png"
+  });
   createBlock("start", {
     label: "시작하면",
     color: 160,
@@ -180,23 +198,12 @@ function drawMaze(loader) {
   stage.addChild(background);
 
   var obstacle_ids = _.chain(maze.manifest)
+      .filter(function(el) {
+        return el.obstacle;
+      })
       .map(function(el) {
         return el.id || el;
       })
-      .difference([
-        "background",
-        "character",
-        "food",
-        "item",
-        "rock5",
-        "rock4",
-        "rock3",
-        "rock2",
-        "rock1",
-        "trap",
-        "bgm",
-        "hammer"
-      ])
       .value();
   for(var i = 0; i < 8; i++) {
     for(var j = 0; j < 8; j++) {
@@ -241,6 +248,31 @@ function drawMaze(loader) {
           setBitmapCoord(bitmap, j, i);
           stage.addChild(bitmap);
           break;
+        case "R": // rock
+        case "P": // paper
+        case "S": // scissors
+          var container = new createjs.Container();
+          var bitmap = new createjs.Bitmap(loader.getResult("spider"));
+          var hand = {
+            "R": "rock",
+            "P": "paper",
+            "S": "scissors"
+          }[mazeInfo.map[i][j]];
+          var bitmap2 = new createjs.Bitmap(loader.getResult("hand_" + hand));
+          var bounds = bitmap2.getBounds();
+          var size = 25;
+          bitmap2.scaleX = size / bounds.width;
+          bitmap2.scaleY = size / bounds.height;
+          bitmap2.x = 50 - size;
+          container.hand = hand;
+          container.addChild(bitmap, bitmap2);
+          setBitmapCoord(container, j, i);
+          stage.addChild(container);
+          if(!mazeInfo.canvas.spiders) {
+            mazeInfo.canvas.spiders = [];
+          }
+          mazeInfo.canvas.spiders.push(container);
+          break;
         case ".":
         default:
           break;
@@ -267,7 +299,7 @@ function addEvents(step, loader, mazeInfo) {
   });
   $("#modal .go-next").click(function(e) {
     var path = "/maze/";
-    if(step.substr(0, 1) == "t" || step.substr(0, 1) == "r" || step.substr(0, 1) == "i") {
+    if(step.substr(0, 1) == "t" || step.substr(0, 1) == "r" || step.substr(0, 1) == "i" || step.substr(0, 1) == "a") {
       path = path + step.substr(0, 1);
       step = step.substr(1);
     }
@@ -371,6 +403,27 @@ function useItem() {
   queue.push({
     type: "useItem",
     args: []
+  });
+}
+
+function itemRock() {
+  queue.push({
+    type: "action",
+    args: ["rock"]
+  });
+}
+
+function itemPaper() {
+  queue.push({
+    type: "action",
+    args: ["paper"]
+  });
+}
+
+function itemScissors() {
+  queue.push({
+    type: "action",
+    args: ["scissors"]
   });
 }
 
@@ -504,6 +557,24 @@ function popQueue(loader, mazeInfo, q_idx) {
           popQueue(loader, mazeInfo, q_idx + 1);
         });
       }
+    } else if( tile == "R" || tile == "S" || tile == "P" ) {
+      for(var i = 0; i < mazeInfo.canvas.spiders.length; i++) {
+        if( mazeInfo.canvas.spiders[i].px == x_next &&
+            mazeInfo.canvas.spiders[i].py == y_next &&
+            mazeInfo.canvas.spiders[i].display != "none") {
+          queue = [];
+          createjs.Sound.play("fail");
+          trapCharacter(mazeInfo, x_next, y_next, function() {
+            showModal("거미줄에 걸렸어요");
+          });
+          break;
+        }
+      }
+      if(i == mazeInfo.canvas.spiders.length) {
+        moveCharacter(mazeInfo, x_next, y_next, function() {
+          popQueue(loader, mazeInfo, q_idx + 1);
+        });
+      }
     } else if( tile == "^" ) {
       queue = [];
       trapCharacter(mazeInfo, x_next, y_next, function() {
@@ -583,6 +654,55 @@ function popQueue(loader, mazeInfo, q_idx) {
       queue = [];
       showModal("아이템을 사용할 수 없어요");
     }
+  } else if(type == "action") {
+    var x_next = character.px,
+        y_next = character.py,
+        rotation = character.rotation,
+        hand = queue[q_idx].args[0];
+    if(rotation == 0) {
+      y_next--;
+    } else if(rotation == 90) {
+      x_next++;
+    } else if(rotation == 180) {
+      y_next++;
+    } else if(rotation == 270) {
+      x_next--;
+    }
+    if( mazeInfo.map[y_next][x_next] != "R" &&
+        mazeInfo.map[y_next][x_next] != "S" &&
+        mazeInfo.map[y_next][x_next] != "P") {
+      queue = [];
+      showModal("가위바위보를 할 수 없어요");
+      return;
+    }
+    var spider;
+    for(var i = 0; i < mazeInfo.canvas.spiders.length; i++) {
+      if( mazeInfo.canvas.spiders[i].px == x_next &&
+          mazeInfo.canvas.spiders[i].py == y_next) {
+        spider = mazeInfo.canvas.spiders[i];
+      }
+    }
+    if(hand == spider.hand) {
+      queue = [];
+      showModal("비겼어요");
+      createjs.Sound.play("fail");
+      return;
+    }
+    if( (hand == "rock"     && spider.hand == "paper") ||
+        (hand == "scissors" && spider.hand == "rock") ||
+        (hand == "paper"    && spider.hand == "scissors") ) {
+      queue = [];
+      showModal("졌어요");
+      createjs.Sound.play("fail");
+      return;
+    }
+    spider.display = "none";
+    mazeInfo.canvas.stage.removeChild(spider);
+    mazeInfo.canvas.stage.update();
+    createjs.Sound.play("success");
+    setTimeout(function() {
+      popQueue(loader, mazeInfo, q_idx + 1);
+    }, 500);
   }
 
 }
@@ -624,6 +744,14 @@ function resetMaze(loader, mazeInfo, org_px, org_py) {
           mazeInfo.canvas.stage.addChild(bitmap);
           break;
       }
+    }
+  }
+
+  // reset spiders
+  for(var i = 0; i < mazeInfo.canvas.spiders.length; i++) {
+    if(mazeInfo.canvas.spiders[i].display == "none") {
+      delete mazeInfo.canvas.spiders[i].display;
+      mazeInfo.canvas.stage.addChild(mazeInfo.canvas.spiders[i]);
     }
   }
 
