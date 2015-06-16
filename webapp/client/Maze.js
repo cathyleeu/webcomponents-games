@@ -39,142 +39,15 @@ Router.route('/maze/:step', function() {
   this.render("Maze");
 });
 
-var queue = [];
+var queue = [],
+    kidscoding = new KidsCoding(queue);
 
 function init(step, loader) {
-  initBlockly(loader);
+
+  kidscoding.initBlockly(loader);
   var mazeInfo = drawMaze(loader);
   addEvents(step, loader, mazeInfo);
   runTutorial(loader);
-}
-
-function initBlockly(loader) {
-  createBlock("move_up", {
-    label: "위로 이동",
-    color: 260,
-    javascript: "moveUp();\n",
-    img: "/img/up.png"
-  });
-  createBlock("move_down", {
-    label: "아래로 이동",
-    color: 260,
-    javascript: "moveDown();\n",
-    img: "/img/down.png"
-  });
-  createBlock("move_left", {
-    label: "왼쪽으로 이동",
-    color: 260,
-    javascript: "moveLeft();\n",
-    img: "/img/left.png"
-  });
-  createBlock("move_right", {
-    label: "오른쪽으로 이동",
-    color: 260,
-    javascript: "moveRight();\n",
-    img: "/img/right.png"
-  });
-  createBlock("get_item", {
-    label: "아이템 가져오기",
-    color: 260,
-    javascript: "getItem();\n",
-    img: "/img/get_item.png"
-  });
-  createBlock("use_item", {
-    label: "아이템 사용하기",
-    color: 260,
-    javascript: "useItem();\n",
-    img: "/img/map/pick.png"
-  });
-  createBlock("repeat");
-  createBlock("item_scissors", {
-    label: "가위",
-    color: 260,
-    javascript: "itemScissors();\n",
-    img: "/img/hand_scissors.png"
-  });
-  createBlock("item_rock", {
-    label: "바위",
-    color: 260,
-    javascript: "itemRock();\n",
-    img: "/img/hand_rock.png"
-  });
-  createBlock("item_paper", {
-    label: "보",
-    color: 260,
-    javascript: "itemPaper();\n",
-    img: "/img/hand_paper.png"
-  });
-  createBlock("start", {
-    label: "시작하면",
-    color: 160,
-    previousStatement: false,
-    deletable: false,
-    movable: false
-  });
-
-	var toolbox = _(loader.getResult("maze").toolbox).map(function(i,j) {
-    return '<block type="' + i + '"></block>';
-  });
-	Blockly.inject(document.getElementById('blocklyDiv'),
-      {toolbox: '<xml>' + toolbox + '</xml>'});
-  var startblock = '<xml><block type="start" x="20" y="20"></block></xml>';
-	Blockly.Xml.domToWorkspace(Blockly.mainWorkspace,
-	    $(startblock).get(0));
-}
-
-function createBlock(id, options) {
-  if(id == "repeat") {
-    Blockly.Blocks['repeat'] = {
-      init: function() {
-        this.setColour(30);
-        this.appendDummyInput()
-            .appendField("반복")
-            .appendField(new Blockly.FieldDropdown([["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]]), "count");
-        this.appendStatementInput("statements");
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
-        this.setTooltip('');
-      }
-    };
-    Blockly.JavaScript['repeat'] = function(block) {
-      var count = +block.getFieldValue('count');
-      var statements = Blockly.JavaScript.statementToCode(block, 'statements');
-      var code = '';
-      for(var i = 0; i < count; i++) {
-        code += statements;
-      }
-      return code;
-    };
-    return;
-  }
-  _.defaults(options, {
-    color: 0,
-    label: "",
-    javascript: "",
-    img: "",
-    deletable: true,
-    movable: true,
-    previousStatement: true,
-    nextStatement: true
-  });
-  Blockly.Blocks[id] = {
-    init: function() {
-      this.setColour(options.color);
-      var dummyInput = this.appendDummyInput();
-      if(options.img) {
-        dummyInput.appendField(new Blockly.FieldImage(options.img, 24, 24, "*"));
-      }
-      dummyInput.appendField(options.label);
-      this.setDeletable(!!options.deletable);
-      this.setMovable(!!options.movable);
-      this.setPreviousStatement(!!options.previousStatement);
-      this.setNextStatement(!!options.nextStatement);
-      this.contextMenu = false;
-    }
-  };
-  Blockly.JavaScript[id] = function(block) {
-    return options.javascript;
-  };
 }
 
 function drawMaze(loader) {
@@ -316,7 +189,7 @@ function addEvents(step, loader, mazeInfo) {
           'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
       var code = Blockly.JavaScript.workspaceToCode();
       Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-        eval(code);
+        eval("with(kidscoding){\n" + code + "\n}");
         if(queue.length == 0) {
           showModal("블럭이 하나도 없어요!");
         } else {
@@ -361,69 +234,6 @@ function runTutorial(loader) {
     } else {
       $('#modal').modal('hide');
     }
-  });
-}
-
-function moveUp() {
-  queue.push({
-    type: "move",
-    args: [0, -1]
-  });
-}
-
-function moveDown() {
-  queue.push({
-    type: "move",
-    args: [0, 1]
-  });
-}
-
-function moveLeft() {
-  queue.push({
-    type: "move",
-    args: [-1, 0]
-  });
-}
-
-function moveRight() {
-  queue.push({
-    type: "move",
-    args: [1, 0]
-  });
-}
-
-function getItem() {
-  queue.push({
-    type: "getItem",
-    args: []
-  });
-}
-
-function useItem() {
-  queue.push({
-    type: "useItem",
-    args: []
-  });
-}
-
-function itemRock() {
-  queue.push({
-    type: "action",
-    args: ["rock"]
-  });
-}
-
-function itemPaper() {
-  queue.push({
-    type: "action",
-    args: ["paper"]
-  });
-}
-
-function itemScissors() {
-  queue.push({
-    type: "action",
-    args: ["scissors"]
   });
 }
 
