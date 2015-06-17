@@ -1,5 +1,5 @@
-KidsCoding = function(queue) {
-  this.queue = queue;
+KidsCoding = function() {
+  this.queue = [];
 };
 KidsCoding.prototype = {
 
@@ -27,6 +27,24 @@ KidsCoding.prototype = {
       color: 260,
       javascript: "moveRight();\n",
       img: "/img/right.png"
+    });
+    this.createBlock("move_forward", {
+      label: "앞으로 가기",
+      color: 260,
+      javascript: "moveForward();\n",
+      img: "/img/move_forward.png"
+    });
+    this.createBlock("rotate_left", {
+      label: "왼쪽으로 돌기",
+      color: 260,
+      javascript: "rotateLeft();\n",
+      img: "/img/rotate_left.png"
+    });
+    this.createBlock("rotate_right", {
+      label: "오른쪽으로 돌기",
+      color: 260,
+      javascript: "rotateRight();\n",
+      img: "/img/rotate_right.png"
     });
     this.createBlock("get_item", {
       label: "아이템 가져오기",
@@ -157,6 +175,27 @@ KidsCoding.prototype = {
     this.queue.push({
       type: "move",
       args: [1, 0]
+    });
+  },
+
+  moveForward: function() {
+    this.queue.push({
+      type: "move",
+      args: ["forward"]
+    });
+  },
+
+  rotateLeft: function() {
+    this.queue.push({
+      type: "rotate",
+      args: ["left"]
+    });
+  },
+
+  rotateRight: function() {
+    this.queue.push({
+      type: "rotate",
+      args: ["right"]
     });
   },
 
