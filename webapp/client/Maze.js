@@ -6,7 +6,7 @@ Router.route('/maze/:step', function() {
   var loader = new createjs.LoadQueue();
   var d1 = $.Deferred();
   var d2 = $.Deferred();
-  createjs.Sound.alternateExtensions = ["mp3"];
+  createjs.Sound.alternateExtensions = ["mp3", "wav"];
   loader.installPlugin(createjs.Sound);
   loader.loadManifest({
     id: "maze",
@@ -351,6 +351,7 @@ function popQueue(loader, mazeInfo, q_idx) {
     kidscoding.queue = [];
     for(var i = 0; i < foods.length; i++) {
       if(foods[i].px == character.px && foods[i].py == character.py) {
+        createjs.Sound.play("success");
         showModal({
           msg: "성공!",
           goNext: true
@@ -422,11 +423,13 @@ function popQueue(loader, mazeInfo, q_idx) {
       }
     } else if( tile == "^" ) {
       kidscoding.queue = [];
+      createjs.Sound.play("fail");
       trapCharacter(mazeInfo, x_next, y_next, function() {
         showModal("덫에 걸렸어요");
       });
     } else { // 이동할 수 없다면
       kidscoding.queue = [];
+      createjs.Sound.play("fail");
       bounceCharacter(mazeInfo, x_next, y_next, function() {
         showModal("벽에 부딪쳤어요");
       });
