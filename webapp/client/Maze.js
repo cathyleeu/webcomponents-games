@@ -350,18 +350,18 @@ function popQueue(loader, mazeInfo, q_idx) {
   if(q_idx == kidscoding.queue.length) {
     kidscoding.queue = [];
     for(var i = 0; i < foods.length; i++) {
-      if(foods[i].px == character.px && foods[i].py == character.py) {
-        createjs.Sound.play("complete");
-        showModal({
-          msg: "성공!",
-          goNext: true
-        });
+      if(foods[i].visible == true) {
+        createjs.Sound.play("fail");
+        showModal("블럭을 다 썼지만 끝나지 않았어요");
         break;
       }
     }
     if(i == foods.length) {
-      createjs.Sound.play("fail");
-      showModal("블럭을 다 썼지만 끝나지 않았어요");
+      createjs.Sound.play("complete");
+      showModal({
+        msg: "성공!",
+        goNext: true
+      });
     }
     return;
   }
@@ -385,8 +385,20 @@ function popQueue(loader, mazeInfo, q_idx) {
       y_next += kidscoding.queue[q_idx].args[1];
     }
     var tile = mazeInfo.map[y_next][x_next];
-    if( tile == "." || tile == "@" || tile == "%" || tile == ")" ) {
+    if( tile == "." || tile == "@" || tile == ")" ) {
       moveCharacter(mazeInfo, x_next, y_next, function() {
+        popQueue(loader, mazeInfo, q_idx + 1);
+      });
+    } else if( tile == "%" ) {
+      moveCharacter(mazeInfo, x_next, y_next, function() {
+        for(var i = 0; i < foods.length; i++) {
+          if(foods[i].px == x_next && foods[i].py == y_next) {
+            foods[i].visible = false;
+            break;
+          }
+        }
+        createjs.Sound.play("success");
+        mazeInfo.canvas.stage.update();
         popQueue(loader, mazeInfo, q_idx + 1);
       });
     } else if( tile == "5" || tile == "4" || tile == "3" || tile == "2" || tile == "1" ) {
@@ -409,7 +421,7 @@ function popQueue(loader, mazeInfo, q_idx) {
       for(var i = 0; i < mazeInfo.canvas.spiders.length; i++) {
         if( mazeInfo.canvas.spiders[i].px == x_next &&
             mazeInfo.canvas.spiders[i].py == y_next &&
-            mazeInfo.canvas.spiders[i].display != "none") {
+            mazeInfo.canvas.spiders[i].visible == true) {
           kidscoding.queue = [];
           createjs.Sound.play("fail");
           trapCharacter(mazeInfo, x_next, y_next, function() {
@@ -562,8 +574,7 @@ function popQueue(loader, mazeInfo, q_idx) {
       createjs.Sound.play("fail");
       return;
     }
-    spider.display = "none";
-    mazeInfo.canvas.stage.removeChild(spider);
+    spider.visible = false;
     mazeInfo.canvas.stage.update();
     createjs.Sound.play("success");
     setTimeout(function() {
@@ -584,6 +595,11 @@ function resetMaze(loader, mazeInfo, org_px, org_py) {
 
   if(mazeInfo.canvas.item) {
     mazeInfo.canvas.stage.addChild(mazeInfo.canvas.item);
+  }
+
+  // reset foods
+  for(var i = 0; i < mazeInfo.canvas.foods.length; i++) {
+    mazeInfo.canvas.foods[i].visible = true;
   }
 
   // reset rocks
@@ -616,10 +632,7 @@ function resetMaze(loader, mazeInfo, org_px, org_py) {
   // reset spiders
   if(mazeInfo.canvas.spiders) {
     for(var i = 0; i < mazeInfo.canvas.spiders.length; i++) {
-      if(mazeInfo.canvas.spiders[i].display == "none") {
-        delete mazeInfo.canvas.spiders[i].display;
-        mazeInfo.canvas.stage.addChild(mazeInfo.canvas.spiders[i]);
-      }
+      mazeInfo.canvas.spiders[i].visible = true;
     }
   }
 
