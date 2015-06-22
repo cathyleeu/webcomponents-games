@@ -11,8 +11,9 @@
     {"id": "weed1", "src": "/img/map/weed1.png", "obstacle": true},
     {"id": "weed2", "src": "/img/map/weed2.png", "obstacle": true},
     {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
-    {"id": "success", "src": "/sound/success.wav", "type": "sound"},
-    {"id": "fail", "src": "/sound/fail.wav", "type": "sound"}
+    {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+    {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+    {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"}
   ],
   "toolbox": [
     "move_forward",

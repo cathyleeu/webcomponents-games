@@ -12,8 +12,8 @@
     {"id": "stone", "src": "/img/map/stone.png", "obstacle": true},
     {"id": "wall", "src": "/img/map/wall.png", "obstacle": true},
     {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
-    {"id": "success", "src": "/sound/success.wav", "type": "sound"},
-    {"id": "fail", "src": "/sound/fail.wav", "type": "sound"}
+    {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+    {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"}
   ],
   "toolbox": [
     "move_up",

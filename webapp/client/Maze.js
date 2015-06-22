@@ -351,7 +351,7 @@ function popQueue(loader, mazeInfo, q_idx) {
     kidscoding.queue = [];
     for(var i = 0; i < foods.length; i++) {
       if(foods[i].px == character.px && foods[i].py == character.py) {
-        createjs.Sound.play("success");
+        createjs.Sound.play("complete");
         showModal({
           msg: "성공!",
           goNext: true
@@ -360,6 +360,7 @@ function popQueue(loader, mazeInfo, q_idx) {
       }
     }
     if(i == foods.length) {
+      createjs.Sound.play("fail");
       showModal("블럭을 다 썼지만 끝나지 않았어요");
     }
     return;
@@ -393,6 +394,7 @@ function popQueue(loader, mazeInfo, q_idx) {
         if( mazeInfo.canvas.obstacles[i].px == x_next &&
             mazeInfo.canvas.obstacles[i].py == y_next) {
           kidscoding.queue = [];
+          createjs.Sound.play("fail");
           bounceCharacter(mazeInfo, x_next, y_next, function() {
             showModal("바위에 막혔어요");
           });
@@ -450,6 +452,7 @@ function popQueue(loader, mazeInfo, q_idx) {
       character.item = true;
       mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.item);
       mazeInfo.canvas.stage.update();
+      createjs.Sound.play("success");
       setTimeout(function() {
         popQueue(loader, mazeInfo, q_idx + 1);
       }, 500);
@@ -464,6 +467,7 @@ function popQueue(loader, mazeInfo, q_idx) {
         num;
     if(!character.item) {
       kidscoding.queue = [];
+      createjs.Sound.play("fail");
       showModal("아이템을 가지고 있지 않아요");
       return;
     }
@@ -506,9 +510,11 @@ function popQueue(loader, mazeInfo, q_idx) {
         }
       }
       // 이미 바위가 없어져 아이템을 사용하지 않은 경우
+      createjs.Sound.play("fail");
       kidscoding.queue = [];
       showModal("아이템을 사용할 수 없어요");
     } else {
+      createjs.Sound.play("fail");
       kidscoding.queue = [];
       showModal("아이템을 사용할 수 없어요");
     }
@@ -529,6 +535,7 @@ function popQueue(loader, mazeInfo, q_idx) {
     if( mazeInfo.map[y_next][x_next] != "R" &&
         mazeInfo.map[y_next][x_next] != "S" &&
         mazeInfo.map[y_next][x_next] != "P") {
+      createjs.Sound.play("fail");
       kidscoding.queue = [];
       showModal("가위바위보를 할 수 없어요");
       return;
@@ -541,6 +548,7 @@ function popQueue(loader, mazeInfo, q_idx) {
       }
     }
     if(hand == spider.hand) {
+      createjs.Sound.play("fail");
       kidscoding.queue = [];
       showModal("비겼어요");
       createjs.Sound.play("fail");
