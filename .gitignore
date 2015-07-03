@@ -27,4 +27,11 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 .DS_Store
+Thumbs.db
+
+# meteorjs bundle directory(release image)
 bundle
+
+# Generated less files via bootstrap
+webapp/stylesheets/vendor/custom.bootstrap.less
+webapp/stylesheets/vendor/custom.bootstrap.mixins.import.less
