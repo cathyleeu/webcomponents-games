@@ -18,10 +18,11 @@
   "toolbox": [
     "move_forward",
     "rotate_left",
-    "rotate_right"
+    "rotate_right",
     "repeat"
   ],
   "map": [
+    "########",
     "########",
     "####..##",
     "###..###",
