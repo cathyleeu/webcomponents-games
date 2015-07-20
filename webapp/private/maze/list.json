@@ -1,0 +1,31 @@
+[{
+  "href": "click",
+  "title": "클릭연습"
+}, {
+  "href": "classify",
+  "title": "그래프"
+}, {
+  "href": "maze/basic/1",
+  "title": "생쥐: 치즈"
+}, {
+  "href": "maze/trap/1",
+  "title": "생쥐: 쥐덫"
+}, {
+  "href": "maze/action/1",
+  "title": "무당벌레: 가위바위보"
+}, {
+  "href": "maze/item/1",
+  "title": "무당벌레: 아이템"
+}, {
+  "href": "maze/rotation/1",
+  "title": "개미: 회전하기"
+}, {
+  "href": "maze/repeat/1",
+  "title": "개미: 반복"
+}, {
+  "href": "maze/rore/1",
+  "title": "개미: 회전, 반복"
+}, {
+  "href": "maze/itrore/1",
+  "title": "개미: 아이템, 회전, 반복"
+}]

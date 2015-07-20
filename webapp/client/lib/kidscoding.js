@@ -3,7 +3,7 @@ KidsCoding = function() {
 };
 KidsCoding.prototype = {
 
-  initBlockly: function(loader) {
+  initBlockly: function(toolbox) {
     this.createBlock("move_up", {
       label: "위로 이동",
       color: 260,
@@ -85,7 +85,7 @@ KidsCoding.prototype = {
       movable: false
     });
 
-  	var toolbox = _(loader.getResult("maze").toolbox).map(function(i,j) {
+  	var toolbox = _(toolbox).map(function(i,j) {
       return '<block type="' + i + '"></block>';
     });
   	Blockly.inject(document.getElementById('blocklyDiv'),
