@@ -92,66 +92,11 @@
                   </div>
               </div>
               <div class="row">
-                  <div class="col-sm-4 portfolio-item">
-                      <a href="/maze/a1" class="portfolio-link" data-toggle="modal">
-                          <div class="caption">
-                              <div class="caption-content">
-                                  <i class="fa fa-search-plus fa-3x"></i>
-                              </div>
-                          </div>
-                          <img src="/img/portfolio/cabin.png" class="img-responsive" alt="">
-                      </a>
-                  </div>
-                  <div class="col-sm-4 portfolio-item">
-                      <a href="/maze/rt1" class="portfolio-link" data-toggle="modal">
-                          <div class="caption">
-                              <div class="caption-content">
-                                  <i class="fa fa-search-plus fa-3x"></i>
-                              </div>
-                          </div>
-                          <img src="/img/portfolio/cake.png" class="img-responsive" alt="">
-                      </a>
-                  </div>
-                  <div class="col-sm-4 portfolio-item">
-                      <a href="/maze/rr1" class="portfolio-link" data-toggle="modal">
-                          <div class="caption">
-                              <div class="caption-content">
-                                  <i class="fa fa-search-plus fa-3x"></i>
-                              </div>
-                          </div>
-                          <img src="/img/portfolio/circus.png" class="img-responsive" alt="">
-                      </a>
-                  </div>
-                  <div class="col-sm-4 portfolio-item">
-                      <a href="/maze/irr1" class="portfolio-link" data-toggle="modal">
-                          <div class="caption">
-                              <div class="caption-content">
-                                  <i class="fa fa-search-plus fa-3x"></i>
-                              </div>
-                          </div>
-                          <img src="/img/portfolio/game.png" class="img-responsive" alt="">
-                      </a>
-                  </div>
-                  <div class="col-sm-4 portfolio-item">
-                      <a href="/maze/r1" class="portfolio-link" data-toggle="modal">
-                          <div class="caption">
-                              <div class="caption-content">
-                                  <i class="fa fa-search-plus fa-3x"></i>
-                              </div>
-                          </div>
-                          <img src="/img/portfolio/safe.png" class="img-responsive" alt="">
-                      </a>
-                  </div>
-                  <div class="col-sm-4 portfolio-item">
-                      <a href="/maze/i1" class="portfolio-link" data-toggle="modal">
-                          <div class="caption">
-                              <div class="caption-content">
-                                  <i class="fa fa-search-plus fa-3x"></i>
-                              </div>
-                          </div>
-                          <img src="/img/portfolio/submarine.png" class="img-responsive" alt="">
-                      </a>
-                  </div>
+                  <ul class="list-group">
+                      {{#each list}}
+                        <li class="list-group-item"><a href="{{href}}">{{title}}</a></li>
+                      {{/each}}
+                  </ul>
               </div>
           </div>
       </section>

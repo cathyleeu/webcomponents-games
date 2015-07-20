@@ -1,26 +1,22 @@
-Router.route('/maze', function () {
-  this.redirect('/maze/1');
-});
-
-Router.route('/maze/:step', function() {
+Router.route('/maze/:type/:step', function() {
   var loader = new createjs.LoadQueue();
   var d1 = $.Deferred();
   var d2 = $.Deferred();
+  var d3 = $.Deferred();
   createjs.Sound.alternateExtensions = ["mp3", "wav"];
   loader.installPlugin(createjs.Sound);
-  loader.loadManifest({
-    id: "maze",
-    src: "/maps/maze" + this.params.step + ".json",
-    type: "manifest"
+  Meteor.call('getMaze', this.params.type, this.params.step, function(error, maze) {
+    loader.loadManifest(maze.manifest);
+    d3.resolve(maze);
   });
   loader.on("complete", function() {
-    var manifest = loader.getResult("maze").manifest;
+    var manifest = loader.getItems();
     // register sound resources
     for(var i = 0; i < manifest.length; i++) {
-      if(manifest[i].type == "sound") {
+      if(manifest[i].item.type == "sound") {
         createjs.Sound.registerSound({
-          id: manifest[i].id,
-          src: manifest[i].src
+          id: manifest[i].item.id,
+          src: manifest[i].item.src
         });
       }
     }
@@ -35,23 +31,21 @@ Router.route('/maze/:step', function() {
   Template.Maze.rendered = function() {
     d2.resolve();
   };
-  $.when( this.params.step, loader, d1, d2 ).done(init);
+  $.when( this.params.step, d3, loader, d1, d2 ).done(init);
   this.render("Maze");
 });
 
 var kidscoding = new KidsCoding();
 
-function init(step, loader) {
-
-  kidscoding.initBlockly(loader);
-  var mazeInfo = drawMaze(loader);
-  addEvents(step, loader, mazeInfo);
-  runTutorial(loader);
+function init(step, maze, loader) {
+  kidscoding.initBlockly(maze.toolbox);
+  var mazeInfo = drawMaze(maze, loader);
+  addEvents(step, loader, mazeInfo, maze.type || "");
+  runTutorial(maze);
 }
 
-function drawMaze(loader) {
-  var maze = loader.getResult("maze"),
-      stage = new createjs.Stage("display");
+function drawMaze(maze, loader) {
+  var stage = new createjs.Stage("display");
   if(loader.getItem("background")) {
     var background = new createjs.Bitmap(loader.getResult("background"));
     stage.addChild(background);
@@ -175,7 +169,7 @@ function setBitmapCoord(bitmap, px, py) {
   bitmap.regY = 25;
 }
 
-function addEvents(step, loader, mazeInfo) {
+function addEvents(step, loader, mazeInfo, type) {
   $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
   });
@@ -211,7 +205,7 @@ function addEvents(step, loader, mazeInfo) {
     }
   });
 
-  if(loader.getResult("maze").type == "game") {
+  if(type == "game") {
     mazeInfo.score = 0;
     addFood(loader, mazeInfo);
     $("#scoreBox").show();
@@ -222,9 +216,8 @@ function addEvents(step, loader, mazeInfo) {
   }
 }
 
-function runTutorial(loader) {
-  var maze = loader.getResult("maze"),
-      tutorial = maze.tutorial,
+function runTutorial(maze) {
+  var tutorial = maze.tutorial,
       idx = 0;
   if(tutorial) {
     showModal({
