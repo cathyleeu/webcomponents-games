@@ -175,9 +175,9 @@ function addEvents(step, loader, mazeInfo, type) {
   });
   $("#modal .go-next").click(function(e) {
     var path = "/maze/";
-    var matched = /^(\D*)(\d+)$/gm.exec(step);
+    var matched = /\/maze\/([^/]*)\/(.*)/gm.exec(location.pathname);
     if(matched) {
-      location.pathname = path + matched[1] + (+matched[2]+1);
+      location.pathname = path + matched[1] + "/" +(+matched[2]+1);
     }
   });
   var org_px = mazeInfo.canvas.character.px,
