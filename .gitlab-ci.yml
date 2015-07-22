@@ -1,0 +1,17 @@
+deploy to dev.toycode.org:
+  script:
+  - "PATH=/usr/local/bin:$PATH"
+  - "export ROOT_URL='http://toycode.org'"
+  - "export PORT=3000"
+  - "cd webapp"
+  - "meteor build --directory .."
+  - "cd ../bundle/programs/server/"
+  - "npm install"
+  - "npm install fibers"
+  - "cd ../.."
+  - "if forever list|grep kidscoding; then forever stop kidscoding; fi"
+  - "forever start --uid \"kidscoding\" -a -c \"/usr/local/bin/node main.js\" ."
+  type: deploy
+  tags:
+  only:
+  - master
