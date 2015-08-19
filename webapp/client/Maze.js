@@ -221,6 +221,7 @@ function runTutorial(maze) {
       idx = 0;
   if(tutorial) {
     showModal({
+      video: tutorial[idx].video,
       msg: tutorial[idx].msg,
       tutorial: true
     });
@@ -650,6 +651,15 @@ function showModal(options) {
     $("#modal .tutorial").show();
   } else {
     $("#modal .close-modal").show();
+  }
+  if(options.video) {
+    $("#modal .modal-msg-box").hide();
+    $("#modal video").show();
+    $("#modal video source").prop("src", options.video);
+    $("#modal video").get(0).load();
+  } else {
+    $("#modal .modal-msg-box").show();
+    $("#modal video").hide();
   }
   $("#modal .modal-msg").text(options.msg);
   $('#modal').modal({

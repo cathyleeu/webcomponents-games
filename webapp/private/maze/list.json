@@ -28,7 +28,10 @@
 }, {
   "href": "maze/itrore/1",
   "title": "개미: 아이템, 회전, 반복"
-},{
+}, {
   "href": "maze/figure/1",
   "title": "개미: 회전, 반복을 이용하여 도형만들기"
+}, {
+  "href": "maze/tutorial/1",
+  "title": "연습하기: 회전, 반복, 아이템"
 }]
