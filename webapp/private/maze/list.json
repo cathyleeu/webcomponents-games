@@ -34,4 +34,10 @@
 }, {
   "href": "maze/tutorial/1",
   "title": "연습하기: 회전, 반복, 아이템"
+}, {
+  "href": "maze/rore2/1",
+  "title": "개미: 이중반복"
+}, {
+  "href": "maze/figure/15",
+  "title": "개미: 도형만들기 두번째"
 }]
