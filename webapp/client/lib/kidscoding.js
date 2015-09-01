@@ -77,6 +77,7 @@ KidsCoding.prototype = {
       javascript: "itemPaper();\n",
       img: "/img/hand_paper.png"
     });
+    this.createBlock("condition_cannotMoveForward");
     this.createBlock("start", {
       label: "시작하면",
       color: 160,
@@ -116,6 +117,25 @@ KidsCoding.prototype = {
         for(var i = 0; i < count; i++) {
           code += statements;
         }
+        return code;
+      };
+      return;
+    } else if(id == "condition_cannotMoveForward") {
+      Blockly.Blocks['condition_cannotMoveForward'] = {
+        init: function() {
+          this.setColour(0);
+          this.appendDummyInput()
+              .appendField("앞으로 가지 못하면");
+          this.appendStatementInput("statements");
+          this.setPreviousStatement(true);
+          this.setNextStatement(true);
+          this.setTooltip('');
+        }
+      };
+      Blockly.JavaScript['condition_cannotMoveForward'] = function(block) {
+        var statements = Blockly.JavaScript.statementToCode(block, 'statements');
+        statements = "\"" + statements.split("\"").join("\\\"").split("\n").join("\\n") + "\"";
+        var code = 'ifCannotMoveForward(' + statements + ');';
         return code;
       };
       return;
@@ -231,6 +251,13 @@ KidsCoding.prototype = {
     this.queue.push({
       type: "action",
       args: ["scissors"]
+    });
+  },
+
+  ifCannotMoveForward: function(code) {
+    this.queue.push({
+      type: "condition",
+      args: ["cannot_move_forward", code]
     });
   }
 

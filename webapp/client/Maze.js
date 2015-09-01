@@ -191,12 +191,12 @@ function addEvents(step, loader, mazeInfo, type) {
           'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
       var code = Blockly.JavaScript.workspaceToCode();
       Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-        eval("with(kidscoding){\n" + code + "\n}");
-        if(kidscoding.queue.length == 0) {
-          showModal("블럭이 하나도 없어요!");
-        } else {
-          popQueue(loader, mazeInfo, 0);
-        }
+      eval("with(kidscoding){\n" + code + "\n}");
+      if(kidscoding.queue.length == 0) {
+        showModal("블럭이 하나도 없어요!");
+      } else {
+        popQueue(loader, mazeInfo, 0);
+      }
     } else {
       $(this).html('<i class="fa fa-play"></i> 시작');
       createjs.Tween.removeAllTweens();
@@ -574,6 +574,33 @@ function popQueue(loader, mazeInfo, q_idx) {
     setTimeout(function() {
       popQueue(loader, mazeInfo, q_idx + 1);
     }, 500);
+  } else if(type == "condition") {
+    var x_next = character.px,
+        y_next = character.py;
+    if(character.rotation == 0) {
+      y_next -= 1;
+    } else if(character.rotation == 90) {
+      x_next += 1;
+    } else if(character.rotation == 180) {
+      y_next += 1;
+    } else {
+      x_next -= 1;
+    }
+    var tile = mazeInfo.map[y_next][x_next],
+        move_forward = false;
+    if( tile == "." || tile == "@" || tile == ")" || tile == "%" ) {
+      move_forward = true;
+    }
+    if(kidscoding.queue[q_idx].args[0] == "cannot_move_forward") {
+      if(!move_forward) {
+        var temp = kidscoding.queue.splice(q_idx+1, kidscoding.queue.length);
+        eval("with(kidscoding){\n" + kidscoding.queue[q_idx].args[1] + "\n}");
+        kidscoding.queue = kidscoding.queue.concat(temp);
+      }
+    }
+    setTimeout(function() {
+      popQueue(loader, mazeInfo, q_idx + 1);
+    }, 1);
   }
 
 }
