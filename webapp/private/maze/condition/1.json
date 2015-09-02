@@ -26,8 +26,8 @@
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "repeat",
-    "condition_cannotMoveForward"
+    "repeat_until",
+    "condition_ifMoveForward"
   ],
   "map": [
     "########",
