@@ -59,6 +59,7 @@ KidsCoding.prototype = {
       img: "/img/map/pick.png"
     });
     this.createBlock("repeat");
+    this.createBlock("repeat_until");
     this.createBlock("item_scissors", {
       label: "가위",
       color: 260,
@@ -77,7 +78,7 @@ KidsCoding.prototype = {
       javascript: "itemPaper();\n",
       img: "/img/hand_paper.png"
     });
-    this.createBlock("condition_cannotMoveForward");
+    this.createBlock("condition_ifMoveForward");
     this.createBlock("start", {
       label: "시작하면",
       color: 160,
@@ -120,23 +121,45 @@ KidsCoding.prototype = {
         return code;
       };
       return;
-    } else if(id == "condition_cannotMoveForward") {
-      Blockly.Blocks['condition_cannotMoveForward'] = {
+    } else if(id == "repeat_until") {
+      Blockly.Blocks['repeat_until'] = {
         init: function() {
-          this.setColour(0);
+          this.setColour(30);
           this.appendDummyInput()
-              .appendField("앞으로 가지 못하면");
+              .appendField("별에 도달 할때까지 반복");
           this.appendStatementInput("statements");
           this.setPreviousStatement(true);
           this.setNextStatement(true);
           this.setTooltip('');
         }
       };
-      Blockly.JavaScript['condition_cannotMoveForward'] = function(block) {
-        var statements = Blockly.JavaScript.statementToCode(block, 'statements');
-        statements = "\"" + statements.split("\"").join("\\\"").split("\n").join("\\n") + "\"";
-        var code = 'ifCannotMoveForward(' + statements + ');';
-        return code;
+      Blockly.JavaScript['repeat_until'] = function(block) {
+        var blocks = Blockly.JavaScript.statementToCode(block, 'statements');
+        blocks = "\"" + blocks.split("\"").join("\\\"").split("\n").join(";") + "\"";
+        return 'repeat_until(' + blocks + ');';
+      };
+      return;
+    } else if(id == "condition_ifMoveForward") {
+      Blockly.Blocks['condition_ifMoveForward'] = {
+        init: function() {
+          this.setColour(0);
+          this.appendDummyInput()
+              .appendField("만약 앞으로 갈 수 있다면");
+          this.appendStatementInput("if_statements");
+          this.appendDummyInput()
+              .appendField("갈수 없다면");
+          this.appendStatementInput("else_statements");
+          this.setPreviousStatement(true);
+          this.setNextStatement(true);
+          this.setTooltip('');
+        }
+      };
+      Blockly.JavaScript['condition_ifMoveForward'] = function(block) {
+        var if_blocks = Blockly.JavaScript.statementToCode(block, 'if_statements'),
+            else_blocks = Blockly.JavaScript.statementToCode(block, 'else_statements');
+        if_blocks = "\"" + if_blocks.split("\"").join("\\\"").split("\n").join(";") + "\"";
+        else_blocks = "\"" + else_blocks.split("\"").join("\\\"").split("\n").join(";") + "\"";
+        return 'ifMoveForward(' + if_blocks + ',' + else_blocks + ');';
       };
       return;
     }
@@ -254,10 +277,17 @@ KidsCoding.prototype = {
     });
   },
 
-  ifCannotMoveForward: function(code) {
+  ifMoveForward: function(if_blocks, else_blocks) {
     this.queue.push({
       type: "condition",
-      args: ["cannot_move_forward", code]
+      args: ["if_move_forward", if_blocks, else_blocks]
+    });
+  },
+
+  repeat_until: function(blocks) {
+    this.queue.push({
+      type: "repeat",
+      args: ["repeat_until", blocks]
     });
   }
 

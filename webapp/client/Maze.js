@@ -591,18 +591,30 @@ function popQueue(loader, mazeInfo, q_idx) {
     if( tile == "." || tile == "@" || tile == ")" || tile == "%" ) {
       move_forward = true;
     }
-    if(kidscoding.queue[q_idx].args[0] == "cannot_move_forward") {
-      if(!move_forward) {
-        var temp = kidscoding.queue.splice(q_idx+1, kidscoding.queue.length);
-        eval("with(kidscoding){\n" + kidscoding.queue[q_idx].args[1] + "\n}");
-        kidscoding.queue = kidscoding.queue.concat(temp);
-      }
+    if(kidscoding.queue[q_idx].args[0] == "if_move_forward") {
+      var blocks = kidscoding.queue[q_idx].args[move_forward ? 1 : 2];
+      var temp = kidscoding.queue.splice(q_idx+1, kidscoding.queue.length);
+      eval("with(kidscoding){\n" + blocks + "\n}");
+      kidscoding.queue = kidscoding.queue.concat(temp);
+    }
+    setTimeout(function() {
+      popQueue(loader, mazeInfo, q_idx + 1);
+    }, 1);
+  } else if(type == "repeat") {
+    var x_next = character.px,
+        y_next = character.py;
+    var tile = mazeInfo.map[y_next][x_next];
+    if( tile != "%" && kidscoding.queue[q_idx].args[0] == "repeat_until" ) {
+      var blocks = kidscoding.queue[q_idx].args[1];
+      var temp = kidscoding.queue.splice(q_idx + 1, kidscoding.queue.length);
+      eval("with(kidscoding){\n" + blocks + "\n}");
+      kidscoding.queue.push(_.clone(kidscoding.queue[q_idx]));
+      kidscoding.queue = kidscoding.queue.concat(temp);
     }
     setTimeout(function() {
       popQueue(loader, mazeInfo, q_idx + 1);
     }, 1);
   }
-
 }
 
 function resetMaze(loader, mazeInfo, org_px, org_py) {
