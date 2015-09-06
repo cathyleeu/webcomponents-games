@@ -604,11 +604,19 @@ function popQueue(loader, mazeInfo, q_idx) {
     var x_next = character.px,
         y_next = character.py;
     var tile = mazeInfo.map[y_next][x_next];
+    var count = parseInt(kidscoding.queue[q_idx].args[0], 10);
     if( tile != "%" && kidscoding.queue[q_idx].args[0] == "repeat_until" ) {
       var blocks = kidscoding.queue[q_idx].args[1];
       var temp = kidscoding.queue.splice(q_idx + 1, kidscoding.queue.length);
       eval("with(kidscoding){\n" + blocks + "\n}");
       kidscoding.queue.push(_.clone(kidscoding.queue[q_idx]));
+      kidscoding.queue = kidscoding.queue.concat(temp);
+    } else if(count > 0) {
+      var blocks = kidscoding.queue[q_idx].args[1];
+      var temp = kidscoding.queue.splice(q_idx + 1, kidscoding.queue.length);
+      eval("with(kidscoding){\n" + blocks + "\n}");
+      kidscoding.queue.push(_.clone(kidscoding.queue[q_idx]));
+      --kidscoding.queue[kidscoding.queue.length -1].args[0];
       kidscoding.queue = kidscoding.queue.concat(temp);
     }
     setTimeout(function() {
