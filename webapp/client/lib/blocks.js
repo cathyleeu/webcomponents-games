@@ -115,3 +115,27 @@ Blocks['condition_ifMoveForward'] = {
     return BlockUtils.getScript("condition", ["if_move_forward", if_code, else_code]);
   }
 };
+Blocks['condition_ifMoveLeft'] = {
+  label: "만약 왼쪽으로 갈 수 있다면",
+  color: 0,
+  appendStatementInput: "if_statements",
+  label2: "갈 수 없다면",
+  appendStatementInput2: "else_statements",
+  command: function(block) {
+    var if_code = Blockly.JavaScript.statementToCode(block, 'if_statements'),
+        else_code = Blockly.JavaScript.statementToCode(block, 'else_statements');
+    return BlockUtils.getScript("condition", ["if_move_left", if_code, else_code]);
+  }
+};
+Blocks['condition_ifMoveRight'] = {
+  label: "만약 오른쪽으로 갈 수 있다면",
+  color: 0,
+  appendStatementInput: "if_statements",
+  label2: "갈 수 없다면",
+  appendStatementInput2: "else_statements",
+  command: function(block) {
+    var if_code = Blockly.JavaScript.statementToCode(block, 'if_statements'),
+        else_code = Blockly.JavaScript.statementToCode(block, 'else_statements');
+    return BlockUtils.getScript("condition", ["if_move_right", if_code, else_code]);
+  }
+};
