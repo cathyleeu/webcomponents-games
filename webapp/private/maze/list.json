@@ -39,6 +39,9 @@
   "title": "개미: 이중반복"
 }, {
   "href": "maze/condition/1",
-  "title": "조건문"
+  "title": "조건문 : 만약 앞에 길이 있을 때"
+}, {
+  "href": "maze/condition/11",
+  "title" : "조건문 : 만약 왼쪽or 오른쪽에 길이 있을 때"
 }
 ]
