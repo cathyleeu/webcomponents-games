@@ -26,20 +26,18 @@
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "repeat",
-    "get_item",
-    "use_item",
     "repeat_until",
-    "condition_ifMoveForward"
+    "condition_ifMoveForward",
+    "condition_ifMoveRight"
   ],
   "map": [
     "########",
-    "###%####",
-    "###5####",
-    "###5####",
-    "###5####",
-    "###)####",
-    "###@####",
+    "#....#.#",
+    "#....#.#",
+    "#......#",
+    "###..#.#",
+    "#....#.#",
+    "#@..##%#",
     "########"
   ]
 }
