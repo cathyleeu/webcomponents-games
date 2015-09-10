@@ -257,9 +257,9 @@ function moveCharacter(mazeInfo, x_next, y_next, callback) {
       tween = createjs.Tween.get(character),
       rotation;
   if(character.px == x_next) {
-    rotation = character.py - 1 == y_next? 0 : 180;
+    rotation = character.py > y_next? 0 : 180;
   } else {
-    rotation = character.px - 1 == x_next ? 270 : 90;
+    rotation = character.px > x_next ? 270 : 90;
   }
   if(character.rotation == 0 && rotation == 270) {
     rotation = -90;
