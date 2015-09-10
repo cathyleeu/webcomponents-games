@@ -289,9 +289,9 @@ function bounceCharacter(mazeInfo, x_next, y_next, callback) {
       tween = createjs.Tween.get(character),
       rotation;
   if(character.px == x_next) {
-    rotation = character.py - 1 == y_next? 0 : 180;
+    rotation = character.py > y_next ? 0 : 180;
   } else {
-    rotation = character.px - 1 == x_next ? 270 : 90;
+    rotation = character.px > x_next ? 270 : 90;
   }
   if(rotation == 0) {
     y_next += 0.5;
@@ -340,7 +340,8 @@ function trapCharacter(mazeInfo, x_next, y_next, callback) {
 
 function popQueue(loader, mazeInfo, q_idx) {
   var character = mazeInfo.canvas.character,
-      foods = mazeInfo.canvas.foods;
+      foods = mazeInfo.canvas.foods,
+      args;
   if(q_idx == kidscoding.queue.length) {
     kidscoding.queue = [];
     for(var i = 0; i < foods.length; i++) {
@@ -359,26 +360,30 @@ function popQueue(loader, mazeInfo, q_idx) {
     }
     return;
   }
-
+  args = kidscoding.queue[q_idx].args
   var type = kidscoding.queue[q_idx].type;
   if(type == "move") {
     var x_next = character.px,
-        y_next = character.py;
-    if(kidscoding.queue[q_idx].args[0] == "forward") {
+        y_next = character.py,
+        diff = args[0] == "jump_forward" ? 2 : 1;
+    if(args[0] == "forward" || args[0] == "jump_forward") {
       if(character.rotation == 0) {
-        y_next -= 1;
+        y_next -= diff;
       } else if(character.rotation == 90) {
-        x_next += 1;
+        x_next += diff;
       } else if(character.rotation == 180) {
-        y_next += 1;
+        y_next += diff;
       } else {
-        x_next -= 1;
+        x_next -= diff;
       }
     } else {
-      x_next += kidscoding.queue[q_idx].args[0];
-      y_next += kidscoding.queue[q_idx].args[1];
+      x_next += args[0];
+      y_next += args[1];
     }
     var tile = mazeInfo.map[y_next][x_next];
+    if(x_next < 0 || y_next < 0 || x_next >=8 || y_next >= 8) {
+      tile = "#";
+    }
     if( tile == "." || tile == "@" || tile == ")" ) {
       moveCharacter(mazeInfo, x_next, y_next, function() {
         popQueue(loader, mazeInfo, q_idx + 1);
@@ -444,7 +449,7 @@ function popQueue(loader, mazeInfo, q_idx) {
     }
   } else if(type == "rotate") {
     var rotation = character.rotation;
-    if(kidscoding.queue[q_idx].args[0] == "left") {
+    if(args[0] == "left") {
       rotation -= 90;
     } else {
       rotation += 90;
@@ -528,7 +533,7 @@ function popQueue(loader, mazeInfo, q_idx) {
     var x_next = character.px,
         y_next = character.py,
         rotation = character.rotation,
-        hand = kidscoding.queue[q_idx].args[0];
+        hand = args[0];
     if(rotation == 0) {
       y_next--;
     } else if(rotation == 90) {
@@ -578,12 +583,11 @@ function popQueue(loader, mazeInfo, q_idx) {
     var x_next = character.px,
         y_next = character.py,
         rotation = character.rotation;
-    debugger
-    if(kidscoding.queue[q_idx].args[0] == "if_move_forward") {
+    if(args[0] == "if_move_forward") {
       rotation += 0;
-    } else if(kidscoding.queue[q_idx].args[0] == "if_move_left") {
+    } else if(args[0] == "if_move_left") {
       rotation -= 90;
-    } else if(kidscoding.queue[q_idx].args[0] == "if_move_right") {
+    } else if(args[0] == "if_move_right") {
       rotation += 90;
     }
     rotation = (rotation + 360) % 360;
@@ -601,7 +605,7 @@ function popQueue(loader, mazeInfo, q_idx) {
     if( tile == "." || tile == "@" || tile == ")" || tile == "%" ) {
       move_forward = true;
     }
-    var blocks = kidscoding.queue[q_idx].args[move_forward ? 1 : 2];
+    var blocks = args[move_forward ? 1 : 2];
     var temp = kidscoding.queue.splice(q_idx+1, kidscoding.queue.length);
     eval("with(kidscoding){\n" + blocks + "\n}");
     kidscoding.queue = kidscoding.queue.concat(temp);
@@ -612,15 +616,15 @@ function popQueue(loader, mazeInfo, q_idx) {
     var x_next = character.px,
         y_next = character.py;
     var tile = mazeInfo.map[y_next][x_next];
-    var count = parseInt(kidscoding.queue[q_idx].args[0], 10);
-    if( tile != "%" && kidscoding.queue[q_idx].args[0] == "repeat_until" ) {
-      var blocks = kidscoding.queue[q_idx].args[1];
+    var count = parseInt(args[0], 10);
+    if( tile != "%" && args[0] == "repeat_until" ) {
+      var blocks = args[1];
       var temp = kidscoding.queue.splice(q_idx + 1, kidscoding.queue.length);
       eval("with(kidscoding){\n" + blocks + "\n}");
       kidscoding.queue.push(_.clone(kidscoding.queue[q_idx]));
       kidscoding.queue = kidscoding.queue.concat(temp);
     } else if(count > 0) {
-      var blocks = kidscoding.queue[q_idx].args[1];
+      var blocks = args[1];
       var temp = kidscoding.queue.splice(q_idx + 1, kidscoding.queue.length);
       eval("with(kidscoding){\n" + blocks + "\n}");
       kidscoding.queue.push(_.clone(kidscoding.queue[q_idx]));

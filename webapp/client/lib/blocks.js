@@ -37,6 +37,12 @@ Blocks["move_forward"] = {
   img: "/img/move_forward.png",
   command: ["move", "forward"]
 };
+Blocks["jump_forward"] = {
+  label: "앞으로 점프",
+  color: 260,
+  img: "/img/move_forward.png",
+  command: ["move", "jump_forward"]
+};
 Blocks["rotate_left"] = {
   label: "왼쪽으로 돌기",
   color: 260,
