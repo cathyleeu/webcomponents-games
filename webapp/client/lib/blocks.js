@@ -39,7 +39,7 @@ Blocks["move_forward"] = {
 };
 Blocks["jump_forward"] = {
   label: "앞으로 점프",
-  color: 260,
+  color: 120,
   img: "/img/move_forward.png",
   command: ["move", "jump_forward"]
 };
@@ -57,13 +57,13 @@ Blocks["rotate_right"] = {
 };
 Blocks["get_item"] = {
   label: "아이템 가져오기",
-  color: 260,
+  color: 360,
   img: "/img/get_item.png",
   command: ["getItem"]
 };
 Blocks["use_item"] = {
   label: "아이템 사용하기",
-  color: 260,
+  color: 360,
   img: "/img/map/pick.png",
   command: ["useItem"]
 };
