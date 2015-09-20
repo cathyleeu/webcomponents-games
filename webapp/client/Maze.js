@@ -46,12 +46,18 @@ function init(step, maze, loader) {
 
 function drawMaze(maze, loader) {
   var stage = new createjs.Stage("display");
+  var map_width = maze.map[0].length;
+  var map_height = maze.map.length;
+
+  stage.canvas.width = map_width * 50;
+  stage.canvas.height = map_height * 50;
+
   if(loader.getItem("background")) {
     var background = new createjs.Bitmap(loader.getResult("background"));
     stage.addChild(background);
   } else if(loader.getItem("bg1")) {
-    for(var i = 0; i < 8; i++) {
-      for(var j = 0; j < 8; j++) {
+    for(var i = 0; i < map_height; i++) {
+      for(var j = 0; j < map_width; j++) {
         var idx = (i + j) % 2 + 1;
         var bg_tile = new createjs.Bitmap(loader.getResult("bg" + idx));
         setBitmapCoord(bg_tile, j, i);
@@ -65,6 +71,8 @@ function drawMaze(maze, loader) {
         return item;
       })
     }),
+    width: map_width,
+    height: map_height,
     canvas: {
       stage: stage,
       character: new createjs.Bitmap(loader.getResult("character")),
@@ -81,8 +89,8 @@ function drawMaze(maze, loader) {
         return el.id || el;
       })
       .value();
-  for(var i = 0; i < 8; i++) {
-    for(var j = 0; j < 8; j++) {
+  for(var i = 0; i < map_height; i++) {
+    for(var j = 0; j < map_width; j++) {
       switch(mazeInfo.map[i][j]) {
         case "@": // character
           setBitmapCoord(mazeInfo.canvas.character, j, i);
@@ -173,6 +181,17 @@ function addEvents(step, loader, mazeInfo, type) {
   $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
   });
+  var handle_resize = function(e) {
+    var available_height = $(window).height() - $("#navbarMaze").height() - $("#maze-container .row").height();
+    var zoom = available_height / (mazeInfo.height * 50);
+    zoom = parseInt(zoom * 100, 10) / 100;
+    $("#display").css("zoom", zoom);
+    var real_height = parseInt($("#display").height() * zoom + 0.5, 10);
+    $(".sidebar").width(real_height);
+    $(".workspace").css("left", real_height + "px");
+  };
+  $(window).on("resize", handle_resize);
+  handle_resize();
   $("#modal .go-next").click(function(e) {
     var path = "/maze/";
     var matched = /\/maze\/([^/]*)\/(.*)/gm.exec(location.pathname);
@@ -380,9 +399,11 @@ function popQueue(loader, mazeInfo, q_idx) {
       x_next += args[0];
       y_next += args[1];
     }
-    var tile = mazeInfo.map[y_next][x_next];
-    if(x_next < 0 || y_next < 0 || x_next >=8 || y_next >= 8) {
+    var tile;
+    if(x_next < 0 || y_next < 0 || x_next >=mazeInfo.width || y_next >= mazeInfo.height) {
       tile = "#";
+    } else {
+      tile = mazeInfo.map[y_next][x_next];
     }
     if( tile == "." || tile == "@" || tile == ")" ) {
       moveCharacter(mazeInfo, x_next, y_next, function() {
@@ -662,8 +683,8 @@ function resetMaze(loader, mazeInfo, org_px, org_py) {
       mazeInfo.canvas.obstacles.splice(i, 1);
     }
   }
-  for(var i = 0; i < 8; i++) {
-    for(var j = 0; j < 8; j++) {
+  for(var i = 0; i < mazeInfo.height; i++) {
+    for(var j = 0; j < mazeInfo.width; j++) {
       switch(mazeInfo.map[i][j]) {
         case "5": // rock
         case "4":
