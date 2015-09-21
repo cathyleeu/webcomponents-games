@@ -16,30 +16,40 @@
     {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
     {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
     {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
-    {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"}
+    {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+    {"id": "hammer", "src": "/sound/hammer.wav", "type": "sound"},
+    {"id": "item", "src": "/img/map/pick.png"},
+    {"id": "rock5", "src": "/img/map/rock5.png"},
+    {"id": "rock4", "src": "/img/map/rock4.png"},
+    {"id": "rock3", "src": "/img/map/rock3.png"},
+    {"id": "rock2", "src": "/img/map/rock2.png"},
+    {"id": "rock1", "src": "/img/map/rock1.png"}
   ],
   "toolbox": [
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "repeat"
+    "repeat",
+    "get_item",
+    "use_item"
+
   ],
   "map": [
     "###########",
-    "#####%#####",
-    "##.......##",
-    "##.......##",
-    "##.......##",
-    "##.......##",
-    "##.......##",
-    "##.......##",
-    "##...@...##",
-    "###########",
+    "#.........#",
+    "#.......).#",
+    "#.........#",
+    "#...111...#",
+    "#...1%1...#",
+    "#...111...#",
+    "#.........#",
+    "#.........#",
+    "#@........#",
     "###########"
   ],
   "tutorial": [{
-    "msg": "앗! 별이 7칸 앞쪽에 있어"
+    "msg": "곡괭이가 엄청 멀리에 있어!"
   }, {
-    "msg": "'반복'블록을 이용해서 앞으로 가보자!"
+    "msg": "우선 곡괭이를 얻고 바위를 부시자!"
   }]
 }
