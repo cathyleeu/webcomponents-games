@@ -49,5 +49,7 @@
 }, {
   "href": "maze/jump/11",
   "title" : "점프2"
-}
-]
+}, {
+  "href": "maze/team_match/1",
+  "title" : "팀대결"
+}]
