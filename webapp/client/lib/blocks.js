@@ -91,7 +91,8 @@ Blocks["repeat"] = {
   appendField: {
     type: "dropdown",
     name: "count",
-    data: [["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]]
+    data: [["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]
+  ,["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"]]
   },
   appendStatementInput: "statements",
   command: function(block) {
