@@ -569,14 +569,26 @@ function popQueue(loader, mazeInfo, q_idx) {
       showModal("아이템을 가지고 있지 않아요");
       return;
     }
-    if(rotation == 0) {
-      y_next--;
-    } else if(rotation == 90) {
-      x_next++;
-    } else if(rotation == 180) {
-      y_next++;
-    } else if(rotation == 270) {
-      x_next--;
+    if(character.direct) {
+      if(character.direct == "u") {
+        y_next--;
+      } else if(character.direct == "r") {
+        x_next++;
+      } else if(character.direct == "d") {
+        y_next++;
+      } else if(character.direct == "l") {
+        x_next--;
+      }
+    } else {
+      if(rotation == 0) {
+        y_next--;
+      } else if(rotation == 90) {
+        x_next++;
+      } else if(rotation == 180) {
+        y_next++;
+      } else if(rotation == 270) {
+        x_next--;
+      }
     }
     num = +mazeInfo.map[y_next][x_next];
     if(!isNaN(num)) {
