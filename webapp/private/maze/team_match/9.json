@@ -3,7 +3,10 @@
   "manifest": [
     {"id": "bg1", "src": "/img/map/bg1.png"},
     {"id": "bg2", "src": "/img/map/bg2.png"},
-    {"id": "character", "src": "/img/map/ant.png"},
+    {"id": "character_u", "src": "/img/map/ant_up.png"},
+    {"id": "character_d", "src": "/img/map/ant_down.png"},
+    {"id": "character_l", "src": "/img/map/ant_left.png"},
+    {"id": "character_r", "src": "/img/map/ant_right.png"},
     {"id": "food", "src": "/img/map/star.png"},
     {"id": "stump", "src": "/img/map/stump.png", "obstacle": true},
     {"id": "stone1", "src": "/img/map/stone1.png", "obstacle": true},
@@ -22,25 +25,25 @@
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "repeat_until",
-    "condition_ifMoveForward"
+    "repeat",
+    "jump_forward"
   ],
   "map": [
     "###########",
+    "#....#.#.%#",
+    "###########",
+    "#.#.#.#.###",
+    "###########",
+    "##.#......#",
+    "###########",
     "#.........#",
-    "#.#######.#",
-    "#.#.....#.#",
-    "#.#.###.#.#",
-    "#.#..%#.#.#",
-    "#.#####.#.#",
-    "#.......#.#",
-    "#########.#",
-    "#@........#",
+    "###########",
+    "#....u....#",
     "###########"
   ],
   "tutorial": [{
-    "msg": "빙글빙글~@@ 달팽이 모양이다~@@"
+    "msg": "길이 막혀서 갈 수가 없어ㅜㅡㅜ"
   }, {
-    "msg": "'무한반복'블록과 '조건문'을 함께 이용하면 금방이지!"
+    "msg": "'점프'를 해서 뛰어넘어 가야겠어!"
   }]
 }
