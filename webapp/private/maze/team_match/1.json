@@ -3,7 +3,10 @@
   "manifest": [
     {"id": "bg1", "src": "/img/map/bg1.png"},
     {"id": "bg2", "src": "/img/map/bg2.png"},
-    {"id": "character", "src": "/img/map/ant.png"},
+    {"id": "character_u", "src": "/img/map/ant_up.png"},
+    {"id": "character_d", "src": "/img/map/ant_down.png"},
+    {"id": "character_l", "src": "/img/map/ant_left.png"},
+    {"id": "character_r", "src": "/img/map/ant_right.png"},
     {"id": "food", "src": "/img/map/star.png"},
     {"id": "stump", "src": "/img/map/stump.png", "obstacle": true},
     {"id": "stone1", "src": "/img/map/stone1.png", "obstacle": true},
@@ -33,7 +36,7 @@
     "##.......##",
     "##.......##",
     "##.......##",
-    "##...@...##",
+    "##...u...##",
     "###########",
     "###########"
   ],

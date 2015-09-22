@@ -65,6 +65,7 @@ function drawMaze(maze, loader) {
       }
     }
   }
+  var character = new createjs.Bitmap(loader.getResult("character"));
   var mazeInfo = {
     map: _.map(maze.map, function(row) {
       return _.map(row, function(item) {
@@ -75,7 +76,7 @@ function drawMaze(maze, loader) {
     height: map_height,
     canvas: {
       stage: stage,
-      character: new createjs.Bitmap(loader.getResult("character")),
+      character: character,
       foods: [],
       obstacles: []
     }
@@ -92,6 +93,13 @@ function drawMaze(maze, loader) {
   for(var i = 0; i < map_height; i++) {
     for(var j = 0; j < map_width; j++) {
       switch(mazeInfo.map[i][j]) {
+        case "u":
+        case "d":
+        case "l":
+        case "r":
+          character.image = loader.getResult("character_" + mazeInfo.map[i][j]);
+          character.direct = mazeInfo.map[i][j];
+          character.initDirect = mazeInfo.map[i][j];
         case "@": // character
           setBitmapCoord(mazeInfo.canvas.character, j, i);
           break;
@@ -169,12 +177,15 @@ function drawMaze(maze, loader) {
 }
 
 function setBitmapCoord(bitmap, px, py) {
+  var bounds = bitmap.getBounds();
   bitmap.px = px;
   bitmap.py = py;
   bitmap.x = 50 * px + 25;
   bitmap.y = 50 * py + 25;
-  bitmap.regX = 25;
-  bitmap.regY = 25;
+  bitmap.scaleX = 50 / bounds.width;
+  bitmap.scaleY = 50 / bounds.height;
+  bitmap.regX = bounds.width / 2;
+  bitmap.regY = bounds.height / 2;
 }
 
 function addEvents(step, loader, mazeInfo, type) {
@@ -258,44 +269,65 @@ function runTutorial(maze) {
   });
 }
 
-function rotateCharacter(mazeInfo, rotation, callback) {
+function rotateCharacter(loader, mazeInfo, rotation, callback) {
   var character = mazeInfo.canvas.character,
       tween = createjs.Tween.get(character);
-  tween.to({rotation: rotation}, 500)
-      .call(function() {
-        character.rotation = (character.rotation + 360) % 360;
-        callback();
-      })
-      .addEventListener("change", function() {
-        mazeInfo.canvas.stage.update();
-      });
+  if(character.direct) {
+    setTimeout(function() {
+      var rot = {'u': 0, 'r': 90, 'd': 180, 'l': 270}[character.direct] + rotation;
+      character.direct = ['u', 'r', 'd', 'l'][rot = (rot / 90 + 4) % 4];
+      character.image = loader.getResult('character_' + character.direct);
+      mazeInfo.canvas.stage.update();
+      callback();
+    }, 500);
+  } else {
+    tween.to({rotation: rotation}, 500)
+        .call(function() {
+          character.rotation = (character.rotation + 360) % 360;
+          callback();
+        })
+        .addEventListener("change", function() {
+          mazeInfo.canvas.stage.update();
+        });
+  }
 }
 
-function moveCharacter(mazeInfo, x_next, y_next, callback) {
+function moveCharacter(loader, mazeInfo, x_next, y_next, callback) {
   var character = mazeInfo.canvas.character,
-      tween = createjs.Tween.get(character),
-      rotation;
-  if(character.px == x_next) {
-    rotation = character.py > y_next? 0 : 180;
+      tween = createjs.Tween.get(character);
+  if(character.direct) {
+    if(character.px == x_next) {
+      character.direct = character.py > y_next ? "u" : "d";
+    } else {
+      character.direct = character.px > x_next ? "l" : "r";
+    }
+    character.image = loader.getResult('character_' + character.direct);
   } else {
-    rotation = character.px > x_next ? 270 : 90;
-  }
-  if(character.rotation == 0 && rotation == 270) {
-    rotation = -90;
-  } else if(character.rotation == 270 && rotation == 0) {
-    rotation = 360;
-  }
+    var rotation;
+    if(character.px == x_next) {
+      rotation = character.py > y_next ? 0 : 180;
+    } else {
+      rotation = character.px > x_next ? 270 : 90;
+    }
+    if(character.rotation == 0 && rotation == 270) {
+      rotation = -90;
+    } else if(character.rotation == 270 && rotation == 0) {
+      rotation = 360;
+    }
 
-  character.px = x_next;
-  character.py = y_next;
+    character.px = x_next;
+    character.py = y_next;
 
-  if(character.rotation != rotation) {
-    tween.to({rotation: rotation}, 500);
+    if(character.rotation != rotation) {
+      tween.to({rotation: rotation}, 500);
+    }
   }
   tween.wait(300)
        .to({x:50*x_next + 25, y: 50*y_next + 25}, 700)
        .call(function() {
          character.rotation = (character.rotation + 360) % 360;
+         character.px = x_next;
+         character.py = y_next;
          callback();
        })
        .addEventListener("change", function() {
@@ -303,32 +335,51 @@ function moveCharacter(mazeInfo, x_next, y_next, callback) {
        });
 }
 
-function bounceCharacter(mazeInfo, x_next, y_next, callback) {
+function bounceCharacter(loader, mazeInfo, x_next, y_next, callback) {
   var character = mazeInfo.canvas.character,
-      tween = createjs.Tween.get(character),
-      rotation;
-  if(character.px == x_next) {
-    rotation = character.py > y_next ? 0 : 180;
+      tween = createjs.Tween.get(character);
+  if(character.direct) {
+    if(character.px == x_next) {
+      character.direct = character.py > y_next ? "u" : "d";
+    } else {
+      character.direct = character.px > x_next ? "l" : "r";
+    }
+    character.image = loader.getResult('character_' + character.direct);
+    if(character.direct == "u") {
+      y_next += 0.5;
+    } else if(character.direct == "d") {
+      y_next -= 0.5;
+    } else if(character.direct == "r") {
+      x_next -= 0.5;
+    } else if(character.direct == "l") {
+      x_next += 0.5;
+    }
   } else {
-    rotation = character.px > x_next ? 270 : 90;
+    var rotation;
+    if(character.px == x_next) {
+      rotation = character.py > y_next ? 0 : 180;
+    } else {
+      rotation = character.px > x_next ? 270 : 90;
+    }
+    if(rotation == 0) {
+      y_next += 0.5;
+    } else if(rotation == 180) {
+      y_next -= 0.5;
+    } else if(rotation == 90) {
+      x_next -= 0.5;
+    } else {
+      x_next += 0.5;
+    }
+    if(character.rotation == 0 && rotation == 270) {
+      rotation = -90;
+    } else if(character.rotation == 270 && rotation == 0) {
+      rotation = 360;
+    }
+    if(character.rotation != rotation) {
+      tween.to({rotation: rotation}, 500);
+    }
   }
-  if(rotation == 0) {
-    y_next += 0.5;
-  } else if(rotation == 180) {
-    y_next -= 0.5;
-  } else if(rotation == 90) {
-    x_next -= 0.5;
-  } else {
-    x_next += 0.5;
-  }
-  if(character.rotation == 0 && rotation == 270) {
-    rotation = -90;
-  } else if(character.rotation == 270 && rotation == 0) {
-    rotation = 360;
-  }
-  if(character.rotation != rotation) {
-    tween.to({rotation: rotation}, 500);
-  }
+
   tween.wait(200)
        .to({x:50*x_next + 25, y: 50*y_next + 25}, 350)
        .to({x:50*character.px + 25, y: 50*character.py + 25}, 350)
@@ -342,8 +393,8 @@ function bounceCharacter(mazeInfo, x_next, y_next, callback) {
        });
 }
 
-function trapCharacter(mazeInfo, x_next, y_next, callback) {
-  moveCharacter(mazeInfo, x_next, y_next, function() {
+function trapCharacter(loader, mazeInfo, x_next, y_next, callback) {
+  moveCharacter(loader, mazeInfo, x_next, y_next, function() {
     var character = mazeInfo.canvas.character,
         tween = createjs.Tween.get(character);
     tween.to({rotation: character.rotation+720}, 1000)
@@ -386,14 +437,26 @@ function popQueue(loader, mazeInfo, q_idx) {
         y_next = character.py,
         diff = args[0] == "jump_forward" ? 2 : 1;
     if(args[0] == "forward" || args[0] == "jump_forward") {
-      if(character.rotation == 0) {
-        y_next -= diff;
-      } else if(character.rotation == 90) {
-        x_next += diff;
-      } else if(character.rotation == 180) {
-        y_next += diff;
+      if(character.direct) {
+        if(character.direct == "u") {
+          y_next -= diff;
+        } else if(character.direct == "r") {
+          x_next += diff;
+        } else if(character.direct == "d") {
+          y_next += diff;
+        } else if(character.direct == "l") {
+          x_next -= diff;
+        }
       } else {
-        x_next -= diff;
+        if(character.rotation == 0) {
+          y_next -= diff;
+        } else if(character.rotation == 90) {
+          x_next += diff;
+        } else if(character.rotation == 180) {
+          y_next += diff;
+        } else {
+          x_next -= diff;
+        }
       }
     } else {
       x_next += args[0];
@@ -406,11 +469,11 @@ function popQueue(loader, mazeInfo, q_idx) {
       tile = mazeInfo.map[y_next][x_next];
     }
     if( tile == "." || tile == "@" || tile == ")" ) {
-      moveCharacter(mazeInfo, x_next, y_next, function() {
+      moveCharacter(loader, mazeInfo, x_next, y_next, function() {
         popQueue(loader, mazeInfo, q_idx + 1);
       });
     } else if( tile == "%" ) {
-      moveCharacter(mazeInfo, x_next, y_next, function() {
+      moveCharacter(loader, mazeInfo, x_next, y_next, function() {
         for(var i = 0; i < foods.length; i++) {
           if(foods[i].px == x_next && foods[i].py == y_next) {
             foods[i].visible = false;
@@ -427,13 +490,13 @@ function popQueue(loader, mazeInfo, q_idx) {
             mazeInfo.canvas.obstacles[i].py == y_next) {
           kidscoding.queue = [];
           createjs.Sound.play("fail");
-          bounceCharacter(mazeInfo, x_next, y_next, function() {
+          bounceCharacter(loader, mazeInfo, x_next, y_next, function() {
             showModal("바위에 막혔어요");
           });
         }
       }
       if(i == mazeInfo.canvas.obstacles.length) {
-        moveCharacter(mazeInfo, x_next, y_next, function() {
+        moveCharacter(loader, mazeInfo, x_next, y_next, function() {
           popQueue(loader, mazeInfo, q_idx + 1);
         });
       }
@@ -444,27 +507,27 @@ function popQueue(loader, mazeInfo, q_idx) {
             mazeInfo.canvas.spiders[i].visible == true) {
           kidscoding.queue = [];
           createjs.Sound.play("fail");
-          trapCharacter(mazeInfo, x_next, y_next, function() {
+          trapCharacter(loader, mazeInfo, x_next, y_next, function() {
             showModal("거미줄에 걸렸어요");
           });
           break;
         }
       }
       if(i == mazeInfo.canvas.spiders.length) {
-        moveCharacter(mazeInfo, x_next, y_next, function() {
+        moveCharacter(loader, mazeInfo, x_next, y_next, function() {
           popQueue(loader, mazeInfo, q_idx + 1);
         });
       }
     } else if( tile == "^" ) {
       kidscoding.queue = [];
       createjs.Sound.play("fail");
-      trapCharacter(mazeInfo, x_next, y_next, function() {
+      trapCharacter(loader, mazeInfo, x_next, y_next, function() {
         showModal("덫에 걸렸어요");
       });
     } else { // 이동할 수 없다면
       kidscoding.queue = [];
       createjs.Sound.play("fail");
-      bounceCharacter(mazeInfo, x_next, y_next, function() {
+      bounceCharacter(loader, mazeInfo, x_next, y_next, function() {
         showModal("벽에 부딪쳤어요");
       });
     }
@@ -475,7 +538,7 @@ function popQueue(loader, mazeInfo, q_idx) {
     } else {
       rotation += 90;
     }
-    rotateCharacter(mazeInfo, rotation, function() {
+    rotateCharacter(loader, mazeInfo, rotation, function() {
       popQueue(loader, mazeInfo, q_idx + 1);
     });
   } else if(type == "getItem") {
@@ -666,6 +729,8 @@ function resetMaze(loader, mazeInfo, org_px, org_py) {
   character.y = org_py * 50 + 25;
   character.rotation = 0;
   character.item = false;
+  character.direct = character.initDirect;
+  character.image = loader.getResult("character_" + character.direct);
 
   if(mazeInfo.canvas.item) {
     mazeInfo.canvas.stage.addChild(mazeInfo.canvas.item);
@@ -776,7 +841,7 @@ function gameMove(e, loader, mazeInfo) {
   }
 
   if( mazeInfo.map[y_next][x_next] == "." ) {
-    moveCharacter(mazeInfo, x_next, y_next, function() {
+    moveCharacter(loader, mazeInfo, x_next, y_next, function() {
       for(i = 0; i < foods.length; i++) {
         if(foods[i].px == x_next && foods[i].py == y_next) {
           $("#scoreBox .score").text(++mazeInfo.score);
@@ -787,11 +852,11 @@ function gameMove(e, loader, mazeInfo) {
       }
     });
   } else if( mazeInfo.map[y_next][x_next] == "^" ) {
-    trapCharacter(mazeInfo, x_next, y_next, function() {
+    trapCharacter(loader, mazeInfo, x_next, y_next, function() {
       // showModal("덫에 걸렸어요");
     });
   } else { // 이동할 수 없다면
-    bounceCharacter(mazeInfo, x_next, y_next, function() {
+    bounceCharacter(loader, mazeInfo, x_next, y_next, function() {
       // showModal("벽에 부딪쳤어요");
     });
   }
