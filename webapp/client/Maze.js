@@ -193,8 +193,11 @@ function addEvents(step, loader, mazeInfo, type) {
     e.preventDefault();
   });
   var handle_resize = function(e) {
-    var available_height = $(window).height() - $("#navbarMaze").height() - $("#maze-container .row").height();
-    var zoom = available_height / (mazeInfo.height * 50);
+    var size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .row").height();
+    if($(window).width() / 2 < size) {
+      size = parseInt($(window).width() / 2, 10);
+    }
+    var zoom = size / (mazeInfo.height * 50);
     zoom = parseInt(zoom * 100, 10) / 100;
     $("#display").css("zoom", zoom);
     var real_height = parseInt($("#display").height() * zoom + 0.5, 10);
