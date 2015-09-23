@@ -52,4 +52,7 @@
 }, {
   "href": "maze/team_match/1",
   "title" : "팀대결"
+}, {
+  "href": "maze/maze_hard/1",
+  "title" : "미로찾기 고난이도"
 }]
