@@ -414,6 +414,9 @@ function showModal(options) {
 }
 
 function gameMove(e, loader, mazeInfo) {
+  if(createjs.Tween.hasActiveTweens()) {
+    return;
+  }
   var character = mazeInfo.canvas.character,
       foods = mazeInfo.canvas.foods,
       x_next = character.px,
@@ -436,12 +439,9 @@ function gameMove(e, loader, mazeInfo) {
       return;
   }
   e.preventDefault();
-  if(createjs.Tween.hasActiveTweens()) {
-    return;
-  }
 
   if( mazeInfo.map[y_next][x_next] == "." ) {
-    moveCharacter(loader, mazeInfo, x_next, y_next, function() {
+    kidscoding.Actions._moveCharacter(x_next, y_next, function() {
       for(i = 0; i < foods.length; i++) {
         if(foods[i].px == x_next && foods[i].py == y_next) {
           $("#scoreBox .score").text(++mazeInfo.score);
@@ -452,11 +452,11 @@ function gameMove(e, loader, mazeInfo) {
       }
     });
   } else if( mazeInfo.map[y_next][x_next] == "^" ) {
-    trapCharacter(loader, mazeInfo, x_next, y_next, function() {
+    kidscoding.Actions._trapCharacter(x_next, y_next, function() {
       // showModal("덫에 걸렸어요");
     });
   } else { // 이동할 수 없다면
-    bounceCharacter(loader, mazeInfo, x_next, y_next, function() {
+    kidscoding.Actions._bounceCharacter(x_next, y_next, function() {
       // showModal("벽에 부딪쳤어요");
     });
   }
