@@ -11,25 +11,25 @@ Blocks["move_up"] = {
   label: "위로 이동",
   color: 260,
   img: "/img/up.png",
-  command: ["move", 0, -1]
+  command: ["move", "up"]
 };
 Blocks["move_down"] = {
   label: "아래로 이동",
   color: 260,
   img: "/img/down.png",
-  command: ["move", 0, 1]
+  command: ["move", "down"]
 };
 Blocks["move_left"] = {
   label: "왼쪽으로 이동",
   color: 260,
   img: "/img/left.png",
-  command: ["move", -1, 0]
+  command: ["move", "left"]
 };
 Blocks["move_right"] = {
   label: "오른쪽으로 이동",
   color: 260,
   img: "/img/right.png",
-  command: ["move", 1, 0]
+  command: ["move", "right"]
 };
 Blocks["move_forward"] = {
   label: "앞으로 가기",
@@ -47,13 +47,13 @@ Blocks["rotate_left"] = {
   label: "왼쪽으로 돌기",
   color: 260,
   img: "/img/rotate_left.png",
-  command: ["rotate", "left"]
+  command: ["rotate", "couter_clock_wise"]
 };
 Blocks["rotate_right"] = {
   label: "오른쪽으로 돌기",
   color: 260,
   img: "/img/rotate_right.png",
-  command: ["rotate", "right"]
+  command: ["rotate", "clock_wise"]
 };
 Blocks["get_item"] = {
   label: "아이템 가져오기",
