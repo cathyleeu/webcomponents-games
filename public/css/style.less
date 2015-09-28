@@ -8,6 +8,15 @@ a {
   color: #00B7FF;
 }
 
+canvas {
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
 .navbar-default {
   background-color: @brand-primary;
   border-color: transparent;

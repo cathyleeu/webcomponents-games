@@ -5,7 +5,8 @@ Actions = function(kidscoding, loader, mazeInfo) {
   this.canvas = mazeInfo.canvas;
   this.width = mazeInfo.width;
   this.height = mazeInfo.height;
-  this.view_size = mazeInfo.view_size || null;
+  this.view_size = mazeInfo.view_size;
+  this.tile_size = mazeInfo.tile_size;
 };
 
 Actions.prototype._rotateCharacter = function(direct, callback) {
@@ -53,7 +54,10 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
   this._rotateCharacter(direct, function() {
     var tween = createjs.Tween.get(character);
     tween.wait(100)
-         .to({x:50*x_next + 25, y: 50*y_next + 25}, 500)
+         .to({
+           x: _this.tile_size*x_next + _this.tile_size/2,
+           y: _this.tile_size*y_next + _this.tile_size/2
+         }, 500)
          .call(function() {
            character.rotation = (character.rotation + 360) % 360;
            character.px = x_next;
@@ -65,22 +69,22 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
          });
     if(_this.view_size != _this.width) {
       var stage_tween = createjs.Tween.get(_this.canvas.stage);
-      var x = _this.canvas.stage.x - 50 * {u:0, r:1, d:0, l:-1}[direct],
-          y = _this.canvas.stage.y - 50 * {u:-1, r:0, d:1, l:0}[direct];
+      var x = _this.canvas.stage.x - _this.tile_size * {u:0, r:1, d:0, l:-1}[direct],
+          y = _this.canvas.stage.y - _this.tile_size * {u:-1, r:0, d:1, l:0}[direct];
       if(x > 0) {
         x = 0;
-      } else if(x < -50 * (_this.width - _this.view_size)) {
-        x = -50 * (_this.width - _this.view_size);
+      } else if(x < -_this.tile_size * (_this.width - _this.view_size)) {
+        x = -_this.tile_size * (_this.width - _this.view_size);
       }
-      if((50 * x_next + x) / 50 != _this.view_size / 2 - 1) {
+      if((_this.tile_size * x_next + x) / _this.tile_size != _this.view_size / 2 - 1) {
         x = _this.canvas.stage.x;
       }
       if(y > 0) {
         y = 0;
-      } else if(y < -50 * (_this.height - _this.view_size)) {
-        y = -50 * (_this.height - _this.view_size);
+      } else if(y < -_this.tile_size * (_this.height - _this.view_size)) {
+        y = -_this.tile_size * (_this.height - _this.view_size);
       }
-      if((50 * y_next + y) / 50 != _this.view_size / 2 - 1) {
+      if((_this.tile_size * y_next + y) / _this.tile_size != _this.view_size / 2 - 1) {
         y = _this.canvas.stage.y;
       }
       stage_tween.wait(100)
@@ -107,8 +111,14 @@ Actions.prototype._bounceCharacter = function(x_next, y_next, callback) {
   this._rotateCharacter(direct, function() {
     var tween = createjs.Tween.get(character);
     tween.wait(200)
-         .to({x:50*x_next + 25, y: 50*y_next + 25}, 350)
-         .to({x:50*character.px + 25, y: 50*character.py + 25}, 350)
+         .to({
+           x: _this.tile_size*x_next + _this.tile_size/2,
+           y: _this.tile_size*y_next + _this.tile_size/2}
+          , 350)
+         .to({
+           x: _this.tile_size*character.px + _this.tile_size/2,
+           y: _this.tile_size*character.py + _this.tile_size/2},
+          350)
          .to({rotation: rotation+720}, 1000)
          .call(function() {
            character.rotation = (character.rotation + 360) % 360;
