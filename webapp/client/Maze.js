@@ -260,7 +260,25 @@ function addEvents(step, loader, mazeInfo, type) {
     $("#scoreBox").show();
     $("#runCode").hide();
     $(document).keydown(function(e) {
-      gameMove(e, loader, mazeInfo);
+      e.preventDefault();
+      kidscoding.Actions._gameMove.call(kidscoding.Actions, {
+        37: "l", 38: "u", 39: "r", 40: "d"
+      }[e.keyCode], function(tile) {
+        if(tile == ".") {
+          var character = mazeInfo.canvas.character,
+              foods = mazeInfo.canvas.foods;
+          for(var i = 0; i < foods.length; i++) {
+            if(foods[i].px == character.px && foods[i].py == character.py) {
+              $("#scoreBox .score").text(++mazeInfo.score);
+              mazeInfo.canvas.stage.removeChild(foods[i]);
+              mazeInfo.canvas.stage.update();
+              foods.splice(i, 1);
+              addFood(loader, mazeInfo);
+              break;
+            }
+          }
+        }
+      });
     });
   }
 }
@@ -421,60 +439,6 @@ function showModal(options) {
   $('#modal').modal('show');
 }
 
-function gameMove(e, loader, mazeInfo) {
-  if(createjs.Tween.hasActiveTweens()) {
-    return;
-  }
-  var character = mazeInfo.canvas.character,
-      foods = mazeInfo.canvas.foods,
-      x_next = character.px,
-      y_next = character.py,
-      i = 0;
-  switch(e.keyCode) {
-    case 37: // left
-      x_next--;
-      break;
-    case 38: // up
-      y_next--;
-      break;
-    case 39: // right
-      x_next++;
-      break;
-    case 40: //down
-      y_next++;
-      break;
-    default:
-      return;
-  }
-  e.preventDefault();
-
-  var tile = "#";
-  if(0 <= x_next && x_next < mazeInfo.width && 0 <= y_next && y_next < mazeInfo.height) {
-    tile = mazeInfo.map[y_next][x_next];
-  }
-
-  if( tile == "." ) {
-    kidscoding.Actions._moveCharacter(x_next, y_next, function() {
-      for(i = 0; i < foods.length; i++) {
-        if(foods[i].px == x_next && foods[i].py == y_next) {
-          $("#scoreBox .score").text(++mazeInfo.score);
-          removeFood(mazeInfo, x_next, y_next);
-          addFood(loader, mazeInfo);
-          break;
-        }
-      }
-    });
-  } else if( tile == "^" ) {
-    kidscoding.Actions._trapCharacter(x_next, y_next, function() {
-      // showModal("덫에 걸렸어요");
-    });
-  } else { // 이동할 수 없다면
-    kidscoding.Actions._bounceCharacter(x_next, y_next, function() {
-      // showModal("벽에 부딪쳤어요");
-    });
-  }
-}
-
 function addFood(loader, mazeInfo) {
   var character = mazeInfo.canvas.character,
       foods = mazeInfo.canvas.foods;
@@ -500,17 +464,4 @@ function addFood(loader, mazeInfo) {
   mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
   mazeInfo.canvas.stage.addChild(mazeInfo.canvas.character);
   mazeInfo.canvas.stage.update();
-}
-
-function removeFood(mazeInfo, x, y) {
-  var foods = mazeInfo.canvas.foods;
-  var i;
-  for(i = 0; i < foods.length; i++) {
-    if(foods[i].px == x && foods[i].py == y) {
-      mazeInfo.canvas.stage.removeChild(foods[i]);
-      mazeInfo.canvas.stage.update();
-      foods.splice(i, 1);
-      break;
-    }
-  }
 }

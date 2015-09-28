@@ -136,6 +136,33 @@ Actions.prototype._trapCharacter = function(x_next, y_next, callback) {
   });
 };
 
+Actions.prototype._gameMove = function(direct, callback) {
+  if(createjs.Tween.hasActiveTweens()) {
+    return;
+  }
+  var character = this.canvas.character,
+      x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[direct],
+      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[direct];
+
+  var tile = "#";
+  if(0 <= x_next && x_next < this.width && 0 <= y_next && y_next < this.height) {
+    tile = this.map[y_next][x_next];
+  }
+  if( tile == "." ) {
+    this._moveCharacter(x_next, y_next, function() {
+      callback(tile);
+    });
+  } else if( tile == "^" ) {
+    this._trapCharacter(x_next, y_next, function() {
+      callback(tile);
+    });
+  } else {
+    this._bounceCharacter(x_next, y_next, function() {
+      callback(tile);
+    });
+  }
+}
+
 Actions.prototype.move = function(type, callback) {
   var _this = this,
       character = this.canvas.character,
