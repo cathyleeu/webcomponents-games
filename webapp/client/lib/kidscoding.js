@@ -1,6 +1,7 @@
 KidsCoding = function(loader, mazeInfo) {
+  this.q_idx = 0;
   this.queue = [];
-  this.Actions = new Actions(loader, mazeInfo);
+  this.Actions = new Actions(this, loader, mazeInfo);
 };
 KidsCoding.prototype = {
 

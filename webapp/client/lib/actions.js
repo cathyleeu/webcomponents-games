@@ -1,9 +1,11 @@
-Actions = function(loader, mazeInfo) {
+Actions = function(kidscoding, loader, mazeInfo) {
+  this.kidscoding = kidscoding;
   this.loader = loader;
   this.map = mazeInfo.map;
   this.canvas = mazeInfo.canvas;
   this.width = mazeInfo.width;
   this.height = mazeInfo.height;
+  this.view_size = mazeInfo.view_size || null;
 };
 
 Actions.prototype._rotateCharacter = function(direct, callback) {
@@ -19,7 +21,7 @@ Actions.prototype._rotateCharacter = function(direct, callback) {
     setTimeout(function() {
       _this.canvas.stage.update();
       callback();
-    }, 500);
+    }, 100);
   } else { // character.rotate_mode == "rotation"
     var rotation = {"u":0, "r":90, "d":180, "l":270}[direct];
     if(character.rotation == 0 && rotation == 270) {
@@ -28,7 +30,7 @@ Actions.prototype._rotateCharacter = function(direct, callback) {
       rotation = 360;
     }
     var tween = createjs.Tween.get(character);
-    tween.to({rotation: rotation}, 500)
+    tween.to({rotation: rotation}, 300)
         .call(function() {
           character.rotation = (character.rotation + 360) % 360;
           callback();
@@ -50,17 +52,43 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
   }
   this._rotateCharacter(direct, function() {
     var tween = createjs.Tween.get(character);
-    tween.wait(300)
-         .to({x:50*x_next + 25, y: 50*y_next + 25}, 700)
+    tween.wait(100)
+         .to({x:50*x_next + 25, y: 50*y_next + 25}, 500)
          .call(function() {
            character.rotation = (character.rotation + 360) % 360;
            character.px = x_next;
            character.py = y_next;
            callback();
          })
-         .addEventListener("change", function() {
+         .addEventListener("change", function(e) {
            _this.canvas.stage.update();
          });
+    if(_this.view_size != _this.width) {
+      var stage_tween = createjs.Tween.get(_this.canvas.stage);
+      var x = _this.canvas.stage.x - 50 * {u:0, r:1, d:0, l:-1}[direct],
+          y = _this.canvas.stage.y - 50 * {u:-1, r:0, d:1, l:0}[direct];
+      if(x > 0) {
+        x = 0;
+      } else if(x < -50 * (_this.width - _this.view_size)) {
+        x = -50 * (_this.width - _this.view_size);
+      }
+      if((50 * x_next + x) / 50 != _this.view_size / 2 - 1) {
+        x = _this.canvas.stage.x;
+      }
+      if(y > 0) {
+        y = 0;
+      } else if(y < -50 * (_this.height - _this.view_size)) {
+        y = -50 * (_this.height - _this.view_size);
+      }
+      if((50 * y_next + y) / 50 != _this.view_size / 2 - 1) {
+        y = _this.canvas.stage.y;
+      }
+      stage_tween.wait(100)
+           .to({x:x, y:y}, 500)
+           .addEventListener("change", function(e) {
+             _this.canvas.stage.update();
+           });
+    }
   });
 };
 
@@ -129,7 +157,7 @@ Actions.prototype.move = function(type, callback) {
   if(0 <= x_next && x_next < this.width && 0 <= y_next && y_next < this.height) {
     tile = this.map[y_next][x_next];
   }
-  if( tile == "." || tile == "@" || tile == ")" ) {
+  if( tile == "." || tile == ")" ) {
     this._moveCharacter(x_next, y_next, function() {
       callback();
     });
@@ -219,20 +247,18 @@ Actions.prototype.getItem = function(callback) {
 Actions.prototype.useItem = function(callback) {
   var character = this.canvas.character,
       x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[character.direct],
-      y_next = character.px + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct],
+      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct],
       rotation = character.rotation,
-      num;
+      num = +this.map[y_next][x_next];
   if(!character.item) {
     callback("아이템을 가지고 있지 않아요");
     return;
   }
-  num = +this.map[y_next][x_next];
   if(!isNaN(num)) {
     for(var i = 0; i < this.canvas.obstacles.length; i++) {
       if( this.canvas.obstacles[i].px == x_next &&
           this.canvas.obstacles[i].py == y_next) {
         var bitmap = this.canvas.obstacles[i];
-        debugger
         num = bitmap.num - 1;
 
         if(num > 0) {
@@ -261,8 +287,7 @@ Actions.prototype.useItem = function(callback) {
 Actions.prototype.action = function(hand, callback) {
   var character = this.canvas.character,
       x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[character.direct],
-      y_next = character.px + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct],
-      rotation = character.rotation,
+      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct],
       spiders = this.canvas.spiders;
   if( this.map[y_next][x_next] != "R" &&
       this.map[y_next][x_next] != "S" &&
@@ -297,56 +322,41 @@ Actions.prototype.action = function(hand, callback) {
 
 Actions.prototype.condition = function(type, if_code, else_code, callback) {
   var character = this.canvas.character,
-      x_next = character.px,
-      y_next = character.py,
-      rotation = character.rotation;
-  if(type == "if_move_forward") {
-    rotation += 0;
-  } else if(type == "if_move_left") {
-    rotation -= 90;
-  } else if(type == "if_move_right") {
-    rotation += 90;
-  }
-  rotation = (rotation + 360) % 360;
-  if(rotation == 0) {
-    y_next -= 1;
-  } else if(rotation == 90) {
-    x_next += 1;
-  } else if(rotation == 180) {
-    y_next += 1;
-  } else {
-    x_next -= 1;
-  }
-  var tile = this.map[y_next][x_next],
-      move_forward = false;
-  if( tile == "." || tile == "@" || tile == ")" || tile == "%" ) {
-    move_forward = true;
-  }
-  var blocks = move_forward ? if_code : else_code;
-  var temp = kidscoding.queue.splice(q_idx+1, kidscoding.queue.length);
-  eval("with(kidscoding){\n" + blocks + "\n}");
-  kidscoding.queue = kidscoding.queue.concat(temp);
+      queue = this.kidscoding.queue,
+      q_idx = this.kidscoding.q_idx,
+      arr = ["u", "r", "d", "l"],
+      if_move_left = type == "if_move_left" ? -1 : 0,
+      if_move_right = type == "if_move_right" ? 1 : 0,
+      idx = arr.indexOf(character.direct) + if_move_left + if_move_right;
+      direct = arr[(idx + 4) % 4],
+      x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[direct],
+      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[direct],
+      tile = this.map[y_next][x_next],
+      move_forward = tile == "." || tile == ")" || tile == "%",
+      blocks = move_forward ? if_code : else_code;
+
+  var temp = queue.splice(q_idx+1, queue.length);
+  eval("with(this.kidscoding){\n" + blocks + "\n}");
+  queue = queue.concat(temp);
   setTimeout(function() {
     callback();
   }, 1);
 };
 
 Actions.prototype.repeat = function(count, code, callback) {
-  var x_next = character.px,
-      y_next = character.py;
-  var tile = this.map[y_next][x_next];
-  var count = parseInt(count, 10);
-  if( tile != "%" && count == "repeat_until" ) {
-    var temp = kidscoding.queue.splice(q_idx + 1, kidscoding.queue.length);
-    eval("with(kidscoding){\n" + code + "\n}");
-    kidscoding.queue.push(_.clone(kidscoding.queue[q_idx]));
-    kidscoding.queue = kidscoding.queue.concat(temp);
-  } else if(count > 0) {
-    var temp = kidscoding.queue.splice(q_idx + 1, kidscoding.queue.length);
-    eval("with(kidscoding){\n" + code + "\n}");
-    kidscoding.queue.push(_.clone(kidscoding.queue[q_idx]));
-    --kidscoding.queue[kidscoding.queue.length -1].count;
-    kidscoding.queue = kidscoding.queue.concat(temp);
+  var character = this.canvas.character,
+      queue = this.kidscoding.queue,
+      q_idx = this.kidscoding.q_idx,
+      tile = this.map[character.py][character.px],
+      repeat = (tile != "%" && count == "repeat_until") || count > 0;
+  if(repeat) {
+    var temp = queue.splice(q_idx + 1, queue.length);
+    eval("with(this.kidscoding){\n" + code + "\n}");
+    queue.push(_.clone(queue[q_idx]));
+    if(typeof count == "number") {
+      --queue[queue.length -1].args[0];
+    }
+    queue = queue.concat(temp);
   }
   setTimeout(function() {
     callback();
