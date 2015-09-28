@@ -37,10 +37,11 @@ $(function() {
 });
 $.when( step, d3, loader, d1, d2 ).done(init);
 
-var kidscoding;
+var kidscoding,
+    mazeInfo;
 
 function init(step, maze, loader) {
-  var mazeInfo = drawMaze(maze, loader);
+  mazeInfo = drawMaze(maze, loader);
   kidscoding = new KidsCoding(loader, mazeInfo);
   kidscoding.initBlockly(maze.toolbox);
   addEvents(step, loader, mazeInfo, maze.type || "");
@@ -49,16 +50,41 @@ function init(step, maze, loader) {
 
 function drawMaze(maze, loader) {
   var stage = new createjs.Stage("display");
+  var ctx = stage.canvas.getContext("2d");
   var map_width = maze.map[0].length;
   var map_height = maze.map.length;
-
-  stage.canvas.width = (maze.view_size || map_width) * 50;
-  stage.canvas.height = (maze.view_size || map_height) * 50;
+  var character = new createjs.Bitmap();
+  mazeInfo = {
+    map: maze.map.map(function(row) {
+      return [].slice.call(new String(row));
+    }),
+    land: maze.land ? maze.land.map(function(row) {
+      return [].slice.call(new String(row));
+    }) : null,
+    width: map_width,
+    height: map_height,
+    view_size: maze.view_size || null,
+    tile_size: maze.tile_size || 50,
+    canvas: {
+      stage: stage,
+      character: character,
+      foods: [],
+      obstacles: []
+    }
+  };
+  stage.canvas.width = (mazeInfo.view_size || map_width) * mazeInfo.tile_size;
+  stage.canvas.height = (mazeInfo.view_size || map_height) * mazeInfo.tile_size;
+  ctx.imageSmoothingEnabled = false;
+  ctx.mozImageSmoothingEnabled = false;
+  ctx.oImageSmoothingEnabled = false;
+  ctx.webkitImageSmoothingEnabled = false;
 
   if(loader.getItem("background")) {
+    // 1-image background
     var background = new createjs.Bitmap(loader.getResult("background"));
     stage.addChild(background);
   } else if(loader.getItem("bg1")) {
+    // mosaic background
     for(var i = 0; i < map_height; i++) {
       for(var j = 0; j < map_width; j++) {
         var idx = (i + j) % 2 + 1;
@@ -67,22 +93,44 @@ function drawMaze(maze, loader) {
         stage.addChild(bg_tile);
       }
     }
-  }
-  var character = new createjs.Bitmap();
-  var mazeInfo = {
-    map: maze.map.map(function(row) {
-      return [].slice.call(new String(row));
-    }),
-    width: map_width,
-    height: map_height,
-    view_size: maze.view_size || null,
-    canvas: {
-      stage: stage,
-      character: character,
-      foods: [],
-      obstacles: []
+  } else if(loader.getItem("land0")) {
+    // land background
+    // +---+---+---+
+    // | 0 | 1 | 2 |
+    // +---+---+---+
+    // | 3 | 4 | 5 |
+    // +---+---+---+
+    // | 6 | 7 | 8 |
+    // +---+---+---+
+    // urdl == 8421
+    var arr = [4, 3, 7, 6, 5, -1, 8, -1, 1, 0, -1, -1, 2, -1, -1, -1];
+    for(var i = 0; i < map_height; i++) {
+      for(var j = 0; j < map_width; j++) {
+        var tile = mazeInfo.land[i][j];
+        var bg_tile = new createjs.Bitmap();
+        if(tile == ".") {
+          bg_tile.image = loader.getResult("land4");
+        } else {
+          var idx = 0,
+              walls = [
+                i == 0 ? "." : mazeInfo.land[i-1][j],
+                j == map_width-1 ? "." : mazeInfo.land[i][j+1],
+                i == map_height-1 ? "." : mazeInfo.land[i+1][j],
+                j == 0 ? "." : mazeInfo.land[i][j-1]
+              ];
+          while(walls.length > 0) {
+            idx <<= 1;
+            if(walls.shift() != tile) {
+              idx += 1;
+            }
+          }
+          bg_tile.image = loader.getResult("land"+arr[idx]);
+        }
+        setBitmapCoord(bg_tile, j, i);
+        stage.addChild(bg_tile);
+      }
     }
-  };
+  }
 
   var obstacle_ids = maze.manifest
       .filter(function(el){
@@ -165,10 +213,10 @@ function drawMaze(maze, loader) {
           }[mazeInfo.map[i][j]];
           var bitmap2 = new createjs.Bitmap(loader.getResult("hand_" + hand));
           var bounds = bitmap2.getBounds();
-          var size = 25;
+          var size = mazeInfo.tile_size / 2;
           bitmap2.scaleX = size / bounds.width;
           bitmap2.scaleY = size / bounds.height;
-          bitmap2.x = 50 - size;
+          bitmap2.x = mazeInfo.tile_size - size;
           container.hand = hand;
           container.addChild(bitmap, bitmap2);
           setBitmapCoord(container, j, i);
@@ -193,10 +241,10 @@ function setBitmapCoord(bitmap, px, py) {
   var bounds = bitmap.getBounds();
   bitmap.px = px;
   bitmap.py = py;
-  bitmap.x = 50 * px + 25;
-  bitmap.y = 50 * py + 25;
-  bitmap.scaleX = 50 / bounds.width;
-  bitmap.scaleY = 50 / bounds.height;
+  bitmap.x = mazeInfo.tile_size * px + mazeInfo.tile_size / 2;
+  bitmap.y = mazeInfo.tile_size * py + mazeInfo.tile_size / 2;
+  bitmap.scaleX = mazeInfo.tile_size / bounds.width;
+  bitmap.scaleY = mazeInfo.tile_size / bounds.height;
   bitmap.regX = bounds.width / 2;
   bitmap.regY = bounds.height / 2;
 }
@@ -211,10 +259,14 @@ function addEvents(step, loader, mazeInfo, type) {
       size = parseInt($(window).width() / 2, 10);
     }
     var view_size = mazeInfo.view_size || mazeInfo.width;
-    var zoom = size / (view_size * 50);
+    var zoom = size / (view_size * mazeInfo.tile_size);
     zoom = parseInt(zoom * 100, 10) / 100;
-    $("#display").css("zoom", zoom);
-    var real_width = parseInt($("#display").width() * zoom + 0.5, 10);
+    $("#display").css({
+      width: view_size*mazeInfo.tile_size * zoom,
+      height: view_size*mazeInfo.tile_size * zoom
+    });
+
+    var real_width = $("#display").width();
     $(".sidebar").width(real_width);
     $(".workspace").css("left", real_width + "px");
   };
@@ -350,8 +402,8 @@ function resetMaze(loader, mazeInfo, org_px, org_py) {
   var character = mazeInfo.canvas.character;
   character.px = org_px;
   character.py = org_py;
-  character.x = org_px * 50 + 25;
-  character.y = org_py * 50 + 25;
+  character.x = org_px * mazeInfo.tile_size + mazeInfo.tile_size / 2;
+  character.y = org_py * mazeInfo.tile_size + mazeInfo.tile_size / 2;
   character.rotation = 0;
   character.item = false;
   character.direct = character.initDirect;
