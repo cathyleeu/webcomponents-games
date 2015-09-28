@@ -1,0 +1,94 @@
+<!-- Navigation -->
+<nav id="navbarMaze" class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KIDSCODING</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="/"></a>
+                </li>
+                <!--li class="page-scroll">
+                    <a href="#portfolio">연습문제</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">문제 만들기</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#contact">문의</a>
+                </li-->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div id="maze-container">
+  <div class="sidebar">
+    <canvas id="display"></canvas>
+    <div class="row text-center">
+      <p id="scoreBox" class="bg-primary" style="display:none">점수 : <span class="score">0</span></p>
+      <!--a id="showCode" href="#" class="btn btn-lg btn-outline">
+        <i class="fa fa-file-text"></i> 코드 보기
+      </a-->
+      <a id="runCode" href="#" class="btn btn-lg btn-outline">
+        <i class="fa fa-play"></i> 시작
+      </a>
+    </div>
+  </div>
+  <div class="workspace">
+    <div id="blocklyDiv" style="height: 100%; width: 100%;"></div>
+  </div>
+</div>
+
+<div id="modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">키즈코딩</h4>
+      </div>
+      <div class="modal-body">
+        <div class="modal-msg-box">
+          <img class="modal-character" src="/img/ladybug.png" />
+          <div class="modal-div">
+            <span class="modal-msg"></span>
+          </div>
+        </div>
+        <video autoplay controls>
+          <source src="" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close-modal btn btn-default" data-dismiss="modal">닫기</button>
+        <button type="button" class="go-next btn btn-primary" style="display:none">다음 단계로 이동</button>
+        <button type="button" class="tutorial btn btn-primary" style="display:none">다음</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src="/components/GoogleBlockly/blockly_compressed.js"></script>
+<script src="/components/GoogleBlockly/blocks_compressed.js"></script>
+<script src="/components/GoogleBlockly/javascript_compressed.js"></script>
+<script src="/components/GoogleBlockly/msg/js/ko.js"></script>
+<script src="/components/EaselJS/lib/easeljs-0.8.1.min.js"></script>
+<script src="/components/PreloadJS/lib/preloadjs-0.6.1.min.js"></script>
+<script src="/components/SoundJS/lib/soundjs-0.6.1.min.js"></script>
+<script src="/components/TweenJS/lib/tweenjs-0.6.1.min.js"></script>
+<script src="/js/kidscoding.js"></script>
+<script src="/js/actions.js"></script>
+<script src="/js/blocks.js"></script>
+<script src="/js/maze.js"></script>

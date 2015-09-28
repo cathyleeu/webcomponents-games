@@ -1,0 +1,10 @@
+deploy to dev.muglau.com:
+  script:
+  - "npm install"
+  - "bower install"
+  - "forever stop kidscoding || true"
+  - "forever start --uid \"kidscoding\" -a -c \"node --harmony app.js --kidscoding\" ."
+  type: deploy
+  tags:
+  only:
+  - master

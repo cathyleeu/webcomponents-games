@@ -1,0 +1,196 @@
+@import "variables.less";
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.navbar-default {
+  background-color: @brand-primary;
+  border-color: transparent;
+  .navbar-brand {
+      color: #ffffff;
+  }
+  .navbar-toggle {
+    border-color: #1a242f;
+    .icon-bar {
+      background-color: #ffffff;
+    }
+  }
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: @brand-primary;
+  border-color: @brand-primary;
+}
+
+#navbarMaze {
+  margin-bottom: 0;
+}
+
+#visualizationColumn {
+  color:#fff;
+  background:@brand-success;
+}
+
+@media(max-width:991px) {
+    #visualizationColumn {
+        height:auto;
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+    #display {
+      width:auto;
+      height:auto;
+      min-width:300px;
+      min-height:300px;
+    }
+}
+@media(min-width:992px) {
+    #visualizationColumn {
+        height:800px;
+    }
+    #workspace {
+      padding-left:0;
+    }
+    #display {
+      min-width:275px;
+      min-height:275px;
+    }
+}
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+/* Click */
+#container {
+  position: relative;
+
+  .instruction {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .timer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 50px;
+    display: none;
+    line-height: 50px;
+    font-size: 30px;
+    padding: 0 20px;
+  }
+
+  .workspace {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .bubble {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      border: 1px solid gray;
+      text-align: center;
+      line-height: 100px;
+      font-size: 50px;
+    }
+  }
+}
+
+/* Classify */
+.classify {
+  min-width: 640px;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+
+  .instruction {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .wrapper {
+    position: relative;
+    height: 400px;
+    width: 100%;
+  }
+  #blocklyDiv {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+body.classify-body {
+  background-color: #779ECB !important;
+  overflow: auto;
+}
+
+/* Maze */
+#maze-container {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  width: 100%;
+  color:#fff;
+  background:#18bc9c;
+
+  .sidebar {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    canvas {
+      display: block;
+      background-color: transparent;
+    }
+    #scoreBox {
+      padding: 10px;
+    }
+    #runCode {
+      padding: 8px 20px;
+    }
+  }
+
+  .workspace {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+  }
+
+}
+
+#modal {
+  .modal-msg {
+    font-size: 30px;
+    padding-left: 20px;
+  }
+  img {
+    float: left;
+  }
+  .modal-div {
+    height: 185px;
+    padding-top: 60px;
+  }
+  video {
+    width: 100%;
+  }
+}

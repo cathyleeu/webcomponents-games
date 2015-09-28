@@ -1,0 +1,79 @@
+toolbox list
+"move_forward",
+"rotate_left",
+"rotate_right",
+
+"item_rock",
+"item_paper",
+"item_scissors"
+
+"get_item",
+"use_item",
+
+"repeat",
+"repeat_until",
+
+"condition_ifMoveForward",
+"condition_ifMoveLeft",
+"condition_ifMoveRight",
+
+"jump_forward",
+
+background list
+{"id": "bg1", "src": "/img/map/bg1.png"},
+{"id": "bg2", "src": "/img/map/bg2.png"},
+{"id": "food", "src": "/img/map/star.png"},
+
+{"id": "stump", "src": "/img/map/stump.png", "obstacle": true},
+{"id": "stone1", "src": "/img/map/stone1.png", "obstacle": true},
+{"id": "stone2", "src": "/img/map/stone2.png", "obstacle": true},
+{"id": "stone3", "src": "/img/map/stone3.png", "obstacle": true},
+{"id": "weed1", "src": "/img/map/weed1.png", "obstacle": true},
+{"id": "weed2", "src": "/img/map/weed2.png", "obstacle": true},
+{"id": "mushroom1", "src": "/img/map/mushroom1.png", "obstacle": true},
+{"id": "flower1", "src": "/img/map/flower1.png", "obstacle": true},
+
+{"id": "spider", "src": "/img/map/spider.png"},
+{"id": "hand_rock", "src": "/img/hand_rock.png"},
+{"id": "hand_paper", "src": "/img/hand_paper.png"},
+{"id": "hand_scissors", "src": "/img/hand_scissors.png"},
+
+{"id": "item", "src": "/img/map/pick.png"},
+{"id": "rock5", "src": "/img/map/rock5.png"},
+{"id": "rock4", "src": "/img/map/rock4.png"},
+{"id": "rock3", "src": "/img/map/rock3.png"},
+{"id": "rock2", "src": "/img/map/rock2.png"},
+{"id": "rock1", "src": "/img/map/rock1.png"},
+
+{"id": "box", "src": "/img/map/box.png", "obstacle": true},
+{"id": "stone", "src": "/img/map/stone.png", "obstacle": true},
+{"id": "wall", "src": "/img/map/wall.png", "obstacle": true},
+
+sound list
+{"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
+{"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+{"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+{"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+{"id": "hammer", "src": "/sound/hammer.wav", "type": "sound"},
+
+caracter list
+{"id": "character", "src": "/img/map/ladybug.png"},
+{"id": "character", "src": "/img/map/ant.png"},
+
+{"id": "character_u", "src": "/img/map/ant_up.png"},
+{"id": "character_d", "src": "/img/map/ant_down.png"},
+{"id": "character_l", "src": "/img/map/ant_left.png"},
+{"id": "character_r", "src": "/img/map/ant_right.png"},
+
+map 11*11
+"###########",
+"#.........#",
+"#.........#",
+"#.........#",
+"#.........#",
+"#.........#",
+"#.........#",
+"#.........#",
+"#.........#",
+"#.........#",
+"###########"

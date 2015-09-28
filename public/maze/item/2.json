@@ -1,0 +1,43 @@
+{
+  "path": "/img/map/",
+  "manifest": [
+    {"id": "background", "src": "/img/map/background.png"},
+    {"id": "character", "src": "/img/map/ladybug.png"},
+    {"id": "food", "src": "/img/map/star.png"},
+    {"id": "item", "src": "/img/map/pick.png"},
+    {"id": "rock5", "src": "/img/map/rock5.png"},
+    {"id": "rock4", "src": "/img/map/rock4.png"},
+    {"id": "rock3", "src": "/img/map/rock3.png"},
+    {"id": "rock2", "src": "/img/map/rock2.png"},
+    {"id": "rock1", "src": "/img/map/rock1.png"},
+    {"id": "box", "src": "/img/map/box.png", "obstacle": true},
+    {"id": "stone", "src": "/img/map/stone.png", "obstacle": true},
+    {"id": "wall", "src": "/img/map/wall.png", "obstacle": true},
+    {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
+    {"id": "hammer", "src": "/sound/hammer.wav", "type": "sound"}
+  ],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "########",
+    "###@####",
+    "###.####",
+    "###)####",
+    "###.####",
+    "###1####",
+    "###%####",
+    "########"
+  ],
+  "tutorial": [{
+    "msg": "이번엔 아래로 가서 아이템을 가져와야 돼"
+    }, {
+    "msg": "아이템을 먼저 가져와야 바위를 부술 수 있어~ 잊지마!"
+  }]
+}

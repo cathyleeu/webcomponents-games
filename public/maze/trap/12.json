@@ -1,0 +1,28 @@
+{
+  "path": "/img/map/",
+  "manifest": [
+    {"id": "background", "src": "/img/map/background.png"},
+    {"id": "character", "src": "/img/map/mouse.png"},
+    {"id": "food", "src": "/img/map/cheese.png"},
+    {"id": "trap", "src": "/img/map/trap.png"},
+    {"id": "box", "src": "/img/map/box.png", "obstacle": true},
+    {"id": "stone", "src": "/img/map/stone.png", "obstacle": true},
+    {"id": "wall", "src": "/img/map/wall.png", "obstacle": true}
+  ],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "########",
+    "#......#",
+    "#.^..^.#",
+    "#..^@..#",
+    "#^.^^^.#",
+    "#....^.#",
+    "#%^^...#",
+    "########"
+  ]
+}

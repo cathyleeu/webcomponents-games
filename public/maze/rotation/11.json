@@ -1,0 +1,33 @@
+{
+  "path": "/img/map/",
+  "manifest": [
+    {"id": "bg1", "src": "/img/map/bg1.png"},
+    {"id": "bg2", "src": "/img/map/bg2.png"},
+    {"id": "character", "src": "/img/map/ant.png"},
+    {"id": "food", "src": "/img/map/star.png"},
+    {"id": "stump", "src": "/img/map/stump.png", "obstacle": true},
+    {"id": "stone1", "src": "/img/map/stone1.png", "obstacle": true},
+    {"id": "stone2", "src": "/img/map/stone2.png", "obstacle": true},
+    {"id": "weed1", "src": "/img/map/weed1.png", "obstacle": true},
+    {"id": "weed2", "src": "/img/map/weed2.png", "obstacle": true},
+    {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
+    {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+    {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+    {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"}
+  ],
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "########",
+    "########",
+    "##....##",
+    "##.##.##",
+    "##%##.##",
+    "#####.##",
+    "#####@##",
+    "########"
+  ]
+}

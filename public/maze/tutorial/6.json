@@ -1,0 +1,50 @@
+{
+  "path": "/img/map/",
+  "manifest": [
+    {"id": "bg1", "src": "/img/map/bg1.png"},
+    {"id": "bg2", "src": "/img/map/bg2.png"},
+    {"id": "character", "src": "/img/map/ant.png"},
+    {"id": "food", "src": "/img/map/star.png"},
+    {"id": "item", "src": "/img/map/pick.png"},
+    {"id": "rock5", "src": "/img/map/rock5.png"},
+    {"id": "rock4", "src": "/img/map/rock4.png"},
+    {"id": "rock3", "src": "/img/map/rock3.png"},
+    {"id": "rock2", "src": "/img/map/rock2.png"},
+    {"id": "rock1", "src": "/img/map/rock1.png"},
+    {"id": "stump", "src": "/img/map/stump.png", "obstacle": true},
+    {"id": "stone1", "src": "/img/map/stone1.png", "obstacle": true},
+    {"id": "stone2", "src": "/img/map/stone2.png", "obstacle": true},
+    {"id": "weed1", "src": "/img/map/weed1.png", "obstacle": true},
+    {"id": "weed2", "src": "/img/map/weed2.png", "obstacle": true},
+    {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
+    {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+    {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+    {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+    {"id": "hammer", "src": "/sound/hammer.wav", "type": "sound"}
+  ],
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "########",
+    "########",
+    "###%####",
+    "##...###",
+    "##...###",
+    "##.@.###",
+    "##...###",
+    "########"
+  ],
+  "tutorial": [{
+    "video": "/video/tutorial/6.mp4"
+    }, {
+      "msg": "별이 멀리~~~ 있어 편하게 갈 수 없을까?"
+      }, {
+      "msg": "'반복' 블록을 이용해서 움직여보자!"
+  }]
+}

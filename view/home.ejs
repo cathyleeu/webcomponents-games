@@ -1,0 +1,90 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KIDSCODING</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="/"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#portfolio">연습문제</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">문제 만들기</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#contact">문의</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" src="/img/profile.png" alt="">
+                <div class="intro-text">
+                    <span class="name">코딩 공부를 지금 시작하세요</span>
+                    <hr class="star-light">
+                    <span class="skills">문제를 풀어보고 - 문제를 만들어보고 - 문제를 공유하는 사이트</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Portfolio Grid Section -->
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>연습 문제</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list-group">
+                <% for(var i = 0; i < list.length; i++) { %>
+                  <li class="list-group-item"><a href="<%-list[i].href%>"><%-list[i].title%></a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; (주)토이코드 2015
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visble-sm">
+    <a class="btn btn-primary" href="/">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>

@@ -1,0 +1,49 @@
+{
+  "path": "/img/map/",
+  "manifest": [
+    {"id": "bg1", "src": "/img/map/bg1.png"},
+    {"id": "bg2", "src": "/img/map/bg2.png"},
+    {"id": "character_u", "src": "/img/map/ant_up.png"},
+    {"id": "character_d", "src": "/img/map/ant_down.png"},
+    {"id": "character_l", "src": "/img/map/ant_left.png"},
+    {"id": "character_r", "src": "/img/map/ant_right.png"},
+    {"id": "food", "src": "/img/map/star.png"},
+    {"id": "stump", "src": "/img/map/stump.png", "obstacle": true},
+    {"id": "stone1", "src": "/img/map/stone1.png", "obstacle": true},
+    {"id": "stone2", "src": "/img/map/stone2.png", "obstacle": true},
+    {"id": "stone3", "src": "/img/map/stone3.png", "obstacle": true},
+    {"id": "weed1", "src": "/img/map/weed1.png", "obstacle": true},
+    {"id": "weed2", "src": "/img/map/weed2.png", "obstacle": true},
+    {"id": "mushroom1", "src": "/img/map/mushroom1.png", "obstacle": true},
+    {"id": "flower1", "src": "/img/map/flower1.png", "obstacle": true},
+    {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
+    {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+    {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+    {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"}
+  ],
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward"
+  ],
+  "map": [
+    "###########",
+    "#....#.#.%#",
+    "###########",
+    "#.#.#.#.###",
+    "###########",
+    "##.#......#",
+    "###########",
+    "#.........#",
+    "###########",
+    "#....u....#",
+    "###########"
+  ],
+  "tutorial": [{
+    "msg": "길이 막혀서 갈 수가 없어ㅜㅡㅜ"
+  }, {
+    "msg": "'점프'를 해서 뛰어넘어 가야겠어!"
+  }]
+}
