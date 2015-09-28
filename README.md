@@ -1,9 +1,6 @@
+<<<<<<< HEAD
 ## 준비
   * [nodejs](https://nodejs.org/en/) >= v0.12
-  * cordova sdk
-    ```
-    npm install -g cordova
-    ```
   * gulp, bower
     ```
     npm install -g gulp bower
@@ -11,8 +8,8 @@
 
 ## 설치
   ```
-  git clone git@gitlab.com:umven/muglau2-server.git
-  cd muglau2-server
+  git clone git@gitlab.com:toycode/kidscoding.git
+  cd kidscoding
   npm install & bower install
   ```
 
@@ -30,3 +27,6 @@
     ```
     nodemon --exec npm start
     ```
+=======
+# kidscoding
+>>>>>>> 18970501311b07086fbbba5c9481c188a1ce1006

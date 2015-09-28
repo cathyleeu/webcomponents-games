@@ -1,4 +1,4 @@
-deploy to dev.muglau.com:
+deploy to dev.toycode.org:
   script:
   - "npm install"
   - "bower install"
