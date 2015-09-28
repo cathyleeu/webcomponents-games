@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## 준비
   * [nodejs](https://nodejs.org/en/) >= v0.12
   * gulp, bower
@@ -27,6 +26,3 @@
     ```
     nodemon --exec npm start
     ```
-=======
-# kidscoding
->>>>>>> 18970501311b07086fbbba5c9481c188a1ce1006
