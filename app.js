@@ -24,7 +24,7 @@ render(app, {
   root: path.join(__dirname, 'view'),
   layout: 'layout',
   viewExt: 'ejs',
-  cache: true,
+  cache: false,
   debug: true
 });
 

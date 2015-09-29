@@ -1,0 +1,9 @@
+[
+  {"id": "background", "src": "/img/map/background.png"},
+  {"id": "character", "src": "/img/map/ladybug.png"},
+  {"id": "food", "src": "/img/map/star.png"},
+  {"id": "box", "src": "/img/map/box.png", "obstacle": true},
+  {"id": "stone", "src": "/img/map/stone.png", "obstacle": true},
+  {"id": "wall", "src": "/img/map/wall.png", "obstacle": true},
+  {"id": "bgm", "src": "/sound/bgm_normal.mp3"}
+]

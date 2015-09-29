@@ -16,14 +16,14 @@ router.get('/', function *(next) {
     uri: 'http://localhost:' + config.port + '/maze/list.json'
   });
   yield this.render('home', {
-    title: "Kidscoding",
+    title: "키즈코딩",
     list: JSON.parse(list.body)
   });
 });
 
 router.get('/maze/:type/:step', function *(next) {
   yield this.render('maze', {
-    title: "Kidscoding",
+    title: "키즈코딩",
     type: this.params.type,
     step: this.params.step
   });

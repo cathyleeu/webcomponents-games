@@ -1,41 +1,60 @@
 (function($) {
 
-var loader = new createjs.LoadQueue();
-var d1 = $.Deferred();
-var d2 = $.Deferred();
-var d3 = $.Deferred();
-var type = location.pathname.split("/")[2];
-var step = location.pathname.split("/")[3];
+var d1 = $.Deferred(),
+    d2 = $.Deferred(),
+    path = location.pathname.split("/"),
+    type = path[2],
+    step = path[3],
+    map_url = location.pathname + ".json",
+    manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/");
 
-createjs.Sound.alternateExtensions = ["mp3", "wav"];
-loader.installPlugin(createjs.Sound);
-$.getJSON(location.pathname + ".json", function(json) {
-  loader.loadManifest(json.manifest);
-  d3.resolve(json);
+// load map json file
+$.getJSON(map_url, function(json) {
+  d1.resolve(json);
+}).fail(function(jqXHR, msg, err) {
+  throw( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
 });
-loader.on("complete", function() {
-  var manifest = loader.getItems();
-  // register sound resources
-  for(var i = 0; i < manifest.length; i++) {
-    if(manifest[i].item.type == "sound") {
-      createjs.Sound.registerSound({
-        id: manifest[i].item.id,
-        src: manifest[i].item.src
-      });
+
+// load manifest.json file
+$.getJSON(manifest_url, function(manifest) {
+  var image_loader = new createjs.LoadQueue();
+  var sound_loader = new createjs.LoadQueue();
+  var getResult = image_loader.constructor.prototype.getResult;
+  var newGetResult = function() {
+    var result = getResult.apply(image_loader, arguments);
+    if(result == null) {
+      throw("[Cannot find \"" + arguments[0] + "\" on manifest.json]");
     }
-  }
-  // play bgm if it exist
-  createjs.Sound.addEventListener("fileload", function(e) {
-    if(loader.getItem("bgm")) {
+    return result;
+  };
+
+  // loader for images
+  image_loader.loadManifest(manifest.filter(function(item) {
+    return item.type != "sound";
+  }));
+  image_loader.on("complete", function() {
+    d2.resolve(image_loader);
+  });
+  image_loader.getResult = newGetResult;
+
+  // loader for sounds
+  createjs.Sound.alternateExtensions = ["mp3", "wav"];
+  sound_loader.installPlugin(createjs.Sound);
+  sound_loader.loadManifest(manifest.filter(function(item) {
+    return item.type == "sound";
+  }));
+  sound_loader.on("complete", function() {
+    if(sound_loader.getItem("bgm")) {
       createjs.Sound.play("bgm", {loop: -1});
+      $("#playstop").removeClass("hidden");
     }
   });
-  d1.resolve();
+  sound_loader.getResult = newGetResult;
+}).fail(function(jqXHR, msg, err) {
+  throw( "[" + msg + " - " + manifest_url + "]\n" + err.name + ": " + err.message);
 });
-$(function() {
-  d2.resolve();
-});
-$.when( step, d3, loader, d1, d2 ).done(init);
+
+$.when( step, d1, d2 ).done(init);
 
 var kidscoding,
     mazeInfo;
@@ -50,7 +69,6 @@ function init(step, maze, loader) {
 
 function drawMaze(maze, loader) {
   var stage = new createjs.Stage("display");
-  var ctx = stage.canvas.getContext("2d");
   var map_width = maze.map[0].length;
   var map_height = maze.map.length;
   var character = new createjs.Bitmap();
@@ -74,10 +92,14 @@ function drawMaze(maze, loader) {
   };
   stage.canvas.width = (mazeInfo.view_size || map_width) * mazeInfo.tile_size;
   stage.canvas.height = (mazeInfo.view_size || map_height) * mazeInfo.tile_size;
-  ctx.imageSmoothingEnabled = false;
-  ctx.mozImageSmoothingEnabled = false;
-  ctx.oImageSmoothingEnabled = false;
-  ctx.webkitImageSmoothingEnabled = false;
+  if(maze.render == "pixel") {
+    var ctx = stage.canvas.getContext("2d");
+    ctx.imageSmoothingEnabled = false;
+    ctx.mozImageSmoothingEnabled = false;
+    ctx.oImageSmoothingEnabled = false;
+    ctx.webkitImageSmoothingEnabled = false;
+    $("#display").addClass("pixel");
+  }
 
   if(loader.getItem("background")) {
     // 1-image background
@@ -132,12 +154,11 @@ function drawMaze(maze, loader) {
     }
   }
 
-  var obstacle_ids = maze.manifest
-      .filter(function(el){
-        return el.obstacle;
-      })
-      .map(function(el) {
-        return el.id || el;
+  var obstacle_ids = loader.getItems()
+      .filter(function(obj) {
+        return obj.item.obstacle;
+      }).map(function(obj) {
+        return obj.item.id;
       });
   for(var i = 0; i < map_height; i++) {
     for(var j = 0; j < map_width; j++) {
@@ -305,6 +326,18 @@ function addEvents(step, loader, mazeInfo, type) {
     }
   });
 
+  $("#playstop a").click(function(e) {
+    if($("#playstop i").hasClass("fa-play")) {
+      $("#playstop i").addClass("fa-stop");
+      $("#playstop i").removeClass("fa-play");
+      createjs.Sound.play("bgm", {loop: -1});
+    } else {
+      $("#playstop i").addClass("fa-play");
+      $("#playstop i").removeClass("fa-stop");
+      createjs.Sound.stop("bgm");
+    }
+  });
+
   if(type == "game") {
     mazeInfo.score = 0;
     addFood(loader, mazeInfo);
@@ -322,6 +355,7 @@ function addEvents(step, loader, mazeInfo, type) {
               foods = mazeInfo.canvas.foods;
           for(var i = 0; i < foods.length; i++) {
             if(foods[i].px == character.px && foods[i].py == character.py) {
+              createjs.Sound.play("success");
               $("#scoreBox .score").text(++mazeInfo.score);
               mazeInfo.canvas.stage.removeChild(foods[i]);
               mazeInfo.canvas.stage.update();
@@ -518,8 +552,5 @@ function addFood(loader, mazeInfo) {
   mazeInfo.canvas.stage.addChild(mazeInfo.canvas.character);
   mazeInfo.canvas.stage.update();
 }
-
-
-
 
 })(jQuery);
