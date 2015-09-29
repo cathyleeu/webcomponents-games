@@ -8,7 +8,7 @@ a {
   color: #00B7FF;
 }
 
-canvas {
+canvas.pixel {
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
@@ -39,6 +39,10 @@ canvas {
 
 #navbarMaze {
   margin-bottom: 0;
+  z-index: 100;
+  .navbar-nav>li>a:focus, .navbar-nav>li>a:hover {
+    color: #aaa;
+  }
 }
 
 #visualizationColumn {
