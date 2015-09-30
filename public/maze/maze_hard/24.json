@@ -1,0 +1,27 @@
+{
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y......m%.y",
+    "yxxxx.ㅑiiiy",
+    "y..i.xxxxxy",
+    "yi...y...my",
+    "yxxxxx....y",
+    "y.i..y...my",
+    "y....yxxxxy",
+    "yxxxxx....y",
+    "y.u......jy",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "불개미들이 더 많아졌어!"
+  }, {
+    "msg": "불개미를 피해 점프를 해 이동하자!"
+  }]
+}

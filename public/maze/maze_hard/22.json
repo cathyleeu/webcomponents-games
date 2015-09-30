@@ -1,0 +1,24 @@
+{
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y%........y",
+    "yxxxx.....y",
+    "y......ii.y",
+    "y.xx.y..xxy",
+    "y..i.y....y",
+    "yk...iij..y",
+    "yxii..y...y",
+    "y.....y..my",
+    "y.u...y...y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "불개미들을 피해 별을 먹어 다음 단계로 이동해보자!"
+  }]
+}
