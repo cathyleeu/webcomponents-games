@@ -1,0 +1,29 @@
+{
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y...k..p%py",
+    "yxxxx..11.y",
+    "yppppxxxxxy",
+    "y1abce1...y",
+    "y.1111....y",
+    "y.xxxx....y",
+    "y.....)...y",
+    "yxxxxx....y",
+    "y.u......jy",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "친구들이 돌더미에 갇혀있어!"
+  }, {
+    "msg": "돌을 부셔 친구들을 구하고 별을 먹어보자!"
+  }]
+}

@@ -131,7 +131,7 @@ function initMaze(maze, loader, tileFactory) {
     // | 6 | 7 | 8 |
     // +---+---+---+
     // urdl == 8421
-    var arr = [4, 3, 7, 6, 5, -1, 8, -1, 1, 0, -1, -1, 2, -1, -1, -1];
+    var arr = [4, 3, 7, 6, 5, 9, 8, 10, 1, 0, 7, 6, 2, 11, 8, 10];
     for(var i = 0; i < map_height; i++) {
       for(var j = 0; j < map_width; j++) {
         var tile = mazeInfo.land[i][j];

@@ -1,0 +1,27 @@
+{
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y......m%.y",
+    "yxxxx..iiiy",
+    "y....xxxxxy",
+    "y....y....y",
+    "yxxxxx....y",
+    "y....y....y",
+    "y....yxxxxy",
+    "yxxxxx....y",
+    "y.u.......y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "불개미들이 별을 지키고 있어!"
+  }, {
+    "msg": "점프를 하면 울타리를 뛰어 넘을 수 있어!"
+  }]
+}
