@@ -60,13 +60,16 @@ var kidscoding,
     mazeInfo;
 
 function init(step, maze, loader) {
-  var tileFactory = new TileFactory(loader, maze.tile_size || 50);
+  var tileFactory = new TileFactory(maze, loader, maze.tile_size || 50);
   mazeInfo = initMaze(maze, loader, tileFactory);
   mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
   kidscoding = new KidsCoding(loader, mazeInfo);
   kidscoding.initBlockly(maze.toolbox);
   addEvents(step, loader, mazeInfo, maze, tileFactory);
   runTutorial(maze);
+  if(maze.type == "game") {
+    gameMode(tileFactory);
+  }
 }
 
 function initMaze(maze, loader, tileFactory) {
@@ -203,7 +206,6 @@ function setBitmapCoord(bitmap, px, py) {
 }
 
 function addEvents(step, loader, mazeInfo, maze, tileFactory) {
-  var type = maze.type || "";
   $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
   });
@@ -227,6 +229,17 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
   $(window).on("resize", handle_resize);
   handle_resize();
   $("#modal .go-next").click(function(e) {
+    var queries = {};
+    location.search.slice(1).split(",").map(function(query) {
+      var sp = query.split("=");
+      if(sp[0]) {
+        queries[sp[0]] = sp[1];
+      }
+    });
+    if(queries.back) {
+      location.href = location.protocol + "//" + location.host + queries.back;
+      return;
+    }
     var path = "/maze/";
     var matched = /\/maze\/([^/]*)\/(.*)/gm.exec(location.pathname);
     if(matched) {
@@ -270,61 +283,67 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
       createjs.Sound.stop("bgm");
     }
   });
+}
 
-  if(type == "game") {
-    var character = mazeInfo.canvas.character,
-        foods = mazeInfo.canvas.foods,
-        stage = mazeInfo.canvas.stage;
-    mazeInfo.score = 0;
-    function addFood() {
-      var i, x, y;
-      while(true) {
-        x = parseInt(Math.random() * mazeInfo.width + 1, 10);
-        y = parseInt(Math.random() * mazeInfo.height + 1, 10);
-        if(character.px == x && character.py == y) {
-          continue;
-        }
-        var obj = kidscoding.Actions._getCanvasObject(x, y);
-        if(obj.role == "empty") {
-          for(i = 0; i < foods.length; i++) {
-            if(foods[i].visible == false) {
-              foods[i].visible = true;
-              tileFactory.setBitmapCoord(foods[i], x, y);
-              break;
-            }
-          }
-          if(i == foods.length) {
-            var bitmap = tileFactory.create("%", x, y);
-            foods.push(bitmap);
-            stage.addChild(bitmap);
-          }
-          break;
-        }
+function gameMode(tileFactory) {
+  var character = mazeInfo.canvas.character,
+      foods = mazeInfo.canvas.foods,
+      stage = mazeInfo.canvas.stage;
+  mazeInfo.score = 0;
+  function addFood() {
+    var i, x, y;
+    while(true) {
+      x = parseInt(Math.random() * mazeInfo.width + 1, 10);
+      y = parseInt(Math.random() * mazeInfo.height + 1, 10);
+      if(character.px == x && character.py == y) {
+        continue;
       }
-      stage.removeChild(character);
-      stage.addChild(character);
-      stage.update();
+      var obj = kidscoding.Actions._getCanvasObject(x, y);
+      if(obj.role == "empty") {
+        for(i = 0; i < foods.length; i++) {
+          if(foods[i].visible == false) {
+            foods[i].visible = true;
+            tileFactory.setBitmapCoord(foods[i], x, y);
+            break;
+          }
+        }
+        if(i == foods.length) {
+          var bitmap = tileFactory.create("%", x, y);
+          foods.push(bitmap);
+          stage.addChild(bitmap);
+        }
+        break;
+      }
     }
-    addFood();
-    $("#scoreBox").show();
-    $("#runCode").hide();
-    $(document).keydown(function(e) {
-      var direct = {37: "l", 38: "u", 39: "r", 40: "d"}[e.keyCode];
-      if(!direct) {
-        return;
-      }
-      e.preventDefault();
-      kidscoding.Actions._gameMove.call(kidscoding.Actions, direct, function(food) {
-        if(food) {
-          food.visible = false;
-          createjs.Sound.play("success");
-          stage.update();
-          $("#scoreBox .score").text(++mazeInfo.score);
-          addFood();
-        }
-      });
-    });
+    stage.removeChild(character);
+    stage.addChild(character);
+    stage.update();
   }
+  addFood();
+  $("#scoreBox").show();
+  $("#runCode").hide();
+  $(document).keydown(function(e) {
+    if(createjs.Tween.hasActiveTweens()) {
+      return;
+    }
+    var direct = {37: "l", 38: "u", 39: "r", 40: "d"}[e.keyCode];
+    if(!direct) {
+      return;
+    }
+    e.preventDefault();
+    kidscoding.Actions.move.call(kidscoding.Actions, direct, function(obj) {
+      if(obj.role == "food") {
+        obj.visible = false;
+        createjs.Sound.play("success");
+        mazeInfo.canvas.stage.update();
+        $("#scoreBox .score").text(++mazeInfo.score);
+        addFood();
+      }
+      if(obj.link) {
+        location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
+      }
+    });
+  });
 }
 
 function runTutorial(maze) {
@@ -374,17 +393,28 @@ function popQueue(loader, mazeInfo) {
     return;
   }
   var type = queue[q_idx].type;
-  var args = queue[q_idx].args.concat([function(err) {
-    if(err) {
+  var args = queue[q_idx].args.concat([function(obj) {
+    if( obj.obstacle ) {
+      var message = {
+        rock: "바위에 막혔어요",
+        obstacle: "벽에 부딪쳤어요",
+        spider: "거미줄에 걸렸어요",
+        trap: "덫에 걸렸어요"
+      }[obj.role];
       queue.splice(0, queue.length);
       createjs.Sound.play("fail");
-      showModal(err);
-    } else {
-      setTimeout(function() {
-        kidscoding.q_idx++;
-        popQueue(loader, mazeInfo);
-      }, 1);
+      showModal(message);
+      return;
     }
+    if( obj.role == "food" ) {
+      obj.visible = false;
+      createjs.Sound.play("success");
+      mazeInfo.canvas.stage.update();
+    }
+    setTimeout(function() {
+      kidscoding.q_idx++;
+      popQueue(loader, mazeInfo);
+    }, 1);
   }]);
   kidscoding.Actions[type].apply(kidscoding.Actions, args);
 }
