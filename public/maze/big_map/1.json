@@ -49,5 +49,11 @@
     "x": 3,
     "y": 1,
     "link": "/maze/maze_hard/1"
+  }],
+  "tutorial": [{
+    "msg": "튜토리얼 메세지",
+    "img": "/img/profile.png"
+  }, {
+    "msg": "'아이템 가져오기' 블록으로 아이템을 가져와서 사용해보자~!"
   }]
 }

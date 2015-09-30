@@ -77,7 +77,7 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
          .addEventListener("change", function(e) {
            _this.canvas.stage.update();
          });
-    if(_this.view_size != _this.width) {
+    if(_this.view_size != null && _this.view_size != _this.width) {
       var stage_tween = createjs.Tween.get(_this.canvas.stage),
           half = parseInt(_this.view_size / 2 - 0.5, 10),
           center_x = x_next,
@@ -329,7 +329,7 @@ Actions.prototype.condition = function(type, if_code, else_code, callback) {
 
   var temp = queue.splice(q_idx+1, queue.length);
   eval("with(this.kidscoding){\n" + blocks + "\n}");
-  queue = queue.concat(temp);
+  [].push.apply(queue, temp);
   setTimeout(function() {
     callback();
   }, 1);
@@ -348,7 +348,7 @@ Actions.prototype.repeat = function(count, code, callback) {
     if(typeof count == "number") {
       --queue[queue.length -1].args[0];
     }
-    queue = queue.concat(temp);
+    [].push.apply(queue, temp);
   }
   setTimeout(function() {
     callback();
