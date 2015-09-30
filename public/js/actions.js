@@ -146,6 +146,42 @@ Actions.prototype._trapCharacter = function(x_next, y_next, callback) {
   });
 };
 
+Actions.prototype._getCanvasObject = function(x, y) {
+  var foods = this.canvas.foods,
+      obstacles = this.canvas.obstacles;
+  if(0 <= x && x < this.width && 0 <= y && y < this.height) {
+    if( this.canvas.item &&
+        this.canvas.item.px == x &&
+        this.canvas.item.py == y &&
+        this.canvas.item.visible == true) {
+      return this.canvas.item;
+    }
+
+    for(var i = 0; i < foods.length; i++) {
+      if( foods[i].px == x &&
+          foods[i].py == y &&
+          foods[i].visible == true) {
+        return foods[i];
+      }
+    }
+    for(var i = 0; i < obstacles.length; i++) {
+      if( obstacles[i].px == x &&
+          obstacles[i].py == y &&
+          obstacles[i].visible == true) {
+        return obstacles[i];
+      }
+    }
+    return {
+      role: "empty",
+      obstacle: false
+    };
+  }
+  return {
+    role: "obstacle",
+    obstacle: true
+  };
+};
+
 Actions.prototype._gameMove = function(direct, callback) {
   if(createjs.Tween.hasActiveTweens()) {
     return;
@@ -154,24 +190,31 @@ Actions.prototype._gameMove = function(direct, callback) {
       x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[direct],
       y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[direct];
 
-  var tile = "#";
-  if(0 <= x_next && x_next < this.width && 0 <= y_next && y_next < this.height) {
-    tile = this.map[y_next][x_next];
-  }
-  if( tile == "." ) {
+  var obj = this._getCanvasObject(x_next, y_next);
+  if( obj.role == "food" ) {
     this._moveCharacter(x_next, y_next, function() {
-      callback(tile);
+      callback(obj);
     });
-  } else if( tile == "^" ) {
-    this._trapCharacter(x_next, y_next, function() {
-      callback(tile);
-    });
+  } else if( obj.obstacle ) {
+    if(obj.role == "rock" || obj.role == "obstacle") {
+      this._bounceCharacter(x_next, y_next, function() {
+        callback(null);
+      });
+    } else if(obj.role == "spider") {
+      this._trapCharacter(x_next, y_next, function() {
+        callback(null);
+      });
+    } else if(obj.role == "trap") {
+      this._trapCharacter(x_next, y_next, function() {
+        callback(null);
+      });
+    }
   } else {
-    this._bounceCharacter(x_next, y_next, function() {
-      callback(tile);
+    this._moveCharacter(x_next, y_next, function() {
+      callback(null);
     });
   }
-}
+};
 
 Actions.prototype.move = function(type, callback) {
   var _this = this,
@@ -190,63 +233,31 @@ Actions.prototype.move = function(type, callback) {
   x_next += {'u':0, 'r':1, 'd':0, 'l':-1}[direct] * diff;
   y_next += {'u':-1, 'r':0, 'd':1, 'l':0}[direct] * diff;
 
-  var tile = "#";
-  if(0 <= x_next && x_next < this.width && 0 <= y_next && y_next < this.height) {
-    tile = this.map[y_next][x_next];
-  }
-  if( tile == "." || tile == ")" ) {
+  var obj = this._getCanvasObject(x_next, y_next);
+  if( obj.role == "food" ) {
     this._moveCharacter(x_next, y_next, function() {
-      callback();
-    });
-  } else if( tile == "%" ) {
-    this._moveCharacter(x_next, y_next, function() {
-      for(var i = 0; i < foods.length; i++) {
-        if(foods[i].px == x_next && foods[i].py == y_next) {
-          foods[i].visible = false;
-          break;
-        }
-      }
+      obj.visible = false;
       createjs.Sound.play("success");
       _this.canvas.stage.update();
       callback();
     });
-  } else if( tile == "5" || tile == "4" || tile == "3" || tile == "2" || tile == "1" ) {
-    for(var i = 0; i < obstacles.length; i++) {
-      if( obstacles[i].px == x_next &&
-          obstacles[i].py == y_next) {
-        this._bounceCharacter(x_next, y_next, function() {
-          callback("바위에 막혔어요");
-        });
-      }
-    }
-    if(i == obstacles.length) {
-      this._moveCharacter(x_next, y_next, function() {
-        callback();
+  } else if( obj.obstacle ) {
+    if(obj.role == "rock" || obj.role == "obstacle") {
+      this._bounceCharacter(x_next, y_next, function() {
+        callback(obj.role == "rock" ? "바위에 막혔어요" : "벽에 부딪쳤어요");
+      });
+    } else if(obj.role == "spider") {
+      this._trapCharacter(x_next, y_next, function() {
+        callback("거미줄에 걸렸어요");
+      });
+    } else if(obj.role == "trap") {
+      this._trapCharacter(x_next, y_next, function() {
+        callback("덫에 걸렸어요");
       });
     }
-  } else if( tile == "R" || tile == "S" || tile == "P" ) {
-    for(var i = 0; i < spiders.length; i++) {
-      if( spiders[i].px == x_next &&
-          spiders[i].py == y_next &&
-          spiders[i].visible == true) {
-        this._trapCharacter(x_next, y_next, function() {
-          callback("거미줄에 걸렸어요");
-        });
-        break;
-      }
-    }
-    if(i == spiders.length) {
-      this._moveCharacter(x_next, y_next, function() {
-        callback();
-      });
-    }
-  } else if( tile == "^" ) {
-    this._trapCharacter(x_next, y_next, function() {
-      callback("덫에 걸렸어요");
-    });
-  } else { // 이동할 수 없다면
-    this._bounceCharacter(x_next, y_next, function() {
-      callback("벽에 부딪쳤어요");
+  } else {
+    this._moveCharacter(x_next, y_next, function() {
+      callback();
     });
   }
 };
@@ -266,11 +277,11 @@ Actions.prototype.rotate = function(type, callback) {
 };
 
 Actions.prototype.getItem = function(callback) {
-  var character = this.canvas.character;
-  if( character.px == this.canvas.item.px &&
-      character.py == this.canvas.item.py) {
+  var character = this.canvas.character,
+      item = this._getCanvasObject(character.px, character.py);
+  if( item.role == "item") {
     character.item = true;
-    this.canvas.stage.removeChild(this.canvas.item);
+    item.visible = false;
     this.canvas.stage.update();
     createjs.Sound.play("success");
     setTimeout(function() {
@@ -284,77 +295,59 @@ Actions.prototype.getItem = function(callback) {
 Actions.prototype.useItem = function(callback) {
   var character = this.canvas.character,
       x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[character.direct],
-      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct],
-      rotation = character.rotation,
-      num = +this.map[y_next][x_next];
+      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct];
   if(!character.item) {
     callback("아이템을 가지고 있지 않아요");
     return;
   }
-  if(!isNaN(num)) {
-    for(var i = 0; i < this.canvas.obstacles.length; i++) {
-      if( this.canvas.obstacles[i].px == x_next &&
-          this.canvas.obstacles[i].py == y_next) {
-        var bitmap = this.canvas.obstacles[i];
-        num = bitmap.num - 1;
+  var rock = this._getCanvasObject(x_next, y_next);
+  if(rock.role == "rock") {
+    var num = rock.num - 1;
 
-        if(num > 0) {
-          // add rock
-          bitmap.num = num;
-          bitmap.image = bitmap["img" + num];
-        } else {
-          // remove rock
-          this.canvas.stage.removeChild(this.canvas.obstacles[i]);
-          this.canvas.obstacles.splice(i, 1);
-        }
-
-        createjs.Sound.play("hammer");
-        this.canvas.stage.update();
-        setTimeout(function() {
-          callback();
-        }, 1000);
-        return;
-      }
+    if(num > 0) {
+      // replace rock image
+      rock.num = num;
+      rock.image = rock["img" + num];
+    } else {
+      // hide rock
+      rock.visible = false;
     }
-    // 이미 바위가 없어져 아이템을 사용하지 않은 경우는 실패
+
+    createjs.Sound.play("hammer");
+    this.canvas.stage.update();
+    setTimeout(function() {
+      callback();
+    }, 1000);
+  } else {
+    callback("아이템을 사용할 수 없어요");
   }
-  callback("아이템을 사용할 수 없어요");
 };
 
 Actions.prototype.action = function(hand, callback) {
   var character = this.canvas.character,
       x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[character.direct],
-      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct],
-      spiders = this.canvas.spiders;
-  if( this.map[y_next][x_next] != "R" &&
-      this.map[y_next][x_next] != "S" &&
-      this.map[y_next][x_next] != "P") {
-    callback("가위바위보를 할 수 없어요");
-    return;
-  }
-  var spider;
-  for(var i = 0; i < spiders.length; i++) {
-    if( spiders[i].px == x_next &&
-        spiders[i].py == y_next) {
-      spider = spiders[i];
+      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct];
+  var spider = this._getCanvasObject(x_next, y_next);
+  if(spider.role == "spider") {
+    if(hand == spider.hand) {
+      callback("비겼어요");
+      return;
     }
+    if( (hand == "rock"     && spider.hand == "paper") ||
+        (hand == "scissors" && spider.hand == "rock") ||
+        (hand == "paper"    && spider.hand == "scissors") ) {
+      callback("졌어요");
+      return;
+    }
+    spider.visible = false;
+    this.canvas.stage.update();
+    createjs.Sound.play("success");
+    setTimeout(function() {
+      callback();
+    }, 500);
+  } else {
+    callback("가위바위보를 할 수 없어요");
   }
-  if(hand == spider.hand) {
-    callback("비겼어요");
-    return;
-  }
-  if( (hand == "rock"     && spider.hand == "paper") ||
-      (hand == "scissors" && spider.hand == "rock") ||
-      (hand == "paper"    && spider.hand == "scissors") ) {
-    callback("졌어요");
-    return;
-  }
-  spider.visible = false;
-  this.canvas.stage.update();
-  createjs.Sound.play("success");
-  setTimeout(function() {
-    callback();
-  }, 500);
 };
 
 Actions.prototype.condition = function(type, if_code, else_code, callback) {

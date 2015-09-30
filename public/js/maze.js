@@ -60,18 +60,20 @@ var kidscoding,
     mazeInfo;
 
 function init(step, maze, loader) {
-  mazeInfo = drawMaze(maze, loader);
+  var tileFactory = new TileFactory(loader, maze.tile_size || 50);
+  mazeInfo = initMaze(maze, loader, tileFactory);
+  mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
   kidscoding = new KidsCoding(loader, mazeInfo);
   kidscoding.initBlockly(maze.toolbox);
-  addEvents(step, loader, mazeInfo, maze.type || "");
+  addEvents(step, loader, mazeInfo, maze, tileFactory);
   runTutorial(maze);
 }
 
-function drawMaze(maze, loader) {
+function initMaze(maze, loader, tileFactory) {
   var stage = new createjs.Stage("display");
   var map_width = maze.map[0].length;
   var map_height = maze.map.length;
-  var character = new createjs.Bitmap();
+
   mazeInfo = {
     map: maze.map.map(function(row) {
       return [].slice.call(new String(row));
@@ -85,7 +87,8 @@ function drawMaze(maze, loader) {
     tile_size: maze.tile_size || 50,
     canvas: {
       stage: stage,
-      character: character,
+      character: null,
+      item: null,
       foods: [],
       obstacles: []
     }
@@ -154,107 +157,36 @@ function drawMaze(maze, loader) {
     }
   }
 
-  var obstacle_ids = loader.getItems()
-      .filter(function(obj) {
-        return obj.item.obstacle;
-      }).map(function(obj) {
-        return obj.item.id;
-      });
-  for(var i = 0; i < map_height; i++) {
-    for(var j = 0; j < map_width; j++) {
-      switch(mazeInfo.map[i][j]) {
-        case "u": // directed character
-        case "d":
-        case "l":
-        case "r":
-          character.image = loader.getResult("character_" + mazeInfo.map[i][j]);
-          character.direct = character.initDirect = mazeInfo.map[i][j];
-          character.rotate_mode = "image";
-          setBitmapCoord(mazeInfo.canvas.character, j, i);
-          mazeInfo.map[i][j] = ".";
+  return mazeInfo;
+}
+
+function drawMaze(mazeInfo, maze, loader, tileFactory) {
+  for(var i = 0; i < mazeInfo.height; i++) {
+    for(var j = 0; j < mazeInfo.width; j++) {
+      var bitmap = tileFactory.create(mazeInfo.map[i][j], j, i);
+      switch(bitmap ? bitmap.role : null) {
+        case "character":
+          mazeInfo.canvas.character = bitmap;
           break;
-        case "@": // undirected character
-          character.image = loader.getResult("character");
-          character.direct = character.initDirect = "u";
-          character.rotate_mode = "rotation";
-          setBitmapCoord(mazeInfo.canvas.character, j, i);
-          mazeInfo.map[i][j] = ".";
-          break;
-        case "%": // food
-          var bitmap = new createjs.Bitmap(loader.getResult("food"));
+        case "food":
           mazeInfo.canvas.foods.push(bitmap);
-          setBitmapCoord(bitmap, j, i);
-          stage.addChild(bitmap);
           break;
-        case ")": // item
-          var bitmap = new createjs.Bitmap(loader.getResult("item"));
+        case "item":
           mazeInfo.canvas.item = bitmap;
-          setBitmapCoord(bitmap, j, i);
-          stage.addChild(bitmap);
           break;
-        case "5": // rock
-        case "4":
-        case "3":
-        case "2":
-        case "1":
-          var num = +mazeInfo.map[i][j];
-          var bitmap = new createjs.Bitmap(loader.getResult("rock" + num));
-          bitmap.type = "rock";
-          bitmap.num = num;
-          bitmap.img1 = loader.getResult("rock1");
-          bitmap.img2 = loader.getResult("rock2");
-          bitmap.img3 = loader.getResult("rock3");
-          bitmap.img4 = loader.getResult("rock4");
-          bitmap.img5 = loader.getResult("rock5");
+      }
+      if(bitmap) {
+        if(bitmap.obstacle) {
           mazeInfo.canvas.obstacles.push(bitmap);
-          setBitmapCoord(bitmap, j, i);
-          stage.addChild(bitmap);
-          break;
-        case "^": // trap
-          var trap = new createjs.Bitmap(loader.getResult("trap"));
-          setBitmapCoord(trap, j, i);
-          stage.addChild(trap);
-          break;
-        case "#": // obstacles
-          var idx = parseInt(Math.random() * obstacle_ids.length, 10),
-              bitmap = new createjs.Bitmap(loader.getResult(obstacle_ids[idx]));
-          mazeInfo.canvas.obstacles.push(bitmap);
-          setBitmapCoord(bitmap, j, i);
-          stage.addChild(bitmap);
-          break;
-        case "R": // rock
-        case "P": // paper
-        case "S": // scissors
-          var container = new createjs.Container();
-          var bitmap = new createjs.Bitmap(loader.getResult("spider"));
-          var hand = {
-            "R": "rock",
-            "P": "paper",
-            "S": "scissors"
-          }[mazeInfo.map[i][j]];
-          var bitmap2 = new createjs.Bitmap(loader.getResult("hand_" + hand));
-          var bounds = bitmap2.getBounds();
-          var size = mazeInfo.tile_size / 2;
-          bitmap2.scaleX = size / bounds.width;
-          bitmap2.scaleY = size / bounds.height;
-          bitmap2.x = mazeInfo.tile_size - size;
-          container.hand = hand;
-          container.addChild(bitmap, bitmap2);
-          setBitmapCoord(container, j, i);
-          stage.addChild(container);
-          if(!mazeInfo.canvas.spiders) {
-            mazeInfo.canvas.spiders = [];
-          }
-          mazeInfo.canvas.spiders.push(container);
-          break;
-        case ".":
-        default:
-          break;
+        }
+        mazeInfo.canvas.stage.addChild(bitmap);
       }
     }
   }
-  stage.addChild(mazeInfo.canvas.character);
-  stage.update();
+  // 캐릭터를 항상 위로
+  mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
+  mazeInfo.canvas.stage.addChild(mazeInfo.canvas.character);
+  mazeInfo.canvas.stage.update();
   return mazeInfo;
 }
 
@@ -270,7 +202,8 @@ function setBitmapCoord(bitmap, px, py) {
   bitmap.regY = bounds.height / 2;
 }
 
-function addEvents(step, loader, mazeInfo, type) {
+function addEvents(step, loader, mazeInfo, maze, tileFactory) {
+  var type = maze.type || "";
   $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
   });
@@ -304,7 +237,6 @@ function addEvents(step, loader, mazeInfo, type) {
       org_py = mazeInfo.canvas.character.py;
   $("#runCode").click(function(e) {
     if($(this).find("i").hasClass("fa-play")) {
-      $(this).html('<i class="fa fa-refresh"></i> 처음상태로');
       // Generate JavaScript code and run it.
       window.LoopTrap = 1000;
       Blockly.JavaScript.INFINITE_LOOP_TRAP =
@@ -315,6 +247,7 @@ function addEvents(step, loader, mazeInfo, type) {
       if(kidscoding.queue.length == 0) {
         showModal("블럭이 하나도 없어요!");
       } else {
+        $(this).html('<i class="fa fa-refresh"></i> 처음상태로');
         kidscoding.q_idx = 0;
         popQueue(loader, mazeInfo);
       }
@@ -322,7 +255,7 @@ function addEvents(step, loader, mazeInfo, type) {
       $(this).html('<i class="fa fa-play"></i> 시작');
       createjs.Tween.removeAllTweens();
       kidscoding.queue.splice(0, kidscoding.queue.length);
-      resetMaze(loader, mazeInfo, org_px, org_py);
+      resetMaze(mazeInfo, maze, loader, tileFactory);
     }
   });
 
@@ -339,8 +272,40 @@ function addEvents(step, loader, mazeInfo, type) {
   });
 
   if(type == "game") {
+    var character = mazeInfo.canvas.character,
+        foods = mazeInfo.canvas.foods,
+        stage = mazeInfo.canvas.stage;
     mazeInfo.score = 0;
-    addFood(loader, mazeInfo);
+    function addFood() {
+      var i, x, y;
+      while(true) {
+        x = parseInt(Math.random() * mazeInfo.width + 1, 10);
+        y = parseInt(Math.random() * mazeInfo.height + 1, 10);
+        if(character.px == x && character.py == y) {
+          continue;
+        }
+        var obj = kidscoding.Actions._getCanvasObject(x, y);
+        if(obj.role == "empty") {
+          for(i = 0; i < foods.length; i++) {
+            if(foods[i].visible == false) {
+              foods[i].visible = true;
+              tileFactory.setBitmapCoord(foods[i], x, y);
+              break;
+            }
+          }
+          if(i == foods.length) {
+            var bitmap = tileFactory.create("%", x, y);
+            foods.push(bitmap);
+            stage.addChild(bitmap);
+          }
+          break;
+        }
+      }
+      stage.removeChild(character);
+      stage.addChild(character);
+      stage.update();
+    }
+    addFood();
     $("#scoreBox").show();
     $("#runCode").hide();
     $(document).keydown(function(e) {
@@ -349,21 +314,13 @@ function addEvents(step, loader, mazeInfo, type) {
         return;
       }
       e.preventDefault();
-      kidscoding.Actions._gameMove.call(kidscoding.Actions, direct, function(tile) {
-        if(tile == ".") {
-          var character = mazeInfo.canvas.character,
-              foods = mazeInfo.canvas.foods;
-          for(var i = 0; i < foods.length; i++) {
-            if(foods[i].px == character.px && foods[i].py == character.py) {
-              createjs.Sound.play("success");
-              $("#scoreBox .score").text(++mazeInfo.score);
-              mazeInfo.canvas.stage.removeChild(foods[i]);
-              mazeInfo.canvas.stage.update();
-              foods.splice(i, 1);
-              addFood(loader, mazeInfo);
-              break;
-            }
-          }
+      kidscoding.Actions._gameMove.call(kidscoding.Actions, direct, function(food) {
+        if(food) {
+          food.visible = false;
+          createjs.Sound.play("success");
+          stage.update();
+          $("#scoreBox .score").text(++mazeInfo.score);
+          addFood();
         }
       });
     });
@@ -432,66 +389,20 @@ function popQueue(loader, mazeInfo) {
   kidscoding.Actions[type].apply(kidscoding.Actions, args);
 }
 
-function resetMaze(loader, mazeInfo, org_px, org_py) {
-  var character = mazeInfo.canvas.character;
-  character.px = org_px;
-  character.py = org_py;
-  character.x = org_px * mazeInfo.tile_size + mazeInfo.tile_size / 2;
-  character.y = org_py * mazeInfo.tile_size + mazeInfo.tile_size / 2;
-  character.rotation = 0;
-  character.item = false;
-  character.direct = character.initDirect;
-  if(character.rotate_mode == "image") {
-    character.image = loader.getResult("character_" + character.direct);
-  }
-
-  if(mazeInfo.canvas.item) {
-    mazeInfo.canvas.stage.addChild(mazeInfo.canvas.item);
-  }
-
-  // reset foods
-  for(var i = 0; i < mazeInfo.canvas.foods.length; i++) {
-    mazeInfo.canvas.foods[i].visible = true;
-  }
-
-  // reset rocks
-  for(var i = 0; i < mazeInfo.canvas.obstacles.length; i++) {
-    if(mazeInfo.canvas.obstacles[i].type == "rock") {
-      mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.obstacles[i]);
-      mazeInfo.canvas.obstacles.splice(i, 1);
-    }
-  }
-  for(var i = 0; i < mazeInfo.height; i++) {
-    for(var j = 0; j < mazeInfo.width; j++) {
-      switch(mazeInfo.map[i][j]) {
-        case "5": // rock
-        case "4":
-        case "3":
-        case "2":
-        case "1":
-          var num = +mazeInfo.map[i][j];
-          var bitmap = new createjs.Bitmap(loader.getResult("rock" + num));
-          bitmap.type = "rock";
-          bitmap.num = num;
-          mazeInfo.canvas.obstacles.push(bitmap);
-          setBitmapCoord(bitmap, j, i);
-          mazeInfo.canvas.stage.addChild(bitmap);
-          break;
-      }
-    }
-  }
-
-  // reset spiders
-  if(mazeInfo.canvas.spiders) {
-    for(var i = 0; i < mazeInfo.canvas.spiders.length; i++) {
-      mazeInfo.canvas.spiders[i].visible = true;
-    }
-  }
-
-  // 캐릭터를 항상 위로
-  mazeInfo.canvas.stage.removeChild(character);
-  mazeInfo.canvas.stage.addChild(character);
-  mazeInfo.canvas.stage.update();
+function resetMaze(mazeInfo, maze, loader, tileFactory) {
+  mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
+  mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.item);
+  mazeInfo.canvas.foods.map(function(food) {
+    mazeInfo.canvas.stage.removeChild(food);
+  });
+  mazeInfo.canvas.obstacles.map(function(obstacle) {
+    mazeInfo.canvas.stage.removeChild(obstacle);
+  });
+  mazeInfo.canvas.character = null;
+  mazeInfo.canvas.item = null
+  mazeInfo.canvas.foods = [];
+  mazeInfo.canvas.obstacles = [];
+  mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
 }
 
 function showModal(options) {
@@ -524,33 +435,6 @@ function showModal(options) {
     backdrop: "static"
   });
   $('#modal').modal('show');
-}
-
-function addFood(loader, mazeInfo) {
-  var character = mazeInfo.canvas.character,
-      foods = mazeInfo.canvas.foods;
-  var i, x, y;
-  while(true) {
-    x = parseInt(Math.random() * 6 + 1, 10);
-    y = parseInt(Math.random() * 6 + 1, 10);
-    if(character.px != x && character.py != y && mazeInfo.map[y][x] == ".") {
-      for(i = 0; i < foods.length; i++) {
-        if(foods[i].px == x && foods[i].py == y) {
-          break;
-        }
-      }
-      if(i == foods.length) {
-        break;
-      }
-    }
-  }
-  var bitmap = new createjs.Bitmap(loader.getResult("food"));
-  mazeInfo.canvas.foods.push(bitmap);
-  setBitmapCoord(bitmap, x, y);
-  mazeInfo.canvas.stage.addChild(bitmap);
-  mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
-  mazeInfo.canvas.stage.addChild(mazeInfo.canvas.character);
-  mazeInfo.canvas.stage.update();
 }
 
 })(jQuery);
