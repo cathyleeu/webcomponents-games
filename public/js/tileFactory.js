@@ -48,7 +48,58 @@ TileFactory.prototype.create = function(tile, x, y) {
     bitmap.role = role;
     switch(role) {
       case "character":
-        if(tile == "@") { // undirected character
+        var character = this.loader.getItem("character");
+        if(character && character.sprite) {
+          var data = {
+            images: [this.loader.getResult("character")],
+            frames: {width: character.size, height: character.size},
+            animations: {
+              stand_u: 0,
+              walk_u: {
+                frames: [0,1,0,2],
+                speed: 0.5
+              },
+              jump_u: {
+                frames: [3,4,5,6,7,6,5,4,3],
+                speed: 0.4
+              },
+              stand_r: 8,
+              walk_r: {
+                frames: [8,9],
+                speed: 0.2
+              },
+              jump_r: {
+                frames: [11,12,13,14,15,14,13,12,11],
+                speed: 0.4
+              },
+              stand_d: 16,
+              walk_d: {
+                frames: [16,17,16,18],
+                speed: 0.5
+              },
+              jump_d: {
+                frames: [19,20,21,22,23,22,21,20,19],
+                speed: 0.4
+              },
+              stand_l: 24,
+              walk_l: {
+                frames: [24,25],
+                speed: 0.2
+              },
+              jump_l: {
+                frames: [27,28,29,30,31,30,29,28,27],
+                speed: 0.4
+              }
+            }
+          };
+          bitmap = new createjs.Sprite(
+            new createjs.SpriteSheet(data),
+            "stand_" + (tile == "@" ? "d" : tile)
+          );
+          bitmap.framerate = 40;
+          bitmap.sprite = true;
+          bitmap.role = "character";
+        } else if(tile == "@") { // undirected character
           bitmap.image = this.loader.getResult("character");
           bitmap.direct = bitmap.initDirect = "u";
           bitmap.rotate_mode = "rotation";
@@ -110,13 +161,13 @@ TileFactory.prototype.create = function(tile, x, y) {
     this.setBitmapCoord(bitmap, x, y);
     if(this.maze.extra) {
       this.maze.extra.forEach(function(obj) {
-        if(bitmap.px == x && bitmap.py == y) {
+        if(obj.x == x && obj.y == y) {
           var temp = $.extend({}, obj);
           delete temp.x;
           delete temp.y;
           $.extend(bitmap, temp);
         }
-      });      
+      });
     }
   }
   return bitmap;

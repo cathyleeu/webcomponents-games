@@ -285,6 +285,29 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
   });
 }
 
+function runTutorial(maze) {
+  var tutorial = maze.tutorial,
+      idx = 0;
+  if(tutorial) {
+    showModal({
+      video: tutorial[idx].video,
+      msg: tutorial[idx].msg,
+      tutorial: true
+    });
+  }
+  $("#modal .tutorial").click(function(e) {
+    idx++;
+    if(idx < tutorial.length) {
+      showModal({
+        msg: tutorial[idx].msg,
+        tutorial: true
+      });
+    } else {
+      $('#modal').modal('hide');
+    }
+  });
+}
+
 function gameMode(tileFactory) {
   var character = mazeInfo.canvas.character,
       foods = mazeInfo.canvas.foods,
@@ -326,7 +349,7 @@ function gameMode(tileFactory) {
     if(createjs.Tween.hasActiveTweens()) {
       return;
     }
-    var direct = {37: "l", 38: "u", 39: "r", 40: "d"}[e.keyCode];
+    var direct = {37:"l", 38:"u", 39:"r", 40:"d", 32:"jump_forward"}[e.keyCode];
     if(!direct) {
       return;
     }
@@ -343,29 +366,6 @@ function gameMode(tileFactory) {
         location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
       }
     });
-  });
-}
-
-function runTutorial(maze) {
-  var tutorial = maze.tutorial,
-      idx = 0;
-  if(tutorial) {
-    showModal({
-      video: tutorial[idx].video,
-      msg: tutorial[idx].msg,
-      tutorial: true
-    });
-  }
-  $("#modal .tutorial").click(function(e) {
-    idx++;
-    if(idx < tutorial.length) {
-      showModal({
-        msg: tutorial[idx].msg,
-        tutorial: true
-      });
-    } else {
-      $('#modal').modal('hide');
-    }
   });
 }
 
@@ -410,6 +410,9 @@ function popQueue(loader, mazeInfo) {
       obj.visible = false;
       createjs.Sound.play("success");
       mazeInfo.canvas.stage.update();
+    }
+    if(obj.link) {
+      location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
     }
     setTimeout(function() {
       kidscoding.q_idx++;

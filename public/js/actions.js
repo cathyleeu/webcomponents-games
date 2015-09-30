@@ -17,7 +17,13 @@ Actions.prototype._rotateCharacter = function(direct, callback) {
     return;
   }
   character.direct = direct;
-  if(character.rotate_mode == "image") {
+  if(character.sprite) {
+    character.gotoAndStop("stand_" + direct);
+    _this.canvas.stage.update();
+    setTimeout(function() {
+      callback();
+    }, 100);
+  } else if(character.rotate_mode == "image") {
     character.image = this.loader.getResult('character_' + character.direct);
     setTimeout(function() {
       _this.canvas.stage.update();
@@ -45,15 +51,19 @@ Actions.prototype._rotateCharacter = function(direct, callback) {
 Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
   var _this = this,
       character = this.canvas.character,
-      direct = character.direct;
+      direct = character.direct,
+      jump = Math.abs(character.px - x_next) >= 2 || Math.abs(character.py - y_next) >= 2;
   if(character.px == x_next && character.py != y_next) {
     direct = character.py > y_next ? "u" : "d";
   } else if (character.px != x_next && character.py == y_next) {
     direct = character.px > x_next ? "l" : "r";
   }
   this._rotateCharacter(direct, function() {
+    if(character.sprite) {
+      character.gotoAndPlay( (jump ? "jump_" : "walk_") + direct);
+    }
     var tween = createjs.Tween.get(character);
-    tween.wait(100)
+    tween.wait(character.sprite ? 0 : 100)
          .to({
            x: _this.tile_size*x_next + _this.tile_size/2,
            y: _this.tile_size*y_next + _this.tile_size/2
@@ -68,30 +78,27 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
            _this.canvas.stage.update();
          });
     if(_this.view_size != _this.width) {
-      var stage_tween = createjs.Tween.get(_this.canvas.stage);
-      var x = _this.canvas.stage.x - _this.tile_size * {u:0, r:1, d:0, l:-1}[direct],
-          y = _this.canvas.stage.y - _this.tile_size * {u:-1, r:0, d:1, l:0}[direct];
-      if(x > 0) {
-        x = 0;
-      } else if(x < -_this.tile_size * (_this.width - _this.view_size)) {
-        x = -_this.tile_size * (_this.width - _this.view_size);
+      var stage_tween = createjs.Tween.get(_this.canvas.stage),
+          half = parseInt(_this.view_size / 2 - 0.5, 10),
+          center_x = x_next,
+          center_y = y_next,
+          stage_x, stage_y;
+      if(x_next < half) {
+        center_x = half;
       }
-      if((_this.tile_size * x_next + x) / _this.tile_size != _this.view_size / 2 - 1) {
-        x = _this.canvas.stage.x;
+      if(x_next > _this.width - half - 2) {
+        center_x = _this.width - half - 2;
       }
-      if(y > 0) {
-        y = 0;
-      } else if(y < -_this.tile_size * (_this.height - _this.view_size)) {
-        y = -_this.tile_size * (_this.height - _this.view_size);
+      stage_x = -(center_x - half) * _this.tile_size;
+      if(y_next < half) {
+        center_y = half;
       }
-      if((_this.tile_size * y_next + y) / _this.tile_size != _this.view_size / 2 - 1) {
-        y = _this.canvas.stage.y;
+      if(y_next > _this.height - half - 2) {
+        center_y = _this.height - half - 2;
       }
-      stage_tween.wait(100)
-           .to({x:x, y:y}, 500)
-           .addEventListener("change", function(e) {
-             _this.canvas.stage.update();
-           });
+      stage_y = -(center_y - half) * _this.tile_size;
+      stage_tween.wait(character.sprite ? 0 : 100)
+           .to({x:stage_x, y:stage_y}, 500);
     }
   });
 };
