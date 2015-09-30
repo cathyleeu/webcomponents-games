@@ -292,6 +292,7 @@ function runTutorial(maze) {
     showModal({
       video: tutorial[idx].video,
       msg: tutorial[idx].msg,
+      img: tutorial[idx].img,
       tutorial: true
     });
   }
@@ -394,25 +395,33 @@ function popQueue(loader, mazeInfo) {
   }
   var type = queue[q_idx].type;
   var args = queue[q_idx].args.concat([function(obj) {
-    if( obj.obstacle ) {
-      var message = {
-        rock: "바위에 막혔어요",
-        obstacle: "벽에 부딪쳤어요",
-        spider: "거미줄에 걸렸어요",
-        trap: "덫에 걸렸어요"
-      }[obj.role];
+    if( typeof obj == "string") {
       queue.splice(0, queue.length);
       createjs.Sound.play("fail");
-      showModal(message);
+      showModal(obj);
       return;
     }
-    if( obj.role == "food" ) {
-      obj.visible = false;
-      createjs.Sound.play("success");
-      mazeInfo.canvas.stage.update();
-    }
-    if(obj.link) {
-      location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
+    if( typeof obj == "object" && obj != null) {
+      if( obj.obstacle ) {
+        var message = {
+          rock: "바위에 막혔어요",
+          obstacle: "벽에 부딪쳤어요",
+          spider: "거미줄에 걸렸어요",
+          trap: "덫에 걸렸어요"
+        }[obj.role];
+        queue.splice(0, queue.length);
+        createjs.Sound.play("fail");
+        showModal(message);
+        return;
+      }
+      if( obj.role == "food" ) {
+        obj.visible = false;
+        createjs.Sound.play("success");
+        mazeInfo.canvas.stage.update();
+      }
+      if(obj.link) {
+        location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
+      }
     }
     setTimeout(function() {
       kidscoding.q_idx++;
@@ -463,6 +472,8 @@ function showModal(options) {
     $("#modal .modal-msg-box").show();
     $("#modal video").hide();
   }
+  var img_src = options.img || "/img/ladybug.png";
+  $(".modal-msg-box img").attr("src", img_src);
   $("#modal .modal-msg").text(options.msg);
   $('#modal').modal({
     backdrop: "static"
