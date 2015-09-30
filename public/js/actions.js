@@ -182,40 +182,6 @@ Actions.prototype._getCanvasObject = function(x, y) {
   };
 };
 
-Actions.prototype._gameMove = function(direct, callback) {
-  if(createjs.Tween.hasActiveTweens()) {
-    return;
-  }
-  var character = this.canvas.character,
-      x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[direct],
-      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[direct];
-
-  var obj = this._getCanvasObject(x_next, y_next);
-  if( obj.role == "food" ) {
-    this._moveCharacter(x_next, y_next, function() {
-      callback(obj);
-    });
-  } else if( obj.obstacle ) {
-    if(obj.role == "rock" || obj.role == "obstacle") {
-      this._bounceCharacter(x_next, y_next, function() {
-        callback(null);
-      });
-    } else if(obj.role == "spider") {
-      this._trapCharacter(x_next, y_next, function() {
-        callback(null);
-      });
-    } else if(obj.role == "trap") {
-      this._trapCharacter(x_next, y_next, function() {
-        callback(null);
-      });
-    }
-  } else {
-    this._moveCharacter(x_next, y_next, function() {
-      callback(null);
-    });
-  }
-};
-
 Actions.prototype.move = function(type, callback) {
   var _this = this,
       character = this.canvas.character,
@@ -234,30 +200,19 @@ Actions.prototype.move = function(type, callback) {
   y_next += {'u':-1, 'r':0, 'd':1, 'l':0}[direct] * diff;
 
   var obj = this._getCanvasObject(x_next, y_next);
-  if( obj.role == "food" ) {
-    this._moveCharacter(x_next, y_next, function() {
-      obj.visible = false;
-      createjs.Sound.play("success");
-      _this.canvas.stage.update();
-      callback();
-    });
-  } else if( obj.obstacle ) {
-    if(obj.role == "rock" || obj.role == "obstacle") {
+  if( obj.obstacle ) {
+    if(obj.role == "spider" || obj.role == "trap") {
+      this._trapCharacter(x_next, y_next, function() {
+        callback(obj);
+      });
+    } else {
       this._bounceCharacter(x_next, y_next, function() {
-        callback(obj.role == "rock" ? "바위에 막혔어요" : "벽에 부딪쳤어요");
-      });
-    } else if(obj.role == "spider") {
-      this._trapCharacter(x_next, y_next, function() {
-        callback("거미줄에 걸렸어요");
-      });
-    } else if(obj.role == "trap") {
-      this._trapCharacter(x_next, y_next, function() {
-        callback("덫에 걸렸어요");
+        callback(obj);
       });
     }
   } else {
     this._moveCharacter(x_next, y_next, function() {
-      callback();
+      callback(obj);
     });
   }
 };

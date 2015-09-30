@@ -1,5 +1,6 @@
-TileFactory = function(loader, tile_size) {
+TileFactory = function(maze, loader, tile_size) {
   var _this = this;
+  this.maze = maze;
   this.tile_size = tile_size;
   this.loader = loader;
   this.obstacle_ids = loader.getItems()
@@ -107,6 +108,16 @@ TileFactory.prototype.create = function(tile, x, y) {
   }
   if(bitmap) {
     this.setBitmapCoord(bitmap, x, y);
+    if(this.maze.extra) {
+      this.maze.extra.forEach(function(obj) {
+        if(bitmap.px == x && bitmap.py == y) {
+          var temp = $.extend({}, obj);
+          delete temp.x;
+          delete temp.y;
+          $.extend(bitmap, temp);
+        }
+      });      
+    }
   }
   return bitmap;
 };
