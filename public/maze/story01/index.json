@@ -1,0 +1,280 @@
+{
+  "type": "world",
+  "view_size": 10,
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".xxxxxxxxxxxxxxxx.",
+    "y%.......%.%.zzzzy",
+    "yxxx.z.%zzzz%....y",
+    "yzzz%zz%.zzzz.%..y",
+    "yzzz.zzz%zzzzz.zzy",
+    "yzzz%zzz.zzzz.%zy",
+    "yzzz.zzz%zzz%.zzzy",
+    "yzzz%.zz%zz%.zzzzy",
+    "yzzzz#zz#zz#zzzzzy",
+    "yzzz..........zzzy",
+    "yppp.zzppppzz%pppy",
+    "yxx.xzzx%xxzz.%..y",
+    "y...%zz.%..zzx%xxy",
+    "y....zz....zz....y",
+    "yxxxx.zzxxzzzxxzzy",
+    "yz.zzzz.%zzz.%zzzy",
+    "y..zzzz%.zz.%....y",
+    "yz%..zz.zz.%.zz..y",
+    "y.z%xzx%zx%zzzzzzy",
+    "yzzxxzxxzxxzzzzzzy",
+    "yzz..z..z..zzzzzzy",
+    "yzz..z..z..zzzz..y",
+    "yzz#xzx#zx#zzzz..y",
+    "y.............zz.y",
+    "y.............zz.y",
+    "yzzzzzx.xzzzzzz..y",
+    "y..zzzq#.zzzzzz..y",
+    "y..zzz...zzzz....y",
+    "yzzzzz...zzzzzzzzy",
+    "y........qo.ppp.hy",
+    "y.....uf..o.ppp..y",
+    ".xxxxxxxxxxxxxxxx."
+  ],
+  "land": [
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    "................."
+  ],
+  "extra": [{
+    "x": 3,
+    "y": 18,
+    "link": "/maze/story01/1"
+  }, {
+    "x": 2,
+    "y": 17,
+    "link": "/maze/story01/2"
+  }, {
+    "x": 4,
+    "y": 12,
+    "link": "/maze/story01/3"
+  }, {
+    "x": 4,
+    "y": 7,
+    "link": "/maze/story01/4"
+  }, {
+    "x": 4,
+    "y": 5,
+    "link": "/maze/story01/5"
+  }, {
+    "x": 4,
+    "y": 3,
+    "link": "/maze/story01/6"
+  }, {
+    "x": 7,
+    "y": 18,
+    "link": "/maze/story01/11"
+  }, {
+    "x": 7,
+    "y": 16,
+    "link": "/maze/story01/12"
+  }, {
+    "x": 8,
+    "y": 15,
+    "link": "/maze/story01/13"
+  }, {
+    "x": 8,
+    "y": 12,
+    "link": "/maze/story01/14"
+  }, {
+    "x": 8,
+    "y": 11,
+    "link": "/maze/story01/15"
+  }, {
+    "x": 8,
+    "y": 7,
+    "link": "/maze/story01/16"
+  }, {
+    "x": 8,
+    "y": 6,
+    "link": "/maze/story01/17"
+  }, {
+    "x": 8,
+    "y": 4,
+    "link": "/maze/story01/18"
+  }, {
+    "x": 7,
+    "y": 3,
+    "link": "/maze/story01/19"
+  }, {
+    "x": 7,
+    "y": 2,
+    "link": "/maze/story01/20"
+  }, {
+    "x": 10,
+    "y": 18,
+    "link": "/maze/story01/31"
+  }, {
+    "x": 11,
+    "y": 17,
+    "link": "/maze/story01/32"
+  }, {
+    "x": 12,
+    "y": 16,
+    "link": "/maze/story01/33"
+  }, {
+    "x": 13,
+    "y": 15,
+    "link": "/maze/story01/34"
+  }, {
+    "x": 14,
+    "y": 12,
+    "link": "/maze/story01/35"
+  }, {
+    "x": 14,
+    "y": 11,
+    "link": "/maze/story01/36"
+  }, {
+    "x": 13,
+    "y": 10,
+    "link": "/maze/story01/37"
+  }, {
+    "x": 11,
+    "y": 7,
+    "link": "/maze/story01/38"
+  }, {
+    "x": 12,
+    "y": 6,
+    "link": "/maze/story01/39"
+  }, {
+    "x": 14,
+    "y": 5,
+    "link": "/maze/story01/40"
+  }, {
+    "x": 14,
+    "y": 3,
+    "link": "/maze/story01/41"
+  }, {
+    "x": 12,
+    "y": 2,
+    "link": "/maze/story01/42"
+  }, {
+    "x": 11,
+    "y": 1,
+    "link": "/maze/story01/43"
+  }, {
+    "x": 9,
+    "y": 1,
+    "link": "/maze/story01/44"
+  },  {
+    "x": 1,
+    "y": 1,
+    "src": "/img/village/house1.png",
+    "obstacle": false,
+    "link": "/maze/story01/index2"
+  }, {
+    "x": 7,
+    "y": 26,
+    "src": "/img/guide/question.png",
+    "obstacle": false,
+    "video": "/video/S_Position/1.mp4"
+  }, {
+    "x": 3,
+    "y": 22,
+    "src": "/img/guide/hard.png",
+    "obstacle": false,
+    "msg": "이 길은 아주 어려우니 신중히 생각해!"
+  }, {
+    "x": 7,
+    "y": 22,
+    "src": "/img/guide/normal.png",
+    "obstacle": false,
+    "msg": "이 길은 평범한 수준이야 잘해보라고~"
+  }, {
+    "x": 10,
+    "y": 22,
+    "src": "/img/guide/easy.png",
+    "obstacle": false,
+    "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!"
+  }, {
+    "x": 5,
+    "y": 8,
+    "src": "/img/guide/hard.png",
+    "obstacle": false,
+    "msg": "이 길은 아주 어려우니 신중히 생각해!"
+  }, {
+    "x": 8,
+    "y": 8,
+    "src": "/img/guide/normal.png",
+    "obstacle": false,
+    "msg": "이 길은 평범한 수준이야 잘해보라고~"
+  }, {
+    "x": 11,
+    "y": 8,
+    "src": "/img/guide/easy.png",
+    "obstacle": false,
+    "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!"
+  }],
+  "tutorial": [{
+    "msg": "공주를 잡아라!",
+    "img": "/img/ant/ant2.png",
+    "x": 17,
+    "y": 30
+  },{
+    "msg": "공주님! 여기는 저희가 막겠습니다. 자네 공주님을 데리고 도망치게!",
+    "img": "/img/ant2/q.png",
+    "x": 8,
+    "y": 30
+  },{
+    "msg": "꼭 살아서 다시 만나요... 미안해요 여러분...",
+    "img": "/img/ant/ant3.png",
+    "x": 3,
+    "y": 30
+  },{
+    "msg": "공주님 시간이 없습니다! 어서 가셔야 합니다.",
+    "img": "/img/ant/ant1.png",
+    "x": 5,
+    "y": 30
+  },{
+    "msg": "불개미들을 피해 숲속으로 도망가자!",
+    "img": "/img/ant/ant1.png",
+    "x": 7,
+    "y": 30
+  },{
+    "msg": "숲 끝에 비밀장소가 있으니 저곳으로 가 숨어야 해!",
+    "img": "/img/village/house1.png",
+    "x": 1,
+    "y": 1
+  }]
+}

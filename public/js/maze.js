@@ -302,6 +302,9 @@ function runTutorial(maze) {
   }
   $("#modal .tutorial").click(function(e) {
     if(idx < tutorial.length) {
+      if(tutorial[idx].hasOwnProperty("x") && tutorial[idx].hasOwnProperty("y")) {
+        kidscoding.Actions._setFocus(tutorial[idx].x, tutorial[idx].y, 0, 500);
+      }
       showModal({
         video: tutorial[idx].video,
         msg: tutorial[idx].msg,
@@ -360,7 +363,7 @@ function gameMode(type, tileFactory) {
     if(createjs.Tween.hasActiveTweens()) {
       return;
     }
-    var direct = {37:"l", 38:"u", 39:"r", 40:"d"}[e.keyCode];
+    var direct = {37:"l", 38:"u", 39:"r", 40:"d", 32:"jump_forward"}[e.keyCode];
     if(!direct) {
       return;
     }

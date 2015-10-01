@@ -1,0 +1,27 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward"
+  ],
+  "map": [
+    ".zzzzzzzz..",
+    "y.....zz..y",
+    "y....zz...y",
+    "y...zz..z.y",
+    "y..zz..zz.y",
+    "y.zz..zz..y",
+    "yzz.%zz..zy",
+    "yz..zz..z.y",
+    "y..zz..z..y",
+    "yuzz..z...y",
+    ".zzzzzzzzz."
+  ],
+  "tutorial": [{
+    "msg": "계단모양이야! 반복을 써서 가보자!"
+  }]
+}

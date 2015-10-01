@@ -1,0 +1,27 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward"
+  ],
+  "map": [
+    ".zzzzzzzz..",
+    "y.........y",
+    "y.zzzzzzz.y",
+    "y.zzzzzzz.y",
+    "y.zz...zz.y",
+    "y.zz.z.zz.y",
+    "y.zz.z.zz.y",
+    "y.zz.zzzz.y",
+    "y.zz.zzzz.y",
+    "y.zz%....ly",
+    ".zzzzzzzzz."
+  ],
+  "tutorial": [{
+    "msg": "깊은 숲속에 들어왔어. 반복을 써서 손쉽게 목적지까지 가보자!"
+  }]
+}
