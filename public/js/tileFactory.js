@@ -96,16 +96,15 @@ TileFactory.prototype.create = function(tile, x, y) {
             new createjs.SpriteSheet(data),
             "stand_" + (tile == "@" ? "d" : tile)
           );
+          bitmap.direct = (tile == "@" ? "d" : tile);
           bitmap.framerate = 40;
           bitmap.sprite = true;
           bitmap.role = "character";
         } else if(tile == "@") { // undirected character
           bitmap.image = this.loader.getResult("character");
-          bitmap.direct = bitmap.initDirect = "u";
           bitmap.rotate_mode = "rotation";
         } else { // directed character
           bitmap.image = this.loader.getResult("character_" + tile);
-          bitmap.direct = bitmap.initDirect = tile;
           bitmap.rotate_mode = "image";
         }
         break;
