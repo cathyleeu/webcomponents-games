@@ -1,6 +1,6 @@
 {
   "type": "world",
-  "view_size": 8,
+  "view_size": 20,
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [
@@ -37,15 +37,56 @@
     "x": 21,
     "y": 3,
     "link": "/maze/story00/1"
-  }],
+  }, {
+    "x": 17,
+    "y": 4,
+    "link": "/maze/story00/2"
+  }, {
+    "x": 17,
+    "y": 6,
+    "link": "/maze/story00/3"
+  }, {
+    "x": 21,
+    "y": 6,
+    "link": "/maze/story00/4"
+  }, {
+    "x": 21,
+    "y": 8,
+    "link": "/maze/story00/5"
+  }, {
+    "x": 14,
+    "y": 8,
+    "link": "/maze/story00/6"
+  }, {
+    "x": 11,
+    "y": 7,
+    "link": "/maze/story00/7"
+  }, {
+    "x": 13,
+    "y": 4,
+    "link": "/maze/story00/8"
+  }, {
+    "x": 12,
+    "y": 2,
+    "link": "/maze/story00/9"
+  }, {
+    "x": 10,
+    "y": 2,
+    "link": "/maze/story00/10"
+  }, {
+    "x": 7,
+    "y": 4,
+    "link": "/maze/story00/11"
+  }
+],
   "tutorial": [{
     "msg": "하하하 여기까지다! 더 도망쳐 보시지 공주!",
     "img": "/img/ant/ant2.png"
   }, {
-    "msg": "이 나쁜 불개미 왕자! 공주님이 위험해! ",
-    "img": "/img/ant/ant1.png"
+    "msg": "이 나쁜 불개미 왕자! 큰일이야 이러다가 당하겠어!!",
+    "img": "/img/ant/ant3.png"
   }, {
-    "msg": "어서 공주님을 구하러 가자!",
+    "msg": "공주님이 위험해! 어서 공주님을 구하러 가자!",
     "img": "/img/ant/ant1.png"
   }]
 }
