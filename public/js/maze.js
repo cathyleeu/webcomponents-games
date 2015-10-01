@@ -295,7 +295,7 @@ function runTutorial(maze) {
       queries[sp[0]] = sp[1];
     }
   });
-  if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y")) {
+  if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
     return;
