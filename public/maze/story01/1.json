@@ -1,0 +1,27 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward"
+  ],
+  "map": [
+    ".xxxxxxx.x.",
+    "yzzzzz.z%.y",
+    "yzzzzz.zzzy",
+    "yzzzzzzzzzy",
+    "y....x.x..y",
+    "yxxxxxxxxxy",
+    "y.xx..xx.xy",
+    "yx..xx....y",
+    "yxxxxxxxxxy",
+    "y.u.......y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "점프를 통해 울타리를 뛰어 넘어 숲속으로 들어가자!"
+  }]
+}

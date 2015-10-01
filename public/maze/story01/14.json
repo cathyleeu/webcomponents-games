@@ -1,0 +1,27 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward"
+  ],
+  "map": [
+    ".zzzzzzzz..",
+    "y..z.z.z.%y",
+    "yzz.z...zzy",
+    "yz.zzz.zzzy",
+    "y.z.z...zzy",
+    "yz.z.z.zzzy",
+    "ypppz...zzy",
+    "yppp.z.z..y",
+    "yx.xxxxxxxy",
+    "y.u.......y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "불개미 병사들이 여기까지 쫓아왔어! 어서 도망가자!"
+  }]
+}

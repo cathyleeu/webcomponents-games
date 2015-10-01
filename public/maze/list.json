@@ -1,6 +1,9 @@
 [{
+  "href": "maze/story01/index",
+  "title": "공주와 도망가기!"
+}, {
   "href": "maze/story00/index",
-  "title": "마을"
+  "title": "공주 구하기"
 }, {
   "href": "click",
   "title": "클릭연습"
