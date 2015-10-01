@@ -1,0 +1,31 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "yppp..pp%.y",
+    "y.o....o..y",
+    "yxxxxxxxxxy",
+    "y.....ppppy",
+    "yxxxxx.oo.y",
+    "y.p..y....y",
+    "y.o..yxxxxy",
+    "yxxxxx.pppy",
+    "y.u.....ooy",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "틀렸어... 이대로는 공주님을 구할 수 없어...",
+    "img": "/img/ant2/o.png"
+  }, {
+    "msg": "아니! 우리 병사들이 위험해 도와주자!",
+    "img": "/img/ant/ant1.png"
+  }]
+}
