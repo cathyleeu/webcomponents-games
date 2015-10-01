@@ -208,43 +208,56 @@
     "y": 26,
     "src": "/img/guide/question.png",
     "obstacle": false,
-    "video": "/video/S_Position/1.mp4"
+    "msg": "숲속으로 도망가기 위해서는 위 3가지 길중 하나를 선택해야 합니다.",
+    "img": "/img/ant2/q.png",
+    "msg": "빨간색 표지판의 길은 문제수는 적으나 매우 어렵습니다.",
+    "img": "/img/guide/hard.png",
+    "msg": "노란색 표지판의 길은 평소에 하던 코딩과 비슷합니다.",
+    "img": "/img/guide/normal.png",
+    "msg": "초록색 표지판의 길은 문제는 쉬우나 문제수가 아주 많습니다.",
+    "img": "/img/guide/easy.png"
   }, {
     "x": 3,
     "y": 22,
     "src": "/img/guide/hard.png",
     "obstacle": false,
-    "msg": "이 길은 아주 어려우니 신중히 생각해!"
+    "msg": "이 길은 아주 어려우니 신중히 생각해!",
+    "img": "/img/guide/hard.png"
   }, {
     "x": 7,
     "y": 22,
     "src": "/img/guide/normal.png",
     "obstacle": false,
-    "msg": "이 길은 평범한 수준이야 잘해보라고~"
+    "msg": "이 길은 평범한 수준이야 잘해보라고~",
+    "img": "/img/guide/normal.png"
   }, {
     "x": 10,
     "y": 22,
     "src": "/img/guide/easy.png",
     "obstacle": false,
-    "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!"
+    "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!",
+    "img": "/img/guide/easy.png"
   }, {
     "x": 5,
     "y": 8,
     "src": "/img/guide/hard.png",
     "obstacle": false,
-    "msg": "이 길은 아주 어려우니 신중히 생각해!"
+    "msg": "이 길은 아주 어려우니 신중히 생각해!",
+    "img": "/img/guide/hard.png"
   }, {
     "x": 8,
     "y": 8,
     "src": "/img/guide/normal.png",
     "obstacle": false,
-    "msg": "이 길은 평범한 수준이야 잘해보라고~"
+    "msg": "이 길은 평범한 수준이야 잘해보라고~",
+    "img": "/img/guide/normal.png"
   }, {
     "x": 11,
     "y": 8,
     "src": "/img/guide/easy.png",
     "obstacle": false,
-    "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!"
+    "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!",
+    "img": "/img/guide/easy.png"
   }],
   "tutorial": [{
     "msg": "공주를 잡아라!",
