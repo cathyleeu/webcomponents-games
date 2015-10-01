@@ -1,4 +1,6 @@
 {
+  "tile_size": 32,
+  "render": "pixel",
   "toolbox": [
     "move_forward",
     "rotate_left",
