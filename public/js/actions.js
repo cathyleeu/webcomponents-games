@@ -77,31 +77,39 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
          .addEventListener("change", function(e) {
            _this.canvas.stage.update();
          });
-    if(_this.view_size != null && _this.view_size != _this.width) {
-      var stage_tween = createjs.Tween.get(_this.canvas.stage),
-          half = parseInt(_this.view_size / 2 - 0.5, 10),
-          center_x = x_next,
-          center_y = y_next,
-          stage_x, stage_y;
-      if(x_next < half) {
-        center_x = half;
-      }
-      if(x_next > _this.width - half - 2) {
-        center_x = _this.width - half - 2;
-      }
-      stage_x = -(center_x - half) * _this.tile_size;
-      if(y_next < half) {
-        center_y = half;
-      }
-      if(y_next > _this.height - half - 2) {
-        center_y = _this.height - half - 2;
-      }
-      stage_y = -(center_y - half) * _this.tile_size;
-      stage_tween.wait(character.sprite ? 0 : 100)
-           .to({x:stage_x, y:stage_y}, 500);
-    }
+    _this._setFocus(x_next, y_next, character.sprite ? 0 : 100, 500);
   });
 };
+
+Actions.prototype._setFocus = function(center_x, center_y, wait, time, callback) {
+  if(this.view_size != null && this.view_size != this.width) {
+    var _this = this;
+    wait = wait || 0;
+    time = time || 0;
+    var stage_tween = createjs.Tween.get(this.canvas.stage),
+        half = parseInt(this.view_size / 2 - 0.5, 10),
+        stage_x, stage_y;
+    if(center_x < half) {
+      center_x = half;
+    }
+    if(center_x > this.width - half - 2) {
+      center_x = this.width - half - 2;
+    }
+    stage_x = -(center_x - half) * this.tile_size;
+    if(center_y < half) {
+      center_y = half;
+    }
+    if(center_y > this.height - half - 2) {
+      center_y = this.height - half - 2;
+    }
+    stage_y = -(center_y - half) * this.tile_size;
+    stage_tween.wait(wait)
+          .to({x:stage_x, y:stage_y}, time)
+          .addEventListener("change", function(e) {
+            _this.canvas.stage.update();
+          });
+  }
+}
 
 Actions.prototype._bounceCharacter = function(x_next, y_next, callback) {
   var _this = this,

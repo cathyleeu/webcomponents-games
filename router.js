@@ -21,6 +21,13 @@ router.get('/', function *(next) {
   });
 });
 
+router.get('/maze/:type', function *(next) {
+  yield this.render('maze', {
+    title: "키즈코딩",
+    type: this.params.type
+  });
+});
+
 router.get('/maze/:type/:step', function *(next) {
   yield this.render('maze', {
     title: "키즈코딩",

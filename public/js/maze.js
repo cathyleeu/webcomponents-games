@@ -3,10 +3,10 @@
 var d1 = $.Deferred(),
     d2 = $.Deferred(),
     path = location.pathname.split("/"),
-    type = path[2],
-    step = path[3],
-    map_url = location.pathname + ".json",
-    manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/");
+    path = path.length == 3 ? path.concat(["index"]) : path,
+    map_url = path.join("/") + ".json",
+    manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/"),
+    step = path[3];
 
 // load map json file
 $.getJSON(map_url, function(json) {
@@ -67,8 +67,8 @@ function init(step, maze, loader) {
   kidscoding.initBlockly(maze.toolbox);
   addEvents(step, loader, mazeInfo, maze, tileFactory);
   runTutorial(maze);
-  if(maze.type == "game") {
-    gameMode(tileFactory);
+  if(maze.type == "game" || maze.type == "world") {
+    gameMode(maze.type, tileFactory);
   }
 }
 
@@ -107,11 +107,11 @@ function initMaze(maze, loader, tileFactory) {
     $("#display").addClass("pixel");
   }
 
-  if(loader.getItem("background")) {
+  if(!mazeInfo.land && loader.getItem("background")) {
     // 1-image background
     var background = new createjs.Bitmap(loader.getResult("background"));
     stage.addChild(background);
-  } else if(loader.getItem("bg1")) {
+  } else if(!mazeInfo.land && loader.getItem("bg1")) {
     // mosaic background
     for(var i = 0; i < map_height; i++) {
       for(var j = 0; j < map_width; j++) {
@@ -121,7 +121,7 @@ function initMaze(maze, loader, tileFactory) {
         stage.addChild(bg_tile);
       }
     }
-  } else if(loader.getItem("land0")) {
+  } else if(mazeInfo.land && loader.getItem("land0")) {
     // land background
     // +---+---+---+
     // | 0 | 1 | 2 |
@@ -230,14 +230,14 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
   handle_resize();
   $("#modal .go-next").click(function(e) {
     var queries = {};
-    location.search.slice(1).split(",").map(function(query) {
+    location.search.slice(1).split("&").map(function(query) {
       var sp = query.split("=");
       if(sp[0]) {
         queries[sp[0]] = sp[1];
       }
     });
     if(queries.back) {
-      location.href = location.protocol + "//" + location.host + queries.back;
+      location.href = location.protocol + "//" + location.host + queries.back + "?x=" + queries.x + "&y=" + queries.y;
       return;
     }
     var path = "/maze/";
@@ -288,28 +288,36 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
 function runTutorial(maze) {
   var tutorial = maze.tutorial,
       idx = 0;
-  if(tutorial) {
-    showModal({
-      video: tutorial[idx].video,
-      msg: tutorial[idx].msg,
-      img: tutorial[idx].img,
-      tutorial: true
-    });
+  var queries = {};
+  location.search.slice(1).split("&").map(function(query) {
+    var sp = query.split("=");
+    if(sp[0]) {
+      queries[sp[0]] = sp[1];
+    }
+  });
+  if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y")) {
+    setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
+    kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
+    return;
   }
   $("#modal .tutorial").click(function(e) {
-    idx++;
     if(idx < tutorial.length) {
       showModal({
+        video: tutorial[idx].video,
         msg: tutorial[idx].msg,
+        img: tutorial[idx].img,
         tutorial: true
       });
     } else {
       $('#modal').modal('hide');
+      kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 1000);
     }
+    idx++;
   });
+  $("#modal .tutorial").click();
 }
 
-function gameMode(tileFactory) {
+function gameMode(type, tileFactory) {
   var character = mazeInfo.canvas.character,
       foods = mazeInfo.canvas.foods,
       stage = mazeInfo.canvas.stage;
@@ -343,20 +351,22 @@ function gameMode(tileFactory) {
     stage.addChild(character);
     stage.update();
   }
-  addFood();
-  $("#scoreBox").show();
+  if(type == "game") {
+    addFood();
+    $("#scoreBox").show();
+  }
   $("#runCode").hide();
   $(document).keydown(function(e) {
     if(createjs.Tween.hasActiveTweens()) {
       return;
     }
-    var direct = {37:"l", 38:"u", 39:"r", 40:"d", 32:"jump_forward"}[e.keyCode];
+    var direct = {37:"l", 38:"u", 39:"r", 40:"d"}[e.keyCode];
     if(!direct) {
       return;
     }
     e.preventDefault();
-    kidscoding.Actions.move.call(kidscoding.Actions, direct, function(obj) {
-      if(obj.role == "food") {
+    kidscoding.Actions.move(direct, function(obj) {
+      if(type == "game" && obj.role == "food") {
         obj.visible = false;
         createjs.Sound.play("success");
         mazeInfo.canvas.stage.update();
@@ -364,7 +374,7 @@ function gameMode(tileFactory) {
         addFood();
       }
       if(obj.link) {
-        location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
+        location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname + "&x=" + character.px + "&y=" + character.py;
       }
     });
   });
