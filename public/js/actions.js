@@ -163,7 +163,8 @@ Actions.prototype._trapCharacter = function(x_next, y_next, callback) {
 
 Actions.prototype._getCanvasObject = function(x, y) {
   var foods = this.canvas.foods,
-      obstacles = this.canvas.obstacles;
+      obstacles = this.canvas.obstacles,
+      others = this.canvas.others;
   if(0 <= x && x < this.width && 0 <= y && y < this.height) {
     if( this.canvas.item &&
         this.canvas.item.px == x &&
@@ -184,6 +185,13 @@ Actions.prototype._getCanvasObject = function(x, y) {
           obstacles[i].py == y &&
           obstacles[i].visible == true) {
         return obstacles[i];
+      }
+    }
+    for(var i = 0; i < others.length; i++) {
+      if( others[i].px == x &&
+          others[i].py == y &&
+          others[i].visible == true) {
+        return others[i];
       }
     }
     return {
