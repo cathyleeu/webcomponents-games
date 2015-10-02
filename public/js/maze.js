@@ -326,6 +326,7 @@ function runTutorial(tutorial) {
     }
     idx++;
   });
+  $('#modal').modal('hide');
   $("#modal .tutorial").click();
 }
 
