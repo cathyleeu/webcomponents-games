@@ -3,12 +3,7 @@
   "view_size": 8,
   "tile_size": 32,
   "render": "pixel",
-  "toolbox": [
-    "move_up",
-    "move_down",
-    "move_right",
-    "move_left"
-  ],
+  "toolbox": [],
   "map": [
     ".xxxxxxxxxxxxxxxxxxxxxx.",
     "y.q.f.qypp..pphp.yyr...y",

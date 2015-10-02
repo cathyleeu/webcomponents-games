@@ -3,12 +3,7 @@
   "view_size": 10,
   "tile_size": 32,
   "render": "pixel",
-  "toolbox": [
-    "move_up",
-    "move_down",
-    "move_right",
-    "move_left"
-  ],
+  "toolbox": [],
   "map": [
     ".xxxxxxxxxxxxxxxx.",
     "y%.......%.%.zzzzy",
