@@ -1,0 +1,280 @@
+{
+  "type": "world",
+  "view_size": 32,
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".xxxxxxxxxxxxxxxx.",
+    "y.......o........y",
+    "y................y",
+    "ybkm.yy....yyimg%y",
+    "y..g%yyimb%yyfme%y",
+    "y....yy....yyfmc%y",
+    "ybhm.yyjmc%yy....y",
+    "yxxh%yy....yygmb%y",
+    "y....yykmg%yyfmb%y",
+    "ybam.yy....yyemb%y",
+    "yxxe%yyfmb%yycmb%y",
+    "yxxx#yyxxx#yyxxx#y",
+    "y................y",
+    "y....yybpk%yybpk%y",
+    "yjpg%yy....yybpj%y",
+    "y....yybpi%yybpi%y",
+    "yfpk%yy....yybph%y",
+    "y....yybpg%yy....y",
+    "ykph%yy....yybpf%y",
+    "y....yybpe%yybpe%y",
+    "yepi%yy....yybpc%y",
+    "y....yybpc%yybpb%y",
+    "yxxx.yyxxx.yyxxx.y",
+    "yxxx.yyxxx.yyxxx.y",
+    "y...#yy.#..yy#...y",
+    "y................y",
+    "y.......#........y",
+    "yxxxxxxx.xxxxxxxxy",
+    "yxxxxxxx.xxxxxxxxy",
+    "y.......u........y",
+    ".xxxxxxxxxxxxxxxx."
+  ],
+  "land": [
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    ".................",
+    "................."
+  ],
+  "extra": [{
+    "x": 4,
+    "y": 20,
+    "link": "/maze/story02/1"
+  },{
+    "x": 4,
+    "y": 18,
+    "link": "/maze/story02/2"
+  },{
+    "x": 4,
+    "y": 16,
+    "link": "/maze/story02/3"
+  },{
+    "x": 4,
+    "y": 14,
+    "link": "/maze/story02/4"
+  },{
+    "x": 4,
+    "y": 10,
+    "link": "/maze/story02/5"
+  },{
+    "x": 4,
+    "y": 7,
+    "link": "/maze/story02/6"
+  },{
+    "x": 4,
+    "y": 4,
+    "link": "/maze/story02/7"
+  },{
+    "x": 10,
+    "y": 21,
+    "link": "/maze/story02/10"
+  },{
+    "x": 10,
+    "y": 19,
+    "link": "/maze/story02/11"
+  },{
+    "x": 10,
+    "y": 17,
+    "link": "/maze/story02/12"
+  },{
+    "x": 10,
+    "y": 15,
+    "link": "/maze/story02/13"
+  },{
+    "x": 10,
+    "y": 13,
+    "link": "/maze/story02/14"
+  },{
+    "x": 10,
+    "y": 10,
+    "link": "/maze/story02/15"
+  },{
+    "x": 10,
+    "y": 8,
+    "link": "/maze/story02/16"
+  },{
+    "x": 10,
+    "y": 6,
+    "link": "/maze/story02/17"
+  },{
+    "x": 10,
+    "y": 4,
+    "link": "/maze/story02/18"
+  },{
+    "x": 16,
+    "y": 21,
+    "link": "/maze/story02/30"
+  },{
+    "x": 16,
+    "y": 20,
+    "link": "/maze/story02/31"
+  },{
+    "x": 16,
+    "y": 19,
+    "link": "/maze/story02/32"
+  },{
+    "x": 16,
+    "y": 18,
+    "link": "/maze/story02/33"
+  },{
+    "x": 16,
+    "y": 16,
+    "link": "/maze/story02/34"
+  },{
+    "x": 16,
+    "y": 15,
+    "link": "/maze/story02/35"
+  },{
+    "x": 16,
+    "y": 14,
+    "link": "/maze/story02/36"
+  },{
+    "x": 16,
+    "y": 13,
+    "link": "/maze/story02/37"
+  },{
+    "x": 16,
+    "y": 10,
+    "link": "/maze/story02/38"
+  },{
+    "x": 16,
+    "y": 9,
+    "link": "/maze/story02/39"
+  },{
+    "x": 16,
+    "y": 8,
+    "link": "/maze/story02/40"
+  },{
+    "x": 16,
+    "y": 7,
+    "link": "/maze/story02/41"
+  },{
+    "x": 16,
+    "y": 5,
+    "link": "/maze/story02/42"
+  },{
+    "x": 16,
+    "y": 4,
+    "link": "/maze/story02/43"
+  },{
+    "x": 16,
+    "y": 3,
+    "link": "/maze/story02/44"
+  },   {
+    "x": 8,
+    "y": 26,
+    "src": "/img/guide/question.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "위 3가지 길중 하나를 선택해야 합니다.",
+      "img": "/img/ant/ant1.png"
+    }, {
+      "msg": "빨간색 표지판의 길은 문제수는 적으나 매우 어렵습니다.",
+      "img": "/img/guide/hard.png"
+    }, {
+      "msg": "노란색 표지판의 길은 평소에 하던 코딩과 비슷합니다.",
+      "img": "/img/guide/normal.png"
+    }, {
+      "msg": "초록색 표지판의 길은 문제는 쉬우나 문제수가 아주 많습니다.",
+      "img": "/img/guide/easy.png"
+    }]
+  },
+
+  {
+    "x": 4,
+    "y": 24,
+    "src": "/img/guide/hard.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이 길은 아주 어려우니 신중히 생각해!",
+      "img": "/img/guide/hard.png"
+    }]
+  }, {
+    "x": 8,
+    "y": 24,
+    "src": "/img/guide/normal.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이 길은 평범한 수준이야 잘해보라고~",
+      "img": "/img/guide/normal.png"
+    }]
+  }, {
+    "x": 13 ,
+    "y": 24,
+    "src": "/img/guide/easy.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!",
+      "img": "/img/guide/easy.png"
+    }]
+  },{
+    "x": 4,
+    "y": 11,
+    "src": "/img/guide/hard.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이 길은 아주 어려우니 신중히 생각해!",
+      "img": "/img/guide/hard.png"
+    }]
+  }, {
+    "x": 10,
+    "y": 11,
+    "src": "/img/guide/normal.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이 길은 평범한 수준이야 잘해보라고~",
+      "img": "/img/guide/normal.png"
+    }]
+  }, {
+    "x": 16,
+    "y": 11,
+    "src": "/img/guide/easy.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!",
+      "img": "/img/guide/easy.png"
+    }]
+
+  }],
+  "tutorial": [{
+    "msg": "오늘은 재미있는 덧셈 뺄셈 놀이를 할꺼야",
+    "img": "/img/ant/ant1.png",
+    "x": 8,
+    "y": 30
+  }]
+}

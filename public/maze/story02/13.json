@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.tk......y",
+    "y.xxx.....y",
+    "y.........y",
+    "y...xxx...y",
+    "y....u....y",
+    "y...bpi...y",
+    "y.........y",
+    "y.....xxx.y",
+    "y......j%.y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "1 + 7 = ?"
+  }]
+}
