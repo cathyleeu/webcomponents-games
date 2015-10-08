@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "ytbc...bf%y",
+    "y...x.x...y",
+    "yx.......xy",
+    "y..x.x.x..y",
+    "y....u....y",
+    "y..bkmg...y",
+    "yx...x...xy",
+    "y..x...x..y",
+    "ytba...bety",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "19 - 5 = ?"
+  }]
+}

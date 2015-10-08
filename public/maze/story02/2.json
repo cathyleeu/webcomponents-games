@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.tba.bct.y",
+    "y.........y",
+    "y.........y",
+    "y.........y",
+    "y....u....y",
+    "y...kph...y",
+    "y.........y",
+    "y.........y",
+    "y.tbe.bg%.y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "9 + 6 = ?"
+  }]
+}

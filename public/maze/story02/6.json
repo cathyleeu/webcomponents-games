@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "ytbc...bgty",
+    "y...x.x...y",
+    "yx.......xy",
+    "y..x.x.x..y",
+    "y....u....y",
+    "y..bhmh...y",
+    "yx...x...xy",
+    "y..x...x..y",
+    "y%ba...bety",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "16 - 6 = ?"
+  }]
+}
