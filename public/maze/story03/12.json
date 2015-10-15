@@ -9,18 +9,18 @@
   ],
   "map": [
     ".xxxxxxxxx.",
-    "y.tba.bct.y",
     "y.........y",
     "y.........y",
-    "y.........y",
-    "y....u....y",
-    "y...kph...y",
-    "y.........y",
-    "y.........y",
-    "y.%bg.bft.y",
+    "yk......bby",
+    "y.qqqqqqq.y",
+    "yjq.....qby",
+    "y.q.ca...gy",
+    "ygq..qqqqqy",
+    "y.q.cq....y",
+    "yuq.g%....y",
     ".xxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": "9 + 6 = ?"
+    "msg": "이번에는 숫자가 많아! 5부터 25까지!"
   }]
 }

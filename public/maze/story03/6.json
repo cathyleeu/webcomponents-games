@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y....qeh..y",
+    "y....q..qfy",
+    "y....q..qay",
+    "y.qqqq..q.y",
+    "yr..gh..fky",
+    "yqqqqq.q..y",
+    "y%qqqq.q..y",
+    "yh..ea...y",
+    "y.........y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "56에서 6까지 큰 수부터 작은 수 순서대로 움직여보자!"
+  }]
+}

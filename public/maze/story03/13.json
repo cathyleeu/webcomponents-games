@@ -9,18 +9,18 @@
   ],
   "map": [
     ".xxxxxxxxx.",
-    "y.tba.bct.y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y....u....y",
-    "y...kph...y",
-    "y.........y",
-    "y.........y",
-    "y.%bg.bft.y",
+    "y......qd.y",
+    "yf...f.q..y",
+    "yhqqqkqqc.y",
+    "y.q.q.qqg.y",
+    "y.q.qgqq..y",
+    "y.q.qaqq..y",
+    "y.q..%.qc.y",
+    "yfqqqqqqk.y",
+    "yg....fa..y",
     ".xxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": "9 + 6 = ?"
+    "msg": "25에서 50까지의 수!"
   }]
 }

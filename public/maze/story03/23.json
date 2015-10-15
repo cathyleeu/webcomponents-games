@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "yj...k%...y",
+    "y.qqqq....y",
+    "y.q.......y",
+    "y.q.......y",
+    "yiq.......y",
+    "y.q.......y",
+    "y.q.......y",
+    "y.q.......y",
+    "yu........y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "7부터 9까지의 수야! 가보자!"
+  }]
+}

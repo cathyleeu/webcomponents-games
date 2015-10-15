@@ -9,18 +9,18 @@
   ],
   "map": [
     ".xxxxxxxxx.",
-    "y.tba.bct.y",
     "y.........y",
-    "y.........y",
-    "y.........y",
+    "y..qqqqq..y",
+    "y.qe.c.b%.y",
+    "y.q.qqqqq.y",
+    "y.qf.g.hq.y",
+    "y..qqqq.q.y",
+    "y...qj.iq.y",
+    "y...q.qq..y",
     "y....u....y",
-    "y...kph...y",
-    "y.........y",
-    "y.........y",
-    "y.%bg.bft.y",
     ".xxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": "9 + 6 = ?"
+    "msg": "8부터 2까지의 수를 밟으면서 가는거야!"
   }]
 }

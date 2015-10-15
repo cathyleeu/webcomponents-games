@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y...qf..g%y",
+    "y...q.qqq.y",
+    "y...qeq...y",
+    "y...q.q...y",
+    "y...qcq...y",
+    "y...q.q...y",
+    "y...qbq...y",
+    "y...q.q...y",
+    "y...quq...y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "1부터 5까지 순서대로 글자를 밟으면서 지나가봐!"
+  }]
+}

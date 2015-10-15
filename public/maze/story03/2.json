@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "yc.......ey",
+    "y.qqqqqqq.y",
+    "y.q.j..kq.y",
+    "y.q..qq.q.y",
+    "ybq..qq.qfy",
+    "y.q.iqbaq.y",
+    "y.q..q%.q.y",
+    "y.q..qqqq.y",
+    "yuq.h....gy",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "1부터 10까지의 수를 따라가봐!"
+  }]
+}

@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.qck..cj.y",
+    "y.q.qqqq..y",
+    "y.qeq..qc.y",
+    "y.qaq..qg.y",
+    "y.q%q..q..y",
+    "y.qqqqqqc.y",
+    "yqba.bg.a.y",
+    "yq.qqqqqqqy",
+    "y.uq......y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "10부터 30까지 작은수부터 큰수까지 가는거야~"
+  }]
+}
