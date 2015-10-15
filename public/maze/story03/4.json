@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.dq......y",
+    "y..qqqq...y",
+    "y.eq.%q...y",
+    "y.cq.fq...y",
+    "y..q.kq...y",
+    "y..qq.qqqqy",
+    "y.ej....eky",
+    "y.qqqfqq..y",
+    "y....g..fay",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "순서대로 따라가면 별을 먹을 수 있어!"
+  }]
+}

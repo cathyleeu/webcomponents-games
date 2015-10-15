@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y......q.cy",
+    "y.....q.e.y",
+    "y....q.f..y",
+    "y...q.g.qby",
+    "y..q.h.q.%y",
+    "y.q.i.q...y",
+    "yq.j.q....y",
+    "y.k.q.....y",
+    "yu.q......y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "이번에는 9부터 1까지!"
+  }]
+}

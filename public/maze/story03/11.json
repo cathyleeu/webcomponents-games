@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.h....jq.y",
+    "y..qqqq.q.y",
+    "y.gq..q.q.y",
+    "y..q..qkq.y",
+    "y.cq..q%q.y",
+    "y..q...q..y",
+    "y.bq......y",
+    "y..q......y",
+    "y.uq......y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "이번에는 1부터 9까지 수를 순서대로 지나가보자!"
+  }]
+}

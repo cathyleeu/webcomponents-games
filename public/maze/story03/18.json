@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.qh...ha.y",
+    "y.qeqqqq..y",
+    "y.q.qqqq..y",
+    "y.qhg.hqg.y",
+    "y..qqqkqk.y",
+    "y....q.q..y",
+    "y...qiaqg.y",
+    "y...q.qqa.y",
+    "y....uq.%.y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "이번에는 숫자가 크다! 70부터 50까지야!"
+  }]
+}

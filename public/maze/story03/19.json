@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "yj..je..jay",
+    "ygqqqqqqq.y",
+    "y.qqig..iky",
+    "yjq..qqqqqy",
+    "ykqqiq...qy",
+    "y.qqe..ia.y",
+    "ykq.qqqqq%y",
+    "yaq.......y",
+    "yu........y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "90부터 70까지의 수 마지막 단계다!"
+  }]
+}

@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.qi..ikq.y",
+    "y.qgqqq.q.y",
+    "y.q.q.q.q.y",
+    "y.qia%qjq.y",
+    "y..qq.qaq.y",
+    "y.qqqqq.q.y",
+    "yqka..jgq.y",
+    "yq.qqqqqq.y",
+    "yquq......y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "90부터 70까지 큰수부터 작은수까지 가는거야! 마지막 단계다!"
+  }]
+}

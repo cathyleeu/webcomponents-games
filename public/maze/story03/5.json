@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y..qj....iy",
+    "y.qq.qqqq.y",
+    "ye%q....q.y",
+    "y.qq.qqqq.y",
+    "y..qkq..qhy",
+    "y..quq..q.y",
+    "y.q.q...q.y",
+    "y.qqqqqqq.y",
+    "yf.......gy",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "이번에는 큰 수부터 작은 수 순서대로 가보는거야!"
+  }]
+}

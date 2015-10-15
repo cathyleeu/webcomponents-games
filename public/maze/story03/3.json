@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "yca....bk.y",
+    "y..qqqq...y",
+    "ycg.eaq...y",
+    "yqq...q...y",
+    "y..q..q...y",
+    "y..q.eq.b.y",
+    "y..q.cq.g.y",
+    "y.....q...y",
+    "y%ef..q.u.y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "15에서 34까지 작은 수부터 큰 수 순서대로 따라가봐!"
+  }]
+}
