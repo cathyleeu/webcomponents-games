@@ -1,0 +1,32 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "forward_twice",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxxxx.",
+    "y...czfocpc.y",
+    "y........pc.y",
+    "y%j......pc.y",
+    "y........oj.y",
+    "y.h.........y",
+    "y...........y",
+    "y.f.........y",
+    "y...........y",
+    "y.c.........y",
+    "y...........y",
+    "yu..........y",
+    ".xxxxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "2를 4개 더하면?"
+  },{
+    "msg": "2 곱하기 4하고 똑같아!"
+  },{
+    "msg": "반복을 이용해봐 숫자는 4를 넣고!"
+  }]
+}

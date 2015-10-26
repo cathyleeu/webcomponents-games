@@ -1,0 +1,30 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "forward_twice",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.czeocpc.y",
+    "y......pc.y",
+    "y..h%..oh.y",
+    "y.........y",
+    "y..f......y",
+    "y.........y",
+    "y..c......y",
+    "y.........y",
+    "y...u.....y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "2를 3개 더하면?"
+  },{
+    "msg": "2 곱하기 3하고 똑같아!"
+  },{
+    "msg": "반복을 이용해봐 숫자는 3을 넣고!"
+  }]
+}

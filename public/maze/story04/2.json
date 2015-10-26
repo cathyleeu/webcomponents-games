@@ -1,0 +1,28 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "forward_twice",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.czcocpc.y",
+    "y......of.y",
+    "y.........y",
+    "y.........y",
+    "y......f%.y",
+    "y.........y",
+    "y......c..y",
+    "y.........y",
+    "y.......u.y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "2 곱하기 2는 2가 두 개 있다는거야"
+  },  {
+    "msg": "반복을 이용해서 별을 먹어봐!"
+  }]
+}

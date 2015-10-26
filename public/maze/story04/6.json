@@ -1,0 +1,34 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "forward_twice",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxxxxxx.",
+    "y.%bc.czhocpc.y",
+    "y..........pc.y",
+    "y..ba......pc.y",
+    "y..........pc.y",
+    "y..j.......pc.y",
+    "y..........obcy",
+    "y..h..........y",
+    "y.............y",
+    "y..f..........y",
+    "y.............y",
+    "y..c..........y",
+    "y.............y",
+    "y.u...........y",
+    ".xxxxxxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "2를 6개 더하면?"
+  },{
+    "msg": "2 곱하기 6하고 똑같아!"
+  },{
+    "msg": "반복을 이용해봐 숫자는 6을 넣고!"
+  }]
+}
