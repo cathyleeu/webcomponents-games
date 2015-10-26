@@ -85,6 +85,12 @@ Blocks["item_paper"] = {
   img: "/img/hand_paper.png",
   command: ["action", "paper"]
 };
+Blocks["forward_twice"] = {
+label: "앞으로 2칸 가기",
+color: 120,
+img: "/img/move_forward.png",
+command: ["move", "jump_forward"]
+};
 Blocks["repeat"] = {
   label: "반복",
   color: 30,

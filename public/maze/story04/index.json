@@ -1,0 +1,211 @@
+{
+  "type": "world",
+  "view_size": 10,
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".xxxxxxxxxxxxxxxxxxxxxxxxxx.",
+    "y............xx............y",
+    "yezko%xxfzko%xxizko%xxjzko%y",
+    "yezjo%xxfzjo%xxizjo%xxjzjo%y",
+    "yezio%xxfzio%xxizio%xxjzio%y",
+    "yezho%xxfzho%xxizho%xxjzho%y",
+    "yezgo%xxfzgo%xxizgo%xxjzgo%y",
+    "yezfo%xxfzfo%xxizfo%xxjzfo%y",
+    "yezeo%xxfzeo%xxizeo%xxjzeo%y",
+    "yezco%xxfzco%xxizco%xxjzco%y",
+    "yezbo%xxfzbo%xxizbo%xxjzbo%y",
+    "y.....xx.....xx.....xx.....y",
+    "yczko%xxgzko%xxhzko%xxkzko%y",
+    "yczjo%xxgzjo%xxhzjo%xxkzjo%y",
+    "yczio%xxgzio%xxhzio%xxkzio%y",
+    "yczho%xxgzho%xxhzho%xxkzho%y",
+    "yczgo%xxgzgo%xxhzgo%xxkzgo%y",
+    "yczfo%xxgzfo%xxhzfo%xxkzfo%y",
+    "yczeo%xxgzeo%xxhzeo%xxkzeo%y",
+    "yczco%xxgzco%xxhzco%xxkzco%y",
+    "yczbo%xxgzbo%xxhzbo%xxkzbo%y",
+    "y.....xx............xx.....y",
+    "y....uxx............xx.....y",
+    ".xxxxxxxxxxxxxxxxxxxxxxxxxx."
+  ],
+  "land": [
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................",
+    "............................"
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 20,
+    "link": "/maze/story04/1"
+  },  {
+    "x": 5,
+    "y": 19,
+    "link": "/maze/story04/2"
+  },  {
+    "x": 5,
+    "y": 18,
+    "link": "/maze/story04/3"
+  },  {
+    "x": 5,
+    "y": 17,
+    "link": "/maze/story04/4"
+  },  {
+    "x": 5,
+    "y": 16,
+    "link": "/maze/story04/5"
+  },  {
+    "x": 5,
+    "y": 15,
+    "link": "/maze/story04/6"
+  },  {
+    "x": 5,
+    "y": 14,
+    "link": "/maze/story04/7"
+  },  {
+    "x": 5,
+    "y": 13,
+    "link": "/maze/story04/8"
+  },  {
+    "x": 5,
+    "y": 12,
+    "link": "/maze/story04/9"
+  },  {
+    "x": 5,
+    "y": 10,
+    "link": "/maze/story04/11"
+  },  {
+    "x": 5,
+    "y": 9,
+    "link": "/maze/story04/12"
+  },  {
+    "x": 5,
+    "y": 8,
+    "link": "/maze/story04/13"
+  },  {
+    "x": 5,
+    "y": 7,
+    "link": "/maze/story04/14"
+  },  {
+    "x": 5,
+    "y": 6,
+    "link": "/maze/story04/15"
+  },  {
+    "x": 5,
+    "y": 5,
+    "link": "/maze/story04/16"
+  },  {
+    "x": 5,
+    "y": 4,
+    "link": "/maze/story04/17"
+  },  {
+    "x": 5,
+    "y": 3,
+    "link": "/maze/story04/18"
+  },  {
+    "x": 5,
+    "y": 2,
+    "link": "/maze/story04/19"
+  },  {
+    "x": 12,
+    "y": 20,
+    "link": "/maze/story04/21"
+  },  {
+    "x": 12,
+    "y": 19,
+    "link": "/maze/story04/22"
+  },  {
+    "x": 12,
+    "y": 18,
+    "link": "/maze/story04/23"
+  },  {
+    "x": 12,
+    "y": 17,
+    "link": "/maze/story04/24"
+  },  {
+    "x": 12,
+    "y": 16,
+    "link": "/maze/story04/25"
+  },  {
+    "x": 12,
+    "y": 15,
+    "link": "/maze/story04/26"
+  },  {
+    "x": 12,
+    "y": 14,
+    "link": "/maze/story04/27"
+  },  {
+    "x": 12,
+    "y": 13,
+    "link": "/maze/story04/28"
+  },  {
+    "x": 12,
+    "y": 12,
+    "link": "/maze/story04/29"
+  },  {
+    "x": 12,
+    "y": 10,
+    "link": "/maze/story04/31"
+  },  {
+    "x": 12,
+    "y": 9,
+    "link": "/maze/story04/32"
+  },  {
+    "x": 12,
+    "y": 8,
+    "link": "/maze/story04/33"
+  },  {
+    "x": 12,
+    "y": 7,
+    "link": "/maze/story04/34"
+  },  {
+    "x": 12,
+    "y": 6,
+    "link": "/maze/story04/35"
+  },  {
+    "x": 12,
+    "y": 5,
+    "link": "/maze/story04/36"
+  },  {
+    "x": 12,
+    "y": 4,
+    "link": "/maze/story04/37"
+  },  {
+    "x": 12,
+    "y": 3,
+    "link": "/maze/story04/38"
+  },  {
+    "x": 12,
+    "y": 2,
+    "link": "/maze/story04/39"
+  }
+ ],
+  "tutorial": [{
+    "msg": "오늘은 곱셈놀이를 하자~!",
+    "img": "/img/ant/ant1.png",
+    "x": 9,
+    "y": 0
+  }]
+}

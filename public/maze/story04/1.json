@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "forward_twice",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.czboc...y",
+    "y.....%...y",
+    "y.........y",
+    "y.....u...y",
+    "y.........y",
+    "y.........y",
+    "y.........y",
+    "y.........y",
+    "y.........y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "2 곱하기 1은 2가 한 개 있다는 소리야"
+  }]
+}

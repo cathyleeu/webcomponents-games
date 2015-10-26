@@ -1,0 +1,32 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "forward_twice",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxxxx.",
+    "y%ba.czgocpcy",
+    "y.........pcy",
+    "y.j.......pcy",
+    "y.........pcy",
+    "y.h......obay",
+    "y...........y",
+    "y.f.........y",
+    "y...........y",
+    "y.c.........y",
+    "y...........y",
+    "yu..........y",
+    ".xxxxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "2를 5개 더하면?"
+  },{
+    "msg": "2 곱하기 5하고 똑같아!"
+  },{
+    "msg": "반복을 이용해봐 숫자는 5를 넣고!"
+  }]
+}

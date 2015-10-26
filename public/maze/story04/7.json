@@ -1,0 +1,36 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "forward_twice",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxxxxxxxx.",
+    "y.bf...cziocpc..y",
+    "y...........pc..y",
+    "y.bc........pc..y",
+    "y...........pc..y",
+    "y.ba........pc..y",
+    "y...........pc..y",
+    "y.j.........obf.y",
+    "y...............y",
+    "y.h.............y",
+    "y...............y",
+    "y.f.............y",
+    "y...............y",
+    "y.c.............y",
+    "y...............y",
+    "yu..............y",
+    ".xxxxxxxxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "2를 7개 더하면?"
+  },{
+    "msg": "2 곱하기 7하고 똑같아!"
+  },{
+    "msg": "반복을 이용해봐 숫자는 7을 넣고!"
+  }]
+}
