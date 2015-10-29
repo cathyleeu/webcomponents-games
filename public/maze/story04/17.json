@@ -2,25 +2,30 @@
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [
-    "move_forward",
+    "move_forward3",
     "rotate_left",
     "rotate_right",
     "repeat"
   ],
   "map": [
-    ".xxxxxxxxx.",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    ".xxxxxxxxx."
+    ".xxxxxxxxxxxxxx.",
+    "y..............y",
+    "y.............ey",
+    "y..............y",
+    "y......x..x....y",
+    "y..x..x....x..ey",
+    "y..............y",
+    "yezio..........y",
+    "y..x%.xu.x.x..ey",
+    "y......x.......y",
+    "y..............y",
+    "y..x.......x..ey",
+    "y...x..x..x....y",
+    "y..............y",
+    "ye..e..e..e...ey",
+    ".xxxxxxxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": ""
+    "msg": "3 곱하기 7은??"
   }]
 }

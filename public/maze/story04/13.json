@@ -2,25 +2,30 @@
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [
-    "move_forward",
+    "move_forward3",
     "rotate_left",
     "rotate_right",
     "repeat"
   ],
   "map": [
-    ".xxxxxxxxx.",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    ".xxxxxxxxx."
+    ".xxxxxxxxxxxxxx.",
+    "yezeo..........y",
+    "y.e..e..e..e..ey",
+    "y..............y",
+    "y...x..x..x..x.y",
+    "ye............ey",
+    "y..x...x..x....y",
+    "y..x..x........y",
+    "ye..........x.ey",
+    "y..............y",
+    "y..x...x.......y",
+    "ye..........x.ey",
+    "y..............y",
+    "y..............y",
+    "ye..%..e..ex.u.y",
+    ".xxxxxxxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": ""
+    "msg": "3 곱하기 3은 9라는것을 생각해서 개미를 움직여봐!"
   }]
 }
