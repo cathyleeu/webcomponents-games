@@ -2,25 +2,30 @@
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [
-    "move_forward",
+    "move_forward3",
     "rotate_left",
     "rotate_right",
     "repeat"
   ],
   "map": [
-    ".xxxxxxxxx.",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    ".xxxxxxxxx."
+    ".xxxxxxxxxxxxxx.",
+    "ye.............y",
+    "y..............y",
+    "y..........x...y",
+    "ye.....ezjo%...y",
+    "y.x....x.......y",
+    "y....x.........y",
+    "ye.......x.....y",
+    "y..............y",
+    "y..............y",
+    "ye..x.x.....x..y",
+    "y..............y",
+    "y.......x......y",
+    "y.u...x.....x..y",
+    "y....e..e..e..ey",
+    ".xxxxxxxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": ""
+    "msg": "3곱하기 8은!?"
   }]
 }

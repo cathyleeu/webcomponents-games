@@ -2,25 +2,32 @@
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [
-    "move_forward",
+    "move_forward3",
     "rotate_left",
     "rotate_right",
     "repeat"
   ],
   "map": [
-    ".xxxxxxxxx.",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    ".xxxxxxxxx."
+    ".xxxxxxxxxxxxxx.",
+    "ye..e..e..ex.e.y",
+    "y.......x......y",
+    "y...x........x.y",
+    "ye..........x.ey",
+    "y..............y",
+    "y.......x......y",
+    "yr...x......x.ey",
+    "y..............y",
+    "y..............y",
+    "ye...xezho%...ey",
+    "y..............y",
+    "y..............y",
+    "ye...x........ey",
+    "y...e..e..e..e.y",
+    ".xxxxxxxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": ""
+    "msg": "이번에는 3 곱하기 6이야!"
+  }, {
+    "msg": "총 이동거리가 3곱하기 6이 되게 이동해봐"
   }]
 }

@@ -2,25 +2,32 @@
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [
-    "move_forward",
+    "move_forward3",
     "rotate_left",
     "rotate_right",
     "repeat"
   ],
   "map": [
-    ".xxxxxxxxx.",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    ".xxxxxxxxx."
+    ".xxxxxxxxxxxxxx.",
+    "y.%.x.........dy",
+    "y.......x..x...y",
+    "y......ezfo....y",
+    "ye..x..x.....e.y",
+    "y....x.........y",
+    "y..............y",
+    "ye..x........e.y",
+    "y..............y",
+    "y..............y",
+    "ye..x........e.y",
+    "y..............y",
+    "y....x..X..x...y",
+    "y..............y",
+    "y.e..e..e..e...y",
+    ".xxxxxxxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": ""
+    "msg": "3곱하기 4는?"
+  }, {
+    "msg": "12! 12칸씩 움직여보자!"
   }]
 }
