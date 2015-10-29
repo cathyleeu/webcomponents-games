@@ -308,6 +308,9 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
 
 function runTutorial(tutorial) {
   var idx = 0;
+  if(!tutorial) {
+    return;
+  }
   $("#modal .tutorial").click(function handleClick(e) {
     if(idx < tutorial.length) {
       if(tutorial[idx].hasOwnProperty("x") && tutorial[idx].hasOwnProperty("y")) {

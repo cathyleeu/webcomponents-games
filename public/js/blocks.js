@@ -43,6 +43,26 @@ Blocks["jump_forward"] = {
   img: "/img/move_forward.png",
   command: ["move", "jump_forward"]
 };
+Blocks["move_forward2"] = {
+  label: "앞으로 2칸 가기",
+  color: 260,
+  img: "/img/move_forward.png",
+  command: function(block) {
+    var count = 2;
+    var code = 'queue.push({type:"move",args:["forward"]});';
+    return BlockUtils.getScript("repeat", [count, code]);
+  }
+};
+Blocks["move_forward3"] = {
+  label: "앞으로 3칸 가기",
+  color: 260,
+  img: "/img/move_forward.png",
+  command: function(block) {
+    var count = 3;
+    var code = 'queue.push({type:"move",args:["forward"]});';
+    return BlockUtils.getScript("repeat", [count, code]);
+  }
+};
 Blocks["rotate_left"] = {
   label: "왼쪽으로 돌기",
   color: 260,
@@ -85,12 +105,6 @@ Blocks["item_paper"] = {
   img: "/img/hand_paper.png",
   command: ["action", "paper"]
 };
-Blocks["forward_twice"] = {
-label: "앞으로 2칸 가기",
-color: 120,
-img: "/img/move_forward.png",
-command: ["move", "jump_forward"]
-};
 Blocks["repeat"] = {
   label: "반복",
   color: 30,
@@ -104,6 +118,7 @@ Blocks["repeat"] = {
   command: function(block) {
     var count = +block.getFieldValue('count');
     var code = Blockly.JavaScript.statementToCode(block, 'statements');
+    debugger
     return BlockUtils.getScript("repeat", [count, code]);
   }
 };
