@@ -63,6 +63,16 @@ Blocks["move_forward3"] = {
     return BlockUtils.getScript("repeat", [count, code]);
   }
 };
+Blocks["move_forward4"] = {
+  label: "앞으로 4칸 가기",
+  color: 260,
+  img: "/img/move_forward.png",
+  command: function(block) {
+    var count = 4;
+    var code = 'queue.push({type:"move",args:["forward"]});';
+    return BlockUtils.getScript("repeat", [count, code]);
+  }
+};
 Blocks["rotate_left"] = {
   label: "왼쪽으로 돌기",
   color: 260,

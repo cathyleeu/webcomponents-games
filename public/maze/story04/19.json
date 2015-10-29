@@ -2,25 +2,30 @@
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [
-    "move_forward",
+    "move_forward3",
     "rotate_left",
     "rotate_right",
     "repeat"
   ],
   "map": [
-    ".xxxxxxxxx.",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    "y.........y",
-    ".xxxxxxxxx."
+    ".xxxxxxxxxxxxxx.",
+    "ye..e..e..e...ey",
+    "y..............y",
+    "y..............y",
+    "y.........x...ey",
+    "y......x.......y",
+    "y............x.y",
+    "y..x%.x......l.y",
+    "y..............y",
+    "y.........x..x.y",
+    "y..x..x....x..ey",
+    "y......x.......y",
+    "y..............y",
+    "y..x..........ey",
+    "ye..e..e..e....y",
+    ".xxxxxxxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": ""
+    "msg": "3 곱하기 9는?"
   }]
 }
