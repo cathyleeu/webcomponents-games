@@ -63,7 +63,7 @@ function init(step, maze, loader) {
   var tileFactory = new TileFactory(maze, loader, maze.tile_size || 50);
   mazeInfo = initMaze(maze, loader, tileFactory);
   mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
-  kidscoding = new KidsCoding(loader, mazeInfo);
+  kidscoding = new KidsCoding(loader, mazeInfo, run);
   kidscoding.initBlockly(maze.toolbox);
   addEvents(step, loader, mazeInfo, maze, tileFactory);
 
@@ -271,24 +271,36 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
       org_py = mazeInfo.canvas.character.py;
   $("#runCode").click(function(e) {
     if($(this).find("i").hasClass("fa-play")) {
-      // Generate JavaScript code and run it.
-      window.LoopTrap = 1000;
-      Blockly.JavaScript.INFINITE_LOOP_TRAP =
-          'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
-      var code = Blockly.JavaScript.workspaceToCode(kidscoding.workspace);
-      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-      eval("with(kidscoding){\n" + code + "\n}");
-      if(kidscoding.queue.length == 0) {
-        showModal("블럭이 하나도 없어요!");
-      } else {
+      var startblock = kidscoding.workspace.getBlockById("start");
+      if(startblock.getNextBlock()) {
         $(this).html('<i class="fa fa-refresh"></i> 처음상태로');
-        kidscoding.q_idx = 0;
-        popQueue(loader, mazeInfo);
+        // remove the selection of the last-placed-block
+        kidscoding.workspace.getAllBlocks().map(function(block) {
+          block.removeSelect()
+        });
+        run(startblock, function() {
+          var foods = mazeInfo.canvas.foods;
+          for(var i = 0; i < foods.length; i++) {
+            if(foods[i].visible == true) {
+              createjs.Sound.play("fail");
+              showModal("블럭을 다 썼지만 끝나지 않았어요");
+              break;
+            }
+          }
+          if(i == foods.length) {
+            createjs.Sound.play("complete");
+            showModal({
+              msg: "성공!",
+              goNext: true
+            });
+          }
+        });
+      } else {
+        showModal("블럭이 하나도 없어요!");
       }
     } else {
       $(this).html('<i class="fa fa-play"></i> 시작');
       createjs.Tween.removeAllTweens();
-      kidscoding.queue.splice(0, kidscoding.queue.length);
       resetMaze(mazeInfo, maze, loader, tileFactory);
     }
   });
@@ -399,68 +411,62 @@ function gameMode(type, tileFactory) {
   });
 }
 
-function popQueue(loader, mazeInfo) {
-  var character = mazeInfo.canvas.character,
-      foods = mazeInfo.canvas.foods,
-      q_idx = kidscoding.q_idx,
-      queue = kidscoding.queue;
-  if(q_idx == queue.length) {
-    queue.splice(0, queue.length);
-    for(var i = 0; i < foods.length; i++) {
-      if(foods[i].visible == true) {
-        createjs.Sound.play("fail");
-        showModal("블럭을 다 썼지만 끝나지 않았어요");
-        break;
-      }
-    }
-    if(i == foods.length) {
-      createjs.Sound.play("complete");
-      showModal({
-        msg: "성공!",
-        goNext: true
-      });
-    }
+function run(block, callback) {
+  if(!block) {
+    callback();
     return;
   }
-  var type = queue[q_idx].type;
-  var args = queue[q_idx].args.concat([function(obj) {
-    if( typeof obj == "string") {
-      queue.splice(0, queue.length);
-      createjs.Sound.play("fail");
-      showModal(obj);
-      return;
-    }
-    if( typeof obj == "object" && obj != null) {
-      if( obj.obstacle ) {
-        var message = {
-          rock: "바위에 막혔어요",
-          obstacle: "벽에 부딪쳤어요",
-          spider: "거미줄에 걸렸어요",
-          trap: "덫에 걸렸어요"
-        }[obj.role];
-        queue.splice(0, queue.length);
+  var action = Blocks[block.type].action;
+  if(typeof action == "function") {
+    action = action(block);
+  }
+  block.addSelect();
+  if(action) {
+    var type = action[0],
+        args = action.slice(1);
+    args.push(block);
+    args.push(function(obj) {
+      if( typeof obj == "string") {
         createjs.Sound.play("fail");
-        showModal(message);
+        showModal(obj);
         return;
       }
-      if( obj.role == "food" ) {
-        obj.visible = false;
-        createjs.Sound.play("success");
-        mazeInfo.canvas.stage.update();
+      if( typeof obj == "object" && obj != null) {
+        if( obj.obstacle ) {
+          var message = {
+            rock: "바위에 막혔어요",
+            obstacle: "벽에 부딪쳤어요",
+            spider: "거미줄에 걸렸어요",
+            trap: "덫에 걸렸어요"
+          }[obj.role];
+          createjs.Sound.play("fail");
+          showModal(message);
+          return;
+        }
+        if( obj.role == "food" ) {
+          obj.visible = false;
+          createjs.Sound.play("success");
+          mazeInfo.canvas.stage.update();
+        }
+        if(obj.link) {
+          location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
+        }
+        if(obj.tutorial) {
+          runTutorial(obj.tutorial);
+        }
       }
-      if(obj.link) {
-        location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
-      }
-      if(obj.tutorial) {
-        runTutorial(obj.tutorial);
-      }
-    }
+      setTimeout(function() {
+        block.removeSelect();
+        run(block.getNextBlock(), callback);
+      }, 1);
+    });
+    kidscoding.Actions[type].apply(kidscoding.Actions, args);
+  } else {
     setTimeout(function() {
-      kidscoding.q_idx++;
-      popQueue(loader, mazeInfo);
-    }, 1);
-  }]);
-  kidscoding.Actions[type].apply(kidscoding.Actions, args);
+      block.removeSelect();
+      run(block.getNextBlock(), callback);
+    }, 500);
+  }
 }
 
 function resetMaze(mazeInfo, maze, loader, tileFactory) {
