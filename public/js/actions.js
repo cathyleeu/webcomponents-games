@@ -1,4 +1,4 @@
-Actions = function(kidscoding, loader, mazeInfo) {
+Actions = function(kidscoding, loader, mazeInfo, run) {
   this.kidscoding = kidscoding;
   this.loader = loader;
   this.map = mazeInfo.map;
@@ -7,6 +7,7 @@ Actions = function(kidscoding, loader, mazeInfo) {
   this.height = mazeInfo.height;
   this.view_size = mazeInfo.view_size;
   this.tile_size = mazeInfo.tile_size;
+  this.run = run;
 };
 
 Actions.prototype._rotateCharacter = function(direct, callback) {
@@ -205,7 +206,7 @@ Actions.prototype._getCanvasObject = function(x, y) {
   };
 };
 
-Actions.prototype.move = function(type, callback) {
+Actions.prototype.move = function(type, block, callback) {
   var _this = this,
       character = this.canvas.character,
       foods = this.canvas.foods,
@@ -240,7 +241,7 @@ Actions.prototype.move = function(type, callback) {
   }
 };
 
-Actions.prototype.rotate = function(type, callback) {
+Actions.prototype.rotate = function(type, block, callback) {
   var character = this.canvas.character,
       direct = character.direct,
       arr = ["u", "r", "d", "l"];
@@ -254,7 +255,7 @@ Actions.prototype.rotate = function(type, callback) {
   });
 };
 
-Actions.prototype.getItem = function(callback) {
+Actions.prototype.getItem = function(block, callback) {
   var character = this.canvas.character,
       item = this._getCanvasObject(character.px, character.py);
   if( item.role == "item") {
@@ -270,7 +271,7 @@ Actions.prototype.getItem = function(callback) {
   }
 };
 
-Actions.prototype.useItem = function(callback) {
+Actions.prototype.useItem = function(block, callback) {
   var character = this.canvas.character,
       x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[character.direct],
       y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct];
@@ -301,7 +302,7 @@ Actions.prototype.useItem = function(callback) {
   }
 };
 
-Actions.prototype.action = function(hand, callback) {
+Actions.prototype.action = function(hand, block, callback) {
   var character = this.canvas.character,
       x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[character.direct],
       y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct];
@@ -328,10 +329,8 @@ Actions.prototype.action = function(hand, callback) {
   }
 };
 
-Actions.prototype.condition = function(type, if_code, else_code, callback) {
+Actions.prototype.condition = function(type, block, callback) {
   var character = this.canvas.character,
-      queue = this.kidscoding.queue,
-      q_idx = this.kidscoding.q_idx,
       arr = ["u", "r", "d", "l"],
       if_move_left = type == "if_move_left" ? -1 : 0,
       if_move_right = type == "if_move_right" ? 1 : 0,
@@ -341,32 +340,61 @@ Actions.prototype.condition = function(type, if_code, else_code, callback) {
       y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[direct],
       tile = this.map[y_next][x_next],
       move_forward = tile == "." || tile == ")" || tile == "%",
-      blocks = move_forward ? if_code : else_code;
-
-  var temp = queue.splice(q_idx+1, queue.length);
-  eval("with(this.kidscoding){\n" + blocks + "\n}");
-  [].push.apply(queue, temp);
+      if_block = block.getInputTargetBlock("if_statements"),
+      else_block = block.getInputTargetBlock("else_statements"),
+      child = move_forward ? if_block : else_block,
+      _this = this;
   setTimeout(function() {
-    callback();
-  }, 1);
+    block.removeSelect();
+    _this.run(child, callback);
+  }, 500);
 };
 
-Actions.prototype.repeat = function(count, code, callback) {
+Actions.prototype.repeat = function(type, block, callback) {
   var character = this.canvas.character,
-      queue = this.kidscoding.queue,
-      q_idx = this.kidscoding.q_idx,
       tile = this.map[character.py][character.px],
-      repeat = (tile != "%" && count == "repeat_until") || count > 0;
-  if(repeat) {
-    var temp = queue.splice(q_idx + 1, queue.length);
-    eval("with(this.kidscoding){\n" + code + "\n}");
-    queue.push($.extend({}, queue[q_idx]));
-    if(typeof count == "number") {
-      --queue[queue.length -1].args[0];
+      child = block.getInputTargetBlock("statements"),
+      count = +block.getFieldValue("count"),
+      _this = this;
+  function proc() {
+    if(child && ((tile != "%" && type == "repeat_until") || count > 0)) {
+      setTimeout(function() {
+        block.removeSelect();
+        count--;
+        _this.run(child, function() {
+          block.addSelect();
+          proc();
+        });
+      }, 500);
+    } else {
+      block.addSelect();
+      setTimeout(callback, 500);
     }
-    [].push.apply(queue, temp);
+  };
+  proc();
+};
+
+Actions.prototype._makePseudoBlock = function(json) {
+  var _this = this;
+  var obj = $.extend({
+    addSelect: function() {},
+    removeSelect: function() {},
+    getInputTargetBlock: function(target) {
+      return _this._makePseudoBlock(this[target]);
+    },
+    getFieldValue: function(field) {
+      return this[field];
+    },
+    getNextBlock: function() {
+      return this.nextStatement || null;
+    }
+  }, json);
+  return obj;
+};
+
+Actions.prototype.func = function(contents, block, callback) {
+  if(typeof contents == "object") {
+    var pseudoBlock = this._makePseudoBlock(contents);
+    this.run(pseudoBlock, callback);
   }
-  setTimeout(function() {
-    callback();
-  }, 1);
 };

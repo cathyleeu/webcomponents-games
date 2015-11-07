@@ -2,7 +2,7 @@
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [
-    "forward_twice",
+    "move_forward2",
     "rotate_left",
     "rotate_right",
     "repeat"
