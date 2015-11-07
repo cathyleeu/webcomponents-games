@@ -393,7 +393,7 @@ function gameMode(type, tileFactory) {
       return;
     }
     e.preventDefault();
-    kidscoding.Actions.move(direct, function(obj) {
+    kidscoding.Actions.move(direct, {}, function(obj) {
       if(type == "game" && obj.role == "food") {
         obj.visible = false;
         createjs.Sound.play("success");
