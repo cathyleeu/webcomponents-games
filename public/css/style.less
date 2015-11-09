@@ -196,6 +196,15 @@ body.classify-body {
     overflow: hidden;
     top: 0;
     right: 0;
+    .blocklyPath {
+      stroke-width: 0;
+    }
+    .blocklySelected>.blocklyPath {
+      stroke-width: 3px;
+    }
+    .blocklyPath.error {
+      stroke: red;
+    }
   }
 
 }
