@@ -1,0 +1,20 @@
+[
+  {"id": "bg1", "src": "/img/map/bg1.png"},
+  {"id": "bg2", "src": "/img/map/bg2.png"},
+  {"id": "character", "src": "/img/map32/ant_sprite.png", "sprite": true, "size": 32},
+  {"id": "food", "src": "/img/map/star.png"},
+  {"id": "house1", "src": "/img/village/house1.png", "obstacle": true},
+  {"id": "question", "src": "/img/guide/question.png", "obstacle": false},
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"tile": "a", "id": "a", "src": "/img/guide/up.png", "obstacle": false},
+  {"tile": "b", "id": "b", "src": "/img/guide/down.png", "obstacle": false},
+  {"tile": "c", "id": "c", "src": "/img/guide/right.png", "obstacle": false},
+  {"tile": "x", "id": "x", "src": "/img/village/x.png", "obstacle": true},
+  {"tile": "y", "id": "y", "src": "/img/village/y.png", "obstacle": true},
+  {"tile": "z", "id": "z", "src": "/img/village/z.png", "obstacle": true}
+]
