@@ -427,12 +427,26 @@ function run(block, callback) {
     args.push(block);
     args.push(function(obj) {
       if( typeof obj == "string") {
+        // TODO: fix this later
+        // jQuery's class manipulation functions do not work with the SVG elements
+        // See: http://stackoverflow.com/questions/8638621/jquery-svg-why-cant-i-addclass
+        var $svg = $(block.svgGroup_).find(".blocklyPath"),
+            className = $svg.attr("class");
+        $svg.attr("class", className + " error");
+
         createjs.Sound.play("fail");
         showModal(obj);
         return;
       }
       if( typeof obj == "object" && obj != null) {
         if( obj.obstacle ) {
+          // TODO: fix this later
+          // jQuery's class manipulation functions do not work with the SVG elements
+          // See: http://stackoverflow.com/questions/8638621/jquery-svg-why-cant-i-addclass
+          var $svg = $(block.svgGroup_).find(".blocklyPath"),
+              className = $svg.attr("class");
+          $svg.attr("class", className + " error");
+
           var message = {
             rock: "바위에 막혔어요",
             obstacle: "벽에 부딪쳤어요",
@@ -470,6 +484,13 @@ function run(block, callback) {
 }
 
 function resetMaze(mazeInfo, maze, loader, tileFactory) {
+  // TODO: fix this later
+  // jQuery's class manipulation functions do not work with the SVG elements
+  // See: http://stackoverflow.com/questions/8638621/jquery-svg-why-cant-i-addclass
+  var $svg = $(".workspace .error"),
+      className = $svg.attr("class");
+  $svg.attr("class", className.split(" ").filter(function(name) {return name != "error"}).join(" "));
+
   mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
   mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.item);
   mazeInfo.canvas.foods.map(function(food) {
