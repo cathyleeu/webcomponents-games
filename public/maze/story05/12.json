@@ -1,0 +1,28 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".xxxxxxxxxxx.",
+    "y...........y",
+    "y...........y",
+    "y...........y",
+    "y...........y",
+    "y...........y",
+    "yr.........%y",
+    "y...........y",
+    "y...........y",
+    "y...........y",
+    "y...........y",
+    "y...........y",
+    ".xxxxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "오른쪽으로 움직여 보자"
+  }]
+}

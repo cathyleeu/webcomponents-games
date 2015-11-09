@@ -1,0 +1,28 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".xxxxxxxxxxx.",
+    "y...........y",
+    "y....xxx....y",
+    "y........xxxy",
+    "y.xxx..%....y",
+    "y......xxx..y",
+    "y..........xy",
+    "y...xxxx....y",
+    "y...........y",
+    "yxxx........y",
+    "y.....y.....y",
+    "yu....y.....y",
+    ".xxxxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "꼬불꼬불한 길을 움직여 보자"
+  }]
+}
