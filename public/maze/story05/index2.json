@@ -50,7 +50,7 @@
   },  {
     "x": 47,
     "y": 8,
-    "link": "/maze/story05/index&x=46&y=9"
+    "link": "/maze/story05/index?x=46&y=9"
   }  ,{
     "x": 2,
     "y": 5,
