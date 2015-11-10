@@ -9,7 +9,7 @@ Blocks["start"] = {
   movable: false
 };
 Blocks["move_up"] = {
-  colour: 260,
+  colour: 0,
   message0: "%1 위로 이동",
   args0: [
     {type: "field_image", src: "/img/up.png", width: 24, height: 24}
@@ -17,7 +17,7 @@ Blocks["move_up"] = {
   action: ["move", "up"]
 };
 Blocks["move_down"] = {
-  colour: 260,
+  colour: 30,
   message0: "%1 아래로 이동",
   args0: [
     {type: "field_image", src: "/img/down.png", width: 24, height: 24}
@@ -25,7 +25,7 @@ Blocks["move_down"] = {
   action: ["move", "down"]
 };
 Blocks["move_left"] = {
-  colour: 260,
+  colour: 60,
   message0: "%1 왼쪽으로 이동",
   args0: [
     {type: "field_image", src: "/img/left.png", width: 24, height: 24}
@@ -33,7 +33,7 @@ Blocks["move_left"] = {
   action: ["move", "left"]
 };
 Blocks["move_right"] = {
-  colour: 260,
+  colour: 90,
   message0: "%1 오른쪽으로 이동",
   args0: [
     {type: "field_image", src: "/img/right.png", width: 24, height: 24}

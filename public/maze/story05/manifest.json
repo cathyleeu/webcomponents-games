@@ -23,6 +23,7 @@
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
   {"tile": "a", "id": "a", "src": "/img/guide/up.png", "obstacle": false},
   {"tile": "b", "id": "b", "src": "/img/guide/down.png", "obstacle": false},
   {"tile": "c", "id": "c", "src": "/img/guide/right.png", "obstacle": false},

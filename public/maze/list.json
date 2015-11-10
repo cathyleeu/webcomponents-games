@@ -1,6 +1,12 @@
 [
   {
     "href": "maze/story05/index",
-    "title": "test"
+    "title": "[Drag & Drop] - coding 시작하기"
+  }, {
+    "href": "maze/story05/index2",
+    "title": "[event] - coding 시작하기"
+  } ,{
+    "href": "maze/story05/index3",
+    "title": "[item] - coding 시작하기"
   }
 ]
