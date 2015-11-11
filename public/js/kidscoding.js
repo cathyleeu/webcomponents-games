@@ -3,10 +3,29 @@ KidsCoding = function(loader, mazeInfo, run) {
   this.queue = [];
   this.Actions = new Actions(this, loader, mazeInfo, run);
   this.workspace = null;
+  this.createXml = function(blocks) {
+    if(blocks.length == 0) {
+      return "";
+    }
+    var block = blocks[0],
+        str;
+    if(typeof block == "string") {
+      block = {
+        type: block
+      };
+      if(block.type == "start") {
+        block.x = block.y = 20;
+      }
+    }
+    str = Object.keys(block).map(function(attr) {
+      return attr + '="' + block[attr] + '"';
+    }).join(" ");
+    return "<block " + str + "><next>" + this.createXml(blocks.slice(1)) + "</next></block>";
+  };
 };
 KidsCoding.prototype = {
 
-  initBlockly: function(toolbox) {
+  initBlockly: function(toolbox, workspace) {
     var _this = this;
     $.each(Blocks, function(name, options) {
       options = $.extend({
@@ -40,7 +59,14 @@ KidsCoding.prototype = {
     });
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'),
         {toolbox: '<xml>' + toolbox + '</xml>'});
-    var startblock = '<xml><block type="start" x="20" y="20"></block></xml>';
+    if(!workspace) {
+      workspace = [{
+        "type": "start",
+        "x": 20,
+        "y": 20
+      }];
+    }
+    var startblock = '<xml>' + this.createXml(workspace) + '</xml>';
   	Blockly.Xml.domToWorkspace(this.workspace,$(startblock).get(0));
     return this.workspace;
   }

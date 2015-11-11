@@ -1,6 +1,7 @@
 {
   "tile_size": 32,
   "render": "pixel",
+  "workspace": ["start", "move_up"],
   "toolbox": [
     "move_up",
     "move_down",
