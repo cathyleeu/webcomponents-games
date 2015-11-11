@@ -64,7 +64,7 @@ function init(step, maze, loader) {
   mazeInfo = initMaze(maze, loader, tileFactory);
   mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
   kidscoding = new KidsCoding(loader, mazeInfo, run);
-  kidscoding.initBlockly(maze.toolbox);
+  kidscoding.initBlockly(maze.toolbox, maze.workspace);
   addEvents(step, loader, mazeInfo, maze, tileFactory);
 
   var queries = {};
