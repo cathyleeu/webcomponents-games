@@ -9,22 +9,22 @@
   ],
   "map": [
     ".xxxxxxxxxxxxx.",
+    "ygggggy..ggg.gy",
+    "ygggggy....gggy",
+    "ygg%xxxxxgggggy",
+    "yxx.......xxxxy",
     "y.............y",
     "y.............y",
-    "y.....xxxxx...y",
-    "y.............y",
-    "y.x....d......y",
-    "y....xxxxx....y",
-    "yf..fx.%.x.xxxy",
-    "y.xx.xx.xx....y",
+    "y......u......y",
     "y.............y",
     "y.............y",
-    "y.............y",
-    "y.............y",
-    "y.............y",
+    "yxxx.xxxxx.xxxy",
+    "ygggg...ggg.ggy",
+    "yg..g.....ggggy",
+    "ygggg.......ggy",
     ".xxxxxxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": "시계방향으로 움직여보자!"
+    "msg": "별이 가장 많은쪽이 진짜야! 진짜 별을 찾아보자"
   }]
 }

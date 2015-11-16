@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.........y",
+    "y...g%g...y",
+    "yxxxx.xxxxy",
+    "y.........y",
+    "y.........y",
+    "y....u....y",
+    "y.........y",
+    "yxxxx.xxxxy",
+    "y..ggggg..y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "별이 많은쪽이 가짜야! 진짜 별을 잘 찾아보자!"
+  }]
+}

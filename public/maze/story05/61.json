@@ -1,0 +1,26 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.........y",
+    "y.........y",
+    "y...y.y...y",
+    "y...y.y.g.y",
+    "y.%..r..g.y",
+    "y...y.y.g.y",
+    "y...y.y...y",
+    "y.........y",
+    "y.........y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "별이 적은쪽이 진짜 별이야!"
+  }]
+}

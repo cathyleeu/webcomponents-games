@@ -24,7 +24,6 @@
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
-
   {"tile": "a", "id": "a", "src": "/img/guide/up.png", "obstacle": false},
   {"tile": "b", "id": "b", "src": "/img/guide/down.png", "obstacle": false},
   {"tile": "c", "id": "c", "src": "/img/guide/right.png", "obstacle": false},
@@ -33,6 +32,7 @@
   {"tile": "y", "id": "y", "src": "/img/village/y.png", "obstacle": true},
   {"tile": "z", "id": "z", "src": "/img/village/z.png", "obstacle": true},
   {"tile": "f", "id": "f", "src": "/img/guide/f.png", "obstacle": true},
+  {"tile": "g", "id": "g", "src": "/img/number/trap2.png", "obstacle": true},
   {"id": "rock5", "src": "/img/map/rock5.png"},
   {"id": "rock4", "src": "/img/map/rock4.png"},
   {"id": "rock3", "src": "/img/map/rock3.png"},

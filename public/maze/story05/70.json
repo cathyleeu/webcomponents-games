@@ -1,0 +1,28 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".xxxxxxxxxxx.",
+    "y..ggggg....y",
+    "y..%ggg.....y",
+    "yxx.xxxxxxxxy",
+    "y...........y",
+    "y...........y",
+    "y....u......y",
+    "y...........y",
+    "y...........y",
+    "yxxxxxx.xxxxy",
+    "y......gggg.y",
+    "y......ggg..y",
+    ".xxxxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "별이 많은쪽이 진짜야! 잘 찾아가보자!"
+  }]
+}

@@ -1,0 +1,30 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".xxxxxxxxxxxxx.",
+    "y..g.....gggg.y",
+    "y.g.g....g..g.y",
+    "yggggg...gg%g.y",
+    "yxxx.xxxxxx.xxy",
+    "y.............y",
+    "y.......u.....y",
+    "y.............y",
+    "y.............y",
+    "yxxx.xxxx.xxxxy",
+    "y..gg....g...gy",
+    "ygg..gg...g.g.y",
+    "ygg..gg....g..y",
+    "y..gg.....g.g.y",
+    ".xxxxxxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "별이 두번째로 많은 곳이 진짜야!"
+  }]
+}
