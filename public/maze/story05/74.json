@@ -1,0 +1,28 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".xxxxxxxxxxx.",
+    "yggggg...gggy",
+    "yxxxx.xxxxggy",
+    "y........xxgy",
+    "y...........y",
+    "y...........y",
+    "y.....u.....y",
+    "y...........y",
+    "y...........y",
+    "yx.......xxxy",
+    "yg%yxxxxgg..y",
+    "y.gy........y",
+    ".xxxxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "별이 3번째로 많은 곳이 진짜야!"
+  }]
+}
