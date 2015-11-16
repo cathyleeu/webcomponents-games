@@ -267,6 +267,11 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
       location.pathname = path + matched[1] + "/" +(+matched[2]+1);
     }
   });
+  $("#modal .reset-maze").click(function(e) {
+    $("#runCode").html('<i class="fa fa-play"></i> 시작');
+    createjs.Tween.removeAllTweens();
+    resetMaze(mazeInfo, maze, loader, tileFactory);
+  });
   var org_px = mazeInfo.canvas.character.px,
       org_py = mazeInfo.canvas.character.py;
   $("#runCode").click(function(e) {
@@ -489,7 +494,10 @@ function resetMaze(mazeInfo, maze, loader, tileFactory) {
   // See: http://stackoverflow.com/questions/8638621/jquery-svg-why-cant-i-addclass
   var $svg = $(".workspace .error"),
       className = $svg.attr("class");
-  $svg.attr("class", className.split(" ").filter(function(name) {return name != "error"}).join(" "));
+  if(className) {
+    var newClassName = className.split(" ").filter(function(name) {return name != "error"}).join(" ");
+    $svg.attr("class", newClassName);
+  }
 
   mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
   mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.item);
@@ -520,7 +528,7 @@ function showModal(options) {
   }
   $("#modal .btn").hide();
   if(options.goNext) {
-    $("#modal .go-next").show();
+    $("#modal .go-next, #modal .reset-maze").show();
   } else if(options.tutorial) {
     $("#modal .tutorial").show();
   } else {
