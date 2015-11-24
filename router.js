@@ -21,6 +21,17 @@ router.get('/', function *(next) {
   });
 });
 
+router.get('/old', function *(next) {
+  var list = yield request({
+    method: 'GET',
+    uri: 'http://localhost:' + config.port + '/maze/list2.json'
+  });
+  yield this.render('home', {
+    title: "키즈코딩",
+    list: JSON.parse(list.body)
+  });
+});
+
 router.get('/maze/:type', function *(next) {
   yield this.render('maze', {
     title: "키즈코딩",
