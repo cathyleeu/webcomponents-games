@@ -1,0 +1,26 @@
+{
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat_until",
+    "condition_ifMoveForward",
+    "condition_ifMoveLeft"
+  ],
+  "map": [
+    "########",
+    "#......#",
+    "#.####.#",
+    "#....#.#",
+    "####.#.#",
+    "#%##.#.#",
+    "#....#@#",
+    "########"
+  ],
+  "success": [{
+    "msg": "성공! 참 잘했어요~"
+  }, {
+    "msg": "모든 문제를 풀었어요. 다음 단계로 이동합니다.",
+    "link": "http://localhost:3000/maze/experience/5/index"
+  }]
+}

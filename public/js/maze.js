@@ -85,6 +85,7 @@ function init(step, maze, loader) {
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
 
   } else {
+    $("#runTutorial").removeClass("hidden");
     runTutorial(maze.tutorial);
   }
 }
@@ -261,11 +262,10 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
       location.href = location.protocol + "//" + location.host + queries.back + "?x=" + queries.x + "&y=" + queries.y;
       return;
     }
-    var path = "/maze/";
-    var matched = /\/maze\/([^/]*)\/(.*)/gm.exec(location.pathname);
-    if(matched) {
-      location.pathname = path + matched[1] + "/" +(+matched[2]+1);
-    }
+    var path = location.pathname.split("/").filter(function(val){
+      return val
+    });
+    location.pathname = path.slice(0, -1).join("/") + "/"+ (+path.slice(-1)[0] + 1);
   });
   $("#modal .reset-maze").click(function(e) {
     $("#runCode").html('<i class="fa fa-play"></i> 시작');
@@ -294,10 +294,14 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
           }
           if(i == foods.length) {
             createjs.Sound.play("complete");
-            showModal({
-              msg: "성공!",
-              goNext: true
-            });
+            if(maze.success) {
+              runTutorial(maze.success);
+            } else {
+              showModal({
+                msg: "성공!",
+                goNext: true
+              });
+            }
           }
         });
       } else {
@@ -321,6 +325,9 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
       createjs.Sound.stop("bgm");
     }
   });
+  $("#runTutorial a").click(function() {
+    runTutorial(maze.tutorial);
+  });
 }
 
 function runTutorial(tutorial) {
@@ -329,7 +336,9 @@ function runTutorial(tutorial) {
     return;
   }
   $("#modal .tutorial").click(function handleClick(e) {
-    if(idx < tutorial.length) {
+    if(idx > 0 && tutorial[idx-1].link) {
+      location.href = tutorial[idx-1].link;
+    } else if(idx < tutorial.length) {
       if(tutorial[idx].hasOwnProperty("x") && tutorial[idx].hasOwnProperty("y")) {
         kidscoding.Actions._setFocus(tutorial[idx].x, tutorial[idx].y, 0, 500);
       }
@@ -337,6 +346,7 @@ function runTutorial(tutorial) {
         video: tutorial[idx].video,
         msg: tutorial[idx].msg,
         img: tutorial[idx].img,
+        link: tutorial[idx].link,
         tutorial: true
       });
     } else {
@@ -545,7 +555,7 @@ function showModal(options) {
   }
   var img_src = options.img || "/img/ladybug.png";
   $(".modal-msg-box img").attr("src", img_src);
-  $("#modal .modal-msg").text(options.msg);
+  $("#modal .modal-msg").html(options.msg);
   $('#modal').modal({
     backdrop: "static"
   });

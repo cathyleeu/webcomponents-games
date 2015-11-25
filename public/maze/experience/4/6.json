@@ -1,0 +1,20 @@
+{
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat_until",
+    "condition_ifMoveForward",
+    "condition_ifMoveLeft"
+  ],
+  "map": [
+    "########",
+    "########",
+    "##%.####",
+    "###..###",
+    "####..##",
+    "#####..#",
+    "######@#",
+    "########"
+  ]
+}
