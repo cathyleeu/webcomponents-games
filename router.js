@@ -47,73 +47,13 @@ router.get('/maze/:type/:step', function *(next) {
   });
 });
 
-// router.get('/menucreate', function *(next) {
-//   yield this.render('menucreate', {
-//     title: '메뉴 입력하기'
-//   });
-// });
-//
-// router.redirect('/foodgallery', '/foodgallery/0');
-// router.get('/foodgallery/:skip', function *(next) {
-//   var foodlist = yield request({
-//     method: 'GET',
-//     uri: 'http://localhost:40001/foodlist/' + this.params.skip
-//   });
-//   var prev = +this.params.skip - 10,
-//       next = +this.params.skip + 10;
-//   if(prev < 0) {
-//     prev = this.params.skip;
-//   }
-//   yield this.render('foodgallery', {
-//     title: "Food Gallery",
-//     foodlist: JSON.parse(foodlist.body),
-//     prev: prev,
-//     next: next
-//   });
-// });
-//
-// router.post('/subscribe', function *(next) {
-//   //console.log(this.request.body);
-//   var _this = this;
-//
-//   var response = yield request({
-//     method: 'POST',
-//     uri: config.m2push + '/subscribe',
-//     json: this.request.body
-//   });
-//   this.body = 'done';
-// });
-//
-// router
-//   .get('/user/', user.all)
-//   .get('/user/:uuid', user.fetch)
-//   .post('/user/', user.add)
-//   .put('/user/', user.modify)
-//   .delete('/user/:uuid', user.remove);
-//
-// router
-//   .get('/terms/:termstype', terms.fetch);
-//
-// router
-//   .get('/food', food.all)
-//   .get('/foodlist/:skip', food.foodlist);
-//
-// router
-//   .get('/company/', company.all)
-//   .get('/company/:no', company.fetch)
-//   .post('/company/', company.add);
-//
-// router
-//   .get('/restaurant/', restaurant.all)
-//   .get('/restaurant/:company_no', restaurant.fetch);
-//
-// router
-//   .get('/menu/:restaurant_no/:menudate', menu.fetch)
-//   .get('/menu/:restaurant_no/:menudate/:timetype/:course', menu.fetch2)
-//   .get('/menudetails/:restaurant_no/:menudate/:timetype/:course', menu.details)
-//   .post('/menu/', menu.upsert);
-//
-// router
-//   .post('/vote/', vote.upsert);
+router.get('/maze/:category/:type/:step', function *(next) {
+  yield this.render('maze', {
+    title: "키즈코딩",
+    category: this.params.category,
+    type: this.params.type,
+    step: this.params.step
+  });
+});
 
 module.exports = router;

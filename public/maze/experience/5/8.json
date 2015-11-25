@@ -1,0 +1,31 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "jump_forward",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.n...n...y",
+    "y.111111..y",
+    "yn1abce1..y",
+    "y.1ec%a1n.y",
+    "yn1abce1..y",
+    "y.111111n.y",
+    "y..n.)n...y",
+    "y.........y",
+    "y.u.......y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "친구들이 돌더미에 갇혀있어! 친구들과 함께"
+  }, {
+    "msg": "돌을 부셔 친구들을 구하고 별을 먹어보자!"
+  }]
+}
