@@ -11,10 +11,10 @@
     "datatables": "~1.10.9",
     "GoogleBlockly": "*",
     "jquery-ui": "~1.11.4",
-    "PreloadJS": "~0.6.1",
-    "TweenJS": "~0.6.1",
-    "SoundJS": "~0.6.1",
-    "EaselJS": "~0.8.1",
+    "PreloadJS": "^0.6.2",
+    "TweenJS": "~0.6.2",
+    "SoundJS": "^0.6.2",
+    "EaselJS": "^0.8.2",
     "font-awesome": "fontawesome#~4.4.0"
   }
 }
