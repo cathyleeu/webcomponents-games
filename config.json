@@ -1,12 +1,4 @@
 {
-  "development": {
-    "m2push": "http://localhost:8000",
-    "m2db": "mongodb://localhost:27017/muglau2",
-    "port": 3000
-  },
-  "production": {
-    "m2push": "http://push.muglau.com",
-    "m2db":  "mongodb://localhost:27017/muglau2",
-    "port": 3000
-  }
+  "db": "mongodb://localhost:27017/kidscoding",
+  "port": 3000
 }
