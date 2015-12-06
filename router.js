@@ -1,6 +1,8 @@
-var router = require('koa-router')(),
+var public = require('koa-router')(),
+    secured = require('koa-router')(),
+    passport = require('koa-passport'),
     request = require('co-request'),
-    // user = require('./controller/user'),
+    students = require('./controller/students'),
     // terms = require('./controller/terms'),
     // food = require('./controller/food'),
     // company = require('./controller/company'),
@@ -8,9 +10,9 @@ var router = require('koa-router')(),
     // menu = require('./controller/menu'),
     // vote = require('./controller/vote'),
     argv = require('minimist')(process.argv.slice(2)),
-    config = require('./config.json')[argv.production ? 'production' : 'development'];
+    config = require('./config.json'); //[argv.production ? 'production' : 'development'];
 
-router.get('/', function *(next) {
+public.get('/', function *(next) {
   var list = yield request({
     method: 'GET',
     uri: 'http://localhost:' + config.port + '/maze/list.json'
@@ -21,7 +23,7 @@ router.get('/', function *(next) {
   });
 });
 
-router.get('/old', function *(next) {
+public.get('/old', function *(next) {
   var list = yield request({
     method: 'GET',
     uri: 'http://localhost:' + config.port + '/maze/list2.json'
@@ -32,14 +34,33 @@ router.get('/old', function *(next) {
   });
 });
 
-router.get('/maze/:type', function *(next) {
+public.get('/login', function *(next) {
+  yield this.render('login', {
+    title: "키즈코딩 로그인"
+  });
+});
+
+public.get('/login/:school/:class', function *(next) {
+  var Students = require('./model/students');
+  yield this.render('class', {
+    title: "키즈코딩 로그인",
+    schoolName: this.params.school,
+    className: this.params.class,
+    students: yield Students.find({
+      school: this.params.school,
+      class: this.params.class
+    })
+  });
+});
+
+public.get('/maze/:type', function *(next) {
   yield this.render('maze', {
     title: "키즈코딩",
     type: this.params.type
   });
 });
 
-router.get('/maze/:type/:step', function *(next) {
+public.get('/maze/:type/:step', function *(next) {
   yield this.render('maze', {
     title: "키즈코딩",
     type: this.params.type,
@@ -47,7 +68,7 @@ router.get('/maze/:type/:step', function *(next) {
   });
 });
 
-router.get('/maze/:category/:type/:step', function *(next) {
+public.get('/maze/:category/:type/:step', function *(next) {
   yield this.render('maze', {
     title: "키즈코딩",
     category: this.params.category,
@@ -56,4 +77,19 @@ router.get('/maze/:category/:type/:step', function *(next) {
   });
 });
 
-module.exports = router;
+public.post('/api/login',
+  passport.authenticate('local', {
+    successRedirect: '/old',
+    failureRedirect: '/login'
+  })
+);
+
+public.get('/api/logout', function*(next) {
+  this.logout()
+  this.redirect('/login')
+});
+
+module.exports = {
+  public: public,
+  secured: secured
+};
