@@ -547,6 +547,8 @@ function resetMaze(mazeInfo, maze, loader, tileFactory) {
     $svg.attr("class", newClassName);
   }
 
+  clearTimeout(kidscoding.Actions.setTimeoutKey);
+
   mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
   mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.item);
   mazeInfo.canvas.foods.map(function(food) {

@@ -8,6 +8,7 @@ Actions = function(kidscoding, loader, mazeInfo, run) {
   this.view_size = mazeInfo.view_size;
   this.tile_size = mazeInfo.tile_size;
   this.run = run;
+  this.setTimeoutKey = null;
 };
 
 Actions.prototype._rotateCharacter = function(direct, callback) {
@@ -358,7 +359,7 @@ Actions.prototype.repeat = function(type, block, callback) {
       _this = this;
   function proc() {
     if(child && ((tile != "%" && type == "repeat_until") || count > 0)) {
-      setTimeout(function() {
+      _this.setTimeoutKey = setTimeout(function() {
         block.removeSelect();
         count--;
         _this.run(child, function() {
@@ -368,7 +369,7 @@ Actions.prototype.repeat = function(type, block, callback) {
       }, 500);
     } else {
       block.addSelect();
-      setTimeout(callback, 500);
+      _this.setTimeoutKey = setTimeout(callback, 500);
     }
   };
   proc();
