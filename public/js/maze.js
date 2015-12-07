@@ -440,7 +440,8 @@ function gameMode(loader, type, tileFactory) {
     if(createjs.Tween.hasActiveTweens()) {
       return;
     }
-    var direct = {37:"l", 38:"u", 39:"r", 40:"d", 32:"jump_forward"}[e.keyCode];
+    // var direct = {37:"l", 38:"u", 39:"r", 40:"d", 32:"jump_forward"}[e.keyCode];
+    var direct = {37:"l", 38:"u", 39:"r", 40:"d"}[e.keyCode];
     if(!direct) {
       return;
     }
