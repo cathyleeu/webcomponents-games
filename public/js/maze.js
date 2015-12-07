@@ -64,7 +64,9 @@ function init(step, maze, loader) {
   mazeInfo = initMaze(maze, loader, tileFactory);
   mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
   kidscoding = new KidsCoding(loader, mazeInfo, run);
-  kidscoding.initBlockly(maze.toolbox, maze.workspace);
+  if(maze.type != "world" && maze.type != "game") {
+    kidscoding.initBlockly(maze.toolbox, maze.workspace);
+  }
   addEvents(step, loader, mazeInfo, maze, tileFactory);
 
   var queries = {};
@@ -76,7 +78,9 @@ function init(step, maze, loader) {
   });
 
   if(maze.type == "game" || maze.type == "world") {
-    gameMode(maze.type, tileFactory);
+    gameMode(loader, maze.type, tileFactory);
+  } else {
+    $("#runCode").show();
   }
 
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
@@ -183,8 +187,20 @@ function initMaze(maze, loader, tileFactory) {
 }
 
 function drawMaze(mazeInfo, maze, loader, tileFactory) {
+  var localData = store.get('data') || {};
   for(var i = 0; i < mazeInfo.height; i++) {
     for(var j = 0; j < mazeInfo.width; j++) {
+      if(maze.type == "world") {
+        var extra = maze.extra ? maze.extra.filter(function(obj) {
+          return obj.y == i && obj.x == j;
+        })[0] : null;
+        if(extra) {
+          var path = extra.link.split("/").slice(1, -1).join("/");
+          if(localData[path] && localData[path].complete.indexOf(extra.link.split("/").slice(-1)[0]) >= 0) {
+            continue;
+          }
+        }
+      }
       var bitmap = tileFactory.create(mazeInfo.map[i][j], j, i);
       switch(bitmap ? bitmap.role : null) {
         case "character":
@@ -259,6 +275,19 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
       }
     });
     if(queries.back) {
+      var path = location.pathname.split("/").slice(1, -1).join("/");
+      var localData = store.get('data') || {};
+      if(!localData[path]) {
+        localData[path] = {
+          score: 0,
+          complete: []
+        };
+      }
+      if(localData[path].complete.indexOf(step) < 0) {
+        localData[path].complete.push(step);
+        localData[path].score += maze.score || 1;
+        store.set('data', localData);
+      }
       location.href = location.protocol + "//" + location.host + queries.back + "?x=" + queries.x + "&y=" + queries.y;
       return;
     }
@@ -360,7 +389,7 @@ function runTutorial(tutorial) {
   $("#modal .tutorial").click();
 }
 
-function gameMode(type, tileFactory) {
+function gameMode(loader, type, tileFactory) {
   var character = mazeInfo.canvas.character,
       foods = mazeInfo.canvas.foods,
       stage = mazeInfo.canvas.stage;
@@ -396,8 +425,16 @@ function gameMode(type, tileFactory) {
   }
   if(type == "game") {
     addFood();
-    $("#scoreBox").show();
   }
+  $("#scoreBox").show();
+  $("#scoreBox .food").replaceWith(loader.getResult("food"));
+  var localData = store.get('data') || {};
+
+  var path = location.pathname.split("/");
+  path = path.length == 3 ? path.concat(["index"]) : path;
+  path = path.slice(1, -1).join("/");
+  $("#scoreBox .score").text(localData[path] ? localData[path].score || 0 : 0);
+
   $("#runCode").hide();
   $(document).keydown(function(e) {
     if(createjs.Tween.hasActiveTweens()) {
