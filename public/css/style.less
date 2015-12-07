@@ -195,7 +195,7 @@ body.classify-body {
   }
 
   .workspace {
-    position: relative;
+    position: absolute;
     height: 100%;
     overflow: hidden;
     top: 0;
@@ -208,6 +208,43 @@ body.classify-body {
     }
     .blocklyPath.error {
       stroke: red;
+    }
+    #virtualKeypad {
+      position: relative;
+      height: 100%;
+
+      display:none;
+      background-color: white;
+      .key {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: lightgray;
+        color: black;
+      }
+      .up {
+        left: 50%;
+        margin-left: -50px;
+        bottom: 130px;
+      }
+      .down {
+        left: 50%;
+        margin-left: -50px;
+        bottom: 20px;
+      }
+      .left {
+        left: 50%;
+        margin-left: -160px;
+        bottom: 20px;
+      }
+      .right {
+        left: 50%;
+        margin-left: 60px;
+        bottom: 20px;
+      }
     }
   }
 

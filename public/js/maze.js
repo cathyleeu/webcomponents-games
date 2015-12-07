@@ -66,6 +66,9 @@ function init(step, maze, loader) {
   kidscoding = new KidsCoding(loader, mazeInfo, run);
   if(maze.type != "world" && maze.type != "game") {
     kidscoding.initBlockly(maze.toolbox, maze.workspace);
+  } else {
+    $("#virtualKeypad").show();
+    $("#blocklyDiv").hide();
   }
   addEvents(step, loader, mazeInfo, maze, tileFactory);
 
@@ -442,6 +445,31 @@ function gameMode(loader, type, tileFactory) {
     }
     // var direct = {37:"l", 38:"u", 39:"r", 40:"d", 32:"jump_forward"}[e.keyCode];
     var direct = {37:"l", 38:"u", 39:"r", 40:"d"}[e.keyCode];
+    if(!direct) {
+      return;
+    }
+    e.preventDefault();
+    kidscoding.Actions.move(direct, {}, function(obj) {
+      if(type == "game" && obj.role == "food") {
+        obj.visible = false;
+        createjs.Sound.play("success");
+        mazeInfo.canvas.stage.update();
+        $("#scoreBox .score").text(++mazeInfo.score);
+        addFood();
+      }
+      if(obj.link) {
+        location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname + "&x=" + character.px + "&y=" + character.py;
+      }
+      if(obj.tutorial) {
+        runTutorial(obj.tutorial);
+      }
+    });
+  });
+  $("#virtualKeypad .key").click(function(e) {
+    if(createjs.Tween.hasActiveTweens()) {
+      return;
+    }
+    var direct = $(e.target).attr("data-direct");
     if(!direct) {
       return;
     }
