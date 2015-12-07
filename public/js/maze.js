@@ -70,7 +70,6 @@ function init(step, maze, loader) {
     $("#virtualKeypad").show();
     $("#blocklyDiv").hide();
   }
-  addEvents(step, loader, mazeInfo, maze, tileFactory);
 
   var queries = {};
   location.search.slice(1).split("&").map(function(query) {
@@ -85,6 +84,8 @@ function init(step, maze, loader) {
   } else {
     $("#runCode").show();
   }
+
+  addEvents(step, loader, mazeInfo, maze, tileFactory);
 
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
@@ -251,7 +252,7 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
     e.preventDefault();
   });
   var handle_resize = function(e) {
-    var size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .row").height();
+    var size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .bottom-row").height();
     if($(window).width() / 2 < size) {
       size = parseInt($(window).width() / 2, 10);
     }
