@@ -1,31 +1,27 @@
 {
   "tile_size": 32,
   "render": "pixel",
+  "workspace": ["start","repeat","rotate_right"],
   "toolbox": [
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "repeat",
-    "jump_forward"
+    "repeat"
   ],
   "map": [
     ".xxxxxxxxx.",
-    "yppp..pp%.y",
-    "y.o....o..y",
-    "yxxxxxxxxxy",
-    "y.....ppppy",
-    "yxxxxx.oo.y",
-    "y.p..y....y",
-    "y.o..yxxxxy",
-    "yxxxxx.pppy",
-    "y.u.....ooy",
+    "y...ii....y",
+    "yxxxx..i..y",
+    "y..i......y",
+    "y.xx..i.xxy",
+    "yr........y",
+    "yk....ii.%y",
+    "yxi..i....y",
+    "y........my",
+    "y..ii.y...y",
     ".xxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": "틀렸어... 이대로는 공주님을 구할 수 없어...",
-    "img": "/img/ant2/o.png"
-  }, {
-    "msg": "아니! 우리 병사들이 위험해 도와주자!",
-    "img": "/img/ant/ant1.png"
+    "msg": "불개미들을 피해 별을 먹어 다음 단계로 이동해보자!"
   }]
 }

@@ -99,7 +99,7 @@ Blocks["move_forward4"] = {
   }]
 };
 Blocks["rotate_left"] = {
-  colour: 260,
+  colour: 90,
   message0: "%1 왼쪽으로 돌기",
   args0: [
     {type: "field_image", src: "/img/rotate_left.png", width: 24, height: 24}
@@ -107,7 +107,7 @@ Blocks["rotate_left"] = {
   action: ["rotate", "couter_clock_wise"]
 };
 Blocks["rotate_right"] = {
-  colour: 260,
+  colour: 120,
   message0: "%1 오른쪽으로 돌기",
   args0: [
     {type: "field_image", src: "/img/rotate_right.png", width: 24, height: 24}

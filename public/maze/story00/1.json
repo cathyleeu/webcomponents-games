@@ -1,6 +1,8 @@
 {
   "tile_size": 32,
   "render": "pixel",
+  "score":3,
+  "workspace": ["start", "repeat", "rotate_left", "repeat", "rotate_right","repeat","rotate_left","repeat"],
   "toolbox": [
     "move_forward",
     "rotate_left",
@@ -9,18 +11,25 @@
   ],
   "map": [
     ".xxxxxxxxx.",
-    "y....y....y",
-    "ykjk.y....y",
+    "y....yh...y",
+    "ykjk.y%...y",
     "y....y.ii.y",
     "y..jii.xxxy",
     "y.........y",
     "yk...iij..y",
-    "yxxx..%...y",
+    "yxxx......y",
     "y....m...my",
-    "y.u.......y",
+    "y.r.......y",
     ".xxxxxxxxx."
   ],
+  "extra": [{
+      "x": 6,
+      "y": 1,
+      "msg": "큭.. 이번은 봐주겠다",
+      "img": "/img/ant/ant2.png"
+  }],
   "tutorial": [{
-    "msg": "불개미들을 피해 별을 먹어 다음 단계로 이동해보자!"
+    "msg": "개미왕자 결투다! 이 길을 지나가지 못 할껄? 애들아 막아라!",
+    "img": "/img/ant/ant2.png"
   }]
 }
