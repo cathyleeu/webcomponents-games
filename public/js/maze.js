@@ -60,6 +60,18 @@ var kidscoding,
     mazeInfo;
 
 function init(step, maze, loader) {
+  var queries = {};
+  location.search.slice(1).split("&").map(function(query) {
+    var sp = query.split("=");
+    if(sp[0]) {
+      queries[sp[0]] = sp[1];
+    }
+  });
+  // index 화면 초기 구동시 localData 삭제
+  if(!queries.hasOwnProperty("x") && !queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
+    store.clear();
+  }
+
   var tileFactory = new TileFactory(maze, loader, maze.tile_size || 50);
   mazeInfo = initMaze(maze, loader, tileFactory);
   mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
@@ -70,14 +82,6 @@ function init(step, maze, loader) {
     $("#virtualKeypad").show();
     $("#blocklyDiv").hide();
   }
-
-  var queries = {};
-  location.search.slice(1).split("&").map(function(query) {
-    var sp = query.split("=");
-    if(sp[0]) {
-      queries[sp[0]] = sp[1];
-    }
-  });
 
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);
@@ -91,7 +95,6 @@ function init(step, maze, loader) {
     setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
-
   } else {
     $("#runTutorial").removeClass("hidden");
     runTutorial(maze.tutorial);
