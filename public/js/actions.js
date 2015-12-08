@@ -365,11 +365,11 @@ Actions.prototype.condition = function(type, block, callback) {
 
 Actions.prototype.repeat = function(type, block, callback) {
   var character = this.canvas.character,
-      tile = this.map[character.py][character.px],
       child = block.getInputTargetBlock("statements"),
       count = +block.getFieldValue("count"),
       _this = this;
   function proc() {
+    var tile = _this.map[character.py][character.px];
     if(child && ((tile != "%" && type == "repeat_until") || count > 0)) {
       _this.setTimeoutKey = setTimeout(function() {
         block.removeSelect();
