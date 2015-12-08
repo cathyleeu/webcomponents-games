@@ -198,7 +198,7 @@ function drawMaze(mazeInfo, maze, loader, tileFactory) {
         var extra = maze.extra ? maze.extra.filter(function(obj) {
           return obj.y == i && obj.x == j;
         })[0] : null;
-        if(extra) {
+        if(extra && extra.link) {
           var path = extra.link.split("/").slice(1, -1).join("/");
           if(localData[path] && localData[path].complete.indexOf(extra.link.split("/").slice(-1)[0]) >= 0) {
             continue;
