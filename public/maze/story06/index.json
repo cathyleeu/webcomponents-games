@@ -95,7 +95,8 @@
   },{
     "x": 22,
     "y": 3,
-    "link": "/maze/story06/17"
+    "link": "/maze/story06/17",
+    "min_score": 13
   }, {
     "x": 3,
     "y": 3,

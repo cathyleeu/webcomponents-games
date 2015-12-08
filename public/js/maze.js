@@ -432,12 +432,13 @@ function gameMode(loader, type, tileFactory) {
   }
   $("#scoreBox").show();
   $("#scoreBox .food").replaceWith(loader.getResult("food"));
-  var localData = store.get('data') || {};
 
+  var localData = store.get('data') || {};
   var path = location.pathname.split("/");
   path = path.length == 3 ? path.concat(["index"]) : path;
   path = path.slice(1, -1).join("/");
-  $("#scoreBox .score").text(localData[path] ? localData[path].score || 0 : 0);
+  var score = localData[path] ? localData[path].score || 0 : 0;
+  $("#scoreBox .score").text(score);
 
   $("#runCode").hide();
   $(document).keydown(function(e) {
@@ -459,7 +460,11 @@ function gameMode(loader, type, tileFactory) {
         addFood();
       }
       if(obj.link) {
-        location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname + "&x=" + character.px + "&y=" + character.py;
+        if(!obj.min_score || score >= obj.min_score) {
+          location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname + "&x=" + character.px + "&y=" + character.py;
+        } else {
+          showModal("별을 " + obj.min_score + "개 이상 모아야 해요");
+        }
       }
       if(obj.tutorial) {
         runTutorial(obj.tutorial);
