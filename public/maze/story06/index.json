@@ -1,6 +1,6 @@
 {
   "type": "world",
-  "view_size": 16,
+  "view_size": 10,
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [],
@@ -115,8 +115,8 @@
       "img": "/img/guide/normal.png"
     }]
   },{
-    "x": 2,
-    "y": 5,
+    "x": 10,
+    "y": 6,
     "src": "/img/guide/easy.png",
     "obstacle": false,
     "tutorial": [{
@@ -152,7 +152,7 @@
     "msg": "불개미왕자보다 더 빠르게 별을 많이 모아 공주에게 고백하자!",
     "img": "/img/ant/ant1.png"
   }, {
-    "msg": "개미왕자님 기달리게요",
+    "msg": "개미왕자님!",
     "img": "/img/ant/ant3.png"
   }]
 }
