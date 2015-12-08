@@ -123,8 +123,8 @@ function initMaze(maze, loader, tileFactory) {
       others: []
     }
   };
-  stage.canvas.width = (mazeInfo.view_size || map_width) * mazeInfo.tile_size;
-  stage.canvas.height = (mazeInfo.view_size || map_height) * mazeInfo.tile_size;
+  stage.canvas.width = Math.min(mazeInfo.view_size || map_width, map_width) * mazeInfo.tile_size;
+  stage.canvas.height = Math.min(mazeInfo.view_size || map_height, map_height) * mazeInfo.tile_size;
   if(maze.render == "pixel") {
     var ctx = stage.canvas.getContext("2d");
     ctx.imageSmoothingEnabled = false;
@@ -256,12 +256,12 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
     if($(window).width() / 2 < size) {
       size = parseInt($(window).width() / 2, 10);
     }
-    var view_size = mazeInfo.view_size || mazeInfo.width;
-    var zoom = size / (view_size * mazeInfo.tile_size);
-    zoom = parseInt(zoom * 100, 10) / 100;
+    var view_width = Math.min(mazeInfo.view_size || mazeInfo.width, mazeInfo.width),
+        view_height = Math.min(mazeInfo.view_size || mazeInfo.height, mazeInfo.height),
+        zoom = parseInt(100 * size / (view_width * mazeInfo.tile_size), 10) / 100;
     $("#display").css({
-      width: view_size*mazeInfo.tile_size * zoom,
-      height: view_size*mazeInfo.tile_size * zoom
+      width: view_width * mazeInfo.tile_size * zoom,
+      height: view_height * mazeInfo.tile_size * zoom
     });
 
     var real_width = $("#display").width();
