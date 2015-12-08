@@ -230,7 +230,14 @@ Actions.prototype.move = function(type, block, callback) {
   y_next += {'u':-1, 'r':0, 'd':1, 'l':0}[direct] * diff;
 
   var obj = this._getCanvasObject(x_next, y_next);
-  if( obj.obstacle ) {
+
+  var localData = store.get('data') || {};
+  var path = location.pathname.split("/");
+  path = path.length == 3 ? path.concat(["index"]) : path;
+  path = path.slice(1, -1).join("/");
+  var score = localData[path] ? localData[path].score || 0 : 0;
+
+  if( obj.obstacle || (obj.link && obj.min_score && score < obj.min_score)) {
     if(obj.role == "spider" || obj.role == "trap") {
       this._trapCharacter(x_next, y_next, function() {
         callback(obj);
