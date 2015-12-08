@@ -1,0 +1,158 @@
+{
+  "type": "world",
+  "view_size": 16,
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".xxxxxxxxxxxxxxxxxxxxxx.",
+    "y...%..zzz.%....%.yofo.y",
+    "y.%....zzz....%...y....y",
+    "y..#.%.zzz....#...yxxx%y",
+    "y......................y",
+    "ypp....................y",
+    "yxh%y...%.#.zzz#....%..y",
+    "y...y%....%.zzz..%.....y",
+    "y.u.y..%....zzz.%...%..y",
+    ".xxxxxxxxxxxxxxxxxxxxxx."
+  ],
+  "land": [
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................"
+  ],
+  "extra": [{
+    "x": 3,
+    "y": 6,
+    "link": "/maze/story06/1"
+  },{
+    "x": 4,
+    "y": 1,
+    "link": "/maze/story06/2"
+  },{
+    "x": 2,
+    "y": 2,
+    "link": "/maze/story06/3"
+  },{
+    "x": 5,
+    "y": 3,
+    "link": "/maze/story06/4"
+  },{
+    "x": 11,
+    "y": 1,
+    "link": "/maze/story06/5"
+  },{
+    "x": 16,
+    "y": 1,
+    "link": "/maze/story06/6"
+  },{
+    "x": 14,
+    "y": 2,
+    "link": "/maze/story06/7"
+  },{
+    "x": 11,
+    "y": 3,
+    "link": "/maze/story06/8"
+  },{
+    "x": 8,
+    "y": 6,
+    "link": "/maze/story06/9"
+  },{
+    "x": 5,
+    "y": 7,
+    "link": "/maze/story06/10"
+  },{
+    "x": 10,
+    "y": 7,
+    "link": "/maze/story06/11"
+  },{
+    "x": 7,
+    "y": 8,
+    "link": "/maze/story06/12"
+  },{
+    "x": 20,
+    "y": 6,
+    "link": "/maze/story06/13"
+  },{
+    "x": 17,
+    "y": 7,
+    "link": "/maze/story06/14"
+  },{
+    "x": 16,
+    "y": 8,
+    "link": "/maze/story06/15"
+  },{
+    "x": 20,
+    "y": 8,
+    "link": "/maze/story06/16"
+  },{
+    "x": 22,
+    "y": 3,
+    "link": "/maze/story06/17"
+  }, {
+    "x": 3,
+    "y": 3,
+    "src": "/img/guide/hard.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이곳은 별을 따기가 어렵다. 하지만 한 번에 3개의 별을 딸 수 있다",
+      "img": "/img/guide/hard.png"
+    }]
+  }, {
+    "x": 14,
+    "y": 3,
+    "src": "/img/guide/normal.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이곳은 한 번에 2개의 별을 딸 수 있다",
+      "img": "/img/guide/normal.png"
+    }]
+  },{
+    "x": 2,
+    "y": 5,
+    "src": "/img/guide/easy.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이곳은 별을 따기가 쉽지만 한 번에 1개의 별밖에 딸 수가 없다",
+      "img": "/img/guide/easy.png"
+    }]
+  },{
+    "x": 15,
+    "y": 6,
+    "src": "/img/guide/easy.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "이곳은 별을 따기가 쉽지만 한 번에 1개의 별밖에 딸 수가 없다",
+      "img": "/img/guide/easy.png"
+    }]
+  }],
+  "tutorial": [{
+    "msg": "오늘은 공주님에게 사랑한다고 고백을 하는 날이야",
+    "img": "/img/ant/ant1.png"
+  }, {
+    "msg": "코딩맵에 있는 별을 따 공주님에게 고백을 해보자",
+    "img": "/img/ant/ant1.png"
+  }, {
+    "msg": "흥! 공주님에게 고백을 하는건 나야!",
+    "img": "/img/ant/ant2.png"
+  }, {
+    "msg": "결투다! 개미왕자!",
+    "img": "/img/ant/ant2.png"
+  }, {
+    "msg": "이런! 불개미왕자도 고백을 하려나봐!",
+    "img": "/img/ant/ant1.png"
+  }, {
+    "msg": "불개미왕자보다 더 빠르게 별을 많이 모아 공주에게 고백하자!",
+    "img": "/img/ant/ant1.png"
+  }, {
+    "msg": "개미왕자님 기달리게요",
+    "img": "/img/ant/ant3.png"
+  }]
+}
