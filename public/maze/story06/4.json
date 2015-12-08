@@ -1,0 +1,27 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":3,
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.........y",
+    "yxxxx.....y",
+    "y......pi.y",
+    "y%...y..xxy",
+    "y....y....y",
+    "yk........y",
+    "yxpipp...y",
+    "y........my",
+    "y.u...y...y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "불개미 전사다! 불개미들을 피해서 별을 얻어내자"
+  }]
+}

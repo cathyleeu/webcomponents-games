@@ -1,28 +1,31 @@
 {
   "tile_size": 32,
   "render": "pixel",
-  "score":2,
-  "workspace": ["start","repeat"],
   "toolbox": [
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "repeat"
+    "repeat",
+    "jump_forward",
+    "get_item",
+    "use_item"
   ],
   "map": [
     ".xxxxxxxxx.",
+    "y.n...n...y",
+    "y.111111..y",
+    "yn1abce1..y",
+    "y.1ec%a1n.y",
+    "yn1abce1..y",
+    "y.111111n.y",
+    "y..n.)n...y",
     "y.........y",
-    "yxxxx..i..y",
-    "y.....i%..y",
-    "y.xx.i..xxy",
-    "y..ii.....y",
-    "yk.i..ij..y",
-    "yxi..iy...y",
-    "y...i.y..my",
-    "y.u...y...y",
+    "y.u.......y",
     ".xxxxxxxxx."
   ],
   "tutorial": [{
-    "msg": "불개미들을 피해 별을 먹어 다음 단계로 이동해보자!"
+    "msg": "친구들이 돌더미에 갇혀있어! 친구들과 함께"
+  }, {
+    "msg": "돌을 부셔 친구들을 구하고 별을 먹어보자!"
   }]
 }

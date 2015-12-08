@@ -1,7 +1,5 @@
 {
   "tile_size": 32,
-  "score":2,
-  "workspace": ["start","rotate_right", "repeat", "rotate_left", "repeat", "rotate_right"],
   "render": "pixel",
   "toolbox": [
     "move_forward",
@@ -11,15 +9,15 @@
   ],
   "map": [
     ".xxxxxxxxx.",
-    "y....y....y",
-    "ykjk.y....y",
-    "y....y.ii.y",
-    "y..jii.xxxy",
-    "y........%y",
+    "y.........y",
+    "yxxxx.....y",
+    "y....%.ii.y",
+    "y.xx.y..xxy",
+    "y..i.y....y",
     "yk...iij..y",
-    "yxxx......y",
-    "y....m...my",
-    "y.u.......y",
+    "yxii..y...y",
+    "y.....y..my",
+    "y.u...y...y",
     ".xxxxxxxxx."
   ],
   "tutorial": [{
