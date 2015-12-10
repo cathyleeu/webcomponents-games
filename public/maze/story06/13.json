@@ -1,7 +1,7 @@
 {
   "tile_size": 32,
   "render": "pixel",
-  "workspace": ["start","rotate_right","repeat", "rotate_left", "repeat", "rotate_left"],
+  "workspace": ["start","rotate_right","repeat", "rotate_left", "repeat"],
   "toolbox": [
     "move_forward",
     "rotate_left",
@@ -12,9 +12,9 @@
     ".xxxxxxxxx.",
     "y.........y",
     "yxxxx..i..y",
-    "y..i.%....y",
+    "y..i......y",
     "y.xx..i.xxy",
-    "y..i...i..y",
+    "y..i..%i..y",
     "yk........y",
     "yxiiii....y",
     "y........my",

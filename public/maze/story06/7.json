@@ -2,7 +2,7 @@
   "tile_size": 32,
   "render": "pixel",
   "score":2,
-  "workspace": ["start", "rotate_right","repeat","rotate_left","repeat","rotate_right","repeat","rotate_right"],
+  "workspace": ["start", "rotate_right","repeat","rotate_left","repeat","rotate_right","repeat"],
   "toolbox": [
     "move_forward",
     "rotate_left",
@@ -11,11 +11,11 @@
   ],
   "map": [
     ".xxxxxxxxx.",
-    "y...%y....y",
+    "y....y....y",
     "ykjk.y....y",
     "y......ii.y",
     "y..jiy..xxy",
-    "y.........y",
+    "y......%..y",
     "yk...iij..y",
     "yxii..y...y",
     "y.....y..my",

@@ -15,7 +15,7 @@
   {"id": "land11", "src": "/img/map32/11.png"},
   {"id": "character", "src": "/img/map32/ant_sprite.png", "sprite": true, "size": 32},
   {"id": "food", "src": "/img/map/star.png"},
-  {"id": "bgm", "src": "/sound/bgm_story6.mp3", "type": "sound"},
+  {"id": "bgm", "src": "/sound/bgm_story7.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
