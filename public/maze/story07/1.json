@@ -1,7 +1,7 @@
 {
   "tile_size": 32,
   "render": "pixel",
-  "score":1,
+  "score":3,
   "workspace": ["start", "repeat", "rotate_left", "repeat", "rotate_right","repeat","rotate_left","repeat"],
   "toolbox": [
     "move_forward",
