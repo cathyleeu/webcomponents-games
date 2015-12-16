@@ -1,0 +1,58 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KIDSCODING</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="/"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#portfolio">연습문제</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">문제 만들기</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#contact">문의</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div>
+          <h1>
+            <span><%= user.school %><span>
+            <span><%= user.class %><span>
+          </h1>
+        </div>
+        <hr class="star-light">
+        <img class="img-responsive" src="/img/profile.png" alt="">
+        <div class="intro-text">
+          <span class="name"><span><%= user.name %></span></span>
+          <span class="skills">오늘도 재밌게 코딩공부 해볼까?</span>
+          <div><%- JSON.stringify(user) %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
