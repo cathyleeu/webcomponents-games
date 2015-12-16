@@ -33,12 +33,10 @@ render(app, {
 
 var Students = require('./model/students');
 passport.serializeUser(function(user, done) {
-  console.log(1);
   done(null, user)
 });
 
 passport.deserializeUser(function(user, done) {
-  console.log(2);
   Students.findOne({ name: user.name }, function(err, user) {
     if (err) { return done(err); }
     if (!user) {
@@ -52,7 +50,6 @@ passport.use('local', new localStrategy({
   usernameField: 'name',
   passwordField: 'password'
 }, function(name, password, done) {
-  console.log(3);
   Students.findOne({ name: name }, function(err, user) {
     if (err) { return done(err); }
     if (!user) {

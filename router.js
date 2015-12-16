@@ -79,14 +79,21 @@ public.get('/maze/:category/:type/:step', function *(next) {
 
 public.post('/api/login',
   passport.authenticate('local', {
-    successRedirect: '/old',
+    successRedirect: '/dashboard',
     failureRedirect: '/login'
   })
 );
 
 public.get('/api/logout', function*(next) {
-  this.logout()
-  this.redirect('/login')
+  this.logout();
+  this.redirect('/login');
+});
+
+secured.get('/dashboard', function*(next) {
+  yield this.render('dashboard', {
+    title: "키즈코딩",
+    user: this.session.passport.user
+  });
 });
 
 module.exports = {
