@@ -1,0 +1,32 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".zzzzzzzzz.",
+    "z...zza%..z",
+    "z..bbb..z.z",
+    "z.z.....zzz",
+    "z...b...b.z",
+    "z..z....b.z",
+    "z.........z",
+    "z..b.zz...z",
+    "z..zz...b.z",
+    "z...b..u..z",
+    ".zzzzzzzzz."
+  ],
+  "tutorial": [{
+    "msg": "코딩을 완성하면 별을 5개를 얻을 수 있어!",
+    "img": "/img/winter/rudolf.png"
+  },{
+    "msg": "앞으로 몇 칸 가야하는지 세보고 반복을 이용해보자!",
+    "img": "/img/winter/rudolf.png"
+  }]
+}

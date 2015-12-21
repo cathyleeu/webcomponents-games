@@ -1,0 +1,37 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":1000,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".zzzzzzzzz.",
+    "zeeeeeeeeez",
+    "zeeeacaeeez",
+    "zeee.%.eeez",
+    "z.........z",
+    "z.........z",
+    "z.........z",
+    "z....u....z",
+    "z.........z",
+    "z.........z",
+    ".zzzzzzzzz."
+  ],
+  "tutorial": [{
+    "msg": "허허허 별을 다 모아왔구나!",
+    "img": "/img/winter/santa.png"
+  }, {
+    "msg": "코딩 선생님에게 찾아가",
+    "img": "/img/winter/santa.png"
+  }, {
+    "msg": "메리크리스마스~라고 말해주면 선물을 주실꺼야",
+    "img": "/img/winter/santa.png"
+  }]
+}

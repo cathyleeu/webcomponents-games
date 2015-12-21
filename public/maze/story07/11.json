@@ -1,0 +1,34 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":9,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".zzzzzzzzz.",
+    "z.....1...z",
+    "z.zz1..z..z",
+    "z.1......1z",
+    "z.1..%..11z",
+    "z11.11z111z",
+    "z.zz..1...z",
+    "z..11.....z",
+    "z.)z......z",
+    "z.u1...zzzz",
+    ".zzzzzzzzz."
+  ],
+  "tutorial": [{
+    "msg": "코딩을 완성하면 별을 9개를 얻을 수 있어!",
+    "img": "/img/winter/rudolf.png"
+  },  {
+    "msg": "곡괭이로 눈사람을 없앨 수 있어!",
+    "img": "/img/winter/rudolf.png"
+  }]
+}
