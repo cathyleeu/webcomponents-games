@@ -1,0 +1,32 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":20,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".zzzzzzzzz.",
+    "z.........z",
+    "z.b..b....z",
+    "z..bz.bb..z",
+    "z..b....b.z",
+    "z.b....%z.z",
+    "z.z..z.ab.z",
+    "z.b.z..b..z",
+    "z.b.zzb...z",
+    "zuz.......z",
+    ".zzzzzzzzz."
+  ],
+  "tutorial": [{
+    "msg": "코딩을 완성하면 별을 20개를 얻을 수 있어!",
+    "img": "/img/winter/rudolf.png"
+  },{
+    "msg": "이중반복을 이용해야해!!!",
+    "img": "/img/winter/rudolf.png"
+  }]
+}

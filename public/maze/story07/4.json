@@ -11,22 +11,25 @@
   ],
   "map": [
     ".zzzzzzzzz.",
-    "z...bz.z..z",
-    "z.bz..za..z",
-    "z....z.%z.z",
-    "z......z..z",
-    "z.bz..z...z",
+    "z.........z",
+    "z.zbbzbzz.z",
+    "z.z.....b.z",
+    "z...bbb.z.z",
+    "z..b..z...z",
+    "z....b..b.z",
+    "z.z...b.z.z",
     "z.z..b..b.z",
-    "zb..z..z..z",
-    "z.uz.zb..zz",
-    "z.z.b..z..z",
+    "zub...b.a%z",
     ".zzzzzzzzz."
   ],
   "tutorial": [{
     "msg": "코딩을 완성하면 별을 15개를 얻을 수 있어!",
     "img": "/img/winter/rudolf.png"
   },{
-    "msg": "앞으로 오른쪽 앞으로 왼쪽을 5번!! 반복하고 있어!",
+    "msg": "크게~ 한바퀴 돌면 별을 얻을 수 있을거야!",
+    "img": "/img/winter/rudolf.png"
+  },{
+    "msg": "나라면 이중반복을 이용해서 빨리 깨보겠어!",
     "img": "/img/winter/rudolf.png"
   }]
 }
