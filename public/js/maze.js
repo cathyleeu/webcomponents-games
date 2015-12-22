@@ -492,7 +492,11 @@ function gameMode(loader, type, tileFactory) {
         addFood();
       }
       if(obj.link) {
-        location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname + "&x=" + character.px + "&y=" + character.py;
+        if(!obj.min_score || score >= obj.min_score) {
+          location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname + "&x=" + character.px + "&y=" + character.py;
+        } else {
+          showModal("별을 " + obj.min_score + "개 이상 모아야 해요");
+        }
       }
       if(obj.tutorial) {
         runTutorial(obj.tutorial);
