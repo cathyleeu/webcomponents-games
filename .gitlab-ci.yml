@@ -3,7 +3,7 @@ deploy to dev.toycode.org:
   - "npm install"
   - "bower install"
   - "forever stop kidscoding || true"
-  - "forever start --uid \"kidscoding\" -a -c \"node --harmony app.js --kidscoding\" ."
+  - "forever start --uid \"kidscoding\" -a -c \"gulp\" ."
   type: deploy
   tags:
   only:

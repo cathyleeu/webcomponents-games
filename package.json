@@ -1,5 +1,6 @@
 {
-  "name": "muglau2-server",
+  "private": true,
+  "name": "kidscoding",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -9,10 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "appcache-manifest": "^1.0.3",
     "co-request": "^1.0.0",
+    "glob": "^6.0.3",
+    "gulp-less": "^3.0.5",
+    "gulp-shell": "^0.5.1",
     "ip": "^1.0.1",
     "koa": "^1.0.0",
     "koa-body": "^1.2.1",
+    "koa-compress": "^1.0.8",
     "koa-cors": "0.0.16",
     "koa-ejs": "^2.0.1",
     "koa-generic-session": "^1.10.0",
@@ -22,7 +28,7 @@
     "koa-static": "^1.4.9",
     "minimist": "^1.2.0",
     "mongoose": "~4.0.0",
-    "mongoose-auto-increment": "^4.0.0",
+    "mongoose-auto-increment": "~4.0.0",
     "passport-local": "^1.0.0"
   }
 }

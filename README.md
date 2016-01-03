@@ -15,7 +15,7 @@
 ## 서버 실행
   * 서버 시작
   ```
-  npm start
+  gulp
   ```
   * 개발 환경에서의 실행
     * mongodb 실행
@@ -24,5 +24,5 @@
     ```
     * 서버 자동 재실행
     ```
-    nodemon --exec npm start
+    nodemon --exec gulp
     ```

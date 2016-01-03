@@ -3,12 +3,6 @@ var public = require('koa-router')(),
     passport = require('koa-passport'),
     request = require('co-request'),
     students = require('./controller/students'),
-    // terms = require('./controller/terms'),
-    // food = require('./controller/food'),
-    // company = require('./controller/company'),
-    // restaurant = require('./controller/restaurant'),
-    // menu = require('./controller/menu'),
-    // vote = require('./controller/vote'),
     argv = require('minimist')(process.argv.slice(2)),
     config = require('./config.json'); //[argv.production ? 'production' : 'development'];
 
