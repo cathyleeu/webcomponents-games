@@ -7,6 +7,7 @@ var app = require('koa')(),
     less = require('koa-less'),
     serve = require('koa-static'),
     cors = require('koa-cors'),
+    compress = require('koa-compress'),
     path = require('path'),
     mongoose = require('mongoose'),
     autoIncrement = require('mongoose-auto-increment'),
@@ -66,6 +67,7 @@ var router = require('./router');
 app.proxy = true;
 app.keys = ['toycodeinc'];
 app
+  .use(compress())
   .use(less(path.join(__dirname, 'public')))
   .use(serve(path.join(__dirname, 'public'), {
     maxage: 60*60*1000
