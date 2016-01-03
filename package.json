@@ -13,6 +13,7 @@
     "appcache-manifest": "^1.0.3",
     "co-request": "^1.0.0",
     "glob": "^6.0.3",
+    "gulp": "^3.9.0",
     "gulp-less": "^3.0.5",
     "gulp-shell": "^0.5.1",
     "ip": "^1.0.1",
