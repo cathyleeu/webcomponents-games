@@ -14,7 +14,11 @@ gulp.task('less', function () {
 });
 
 gulp.task('appcache', ['less'], function(cb) {
-  var maze = glob.sync('public/maze/basic/*.json');
+  var offline = JSON.parse(fs.readFileSync('public/maze/offline.json'))
+  .map(function(obj) {
+    return 'public/' + obj.href.split('/').slice(0, -1).join('/') + '/*.json';
+  });
+  var maze = glob.sync('{' + offline.join(',') + '}');
   var pages = maze.filter(function(val) {
     return val.slice(-13) !== 'manifest.json';
   }).map(function(val) {
@@ -38,7 +42,7 @@ gulp.task('appcache', ['less'], function(cb) {
     text += pages.join('\n') + '\n';
     text += fs.readFileSync('cache-postfile.txt') + '\n';
     text += 'NETWORK:\n*\n';
-    text += 'FALLBACK:\n/ /offline';
+    text += 'FALLBACK:\n/list /offline';
     fs.writeFile('public/cache.manifest', text, cb);
   });
 });

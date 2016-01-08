@@ -1,0 +1,27 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "workspace": ["start","repeat","rotate_right","repeat","rotate_right"],
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.........y",
+    "yxxxx..i..y",
+    "y..i......y",
+    "y...%.i.xxy",
+    "y......i..y",
+    "ykui......y",
+    "yxi..i....y",
+    "y........my",
+    "y.....y...y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "불개미들을 피해 별을 먹어 다음 단계로 이동해보자!"
+  }]
+}

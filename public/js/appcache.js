@@ -14,10 +14,7 @@
           val2 = parseInt(val * 100) + "%";
       $('#appcache .progress-bar').css("width", val1).text(val2);
     }
-    if(e.type === 'cached') {
-      $('#appcache .msg').text('업데이트 완료');
-    }
-    if(e.type === 'updateready') {
+    if(e.type === 'cached' || e.type === 'updateready') {
       $('#appcache .msg').text('업데이트 완료');
       $('#appcache button').show().click(function() {
         global.location.reload();
