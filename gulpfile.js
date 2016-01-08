@@ -14,7 +14,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('appcache', ['less'], function(cb) {
-  var maze = glob.sync('public/maze/**/*.json');
+  var maze = glob.sync('public/maze/basic/*.json');
   var pages = maze.filter(function(val) {
     return val.slice(-13) !== 'manifest.json';
   }).map(function(val) {
@@ -23,8 +23,8 @@ gulp.task('appcache', ['less'], function(cb) {
   var readable = am.generate([
     'public/css/**/*.css',
     'public/img/**/*.{png,jpg,jpeg,gif}',
-    'public/js/**/*.js',
-    'public/sound/**/*.{mp3,wav}'
+    'public/js/**/*.js'
+    // 'public/sound/**/*.{mp3,wav}'
   ].concat(maze), {});
   var text = '';
   readable.on('readable', function() {
@@ -34,10 +34,12 @@ gulp.task('appcache', ['less'], function(cb) {
     }
   });
   readable.on('end', function() {
+    text += '#' + new Date().toISOString() + '\n';
     text += pages.join('\n') + '\n';
     text += fs.readFileSync('cache-postfile.txt') + '\n';
-    text += 'NETWORK:\n*';
-    fs.writeFile('public/cache.menifest', text, cb);
+    text += 'NETWORK:\n*\n';
+    text += 'FALLBACK:\n/ /offline';
+    fs.writeFile('public/cache.manifest', text, cb);
   });
 });
 
