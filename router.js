@@ -13,6 +13,29 @@ public.get('/', function *(next) {
   });
   yield this.render('home', {
     title: "키즈코딩",
+    list: JSON.parse(list.body),
+    manifest: true
+  });
+});
+
+public.get('/list', function *(next) {
+  var list = yield request({
+    method: 'GET',
+    uri: 'http://localhost:' + config.port + '/maze/list.json'
+  });
+  yield this.render('list', {
+    title: "키즈코딩",
+    list: JSON.parse(list.body)
+  });
+});
+
+public.get('/offline', function *(next) {
+  var list = yield request({
+    method: 'GET',
+    uri: 'http://localhost:' + config.port + '/maze/offline.json'
+  });
+  yield this.render('list', {
+    title: "키즈코딩",
     list: JSON.parse(list.body)
   });
 });

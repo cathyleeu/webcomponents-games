@@ -1,0 +1,27 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "workspace": ["start", "move_up"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.........y",
+    "y.........y",
+    "y....%....y",
+    "y.........y",
+    "y.........y",
+    "y....u....y",
+    "y.........y",
+    "y.........y",
+    "y.........y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "위로 움직여 보자"
+  }]
+}
