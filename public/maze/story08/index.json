@@ -1,0 +1,155 @@
+{
+  "type": "world",
+  "view_size": 10,
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".zzzzzzzzzzzzzzzzzzzzzz.",
+    "z##.####.%#..e.#..###.%z",
+    "z.##%.%..#.....#%...%#.z",
+    "z.#%.#..%##.....#%...#%z",
+    "z.##....#.#..#...##....z",
+    "z.......#..............z",
+    "z.#...#....#...#%....#%z",
+    "z..#.u...#...#.###%....z",
+    "z......#..#.#...#%..#%.z",
+    ".zzzzzzzzzzzzzzzzzzzzzz."
+  ],
+  "extra": [{
+    "x": 3,
+    "y": 3,
+    "link": "/maze/story08/1"
+  },{
+    "x": 4,
+    "y": 2,
+    "link": "/maze/story08/2"
+  },{
+    "x": 6,
+    "y": 2,
+    "link": "/maze/story08/3"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "/maze/story08/4"
+  },{
+    "x": 8,
+    "y": 3,
+    "link": "/maze/story08/5"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "/maze/story08/6"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "/maze/story08/7"
+  },{
+    "x": 20,
+    "y": 2,
+    "link": "/maze/story08/8"
+  },{
+    "x": 22,
+    "y": 1,
+    "link": "/maze/story08/9"
+  },{
+    "x": 22,
+    "y": 3,
+    "link": "/maze/story08/10"
+  },{
+    "x": 16,
+    "y": 6,
+    "link": "/maze/story08/11"
+  },{
+    "x": 18,
+    "y": 7,
+    "link": "/maze/story08/12"
+  },{
+    "x": 17,
+    "y": 8,
+    "link": "/maze/story08/13"
+  },{
+    "x": 22,
+    "y": 6,
+    "link": "/maze/story08/14"
+  },{
+    "x": 21,
+    "y": 8,
+    "link": "/maze/story08/15"
+  },{
+    "x": 13,
+    "y": 1,
+    "link": "/maze/story08/16",
+    "min_score": 77
+  },  {
+    "x": 6,
+    "y": 6,
+    "src": "/img/guide/question.png",
+    "obstacle": false,
+    "tutorial": [
+       {
+      "msg": "빨간색 표지판 : 짱구벌레 10개를 얻을 수 있습니다. 매우 어렵습니다.",
+      "img": "/img/guide/hard.png"
+    }, {
+      "msg": "노란색 표지판 : 짱구벌레 7개를 얻을 수 있습니다.",
+      "img": "/img/guide/normal.png"
+    }, {
+      "msg": "초록색 표지판 : 짱구벌레 5개를 얻을 수 있습니다. 다소 쉽습니다.",
+      "img": "/img/guide/easy.png"
+    }]
+  },{
+    "x": 3,
+    "y": 4,
+    "src": "/img/guide/easy.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "짱구벌레를 5개 얻을 수 있어!",
+      "img": "/img/guide/easy.png"
+    }]
+
+  },  {
+    "x": 18,
+    "y": 4,
+    "src": "/img/guide/normal.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "짱구벌레를 7개 얻을 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 15,
+    "y": 6,
+    "src": "/img/guide/hard.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "짱구벌레를 10개 얻을 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+}],
+  "tutorial": [{
+    "msg": "올챙올챙~ 안녕! 나는 올챙이라고해",
+    "img": "/img/story08/tadpole0.png"
+  }, {
+    "msg": "태어난지 얼마 안되었어",
+    "img": "/img/story08/tadpole0.png"
+  }, {
+    "msg": "우리 엄마가 말해주셨는데",
+    "img": "/img/story08/tadpole0.png"
+  }, {
+    "msg": "밥을 많이~ 먹으면",
+    "img": "/img/story08/tadpole0.png"
+  }, {
+    "msg": "뒷다리가 쏙~ 앞다리가 쏙~",
+    "img": "/img/story08/tadpole0.png"
+  }, {
+    "msg": "멋있는 개구리가 될 수 있다고 말하셨어!",
+    "img": "/img/story08/tadpole0.png"
+  }, {
+    "msg": "앗! 저기 내가 제일 좋아하는 장구벌레다!",
+    "img": "/img/story08/tadpole0.png"
+  }, {
+    "msg": "장구벌레 77마리를 모아보자!",
+    "img": "/img/story08/tadpole0.png"
+  }]
+}

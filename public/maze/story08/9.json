@@ -1,0 +1,33 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":7,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".zzzzzzzzz.",
+    "zd#...#...z",
+    "z.........z",
+    "z..#...##.z",
+    "z....#....z",
+    "z.##...#..z",
+    "z...%.....z",
+    "z.#.#.....z",
+    "z.#.....#.z",
+    "z.#.#.....z",
+    ".zzzzzzzzz."
+  ],
+  "tutorial": [{
+    "msg": "올챙올챙~ 장구벌레는 모기의 유충이야!",
+    "img": "/img/story08/tadpole0.png"
+  },{
+    "msg": "장구벌레를 먹고 쑥쑥 커야지",
+    "img": "/img/story08/tadpole0.png"
+  }]
+}
