@@ -50,47 +50,73 @@ TileFactory.prototype.create = function(tile, x, y) {
       case "character":
         var character = this.loader.getItem("character");
         if(character && character.sprite) {
-          var data = {
-            images: [this.loader.getResult("character")],
-            frames: {width: character.size, height: character.size},
-            animations: {
+          debugger
+          var animations = {
+            stand_u: 0,
+            walk_u: {
+              frames: [0,1,0,2],
+              speed: 0.25
+            },
+            jump_u: {
+              frames: [3,4,5,6,7,6,5,4,3],
+              speed: 0.5
+            },
+            stand_r: 8,
+            walk_r: {
+              frames: [8,9],
+              speed: 0.125
+            },
+            jump_r: {
+              frames: [11,12,13,14,15,14,13,12,11],
+              speed: 0.5
+            },
+            stand_d: 16,
+            walk_d: {
+              frames: [16,17,16,18],
+              speed: 0.25
+            },
+            jump_d: {
+              frames: [19,20,21,22,23,22,21,20,19],
+              speed: 0.5
+            },
+            stand_l: 24,
+            walk_l: {
+              frames: [24,25],
+              speed: 0.125
+            },
+            jump_l: {
+              frames: [27,28,29,30,31,30,29,28,27],
+              speed: 0.5
+            }
+          };
+          if(character.src == "/img/story08/tadpole.png") {
+            animations = {
               stand_u: 0,
               walk_u: {
                 frames: [0,1,0,2],
                 speed: 0.25
               },
-              jump_u: {
-                frames: [3,4,5,6,7,6,5,4,3],
-                speed: 0.5
-              },
-              stand_r: 8,
+              stand_r: 9,
               walk_r: {
-                frames: [8,9],
-                speed: 0.125
-              },
-              jump_r: {
-                frames: [11,12,13,14,15,14,13,12,11],
-                speed: 0.5
-              },
-              stand_d: 16,
-              walk_d: {
-                frames: [16,17,16,18],
+                frames: [9,10,9,11],
                 speed: 0.25
               },
-              jump_d: {
-                frames: [19,20,21,22,23,22,21,20,19],
-                speed: 0.5
+              stand_d: 3,
+              walk_d: {
+                frames: [3,4,3,5],
+                speed: 0.25
               },
-              stand_l: 24,
+              stand_l: 6,
               walk_l: {
-                frames: [24,25],
-                speed: 0.125
-              },
-              jump_l: {
-                frames: [27,28,29,30,31,30,29,28,27],
-                speed: 0.5
+                frames: [6,7,6,8],
+                speed: 0.25
               }
-            }
+            };
+          }
+          var data = {
+            images: [this.loader.getResult("character")],
+            frames: {width: character.size, height: character.size},
+            animations: animations
           };
           bitmap = new createjs.Sprite(
             new createjs.SpriteSheet(data),

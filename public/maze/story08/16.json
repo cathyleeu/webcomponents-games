@@ -1,0 +1,39 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":100,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".zzzzzzzzz.",
+    "z.........z",
+    "z.........z",
+    "z.........z",
+    "z.........z",
+    "z.........z",
+    "z.........z",
+    "z.........z",
+    "z....u....z",
+    "z.........z",
+    ".zzzzzzzzz."
+  ],
+  "tutorial": [{
+    "msg": "엉덩이가 간지러운데 왜이러지?",
+    "img": "/img/story08/tadpole0.png"
+  },{
+    "msg": "뒷다리가 나왔다!",
+    "img": "/img/story08/tadpole01.png"
+  },{
+    "msg": "고마워! 다음 시간에도 먹이를 많이~ 먹으면 앞다리가 나오겠지?",
+    "img": "/img/story08/tadpole01.png"
+  },{
+    "msg": "다음에 보자! 안녕~",
+    "img": "/img/story08/tadpole01.png"
+  }]
+}
