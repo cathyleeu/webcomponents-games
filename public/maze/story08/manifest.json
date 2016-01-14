@@ -20,7 +20,7 @@
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.wav", "type": "sound"},
-  {"tile": "e", "id": "e", "src": "/img/map/star.png", "obstacle": true},
+  {"tile": "e", "id": "e", "src": "/img/map/star.png"},
   {"id": "lotus1", "src": "/img/story08/lotus1.png", "obstacle": true},
   {"id": "lotus2", "src": "/img/story08/lotus2.png", "obstacle": true},
   {"id": "lotus3", "src": "/img/story08/lotus3.png", "obstacle": true},

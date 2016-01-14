@@ -50,7 +50,6 @@ TileFactory.prototype.create = function(tile, x, y) {
       case "character":
         var character = this.loader.getItem("character");
         if(character && character.sprite) {
-          debugger
           var animations = {
             stand_u: 0,
             walk_u: {
@@ -123,7 +122,6 @@ TileFactory.prototype.create = function(tile, x, y) {
             "stand_" + (tile == "@" ? "d" : tile)
           );
           bitmap.direct = (tile == "@" ? "u" : tile);
-          bitmap.framerate = 40;
           bitmap.sprite = true;
           bitmap.role = "character";
         } else if(tile == "@") { // undirected character
