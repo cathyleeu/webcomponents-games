@@ -4,7 +4,7 @@ deploy to dev.toycode.org:
   - "bower install"
   - "./node_modules/.bin/gulp appcache"
   - "forever stop kidscoding || true"
-  - "forever start --uid \"kidscoding\" -a -c "node --harmony" app.js"
+  - "forever start --uid \"kidscoding\" -a -c \"node --harmony\" app.js"
   type: deploy
   tags:
   only:
