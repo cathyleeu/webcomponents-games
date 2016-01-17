@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "gulp appcache",
     "start": "node --harmony app.js"
   },
   "author": "",
