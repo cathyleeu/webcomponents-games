@@ -15,7 +15,7 @@
     "glob": "^6.0.3",
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.5",
-    "gulp-shell": "^0.5.1",
+    "gulp-load-plugins": "^1.2.0",
     "ip": "^1.0.1",
     "koa": "^1.0.0",
     "koa-body": "^1.2.1",
@@ -31,5 +31,8 @@
     "mongoose": "~4.0.0",
     "mongoose-auto-increment": "~4.0.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.0"
   }
 }
