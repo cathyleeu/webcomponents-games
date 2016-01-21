@@ -48,7 +48,8 @@ TileFactory.prototype.create = function(tile, x, y) {
     bitmap.role = role;
     switch(role) {
       case "character":
-        var character = this.loader.getItem("character");
+        var character_id = this.maze.character,
+            character = this.loader.getItem(character_id);
         if(character && character.sprite) {
           var animations = {
             stand_u: 0,
@@ -113,7 +114,7 @@ TileFactory.prototype.create = function(tile, x, y) {
             };
           }
           var data = {
-            images: [this.loader.getResult("character")],
+            images: [this.loader.getResult(character_id)],
             frames: {width: character.size, height: character.size},
             animations: animations
           };
@@ -125,11 +126,11 @@ TileFactory.prototype.create = function(tile, x, y) {
           bitmap.sprite = true;
           bitmap.role = "character";
         } else if(tile == "@") { // undirected character
-          bitmap.image = this.loader.getResult("character");
+          bitmap.image = this.loader.getResult(character_id);
           bitmap.direct = (tile == "@" ? "u" : tile);
           bitmap.rotate_mode = "rotation";
         } else { // directed character
-          bitmap.image = this.loader.getResult("character_" + tile);
+          bitmap.image = this.loader.getResult(character_id + "_" + tile);
           bitmap.direct = (tile == "@" ? "u" : tile);
           bitmap.rotate_mode = "image";
         }

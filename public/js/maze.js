@@ -34,11 +34,6 @@ $.getJSON(manifest_url, function(manifest) {
     return item.type != "sound";
   }));
   image_loader.on("complete", function() {
-    if(image_loader.getItem('message')) {
-      message_url = image_loader.getItem('message').src;
-    } else {
-      message_url = "/img/ladybug.png";
-    }
     d2.resolve(image_loader);
   });
   image_loader.getResult = newGetResult;
@@ -66,6 +61,13 @@ var kidscoding,
     mazeInfo;
 
 function init(step, maze, loader) {
+  var message_id = maze.message || maze.character;
+  if(loader.getItem(message_id)) {
+    message_url = loader.getItem(message_id).src;
+  } else {
+    message_url = "/img/ladybug.png";
+  }
+
   var queries = {};
   location.search.slice(1).split("&").map(function(query) {
     var sp = query.split("=");
