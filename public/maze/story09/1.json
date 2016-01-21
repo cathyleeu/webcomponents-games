@@ -9,6 +9,8 @@
     "move_right",
     "move_left"
   ],
+  "character": "character",
+  "message": "message",
   "map": [
     ".zzzzzzzzz.",
     "z.#...#...z",

@@ -4,6 +4,8 @@
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [],
+  "character": "character3",
+  "message": "message3",
   "map": [
     ".zzzzzzzz.",
     "z#e...#..z",
@@ -44,12 +46,12 @@
   }],
   "tutorial": [{
     "msg": "앗! 앞다리가 나왔어!",
-    "img": "/img/story08/tadpole0.png"
+    "img": "/img/story08/tadpole02.png"
   }, {
     "msg": "이제 나도 멋진 개구리가 될 수 있을거야",
-    "img": "/img/story08/tadpole0.png"
+    "img": "/img/story08/tadpole02.png"
   }, {
     "msg": "여기 있는 장구벌레를 다 먹어버리자!",
-    "img": "/img/story08/tadpole0.png"
+    "img": "/img/story08/tadpole02.png"
   }]
 }

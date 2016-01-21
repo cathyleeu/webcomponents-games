@@ -4,6 +4,8 @@
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [],
+  "character": "character2",
+  "message": "message2",
   "map": [
     ".zzzzzzzz.",
     "z#.####.dz",

@@ -11,6 +11,7 @@
     "repeat"
   ],
   "character": "character3",
+  "message": "message3",
   "map": [
     ".zzzzzzzzz.",
     "z.........z",
