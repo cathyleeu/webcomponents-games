@@ -48,7 +48,7 @@ TileFactory.prototype.create = function(tile, x, y) {
     bitmap.role = role;
     switch(role) {
       case "character":
-        var character_id = this.maze.character,
+        var character_id = this.maze.character || "character",
             character = this.loader.getItem(character_id);
         if(character && character.sprite) {
           var animations = {
