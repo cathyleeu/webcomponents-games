@@ -6,7 +6,8 @@ var d1 = $.Deferred(),
     path = path.length == 3 ? path.concat(["index"]) : path,
     map_url = path.join("/") + ".json",
     manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/"),
-    step = path[3];
+    step = path[3],
+    message_url;
 
 // load map json file
 $.getJSON(map_url, function(json) {
@@ -60,6 +61,13 @@ var kidscoding,
     mazeInfo;
 
 function init(step, maze, loader) {
+  var message_id = maze.message || maze.character;
+  if(loader.getItem(message_id)) {
+    message_url = loader.getItem(message_id).src;
+  } else {
+    message_url = "/img/ladybug.png";
+  }
+
   var queries = {};
   location.search.slice(1).split("&").map(function(query) {
     var sp = query.split("=");
@@ -634,7 +642,7 @@ function showModal(options) {
     $("#modal .modal-msg-box").show();
     $("#modal video").hide();
   }
-  var img_src = options.img || "/img/ladybug.png";
+  var img_src = options.img || message_url;
   $(".modal-msg-box img").attr("src", img_src);
   $("#modal .modal-msg").html(options.msg);
   $('#modal').modal({
