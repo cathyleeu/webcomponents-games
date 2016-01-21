@@ -1,0 +1,40 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":20,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "character": "character3",
+  "map": [
+    ".zzzzzzzzz.",
+    "z.........z",
+    "z.........z",
+    "z....%....z",
+    "z.........z",
+    "z.........z",
+    "z.........z",
+    "z....u....z",
+    "z.........z",
+    "z.........z",
+    ".zzzzzzzzz."
+  ],
+  "tutorial": [{
+    "msg": "개굴개굴~",
+    "img": "/img/story08/frog.png"
+  },{
+    "msg": "앗.. 개구리가 되었어!",
+    "img": "/img/story08/frog.png"
+  },{
+    "msg": "정말로 고마워",
+    "img": "/img/story08/frog.png"
+  },{
+    "msg": "너도 편식하지 않고 밥을 잘 먹는다면 나처럼 멋지게 클 수 있을거야!",
+    "img": "/img/story08/frog.png"
+  }]
+}
