@@ -14,6 +14,7 @@
   {"id": "land10", "src": "/img/map32/10.png"},
   {"id": "land11", "src": "/img/map32/11.png"},
   {"id": "character", "src": "/img/story08/tadpole.png", "sprite": true, "size": 32},
+  {"id": "message", "src": "/img/story08/tadpole0.png"},
   {"id": "food", "src": "/img/story08/larva.png"},
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
