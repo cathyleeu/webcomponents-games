@@ -18,7 +18,7 @@
   {"id": "character3", "src": "/img/story08/tadpole3.png","sprite": true, "size": 32},
   {"id": "message", "src": "/img/story08/tadpole0.png", "size": 32},
   {"id": "message2", "src": "/img/story08/tadpole01.png", "size": 32},
-  {"id": "message3", "src": "/img/story08/tadpole3.png", "size": 32},
+  {"id": "message3", "src": "/img/story08/tadpole02.png", "size": 32},
   {"id": "food", "src": "/img/story08/larva.png"},
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},

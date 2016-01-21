@@ -5,6 +5,7 @@
   "render": "pixel",
   "toolbox": [],
   "character": "character",
+  "message": "message",
   "map": [
     ".zzzzzzzz.",
     "z#.####.ez",

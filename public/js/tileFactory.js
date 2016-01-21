@@ -89,7 +89,7 @@ TileFactory.prototype.create = function(tile, x, y) {
               speed: 0.5
             }
           };
-          if(character.src == "/img/story08/tadpole.png") {
+          if(character.src.indexOf('tadpole') >= 0) {
             animations = {
               stand_u: 0,
               walk_u: {

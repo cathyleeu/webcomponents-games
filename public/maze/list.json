@@ -5,17 +5,17 @@
   }, {
     "href": "maze/story05/index2",
     "title": "[event] - trap(함정)"
-  } ,{
+  }, {
     "href": "maze/story05/index3",
     "title": "[item] - compare(비교하기)"
-  } ,{
-      "href": "maze/story06/index",
-      "title": "별을 따 공주님에게 고백하기!"
-  } ,{
-      "href": "maze/story07/index",
-      "title": "Winter"
-  } ,{
-      "href": "maze/story08/index",
-      "title": "올챙이의 모험"
+  }, {
+    "href": "maze/story06/index",
+    "title": "별을 따 공주님에게 고백하기!"
+  }, {
+    "href": "maze/story07/index",
+    "title": "Winter"
+  }, {
+    "href": "maze/story08/index",
+    "title": "올챙이의 모험"
   }
 ]
