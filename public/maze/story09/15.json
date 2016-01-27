@@ -7,23 +7,18 @@
     "move_up",
     "move_down",
     "move_right",
-    "move_left",
-    "repeat"
+    "move_left"
   ],
-  "character": "character3",
-  "message": "message3",
+  "character": "character2",
+  "message": "message2",
   "map": [
-    ".zzzzzzzzz.",
-    "z.#......#z",
-    "z.........z",
-    "z..#....#.z",
-    "z...#..#..z",
-    "z.#..#.#..z",
-    "z##.%.....z",
-    "z#..##..#.z",
-    "z..#.....#z",
-    "zu..#.....z",
-    ".zzzzzzzzz."
+    ".#####.",
+    "#.##..#",
+    "#.#.#.#",
+    "#r....#",
+    "#.#...#",
+    "#...#%#",
+    ".#####."
   ],
   "tutorial": [{
     "msg": "길이 꼬불꼬불하니 잘 세어보고 가보자!"

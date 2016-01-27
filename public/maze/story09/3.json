@@ -2,7 +2,7 @@
   "tile_size": 32,
   "render": "pixel",
   "score":5,
-  "workspace": ["start", "move_left"],
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -12,17 +12,11 @@
   "character": "character",
   "message": "message",
   "map": [
-    ".zzzzzzzzz.",
-    "z.#...#...z",
-    "z....#.#..z",
-    "z..#....#.z",
-    "z.........z",
-    "z..#...#..z",
-    "z..%.u#...z",
-    "z.#.......z",
-    "z.......#.z",
-    "z...#.....z",
-    ".zzzzzzzzz."
+    ".###.",
+    "#...#",
+    "#.%u#",
+    "#...#",
+    ".###."
   ],
   "tutorial": [{
     "msg": "올챙올챙~ 장구벌레가 왼쪽에 있어"

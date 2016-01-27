@@ -2,34 +2,25 @@
   "tile_size": 32,
   "render": "pixel",
   "score":10,
-  "workspace": ["start", "repeat"],
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left",
-    "repeat"
+    "move_left"
   ],
-  "character": "character2",
-  "message": "message2",
+  "character": "character",
+  "message": "message",
   "map": [
-    ".zzzzzzzzz.",
-    "z.#...#..#z",
-    "z#.....#..z",
-    "z#........z",
-    "z..##..#..z",
-    "z........#z",
-    "z#.#......z",
-    "z.%..u##..z",
-    "z.#......#z",
-    "z...#.....z",
-    ".zzzzzzzzz."
+    ".###.",
+    "#...#",
+    "#%.u#",
+    "#...#",
+    ".###."
   ],
   "tutorial": [{
     "msg": "올챙올챙~ 장구벌레가 왼쪽에 있어"
-    },{
-      "msg": "←왼쪽으로이동 블록을 이용해서 왼쪽으로 가보자!"
-    },{
-      "msg": "←왼쪽으로이동 3번 반복하면 되겠다!"
+  },{
+    "msg": "←왼쪽으로이동 블록을 이용해서 왼쪽으로 가보자!"
   }]
 }
