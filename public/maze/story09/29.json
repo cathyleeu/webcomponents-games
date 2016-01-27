@@ -1,0 +1,29 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":20,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#.f.#",
+    "#...#",
+    ".###."
+  ],
+  "tutorial": [{
+    "msg": "개굴개굴~",
+    "img": "/img/story08/frog.png"
+    },{
+    "msg": "앗! 개구리가 되었어!!",
+    "img": "/img/story08/frog.png"
+    },{
+    "msg": "고마워! 덕분에 멋진 개구리가 되었어",
+    "img": "/img/story08/frog.png"
+  }]
+}

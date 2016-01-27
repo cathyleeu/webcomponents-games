@@ -2,34 +2,25 @@
   "tile_size": 32,
   "render": "pixel",
   "score":10,
-  "workspace": ["start", "repeat"],
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left",
-    "repeat"
+    "move_left"
   ],
   "character": "character2",
   "message": "message2",
   "map": [
-    ".zzzzzzzzz.",
-    "z.#..%#..#z",
-    "z#.....#..z",
-    "z#........z",
-    "z..##..#..z",
-    "z........#z",
-    "z#.#......z",
-    "z.....##..z",
-    "z.#..u...#z",
-    "z...#.....z",
-    ".zzzzzzzzz."
+    ".#####.",
+    "#..#..#",
+    "#...#.#",
+    "#%....#",
+    "#..u..#",
+    "#.#.#.#",
+    ".#####."
   ],
   "tutorial": [{
-    "msg": "올챙올챙~ 장구벌레가 위쪽에 있어"
-  },{
-    "msg": "↑위로이동 블록과 반복블록을 이용해서 위로 가보자!"
-  },{
-    "msg": "↑위로이동을 7번 반복하면 되겠다!"
+    "msg": "올챙올챙~ 뒷다리가 생겼으니 방향 전환을 할 수 있어!"
   }]
 }
