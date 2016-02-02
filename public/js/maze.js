@@ -62,7 +62,6 @@ var kidscoding,
 
 function init(step, maze, loader) {
   var message_id = maze.message || maze.character;
-  debugger
   if(loader.getItem(message_id)) {
     message_url = loader.getItem(message_id).src;
   } else {
@@ -264,21 +263,23 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
     e.preventDefault();
   });
   var handle_resize = function(e) {
-    var size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .bottom-row").height();
-    if($(window).width() / 2 < size) {
-      size = parseInt($(window).width() / 2, 10);
+    var window_width = $(window).width(),
+        size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .bottom-row").height();
+    if(window_width / 2 < size) {
+      size = parseInt(window_width / 2, 10);
     }
     var view_width = Math.min(mazeInfo.view_size || mazeInfo.width, mazeInfo.width),
         view_height = Math.min(mazeInfo.view_size || mazeInfo.height, mazeInfo.height),
-        zoom = parseInt(100 * size / (view_width * mazeInfo.tile_size), 10) / 100;
+        ratio = parseInt(100 * size / (view_width * mazeInfo.tile_size), 10) / 100,
+        zoom = +$(".workspace").css("zoom");
     $("#display").css({
-      width: view_width * mazeInfo.tile_size * zoom,
-      height: view_height * mazeInfo.tile_size * zoom
+      width: view_width * mazeInfo.tile_size * ratio,
+      height: view_height * mazeInfo.tile_size * ratio
     });
-
-    var real_width = $("#display").width();
-    $(".sidebar").width(real_width);
-    $(".workspace").css("left", real_width + "px");
+    var sidebar_width = $("#display").width(),
+        workspace_width = window_width - sidebar_width;
+    $(".sidebar").width(sidebar_width);
+    $(".workspace").width(parseInt(workspace_width / zoom, 10));
   };
   $(window).on("resize", handle_resize);
   handle_resize();
