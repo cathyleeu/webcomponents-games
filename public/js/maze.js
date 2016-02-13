@@ -280,7 +280,9 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
     $(".workspace").css("left", real_width + "px");
   };
   $(window).on("resize", handle_resize);
-  handle_resize();
+  setTimeout(function() {
+    handle_resize();
+  }, 100);
   $("#modal .go-next").click(function(e) {
     var queries = {};
     location.search.slice(1).split("&").map(function(query) {
