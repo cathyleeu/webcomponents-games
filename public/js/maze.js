@@ -62,7 +62,6 @@ var kidscoding,
 
 function init(step, maze, loader) {
   var message_id = maze.message || maze.character;
-  debugger
   if(loader.getItem(message_id)) {
     message_url = loader.getItem(message_id).src;
   } else {
