@@ -322,7 +322,10 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
       org_py = mazeInfo.canvas.character.py;
   $("#runCode").click(function(e) {
     if($(this).find("i").hasClass("fa-play")) {
-      var startblock = kidscoding.workspace.getBlockById("start");
+      var blocks = kidscoding.workspace.getAllBlocks(),
+          startblock = blocks.filter(function(block) {
+            return block.type === "start";
+          })[0];;
       if(startblock.getNextBlock()) {
         $(this).html('<i class="fa fa-refresh"></i> 처음상태로');
         // remove the selection of the last-placed-block
