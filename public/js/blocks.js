@@ -1,7 +1,6 @@
 Blocks = {};
 
 Blocks["start"] = {
-  id: "start",
   colour: 160,
   message0: "시작하면",
   previousStatement: false,
