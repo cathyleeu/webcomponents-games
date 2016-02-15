@@ -61,9 +61,13 @@ var kidscoding,
     mazeInfo;
 
 function init(step, maze, loader) {
-  var message_id = maze.message || maze.character;
-  if(loader.getItem(message_id)) {
-    message_url = loader.getItem(message_id).src;
+  var message_id = maze.message || maze.character,
+      message_item = loader.getItem(message_id)
+                  || loader.getItem("message")
+                  || loader.getItem("character");
+  // TODO: sprite일 경우도 message 캐릭터를 보여줄 수 있어야 함
+  if(message_item && !message_item.sprite) {
+    message_url = message_item.src;
   } else {
     message_url = "/img/ladybug.png";
   }
