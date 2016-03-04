@@ -1,0 +1,30 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    "......##%",
+    ".####....",
+    ".####.##.",
+    ".......#.",
+    ".#.#.#...",
+    ".#.#.##.#",
+    ".#.#.##.#",
+    ".#......#",
+    "u..######"
+  ],
+  "tutorial": [{
+    "msg": "9*9 size -여러 가지 길 찾기"
+  },{
+    "msg": "난이도 ★★★☆"
+  }]
+}
