@@ -122,10 +122,10 @@ Blocks["get_item"] = {
   action: ["getItem"]
 };
 Blocks["use_item"] = {
-  colour: 360,
+  colour: 220,
   message0: "%1 아이템 사용하기",
   args0: [
-    {type: "field_image", src: "/img/map/pick.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/get_item.png", width: 24, height: 24}
   ],
   action: ["useItem"]
 };

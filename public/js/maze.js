@@ -132,7 +132,7 @@ function initMaze(maze, loader, tileFactory) {
     canvas: {
       stage: stage,
       character: null,
-      item: null,
+      items: [],
       foods: [],
       obstacles: [],
       others: []
@@ -229,7 +229,7 @@ function drawMaze(mazeInfo, maze, loader, tileFactory) {
           mazeInfo.canvas.foods.push(bitmap);
           break;
         case "item":
-          mazeInfo.canvas.item = bitmap;
+          mazeInfo.canvas.items.push(bitmap);
           break;
       }
       if(bitmap) {
@@ -568,7 +568,7 @@ function run(block, callback) {
           showModal(message);
           return;
         }
-        if( obj.role == "food" ) {
+        if( obj.role == "food" && !obj.matchTile) {
           obj.visible = false;
           createjs.Sound.play("success");
           mazeInfo.canvas.stage.update();
@@ -608,7 +608,9 @@ function resetMaze(mazeInfo, maze, loader, tileFactory) {
   clearTimeout(kidscoding.Actions.setTimeoutKey);
 
   mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
-  mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.item);
+  mazeInfo.canvas.items.map(function(item) {
+    mazeInfo.canvas.stage.removeChild(item);
+  });
   mazeInfo.canvas.foods.map(function(food) {
     mazeInfo.canvas.stage.removeChild(food);
   });
@@ -619,7 +621,7 @@ function resetMaze(mazeInfo, maze, loader, tileFactory) {
     mazeInfo.canvas.stage.removeChild(obj);
   });
   mazeInfo.canvas.character = null;
-  mazeInfo.canvas.item = null
+  mazeInfo.canvas.items = [];
   mazeInfo.canvas.foods = [];
   mazeInfo.canvas.obstacles = [];
   mazeInfo.canvas.others = [];

@@ -25,7 +25,25 @@
     "........."
   ],
   "extra":[{
-    "src": "/img/lotus/lotus9",
+    "x": 2,
+    "y": 2,
+    "role": "food",
+    "matchTile": "e",
+    "obstacle": false
+  }, {
+    "x": 0,
+    "y": 2,
+    "role": "item",
+    "obstacle": false
+  }, {
+    "x": 2,
+    "y": 5,
+    "role": "item",
+    "obstacle": false
+  }, {
+    "x": 6,
+    "y": 6,
+    "role": "item",
     "obstacle": false
   }],
   "tutorial": [{

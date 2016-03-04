@@ -168,37 +168,22 @@ Actions.prototype._trapCharacter = function(x_next, y_next, callback) {
   });
 };
 
-Actions.prototype._getCanvasObject = function(x, y) {
-  var foods = this.canvas.foods,
-      obstacles = this.canvas.obstacles,
-      others = this.canvas.others;
+Actions.prototype._getCanvasObject = function(x, y, role) {
+  var objs = [
+    this.canvas.items,
+    this.canvas.foods,
+    this.canvas.obstacles,
+    this.canvas.others
+  ];
   if(0 <= x && x < this.width && 0 <= y && y < this.height) {
-    if( this.canvas.item &&
-        this.canvas.item.px == x &&
-        this.canvas.item.py == y &&
-        this.canvas.item.visible == true) {
-      return this.canvas.item;
-    }
-
-    for(var i = 0; i < foods.length; i++) {
-      if( foods[i].px == x &&
-          foods[i].py == y &&
-          foods[i].visible == true) {
-        return foods[i];
-      }
-    }
-    for(var i = 0; i < obstacles.length; i++) {
-      if( obstacles[i].px == x &&
-          obstacles[i].py == y &&
-          obstacles[i].visible == true) {
-        return obstacles[i];
-      }
-    }
-    for(var i = 0; i < others.length; i++) {
-      if( others[i].px == x &&
-          others[i].py == y &&
-          others[i].visible == true) {
-        return others[i];
+    for(var i = 0; i < objs.length; i++) {
+      for(var j = 0; j < objs[i].length; j++) {
+        if( objs[i][j].px == x &&
+            objs[i][j].py == y &&
+            objs[i][j].visible &&
+            (!role || objs[i][j].role == role) ) {
+          return objs[i][j];
+        }
       }
     }
     return {
@@ -270,9 +255,9 @@ Actions.prototype.rotate = function(type, block, callback) {
 
 Actions.prototype.getItem = function(block, callback) {
   var character = this.canvas.character,
-      item = this._getCanvasObject(character.px, character.py);
-  if( item.role == "item") {
-    character.item = true;
+      item = this._getCanvasObject(character.px, character.py, "item");
+  if( item.role == "item" ) {
+    character.item = item;
     item.visible = false;
     this.canvas.stage.update();
     createjs.Sound.play("success");
@@ -285,27 +270,14 @@ Actions.prototype.getItem = function(block, callback) {
 };
 
 Actions.prototype.useItem = function(block, callback) {
-  var character = this.canvas.character,
-      x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[character.direct],
-      y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct];
+  var character = this.canvas.character;
   if(!character.item) {
     callback("아이템을 가지고 있지 않아요");
     return;
   }
-  var rock = this._getCanvasObject(x_next, y_next);
-  if(rock.role == "rock") {
-    var num = rock.num - 1;
-
-    if(num > 0) {
-      // replace rock image
-      rock.num = num;
-      rock.image = rock["img" + num];
-    } else {
-      // hide rock
-      rock.visible = false;
-    }
-
-    createjs.Sound.play("hammer");
+  var food = this._getCanvasObject(character.px, character.py, "food");
+  if(food && food.matchTile == character.item.tile) {
+    food.visible = false;
     this.canvas.stage.update();
     setTimeout(function() {
       callback();
@@ -313,13 +285,34 @@ Actions.prototype.useItem = function(block, callback) {
   } else {
     callback("아이템을 사용할 수 없어요");
   }
+  // var rock = this._getCanvasObject(x_next, y_next, "rock");
+  // if(rock.role == "rock") {
+  //   var num = rock.num - 1;
+  //
+  //   if(num > 0) {
+  //     // replace rock image
+  //     rock.num = num;
+  //     rock.image = rock["img" + num];
+  //   } else {
+  //     // hide rock
+  //     rock.visible = false;
+  //   }
+  //
+  //   createjs.Sound.play("hammer");
+  //   this.canvas.stage.update();
+  //   setTimeout(function() {
+  //     callback();
+  //   }, 1000);
+  // } else {
+  //   callback("아이템을 사용할 수 없어요");
+  // }
 };
 
 Actions.prototype.action = function(hand, block, callback) {
   var character = this.canvas.character,
       x_next = character.px + {'u':0, 'r':1, 'd':0, 'l':-1}[character.direct],
       y_next = character.py + {'u':-1, 'r':0, 'd':1, 'l':0}[character.direct];
-  var spider = this._getCanvasObject(x_next, y_next);
+  var spider = this._getCanvasObject(x_next, y_next, "spider");
   if(spider.role == "spider") {
     if(hand == spider.hand) {
       callback("비겼어요");
