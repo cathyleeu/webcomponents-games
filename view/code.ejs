@@ -1,0 +1,75 @@
+<style>
+  .btn-default {
+    margin: 20px;
+  }
+</style>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand" href="/">KIDSCODING</a>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>안녕하세요. 키즈코딩</h1>
+                <h2><span id="school"></span> 홈페이지입니다.</h2>
+                <img class="img-responsive" src="/img/profile.png" alt="">
+                <div class="intro-text">
+                    <div id="classes">
+                    </div>
+                    <hr class="star-light">
+                    <span class="skills">코딩으로 배우는 스토리텔링 수학, 키즈코딩</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; (주)토이코드 2015
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visble-sm">
+    <a class="btn btn-primary" href="/">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+<script>
+  $.get("login/url.json", function(url) {
+    var code = location.hash.slice(1),
+        info = url.filter(function(item) {
+          return item.code == code
+        })[0];
+    if(!info) {
+      alert("잘못된 경로로 접근하였습니다.");
+      location.href = "/";
+    }
+    $("#school").text(info.school);
+    info.classes.forEach(function(className) {
+      var button = '<a href="/login#' + code + '-' + className + '" class="btn btn-lg btn-default">' + className + '</a>';
+      $(button).appendTo("#classes");
+    });
+
+  });
+</script>

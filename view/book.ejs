@@ -40,29 +40,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>키즈코딩 로그인</h1>
                 <h2><span id="school"></span> - <span id="className"></span></h2>
-                <h3>교재 뒤쪽에 붙어있는<br/><strong style="color:yellow">로그인 스티커</strong>를 확인해주세요.</h3>
-                <h3>1. 이름을 선택하세요</h3>
-                <div id="names">
-                </div>
-                <h3>2. 자신의 캐릭터를 선택하세요</h3>
-                <div id="characters">
-                  <img class="character" src="img/login/01.png" />
-                  <img class="character" src="img/login/02.png" />
-                  <img class="character" src="img/login/03.png" />
-                  <img class="character" src="img/login/04.png" />
-                  <img class="character" src="img/login/05.png" />
-                  <img class="character" src="img/login/06.png" />
-                  <img class="character" src="img/login/07.png" />
-                  <img class="character" src="img/login/08.png" />
-                  <img class="character" src="img/login/09.png" />
-                  <img class="character" src="img/login/10.png" />
-                  <img class="character" src="img/login/11.png" />
-                  <img class="character" src="img/login/12.png" />
-                  <img class="character" src="img/login/13.png" />
-                </div>
-                <button id="login" class="btn btn-lg btn-outline" style="width:140px;height:60px">로그인</button>
+                <h3>키즈코딩 <span id="book"></span></h3>
+                <a href="/maze/demonstration2-4/1" class="btn btn-lg btn-outline" style="width:200px;height:60px">2권</a><br/>
+                <a href="/maze/demonstration2-4/6" class="btn btn-lg btn-outline" style="width:200px;height:60px">3권</a><br/>
+                <a href="/maze/demonstration2-4/11" class="btn btn-lg btn-outline" style="width:200px;height:60px">4권</a><br/>
+                <a href="/maze/demonstration5-lotus/1" class="btn btn-lg btn-outline" style="width:200px;height:60px">5권(연꽃 패턴)</a><br/>
+                <a href="/maze/demonstration5-flower/1" class="btn btn-lg btn-outline" style="width:200px;height:60px">5권(꽃 패턴)</a><br/>
+                <a href="/maze/demonstration5-clover/1" class="btn btn-lg btn-outline" style="width:200px;height:60px">5권(클로버 패턴)</a><br/>
             </div>
         </div>
     </div>
@@ -100,7 +85,7 @@
         로그인에 성공하였습니다!
       </div>
       <div class="modal-footer">
-        <a id="goNext" class="close-modal btn btn-default" tabindex="0">확인</a>
+        <button id="goNext" type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0">확인</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -130,6 +115,7 @@
       var hash = location.hash.slice(1),
           code = hash.split("-")[0],
           className = hash.split("-")[1],
+          book = hash.split("-")[2],
           info = url.filter(function(item) {
             return item.code == code
           })[0];
@@ -139,7 +125,7 @@
       }
       $("#school").text(info.school);
       $("#className").text(className);
-      $("#goNext").attr("href", "/book#" + hash + "-교사교육");
+      $("#book").text(book);
       // info.classes.forEach(function(className) {
       //   var button = '<a href="/login#' + code + '-' + className + '" class="btn btn-lg btn-default">' + className + '</a>';
       //   $(button).appendTo("#classes");
