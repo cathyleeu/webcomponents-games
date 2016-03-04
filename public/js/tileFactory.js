@@ -40,6 +40,7 @@ TileFactory = function(maze, loader, tile_size) {
 TileFactory.prototype.create = function(tile, x, y) {
   var bitmap = new createjs.Bitmap(),
       role = this.tile2role[tile] || null;
+  bitmap.tile = tile;
   if(this.custom_tiles[tile]) {
     bitmap.image = this.loader.getResult(this.custom_tiles[tile].id);
     bitmap.obstacle = !!this.custom_tiles[tile].obstacle;
