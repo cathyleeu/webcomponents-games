@@ -1,4 +1,6 @@
 /login
+/login/names.json
+/login/url.json
 /book
 /components/jquery-ui/themes/base/jquery-ui.min.css
 /components/jquery/dist/jquery.min.js

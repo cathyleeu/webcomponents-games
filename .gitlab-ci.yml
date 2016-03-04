@@ -1,7 +1,8 @@
 deploy to dev.toycode.org:
   script:
-  - "npm install"
-  - "bower install"
+  - "npm install --production"
+  - "bower install --production"
+  - "./node_modules/.bin/gulp makeUrl"
   - "./node_modules/.bin/gulp appcache"
   - "forever stop kidscoding || true"
   - "forever start --uid \"kidscoding\" -a -c \"node --harmony\" app.js"

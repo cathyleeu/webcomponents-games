@@ -50,7 +50,6 @@ gulp.task('appcache', ['less'], function(cb) {
     'public/css/**/*.css',
     'public/img/**/*.{png,jpg,jpeg,gif}',
     'public/js/**/*.js',
-    'public/login/**/*.json'
     // 'public/sound/**/*.{mp3,wav}'
   ].concat(maze), {});
   var text = '';
