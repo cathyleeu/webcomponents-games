@@ -51,24 +51,36 @@ public.get('/old', function *(next) {
   });
 });
 
+public.get('/code', function *(next) {
+  yield this.render('code', {
+    title: "키즈코딩"
+  });
+});
+
 public.get('/login', function *(next) {
   yield this.render('login', {
     title: "키즈코딩 로그인"
   });
 });
 
-public.get('/login/:school/:class', function *(next) {
-  var Students = require('./model/students');
-  yield this.render('class', {
-    title: "키즈코딩 로그인",
-    schoolName: this.params.school,
-    className: this.params.class,
-    students: yield Students.find({
-      school: this.params.school,
-      class: this.params.class
-    })
+public.get('/book', function *(next) {
+  yield this.render('book', {
+    title: "키즈코딩 1권"
   });
 });
+
+// public.get('/login/:school/:class', function *(next) {
+//   var Students = require('./model/students');
+//   yield this.render('class', {
+//     title: "키즈코딩 로그인",
+//     schoolName: this.params.school,
+//     className: this.params.class,
+//     students: yield Students.find({
+//       school: this.params.school,
+//       class: this.params.class
+//     })
+//   });
+// });
 
 public.get('/maze/:type', function *(next) {
   yield this.render('maze', {
@@ -94,17 +106,17 @@ public.get('/maze/:category/:type/:step', function *(next) {
   });
 });
 
-public.post('/api/login',
-  passport.authenticate('local', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/login'
-  })
-);
-
-public.get('/api/logout', function*(next) {
-  this.logout();
-  this.redirect('/login');
-});
+// public.post('/api/login',
+//   passport.authenticate('local', {
+//     successRedirect: '/dashboard',
+//     failureRedirect: '/login'
+//   })
+// );
+//
+// public.get('/api/logout', function*(next) {
+//   this.logout();
+//   this.redirect('/login');
+// });
 
 secured.get('/dashboard', function*(next) {
   yield this.render('dashboard', {

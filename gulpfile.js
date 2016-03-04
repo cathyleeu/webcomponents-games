@@ -15,6 +15,26 @@ gulp.task('less', function () {
     .pipe(gulp.dest('public/css'));
 });
 
+gulp.task('makeUrl', function(cb) {
+  var schools = require('./login/schools.json'),
+      date = new Date().toISOString().slice(0,7).split("-").join(""),
+      result = [];
+  schools[date].forEach(function(school) {
+    var sum = 0;
+    sum += school[0].charCodeAt(0) * 17;
+    sum += school[0].charCodeAt(1) * 13;
+    sum += school[1].charCodeAt(0) * 11;
+    sum += school[1].slice(-1).charCodeAt(0) * 19;
+    sum += school[1].slice(parseInt(school[1] / 2, 10)).charCodeAt(0) * 7;
+    result.push({
+      school: school[1],
+      code: sum.toString(16).slice(1),
+      classes: school.slice(2)
+    });
+  });
+  fs.writeFileSync('public/login/url.json', JSON.stringify(result));
+});
+
 gulp.task('appcache', ['less'], function(cb) {
   var offline = JSON.parse(fs.readFileSync('public/maze/offline.json'))
   .map(function(obj) {

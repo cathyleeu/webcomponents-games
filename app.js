@@ -74,8 +74,8 @@ app
   }))
   .use(session())
   .use(body())
-  .use(passport.initialize())
-  .use(passport.session())
+  // .use(passport.initialize())
+  // .use(passport.session())
   .use(function* logger(next){
     var start = new Date;
     yield next;
@@ -87,13 +87,13 @@ app
   })
   .use(cors({'origin': true}))
   .use(router.public.middleware())
-  .use(function*(next) {
-    if (this.isAuthenticated()) {
-      yield next;
-    } else {
-      this.redirect('/login');
-    }
-  })
+  // .use(function*(next) {
+  //   if (this.isAuthenticated()) {
+  //     yield next;
+  //   } else {
+  //     this.redirect('/login');
+  //   }
+  // })
   .use(router.secured.middleware());
 
 app.listen(config.port);

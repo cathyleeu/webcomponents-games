@@ -16,13 +16,13 @@
     ".....a",
     "c.....",
     "...f..",
-    ".....%",
+    ".....b",
     "u..e.."
   ],
   "extra":[{
     "x": 5,
     "y": 4,
-    "src": "/img/flower/flower1",
+    "role": "food",
     "obstacle": false
   }],
   "tutorial": [{

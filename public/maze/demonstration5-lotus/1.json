@@ -16,13 +16,13 @@
     ".....g",
     ".....h",
     ".....i",
-    ".....%",
+    ".....j",
     "u....."
   ],
   "extra":[{
     "x": 5,
     "y": 4,
-    "src": "/img/lotus/lotus9",
+    "role": "food",
     "obstacle": false
   }],
   "tutorial": [{
