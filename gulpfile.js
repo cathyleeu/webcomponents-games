@@ -2,8 +2,6 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
 var fs = require('fs');
 var child = require('child_process');
 var am = require('appcache-manifest');
@@ -77,6 +75,9 @@ gulp.task('server', ['appcache'], function() {
 });
 
 gulp.task('default', ['server'], function () {
+  var browserSync = require('browser-sync');
+  var reload = browserSync.reload;
+
   browserSync({
     port: 3000,
     notify: false,
