@@ -1,0 +1,30 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    ".........",
+    "#.....##y",
+    "#.......e",
+    "###.u....",
+    "y........",
+    "b...#..#%",
+    ".......#k",
+    "#..#.....",
+    "####iy..."
+  ],
+  "tutorial": [{
+    "msg": "9*9 size -가장 큰 수 찾아가기(가장 큰 수의 벌레만 진짜)"
+  },{
+    "msg": "난이도 ★★★ "
+  }]
+}

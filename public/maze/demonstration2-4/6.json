@@ -1,0 +1,32 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    ".######.",
+    "#...#..#",
+    "##p..%.#",
+    "#..###.#",
+    "#..#...#",
+    "##u#...#",
+    "#...#..#",
+    ".######."
+  ],
+  "tutorial": [{
+    "msg": "8*8 size -가위바위보"
+  },{
+    "msg": "난이도 ★☆"
+  }]
+}

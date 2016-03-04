@@ -1,0 +1,36 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    "..e...b..",
+    "#...y....",
+    "e.x...c..",
+    ".#.#.....",
+    ".#..##...",
+    ".#g###...",
+    ".#.###f##",
+    "..u......",
+    "........."
+  ],
+  "extra":[{
+    "src": "/img/lotus/lotus9",
+    "obstacle": false
+  }],
+  "tutorial": [{
+    "msg": "9*9 size -패턴"
+  },{
+    "msg": "난이도 ★★☆"
+  }]
+}
