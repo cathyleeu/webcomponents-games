@@ -49,7 +49,8 @@ gulp.task('appcache', ['less'], function(cb) {
   var readable = am.generate([
     'public/css/**/*.css',
     'public/img/**/*.{png,jpg,jpeg,gif}',
-    'public/js/**/*.js'
+    'public/js/**/*.js',
+    'public/login/**/*.json'
     // 'public/sound/**/*.{mp3,wav}'
   ].concat(maze), {});
   var text = '';
