@@ -82,7 +82,7 @@
         d2 = $.Deferred();
 
     $.get("login/url.json", function(url) {
-      var hash = location.hash.slice(1),
+      var hash = decodeURI(location.hash).slice(1),
           code = hash.split("-")[0],
           className = hash.split("-")[1],
           info = url.filter(function(item) {
@@ -124,7 +124,7 @@
       }
       var str = $("#template").html(),
           template = ejs.compile(str),
-          className = location.hash.split("-")[1],
+          className = decodeURI(location.hash).split("-")[1],
           year = new Date().getFullYear(),
           month = new Date().getMonth() + 1,
           imgs = getImgs(info.code, className);
