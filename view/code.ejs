@@ -57,7 +57,7 @@
 
 <script>
   $.get("login/url.json", function(url) {
-    var code = location.hash.slice(1),
+    var code = decodeURI(location.hash).slice(1),
         info = url.filter(function(item) {
           return item.code == code
         })[0];
