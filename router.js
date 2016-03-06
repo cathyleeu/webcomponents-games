@@ -64,6 +64,12 @@ public.get('/book', function *(next) {
   });
 });
 
+public.get('/info', function *(next) {
+  yield this.render('info', {
+    title: "키즈코딩 로그인 정보"
+  });
+});
+
 // public.get('/login/:school/:class', function *(next) {
 //   var Students = require('./model/students');
 //   yield this.render('class', {

@@ -1,0 +1,154 @@
+<style>
+  .btn-warning {
+    width: 50px;
+    font-size: 10px;
+    padding: 5px;
+    margin-right: 20px;
+  }
+  .btn-warning.selected {
+    background-color: #E53;
+  }
+  .character {
+    width: 80px;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 5px;
+  }
+  .character.selected {
+    background-color: #E53;
+    border: 2px solid yellow;
+  }
+  .card-row {
+    position: relative;
+    text-align: center;
+  }
+  .card {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    margin: 10px 8px;
+    /*border: 1px solid black;*/
+    padding: 10px 30px;
+  }
+  .card h1 {
+    text-align: center;
+    margin: 5px 0 0 0;
+    font-size: 16px;
+    height: 40px
+  }
+  .sub-row {
+    position: relative;
+    text-align: center;
+  }
+  .row label {
+    position: absolute;
+    display: inline-block;
+    left: 5px;
+    top: 10px;
+  }
+  .kidscoding {
+    float: left;
+    width: 60px;
+  }
+  .toycode {
+    position: absolute;
+    right : 10px;
+    bottom : 10px;
+    width: 60px;
+  }
+</style>
+<script id="template" type="text/x-ejs-template">
+<div class="card">
+  <img class="kidscoding" src="/img/kidscoding.png"/>
+  <h1>키즈코딩 로그인<br/><small><?=school?> <?=className?> - <?=year?>. <?=month?>.</small></h1>
+  <div class="sub-row">
+    <button class="btn btn-lg btn-warning selected"><?=name?></button>
+    <img class="character" src="img/login/<?=img?>.png" />
+  </div>
+  <div class="sub-row">
+    <label class="left">로그인 아이디</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="right">비밀 캐릭터</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+</script>
+<div class="page">
+</div>
+<!--div id="names">
+
+</div-->
+
+<script>
+  $(function() {
+    var d1 = $.Deferred(),
+        d2 = $.Deferred();
+
+    $.get("login/url.json", function(url) {
+      var hash = location.hash.slice(1),
+          code = hash.split("-")[0],
+          className = hash.split("-")[1],
+          info = url.filter(function(item) {
+            return item.code == code
+          })[0],
+          classNameChk = info.classes.filter(function(item) {
+            return item == className
+          })[0];
+      if(!info || className != classNameChk) {
+        alert("잘못된 경로로 접근하였습니다.");
+        location.href = "/";
+      }
+      d1.resolve(info);
+    });
+    $.get("login/names.json", function(names) {
+      d2.resolve(names);
+    });
+    $.when(d1, d2).done(function(info, names) {
+      ejs.open = '<?';
+      ejs.close = '?>';
+      function getImgs(code, className) {
+        var token = '' + className.charCodeAt(0) + className.slice(1).charCodeAt(0) + parseInt(code, 16),
+            key = token + token + token + token,
+            sum = 17,
+            imgs = [],
+            num;
+        for(var i = 0; i < 40; i++) {
+          sum += Number(key.charAt(i));
+          sum = sum % 13;
+          num = sum + 1;
+          if(num < 10) {
+            num = '0' + num;
+          } else {
+            num = '' + num;
+          }
+          imgs.push(num);
+        }
+        return imgs;
+      }
+      var str = $("#template").html(),
+          template = ejs.compile(str),
+          className = location.hash.split("-")[1],
+          year = new Date().getFullYear(),
+          month = new Date().getMonth() + 1,
+          imgs = getImgs(info.code, className);
+      if(month < 10) {
+        month = '0' + month;
+      }
+      var row = [];
+      names.forEach(function(nameArr, index) {
+        row.push(template({
+          name: nameArr[1],
+          school: info.school,
+          className: className,
+          year: '' + year,
+          month: '' + month,
+          img: imgs[index]
+        }));
+        if(row.length == 2) {
+          var $row = $('<div class="card-row">').append(row[0]).append(row[1]);
+          $(".page").append($row)
+          row = [];
+        }
+      });
+
+    });
+  });
+</script>
+<script type="text/javascript" src="/components/ejs/ejs.min.js"/>
