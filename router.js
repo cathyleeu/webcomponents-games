@@ -83,6 +83,12 @@ public.get('/info', function *(next) {
 //   });
 // });
 
+public.get('/click', function *(next) {
+  yield this.render('click', {
+    title: "키즈코딩"
+  });
+});
+
 public.get('/maze/:type', function *(next) {
   yield this.render('maze', {
     title: "키즈코딩",
