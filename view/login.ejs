@@ -171,8 +171,12 @@
             imgs = [],
             num;
         for(var i = 0; i < 40; i++) {
-          sum += Number(key.charAt(i));
-          sum = sum % 13;
+          if(i % 2) {
+            sum += Number(key.charAt(i));
+          } else {
+            sum -= Number(key.charAt(i));
+          }
+          sum = (sum + 13) % 13;
           num = sum + 1;
           if(num < 10) {
             num = '0' + num;
