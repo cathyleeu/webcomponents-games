@@ -21,19 +21,16 @@ var levels = [{
   instruction: "[ 2 단계 ] 큰 숫자부터 클릭해봐요",
   values: [9,8,7,6,5,4,3,2,1,0]
 }, {
-  instruction: "[ 3 단계 ] 작은 숫자부터 클릭해봐요",
-  values: [10,11,12,13,14,15,16,17,18,19,20]
-}, {
-  instruction: "[ 4 단계 ] 큰 숫자부터 클릭해봐요",
-  values: [20,19,18,17,16,15,14,13,12,11,10]
-}, {
-  instruction: "[ 5 단계 ] ㄱ부터 차례대로 클릭해봐요",
+  instruction: "[ 3 단계 ] ㄱ부터 차례대로 클릭해봐요",
   values: ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
 }, {
-  instruction: "[ 6 단계 ] A부터 차례대로 클릭해봐요",
+  instruction: "[ 4 단계 ] ㅏ부터 차례대로 클릭해봐요",
+  values: ["ㅏ","ㅑ","ㅓ","ㅕ","ㅗ","ㅛ","ㅜ","ㅠ","ㅡ","ㅣ"]
+}, {
+  instruction: "[ 5 단계 ] A부터 차례대로 클릭해봐요",
   values: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 }, {
-  instruction: "[ 7 단계 ] a부터 차례대로 클릭해봐요",
+  instruction: "[ 6 단계 ] a부터 차례대로 클릭해봐요",
   values: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 }];
 
@@ -128,7 +125,14 @@ function getIterator(values) {
       return index;
     },
     getValue: function() {
-      return values ? values[index] : index + 1;
+      var code = index % 52,
+          char;
+      if(code < 26) {
+        char = String.fromCharCode(65 + code);
+      } else {
+        char = String.fromCharCode(97 + code - 26);
+      }
+      return values ? values[index] : char;
     }
   }
 }
@@ -150,7 +154,7 @@ function init() {
     $(".instruction").text(levels[level].instruction);
     iter = getIterator(levels[level++].values);
   } else {
-    $(".instruction").text("30초동안 작은 숫자부터 클릭해봐요");
+    $(".instruction").text("30초동안 차례대로 클릭해봐요");
     $(".timer").show();
     iter = getIterator();
     startTime = new Date();
