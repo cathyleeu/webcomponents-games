@@ -16,16 +16,25 @@ var level = 0,
 
 var levels = [{
   instruction: "[ 1 단계 ] 작은 숫자부터 클릭해봐요",
-  values: [1,2,3,4,5,6,7,8,9,10]
+  values: [0,1,2,3,4,5,6,7,8,9]
 }, {
-  instruction: "[ 2 단계 ] 작은 숫자부터 클릭해봐요",
-  values: [11,12,13,14,15,16,17,18,19,20]
+  instruction: "[ 2 단계 ] 큰 숫자부터 클릭해봐요",
+  values: [9,8,7,6,5,4,3,2,1,0]
 }, {
-  instruction: "[ 3 단계 ] 큰 숫자부터 클릭해봐요",
-  values: [10,9,8,7,6,5,4,3,2,1]
+  instruction: "[ 3 단계 ] 작은 숫자부터 클릭해봐요",
+  values: [10,11,12,13,14,15,16,17,18,19,20]
 }, {
   instruction: "[ 4 단계 ] 큰 숫자부터 클릭해봐요",
-  values: [20,19,18,17,16,15,14,13,12,11]
+  values: [20,19,18,17,16,15,14,13,12,11,10]
+}, {
+  instruction: "[ 5 단계 ] ㄱ부터 차례대로 클릭해봐요",
+  values: ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
+}, {
+  instruction: "[ 6 단계 ] A부터 차례대로 클릭해봐요",
+  values: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+}, {
+  instruction: "[ 7 단계 ] a부터 차례대로 클릭해봐요",
+  values: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 }];
 
 var pastel = [
@@ -157,28 +166,23 @@ function init() {
 }
 
 function addBubble(index, value) {
-  var idx = parseInt(Math.random() * pastel.length, 10);
-  $(".workspace").append(
-    Blaze.toHTMLWithData(Template.Bubble, {
-      index: index,
-      value: value,
-      zIndex: 1000 - index,
-      top: (Math.random() * ($(".workspace").height() - 100)) + "px",
-      left: (Math.random() * ($(".workspace").width() - 100)) + "px",
-      background: "#" + pastel[idx]
-    })
-  );
+  var zIndex = 1000 - index,
+      top = (Math.random() * ($(".workspace").height() - 100)) + "px",
+      left = (Math.random() * ($(".workspace").width() - 100)) + "px",
+      idx = parseInt(Math.random() * pastel.length, 10),
+      background = "#" + pastel[idx],
+      $bubble = $('<div class="bubble" data-index="' + index + '">' + value + '</div>').css({
+        top: top,
+        left: left,
+        background: background,
+        "z-index": zIndex
+      });
+  $(".workspace").append($bubble);
 }
 
-<div class="bubble" style="top:{{top}}; left:{{left}}; background:{{background}}; z-index:{{zIndex}}" data-index="{{index}}">{{value}}</div>
 $(function() {
   $("#container").height($(window).height());
-  init();
-
-});
-
-Template.Click.events({
-  'click .bubble': function (e) {
+  $("#container").click('.bubble', function (e) {
     var indexes = $.map($(".bubble"), function(el) {
       return +$(el).attr("data-index");
     })
@@ -201,6 +205,8 @@ Template.Click.events({
       alert("잘 했어요!");
       init();
     }
-  }
+  });
+  init();
 });
+
 </script>
