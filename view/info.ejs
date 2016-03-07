@@ -7,6 +7,7 @@
   }
   .btn-warning.selected {
     background-color: #E53;
+    border-color: #E53;
   }
   .character {
     width: 80px;
@@ -34,7 +35,7 @@
     text-align: center;
     margin: 5px 0 0 0;
     font-size: 16px;
-    height: 40px
+    height: 45px
   }
   .sub-row {
     position: relative;
@@ -60,7 +61,7 @@
 <script id="template" type="text/x-ejs-template">
 <div class="card">
   <img class="kidscoding" src="/img/kidscoding.png"/>
-  <h1>키즈코딩 로그인<br/><small><?=school?> <?=className?> - <?=year?>. <?=month?>.</small></h1>
+  <h1>키즈코딩 로그인<br/><small><?=school?> <?=className?> (<?=month?>월)</small></h1>
   <div class="sub-row">
     <button class="btn btn-lg btn-warning selected"><?=name?></button>
     <img class="character" src="img/login/<?=img?>.png" />
@@ -125,19 +126,14 @@
       var str = $("#template").html(),
           template = ejs.compile(str),
           className = decodeURI(location.hash).split("-")[1],
-          year = new Date().getFullYear(),
           month = new Date().getMonth() + 1,
           imgs = getImgs(info.code, className);
-      if(month < 10) {
-        month = '0' + month;
-      }
       var row = [];
       names.forEach(function(nameArr, index) {
         row.push(template({
           name: nameArr[1],
           school: info.school,
           className: className,
-          year: '' + year,
           month: '' + month,
           img: imgs[index]
         }));
