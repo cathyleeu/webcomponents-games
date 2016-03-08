@@ -1,0 +1,77 @@
+<style>
+.page {
+  background: white;
+  color: black;
+}
+</style>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand" href="/">KIDSCODING</a>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>키즈코딩 원별 접속 코드 및<br/>로그인 스티커 정보</h1>
+                <div class="page">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; (주)토이코드 2015
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visble-sm">
+    <a class="btn btn-primary" href="/">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+<script>
+  $(function() {
+
+    $.get("login/url.json", function(urls) {
+      urls.forEach(function(item) {
+        var url = "http://toycode.org/code#" + item.code,
+            info = item.classes.map(function(className) {
+              var info_url = "http://toycode.org/info#" + item.code + "-" + className;
+              return "<div>"
+                  +   "<label>" + className + "</label> : "
+                  +   "<a href=\"" + info_url + "\">" + info_url + "</a>";
+                  + "</div>";
+            });
+        $("<div>")
+            .append("<label>" + item.school + "</label> : ")
+            .append("<span>" + item.code + "</span><br/>")
+            .append("<label>로그인 주소</label> : ")
+            .append("<a href=\"" + url + "\">" + url + "</a>")
+            .append(info)
+            .appendTo(".page");
+
+      })
+    });
+
+  });
+</script>
