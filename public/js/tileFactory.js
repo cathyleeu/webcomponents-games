@@ -150,11 +150,9 @@ TileFactory.prototype.create = function(tile, x, y) {
         bitmap.img3 = this.loader.getResult("rock3");
         bitmap.img4 = this.loader.getResult("rock4");
         bitmap.img5 = this.loader.getResult("rock5");
-        bitmap.obstacle = true;
         break;
       case "trap":
         bitmap.image = this.loader.getResult("trap");
-        bitmap.obstacle = true;
         break;
       case "obstacle":
         var idx = parseInt(Math.random() * this.obstacle_ids.length, 10);
@@ -178,7 +176,6 @@ TileFactory.prototype.create = function(tile, x, y) {
         bitmap.hand = hand_name;
         bitmap.addChild(spider, hand);
         bitmap.role = role;
-        bitmap.obstacle = true;
         break;
       default:
         bitmap = null;
