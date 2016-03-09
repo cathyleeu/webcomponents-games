@@ -557,15 +557,8 @@ function run(block, callback) {
           var $svg = $(block.svgGroup_).find(".blocklyPath"),
               className = $svg.attr("class");
           $svg.attr("class", className + " error");
-
-          var message = {
-            rock: "바위에 막혔어요",
-            obstacle: "벽에 부딪쳤어요",
-            spider: "거미줄에 걸렸어요",
-            trap: "덫에 걸렸어요"
-          }[obj.role];
           createjs.Sound.play("fail");
-          showModal(message);
+          showModal("벽에 부딪쳤어요");
           return;
         }
         if( obj.role == "food" && !obj.matchTile) {
