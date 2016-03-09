@@ -1,0 +1,39 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    "j...e.",
+    "..b...",
+    "......",
+    "i...c.",
+    ".....h",
+    "f.ug.a"
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 4,
+    "role": "food",
+    "obstacle": false
+  }],
+  "tutorial": [{
+    "msg": "토드 주변에는 숫자 연잎이 규칙적으로 나열되어 있어요. 토드가 앉아있는 연잎에는 어떤 숫자가 있을까요?",
+    "img": "/img/lotus/lotus_7.png"
+  },{
+    "msg": "토드가 앉아있는 연잎과 같은 숫자로 이동해봐요",
+    "img": "/img/lotus/lotus_7.png"
+  }],
+  "success": [{
+    "msg": "성공! 참 잘했어요~",
+    "link": "/maze/5-flower/1"
+  }]
+}
