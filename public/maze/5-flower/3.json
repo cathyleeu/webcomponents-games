@@ -1,0 +1,35 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    "...g..",
+    ".....a",
+    "c.....",
+    "...f..",
+    ".....b",
+    "u..e.."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 5,
+    "role": "food",
+    "obstacle": false
+  }],
+  "tutorial": [{
+    "msg": "토드 주변에는 꽃이 규칙적으로 나열되어 있어요. 토드가 앉아있는 꽃은 어떤 모양일까요?",
+    "img": "/img/flower/flower_3.png"
+  },{
+    "msg": "토드가 앉아있는 꽃과 같은 숫자로 이동해봐요",
+    "img": "/img/flower/flower_3.png"
+  }]
+}
