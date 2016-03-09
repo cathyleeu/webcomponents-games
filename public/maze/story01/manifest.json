@@ -47,10 +47,5 @@
   {"tile": "q", "id": "q", "src": "/img/ant2/q.png", "obstacle": true},
   {"tile": "x", "id": "x", "src": "/img/village/x.png", "obstacle": true},
   {"tile": "y", "id": "y", "src": "/img/village/y.png", "obstacle": true},
-  {"tile": "z", "id": "z", "src": "/img/village/z.png", "obstacle": true},
-  {"tile": "0", "id": "0", "src": "/img/village/0.png"},
-  {"tile": "9", "id": "9", "src": "/img/village/9.png"},
-  {"tile": "8", "id": "8", "src": "/img/village/8.png"},
-  {"tile": "7", "id": "7", "src": "/img/village/7.png"},
-  {"tile": "6", "id": "6", "src": "/img/village/6.png"}
+  {"tile": "z", "id": "z", "src": "/img/village/z.png", "obstacle": true}
 ]

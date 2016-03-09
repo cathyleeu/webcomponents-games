@@ -1,6 +1,6 @@
 {
   "type": "world",
-  "view_size": 32,
+  "view_size": 10,
   "tile_size": 32,
   "render": "pixel",
   "toolbox": [],

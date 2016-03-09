@@ -47,8 +47,6 @@
   {"tile": "w", "id": "w", "src": "/img/number/w.png", "obstacle": false},
   {"tile": "t", "id": "t", "src": "/img/number/trap2.png", "obstacle": true},
   {"tile": "q", "id": "q", "src": "/img/number/q.png", "obstacle": true},
-  {"tile": "l", "id": "l", "src": "/img/number/l.png", "obstacle": false},
-  {"tile": "n", "id": "n", "src": "/img/number/n.png", "obstacle": false},
   {"tile": "o", "id": "o", "src": "/img/ant2/f.png", "obstacle": true},
   {"tile": "x", "id": "x", "src": "/img/village/x.png", "obstacle": true},
   {"tile": "y", "id": "y", "src": "/img/village/y.png", "obstacle": true},
