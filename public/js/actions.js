@@ -173,10 +173,7 @@ Actions.prototype._getCanvasObject = function(x, y, role) {
         }
       }
     }
-    return {
-      role: "empty",
-      obstacle: false
-    };
+    return null;
   }
   return {
     role: "obstacle",
@@ -194,7 +191,7 @@ Actions.prototype.move = function(type, block, callback) {
       y_next = character.py,
       diff = type == "jump_forward" ? 2 : 1,
       direct = type.slice(0, 1),
-      obj = this._getCanvasObject(character.px, character.py, ["spider", "trap", "rock"]);
+      obj;
 
   if(type == "forward" || type == "jump_forward") {
     direct = character.direct;
@@ -202,7 +199,8 @@ Actions.prototype.move = function(type, block, callback) {
   x_next += {'u':0, 'r':1, 'd':0, 'l':-1}[direct] * diff;
   y_next += {'u':-1, 'r':0, 'd':1, 'l':0}[direct] * diff;
 
-  if(obj.role == "spider" || obj.role == "trap" || obj.role == "rock") {
+  obj = this._getCanvasObject(character.px, character.py, ["spider", "trap", "rock"]);
+  if(obj) {
     this._bounceCharacter(x_next, y_next, function() {
       var message = {
         rock: "바위에 막혔어요",
@@ -222,7 +220,7 @@ Actions.prototype.move = function(type, block, callback) {
   path = path.slice(1, -1).join("/");
   var score = localData[path] ? localData[path].score || 0 : 0;
 
-  if( obj.obstacle || (obj.link && obj.min_score && score < obj.min_score)) {
+  if( obj && obj.obstacle || (obj && obj.link && obj.min_score && score < obj.min_score)) {
     this._bounceCharacter(x_next, y_next, function() {
       callback(obj);
     });
@@ -253,7 +251,7 @@ Actions.prototype.getItem = function(block, callback) {
   if( character.item ) {
     // 이미 아이템을 가지고 있는 경우
     callback("이미 아이템을 가지고 있어요");
-  } else if( item.role != "item" ) {
+  } else if( !item ) {
     // 아이템을 가져올 수 없다면
     callback("아이템을 가져올 수 없어요");
   } else {
@@ -277,7 +275,7 @@ Actions.prototype.useItem = function(block, callback) {
 
   // 목표 위에서 아이템 사용(패턴 매칭)
   var food = this._getCanvasObject(character.px, character.py, "food");
-  if(food.role == "food" && food.matchTile == item.tile) {
+  if(food && food.matchTile == item.tile) {
     food.visible = false;
     item.visible = true;
     item.px = food.px;
@@ -293,7 +291,7 @@ Actions.prototype.useItem = function(block, callback) {
 
   // 바위 위에서 아이템 사용
   var rock = this._getCanvasObject(character.px, character.py, "rock");
-  if(rock.role == "rock") {
+  if(rock) {
     var num = rock.num - 1;
 
     if(num > 0) {
@@ -320,7 +318,7 @@ Actions.prototype.useItem = function(block, callback) {
 Actions.prototype.action = function(hand, block, callback) {
   var character = this.canvas.character;
   var spider = this._getCanvasObject(character.px, character.py, "spider");
-  if(spider.role == "spider") {
+  if(spider) {
     if(hand == spider.hand) {
       callback("비겼어요");
       return;

@@ -206,7 +206,8 @@ function initMaze(maze, loader, tileFactory) {
 }
 
 function drawMaze(mazeInfo, maze, loader, tileFactory) {
-  var localData = store.get('data') || {};
+  var localData = store.get('data') || {},
+      canvas = mazeInfo.canvas;
   for(var i = 0; i < mazeInfo.height; i++) {
     for(var j = 0; j < mazeInfo.width; j++) {
       if(maze.type == "world") {
@@ -221,32 +222,26 @@ function drawMaze(mazeInfo, maze, loader, tileFactory) {
         }
       }
       var bitmap = tileFactory.create(mazeInfo.map[i][j], j, i);
-      switch(bitmap ? bitmap.role : null) {
-        case "character":
-          mazeInfo.canvas.character = bitmap;
-          break;
-        case "food":
-          mazeInfo.canvas.foods.push(bitmap);
-          break;
-        case "item":
-          mazeInfo.canvas.items.push(bitmap);
-          break;
-      }
       if(bitmap) {
-        if(bitmap.obstacle) {
-          mazeInfo.canvas.obstacles.push(bitmap);
+        if(bitmap.role == "character") {
+          canvas.character = bitmap;
+        } else if(bitmap.role == "food") {
+          canvas.foods.push(bitmap);
+        } else if(bitmap.role == "item") {
+          canvas.items.push(bitmap);
+        } else if(bitmap.obstacle) {
+          canvas.obstacles.push(bitmap);
+        } else {
+          canvas.others.push(bitmap);
         }
-        if(bitmap.role != "character" && bitmap.role != "food" && bitmap.role != "item") {
-          mazeInfo.canvas.others.push(bitmap);
-        }
-        mazeInfo.canvas.stage.addChild(bitmap);
+        canvas.stage.addChild(bitmap);
       }
     }
   }
   // 캐릭터를 항상 위로
-  mazeInfo.canvas.stage.removeChild(mazeInfo.canvas.character);
-  mazeInfo.canvas.stage.addChild(mazeInfo.canvas.character);
-  mazeInfo.canvas.stage.update();
+  canvas.stage.removeChild(canvas.character);
+  canvas.stage.addChild(canvas.character);
+  canvas.stage.update();
   return mazeInfo;
 }
 
@@ -427,7 +422,7 @@ function gameMode(loader, type, tileFactory) {
         continue;
       }
       var obj = kidscoding.Actions._getCanvasObject(x, y);
-      if(obj.role == "empty") {
+      if(!obj) {
         for(i = 0; i < foods.length; i++) {
           if(foods[i].visible == false) {
             foods[i].visible = true;
@@ -461,65 +456,40 @@ function gameMode(loader, type, tileFactory) {
   $("#scoreBox .score").text(score);
 
   $("#runCode").hide();
-  $(document).keydown(function(e) {
+
+  function handleMove(e) {
     if(createjs.Tween.hasActiveTweens()) {
       return;
     }
     // var direct = {37:"l", 38:"u", 39:"r", 40:"d", 32:"jump_forward"}[e.keyCode];
-    var direct = {37:"l", 38:"u", 39:"r", 40:"d"}[e.keyCode];
+    var direct = e.type == "keydown" ? {37:"l", 38:"u", 39:"r", 40:"d"}[e.keyCode] : $(e.target).attr("data-direct");
+
     if(!direct) {
       return;
     }
     e.preventDefault();
     kidscoding.Actions.move(direct, {}, function(obj) {
-      if(type == "game" && obj.role == "food") {
+      if(type == "game" && obj && obj.role == "food") {
         obj.visible = false;
         createjs.Sound.play("success");
         mazeInfo.canvas.stage.update();
         $("#scoreBox .score").text(++mazeInfo.score);
         addFood();
       }
-      if(obj.link) {
+      if(obj && obj.link) {
         if(!obj.min_score || score >= obj.min_score) {
           location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname + "&x=" + character.px + "&y=" + character.py;
         } else {
           showModal("별을 " + obj.min_score + "개 이상 모아야 해요");
         }
       }
-      if(obj.tutorial) {
+      if(obj && obj.tutorial) {
         runTutorial(obj.tutorial);
       }
     });
-  });
-  $("#virtualKeypad .key").click(function(e) {
-    if(createjs.Tween.hasActiveTweens()) {
-      return;
-    }
-    var direct = $(e.target).attr("data-direct");
-    if(!direct) {
-      return;
-    }
-    e.preventDefault();
-    kidscoding.Actions.move(direct, {}, function(obj) {
-      if(type == "game" && obj.role == "food") {
-        obj.visible = false;
-        createjs.Sound.play("success");
-        mazeInfo.canvas.stage.update();
-        $("#scoreBox .score").text(++mazeInfo.score);
-        addFood();
-      }
-      if(obj.link) {
-        if(!obj.min_score || score >= obj.min_score) {
-          location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname + "&x=" + character.px + "&y=" + character.py;
-        } else {
-          showModal("별을 " + obj.min_score + "개 이상 모아야 해요");
-        }
-      }
-      if(obj.tutorial) {
-        runTutorial(obj.tutorial);
-      }
-    });
-  });
+  }
+  $(document).keydown(handleMove);
+  $("#virtualKeypad .key").click(handleMove);
 }
 
 function run(block, callback) {
@@ -549,7 +519,7 @@ function run(block, callback) {
         showModal(obj);
         return;
       }
-      if( typeof obj == "object" && obj != null) {
+      if( obj && typeof obj == "object" ) {
         if( obj.obstacle ) {
           // TODO: fix this later
           // jQuery's class manipulation functions do not work with the SVG elements
