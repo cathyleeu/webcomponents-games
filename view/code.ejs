@@ -66,7 +66,12 @@
       location.href = "/";
     }
     $("#school").text(info.school);
-    info.classes.forEach(function(className) {
+    var classes = Object.keys(info.classes).map(function(item) {
+      return info.classes[item];
+    }).reduce(function(init, arr) {
+      return init.concat(arr);
+    }, []);
+    classes.forEach(function(className) {
       var button = '<a href="/login#' + code + '-' + className + '" class="btn btn-lg btn-default">' + className + '</a>';
       $(button).appendTo("#classes");
     });
