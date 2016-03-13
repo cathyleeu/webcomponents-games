@@ -20,7 +20,6 @@
   {"id": "message2", "src": "/img/story08/tadpole01.png", "size": 32},
   {"id": "message3", "src": "/img/story08/tadpole02.png", "size": 32},
   {"id": "food", "src": "/img/story08/larva.png"},
-  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
