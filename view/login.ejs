@@ -100,7 +100,7 @@
         로그인에 성공하였습니다!
       </div>
       <div class="modal-footer">
-        <a id="goNext" class="close-modal btn btn-default" tabindex="0">확인</a>
+        <a id="goNext" href="#" class="close-modal btn btn-default" tabindex="0">확인</a>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -141,11 +141,6 @@
       }
       $("#school").text(info.school);
       $("#className").text(className);
-      $("#goNext").attr("href", "/book#" + hash + "-1권");
-      // info.classes.forEach(function(className) {
-      //   var button = '<a href="/login#' + code + '-' + className + '" class="btn btn-lg btn-default">' + className + '</a>';
-      //   $(button).appendTo("#classes");
-      // });
       d1.resolve(info);
     });
     $.get("login/names.json", function(names) {
@@ -206,7 +201,13 @@
         $("#modal img").attr("src", src);
         $("#modal").modal('show');
       });
+      $("#goNext").click(function(e) {
+        e.preventDefault();
+        var book = Object.keys(info.classes).filter(function(item) {
+          return info.classes[item].indexOf(className) >= 0;
+        });
+        location.href = "book#" + code + "-" + className + "-" + book[0];
+      });
     });
-
   });
 </script>

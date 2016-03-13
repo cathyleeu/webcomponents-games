@@ -16,7 +16,7 @@
     }
     if(e.type === 'cached' || e.type === 'updateready') {
       $('#appcache .msg').text('업데이트 완료');
-      $('#appcache button').show().click(function() {
+      $('#appcache button.btn-default').show().click(function() {
         global.location.reload();
       });
     }

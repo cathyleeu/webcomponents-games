@@ -1,6 +1,7 @@
 /login
 /login/names.json
 /login/url.json
+/login/books.json
 /book
 /click
 /components/jquery-ui/themes/base/jquery-ui.min.css

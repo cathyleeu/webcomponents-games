@@ -15,10 +15,12 @@ gulp.task('less', function () {
 
 gulp.task('makeUrl', function(cb) {
   var schools = require('./login/schools.json'),
+      books = require('./login/books.json'),
       date = new Date().toISOString().slice(0,7).split("-").join(""),
       result = [];
-  schools[date].forEach(function(school) {
-    var sum = 0;
+  Object.keys(schools[date]).forEach(function(key) {
+    var school = key.split(":"),
+        sum = 0;
     sum += school[0].charCodeAt(0) * 17;
     sum += school[0].charCodeAt(1) * 13;
     sum += school[1].charCodeAt(0) * 11;
@@ -27,13 +29,15 @@ gulp.task('makeUrl', function(cb) {
     result.push({
       school: school[1],
       code: sum.toString(16).slice(1),
-      classes: school.slice(2)
+      classes: schools[date][key]
     });
   });
   fs.writeFileSync('public/login/url.json', JSON.stringify(result));
+  fs.writeFileSync('public/login/books.json', JSON.stringify(books[date]));
+  cb();
 });
 
-gulp.task('appcache', ['less'], function(cb) {
+gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
   var offline = JSON.parse(fs.readFileSync('public/maze/offline.json'))
   .map(function(obj) {
     return 'public/' + obj.href.split('/').slice(0, -1).join('/') + '/*.json';
