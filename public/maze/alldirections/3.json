@@ -1,0 +1,39 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_left",
+    "move_right"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y.........y",
+    "y..ii.....y",
+    "y.........y",
+    "y....%....y",
+    "y..i......y",
+    "y.......i.y",
+    "y....u....y",
+    "y.........y",
+    "y.i.......y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "정말 잘했어!",
+    "img": "/img/999.png"
+  }, {
+    "msg": "자 이번엔 위로 3칸을 이동해야해",
+    "img": "/img/999.png"
+  }, {
+    "msg": "이제 어떻게 해야 하는지 알겠지?",
+    "img": "/img/999.png"
+  }, {
+    "msg": "쭉쭉 가보는거야!",
+    "img": "/img/999.png"
+  }, {
+    "msg": "자 해보자!",
+    "img": "/img/999.png"
+  }]
+}
