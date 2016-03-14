@@ -1,0 +1,166 @@
+{
+  "type": "world",
+  "view_size": 32,
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".xxxxxxxxxxxxxxxxxxxxxx.",
+    "y%..%...y..%...ph.yr...y",
+    "y.xxp.y.y.%.xx%pp.y..%.y",
+    "y..%y.yix..yi..xxxxxx%my",
+    "yxx.y.y%.%.y.%my.%..%..y",
+    "y%..y%..yxx...my%mxxxxxy",
+    "y.xxxxxxy.k%xxxy.%...%.y",
+    "y..%y...y.k%..iixxxxxk%y",
+    "yjy..%f.y.....%%..%..%.y",
+    "yxxxxxxxxxxxxxxxxxxxxxxy"
+  ],
+  "land": [
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................",
+    "........................"
+  ],
+  "extra": [{
+    "x": 21,
+    "y": 2,
+    "link": "/maze/alldirections/1"
+  }, {
+    "x": 21,
+    "y": 3,
+    "link": "/maze/alldirections/2"
+  }, {
+    "x": 20,
+    "y": 4,
+    "link": "/maze/alldirections/3"
+  }, {
+    "x": 17,
+    "y": 4,
+    "link": "/maze/alldirections/4"
+  }, {
+    "x": 16,
+    "y": 5,
+    "link": "/maze/alldirections/5"
+  }, {
+    "x": 17,
+    "y": 6,
+    "link": "/maze/alldirections/6"
+  }, {
+    "x": 21,
+    "y": 6,
+    "link": "/maze/alldirections/7"
+  }, {
+    "x": 22,
+    "y": 7,
+    "link": "/maze/alldirections/8"
+  }, {
+    "x": 21,
+    "y": 8,
+    "link": "/maze/alldirections/9"
+  }, {
+    "x": 18,
+    "y": 8,
+    "link": "/maze/alldirections/10"
+  }, {
+    "x": 15,
+    "y": 8,
+    "link": "/maze/alldirections/11"
+  }, {
+    "x": 14,
+    "y": 8,
+    "link": "/maze/alldirections/12"
+  }, {
+    "x": 11,
+    "y": 7,
+    "link": "/maze/alldirections/13"
+  }, {
+    "x": 11,
+    "y": 6,
+    "link": "/maze/alldirections/14"
+  }, {
+    "x": 13,
+    "y": 4,
+    "link": "/maze/alldirections/15"
+  }, {
+    "x": 14,
+    "y": 2,
+    "link": "/maze/alldirections/16"
+  }, {
+    "x": 11,
+    "y": 1,
+    "link": "/maze/alldirections/17"
+  }, {
+    "x": 10,
+    "y": 2,
+    "link": "/maze/alldirections/18"
+  }, {
+    "x": 9,
+    "y": 4,
+    "link": "/maze/alldirections/19"
+  }, {
+    "x": 5,
+    "y": 5,
+    "link": "/maze/alldirections/20"
+  }, {
+    "x": 7,
+    "y": 4,
+    "link": "/maze/alldirections/21"
+  }, {
+    "x": 4,
+    "y": 1,
+    "link": "/maze/alldirections/22"
+  }, {
+    "x": 1,
+    "y": 1,
+    "link": "/maze/alldirections/23"
+  }, {
+    "x": 3,
+    "y": 3,
+    "link": "/maze/alldirections/24"
+  }, {
+    "x": 1,
+    "y": 5,
+    "link": "/maze/alldirections/25"
+  }, {
+    "x": 3,
+    "y": 7,
+    "link": "/maze/alldirections/26"
+  }, {
+    "x": 5,
+    "y": 8,
+    "link": "/maze/alldirections/27"
+  }
+],
+  "tutorial": [{
+    "msg": "안녕! 나는 보르네오야",
+    "img": "/img/ant/ant1.png"
+  }, {
+    "msg": "오늘은 공주님에게 고백을 하는 날이야!",
+    "img": "/img/ant/ant1.png"
+  }, {
+    "msg": "어디 멋진 왕자님이 없을까~",
+    "img": "/img/ant/ant3.png"
+  }, {
+    "msg": "공주님 기다리세요 제가 곧 가겠습니다!",
+    "img": "/img/ant/ant1.png"
+  }, {
+    "msg": "흥! 보르네오! 네가 공주님에게 갈 수 있을것 같으냐?",
+    "img": "/img/ant/ant2.png"
+  }, {
+    "msg": "애들아 저 개미놈을 막아라!",
+    "img": "/img/ant/ant2.png"
+  }, {
+    "msg": "이런! 큰일이야 불개미 왕자가 길을 막고 있어",
+    "img": "/img/ant/ant1.png"
+  }, {
+    "msg": "불개미들을 피해서 공주님에게 가자!",
+    "img": "/img/ant/ant1.png"
+  }]
+}

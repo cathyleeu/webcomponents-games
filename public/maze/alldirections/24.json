@@ -1,0 +1,33 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_left",
+    "move_right"
+  ],
+  "map": [
+    ".xxxxxxxxx.",
+    "y......p..y",
+    "y..ppp%...y",
+    "y..i....p.y",
+    "y....p..i.y",
+    "y....u....y",
+    "y.i.p....iy",
+    "y....p..p.y",
+    "y.i.......y",
+    "y......i..y",
+    ".xxxxxxxxx."
+  ],
+  "tutorial": [{
+    "msg": "자 이제 움직이는 방법을 다 배웠으니 불개미를 피해서 목표까직 가보는거야",
+    "img": "/img/999.png"
+  }, {
+    "msg": "불개미에 부딪히면 지나갈 수 없으니 꼭 피해가보자",
+    "img": "/img/999.png"
+  }, {
+    "msg": "자 해보자!",
+    "img": "/img/999.png"
+  }]
+}
