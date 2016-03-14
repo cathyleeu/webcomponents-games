@@ -55,7 +55,10 @@
     $.get("login/url.json", function(urls) {
       urls.forEach(function(item) {
         var url = "http://toycode.org/code#" + item.code,
-            info = item.classes.map(function(className) {
+            classes = Object.keys(item.classes).reduce(function(arr, key) {
+              return arr.concat(item.classes[key])
+            }, []),
+            info = classes.map(function(className) {
               var info_url = "http://toycode.org/info#" + item.code + "-" + className;
               return "<div>"
                   +   "<label>" + className + "</label> : "
