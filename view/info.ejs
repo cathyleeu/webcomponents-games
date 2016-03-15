@@ -84,8 +84,10 @@
           info = url.filter(function(item) {
             return item.code == code
           })[0],
-          classNameChk = info.classes.filter(function(item) {
-            return item == className
+          classNameChk = Object.keys(info.classes).reduce(function(init, book) {
+            return init.concat(info.classes[book]);
+          }, []).filter(function(item) {
+            return item == className;
           })[0];
       if(!info || className != classNameChk) {
         alert("잘못된 경로로 접근하였습니다.");
