@@ -13,12 +13,16 @@
   line-height: 50px;
   font-size: 30px;
   text-align: center;
+  background: #2C3E50;
+  color: white;
 }
 
 .hint {
   position: relative;
   height: 100px;
   text-align: center;
+  background: #18BC9C;
+  color: white;
 }
 
 .timer {
@@ -98,22 +102,56 @@ var hash = location.hash,
     startTime;
 
 var levels = [{
-  instruction: "[ 1 단계 ] 작은 숫자부터 클릭해봐요",
+  instruction: "작은 숫자부터 클릭해봐요",
   values: [0,1,2,3,4,5,6,7,8,9]
 }, {
-  instruction: "[ 2 단계 ] 큰 숫자부터 클릭해봐요",
+  instruction: "큰 숫자부터 클릭해봐요",
   values: [9,8,7,6,5,4,3,2,1,0]
 }, {
-  instruction: "[ 3 단계 ] ㄱ부터 차례대로 클릭해봐요",
+  instruction: "순서대로 클릭해봐요",
+  values: [
+    "/img/login/01.png",
+    "/img/login/02.png",
+    "/img/login/03.png",
+    "/img/login/04.png",
+    "/img/login/05.png",
+    "/img/login/06.png",
+    "/img/login/07.png",
+    "/img/login/08.png",
+    "/img/login/09.png",
+    "/img/login/10.png",
+    "/img/login/11.png",
+    "/img/login/12.png",
+    "/img/login/13.png"
+  ]
+}, {
+  instruction: "순서대로 클릭해봐요",
+  values: [
+    "/img/login/13.png",
+    "/img/login/12.png",
+    "/img/login/11.png",
+    "/img/login/10.png",
+    "/img/login/09.png",
+    "/img/login/08.png",
+    "/img/login/07.png",
+    "/img/login/06.png",
+    "/img/login/05.png",
+    "/img/login/04.png",
+    "/img/login/03.png",
+    "/img/login/02.png",
+    "/img/login/01.png"
+  ]
+}, {
+  instruction: "ㄱ부터 차례대로 클릭해봐요",
   values: ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
 }, {
-  instruction: "[ 4 단계 ] ㅏ부터 차례대로 클릭해봐요",
+  instruction: "ㅏ부터 차례대로 클릭해봐요",
   values: ["ㅏ","ㅑ","ㅓ","ㅕ","ㅗ","ㅛ","ㅜ","ㅠ","ㅡ","ㅣ"]
 }, {
-  instruction: "[ 5 단계 ] A부터 차례대로 클릭해봐요",
+  instruction: "A부터 차례대로 클릭해봐요",
   values: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 }, {
-  instruction: "[ 6 단계 ] a부터 차례대로 클릭해봐요",
+  instruction: "a부터 차례대로 클릭해봐요",
   values: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 }];
 
@@ -159,7 +197,7 @@ function timer() {
 function init() {
   $(".bubble").remove();
   if(level < levels.length) {
-    $(".instruction").text(levels[level].instruction);
+    $(".instruction").text("[ " + (level+1) + " 단계 ] " + levels[level].instruction);
     iter = getIterator(levels[level++].values);
   } else {
     $(".instruction").text("30초동안 차례대로 클릭해봐요");
@@ -184,14 +222,21 @@ function addBubble(index, value) {
       left = (Math.random() * ($(".workspace").width() - 100)) + "px",
       idx = parseInt(Math.random() * pastel.length, 10),
       background = "#" + pastel[idx],
-      $bubble = $('<div class="bubble" data-index="' + index + '">' + value + '</div>').css({
-        top: top,
-        left: left,
-        background: background,
-        "z-index": zIndex
-      });
+      htmlStr,
+      $bubble;
+  if(value.indexOf(".png") < 0) {
+    htmlStr = '<div class="bubble" data-index="' + index + '">' + value + '</div>';
+  } else {
+    htmlStr = '<img class="bubble" data-index="' + index + '" src="' + value + '" />';
+  }
+  $bubble = $(htmlStr).css({
+    top: top,
+    left: left,
+    background: background,
+    "z-index": zIndex
+  });
   $(".workspace").append($bubble);
-  $bubble = $('<div class="bubble" data-index="' + index + '">' + value + '</div>').css({
+  $bubble = $(htmlStr).css({
     background: background,
     "z-index": zIndex
   });
