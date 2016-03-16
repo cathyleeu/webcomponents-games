@@ -91,7 +91,8 @@
 
 var CIRCLE_NUM = 5;
 
-var level = 0,
+var hash = location.hash,
+    level = +(hash||"#1").slice(1) - 1,
     iter,
     count,
     startTime;
@@ -225,6 +226,11 @@ $(function() {
     }
     if(indexes.length <= 1) {
       alert("잘 했어요!");
+      if(history.pushState) {
+        history.pushState(null, null, '#' + (level+1));
+      } else {
+        location.hash = '#' + (level+1);
+      }
       init();
     }
   });
