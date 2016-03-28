@@ -1,12 +1,16 @@
 {
   "201603": {
     "1권": [
-      ["클릭연습", "/click"]
+      ["클릭연습", "/click"],
+      ["개미왕자", "/maze/alldirections/1"],
+      ["올챙이의 모험", "/maze/story09/1"]
     ],
     "1권심화": [
       ["클릭연습", "/click"],
-      ["개미왕자", "maze/alldirections/1"],
-      ["올챙이의 모험", "/maze/story09/1"]
+      ["개미왕자", "/maze/alldirections/1"],
+      ["올챙이의 모험", "/maze/story09/1"],
+      ["개구리", "/maze/2frog/1"],
+      ["생쥐와 치즈", "/maze/basic/1"]
     ],
     "YBM 데모": [
       ["올챙이의 모험", "/maze/story09/1"],

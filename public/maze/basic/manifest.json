@@ -4,5 +4,8 @@
   {"id": "food", "src": "/img/map/cheese.png"},
   {"id": "box", "src": "/img/map/box.png", "obstacle": true},
   {"id": "stone", "src": "/img/map/stone.png", "obstacle": true},
-  {"id": "wall", "src": "/img/map/wall.png", "obstacle": true}
+  {"id": "wall", "src": "/img/map/wall.png", "obstacle": true},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"}
 ]
