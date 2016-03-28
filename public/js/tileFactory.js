@@ -114,6 +114,30 @@ TileFactory.prototype.create = function(tile, x, y) {
               }
             };
           }
+          if(character.src.indexOf('frog') >= 0) {
+            animations = {
+              stand_u: 0,
+              walk_u: {
+                frames: [0,1,2,1,0],
+                speed: 0.5
+              },
+              stand_r: 3,
+              walk_r: {
+                frames: [3,4,5,4,3],
+                speed: 0.5
+              },
+              stand_d: 6,
+              walk_d: {
+                frames: [6,7,8,7,6],
+                speed: 0.5
+              },
+              stand_l: 9,
+              walk_l: {
+                frames: [9,10,11,10,9],
+                speed: 0.5
+              }
+            };
+          }
           var data = {
             images: [this.loader.getResult(character_id)],
             frames: {width: character.size, height: character.size},
