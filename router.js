@@ -95,6 +95,12 @@ public.get('/click', function *(next) {
   });
 });
 
+public.get('/dragndrop', function *(next) {
+  yield this.render('dragndrop', {
+    title: "키즈코딩"
+  });
+});
+
 public.get('/maze/:type', function *(next) {
   yield this.render('maze', {
     title: "키즈코딩",
