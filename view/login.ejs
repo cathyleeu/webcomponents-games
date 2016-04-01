@@ -1,6 +1,8 @@
 <style>
   .btn-warning {
     margin: 20px;
+    width: 130px;
+    padding: 10px;
   }
   .btn-warning.selected {
     background-color: #E53;
@@ -145,7 +147,7 @@
     });
     $.get("login/names.json", function(names) {
       names.forEach(function(name, index) {
-        var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning" style="width:100px">' + name[1] + '</button>';
+        var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning">' + (index+1) + " : " + name[1] + '</button>';
         $(button).appendTo("#names");
       });
       d2.resolve(names);
