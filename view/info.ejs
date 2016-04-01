@@ -1,6 +1,6 @@
 <style>
   .btn-warning {
-    width: 50px;
+    width: 70px;
     font-size: 10px;
     padding: 5px;
     margin-right: 20px;
@@ -58,7 +58,7 @@
   <img class="kidscoding" src="/img/kidscoding.png"/>
   <h1>키즈코딩 로그인<br/><small><?=school?> <?=className?> (<?=month?>월)</small></h1>
   <div class="sub-row">
-    <button class="btn btn-lg btn-warning selected"><?=name?></button>
+    <button class="btn btn-lg btn-warning selected"><?=index?> : <?=name?></button>
     <img class="character" src="img/login/<?=img?>.png" />
   </div>
   <div class="sub-row">
@@ -132,6 +132,7 @@
       var row = [];
       names.forEach(function(nameArr, index) {
         row.push(template({
+          index: (index+1),
           name: nameArr[1],
           school: info.school,
           className: className,
