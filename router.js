@@ -60,7 +60,7 @@ public.get('/login', function *(next) {
 
 public.get('/book', function *(next) {
   yield this.render('book', {
-    title: "키즈코딩 1권"
+    title: "키즈코딩"
   });
 });
 
