@@ -22,8 +22,7 @@
 }
 
 #display {
-  width: 700px;
-  height: 400px;
+  width: 100%;
 }
 
 .modal-dialog {
@@ -199,11 +198,13 @@ $(function() {
         type = target.name.match(/[^\d]+/)[0],
         correct = py >= 0 && (["ball", "box", "cylinder"].indexOf(type) == py);
 
-    if(600<= target.x && target.x <= 700 && correct) {
-      countDown(type);
-      return true;
+    if(600<= target.x && target.x <= 700) {
+      if(correct) {
+        countDown(type);
+        return true;
+      }
+      showModal("모양이 비슷하지 않아요!");
     }
-    showModal("모양이 비슷하지 않아요!");
     return false;
   }
   function countDown(type) {
@@ -218,7 +219,7 @@ $(function() {
     if(sum == 0) {
       showModal("비슷한 모양을 모두 찾았어요!");
       setTimeout(function() {
-        createjs.Sound.play("complete");        
+        createjs.Sound.play("complete");
       }, 1000);
     }
   }
@@ -230,6 +231,15 @@ $(function() {
     });
     $modal.modal('show');
   }
+
+  var handle_resize = function(e) {
+    var height = $(window).height() - $(".head").height();
+    $("#display").css("max-height", height + "px");
+  };
+  $(window).on("resize", handle_resize);
+  setTimeout(function() {
+    handle_resize();
+  }, 100);
 
 });
 
