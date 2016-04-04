@@ -1,4 +1,13 @@
 <style>
+html {
+  -ms-content-zooming: none; /* Disables zooming */
+  -ms-touch-action: none;   /* Disable any special actions on tap/touch */
+  -ms-scroll-chaining: none; /* Disable scroll boucing */
+  content-zooming: none;
+  touch-action: none;
+  scroll-chaining: none;
+}
+
 #container {
   position: relative;
 }
@@ -32,11 +41,17 @@
   min-height: 200px;
   font-size: 30px;
 }
+.score-wrap {
+  padding-right: 30px;
+}
 
 </style>
 <div id="container">
   <div class="head">
     드래그앤드랍 연습
+    <span class="score-wrap pull-right">
+      점수: <span id="score">0</span>
+    </span>
   </div>
   <div class="workspace">
     <canvas id="display"></canvas>
@@ -52,7 +67,7 @@
       <div class="modal-body">
       </div>
       <div class="modal-footer">
-        <button type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0"><i class="fa fa-times-circle-o"></i> 확인</button>
+        <button id="confirm" type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0"><i class="fa fa-times-circle-o"></i> 확인</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -75,7 +90,9 @@ $(function() {
         cylinder: sources.cylinder
       },
       countObj = {},
-      manifest = [];
+      manifest = [],
+      draggers = [];
+  createjs.Touch.enable(stage);
   createjs.Sound.alternateExtensions = ["mp3", "wav"];
   sounds.installPlugin(createjs.Sound);
   sounds.loadManifest([
@@ -167,6 +184,7 @@ $(function() {
         setBitmapCoord(e.currentTarget, e.currentTarget.px, e.currentTarget.py);
         stage.update();
       });
+      draggers.push(dragger);
 
       setBitmapCoord(dragger, px, py);
       stage.addChild(dragger);
@@ -208,7 +226,9 @@ $(function() {
     return false;
   }
   function countDown(type) {
-    var sum = 0;
+    var sum = 0,
+        score = +$("#score").text() + 1;
+    $("#score").text(score);
     count[type]--;
     countObj[type].text = count[type];
     stage.update();
@@ -231,7 +251,46 @@ $(function() {
     });
     $modal.modal('show');
   }
+  function reset() {
+    var px = 0,
+        py = 0;
+    for(var i = 0; i < draggers.length; i++) {
+      var idx = parseInt(Math.random() * draggers.length, 10),
+          temp = draggers[i];
+      draggers[i] = draggers[idx],
+      draggers[idx] = temp;
+    }
+    for(var i = 0; i < draggers.length; i++) {
+      draggers[i].visible = true;
+      setBitmapCoord(draggers[i], px, py);
+      px++;
+      if(px == 5) {
+        px = 0;
+        py++;
+      }
+    }
+    count = {
+      ball: sources.ball,
+      box: sources.box,
+      cylinder: sources.cylinder
+    };
+    Object.keys(count).forEach(function(type) {
+      countObj[type].text = count[type];
+    });
+    stage.update();
+    var score = +$("#score").text() + 5;
+    $("#score").text(score);
+  }
+  $("#confirm").click(function(e) {
+    var text = $(e.target).closest(".modal").find(".modal-body").text();
+    if(text.slice(0, 3) == "비슷한") {
+      reset();
+    }
+  });
 
+  $(document).on("contextmenu mousewheel", function(e) {
+    e.preventDefault();
+  });
   var handle_resize = function(e) {
     var height = $(window).height() - $(".head").height();
     $("#display").css("max-height", height + "px");

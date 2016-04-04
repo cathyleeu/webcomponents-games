@@ -4,6 +4,7 @@
 /login/books.json
 /book
 /click
+/dragndrop
 /components/jquery-ui/themes/base/jquery-ui.min.css
 /components/jquery/dist/jquery.min.js
 /components/jquery-ui/jquery-ui.min.js
