@@ -46,67 +46,67 @@
   "extra": [{
     "x": 41,
     "y": 3,
-    "link": "/maze/story05/31"
+    "link": "story05/31"
   }, {
     "x": 36,
     "y": 4,
-    "link": "/maze/story05/32"
+    "link": "story05/32"
   },{
     "x": 31,
     "y": 2,
-    "link": "/maze/story05/33"
+    "link": "story05/33"
   },{
     "x": 23,
     "y": 3,
-    "link": "/maze/story05/34"
+    "link": "story05/34"
   },{
     "x": 17,
     "y": 5,
-    "link": "/maze/story05/35"
+    "link": "story05/35"
   },{
     "x": 11,
     "y": 5,
-    "link": "/maze/story05/36"
+    "link": "story05/36"
   },{
     "x": 6,
     "y": 1,
-    "link": "/maze/story05/37"
+    "link": "story05/37"
   },{
     "x": 37,
     "y": 9,
-    "link": "/maze/story05/40"
+    "link": "story05/40"
   },{
     "x": 31,
     "y": 7,
-    "link": "/maze/story05/41"
+    "link": "story05/41"
   },{
     "x": 23,
     "y": 9,
-    "link": "/maze/story05/42"
+    "link": "story05/42"
   },{
     "x": 17,
     "y": 10,
-    "link": "/maze/story05/43"
+    "link": "story05/43"
   },{
     "x": 10,
     "y": 7,
-    "link": "/maze/story05/44"
+    "link": "story05/44"
   },{
     "x": 35,
     "y": 14,
-    "link": "/maze/story05/50"
+    "link": "story05/50"
   },{
     "x": 21,
     "y": 15,
-    "link": "/maze/story05/51"
+    "link": "story05/51"
   },{
     "x": 10,
     "y": 12,
-    "link": "/maze/story05/52"
+    "link": "story05/52"
   }, {
     "x": 47,
     "y": 8,
-    "link": "/maze/story05/index?x=46&y=9"
+    "link": "story05/index?x=46&y=9"
   }  ,{
     "x": 45,
     "y": 5,

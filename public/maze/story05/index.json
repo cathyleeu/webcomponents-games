@@ -48,67 +48,67 @@
   "extra": [{
     "x": 6,
     "y": 3,
-    "link": "/maze/story05/1"
+    "link": "story05/1"
   },  {
     "x": 11,
     "y": 4,
-    "link": "/maze/story05/2"
+    "link": "story05/2"
   },  {
     "x": 16,
     "y": 2,
-    "link": "/maze/story05/3"
+    "link": "story05/3"
   },{
     "x": 21,
     "y": 5,
-    "link": "/maze/story05/4"
+    "link": "story05/4"
   },{
     "x": 27,
     "y": 3,
-    "link": "/maze/story05/5"
+    "link": "story05/5"
   },{
     "x": 32,
     "y": 1,
-    "link": "/maze/story05/6"
+    "link": "story05/6"
   },{
     "x": 37,
     "y": 4,
-    "link": "/maze/story05/7"
+    "link": "story05/7"
   },{
     "x": 9,
     "y": 8,
-    "link": "/maze/story05/10"
+    "link": "story05/10"
   },{
     "x": 16,
     "y": 9,
-    "link": "/maze/story05/11"
+    "link": "story05/11"
   },{
     "x": 27,
     "y": 8,
-    "link": "/maze/story05/12"
+    "link": "story05/12"
   },{
     "x": 33,
     "y": 9,
-    "link": "/maze/story05/13"
+    "link": "story05/13"
   },{
     "x": 39,
     "y": 7,
-    "link": "/maze/story05/14"
+    "link": "story05/14"
   },{
     "x": 11,
     "y": 14,
-    "link": "/maze/story05/20"
+    "link": "story05/20"
   },{
     "x": 29,
     "y": 13,
-    "link": "/maze/story05/21"
+    "link": "story05/21"
   },{
     "x": 39,
     "y": 14,
-    "link": "/maze/story05/22"
+    "link": "story05/22"
   },{
     "x": 47,
     "y": 9,
-    "link": "/maze/story05/index2"
+    "link": "story05/index2"
   },{
     "x": 2,
     "y": 5,

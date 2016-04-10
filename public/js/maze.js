@@ -4,12 +4,10 @@ var d1,
     d2,
     step,
     kidscoding = new KidsCoding(),
-    mazeInfo,
     loader,
     mazeInfo,
     maze,
-    tileFactory = new TileFactory(),
-    stage = new createjs.Stage("display");
+    tileFactory = new TileFactory();
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
@@ -70,6 +68,7 @@ page('*', function(ctx, next) {
       }
     });
     sound_loader.getResult = newGetResult;
+    createjs.Sound.stop("bgm");
   }).fail(function(jqXHR, msg, err) {
     throw( "[" + msg + " - " + manifest_url + "]\n" + err.name + ": " + err.message);
   });
@@ -94,8 +93,11 @@ function init() {
     message_url = "/img/ladybug.png";
   }
 
-  var queries = {};
-  location.search.slice(1).split("&").map(function(query) {
+  var queries = {},
+      idx = location.hash.indexOf("?"),
+      search = idx >= 0 ? location.hash.slice(idx + 1) : "";
+
+  search.split("&").map(function(query) {
     var sp = query.split("=");
     if(sp[0]) {
       queries[sp[0]] = sp[1];
@@ -107,22 +109,25 @@ function init() {
   }
 
   tileFactory.init(maze, loader);
-  mazeInfo = initMaze(maze, loader, tileFactory);
-  mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
-  kidscoding.init(loader, mazeInfo, run);
+  initMaze();
   if(maze.type != "world" && maze.type != "game") {
-    kidscoding.initBlockly(maze.toolbox, maze.workspace);
     $("#virtualKeypad").hide();
     $("#blocklyDiv").show();
   } else {
     $("#virtualKeypad").show();
     $("#blocklyDiv").hide();
   }
-
   handle_resize();
+  drawMaze();
+  kidscoding.init(loader, mazeInfo, run);
+  kidscoding.initBlockly(maze.toolbox, maze.workspace);
+
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);
+    $("#scoreBox").show();
+    $("#runCode").hide();
   } else {
+    $("#scoreBox").hide();
     $("#runCode").show();
   }
 
@@ -136,7 +141,7 @@ function init() {
   }
 }
 
-function initMaze(maze, loader, tileFactory) {
+function initMaze() {
   var map_width = maze.map[0].length;
   var map_height = maze.map.length;
 
@@ -152,7 +157,7 @@ function initMaze(maze, loader, tileFactory) {
     view_size: maze.view_size || null,
     tile_size: maze.tile_size || 50,
     canvas: {
-      stage: stage,
+      stage: new createjs.Stage("display"),
       character: null,
       items: [],
       foods: [],
@@ -160,10 +165,11 @@ function initMaze(maze, loader, tileFactory) {
       others: []
     }
   };
-  stage.canvas.width = Math.min(mazeInfo.view_size || map_width, map_width) * mazeInfo.tile_size;
-  stage.canvas.height = Math.min(mazeInfo.view_size || map_height, map_height) * mazeInfo.tile_size;
+  mazeInfo.canvas.stage.removeAllChildren();
+  mazeInfo.canvas.stage.canvas.width = Math.min(mazeInfo.view_size || map_width, map_width) * mazeInfo.tile_size;
+  mazeInfo.canvas.stage.canvas.height = Math.min(mazeInfo.view_size || map_height, map_height) * mazeInfo.tile_size;
   if(maze.render == "pixel") {
-    var ctx = stage.canvas.getContext("2d");
+    var ctx = mazeInfo.canvas.stage.canvas.getContext("2d");
     ctx.imageSmoothingEnabled = false;
     ctx.mozImageSmoothingEnabled = false;
     ctx.oImageSmoothingEnabled = false;
@@ -176,7 +182,7 @@ function initMaze(maze, loader, tileFactory) {
   if(!mazeInfo.land && loader.getItem("background")) {
     // 1-image background
     var background = new createjs.Bitmap(loader.getResult("background"));
-    stage.addChild(background);
+    mazeInfo.canvas.stage.addChild(background);
   } else if(!mazeInfo.land && loader.getItem("bg1")) {
     // mosaic background
     for(var i = 0; i < map_height; i++) {
@@ -184,7 +190,7 @@ function initMaze(maze, loader, tileFactory) {
         var idx = (i + j) % 2 + 1;
         var bg_tile = new createjs.Bitmap(loader.getResult("bg" + idx));
         setBitmapCoord(bg_tile, j, i);
-        stage.addChild(bg_tile);
+        mazeInfo.canvas.stage.addChild(bg_tile);
       }
     }
   } else if(mazeInfo.land && loader.getItem("land0")) {
@@ -221,15 +227,14 @@ function initMaze(maze, loader, tileFactory) {
           bg_tile.image = loader.getResult("land"+arr[idx]);
         }
         setBitmapCoord(bg_tile, j, i);
-        stage.addChild(bg_tile);
+        mazeInfo.canvas.stage.addChild(bg_tile);
       }
     }
   }
-
-  return mazeInfo;
+  mazeInfo.canvas.stage.update();
 }
 
-function drawMaze(mazeInfo, maze, loader, tileFactory) {
+function drawMaze() {
   var localData = store.get('data') || {},
       canvas = mazeInfo.canvas;
   for(var i = 0; i < mazeInfo.height; i++) {
@@ -239,7 +244,7 @@ function drawMaze(mazeInfo, maze, loader, tileFactory) {
           return obj.y == i && obj.x == j;
         })[0] : null;
         if(extra && extra.link) {
-          var path = extra.link.split("/").slice(1, -1).join("/");
+          var path = extra.link.split("/").slice(0, -1).join("/");
           if(localData[path] && localData[path].complete.indexOf(extra.link.split("/").slice(-1)[0]) >= 0) {
             continue;
           }
@@ -266,7 +271,6 @@ function drawMaze(mazeInfo, maze, loader, tileFactory) {
   canvas.stage.removeChild(canvas.character);
   canvas.stage.addChild(canvas.character);
   canvas.stage.update();
-  return mazeInfo;
 }
 
 function setBitmapCoord(bitmap, px, py) {
@@ -305,15 +309,18 @@ function addEvents() {
   });
   $(window).on("resize", handle_resize);
   $("#modal .go-next").click(function(e) {
-    var queries = {};
-    location.search.slice(1).split("&").map(function(query) {
+    var queries = {},
+        idx = location.hash.indexOf("?"),
+        search = idx >= 0 ? location.hash.slice(idx + 1) : "";
+
+    search.split("&").map(function(query) {
       var sp = query.split("=");
       if(sp[0]) {
         queries[sp[0]] = sp[1];
       }
     });
     if(queries.back) {
-      var path = location.pathname.split("/").slice(1, -1).join("/");
+      var path = queries.back.split("/").slice(0, -1).join("/");
       var localData = store.get('data') || {};
       if(!localData[path]) {
         localData[path] = {
@@ -326,7 +333,8 @@ function addEvents() {
         localData[path].score += maze.score || 1;
         store.set('data', localData);
       }
-      location.href = location.protocol + "//" + location.host + queries.back + "?x=" + queries.x + "&y=" + queries.y;
+
+      page(queries.back + "?x=" + queries.x + "&y=" + queries.y);
       return;
     }
     var path = location.hash.slice(2).split("/").filter(function(val){
@@ -385,6 +393,7 @@ function addEvents() {
   });
 
   $("#playstop a").click(function(e) {
+    e.preventDefault();
     if($("#playstop i").hasClass("fa-play")) {
       $("#playstop i").addClass("fa-stop");
       $("#playstop i").removeClass("fa-play");
@@ -399,6 +408,45 @@ function addEvents() {
     e.preventDefault();
     runTutorial(maze.tutorial);
   });
+  function handleMove(e) {
+    if(createjs.Tween.hasActiveTweens()) {
+      return;
+    }
+    if(maze.type != "world" && maze.type != "game") {
+      return;
+    }
+    // var direct = {37:"l", 38:"u", 39:"r", 40:"d", 32:"jump_forward"}[e.keyCode];
+    var direct = e.type == "keydown" ? {37:"l", 38:"u", 39:"r", 40:"d"}[e.keyCode] : $(e.target).attr("data-direct");
+
+    if(!direct) {
+      return;
+    }
+    e.preventDefault();
+    kidscoding.Actions.move(direct, {}, function(obj) {
+      if(maze.type == "game" && obj && obj.role == "food") {
+        obj.visible = false;
+        createjs.Sound.play("success");
+        mazeInfo.canvas.stage.update();
+        $("#scoreBox .score").text(++mazeInfo.score);
+        addFood();
+      }
+      if(obj && obj.link) {
+        if(!obj.min_score || score >= obj.min_score) {
+          var hash = location.hash.slice(2),
+              idx = hash.indexOf("?"),
+              temp = "?back=" + (idx >= 0 ? hash.slice(0, idx) : hash) + "&x=" + mazeInfo.canvas.character.px + "&y=" + mazeInfo.canvas.character.py;
+          page(obj.link + temp);
+        } else {
+          showModal("별을 " + obj.min_score + "개 이상 모아야 해요");
+        }
+      }
+      if(obj && obj.tutorial) {
+        runTutorial(obj.tutorial);
+      }
+    });
+  }
+  $(document).keydown(handleMove);
+  $("#virtualKeypad .key").click(handleMove);
 }
 
 function runTutorial(tutorial) {
@@ -468,51 +516,15 @@ function gameMode(loader, type, tileFactory) {
   if(type == "game") {
     addFood();
   }
-  $("#scoreBox").show();
   $("#scoreBox .food").replaceWith(loader.getResult("food"));
 
   var localData = store.get('data') || {};
-  var path = location.pathname.split("/");
-  path = path.length == 3 ? path.concat(["index"]) : path;
-  path = path.slice(1, -1).join("/");
+  var hash = location.hash.slice(2),
+      idx = hash.indexOf("?"),
+      path = idx >= 0 ? hash.slice(0, idx) : hash;
+  path = path.split("/").slice(0, -1).join("/");
   var score = localData[path] ? localData[path].score || 0 : 0;
   $("#scoreBox .score").text(score);
-
-  $("#runCode").hide();
-
-  function handleMove(e) {
-    if(createjs.Tween.hasActiveTweens()) {
-      return;
-    }
-    // var direct = {37:"l", 38:"u", 39:"r", 40:"d", 32:"jump_forward"}[e.keyCode];
-    var direct = e.type == "keydown" ? {37:"l", 38:"u", 39:"r", 40:"d"}[e.keyCode] : $(e.target).attr("data-direct");
-
-    if(!direct) {
-      return;
-    }
-    e.preventDefault();
-    kidscoding.Actions.move(direct, {}, function(obj) {
-      if(type == "game" && obj && obj.role == "food") {
-        obj.visible = false;
-        createjs.Sound.play("success");
-        mazeInfo.canvas.stage.update();
-        $("#scoreBox .score").text(++mazeInfo.score);
-        addFood();
-      }
-      if(obj && obj.link) {
-        if(!obj.min_score || score >= obj.min_score) {
-          location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname + "&x=" + character.px + "&y=" + character.py;
-        } else {
-          showModal("별을 " + obj.min_score + "개 이상 모아야 해요");
-        }
-      }
-      if(obj && obj.tutorial) {
-        runTutorial(obj.tutorial);
-      }
-    });
-  }
-  $(document).keydown(handleMove);
-  $("#virtualKeypad .key").click(handleMove);
 }
 
 function run(block, callback) {
@@ -560,6 +572,7 @@ function run(block, callback) {
           mazeInfo.canvas.stage.update();
         }
         if(obj.link) {
+          debugger
           location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
         }
         if(obj.tutorial) {

@@ -34,6 +34,6 @@
   }],
   "success": [{
     "msg": "성공! 참 잘했어요~",
-    "link": "/maze/5-flower/1"
+    "link": "5-flower/1"
   }]
 }
