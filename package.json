@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "gulp appcache",
-    "start": "node --harmony app.js"
+    "start": "node --harmony index.js"
   },
   "author": "",
   "license": "ISC",

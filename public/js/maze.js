@@ -1,66 +1,88 @@
 (function($) {
 
-var d1 = $.Deferred(),
-    d2 = $.Deferred(),
-    path = location.pathname.split("/"),
-    path = path.length == 3 ? path.concat(["index"]) : path,
-    map_url = path.join("/") + ".json",
-    manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/"),
-    step = path[3],
-    message_url;
+var d1,
+    d2,
+    step,
+    kidscoding = new KidsCoding(),
+    mazeInfo,
+    loader,
+    mazeInfo,
+    maze,
+    tileFactory = new TileFactory(),
+    stage = new createjs.Stage("display");
 
-// load map json file
-$.getJSON(map_url, function(json) {
-  d1.resolve(json);
-}).fail(function(jqXHR, msg, err) {
-  throw( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
+page('*', function(ctx, next) {
+  var hashbang = ctx.pathname.indexOf("#!"),
+      pathname = hashbang >= 0 ? ctx.pathname.slice(hashbang + 2) : ctx.pathname,
+      path = ["maze"].concat(pathname.split("/").filter(function(val) {
+        return val;
+      })),
+      map_url = path.join("/") + ".json",
+      manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/"),
+      message_url;
+
+  step = path[2];
+  d1 = $.Deferred();
+  d2 = $.Deferred();
+  $.when( step, d1, d2 ).done(init);
+
+  // load map json file
+  $.getJSON(map_url, function(json) {
+    maze = json;
+    d1.resolve(json);
+  }).fail(function(jqXHR, msg, err) {
+    throw( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
+  });
+
+  // load manifest.json file
+  $.getJSON(manifest_url, function(manifest) {
+    var image_loader = new createjs.LoadQueue();
+    var sound_loader = new createjs.LoadQueue();
+    var getResult = image_loader.constructor.prototype.getResult;
+    var newGetResult = function() {
+      var result = getResult.apply(image_loader, arguments);
+      if(result == null) {
+        throw("[Cannot find \"" + arguments[0] + "\" on manifest.json]");
+      }
+      return result;
+    };
+
+    // loader for images
+    image_loader.loadManifest(manifest.filter(function(item) {
+      return item.type != "sound";
+    }));
+    image_loader.on("complete", function() {
+      loader = image_loader;
+      d2.resolve(image_loader);
+    });
+    image_loader.getResult = newGetResult;
+
+    // loader for sounds
+    createjs.Sound.alternateExtensions = ["mp3", "wav"];
+    sound_loader.installPlugin(createjs.Sound);
+    sound_loader.loadManifest(manifest.filter(function(item) {
+      return item.type == "sound";
+    }));
+    sound_loader.on("complete", function() {
+      if(sound_loader.getItem("bgm")) {
+        createjs.Sound.play("bgm", {loop: -1});
+        $("#playstop").removeClass("hidden");
+      }
+    });
+    sound_loader.getResult = newGetResult;
+  }).fail(function(jqXHR, msg, err) {
+    throw( "[" + msg + " - " + manifest_url + "]\n" + err.name + ": " + err.message);
+  });
+
 });
 
-// load manifest.json file
-$.getJSON(manifest_url, function(manifest) {
-  var image_loader = new createjs.LoadQueue();
-  var sound_loader = new createjs.LoadQueue();
-  var getResult = image_loader.constructor.prototype.getResult;
-  var newGetResult = function() {
-    var result = getResult.apply(image_loader, arguments);
-    if(result == null) {
-      throw("[Cannot find \"" + arguments[0] + "\" on manifest.json]");
-    }
-    return result;
-  };
-
-  // loader for images
-  image_loader.loadManifest(manifest.filter(function(item) {
-    return item.type != "sound";
-  }));
-  image_loader.on("complete", function() {
-    d2.resolve(image_loader);
-  });
-  image_loader.getResult = newGetResult;
-
-  // loader for sounds
-  createjs.Sound.alternateExtensions = ["mp3", "wav"];
-  sound_loader.installPlugin(createjs.Sound);
-  sound_loader.loadManifest(manifest.filter(function(item) {
-    return item.type == "sound";
-  }));
-  sound_loader.on("complete", function() {
-    if(sound_loader.getItem("bgm")) {
-      createjs.Sound.play("bgm", {loop: -1});
-      $("#playstop").removeClass("hidden");
-    }
-  });
-  sound_loader.getResult = newGetResult;
-}).fail(function(jqXHR, msg, err) {
-  throw( "[" + msg + " - " + manifest_url + "]\n" + err.name + ": " + err.message);
+page({
+  hashbang: true
 });
 
-$.when( step, d1, d2 ).done(init);
+addEvents();
 
-var kidscoding,
-    mazeInfo;
-
-function init(step, maze, loader) {
+function init() {
   var message_id = maze.message || maze.character,
       message_item = loader.getItem(message_id)
                   || loader.getItem("message")
@@ -84,24 +106,25 @@ function init(step, maze, loader) {
     store.clear();
   }
 
-  var tileFactory = new TileFactory(maze, loader, maze.tile_size || 50);
+  tileFactory.init(maze, loader);
   mazeInfo = initMaze(maze, loader, tileFactory);
   mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
-  kidscoding = new KidsCoding(loader, mazeInfo, run);
+  kidscoding.init(loader, mazeInfo, run);
   if(maze.type != "world" && maze.type != "game") {
     kidscoding.initBlockly(maze.toolbox, maze.workspace);
+    $("#virtualKeypad").hide();
+    $("#blocklyDiv").show();
   } else {
     $("#virtualKeypad").show();
     $("#blocklyDiv").hide();
   }
 
+  handle_resize();
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);
   } else {
     $("#runCode").show();
   }
-
-  addEvents(step, loader, mazeInfo, maze, tileFactory);
 
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
@@ -114,7 +137,6 @@ function init(step, maze, loader) {
 }
 
 function initMaze(maze, loader, tileFactory) {
-  var stage = new createjs.Stage("display");
   var map_width = maze.map[0].length;
   var map_height = maze.map.length;
 
@@ -147,6 +169,8 @@ function initMaze(maze, loader, tileFactory) {
     ctx.oImageSmoothingEnabled = false;
     ctx.webkitImageSmoothingEnabled = false;
     $("#display").addClass("pixel");
+  } else {
+    $("#display").removeClass("pixel");
   }
 
   if(!mazeInfo.land && loader.getItem("background")) {
@@ -257,31 +281,29 @@ function setBitmapCoord(bitmap, px, py) {
   bitmap.regY = bounds.height / 2;
 }
 
-function addEvents(step, loader, mazeInfo, maze, tileFactory) {
+function handle_resize(e) {
+  var size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .bottom-row").height();
+  if($(window).width() / 2 < size) {
+    size = parseInt($(window).width() / 2, 10);
+  }
+  var view_width = Math.min(mazeInfo.view_size || mazeInfo.width, mazeInfo.width),
+      view_height = Math.min(mazeInfo.view_size || mazeInfo.height, mazeInfo.height),
+      zoom = parseInt(100 * size / (view_width * mazeInfo.tile_size), 10) / 100;
+  $("#display").css({
+    width: view_width * mazeInfo.tile_size * zoom,
+    height: view_height * mazeInfo.tile_size * zoom
+  });
+
+  var real_width = $("#display").width();
+  $(".sidebar").width(real_width);
+  $(".workspace").css("left", real_width + "px");
+};
+
+function addEvents() {
   $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
   });
-  var handle_resize = function(e) {
-    var size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .bottom-row").height();
-    if($(window).width() / 2 < size) {
-      size = parseInt($(window).width() / 2, 10);
-    }
-    var view_width = Math.min(mazeInfo.view_size || mazeInfo.width, mazeInfo.width),
-        view_height = Math.min(mazeInfo.view_size || mazeInfo.height, mazeInfo.height),
-        zoom = parseInt(100 * size / (view_width * mazeInfo.tile_size), 10) / 100;
-    $("#display").css({
-      width: view_width * mazeInfo.tile_size * zoom,
-      height: view_height * mazeInfo.tile_size * zoom
-    });
-
-    var real_width = $("#display").width();
-    $(".sidebar").width(real_width);
-    $(".workspace").css("left", real_width + "px");
-  };
   $(window).on("resize", handle_resize);
-  setTimeout(function() {
-    handle_resize();
-  }, 100);
   $("#modal .go-next").click(function(e) {
     var queries = {};
     location.search.slice(1).split("&").map(function(query) {
@@ -307,19 +329,19 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
       location.href = location.protocol + "//" + location.host + queries.back + "?x=" + queries.x + "&y=" + queries.y;
       return;
     }
-    var path = location.pathname.split("/").filter(function(val){
-      return val
+    var path = location.hash.slice(2).split("/").filter(function(val){
+      return val;
     });
-    location.pathname = path.slice(0, -1).join("/") + "/"+ (+path.slice(-1)[0] + 1);
+    $('#modal').modal('hide');
+    page( path.slice(0, -1).concat([+step+1]).join("/") );
   });
   $("#modal .reset-maze").click(function(e) {
     $("#runCode").html('<i class="fa fa-play"></i> 시작');
     createjs.Tween.removeAllTweens();
     resetMaze(mazeInfo, maze, loader, tileFactory);
   });
-  var org_px = mazeInfo.canvas.character.px,
-      org_py = mazeInfo.canvas.character.py;
   $("#runCode").click(function(e) {
+    e.preventDefault();
     if($(this).find("i").hasClass("fa-play")) {
       var blocks = kidscoding.workspace.getAllBlocks(),
           startblock = blocks.filter(function(block) {
@@ -373,7 +395,8 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
       createjs.Sound.stop("bgm");
     }
   });
-  $("#runTutorial a").click(function() {
+  $("#runTutorial a").click(function(e) {
+    e.preventDefault();
     runTutorial(maze.tutorial);
   });
 }

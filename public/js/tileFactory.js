@@ -1,20 +1,4 @@
 TileFactory = function(maze, loader, tile_size) {
-  var _this = this;
-  this.maze = maze;
-  this.tile_size = tile_size;
-  this.loader = loader;
-  this.obstacle_ids = loader.getItems()
-      .filter(function(obj) {
-        return obj.item.obstacle;
-      }).map(function(obj) {
-        return obj.item.id;
-      });
-  this.custom_tiles = {};
-  loader.getItems().map(function(obj) {
-    if(obj.item.tile) {
-      _this.custom_tiles[obj.item.tile] = obj.item;
-    }
-  });
   this.tile2role = {
     "u": "character",
     "d": "character",
@@ -35,6 +19,25 @@ TileFactory = function(maze, loader, tile_size) {
     "S": "spider",
     ".": "empty"
   };
+};
+
+TileFactory.prototype.init = function(maze, loader) {
+  var _this = this;
+  this.maze = maze;
+  this.loader = loader;
+  this.tile_size = maze.tile_size || 50;
+  this.obstacle_ids = loader.getItems()
+      .filter(function(obj) {
+        return obj.item.obstacle;
+      }).map(function(obj) {
+        return obj.item.id;
+      });
+  this.custom_tiles = {};
+  loader.getItems().map(function(obj) {
+    if(obj.item.tile) {
+      _this.custom_tiles[obj.item.tile] = obj.item;
+    }
+  });
 };
 
 TileFactory.prototype.create = function(tile, x, y) {
