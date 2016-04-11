@@ -1,0 +1,152 @@
+{
+  "type": "world",
+  "view_size": 10,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".######################.",
+    "#xx.xxxx.%x..e.x..xxx.%#",
+    "#.xx%.%..x.....x%...%x.#",
+    "#.x%.x..%xx.....#%...x%#",
+    "#.xx....x.x..x...##....#",
+    "#.......x..............#",
+    "#.x...x....x...x%....x%#",
+    "#..x.u...x...x.xxx%....#",
+    "#......x..x.x...x%..x%.#",
+    ".######################."
+  ],
+  "extra": [{
+    "x": 3,
+    "y": 3,
+    "link": "/maze/woong-repeat/1"
+  },{
+    "x": 4,
+    "y": 2,
+    "link": "/maze/woong-repeat/2"
+  },{
+    "x": 6,
+    "y": 2,
+    "link": "/maze/woong-repeat/3"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "/maze/woong-repeat/4"
+  },{
+    "x": 8,
+    "y": 3,
+    "link": "/maze/woong-repeat/5"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "/maze/woong-repeat/6"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "/maze/woong-repeat/7"
+  },{
+    "x": 20,
+    "y": 2,
+    "link": "/maze/woong-repeat/8"
+  },{
+    "x": 22,
+    "y": 1,
+    "link": "/maze/woong-repeat/9"
+  },{
+    "x": 22,
+    "y": 3,
+    "link": "/maze/woong-repeat/10"
+  },{
+    "x": 16,
+    "y": 6,
+    "link": "/maze/woong-repeat/11"
+  },{
+    "x": 18,
+    "y": 7,
+    "link": "/maze/woong-repeat/12"
+  },{
+    "x": 17,
+    "y": 8,
+    "link": "/maze/woong-repeat/13"
+  },{
+    "x": 22,
+    "y": 6,
+    "link": "/maze/woong-repeat/14"
+  },{
+    "x": 21,
+    "y": 8,
+    "link": "/maze/woong-repeat/15"
+  },{
+    "x": 13,
+    "y": 1,
+    "link": "/maze/woong-repeat/16",
+    "min_score": 120
+  },  {
+    "x": 6,
+    "y": 6,
+    "src": "/img/guide/question.png",
+    "obstacle": false,
+    "tutorial": [
+       {
+      "msg": "빨간색 표지판 : 2중 반복을 사용해야 합니다. 매우 어렵습니다.",
+      "img": "/img/guide/hard.png"
+    }, {
+      "msg": "노란색 표지판 : 반복을 여러번 사용해야 합니다. 조금 어렵습니다.",
+      "img": "/img/guide/normal.png"
+    }, {
+      "msg": "초록색 표지판 : 계단식 반복 문제입니다. 다소 쉽습니다.",
+      "img": "/img/guide/easy.png"
+    }]
+  },{
+    "x": 3,
+    "y": 4,
+    "src": "/img/guide/easy.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "점수를 3점 얻을 수 있어!",
+      "img": "/img/guide/easy.png"
+    }]
+
+  },  {
+    "x": 18,
+    "y": 4,
+    "src": "/img/guide/normal.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "점수를 5점 얻을 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 15,
+    "y": 6,
+    "src": "/img/guide/hard.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "점수를 10점 얻을 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+}],
+  "tutorial": [{
+    "msg": "으아아아앙~ 심심해~",
+    "img": "/img/woong/in.png"
+  }, {
+    "msg": "앗.. 동생 인이가 울고 있어",
+    "img": "/img/woong/woong0.png"
+  }, {
+    "msg": "엄마가 오기전에 인이를 달래주자",
+    "img": "/img/woong/woong0.png"
+  }, {
+    "msg": "인아~ 우리 숨박꼭질하자 그러니까 뚝!",
+    "img": "/img/woong/woong0.png"
+  }, {
+    "msg": "숨박꼭질? 그래 좋아! 내가 먼저 숨을게!",
+    "img": "/img/woong/in.png"
+  }, {
+    "msg": "하나~ 둘~ 셋~ ... 자 이제 찾으러 간다~",
+    "img": "/img/woong/woong0.png"
+  }, {
+    "msg": "숲 이곳저곳을 다니면서 인이를 찾아보자!",
+    "img": "/img/woong/woong0.png"
+  }]
+}

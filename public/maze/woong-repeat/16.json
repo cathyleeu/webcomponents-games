@@ -1,0 +1,35 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":100,
+  "workspace": ["start", "repeat", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#########.",
+    "#.........#",
+    "#.........#",
+    "#.........#",
+    "#.........#",
+    "#.........#",
+    "#.........#",
+    "#....%....#",
+    "#....d....#",
+    "#.........#",
+    ".#########."
+  ],
+  "tutorial": [{
+    "msg": "형 이제 졸려",
+    "img": "/img/woong/in.png"
+  },{
+    "msg": "쉿~ 인이가 이제 울지않고 자려나봐 ",
+    "img": "/img/woong/woong0.png"
+  },{
+    "msg": "인이와 놀아주기 성공~!",
+    "img": "/img/woong/woong0.png"
+  }]
+}
