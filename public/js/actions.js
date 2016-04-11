@@ -83,6 +83,58 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
   });
 };
 
+Actions.prototype._splitObjects = function(spider, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      px = character.px,
+      py = character.py;
+  // 거미와 캐릭터를 맨 위로
+  this.canvas.stage.removeChild(spider);
+  this.canvas.stage.addChild(spider);
+  this.canvas.stage.removeChild(character);
+  this.canvas.stage.addChild(character);
+  var tweens = [
+    createjs.Tween.get(character)
+        .wait(character.sprite ? 0 : 100)
+        .to({
+          x: _this.tile_size*(px - 0.5) + _this.tile_size/2,
+          y: _this.tile_size*py + _this.tile_size/2
+        }, 500)
+        .call(callback)
+        .addEventListener("change", function(e) {
+          _this.canvas.stage.update();
+        }),
+    createjs.Tween.get(spider)
+        .wait(character.sprite ? 0 : 100)
+        .to({
+          x: _this.tile_size*(px + 0.5) + _this.tile_size/2,
+          y: _this.tile_size*py + _this.tile_size/2
+        }, 500)
+  ];
+  var timeline = new createjs.Timeline(tweens, "split", {
+    loop: false,
+    paused: false
+  });
+
+};
+
+Actions.prototype._restoreObject = function(callback) {
+  var _this = this,
+      character = this.canvas.character,
+      px = character.px,
+      py = character.py;
+  createjs.Tween.get(character)
+      .wait(character.sprite ? 0 : 100)
+      .to({
+        x: _this.tile_size*px + _this.tile_size/2,
+        y: _this.tile_size*py + _this.tile_size/2
+      }, 500)
+      .call(callback)
+      .addEventListener("change", function(e) {
+        _this.canvas.stage.update();
+      });
+};
+
 Actions.prototype._setFocus = function(center_x, center_y, wait, time, callback) {
   if(this.view_size != null) {
     var _this = this;
@@ -318,26 +370,29 @@ Actions.prototype.useItem = function(block, callback) {
 Actions.prototype.action = function(hand, block, callback) {
   var character = this.canvas.character;
   var spider = this._getCanvasObject(character.px, character.py, "spider");
-  if(spider) {
-    if(hand == spider.hand) {
-      callback("비겼어요");
-      return;
+  var _this = this;
+  this._splitObjects(spider, function() {
+    if(spider) {
+      if(hand == spider.hand) {
+        callback("비겼어요");
+        return;
+      }
+      if( (hand == "rock"     && spider.hand == "paper") ||
+          (hand == "scissors" && spider.hand == "rock") ||
+          (hand == "paper"    && spider.hand == "scissors") ) {
+        callback("졌어요");
+        return;
+      }
+      setTimeout(function() {
+        spider.visible = false;
+        _this.canvas.stage.update();
+        createjs.Sound.play("success");
+        _this._restoreObject(callback);
+      }, 500);
+    } else {
+      callback("가위바위보를 할 수 없어요");
     }
-    if( (hand == "rock"     && spider.hand == "paper") ||
-        (hand == "scissors" && spider.hand == "rock") ||
-        (hand == "paper"    && spider.hand == "scissors") ) {
-      callback("졌어요");
-      return;
-    }
-    spider.visible = false;
-    this.canvas.stage.update();
-    createjs.Sound.play("success");
-    setTimeout(function() {
-      callback();
-    }, 500);
-  } else {
-    callback("가위바위보를 할 수 없어요");
-  }
+  });
 };
 
 Actions.prototype.condition = function(type, block, callback) {
