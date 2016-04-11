@@ -82,17 +82,9 @@
       ["순차이동 [고급]", "/maze/2frog/31"]
     ],
     "숙명키즈": [
-      ["클릭연습", "/click"],
-      ["드래그앤드랍 연습", "/dragndrop"],
-      ["개미왕자 1", "/maze/alldirections/1"],
-      ["개미왕자 2", "/maze/alldirections/14"],
-      ["올챙이의 모험 1", "/maze/story09/1"],
-      ["올챙이의 모험 2", "/maze/story09/14"],
-      ["순차이동 [초급]", "/maze/2frog/1"],
-      ["순차이동 [중급]", "/maze/2frog/16"],
-      ["순차이동 [고급]", "/maze/2frog/31"],
-      ["생쥐와 치즈 1", "/maze/basic/1"],
-      ["생쥐와 치즈 2", "/maze/basic/14"]
+      ["즐거운 우리집", "maze/3woong/index"],
+      ["가위바위보", "maze/3woong-cookie/index"],
+      ["반복 매우 어려운", "maze/woong-repeat/index"]
     ],
     "YBM 데모": [
       ["올챙이의 모험", "/maze/story09/1"],

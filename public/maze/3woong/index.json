@@ -1,0 +1,59 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".######.####",
+    "#......#....",
+    "#...bca#....",
+    "#.r...#%....",
+    "#......#....",
+    "#......#....",
+    ".######.####"
+  ],
+  "extra": [{
+    "x": 7,
+    "y": 3,
+    "link": "/maze/3woong/1"
+  },  {
+    "x": 6,
+    "y": 3,
+    "src": "/img/woong/family.png",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "즐거운 우리집에 온 것을 환영해~ ",
+      "img": "/img/woong/family.png"
+    }]
+
+  }],
+  "tutorial": [{
+    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "img": "/img/woong/woong0.png"
+  }, {
+    "msg": "오른쪽별로 이동하여 　'즐거운 우리집'을 　　완료하면",
+    "img": "/img/woong/family.png"
+  }, {
+    "msg": "옆의 맵으로 이동할 수 있어요",
+    "img": "/img/woong/family.png"
+  }, {
+    "msg": "가상 키보드를 이용하여 케릭터를 움직일 수 있어요",
+    "img": "/img/woong/key.png"
+  }, {
+    "msg": "↑위 버튼을 누르면 케릭터가 위로 가요",
+    "img": "/img/woong/up.png"
+  }, {
+    "msg": "↓아래 버튼을 누르면 케릭터가 아래로 가요",
+    "img": "/img/woong/down.png"
+  }, {
+    "msg": "→오른쪽 버튼을 누르면 케릭터가 아래로 가요",
+    "img": "/img/woong/right.png"
+  }, {
+    "msg": "←왼쪽 버튼을 누르면 케릭터가 아래로 가요",
+    "img": "/img/woong/left.png"
+  }, {
+    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "img": "/img/woong/woong0.png"
+  }]
+}

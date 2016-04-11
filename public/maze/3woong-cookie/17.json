@@ -1,0 +1,29 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
+  ],
+  "map": [
+    "########",
+    "#d...P.#",
+    "#.#R#.##",
+    "#S...P.#",
+    "#..R..P#",
+    "#S#.#R##",
+    "#...S.%#",
+    "########"
+  ],
+  "tutorial": [{
+    "msg": "사냥꾼을 이기자!",
+    "img": "/img/woong/rps.png"
+  }]
+}
