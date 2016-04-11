@@ -1,0 +1,29 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
+  ],
+  "map": [
+    "########",
+    "########",
+    "##@#####",
+    "##.#####",
+    "#...R..#",
+    "####.###",
+    "####%###",
+    "########"
+  ],
+  "tutorial": [{
+    "msg": "주먹은 보자기로 이길 수 있어",
+    "img": "/img/woong/rp.png"
+  }]
+}

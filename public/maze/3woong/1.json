@@ -1,0 +1,37 @@
+{
+  "tile_size": 32,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.xx..xx#",
+    "#.....b.#",
+    "#a......#",
+    "#...d...#",
+    "#.x....x#",
+    "#.xx.c.x#",
+    "#....xx.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "role": "food",
+    "obstacle": false
+  }],
+  "tutorial": [{
+    "msg": "아빠곰에게로 가보자!",
+    "img": "/img/woong/father.png"
+  }],
+  "success": [{
+    "msg": "성공! 참 잘했어요~",
+    "link": "/maze/3woong/2"
+  }]
+}
