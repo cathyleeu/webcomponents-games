@@ -138,6 +138,30 @@ TileFactory.prototype.create = function(tile, x, y) {
               }
             };
           }
+          if(character.src.indexOf('woong') >= 0) {
+            animations = {
+              stand_u: 4,
+              walk_u: {
+                frames: [4,5,6,7,4],
+                speed: 0.5
+              },
+              stand_r: 8,
+              walk_r: {
+                frames: [8,9,10,11,8],
+                speed: 0.5
+              },
+              stand_d: 0,
+              walk_d: {
+                frames: [0,1,2,3,0],
+                speed: 0.5
+              },
+              stand_l: 12,
+              walk_l: {
+                frames: [12,13,14,15,12],
+                speed: 0.5
+              }
+            };
+          }
           var data = {
             images: [this.loader.getResult(character_id)],
             frames: {width: character.size, height: character.size},
