@@ -1,7 +1,7 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":0,
+  "score":1,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -11,27 +11,23 @@
   ],
   "map": [
     ".#######.",
-    "#.xxb.xx#",
+    "#..img..#",
+    "#########",
+    "#h.....f#",
     "#.......#",
+    "#...d...#",
     "#.......#",
-    "#...d..a#",
-    "#.x....x#",
-    "#.xx...x#",
-    "#...cxx.#",
+    "#g..i..j#",
     ".#######."
   ],
   "extra":[{
-    "x": 7,
-    "y": 4,
+    "x": 1,
+    "y": 7,
     "role": "food",
     "obstacle": false
   }],
   "tutorial": [{
-    "msg": "엄마곰에게로 가보자",
-    "img": "/img/woong/mother.png"
-  }],
-  "success": [{
-    "msg": "성공! 참 잘했어요~",
-    "link": "/maze/3woong/3"
+    "msg": "4 - 2 = ?",
+    "img": "/img/woong/woong0.png"
   }]
 }

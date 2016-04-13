@@ -2,7 +2,7 @@
   "tile_size": 50,
   "render": "pixel",
   "score":20,
-  "workspace": ["start", "repeat", "repeat", "repeat", "repeat", "repeat", "repeat", "repeat"],
+  "workspace": ["start", "repeat", "repeat", "repeat", "repeat", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -11,7 +11,7 @@
   ],
   "map": [
     ".#########.",
-    "#d.xxxxxx.#",
+    "#..xxxxxx.#",
     "#.x......x#",
     "#.x.xxxx.x#",
     "#.x.x..x.x#",
@@ -19,7 +19,7 @@
     "#.x.xx.x.x#",
     "#.x....x.x#",
     "#..xxxx..x#",
-    "#.........#",
+    "#.......d.#",
     ".#########."
   ],
   "tutorial": [{
