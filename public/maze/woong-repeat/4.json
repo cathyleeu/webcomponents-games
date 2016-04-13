@@ -2,7 +2,7 @@
   "tile_size": 50,
   "render": "pixel",
   "score":7,
-  "workspace": ["start", "repeat", "repeat", "repeat"],
+  "workspace": ["start", "repeat", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -11,9 +11,9 @@
   ],
   "map": [
     ".#########.",
-    "#dx..x..x.#",
-    "#..x......#",
-    "#x..x..x.%#",
+    "#.x..x.%x.#",
+    "#.dx......#",
+    "#x..x..x..#",
     "#.x...x...#",
     "#...xx...#",
     "#.x.x...x.#",

@@ -1,8 +1,8 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":20,
-  "workspace": ["start", "repeat", "repeat", "repeat"],
+  "score":25,
+  "workspace": ["start", "repeat", "repeat", "repeat", "repeat", "repeat", "repeat", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -14,8 +14,8 @@
     "#%.xxxxxx.#",
     "#.x......x#",
     "#.x.xxxx.x#",
-    "#.x.x..x.x#",
-    "#.x.xd.x.x#",
+    "#.x.xxdx.x#",
+    "#.x.xx.x.x#",
     "#.x.xx.x.x#",
     "#.x....x.x#",
     "#..xxxx..x#",
@@ -29,7 +29,7 @@
     "msg": "자 이제 찾으러 간다~",
     "img": "/img/woong/woong0.png"
   },{
-    "msg": "인이를 찾으면 20점을 얻을 수 있어",
+    "msg": "인이를 찾으면 25점을 얻을 수 있어",
     "img": "/img/woong/woong0.png"
   }]
 }

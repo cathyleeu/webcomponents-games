@@ -83,7 +83,9 @@
     ],
     "숙명키즈": [
       ["즐거운 우리집", "maze/3woong/index"],
+      ["덧셈 뺄셈 놀이", "maze/3woong-plusminus/index"],
       ["가위바위보", "maze/3woong-cookie/index"],
+      ["쿠키 전달하기", "maze/3woong-item/index"],
       ["반복 매우 어려운", "maze/woong-repeat/index"]
     ],
     "YBM 데모": [
