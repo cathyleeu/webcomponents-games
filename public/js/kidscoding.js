@@ -11,8 +11,7 @@ KidsCoding = function(loader, mazeInfo, run) {
         str;
     if(typeof block == "string") {
       block = {
-        type: block,
-        movable: false
+        type: block
       };
       if(block.type == "start") {
         block.x = block.y = 20;
