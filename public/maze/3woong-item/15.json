@@ -1,7 +1,7 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":1,
+  "score":3,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -15,13 +15,25 @@
     ".#######.",
     "#......x#",
     "#.x..x.x#",
-    "#3x....x#",
+    "#cx....x#",
     "#.x%xx..#",
     "#.....dx#",
     "#.x....x#",
     "#....xxx#",
     ".#######."
   ],
+  "extra":[{
+    "x": 3,
+    "y": 4,
+    "role": "food",
+    "matchTile": "c",
+    "obstacle": false
+  }, {
+    "x": 1,
+    "y": 3,
+    "role": "item",
+    "obstacle": false
+  }],
   "tutorial": [{
     "msg": "형 쿠키먹고 싶어~",
     "img": "/img/woong/in.png"

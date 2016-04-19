@@ -15,13 +15,25 @@
     ".#######.",
     "#.......#",
     "#....xd.#",
-    "#xx.1xx.#",
+    "#xx.cxx.#",
     "#....x%.#",
-    "#....x.x#",
+    "#......x#",
     "#.xx.x.x#",
     "#......x#",
     ".#######."
   ],
+  "extra":[{
+    "x": 6,
+    "y": 4,
+    "role": "food",
+    "matchTile": "c",
+    "obstacle": false
+  }, {
+    "x": 4,
+    "y": 3,
+    "role": "item",
+    "obstacle": false
+  }],
   "tutorial": [{
     "msg": "형 쿠키먹고 싶어~",
     "img": "/img/woong/in.png"
