@@ -25,8 +25,7 @@
   "extra":[{
     "x": 4,
     "y": 3,
-    "matchTile": ")",
-    "obstacle": false
+    "matchTile": ")"
   }, {
     "x": 4,
     "y": 4,

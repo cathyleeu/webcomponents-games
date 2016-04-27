@@ -531,7 +531,7 @@ function run(block, callback) {
           showModal("벽에 부딪쳤어요");
           return;
         }
-        if( obj.role == "food" && !obj.matchTile) {
+        if( obj.role == "food" && !obj.useItem) {
           obj.visible = false;
           createjs.Sound.play("success");
           mazeInfo.canvas.stage.update();

@@ -58,10 +58,6 @@ TileFactory.prototype.create = function(tile, x, y) {
           delete temp.y;
           delete temp.img; //extra에 있는 src 다 제거 또는 img로 바꾸기
           $.extend(bitmap, temp);
-          // if(img) {
-          //   bitmap = new createjs.Bitmap();
-          //   bitmap.image = this.loader.getResult(img);
-          // }
         }
       });
     }
@@ -248,7 +244,9 @@ TileFactory.prototype.create = function(tile, x, y) {
         bitmap = null;
     }
   }
-  bitmap.image = this.loader.getResult(img);
+  if(bitmap && img) {
+    bitmap.image = bitmap.image || this.loader.getResult(img);
+  }
   if(bitmap) {
     this.setBitmapCoord(bitmap, x, y);
   }
