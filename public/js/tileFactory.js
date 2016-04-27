@@ -39,7 +39,8 @@ TileFactory = function(maze, loader, tile_size) {
 
 TileFactory.prototype.create = function(tile, x, y) {
   var bitmap = new createjs.Bitmap(),
-      role = this.tile2role[tile] || null;
+      role = this.tile2role[tile] || null,
+      img = null;
   bitmap.tile = tile;
   if(this.custom_tiles[tile]) {
     bitmap.image = this.loader.getResult(this.custom_tiles[tile].id);
@@ -47,6 +48,24 @@ TileFactory.prototype.create = function(tile, x, y) {
     bitmap.role = this.custom_tiles[tile].role || (bitmap.obstacle ? "obstacle" : null);
   } else {
     bitmap.role = role;
+
+    if(this.maze.extra) {
+      this.maze.extra.forEach(function(obj) {
+        if(obj.x == x && obj.y == y) {
+          var temp = $.extend({}, obj);
+          img = temp.img;
+          delete temp.x;
+          delete temp.y;
+          delete temp.img; //extra에 있는 src 다 제거 또는 img로 바꾸기
+          $.extend(bitmap, temp);
+          // if(img) {
+          //   bitmap = new createjs.Bitmap();
+          //   bitmap.image = this.loader.getResult(img);
+          // }
+        }
+      });
+    }
+
     switch(role) {
       case "character":
         var character_id = this.maze.character || "character",
@@ -175,23 +194,23 @@ TileFactory.prototype.create = function(tile, x, y) {
           bitmap.sprite = true;
           bitmap.role = "character";
         } else if(tile == "@") { // undirected character
-          bitmap.image = this.loader.getResult(character_id);
+          img = img || character_id;
           bitmap.direct = (tile == "@" ? "u" : tile);
           bitmap.rotate_mode = "rotation";
         } else { // directed character
-          bitmap.image = this.loader.getResult(character_id + "_" + tile);
+          img = img || character_id + "_" + tile;
           bitmap.direct = (tile == "@" ? "u" : tile);
           bitmap.rotate_mode = "image";
         }
         break;
       case "food":
-        bitmap.image = this.loader.getResult("food");
+        img = img || "food";
         break;
       case "item":
-        bitmap.image = this.loader.getResult("item");
+        img = img || "item";
         break;
       case "rock":
-        bitmap.image = this.loader.getResult("rock" + tile);
+        img = img || "rock" + tile;
         bitmap.num = +tile;
         bitmap.img1 = this.loader.getResult("rock1");
         bitmap.img2 = this.loader.getResult("rock2");
@@ -200,11 +219,11 @@ TileFactory.prototype.create = function(tile, x, y) {
         bitmap.img5 = this.loader.getResult("rock5");
         break;
       case "trap":
-        bitmap.image = this.loader.getResult("trap");
+        img = img || "trap";
         break;
       case "obstacle":
         var idx = parseInt(Math.random() * this.obstacle_ids.length, 10);
-        bitmap.image = this.loader.getResult(this.obstacle_ids[idx]);
+        img = img || this.obstacle_ids[idx];
         bitmap.obstacle = true;
         break;
       case "spider":
@@ -229,28 +248,9 @@ TileFactory.prototype.create = function(tile, x, y) {
         bitmap = null;
     }
   }
+  bitmap.image = this.loader.getResult(img);
   if(bitmap) {
-    var _this = this;
     this.setBitmapCoord(bitmap, x, y);
-    if(this.maze.extra) {
-      this.maze.extra.forEach(function(obj) {
-        if(obj.x == x && obj.y == y) {
-          var temp = $.extend({}, obj),
-              src = temp.src;
-          delete temp.x;
-          delete temp.y;
-          delete temp.src;
-          $.extend(bitmap, temp);
-          if(src) {
-            bitmap.image = document.createElement("img");
-            bitmap.image.onload = function() {
-              _this.setBitmapCoord(bitmap, x, y);
-            };
-            bitmap.image.src = src;
-          }
-        }
-      });
-    }
   }
   return bitmap;
 };

@@ -16,7 +16,7 @@
   "map": [
     "..f...b..",
     "#...y....",
-    "e.x...c..",
+    ").%...c..",
     ".#.#.....",
     ".#..##...",
     ".#g###...",
@@ -27,24 +27,11 @@
   "extra":[{
     "x": 2,
     "y": 2,
-    "role": "food",
-    "matchTile": "e",
-    "obstacle": false
+    "useItem": true
   }, {
     "x": 0,
     "y": 2,
-    "role": "item",
-    "obstacle": false
-  }, {
-    "x": 2,
-    "y": 5,
-    "role": "item",
-    "obstacle": false
-  }, {
-    "x": 6,
-    "y": 6,
-    "role": "item",
-    "obstacle": false
+    "img":"clover3"
   }],
   "tutorial": [{
     "msg": "토드 주변에는 네잎클로버가 규칙적으로 나열되어 있어요. 빈칸의 네잎클로버는 어떤 모양일까요?",

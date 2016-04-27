@@ -327,7 +327,7 @@ Actions.prototype.useItem = function(block, callback) {
 
   // 목표 위에서 아이템 사용(패턴 매칭)
   var food = this._getCanvasObject(character.px, character.py, "food");
-  if(food && food.matchTile == item.tile) {
+  if(food && food.useItme) {
     food.visible = false;
     item.visible = true;
     item.px = food.px;
