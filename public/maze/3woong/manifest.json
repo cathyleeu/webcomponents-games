@@ -26,8 +26,9 @@
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
   {"id": "family", "src": "/img/woong/family.png", "obstacle": false},
-  {"tile": "a", "id": "a", "src": "/img/woong/mother.png", "obstacle": false},
-  {"tile": "b", "id": "b", "src": "/img/woong/father.png", "obstacle": false},
-  {"tile": "c", "id": "c", "src": "/img/woong/in.png", "obstacle": false},
-  {"tile": "x", "id": "x", "src": "/img/frog/rock.png", "obstacle": false}
+  {"tile": "a", "id": "mother", "src": "/img/woong/mother.png", "obstacle": false},
+  {"tile": "b", "id": "father", "src": "/img/woong/father.png", "obstacle": false},
+  {"tile": "c", "id": "in", "src": "/img/woong/in.png", "obstacle": false},
+  {"tile": "x", "id": "x", "src": "/img/frog/rock.png", "obstacle": false},
+  {"tile": "z", "id": "family", "src": "/img/woong/family.png", "obstacle": false}
 ]

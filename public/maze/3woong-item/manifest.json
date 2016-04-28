@@ -31,7 +31,8 @@
   {"id": "rock3", "src": "/img/map/rock3.png"},
   {"id": "rock2", "src": "/img/map/rock2.png"},
   {"id": "rock1", "src": "/img/map/rock1.png"},
-  {"tile": "b", "id": "b", "src": "/img/woong/in.png", "obstacle": false},
-  {"id": "item", "src": "/img/woong/cookie.png", "obstacle": false},
+  {"id": "star", "src": "/img/map/star.png"},
+  {"tile": "b", "id": "in", "src": "/img/woong/in.png", "obstacle": false},
+  {"tile": "c", "id": "cookie", "src": "/img/woong/cookie.png", "obstacle": false},
   {"tile": "x", "id": "x", "src": "/img/frog/rock.png", "obstacle": false}
 ]

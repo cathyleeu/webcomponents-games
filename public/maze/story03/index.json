@@ -198,7 +198,7 @@
    {
     "x": 8,
     "y": 26,
-    "src": "/img/guide/question.png",
+    "img":"question",
     "obstacle": false,
     "tutorial": [{
       "msg": "위 3가지 길중 하나를 선택해야 합니다.",
@@ -218,7 +218,7 @@
   {
     "x": 4,
     "y": 24,
-    "src": "/img/guide/hard.png",
+    "img":"hard",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 아주 어려우니 신중히 생각해!",
@@ -227,7 +227,7 @@
   }, {
     "x": 8,
     "y": 24,
-    "src": "/img/guide/normal.png",
+    "img":"normal",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 평범한 수준이야 잘해보라고~",
@@ -236,7 +236,7 @@
   }, {
     "x": 13 ,
     "y": 24,
-    "src": "/img/guide/easy.png",
+    "img":"easy",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!",
@@ -245,7 +245,7 @@
   },{
     "x": 4,
     "y": 11,
-    "src": "/img/guide/hard.png",
+    "img":"hard",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 아주 어려우니 신중히 생각해!",
@@ -254,7 +254,7 @@
   }, {
     "x": 10,
     "y": 11,
-    "src": "/img/guide/normal.png",
+    "img":"normal",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 평범한 수준이야 잘해보라고~",
@@ -263,7 +263,7 @@
   }, {
     "x": 16,
     "y": 11,
-    "src": "/img/guide/easy.png",
+    "img":"easy",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!",

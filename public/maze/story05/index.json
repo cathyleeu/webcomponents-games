@@ -112,7 +112,7 @@
   },{
     "x": 2,
     "y": 5,
-    "src": "/img/guide/easy.png",
+    "img": "easy",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!",
@@ -122,7 +122,7 @@
   },  {
     "x": 5,
     "y": 8,
-    "src": "/img/guide/normal.png",
+    "img": "normal",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 보통의 난이도를 가진 길이야",
@@ -131,7 +131,7 @@
   },  {
     "x": 2,
     "y": 11,
-    "src": "/img/guide/hard.png",
+    "img": "hard",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 아~주 문제가 어려워! 대신에 문제가 적어",

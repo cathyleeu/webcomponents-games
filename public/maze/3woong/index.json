@@ -20,13 +20,12 @@
   },  {
     "x": 6,
     "y": 3,
-    "src": "/img/woong/family.png",
+    "img":"family",
     "obstacle": false,
     "tutorial": [{
       "msg": "즐거운 우리집에 온 것을 환영해~ ",
       "img": "/img/woong/family.png"
     }]
-
   }],
   "tutorial": [{
     "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",

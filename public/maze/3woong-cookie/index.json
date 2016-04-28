@@ -82,7 +82,7 @@
     "y": 5,
     "link": "/maze/3woong-cookie/17"
   },  {
-    "src": "/img/woong/in.png",
+    "img":"in",
     "x": 27,
     "y": 3,
     "link": "/maze/3woong-item/index",
@@ -90,7 +90,7 @@
   },  {
     "x": 6,
     "y": 3,
-    "src": "/img/woong/h.png",
+    "img":"head",
     "obstacle": false,
     "tutorial": [{
       "msg": "가위 바위 보! ",
@@ -99,7 +99,7 @@
   },  {
     "x": 10,
     "y": 1,
-    "src": "/img/guide/normal.png",
+    "img":"normal",
     "obstacle": false,
     "tutorial": [{
       "msg": "점수를 1점 얻을 수 있어!",
@@ -108,7 +108,7 @@
   },  {
     "x": 10,
     "y": 5,
-    "src": "/img/guide/hard.png",
+    "img":"hard",
     "obstacle": false,
     "tutorial": [{
       "msg": "점수를 3점 얻을 수 있어!",

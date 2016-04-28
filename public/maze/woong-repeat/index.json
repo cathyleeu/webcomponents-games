@@ -84,7 +84,7 @@
   },  {
     "x": 6,
     "y": 6,
-    "src": "/img/guide/question.png",
+    "img":"question",
     "obstacle": false,
     "tutorial": [
        {
@@ -100,7 +100,7 @@
   },{
     "x": 3,
     "y": 4,
-    "src": "/img/guide/easy.png",
+    "img":"easy",
     "obstacle": false,
     "tutorial": [{
       "msg": "계단식 반복 문제입니다.",
@@ -110,7 +110,7 @@
   },  {
     "x": 18,
     "y": 4,
-    "src": "/img/guide/normal.png",
+    "img":"normal",
     "obstacle": false,
     "tutorial": [{
       "msg": "반복을 여러번 사용해야 합니다.",
@@ -119,7 +119,7 @@
   },  {
     "x": 15,
     "y": 6,
-    "src": "/img/guide/hard.png",
+    "img":"hard",
     "obstacle": false,
     "tutorial": [{
       "msg": "다양한 패턴을 제한된 반복으로 움직여야 합니다.",
