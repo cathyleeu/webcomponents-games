@@ -220,7 +220,9 @@ TileFactory.prototype.create = function(tile, x, y) {
       case "obstacle":
         var idx = parseInt(Math.random() * this.obstacle_ids.length, 10);
         img = img || this.obstacle_ids[idx];
-        bitmap.obstacle = true;
+        if(!bitmap.hasOwnProperty("obstacle")){
+          bitmap.obstacle = true;
+        }
         break;
       case "spider":
         bitmap = new createjs.Container();
