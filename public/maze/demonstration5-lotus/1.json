@@ -16,14 +16,13 @@
     ".....g",
     ".....h",
     ".....i",
-    ".....j",
+    ".....%",
     "u....."
   ],
   "extra":[{
     "x": 5,
     "y": 4,
-    "role": "food",
-    "obstacle": false
+    "img":"j"
   }],
   "tutorial": [{
     "msg": "6*6 size -패턴"

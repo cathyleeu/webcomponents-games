@@ -57,7 +57,7 @@
     "x": 21,
     "y": 3,
     "obstacle": false,
-    "src": "/img/woong/h.png",
+    "img":"head",
     "tutorial": [{
     "msg": "오른쪽 별로 들어가면 가위바위보 게임을 할 수 있어요!",
     "img": "/img/woong/h.png"
@@ -69,8 +69,7 @@
   },{
     "x": 6,
     "y": 3,
-    "src": "/img/woong/family.png",
-    "obstacle": false,
+    "img":"family",
     "tutorial": [{
       "msg": "즐거운 우리집에 온 것을 환영해~ ",
       "img": "/img/woong/family.png"

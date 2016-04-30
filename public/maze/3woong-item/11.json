@@ -17,7 +17,7 @@
     "#....x%.#",
     "#xx....x#",
     "#....x..#",
-    "#...c.lx#",
+    "#...).lx#",
     "#.x..xxx#",
     "#......x#",
     ".#######."
@@ -25,14 +25,11 @@
   "extra":[{
     "x": 6,
     "y": 2,
-    "role": "food",
-    "matchTile": "c",
-    "obstacle": false
+    "useItem": true
   }, {
     "x": 4,
     "y": 5,
-    "role": "item",
-    "obstacle": false
+    "img":"cookie"
   }],
   "tutorial": [{
     "msg": "형 쿠키먹고 싶어~",

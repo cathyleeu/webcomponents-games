@@ -12,7 +12,7 @@
   "character": "character",
   "message": "message",
   "map": [
-    "h..g..",
+    "%..g..",
     "......",
     ".j....",
     "....f.",
@@ -22,8 +22,7 @@
   "extra":[{
     "x": 0,
     "y": 0,
-    "role": "food",
-    "obstacle": false
+    "img":"h"
   }],
   "tutorial": [{
     "msg": "토드 주변에는 꽃이 규칙적으로 나열되어 있어요. 토드가 앉아있는 꽃은 어떤 모양일까요?",

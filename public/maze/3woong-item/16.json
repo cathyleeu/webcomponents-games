@@ -13,7 +13,7 @@
   ],
   "map": [
     ".#######.",
-    "#.....cx#",
+    "#.....)x#",
     "#.x..x.x#",
     "#.x....x#",
     "#.x%xx..#",
@@ -25,14 +25,11 @@
   "extra":[{
     "x": 3,
     "y": 4,
-    "role": "food",
-    "matchTile": "c",
-    "obstacle": false
+    "useItem": true
   }, {
     "x": 6,
     "y": 1,
-    "role": "item",
-    "obstacle": false
+    "img":"cookie"
   }],
   "tutorial": [{
     "msg": "형 쿠키먹고 싶어~",
