@@ -87,7 +87,7 @@ function init(step, maze, loader) {
   var tileFactory = new TileFactory(maze, loader, maze.tile_size || 50);
   mazeInfo = initMaze(maze, loader, tileFactory);
   mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
-  kidscoding = new KidsCoding(loader, mazeInfo, run);
+  kidscoding = new KidsCoding(loader, mazeInfo, run, tileFactory);
   if(maze.type != "world" && maze.type != "game") {
     kidscoding.initBlockly(maze.toolbox, maze.workspace);
   } else {
@@ -333,22 +333,40 @@ function addEvents(step, loader, mazeInfo, maze, tileFactory) {
         });
         run(startblock, function() {
           var foods = mazeInfo.canvas.foods;
-          for(var i = 0; i < foods.length; i++) {
-            if(foods[i].visible == true) {
+          if(foods.length == 1 && foods[0].itemCountBitmap) {
+            var itemCount = foods[0].itemCountBitmap ? +foods[0].itemCountBitmap.textBitmap.text : 0;
+            if(foods[0].useItem <= itemCount) {
+              createjs.Sound.play("complete");
+              if(maze.success) {
+                runTutorial(maze.success);
+              } else {
+                showModal({
+                  msg: "성공!",
+                  goNext: true
+                });
+              }
+            } else {
               createjs.Sound.play("fail");
               showModal("블럭을 다 썼지만 끝나지 않았어요");
-              break;
             }
-          }
-          if(i == foods.length) {
-            createjs.Sound.play("complete");
-            if(maze.success) {
-              runTutorial(maze.success);
-            } else {
-              showModal({
-                msg: "성공!",
-                goNext: true
-              });
+          } else {
+            for(var i = 0; i < foods.length; i++) {
+              if(foods[i].visible == true) {
+                createjs.Sound.play("fail");
+                showModal("블럭을 다 썼지만 끝나지 않았어요");
+                break;
+              }
+            }
+            if(i == foods.length) {
+              createjs.Sound.play("complete");
+              if(maze.success) {
+                runTutorial(maze.success);
+              } else {
+                showModal({
+                  msg: "성공!",
+                  goNext: true
+                });
+              }
             }
           }
         });

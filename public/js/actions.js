@@ -9,6 +9,8 @@ Actions = function(kidscoding, loader, mazeInfo, run) {
   this.tile_size = mazeInfo.tile_size;
   this.run = run;
   this.setTimeoutKey = null;
+  this.getItemCount = kidscoding.tileFactory.getItemCount;
+  this.setItemCount = kidscoding.tileFactory.setItemCount;
 };
 
 Actions.prototype._rotateCharacter = function(direct, callback) {
@@ -20,7 +22,7 @@ Actions.prototype._rotateCharacter = function(direct, callback) {
   }
   character.direct = direct;
   if(character.sprite) {
-    character.gotoAndStop("stand_" + direct);
+    character.bitmap.gotoAndStop("stand_" + direct);
     _this.canvas.stage.update();
     setTimeout(function() {
       callback();
@@ -55,31 +57,33 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
       character = this.canvas.character,
       direct = character.direct,
       jump = Math.abs(character.px - x_next) >= 2 || Math.abs(character.py - y_next) >= 2;
-  if(character.px == x_next && character.py != y_next) {
-    direct = character.py > y_next ? "u" : "d";
-  } else if (character.px != x_next && character.py == y_next) {
-    direct = character.px > x_next ? "l" : "r";
-  }
-  this._rotateCharacter(direct, function() {
-    if(character.sprite) {
-      character.gotoAndPlay( (jump ? "jump_" : "walk_") + direct);
+  this._restoreObject(function() {
+    if(character.px == x_next && character.py != y_next) {
+      direct = character.py > y_next ? "u" : "d";
+    } else if (character.px != x_next && character.py == y_next) {
+      direct = character.px > x_next ? "l" : "r";
     }
-    var tween = createjs.Tween.get(character);
-    tween.wait(character.sprite ? 0 : 100)
-         .to({
-           x: _this.tile_size*x_next + _this.tile_size/2,
-           y: _this.tile_size*y_next + _this.tile_size/2
-         }, 500)
-         .call(function() {
-           character.rotation = (character.rotation + 360) % 360;
-           character.px = x_next;
-           character.py = y_next;
-           callback();
-         })
-         .addEventListener("change", function(e) {
-           _this.canvas.stage.update();
-         });
-    _this._setFocus(x_next, y_next, character.sprite ? 0 : 100, 500);
+    _this._rotateCharacter(direct, function() {
+      if(character.sprite) {
+        character.bitmap.gotoAndPlay( (jump ? "jump_" : "walk_") + direct);
+      }
+      var tween = createjs.Tween.get(character);
+      tween.wait(character.sprite ? 0 : 100)
+           .to({
+             x: _this.tile_size*x_next + _this.tile_size/2,
+             y: _this.tile_size*y_next + _this.tile_size/2
+           }, 500)
+           .call(function() {
+             character.rotation = (character.rotation + 360) % 360;
+             character.px = x_next;
+             character.py = y_next;
+             callback();
+           })
+           .addEventListener("change", function(e) {
+             _this.canvas.stage.update();
+           });
+      _this._setFocus(x_next, y_next, character.sprite ? 0 : 100, 500);
+    });
   });
 };
 
@@ -88,6 +92,13 @@ Actions.prototype._splitObjects = function(spider, callback) {
       character = this.canvas.character,
       px = character.px,
       py = character.py;
+  // 이미 갈라서 있다면 아무것도 하지 않는다
+  if(character._splitObject) {
+    callback();
+    return;
+  }
+  // 캐릭터 반대편으로 움직일 캐릭터를 저장
+  character._splitObject = spider;
   // 거미와 캐릭터를 맨 위로
   this.canvas.stage.removeChild(spider);
   this.canvas.stage.addChild(spider);
@@ -115,24 +126,40 @@ Actions.prototype._splitObjects = function(spider, callback) {
     loop: false,
     paused: false
   });
-
 };
 
 Actions.prototype._restoreObject = function(callback) {
+  if(!this.canvas.character._splitObject) {
+    callback();
+    return;
+  }
   var _this = this,
       character = this.canvas.character,
       px = character.px,
       py = character.py;
-  createjs.Tween.get(character)
-      .wait(character.sprite ? 0 : 100)
-      .to({
-        x: _this.tile_size*px + _this.tile_size/2,
-        y: _this.tile_size*py + _this.tile_size/2
-      }, 500)
-      .call(callback)
-      .addEventListener("change", function(e) {
-        _this.canvas.stage.update();
-      });
+      tweens = [
+        createjs.Tween.get(character)
+            .wait(character.sprite ? 0 : 100)
+            .to({
+              x: _this.tile_size*px + _this.tile_size/2,
+              y: _this.tile_size*py + _this.tile_size/2
+            }, 500)
+            .call(callback)
+            .addEventListener("change", function(e) {
+              _this.canvas.stage.update();
+            }),
+        createjs.Tween.get(character._splitObject)
+            .wait(character.sprite ? 0 : 100)
+            .to({
+              x: _this.tile_size*px + _this.tile_size/2,
+              y: _this.tile_size*py + _this.tile_size/2
+            }, 500)
+      ];
+  character._splitObject = null;
+  var timeline = new createjs.Timeline(tweens, "split", {
+    loop: false,
+    paused: false
+  });
 };
 
 Actions.prototype._setFocus = function(center_x, center_y, wait, time, callback) {
@@ -298,17 +325,41 @@ Actions.prototype.rotate = function(type, block, callback) {
 };
 
 Actions.prototype.getItem = function(block, callback) {
-  var character = this.canvas.character,
+  var _this = this,
+      character = this.canvas.character,
       item = this._getCanvasObject(character.px, character.py, "item");
-  if( character.item ) {
-    // 이미 아이템을 가지고 있는 경우
-    callback("이미 아이템을 가지고 있어요");
-  } else if( !item ) {
+  if( !item ) {
     // 아이템을 가져올 수 없다면
     callback("아이템을 가져올 수 없어요");
+    return;
+  }
+  character.hasItem = true;
+  if(item.itemCount) {
+    // 다수의 아이템
+    // 아이템의 개수 감소
+    var itemCount = this.getItemCount(item);
+    if(itemCount == 0) {
+      callback("아이템을 가져올 수 없어요");
+      return;
+    }
+    this._splitObjects(item, function() {
+      if(itemCount - 1 == 0) {
+        item.visible = false;
+      }
+      _this.setItemCount(item, itemCount - 1);
+      // 캐릭터의 아이템 소유 개수 증가
+      itemCount = _this.getItemCount(character);
+      _this.setItemCount(character, itemCount + 1);
+      _this.canvas.stage.update();
+      createjs.Sound.play("success");
+      setTimeout(function() {
+        callback();
+      }, 500);
+    });
   } else {
-    character.item = item;
+    // 곡괭이, 연꽃(숫자 없는 아이템)
     item.visible = false;
+    character.itemBitmap = item;
     this.canvas.stage.update();
     createjs.Sound.play("success");
     setTimeout(function() {
@@ -318,9 +369,10 @@ Actions.prototype.getItem = function(block, callback) {
 };
 
 Actions.prototype.useItem = function(block, callback) {
-  var character = this.canvas.character,
-      item = character.item;
-  if(!item) {
+  var _this = this,
+      character = this.canvas.character,
+      itemBitmap = character.itemBitmap;
+  if(!character.hasItem) {
     callback("아이템을 가지고 있지 않아요");
     return;
   }
@@ -328,16 +380,35 @@ Actions.prototype.useItem = function(block, callback) {
   // 목표 위에서 아이템 사용(패턴 매칭)
   var food = this._getCanvasObject(character.px, character.py, "food");
   if(food && food.useItem) {
-    food.visible = false;
-    item.visible = true;
-    item.px = food.px;
-    item.py = food.py;
-    item.x = food.x;
-    item.y = food.y;
-    this.canvas.stage.update();
-    setTimeout(function() {
-      callback();
-    }, 1000);
+    if(character.itemCountBitmap) {
+      // 다수의 아이템
+      this._splitObjects(food, function() {
+        var itemCount = _this.getItemCount(character);
+        if(itemCount == 0) {
+          callback("아이템을 가지고 있지 않아요");
+          return;
+        }
+        _this.setItemCount(character, itemCount - 1);
+        itemCount = _this.getItemCount(food);
+        _this.setItemCount(food, itemCount + 1);
+        _this.canvas.stage.update();
+        setTimeout(function() {
+          callback();
+        }, 500);
+      });
+    } else {
+      // 아이템 이동하기
+      food.visible = false;
+      itemBitmap.visible = true;
+      itemBitmap.px = food.px;
+      itemBitmap.py = food.py;
+      itemBitmap.x = food.x;
+      itemBitmap.y = food.y;
+      this.canvas.stage.update();
+      setTimeout(function() {
+        callback();
+      }, 500);
+    }
     return;
   }
 

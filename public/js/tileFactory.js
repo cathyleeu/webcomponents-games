@@ -38,231 +38,298 @@ TileFactory = function(maze, loader, tile_size) {
 };
 
 TileFactory.prototype.create = function(tile, x, y) {
-  var bitmap = new createjs.Bitmap(),
-      role = this.tile2role[tile] || null,
-      img = null;
-  bitmap.tile = tile;
+  var info = {
+        tile: tile
+      },
+      container,
+      bitmap;
+
+  // 기본 role 세팅
+  if(this.tile2role[tile]) {
+    info.role = this.tile2role[tile];
+  }
+
+  // manifest에서 img, obstacle 정보를 가져온다
   if(this.custom_tiles[tile]) {
-    bitmap.image = this.loader.getResult(this.custom_tiles[tile].id);
-    bitmap.obstacle = !!this.custom_tiles[tile].obstacle;
-    bitmap.role = this.custom_tiles[tile].role || (bitmap.obstacle ? "obstacle" : null);
-  } else {
-    bitmap.role = role;
-
-    if(this.maze.extra) {
-      this.maze.extra.forEach(function(obj) {
-        if(obj.x == x && obj.y == y) {
-          var temp = $.extend({}, obj);
-          img = temp.img;
-          delete temp.x;
-          delete temp.y;
-          delete temp.img; //extra에 있는 src 다 제거 또는 img로 바꾸기
-          $.extend(bitmap, temp);
-        }
-      });
-    }
-
-    switch(role) {
-      case "character":
-        var character_id = this.maze.character || "character",
-            character = this.loader.getItem(character_id);
-        if(character && character.sprite) {
-          var animations = {
-            stand_u: 0,
-            walk_u: {
-              frames: [0,1,0,2],
-              speed: 0.25
-            },
-            jump_u: {
-              frames: [3,4,5,6,7,6,5,4,3],
-              speed: 0.5
-            },
-            stand_r: 8,
-            walk_r: {
-              frames: [8,9],
-              speed: 0.125
-            },
-            jump_r: {
-              frames: [11,12,13,14,15,14,13,12,11],
-              speed: 0.5
-            },
-            stand_d: 16,
-            walk_d: {
-              frames: [16,17,16,18],
-              speed: 0.25
-            },
-            jump_d: {
-              frames: [19,20,21,22,23,22,21,20,19],
-              speed: 0.5
-            },
-            stand_l: 24,
-            walk_l: {
-              frames: [24,25],
-              speed: 0.125
-            },
-            jump_l: {
-              frames: [27,28,29,30,31,30,29,28,27],
-              speed: 0.5
-            }
-          };
-          if(character.src.indexOf('tadpole') >= 0) {
-            animations = {
-              stand_u: 0,
-              walk_u: {
-                frames: [0,1,0,2],
-                speed: 0.25
-              },
-              stand_r: 9,
-              walk_r: {
-                frames: [9,10,9,11],
-                speed: 0.25
-              },
-              stand_d: 3,
-              walk_d: {
-                frames: [3,4,3,5],
-                speed: 0.25
-              },
-              stand_l: 6,
-              walk_l: {
-                frames: [6,7,6,8],
-                speed: 0.25
-              }
-            };
-          }
-          if(character.src.indexOf('frog') >= 0) {
-            animations = {
-              stand_u: 0,
-              walk_u: {
-                frames: [0,1,2,1,0],
-                speed: 0.5
-              },
-              stand_r: 3,
-              walk_r: {
-                frames: [3,4,5,4,3],
-                speed: 0.5
-              },
-              stand_d: 6,
-              walk_d: {
-                frames: [6,7,8,7,6],
-                speed: 0.5
-              },
-              stand_l: 9,
-              walk_l: {
-                frames: [9,10,11,10,9],
-                speed: 0.5
-              }
-            };
-          }
-          if(character.src.indexOf('woong') >= 0) {
-            animations = {
-              stand_u: 4,
-              walk_u: {
-                frames: [4,5,6,7,4],
-                speed: 0.5
-              },
-              stand_r: 8,
-              walk_r: {
-                frames: [8,9,10,11,8],
-                speed: 0.5
-              },
-              stand_d: 0,
-              walk_d: {
-                frames: [0,1,2,3,0],
-                speed: 0.5
-              },
-              stand_l: 12,
-              walk_l: {
-                frames: [12,13,14,15,12],
-                speed: 0.5
-              }
-            };
-          }
-          var data = {
-            images: [this.loader.getResult(character_id)],
-            frames: {width: character.size, height: character.size},
-            animations: animations
-          };
-          bitmap = new createjs.Sprite(
-            new createjs.SpriteSheet(data),
-            "stand_" + (tile == "@" ? "d" : tile)
-          );
-          bitmap.direct = (tile == "@" ? "u" : tile);
-          bitmap.sprite = true;
-          bitmap.role = "character";
-        } else if(tile == "@") { // undirected character
-          img = img || character_id;
-          bitmap.direct = (tile == "@" ? "u" : tile);
-          bitmap.rotate_mode = "rotation";
-        } else { // directed character
-          img = img || character_id + "_" + tile;
-          bitmap.direct = (tile == "@" ? "u" : tile);
-          bitmap.rotate_mode = "image";
-        }
-        break;
-      case "food":
-        img = img || "food";
-        break;
-      case "item":
-        img = img || "item";
-        break;
-      case "rock":
-        img = img || "rock" + tile;
-        bitmap.num = +tile;
-        bitmap.img1 = this.loader.getResult("rock1");
-        bitmap.img2 = this.loader.getResult("rock2");
-        bitmap.img3 = this.loader.getResult("rock3");
-        bitmap.img4 = this.loader.getResult("rock4");
-        bitmap.img5 = this.loader.getResult("rock5");
-        break;
-      case "trap":
-        img = img || "trap";
-        break;
-      case "obstacle":
-        var idx = parseInt(Math.random() * this.obstacle_ids.length, 10);
-        img = img || this.obstacle_ids[idx];
-        if(!bitmap.hasOwnProperty("obstacle")){
-          bitmap.obstacle = true;
-        }
-        break;
-      case "spider":
-        bitmap = new createjs.Container();
-        var spider = new createjs.Bitmap(this.loader.getResult("spider"));
-        var hand_name = {
-          "R": "rock",
-          "P": "paper",
-          "S": "scissors"
-        }[tile];
-        var hand = new createjs.Bitmap(this.loader.getResult("hand_" + hand_name));
-        var bounds = hand.getBounds();
-        var size = this.tile_size / 2;
-        hand.scaleX = size / bounds.width;
-        hand.scaleY = size / bounds.height;
-        hand.x = this.tile_size - size;
-        bitmap.hand = hand_name;
-        bitmap.addChild(spider, hand);
-        bitmap.role = role;
-        break;
-      default:
-        bitmap = null;
+    info.img = this.custom_tiles[tile].id;
+    if(this.custom_tiles[tile].hasOwnProperty("obstacle")) {
+      info.obstacle = this.custom_tiles[tile].obstacle;
     }
   }
-  if(bitmap && img) {
-    bitmap.image = bitmap.image || this.loader.getResult(img);
+
+  // maze json에서 extra 정보를 가져온다
+  if(this.maze.extra) {
+    this.maze.extra.forEach(function(obj) {
+      if(obj.x == x && obj.y == y) {
+        $.extend(info, obj);
+      }
+    });
+  }
+
+  switch(info.role) {
+    case "character":
+      var character_id = this.maze.character || "character",
+          character = this.loader.getItem(character_id);
+      if(character && character.sprite) { // sprite character
+        this.defaults(info, {
+          img: character_id,
+          direct: (tile == "@" ? "u" : tile),
+          sprite: true
+        });
+      } else if(tile == "@") { // undirected character
+        this.defaults(info, {
+          img: character_id,
+          direct: (tile == "@" ? "u" : tile),
+          rotate_mode: "rotation"
+        });
+      } else { // directed character
+        // TODO: sprite로 교체 필요
+        this.defaults(info, {
+          img: character_id + "_" + tile,
+          direct: (tile == "@" ? "u" : tile),
+          rotate_mode: "image"
+        });
+      }
+      break;
+    case "food":
+      this.defaults(info, {
+        img: "food"
+      });
+      break;
+    case "item":
+      this.defaults(info, {
+        img: "item"
+      });
+      break;
+    case "rock":
+      this.defaults(info, {
+        img: "rock" + tile,
+        num: +tile
+      });
+      // TODO: sprite와 itemCount 조합
+      info.img1 = this.loader.getResult("rock1");
+      info.img2 = this.loader.getResult("rock2");
+      info.img3 = this.loader.getResult("rock3");
+      info.img4 = this.loader.getResult("rock4");
+      info.img5 = this.loader.getResult("rock5");
+      break;
+    case "trap":
+      this.defaults(info, {
+        img: "trap"
+      });
+      break;
+    case "obstacle":
+      var idx = parseInt(Math.random() * this.obstacle_ids.length, 10);
+      this.defaults(info, {
+        img: this.obstacle_ids[idx],
+        obstacle: true
+      });
+      break;
+    case "spider":
+      this.defaults(info, {
+        img: "spider"
+      });
+      break;
+  }
+
+  if(info.img) {
+    if(info.sprite) {
+      var animations = {
+        stand_u: 0,
+        walk_u: {
+          frames: [0,1,0,2],
+          speed: 0.25
+        },
+        jump_u: {
+          frames: [3,4,5,6,7,6,5,4,3],
+          speed: 0.5
+        },
+        stand_r: 8,
+        walk_r: {
+          frames: [8,9],
+          speed: 0.125
+        },
+        jump_r: {
+          frames: [11,12,13,14,15,14,13,12,11],
+          speed: 0.5
+        },
+        stand_d: 16,
+        walk_d: {
+          frames: [16,17,16,18],
+          speed: 0.25
+        },
+        jump_d: {
+          frames: [19,20,21,22,23,22,21,20,19],
+          speed: 0.5
+        },
+        stand_l: 24,
+        walk_l: {
+          frames: [24,25],
+          speed: 0.125
+        },
+        jump_l: {
+          frames: [27,28,29,30,31,30,29,28,27],
+          speed: 0.5
+        }
+      };
+      if(character.src.indexOf('tadpole') >= 0) {
+        animations = {
+          stand_u: 0,
+          walk_u: {
+            frames: [0,1,0,2],
+            speed: 0.25
+          },
+          stand_r: 9,
+          walk_r: {
+            frames: [9,10,9,11],
+            speed: 0.25
+          },
+          stand_d: 3,
+          walk_d: {
+            frames: [3,4,3,5],
+            speed: 0.25
+          },
+          stand_l: 6,
+          walk_l: {
+            frames: [6,7,6,8],
+            speed: 0.25
+          }
+        };
+      }
+      if(character.src.indexOf('frog') >= 0) {
+        animations = {
+          stand_u: 0,
+          walk_u: {
+            frames: [0,1,2,1,0],
+            speed: 0.5
+          },
+          stand_r: 3,
+          walk_r: {
+            frames: [3,4,5,4,3],
+            speed: 0.5
+          },
+          stand_d: 6,
+          walk_d: {
+            frames: [6,7,8,7,6],
+            speed: 0.5
+          },
+          stand_l: 9,
+          walk_l: {
+            frames: [9,10,11,10,9],
+            speed: 0.5
+          }
+        };
+      }
+      if(character.src.indexOf('woong') >= 0) {
+        animations = {
+          stand_u: 4,
+          walk_u: {
+            frames: [4,5,6,7,4],
+            speed: 0.5
+          },
+          stand_r: 8,
+          walk_r: {
+            frames: [8,9,10,11,8],
+            speed: 0.5
+          },
+          stand_d: 0,
+          walk_d: {
+            frames: [0,1,2,3,0],
+            speed: 0.5
+          },
+          stand_l: 12,
+          walk_l: {
+            frames: [12,13,14,15,12],
+            speed: 0.5
+          }
+        };
+      }
+      bitmap = new createjs.Sprite(
+        new createjs.SpriteSheet({
+          images: [this.loader.getResult(character_id)],
+          frames: {width: character.size, height: character.size},
+          animations: animations
+        }),
+        "stand_" + (tile == "@" ? "d" : tile)
+      );
+    } else {
+      bitmap = new createjs.Bitmap(this.loader.getResult(info.img));
+    }
   }
   if(bitmap) {
-    this.setBitmapCoord(bitmap, x, y);
+    container = new createjs.Container();
+    container.addChild(bitmap);
+    container.bitmap = bitmap;
+    $.extend(container, info);
+
+    if(info.role == "spider") {
+      var hand_name = {
+        "R": "rock",
+        "P": "paper",
+        "S": "scissors"
+      }[info.tile];
+      var hand = new createjs.Bitmap(this.loader.getResult("hand_" + hand_name));
+      var bounds = hand.getBounds();
+      var size = this.tile_size / 2;
+      hand.scaleX = size / bounds.width;
+      hand.scaleY = size / bounds.height;
+      hand.x = this.tile_size - size;
+      container.hand = hand_name;
+      container.addChild(hand);
+    }
+    if(info.itemCount) {
+      this.setItemCount(container, info.itemCount);
+    }
+
+    this.setCoord(container, x, y);
   }
-  return bitmap;
+  return container;
 };
 
-TileFactory.prototype.setBitmapCoord = function(bitmap, px, py) {
-  var bounds = bitmap.getBounds();
-  bitmap.px = px;
-  bitmap.py = py;
-  bitmap.x = this.tile_size * px + this.tile_size / 2;
-  bitmap.y = this.tile_size * py + this.tile_size / 2;
-  bitmap.scaleX = this.tile_size / bounds.width;
-  bitmap.scaleY = this.tile_size / bounds.height;
-  bitmap.regX = bounds.width / 2;
-  bitmap.regY = bounds.height / 2;
+TileFactory.prototype.defaults = function(target, source) {
+  for(var key in source) {
+    if(source.hasOwnProperty(key) && !target.hasOwnProperty(key)) {
+      target[key] = source[key];
+    }
+  }
+};
+
+TileFactory.prototype.getItemCount = function(container) {
+  return container.itemCountBitmap ? +container.itemCountBitmap.textBitmap.text : 0;
+};
+
+TileFactory.prototype.setItemCount = function(container, count) {
+  if(!container.itemCountBitmap) {
+    var bounds = container.getBounds();
+    var itemCountBitmap = new createjs.Container();
+    var circle = new createjs.Shape();
+    var size = bounds.width / 5;
+    circle.graphics.beginStroke("#000").beginFill("#FFF").drawCircle(0, 0, size);
+    circle.x = size;
+    circle.y = bounds.width - size;
+    itemCountBitmap.addChild(circle);
+
+    var text = new createjs.Text(count, (2*size) + "px monospace", "#000");
+    text.x = circle.x - size / 1.8;
+    text.y = circle.y - size / 0.8;
+    itemCountBitmap.addChild(text);
+    itemCountBitmap.textBitmap = text;
+    container.itemCountBitmap = itemCountBitmap;
+    container.addChild(itemCountBitmap);
+  } else {
+    container.itemCountBitmap.textBitmap.text = count;
+  }
+  container.itemCountBitmap.visible = !!count;
+};
+
+TileFactory.prototype.setCoord = function(obj, px, py) {
+  var bounds = obj.getBounds();
+  obj.px = px;
+  obj.py = py;
+  obj.x = this.tile_size * px + this.tile_size / 2;
+  obj.y = this.tile_size * py + this.tile_size / 2;
+  obj.scaleX = this.tile_size / bounds.width;
+  obj.scaleY = this.tile_size / bounds.height;
+  obj.regX = bounds.width / 2;
+  obj.regY = bounds.height / 2;
 }
