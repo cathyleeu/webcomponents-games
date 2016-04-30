@@ -1,6 +1,7 @@
-KidsCoding = function(loader, mazeInfo, run) {
+KidsCoding = function(loader, mazeInfo, run, tileFactory) {
   this.q_idx = 0;
   this.queue = [];
+  this.tileFactory = tileFactory;
   this.Actions = new Actions(this, loader, mazeInfo, run);
   this.workspace = null;
   this.createXml = function(blocks) {

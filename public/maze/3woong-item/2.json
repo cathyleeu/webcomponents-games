@@ -9,15 +9,18 @@
     "move_right",
     "move_left",
     "get_item",
-    "use_item"
+    "use_item",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
   ],
   "map": [
     ".#######.",
     "#.......#",
     "#...%...#",
-    "#.......#",
+    "#...R...#",
     "#...)...#",
-    "#.......#",
+    "#...)...#",
     "#...d...#",
     "#.......#",
     ".#######."
@@ -25,11 +28,17 @@
   "extra":[{
     "x": 4,
     "y": 2,
-    "useItem": true
+    "useItem": 5
   }, {
     "x": 4,
     "y": 4,
-    "img":"cookie"
+    "img":"cookie",
+    "itemCount": 2
+  }, {
+    "x": 4,
+    "y": 5,
+    "img":"cookie",
+    "itemCount": 3
   }],
   "tutorial": [{
     "msg": "형 쿠키먹고 싶어~",
