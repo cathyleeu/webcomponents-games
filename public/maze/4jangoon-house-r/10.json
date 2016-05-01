@@ -1,0 +1,33 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".tttttt.",
+    "t.xx..xxt",
+    "tx.e..b.t",
+    "t%x.x.xxt",
+    "t....j..t",
+    "t..x.x..t",
+    "txxd.x..t",
+    "t..c....t",
+    ".tttttt."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"house6"
+  }],
+  "tutorial": [{
+    "msg": "장군이의 집의 주소는 5보다 크고 7보다 작아요!",
+    "img": "/img/jangoon/jangoon0.png"
+  }]
+}

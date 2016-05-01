@@ -1,0 +1,32 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start", "repeat", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w%xx..xxw",
+    "w...fx..w",
+    "w....xj.w",
+    "w......dw",
+    "whx....xw",
+    "w.x..b.xw",
+    "w.x..xx.w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img":"fruit_wa"
+  }],
+  "tutorial": [{
+    "msg": "장군이는 가장 큰 과일을 사야해요!",
+    "img": "/img/jangoon/jangoon0.png"
+  }]
+}

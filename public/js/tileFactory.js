@@ -244,6 +244,30 @@ TileFactory.prototype.create = function(tile, x, y) {
           }
         };
       }
+      if(character.src.indexOf('jangoon') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: {
+            frames: [9,10,11,9],
+            speed: 0.5
+          },
+          stand_r: 3,
+          walk_r: {
+            frames: [3,4,5,3],
+            speed: 0.5
+          },
+          stand_d: 0,
+          walk_d: {
+            frames: [0,1,2,0],
+            speed: 0.5
+          },
+          stand_l: 6,
+          walk_l: {
+            frames: [6,7,8,6],
+            speed: 0.5
+          }
+        };
+      }
       bitmap = new createjs.Sprite(
         new createjs.SpriteSheet({
           images: [this.loader.getResult(character_id)],

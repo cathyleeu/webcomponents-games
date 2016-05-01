@@ -28,5 +28,9 @@
   "tutorial": [{
     "msg": "5 - 2 = ?",
     "img": "/img/woong/woong0.png"
+  }],
+  "success": [{
+    "msg": "성공! 참 잘했어요~ ",
+    "link": "/maze/3woong-cookie/1"
   }]
 }

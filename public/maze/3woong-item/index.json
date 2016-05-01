@@ -6,8 +6,8 @@
   "toolbox": [],
   "map": [
     ".######.###################.",
-    "#......#..#..%.%..%..%.%....",
-    "#......#...%.%.%.%.%.%.%....",
+    "#......#..#..%.%..%..%......",
+    "#......#...%.%.%.%.%.%......",
     "#.....#.r.##.#.#.#.#.#.#.#.#",
     "#......#.......%.....%......",
     "#......#..#..%...%......%...",
@@ -65,45 +65,36 @@
     "link": "/maze/3woong-item/10"
   },  {
     "img":"cookie",
-    "x": 23,
-    "y": 2,
-    "link": "/maze/3woong-item/11"
-  },  {
-    "img":"cookie",
-    "x": 23,
-    "y": 1,
-    "link": "/maze/3woong-item/12"
-  },  {
-    "img":"cookie",
     "x": 13,
     "y": 5,
-    "link": "/maze/3woong-item/13"
+    "link": "/maze/3woong-item/11"
   },  {
     "img":"cookie",
     "x": 15,
     "y": 4,
-    "link": "/maze/3woong-item/14"
+    "link": "/maze/3woong-item/12"
   },  {
     "img":"cookie",
     "x": 17,
     "y": 5,
-    "link": "/maze/3woong-item/15"
+    "link": "/maze/3woong-item/13"
   },  {
     "img":"cookie",
     "x": 21,
     "y": 4,
-    "link": "/maze/3woong-item/16"
+    "link": "/maze/3woong-item/14"
   },  {
     "img":"cookie",
     "x": 24,
     "y": 5,
-    "link": "/maze/3woong-item/17"
+    "link": "/maze/3woong-item/15"
   },  {
     "img":"star",
     "x": 27,
     "y": 3,
-    "link": "/maze/3woong-item/18",
-    "min_score": 23
+    "obstacle": false,
+    "link": "/maze/3woong-item-h/index",
+    "min_score": 25
   },  {
     "x": 6,
     "y": 3,
@@ -154,7 +145,7 @@
     "msg": "어려운 난이도의 쿠키를 전달하면 3점을 얻을 수 있어요",
     "img": "/img/guide/hard.png"
   },{
-    "msg": "모든 임무를 완수하기 위해서는 총 23점을 얻어야해요",
+    "msg": "모든 임무를 완수하기 위해서는 총 25점을 얻어야해요",
     "img": "/img/woong/woong0.png"
   },{
     "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",

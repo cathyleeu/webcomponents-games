@@ -1,0 +1,32 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start", "move_left", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".ttttttt.",
+    "t%xx..xxt",
+    "t.g..xf.t",
+    "t.x..x..t",
+    "t..xi...t",
+    "t....x.xt",
+    "t.xx.c.xt",
+    "t.d..x..t",
+    ".ttttttt."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img":"house2"
+  }],
+  "tutorial": [{
+    "msg": "장군이의 집은 가장 작은 숫자의 주소를 가지고 있어요!",
+    "img": "/img/jangoon/jangoon0.png"
+  }]
+}

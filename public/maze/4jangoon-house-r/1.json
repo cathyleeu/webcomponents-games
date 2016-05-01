@@ -1,0 +1,32 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".ttttttt.",
+    "t.xx..xxt",
+    "t...fx%.t",
+    "ta...x..t",
+    "t.......t",
+    "t.x....xt",
+    "t.xx.bdxt",
+    "t....xx.t",
+    ".ttttttt."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img":"house7"
+  }],
+  "tutorial": [{
+    "msg": "장군이의 집은 가장 큰 숫자의 주소를 가지고 있어요!",
+    "img": "/img/jangoon/jangoon0.png"
+  }]
+}

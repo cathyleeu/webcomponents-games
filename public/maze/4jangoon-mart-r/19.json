@@ -1,0 +1,48 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.xxxx.xw",
+    "w%...x.xw",
+    "wxx.).exw",
+    "w.x).x..w",
+    "w.r..k.xw",
+    "w.x....xw",
+    "w..a.xxxw",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 2,
+    "useItem": 2
+  }, {
+    "x": 3,
+    "y": 4,
+    "img":"fruit_wa",
+    "itemCount": 1
+  }, {
+    "x": 4,
+    "y": 3,
+    "img":"fruit_ki",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg": "초록색 과일 2개를 집어서",
+    "img": "/img/jangoon/jangoon0.png"
+  },{
+    "msg": "카트에 집어 넣어보자!",
+    "img": "/img/jangoon/kart.png"
+  }]
+}

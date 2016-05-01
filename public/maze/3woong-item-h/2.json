@@ -1,7 +1,7 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":3,
+  "score":1,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -13,23 +13,29 @@
   ],
   "map": [
     ".#######.",
-    "#.....)x#",
-    "#.x..x.x#",
-    "#.x....x#",
-    "#.x%xx..#",
-    "#.....dx#",
-    "#.x....x#",
-    "#....xxx#",
+    "#.......#",
+    "#..d.x..#",
+    "#xx..xx.#",
+    "#..).x..#",
+    "#...).%x#",
+    "#.xx...x#",
+    "#......x#",
     ".#######."
   ],
   "extra":[{
+    "x": 6,
+    "y": 5,
+    "useItem": 3
+  }, {
     "x": 3,
     "y": 4,
-    "useItem": true
+    "img":"cookie",
+    "itemCount": 1
   }, {
-    "x": 6,
-    "y": 1,
-    "img":"cookie"
+    "x": 4,
+    "y": 5,
+    "img":"cookie",
+    "itemCount": 2
   }],
   "tutorial": [{
     "msg": "형 쿠키먹고 싶어~",
