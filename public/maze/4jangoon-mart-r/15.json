@@ -1,0 +1,33 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.xx..xxw",
+    "wxb.....w",
+    "w%.xx.xxw",
+    "wx..x..gw",
+    "wy...x..w",
+    "wx.x..dxw",
+    "w..h..xxw",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"fruit_or"
+  }],
+  "tutorial": [{
+    "msg": "장군이는 주황색 과일을 사야해요!",
+    "img": "/img/jangoon/jangoon0.png"
+  }]
+}

@@ -1,0 +1,32 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.xx.dxxw",
+    "wx......w",
+    "w.exx.xxw",
+    "w......fw",
+    "wn%x.x..w",
+    "wx..a.cxw",
+    "wx.xxx..w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 5,
+    "img":"fruit_ba"
+  }],
+  "tutorial": [{
+    "msg": "장군이는 길쭉한 과일을 사야해요!",
+    "img": "/img/jangoon/jangoon0.png"
+  }]
+}

@@ -1,0 +1,61 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "wdxxxxnxw",
+    "w.).jx.xw",
+    "wxx.)..xw",
+    "w.x.xx..w",
+    "w..x..)xw",
+    "w.x..).xw",
+    "w..k%.xxw",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 7,
+    "useItem": 6
+  }, {
+    "x": 2,
+    "y": 2,
+    "img":"fruit_ba",
+    "itemCount": 1
+  }, {
+    "x": 4,
+    "y": 3,
+    "img":"fruit_st",
+    "itemCount": 1
+  }, {
+    "x": 6,
+    "y": 5,
+    "img":"fruit_wa",
+    "itemCount": 2
+  }, {
+    "x": 5,
+    "y": 6,
+    "img":"fruit_or",
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg": "모든 과일을 집어서",
+    "img": "/img/jangoon/jangoon0.png"
+  },{
+    "msg": "카트에 집어 넣어보자!",
+    "img": "/img/jangoon/kart.png"
+  }],
+  "success": [{
+    "msg": "성공! 4권의 모든 콘텐츠를 해결했어요! "
+  }]
+}

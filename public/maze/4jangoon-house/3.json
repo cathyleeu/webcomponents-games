@@ -1,0 +1,36 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".ttttttt.",
+    "t.xx..xxt",
+    "tx%.....t",
+    "t...k.xxt",
+    "tc.b..f.t",
+    "t..x.x..t",
+    "tx.....xt",
+    "t...d...t",
+    ".ttttttt."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 2,
+    "img":"house8"
+  }],
+  "tutorial": [{
+    "msg": "장군이의 집은 두번째로 큰 숫자의 주소를 가지고 있어요!",
+    "img": "/img/jangoon/jangoon0.png"
+  }],
+  "success": [{
+    "msg": "성공! 장군이가 집으로 찾아갔어요~",
+    "link": "/maze/4jangoon-house/4"
+  }]
+}

@@ -25,11 +25,12 @@
   "extra":[{
     "x": 6,
     "y": 4,
-    "useItem": true
+    "useItem": 2
   }, {
     "x": 7,
     "y": 3,
-    "img":"cookie"
+    "img":"cookie",
+    "itemCount": 2
   }],
   "tutorial": [{
     "msg": "형 쿠키먹고 싶어~",

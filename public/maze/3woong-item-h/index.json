@@ -1,0 +1,129 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".######.###################.",
+    "#......#..#..%.......%......",
+    "#......#...%...%.%..........",
+    "#.....#.r.##.#.#.#.#.#.#.#.#",
+    "#......#.......%.....%......",
+    "#......#..#..%...%......%...",
+    ".######.###################."
+  ],
+  "extra": [{
+    "img":"cookie",
+    "x": 11,
+    "y": 2,
+    "link": "/maze/3woong-item/1"
+  },  {
+    "img":"cookie",
+    "x": 13,
+    "y": 2,
+    "link": "/maze/3woong-item/2"
+  },  {
+    "img":"cookie",
+    "x": 13,
+    "y": 1,
+    "link": "/maze/3woong-item/3"
+  },  {
+    "img":"cookie",
+    "x": 15,
+    "y": 2,
+    "link": "/maze/3woong-item/4"
+  },  {
+    "img":"cookie",
+    "x": 15,
+    "y": 1,
+    "link": "/maze/3woong-item/5"
+  },  {
+    "img":"cookie",
+    "x": 17,
+    "y": 2,
+    "link": "/maze/3woong-item/6"
+  },  {
+    "img":"cookie",
+    "x": 18,
+    "y": 1,
+    "link": "/maze/3woong-item/7"
+  },  {
+    "img":"cookie",
+    "x": 19,
+    "y": 2,
+    "link": "/maze/3woong-item/8"
+  },  {
+    "img":"cookie",
+    "x": 21,
+    "y": 2,
+    "link": "/maze/3woong-item/9"
+  },  {
+    "img":"cookie",
+    "x": 21,
+    "y": 1,
+    "link": "/maze/3woong-item/10"
+  },  {
+    "img":"star",
+    "x": 27,
+    "y": 3,
+    "obstacle": false,
+    "link": "/maze/3woong-item/11",
+    "min_score": 15
+  },  {
+    "x": 6,
+    "y": 3,
+    "img":"in",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "형~ 쿠키 먹고 싶어",
+      "img": "/img/woong/in.png"
+    }]
+  },  {
+    "x": 10,
+    "y": 1,
+    "img":"normal",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "점수를 1점 얻을 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 10,
+    "y": 5,
+    "img":"hard",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "점수를 3점 얻을 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+}],
+  "tutorial": [ {
+    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "img": "/img/woong/woong0.png",
+    "x":7,
+    "y":0
+  }, {
+    "msg": "앗 저기 쿠키가 있다!",
+    "img": "/img/woong/cookie.png"
+  }, {
+    "msg": "쿠키까지 이동한 다음에 아이템 가져오기를 해보자",
+    "img": "/img/woong/cookie.png"
+  }, {
+    "msg": "그리고나서 동생곰 인이에게 쿠키를 가져다주자!",
+    "img": "/img/woong/in.png"
+  },{
+    "msg": "보통 난이도의 쿠키를 전달하면 1점을",
+    "img": "/img/guide/normal.png"
+  },{
+    "msg": "어려운 난이도의 쿠키를 전달하면 3점을 얻을 수 있어요",
+    "img": "/img/guide/hard.png"
+  },{
+    "msg": "모든 임무를 완수하기 위해서는 총 15점을 얻어야해요",
+    "img": "/img/woong/woong0.png"
+  },{
+    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "img": "/img/woong/woong0.png"
+  }]
+}
