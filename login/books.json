@@ -149,14 +149,18 @@
       ["덧셈 뺄셈 놀이", "maze/3woong-plus/1"],
       ["가위바위보", "maze/3woong-cookie/1"],
       ["쿠키 전달하기", "maze/3woong-item/1"],
-      ["쿠키 전달하기 심화", "maze/3woong-item-h/1"]
+      ["쿠키 전달하기 - 심화", "maze/3woong-item-h/1"]
     ],
     "숙명키즈": [
       ["즐거운 우리집", "maze/3woong/index"],
       ["덧셈 뺄셈 놀이", "maze/3woong-plus/index"],
       ["가위바위보", "maze/3woong-cookie/index"],
       ["쿠키 전달하기", "maze/3woong-item/index"],
-      ["쿠키 전달하기", "maze/3woong-item-h/index"]
+      ["쿠키 전달하기 - 심화", "maze/3woong-item-h/index"],
+      ["장군이의 집찾기", "maze/4jangoon-house/index"],
+      ["장군이의 심부름", "maze/4jangoon-mart/index"],
+      ["장군이의 집찾기 - 반복", "maze/4jangoon-house-r/index"],
+      ["장군이의 심부름 - 반복", "maze/4jangoon-mart-r/index"]
     ],
     "YBM 데모": [
       ["올챙이의 모험", "/maze/story09/1"],
