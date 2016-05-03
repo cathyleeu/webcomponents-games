@@ -13,7 +13,7 @@
   {"id": "land9", "src": "/img/map32/9.png"},
   {"id": "land10", "src": "/img/map32/10.png"},
   {"id": "land11", "src": "/img/map32/11.png"},
-  {"id": "character", "src": "/img/woong/woong.png", "sprite": true, "size": 50},
+  {"id": "character", "src": "/img/woong/woong.png", "sprite": true, "size": 70},
   {"id": "message", "src": "/img/woong/woong0.png", "size": 32},
   {"id": "food", "src": "/img/woong/cookie.png"},
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},

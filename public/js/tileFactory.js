@@ -224,7 +224,7 @@ TileFactory.prototype.create = function(tile, x, y) {
         animations = {
           stand_u: 4,
           walk_u: {
-            frames: [4,5,6,7,4],
+            frames: [12,13,14,15,12],
             speed: 0.5
           },
           stand_r: 8,
@@ -239,7 +239,7 @@ TileFactory.prototype.create = function(tile, x, y) {
           },
           stand_l: 12,
           walk_l: {
-            frames: [12,13,14,15,12],
+            frames: [4,5,6,7,4],
             speed: 0.5
           }
         };
@@ -264,6 +264,30 @@ TileFactory.prototype.create = function(tile, x, y) {
           stand_l: 6,
           walk_l: {
             frames: [6,7,8,6],
+            speed: 0.5
+          }
+        };
+      }
+      if(character.src.indexOf('lana') >= 0) {
+        animations = {
+          stand_u: 6,
+          walk_u: {
+            frames: [6,7,6],
+            speed: 0.5
+          },
+          stand_r: 2,
+          walk_r: {
+            frames: [2,3,2],
+            speed: 0.5
+          },
+          stand_d: 0,
+          walk_d: {
+            frames: [0,1,0],
+            speed: 0.5
+          },
+          stand_l: 4,
+          walk_l: {
+            frames: [4,5,4],
             speed: 0.5
           }
         };
