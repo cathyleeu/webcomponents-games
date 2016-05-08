@@ -24,8 +24,10 @@
    "img":"fruit_or"
  }],
   "tutorial": [{
-    "msg": "장군이가 마트에 쇼핑을 하러 왔어요."
+    "msg": "장군이가 마트에 쇼핑을 하러 왔어요.",
+    "img": "/img/jangoon/jangoon0.png"
   },{
-    "msg": "←왼쪽으로이동 블록 두 개를 이용해서 귤로 가보자!"
+    "msg": "←왼쪽으로이동 블록 두 개를 이용해서 귤로 가보자!",
+    "img": "/img/jangoon/fruit_or.png"
   }]
 }
