@@ -5,6 +5,7 @@
 /book
 /click
 /dragndrop
+/maze
 /components/jquery-ui/themes/base/jquery-ui.min.css
 /components/jquery/dist/jquery.min.js
 /components/jquery-ui/jquery-ui.min.js
