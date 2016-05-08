@@ -22,7 +22,16 @@
     "w....hnhw",
     ".wwwwwww."
   ],
+  "extra":[{
+   "x": 3,
+   "y": 6,
+   "img":"fruit_or"
+ }],
   "tutorial": [{
-    "msg": "카트가 정말 멀리 있어!"
+    "msg": "장군이가 마트에 쇼핑을 하러 왔어요.",
+    "img": "/img/jangoon/jangoon0.png"
+  },{
+    "msg": "여러가지 이동 블록으로 저 멀리 있는 귤로 가보자!",
+    "img": "/img/jangoon/fruit_or.png"
   }]
 }

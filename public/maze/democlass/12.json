@@ -22,7 +22,16 @@
     "wux..gngw",
     ".wwwwwww."
   ],
+  "extra":[{
+   "x": 4,
+   "y": 3,
+   "img":"milk"
+ }],
   "tutorial": [{
-    "msg": "카트로 가는 길이 어려워졌어!"
+    "msg": "장군이가 마트에 쇼핑을 하러 왔어요.",
+    "img": "/img/jangoon/jangoon0.png"
+  },{
+    "msg": "여러가지 이동 블록으로 저 멀리 있는 우유로 가보자!",
+    "img": "/img/jangoon/milk.png"
   }]
 }

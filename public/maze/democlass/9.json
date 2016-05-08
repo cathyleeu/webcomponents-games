@@ -22,7 +22,16 @@
     "w.k.....w",
     ".wwwwwww."
   ],
+  "extra":[{
+   "x": 4,
+   "y": 4,
+   "img":"fruit_ba"
+ }],
   "tutorial": [{
-    "msg": "먼 길을 돌아 카트로 가보자!"
+    "msg": "장군이가 마트에 쇼핑을 하러 왔어요.",
+    "img": "/img/jangoon/jangoon0.png"
+  },{
+     "msg": "여러가지 이동 블록으로 벽넘어에 있는 바나나로 가보자!",
+    "img": "/img/jangoon/fruit_ba.png"
   }]
 }
