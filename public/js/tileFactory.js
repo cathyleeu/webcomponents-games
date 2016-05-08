@@ -222,7 +222,7 @@ TileFactory.prototype.create = function(tile, x, y) {
       }
       if(character.src.indexOf('woong') >= 0) {
         animations = {
-          stand_u: 4,
+          stand_u: 12,
           walk_u: {
             frames: [12,13,14,15,12],
             speed: 0.5
@@ -237,7 +237,7 @@ TileFactory.prototype.create = function(tile, x, y) {
             frames: [0,1,2,3,0],
             speed: 0.5
           },
-          stand_l: 12,
+          stand_l: 4,
           walk_l: {
             frames: [4,5,6,7,4],
             speed: 0.5

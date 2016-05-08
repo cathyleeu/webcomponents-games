@@ -37,5 +37,8 @@
   },{
     "msg": "카트에 집어 넣어보자!",
     "img": "/img/jangoon/kart.png"
+  }],
+  "success": [{
+    "msg": "이제 카트를 끌고 집에 갈 수 있어!"
   }]
 }
