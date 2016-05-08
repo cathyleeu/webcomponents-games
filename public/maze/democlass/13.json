@@ -1,0 +1,48 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.......w",
+    "w.......w",
+    "w...%...w",
+    "w...)...w",
+    "w...u...w",
+    "w.......w",
+    "w.......w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 3,
+    "useItem": true
+  }, {
+    "x": 4,
+    "y": 4,
+    "img": "fruit_st"
+  }],
+  "tutorial": [{
+    "msg": "딸기로 이동해 아이템 가져오기를 해보자.",
+    "img": "/img/get_item.png"
+  },{
+    "msg": "그리고 카트로 이동해보자.",
+    "img": "/img/jangoon/kart.png"
+  },{
+    "msg": "카트에서 아이템 사용하기를 써서 딸기를 넣어보자.",
+    "img": "/img/get_item.png"
+  }],
+  "success": [{
+    "msg": "이제 카트를 끌고 집에 갈 수 있어!",
+    "link": "/maze#democlass/14"
+  }]
+}

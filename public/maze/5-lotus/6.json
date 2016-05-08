@@ -12,7 +12,7 @@
   "character": "character",
   "message": "message",
   "map": [
-    "j...h.",
+    "j...%.",
     "..b..e",
     "......",
     "i...c.",
@@ -20,10 +20,9 @@
     "f.u..a"
   ],
   "extra":[{
-    "x": 0,
-    "y": 4,
-    "role": "food",
-    "obstacle": false
+    "x": 4,
+    "y": 0,
+    "img":"h"
   }],
   "tutorial": [{
     "msg": "토드 주변에는 숫자 연잎이 규칙적으로 나열되어 있어요. 토드가 앉아있는 연잎에는 어떤 숫자가 있을까요?",

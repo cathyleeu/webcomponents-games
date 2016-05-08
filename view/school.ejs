@@ -22,6 +22,23 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>키즈코딩 원별 접속 코드 및<br/>로그인 스티커 정보</h1>
+                <select id="year">
+                  <option>2016</option>
+                </select>
+                <select id="month">
+                  <option>01</option>
+                  <option>02</option>
+                  <option>03</option>
+                  <option>04</option>
+                  <option>05</option>
+                  <option>06</option>
+                  <option>07</option>
+                  <option>08</option>
+                  <option>09</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
                 <div class="page">
                 </div>
             </div>
@@ -51,7 +68,24 @@
 
 <script>
   $(function() {
-
+    var date = new Date()
+        year = '' + date.getFullYear(),
+        month = date.getMonth() + 1;
+    month = (month < 10 ? '0' : '') + month;
+    $("#year").val(year);
+    $("#month").val(month);
+    $("#year, #month").change(function() {
+      var year = $("#year").val(),
+          month = $("#month").val(),
+          $item = $(".info_url");
+      $item.each(function(index, dom) {
+        var info_url = $(dom).attr("href"),
+            tokens = info_url.split("-");
+        tokens[tokens.length - 1] = year+month;
+        info_url = tokens.join("-");
+        $(dom).attr("href", info_url).text(info_url);
+      });
+    });
     $.get("login/url.json", function(urls) {
       urls.forEach(function(item) {
         var url = "http://toycode.org/code#" + item.code,
@@ -59,10 +93,10 @@
               return arr.concat(item.classes[key])
             }, []),
             info = classes.map(function(className) {
-              var info_url = "http://toycode.org/info#" + item.code + "-" + className;
+              var info_url = "http://toycode.org/info#" + item.code + "-" + className + '-' + year + month;
               return "<div>"
                   +   "<label>" + className + "</label> : "
-                  +   "<a href=\"" + info_url + "\">" + info_url + "</a>";
+                  +   "<a class= \"info_url\" href=\"" + info_url + "\">" + info_url + "</a>";
                   + "</div>";
             });
         $("<div>")

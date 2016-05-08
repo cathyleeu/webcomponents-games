@@ -1,0 +1,106 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 80,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".######.##############.",
+    "#......#..%...%....%..#",
+    "#...bca#....%...%.....#",
+    "#.....#.r............#%",
+    "#......#..%...%....%..#",
+    "#......#....%....%....#",
+    ".######.##############."
+  ],
+  "extra": [{
+    "x": 10,
+    "y": 1,
+    "link": "/maze#3woong-plus/1"
+  },{
+    "x": 12,
+    "y": 2,
+    "link": "/maze#3woong-plus/2"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "/maze#3woong-plus/3"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "/maze#3woong-plus/4"
+  },{
+    "x": 19,
+    "y": 1,
+    "link": "/maze#3woong-plus/5"
+  },{
+    "x": 10,
+    "y": 4,
+    "link": "/maze#3woong-plus/6"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "/maze#3woong-plus/7"
+  },{
+    "x": 14,
+    "y": 4,
+    "link": "/maze#3woong-plus/8"
+  },{
+    "x": 17,
+    "y": 5,
+    "link": "/maze#3woong-plus/9"
+  },{
+    "x": 19,
+    "y": 4,
+    "link": "/maze#3woong-plus/10"
+  },{
+    "x": 21,
+    "y": 3,
+    "obstacle": false,
+    "img":"head",
+    "tutorial": [{
+    "msg": "오른쪽 별로 들어가면 가위바위보 게임을 할 수 있어요!",
+    "img": "/img/woong/h.png"
+    }]
+  },{
+    "x": 22,
+    "y": 3,
+    "link": "/maze#3woong-cookie/index"
+  },{
+    "x": 6,
+    "y": 3,
+    "img":"family",
+    "tutorial": [{
+      "msg": "즐거운 우리집에 온 것을 환영해~ ",
+      "img": "/img/woong/family.png"
+    }]
+
+  }],
+  "tutorial": [{
+    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "img": "/img/woong/woong0.png",
+    "x":7,
+    "y":0
+  }, {
+    "msg": "　　　덧셈과 뺄셈을 해보자!",
+    "img": "/img/woong/plusminus.png"
+  }, {
+    "msg": "만약 3 + 1 = ? 이라는 문제가 나오면",
+    "img": "/img/woong/3plus1.png"
+  }, {
+    "msg": "4가 답이니까 코딩맵에서 4를 찾아가면 되는거야!",
+    "img": "/img/woong/woong0.png"
+  }, {
+    "msg": "자 그럼 덧셈 뺄셈놀이를 해보자!",
+    "img": "/img/woong/woong0.png"
+  }, {
+    "msg": "위쪽은 +덧셈문제 　　　아래쪽은 -뺄셈문제야",
+    "img": "/img/woong/woong0.png"
+  }, {
+    "msg": "총 8문제를 깨야 다음 단계로 넘어갈 수 있어",
+    "img": "/img/woong/woong0.png"
+  },{
+    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "img": "/img/woong/woong0.png"
+  }]
+}

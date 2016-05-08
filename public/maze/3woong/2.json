@@ -1,0 +1,36 @@
+{
+  "tile_size": 80,
+  "render": "pixel",
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.xxb.xx#",
+    "#.......#",
+    "#.......#",
+    "#...d..%#",
+    "#.x....x#",
+    "#.xx...x#",
+    "#...cxx.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 4,
+    "img":"mother"
+  }],
+  "tutorial": [{
+    "msg": "엄마곰에게로 가보자",
+    "img": "/img/woong/mother.png"
+  }],
+  "success": [{
+    "msg": "성공! 참 잘했어요~",
+    "link": "/maze#3woong/3"
+  }]
+}

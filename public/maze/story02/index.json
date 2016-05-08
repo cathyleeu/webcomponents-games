@@ -198,7 +198,7 @@
   },   {
     "x": 8,
     "y": 26,
-    "src": "/img/guide/question.png",
+    "img": "question",
     "obstacle": false,
     "tutorial": [{
       "msg": "위 3가지 길중 하나를 선택해야 합니다.",

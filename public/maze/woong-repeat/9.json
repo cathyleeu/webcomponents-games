@@ -1,0 +1,35 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":20,
+  "workspace": ["start", "repeat", "repeat", "repeat", "repeat", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#########.",
+    "#..xxxxxx.#",
+    "#.x......x#",
+    "#.x.xxxx.x#",
+    "#.x.x..x.x#",
+    "#.x.x%.x.x#",
+    "#.x.xx.x.x#",
+    "#.x....x.x#",
+    "#..xxxx..x#",
+    "#.......d.#",
+    ".#########."
+  ],
+  "tutorial": [{
+    "msg": "꼭꼭 숨어라~ 머리카락 보인다~",
+    "img": "/img/woong/woong0.png"
+  },{
+    "msg": "자 이제 찾으러 간다~",
+    "img": "/img/woong/woong0.png"
+  },{
+    "msg": "인이를 찾으면 15점을 얻을 수 있어",
+    "img": "/img/woong/woong0.png"
+  }]
+}

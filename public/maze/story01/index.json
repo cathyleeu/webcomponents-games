@@ -195,13 +195,13 @@
   },  {
     "x": 1,
     "y": 1,
-    "src": "/img/village/house1.png",
+    "img": "house1",
     "obstacle": false,
     "link": "story01/index2"
   }, {
     "x": 7,
     "y": 26,
-    "src": "/img/guide/question.png",
+    "img": "question",
     "obstacle": false,
     "tutorial": [{
       "msg": "숲속으로 도망가기 위해서는 위 3가지 길중 하나를 선택해야 합니다.",
@@ -219,7 +219,7 @@
   }, {
     "x": 3,
     "y": 22,
-    "src": "/img/guide/hard.png",
+    "img": "hard",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 아주 어려우니 신중히 생각해!",
@@ -228,7 +228,7 @@
   }, {
     "x": 7,
     "y": 22,
-    "src": "/img/guide/normal.png",
+    "img": "normal",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 평범한 수준이야 잘해보라고~",
@@ -237,7 +237,7 @@
   }, {
     "x": 10,
     "y": 22,
-    "src": "/img/guide/easy.png",
+    "img": "easy",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!",
@@ -246,7 +246,7 @@
   }, {
     "x": 5,
     "y": 8,
-    "src": "/img/guide/hard.png",
+    "img": "hard",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 아주 어려우니 신중히 생각해!",
@@ -255,7 +255,7 @@
   }, {
     "x": 8,
     "y": 8,
-    "src": "/img/guide/normal.png",
+    "img": "normal",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 평범한 수준이야 잘해보라고~",
@@ -264,7 +264,7 @@
   }, {
     "x": 11,
     "y": 8,
-    "src": "/img/guide/easy.png",
+    "img": "easy",
     "obstacle": false,
     "tutorial": [{
       "msg": "이 길은 문제가 쉽지만 문제가 아주~ 많아!",

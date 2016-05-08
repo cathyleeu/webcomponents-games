@@ -24,7 +24,8 @@ KidsCoding = function() {
 };
 KidsCoding.prototype = {
 
-  init: function(loader, mazeInfo, run) {
+  init: function(loader, mazeInfo, run, tileFactory) {
+    this.tileFactory = tileFactory;
     this.Actions = new Actions(this, loader, mazeInfo, run);
   },
   initBlockly: function(toolbox, workspace) {

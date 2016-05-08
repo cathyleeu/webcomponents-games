@@ -1,0 +1,48 @@
+{
+  "tile_size": 80,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#...%...#",
+    "#.......#",
+    "#....)..#",
+    "#.......#",
+    "#...d...#",
+    "#.......#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 2,
+    "useItem": 1
+  }, {
+    "x": 5,
+    "y": 4,
+    "img":"cookie",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg": "형 쿠키먹고 싶어~",
+    "img": "/img/woong/in.png"
+  },{
+    "msg": "쿠키로 이동해 아이템 가져오기를 해보자",
+    "img": "/img/woong/cookie.png"
+  },{
+    "msg": "그리고나서 동생곰 인이에게 이동하고",
+    "img": "/img/woong/in.png"
+  },{
+    "msg": "동생곰 인이에게 아이템 사용하기를 해보자",
+    "img": "/img/woong/in.png"
+  }]
+}

@@ -55,7 +55,7 @@
   "extra": [{
     "x": 1,
     "y": 1,
-    "src": "/img/village/house1.png",
+    "img": "house1",
     "obstacle": false
   }],
   "tutorial": [{

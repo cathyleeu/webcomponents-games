@@ -1,0 +1,147 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".tttttt.mtmtmtmtmtmtmtmtmtm.",
+    "t......t..#..%.%..%..%......",
+    "t......t...%.%.%.%.%.%......",
+    "t.......r.tm.m.m.m.m.m.tmt.#",
+    "t......t.......%...%.%.%.%..",
+    "t......t..#..%...%..%.%.%...",
+    ".tttttt.tmtmtmtmtmtmtmtmtmt."
+  ],
+  "extra": [{
+    "x": 11,
+    "y": 2,
+    "link": "/maze#4jangoon-mart-r/1"
+  },  {
+    "x": 13,
+    "y": 2,
+    "link": "/maze#4jangoon-mart-r/2"
+  },  {
+    "x": 13,
+    "y": 1,
+    "link": "/maze#4jangoon-mart-r/3"
+  },  {
+    "x": 15,
+    "y": 2,
+    "link": "/maze#4jangoon-mart-r/4"
+  },  {
+    "x": 15,
+    "y": 1,
+    "link": "/maze#4jangoon-mart-r/5"
+  },  {
+    "x": 17,
+    "y": 2,
+    "link": "/maze#4jangoon-mart-r/6"
+  },  {
+    "x": 18,
+    "y": 1,
+    "link": "/maze#4jangoon-mart-r/7"
+  },  {
+    "x": 19,
+    "y": 2,
+    "link": "/maze#4jangoon-mart-r/8"
+  },  {
+    "x": 21,
+    "y": 2,
+    "link": "/maze#4jangoon-mart-r/9"
+  },  {
+    "x": 21,
+    "y": 1,
+    "link": "/maze#4jangoon-mart-r/10"
+  },  {
+    "x": 13,
+    "y": 5,
+    "link": "/maze#4jangoon-mart-r/11"
+  },  {
+    "x": 15,
+    "y": 4,
+    "link": "/maze#4jangoon-mart-r/12"
+  },  {
+    "x": 17,
+    "y": 5,
+    "link": "/maze#4jangoon-mart-r/13"
+  },  {
+    "x": 19,
+    "y": 4,
+    "link": "/maze#4jangoon-mart-r/14"
+  },  {
+    "x": 20,
+    "y": 5,
+    "link": "/maze#4jangoon-mart-r/15"
+  },  {
+    "x": 21,
+    "y": 4,
+    "link": "/maze#4jangoon-mart-r/16"
+  },  {
+    "x": 22,
+    "y": 5,
+    "link": "/maze#4jangoon-mart-r/17"
+  },  {
+    "x": 23,
+    "y": 4,
+    "link": "/maze#4jangoon-mart-r/18"
+  },  {
+    "x": 24,
+    "y": 5,
+    "link": "/maze#4jangoon-mart-r/19"
+  },  {
+    "x": 25,
+    "y": 4,
+    "link": "/maze#4jangoon-mart-r/20"
+  },  {
+    "img":"star",
+    "x": 27,
+    "y": 3,
+    "obstacle": false,
+    "link": "/maze#4jangoon-mart-r/21",
+    "min_score": 35
+  },  {
+    "x": 10,
+    "y": 1,
+    "img":"normal",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "점수를 1점 얻을 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 10,
+    "y": 5,
+    "img":"hard",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "점수를 3점 얻을 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+  }],
+  "tutorial": [{
+    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "img": "/img/jangoon/jangoon0.png"
+  }, {
+    "msg": "장군이가 심부름을 해결하고",
+    "img": "/img/jangoon/kart.png"
+  }, {
+    "msg": "별을 획득하자!!",
+    "img": "/img/map/star.png"
+  },{
+    "msg": "보통 난이도를 해결하면 1점을",
+    "img": "/img/guide/normal.png"
+  },{
+    "msg": "어려운 난이도를 해결하면 3점을 얻을 수 있어요",
+    "img": "/img/guide/hard.png"
+  },{
+    "msg": "모든 임무를 완성하기 위해서는 총 35점을 얻어야",
+    "img": "/img/jangoon/jangoon0.png",
+    "x" : 23,
+    "y" : 4
+  },{
+    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "img": "/img/jangoon/jangoon0.png"
+  }]
+}

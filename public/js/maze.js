@@ -99,7 +99,6 @@ function init() {
       idx = location.hash.indexOf("?"),
       search = idx >= 0 ? location.hash.slice(idx + 1) : "";
 
-  tutorialIdx = 0;
   search.split("&").map(function(query) {
     var sp = query.split("=");
     if(sp[0]) {
@@ -113,6 +112,7 @@ function init() {
 
   tileFactory.init(maze, loader);
   initMaze();
+  $("#runCode").html('<i class="fa fa-play"></i> 시작');
   if(maze.type != "world" && maze.type != "game") {
     $("#virtualKeypad").hide();
     $("#blocklyDiv").show();
@@ -122,7 +122,7 @@ function init() {
   }
   handle_resize();
   drawMaze();
-  kidscoding.init(loader, mazeInfo, run);
+  kidscoding.init(loader, mazeInfo, run, tileFactory);
   kidscoding.initBlockly(maze.toolbox, maze.workspace);
 
   if(maze.type == "game" || maze.type == "world") {
@@ -313,7 +313,6 @@ function addEvents() {
   });
   $(window).on("resize", handle_resize);
   $("#modal .go-next").click(function(e) {
-    debugger
     var queries = {},
         idx = location.hash.indexOf("?"),
         search = idx >= 0 ? location.hash.slice(idx + 1) : "";
@@ -367,22 +366,40 @@ function addEvents() {
         });
         run(startblock, function() {
           var foods = mazeInfo.canvas.foods;
-          for(var i = 0; i < foods.length; i++) {
-            if(foods[i].visible == true) {
+          if(foods.length == 1 && foods[0].itemCountBitmap) {
+            var itemCount = foods[0].itemCountBitmap ? +foods[0].itemCountBitmap.textBitmap.text : 0;
+            if(foods[0].useItem <= itemCount) {
+              createjs.Sound.play("complete");
+              if(maze.success) {
+                runTutorial(maze.success);
+              } else {
+                showModal({
+                  msg: "성공!",
+                  goNext: true
+                });
+              }
+            } else {
               createjs.Sound.play("fail");
               showModal("블럭을 다 썼지만 끝나지 않았어요");
-              break;
             }
-          }
-          if(i == foods.length) {
-            createjs.Sound.play("complete");
-            if(maze.success) {
-              runTutorial(maze.success);
-            } else {
-              showModal({
-                msg: "성공!",
-                goNext: true
-              });
+          } else {
+            for(var i = 0; i < foods.length; i++) {
+              if(foods[i].visible == true) {
+                createjs.Sound.play("fail");
+                showModal("블럭을 다 썼지만 끝나지 않았어요");
+                break;
+              }
+            }
+            if(i == foods.length) {
+              createjs.Sound.play("complete");
+              if(maze.success) {
+                runTutorial(maze.success);
+              } else {
+                showModal({
+                  msg: "성공!",
+                  goNext: true
+                });
+              }
             }
           }
         });
@@ -576,7 +593,7 @@ function run(block, callback) {
           showModal("벽에 부딪쳤어요");
           return;
         }
-        if( obj.role == "food" && !obj.matchTile) {
+        if( obj.role == "food" && !obj.useItem) {
           obj.visible = false;
           createjs.Sound.play("success");
           mazeInfo.canvas.stage.update();

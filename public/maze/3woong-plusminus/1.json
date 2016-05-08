@@ -1,0 +1,32 @@
+{
+  "tile_size": 80,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#..fpf..#",
+    "#########",
+    "#%.....h#",
+    "#.......#",
+    "#f..d...#",
+    "#......i#",
+    "#......#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"dog2"
+  }],
+  "tutorial": [{
+    "msg": "1 + 1 = ?",
+    "img": "/img/woong/woong0.png"
+  }]
+}

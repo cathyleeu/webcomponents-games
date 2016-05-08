@@ -1,0 +1,32 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start","move_down","move_left","move_left","repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".ttttttt.",
+    "t.xx..xxt",
+    "tx%.....t",
+    "t...k.xxt",
+    "tc.b..f.t",
+    "t..xdx..t",
+    "tx.....xt",
+    "t.......t",
+    ".ttttttt."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 2,
+    "img":"house8"
+  }],
+  "tutorial": [{
+    "msg": "장군이의 집은 두번째로 큰 숫자의 주소를 가지고 있어요!",
+    "img": "/img/jangoon/jangoon0.png"
+  }]
+}

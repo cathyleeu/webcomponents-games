@@ -161,33 +161,14 @@
       $(e.target).addClass("selected");
     });
     $.when(d1, d2).done(function(info, names) {
-      function getImgs(code, className) {
-        var token = '' + className.charCodeAt(0) + className.slice(1).charCodeAt(0) + parseInt(code, 16),
-            key = token + token + token + token,
-            sum = 17,
-            imgs = [],
-            num;
-        for(var i = 0; i < 40; i++) {
-          if(i % 2) {
-            sum += Number(key.charAt(i));
-          } else {
-            sum -= Number(key.charAt(i));
-          }
-          sum = (sum + 13) % 13;
-          num = sum + 1;
-          if(num < 10) {
-            num = '0' + num;
-          } else {
-            num = '' + num;
-          }
-          imgs.push(num);
-        }
-        return imgs;
-      }
       var hash = decodeURI(location.hash).slice(1),
           code = hash.split("-")[0],
           className = hash.split("-")[1],
-          imgs = getImgs(code, className);
+          date = new Date(),
+          year = date.getFullYear(),
+          month = date.getMonth() + 1,
+          yearmonth = '' + year + (month < 10 ? '0' : '') + month,
+          imgs = getImgs(yearmonth, code, className);
       $("#login").click(function(e) {
         if($("#characters .selected").length == 0 || $("#names .selected").length == 0) {
           $("#modal-fail").modal('show');

@@ -1,0 +1,42 @@
+{
+  "tile_size": 80,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#d..)...#",
+    "#xx..xx.#",
+    "#.xx....#",
+    "#...%..x#",
+    "#.xx...x#",
+    "#......x#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "useItem": 2
+  }, {
+    "x": 4,
+    "y": 2,
+    "img":"cookie",
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg": "형 쿠키먹고 싶어~",
+    "img": "/img/woong/in.png"
+  },{
+    "msg": "인이에게 쿠키를 전달하자!",
+    "img": "/img/woong/woong0.png"
+  }]
+}

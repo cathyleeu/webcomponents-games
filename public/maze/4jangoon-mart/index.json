@@ -1,0 +1,78 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".tttttt.mtmtmtmtmtmtmt.",
+    "t......t.m...%...mtm..m",
+    "t......t..tm..tm%..t..t",
+    "t.....m.r.%mt..tm.tmt#%",
+    "t......tmt..m%..m.%tm%m",
+    "t......t...%...tmt..%.t",
+    ".tttttt.tmtmtmtmtmtmtm."
+  ],
+  "extra": [{
+    "x": 10,
+    "y": 3,
+    "link": "/maze#4jangoon-mart/1"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "/maze#4jangoon-mart/2"
+  },{
+    "x": 13,
+    "y": 4,
+    "link": "/maze#4jangoon-mart/3"
+  },{
+    "x": 13,
+    "y": 1,
+    "link": "/maze#4jangoon-mart/4"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "/maze#4jangoon-mart/5"
+  },{
+    "x": 18,
+    "y": 4,
+    "link": "/maze#4jangoon-mart/6"
+  },{
+    "x": 20,
+    "y": 5,
+    "link": "/maze#4jangoon-mart/7"
+  },{
+    "x": 21,
+    "y": 4,
+    "link": "/maze#4jangoon-mart/8"
+  },{
+    "x": 21,
+    "y": 3,
+    "obstacle": false,
+    "img":"house6",
+    "tutorial": [{
+    "msg": "오른쪽 별로 들어가면 집으로 돌아갈 수 있어요!",
+    "img": "/img/jangoon/house6.png"
+    }]
+  },{
+    "x": 22,
+    "y": 3,
+    "img":"star",
+    "link": "/maze#4jangoon-house-r/index"
+  }],
+  "tutorial": [{
+    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "img": "/img/jangoon/jangoon0.png",
+    "x":7,
+    "y":0
+  }, {
+    "msg": "씩씩한 개 장군이는 심부름으로 마트로 가야해요!",
+    "img": "/img/jangoon/kart.png"
+  }, {
+    "msg": "총 6곳의 마트로 다서 물건을 사야 집으로 돌아갈 수 있어요",
+    "img": "/img/jangoon/house6.png"
+  },{
+    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "img": "/img/jangoon/jangoon0.png"
+  }]
+}
