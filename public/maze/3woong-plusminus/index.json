@@ -1,7 +1,7 @@
 {
   "type": "world",
   "view_size": 8,
-  "tile_size": 50,
+  "tile_size": 80,
   "render": "pixel",
   "toolbox": [],
   "map": [
