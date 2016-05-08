@@ -3,11 +3,13 @@
 var d1,
     d2,
     step,
-    kidscoding = new KidsCoding(),
     loader,
     mazeInfo,
     maze,
-    tileFactory = new TileFactory();
+    kidscoding = new KidsCoding(),
+    tileFactory = new TileFactory(),
+    tutorial = null,
+    tutorialIdx = 0;
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
@@ -19,7 +21,7 @@ page('*', function(ctx, next) {
       manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/"),
       message_url;
 
-  step = path[2];
+  step = path[path.length - 1];
   d1 = $.Deferred();
   d2 = $.Deferred();
   $.when( step, d1, d2 ).done(init);
@@ -97,6 +99,7 @@ function init() {
       idx = location.hash.indexOf("?"),
       search = idx >= 0 ? location.hash.slice(idx + 1) : "";
 
+  tutorialIdx = 0;
   search.split("&").map(function(query) {
     var sp = query.split("=");
     if(sp[0]) {
@@ -244,6 +247,7 @@ function drawMaze() {
           return obj.y == i && obj.x == j;
         })[0] : null;
         if(extra && extra.link) {
+          // 이미 성공한 경우에는 별을 놓지 않아야 함
           var path = extra.link.split("/").slice(0, -1).join("/");
           if(localData[path] && localData[path].complete.indexOf(extra.link.split("/").slice(-1)[0]) >= 0) {
             continue;
@@ -309,6 +313,7 @@ function addEvents() {
   });
   $(window).on("resize", handle_resize);
   $("#modal .go-next").click(function(e) {
+    debugger
     var queries = {},
         idx = location.hash.indexOf("?"),
         search = idx >= 0 ? location.hash.slice(idx + 1) : "";
@@ -333,7 +338,6 @@ function addEvents() {
         localData[path].score += maze.score || 1;
         store.set('data', localData);
       }
-
       page(queries.back + "?x=" + queries.x + "&y=" + queries.y);
       return;
     }
@@ -447,34 +451,40 @@ function addEvents() {
   }
   $(document).keydown(handleMove);
   $("#virtualKeypad .key").click(handleMove);
-}
 
-function runTutorial(tutorial) {
-  var idx = 0;
-  if(!tutorial) {
-    return;
-  }
   $("#modal .tutorial").click(function handleClick(e) {
-    if(idx > 0 && tutorial[idx-1].link) {
-      location.href = tutorial[idx-1].link;
-    } else if(idx < tutorial.length) {
-      if(tutorial[idx].hasOwnProperty("x") && tutorial[idx].hasOwnProperty("y")) {
-        kidscoding.Actions._setFocus(tutorial[idx].x, tutorial[idx].y, 0, 500);
+    if(tutorialIdx > 0 && tutorial[tutorialIdx-1].link) {
+      if(tutorial[tutorialIdx-1].link.slice(0, 7) == "http://") {
+        location.href = tutorial[tutorialIdx-1].link;
+      } else {
+        page(tutorial[tutorialIdx-1].link);
+      }
+      return;
+    } else if(tutorialIdx < tutorial.length) {
+      if(tutorial[tutorialIdx].hasOwnProperty("x") && tutorial[tutorialIdx].hasOwnProperty("y")) {
+        kidscoding.Actions._setFocus(tutorial[tutorialIdx].x, tutorial[tutorialIdx].y, 0, 500);
       }
       showModal({
-        video: tutorial[idx].video,
-        msg: tutorial[idx].msg,
-        img: tutorial[idx].img,
-        link: tutorial[idx].link,
+        video: tutorial[tutorialIdx].video,
+        msg: tutorial[tutorialIdx].msg,
+        img: tutorial[tutorialIdx].img,
+        link: tutorial[tutorialIdx].link,
         tutorial: true
       });
     } else {
-      $("#modal .tutorial").off("click", handleClick);
       $('#modal').modal('hide');
       kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 1000);
     }
-    idx++;
+    tutorialIdx++;
   });
+}
+
+function runTutorial(input_tutorial) {
+  if(!input_tutorial) {
+    return;
+  }
+  tutorial = input_tutorial;
+  tutorialIdx = 0;
   $('#modal').modal('hide');
   $("#modal .tutorial").click();
 }
@@ -571,10 +581,10 @@ function run(block, callback) {
           createjs.Sound.play("success");
           mazeInfo.canvas.stage.update();
         }
-        if(obj.link) {
-          debugger
-          location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
-        }
+        // // 쓰이는 경우가 없어서 주석처리함
+        // if(obj.link) {
+        //   location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
+        // }
         if(obj.tutorial) {
           runTutorial(obj.tutorial);
         }
