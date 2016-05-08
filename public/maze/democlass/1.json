@@ -1,0 +1,31 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    ".www.",
+    "w.d.w",
+    "w.%.w",
+    "w...w",
+    ".www."
+  ],
+  "extra":[{
+   "x": 2,
+   "y": 2,
+   "img":"fruit_ap"
+ }],
+  "tutorial": [{
+    "msg": "장군이가 마트에 쇼핑을 하러 왔어요."
+  },{
+    "msg": "↓아래로이동 블록을 이용해서 사과로 가보자!"
+  }]
+}

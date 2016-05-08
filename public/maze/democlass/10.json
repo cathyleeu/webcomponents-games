@@ -1,0 +1,28 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":10,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    ".wwwwwww.",
+    "w....aaaw",
+    "w....anaw",
+    "w....aaaw",
+    "w..x%...w",
+    "w..x....w",
+    "w.ux....w",
+    "w......yw",
+    ".wwwwwww."
+  ],
+  "tutorial": [{
+    "msg": "조금 더 멀리 있는 카트로 가보자!"
+  }]
+}
