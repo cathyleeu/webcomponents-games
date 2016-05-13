@@ -47,7 +47,7 @@ Blocks["move_forward"] = {
   ],
   action: ["move", "forward"]
 };
-Blocks["%1 jump_forward"] = {
+Blocks["jump_forward"] = {
   colour: 120,
   message0: "%1 앞으로 점프",
   args0: [
