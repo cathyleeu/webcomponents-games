@@ -30,5 +30,6 @@
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"id": "question", "src": "/img/guide/question.png", "obstacle": false},
   {"tile": "z", "id": "z", "src": "/img/story08/tree.png", "obstacle": true}
 ]
