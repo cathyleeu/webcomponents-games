@@ -19,67 +19,67 @@
   "extra": [{
     "x": 3,
     "y": 3,
-    "link": "/maze#woong-repeat/1"
+    "link": "woong-repeat/1"
   },{
     "x": 4,
     "y": 2,
-    "link": "/maze#woong-repeat/2"
+    "link": "woong-repeat/2"
   },{
     "x": 6,
     "y": 2,
-    "link": "/maze#woong-repeat/3"
+    "link": "woong-repeat/3"
   },{
     "x": 9,
     "y": 1,
-    "link": "/maze#woong-repeat/4"
+    "link": "woong-repeat/4"
   },{
     "x": 8,
     "y": 3,
-    "link": "/maze#woong-repeat/5"
+    "link": "woong-repeat/5"
   },{
     "x": 16,
     "y": 2,
-    "link": "/maze#woong-repeat/6"
+    "link": "woong-repeat/6"
   },{
     "x": 17,
     "y": 3,
-    "link": "/maze#woong-repeat/7"
+    "link": "woong-repeat/7"
   },{
     "x": 20,
     "y": 2,
-    "link": "/maze#woong-repeat/8"
+    "link": "woong-repeat/8"
   },{
     "x": 22,
     "y": 1,
-    "link": "/maze#woong-repeat/9"
+    "link": "woong-repeat/9"
   },{
     "x": 22,
     "y": 3,
-    "link": "/maze#woong-repeat/10"
+    "link": "woong-repeat/10"
   },{
     "x": 16,
     "y": 6,
-    "link": "/maze#woong-repeat/11"
+    "link": "woong-repeat/11"
   },{
     "x": 18,
     "y": 7,
-    "link": "/maze#woong-repeat/12"
+    "link": "woong-repeat/12"
   },{
     "x": 17,
     "y": 8,
-    "link": "/maze#woong-repeat/13"
+    "link": "woong-repeat/13"
   },{
     "x": 22,
     "y": 6,
-    "link": "/maze#woong-repeat/14"
+    "link": "woong-repeat/14"
   },{
     "x": 21,
     "y": 8,
-    "link": "/maze#woong-repeat/15"
+    "link": "woong-repeat/15"
   },{
     "x": 13,
     "y": 1,
-    "link": "/maze#woong-repeat/16",
+    "link": "woong-repeat/16",
     "min_score": 120
   },  {
     "x": 6,
