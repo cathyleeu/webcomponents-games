@@ -19,7 +19,7 @@
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
-  {"id": "hammer", "src": "/sound/hammer.wav", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
   {"tile": "a", "id": "fruit_ap", "src": "/img/jangoon/fruit_ap.png", "obstacle": false},
   {"tile": "b", "id": "fruit_ba", "src": "/img/jangoon/fruit_ba.png", "obstacle": false},

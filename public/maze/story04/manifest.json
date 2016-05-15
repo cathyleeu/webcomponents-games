@@ -12,7 +12,7 @@
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
-  {"id": "hammer", "src": "/sound/hammer.wav", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
   {"id": "item", "src": "/img/map/pick.png"},
   {"id": "rock5", "src": "/img/map/rock5.png"},
   {"id": "rock4", "src": "/img/map/rock4.png"},

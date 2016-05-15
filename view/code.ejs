@@ -1,3 +1,8 @@
+<script>
+if(location.hash) {
+  location.href = "/code/" + location.hash.slice(1);
+}
+</script>
 <style>
   .btn-default {
     margin: 20px;
@@ -56,8 +61,8 @@
 </div>
 
 <script>
-  $.get("login/url.json", function(url) {
-    var code = decodeURI(location.hash).slice(1),
+  $.get("/login/url.json", function(url) {
+    var code = location.href.slice(location.href.lastIndexOf("/") + 1),
         info = url.filter(function(item) {
           return item.code == code
         })[0];

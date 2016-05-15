@@ -47,8 +47,14 @@ public.get('/old', function *(next) {
 
 public.get('/code', function *(next) {
   yield this.render('code', {
+    title: "키즈코딩"
+  });
+});
+
+public.get('/code/:code', function *(next) {
+  yield this.render('code', {
     title: "키즈코딩",
-    manifest: true
+    manifest: this.params.code
   });
 });
 
