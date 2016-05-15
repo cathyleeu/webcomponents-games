@@ -38,10 +38,10 @@
     ],
     "YBM 데모": [
       ["올챙이의 모험", "/maze#!story09/1"],
-      ["2권", "maze#!demonstration2-4/1"],
-      ["3권", "maze#!demonstration2-4/6"],
-      ["4권", "maze#!demonstration2-4/11"],
-      ["5권", "maze#!5-lotus/1"]
+      ["2권", "/maze#!demonstration2-4/1"],
+      ["3권", "/maze#!demonstration2-4/6"],
+      ["4권", "/maze#!demonstration2-4/11"],
+      ["5권", "/maze#!5-lotus/1"]
     ]
   },
   "201604": {
