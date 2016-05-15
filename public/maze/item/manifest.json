@@ -12,5 +12,5 @@
   {"id": "stone", "src": "/img/map/stone.png", "obstacle": true},
   {"id": "wall", "src": "/img/map/wall.png", "obstacle": true},
   {"id": "bgm", "src": "/sound/bgm_normal.mp3", "type": "sound"},
-  {"id": "hammer", "src": "/sound/hammer.wav", "type": "sound"}
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"}
 ]

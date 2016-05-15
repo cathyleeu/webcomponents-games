@@ -4,8 +4,8 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var fs = require('fs');
 var child = require('child_process');
-var am = require('appcache-manifest');
 var glob = require('glob');
+var path = require('path');
 
 gulp.task('less', function () {
   return gulp.src('public/css/**/*.less')
@@ -38,35 +38,104 @@ gulp.task('makeUrl', function(cb) {
 });
 
 gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
-  var offline = JSON.parse(fs.readFileSync('public/maze/offline.json'))
-  .map(function(obj) {
-    var href = obj.href;
-    if(href.indexOf("#!") >= 0) {
-      href = href.slice(href.indexOf("#!") + 2);
-    }
-    return 'public/maze/' + href.split('/').slice(0, -1).join('/') + '/*.json';
+  // cache 디렉토리가 없는 경우 생성해준다
+  var cacheDirPath = path.join("public", "cache");
+  try {
+    fs.accessSync(cacheDirPath, fs.F_OK);
+  } catch (e) {
+    fs.mkdirSync(cacheDirPath);
+  }
+
+  // js와 css파일 리스트를 생성 및 cache-postfile.txt 로딩
+  var jsList = fs.readdirSync(path.join("public", "js"))
+      .map(function(item) {
+        return "/" + path.join("js", item);
+      }),
+      cssList = fs.readdirSync(path.join("public", "css"))
+      .filter(function(item) {
+        return item.slice(item.lastIndexOf(".")) == ".css";
+      })
+      .map(function(item) {
+        return "/" + path.join("css", item);
+      }),
+      postfile = fs.readFileSync('cache-postfile.txt');
+
+  // 로그인 및 공통 이미지 파일들 로딩
+  var loginImgs = fs.readdirSync("public/img/login")
+      .map(function(item) {
+        return "/img/login/" + item;
+      });
+  var commonImgs = fs.readdirSync("public/img")
+      .filter(function(item) {
+        var stat = fs.statSync("public/img/" + item);
+        return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
+      })
+      .map(function(item) {
+        return "/img/" + item;
+      });
+
+  // 각 원별 cache 생성
+  var url = JSON.parse(fs.readFileSync('public/login/url.json')),
+      books = JSON.parse(fs.readFileSync('public/login/books.json'));
+  url.forEach(function(school, index) {
+    var bookArr = Object.keys(school.classes),
+        manifests = [],
+        jsons = [],
+        cache = [],
+        cachePath = path.join(cacheDirPath, school.code + ".manifest"),
+        output = "CACHE MANIFEST\n";
+    bookArr.forEach(function(bookName) {
+      books[bookName].forEach(function(contentInfo) {
+        var maniPath = contentInfo[1];
+        if(maniPath.indexOf("#!") >= 0) {
+          maniPath = maniPath.slice(maniPath.indexOf("#!") + 2);
+        }
+        maniPath = maniPath.slice(0, maniPath.lastIndexOf("/"));
+        if(maniPath && manifests.indexOf(maniPath) < 0) {
+          manifests.push(maniPath);
+        }
+      });
+    });
+    manifests.forEach(function(maniPath) {
+      var manifest = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, "manifest.json")));
+      manifest.forEach(function(item) {
+        // bgm을 제외한 파일을 중복 없이 추가
+        if(item.id != "bgm" && cache.indexOf(item.src) < 0) {
+          cache.push(item.src);
+        }
+      });
+
+      jsons = jsons.concat(fs.readdirSync(path.join("public/maze", maniPath))
+      .map(function(item) {
+        return path.join("/maze", maniPath, item);
+      }));
+    });
+
+    // timestamp
+    output += '#' + new Date().toISOString() + '\n';
+
+    output += "# jsons\n";
+    output += jsons.join("\n") + "\n";
+
+    output += "# files in manifest\n";
+    output += cache.join("\n") + "\n";
+
+    output += "# common images\n";
+    output += loginImgs.join("\n") + "\n";
+    output += commonImgs.join("\n") + "\n";
+
+    output += "# js and css\n";
+    output += jsList.join("\n") + "\n";
+    output += cssList.join("\n") + "\n";
+
+    output += "# postfile\n";
+    output += postfile;
+
+    output += "NETWORK:\n*\n";
+
+    fs.writeFileSync(cachePath, output);
   });
-  var maze = glob.sync('{' + offline.join(',') + '}');
-  var readable = am.generate([
-    'public/css/**/*.css',
-    'public/img/**/*.{png,jpg,jpeg,gif}',
-    'public/js/**/*.js',
-    // 'public/sound/**/*.{mp3,wav}'
-  ].concat(maze), {});
-  var text = '';
-  readable.on('readable', function() {
-    var chunk;
-    while (null !== (chunk = readable.read())) {
-      text += chunk;
-    }
-  });
-  readable.on('end', function() {
-    text += '#' + new Date().toISOString() + '\n';
-    text += fs.readFileSync('cache-postfile.txt') + '\n';
-    text += 'NETWORK:\n*\n';
-    text += 'FALLBACK:\n/list /offline';
-    fs.writeFile('public/cache.manifest', text, cb);
-  });
+  cb();
 });
 
 gulp.task('server', ['appcache'], function() {
