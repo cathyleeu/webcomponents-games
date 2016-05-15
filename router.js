@@ -53,8 +53,14 @@ public.get('/code', function *(next) {
 });
 
 public.get('/login', function *(next) {
+  var date = new Date(),
+      year = date.getFullYear(),
+      month = date.getMonth() + 1,
+      yearmonth = '' + year + (month < 10 ? '0' : '') + month;
+
   yield this.render('login', {
-    title: "키즈코딩 로그인"
+    title: "키즈코딩 로그인",
+    yearmonth: yearmonth
   });
 });
 
@@ -71,8 +77,14 @@ public.get('/school', function *(next) {
 });
 
 public.get('/info', function *(next) {
+  var date = new Date(),
+      year = date.getFullYear(),
+      month = date.getMonth() + 1,
+      yearmonth = '' + year + (month < 10 ? '0' : '') + month;
+
   yield this.render('info', {
-    title: "키즈코딩 로그인 정보"
+    title: "키즈코딩 로그인 정보",
+    yearmonth: yearmonth
   });
 });
 

@@ -104,12 +104,9 @@
       var str = $("#template").html(),
           template = ejs.compile(str),
           className = decodeURI(location.hash).split("-")[1],
-          date = new Date(),
-          year = date.getFullYear(),
-          month = date.getMonth() + 1,
-          yearmonth = decodeURI(location.hash).split("-")[2] || '' + year + (month < 10 ? '0' : '') + month,
+          yearmonth = "<%= yearmonth %>",
           imgs = getImgs(yearmonth, info.code, className);
-      month = Number(yearmonth.slice(4, 6));
+      month = new Date().getMonth() + 1;
       var row = [];
       names.forEach(function(nameArr, index) {
         row.push(template({
