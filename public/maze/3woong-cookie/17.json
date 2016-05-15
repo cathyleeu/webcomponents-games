@@ -28,6 +28,6 @@
   }],
   "success": [{
     "msg": "성공! 모든 사냥꾼을 이겼어요~ ",
-    "link": "/maze#3woong-item/1"
+    "link": "3woong-item/1"
   }]
 }

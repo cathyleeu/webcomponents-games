@@ -43,6 +43,6 @@
   }],
   "success": [{
     "msg": "이제 카트를 끌고 집에 갈 수 있어!",
-    "link": "/maze#democlass/14"
+    "link": "democlass/14"
   }]
 }
