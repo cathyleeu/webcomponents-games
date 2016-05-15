@@ -78,9 +78,13 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
   var url = JSON.parse(fs.readFileSync('public/login/url.json')),
       books = JSON.parse(fs.readFileSync('public/login/books.json'));
   url.forEach(function(school, index) {
+    if(index > 0) {
+      return;
+    }
     var bookArr = Object.keys(school.classes),
         manifests = [],
         jsons = [],
+        imgs = [],
         cache = [],
         cachePath = path.join(cacheDirPath, school.code + ".manifest"),
         output = "CACHE MANIFEST\n";
@@ -107,8 +111,36 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
 
       jsons = jsons.concat(fs.readdirSync(path.join("public/maze", maniPath))
       .map(function(item) {
+        if(item != "manifest.json") {
+          var maze = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, item)));
+          // tutorial에 들어있는 이미지 추가
+          if(maze.tutorial) {
+            maze.tutorial.forEach(function(item) {
+              if(item.img && imgs.indexOf(item.img) < 0) {
+                imgs.push(item.img);
+              }
+            });
+          }
+          // extra안에 들어있는 tutorial에 들어있는 이미지 추가
+          if(maze.extra) {
+            maze.extra.forEach(function(extra) {
+              if(extra.tutorial) {
+                extra.tutorial.forEach(function(item) {
+                  if(item.img && imgs.indexOf(item.img) < 0) {
+                    imgs.push(item.img);
+                  }
+                });
+              }
+            });
+          }
+        }
         return path.join("/maze", maniPath, item);
       }));
+    });
+
+    // imgs에 속한 이미지중 cache에 속한 이미지는 제거
+    imgs = imgs.filter(function(item) {
+      return cache.indexOf(item) < 0;
     });
 
     // timestamp
@@ -119,6 +151,9 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
 
     output += "# files in manifest\n";
     output += cache.join("\n") + "\n";
+
+    output += "# images in jsons\n";
+    output += imgs.join("\n") + "\n";
 
     output += "# common images\n";
     output += loginImgs.join("\n") + "\n";
