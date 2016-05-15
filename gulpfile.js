@@ -78,9 +78,6 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
   var url = JSON.parse(fs.readFileSync('public/login/url.json')),
       books = JSON.parse(fs.readFileSync('public/login/books.json'));
   url.forEach(function(school, index) {
-    if(index > 0) {
-      return;
-    }
     var bookArr = Object.keys(school.classes),
         manifests = [],
         jsons = [],
