@@ -37,6 +37,6 @@
   }],
   "success": [{
     "msg": "성공! 참 잘했어요~",
-    "link": "/maze/demonstration5-clover/1"
+    "link": "demonstration5-clover/1"
   }]
 }

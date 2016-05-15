@@ -1,18 +1,18 @@
 [
   {
-    "href": "maze/alldirections/index",
+    "href": "maze#!alldirections/index",
     "title": "개미왕자 : 이동블럭 연습"
   }, {
-    "href": "maze/story08/index",
+    "href": "maze#!story08/index",
     "title": "올챙이의 모험"
   }, {
-    "href": "maze/5-lotus/1",
+    "href": "maze#!5-lotus/1",
     "title": "연잎"
   }, {
-    "href": "maze/5-flower/1",
+    "href": "maze#!5-flower/1",
     "title": "꽃"
   }, {
-    "href": "maze/5-clover/1",
+    "href": "maze#!5-clover/1",
     "title": "네잎클로버"
   }
 ]

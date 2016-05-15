@@ -74,127 +74,127 @@
   "extra": [{
     "x": 4,
     "y": 20,
-    "link": "/maze/story02/1"
+    "link": "story02/1"
   },{
     "x": 4,
     "y": 18,
-    "link": "/maze/story02/2"
+    "link": "story02/2"
   },{
     "x": 4,
     "y": 16,
-    "link": "/maze/story02/3"
+    "link": "story02/3"
   },{
     "x": 4,
     "y": 14,
-    "link": "/maze/story02/4"
+    "link": "story02/4"
   },{
     "x": 4,
     "y": 10,
-    "link": "/maze/story02/5"
+    "link": "story02/5"
   },{
     "x": 4,
     "y": 7,
-    "link": "/maze/story02/6"
+    "link": "story02/6"
   },{
     "x": 4,
     "y": 4,
-    "link": "/maze/story02/7"
+    "link": "story02/7"
   },{
     "x": 10,
     "y": 21,
-    "link": "/maze/story02/10"
+    "link": "story02/10"
   },{
     "x": 10,
     "y": 19,
-    "link": "/maze/story02/11"
+    "link": "story02/11"
   },{
     "x": 10,
     "y": 17,
-    "link": "/maze/story02/12"
+    "link": "story02/12"
   },{
     "x": 10,
     "y": 15,
-    "link": "/maze/story02/13"
+    "link": "story02/13"
   },{
     "x": 10,
     "y": 13,
-    "link": "/maze/story02/14"
+    "link": "story02/14"
   },{
     "x": 10,
     "y": 10,
-    "link": "/maze/story02/15"
+    "link": "story02/15"
   },{
     "x": 10,
     "y": 8,
-    "link": "/maze/story02/16"
+    "link": "story02/16"
   },{
     "x": 10,
     "y": 6,
-    "link": "/maze/story02/17"
+    "link": "story02/17"
   },{
     "x": 10,
     "y": 4,
-    "link": "/maze/story02/18"
+    "link": "story02/18"
   },{
     "x": 16,
     "y": 21,
-    "link": "/maze/story02/30"
+    "link": "story02/30"
   },{
     "x": 16,
     "y": 20,
-    "link": "/maze/story02/31"
+    "link": "story02/31"
   },{
     "x": 16,
     "y": 19,
-    "link": "/maze/story02/32"
+    "link": "story02/32"
   },{
     "x": 16,
     "y": 18,
-    "link": "/maze/story02/33"
+    "link": "story02/33"
   },{
     "x": 16,
     "y": 16,
-    "link": "/maze/story02/34"
+    "link": "story02/34"
   },{
     "x": 16,
     "y": 15,
-    "link": "/maze/story02/35"
+    "link": "story02/35"
   },{
     "x": 16,
     "y": 14,
-    "link": "/maze/story02/36"
+    "link": "story02/36"
   },{
     "x": 16,
     "y": 13,
-    "link": "/maze/story02/37"
+    "link": "story02/37"
   },{
     "x": 16,
     "y": 10,
-    "link": "/maze/story02/38"
+    "link": "story02/38"
   },{
     "x": 16,
     "y": 9,
-    "link": "/maze/story02/39"
+    "link": "story02/39"
   },{
     "x": 16,
     "y": 8,
-    "link": "/maze/story02/40"
+    "link": "story02/40"
   },{
     "x": 16,
     "y": 7,
-    "link": "/maze/story02/41"
+    "link": "story02/41"
   },{
     "x": 16,
     "y": 5,
-    "link": "/maze/story02/42"
+    "link": "story02/42"
   },{
     "x": 16,
     "y": 4,
-    "link": "/maze/story02/43"
+    "link": "story02/43"
   },{
     "x": 16,
     "y": 3,
-    "link": "/maze/story02/44"
+    "link": "story02/44"
   },   {
     "x": 8,
     "y": 26,

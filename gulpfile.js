@@ -40,14 +40,13 @@ gulp.task('makeUrl', function(cb) {
 gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
   var offline = JSON.parse(fs.readFileSync('public/maze/offline.json'))
   .map(function(obj) {
-    return 'public/' + obj.href.split('/').slice(0, -1).join('/') + '/*.json';
+    var href = obj.href;
+    if(href.indexOf("#!") >= 0) {
+      href = href.slice(href.indexOf("#!") + 2);
+    }
+    return 'public/maze/' + href.split('/').slice(0, -1).join('/') + '/*.json';
   });
   var maze = glob.sync('{' + offline.join(',') + '}');
-  var pages = maze.filter(function(val) {
-    return val.slice(-13) !== 'manifest.json';
-  }).map(function(val) {
-    return val.slice(6, -5);
-  });
   var readable = am.generate([
     'public/css/**/*.css',
     'public/img/**/*.{png,jpg,jpeg,gif}',
@@ -63,7 +62,6 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
   });
   readable.on('end', function() {
     text += '#' + new Date().toISOString() + '\n';
-    text += pages.join('\n') + '\n';
     text += fs.readFileSync('cache-postfile.txt') + '\n';
     text += 'NETWORK:\n*\n';
     text += 'FALLBACK:\n/list /offline';

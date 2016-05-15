@@ -31,47 +31,47 @@
   "extra": [{
     "x": 21,
     "y": 3,
-    "link": "/maze/story00/1"
+    "link": "story00/1"
   }, {
     "x": 17,
     "y": 4,
-    "link": "/maze/story00/2"
+    "link": "story00/2"
   }, {
     "x": 17,
     "y": 6,
-    "link": "/maze/story00/3"
+    "link": "story00/3"
   }, {
     "x": 21,
     "y": 6,
-    "link": "/maze/story00/4"
+    "link": "story00/4"
   }, {
     "x": 21,
     "y": 8,
-    "link": "/maze/story00/5"
+    "link": "story00/5"
   }, {
     "x": 14,
     "y": 8,
-    "link": "/maze/story00/6"
+    "link": "story00/6"
   }, {
     "x": 11,
     "y": 7,
-    "link": "/maze/story00/7"
+    "link": "story00/7"
   }, {
     "x": 13,
     "y": 4,
-    "link": "/maze/story00/8"
+    "link": "story00/8"
   }, {
     "x": 12,
     "y": 2,
-    "link": "/maze/story00/9"
+    "link": "story00/9"
   }, {
     "x": 10,
     "y": 2,
-    "link": "/maze/story00/10"
+    "link": "story00/10"
   }, {
     "x": 7,
     "y": 4,
-    "link": "/maze/story00/11"
+    "link": "story00/11"
   }
 ],
   "tutorial": [{

@@ -16,35 +16,35 @@
   "extra": [{
     "x": 10,
     "y": 3,
-    "link": "/maze/4jangoon-mart/1"
+    "link": "/maze#4jangoon-mart/1"
   },{
     "x": 11,
     "y": 5,
-    "link": "/maze/4jangoon-mart/2"
+    "link": "/maze#4jangoon-mart/2"
   },{
     "x": 13,
     "y": 4,
-    "link": "/maze/4jangoon-mart/3"
+    "link": "/maze#4jangoon-mart/3"
   },{
     "x": 13,
     "y": 1,
-    "link": "/maze/4jangoon-mart/4"
+    "link": "/maze#4jangoon-mart/4"
   },{
     "x": 16,
     "y": 2,
-    "link": "/maze/4jangoon-mart/5"
+    "link": "/maze#4jangoon-mart/5"
   },{
     "x": 18,
     "y": 4,
-    "link": "/maze/4jangoon-mart/6"
+    "link": "/maze#4jangoon-mart/6"
   },{
     "x": 20,
     "y": 5,
-    "link": "/maze/4jangoon-mart/7"
+    "link": "/maze#4jangoon-mart/7"
   },{
     "x": 21,
     "y": 4,
-    "link": "/maze/4jangoon-mart/8"
+    "link": "/maze#4jangoon-mart/8"
   },{
     "x": 21,
     "y": 3,
@@ -58,7 +58,7 @@
     "x": 22,
     "y": 3,
     "img":"star",
-    "link": "/maze/4jangoon-house-r/index"
+    "link": "/maze#4jangoon-house-r/index"
   }],
   "tutorial": [{
     "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",

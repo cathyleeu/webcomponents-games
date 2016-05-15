@@ -19,51 +19,51 @@
   "extra": [{
     "x": 3,
     "y": 2,
-    "link": "/maze/story07/1"
+    "link": "story07/1"
   },{
     "x": 10,
     "y": 2,
-    "link": "/maze/story07/2"
+    "link": "story07/2"
   },{
     "x": 12,
     "y": 3,
-    "link": "/maze/story07/3"
+    "link": "story07/3"
   },{
     "x": 7,
     "y": 4,
-    "link": "/maze/story07/4"
+    "link": "story07/4"
   },{
     "x": 3,
     "y": 5,
-    "link": "/maze/story07/5"
+    "link": "story07/5"
   },{
     "x": 16,
     "y": 5,
-    "link": "/maze/story07/6"
+    "link": "story07/6"
   },{
     "x": 8,
     "y": 6,
-    "link": "/maze/story07/7"
+    "link": "story07/7"
   },{
     "x": 21,
     "y": 6,
-    "link": "/maze/story07/8"
+    "link": "story07/8"
   },{
     "x": 14,
     "y": 7,
-    "link": "/maze/story07/9"
+    "link": "story07/9"
   },{
     "x": 4,
     "y": 8,
-    "link": "/maze/story07/10"
+    "link": "story07/10"
   },{
     "x": 20,
     "y": 8,
-    "link": "/maze/story07/11"
+    "link": "story07/11"
   },{
     "x": 17,
     "y": 2,
-    "link": "/maze/story07/12",
+    "link": "story07/12",
     "min_score": 77
   }],
   "tutorial": [{

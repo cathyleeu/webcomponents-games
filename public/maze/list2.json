@@ -1,33 +1,33 @@
 [
   {
-    "href": "maze/story05/index",
+    "href": "maze#!story05/index",
     "title": "[Drag & Drop] - coding 시작하기"
   }, {
-    "href": "maze/story05/index2",
+    "href": "maze#!story05/index2",
     "title": "[event] - trap(함정)"
   }, {
-    "href": "maze/story05/index3",
+    "href": "maze#!story05/index3",
     "title": "[item] - compare(비교하기)"
   }, {
-    "href": "maze/story06/index",
+    "href": "maze#!story06/index",
     "title": "별을 따 공주님에게 고백하기!"
   }, {
-    "href": "maze/story07/index",
+    "href": "maze#!story07/index",
     "title": "Winter"
   },{
-  "href": "maze/story04/index",
+  "href": "maze#!story04/index",
   "title": "구구단 놀이~"
 },{
-  "href": "maze/story03/index",
+  "href": "maze#!story03/index",
   "title": "숫자 따라가기"
 },{
-  "href": "maze/story02/index",
+  "href": "maze#!story02/index",
   "title": "덧셈 뺄셈"
 },{
-  "href": "maze/story01/index",
+  "href": "maze#!story01/index",
   "title": "공주와 도망가기!"
 }, {
-  "href": "maze/story00/index",
+  "href": "maze#!story00/index",
   "title": "공주 구하기"
 }, {
   "href": "click",
@@ -36,54 +36,54 @@
   "href": "classify",
   "title": "그래프"
 }, {
-  "href": "maze/basic/1",
+  "href": "maze#!basic/1",
   "title": "생쥐: 치즈"
 }, {
-  "href": "maze/trap/1",
+  "href": "maze#!trap/1",
   "title": "생쥐: 쥐덫"
 }, {
-  "href": "maze/action/1",
+  "href": "maze#!action/1",
   "title": "무당벌레: 가위바위보"
 }, {
-  "href": "maze/item/1",
+  "href": "maze#!item/1",
   "title": "무당벌레: 아이템"
 }, {
-  "href": "maze/rotation/1",
+  "href": "maze#!rotation/1",
   "title": "개미: 회전하기"
 }, {
-  "href": "maze/repeat/1",
+  "href": "maze#!repeat/1",
   "title": "개미: 반복"
 }, {
-  "href": "maze/rore/1",
+  "href": "maze#!rore/1",
   "title": "개미: 회전, 반복"
 }, {
-  "href": "maze/itrore/1",
+  "href": "maze#!itrore/1",
   "title": "개미: 아이템, 회전, 반복"
 }, {
-  "href": "maze/figure/1",
+  "href": "maze#!figure/1",
   "title": "개미: 회전, 반복을 이용하여 도형만들기"
 }, {
-  "href": "maze/tutorial/1",
+  "href": "maze#!tutorial/1",
   "title": "연습하기: 회전, 반복, 아이템"
 }, {
-  "href": "maze/s_position_re/1",
+  "href": "maze#!s_position_re/1",
   "title": "개미: 이중반복"
 }, {
-  "href": "maze/condition/1",
+  "href": "maze#!condition/1",
   "title": "조건문 : 만약 앞에 길이 있을 때"
 }, {
-  "href": "maze/condition/11",
+  "href": "maze#!condition/11",
   "title" : "조건문 : 만약 왼쪽or 오른쪽에 길이 있을 때"
 }, {
-  "href": "maze/jump/1",
+  "href": "maze#!jump/1",
   "title" : "점프"
 }, {
-  "href": "maze/jump/11",
+  "href": "maze#!jump/11",
   "title" : "점프2"
 }, {
-  "href": "maze/team_match/1",
+  "href": "maze#!team_match/1",
   "title" : "팀대결"
 }, {
-  "href": "maze/maze_hard/1",
+  "href": "maze#!maze_hard/1",
   "title" : "미로찾기 고난이도"
 }]

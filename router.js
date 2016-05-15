@@ -113,27 +113,9 @@ public.get('/dragndrop', function *(next) {
   });
 });
 
-public.get('/maze/:type', function *(next) {
+public.get('/maze', function *(next) {
   yield this.render('maze', {
-    title: "키즈코딩",
-    type: this.params.type
-  });
-});
-
-public.get('/maze/:type/:step', function *(next) {
-  yield this.render('maze', {
-    title: "키즈코딩",
-    type: this.params.type,
-    step: this.params.step
-  });
-});
-
-public.get('/maze/:category/:type/:step', function *(next) {
-  yield this.render('maze', {
-    title: "키즈코딩",
-    category: this.params.category,
-    type: this.params.type,
-    step: this.params.step
+    title: "키즈코딩"
   });
 });
 

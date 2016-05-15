@@ -1,8 +1,6 @@
-KidsCoding = function(loader, mazeInfo, run, tileFactory) {
+KidsCoding = function() {
   this.q_idx = 0;
   this.queue = [];
-  this.tileFactory = tileFactory;
-  this.Actions = new Actions(this, loader, mazeInfo, run);
   this.workspace = null;
   this.createXml = function(blocks) {
     if(blocks.length == 0) {
@@ -26,6 +24,10 @@ KidsCoding = function(loader, mazeInfo, run, tileFactory) {
 };
 KidsCoding.prototype = {
 
+  init: function(loader, mazeInfo, run, tileFactory) {
+    this.tileFactory = tileFactory;
+    this.Actions = new Actions(this, loader, mazeInfo, run);
+  },
   initBlockly: function(toolbox, workspace) {
     var _this = this;
     $.each(Blocks, function(name, options) {
@@ -58,6 +60,7 @@ KidsCoding.prototype = {
   	var toolbox = toolbox.map(function(i,j) {
       return '<block type="' + i + '"></block>';
     });
+    document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'),
         {toolbox: '<xml>' + toolbox + '</xml>'});
     if(!workspace) {

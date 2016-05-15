@@ -31,111 +31,111 @@
   "extra": [{
     "x": 21,
     "y": 2,
-    "link": "/maze/alldirections/1"
+    "link": "alldirections/1"
   }, {
     "x": 21,
     "y": 3,
-    "link": "/maze/alldirections/2"
+    "link": "alldirections/2"
   }, {
     "x": 20,
     "y": 4,
-    "link": "/maze/alldirections/3"
+    "link": "alldirections/3"
   }, {
     "x": 17,
     "y": 4,
-    "link": "/maze/alldirections/4"
+    "link": "alldirections/4"
   }, {
     "x": 16,
     "y": 5,
-    "link": "/maze/alldirections/5"
+    "link": "alldirections/5"
   }, {
     "x": 17,
     "y": 6,
-    "link": "/maze/alldirections/6"
+    "link": "alldirections/6"
   }, {
     "x": 21,
     "y": 6,
-    "link": "/maze/alldirections/7"
+    "link": "alldirections/7"
   }, {
     "x": 22,
     "y": 7,
-    "link": "/maze/alldirections/8"
+    "link": "alldirections/8"
   }, {
     "x": 21,
     "y": 8,
-    "link": "/maze/alldirections/9"
+    "link": "alldirections/9"
   }, {
     "x": 18,
     "y": 8,
-    "link": "/maze/alldirections/10"
+    "link": "alldirections/10"
   }, {
     "x": 15,
     "y": 8,
-    "link": "/maze/alldirections/11"
+    "link": "alldirections/11"
   }, {
     "x": 14,
     "y": 8,
-    "link": "/maze/alldirections/12"
+    "link": "alldirections/12"
   }, {
     "x": 11,
     "y": 7,
-    "link": "/maze/alldirections/13"
+    "link": "alldirections/13"
   }, {
     "x": 11,
     "y": 6,
-    "link": "/maze/alldirections/14"
+    "link": "alldirections/14"
   }, {
     "x": 13,
     "y": 4,
-    "link": "/maze/alldirections/15"
+    "link": "alldirections/15"
   }, {
     "x": 14,
     "y": 2,
-    "link": "/maze/alldirections/16"
+    "link": "alldirections/16"
   }, {
     "x": 11,
     "y": 1,
-    "link": "/maze/alldirections/17"
+    "link": "alldirections/17"
   }, {
     "x": 10,
     "y": 2,
-    "link": "/maze/alldirections/18"
+    "link": "alldirections/18"
   }, {
     "x": 9,
     "y": 4,
-    "link": "/maze/alldirections/19"
+    "link": "alldirections/19"
   }, {
     "x": 5,
     "y": 5,
-    "link": "/maze/alldirections/20"
+    "link": "alldirections/20"
   }, {
     "x": 7,
     "y": 4,
-    "link": "/maze/alldirections/21"
+    "link": "alldirections/21"
   }, {
     "x": 4,
     "y": 1,
-    "link": "/maze/alldirections/22"
+    "link": "alldirections/22"
   }, {
     "x": 1,
     "y": 1,
-    "link": "/maze/alldirections/23"
+    "link": "alldirections/23"
   }, {
     "x": 3,
     "y": 3,
-    "link": "/maze/alldirections/24"
+    "link": "alldirections/24"
   }, {
     "x": 1,
     "y": 5,
-    "link": "/maze/alldirections/25"
+    "link": "alldirections/25"
   }, {
     "x": 3,
     "y": 7,
-    "link": "/maze/alldirections/26"
+    "link": "alldirections/26"
   }, {
     "x": 5,
     "y": 8,
-    "link": "/maze/alldirections/27"
+    "link": "alldirections/27"
   }
 ],
   "tutorial": [{

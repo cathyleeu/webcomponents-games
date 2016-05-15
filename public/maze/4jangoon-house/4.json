@@ -31,6 +31,6 @@
   }],
   "success": [{
     "msg": "성공! 장군이가 집으로 찾아갔어요~",
-    "link": "/maze/4jangoon-house/5"
+    "link": "/maze#4jangoon-house/5"
   }]
 }
