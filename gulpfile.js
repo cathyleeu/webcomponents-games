@@ -48,6 +48,9 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
 
   // js와 css파일 리스트를 생성 및 cache-postfile.txt 로딩
   var jsList = fs.readdirSync(path.join("public", "js"))
+      .filter(function(item) {
+        return item != ".DS_Store" && item != "Thumbs.db";
+      })
       .map(function(item) {
         return "/" + path.join("js", item);
       }),
@@ -60,8 +63,11 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
       }),
       postfile = fs.readFileSync('cache-postfile.txt');
 
-  // 로그인 및 공통 이미지 파일들 로딩
+  // 로그인 및 공통 이미지, 블록클리 리소스 파일들 로딩
   var loginImgs = fs.readdirSync("public/img/login")
+      .filter(function(item) {
+        return item != ".DS_Store" && item != "Thumbs.db";
+      })
       .map(function(item) {
         return "/img/login/" + item;
       });
@@ -72,6 +78,13 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
       })
       .map(function(item) {
         return "/img/" + item;
+      });
+  var blocklyImgs = fs.readdirSync("public/components/GoogleBlockly/media")
+      .filter(function(item) {
+        return item != ".DS_Store" && item != "Thumbs.db";
+      })
+      .map(function(item) {
+        return "/components/GoogleBlockly/media/" + item;
       });
 
   // 각 원별 cache 생성
@@ -152,9 +165,10 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
     output += "# images in jsons\n";
     output += imgs.join("\n") + "\n";
 
-    output += "# common images\n";
+    output += "# common resouces\n";
     output += loginImgs.join("\n") + "\n";
     output += commonImgs.join("\n") + "\n";
+    output += blocklyImgs.join("\n") + "\n";
 
     output += "# js and css\n";
     output += jsList.join("\n") + "\n";

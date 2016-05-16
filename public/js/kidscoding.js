@@ -61,8 +61,10 @@ KidsCoding.prototype = {
       return '<block type="' + i + '"></block>';
     });
     document.getElementById('blocklyDiv').innerHTML = "";
-  	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'),
-        {toolbox: '<xml>' + toolbox + '</xml>'});
+  	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
+      toolbox: '<xml>' + toolbox + '</xml>',
+      media: '/components/GoogleBlockly/media/'
+    });
     if(!workspace) {
       workspace = [{
         "type": "start",

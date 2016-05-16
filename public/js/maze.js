@@ -46,6 +46,7 @@ page('*', function(ctx, next) {
       }
       return result;
     };
+    var noBgm = false;
 
     // loader for images
     image_loader.loadManifest(manifest.filter(function(item) {
@@ -64,13 +65,18 @@ page('*', function(ctx, next) {
       return item.type == "sound";
     }));
     sound_loader.on("complete", function() {
-      if(sound_loader.getItem("bgm")) {
+      if(!noBgm && sound_loader.getItem("bgm")) {
         createjs.Sound.play("bgm", {loop: -1});
         $("#playstop").removeClass("hidden");
       }
     });
+    sound_loader.on("error", function(e) {
+      // 오프라인 모드에서 bgm 없을 경우 처리
+      if(e.data.id == "bgm") {
+        noBgm = true;
+      }
+    });
     sound_loader.getResult = newGetResult;
-    createjs.Sound.stop("bgm");
   }).fail(function(jqXHR, msg, err) {
     throw( "[" + msg + " - " + manifest_url + "]\n" + err.name + ": " + err.message);
   });
@@ -116,9 +122,13 @@ function init() {
   if(maze.type != "world" && maze.type != "game") {
     $("#virtualKeypad").hide();
     $("#blocklyDiv").show();
+    $("#scoreBox").hide();
+    $("#runCode").show();
   } else {
     $("#virtualKeypad").show();
     $("#blocklyDiv").hide();
+    $("#scoreBox").show();
+    $("#runCode").hide();
   }
   handle_resize();
   drawMaze();
@@ -127,11 +137,6 @@ function init() {
 
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);
-    $("#scoreBox").show();
-    $("#runCode").hide();
-  } else {
-    $("#scoreBox").hide();
-    $("#runCode").show();
   }
 
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
