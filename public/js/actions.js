@@ -392,6 +392,7 @@ Actions.prototype.useItem = function(block, callback) {
         itemCount = _this.getItemCount(food);
         _this.setItemCount(food, itemCount + 1);
         _this.canvas.stage.update();
+        createjs.Sound.play("success");
         setTimeout(function() {
           callback();
         }, 500);
@@ -405,6 +406,7 @@ Actions.prototype.useItem = function(block, callback) {
       itemBitmap.x = food.x;
       itemBitmap.y = food.y;
       this.canvas.stage.update();
+      createjs.Sound.play("success");
       setTimeout(function() {
         callback();
       }, 500);
