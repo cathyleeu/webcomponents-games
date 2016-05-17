@@ -162,6 +162,11 @@
       ["장군이의 집찾기 - 반복", "/maze#!4jangoon-house-r/index"],
       ["장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"]
     ],
+    "학원": [
+      ["시범교육", "/maze#!2frog/31"],
+      ["클로즈 베타 1", "/maze#!2frog/1"],
+      ["클로즈 베타 2", "/maze#!story08/index"]
+    ],
     "YBM 데모": [
       ["장군이의 심부름", "/maze#!democlass/1"],
       ["올챙이의 모험", "/maze#!story09/1"],
