@@ -21,6 +21,13 @@ KidsCoding = function() {
     }).join(" ");
     return "<block " + str + "><next>" + this.createXml(blocks.slice(1)) + "</next></block>";
   };
+  var labelInit = Blockly.FieldLabel.prototype.init;
+  Blockly.FieldLabel.prototype.init = function() {
+    // 텍스트 라벨의 위치 조정
+    labelInit.call(this);
+    var y = +this.textElement_.getAttribute("y");
+    this.textElement_.setAttribute("y", y + 5);
+  };
 };
 KidsCoding.prototype = {
 
@@ -54,6 +61,9 @@ KidsCoding.prototype = {
           this.setDeletable(!!options.deletable);
           this.setMovable(!!options.movable);
           this.contextMenu = false;
+          if(options.rgbColor) {
+            this.colour_ = options.rgbColor;
+          }
         }
       };
     });
@@ -65,6 +75,9 @@ KidsCoding.prototype = {
       toolbox: '<xml>' + toolbox + '</xml>',
       media: '/components/GoogleBlockly/media/'
     });
+    // this.workspace.addChangeListener(function(event) {
+    //   debugger
+    // });
     if(!workspace) {
       workspace = [{
         "type": "start",
