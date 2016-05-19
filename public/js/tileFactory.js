@@ -139,161 +139,85 @@ TileFactory.prototype.create = function(tile, x, y) {
     if(info.sprite) {
       var animations = {
         stand_u: 0,
-        walk_u: {
-          frames: [0,1,0,2],
-          speed: 0.25
-        },
-        jump_u: {
-          frames: [3,4,5,6,7,6,5,4,3],
-          speed: 0.5
-        },
+        walk_u: [0,1,0,2],
+        jump_u: [3,4,5,6,7,6,5,4],
         stand_r: 8,
-        walk_r: {
-          frames: [8,9],
-          speed: 0.125
-        },
-        jump_r: {
-          frames: [11,12,13,14,15,14,13,12,11],
-          speed: 0.5
-        },
+        walk_r: [8,9],
+        jump_r: [11,12,13,14,15,14,13,12],
         stand_d: 16,
-        walk_d: {
-          frames: [16,17,16,18],
-          speed: 0.25
-        },
-        jump_d: {
-          frames: [19,20,21,22,23,22,21,20,19],
-          speed: 0.5
-        },
+        walk_d: [16,17,16,18],
+        jump_d: [19,20,21,22,23,22,21,20],
         stand_l: 24,
-        walk_l: {
-          frames: [24,25],
-          speed: 0.125
-        },
-        jump_l: {
-          frames: [27,28,29,30,31,30,29,28,27],
-          speed: 0.5
-        }
+        walk_l: [24,25],
+        jump_l: [27,28,29,30,31,30,29,28]
       };
       if(character.src.indexOf('tadpole') >= 0) {
         animations = {
           stand_u: 0,
-          walk_u: {
-            frames: [0,1,0,2],
-            speed: 0.25
-          },
+          walk_u:[0,1,0,2],
           stand_r: 9,
-          walk_r: {
-            frames: [9,10,9,11],
-            speed: 0.25
-          },
+          walk_r:[9,10,9,11],
           stand_d: 3,
-          walk_d: {
-            frames: [3,4,3,5],
-            speed: 0.25
-          },
+          walk_d:[3,4,3,5],
           stand_l: 6,
-          walk_l: {
-            frames: [6,7,6,8],
-            speed: 0.25
-          }
+          walk_l:[6,7,6,8]
         };
       }
       if(character.src.indexOf('frog') >= 0) {
         animations = {
           stand_u: 0,
-          walk_u: {
-            frames: [0,1,2,1,0],
-            speed: 0.5
-          },
+          walk_u: [0,1,2,1],
           stand_r: 3,
-          walk_r: {
-            frames: [3,4,5,4,3],
-            speed: 0.5
-          },
+          walk_r: [3,4,5,4],
           stand_d: 6,
-          walk_d: {
-            frames: [6,7,8,7,6],
-            speed: 0.5
-          },
+          walk_d: [6,7,8,7],
           stand_l: 9,
-          walk_l: {
-            frames: [9,10,11,10,9],
-            speed: 0.5
-          }
+          walk_l: [9,10,11,10]
         };
       }
       if(character.src.indexOf('woong') >= 0) {
         animations = {
           stand_u: 12,
-          walk_u: {
-            frames: [12,13,14,15,12],
-            speed: 0.5
-          },
+          walk_u: [12,13,14,15],
           stand_r: 8,
-          walk_r: {
-            frames: [8,9,10,11,8],
-            speed: 0.5
-          },
+          walk_r: [8,9,10,11],
           stand_d: 0,
-          walk_d: {
-            frames: [0,1,2,3,0],
-            speed: 0.5
-          },
+          walk_d: [0,1,2,3],
           stand_l: 4,
-          walk_l: {
-            frames: [4,5,6,7,4],
-            speed: 0.5
-          }
+          walk_l: [4,5,6,7]
         };
       }
       if(character.src.indexOf('jangoon') >= 0) {
         animations = {
           stand_u: 9,
-          walk_u: {
-            frames: [9,10,11,9],
-            speed: 0.5
-          },
+          walk_u: [9,10,11],
           stand_r: 3,
-          walk_r: {
-            frames: [3,4,5,3],
-            speed: 0.5
-          },
+          walk_r: [3,4,5],
           stand_d: 0,
-          walk_d: {
-            frames: [0,1,2,0],
-            speed: 0.5
-          },
+          walk_d: [0,1,2],
           stand_l: 6,
-          walk_l: {
-            frames: [6,7,8,6],
-            speed: 0.5
-          }
+          walk_l: [6,7,8]
         };
       }
       if(character.src.indexOf('lana') >= 0) {
         animations = {
           stand_u: 6,
-          walk_u: {
-            frames: [6,7,6],
-            speed: 0.5
-          },
+          walk_u: [6,7,6],
           stand_r: 2,
-          walk_r: {
-            frames: [2,3,2],
-            speed: 0.5
-          },
+          walk_r: [2,3,2],
           stand_d: 0,
-          walk_d: {
-            frames: [0,1,0],
-            speed: 0.5
-          },
+          walk_d: [0,1,0],
           stand_l: 4,
-          walk_l: {
-            frames: [4,5,4],
-            speed: 0.5
-          }
+          walk_l: [4,5,4]
         };
+      }
+      for(var key in animations) {
+        if($.isArray(animations[key])) {
+          animations[key] = {
+            frames: animations[key],
+            speed: animations[key].length / 16.6
+          };
+        }
       }
       bitmap = new createjs.Sprite(
         new createjs.SpriteSheet({
