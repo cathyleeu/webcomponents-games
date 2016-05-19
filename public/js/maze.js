@@ -21,6 +21,9 @@ page('*', function(ctx, next) {
       manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/"),
       message_url;
 
+  // page 이동시 이전에 재생되던 bgm을 멈춤
+  createjs.Sound.stop("bgm");
+
   step = path[path.length - 1];
   d1 = $.Deferred();
   d2 = $.Deferred();
