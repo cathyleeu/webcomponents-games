@@ -163,38 +163,37 @@ Actions.prototype._restoreObject = function(callback) {
 };
 
 Actions.prototype._setFocus = function(center_x, center_y, wait, time, callback) {
-  if(this.view_size != null) {
-    var _this = this;
-    wait = wait || 0;
-    time = time || 0;
-    var stage_tween = createjs.Tween.get(this.canvas.stage),
-        half = parseInt(this.view_size / 2 - 0.5, 10),
-        stage_x = 0,
-        stage_y = 0;
-    if(this.width > this.view_size) {
-      if(center_x < half) {
-        center_x = half;
-      }
-      if(center_x > this.width - half - 2) {
-        center_x = this.width - half - 2;
-      }
-      stage_x = -(center_x - half) * this.tile_size;
+  var _this = this,
+      view_size = this.view_size || this.width;
+  wait = wait || 0;
+  time = time || 0;
+  var stage_tween = createjs.Tween.get(this.canvas.stage),
+      half = parseInt(view_size / 2 - 0.5, 10),
+      stage_x = 0,
+      stage_y = 0;
+  if(this.width > view_size) {
+    if(center_x < half) {
+      center_x = half;
     }
-    if(this.height > this.view_size) {
-      if(center_y < half) {
-        center_y = half;
-      }
-      if(center_y > this.height - half - 2) {
-        center_y = this.height - half - 2;
-      }
-      stage_y = -(center_y - half) * this.tile_size;
+    if(center_x > this.width - half - 2) {
+      center_x = this.width - half - 2;
     }
-    stage_tween.wait(wait)
-          .to({x:stage_x, y:stage_y}, time)
-          .addEventListener("change", function(e) {
-            _this.canvas.stage.update();
-          });
+    stage_x = -(center_x - half) * this.tile_size;
   }
+  if(this.height > view_size) {
+    if(center_y < half) {
+      center_y = half;
+    }
+    if(center_y > this.height - half - 2) {
+      center_y = this.height - half - 2;
+    }
+    stage_y = -(center_y - half) * this.tile_size;
+  }
+  stage_tween.wait(wait)
+        .to({x:stage_x, y:stage_y}, time)
+        .addEventListener("change", function(e) {
+          _this.canvas.stage.update();
+        });
 }
 
 Actions.prototype._bounceCharacter = function(x_next, y_next, callback) {
