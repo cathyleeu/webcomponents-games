@@ -1,0 +1,51 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
+  ],
+  "map": [
+    "d#...#a..",
+    "......P..",
+    "..#...##.",
+    "...R#....",
+    "a##...#..",
+    "....##...",
+    ".#....S%.",
+    ".#P....#.",
+    ".#a#....."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 6,
+    "img":"lotus1"
+  }, {
+    "x": 0,
+    "y": 4,
+    "img":"lotus2"
+  }, {
+    "x": 2,
+    "y": 8,
+    "img":"lotus3"
+  }, {
+    "x": 6,
+    "y": 0,
+    "img":"lotus4"
+  }],
+  "tutorial": [{
+    "msg": "토드는 규칙찾기 놀이를 하고 싶어!",
+    "img": "/img/frog/tode0.png"
+  },{
+    "msg": "빈 연잎 위의 숫자를 찾아가보자!",
+    "img": "/img/5pattern/lotus_pattern_q3_1.png"
+  }]
+}

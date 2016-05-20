@@ -1,0 +1,204 @@
+{
+  "type": "world",
+  "view_size": 10,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".######################.",
+    "###.####.%#..#%#.%###.%#",
+    "#.##%.%..#.e.#..%...%#.#",
+    "#.#%.#..%##..#%..%...#%#",
+    "#%#%....#.#..##.%##.%..#",
+    "#....%#................#",
+    "#%#%##.u...##.%.%...%#%#",
+    "####.....#.#%..#.#%....#",
+    "#......#..##%..%.%..#%.#",
+    ".######################."
+  ],
+  "extra": [{
+    "x": 3,
+    "y": 3,
+    "link": "5lana_gift/1"
+  },{
+    "x": 4,
+    "y": 2,
+    "link": "5lana_gift/2"
+  },{
+    "x": 6,
+    "y": 2,
+    "link": "5lana_gift/3"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "5lana_gift/4"
+  },{
+    "x": 8,
+    "y": 3,
+    "link": "5lana_gift/5"
+  },{
+    "x": 1,
+    "y": 4,
+    "link": "5lana_gift/6"
+  },{
+    "x": 3,
+    "y": 4,
+    "link": "5lana_gift/7"
+  },{
+    "x": 1,
+    "y": 6,
+    "link": "5lana_gift/8"
+  },{
+    "x": 3,
+    "y": 6,
+    "link": "5lana_gift/9"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "5lana_gift/10"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "5lana_gift/11"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "5lana_gift/12"
+  },{
+    "x": 20,
+    "y": 2,
+    "link": "5lana_gift/13"
+  },{
+    "x": 22,
+    "y": 1,
+    "link": "5lana_gift/14"
+  },{
+    "x": 22,
+    "y": 3,
+    "link": "5lana_gift/15"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "5lana_gift/16"
+  },{
+    "x": 17,
+    "y": 1,
+    "link": "5lana_gift/17"
+  },{
+    "x": 14,
+    "y": 3,
+    "link": "5lana_gift/18"
+  },{
+    "x": 16,
+    "y": 4,
+    "link": "5lana_gift/19"
+  },{
+    "x": 20,
+    "y": 4,
+    "link": "5lana_gift/20"
+  },{
+    "x": 16,
+    "y": 6,
+    "link": "5lana_gift/21"
+  },{
+    "x": 18,
+    "y": 7,
+    "link": "5lana_gift/22"
+  },{
+    "x": 17,
+    "y": 8,
+    "link": "5lana_gift/23"
+  },{
+    "x": 22,
+    "y": 6,
+    "link": "5lana_gift/24"
+  },{
+    "x": 21,
+    "y": 8,
+    "link": "5lana_gift/25"
+  },{
+    "x": 14,
+    "y": 6,
+    "link": "5lana_gift/26"
+  },{
+    "x": 12,
+    "y": 7,
+    "link": "5lana_gift/27"
+  },{
+    "x": 12,
+    "y": 8,
+    "link": "5lana_gift/28"
+  },{
+    "x": 15,
+    "y": 8,
+    "link": "5lana_gift/29"
+  },{
+    "x": 20,
+    "y": 6,
+    "link": "5lana_gift/30"
+  },{
+    "x": 11,
+    "y": 2,
+    "img": "tode",
+    "link": "5lana_gift/31",
+    "min_score": 36
+  },  {
+    "x": 7,
+    "y": 8,
+    "img": "question",
+    "obstacle": false,
+    "tutorial": [
+       {
+      "msg": "빨간색 글자 표지판 : 선물상자 3개를 얻을 수 있습니다. 매우 어렵습니다.",
+      "img": "/img/guide/hard.png"
+    }, {
+      "msg": "노란색 글자 표지판 : 선물상자 2개를 얻을 수 있습니다.",
+      "img": "/img/guide/normal.png"
+    }, {
+      "msg": "초록색 글자 표지판 : 선물상자 1개를 얻을 수 있습니다. 다소 쉽습니다.",
+      "img": "/img/guide/easy.png"
+    }]
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "easy",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "선물상자를 1개 얻을 수 있어!",
+      "img": "/img/guide/easy.png"
+    }]
+
+  },  {
+    "x": 13,
+    "y": 4,
+    "img": "normal",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "선물상자를 2개 얻을 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 12,
+    "y": 6,
+    "img": "hard",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "선물상자를 3개 얻을 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+}],
+  "tutorial": [{
+    "msg": "안녕! 나는 개구리 라나라고해!",
+    "img": "/img/frog/lana0.png"
+  }, {
+    "msg": "나는 토드를 위해서 규칙찾기 놀이를 도와주려고 해",
+    "img": "/img/clover/clover_goal.png"
+  }, {
+    "msg": "토드에게 규칙찾기 놀이를 도와주고 선물상자 36개을 모아서",
+    "img": "/img/frog/gift.png"
+  }, {
+    "msg": "개구리 토드에게 전달해보자!",
+    "img": "/img/frog/tode0.png"
+  }]
+}

@@ -1,0 +1,204 @@
+{
+  "type": "world",
+  "view_size": 10,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".######################.",
+    "###.####.%#..#%#.%###.%#",
+    "#.##%.%..#.e.#..%...%#.#",
+    "#.#%.#..%##..#%..%...#%#",
+    "#%#%....#.#..##.%##.%..#",
+    "#....%#................#",
+    "#%#%##.u...##.%.%...%#%#",
+    "####.....#.#%..#.#%....#",
+    "#......#..##%..%.%..#%.#",
+    ".######################."
+  ],
+  "extra": [{
+    "x": 3,
+    "y": 3,
+    "link": "5tode_pattern/1"
+  },{
+    "x": 4,
+    "y": 2,
+    "link": "5tode_pattern/2"
+  },{
+    "x": 6,
+    "y": 2,
+    "link": "5tode_pattern/3"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "5tode_pattern/4"
+  },{
+    "x": 8,
+    "y": 3,
+    "link": "5tode_pattern/5"
+  },{
+    "x": 1,
+    "y": 4,
+    "link": "5tode_pattern/6"
+  },{
+    "x": 3,
+    "y": 4,
+    "link": "5tode_pattern/7"
+  },{
+    "x": 1,
+    "y": 6,
+    "link": "5tode_pattern/8"
+  },{
+    "x": 3,
+    "y": 6,
+    "link": "5tode_pattern/9"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "5tode_pattern/10"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "5tode_pattern/11"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "5tode_pattern/12"
+  },{
+    "x": 20,
+    "y": 2,
+    "link": "5tode_pattern/13"
+  },{
+    "x": 22,
+    "y": 1,
+    "link": "5tode_pattern/14"
+  },{
+    "x": 22,
+    "y": 3,
+    "link": "5tode_pattern/15"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "5tode_pattern/16"
+  },{
+    "x": 17,
+    "y": 1,
+    "link": "5tode_pattern/17"
+  },{
+    "x": 14,
+    "y": 3,
+    "link": "5tode_pattern/18"
+  },{
+    "x": 16,
+    "y": 4,
+    "link": "5tode_pattern/19"
+  },{
+    "x": 20,
+    "y": 4,
+    "link": "5tode_pattern/20"
+  },{
+    "x": 16,
+    "y": 6,
+    "link": "5tode_pattern/21"
+  },{
+    "x": 18,
+    "y": 7,
+    "link": "5tode_pattern/22"
+  },{
+    "x": 17,
+    "y": 8,
+    "link": "5tode_pattern/23"
+  },{
+    "x": 22,
+    "y": 6,
+    "link": "5tode_pattern/24"
+  },{
+    "x": 21,
+    "y": 8,
+    "link": "5tode_pattern/25"
+  },{
+    "x": 14,
+    "y": 6,
+    "link": "5tode_pattern/26"
+  },{
+    "x": 12,
+    "y": 7,
+    "link": "5tode_pattern/27"
+  },{
+    "x": 12,
+    "y": 8,
+    "link": "5tode_pattern/28"
+  },{
+    "x": 15,
+    "y": 8,
+    "link": "5tode_pattern/29"
+  },{
+    "x": 20,
+    "y": 6,
+    "link": "5tode_pattern/30"
+  },{
+    "x": 11,
+    "y": 2,
+    "img": "lana",
+    "link": "5lana_gift/index",
+    "min_score": 36
+  },  {
+    "x": 7,
+    "y": 8,
+    "img": "question",
+    "obstacle": false,
+    "tutorial": [
+       {
+      "msg": "빨간색 글자 표지판 : 별 3개를 얻을 수 있습니다. 매우 어렵습니다.",
+      "img": "/img/guide/hard.png"
+    }, {
+      "msg": "노란색 글자 표지판 : 별 2개를 얻을 수 있습니다.",
+      "img": "/img/guide/normal.png"
+    }, {
+      "msg": "초록색 글자 표지판 : 별 1개를 얻을 수 있습니다. 다소 쉽습니다.",
+      "img": "/img/guide/easy.png"
+    }]
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "easy",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "별를 1개 얻을 수 있어!",
+      "img": "/img/guide/easy.png"
+    }]
+
+  },  {
+    "x": 13,
+    "y": 4,
+    "img": "normal",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "별를 2개 얻을 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 12,
+    "y": 6,
+    "img": "hard",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "별를 3개 얻을 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+}],
+  "tutorial": [{
+    "msg": "안녕! 나는 개구리 토드라고해!",
+    "img": "/img/frog/tode0.png"
+  }, {
+    "msg": "나는 규칙찾기 놀이를 매우 좋아해!",
+    "img": "/img/frog/tode0.png"
+  }, {
+    "msg": "규칙놀이 문제를 풀고 별 36개을 모아서",
+    "img": "/img/map/star.png"
+  }, {
+    "msg": "개구리 라나에게 전달해보자!",
+    "img": "/img/frog/lana0.png"
+  }]
+}
