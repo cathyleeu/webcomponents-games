@@ -1,0 +1,33 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":100,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".........",
+    ".........",
+    "...d%x...",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    "........."
+  ],
+  "tutorial": [{
+    "msg": "이제 토드에게 선물을 전달야지!",
+    "img": "/img/frog/lana0.png"
+  },{
+    "msg": "토드에게 선물주니 서로 짝꿍이 되었어!!",
+    "img": "/img/frog/love.png"
+  },{
+    "msg": "코딩 친구들아 고마워!! 안녕~",
+    "img": "/img/frog/lana0.png"
+  }]
+}

@@ -1,0 +1,46 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "item_rock",
+    "item_paper",
+    "item_scissors",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#...#c.a",
+    "...#P..x.",
+    "..#..#%#c",
+    "...#..)..",
+    "b##..R###",
+    "S.###....",
+    ".#..#....",
+    "..u....#e",
+    ".#.#....."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img":"clover0",
+    "useItem": true
+  }, {
+    "x": 6,
+    "y": 3,
+    "img":"clover1"
+  }],
+  "tutorial": [{
+    "msg": "라나는 토드의 규칙찾기 놀이를 도와주고 싶어!",
+    "img": "/img/frog/lana0.png"
+  },{
+    "msg": "빈칸에 들어갈 모양을 찾아서 놓아보자!!",
+    "img": "/img/5pattern/clover_pattern00.png"
+  }]
+}
