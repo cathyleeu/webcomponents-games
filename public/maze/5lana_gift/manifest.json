@@ -32,7 +32,7 @@
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
-  {"id": "spider", "src": "/img/woong/hunter.png"},
+  {"id": "spider", "src": "/img/woong/hunter50.png"},
   {"id": "hand_rock", "src": "/img/hand_rock.png"},
   {"id": "hand_paper", "src": "/img/hand_paper.png"},
   {"id": "hand_scissors", "src": "/img/hand_scissors.png"},
