@@ -249,6 +249,7 @@ TileFactory.prototype.create = function(tile, x, y) {
     container.bitmap = bitmap;
     $.extend(container, info);
 
+    this.setCoord(container, x, y);
     if(info.role == "spider") {
       var hand_name = {
         "R": "rock",
@@ -258,17 +259,15 @@ TileFactory.prototype.create = function(tile, x, y) {
       var hand = new createjs.Bitmap(this.loader.getResult("hand_" + hand_name));
       var bounds = hand.getBounds();
       var size = this.tile_size / 2;
-      hand.scaleX = size / bounds.width;
-      hand.scaleY = size / bounds.height;
-      hand.x = this.tile_size - size;
+      hand.scaleX = size / bounds.width / container.scaleX;
+      hand.scaleY = size / bounds.height / container.scaleY;
+      hand.x = (this.tile_size - size) / container.scaleX;
       container.hand = hand_name;
       container.addChild(hand);
     }
     if(info.itemCount) {
       this.setItemCount(container, info.itemCount);
     }
-
-    this.setCoord(container, x, y);
   }
   return container;
 };
