@@ -102,7 +102,7 @@
     "obstacle": false,
     "tutorial": [{
       "msg": "형~ 쿠키 먹고 싶어",
-      "img": "/img/woong/in.png"
+      "img": "/img/woong/in0.png"
     }]
   },  {
     "x": 10,
@@ -137,7 +137,7 @@
     "img": "/img/woong/cookie.png"
   }, {
     "msg": "그리고나서 동생곰 인이에게 쿠키를 가져다주자!",
-    "img": "/img/woong/in.png"
+    "img": "/img/woong/in0.png"
   },{
     "msg": "보통 난이도의 쿠키를 전달하면 1점을",
     "img": "/img/guide/normal.png"
