@@ -136,8 +136,11 @@
     "msg": "어려운 난이도를 해결하면 3점을 얻을 수 있어요",
     "img": "/img/guide/hard.png"
   },{
-    "msg": "모든 임무를 완성하기 위해서는 총 35점을 얻어야",
-    "img": "/img/jangoon/jangoon0.png",
+    "msg": "모든 임무를 완성하기 위해서는 총 35점을 얻어야 해요",
+    "img": "/img/jangoon/jangoon0.png"
+  },{
+    "msg": "별을 통해 다음단계로 이동할 수 있어요",
+    "img": "/img/map/star.png",
     "x" : 23,
     "y" : 4
   },{

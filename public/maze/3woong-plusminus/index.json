@@ -65,7 +65,8 @@
   },{
     "x": 22,
     "y": 3,
-    "link": "3woong-cookie/index"
+    "link": "3woong-cookie/index",
+    "min_score": 8    
   },{
     "x": 6,
     "y": 3,
