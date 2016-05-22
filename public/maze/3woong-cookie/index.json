@@ -129,7 +129,7 @@
     "img": "/img/woong/h.png"
   }, {
     "msg": "쿠키를 먹으러 가자!",
-    "img": "/img/woong/cookie.png"
+    "img": "/img/woong/cookie0.png"
   }, {
     "msg": "바위는 가위한테 이겨요",
     "img": "/img/woong/sr.png"
@@ -149,8 +149,8 @@
     "msg": "다음 단계로 이동하기 위해서는 총 20점을 얻어야",
     "img": "/img/woong/woong0.png"
   }, {
-    "msg": "별을 통해 다음단계로 이동할 수 있어요",
-    "img": "/img/map/star.png",
+    "msg": "인이를 통해 다음단계로 이동할 수 있어요",
+    "img": "/img/woong/in0.png",
     "x" : 23,
     "y" : 4
   },{

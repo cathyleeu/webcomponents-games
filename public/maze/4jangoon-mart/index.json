@@ -52,7 +52,7 @@
     "img":"house6",
     "tutorial": [{
     "msg": "오른쪽 별로 들어가면 집으로 돌아갈 수 있어요!",
-    "img": "/img/jangoon/house6.png"
+    "img": "/img/jangoon/house_dot6.png"
     }]
   },{
     "x": 22,
@@ -70,7 +70,7 @@
     "img": "/img/jangoon/kart.png"
   }, {
     "msg": "총 6곳의 마트로 다서 물건을 사야 집으로 돌아갈 수 있어요",
-    "img": "/img/jangoon/house6.png"
+    "img": "/img/jangoon/house_dot6.png"
   },{
     "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
     "img": "/img/jangoon/jangoon0.png"

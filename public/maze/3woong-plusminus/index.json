@@ -16,43 +16,43 @@
   "extra": [{
     "x": 10,
     "y": 1,
-    "link": "3woong-plus/1"
+    "link": "3woong-plusminus/1"
   },{
     "x": 12,
     "y": 2,
-    "link": "3woong-plus/2"
+    "link": "3woong-plusminus/2"
   },{
     "x": 14,
     "y": 1,
-    "link": "3woong-plus/3"
+    "link": "3woong-plusminus/3"
   },{
     "x": 16,
     "y": 2,
-    "link": "3woong-plus/4"
+    "link": "3woong-plusminus/4"
   },{
     "x": 19,
     "y": 1,
-    "link": "3woong-plus/5"
+    "link": "3woong-plusminus/5"
   },{
     "x": 10,
     "y": 4,
-    "link": "3woong-plus/6"
+    "link": "3woong-plusminus/6"
   },{
     "x": 12,
     "y": 5,
-    "link": "3woong-plus/7"
+    "link": "3woong-plusminus/7"
   },{
     "x": 14,
     "y": 4,
-    "link": "3woong-plus/8"
+    "link": "3woong-plusminus/8"
   },{
     "x": 17,
     "y": 5,
-    "link": "3woong-plus/9"
+    "link": "3woong-plusminus/9"
   },{
     "x": 19,
     "y": 4,
-    "link": "3woong-plus/10"
+    "link": "3woong-plusminus/10"
   },{
     "x": 21,
     "y": 3,
@@ -65,7 +65,8 @@
   },{
     "x": 22,
     "y": 3,
-    "link": "3woong-cookie/index"
+    "link": "3woong-cookie/index",
+    "min_score": 8    
   },{
     "x": 6,
     "y": 3,

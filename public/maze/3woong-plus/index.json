@@ -16,43 +16,43 @@
   "extra": [{
     "x": 10,
     "y": 1,
-    "link": "3woong-plusminus/1"
+    "link": "3woong-plus/1"
   },{
     "x": 12,
     "y": 2,
-    "link": "3woong-plusminus/2"
+    "link": "3woong-plus/2"
   },{
     "x": 14,
     "y": 1,
-    "link": "3woong-plusminus/3"
+    "link": "3woong-plus/3"
   },{
     "x": 16,
     "y": 2,
-    "link": "3woong-plusminus/4"
+    "link": "3woong-plus/4"
   },{
     "x": 19,
     "y": 1,
-    "link": "3woong-plusminus/5"
+    "link": "3woong-plus/5"
   },{
     "x": 10,
     "y": 4,
-    "link": "3woong-plusminus/6"
+    "link": "3woong-plus/6"
   },{
     "x": 12,
     "y": 5,
-    "link": "3woong-plusminus/7"
+    "link": "3woong-plus/7"
   },{
     "x": 14,
     "y": 4,
-    "link": "3woong-plusminus/8"
+    "link": "3woong-plus/8"
   },{
     "x": 17,
     "y": 5,
-    "link": "3woong-plusminus/9"
+    "link": "3woong-plus/9"
   },{
     "x": 19,
     "y": 4,
-    "link": "3woong-plusminus/10"
+    "link": "3woong-plus/10"
   },{
     "x": 21,
     "y": 3,
@@ -65,7 +65,8 @@
   },{
     "x": 22,
     "y": 3,
-    "link": "3woong-cookie/index"
+    "link": "3woong-cookie/index",
+    "min_score": 8
   },{
     "x": 6,
     "y": 3,
@@ -82,19 +83,13 @@
     "x":7,
     "y":0
   }, {
-    "msg": "　　　덧셈과 뺄셈을 해보자!",
-    "img": "/img/woong/plusminus.png"
+    "msg": "덧셈을 해보자!",
+    "img": "/img/woong/plus.png"
   }, {
     "msg": "만약 3 + 1 = ? 이라는 문제가 나오면",
     "img": "/img/woong/3plus1.png"
   }, {
     "msg": "4가 답이니까 코딩맵에서 4를 찾아가면 되는거야!",
-    "img": "/img/woong/woong0.png"
-  }, {
-    "msg": "자 그럼 덧셈 뺄셈놀이를 해보자!",
-    "img": "/img/woong/woong0.png"
-  }, {
-    "msg": "위쪽은 +덧셈문제 　　　아래쪽은 -뺄셈문제야",
     "img": "/img/woong/woong0.png"
   }, {
     "msg": "총 8문제를 깨야 다음 단계로 넘어갈 수 있어",

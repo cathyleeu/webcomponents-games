@@ -89,7 +89,7 @@
   "img": "/img/jangoon/jangoon0.png"
 }, {
   "msg": "장군이의 집을 찾아서",
-  "img": "/img/jangoon/house5.png"
+  "img": "/img/jangoon/house_dot5.png"
 }, {
   "msg": "별을 획득하자!!",
   "img": "/img/map/star.png"
@@ -100,11 +100,11 @@
   "msg": "어려운 난이도를 해결하면 3점을 얻을 수 있어요",
   "img": "/img/guide/hard.png"
 },{
-  "msg": "다음 단계로 이동하기 위해서는 총 20점을 얻어야",
+  "msg": "다음 단계로 이동하기 위해서는 총 20점을 얻어야 해요",
   "img": "/img/jangoon/jangoon0.png"
 }, {
-  "msg": "별을 통해 다음단계로 이동할 수 있어요",
-  "img": "/img/map/star.png",
+  "msg": "카트를 통해 다음단계로 이동할 수 있어요",
+  "img": "/img/jangoon/kart.png",
   "x" : 23,
   "y" : 4
 },{

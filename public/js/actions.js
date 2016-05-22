@@ -283,7 +283,7 @@ Actions.prototype.move = function(type, block, callback) {
     this._bounceCharacter(x_next, y_next, function() {
       var message = {
         rock: "바위에 막혔어요",
-        spider: "거미줄에 걸렸어요",
+        spider: "사냥꾼에게 잡혔어요",
         trap: "덫에 걸렸어요"
       }[obj.role];
       callback(message);
