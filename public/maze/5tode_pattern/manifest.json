@@ -17,7 +17,7 @@
   {"id": "message", "src": "/img/frog/tode0.png", "size": 50},
   {"id": "tode", "src": "/img/frog/tode0.png"},
   {"id": "lana", "src": "/img/frog/lana0.png"},
-  {"id": "food", "src": "/img/map/star.png"},
+  {"id": "food", "src": "/img/frog/flower.png"},
   {"tile": "a", "id": "candidate", "src": "/img/story08/larva.png", "obstacle": false},
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
@@ -69,5 +69,5 @@
   {"id": "lotus7", "src": "/img/5pattern/lotus_pattern7.png", "obstacle": false},
   {"id": "lotus8", "src": "/img/5pattern/lotus_pattern8.png", "obstacle": false},
   {"id": "lotus9", "src": "/img/5pattern/lotus_pattern9.png", "obstacle": false},
-  {"id": "question", "src": "/img/guide/question.png", "obstacle": false}
+  {"id": "question", "src": "/img/frog/question.png", "obstacle": false}
 ]
