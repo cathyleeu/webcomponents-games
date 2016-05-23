@@ -53,5 +53,5 @@
   {"tile": "w", "id": "star3", "src": "/img/5pattern/star_pattern3.png", "obstacle": false},
   {"tile": "y", "id": "star4", "src": "/img/5pattern/star_pattern4.png", "obstacle": false},
   {"tile": "z", "id": "star5", "src": "/img/5pattern/star_pattern5.png", "obstacle": false},
-  {"id": "question", "src": "/img/guide/question.png", "obstacle": false}
+  {"id": "question", "src": "/img/frog/question.png", "obstacle": false}
 ]

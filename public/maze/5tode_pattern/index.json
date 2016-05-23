@@ -164,7 +164,7 @@
     "img": "easy",
     "obstacle": false,
     "tutorial": [{
-      "msg": "별를 1개 얻을 수 있어!",
+      "msg": "꽃을 1개 얻을 수 있어!",
       "img": "/img/guide/easy.png"
     }]
 
@@ -174,7 +174,7 @@
     "img": "normal",
     "obstacle": false,
     "tutorial": [{
-      "msg": "별를 2개 얻을 수 있어!",
+      "msg": "꽃을 2개 얻을 수 있어!",
       "img": "/img/guide/normal.png"
     }]
   },  {
@@ -183,7 +183,7 @@
     "img": "hard",
     "obstacle": false,
     "tutorial": [{
-      "msg": "별를 3개 얻을 수 있어!",
+      "msg": "꽃을 3개 얻을 수 있어!",
       "img": "/img/guide/hard.png"
     }]
 
@@ -196,7 +196,7 @@
     "img": "/img/frog/tode0.png"
   }, {
     "msg": "규칙놀이 문제를 풀고 별 36개을 모아서",
-    "img": "/img/map/star.png"
+    "img": "/img/frog/flower0.png"
   }, {
     "msg": "개구리 라나에게 전달해보자!",
     "img": "/img/frog/lana0.png"

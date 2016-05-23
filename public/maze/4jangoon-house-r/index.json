@@ -63,7 +63,7 @@
   },  {
     "x": 6,
     "y": 3,
-    "img":"house6"
+    "img":"house"
   },  {
     "x": 10,
     "y": 1,
@@ -89,10 +89,10 @@
   "img": "/img/jangoon/jangoon0.png"
 }, {
   "msg": "장군이의 집을 찾아서",
-  "img": "/img/jangoon/house_dot5.png"
+  "img": "/img/jangoon/house0.png"
 }, {
-  "msg": "별을 획득하자!!",
-  "img": "/img/map/star.png"
+  "msg": "집을 모으자!!",
+  "img": "/img/jangoon/house0.png"
 },{
   "msg": "보통 난이도를 해결하면 1점을",
   "img": "/img/guide/normal.png"

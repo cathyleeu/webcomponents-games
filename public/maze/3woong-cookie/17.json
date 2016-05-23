@@ -25,8 +25,5 @@
   "tutorial": [{
     "msg": "사냥꾼을 이기자!",
     "img": "/img/woong/rps.png"
-  }],
-  "success": [{
-    "msg": "성공! 모든 사냥꾼을 이겼어요~ "
   }]
 }

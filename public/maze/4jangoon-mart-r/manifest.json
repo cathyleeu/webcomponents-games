@@ -25,6 +25,8 @@
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
   {"id": "star", "src": "/img/map/star.png"},
+  {"id": "house", "src": "/img/jangoon/house.png", "obstacle": false},
+  {"id": "mart", "src": "/img/jangoon/mart.png", "obstacle": false},
 
   {"tile": "a", "id": "fruit_ap", "src": "/img/jangoon/fruit_ap.png", "obstacle": false},
   {"tile": "b", "id": "fruit_ba", "src": "/img/jangoon/fruit_ba.png", "obstacle": false},
