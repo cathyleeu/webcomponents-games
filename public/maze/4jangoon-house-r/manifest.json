@@ -26,6 +26,7 @@
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"id": "house", "src": "/img/jangoon/house0.png", "obstacle": false},
   {"tile": "a", "id": "house1", "src": "/img/jangoon/house_dot1.png", "obstacle": false},
   {"tile": "b", "id": "house2", "src": "/img/jangoon/house_dot2.png", "obstacle": false},
   {"tile": "c", "id": "house3", "src": "/img/jangoon/house_dot3.png", "obstacle": false},

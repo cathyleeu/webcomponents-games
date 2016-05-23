@@ -148,6 +148,11 @@
     "msg": "모든 임무를 완수하기 위해서는 총 25점을 얻어야해요",
     "img": "/img/woong/woong0.png"
   },{
+    "msg": "별을 통해 다음 단계로 이동할 수 있어요",
+    "img": "/img/map/star.png",
+    "x": 27,
+    "y": 3,
+  },{
     "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
     "img": "/img/woong/woong0.png"
   }]
