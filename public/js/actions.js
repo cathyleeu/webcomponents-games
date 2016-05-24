@@ -294,10 +294,12 @@ Actions.prototype.move = function(type, block, callback) {
   obj = this._getCanvasObject(x_next, y_next);
 
   var localData = store.get('data') || {};
-  var path = location.pathname.split("/");
-  path = path.length == 3 ? path.concat(["index"]) : path;
-  path = path.slice(1, -1).join("/");
+  var hash = location.hash.slice(2),
+      idx = hash.indexOf("?"),
+      path = idx >= 0 ? hash.slice(0, idx) : hash;
+  path = path.split("/").slice(0, -1).join("/");
   var score = localData[path] ? localData[path].score || 0 : 0;
+
 
   if( obj && obj.obstacle || (obj && obj.link && obj.min_score && score < obj.min_score)) {
     this._bounceCharacter(x_next, y_next, function() {
