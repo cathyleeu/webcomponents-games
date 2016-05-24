@@ -126,7 +126,7 @@
     "img":"normal",
     "obstacle": false,
     "tutorial": [{
-      "msg": "점수를 1점 얻을 수 있어!",
+      "msg": "카트를 1개 얻을 수 있어!",
       "img": "/img/guide/normal.png"
     }]
   },  {
@@ -135,7 +135,7 @@
     "img":"hard",
     "obstacle": false,
     "tutorial": [{
-      "msg": "점수를 3점 얻을 수 있어!",
+      "msg": "카트를 3개 얻을 수 있어!",
       "img": "/img/guide/hard.png"
     }]
 
@@ -144,22 +144,22 @@
     "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
     "img": "/img/jangoon/jangoon0.png"
   }, {
-    "msg": "장군이가 심부름을 해결하고",
+    "msg": "장군이의 심부름을 해결하고",
     "img": "/img/jangoon/mart0.png"
   }, {
     "msg": "카트를 모으자!!",
     "img": "/img/jangoon/kart.png"
   },{
-    "msg": "보통 난이도를 해결하면 1점을",
+    "msg": "보통 난이도를 해결하면 카트 1개를",
     "img": "/img/guide/normal.png"
   },{
-    "msg": "어려운 난이도를 해결하면 3점을 얻을 수 있어요",
+    "msg": "어려운 난이도를 해결하면 카트 3개를 얻을 수 있어요",
     "img": "/img/guide/hard.png"
   },{
-    "msg": "모든 임무를 완성하기 위해서는 총 35점을 얻어야 해요",
+    "msg": "카트를 35개 얻으면 성공!",
     "img": "/img/jangoon/jangoon0.png"
   },{
-    "msg": "점수를 35점 모으면 별에게 가요",
+    "msg": "카트를 35점 모으면 별에게 가요",
     "img": "/img/map/star.png",
     "x" : 23,
     "y" : 4

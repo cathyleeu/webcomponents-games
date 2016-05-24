@@ -70,7 +70,7 @@
     "img":"normal",
     "obstacle": false,
     "tutorial": [{
-      "msg": "점수를 1점 얻을 수 있어!",
+      "msg": "집을 1개 얻을 수 있어!",
       "img": "/img/guide/normal.png"
     }]
   },  {
@@ -79,7 +79,7 @@
     "img":"hard",
     "obstacle": false,
     "tutorial": [{
-      "msg": "점수를 3점 얻을 수 있어!",
+      "msg": "집을 3개 얻을 수 있어!",
       "img": "/img/guide/hard.png"
     }]
 
@@ -88,19 +88,19 @@
   "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
   "img": "/img/jangoon/jangoon0.png"
 }, {
-  "msg": "장군이의 집을 찾아서",
+  "msg": "장군이의 집을 찾아가서",
   "img": "/img/jangoon/house0.png"
 }, {
   "msg": "집을 모으자!!",
   "img": "/img/jangoon/house0.png"
 },{
-  "msg": "보통 난이도를 해결하면 1점을",
+  "msg": "보통 난이도를 해결하면 집 1개를",
   "img": "/img/guide/normal.png"
 },{
-  "msg": "어려운 난이도를 해결하면 3점을 얻을 수 있어요",
+  "msg": "어려운 난이도를 해결하면 집 3개를 얻을 수 있어요",
   "img": "/img/guide/hard.png"
 },{
-  "msg": "다음 단계로 이동하기 위해서는 총 20점을 얻어야 해요",
+  "msg": "다음 단계로 이동하기 위해서는 집 20개를 얻어야 해요",
   "img": "/img/jangoon/jangoon0.png"
 }, {
   "msg": "카트를 통해 다음단계로 이동할 수 있어요",
