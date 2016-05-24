@@ -460,10 +460,14 @@ function addEvents() {
         addFood();
       }
       if(obj && obj.link) {
+        var localData = store.get('data') || {};
+        var hash = location.hash.slice(2),
+            idx = hash.indexOf("?"),
+            path = idx >= 0 ? hash.slice(0, idx) : hash;
+        path = path.split("/").slice(0, -1).join("/");
+        var score = localData[path] ? localData[path].score || 0 : 0;
         if(!obj.min_score || score >= obj.min_score) {
-          var hash = location.hash.slice(2),
-              idx = hash.indexOf("?"),
-              temp = "?back=" + (idx >= 0 ? hash.slice(0, idx) : hash) + "&x=" + mazeInfo.canvas.character.px + "&y=" + mazeInfo.canvas.character.py;
+          var temp = "?back=" + (idx >= 0 ? hash.slice(0, idx) : hash) + "&x=" + mazeInfo.canvas.character.px + "&y=" + mazeInfo.canvas.character.py;
           page(obj.link + temp);
         } else {
           showModal("별을 " + obj.min_score + "개 이상 모아야 해요");
