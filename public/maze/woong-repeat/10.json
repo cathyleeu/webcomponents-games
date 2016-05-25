@@ -1,5 +1,5 @@
 {
-  "tile_size": 50,
+  "tile_size": 80,
   "render": "pixel",
   "score":25,
   "workspace": ["start", "repeat", "repeat", "repeat", "repeat", "repeat", "repeat", "repeat"],

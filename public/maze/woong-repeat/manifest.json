@@ -13,7 +13,7 @@
   {"id": "land9", "src": "/img/map32/9.png"},
   {"id": "land10", "src": "/img/map32/10.png"},
   {"id": "land11", "src": "/img/map32/11.png"},
-  {"id": "character", "src": "/img/woong/woong.png", "sprite": true, "size": 50},
+  {"id": "character", "src": "/img/woong/woong.png", "sprite": true, "size": 80},
   {"id": "message", "src": "/img/woong/woong0.png"},
   {"id": "food", "src": "/img/woong/in.png"},
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
@@ -26,5 +26,6 @@
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
-  {"tile": "x", "id": "x", "src": "/img/frog/rock.png", "obstacle": true}
+  {"tile": "x", "id": "x", "src": "/img/frog/rock.png", "obstacle": true},
+  {"id": "question", "src": "/img/frog/question.png", "obstacle": false}
 ]
