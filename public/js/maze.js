@@ -133,7 +133,6 @@ function init() {
     $("#scoreBox").show();
     $("#runCode").hide();
   }
-  handle_resize();
   drawMaze();
   kidscoding.init(loader, mazeInfo, run, tileFactory);
   kidscoding.initBlockly(maze.toolbox, maze.workspace);
@@ -141,6 +140,7 @@ function init() {
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);
   }
+  handle_resize();
 
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
