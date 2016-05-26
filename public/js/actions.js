@@ -77,7 +77,9 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
              character.rotation = (character.rotation + 360) % 360;
              character.px = x_next;
              character.py = y_next;
-             character.bitmap.stop();
+             if(character.sprite) {
+               character.bitmap.stop();
+             }
              callback();
            })
            .addEventListener("change", function(e) {
