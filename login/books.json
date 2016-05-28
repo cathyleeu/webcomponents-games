@@ -167,9 +167,13 @@
       ["라나의 선물하기", "/maze#!5lana_gift/index"]
     ],
     "학원": [
-      ["시범교육", "/maze#!2frog/31"],
       ["클로즈 베타 1", "/maze#!2frog/1"],
-      ["클로즈 베타 2", "/maze#!story08/index"]
+      ["클로즈 베타 2", "/maze#!story08/index"],
+      ["즐거운 우리집", "/maze#!3woong/index"],
+      ["덧셈 놀이", "/maze#!3woong-plus/index"],
+      ["가위바위보", "/maze#!3woong-cookie/index"],
+      ["쿠키 전달하기", "/maze#!3woong-item/index"],
+      ["쿠키 전달하기 - 심화", "/maze#!3woong-item-h/index"]
     ],
     "YBM 데모": [
       ["장군이의 심부름", "/maze#!democlass/1"],
