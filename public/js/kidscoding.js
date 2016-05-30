@@ -13,7 +13,8 @@ KidsCoding = function() {
         type: block
       };
       if(block.type == "start") {
-        block.x = block.y = 20;
+        block.x = 30;
+        block.y = 20;
       }
     }
     str = Object.keys(block).map(function(attr) {
@@ -73,17 +74,19 @@ KidsCoding.prototype = {
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
       toolbox: '<xml>' + toolbox + '</xml>',
-      media: '/components/GoogleBlockly/media/'
+      media: '/components/GoogleBlockly/media/',
+      trashcan: true,
+      zoom: {
+        controls: true,
+        wheel: true,
+        startScale: 1.0,
+        maxScale: 1.2,
+        minScale: 0.6,
+        scaleSpeed: 1.2
+      },
     });
-    // this.workspace.addChangeListener(function(event) {
-    //   debugger
-    // });
     if(!workspace) {
-      workspace = [{
-        "type": "start",
-        "x": 20,
-        "y": 20
-      }];
+      workspace = ["start"];
     }
     var startblock = '<xml>' + this.createXml(workspace) + '</xml>';
   	Blockly.Xml.domToWorkspace(this.workspace,$(startblock).get(0));
