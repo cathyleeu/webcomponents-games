@@ -69,7 +69,6 @@ page('*', function(ctx, next) {
     }));
     sound_loader.on("complete", function() {
       if(!noBgm && sound_loader.getItem("bgm")) {
-        createjs.Sound.play("bgm", {loop: -1});
         $("#playstop").removeClass("hidden");
       }
     });
