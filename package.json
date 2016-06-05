@@ -6,12 +6,13 @@
   "main": "index.js",
   "scripts": {
     "prestart": "gulp appcache",
-    "start": "node --harmony index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "co-request": "^1.0.0",
+    "email-verification": "^0.3.1",
     "glob": "^6.0.3",
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.5",
@@ -29,7 +30,6 @@
     "koa-static": "^1.4.9",
     "minimist": "^1.2.0",
     "mongoose": "~4.0.0",
-    "mongoose-auto-increment": "~4.0.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {

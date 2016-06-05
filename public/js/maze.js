@@ -481,22 +481,25 @@ function addEvents() {
   $("#virtualKeypad .key").click(handleMove);
 
   $("#modal .tutorial").click(function handleClick(e) {
-    if(tutorialIdx > 0 && tutorial[tutorialIdx-1].link) {
-      if(tutorial[tutorialIdx-1].link.slice(0, 7) == "http://") {
-        location.href = tutorial[tutorialIdx-1].link;
+    var tItem = tutorial[tutorialIdx],
+        link = tutorial[tutorialIdx-1] ? tutorial[tutorialIdx-1].link : null;
+    if(link) {
+      if(link.slice(0, 7) == "http://" || link.slice(0, 1) == "/") {
+        location.href = link;
       } else {
-        page(tutorial[tutorialIdx-1].link);
+        page(link);
       }
       return;
-    } else if(tutorialIdx < tutorial.length) {
-      if(tutorial[tutorialIdx].hasOwnProperty("x") && tutorial[tutorialIdx].hasOwnProperty("y")) {
-        kidscoding.Actions._setFocus(tutorial[tutorialIdx].x, tutorial[tutorialIdx].y, 0, 500);
+    }
+    if(tutorialIdx < tutorial.length) {
+      if(tItem.hasOwnProperty("x") && tItem.hasOwnProperty("y")) {
+        kidscoding.Actions._setFocus(tItem.x, tItem.y, 0, 500);
       }
       showModal({
-        video: tutorial[tutorialIdx].video,
-        msg: tutorial[tutorialIdx].msg,
-        img: tutorial[tutorialIdx].img,
-        link: tutorial[tutorialIdx].link,
+        video: tItem.video,
+        msg: tItem.msg,
+        img: tItem.img,
+        link: tItem.link,
         tutorial: true
       });
     } else {

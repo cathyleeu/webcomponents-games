@@ -68,6 +68,7 @@
 
 <script>
   $(function() {
+    var siteUrl = "<%= siteUrl %>";
     var date = new Date()
         year = '' + date.getFullYear(),
         month = date.getMonth() + 1;
@@ -88,12 +89,12 @@
     });
     $.get("login/url.json", function(urls) {
       urls.forEach(function(item) {
-        var url = "http://toycode.org/code#" + item.code,
+        var url = siteUrl + "/code/" + item.code,
             classes = Object.keys(item.classes).reduce(function(arr, key) {
               return arr.concat(item.classes[key])
             }, []),
             info = classes.map(function(className) {
-              var info_url = "http://toycode.org/info#" + item.code + "-" + className + '-' + year + month;
+              var info_url = siteUrl + "/info#" + item.code + "-" + className + '-' + year + month;
               return "<div>"
                   +   "<label>" + className + "</label> : "
                   +   "<a class= \"info_url\" href=\"" + info_url + "\">" + info_url + "</a>";

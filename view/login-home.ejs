@@ -1,0 +1,46 @@
+<link href="/css/signin.css" rel="stylesheet">
+<div class="container">
+
+  <form class="form-signin" action="/api/login" method="post">
+    <h2 class="form-signin-heading">키즈코딩 가정학습 <sup style="color:#27D27B">beta</sup></h2>
+    <label for="email" class="sr-only">이메일</label>
+    <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
+    <label for="password" class="sr-only">비밀번호</label>
+    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+    <label for="code">원 선택</label>
+    <select id="code" name="code" class="form-control">
+      <option value="">== 원 선택 ==</option>
+      <option value="3c2c0">이레유치원</option>
+      <option value="1e1e2">경희과학자연유치원</option>
+    </select>
+    <br/>
+    <label for="className">반 선택</label>
+    <select id="className" name="className" class="form-control">
+      <option>== 반 선택 ==</option>
+    </select>
+    <br/>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+  </form>
+
+</div> <!-- /container -->
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!--script src="../../assets/js/ie10-viewport-bug-workaround.js"></script-->
+<script>
+$("#code").change(function(e) {
+  var code = $(e.target).val();
+  var options = ["== 반 선택 =="];
+  if(code == "3c2c0") {
+    // 이레유치원
+    options.push("백옥반", "진주반", "실버반");
+  } else if(code == "1e1e2") {
+    // 경희유치원
+    options.push("슈바이처", "다윈");
+  }
+  $("#className").html("");
+  options.forEach(function(item) {
+    $("#className").append("<option>" + item + "</option>");
+  });
+});
+</script>

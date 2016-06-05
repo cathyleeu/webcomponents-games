@@ -164,6 +164,7 @@
       var hash = decodeURI(location.hash).slice(1),
           code = hash.split("-")[0],
           className = hash.split("-")[1],
+          kids = (hash.split("-")[2] || "") == "kids",
           yearmonth = "<%= yearmonth %>",
           imgs = getImgs(yearmonth, code, className);
       $("#login").click(function(e) {
@@ -186,7 +187,11 @@
         var book = Object.keys(info.classes).filter(function(item) {
           return info.classes[item].indexOf(className) >= 0;
         });
-        location.href = "book#" + code + "-" + className + "-" + book[0];
+        if(kids) {
+          location.href = "book#02080-가정심화학습-가정심화학습";
+        } else {
+          location.href = "book#" + code + "-" + className + "-" + book[0];
+        }
       });
     });
   });
