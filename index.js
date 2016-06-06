@@ -35,8 +35,8 @@ passport.serializeUser(function(user, done) {
   done(null, user.email);
 });
 
-passport.deserializeUser(function(user, done) {
-  Users.findOne({ email: user.email }, function(err, user) {
+passport.deserializeUser(function(email, done) {
+  Users.findOne({ email: email }, function(err, user) {
     if (err) { return done(err); }
     if (!user) {
       return done(null, false, { message: 'Incorrect username.' });
