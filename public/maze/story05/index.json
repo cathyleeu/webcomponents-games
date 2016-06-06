@@ -108,7 +108,11 @@
   },{
     "x": 47,
     "y": 9,
-    "link": "story05/index2"
+    "tutorial": [{
+      "msg": "성공! 이번주 학습을 완료하였습니다. 축하드립니다.",
+      "img": "/img/ant/ant1.png",
+      "link": "/kids"
+    }]
   },{
     "x": 2,
     "y": 5,

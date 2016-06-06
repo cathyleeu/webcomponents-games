@@ -10,13 +10,12 @@ var app = require('koa')(),
     compress = require('koa-compress'),
     path = require('path'),
     mongoose = require('mongoose'),
-    autoIncrement = require('mongoose-auto-increment'),
     argv = require('minimist')(process.argv.slice(2)),
+    Users = require('./model/users'),
     config = require('./config.json'); //[argv.production ? 'production' : 'development'];
 
 mongoose.connect(config.db);
 var db = mongoose.connection;
-autoIncrement.initialize(db);
 db.on('error', function(e) {
   console.error(e);
 });
@@ -32,13 +31,12 @@ render(app, {
   debug: true
 });
 
-var Students = require('./model/students');
 passport.serializeUser(function(user, done) {
   done(null, user)
 });
 
 passport.deserializeUser(function(user, done) {
-  Students.findOne({ name: user.name }, function(err, user) {
+  Users.findOne({ email: user.email }, function(err, user) {
     if (err) { return done(err); }
     if (!user) {
       return done(null, false, { message: 'Incorrect username.' });
@@ -48,10 +46,10 @@ passport.deserializeUser(function(user, done) {
 });
 
 passport.use('local', new localStrategy({
-  usernameField: 'name',
+  usernameField: 'email',
   passwordField: 'password'
-}, function(name, password, done) {
-  Students.findOne({ name: name }, function(err, user) {
+}, function(email, password, done) {
+  Users.findOne({ email: email }, function(err, user) {
     if (err) { return done(err); }
     if (!user) {
       return done(null, false, { message: 'Incorrect username.' });
@@ -74,8 +72,8 @@ app
   }))
   .use(session())
   .use(body())
-  // .use(passport.initialize())
-  // .use(passport.session())
+  .use(passport.initialize())
+  .use(passport.session())
   .use(function* logger(next){
     var start = new Date;
     yield next;
@@ -87,13 +85,13 @@ app
   })
   .use(cors({'origin': true}))
   .use(router.public.middleware())
-  // .use(function*(next) {
-  //   if (this.isAuthenticated()) {
-  //     yield next;
-  //   } else {
-  //     this.redirect('/login');
-  //   }
-  // })
+  .use(function*(next) {
+    if (this.isAuthenticated()) {
+      yield next;
+    } else {
+      this.redirect('/login-home');
+    }
+  })
   .use(router.secured.middleware());
 
 app.listen(config.port);
