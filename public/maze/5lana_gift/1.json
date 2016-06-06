@@ -25,8 +25,20 @@
   "extra":[{
     "x": 3,
     "y": 3,
-    "img":"clover0",
+    "img":"clover0_back",
     "useItem": true
+  }, {
+    "x": 1,
+    "y": 1,
+    "img":"c_b"
+  },{
+    "x": 3,
+    "y": 1,
+    "img":"b_b"
+  },{
+    "x": 1,
+    "y": 3,
+    "img":"e_b"
   }, {
     "x": 5,
     "y": 4,

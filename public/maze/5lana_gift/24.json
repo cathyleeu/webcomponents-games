@@ -29,12 +29,28 @@
   "extra":[{
     "x": 0,
     "y": 6,
-    "img":"flower0",
+    "img":"flower0_back",
     "useItem": true
   }, {
     "x": 3,
     "y": 5,
     "img":"flower2"
+  }, {
+    "x": 0,
+    "y": 7,
+    "img":"k_b"
+  }, {
+    "x": 0,
+    "y": 8,
+    "img":"h_b"
+  }, {
+    "x": 2,
+    "y": 6,
+    "img":"j_b"
+  }, {
+    "x": 2,
+    "y": 8,
+    "img":"f_b"
   }],
   "tutorial": [{
     "msg": "라나는 토드의 규칙찾기 놀이를 도와주고 싶어!",

@@ -29,12 +29,24 @@
   "extra":[{
     "x": 8,
     "y": 8,
-    "img":"clover0",
+    "img":"clover0_back",
     "useItem": true
   }, {
     "x": 8,
     "y": 4,
     "img":"clover2"
+  }, {
+    "x": 6,
+    "y": 6,
+    "img":"b_b"
+  }, {
+    "x": 6,
+    "y": 8,
+    "img":"e_b"
+  }, {
+    "x": 8,
+    "y": 6,
+    "img":"e_b"
   }],
   "tutorial": [{
     "msg": "라나는 토드의 규칙찾기 놀이를 도와주고 싶어!",

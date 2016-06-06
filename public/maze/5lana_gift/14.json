@@ -24,9 +24,25 @@
     ".#.#..g.h"
   ],
   "extra":[{
+    "x": 6,
+    "y": 6,
+    "img":"f_b"
+  }, {
+    "x": 7,
+    "y": 6,
+    "img":"k_b"
+  }, {
+    "x": 6,
+    "y": 8,
+    "img":"g_b"
+  }, {
+    "x": 8,
+    "y": 8,
+    "img":"h_b"
+  }, {
     "x": 8,
     "y": 6,
-    "img":"flower0",
+    "img":"flower0_back",
     "useItem": true
   }, {
     "x": 3,

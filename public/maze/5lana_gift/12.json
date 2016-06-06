@@ -24,9 +24,21 @@
     ".#.#....."
   ],
   "extra":[{
+    "x": 3,
+    "y": 0,
+    "img":"a_b"
+  }, {
+    "x": 1,
+    "y": 2,
+    "img":"c_b"
+  }, {
+    "x": 3,
+    "y": 2,
+    "img":"b_b"
+  }, {
     "x": 1,
     "y": 0,
-    "img":"clover0",
+    "img":"clover0_back",
     "useItem": true
   }, {
     "x": 0,
