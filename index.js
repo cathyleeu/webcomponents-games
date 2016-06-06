@@ -32,7 +32,7 @@ render(app, {
 });
 
 passport.serializeUser(function(user, done) {
-  done(null, user)
+  done(null, user.email);
 });
 
 passport.deserializeUser(function(user, done) {
