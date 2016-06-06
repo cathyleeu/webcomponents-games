@@ -26,8 +26,14 @@ nev.configure({
   verifyMailOptions: {
     from: '키즈코딩 <toycodeinc_do_not_reply@gmail.com>',
     subject: '키즈코딩 회원 이메일 인증',
-    html: '다음의 링크를 클릭하시면 이메일 인증이 완료됩니다 : </p><p>${URL}</p>',
+    html: '<p>다음의 링크를 클릭하시면 이메일 인증이 완료됩니다 : </p><p>${URL}</p>',
     text: '다음의 링크를 클릭하시면 이메일 인증이 완료됩니다 : ${URL}'
+  },
+  confirmMailOptions: {
+    from: '키즈코딩 <toycodeinc_do_not_reply@gmail.com>',
+    subject: '키즈코딩 회원 가입 완료',
+    html: '<p>키즈코딩 회원 가입이 완료 되었습니다.</p>',
+    text: '키즈코딩 회원 가입이 완료 되었습니다.'
   }
 });
 nev.generateTempUserModel(Users);
@@ -173,7 +179,7 @@ public.post('/createTempUser', function *(next) {
       console.log(err);
       this.body = "유저 등록 에러";
     }
-    this.body = "입력하신 메일로 이메일 인증 메세지를 보냈습니다.<br/>이메일 인증을 하시면 로그인하실수 있습니다.";
+    this.body = "입력하신 메일로 이메일 인증 메세지를 보냈습니다. \n이메일 인증을 하시면 로그인하실수 있습니다.";
   } else {
     // user already exists in our temporary collection
     console.log("ERROR: user already exists");
