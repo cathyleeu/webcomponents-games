@@ -213,7 +213,7 @@ public.post('/api/login', function*(next) {
   var code = this.request.body.code,
       className = this.request.body.className;
   yield passport.authenticate('local', {
-    successRedirect: '/login#' + code + '-' + className + '-kids',
+    successRedirect: '/login#' + code + '-' + decodeURI(className) + '-kids',
     failureRedirect: '/login-home'
   });
 });
