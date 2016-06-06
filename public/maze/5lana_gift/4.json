@@ -23,9 +23,21 @@
     "...#..k.j"
   ],
   "extra":[{
+    "x": 6,
+    "y": 6,
+    "img":"g_b"
+  }, {
+    "x": 6,
+    "y": 8,
+    "img":"k_b"
+  }, {
+    "x": 8,
+    "y": 8,
+    "img":"j_b"
+  }, {
     "x": 8,
     "y": 6,
-    "img":"flower0",
+    "img":"flower0_back",
     "useItem": true
   }, {
     "x": 6,
