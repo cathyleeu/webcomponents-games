@@ -156,10 +156,14 @@ public.get('/registration', function *(next) {
 });
 
 public.post('/createTempUser', function *(next) {
+  var code = this.request.body.code.split("-");
   var newUser = Users({
     name: this.request.body.name,
     email: this.request.body.email,
-    password: this.request.body.password
+    password: this.request.body.password,
+    code: code[0],
+    school: code[1],
+    className: this.request.body.className
   });
 
   var result = yield createTempUser(newUser),
@@ -216,10 +220,9 @@ public.get('/maze', function *(next) {
 });
 
 public.post('/api/login', function*(next) {
-  var code = this.request.body.code,
-      className = this.request.body.className;
+  var user = yield Users.findOne({email: this.request.body.email});
   yield passport.authenticate('local', {
-    successRedirect: '/login#' + code + '-' + encodeURI(className) + '-kids',
+    successRedirect: '/login#' + user.code + '-' + encodeURI(user.className) + '-kids',
     failureRedirect: '/login-home'
   });
 });
