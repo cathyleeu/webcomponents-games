@@ -146,10 +146,6 @@
       d1.resolve(info);
     });
     $.get("login/names.json", function(names) {
-      names.forEach(function(name, index) {
-        var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning">' + (index+1) + " : " + name[1] + '</button>';
-        $(button).appendTo("#names");
-      });
       d2.resolve(names);
     });
     $("#names").click('button', function(e) {
@@ -167,6 +163,18 @@
           kids = (hash.split("-")[2] || "") == "kids",
           yearmonth = "<%= yearmonth %>",
           imgs = getImgs(yearmonth, code, className);
+
+      if(names[info.school + "-" + className]) {
+        names = names[info.school + "-" + className]
+      } else {
+        names = names["default"];
+      }
+
+      names.forEach(function(name, index) {
+        var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning">' + (index+1) + " : " + ($.isArray(name) ? name[1] : name) + '</button>';
+        $(button).appendTo("#names");
+      });
+
       $("#login").click(function(e) {
         if($("#characters .selected").length == 0 || $("#names .selected").length == 0) {
           $("#modal-fail").modal('show');

@@ -108,16 +108,21 @@
           imgs = getImgs(yearmonth, info.code, className);
       month = new Date().getMonth() + 1;
       var row = [];
+      if(names[info.school + "-" + className]) {
+        names = names[info.school + "-" + className]
+      } else {
+        names = names["default"];
+      }
       names.forEach(function(nameArr, index) {
         row.push(template({
           index: (index+1),
-          name: nameArr[1],
+          name: $.isArray(nameArr) ? nameArr[1] : nameArr,
           school: info.school,
           className: className,
           month: '' + month,
           img: imgs[index]
         }));
-        if(row.length == 2) {
+        if(row.length == 2 || index + 1 == names.length) {
           var $row = $('<div class="card-row">').append(row[0]).append(row[1]);
           $(".page").append($row)
           row = [];
