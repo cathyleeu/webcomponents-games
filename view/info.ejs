@@ -124,8 +124,11 @@
         }));
         if(row.length == 2 || index + 1 == names.length) {
           var $row = $('<div class="card-row">').append(row[0]).append(row[1]);
-          $(".page").append($row)
+          $(".page").append($row);
           row = [];
+          if(index + 1 == names.length) {
+            $row.append('<div class="card" style="width:280px;">');
+          }
         }
       });
 
