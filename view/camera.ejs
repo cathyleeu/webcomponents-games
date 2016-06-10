@@ -40,6 +40,7 @@
   position: relative;
   width: 80%; /* 원하는 너비 */
   margin-left: 10%;
+  border: 1px solid black;
 }
 .box:before {
   content: "";
@@ -52,7 +53,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border: 1px solid black;
+  overflow: hidden;
 }
 #right .box {
   width: 60%;
@@ -83,6 +84,9 @@
   bottom: 20%;
   right: 20%;
   border: 5px solid #f0ad4e;
+}
+.img {
+  height: 100%;
 }
 </style>
 <!-- Navigation -->
@@ -126,7 +130,9 @@
     </div>
     <div class="box">
       <div class="screen">
-        <div class="cam"></div>
+        <div class="cam">
+          <video autoplay style="height:100%"></video>
+        </div>
         <div class="guide"></div>
       </div>
     </div>
@@ -140,7 +146,10 @@
       <button type="button" class="btn btn-warning camera-button">촬영하기</button>
     </div>
     <div class="box">
-      <div class="screen">1:1 비율</div>
+      <div class="screen">
+        <img class="img" src="">
+        <canvas style="display:none;" width="640" height="480"></canvas>
+      </div>
     </div>
     <div class="play-box">
       <button type="button" class="btn btn-warning"><i class="fa fa-play" aria-hidden="true"></i> 키즈코딩 시작</button>
@@ -164,4 +173,47 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<script src="/components/EaselJS/lib/easeljs-0.8.2.min.js"></script>
+<script>
+  navigator.getUserMedia  = navigator.getUserMedia ||
+                            navigator.webkitGetUserMedia ||
+                            navigator.mozGetUserMedia ||
+                            navigator.msGetUserMedia;
+
+  var video = document.querySelector('video');
+  var canvas = document.querySelector('canvas');
+  var ctx = canvas.getContext('2d');
+  var localMediaStream = null;
+
+  function snapshot() {
+    if (localMediaStream) {
+      ctx.drawImage(video, 0, 0);
+      // "image/webp" works in Chrome.
+      // Other browsers will fall back to image/png.
+      var chapture_img = canvas.toDataURL('image/webp');
+      document.querySelector('img').src = chapture_img;
+    }
+  }
+
+  video.addEventListener('click', snapshot, false);
+
+  navigator.getUserMedia({
+    video: {
+      mandatory: {
+        maxWidth: 640,
+        maxHeight: 480
+      }
+    }, audio: false},
+    function(stream) {
+      video.src = window.URL.createObjectURL(stream);
+      localMediaStream = stream;
+      // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
+      // See crbug.com/110938.
+      video.onloadedmetadata = function(e) {
+        // Ready to go. Do some stuff.
+      };
+    },
+    function(e) {
+      console.log('Reeeejected!', e);
+    }
+  );
+</script>
