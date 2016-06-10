@@ -10,7 +10,7 @@
     "move_left"
   ],
   "map": [
-    ".tttttt.",
+    ".ttttttt.",
     "t.xx..xxt",
     "tx.e..b.t",
     "t.x.x.xxt",
@@ -18,7 +18,7 @@
     "t..x.x..t",
     "txx..x..t",
     "t..c...dt",
-    ".tttttt."
+    ".ttttttt."
   ],
   "extra":[{
     "x": 1,
