@@ -143,7 +143,7 @@
       '촬영하기'를 누르면 캐릭터가 만들어져요
     </div>
     <div class="camera-box">
-      <button type="button" class="btn btn-warning camera-button">촬영하기</button>
+      <button id="makeimg" type="button" class="btn btn-warning camera-button">촬영하기</button>
     </div>
     <div class="box">
       <div class="screen">
@@ -152,7 +152,7 @@
       </div>
     </div>
     <div class="play-box">
-      <button type="button" class="btn btn-warning"><i class="fa fa-play" aria-hidden="true"></i> 키즈코딩 시작</button>
+      <button id="goKids" type="button" class="btn btn-warning"><i class="fa fa-play" aria-hidden="true"></i> 키즈코딩 시작</button>
     </div>
   </div>
 </div>
@@ -184,6 +184,7 @@
   var ctx = canvas.getContext('2d');
   var localMediaStream = null;
   var videoObj = { "video": true };
+  var isClicked = false;
 	var	errBack = function(error) {
 			console.log("Video capture error: ", error.code);
 		};
@@ -196,9 +197,17 @@
       var chapture_img = canvas.toDataURL('image/webp');
       document.querySelector('img').src = chapture_img;
     }
+    isClicked = true;
   }
-
-  video.addEventListener('click', snapshot, false);
+  function gocoding() {
+    if(isClicked){
+      //location.href("/maze#!4jangoon-mart/1")
+    }else{
+      alert("'촬영하기'버튼을 눌러서 키즈코딩 캐릭터를 만들어 보세요")
+    }
+  }
+  document.getElementById('makeimg').addEventListener('click', snapshot, false);
+  document.getElementById('goKids').addEventListener('click', gocoding, false);
 	if(navigator.webkitGetUserMedia) { // WebKit-prefixed
 		navigator.webkitGetUserMedia(videoObj, function(stream){
       var URL = window.URL || window.webkitURL;
