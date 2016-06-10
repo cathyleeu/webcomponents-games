@@ -12,7 +12,7 @@
   bottom: 0;
   left: 0;
   right: 50%;
-  background: red;
+  background: #e3e3e3;
 }
 #right {
   position: absolute;
@@ -20,7 +20,54 @@
   bottom: 0;
   left: 50%;
   right: 0;
-  background: blue;
+  background: #fff;
+}
+.round-box {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+#left .round-box {
+  background: #fff;
+}
+#right .round-box {
+  background: #e3e3e3;
+}
+
+/* 정사각형 박스 만들기 See: https://goo.gl/xF6uQV */
+.box {
+  position: relative;
+  width: 80%; /* 원하는 너비 */
+  margin-left: 10%;
+}
+.box:before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* 1:1 비율 */
+}
+.screen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: yellow;
+  border: 1px solid black;
+}
+#right .box {
+  width: 60%;
+  margin-left: 20%;
+}
+.camera-box {
+  position: relative;
+  text-align: right;
+  margin: 10px;
+}
+.play-box {
+  position: relative;
+  text-align: center;
+  margin: 10px;
 }
 </style>
 <!-- Navigation -->
@@ -64,8 +111,28 @@
 
 <div id="container">
   <div id="left">
+    <div class="round-box">
+      <i class="fa fa-camera" aria-hidden="true"></i>
+      네모칸에 캐릭터 그림을 넣고 '촬영하기'를 눌러주세요
+    </div>
+    <div class="box">
+      <div class="screen">1:1 비율</div>
+    </div>
   </div>
   <div id="right">
+    <div class="round-box">
+      <i class="fa fa-user" aria-hidden="true"></i>
+      '촬영하기'를 누르면 캐릭터가 만들어져요
+    </div>
+    <div class="camera-box">
+      <button type="button" class="btn btn-warning camera-button">촬영하기</button>
+    </div>
+    <div class="box">
+      <div class="screen">1:1 비율</div>
+    </div>
+    <div class="play-box">
+      <button type="button" class="btn btn-warning"><i class="fa fa-play" aria-hidden="true"></i> 키즈코딩 시작</button>
+    </div>
   </div>
 </div>
 
