@@ -232,6 +232,10 @@ public.get('/api/logout', function*(next) {
   this.redirect('/login-home');
 });
 
+public.get('/camera', function *(next) {
+  yield this.render('camera');
+});
+
 module.exports = {
   public: public,
   secured: secured
