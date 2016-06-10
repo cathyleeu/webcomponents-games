@@ -11,7 +11,7 @@
     "repeat"
   ],
   "map": [
-    ".tttttt.",
+    ".ttttttt.",
     "t.xx..xxt",
     "tx.e..b.t",
     "t%x.x.xxt",
@@ -19,7 +19,7 @@
     "t..x.x..t",
     "txxd.x..t",
     "t..c....t",
-    ".tttttt."
+    ".ttttttt."
   ],
   "extra":[{
     "x": 1,
