@@ -147,8 +147,8 @@
     </div>
     <div class="box">
       <div class="screen">
-        <img class="img" src="">
-        <canvas style="display:none;" width="640" height="480"></canvas>
+        <img class="img" id = "my-image" src="">
+        <canvas width="640" height="480"></canvas>
       </div>
     </div>
     <div class="play-box">
@@ -181,7 +181,10 @@
 
   var video = document.querySelector('video');
   var canvas = document.querySelector('canvas');
-  var ctx = canvas.getContext('2d');
+  var chapture_canvas = document.createElement('canvas');
+  chapture_canvas.width=640;
+  chapture_canvas.height=480;
+  var ctx = chapture_canvas.getContext('2d');
   var localMediaStream = null;
   var videoObj = { "video": true };
   var isClicked = false;
@@ -191,13 +194,44 @@
 
   function snapshot() {
     if (localMediaStream) {
+
       ctx.drawImage(video, 0, 0);
       // "image/webp" works in Chrome.
       // Other browsers will fall back to image/png.
-      var chapture_img = canvas.toDataURL('image/webp');
-      document.querySelector('img').src = chapture_img;
+      //document.querySelector('img').src = canvas.toDataURL('image/webp');
+
+      //var chapture_img = document.getElementById('my-image');
+      //var chapture_canvas = document.createElement('canvas');
+      //chapture_canvas.width = chapture_img.width;
+      //chapture_canvas.height = chapture_img.height;
+      //chapture_canvas.getContext('2d').drawImage(chapture_img, 0, 0, chapture_img.width, chapture_img.height);
+
+      var start_wh = chapture_canvas.height*0.2;
+      var p_width = chapture_canvas.height*0.6/14;
+
+      var image_parts = new Array();
+      for(var w = 0 ; w < 14 ; w++){
+        var temp_parts = new Array();
+        for(var h = 0 ; h < 14 ; h++){
+          var part_info = {
+            'wmin' : start_wh + p_width*w,
+            'hmin' : start_wh + p_width*h,
+            'wmax' : start_wh + p_width*(w+1),
+            'hmax' : start_wh + p_width*(h+1)
+          };
+          setpixelData(part_info);
+          temp_parts.push(part_info);
+        }
+        image_parts.push(temp_parts);
+      }
+      var pixelData = chapture_canvas.getContext('2d').getImageData(50, 50, 1, 1).data;
+      debugger
+
     }
     isClicked = true;
+  }
+  function setpixelData(part){
+    part.pixelData = chapture_canvas.getContext('2d').getImageData(Math.floor(part.wmin), Math.floor(part.hmin), 1, 1).data;
   }
   function gocoding() {
     if(isClicked){
@@ -225,6 +259,8 @@
 			localMediaStream = stream;
 		}, errBack);
   }
+
+
 /*
   navigator.getUserMedia({
     video: {
