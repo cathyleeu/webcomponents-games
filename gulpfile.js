@@ -101,6 +101,7 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
         cachePath = path.join(cacheDirPath, school.code + ".manifest"),
         output = "CACHE MANIFEST\n";
     bookArr.forEach(function(bookName) {
+      bookName = bookName.split(":")[0];
       books[bookName].forEach(function(contentInfo) {
         var maniPath = contentInfo[1];
         if(maniPath.indexOf("#!") >= 0) {
