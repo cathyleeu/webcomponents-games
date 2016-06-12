@@ -194,24 +194,12 @@
 
   function snapshot() {
     if (localMediaStream) {
-
       ctx.drawImage(video, 0, 0);
-      // "image/webp" works in Chrome.
-      // Other browsers will fall back to image/png.
-      //document.querySelector('img').src = canvas.toDataURL('image/webp');
-
-      //var chapture_img = document.getElementById('my-image');
-      //var chapture_canvas = document.createElement('canvas');
-      //chapture_canvas.width = chapture_img.width;
-      //chapture_canvas.height = chapture_img.height;
-      //chapture_canvas.getContext('2d').drawImage(chapture_img, 0, 0, chapture_img.width, chapture_img.height);
 
       var start_wh = chapture_canvas.height*0.2;
       var p_width = chapture_canvas.height*0.6/14;
 
-      var image_parts = new Array();
       for(var w = 0 ; w < 14 ; w++){
-        var temp_parts = new Array();
         for(var h = 0 ; h < 14 ; h++){
           var part_info = {
             'wmin' : start_wh + p_width*w,
@@ -224,10 +212,7 @@
           var dColor = part_info.pixelData[2] + 256 * part_info.pixelData[1] + 65536 * part_info.pixelData[0];
           ctx_dot.fillStyle = "#"+ dColor.toString(16);
           ctx_dot.fillRect(10*w, 10*h, 10, 10);
-          debugger
-          //temp_parts.push(part_info);
         }
-        //image_parts.push(temp_parts);
       }
       document.querySelector('img').src = canvas.toDataURL('image/webp');
     }
@@ -280,7 +265,7 @@
     }
 
     return h;
-    }
+  }
   function HSVtoRGB(h, s, v) {
     var r, g, b, i, f, p, q, t;
     if (arguments.length === 1) {
@@ -327,27 +312,4 @@
 			localMediaStream = stream;
 		}, errBack);
   }
-
-
-/*
-  navigator.getUserMedia({
-    video: {
-      mandatory: {
-        maxWidth: 640,
-        maxHeight: 480
-      }
-    }, audio: false},
-    function(stream) {
-      video.src = stream;
-      localMediaStream = stream;
-      // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
-      // See crbug.com/110938.
-      video.onloadedmetadata = function(e) {
-        // Ready to go. Do some stuff.
-      };
-    },
-    function(e) {
-      console.log('Reeeejected!', e);
-    }
-  );*/
 </script>
