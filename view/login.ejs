@@ -194,12 +194,10 @@
         e.preventDefault();
         var book = Object.keys(info.classes).filter(function(item) {
           return info.classes[item].indexOf(className) >= 0;
-        });
-        if(kids) {
-          location.href = "book#02080-가정심화학습-가정심화학습";
-        } else {
-          location.href = "book#" + code + "-" + className + "-" + book[0];
-        }
+        })[0];
+        var tokens = book.split(":");
+        book = kids ? tokens[1] || "가정심화학습": tokens[0];
+        location.href = "book#" + code + "-" + className + "-" + book;
       });
     });
   });
