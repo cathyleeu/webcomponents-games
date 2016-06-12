@@ -148,7 +148,7 @@
     <div class="box">
       <div class="screen">
         <img class="img" id = "my-image" src="">
-        <canvas width="640" height="480"></canvas>
+        <canvas width="140" height="140"></canvas>
       </div>
     </div>
     <div class="play-box">
@@ -220,12 +220,16 @@
             'hmax' : start_wh + p_width*(h+1)
           };
           setpixelData(part_info);
-          temp_parts.push(part_info);
+          var ctx_dot = canvas.getContext("2d");
+          var dColor = part_info.pixelData[2] + 256 * part_info.pixelData[1] + 65536 * part_info.pixelData[0];
+          ctx_dot.fillStyle = "#"+ dColor.toString(16);
+          ctx_dot.fillRect(10*w, 10*h, 10, 10);
+          debugger
+          //temp_parts.push(part_info);
         }
-        image_parts.push(temp_parts);
+        //image_parts.push(temp_parts);
       }
-      debugger
-      //var pixelData = chapture_canvas.getContext('2d').getImageData(50, 50, 1, 1).data;
+      document.querySelector('img').src = canvas.toDataURL('image/webp');
     }
     isClicked = true;
   }
