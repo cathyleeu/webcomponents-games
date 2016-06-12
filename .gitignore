@@ -3,7 +3,6 @@ public/components
 public/css/*.css
 public/cache
 public/login/url.json
-public/login/books.json
 npm-debug.log
 .DS_Store
 Thumbs.db
