@@ -224,14 +224,78 @@
         }
         image_parts.push(temp_parts);
       }
-      var pixelData = chapture_canvas.getContext('2d').getImageData(50, 50, 1, 1).data;
       debugger
-
+      //var pixelData = chapture_canvas.getContext('2d').getImageData(50, 50, 1, 1).data;
     }
     isClicked = true;
   }
   function setpixelData(part){
-    part.pixelData = chapture_canvas.getContext('2d').getImageData(Math.floor(part.wmin), Math.floor(part.hmin), 1, 1).data;
+    var hsvCounts = new Array();
+    for(var i = 0 ; i < 60 ; i++){
+      hsvCounts.push({
+        'Colors' : new Array(),
+        'Count' : 0
+      });
+    }
+    for(var w = part.wmin ; w < part.wmax ; w = w + 3){
+      for(var h = part.hmin ; h < part.hmax ; h = h + 3){
+        var pixelRBG = chapture_canvas.getContext('2d').getImageData(Math.floor(w+1), Math.floor(h+1), 1, 1).data;
+        var pixelHSV = RGBtoHSV(pixelRBG[0],pixelRBG[1], pixelRBG[2]);
+        var hsvIndex = Math.floor(pixelHSV/6);
+        if(hsvIndex==60) hsvIndex--;
+        hsvCounts[hsvIndex].Colors.push(pixelRBG);
+        hsvCounts[hsvIndex].Count++;
+      }
+    }
+    hsvCounts.sort(function(a, b){return b.Count-a.Count});
+    var sumR = 0;
+    var sumG = 0;
+    var sumB = 0;
+    for(var i=0; i<hsvCounts[0].Count ; i++){
+      sumR = sumR + hsvCounts[0].Colors[i][0];
+      sumG = sumG + hsvCounts[0].Colors[i][1];
+      sumB = sumB + hsvCounts[0].Colors[i][2];
+    }
+    part.pixelData = [Math.floor(sumR/hsvCounts[0].Count),Math.floor(sumG/hsvCounts[0].Count),Math.floor(sumB/hsvCounts[0].Count),255];
+  }
+  function RGBtoHSV(r, g, b) {
+    if (arguments.length === 1) {
+        g = r.g, b = r.b, r = r.r;
+    }
+    var max = Math.max(r, g, b), min = Math.min(r, g, b),
+        d = max - min,
+        h,
+        s = (max === 0 ? 0 : d / max),
+        v = max / 255;
+
+    switch (max) {
+        case min: h = 0; break;
+        case r: h = (g - b) + d * (g < b ? 6: 0); h /= 6 * d; break;
+        case g: h = (b - r) + d * 2; h /= 6 * d; break;
+        case b: h = (r - g) + d * 4; h /= 6 * d; break;
+    }
+
+    return h;
+    }
+  function HSVtoRGB(h, s, v) {
+    var r, g, b, i, f, p, q, t;
+    if (arguments.length === 1) {
+        s = h.s, v = h.v, h = h.h;
+    }
+    i = Math.floor(h * 6);
+    f = h * 6 - i;
+    p = v * (1 - s);
+    q = v * (1 - f * s);
+    t = v * (1 - (1 - f) * s);
+    switch (i % 6) {
+        case 0: r = v, g = t, b = p; break;
+        case 1: r = q, g = v, b = p; break;
+        case 2: r = p, g = v, b = t; break;
+        case 3: r = p, g = q, b = v; break;
+        case 4: r = t, g = p, b = v; break;
+        case 5: r = v, g = p, b = q; break;
+    }
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
   }
   function gocoding() {
     if(isClicked){
