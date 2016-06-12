@@ -81,6 +81,7 @@
       var hash = decodeURI(location.hash).slice(1),
           code = hash.split("-")[0],
           className = hash.split("-")[1],
+          yearmonth = hash.split("-")[2],
           info = url.filter(function(item) {
             return item.code == code
           })[0],
@@ -89,6 +90,7 @@
           }, []).filter(function(item) {
             return item == className;
           })[0];
+      info.date = yearmonth || info.date;
       if(!info || className != classNameChk) {
         alert("잘못된 경로로 접근하였습니다.");
         location.href = "/";
@@ -104,9 +106,8 @@
       var str = $("#template").html(),
           template = ejs.compile(str),
           className = decodeURI(location.hash).split("-")[1],
-          yearmonth = "<%= yearmonth %>",
-          imgs = getImgs(yearmonth, info.code, className);
-      month = new Date().getMonth() + 1;
+          imgs = getImgs(info.date, info.code, className);
+      month = Number(info.date.slice(4, 6));
       var row = [];
       if(names[info.school + "-" + className]) {
         names = names[info.school + "-" + className]

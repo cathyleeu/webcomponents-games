@@ -112,14 +112,7 @@ public.get('/code/:code', function *(next) {
 });
 
 public.get('/login', function *(next) {
-  var date = new Date(),
-      year = date.getFullYear(),
-      month = date.getMonth() + 1,
-      yearmonth = '' + year + (month < 10 ? '0' : '') + month;
-
-  yield this.render('login', {
-    yearmonth: yearmonth
-  });
+  yield this.render('login');
 });
 
 public.get('/book', function *(next) {
@@ -133,14 +126,7 @@ public.get('/school', function *(next) {
 });
 
 public.get('/info', function *(next) {
-  var date = new Date(),
-      year = date.getFullYear(),
-      month = date.getMonth() + 1,
-      yearmonth = '' + year + (month < 10 ? '0' : '') + month;
-
-  yield this.render('info', {
-    yearmonth: yearmonth
-  });
+  yield this.render('info');
 });
 
 public.get('/kids', function *(next) {

@@ -15,25 +15,27 @@ gulp.task('less', function () {
 
 gulp.task('makeUrl', function(cb) {
   var schools = require('./login/schools.json'),
-      books = require('./login/books.json'),
-      date = new Date().toISOString().slice(0,7).split("-").join(""),
       result = [];
-  Object.keys(schools[date]).forEach(function(key) {
+  Object.keys(schools).forEach(function(key) {
     var school = key.split(":"),
+        date = school[2],
         sum = 0;
+    if(date.length == 6) {
+      date += "01";
+    }
     sum += school[0].charCodeAt(0) * 17;
     sum += school[0].charCodeAt(1) * 13;
     sum += school[1].charCodeAt(0) * 11;
     sum += school[1].slice(-1).charCodeAt(0) * 19;
     sum += school[1].slice(parseInt(school[1] / 2, 10)).charCodeAt(0) * 7;
     result.push({
+      date: date,
       school: school[1],
       code: sum.toString(16).slice(1),
-      classes: schools[date][key]
+      classes: schools[key]
     });
   });
   fs.writeFileSync('public/login/url.json', JSON.stringify(result));
-  fs.writeFileSync('public/login/books.json', JSON.stringify(books[date]));
   cb();
 });
 

@@ -1,9 +1,10 @@
 function getImgs(yearmonth, code, className) {
   var year = yearmonth.slice(0, 4),
       month = yearmonth.slice(4, 6),
+      day = yearmonth.slice(6, 8) || "01",
       token = '' + className.charCodeAt(0) + className.slice(1).charCodeAt(0) + parseInt(code, 16),
       key = token.slice(1) + token.slice(2) + token.slice(3) + token.slice(4),
-      sum = Number(year) + Number(month) + 17,
+      sum = Number(year) + Number(month) + Number(day) + 16,
       imgs = [],
       num;
   for(var i = 0; i < 40; i++) {
