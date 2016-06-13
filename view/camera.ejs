@@ -34,6 +34,14 @@
 #right .round-box {
   background: #e3e3e3;
 }
+video {
+  height: 100%;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  filter: FlipH;
+}
 
 /* 정사각형 박스 만들기 See: https://goo.gl/xF6uQV */
 .box {
@@ -85,8 +93,14 @@
   right: 20%;
   border: 5px solid #f0ad4e;
 }
-.img {
+.canvas {
   height: 100%;
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
 }
 </style>
 <!-- Navigation -->
@@ -136,7 +150,7 @@
     <div class="box">
       <div class="screen">
         <div class="cam">
-          <video autoplay style="height:100%"></video>
+          <video autoplay></video>
         </div>
         <div class="guide"></div>
       </div>
@@ -152,8 +166,7 @@
     </div>
     <div class="box">
       <div class="screen">
-        <img class="img" id = "my-image" src="">
-        <canvas width="140" height="140"></canvas>
+        <canvas class="canvas" width="14" height="14"></canvas>
       </div>
     </div>
     <div class="play-box">
@@ -190,6 +203,13 @@
   chapture_canvas.width=640;
   chapture_canvas.height=480;
   var ctx = chapture_canvas.getContext('2d');
+  ctx.imageSmoothingEnabled = false;
+  ctx.mozImageSmoothingEnabled = false;
+  ctx.oImageSmoothingEnabled = false;
+  ctx.webkitImageSmoothingEnabled = false;
+  // flip
+  ctx.translate(chapture_canvas.width, 0);
+  ctx.scale(-1, 1);
   var localMediaStream = null;
   var isClicked = false;
   var videoSelect = document.querySelector('#videoSource');
@@ -256,10 +276,10 @@
           var ctx_dot = canvas.getContext("2d");
           var dColor = part_info.pixelData[2] + 256 * part_info.pixelData[1] + 65536 * part_info.pixelData[0];
           ctx_dot.fillStyle = "#"+ dColor.toString(16);
-          ctx_dot.fillRect(10*w, 10*h, 10, 10);
+          ctx_dot.fillRect(w, h, 1, 1);
         }
       }
-      document.querySelector('img').src = canvas.toDataURL('image/webp');
+      console.log(canvas.toDataURL('image/png'));
     }
     isClicked = true;
   }
@@ -332,9 +352,9 @@
     return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
   }
   function gocoding() {
-    if(isClicked){
-      //location.href("/maze#!4jangoon-mart/1")
-    }else{
+    if(isClicked) {
+      location.href = "/maze#!4jangoon-mart/1?character=" + encodeURIComponent(canvas.toDataURL('image/png'));
+    } else {
       alert("'촬영하기'버튼을 눌러서 키즈코딩 캐릭터를 만들어 보세요")
     }
   }
