@@ -68,8 +68,9 @@ KidsCoding.prototype = {
         }
       };
     });
-  	var toolbox = toolbox.map(function(i,j) {
-      return '<block type="' + i + '"></block>';
+  	var toolbox = toolbox.map(function(item) {
+      item = item.split(":")[0];
+      return '<block type="' + item + '"></block>';
     });
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
