@@ -136,6 +136,24 @@ function init() {
   kidscoding.init(loader, mazeInfo, run, tileFactory);
   kidscoding.initBlockly(maze.toolbox, maze.workspace);
 
+  function blockLimitsHandler(event) {
+    var xml = event.xml || event.oldXml,
+        type = xml ? (xml.getAttribute("type") || "") : "";
+    if(type == "start") {
+      return;
+    }
+    if (event.type == Blockly.Events.CREATE || event.type == Blockly.Events.DELETE) {
+      kidscoding.blockLimits[type] += event.type == Blockly.Events.CREATE ? -1 : 1;
+      var toolbox = maze.toolbox.map(function(item) {
+        var tokens = item.split(":"),
+            disabled = kidscoding.blockLimits[tokens[0]] === 0 ? ' disabled="true"' : "";
+        return '<block type="' + tokens[0] + '"' + disabled + '></block>';
+      }).join("");
+      kidscoding.workspace.updateToolbox('<xml>' + toolbox + '</xml>');
+    }
+  }
+  kidscoding.workspace.addChangeListener(blockLimitsHandler);
+
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);
   }

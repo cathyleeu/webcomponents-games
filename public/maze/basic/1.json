@@ -1,7 +1,7 @@
 {
   "toolbox": [
-    "move_up:1",
-    "move_down:2",
+    "move_up",
+    "move_down",
     "move_right",
     "move_left"
   ],

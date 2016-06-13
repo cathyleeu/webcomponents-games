@@ -38,6 +38,7 @@ KidsCoding.prototype = {
   },
   initBlockly: function(toolbox, workspace) {
     var _this = this;
+    this.blockLimits = {};
     $.each(Blocks, function(name, options) {
       options = $.extend({
         colour: 0,
@@ -69,9 +70,12 @@ KidsCoding.prototype = {
       };
     });
   	var toolbox = toolbox.map(function(item) {
-      item = item.split(":")[0];
-      return '<block type="' + item + '"></block>';
-    });
+      var tokens = item.split(":");
+      if(tokens.length >= 2) {
+        _this.blockLimits[tokens[0]] = +tokens[1];
+      }
+      return '<block type="' + tokens[0] + '"></block>';
+    }).join("");
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
       toolbox: '<xml>' + toolbox + '</xml>',
@@ -91,6 +95,5 @@ KidsCoding.prototype = {
     }
     var startblock = '<xml>' + this.createXml(workspace) + '</xml>';
   	Blockly.Xml.domToWorkspace(this.workspace,$(startblock).get(0));
-    return this.workspace;
   }
 };
