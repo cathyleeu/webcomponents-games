@@ -1,0 +1,26 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_right1:1",
+    "move_right2:1",
+    "move_right4:1",
+    "move_right8:1"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    ".########.",
+    "#........#",
+    "#r......%#",
+    "#........#",
+    ".########."
+  ],
+  "tutorial": [{
+    "msg": "게살버거가 먹고 싶어요"
+  },{
+    "msg": "1, 2, 4, 8 이동블록을 　　한개만써서 게살버거까지 움직여보자"
+  }]
+}
