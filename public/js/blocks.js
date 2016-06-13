@@ -239,3 +239,53 @@ Blocks['condition_ifMoveRight'] = {
   }],
   action: ["condition", "if_move_right"]
 };
+Blocks["move_right1"] = {
+  colour: 260,
+  message0: "%1 앞으로 1칸 가기",
+  args0: [
+    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+  ],
+  action: ["move", "right"]
+};
+Blocks["move_right2"] = {
+  colour: 260,
+  message0: "%1 앞으로 2칸 가기",
+  args0: [
+    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+  ],
+  action: ["func", {
+    type: "repeat",
+    count: 2,
+    statements: {
+      type: "move_right"
+    }
+  }]
+};
+Blocks["move_right4"] = {
+  colour: 260,
+  message0: "%1 앞으로 4칸 가기",
+  args0: [
+    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+  ],
+  action: ["func", {
+    type: "repeat",
+    count: 4,
+    statements: {
+      type: "move_right"
+    }
+  }]
+};
+Blocks["move_right8"] = {
+  colour: 260,
+  message0: "%1 앞으로 8칸 가기",
+  args0: [
+    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+  ],
+  action: ["func", {
+    type: "repeat",
+    count: 8,
+    statements: {
+      type: "move_right"
+    }
+  }]
+};
