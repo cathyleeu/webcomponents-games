@@ -126,7 +126,12 @@
   <div id="left">
     <div class="round-box">
       <i class="fa fa-camera" aria-hidden="true"></i>
-      네모칸에 캐릭터 그림을 넣고 '촬영하기'를 눌러주세요
+      네모칸에 캐릭터 그림을 넣고 '촬영하기'를 눌러주세요<br/>
+      <a id="videoChange" href="#">
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+        카메라 전환
+      </a>
+      <select id="videoSource" hidden="true"></select>
     </div>
     <div class="box">
       <div class="screen">
@@ -186,11 +191,51 @@
   chapture_canvas.height=480;
   var ctx = chapture_canvas.getContext('2d');
   var localMediaStream = null;
-  var videoObj = { "video": true };
   var isClicked = false;
-	var	errBack = function(error) {
-			console.log("Video capture error: ", error.code);
-		};
+  var videoSelect = document.querySelector('#videoSource');
+  navigator.mediaDevices.enumerateDevices().then(function gotDevices(deviceInfos) {
+    deviceInfos.filter(function(item) {
+      return item.kind == "videoinput";
+    }).forEach(function(item) {
+      $(videoSelect).append('<option value="' + item.deviceId + '">' + item.label + '</option>');
+    });
+  }).catch(function handleError(error) {
+    console.log('navigator.getUserMedia error: ', error);
+  });
+
+  function start() {
+    if (localMediaStream) {
+      localMediaStream.getTracks().forEach(function(track) {
+        track.stop();
+      });
+    }
+    var videoSource = videoSelect.value;
+    var constraints = {
+      video: (videoSource ? {
+        optional: [{sourceId: videoSource}]
+      } : true)
+    };
+    navigator.getUserMedia(constraints, function(stream){
+      var URL = window.URL || window.webkitURL;
+      video.src = URL ? URL.createObjectURL(stream) : stream;
+      localMediaStream = stream;
+    }, function(error) {
+  		console.log("Video capture error: ", error.code);
+  	});
+
+  };
+  $(videoSelect).change(start);
+  start();
+
+  $("#videoChange").click(function(e) {
+    e.preventDefault();
+    if(videoSelect.selectedIndex+1 < videoSelect.length) {
+      videoSelect.selectedIndex++;
+    } else {
+      videoSelect.selectedIndex = 0;
+    }
+    $(videoSelect).trigger('change');
+  });
 
   function snapshot() {
     if (localMediaStream) {
@@ -295,21 +340,4 @@
   }
   document.getElementById('makeimg').addEventListener('click', snapshot, false);
   document.getElementById('goKids').addEventListener('click', gocoding, false);
-	if(navigator.webkitGetUserMedia) { // WebKit-prefixed
-		navigator.webkitGetUserMedia(videoObj, function(stream){
-      var URL = window.URL || window.webkitURL;
-			video.src = URL.createObjectURL(stream);
-			localMediaStream = stream;
-		}, errBack);
-	} else if(navigator.mozGetUserMedia) { // Firefox-prefixed
-		navigator.mozGetUserMedia(videoObj, function(stream){
-			video.src = window.URL.createObjectURL(stream);
-			localMediaStream = stream;
-		}, errBack);
-	} else if(navigator.getUserMedia) { // Standard
-		navigator.getUserMedia(videoObj, function(stream) {
-			video.src = stream;
-			localMediaStream = stream;
-		}, errBack);
-  }
 </script>
