@@ -1,0 +1,27 @@
+{
+  "tile_size": 50,
+  "view_size":10,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_right1:1",
+    "move_right2:1",
+    "move_right4:1",
+    "move_right8:1"
+  ],
+  "character": "character",
+  "message": "message",
+  "map": [
+    ".###############.",
+    "#...............#",
+    "#r.............%#",
+    "#...............#",
+    ".###############."
+  ],
+  "tutorial": [{
+    "msg": "게살버거가 먹고 싶어요"
+  },{
+    "msg": "게살버거는 오른쪽으로 14칸 움직여야 먹을 수 있어요"
+  }]
+}
