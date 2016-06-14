@@ -115,7 +115,7 @@ function init() {
   });
   // index 화면 초기 구동시 localData 삭제
   if(!queries.hasOwnProperty("x") && !queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
-    store.clear();
+    store.remove("data");
   }
 
   tileFactory.init(maze, loader);
