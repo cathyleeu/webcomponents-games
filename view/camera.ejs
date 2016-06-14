@@ -259,6 +259,8 @@ video.flip {
     } else {
       $(video).removeClass('flip');
     }
+    ctx.translate(chapture_canvas.width, 0);
+    ctx.scale(-1, 1);
     $(videoSelect).trigger('change');
   });
 
