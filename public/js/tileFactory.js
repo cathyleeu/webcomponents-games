@@ -45,6 +45,9 @@ TileFactory.prototype.init = function(maze, loader) {
     var tokens = item.split("=");
     _this.hashObj[tokens[0]] = tokens[1];
   });
+  if(this.hashObj.character) {
+    store.set('character', this.hashObj.character);
+  }
 };
 
 TileFactory.prototype.create = function(tile, x, y) {
@@ -143,11 +146,9 @@ TileFactory.prototype.create = function(tile, x, y) {
   }
 
   if(info.img) {
-    if(info.role == "character" && this.hashObj.character) {
-      if(this.hashObj.character) {
-        bitmap = new createjs.Bitmap(decodeURIComponent(this.hashObj.character));
-        delete info.sprite;
-      }
+    if(info.role == "character" && store.get('character')) {
+      bitmap = new createjs.Bitmap(decodeURIComponent(store.get('character')));
+      delete info.sprite;
     } else if(info.sprite) {
       var animations = {
         stand_u: 0,
