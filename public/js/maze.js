@@ -102,9 +102,6 @@ function init() {
   } else {
     message_url = "/img/ladybug.png";
   }
-  if(store.get('character')) {
-    message_url = decodeURIComponent(store.get('character'));
-  }
 
   var queries = {},
       idx = location.hash.indexOf("?"),
@@ -122,6 +119,10 @@ function init() {
   }
 
   tileFactory.init(maze, loader);
+  if(store.get('character')) {
+    message_url = decodeURIComponent(store.get('character'));
+  }
+
   initMaze();
   $("#runCode").html('<i class="fa fa-play"></i> 시작');
   if(maze.type != "world" && maze.type != "game") {
