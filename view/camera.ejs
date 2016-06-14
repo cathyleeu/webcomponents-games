@@ -34,7 +34,7 @@
 #right .round-box {
   background: #e3e3e3;
 }
-video {
+video.flip {
   height: 100%;
   -moz-transform: scale(-1, 1);
   -webkit-transform: scale(-1, 1);
@@ -150,7 +150,7 @@ video {
     <div class="box">
       <div class="screen">
         <div class="cam">
-          <video autoplay></video>
+          <video autoplay class="flip"></video>
         </div>
         <div class="guide"></div>
       </div>
@@ -253,6 +253,11 @@ video {
       videoSelect.selectedIndex++;
     } else {
       videoSelect.selectedIndex = 0;
+    }
+    if(videoSelect.selectedIndex == 0) {
+      $(video).addClass('flip');
+    } else {
+      $(video).removeClass('flip');
     }
     $(videoSelect).trigger('change');
   });
