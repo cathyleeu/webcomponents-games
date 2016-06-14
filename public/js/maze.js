@@ -102,6 +102,9 @@ function init() {
   } else {
     message_url = "/img/ladybug.png";
   }
+  if(store.get('character')) {
+    message_url = decodeURIComponent(store.get('character'));
+  }
 
   var queries = {},
       idx = location.hash.indexOf("?"),
