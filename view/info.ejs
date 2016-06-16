@@ -129,7 +129,9 @@
           $(".page").append($row);
           row = [];
           if(index + 1 == names.length) {
-            $row.append('<div class="card" style="width:280px;">');
+            // TODO: 문정 유치원의 커스텀 ID 적용시 홀수에서 끝나는 경우를 대비하기 위하여 추가된 코드이지만 다시 짝수가 되었을때
+            //여백이 틀어지는 문제가 발생함. 향수 수정 필요
+            //$row.append('<div class="card" style="width:280px;">');
           }
         }
       });
