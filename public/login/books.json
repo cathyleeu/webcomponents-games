@@ -92,12 +92,10 @@
     ["장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"]
   ],
   "숙명키즈": [
-    ["장군이의 집찾기", "/maze#!4jangoon-house/index"],
-    ["장군이의 심부름", "/maze#!4jangoon-mart/index"],
-    ["장군이의 집찾기 - 반복", "/maze#!4jangoon-house-r/index"],
-    ["장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"],
     ["토드의 규칙찾기", "/maze#!5tode_pattern/index"],
-    ["라나의 선물하기", "/maze#!5lana_gift/index"]
+    ["라나의 선물하기", "/maze#!5lana_gift/index"],
+    ["라나와 토드의 선물준비", "/maze#!5_5_1present/index"],
+    ["지미와 장군이의 선물사기", "/maze#!5_5_2mart/index"]
   ],
   "학원": [
     ["클로즈 베타 1", "/maze#!2frog/1"],
