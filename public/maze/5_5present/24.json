@@ -1,0 +1,51 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
+  ],
+  "map": [
+    ".#...#..d",
+    ".........",
+    ".P#.#....",
+    "Pa.##..#S",
+    ".##.#R##S",
+    ".a#%R#..a",
+    ".#..#....",
+    "...#...#.",
+    ".#.#....."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 5,
+    "img":"clover1"
+  }, {
+    "x": 1,
+    "y": 3,
+    "img":"clover2"
+  }, {
+    "x": 1,
+    "y": 5,
+    "img":"clover3"
+  }, {
+    "x": 8,
+    "y": 5,
+    "img":"clover4"
+  }],
+  "tutorial": [{
+    "msg": "토드는 규칙찾기 놀이를 하고 싶어!",
+    "img": "/img/frog/tode0.png"
+  },{
+    "msg": "빈칸에 들어갈 꽃 모양을 찾아가보자!",
+    "img": "/img/5pattern/flower_pattern_q3_2.png"
+  }]
+}
