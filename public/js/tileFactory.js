@@ -237,6 +237,18 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [4,5,4]
         };
       }
+      if(character.src.indexOf('jimi') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: [9,10,11,9],
+          stand_r: 3,
+          walk_r: [3,4,5,3],
+          stand_d: 0,
+          walk_d: [0,1,2,0],
+          stand_l: 6,
+          walk_l: [6,7,8,6]
+        };
+      }
       for(var key in animations) {
         if($.isArray(animations[key])) {
           animations[key] = {

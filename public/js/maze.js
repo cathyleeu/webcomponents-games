@@ -528,7 +528,7 @@ function addEvents() {
           }
           page(obj.link + temp);
         } else {
-          showModal("별을 " + obj.min_score + "개 이상 모아야 해요");
+          showModal(obj.min_score + "개 이상 모아야 해요");
         }
       }
       if(obj && obj.tutorial) {
