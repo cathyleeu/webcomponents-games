@@ -7,142 +7,82 @@
   "toolbox": [],
   "map": [
     ".######################.",
-    "###.####.%#..#%#.%###.%#",
+    "###.####.%#..#.#..###.%#",
     "#.##%.%..#.e.#..%...%#.#",
-    "#.#%.#..%##..#%..%...#%#",
-    "#%#%....#.#..##.%##.%..#",
-    "#....%#................#",
-    "#%#%##.u...##.%.%...%#%#",
-    "####.....#.#%..#.#%....#",
-    "#......#..##%..%.%..#%.#",
+    "#.#%.#..%##..#...%...#%#",
+    "#.#.....#.#..##..##....#",
+    "#.....#................#",
+    "#.#.##.u...##...%....#%#",
+    "####.....#.#...#.#%....#",
+    "#......#..##.....%..#%.#",
     ".######################."
   ],
   "extra": [{
     "x": 3,
     "y": 3,
-    "link": "5tode_pattern/1"
+    "link": "5_5present/1"
   },{
     "x": 4,
     "y": 2,
-    "link": "5tode_pattern/2"
+    "link": "5_5present/2"
   },{
     "x": 6,
     "y": 2,
-    "link": "5tode_pattern/3"
+    "link": "5_5present/3"
   },{
     "x": 9,
     "y": 1,
-    "link": "5tode_pattern/4"
+    "link": "5_5present/4"
   },{
     "x": 8,
     "y": 3,
-    "link": "5tode_pattern/5"
-  },{
-    "x": 1,
-    "y": 4,
-    "link": "5tode_pattern/6"
-  },{
-    "x": 3,
-    "y": 4,
-    "link": "5tode_pattern/7"
-  },{
-    "x": 1,
-    "y": 6,
-    "link": "5tode_pattern/8"
-  },{
-    "x": 3,
-    "y": 6,
-    "link": "5tode_pattern/9"
-  },{
-    "x": 5,
-    "y": 5,
-    "link": "5_5present/1"
+    "link": "5_5present/5"
   },{
     "x": 16,
     "y": 2,
-    "link": "5tode_pattern/11"
+    "link": "5_5present/6"
   },{
     "x": 17,
     "y": 3,
-    "link": "5tode_pattern/12"
+    "link": "5_5present/7"
   },{
     "x": 20,
     "y": 2,
-    "link": "5tode_pattern/13"
+    "link": "5_5present/8"
   },{
     "x": 22,
     "y": 1,
-    "link": "5tode_pattern/14"
+    "link": "5_5present/9"
   },{
     "x": 22,
     "y": 3,
-    "link": "5tode_pattern/15"
-  },{
-    "x": 14,
-    "y": 1,
-    "link": "5tode_pattern/16"
-  },{
-    "x": 17,
-    "y": 1,
-    "link": "5tode_pattern/17"
-  },{
-    "x": 14,
-    "y": 3,
-    "link": "5tode_pattern/18"
-  },{
-    "x": 16,
-    "y": 4,
-    "link": "5tode_pattern/19"
-  },{
-    "x": 20,
-    "y": 4,
-    "link": "5tode_pattern/20"
+    "link": "5_5present/10"
   },{
     "x": 16,
     "y": 6,
-    "link": "5tode_pattern/21"
+    "link": "5_5present/11"
   },{
     "x": 18,
     "y": 7,
-    "link": "5tode_pattern/22"
+    "link": "5_5present/12"
   },{
     "x": 17,
     "y": 8,
-    "link": "5tode_pattern/23"
+    "link": "5_5present/13"
   },{
     "x": 22,
     "y": 6,
-    "link": "5tode_pattern/24"
+    "link": "5_5present/14"
   },{
     "x": 21,
     "y": 8,
-    "link": "5tode_pattern/25"
-  },{
-    "x": 14,
-    "y": 6,
-    "link": "5tode_pattern/26"
-  },{
-    "x": 12,
-    "y": 7,
-    "link": "5tode_pattern/27"
-  },{
-    "x": 12,
-    "y": 8,
-    "link": "5tode_pattern/28"
-  },{
-    "x": 15,
-    "y": 8,
-    "link": "5tode_pattern/29"
-  },{
-    "x": 20,
-    "y": 6,
-    "link": "5tode_pattern/30"
+    "link": "5_5present/15"
   },{
     "x": 11,
     "y": 2,
-    "img": "lana",
+    "img": "in",
     "link": "5lana_gift/index",
-    "min_score": 36
+    "min_score": 20
   },  {
     "x": 7,
     "y": 8,
@@ -150,13 +90,13 @@
     "obstacle": false,
     "tutorial": [
        {
-      "msg": "빨간색 글자 표지판 : 별 3개를 얻을 수 있습니다. 매우 어렵습니다.",
+      "msg": "빨간색 글자 표지판 : 선물 3개를 얻을 수 있습니다. 매우 어렵습니다.",
       "img": "/img/guide/hard.png"
     }, {
-      "msg": "노란색 글자 표지판 : 별 2개를 얻을 수 있습니다.",
+      "msg": "노란색 글자 표지판 : 선물 2개를 얻을 수 있습니다.",
       "img": "/img/guide/normal.png"
     }, {
-      "msg": "초록색 글자 표지판 : 별 1개를 얻을 수 있습니다. 다소 쉽습니다.",
+      "msg": "초록색 글자 표지판 : 선물 1개를 얻을 수 있습니다. 다소 쉽습니다.",
       "img": "/img/guide/easy.png"
     }]
   },{
@@ -165,7 +105,7 @@
     "img": "easy",
     "obstacle": false,
     "tutorial": [{
-      "msg": "꽃을 1개 얻을 수 있어!",
+      "msg": "선물을 1개 얻을 수 있어!",
       "img": "/img/guide/easy.png"
     }]
 
@@ -175,7 +115,7 @@
     "img": "normal",
     "obstacle": false,
     "tutorial": [{
-      "msg": "꽃을 2개 얻을 수 있어!",
+      "msg": "선물을 2개 얻을 수 있어!",
       "img": "/img/guide/normal.png"
     }]
   },  {
@@ -184,18 +124,18 @@
     "img": "hard",
     "obstacle": false,
     "tutorial": [{
-      "msg": "꽃을 3개 얻을 수 있어!",
+      "msg": "선물을 3개 얻을 수 있어!",
       "img": "/img/guide/hard.png"
     }]
 
 }],
   "tutorial": [{
-    "msg": "나는 규칙찾기 놀이를 매우 좋아해!"
+    "msg": "인이 돌잔지에 가져갈 선물을 준비해야해!"
   }, {
-    "msg": "규칙놀이 문제를 풀고 별 36개을 모아서",
-    "img": "/img/frog/flower0.png"
+    "msg": "선물을 20개을 모아서",
+    "img": "/img/frog/gift.png"
   }, {
-    "msg": "개구리 라나에게 전달해보자!",
-    "img": "/img/frog/lana0.png"
+    "msg": "인이에게 전달해보자!",
+    "img": "/img/woong/in_old.png"
   }]
 }

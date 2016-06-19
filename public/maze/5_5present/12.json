@@ -1,22 +1,23 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":2,
+  "score":3,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
     "move_left",
-    "repeat"
+    "get_item",
+    "use_item"
   ],
   "map": [
     ".#...#...",
-    "..a......",
-    "..#..a.#.",
+    ".........",
+    "..#....#.",
     ".....#...",
-    ".##...#.a",
-    "..#......",
+    ".##...#..",
+    ".)#......",
     "%#.#.....",
     ".#..u..#.",
     ".#.#....."
@@ -24,25 +25,17 @@
   "extra":[{
     "x": 0,
     "y": 6,
-    "img":"clover4"
-  }, {
-    "x": 2,
-    "y": 1,
-    "img":"clover2"
-  }, {
-    "x": 5,
-    "y": 2,
-    "img":"clover3"
-  }, {
-    "x": 8,
-    "y": 4,
-    "img":"clover1"
+    "useItem": true
+  },{
+    "x": 1,
+    "y": 5,
+    "img":"flower"
   }],
   "tutorial": [{
-    "msg": "토드는 규칙찾기 놀이를 하고 싶어!",
-    "img": "/img/frog/tode0.png"
+    "msg": "돌자치 선물로 연꽅을 집어서",
+    "img": "/img/frog/lotus_flower.png"
   },{
-    "msg": "빈칸에 들어갈 클로버 모양을 찾아가보자!",
-    "img": "/img/5pattern/clover_pattern_q2_2.png"
+    "msg": "선물상자에 넣어보자!",
+    "img": "/img/frog/gift0.png"
   }]
 }

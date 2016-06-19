@@ -93,7 +93,18 @@ addEvents();
 
 function preInit() {
   //캐릭터 선택 팝업
-  if(maze.select_character) {
+  var queries = {},
+      idx = location.hash.indexOf("?"),
+      search = idx >= 0 ? location.hash.slice(idx + 1) : "";
+
+  search.split("&").map(function(query) {
+    var sp = query.split("=");
+    if(sp[0]) {
+      queries[sp[0]] = sp[1];
+    }
+  });
+
+  if(maze.select_character && !queries.hasOwnProperty("x") && !queries.hasOwnProperty("y")) {
     showModal({
       select_character: true,
       character1: loader.getItem("message").src,
@@ -185,6 +196,7 @@ function init() {
   handle_resize();
 
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
+    // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
     setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
@@ -510,6 +522,10 @@ function addEvents() {
         var score = localData[path] ? localData[path].score || 0 : 0;
         if(!obj.min_score || score >= obj.min_score) {
           var temp = "?back=" + (idx >= 0 ? hash.slice(0, idx) : hash) + "&x=" + mazeInfo.canvas.character.px + "&y=" + mazeInfo.canvas.character.py;
+          if(obj.link.slice(-5) == "index") {
+            // 새로운 index로 넘어갈땐 돌아올 필요가 없음
+            temp = "";
+          }
           page(obj.link + temp);
         } else {
           showModal("별을 " + obj.min_score + "개 이상 모아야 해요");

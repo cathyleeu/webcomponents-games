@@ -1,47 +1,41 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":1,
+  "score":2,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left"
+    "move_left",
+    "get_item",
+    "use_item"
   ],
   "map": [
     ".#...#...",
     "....#....",
     "..#...##.",
     "......#..",
-    ".a#..a#..",
+    "..#...#..",
     ".....#...",
     ".#......%",
     "..r....#.",
-    "...#...a."
+    "...#...)."
   ],
   "extra":[{
     "x": 8,
     "y": 6,
-    "img":"lana5"
-  }, {
-    "x": 1,
-    "y": 4,
-    "img":"lana1"
-  }, {
-    "x": 5,
-    "y": 4,
-    "img":"lana2"
-  }, {
+    "useItem": true
+  },{
     "x": 7,
     "y": 8,
-    "img":"lana6"
+    "img":"flower"
   }],
   "tutorial": [{
-    "msg": "토드는 규칙찾기 놀이를 하고 싶어!",
-    "img": "/img/frog/tode0.png"
+    "msg": "돌자치 선물로 연꽅을 집어서",
+    "img": "/img/frog/lotus_flower.png"
   },{
-    "msg": "물음표에 들어갈 라나 마리 수를 찾아가보자!",
-    "img": "/img/5pattern/lana_pattern_q1_2.png"
+    "msg": "선물상자에 넣어보자!",
+    "img": "/img/frog/gift0.png"
   }]
 }

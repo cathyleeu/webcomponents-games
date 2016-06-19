@@ -1,47 +1,41 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":1,
+  "score":2,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left"
+    "move_left",
+    "get_item",
+    "use_item"
   ],
   "map": [
     ".#...#.#.",
     ".#.......",
     "..#....#.",
-    ".....#a..",
-    ".a#...#..",
+    ".....#...",
+    "..#...#..",
     ".....#d..",
     ".#.......",
-    "...a#..#.",
-    "...#...%."
+    "....#..#.",
+    "...#)..%."
   ],
   "extra":[{
     "x": 7,
     "y": 8,
-    "img":"lotus6"
-  }, {
-    "x": 1,
-    "y": 4,
-    "img":"lotus4"
-  }, {
-    "x": 3,
-    "y": 7,
-    "img":"lotus5"
-  }, {
-    "x": 6,
-    "y": 3,
-    "img":"lotus7"
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 8,
+    "img":"flower"
   }],
   "tutorial": [{
-    "msg": "토드는 규칙찾기 놀이를 하고 싶어!",
-    "img": "/img/frog/tode0.png"
+    "msg": "돌자치 선물로 연꽅을 집어서",
+    "img": "/img/frog/lotus_flower.png"
   },{
-    "msg": "빈 연잎 위의 숫자를 찾아가보자!",
-    "img": "/img/5pattern/lotus_pattern_q1_2.png"
+    "msg": "선물상자에 넣어보자!",
+    "img": "/img/frog/gift0.png"
   }]
 }
