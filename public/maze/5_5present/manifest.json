@@ -39,5 +39,6 @@
   {"id": "hand_paper", "src": "/img/hand_paper.png"},
   {"id": "hand_scissors", "src": "/img/hand_scissors.png"},
   {"id": "flower", "src": "/img/frog/lotus_flower.png"},
+  {"id": "in", "src": "/img/woong/in50.png"},
   {"id": "question", "src": "/img/frog/question.png", "obstacle": false}
 ]
