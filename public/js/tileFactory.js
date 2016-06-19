@@ -81,7 +81,7 @@ TileFactory.prototype.create = function(tile, x, y) {
 
   switch(info.role) {
     case "character":
-      var character_id = this.maze.character || "character",
+      var character_id = store.get('character_id') || this.maze.character || "character",
           character = this.loader.getItem(character_id);
       if(character && character.sprite) { // sprite character
         this.defaults(info, {
@@ -147,6 +147,7 @@ TileFactory.prototype.create = function(tile, x, y) {
 
   if(info.img) {
     if(info.role == "character" && store.get('character')) {
+      // camera 처리
       bitmap = new createjs.Bitmap(decodeURIComponent(store.get('character')));
       delete info.sprite;
     } else if(info.sprite) {

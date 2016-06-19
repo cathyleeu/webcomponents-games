@@ -9,7 +9,8 @@ var d1,
     kidscoding = new KidsCoding(),
     tileFactory = new TileFactory(),
     tutorial = null,
-    tutorialIdx = 0;
+    tutorialIdx = 0,
+    message_url = "";
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
@@ -18,8 +19,7 @@ page('*', function(ctx, next) {
         return val;
       })),
       map_url = path.join("/") + ".json",
-      manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/"),
-      message_url;
+      manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/");
 
   // page 이동시 이전에 재생되던 bgm을 멈춤
   createjs.Sound.stop("bgm");
@@ -27,7 +27,7 @@ page('*', function(ctx, next) {
   step = path[path.length - 1];
   d1 = $.Deferred();
   d2 = $.Deferred();
-  $.when( step, d1, d2 ).done(init);
+  $.when( step, d1, d2 ).done(preInit);
 
   // load map json file
   $.getJSON(map_url, function(json) {
@@ -91,6 +91,19 @@ page({
 
 addEvents();
 
+function preInit() {
+  //캐릭터 선택 팝업
+  if(maze.select_character) {
+    showModal({
+      select_character: true,
+      character1: loader.getItem("message").src,
+      character2: loader.getItem("message2").src
+    });
+  } else {
+    init();
+  }
+}
+
 function init() {
   var message_id = maze.message || maze.character,
       message_item = loader.getItem(message_id)
@@ -116,11 +129,19 @@ function init() {
   // index 화면 초기 구동시 localData 삭제
   if(!queries.hasOwnProperty("x") && !queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     store.remove("data");
+    store.remove('character');
+    if(!maze.select_character) {
+      store.remove('character_id');
+      store.remove('message_id');
+    }
   }
 
   tileFactory.init(maze, loader);
   if(store.get('character')) {
     message_url = decodeURIComponent(store.get('character'));
+  }
+  if(store.get('message_id')) {
+    message_url = loader.getItem(store.get('message_id')).src;
   }
 
   initMaze();
@@ -530,6 +551,15 @@ function addEvents() {
     }
     tutorialIdx++;
   });
+
+  $("#modal .character1-modal, #modal .character2-modal").click(function(e) {
+    var isFirst = $(e.currentTarget).hasClass("character1-modal"),
+        character = isFirst ? "character" : "character2",
+        message = isFirst ? "message" : "message2";
+    store.set("character_id", character);
+    store.set("message_id", message);
+    init();
+  });
 }
 
 function runTutorial(input_tutorial) {
@@ -714,6 +744,18 @@ function showModal(options) {
   } else {
     $("#modal .modal-msg-box").show();
     $("#modal video").hide();
+  }
+  if(options.select_character){
+    $("#modal .modal-msg-box").hide();
+    $("#modal .modal-select").show();
+    $("#modal .character1-modal").show();
+    $("#modal .character2-modal").show();
+    $("#modal .modal-character1").attr("src", options.character1);
+    $("#modal .modal-character2").attr("src", options.character2);
+    $("#modal .modal-footer .tutorial").hide();
+  } else {
+    $("#modal .modal-msg-box").show();
+    $("#modal .modal-select").hide();
   }
   var img_src = options.img || message_url;
   $(".modal-msg-box img").attr("src", img_src);

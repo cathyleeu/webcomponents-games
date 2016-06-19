@@ -1,0 +1,47 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#...#...",
+    "....#....",
+    "..#...##.",
+    "......#..",
+    ".a#..a#..",
+    ".....#...",
+    ".#......%",
+    "..r....#.",
+    "...#...a."
+  ],
+  "extra":[{
+    "x": 8,
+    "y": 6,
+    "img":"lana5"
+  }, {
+    "x": 1,
+    "y": 4,
+    "img":"lana1"
+  }, {
+    "x": 5,
+    "y": 4,
+    "img":"lana2"
+  }, {
+    "x": 7,
+    "y": 8,
+    "img":"lana6"
+  }],
+  "tutorial": [{
+    "msg": "토드는 규칙찾기 놀이를 하고 싶어!",
+    "img": "/img/frog/tode0.png"
+  },{
+    "msg": "물음표에 들어갈 라나 마리 수를 찾아가보자!",
+    "img": "/img/5pattern/lana_pattern_q1_2.png"
+  }]
+}
