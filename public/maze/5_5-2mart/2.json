@@ -27,6 +27,7 @@
     "img":"fruit_st"
   }],
   "tutorial": [{
-    "msg": "가장 작은 과일을 사야해요!"
+    "msg": "가장 작은 과일을 사야해요!",
+    "img": "/img/ment/smallest.png"
   }]
 }

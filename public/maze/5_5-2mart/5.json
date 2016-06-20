@@ -27,6 +27,7 @@
     "img":"fruit_or"
   }],
   "tutorial": [{
-    "msg": "주황색 과일을 사야해요!"
+    "msg": "주황색 과일을 사야해요!",
+    "img": "/img/ment/orange.png"
   }]
 }

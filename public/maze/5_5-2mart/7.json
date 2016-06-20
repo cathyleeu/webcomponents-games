@@ -33,7 +33,8 @@
     "img":"fruit_ap"
   }],
   "tutorial": [{
-    "msg": "두번째로 큰 과일 1개를 집어서"
+    "msg": "두번째로 큰 과일 1개를 집어서",
+    "img": "/img/ment/middle.png"
   },{
     "msg": "카트에 집어 넣어보자!",
     "img": "/img/jangoon/kart.png"

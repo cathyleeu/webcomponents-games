@@ -33,7 +33,8 @@
     "img":"fruit_or"
   }],
   "tutorial": [{
-    "msg": "주황색 과일 1개를 집어서"
+    "msg": "주황색 과일 1개를 집어서",
+    "img": "/img/ment/orange.png"
   },{
     "msg": "카트에 집어 넣어보자!",
     "img": "/img/jangoon/kart.png"

@@ -39,7 +39,8 @@
     "itemCount": 1
   }],
   "tutorial": [{
-    "msg": "동그랗지 않은 과일 2개를 집어서"
+    "msg": "동그랗지 않은 과일 2개를 집어서",
+    "img": "/img/ment/notcircle.png"
   },{
     "msg": "카트에 집어 넣어보자!",
     "img": "/img/jangoon/kart.png"
