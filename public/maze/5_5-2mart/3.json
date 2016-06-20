@@ -27,6 +27,7 @@
     "img":"fruit_ba"
   }],
   "tutorial": [{
-    "msg": "길쭉한 과일을 사야해요!"
+    "msg": "길쭉한 과일을 사야해요!",
+    "img": "/img/ment/long.png"
   }]
 }

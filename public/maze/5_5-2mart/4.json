@@ -27,6 +27,7 @@
     "img":"milk"
   }],
   "tutorial": [{
-    "msg": "네모난 물건을 사야해요!"
+    "msg": "네모난 물건을 사야해요!",
+    "img": "/img/ment/square.png"
   }]
 }

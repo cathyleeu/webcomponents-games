@@ -29,7 +29,7 @@
   {"id": "star", "src": "/img/map/star.png"},
   {"id": "house", "src": "/img/jangoon/house.png", "obstacle": false},
   {"id": "mart", "src": "/img/jangoon/mart.png", "obstacle": false},
-  {"id": "in", "src": "/img/woong/in50.png"},
+  {"id": "in", "src": "/img/woong/in0.png"},
 
   {"tile": "a", "id": "fruit_ap", "src": "/img/jangoon/fruit_ap.png", "obstacle": false},
   {"tile": "b", "id": "fruit_ba", "src": "/img/jangoon/fruit_ba.png", "obstacle": false},
