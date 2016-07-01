@@ -91,6 +91,18 @@
     ["장군이의 집찾기 - 반복", "/maze#!4jangoon-house-r/index"],
     ["장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"]
   ],
+  "4&5권": [
+    ["장군이의 집찾기", "/maze#!4jangoon-house/index"],
+    ["장군이의 심부름", "/maze#!4jangoon-mart/index"],
+    ["장군이의 집찾기 - 반복", "/maze#!4jangoon-house-r/index"],
+    ["장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"],
+    ["토드의 규칙찾기", "/maze#!5tode_pattern/index"],
+    ["라나의 선물하기", "/maze#!5lana_gift/index"]
+  ],
+  "5권": [
+    ["토드의 규칙찾기", "/maze#!5tode_pattern/index"],
+    ["라나의 선물하기", "/maze#!5lana_gift/index"]
+  ],
   "숙명키즈": [
     ["토드의 규칙찾기", "/maze#!5tode_pattern/index"],
     ["라나의 선물하기", "/maze#!5lana_gift/index"],
