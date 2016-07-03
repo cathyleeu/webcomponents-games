@@ -1,0 +1,32 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":100,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".%%%%%%%.",
+    ".%.mxy.%.",
+    ".%.w%z.%.",
+    ".%..d..%.",
+    ".........",
+    ".........",
+    ".........",
+    ".........",
+    "........."
+  ],
+  "tutorial": [{
+    "msg": "이제 선물 상자를 충분히 모았으니",
+    "img": "/img/frog/gift0.png"
+  },{
+    "msg": "인이의 첫번째 생일 파티를 시작하자!! ",
+    "img": "/img/woong/in_old.png"
+  },{
+    "msg": "내 동생의 생일을 준비해줘서 고마워!! 안녕~"
+  }]
+}
