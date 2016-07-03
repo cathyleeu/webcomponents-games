@@ -1,0 +1,61 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "ttttttttt",
+    "tm%.gy..t",
+    "twk.fz##t",
+    "t.......t",
+    "t##...#.t",
+    "t..)....t",
+    "t#.#.l..t",
+    "t#.....xt",
+    "ttttttttt"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 2,
+    "img":"table2"
+  }, {
+    "x": 2,
+    "y": 2,
+    "img":"table5"
+  }, {
+    "x": 4,
+    "y": 1,
+    "img":"table6"
+  }, {
+    "x": 2,
+    "y": 1,
+    "img":"table3",
+    "useItem": true
+  }, {
+    "x": 3,
+    "y": 5,
+    "img":"fruit_wa"
+  }],
+  "tutorial": [{
+    "msg": "4명의 친구중 1명의 친구가 수박를 먹고 싶어해",
+    "img": "/img/jangoon/fruit_wa.png"
+  },{
+    "msg": "그 친구는 2번째로 작은 번호가 적혀 있는 상 옆에 있어",
+    "img": "/img/ment/mid_num.png"
+  },{
+    "msg": "2번째로 작은 번호의 상 위에 수박을 놓으면",
+    "img": "/img/woong/table.png"
+  },{
+    "msg": "선물상자를 받을 수 있어",
+    "img": "/img/frog/gift0.png"
+  }]
+}

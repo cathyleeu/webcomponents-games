@@ -1,0 +1,61 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "ttttttttt",
+    "tr......t",
+    "t.#...##t",
+    "t...#...t",
+    "t##..)..t",
+    "t.#ma.ewt",
+    "t#.#....t",
+    "t#.y%.czt",
+    "ttttttttt"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "img":"table1"
+  }, {
+    "x": 6,
+    "y": 5,
+    "img":"table3"
+  }, {
+    "x": 6,
+    "y": 7,
+    "img":"table5"
+  }, {
+    "x": 4,
+    "y": 7,
+    "img":"table4",
+    "useItem": true
+  }, {
+    "x": 5,
+    "y": 4,
+    "img":"fruit_ba"
+  }],
+  "tutorial": [{
+    "msg": "4명의 친구중 1명의 친구가 바나나를 먹고 싶어해",
+    "img": "/img/jangoon/fruit_ba.png"
+  },{
+    "msg": "그 친구는 2번째로 큰 번호가 적혀 있는 상 옆에 있어",
+    "img": "/img/ment/mid_num.png"
+  },{
+    "msg": "2번째로 큰 번호의 상 위에 바나나를 놓으면",
+    "img": "/img/woong/table.png"
+  },{
+    "msg": "선물상자를 받을 수 있어",
+    "img": "/img/frog/gift0.png"
+  }]
+}

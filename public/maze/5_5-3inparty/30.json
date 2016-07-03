@@ -1,0 +1,81 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#####...",
+    "mq...#y%.",
+    ".x...#x..",
+    "####.)...",
+    "..x....##",
+    ".wq.)..##",
+    "##.....qz",
+    "##).u..x.",
+    "...####.."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 1,
+    "img":"table",
+    "useItem": 4
+  }, {
+    "x": 5,
+    "y": 3,
+    "img":"machine",
+    "itemCount": 2
+  }, {
+    "x": 2,
+    "y": 7,
+    "img":"water",
+    "itemCount": 1
+  }, {
+    "x": 4,
+    "y": 5,
+    "img":"water",
+    "itemCount": 1
+  }, {
+    "x": 1,
+    "y": 2,
+    "img":"star1"
+  }, {
+    "x": 6,
+    "y": 2,
+    "img":"star2"
+  }, {
+    "x": 2,
+    "y": 4,
+    "img":"star4"
+  }, {
+    "x": 7,
+    "y": 7,
+    "img":"star5"
+  }],
+  "tutorial": [{
+    "msg": "인이 생일 파티에 온 친구중 1명이 목이 말라해!"
+  },{
+    "msg": "정수기에서 물 2컵을 뜨고",
+    "img": "/img/jangoon/water.png"
+  },{
+    "msg": "자판기에서 음료수 3캔를 뽑은 다음",
+    "img": "/img/jangoon/machine.png"
+  },{
+    "msg": "아래 빈칸에 들어갈 모양옆에 있는",
+    "img": "/img/5pattern/star_pattern_q3_2.png"
+  },{
+    "msg": "테이블에 가져다 놓으면",
+    "img": "/img/woong/table.png"
+  },{
+    "msg": "선물상자를 받을 수 있어",
+    "img": "/img/frog/gift0.png"
+  }]
+}

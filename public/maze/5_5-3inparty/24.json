@@ -1,0 +1,63 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#...#..d",
+    "...b.....",
+    "..#.#....",
+    ".##...##a",
+    "...)#.###",
+    "w.m.....#",
+    "%.j##g...",
+    "h.f#...#.",
+    "y.z#....."
+  ],
+  "extra":[{
+    "x": 0,
+    "y": 6,
+    "img":"table3",
+    "useItem": true
+  }, {
+    "x": 3,
+    "y": 4,
+    "img":"fruit_st"
+  }, {
+    "x": 0,
+    "y": 7,
+    "img":"table2"
+  }, {
+    "x": 2,
+    "y": 6,
+    "img":"table5"
+  }, {
+    "x": 2,
+    "y": 7,
+    "img":"table6"
+  }],
+  "tutorial": [{
+    "msg": "4명의 친구중 1명의 친구가 배가고파해"
+  },{
+    "msg": "그 친구는 두번째로 작은 번호가 적혀 있는 상 옆에 있어",
+    "img": "/img/ment/mid_num.png"
+  },{
+    "msg": "두번째로 작은 번호의 상 위에",
+    "img": "/img/woong/table.png"
+  },{
+    "msg": "가장 작은 과일을 놓으면",
+    "img": "/img/ment/smallest.png"
+  },{
+    "msg": "선물상자를 받을 수 있어",
+    "img": "/img/frog/gift0.png"
+  }]
+}

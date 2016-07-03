@@ -1,0 +1,49 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "ttttttttt",
+    "t...#z#.t",
+    "t...%y.#t",
+    "t...mw..t",
+    "t)#...#.t",
+    "t....#..t",
+    "t#...l..t",
+    "t......#t",
+    "ttttttttt"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 2,
+    "img":"table",
+    "useItem": 4
+  }, {
+    "x": 1,
+    "y": 4,
+    "img":"machine",
+    "itemCount": 4
+  }],
+  "tutorial": [{
+    "msg": "인이 생일 파티에 온 4명의 친구들이 목이 말라해!"
+  },{
+    "msg": "자판기에서 *아이템 가져오기*로 물을 뜬다음",
+    "img": "/img/jangoon/machine.png"
+  },{
+    "msg": "테이블에 가져다 놓으면",
+    "img": "/img/woong/table.png"
+  },{
+    "msg": "선물상자를 받을 수 있어",
+    "img": "/img/frog/gift0.png"
+  }]
+}

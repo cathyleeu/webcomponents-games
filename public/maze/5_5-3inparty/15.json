@@ -1,0 +1,60 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "ttttttttt",
+    "tm.w....t",
+    "th.j.#.#t",
+    "tg.%.#)#t",
+    "ty.z.#.#t",
+    "t.....u.t",
+    "t#.#....t",
+    "t#.....#t",
+    "ttttttttt"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 2,
+    "img":"table3"
+  }, {
+    "x": 3,
+    "y": 2,
+    "img":"table4"
+  }, {
+    "x": 1,
+    "y": 3,
+    "img":"table5"
+  }, {
+    "x": 3,
+    "y": 3,
+    "img":"table6",
+    "useItem": true
+  }, {
+    "x": 6,
+    "y": 3,
+    "img":"milk"
+  }],
+  "tutorial": [{
+    "msg": "4명의 친구중 1명의 친구가 우유를 먹고 싶어해",
+    "img": "/img/jangoon/milk.png"
+  },{
+    "msg": "그 친구는 '2-4-?-8' ?에 들어가는 번호가 적혀 있는 상 옆에 있어"
+  },{
+    "msg": "찾은 번호의 상 위에 우유을 놓으면",
+    "img": "/img/woong/table.png"
+  },{
+    "msg": "선물상자를 받을 수 있어",
+    "img": "/img/frog/gift0.png"
+  }]
+}

@@ -1,0 +1,67 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "ttttttttt",
+    "t.).d...t",
+    "t.#..##.t",
+    "t..#....t",
+    "t)..).#.t",
+    "t.#..##.t",
+    "t.#.)..yt",
+    "t.##wz%mt",
+    "ttttttttt"
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 7,
+    "img":"table",
+    "useItem": 6
+  }, {
+    "x": 1,
+    "y": 4,
+    "img":"machine",
+    "itemCount": 1
+  }, {
+    "x": 2,
+    "y": 1,
+    "img":"machine",
+    "itemCount": 2
+  }, {
+    "x": 4,
+    "y": 4,
+    "img":"water",
+    "itemCount": 2
+  }, {
+    "x": 4,
+    "y": 6,
+    "img":"water",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg": "인이 생일 파티에 온 친구들이 목이 말라해!"
+  },{
+    "msg": "정수기에서 물 3컵을 뜨고",
+    "img": "/img/jangoon/water.png"
+  },{
+    "msg": "자판기에서 음료수 3캔를 뽑은 다음",
+    "img": "/img/jangoon/machine.png"
+  },{
+    "msg": "테이블에 가져다 놓으면",
+    "img": "/img/woong/table.png"
+  },{
+    "msg": "선물상자를 받을 수 있어",
+    "img": "/img/frog/gift0.png"
+  }]
+}

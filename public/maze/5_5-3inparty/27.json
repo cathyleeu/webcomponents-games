@@ -1,0 +1,68 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#####...",
+    "mq...#qy.",
+    ".x...#x..",
+    "####....)",
+    "..x....##",
+    ".wq....##",
+    ".......%z",
+    ".##.u..x.",
+    "...####.."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 6,
+    "img":"table",
+    "useItem": 4
+  }, {
+    "x": 8,
+    "y": 3,
+    "img":"machine",
+    "itemCount": 4
+  }, {
+    "x": 1,
+    "y": 2,
+    "img":"flower2"
+  }, {
+    "x": 6,
+    "y": 2,
+    "img":"flower1"
+  }, {
+    "x": 2,
+    "y": 4,
+    "img":"flower5"
+  }, {
+    "x": 7,
+    "y": 7,
+    "img":"flower4"
+  }],
+  "tutorial": [{
+    "msg": "인이 생일 파티에 온 친구중 1명이 목이 말라해!"
+  },{
+    "msg": "자판기에서 물 4컵을 뜨고",
+    "img": "/img/jangoon/machine.png"
+  },{
+    "msg": "아래 빈칸에 들어갈 모양옆에 있는",
+    "img": "/img/5pattern/flower_pattern_q2_1.png"
+  },{
+    "msg": "테이블에 가져다 놓으면",
+    "img": "/img/woong/table.png"
+  },{
+    "msg": "선물상자를 받을 수 있어",
+    "img": "/img/frog/gift0.png"
+  }]
+}

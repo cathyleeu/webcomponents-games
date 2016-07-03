@@ -1,0 +1,68 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#####...",
+    "m%...#qy.",
+    ".x...#x..",
+    "####.....",
+    "..x..).##",
+    ".wq....##",
+    ".......qz",
+    ".##.u..x.",
+    "...####.."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img":"table",
+    "useItem": 3
+  }, {
+    "x": 5,
+    "y": 4,
+    "img":"water",
+    "itemCount": 3
+  }, {
+    "x": 1,
+    "y": 2,
+    "img":"clover4"
+  }, {
+    "x": 6,
+    "y": 2,
+    "img":"clover1"
+  }, {
+    "x": 2,
+    "y": 4,
+    "img":"clover3"
+  }, {
+    "x": 7,
+    "y": 7,
+    "img":"clover2"
+  }],
+  "tutorial": [{
+    "msg": "인이 생일 파티에 온 친구중 1명이 목이 말라해!"
+  },{
+    "msg": "정수기에서 물 3컵을 뜨고",
+    "img": "/img/jangoon/water.png"
+  },{
+    "msg": "아래 빈칸에 들어갈 모양옆에 있는",
+    "img": "/img/5pattern/clover_pattern_q1_1.png"
+  },{
+    "msg": "테이블에 가져다 놓으면",
+    "img": "/img/woong/table.png"
+  },{
+    "msg": "선물상자를 받을 수 있어",
+    "img": "/img/frog/gift0.png"
+  }]
+}
