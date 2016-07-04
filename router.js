@@ -196,9 +196,15 @@ public.get('/confirmTempUser/:url', function *(next) {
 public.get('/click', function *(next) {
   yield this.render('click');
 });
+public.get('/click_history', function *(next) {
+  yield this.render('click_history');
+});
 
 public.get('/dragndrop', function *(next) {
   yield this.render('dragndrop');
+});
+public.get('/dragndrop_suwon', function *(next) {
+  yield this.render('dragndrop_suwon');
 });
 
 public.get('/maze', function *(next) {
