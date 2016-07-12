@@ -132,6 +132,22 @@ Blocks["use_item"] = {
   ],
   action: ["useItem"]
 };
+Blocks["check"] = {
+  rgbColor: "#33B1B1",
+  message0: "%1 확인하기",
+  args0: [
+    {type: "field_image", src: "/img/check.png", width: 24, height: 24}
+  ],
+  action: ["check"]
+};
+Blocks["wait"] = {
+  rgbColor: "#8D69AE",
+  message0: "%1 초록 불까지 기다리기",
+  args0: [
+    {type: "field_image", src: "/img/bomi/trf_rot_green.png", width: 24, height: 24}
+  ],
+  action: ["wait"]
+};
 Blocks["item_scissors"] = {
   rgbColor: "#8C68AD",
   message0: "%1 가위",
@@ -238,6 +254,39 @@ Blocks['condition_ifMoveRight'] = {
     name: "else_statements"
   }],
   action: ["condition", "if_move_right"]
+};
+Blocks['condition_foodget'] = {
+  rgbColor: "#E11376",
+  message0: "먹이가 나오면",
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  action: ["conditioncheck","tile"]
+};
+Blocks['condition_fooduse'] = {
+  rgbColor: "#E11376",
+  message0: "먹이가 있으면",
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  action: ["conditioncheck","character"]
+};
+Blocks['condition_light'] = {
+  rgbColor: "#E11376",
+  message0: "%1 만약에 빨간 불이라면",
+  args0: [
+    {type: "field_image", src: "/img/bomi/trf_rot_red.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  action: ["conditioncheck","sign"]
 };
 Blocks["move_right1"] = {
   colour: 260,

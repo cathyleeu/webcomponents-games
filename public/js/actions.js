@@ -11,6 +11,7 @@ Actions = function(kidscoding, loader, mazeInfo, run) {
   this.setTimeoutKey = null;
   this.getItemCount = kidscoding.tileFactory.getItemCount;
   this.setItemCount = kidscoding.tileFactory.setItemCount;
+  this.setCoord = kidscoding.tileFactory.setCoord;
 };
 
 Actions.prototype._rotateCharacter = function(direct, callback) {
@@ -444,6 +445,31 @@ Actions.prototype.useItem = function(block, callback) {
   callback("아이템을 사용할 수 없어요");
 }
 
+Actions.prototype.check = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character;
+  // 바위 위에서 아이템 사용
+  var chest = this._getCanvasObject(character.px, character.py, "chest");
+  if(chest) {
+    var ranNum = parseInt(Math.random()*chest.contents.length, 10);
+    if(chest.contents[ranNum].role == "item") {
+      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
+      chest.role = "item";
+      _this.setCoord(chest, chest.px, chest.py);
+    }else{
+      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
+      chest.role = chest.contents[ranNum].role;
+      _this.setCoord(chest, chest.px, chest.py);
+    }
+    createjs.Sound.play("success");
+    _this.canvas.stage.update();
+    setTimeout(function() {
+      callback();
+    }, 1000);
+    return;
+  }
+}
+
 Actions.prototype.action = function(hand, block, callback) {
   var character = this.canvas.character;
   var spider = this._getCanvasObject(character.px, character.py, "spider");
@@ -470,6 +496,103 @@ Actions.prototype.action = function(hand, block, callback) {
       callback("가위바위보를 할 수 없어요");
     }
   });
+};
+
+Actions.prototype.conditioncheck = function(options, block, callback) {
+  var character = this.canvas.character,
+      _this = this;
+  if(options == "tile"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo.role == "item"){
+      if_block = block.getInputTargetBlock("if_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(if_block, callback);
+      }, 500);
+    }else{
+      setTimeout(function() {
+        callback();
+      }, 500);
+    }
+  } else if(options == "character"){
+    var itemBitmap = character.itemBitmap;
+    if(itemBitmap){
+      if_block = block.getInputTargetBlock("if_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(if_block, callback);
+      }, 500);
+    }else{
+      var food = this._getCanvasObject(character.px, character.py, "food");
+      food.useItem = false;
+      food.visible = false;
+      setTimeout(function() {
+        callback();
+      }, 500);
+    }
+  } else if(options == "sign"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      if(tileInfo.role == "stop"){
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        var nextTileInfo;
+        switch(tileInfo.position) {
+            case "up":
+                nextTileInfo = _this._getCanvasObject(character.px, character.py-1);
+                break;
+            case "down":
+                nextTileInfo = _this._getCanvasObject(character.px, character.py+1);
+                break;
+            case "right":
+                nextTileInfo = _this._getCanvasObject(character.px+1, character.py);
+                break;
+            default:
+                nextTileInfo = _this._getCanvasObject(character.px-1, character.py);
+        }
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          callback();
+        }, 500);
+      }
+    });
+  }
+};
+
+Actions.prototype.wait = function(block, callback) {
+  var character = this.canvas.character,
+      _this = this,
+      stopInfo = this._getCanvasObject(character.px, character.py, "stop");
+  if(stopInfo && stopInfo.role=="stop") {
+    stopInfo.bitmap.image = this.loader.getResult(stopInfo.contents[0].img);
+    stopInfo.role = stopInfo.contents[0].role;
+    this.setCoord(stopInfo, stopInfo.px, stopInfo.py);
+    var nextTileInfo;
+    switch(stopInfo.position) {
+        case "up":
+            nextTileInfo = this._getCanvasObject(character.px, character.py-1);
+            break;
+        case "down":
+            nextTileInfo = this._getCanvasObject(character.px, character.py+1);
+            break;
+        case "right":
+            nextTileInfo = this._getCanvasObject(character.px+1, character.py);
+            break;
+        default:
+            nextTileInfo = this._getCanvasObject(character.px-1, character.py);
+    }
+    nextTileInfo.obstacle = false;
+    setTimeout(function() {
+      createjs.Sound.play("success");
+      _this.canvas.stage.update();
+      callback();
+    }, 5000);
+    return;
+  }
 };
 
 Actions.prototype.condition = function(type, block, callback) {
