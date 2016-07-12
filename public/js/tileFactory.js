@@ -7,6 +7,7 @@ TileFactory = function(maze, loader, tile_size) {
     "@": "character",
     "%": "food",
     ")": "item",
+    "&": "chest",
     "5": "rock",
     "4": "rock",
     "3": "rock",
@@ -112,6 +113,11 @@ TileFactory.prototype.create = function(tile, x, y) {
     case "item":
       this.defaults(info, {
         img: "item"
+      });
+      break;
+    case "chest":
+      this.defaults(info, {
+        img: "chest"
       });
       break;
     case "rock":

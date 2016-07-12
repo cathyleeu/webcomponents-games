@@ -103,6 +103,11 @@
     ["토드의 규칙찾기", "/maze#!5tode_pattern/index"],
     ["라나의 선물하기", "/maze#!5lana_gift/index"]
   ],
+  "여름특별호": [
+    ["라나와 토드의 선물준비", "/maze#!5_5-1present/index"],
+    ["지미와 장군이의 선물사기", "/maze#!5_5-2mart/index"],
+    ["인이의 돌잔치", "/maze#!5_5-3inparty/index"]
+  ],
   "숙명키즈": [
     ["퍼포먼스데이1", "/click_history"],
     ["퍼포먼스데이2", "/dragndrop_suwon"],
