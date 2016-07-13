@@ -31,6 +31,10 @@ gulp.task('makeUrl', function(cb) {
         sum += school[1].charCodeAt(3) * 29;
       }
     }
+    if(school[1].slice(0, 2) == "이화") {
+      sum += school[1].charCodeAt(2) * 13;
+      sum += school[1].charCodeAt(3) * 29;
+    }
     sum += school[1].charCodeAt(0) * 11;
     sum += school[1].slice(-1).charCodeAt(0) * 19;
     sum += school[1].slice(parseInt(school[1] / 2, 10)).charCodeAt(0) * 7;
