@@ -67,13 +67,6 @@
     ["쿠키 전달하기", "/maze#!3woong-item/index"],
     ["쿠키 전달하기 - 심화", "/maze#!3woong-item-h/index"]
   ],
-  "3권한얼유치원": [
-    ["즐거운 우리집", "/maze#!3woong/1"],
-    ["덧셈 놀이", "/maze#!3woong-plus/1"],
-    ["가위바위보", "/maze#!3woong-cookie/1"],
-    ["쿠키 전달하기", "/maze#!3woong-item/1"],
-    ["쿠키 전달하기 - 심화", "/maze#!3woong-item-h/1"]
-  ],
   "3&4권": [
     ["즐거운 우리집", "/maze#!3woong/index"],
     ["덧셈 놀이", "/maze#!3woong-plus/index"],
@@ -90,6 +83,15 @@
     ["장군이의 심부름", "/maze#!4jangoon-mart/index"],
     ["장군이의 집찾기 - 반복", "/maze#!4jangoon-house-r/index"],
     ["장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"]
+  ],
+    ["장군이의 집찾기", "/maze#!4jangoon-house/index"],
+    ["장군이의 심부름", "/maze#!4jangoon-mart/index"],
+    ["장군이의 집찾기 - 반복", "/maze#!4jangoon-house-r/index"],
+    ["장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"],
+    ["클릭연습", "/click"],
+    ["개미왕자", "/maze#!alldirections/1"],
+    ["올챙이의 모험 1", "/maze#!story09/1"],
+    ["올챙이의 모험 2", "/maze#!story09/14"]
   ],
   "4&5권": [
     ["장군이의 집찾기", "/maze#!4jangoon-house/index"],
