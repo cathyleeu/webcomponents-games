@@ -2,7 +2,10 @@ Blocks = {};
 
 Blocks["start"] = {
   rgbColor: "#18BC9C",
-  message0: "%1 시작하면",
+  message0: {
+    ko: "%1 시작하면",
+    en: "%1 Start"
+  },
   args0: [
     {type: "field_image", src: "/img/start.png", width: 24, height: 24}
   ],
@@ -12,7 +15,10 @@ Blocks["start"] = {
 };
 Blocks["move_up"] = {
   rgbColor: "#EE4E34",
-  message0: "%1 위로 이동",
+  message0: {
+    ko: "%1 위로 이동",
+    en: "%1 Move Up"
+  },
   args0: [
     {type: "field_image", src: "/img/up.png", width: 24, height: 24}
   ],
@@ -20,7 +26,10 @@ Blocks["move_up"] = {
 };
 Blocks["move_down"] = {
   rgbColor: "#E5DA58",
-  message0: "%1 아래로 이동",
+  message0: {
+    ko: "%1 아래로 이동",
+    en: "%1 Move Down"
+  },
   args0: [
     {type: "field_image", src: "/img/down.png", width: 24, height: 24}
   ],
@@ -28,7 +37,10 @@ Blocks["move_down"] = {
 };
 Blocks["move_left"] = {
   rgbColor: "#359CC9",
-  message0: "%1 왼쪽으로 이동",
+  message0: {
+    ko: "%1 왼쪽으로 이동",
+    en: "%1 Move Left"
+  },
   args0: [
     {type: "field_image", src: "/img/left.png", width: 24, height: 24}
   ],
@@ -36,7 +48,10 @@ Blocks["move_left"] = {
 };
 Blocks["move_right"] = {
   rgbColor: "#83B359",
-  message0: "%1 오른쪽으로 이동",
+  message0: {
+    ko: "%1 오른쪽으로 이동",
+    en: "%1 Move Right"
+  },
   args0: [
     {type: "field_image", src: "/img/right.png", width: 24, height: 24}
   ],
@@ -44,7 +59,10 @@ Blocks["move_right"] = {
 };
 Blocks["move_forward"] = {
   colour: 260,
-  message0: "%1 앞으로 가기",
+  message0: {
+    ko: "%1 앞으로 가기",
+    en: "%1 Move Forward"
+  },
   args0: [
     {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
   ],
@@ -52,7 +70,10 @@ Blocks["move_forward"] = {
 };
 Blocks["jump_forward"] = {
   colour: 120,
-  message0: "%1 앞으로 점프",
+  message0: {
+    ko: "%1 앞으로 점프",
+    en: "%1 Jump Forward"
+  },
   args0: [
     {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
   ],
@@ -60,7 +81,10 @@ Blocks["jump_forward"] = {
 };
 Blocks["move_forward2"] = {
   colour: 260,
-  message0: "%1 앞으로 2칸 가기",
+  message0: {
+    ko: "%1 앞으로 2칸 가기",
+    en: "%1 Move Forward Twice"
+  },
   args0: [
     {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
   ],
@@ -74,7 +98,10 @@ Blocks["move_forward2"] = {
 };
 Blocks["move_forward3"] = {
   colour: 260,
-  message0: "%1 앞으로 3칸 가기",
+  message0: {
+    ko: "%1 앞으로 3칸 가기",
+    en: "%1 Move Forward Three Times"
+  },
   args0: [
     {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
   ],
@@ -88,7 +115,10 @@ Blocks["move_forward3"] = {
 };
 Blocks["move_forward4"] = {
   colour: 260,
-  message0: "%1 앞으로 4칸 가기",
+  message0: {
+    ko: "%1 앞으로 4칸 가기",
+    en: "%1 Move Forward Four Times"
+  },
   args0: [
     {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
   ],
@@ -102,7 +132,10 @@ Blocks["move_forward4"] = {
 };
 Blocks["rotate_left"] = {
   colour: 90,
-  message0: "%1 왼쪽으로 돌기",
+  message0: {
+    ko: "%1 왼쪽으로 돌기",
+    en: "%1 Turn Left"
+  },
   args0: [
     {type: "field_image", src: "/img/rotate_left.png", width: 24, height: 24}
   ],
@@ -110,7 +143,10 @@ Blocks["rotate_left"] = {
 };
 Blocks["rotate_right"] = {
   colour: 120,
-  message0: "%1 오른쪽으로 돌기",
+  message0: {
+    ko: "%1 오른쪽으로 돌기",
+    en: "%1 Turn Right"
+  },
   args0: [
     {type: "field_image", src: "/img/rotate_right.png", width: 24, height: 24}
   ],
@@ -118,7 +154,10 @@ Blocks["rotate_right"] = {
 };
 Blocks["get_item"] = {
   rgbColor: "#9C1881",
-  message0: "%1 아이템 가져오기",
+  message0: {
+    ko: "%1 아이템 가져오기",
+    en: "%1 Get Item"
+  },
   args0: [
     {type: "field_image", src: "/img/get_item.png", width: 24, height: 24}
   ],
@@ -126,7 +165,10 @@ Blocks["get_item"] = {
 };
 Blocks["use_item"] = {
   rgbColor: "#ED95AE",
-  message0: "%1 아이템 사용하기",
+  message0: {
+    ko: "%1 아이템 사용하기",
+    en: "%1 Use Item"
+  },
   args0: [
     {type: "field_image", src: "/img/get_item.png", width: 24, height: 24}
   ],
@@ -134,7 +176,10 @@ Blocks["use_item"] = {
 };
 Blocks["check"] = {
   rgbColor: "#33B1B1",
-  message0: "%1 확인하기",
+  message0: {
+    ko: "%1 확인하기",
+    en: "%1 Inspect"
+  },
   args0: [
     {type: "field_image", src: "/img/check.png", width: 24, height: 24}
   ],
@@ -142,7 +187,10 @@ Blocks["check"] = {
 };
 Blocks["wait"] = {
   rgbColor: "#8D69AE",
-  message0: "%1 초록 불까지 기다리기",
+  message0: {
+    ko: "%1 초록 불까지 기다리기",
+    en: "%1 Wait for Green Light"
+  },
   args0: [
     {type: "field_image", src: "/img/bomi/trf_rot_green.png", width: 24, height: 24}
   ],
@@ -150,7 +198,10 @@ Blocks["wait"] = {
 };
 Blocks["item_scissors"] = {
   rgbColor: "#8C68AD",
-  message0: "%1 가위",
+  message0: {
+    ko: "%1 가위",
+    en: "%1 Scissors"
+  },
   args0: [
     {type: "field_image", src: "/img/hand_scissors.png", width: 24, height: 24}
   ],
@@ -158,7 +209,10 @@ Blocks["item_scissors"] = {
 };
 Blocks["item_rock"] = {
   rgbColor: "#8C68AD",
-  message0: "%1 바위",
+  message0: {
+    ko: "%1 바위",
+    en: "%1 Rock"
+  },
   args0: [
     {type: "field_image", src: "/img/hand_rock.png", width: 24, height: 24}
   ],
@@ -166,7 +220,10 @@ Blocks["item_rock"] = {
 };
 Blocks["item_paper"] = {
   rgbColor: "#8C68AD",
-  message0: "%1 보",
+  message0: {
+    ko: "%1 보",
+    en: "%1 Paper"
+  },
   args0: [
     {type: "field_image", src: "/img/hand_paper.png", width: 24, height: 24}
   ],
@@ -174,7 +231,10 @@ Blocks["item_paper"] = {
 };
 Blocks["repeat"] = {
   rgbColor: "#242786",
-  message0: "반복 %1",
+  message0: {
+    ko: "반복 %1",
+    en: "Paper %1"
+  },
   args0: [{
     type: "field_dropdown",
     name: "count",
@@ -199,7 +259,10 @@ Blocks["repeat"] = {
 };
 Blocks['repeat_until'] = {
   rgbColor: "#242786",
-  message0: "별에 도달 할때까지 반복",
+  message0: {
+    ko: "별에 도달 할때까지 반복",
+    en: "Repeat Until"
+  },
   message1: "%1",
   args1: [{
     type: "input_statement",
@@ -209,13 +272,19 @@ Blocks['repeat_until'] = {
 };
 Blocks['condition_ifMoveForward'] = {
   rgbColor: "#E11376",
-  message0: "만약 앞으로 갈 수 있다면",
+  message0: {
+    ko: "만약 앞으로 갈 수 있다면",
+    en: "If Move Forward"
+  },
   message1: "%1",
   args1: [{
     type: "input_statement",
     name: "if_statements"
   }],
-  message2: "갈 수 없다면",
+  message2: {
+    ko: "갈 수 없다면",
+    en: "Else"
+  }
   message3: "%1",
   args3: [{
     type: "input_statement",
@@ -225,13 +294,19 @@ Blocks['condition_ifMoveForward'] = {
 };
 Blocks['condition_ifMoveLeft'] = {
   rgbColor: "#E11376",
-  message0: "만약 왼쪽으로 갈 수 있다면",
+  message0: {
+    ko: "만약 왼쪽으로 갈 수 있다면",
+    en: "If Move Left"
+  }
   message1: "%1",
   args1: [{
     type: "input_statement",
     name: "if_statements"
   }],
-  message2: "갈 수 없다면",
+  message2: {
+    ko: "갈 수 없다면",
+    en: "Else"
+  },
   message3: "%1",
   args3: [{
     type: "input_statement",
@@ -241,13 +316,19 @@ Blocks['condition_ifMoveLeft'] = {
 };
 Blocks['condition_ifMoveRight'] = {
   rgbColor: "#E11376",
-  message0: "만약 오른쪽으로 갈 수 있다면",
+  message0: {
+    ko: "만약 오른쪽으로 갈 수 있다면",
+    en: "If Move Right"
+  },
   message1: "%1",
   args1: [{
     type: "input_statement",
     name: "if_statements"
   }],
-  message2: "갈 수 없다면",
+  message2: {
+    ko: "갈 수 없다면",
+    en: "Else"
+  },
   message3: "%1",
   args3: [{
     type: "input_statement",
@@ -257,7 +338,10 @@ Blocks['condition_ifMoveRight'] = {
 };
 Blocks['condition_foodget'] = {
   rgbColor: "#E11376",
-  message0: "먹이가 나오면",
+  message0: {
+    ko: "먹이가 나오면",
+    en: "If There is Food"
+  },
   message1: "%1",
   args1: [{
     type: "input_statement",
@@ -267,7 +351,10 @@ Blocks['condition_foodget'] = {
 };
 Blocks['condition_fooduse'] = {
   rgbColor: "#E11376",
-  message0: "먹이가 있으면",
+  message0: {
+    ko: "먹이가 있으면",
+    en: "If Have Food"
+  },
   message1: "%1",
   args1: [{
     type: "input_statement",
@@ -277,7 +364,10 @@ Blocks['condition_fooduse'] = {
 };
 Blocks['condition_light'] = {
   rgbColor: "#E11376",
-  message0: "%1 만약에 빨간 불이라면",
+  message0: {
+    ko: "%1 만약에 빨간 불이라면",
+    en: "If Red Light"
+  },
   args0: [
     {type: "field_image", src: "/img/bomi/trf_rot_red.png", width: 24, height: 24}
   ],

@@ -38,6 +38,9 @@
     }]
   }],
   "tutorial": [{
-    "msg": "6권 조건연습 - 1"
+    "msg": {
+      "ko": "6권 조건연습 - 1",
+      "en": "Book 6, Condition Practice - 1"
+    }
   }]
 }
