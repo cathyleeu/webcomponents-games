@@ -428,8 +428,8 @@ function addEvents() {
         });
         run(startblock, function() {
           var foods = mazeInfo.canvas.foods;
-          if(foods.length == 1 && foods[0].itemCountBitmap) {
-            var itemCount = foods[0].itemCountBitmap ? +foods[0].itemCountBitmap.textBitmap.text : 0;
+          if(foods.length == 1 && (foods[0].itemCountBitmap || foods[0].itemList)) {
+            var itemCount = tileFactory.getItemCount(foods[0]);
             if(foods[0].useItem <= itemCount) {
               createjs.Sound.play("complete");
               if(maze.success) {

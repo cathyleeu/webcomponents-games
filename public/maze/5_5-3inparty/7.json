@@ -9,8 +9,8 @@
     "move_right",
     "move_left",
     "repeat",
-    "get_item",
-    "use_item"
+    "get_item2",
+    "use_item2"
   ],
   "map": [
     "ttttttttt",
@@ -32,6 +32,7 @@
     "x": 1,
     "y": 4,
     "img":"machine",
+    "itemImg":"can",
     "itemCount": 4
   }],
   "tutorial": [{

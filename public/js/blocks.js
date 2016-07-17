@@ -132,6 +132,22 @@ Blocks["use_item"] = {
   ],
   action: ["useItem"]
 };
+Blocks["get_item2"] = {
+  rgbColor: "#9C1881",
+  message0: "%1 아이템 가져오기",
+  args0: [
+    {type: "field_image", src: "/img/get_item.png", width: 24, height: 24}
+  ],
+  action: ["getItem2"]
+};
+Blocks["use_item2"] = {
+  rgbColor: "#ED95AE",
+  message0: "%1 아이템 사용하기",
+  args0: [
+    {type: "field_image", src: "/img/get_item.png", width: 24, height: 24}
+  ],
+  action: ["useItem2"]
+};
 Blocks["check"] = {
   rgbColor: "#33B1B1",
   message0: "%1 확인하기",

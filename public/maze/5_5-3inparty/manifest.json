@@ -50,6 +50,8 @@
   {"tile": "h", "id": "milk", "src": "/img/jangoon/milk.png", "obstacle": false},
   {"tile": "j", "id": "machine", "src": "/img/jangoon/machine.png", "obstacle": false},
   {"tile": "k", "id": "water", "src": "/img/jangoon/water.png", "obstacle": false},
+  {"id": "can", "src": "/img/jangoon/can.png"},
+  {"id": "cup", "src": "/img/jangoon/cup.png"},
 
   {"id": "clover1", "src": "/img/5pattern/clover_pattern1.png", "obstacle": false},
   {"id": "clover2", "src": "/img/5pattern/clover_pattern2.png", "obstacle": false},

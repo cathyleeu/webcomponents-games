@@ -9,8 +9,8 @@
     "move_right",
     "move_left",
     "repeat",
-    "get_item",
-    "use_item"
+    "get_item2",
+    "use_item2"
   ],
   "map": [
     ".#####...",
@@ -32,16 +32,19 @@
     "x": 5,
     "y": 3,
     "img":"machine",
+    "itemImg":"can",
     "itemCount": 2
   }, {
     "x": 2,
     "y": 7,
     "img":"water",
+    "itemImg":"cup",
     "itemCount": 1
   }, {
     "x": 4,
     "y": 5,
     "img":"water",
+    "itemImg":"cup",
     "itemCount": 1
   }, {
     "x": 1,
