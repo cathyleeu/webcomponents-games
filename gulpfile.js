@@ -98,6 +98,14 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
       .map(function(item) {
         return "/components/GoogleBlockly/media/" + item;
       });
+  var suwonImgs = fs.readdirSync("public/img/dragndrop_suwon")
+      .filter(function(item) {
+        var stat = fs.statSync("public/img/dragndrop_suwon/" + item);
+        return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
+      })
+      .map(function(item) {
+        return "/img/dragndrop_suwon/" + item;
+      });
 
   // 각 원별 cache 생성
   var url = JSON.parse(fs.readFileSync('public/login/url.json')),
@@ -109,11 +117,15 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
         imgs = [],
         cache = [],
         cachePath = path.join(cacheDirPath, school.code + ".manifest"),
-        output = "CACHE MANIFEST\n";
+        output = "CACHE MANIFEST\n",
+        suwonCheck = false;
     bookArr.forEach(function(bookName) {
       bookName = bookName.split(":")[0];
       books[bookName].forEach(function(contentInfo) {
         var maniPath = contentInfo[1];
+        if(maniPath == "/dragndrop_suwon") {
+          suwonCheck = true;
+        }
         if(maniPath.indexOf("#!") >= 0) {
           maniPath = maniPath.slice(maniPath.indexOf("#!") + 2);
         }
@@ -182,6 +194,10 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
     output += loginImgs.join("\n") + "\n";
     output += commonImgs.join("\n") + "\n";
     output += blocklyImgs.join("\n") + "\n";
+    if(suwonCheck) {
+      output += "/click_history\n/dragndrop_suwon\n";
+      output += suwonImgs.join("\n") + "\n";
+    }
 
     output += "# js and css\n";
     output += jsList.join("\n") + "\n";
