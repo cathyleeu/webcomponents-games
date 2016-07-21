@@ -93,16 +93,7 @@ addEvents();
 
 function preInit() {
   //캐릭터 선택 팝업
-  var queries = {},
-      idx = location.hash.indexOf("?"),
-      search = idx >= 0 ? location.hash.slice(idx + 1) : "";
-
-  search.split("&").map(function(query) {
-    var sp = query.split("=");
-    if(sp[0]) {
-      queries[sp[0]] = sp[1];
-    }
-  });
+  var queries = store.get("queries") || {};
 
   if(maze.select_character && !queries.hasOwnProperty("x") && !queries.hasOwnProperty("y")) {
     showModal({
@@ -127,16 +118,7 @@ function init() {
     message_url = "/img/ladybug.png";
   }
 
-  var queries = {},
-      idx = location.hash.indexOf("?"),
-      search = idx >= 0 ? location.hash.slice(idx + 1) : "";
-
-  search.split("&").map(function(query) {
-    var sp = query.split("=");
-    if(sp[0]) {
-      queries[sp[0]] = sp[1];
-    }
-  });
+  var queries = store.get("queries") || {};
   // index 화면 초기 구동시 localData 삭제
   if(!queries.hasOwnProperty("x") && !queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     store.remove("data");
@@ -375,16 +357,7 @@ function addEvents() {
   });
   $(window).on("resize", handle_resize);
   $("#modal .go-next").click(function(e) {
-    var queries = {},
-        idx = location.hash.indexOf("?"),
-        search = idx >= 0 ? location.hash.slice(idx + 1) : "";
-
-    search.split("&").map(function(query) {
-      var sp = query.split("=");
-      if(sp[0]) {
-        queries[sp[0]] = sp[1];
-      }
-    });
+    var queries = store.get("queries") || {};
     if(queries.back) {
       var path = queries.back.split("/").slice(0, -1).join("/");
       var localData = store.get('data') || {};
@@ -399,13 +372,18 @@ function addEvents() {
         localData[path].score += maze.score || 1;
         store.set('data', localData);
       }
-      page(queries.back + "?x=" + queries.x + "&y=" + queries.y);
+      store.set("queries", {
+        x: queries.x,
+        y: queries.y
+      });
+      page(queries.back);
       return;
     }
     var path = location.hash.slice(2).split("/").filter(function(val){
       return val;
     });
     $('#modal').modal('hide');
+    store.set("queries", {});
     page( path.slice(0, -1).concat([+step+1]).join("/") );
   });
   $("#modal .reset-maze").click(function(e) {
@@ -521,12 +499,17 @@ function addEvents() {
         path = path.split("/").slice(0, -1).join("/");
         var score = localData[path] ? localData[path].score || 0 : 0;
         if(!obj.min_score || score >= obj.min_score) {
-          var temp = "?back=" + (idx >= 0 ? hash.slice(0, idx) : hash) + "&x=" + mazeInfo.canvas.character.px + "&y=" + mazeInfo.canvas.character.py;
-          if(obj.link.slice(-5) == "index") {
-            // 새로운 index로 넘어갈땐 돌아올 필요가 없음
-            temp = "";
+          var queries = {};
+          // 새로운 index로 넘어갈땐 돌아올 필요가 없음
+          if(obj.link.slice(-5) != "index") {
+            queries = {
+              back: idx >= 0 ? hash.slice(0, idx) : hash,
+              x: mazeInfo.canvas.character.px,
+              y: mazeInfo.canvas.character.py
+            };
           }
-          page(obj.link + temp);
+          store.set("queries", queries);
+          page(obj.link);
         } else {
           showModal(obj.min_score + "개 이상 모아야 해요");
         }
@@ -546,6 +529,7 @@ function addEvents() {
       if(link.slice(0, 7) == "http://" || link.slice(0, 1) == "/") {
         location.href = link;
       } else {
+        store.set("queries", {});
         page(link);
       }
       return;
