@@ -16,10 +16,15 @@ page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
       pathname = hashbang >= 0 ? ctx.pathname.slice(hashbang + 2) : ctx.pathname,
       map_url,
-      manifest_url;
+      manifest_url,
+      idx;
   map_path = pathname.split("/").filter(function(val) {
     return val;
   });
+  // back link로 온것이 아님 -> 주소로 접속함 -> localData 삭제
+  if(ctx.querystring.split("&").indexOf("back") < 0) {
+    store.clear();
+  }
   map_url = "maze/" + map_path.join("/") + ".json";
   manifest_url = "maze/" + map_path.slice(0, -1).concat(["manifest.json"]).join("/");
 
@@ -119,17 +124,6 @@ function init() {
     message_url = "/img/ladybug.png";
   }
 
-  var queries = store.get("queries") || {};
-  // index 화면 초기 구동시 localData 삭제
-  if(!queries.hasOwnProperty("x") && !queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
-    store.remove("data");
-    store.remove('character');
-    if(!maze.select_character) {
-      store.remove('character_id');
-      store.remove('message_id');
-    }
-  }
-
   tileFactory.init(maze, loader);
   if(store.get('character')) {
     message_url = decodeURIComponent(store.get('character'));
@@ -178,6 +172,7 @@ function init() {
   }
   handle_resize();
 
+  var queries = store.get("queries") || {};
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
     setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
@@ -378,11 +373,14 @@ function addEvents() {
         x: queries.x,
         y: queries.y
       });
-      page(queries.back);
+      page(queries.back + "?back");
       return;
     }
     var path = map_path.slice();
     path[path.length-1]++;
+    if(isNaN(path[path.length-1])) {
+      alert("주소가 잘못 설정되었습니다.");
+    }
     $('#modal').modal('hide');
     store.set("queries", {});
     page( path.join("/") );
@@ -497,17 +495,19 @@ function addEvents() {
             path = map_path.slice(0, -1).join("/"),
             score = localData[path] ? localData[path].score || 0 : 0;
         if(!obj.min_score || score >= obj.min_score) {
-          var queries = {};
-          // 새로운 index로 넘어갈땐 돌아올 필요가 없음
-          if(obj.link.slice(-5) != "index") {
-            queries = {
+          if(obj.link.slice(-5) == "index") {
+            // 새로운 index로 넘어갈때 : 돌아올 필요 없음
+            store.set("queries", {});
+            page(obj.link);
+          } else {
+            // 문제 풀이 화면으로 넘어갈때 : back link를 저장
+            store.set("queries", {
               back: map_path.join("/"),
               x: mazeInfo.canvas.character.px,
               y: mazeInfo.canvas.character.py
-            };
+            });
+            page(obj.link + "?back");
           }
-          store.set("queries", queries);
-          page(obj.link);
         } else {
           showModal(obj.min_score + "개 이상 모아야 해요");
         }
