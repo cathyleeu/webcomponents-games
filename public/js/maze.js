@@ -10,23 +10,22 @@ var d1,
     tutorial = null,
     tutorialIdx = 0,
     message_url = "",
-    map_path = null;
+    map_path = null,
+    map_qs;
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
       pathname = hashbang >= 0 ? ctx.pathname.slice(hashbang + 2) : ctx.pathname,
+      path,
+      qs,
       map_url,
       manifest_url,
       idx;
-  map_path = pathname.split("/").filter(function(val) {
+  path = pathname.split("/").filter(function(val) {
     return val;
   });
-  // back link로 온것이 아님 -> 주소로 접속함 -> localData 삭제
-  if(ctx.querystring.split("&").indexOf("back") < 0) {
-    store.clear();
-  }
-  map_url = "maze/" + map_path.join("/") + ".json";
-  manifest_url = "maze/" + map_path.slice(0, -1).concat(["manifest.json"]).join("/");
+  map_url = "maze/" + path.join("/") + ".json";
+  manifest_url = "maze/" + path.slice(0, -1).concat(["manifest.json"]).join("/");
 
   // page 이동시 이전에 재생되던 bgm을 멈춤
   createjs.Sound.stop("bgm");
@@ -38,9 +37,17 @@ page('*', function(ctx, next) {
   // load map json file
   $.getJSON(map_url, function(json) {
     maze = json;
+    map_path = path;
+    map_qs = ctx.querystring;
+    // back link로 온것이 아님 -> 주소로 접속함 -> localData 삭제
+    if(map_qs.split("&").indexOf("back") < 0) {
+      store.clear();
+    }
     d1.resolve(json);
   }).fail(function(jqXHR, msg, err) {
-    throw( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
+    console.log( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
+    alert("잘못된 주소입니다. 이전 페이지로 이동합니다.");
+    page(map_path.join("/") + "?" + map_qs);
   });
 
   // load manifest.json file
