@@ -2,7 +2,6 @@
 
 var d1,
     d2,
-    step,
     loader,
     mazeInfo,
     maze,
@@ -10,24 +9,26 @@ var d1,
     tileFactory = new TileFactory(),
     tutorial = null,
     tutorialIdx = 0,
-    message_url = "";
+    message_url = "",
+    map_path = null;
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
       pathname = hashbang >= 0 ? ctx.pathname.slice(hashbang + 2) : ctx.pathname,
-      path = ["maze"].concat(pathname.split("/").filter(function(val) {
-        return val;
-      })),
-      map_url = path.join("/") + ".json",
-      manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/");
+      map_url,
+      manifest_url;
+  map_path = pathname.split("/").filter(function(val) {
+    return val;
+  });
+  map_url = "maze/" + map_path.join("/") + ".json";
+  manifest_url = "maze/" + map_path.slice(0, -1).concat(["manifest.json"]).join("/");
 
   // page 이동시 이전에 재생되던 bgm을 멈춤
   createjs.Sound.stop("bgm");
 
-  step = path[path.length - 1];
   d1 = $.Deferred();
   d2 = $.Deferred();
-  $.when( step, d1, d2 ).done(preInit);
+  $.when( d1, d2 ).done(preInit);
 
   // load map json file
   $.getJSON(map_url, function(json) {
@@ -359,8 +360,9 @@ function addEvents() {
   $("#modal .go-next").click(function(e) {
     var queries = store.get("queries") || {};
     if(queries.back) {
-      var path = queries.back.split("/").slice(0, -1).join("/");
-      var localData = store.get('data') || {};
+      var localData = store.get('data') || {},
+          path = queries.back.split("/").slice(0, -1).join("/"),
+          step = map_path[map_path.length-1];
       if(!localData[path]) {
         localData[path] = {
           score: 0,
@@ -379,12 +381,11 @@ function addEvents() {
       page(queries.back);
       return;
     }
-    var path = location.hash.slice(2).split("/").filter(function(val){
-      return val;
-    });
+    var path = map_path.slice();
+    path[path.length-1]++;
     $('#modal').modal('hide');
     store.set("queries", {});
-    page( path.slice(0, -1).concat([+step+1]).join("/") );
+    page( path.join("/") );
   });
   $("#modal .reset-maze").click(function(e) {
     $("#runCode").html('<i class="fa fa-play"></i> 시작');
@@ -492,18 +493,15 @@ function addEvents() {
         addFood();
       }
       if(obj && obj.link) {
-        var localData = store.get('data') || {};
-        var hash = location.hash.slice(2),
-            idx = hash.indexOf("?"),
-            path = idx >= 0 ? hash.slice(0, idx) : hash;
-        path = path.split("/").slice(0, -1).join("/");
-        var score = localData[path] ? localData[path].score || 0 : 0;
+        var localData = store.get('data') || {},
+            path = map_path.slice(0, -1).join("/"),
+            score = localData[path] ? localData[path].score || 0 : 0;
         if(!obj.min_score || score >= obj.min_score) {
           var queries = {};
           // 새로운 index로 넘어갈땐 돌아올 필요가 없음
           if(obj.link.slice(-5) != "index") {
             queries = {
-              back: idx >= 0 ? hash.slice(0, idx) : hash,
+              back: map_path.join("/"),
               x: mazeInfo.canvas.character.px,
               y: mazeInfo.canvas.character.py
             };
@@ -611,12 +609,9 @@ function gameMode(loader, type, tileFactory) {
   }
   $("#scoreBox .food").replaceWith(loader.getResult("food"));
 
-  var localData = store.get('data') || {};
-  var hash = location.hash.slice(2),
-      idx = hash.indexOf("?"),
-      path = idx >= 0 ? hash.slice(0, idx) : hash;
-  path = path.split("/").slice(0, -1).join("/");
-  var score = localData[path] ? localData[path].score || 0 : 0;
+  var localData = store.get('data') || {},
+      path = map_path.slice(0, -1).join("/"),
+      score = localData[path] ? localData[path].score || 0 : 0;
   $("#scoreBox .score").text(score);
 }
 
