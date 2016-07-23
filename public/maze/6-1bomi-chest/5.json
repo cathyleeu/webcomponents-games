@@ -1,0 +1,45 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item2",
+    "use_item2",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "##.)....#",
+    "#.#.#a###",
+    "#%......#",
+    "#..###..#",
+    "###..d..#",
+    "#..c....#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 4,
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 2,
+    "img":"rectangle_key",
+    "itemImg":"chestopen"
+  }],
+  "tutorial": [{
+    "msg": "도시 고양이 봄이가 보물 상자를 열고 싶어!"
+  },{
+    "msg": "네모 모양의 열쇠를 찾아서",
+    "img": "/img/bomi/rectangle.png"
+  },{
+    "msg": "보물 상자를 열어보자!",
+    "img": "/img/bomi/chest0.png"
+  }]
+}
