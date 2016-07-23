@@ -36,13 +36,30 @@ page('*', function(ctx, next) {
 
   // load map json file
   $.getJSON(map_url, function(json) {
+    var lang = store.get("lang") || "ko";
     maze = json;
     map_path = path;
     map_qs = ctx.querystring;
     // back link로 온것이 아님 -> 주소로 접속함 -> localData 삭제
     if(map_qs.split("&").indexOf("back") < 0) {
       store.clear();
+      // index나 1번 map 이라면 lang 설정을 초기화, 이외에는 유지
+      if(map_path[map_path.length-1] == "index" || map_path[map_path.length-1] == "1") {
+        lang = "ko";
+      }
     }
+    // 다국어 설정
+    if(map_qs.split("&").indexOf("lang=en") >= 0) {
+      lang = "en";
+    } else if(map_qs.split("&").indexOf("lang=ko") >= 0) {
+      lang = "ko";
+    }
+    store.set("lang", lang);
+    $.getJSON("/msg/" + lang + ".json", function(msg_obj) {
+      Object.keys(msg_obj).forEach(function(key) {
+        $("[data-msg=" + key + "]").text(msg_obj[key]);
+      });
+    });
     d1.resolve(json);
   }).fail(function(jqXHR, msg, err) {
     console.log( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
@@ -140,7 +157,8 @@ function init() {
   }
 
   initMaze();
-  $("#runCode").html('<i class="fa fa-play"></i> 시작');
+  $("#runCode .start").show();
+  $("#runCode .reset").hide();
   if(maze.type != "world" && maze.type != "game") {
     $("#virtualKeypad").hide();
     $("#blocklyDiv").show();
@@ -393,19 +411,21 @@ function addEvents() {
     page( path.join("/") );
   });
   $("#modal .reset-maze").click(function(e) {
-    $("#runCode").html('<i class="fa fa-play"></i> 시작');
+    $("#runCode .start").show();
+    $("#runCode .reset").hide();
     createjs.Tween.removeAllTweens();
     resetMaze(mazeInfo, maze, loader, tileFactory);
   });
   $("#runCode").click(function(e) {
     e.preventDefault();
-    if($(this).find("i").hasClass("fa-play")) {
+    if($(this).find("i:visible").hasClass("fa-play")) {
       var blocks = kidscoding.workspace.getAllBlocks(),
           startblock = blocks.filter(function(block) {
             return block.type === "start";
           })[0];;
       if(startblock.getNextBlock()) {
-        $(this).html('<i class="fa fa-refresh"></i> 처음상태로');
+        $("#runCode .start").hide();
+        $("#runCode .reset").show();
         // remove the selection of the last-placed-block
         kidscoding.workspace.getAllBlocks().map(function(block) {
           block.removeSelect()
@@ -453,7 +473,8 @@ function addEvents() {
         showModal("블럭이 하나도 없어요!");
       }
     } else {
-      $(this).html('<i class="fa fa-play"></i> 시작');
+      $("#runCode .start").show();
+      $("#runCode .reset").hide();
       createjs.Tween.removeAllTweens();
       resetMaze(mazeInfo, maze, loader, tileFactory);
     }
@@ -543,9 +564,10 @@ function addEvents() {
       if(tItem.hasOwnProperty("x") && tItem.hasOwnProperty("y")) {
         kidscoding.Actions._setFocus(tItem.x, tItem.y, 0, 500);
       }
+      var lang = store.get("lang") || "ko";
       showModal({
         video: tItem.video,
-        msg: tItem.msg,
+        msg: tItem["msg" + (lang ? ":" + lang : "")] || tItem["msg"],
         img: tItem.img,
         link: tItem.link,
         tutorial: true

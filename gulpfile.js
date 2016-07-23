@@ -42,7 +42,8 @@ gulp.task('makeUrl', function(cb) {
       date: date,
       school: school[1],
       code: sum.toString(16).slice(1),
-      classes: schools[key]
+      classes: schools[key],
+      lang: school[3] || ""
     });
   });
   fs.writeFileSync('public/login/url.json', JSON.stringify(result));

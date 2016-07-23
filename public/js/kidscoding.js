@@ -37,9 +37,19 @@ KidsCoding.prototype = {
     this.Actions = new Actions(this, loader, mazeInfo, run);
   },
   initBlockly: function(toolbox, workspace) {
-    var _this = this;
+    var _this = this,
+        lang = store.get("lang") || "ko";
     this.blockLimits = {};
     $.each(Blocks, function(name, options) {
+      if(typeof options.message0 == "object") {
+        options.message0 = options.message0[lang];
+      }
+      if(typeof options.message1 == "object") {
+        options.message1 = options.message1[lang];
+      }
+      if(typeof options.message2 == "object") {
+        options.message2 = options.message2[lang];
+      }
       options = $.extend({
         colour: 0,
         message0: "",

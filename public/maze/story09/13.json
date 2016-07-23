@@ -21,6 +21,7 @@
     ".#####."
   ],
   "tutorial": [{
-    "msg": "길이 꼬불꼬불하니 잘 세어보고 가보자!"
+    "msg:ko": "길이 꼬불꼬불하니 잘 세어보고 가보자!",
+    "msg:en": "Let's count how many steps I should move."
   }]
 }

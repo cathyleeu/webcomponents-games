@@ -300,7 +300,7 @@ Blocks['condition_ifMoveForward'] = {
   message2: {
     ko: "갈 수 없다면",
     en: "Else"
-  }
+  },
   message3: "%1",
   args3: [{
     type: "input_statement",
@@ -313,7 +313,7 @@ Blocks['condition_ifMoveLeft'] = {
   message0: {
     ko: "만약 왼쪽으로 갈 수 있다면",
     en: "If Move Left"
-  }
+  },
   message1: "%1",
   args1: [{
     type: "input_statement",

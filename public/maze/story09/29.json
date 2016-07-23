@@ -17,13 +17,16 @@
     ".###."
   ],
   "tutorial": [{
-    "msg": "개굴개굴~",
+    "msg:ko": "개굴개굴~",
+    "msg:en": "Croak~ Croak!",
     "img": "/img/story08/frog.png"
     },{
-    "msg": "앗! 개구리가 되었어!!",
+    "msg:ko": "앗! 개구리가 되었어!!",
+    "msg:en": "Wow, I am a fog now!",
     "img": "/img/story08/frog.png"
     },{
-    "msg": "고마워! 덕분에 멋진 개구리가 되었어",
+    "msg:ko": "고마워! 덕분에 멋진 개구리가 되었어",
+    "msg:en": "Thank you for helping me.",
     "img": "/img/story08/frog.png"
   }]
 }
