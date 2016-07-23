@@ -24,5 +24,9 @@
   {"id": "fruit_or", "src": "/img/jangoon/fruit_or.png", "obstacle": false},
   {"id": "fruit_st", "src": "/img/jangoon/fruit_st.png", "obstacle": false},
   {"id": "fruit_wa", "src": "/img/jangoon/fruit_wa.png", "obstacle": false},
+  {"id": "table", "src": "/img/woong/table.png", "obstacle": false},
+  {"id": "water", "src": "/img/jangoon/water.png", "obstacle": false},
+  {"id": "cuptable", "src": "/img/jangoon/cuptable.png"},
+  {"id": "cup", "src": "/img/jangoon/cup.png"},
   {"id": "milk", "src": "/img/jangoon/milk.png", "obstacle": false}
 ]

@@ -2,7 +2,6 @@
 
 var d1,
     d2,
-    step,
     loader,
     mazeInfo,
     maze,
@@ -10,31 +9,45 @@ var d1,
     tileFactory = new TileFactory(),
     tutorial = null,
     tutorialIdx = 0,
-    message_url = "";
+    message_url = "",
+    map_path = null,
+    map_qs;
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
       pathname = hashbang >= 0 ? ctx.pathname.slice(hashbang + 2) : ctx.pathname,
-      path = ["maze"].concat(pathname.split("/").filter(function(val) {
-        return val;
-      })),
-      map_url = path.join("/") + ".json",
-      manifest_url = path.slice(0, -1).concat(["manifest.json"]).join("/");
+      path,
+      qs,
+      map_url,
+      manifest_url,
+      idx;
+  path = pathname.split("/").filter(function(val) {
+    return val;
+  });
+  map_url = "maze/" + path.join("/") + ".json";
+  manifest_url = "maze/" + path.slice(0, -1).concat(["manifest.json"]).join("/");
 
   // page 이동시 이전에 재생되던 bgm을 멈춤
   createjs.Sound.stop("bgm");
 
-  step = path[path.length - 1];
   d1 = $.Deferred();
   d2 = $.Deferred();
-  $.when( step, d1, d2 ).done(preInit);
+  $.when( d1, d2 ).done(preInit);
 
   // load map json file
   $.getJSON(map_url, function(json) {
     maze = json;
+    map_path = path;
+    map_qs = ctx.querystring;
+    // back link로 온것이 아님 -> 주소로 접속함 -> localData 삭제
+    if(map_qs.split("&").indexOf("back") < 0) {
+      store.clear();
+    }
     d1.resolve(json);
   }).fail(function(jqXHR, msg, err) {
-    throw( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
+    console.log( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
+    alert("잘못된 주소입니다. 이전 페이지로 이동합니다.");
+    page(map_path.join("/") + "?" + map_qs);
   });
 
   // load manifest.json file
@@ -93,16 +106,7 @@ addEvents();
 
 function preInit() {
   //캐릭터 선택 팝업
-  var queries = {},
-      idx = location.hash.indexOf("?"),
-      search = idx >= 0 ? location.hash.slice(idx + 1) : "";
-
-  search.split("&").map(function(query) {
-    var sp = query.split("=");
-    if(sp[0]) {
-      queries[sp[0]] = sp[1];
-    }
-  });
+  var queries = store.get("queries") || {};
 
   if(maze.select_character && !queries.hasOwnProperty("x") && !queries.hasOwnProperty("y")) {
     showModal({
@@ -125,26 +129,6 @@ function init() {
     message_url = message_item.src;
   } else {
     message_url = "/img/ladybug.png";
-  }
-
-  var queries = {},
-      idx = location.hash.indexOf("?"),
-      search = idx >= 0 ? location.hash.slice(idx + 1) : "";
-
-  search.split("&").map(function(query) {
-    var sp = query.split("=");
-    if(sp[0]) {
-      queries[sp[0]] = sp[1];
-    }
-  });
-  // index 화면 초기 구동시 localData 삭제
-  if(!queries.hasOwnProperty("x") && !queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
-    store.remove("data");
-    store.remove('character');
-    if(!maze.select_character) {
-      store.remove('character_id');
-      store.remove('message_id');
-    }
   }
 
   tileFactory.init(maze, loader);
@@ -195,6 +179,7 @@ function init() {
   }
   handle_resize();
 
+  var queries = store.get("queries") || {};
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
     setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
@@ -375,19 +360,11 @@ function addEvents() {
   });
   $(window).on("resize", handle_resize);
   $("#modal .go-next").click(function(e) {
-    var queries = {},
-        idx = location.hash.indexOf("?"),
-        search = idx >= 0 ? location.hash.slice(idx + 1) : "";
-
-    search.split("&").map(function(query) {
-      var sp = query.split("=");
-      if(sp[0]) {
-        queries[sp[0]] = sp[1];
-      }
-    });
+    var queries = store.get("queries") || {};
     if(queries.back) {
-      var path = queries.back.split("/").slice(0, -1).join("/");
-      var localData = store.get('data') || {};
+      var localData = store.get('data') || {},
+          path = queries.back.split("/").slice(0, -1).join("/"),
+          step = map_path[map_path.length-1];
       if(!localData[path]) {
         localData[path] = {
           score: 0,
@@ -399,14 +376,21 @@ function addEvents() {
         localData[path].score += maze.score || 1;
         store.set('data', localData);
       }
-      page(queries.back + "?x=" + queries.x + "&y=" + queries.y);
+      store.set("queries", {
+        x: queries.x,
+        y: queries.y
+      });
+      page(queries.back + "?back");
       return;
     }
-    var path = location.hash.slice(2).split("/").filter(function(val){
-      return val;
-    });
+    var path = map_path.slice();
+    path[path.length-1]++;
+    if(isNaN(path[path.length-1])) {
+      alert("주소가 잘못 설정되었습니다.");
+    }
     $('#modal').modal('hide');
-    page( path.slice(0, -1).concat([+step+1]).join("/") );
+    store.set("queries", {});
+    page( path.join("/") );
   });
   $("#modal .reset-maze").click(function(e) {
     $("#runCode").html('<i class="fa fa-play"></i> 시작');
@@ -428,8 +412,8 @@ function addEvents() {
         });
         run(startblock, function() {
           var foods = mazeInfo.canvas.foods;
-          if(foods.length == 1 && foods[0].itemCountBitmap) {
-            var itemCount = foods[0].itemCountBitmap ? +foods[0].itemCountBitmap.textBitmap.text : 0;
+          if(foods.length == 1 && (foods[0].itemCountBitmap || foods[0].itemList)) {
+            var itemCount = tileFactory.getItemCount(foods[0]);
             if(foods[0].useItem <= itemCount) {
               createjs.Sound.play("complete");
               if(maze.success) {
@@ -514,19 +498,23 @@ function addEvents() {
         addFood();
       }
       if(obj && obj.link) {
-        var localData = store.get('data') || {};
-        var hash = location.hash.slice(2),
-            idx = hash.indexOf("?"),
-            path = idx >= 0 ? hash.slice(0, idx) : hash;
-        path = path.split("/").slice(0, -1).join("/");
-        var score = localData[path] ? localData[path].score || 0 : 0;
+        var localData = store.get('data') || {},
+            path = map_path.slice(0, -1).join("/"),
+            score = localData[path] ? localData[path].score || 0 : 0;
         if(!obj.min_score || score >= obj.min_score) {
-          var temp = "?back=" + (idx >= 0 ? hash.slice(0, idx) : hash) + "&x=" + mazeInfo.canvas.character.px + "&y=" + mazeInfo.canvas.character.py;
           if(obj.link.slice(-5) == "index") {
-            // 새로운 index로 넘어갈땐 돌아올 필요가 없음
-            temp = "";
+            // 새로운 index로 넘어갈때 : 돌아올 필요 없음
+            store.set("queries", {});
+            page(obj.link);
+          } else {
+            // 문제 풀이 화면으로 넘어갈때 : back link를 저장
+            store.set("queries", {
+              back: map_path.join("/"),
+              x: mazeInfo.canvas.character.px,
+              y: mazeInfo.canvas.character.py
+            });
+            page(obj.link + "?back");
           }
-          page(obj.link + temp);
         } else {
           showModal(obj.min_score + "개 이상 모아야 해요");
         }
@@ -546,6 +534,7 @@ function addEvents() {
       if(link.slice(0, 7) == "http://" || link.slice(0, 1) == "/") {
         location.href = link;
       } else {
+        store.set("queries", {});
         page(link);
       }
       return;
@@ -627,12 +616,9 @@ function gameMode(loader, type, tileFactory) {
   }
   $("#scoreBox .food").replaceWith(loader.getResult("food"));
 
-  var localData = store.get('data') || {};
-  var hash = location.hash.slice(2),
-      idx = hash.indexOf("?"),
-      path = idx >= 0 ? hash.slice(0, idx) : hash;
-  path = path.split("/").slice(0, -1).join("/");
-  var score = localData[path] ? localData[path].score || 0 : 0;
+  var localData = store.get('data') || {},
+      path = map_path.slice(0, -1).join("/"),
+      score = localData[path] ? localData[path].score || 0 : 0;
   $("#scoreBox .score").text(score);
 }
 

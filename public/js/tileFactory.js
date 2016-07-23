@@ -313,7 +313,12 @@ TileFactory.prototype.defaults = function(target, source) {
 };
 
 TileFactory.prototype.getItemCount = function(container) {
-  return container.itemCountBitmap ? +container.itemCountBitmap.textBitmap.text : 0;
+  if(container.itemCountBitmap) {
+    return +container.itemCountBitmap.textBitmap.text;
+  } else if(container.itemList) {
+    return container.itemList.length;
+  }
+  return 0;
 };
 
 TileFactory.prototype.setItemCount = function(container, count) {
@@ -338,6 +343,24 @@ TileFactory.prototype.setItemCount = function(container, count) {
     container.itemCountBitmap.textBitmap.text = count;
   }
   container.itemCountBitmap.visible = !!count;
+};
+
+TileFactory.prototype.addItemImage = function(container, img) {
+  if(!container.itemList) {
+    container.itemList = [];
+  }
+  var bounds = container.getBounds();
+  var bitmap = new createjs.Bitmap();
+  var px = container.itemList.length % 3;
+  var py = parseInt(container.itemList.length / 3, 10);
+  var size = bounds.width / 3;
+  bitmap.image = this.loader.getResult(img);
+  bitmap.x = px * size;
+  bitmap.y = py * size;
+  bitmap.scaleX = size / bounds.width;
+  bitmap.scaleY = size / bounds.height;
+  container.addChild(bitmap);
+  container.itemList.push(bitmap);
 };
 
 TileFactory.prototype.setCoord = function(obj, px, py) {

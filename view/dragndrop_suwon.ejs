@@ -111,8 +111,8 @@ $(function() {
       });
     }
   });
-  stage.canvas.width = 2100;
-  stage.canvas.height = 1200;
+  stage.canvas.width = 700;
+  stage.canvas.height = 400;
   stage.mouseMoveOutside = true;
   loader.loadManifest(manifest);
   loader.on("complete", function() {
@@ -133,13 +133,13 @@ $(function() {
       setBitmapCoord(bitmap, px, py + 0.5);
       stage.addChild(bitmap);
 			var circle = new createjs.Shape();
-      circle.graphics.beginStroke("#000").beginFill("#FFF").drawCircle(0, 0, 30);
-      circle.x = bitmap.x + 120;
-      circle.y = bitmap.y + 120;
+      circle.graphics.beginStroke("#000").beginFill("#FFF").drawCircle(0, 0, 15);
+      circle.x = bitmap.x + 25;
+      circle.y = bitmap.y + 25;
       stage.addChild(circle);
-      countObj[item] = new createjs.Text(count[item], "40px monospace", "#000");
-			countObj[item].x = bitmap.x + 110;
-      countObj[item].y = bitmap.y + 103;
+      countObj[item] = new createjs.Text(count[item], "20px monospace", "#000");
+			countObj[item].x = bitmap.x + 20;
+      countObj[item].y = bitmap.y + 15;
       stage.addChild(countObj[item]);
       py++;
     });
@@ -198,7 +198,7 @@ $(function() {
   }
   function setBitmapCoord(bitmap, px, py) {
     var bounds = bitmap.getBounds(),
-        size = 300,
+        size = 100,
         scale = size / bounds.width;
     bitmap.px = px;
     bitmap.py = py;
@@ -210,11 +210,11 @@ $(function() {
     bitmap.regY = bounds.height / 2;
   }
   function matched(target) {
-    var py = Math.floor((target.y - 150) / 300),
+    var py = Math.floor((target.y - 50) / 100),
         type = target.name.match(/[^\d]+/)[0],
         correct = py >= 0 && (["suwon", "hwaseong"].indexOf(type) == py);
 
-    if(1800<= target.x && target.x <= 2100) {
+    if(600<= target.x && target.x <= 700) {
       if(correct) {
         countDown(type);
         return true;

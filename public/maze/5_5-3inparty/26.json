@@ -9,8 +9,8 @@
     "move_right",
     "move_left",
     "repeat",
-    "get_item",
-    "use_item"
+    "get_item2",
+    "use_item2"
   ],
   "map": [
     ".#####...",
@@ -32,15 +32,16 @@
     "x": 5,
     "y": 4,
     "img":"water",
+    "itemImg":"cup",
     "itemCount": 3
   }, {
     "x": 1,
     "y": 2,
-    "img":"clover4"
+    "img":"clover1"
   }, {
     "x": 6,
     "y": 2,
-    "img":"clover1"
+    "img":"clover4"
   }, {
     "x": 2,
     "y": 4,

@@ -9,8 +9,8 @@
     "move_right",
     "move_left",
     "repeat",
-    "get_item",
-    "use_item"
+    "get_item2",
+    "use_item2"
   ],
   "map": [
     "ttttttttt",
@@ -32,21 +32,25 @@
     "x": 1,
     "y": 4,
     "img":"machine",
+    "itemImg":"can",
     "itemCount": 1
   }, {
     "x": 2,
     "y": 1,
     "img":"machine",
+    "itemImg":"can",
     "itemCount": 2
   }, {
     "x": 4,
     "y": 4,
     "img":"water",
+    "itemImg":"cup",
     "itemCount": 2
   }, {
     "x": 4,
     "y": 6,
     "img":"water",
+    "itemImg":"cup",
     "itemCount": 1
   }],
   "tutorial": [{

@@ -11,6 +11,7 @@ Actions = function(kidscoding, loader, mazeInfo, run) {
   this.setTimeoutKey = null;
   this.getItemCount = kidscoding.tileFactory.getItemCount;
   this.setItemCount = kidscoding.tileFactory.setItemCount;
+  this.addItemImage = kidscoding.tileFactory.addItemImage;
   this.setCoord = kidscoding.tileFactory.setCoord;
 };
 
@@ -373,6 +374,45 @@ Actions.prototype.getItem = function(block, callback) {
   }
 };
 
+Actions.prototype.getItem2 = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      item = this._getCanvasObject(character.px, character.py, "item");
+  if( !item ) {
+    // 아이템을 가져올 수 없다면
+    callback("아이템을 가져올 수 없어요");
+    return;
+  }
+
+  character.hasItem = true;
+  var itemCount = this.getItemCount(item);
+
+  if(item.itemCount) {
+    if(itemCount == 0) {
+      callback("아이템을 가져올 수 없어요");
+      return;
+    }
+    // 다수의 아이템
+    //아이템의 소유 개수 감소
+    this.setItemCount(item, itemCount - 1);
+    // 캐릭터의 아이템 소유 개수 증가
+    var itemCount = this.getItemCount(character);
+    this.setItemCount(character, itemCount + 1);
+    if(!character.itemList){
+      character.itemList = [];
+    }
+    character.itemList.push(item);
+  }else{
+    item.visible = false;
+    character.itemBitmap = item;
+  }
+  this.canvas.stage.update();
+  createjs.Sound.play("success");
+  setTimeout(function() {
+    callback();
+  }, 500);
+};
+
 Actions.prototype.useItem = function(block, callback) {
   var _this = this,
       character = this.canvas.character,
@@ -441,6 +481,60 @@ Actions.prototype.useItem = function(block, callback) {
     return;
   }
 
+  // 아이템을 사용할 수 없는 경우
+  callback("아이템을 사용할 수 없어요");
+}
+
+Actions.prototype.useItem2 = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      itemBitmap = character.itemBitmap;
+  if(!character.hasItem) {
+    callback("아이템을 가지고 있지 않아요");
+    return;
+  }
+
+  // 목표 위에서 아이템 사용(패턴 매칭)
+  var food = this._getCanvasObject(character.px, character.py, "food");
+  if(food && food.useItem) {
+    if(character.itemList && character.itemList.length>0) {
+      // 다수의 아이템
+      this._splitObjects(food, function() {
+        var itemCount = _this.getItemCount(character);
+        if(itemCount == 0) {
+          callback("아이템을 가지고 있지 않아요");
+          return;
+        }
+        _this.setItemCount(character, itemCount - 1);
+        var dropItem = character.itemList.shift();
+        _this.addItemImage(food, dropItem.itemImg);
+        _this.canvas.stage.update();
+        createjs.Sound.play("success");
+        setTimeout(function() {
+          callback();
+        }, 500);
+      });
+      return;
+    }else if(itemBitmap){
+      this._splitObjects(food, function() {
+        food.visible = false;
+        itemBitmap.bitmap.image = _this.loader.getResult(itemBitmap.itemImg);
+        itemBitmap.visible = true;
+        itemBitmap.px = food.px;
+        itemBitmap.py = food.py;
+        itemBitmap.x = food.x;
+        itemBitmap.y = food.y;
+        _this.canvas.stage.update();
+        createjs.Sound.play("success");
+        setTimeout(function() {
+          callback();
+        }, 500);
+      });
+      return;
+    }
+    callback("아이템을 사용할 수 없어요");
+    return;
+  }
   // 아이템을 사용할 수 없는 경우
   callback("아이템을 사용할 수 없어요");
 }
@@ -631,10 +725,10 @@ Actions.prototype.repeat = function(type, block, callback) {
           block.addSelect();
           proc();
         });
-      }, 500);
+      }, 0);
     } else {
       block.addSelect();
-      _this.setTimeoutKey = setTimeout(callback, 500);
+      _this.setTimeoutKey = setTimeout(callback, 0);
     }
   };
   proc();
