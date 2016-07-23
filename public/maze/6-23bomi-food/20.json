@@ -1,0 +1,57 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item",
+    "check",
+    "condition_foodget",
+    "condition_fooduse"
+  ],
+  "map": [
+    ".#######.",
+    "#.####%##",
+    "#..###.##",
+    "###..#.##",
+    "#d#.##..#",
+    "#......##",
+    "#.#..&.##",
+    "##...####",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 1,
+    "img": "kitties",
+    "useItem": true
+    },{
+    "x": 5,
+    "y": 6,
+    "contents" : [{
+      "img": "fish",
+      "role": "item"
+    },{
+      "img": "bang",
+      "role": "img"
+    }]
+  }],
+  "tutorial": [{
+    "msg": "도시 고양이 봄이는 "
+  },{
+    "msg": "보물상자를 확인하고",
+    "img": "/img/bomi/chest0.png"
+  },{
+    "msg": "먹이가 있으면 아기 고양이에게 주고 ",
+    "img": "/img/bomi/fish.png"
+  },{
+    "msg": "먹이가 없으면 바로 아기 고양이에게 가자!",
+    "img": "/img/bomi/kitties0.png"
+  }]
+}
