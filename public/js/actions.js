@@ -528,6 +528,7 @@ Actions.prototype.useItem2 = function(block, callback) {
       setTimeout(function() {
         callback();
       }, 500);
+      return;
     }
     callback("아이템을 사용할 수 없어요");
     return;
