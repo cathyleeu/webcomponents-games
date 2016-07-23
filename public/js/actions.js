@@ -516,18 +516,20 @@ Actions.prototype.useItem2 = function(block, callback) {
       });
       return;
     }else if(itemBitmap){
-      food.visible = false;
-      itemBitmap.bitmap.image = this.loader.getResult(itemBitmap.itemImg);
-      itemBitmap.visible = true;
-      itemBitmap.px = food.px;
-      itemBitmap.py = food.py;
-      itemBitmap.x = food.x;
-      itemBitmap.y = food.y;
-      this.canvas.stage.update();
-      createjs.Sound.play("success");
-      setTimeout(function() {
-        callback();
-      }, 500);
+      this._splitObjects(food, function() {
+        food.visible = false;
+        itemBitmap.bitmap.image = _this.loader.getResult(itemBitmap.itemImg);
+        itemBitmap.visible = true;
+        itemBitmap.px = food.px;
+        itemBitmap.py = food.py;
+        itemBitmap.x = food.x;
+        itemBitmap.y = food.y;
+        _this.canvas.stage.update();
+        createjs.Sound.play("success");
+        setTimeout(function() {
+          callback();
+        }, 500);
+      });
       return;
     }
     callback("아이템을 사용할 수 없어요");
