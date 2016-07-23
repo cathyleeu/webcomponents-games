@@ -383,22 +383,29 @@ Actions.prototype.getItem2 = function(block, callback) {
     callback("아이템을 가져올 수 없어요");
     return;
   }
-  var itemCount = this.getItemCount(item);
-  if(itemCount == 0) {
-    callback("아이템을 가져올 수 없어요");
-    return;
-  }
+
   character.hasItem = true;
-  // 다수의 아이템
-  //아이템의 소유 개수 감소
-  this.setItemCount(item, itemCount - 1);
-  // 캐릭터의 아이템 소유 개수 증가
-  var itemCount = this.getItemCount(character);
-  this.setItemCount(character, itemCount + 1);
-  if(!character.itemList){
-    character.itemList = [];
+  var itemCount = this.getItemCount(item);
+
+  if(item.itemCount) {
+    if(itemCount == 0) {
+      callback("아이템을 가져올 수 없어요");
+      return;
+    }
+    // 다수의 아이템
+    //아이템의 소유 개수 감소
+    this.setItemCount(item, itemCount - 1);
+    // 캐릭터의 아이템 소유 개수 증가
+    var itemCount = this.getItemCount(character);
+    this.setItemCount(character, itemCount + 1);
+    if(!character.itemList){
+      character.itemList = [];
+    }
+    character.itemList.push(item);
+  }else{
+    item.visible = false;
+    character.itemBitmap = item;
   }
-  character.itemList.push(item);
   this.canvas.stage.update();
   createjs.Sound.play("success");
   setTimeout(function() {
@@ -490,7 +497,7 @@ Actions.prototype.useItem2 = function(block, callback) {
   // 목표 위에서 아이템 사용(패턴 매칭)
   var food = this._getCanvasObject(character.px, character.py, "food");
   if(food && food.useItem) {
-    if(character.itemList.length>0) {
+    if(character.itemList && character.itemList.length>0) {
       // 다수의 아이템
       this._splitObjects(food, function() {
         var itemCount = _this.getItemCount(character);
@@ -499,18 +506,8 @@ Actions.prototype.useItem2 = function(block, callback) {
           return;
         }
         _this.setItemCount(character, itemCount - 1);
-        //itemCount = _this.getItemCount(food);
-        //_this.setItemCount(food, itemCount + 1);
         var dropItem = character.itemList.shift();
         _this.addItemImage(food, dropItem.itemImg);
-        /*
-        dropItem.img = dropItem.itemImg;
-        dropItem.bitmap.image = _this.loader.getResult(dropItem.img);
-        dropItem.visible = true;
-        dropItem.px = food.px;
-        dropItem.py = food.py;
-        dropItem.x = food.x;
-        dropItem.y = food.y;*/
         _this.canvas.stage.update();
         createjs.Sound.play("success");
         setTimeout(function() {
@@ -518,6 +515,19 @@ Actions.prototype.useItem2 = function(block, callback) {
         }, 500);
       });
       return;
+    }else if(itemBitmap){
+      food.visible = false;
+      itemBitmap.bitmap.image = this.loader.getResult(itemBitmap.itemImg);
+      itemBitmap.visible = true;
+      itemBitmap.px = food.px;
+      itemBitmap.py = food.py;
+      itemBitmap.x = food.x;
+      itemBitmap.y = food.y;
+      this.canvas.stage.update();
+      createjs.Sound.play("success");
+      setTimeout(function() {
+        callback();
+      }, 500);
     }
     callback("아이템을 사용할 수 없어요");
     return;

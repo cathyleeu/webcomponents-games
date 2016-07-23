@@ -1,0 +1,37 @@
+{
+  "tile_size": 50,
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    "########",
+    "########",
+    "########",
+    "########",
+    "#@.)..%#",
+    "########",
+    "########",
+    "########"
+  ],
+  "extra":[ {
+    "x": 6,
+    "y": 4,
+    "img":"table",
+    "useItem": 3
+  }, {
+    "x": 3,
+    "y": 4,
+    "img":"water",
+    "itemImg":"cup",
+    "itemCount": 3
+  }],
+  "tutorial": [{
+    "msg": "5.5권 정수기 사용"
+  }]
+}
