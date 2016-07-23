@@ -255,6 +255,18 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [6,7,8,6]
         };
       }
+      if(character.src.indexOf('bomi') >= 0) {
+        animations = {
+          stand_u: 12,
+          walk_u: [12,13,14,15,12],
+          stand_r: 8,
+          walk_r: [8,9,10,11,8],
+          stand_d: 0,
+          walk_d: [0,1,2,3,0],
+          stand_l: 4,
+          walk_l: [4,5,6,7,4]
+        };
+      }
       for(var key in animations) {
         if($.isArray(animations[key])) {
           animations[key] = {

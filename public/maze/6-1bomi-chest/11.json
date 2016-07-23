@@ -1,0 +1,64 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item2",
+    "use_item2",
+    "repeat",
+    "check"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "##.#.##.#",
+    "#%#.#.###",
+    "#...&...#",
+    "#..#.#.u#",
+    "###.#####",
+    "#.......#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"teacher"
+  },{
+    "x": 4,
+    "y": 4,
+    "contents" : [{
+      "img": "star",
+      "role": "img"
+    },{
+      "img": "bang",
+      "role": "img"
+    }]
+  }],
+  "tutorial": [{
+    "msg": "자 이제 코딩 선생님과 같이 '확인하기'블록을 알아보자",
+    "img": "/img/profile.png"
+  },{
+    "msg": "먼저 고양이 봄이를"
+  },{
+    "msg": "보물 상자로 이동시키고",
+    "img": "/img/bomi/chest0.png"
+  },{
+    "msg": "확인하기 블록을 사용한 다음",
+    "img": "/img/bomi/checkblock.png"
+  },{
+    "msg": "그리고 코딩 선생님에게 이동해봐!",
+    "img": "/img/profile.png"
+  }],
+  "success": [{
+    "msg": "성공했어! 이제 너희 코딩 선생님에게",
+    "img": "/img/profile.png"
+  },{
+    "msg": "보물상자에서 무엇이 나왔는지 이야기 해봐!",
+    "img": "/img/bomi/chest0.png"
+  }]
+}
