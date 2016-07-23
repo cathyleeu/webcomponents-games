@@ -19,8 +19,10 @@
     ".###."
   ],
   "tutorial": [{
-    "msg": "올챙올챙~ 장구벌레가 위쪽에 있어"
+    "msg:ko": "올챙올챙~ 장구벌레가 위쪽에 있어",
+    "msg:en": "There is a bug up above!"
   },{
-    "msg": "↑위로이동 블록을 이용해서 위로 가보자!"
+    "msg:ko": "↑위로이동 블록을 이용해서 위로 가보자!",
+    "msg:en": "Let's move up using [Move Up] block."
   }]
 }
