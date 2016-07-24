@@ -17,7 +17,7 @@
   {"id": "trf_lights", "src": "/img/bomi/trf_lights.png"},
   {"id": "trf_green", "src": "/img/bomi/trf_green.png"},
   {"id": "trf_red", "src": "/img/bomi/trf_red.png"},
-  {"id": "crosswalk_col", "src": "/img/bomi/crosswalk_col.png"},
+  {"tile": "a", "id": "crosswalk_col", "src": "/img/bomi/crosswalk_col.png", "wall": true},
   {"id": "fruit_ap", "src": "/img/jangoon/fruit_ap.png", "obstacle": false},
   {"id": "fruit_ba", "src": "/img/jangoon/fruit_ba.png", "obstacle": false},
   {"id": "fruit_ki", "src": "/img/jangoon/fruit_ki.png", "obstacle": false},

@@ -69,6 +69,9 @@ TileFactory.prototype.create = function(tile, x, y) {
     if(this.custom_tiles[tile].hasOwnProperty("obstacle")) {
       info.obstacle = this.custom_tiles[tile].obstacle;
     }
+    if(this.custom_tiles[tile].hasOwnProperty("wall")) {
+      info.obstacle = this.custom_tiles[tile].wall;
+    }
   }
 
   // maze json에서 extra 정보를 가져온다
