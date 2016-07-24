@@ -43,7 +43,8 @@
     "msg": "자 이제 코딩 선생님과 같이 '확인하기'블록을 알아보자",
     "img": "/img/profile.png"
   },{
-    "msg": "먼저 고양이 봄이를"
+    "msg": "먼저 고양이 봄이를",
+    "img": "/img/bomi/bomi0.png"
   },{
     "msg": "보물 상자로 이동시키고",
     "img": "/img/bomi/chest0.png"
@@ -55,7 +56,7 @@
     "img": "/img/profile.png"
   }],
   "success": [{
-    "msg": "성공했어! 이제 너희 코딩 선생님에게",
+    "msg": "성공했어! 이제 코딩 선생님에게",
     "img": "/img/profile.png"
   },{
     "msg": "보물상자에서 무엇이 나왔는지 이야기 해봐!",
