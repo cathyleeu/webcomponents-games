@@ -8,8 +8,8 @@
     "move_down",
     "move_right",
     "move_left",
-    "get_item",
-    "use_item",
+    "get_item2",
+    "use_item2",
     "check",
     "condition_foodget",
     "condition_fooduse"
@@ -33,6 +33,7 @@
     },{
     "x": 5,
     "y": 4,
+    "itemImg": "feeding",
     "contents" : [{
       "img": "fish",
       "role": "item"

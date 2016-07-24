@@ -9,19 +9,17 @@
     "move_right",
     "move_left",
     "repeat",
-    "get_item",
-    "use_item",
     "check",
-    "condition_foodget",
-    "condition_fooduse"
+    "condition_light",
+    "wait"
   ],
   "map": [
     ".#######.",
     "#.####%.#",
     "#......##",
-    "###...###",
+    "bbbzbbbbb",
     "##.&.#..#",
-    "#.....l##",
+    "#......l#",
     "#.#..####",
     "#....#.##",
     ".#######."
@@ -29,30 +27,30 @@
   "extra":[{
     "x": 6,
     "y": 1,
-    "img": "kitties",
-    "useItem": true
+    "img": "kitties"
     },{
     "x": 3,
     "y": 4,
-    "itemImg": "feeding",
-    "contents" : [{
-      "img": "fish",
-      "role": "item"
+    "img": "trf_lights",
+    "position":"up",
+    "contents" :[{
+      "img": "trf_green",
+      "role": "go"
     },{
-      "img": "bang",
-      "role": "img"
+      "img": "trf_red",
+      "role":"stop"
     }]
   }],
   "tutorial": [{
     "msg": "도시 고양이 봄이는 "
   },{
-    "msg": "보물상자를 확인하고",
-    "img": "/img/bomi/chest0.png"
+    "msg": "신호등을 확인하고",
+    "img": "/img/bomi/trf0.png"
   },{
-    "msg": "먹이가 있으면 아기 고양이에게 주고 ",
-    "img": "/img/bomi/fish0.png"
+    "msg": "안전하게 횡단보도를 건너서",
+    "img": "/img/bomi/crosswalk_col.png"
   },{
-    "msg": "먹이가 없으면 바로 아기 고양이에게 가자!",
+    "msg": "아기 고양이에게로 가요",
     "img": "/img/bomi/kitties0.png"
   }]
-}
+  }

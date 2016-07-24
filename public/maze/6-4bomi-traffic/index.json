@@ -16,83 +16,83 @@
   "extra": [{
     "x": 11,
     "y": 2,
-    "link": "6-23bomi-food/1"
+    "link": "6-4bomi-traffic/1"
   },  {
     "x": 13,
     "y": 2,
-    "link": "6-23bomi-food/2"
+    "link": "6-4bomi-traffic/2"
   },  {
     "x": 13,
     "y": 1,
-    "link": "6-23bomi-food/3"
+    "link": "6-4bomi-traffic/3"
   },  {
     "x": 15,
     "y": 2,
-    "link": "6-23bomi-food/4"
+    "link": "6-4bomi-traffic/4"
   },  {
     "x": 15,
     "y": 1,
-    "link": "6-23bomi-food/5"
+    "link": "6-4bomi-traffic/5"
   },  {
     "x": 17,
     "y": 2,
-    "link": "6-23bomi-food/6"
+    "link": "6-4bomi-traffic/6"
   },  {
     "x": 18,
     "y": 1,
-    "link": "6-23bomi-food/7"
+    "link": "6-4bomi-traffic/7"
   },  {
     "x": 19,
     "y": 2,
-    "link": "6-23bomi-food/8"
+    "link": "6-4bomi-traffic/8"
   },  {
     "x": 21,
     "y": 2,
-    "link": "6-23bomi-food/9"
+    "link": "6-4bomi-traffic/9"
   },  {
     "x": 21,
     "y": 1,
-    "link": "6-23bomi-food/10"
+    "link": "6-4bomi-traffic/10"
   },  {
     "x": 13,
     "y": 5,
-    "link": "6-23bomi-food/11"
+    "link": "6-4bomi-traffic/11"
   },  {
     "x": 15,
     "y": 4,
-    "link": "6-23bomi-food/12"
+    "link": "6-4bomi-traffic/12"
   },  {
     "x": 17,
     "y": 5,
-    "link": "6-23bomi-food/13"
+    "link": "6-4bomi-traffic/13"
   },  {
     "x": 19,
     "y": 4,
-    "link": "6-23bomi-food/14"
+    "link": "6-4bomi-traffic/14"
   },  {
     "x": 20,
     "y": 5,
-    "link": "6-23bomi-food/15"
+    "link": "6-4bomi-traffic/15"
   },  {
     "x": 21,
     "y": 4,
-    "link": "6-23bomi-food/16"
+    "link": "6-4bomi-traffic/16"
   },  {
     "x": 22,
     "y": 5,
-    "link": "6-23bomi-food/17"
+    "link": "6-4bomi-traffic/17"
   },  {
     "x": 23,
     "y": 4,
-    "link": "6-23bomi-food/18"
+    "link": "6-4bomi-traffic/18"
   },  {
     "x": 24,
     "y": 5,
-    "link": "6-23bomi-food/19"
+    "link": "6-4bomi-traffic/19"
   },  {
     "x": 25,
     "y": 4,
-    "link": "6-23bomi-food/20"
+    "link": "6-4bomi-traffic/20"
   },  {
     "img":"star",
     "x": 27,
@@ -123,8 +123,8 @@
   "tutorial": [{
     "msg": "도시 고양이 보미는"
   }, {
-    "msg": "아기 고양이에게 먹이를 주고",
-    "img": "/img/bomi/feeding0.png"
+    "msg": "횡단보도를 안전하게 건너서 아기 고양이에게 가고",
+    "img": "/img/bomi/crossing.png"
   }, {
     "msg": "보물상자를 받을 수 있어요",
     "img": "/img/bomi/chest0.png"

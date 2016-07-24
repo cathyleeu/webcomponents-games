@@ -34,6 +34,7 @@
     },{
     "x": 4,
     "y": 3,
+    "itemImg": "feeding",
     "contents" : [{
       "img": "fish",
       "role": "item"
