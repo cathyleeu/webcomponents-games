@@ -1,0 +1,55 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start","move_left","move_down","check","condition_light"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "check",
+    "condition_light",
+    "wait"
+  ],
+  "map": [
+    ".######a.",
+    "#.##..#a#",
+    "##.d...a.",
+    "#.&##..x#",
+    "bbzbbbzcz",
+    "#.%#.#tx.",
+    "##.....a#",
+    "##.###.a#",
+    ".######a."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 3,
+    "img": "trf_lights",
+    "position":"down",
+    "contents" :[{
+      "img": "trf_green",
+      "role": "go"
+    },{
+      "img": "trf_red",
+      "role":"stop"
+    }]
+  },{
+    "x": 2,
+    "y": 5,
+    "img": "kitties"
+  }],
+  "tutorial": [{
+    "msg": "도시 고양이 봄이는 "
+  },{
+    "msg": "신호등을 확인하고",
+    "img": "/img/bomi/trf0.png"
+  },{
+    "msg": "안전하게 횡단보도를 건너서",
+    "img": "/img/bomi/crosswalk_col.png"
+  },{
+    "msg": "아기 고양이에게로 가요",
+    "img": "/img/bomi/kitties0.png"
+  }]
+  }

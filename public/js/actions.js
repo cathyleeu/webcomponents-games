@@ -562,6 +562,7 @@ Actions.prototype.check = function(block, callback) {
     }, 1000);
     return;
   }
+  callback("확인할 것이 없어요");
 }
 
 Actions.prototype.action = function(hand, block, callback) {
