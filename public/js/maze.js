@@ -10,6 +10,7 @@ var d1,
     tutorial = null,
     tutorialIdx = 0,
     message_url = "",
+    messages = null,
     map_path = null,
     map_qs;
 
@@ -56,6 +57,7 @@ page('*', function(ctx, next) {
     }
     store.set("lang", lang);
     $.getJSON("/msg/" + lang + ".json", function(msg_obj) {
+      messages = msg_obj;
       Object.keys(msg_obj).forEach(function(key) {
         $("[data-msg=" + key + "]").text(msg_obj[key]);
       });
@@ -440,19 +442,19 @@ function addEvents() {
                 runTutorial(maze.success);
               } else {
                 showModal({
-                  msg: "성공!",
+                  msg: messages.success,
                   goNext: true
                 });
               }
             } else {
               createjs.Sound.play("fail");
-              showModal("블럭을 다 썼지만 끝나지 않았어요");
+              showModal(messages.fail_done);
             }
           } else {
             for(var i = 0; i < foods.length; i++) {
               if(foods[i].visible == true) {
                 createjs.Sound.play("fail");
-                showModal("블럭을 다 썼지만 끝나지 않았어요");
+                showModal(messages.fail_done);
                 break;
               }
             }
@@ -462,7 +464,7 @@ function addEvents() {
                 runTutorial(maze.success);
               } else {
                 showModal({
-                  msg: "성공!",
+                  msg: messages.success,
                   goNext: true
                 });
               }
@@ -470,7 +472,7 @@ function addEvents() {
           }
         });
       } else {
-        showModal("블럭이 하나도 없어요!");
+        showModal(messages.fail_noBlocks);
       }
     } else {
       $("#runCode .start").show();
@@ -537,7 +539,8 @@ function addEvents() {
             page(obj.link + "?back");
           }
         } else {
-          showModal(obj.min_score + "개 이상 모아야 해요");
+          var msg = messages.fail_notEnough.split("%1").join(obj.min_score);
+          showModal(msg);
         }
       }
       if(obj && obj.tutorial) {
@@ -680,7 +683,7 @@ function run(block, callback) {
               className = $svg.attr("class");
           $svg.attr("class", className + " error");
           createjs.Sound.play("fail");
-          showModal("벽에 부딪쳤어요");
+          showModal(messages.fail_wall);
           return;
         }
         if( obj.role == "food" && !obj.useItem) {

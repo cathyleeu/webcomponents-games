@@ -1,6 +1,12 @@
 {
+  "kidscoding": "KidsCoding",
   "start": "Start",
   "reset": "Reset",
   "tutorial": "Show Tutorial",
-  "bgm": "Play BGM"
+  "bgm": "Play BGM",
+  "success": "Good Job!",
+  "fail_wall": "I'd hit the wall.",
+  "fail_done": "Try it again.",
+  "fail_noBlocks": "No blocks!",
+  "fail_notEnough": "You need %1"
 }
