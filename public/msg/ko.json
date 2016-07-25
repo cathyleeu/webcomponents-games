@@ -11,7 +11,7 @@
   "next_stage": "다음 단계로 이동",
   "select_character": "캐릭터를 선택해 보세요.",
   "success": "성공!",
-  "fail_wall": "벽에 부딪쳤어요.",
+  "fail_wall": "갈 수 없는 곳이에요!",
   "fail_done": "블럭을 다 썼지만 끝나지 않았어요",
   "fail_noBlocks": "블럭이 하나도 없어요!",
   "fail_notEnough": "%1 개 이상 모아야 해요"
