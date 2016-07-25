@@ -107,6 +107,13 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
       .map(function(item) {
         return "/img/dragndrop_suwon/" + item;
       });
+  var msgJsons = fs.readdirSync("public/msg")
+      .filter(function(item) {
+        return item != ".DS_Store" && item != "Thumbs.db";
+      })
+      .map(function(item) {
+        return "/msg/" + item;
+      });
 
   // 각 원별 cache 생성
   var url = JSON.parse(fs.readFileSync('public/login/url.json')),
@@ -195,6 +202,7 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
     output += loginImgs.join("\n") + "\n";
     output += commonImgs.join("\n") + "\n";
     output += blocklyImgs.join("\n") + "\n";
+    output += msgJsons.join("\n") + "\n";
     if(suwonCheck) {
       output += "/click_history\n/dragndrop_suwon\n";
       output += suwonImgs.join("\n") + "\n";
