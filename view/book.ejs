@@ -131,9 +131,11 @@
       $("#className").text(className);
       $("#book").text(book);
       $.get("login/books.json", function(books) {
-        var lang = info.lang ? "?lang=" + info.lang : "";
+        var lang = info.lang ? "lang=" + info.lang : "";
         books[book].forEach(function(item) {
-          $('<a class="btn btn-lg btn-outline">').attr("href", item[1] + lang).text(item[0]).appendTo(".contents");
+          var conn = item[1].indexOf("#!") >= 0 ? "?" : "#",
+              lang2 = lang ? conn + lang : "";
+          $('<a class="btn btn-lg btn-outline">').attr("href", item[1] + lang2).text(item[0]).appendTo(".contents");
         });
       });
     });
