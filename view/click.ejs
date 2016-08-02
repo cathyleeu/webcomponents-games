@@ -98,19 +98,23 @@
 var CIRCLE_NUM = 5;
 
 var hash = location.hash,
-    level = +(hash||"#1").slice(1) - 1,
+    lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+    level = (+(hash||"#1").slice(1) - 1) || 0,
     iter,
     count,
     startTime;
 
 var levels = [{
-  instruction: "작은 숫자부터 클릭해봐요",
+  ko: "작은 숫자부터 클릭해봐요",
+  en: "Click from small numbers.",
   values: [0,1,2,3,4,5,6,7,8,9]
 }, {
-  instruction: "큰 숫자부터 클릭해봐요",
+  ko: "큰 숫자부터 클릭해봐요",
+  en: "Click from big numbers.",
   values: [9,8,7,6,5,4,3,2,1,0]
 }, {
-  instruction: "순서대로 클릭해봐요",
+  ko: "순서대로 클릭해봐요",
+  en: "Click the bubbles in order.",
   values: [
     "/img/login/01.png",
     "/img/login/02.png",
@@ -127,7 +131,8 @@ var levels = [{
     "/img/login/13.png"
   ]
 }, {
-  instruction: "순서대로 클릭해봐요",
+  ko: "순서대로 클릭해봐요",
+  en: "Click the bubbles in order.",
   values: [
     "/img/login/13.png",
     "/img/login/12.png",
@@ -144,16 +149,20 @@ var levels = [{
     "/img/login/01.png"
   ]
 }, {
-  instruction: "ㄱ부터 차례대로 클릭해봐요",
+  ko: "ㄱ부터 차례대로 클릭해봐요",
+  en: "Click from ㄱ to ㅎ",
   values: ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
 }, {
-  instruction: "ㅏ부터 차례대로 클릭해봐요",
+  ko: "ㅏ부터 차례대로 클릭해봐요",
+  en: "Click from ㅏ to ㅣ",
   values: ["ㅏ","ㅑ","ㅓ","ㅕ","ㅗ","ㅛ","ㅜ","ㅠ","ㅡ","ㅣ"]
 }, {
-  instruction: "A부터 차례대로 클릭해봐요",
+  ko: "A부터 차례대로 클릭해봐요",
+  en: "Click from A to Z",
   values: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 }, {
-  instruction: "a부터 차례대로 클릭해봐요",
+  ko: "a부터 차례대로 클릭해봐요",
+  en: "Click from a to z",
   values: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 }];
 
@@ -189,7 +198,7 @@ function timer() {
   var t = parseInt((new Date() - startTime) / 100, 10) / 10;
   $(".timer").text(t.toFixed(1));
   if(t >= 30) {
-    alert(count + "개 성공!");
+    alert(lang == "ko" ? count + "개 성공!" : "Score: " + count);
     $(".hint").html("");
     init();
   } else {
@@ -200,10 +209,11 @@ function timer() {
 function init() {
   $(".bubble").remove();
   if(level < levels.length) {
-    $(".instruction").text("[ " + (level+1) + " 단계 ] " + levels[level].instruction);
+    var levelStr = (lang == "ko") ? "단계" : "Level";
+    $(".instruction").text("[ " + (level+1) + " " + levelStr + " ] " + levels[level][lang]);
     iter = getIterator(levels[level++].values);
   } else {
-    $(".instruction").text("30초동안 차례대로 클릭해봐요");
+    $(".instruction").text(lang == "ko" ? "30초동안 차례대로 클릭해봐요" : "Click in order for 30 seconds");
     $(".timer").show();
     iter = getIterator();
     startTime = new Date();
@@ -258,7 +268,10 @@ $(function() {
     if($(e.target).attr("data-index") != min + "") {
       if(level < levels.length) {
         // time-attack 모드에서는 alert을 띄우지 않는다
-        alert($(".workspace .bubble[data-index=" + min + "]").text() + " 부터 클릭해주세요");
+        var minStr = $(".workspace .bubble[data-index=" + min + "]").text();
+        if(minStr) {
+          alert(lang == "ko" ? minStr + " 부터 클릭해주세요" : "Click " + minStr + " first");
+        }
       }
       return;
     }
@@ -273,7 +286,7 @@ $(function() {
       addBubble(iter.getIndex(), iter.getValue());
     }
     if(indexes.length <= 1) {
-      alert("잘 했어요!");
+      alert(lang == "ko" ? "잘 했어요!" : "Good Job!");
       if(history.pushState) {
         history.pushState(null, null, '#' + (level+1));
       } else {
