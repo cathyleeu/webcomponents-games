@@ -21,8 +21,10 @@
     ".#####."
   ],
   "tutorial": [{
-    "msg": "개굴개굴 "
+    "msg:ko": "개굴개굴 ",
+    "msg:en": "Ribbit~ Ribbit!"
   },{
-    "msg": "←왼쪽으로 이동 블록을 이용해서 왼쪽으로 가보자!"
+    "msg:ko": "←왼쪽으로 이동 블록을 이용해서 왼쪽으로 가보자!",
+    "msg:en": "Let's move left using [Move Left] block"
   }]
 }
