@@ -48,9 +48,9 @@ html {
 </style>
 <div id="container">
   <div class="head">
-    드래그앤드랍 연습
+    <span data-msg="title">드래그앤드랍 연습</span>
     <span class="score-wrap pull-right">
-      점수: <span id="score">0</span>
+      <span data-msg="score">점수</span>: <span id="score">0</span>
     </span>
   </div>
   <div class="workspace">
@@ -62,12 +62,12 @@ html {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">키즈코딩</h4>
+        <h4 class="modal-title"><span data-msg="modal_title">키즈코딩</span></h4>
       </div>
       <div class="modal-body">
       </div>
       <div class="modal-footer">
-        <button id="confirm" type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0"><i class="fa fa-times-circle-o"></i> 확인</button>
+        <button id="confirm" type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0"><i class="fa fa-times-circle-o"></i> <span data-msg="confirm">확인</span></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -75,7 +75,23 @@ html {
 
 <script>
 $(function() {
-  var stage = new createjs.Stage("display"),
+  var hash = location.hash,
+      lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+      msg = {
+        ko: {
+          title: "드래그앤드랍 연습",
+          score: "점수",
+          modal_title: "키즈코딩",
+          confirm: "확인"
+        },
+        en: {
+          title: "Dran and Drop",
+          score: "Score",
+          modal_title: "KidsCoding",
+          confirm: "OK"
+        }
+      },
+      stage = new createjs.Stage("display"),
       loader = new createjs.LoadQueue(),
       sounds = new createjs.LoadQueue(),
       sources = {
@@ -92,6 +108,10 @@ $(function() {
       countObj = {},
       manifest = [],
       draggers = [];
+
+  $("[data-msg]").each(function(idx, el) {
+    $(el).text(msg[lang][$(el).data("msg")]);
+  });
   createjs.Touch.enable(stage);
   createjs.Sound.alternateExtensions = ["mp3", "wav"];
   sounds.installPlugin(createjs.Sound);
@@ -196,7 +216,9 @@ $(function() {
     });
 
     stage.update();
-    showModal("왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!");
+    showModal(lang == "ko" ?
+        "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!" :
+        "Drag a stuff from left and drop it on the right side.");
   }
   function setBitmapCoord(bitmap, px, py) {
     var bounds = bitmap.getBounds(),
@@ -221,7 +243,7 @@ $(function() {
         countDown(type);
         return true;
       }
-      showModal("모양이 비슷하지 않아요!");
+      showModal(lang == "ko" ? "모양이 비슷하지 않아요!" : "Unmatched!");
     }
     return false;
   }
@@ -237,7 +259,7 @@ $(function() {
       sum += count[item];
     });
     if(sum == 0) {
-      showModal("비슷한 모양을 모두 찾았어요!");
+      showModal(lang == "ko" ? "비슷한 모양을 모두 찾았어요!" : "Good Job!");
       setTimeout(function() {
         createjs.Sound.play("complete");
       }, 1000);
@@ -283,7 +305,7 @@ $(function() {
   }
   $("#confirm").click(function(e) {
     var text = $(e.target).closest(".modal").find(".modal-body").text();
-    if(text.slice(0, 3) == "비슷한") {
+    if(text.slice(0, 3) == "비슷한" || text.slice(0, 4) == "Good") {
       reset();
     }
   });
