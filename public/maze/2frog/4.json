@@ -20,9 +20,11 @@
     "#..d..#",
     ".#####."
   ],
-  "tutorial": [{
-    "msg": "개굴개굴 "
-  },{
-    "msg": "↑위로 이동 블록을 이용해서 위로 가보자!"
-  }]
-}
+    "tutorial": [{
+      "msg:ko": "개굴개굴 ",
+      "msg:en": "Ribbit~ Ribbit!"
+    },{
+      "msg:ko": "↑위로 이동 블록을 이용해서 위로 가보자!",
+      "msg:en": "Let's move up using [Move Up] block"
+    }]
+  }

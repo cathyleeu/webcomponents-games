@@ -23,8 +23,11 @@
     ".#######."
   ],
   "tutorial": [{
-    "msg": "개굴개굴 "
+    "msg:ko": "개굴개굴 ",
+    "msg:en": "Ribbit~ Ribbit!"
   },{
-    "msg": "힌트 : ↓ ← ↓"
+    "msg:ko": "힌트 : ↓ ← ↓",
+    "msg:en": "Hint : Move down & Move left & Move down"
   }]
 }
+      
