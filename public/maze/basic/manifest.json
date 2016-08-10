@@ -1,4 +1,5 @@
 [
+  {"book": "1", "title": "생쥐와 치즈"},
   {"id": "background", "src": "/img/map/background.png"},
   {"id": "character", "src": "/img/map/mouse.png"},
   {"id": "food", "src": "/img/map/cheese.png"},

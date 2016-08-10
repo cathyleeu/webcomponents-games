@@ -1,4 +1,5 @@
 [
+  {"book": "3", "title": "덧셈 놀이"},
   {"id": "bg1", "src": "/img/woong/tile1.png"},
   {"id": "bg2", "src": "/img/woong/tile2.png"},
   {"id": "land0", "src": "/img/map32/0.png"},
