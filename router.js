@@ -6,6 +6,8 @@ var public = require('koa-router')(),
     students = require('./controller/students'),
     Users = require('./model/users'),
     nev = require('email-verification')(mongoose);
+    fs = require('fs'),
+    path = require('path'),
     argv = require('minimist')(process.argv.slice(2)),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'); //[argv.production ? 'production' : 'development'];
@@ -72,12 +74,19 @@ public.get('/', function *(next) {
 });
 
 public.get('/list', function *(next) {
-  var list = yield request({
-    method: 'GET',
-    uri: 'http://localhost:' + config.port + '/maze/list.json'
-  });
+  var list = fs.readdirSync(path.join("public", "maze"))
+      .filter(function(item) {
+        return fs.lstatSync(path.join("public", "maze", item)).isDirectory();
+      })
+      .map(function(item) {
+        var entry = fs.existsSync(path.join("public", "maze", item, "index.json")) ? "index" : "1";
+        return {
+          title: item,
+          href: "/maze#!" + item + "/" + entry
+        };
+      });
   yield this.render('list', {
-    list: JSON.parse(list.body)
+    list: list
   });
 });
 
