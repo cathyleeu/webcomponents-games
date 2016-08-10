@@ -71,6 +71,9 @@ page('*', function(ctx, next) {
 
   // load manifest.json file
   $.getJSON(manifest_url, function(manifest) {
+    manifest = manifest.filter(function(item) {
+      return !(item.book && item.title);
+    });
     var image_loader = new createjs.LoadQueue();
     var sound_loader = new createjs.LoadQueue();
     var getResult = image_loader.constructor.prototype.getResult;
