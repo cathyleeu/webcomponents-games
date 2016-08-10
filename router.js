@@ -76,12 +76,20 @@ public.get('/', function *(next) {
 public.get('/list', function *(next) {
   var list = fs.readdirSync(path.join("public", "maze"))
       .filter(function(item) {
-        return fs.lstatSync(path.join("public", "maze", item)).isDirectory();
+        return fs.lstatSync(path.join("public", "maze", item)).isDirectory() &&
+            fs.existsSync(path.join("public", "maze", item, "manifest.json"));
       })
       .map(function(item) {
         var entry = fs.existsSync(path.join("public", "maze", item, "index.json")) ? "index" : "1";
+        var manifest = JSON.parse(fs.readFileSync(path.join("public", "maze", item, "manifest.json")));
+        var info = null;
+        manifest.forEach(function(item) {
+          if(item.book && item.title) {
+            info = item;
+          }
+        });
         return {
-          title: item,
+          title: info ? "[" + info.book + "] : " + info.title: item,
           href: "/maze#!" + item + "/" + entry
         };
       });
