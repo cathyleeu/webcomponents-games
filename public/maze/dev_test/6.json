@@ -25,19 +25,21 @@
     "img": "board",
     "contents" : [{
         "img": "b_apple",
-        "role": "first"
+        "role": "if"
       },{
         "img": "b_bam",
-        "role": "second"
+        "role": "else"
     }]
   },{
     "x": 6,
     "y": 4,
-    "img": "apple"
+    "img": "bam",
+    "order": "else"
   },{
     "x": 3,
     "y": 6,
-    "img": "bam"
+    "img": "apple",
+    "order": "if"
   }],
   "tutorial": [{
     "msg": "7권 조건연습 - 1"

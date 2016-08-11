@@ -551,7 +551,7 @@ Actions.prototype.check = function(block, callback) {
       chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = "food";
       chest.useItem = true;
-      chest.itemNum = chest.contents[ranNum].itemNum;
+      chest.order = chest.contents[ranNum].order;
       foods.push(chest);
       foods.shift();
       _this.setCoord(chest, chest.px, chest.py);
@@ -676,15 +676,25 @@ Actions.prototype.conditioncheck2 = function(options, block, callback) {
   if(options == "food"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
     this._splitObjects(tileInfo, function() {
-      if(tileInfo.role == "first"){
-        foods.pop();
+      if(tileInfo.role == "if"){
+        for(var i = 0; i<foods.length;i++){
+          if(tileInfo.role==foods[i].order){
+            foods.push(foods[i]);
+            foods.splice(0,foods.length-1);
+          }
+        }
         if_block = block.getInputTargetBlock("if_statements");
         setTimeout(function() {
           block.removeSelect();
           _this.run(if_block, callback);
         }, 500);
       }else{
-        foods.shift();
+        for(var i = 0; i<foods.length;i++){
+          if(tileInfo.role==foods[i].order){
+            foods.push(foods[i]);
+            foods.splice(0,foods.length-1);
+          }
+        }
         else_block = block.getInputTargetBlock("else_statements");
         setTimeout(function() {
           block.removeSelect();
@@ -717,15 +727,23 @@ Actions.prototype.conditioncheck2 = function(options, block, callback) {
   } else if(options == "itemfood"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
     this._splitObjects(tileInfo, function() {
-      if(tileInfo.itemNum == "item1"){
-        items[0].obstacle = false;
+      if(tileInfo.order == "if"){
+        for(var i = 0; i<items.length;i++){
+          if(tileInfo.order==items[i].order){
+            items[i].obstacle = false;
+          }
+        }
         if_block = block.getInputTargetBlock("if_statements");
         setTimeout(function() {
           block.removeSelect();
           _this.run(if_block, callback);
         }, 500);
       }else{
-        items[1].obstacle = false;
+        for(var i = 0; i<items.length;i++){
+          if(tileInfo.order==items[i].order){
+            items[i].obstacle = false;
+          }
+        }
         else_block = block.getInputTargetBlock("else_statements");
         setTimeout(function() {
           block.removeSelect();
@@ -736,15 +754,23 @@ Actions.prototype.conditioncheck2 = function(options, block, callback) {
   } else if(options == "itemkey"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
     this._splitObjects(tileInfo, function() {
-      if(tileInfo.role == "item1"){
-        items[0].obstacle = false;
+      if(tileInfo.role == "if"){
+        for(var i = 0; i<items.length;i++){
+          if(tileInfo.role==items[i].order){
+            items[i].obstacle = false;
+          }
+        }
         if_block = block.getInputTargetBlock("if_statements");
         setTimeout(function() {
           block.removeSelect();
           _this.run(if_block, callback);
         }, 500);
       }else{
-        items[1].obstacle = false;
+        for(var i = 0; i<items.length;i++){
+          if(tileInfo.role==items[i].order){
+            items[i].obstacle = false;
+          }
+        }
         else_block = block.getInputTargetBlock("else_statements");
         setTimeout(function() {
           block.removeSelect();
