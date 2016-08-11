@@ -541,12 +541,22 @@ Actions.prototype.useItem2 = function(block, callback) {
 
 Actions.prototype.check = function(block, callback) {
   var _this = this,
+      foods = this.canvas.foods,
       character = this.canvas.character;
   // 바위 위에서 아이템 사용
   var chest = this._getCanvasObject(character.px, character.py, "chest");
   if(chest) {
     var ranNum = parseInt(Math.random()*chest.contents.length, 10);
-    if(chest.contents[ranNum].role == "item") {
+    if(chest.contents[ranNum].role == "food"){
+      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
+      chest.role = "food";
+      chest.useItem = true;
+      chest.itemNum = chest.contents[ranNum].itemNum;
+      foods.push(chest);
+      foods.shift();
+      _this.setCoord(chest, chest.px, chest.py);
+    }
+    else if(chest.contents[ranNum].role == "item") {
       chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = "item";
       _this.setCoord(chest, chest.px, chest.py);
@@ -652,6 +662,93 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
         nextTileInfo.obstacle = false;
         setTimeout(function() {
           callback();
+        }, 500);
+      }
+    });
+  }
+};
+
+Actions.prototype.conditioncheck2 = function(options, block, callback) {
+  var character = this.canvas.character,
+      foods = this.canvas.foods,
+      items = this.canvas.items,
+      _this = this;
+  if(options == "food"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      if(tileInfo.role == "first"){
+        foods.pop();
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        foods.shift();
+        else_block = block.getInputTargetBlock("else_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      }
+    });
+  } else if(options == "direction"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      var nextTileInfo;
+      if(tileInfo.role == "up"){
+        nextTileInfo = _this._getCanvasObject(character.px, character.py-1);
+        if_block = block.getInputTargetBlock("if_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        nextTileInfo = _this._getCanvasObject(character.px, character.py+1);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      }
+    });
+  } else if(options == "itemfood"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      if(tileInfo.itemNum == "item1"){
+        items[0].obstacle = false;
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        items[1].obstacle = false;
+        else_block = block.getInputTargetBlock("else_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      }
+    });
+  } else if(options == "itemkey"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      if(tileInfo.role == "item1"){
+        items[0].obstacle = false;
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        items[1].obstacle = false;
+        else_block = block.getInputTargetBlock("else_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
         }, 500);
       }
     });

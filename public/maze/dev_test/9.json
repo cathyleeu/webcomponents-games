@@ -1,0 +1,56 @@
+{
+  "tile_size": 50,
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2",
+    "check",
+    "condition2_itemkey_circle"
+  ],
+  "map": [
+    "########",
+    "########",
+    "########",
+    "###.)..#",
+    "#@.&##%.",
+    "###.)..#",
+    "########",
+    "########"
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 4,
+    "img": "board",
+    "contents" : [{
+        "img": "b_circle",
+        "role": "item1"
+      },{
+        "img": "b_rectangle",
+        "role": "item2"
+    }]
+  },{
+    "x": 6,
+    "y": 4,
+    "img": "chest",
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 3,
+    "img": "circle",
+    "itemImg":"chestopen",
+    "obstacle": true
+  },{
+    "x": 4,
+    "y": 5,
+    "img": "rectangle",
+    "itemImg":"chestopen",
+    "obstacle": true
+  }],
+  "tutorial": [{
+    "msg": "7권 조건연습 - 3-2"
+  }]
+}

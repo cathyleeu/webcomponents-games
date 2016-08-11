@@ -1,0 +1,57 @@
+{
+  "tile_size": 50,
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item",
+    "check",
+    "condition2_itemfood_apple"
+  ],
+  "map": [
+    "%#######",
+    "########",
+    "########",
+    "###.)###",
+    "#@.&####",
+    "###.)###",
+    "########",
+    "########"
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 4,
+    "img": "baby",
+    "contents" : [{
+        "img": "baby_apple",
+        "role": "food",
+        "itemNum": "item1",
+        "useItem": true
+      },{
+        "img": "baby_bam",
+        "role": "food",
+        "itemNum": "item2",
+        "useItem": true
+    }]
+  },{
+    "x": 0,
+    "y": 0,
+    "img": "wall"
+  },{
+    "x": 4,
+    "y": 3,
+    "img": "apple",
+    "obstacle": true
+  },{
+    "x": 4,
+    "y": 5,
+    "img": "bam",
+    "obstacle": true
+  }],
+  "tutorial": [{
+    "msg": "7권 조건연습 - 3-1"
+  }]
+}
