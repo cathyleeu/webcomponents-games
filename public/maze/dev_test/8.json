@@ -28,12 +28,12 @@
     "contents" : [{
         "img": "baby_apple",
         "role": "food",
-        "itemNum": "item1",
+        "order": "if",
         "useItem": true
       },{
         "img": "baby_bam",
         "role": "food",
-        "itemNum": "item2",
+        "order": "else",
         "useItem": true
     }]
   },{
@@ -43,12 +43,14 @@
   },{
     "x": 4,
     "y": 3,
-    "img": "apple",
+    "img": "bam",
+    "order": "else",
     "obstacle": true
   },{
     "x": 4,
     "y": 5,
-    "img": "bam",
+    "img": "apple",
+    "order": "if",
     "obstacle": true
   }],
   "tutorial": [{

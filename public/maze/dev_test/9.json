@@ -27,10 +27,10 @@
     "img": "board",
     "contents" : [{
         "img": "b_circle",
-        "role": "item1"
+        "role": "if"
       },{
         "img": "b_rectangle",
-        "role": "item2"
+        "role": "else"
     }]
   },{
     "x": 6,
@@ -40,14 +40,16 @@
   },{
     "x": 4,
     "y": 3,
-    "img": "circle",
+    "img": "rectangle",
     "itemImg":"chestopen",
+    "order": "else",
     "obstacle": true
   },{
     "x": 4,
     "y": 5,
-    "img": "rectangle",
+    "img": "circle",
     "itemImg":"chestopen",
+    "order": "if",
     "obstacle": true
   }],
   "tutorial": [{
