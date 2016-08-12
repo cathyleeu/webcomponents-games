@@ -124,6 +124,11 @@
     ["지미와 장군이의 선물사기", "/maze#!5_5-2mart/index"],
     ["인이의 돌잔치", "/maze#!5_5-3inparty/index"]
   ],
+  "6권": [
+    ["봄이와 보물상자", "/maze#!6-1bomi-chest/index"],
+    ["봄이의 먹이 구하기", "/maze#!6-23bomi-food/index"],
+    ["봄이와 횡단보도", "/maze#!6-4bomi-traffic/index"]
+  ],
   "숙명키즈": [
     ["봄이와 보물상자", "/maze#!6-1bomi-chest/index"],
     ["봄이의 먹이 구하기", "/maze#!6-23bomi-food/index"],
