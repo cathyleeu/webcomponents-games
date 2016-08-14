@@ -1,7 +1,7 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":3,
+  "score":2,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -23,27 +23,27 @@
   "extra":[{
     "x": 3,
     "y": 1,
-    "img":"p6"
+    "img":"6p"
   },{
     "x": 5,
     "y": 1,
-    "img":"p2"
+    "img":"2p"
   },{
     "x": 1,
     "y": 3,
-    "img":"p4"
+    "img":"4p"
   },{
     "x": 1,
     "y": 7,
-    "img":"p5"
+    "img":"5p"
   },{
     "x": 7,
     "y": 3,
-    "img":"p1"
+    "img":"1p"
   },{
     "x": 7,
     "y": 7,
-    "img":"p2"
+    "img":"2p"
   }],
   "tutorial": [{
     "msg": "6 - 2 = ?"
