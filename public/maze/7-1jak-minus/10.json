@@ -1,7 +1,7 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":3,
+  "score":2,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -23,27 +23,27 @@
   "extra":[{
     "x": 3,
     "y": 1,
-    "img":"a8"
+    "img":"8a"
   },{
     "x": 5,
     "y": 1,
-    "img":"a6"
+    "img":"6a"
   },{
     "x": 1,
     "y": 3,
-    "img":"a6"
+    "img":"6a"
   },{
     "x": 1,
     "y": 7,
-    "img":"a4"
+    "img":"4a"
   },{
     "x": 7,
     "y": 3,
-    "img":"a1"
+    "img":"1a"
   },{
     "x": 7,
     "y": 7,
-    "img":"a2"
+    "img":"2a"
   }],
   "tutorial": [{
     "msg": "8 - 6 = ?"
