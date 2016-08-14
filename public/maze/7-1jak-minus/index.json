@@ -1,0 +1,140 @@
+{
+  "type": "world",
+  "view_size": 10,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".######################.",
+    "###.####.%#..#.#..###.%#",
+    "#.##%.%..#.e.#..%...%#.#",
+    "#.#%.#..%##..#...%...#%#",
+    "#.#.....#.#..##..##....#",
+    "#.....#................#",
+    "#.#.##.u...##...%....#%#",
+    "####.....#.#...#.#%....#",
+    "#......#..##.....%..#%.#",
+    ".######################."
+  ],
+  "extra": [{
+    "x": 3,
+    "y": 3,
+    "link": "7-1jak-minus/1"
+  },{
+    "x": 4,
+    "y": 2,
+    "link": "7-1jak-minus/2"
+  },{
+    "x": 6,
+    "y": 2,
+    "link": "7-1jak-minus/3"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "7-1jak-minus/4"
+  },{
+    "x": 8,
+    "y": 3,
+    "link": "7-1jak-minus/5"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "7-1jak-minus/6"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "7-1jak-minus/7"
+  },{
+    "x": 20,
+    "y": 2,
+    "link": "7-1jak-minus/8"
+  },{
+    "x": 22,
+    "y": 1,
+    "link": "7-1jak-minus/9"
+  },{
+    "x": 22,
+    "y": 3,
+    "link": "7-1jak-minus/10"
+  },{
+    "x": 16,
+    "y": 6,
+    "link": "7-1jak-minus/11"
+  },{
+    "x": 18,
+    "y": 7,
+    "link": "7-1jak-minus/12"
+  },{
+    "x": 17,
+    "y": 8,
+    "link": "7-1jak-minus/13"
+  },{
+    "x": 22,
+    "y": 6,
+    "link": "7-1jak-minus/14"
+  },{
+    "x": 21,
+    "y": 8,
+    "link": "7-1jak-minus/15"
+  },{
+    "x": 11,
+    "y": 2,
+    "img": "baby",
+    "link": "7-2jak-food/index",
+    "min_score": 21
+  },  {
+    "x": 7,
+    "y": 8,
+    "img": "question",
+    "obstacle": false,
+    "tutorial": [
+       {
+      "msg": "빨간색 글자 표지판 : 먹이 3개를 얻을 수 있습니다. 매우 어렵습니다.",
+      "img": "/img/guide/hard.png"
+    }, {
+      "msg": "노란색 글자 표지판 : 먹이 2개를 얻을 수 있습니다.",
+      "img": "/img/guide/normal.png"
+    }, {
+      "msg": "초록색 글자 표지판 : 먹이 1개를 얻을 수 있습니다. 다소 쉽습니다.",
+      "img": "/img/guide/easy.png"
+    }]
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "easy",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "먹이을 1개 얻을 수 있어!",
+      "img": "/img/guide/easy.png"
+    }]
+
+  },  {
+    "x": 13,
+    "y": 4,
+    "img": "normal",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "먹이을 2개 얻을 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 12,
+    "y": 6,
+    "img": "hard",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "먹이을 3개 얻을 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+}],
+  "tutorial": [{
+    "msg": "참새 짹스페로우는 "
+  }, {
+    "msg": "뺄셈 문제를 해결하면 먹이를 받을 수 있어요",
+    "img": "/img/jsparrow/seed0.png"
+  }, {
+    "msg": "먹이 21개를 모아서 아기새들에게 전달해보자!",
+    "img": "/img/jsparrow/baby0.png"
+  }]
+}

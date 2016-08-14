@@ -1,0 +1,49 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition2_direction"
+  ],
+  "map": [
+    "########",
+    "#.#.#..#",
+    "#..#####",
+    "#.#b...#",
+    "#r.&##%#",
+    "#.#b...#",
+    "#..##..#",
+    "########"
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 4,
+    "img": "board",
+    "contents" : [{
+        "img": "b_up",
+        "role": "up"
+      },{
+        "img": "b_down",
+        "role": "down"
+    }]
+  },{
+    "x": 6,
+    "y": 4,
+    "img": "apple"
+  }],
+  "tutorial": [{
+    "msg": "참새 짹스패로우는 먹이를 찾고 싶어"
+  },{
+    "msg": "표시판에서 먹이로 가는 안전한 경로의 방향을 확인하고",
+    "img": "/img/jsparrow/board0.png"
+  },{
+    "msg": "<만약에~아니라면> 조건 블록을 사용하여 먹이 위치로 이동해보자!"
+  }]
+}
