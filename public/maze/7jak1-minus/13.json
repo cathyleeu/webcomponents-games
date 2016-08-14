@@ -1,0 +1,35 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#..jmg..#",
+    "#########",
+    "#%.....f#",
+    "#.......#",
+    "#...d...#",
+    "#.......#",
+    "#g..i..j#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"dog3"
+  }],
+  "tutorial": [{
+    "msg": "5 - 2 = ?",
+    "img": "/img/woong/woong0.png"
+  }],
+  "success": [{
+    "msg": "성공! 참 잘했어요~"
+  }]
+}
