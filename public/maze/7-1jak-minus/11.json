@@ -1,7 +1,7 @@
 {
-  "tile_size": 80,
+  "tile_size": 50,
   "render": "pixel",
-  "score":1,
+  "score":3,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -11,22 +11,21 @@
   ],
   "map": [
     ".#######.",
-    "#..gmf..#",
+    "#..bma..#",
     "#########",
-    "#j.....i#",
+    "#b.....c#",
     "#.......#",
     "#...d...#",
     "#.......#",
-    "#g.....%#",
+    "#f.....%#",
     ".#######."
   ],
   "extra":[{
     "x": 7,
     "y": 7,
-    "img":"dog1"
+    "img":"n1"
   }],
   "tutorial": [{
-    "msg": "2 - 1 = ?",
-    "img": "/img/woong/woong0.png"
+    "msg": "2 - 1 = ?"
   }]
 }
