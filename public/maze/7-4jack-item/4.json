@@ -12,29 +12,29 @@
     "get_item",
     "use_item",
     "check",
-    "condition2_itemfood_apple"
+    "condition2_itemfood_gam"
   ],
   "map": [
     "%#######",
-    "##.#...#",
-    "#..##.##",
-    "#.#.#)##",
-    "#...r&##",
-    "###.#)##",
     "#..#...#",
+    "#d.#.#.#",
+    "#.#.#..#",
+    "#.)..#.#",
+    "#.#)#.##",
+    "#&..#..#",
     "########"
   ],
   "extra":[{
-    "x": 5,
-    "y": 4,
+    "x": 1,
+    "y": 6,
     "img": "baby",
     "contents" : [{
-        "img": "baby_apple",
+        "img": "baby_gam",
         "role": "food",
         "order": "if",
         "useItem": true
       },{
-        "img": "baby_bam",
+        "img": "baby_pear",
         "role": "food",
         "order": "else",
         "useItem": true
@@ -44,15 +44,15 @@
     "y": 0,
     "img": "reed"
   },{
-    "x": 5,
-    "y": 3,
-    "img": "apple",
+    "x": 2,
+    "y": 4,
+    "img": "gam",
     "order": "if",
     "obstacle": true
   },{
-    "x": 5,
+    "x": 3,
     "y": 5,
-    "img": "bam",
+    "img": "pear",
     "order": "else",
     "obstacle": true
   }],

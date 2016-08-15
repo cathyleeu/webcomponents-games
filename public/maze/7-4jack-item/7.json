@@ -1,7 +1,7 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":1,
+  "score":2,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -12,29 +12,29 @@
     "get_item",
     "use_item",
     "check",
-    "condition2_itemfood_apple"
+    "condition2_itemfood_pumpkin"
   ],
   "map": [
     "%#######",
-    "##.#...#",
-    "#..##.##",
-    "#.#.#)##",
-    "#...r&##",
-    "###.#)##",
-    "#..#...#",
+    "#.##.#.#",
+    "#)&....#",
+    "#..##..#",
+    "##.....#",
+    "#.#.##)#",
+    "#...l#.#",
     "########"
   ],
   "extra":[{
-    "x": 5,
-    "y": 4,
+    "x": 2,
+    "y": 2,
     "img": "baby",
     "contents" : [{
-        "img": "baby_apple",
+        "img": "baby_pumpkin",
         "role": "food",
         "order": "if",
         "useItem": true
       },{
-        "img": "baby_bam",
+        "img": "baby_walnut",
         "role": "food",
         "order": "else",
         "useItem": true
@@ -44,15 +44,15 @@
     "y": 0,
     "img": "reed"
   },{
-    "x": 5,
-    "y": 3,
-    "img": "apple",
+    "x": 1,
+    "y": 2,
+    "img": "pumpkin",
     "order": "if",
     "obstacle": true
   },{
-    "x": 5,
+    "x": 6,
     "y": 5,
-    "img": "bam",
+    "img": "walnut",
     "order": "else",
     "obstacle": true
   }],
