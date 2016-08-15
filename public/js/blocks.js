@@ -594,7 +594,7 @@ Blocks['condition2_food_wandu'] = {
   }],
   action: ["conditioncheck2","food"]
 };
-Blocks['condition2_direction'] = {
+Blocks['condition2_direction_up'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 안전한 길이라면",
@@ -617,7 +617,82 @@ Blocks['condition2_direction'] = {
     type: "input_statement",
     name: "else_statements"
   }],
-  action: ["conditioncheck2","direction"]
+  action: ["conditioncheck2","direction_up"]
+};
+Blocks['condition2_direction_down'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 안전한 길이라면",
+    en: "If Red Light"
+  },
+  args0: [
+    {type: "field_image", src: "/img/jsparrow/b_down.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","direction_down"]
+};
+Blocks['condition2_direction_left'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 안전한 길이라면",
+    en: "If Red Light"
+  },
+  args0: [
+    {type: "field_image", src: "/img/jsparrow/b_left.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","direction_left"]
+};
+Blocks['condition2_direction_right'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 안전한 길이라면",
+    en: "If Red Light"
+  },
+  args0: [
+    {type: "field_image", src: "/img/jsparrow/b_right.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","direction_right"]
 };
 Blocks['condition2_itemfood_apple'] = {
   rgbColor: "#E11376",
@@ -777,6 +852,31 @@ Blocks['condition2_itemfood_walnut'] = {
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/walnut.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","itemfood"]
+};
+Blocks['condition2_itemfood_wandu'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If Red Light"
+  },
+  args0: [
+    {type: "field_image", src: "/img/jsparrow/wandu.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{

@@ -1,8 +1,8 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":2,
-  "workspace": ["start"],
+  "score":1,
+  "workspace": ["start","move_right","check","condition2_food_apple"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -10,38 +10,44 @@
     "move_left",
     "repeat",
     "check",
-    "condition2_direction"
+    "condition2_food_apple"
   ],
   "map": [
     "########",
-    "#.#.#..#",
-    "#..#####",
-    "#.#b...#",
-    "#r.&##%#",
-    "#.#b...#",
-    "#..##..#",
+    "##.#.#.#",
+    "#.#.#.##",
+    "#..#.#%#",
+    "#....r&#",
+    "#.#.##%#",
+    "##....##",
     "########"
   ],
   "extra":[{
-    "x": 3,
+    "x": 6,
     "y": 4,
     "img": "board",
     "contents" : [{
-        "img": "b_up",
-        "role": "up"
+        "img": "b_apple",
+        "role": "if"
       },{
-        "img": "b_down",
-        "role": "down"
+        "img": "b_bam",
+        "role": "else"
     }]
   },{
     "x": 6,
-    "y": 4,
-    "img": "apple"
+    "y": 3,
+    "img": "bam",
+    "order": "else"
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "apple",
+    "order": "if"
   }],
   "tutorial": [{
     "msg": "참새 짹스패로우는 먹이를 찾고 싶어"
   },{
-    "msg": "표시판에서 먹이로 가는 안전한 경로의 방향을 확인하고",
+    "msg": "표지판에서 좋아하는 먹이를 확인하고",
     "img": "/img/jsparrow/board0.png"
   },{
     "msg": "<만약에~아니라면> 조건 블록을 사용하여 먹이 위치로 이동해보자!"

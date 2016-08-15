@@ -702,7 +702,7 @@ Actions.prototype.conditioncheck2 = function(options, block, callback) {
         }, 500);
       }
     });
-  } else if(options == "direction"){
+  } else if(options == "direction_up"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
     this._splitObjects(tileInfo, function() {
       var nextTileInfo;
@@ -714,13 +714,143 @@ Actions.prototype.conditioncheck2 = function(options, block, callback) {
           block.removeSelect();
           _this.run(if_block, callback);
         }, 500);
-      }else{
+      } else if(tileInfo.role == "down"){
         nextTileInfo = _this._getCanvasObject(character.px, character.py+1);
         else_block = block.getInputTargetBlock("else_statements");
         nextTileInfo.obstacle = false;
         setTimeout(function() {
           block.removeSelect();
           _this.run(else_block, callback);
+        }, 500);
+      } else if(tileInfo.role == "left"){
+        nextTileInfo = _this._getCanvasObject(character.px-1, character.py);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      } else if(tileInfo.role== "right"){
+        nextTileInfo = _this._getCanvasObject(character.px+1, character.py);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      }
+    });
+  } else if(options == "direction_down"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      var nextTileInfo;
+      if(tileInfo.role == "up"){
+        nextTileInfo = _this._getCanvasObject(character.px, character.py-1);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      } else if(tileInfo.role == "down"){
+        nextTileInfo = _this._getCanvasObject(character.px, character.py+1);
+        if_block = block.getInputTargetBlock("if_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      } else if(tileInfo.role == "left"){
+        nextTileInfo = _this._getCanvasObject(character.px-1, character.py);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      } else if(tileInfo.role== "right"){
+        nextTileInfo = _this._getCanvasObject(character.px+1, character.py);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      }
+    });
+  }else if(options == "direction_left"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      var nextTileInfo;
+      if(tileInfo.role == "up"){
+        nextTileInfo = _this._getCanvasObject(character.px, character.py-1);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      } else if(tileInfo.role == "down"){
+        nextTileInfo = _this._getCanvasObject(character.px, character.py+1);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      } else if(tileInfo.role == "left"){
+        nextTileInfo = _this._getCanvasObject(character.px-1, character.py);
+        if_block = block.getInputTargetBlock("if_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      } else if(tileInfo.role== "right"){
+        nextTileInfo = _this._getCanvasObject(character.px+1, character.py);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      }
+    });
+  }else if(options == "direction_right"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      var nextTileInfo;
+      if(tileInfo.role == "up"){
+        nextTileInfo = _this._getCanvasObject(character.px, character.py-1);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      } else if(tileInfo.role == "down"){
+        nextTileInfo = _this._getCanvasObject(character.px, character.py+1);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      } else if(tileInfo.role == "left"){
+        nextTileInfo = _this._getCanvasObject(character.px-1, character.py);
+        else_block = block.getInputTargetBlock("else_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      } else if(tileInfo.role== "right"){
+        nextTileInfo = _this._getCanvasObject(character.px+1, character.py);
+        if_block = block.getInputTargetBlock("if_statements");
+        nextTileInfo.obstacle = false;
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
         }, 500);
       }
     });

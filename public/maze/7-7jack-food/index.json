@@ -16,49 +16,49 @@
   "extra": [{
     "x": 11,
     "y": 2,
-    "link": "7-7jak-food/1"
+    "link": "7-7jack-food/1"
   },  {
     "x": 15,
     "y": 1,
-    "link": "7-7jak-food/2"
+    "link": "7-7jack-food/2"
   },  {
     "x": 17,
     "y": 2,
-    "link": "7-7jak-food/3"
+    "link": "7-7jack-food/3"
   },  {
     "x": 21,
     "y": 1,
-    "link": "7-7jak-food/4"
+    "link": "7-7jack-food/4"
   },  {
     "x": 23,
     "y": 2,
-    "link": "7-7jak-food/5"
+    "link": "7-7jack-food/5"
   },  {
     "x": 13,
     "y": 5,
-    "link": "7-7jak-food/6"
+    "link": "7-7jack-food/6"
   },  {
     "x": 15,
     "y": 4,
-    "link": "7-7jak-food/7"
+    "link": "7-7jack-food/7"
   },  {
     "x": 17,
     "y": 5,
-    "link": "7-7jak-food/8"
+    "link": "7-7jack-food/8"
   },  {
     "x": 21,
     "y": 4,
-    "link": "7-7jak-food/9"
+    "link": "7-7jack-food/9"
   },  {
     "x": 24,
     "y": 5,
-    "link": "7-7jak-food/10"
+    "link": "7-7jack-food/10"
   },  {
     "img":"baby",
     "x": 27,
     "y": 3,
     "obstacle": false,
-    "link": "7-7jak-food/11",
+    "link": "7-7jack-food/11",
     "min_score": 15
   }],
 

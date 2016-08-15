@@ -1,0 +1,55 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition2_food_gam"
+  ],
+  "map": [
+    "########",
+    "##.#..l#",
+    "#.#.#.##",
+    "#..#...#",
+    "#....#.#",
+    "#.%.&#.#",
+    "##..%.##",
+    "########"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "img": "board",
+    "contents" : [{
+        "img": "b_gam",
+        "role": "if"
+      },{
+        "img": "b_pumpkin",
+        "role": "else"
+    }]
+  },{
+    "x": 2,
+    "y": 5,
+    "img": "pumpkin",
+    "order": "else"
+  },{
+    "x": 4,
+    "y": 6,
+    "img": "gam",
+    "order": "if"
+  }],
+  "tutorial": [{
+    "msg": "참새 짹스패로우는 먹이를 찾고 싶어"
+  },{
+    "msg": "표지판에서 좋아하는 먹이를 확인하고",
+    "img": "/img/jsparrow/board0.png"
+  },{
+    "msg": "<만약에~아니라면> 조건 블록을 사용하여 먹이 위치로 이동해보자!"
+  }]
+}
