@@ -1,7 +1,7 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":2,
+  "score":1,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -9,64 +9,62 @@
     "move_right",
     "move_left",
     "repeat",
-    "get_item2",
-    "use_item2",
+    "get_item",
+    "use_item",
     "check",
-    "condition2_itemkey_circle"
+    "condition2_itemfood_bam"
   ],
   "map": [
-    "########",
-    "#..##..#",
-    "#.####.#",
-    "###.).##",
-    "#r.&#%.#",
-    "###.).##",
-    "#..###.#",
+    "%#######",
+    "##.#...#",
+    "#..##)##",
+    "#.#.#.##",
+    "#r...&##",
+    "###.#.##",
+    "#..#.).#",
     "########"
   ],
   "extra":[{
-    "x": 3,
-    "y": 4,
-    "img": "board",
-    "contents" : [{
-        "img": "b_circle",
-        "role": "if"
-      },{
-        "img": "b_rectangle",
-        "role": "else"
-    }]
-  },{
     "x": 5,
     "y": 4,
-    "img": "chest",
-    "useItem": true
+    "img": "baby",
+    "contents" : [{
+        "img": "baby_bam",
+        "role": "food",
+        "order": "if",
+        "useItem": true
+      },{
+        "img": "baby_gam",
+        "role": "food",
+        "order": "else",
+        "useItem": true
+    }]
   },{
-    "x": 4,
-    "y": 3,
-    "img": "rectangle",
-    "itemImg":"chestopen",
-    "order": "else",
+    "x": 0,
+    "y": 0,
+    "img": "reed"
+  },{
+    "x": 5,
+    "y": 2,
+    "img": "bam",
+    "order": "if",
     "obstacle": true
   },{
-    "x": 4,
-    "y": 5,
-    "img": "circle",
-    "itemImg":"chestopen",
-    "order": "if",
+    "x": 5,
+    "y": 6,
+    "img": "gam",
+    "order": "else",
     "obstacle": true
   }],
   "tutorial": [{
     "msg": "참새 짹스패로우는 아기새들의 먹이를 찾고 싶어"
   },{
-    "msg": "먹이는 보물상자 안에 들어있고",
-    "img": "/img/bomi/chest0.png"
+    "msg": "아기새들에게 먹고 싶은 먹이 확인하고",
+    "img": "/img/jsparrow/baby0.png"
   },{
-    "msg": "팻말에서 보물상자를 열수 있는 열쇠의 모양을 확인해야해!",
-    "img": "/img/jsparrow/board0.png"
+    "msg": "<만약에~아니라면> 조건 블록을 사용하여 먹이 위치로 이동한 다음"
   },{
-    "msg": "<만약에~아니라면> 조건 블록을 사용하여 알맞은 모양의 열쇠로 이동한 다음"
-  },{
-    "msg": "열쇠를 집어서 보물상자를 열어보자!",
-    "img": "/img/bomi/chestopen0.png"
+    "msg": "찾은 먹이를 집어서 아기새들에게 가져다 주자!",
+    "img": "/img/jsparrow/baby0.png"
   }]
 }

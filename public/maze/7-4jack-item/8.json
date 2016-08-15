@@ -1,0 +1,72 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2",
+    "check",
+    "condition2_itemkey_circle"
+  ],
+  "map": [
+    "########",
+    "#.#....#",
+    "#.#.#).#",
+    "#.r&..#",
+    "##.##.)#",
+    "#.#....#",
+    "#%...#.#",
+    "########"
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 3,
+    "img": "board",
+    "contents" : [{
+        "img": "b_circle",
+        "role": "if"
+      },{
+        "img": "b_triangle",
+        "role": "else"
+    }]
+  },{
+    "x": 1,
+    "y": 6,
+    "img": "chest",
+    "useItem": true
+  },{
+    "x": 5,
+    "y": 2,
+    "img": "triangle",
+    "itemImg":"chestopen",
+    "order": "else",
+    "obstacle": true
+  },{
+    "x": 6,
+    "y": 4,
+    "img": "circle",
+    "itemImg":"chestopen",
+    "order": "if",
+    "obstacle": true
+  }],
+  "tutorial": [{
+    "msg": "참새 짹스패로우는 아기새들의 먹이를 찾고 싶어"
+  },{
+    "msg": "먹이는 보물상자 안에 들어있고",
+    "img": "/img/bomi/chest0.png"
+  },{
+    "msg": "팻말에서 보물상자를 열수 있는 열쇠의 모양을 확인해야해!",
+    "img": "/img/jsparrow/board0.png"
+  },{
+    "msg": "<만약에~아니라면> 조건 블록을 사용하여 알맞은 모양의 열쇠로 이동한 다음"
+  },{
+    "msg": "열쇠를 집어서 보물상자를 열어보자!",
+    "img": "/img/bomi/chestopen0.png"
+  }]
+}
