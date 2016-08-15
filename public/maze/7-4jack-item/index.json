@@ -48,11 +48,11 @@
   },  {
     "x": 21,
     "y": 4,
-    "link": "7-4jack-item/6"
+    "link": "7-4jack-item/7"
   },  {
     "x": 24,
     "y": 5,
-    "link": "7-4jack-item/5"
+    "link": "7-4jack-item/6"
   },  {
     "img":"baby",
     "x": 27,
@@ -81,7 +81,7 @@
 
   }],
   "tutorial": [{
-    "msg": "참새 짹스페로우는 "
+    "msg": "참새 짹스패로우는 "
   }, {
     "msg": "아기새들을 위해서 먹이를 모어야 해요",
     "img": "/img/jsparrow/seed0.png"
