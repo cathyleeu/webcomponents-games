@@ -2,7 +2,7 @@
   "tile_size": 50,
   "render": "pixel",
   "score":1,
-  "workspace": ["start"],
+  "workspace": ["start","move_down","move_right","move_right","move_down","check"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -19,9 +19,9 @@
     "#.d##..#",
     "#......#",
     "###.&.##",
-    "#.)...%#",
-    "###...##",
-    "#...)..#",
+    "#.)....#",
+    "###%)..##",
+    "#......#",
     "########"
   ],
   "extra":[{
@@ -36,8 +36,8 @@
         "role": "else"
     }]
   },{
-    "x": 6,
-    "y": 4,
+    "x": 3,
+    "y": 5,
     "img": "chest",
     "useItem": true
   },{
@@ -49,7 +49,7 @@
     "obstacle": true
   },{
     "x": 4,
-    "y": 6,
+    "y": 5,
     "img": "rectangle",
     "itemImg":"chestopen",
     "order": "else",

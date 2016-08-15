@@ -42,7 +42,6 @@
   {"id": "b_down", "src": "/img/jsparrow/b_down.png"},
   {"id": "b_left", "src": "/img/jsparrow/b_left.png"},
   {"id": "b_right", "src": "/img/jsparrow/b_right.png"},
-  {"tile": "b", "id": "invisible", "src": "/img/invisible.png", "wall": true},
-  {"tile": "c", "id": "invisible2", "src": "/img/invisible.png", "wall": true},
+  {"tile": "b", "id": "invisible", "src": "/img/jsparrow/blind.png", "wall": true},
   {"id": "question", "src": "/img/frog/question.png", "obstacle": false}
 ]

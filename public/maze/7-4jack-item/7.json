@@ -12,29 +12,29 @@
     "get_item",
     "use_item",
     "check",
-    "condition2_itemfood_pumpkin"
+    "condition2_itemfood_pear"
   ],
   "map": [
     "%#######",
-    "#.##.#.#",
-    "#)&....#",
-    "#..##..#",
-    "##.....#",
-    "#.#.##)#",
-    "#...l#.#",
+    "#..#...#",
+    "#)#..#.#",
+    "#...#..#",
+    "#.##...#",
+    "#.l#..##",
+    "#&....)#",
     "########"
   ],
   "extra":[{
-    "x": 2,
-    "y": 2,
+    "x": 1,
+    "y": 6,
     "img": "baby",
     "contents" : [{
-        "img": "baby_pumpkin",
+        "img": "baby_pear",
         "role": "food",
         "order": "if",
         "useItem": true
       },{
-        "img": "baby_walnut",
+        "img": "baby_pumpkin",
         "role": "food",
         "order": "else",
         "useItem": true
@@ -46,13 +46,13 @@
   },{
     "x": 1,
     "y": 2,
-    "img": "pumpkin",
+    "img": "pear",
     "order": "if",
     "obstacle": true
   },{
     "x": 6,
-    "y": 5,
-    "img": "walnut",
+    "y": 6,
+    "img": "pumpkin",
     "order": "else",
     "obstacle": true
   }],

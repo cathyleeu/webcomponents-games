@@ -2,7 +2,7 @@
   "tile_size": 50,
   "render": "pixel",
   "score":1,
-  "workspace": ["start"],
+  "workspace": ["start","repeat","check"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -19,9 +19,9 @@
     "#..#...#",
     "#d.#.#.#",
     "#.#.#..#",
-    "#.)..#.#",
-    "#.#)#.##",
-    "#&..#..#",
+    "#.#..#.#",
+    "#.).#.##",
+    "#&.)#..#",
     "########"
   ],
   "extra":[{
@@ -45,13 +45,13 @@
     "img": "reed"
   },{
     "x": 2,
-    "y": 4,
+    "y": 5,
     "img": "gam",
     "order": "if",
     "obstacle": true
   },{
     "x": 3,
-    "y": 5,
+    "y": 6,
     "img": "pear",
     "order": "else",
     "obstacle": true
