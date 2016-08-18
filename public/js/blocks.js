@@ -597,7 +597,7 @@ Blocks['condition2_food_wandu'] = {
 Blocks['condition2_direction_up'] = {
   rgbColor: "#E11376",
   message0: {
-    ko: "%1 안전한 길이라면",
+    ko: "안전한 길이 %1 라면",
     en: "If Red Light"
   },
   args0: [
