@@ -127,12 +127,10 @@
         if(row.length == 2 || index + 1 == names.length) {
           var $row = $('<div class="card-row">').append(row[0]).append(row[1]);
           $(".page").append($row);
-          row = [];
-          if(index + 1 == names.length) {
-            // TODO: 문정 유치원의 커스텀 ID 적용시 홀수에서 끝나는 경우를 대비하기 위하여 추가된 코드이지만 다시 짝수가 되었을때
-            //여백이 틀어지는 문제가 발생함. 향수 수정 필요
-            //$row.append('<div class="card" style="width:280px;">');
+          if(row.length < 2 && index + 1 == names.length) {
+            $row.append('<div class="card" style="width:280px;">');
           }
+          row = [];
         }
       });
 
