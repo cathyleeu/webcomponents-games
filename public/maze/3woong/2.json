@@ -26,11 +26,13 @@
     "img":"mother"
   }],
   "tutorial": [{
-    "msg": "엄마곰에게로 가보자",
+    "msg:ko": "엄마곰에게로 가보자",
+    "msg:en": "Go Mamy Bear!",
     "img": "/img/woong/mother.png"
   }],
   "success": [{
-    "msg": "성공! 참 잘했어요~",
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Succes! Good Job!",
     "link": "3woong/3"
   }]
 }

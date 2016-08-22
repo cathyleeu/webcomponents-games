@@ -23,7 +23,8 @@
     "########"
   ],
   "tutorial": [{
-    "msg": "사냥꾼을 이기자!",
+    "msg:ko": "사냥꾼을 이기자!",
+    "msg:en": "Win the Hunter",
     "img": "/img/woong/rps.png"
   }]
 }

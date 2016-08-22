@@ -27,7 +27,8 @@
     "img":"milk"
   }],
   "tutorial": [{
-    "msg": "장군이는 네모난 물건을 사야해요!",
+    "msg:ko": "장군이는 네모난 물건을 사야해요!",
+    "msg:en": "jangoon have to buy ractangle things",
     "img": "/img/jangoon/jangoon0.png"
   }]
 }

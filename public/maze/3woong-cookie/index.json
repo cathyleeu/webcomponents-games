@@ -93,7 +93,8 @@
     "img":"head",
     "obstacle": false,
     "tutorial": [{
-      "msg": "가위 바위 보! ",
+      "msg:ko": "가위 바위 보!",
+      "msg:en": "Rock Scissors Paper !",
       "img": "/img/woong/h.png"
     }]
   },  {
@@ -102,7 +103,8 @@
     "img":"normal",
     "obstacle": false,
     "tutorial": [{
-      "msg": "점수를 1점 얻을 수 있어!",
+      "msg:ko": "점수를 1점 얻을 수 있어!",
+      "msg:en": "You can get 1 point!",
       "img": "/img/guide/normal.png"
     }]
   },  {
@@ -111,50 +113,63 @@
     "img":"hard",
     "obstacle": false,
     "tutorial": [{
-      "msg": "점수를 3점 얻을 수 있어!",
+      "msg:ko": "점수를 3점 얻을 수 있어!",
+      "msg:en": "You can get 3 point!",
       "img": "/img/guide/hard.png"
     }]
 
 }],
   "tutorial": [ {
-    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:en": "Press 'Next' Button~ 　　　　　　　↘",
     "img": "/img/woong/woong0.png",
     "x":7,
     "y":0
   }, {
-    "msg": "가위 바위 보!",
+    "msg:ko": "가위 바위 보!",
+    "msg:en": "Rock Scissors Paper !",
     "img": "/img/woong/rps.png"
   }, {
-    "msg": "사냥꾼에게 가위바위보를 이겨서",
+    "msg:ko": "사냥꾼에게 가위바위보를 이겨서",
+    "msg:en": "if you win Rock Scissors Paper to Hunter,",
     "img": "/img/woong/h.png"
   }, {
-    "msg": "쿠키를 먹으러 가자!",
+    "msg:ko": "쿠키를 먹으러 가자!",
+    "msg:en": "you will get cookies",
     "img": "/img/woong/cookie0.png"
   }, {
-    "msg": "바위는 가위한테 이겨요",
+    "msg:ko": "바위는 가위한테 이겨요",
+    "msg:en": "Rock is stronger than Scissors",
     "img": "/img/woong/sr.png"
   }, {
-    "msg": "보자기는 바위한테 이겨요",
+    "msg:ko": "보자기는 바위한테 이겨요",
+    "msg:en": "Paper is stronger than Rock",
     "img": "/img/woong/rp.png"
   },{
-    "msg": "가위는 보자기한테 이겨요",
+    "msg:ko": "가위는 보자기한테 이겨요",
+    "msg:en": "Scissors is stronger than Paper",
     "img": "/img/woong/ps.png"
   },{
-    "msg": "보통 난이도의 쿠키를 먹으면 1점을",
+    "msg:ko": "보통 난이도의 쿠키를 먹으면 1점을",
+    "msg:en": "if you clear normal problem, you will get 1 Point Cookie",
     "img": "/img/guide/normal.png"
   },{
-    "msg": "어려운 난이도의 쿠키를 먹으면 3점을 얻을 수 있어요",
+    "msg:ko": "어려운 난이도의 쿠키를 먹으면 3점을 얻을 수 있어요",
+    "msg:en": "if you clear hard problem, you will get 3 Point Cookie",
     "img": "/img/guide/hard.png"
   },{
-    "msg": "다음 단계로 이동하기 위해서는 총 20점을 얻어야 해요",
+    "msg:ko": "다음 단계로 이동하기 위해서는 총 20점을 얻어야 해요",
+    "msg:en": "To move next stage, you have to get more than 20 point",
     "img": "/img/woong/woong0.png"
   }, {
-    "msg": "인이를 통해 다음단계로 이동할 수 있어요",
+    "msg:ko": "인이를 통해 다음단계로 이동할 수 있어요",
+    "msg:en": "if you move 'In' after more tha 20 point, you will go next Stage",
     "img": "/img/woong/in0.png",
     "x" : 23,
     "y" : 4
   },{
-    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play Coding",
     "img": "/img/woong/woong0.png"
   }]
 }

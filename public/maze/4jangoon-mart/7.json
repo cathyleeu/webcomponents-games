@@ -38,10 +38,12 @@
     "itemCount": 1
   }],
   "tutorial": [{
-    "msg": "초록색 과일 2개를 집어서",
+    "msg:ko": "초록색 과일 2개를 집어서",
+    "msg:en": "Get two green fruit",
     "img": "/img/jangoon/jangoon0.png"
   },{
-    "msg": "카트에 집어 넣어보자!",
+    "msg:ko": "카트에 집어 넣어보자!",
+    "msg:en": "And add to cart",
     "img": "/img/jangoon/kart.png"
   }]
 }

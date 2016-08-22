@@ -23,7 +23,8 @@
     "########"
   ],
   "tutorial": [{
-    "msg": "가위는 주먹으로 이길 수 있어",
+    "msg:ko": "가위는 주먹으로 이길 수 있어",
+    "msg:en": "Scissors is weaker than Rock",
     "img": "/img/woong/sr.png"
   }]
 }

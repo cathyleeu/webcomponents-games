@@ -38,10 +38,12 @@
     "itemCount": 3
   }],
   "tutorial": [{
-    "msg": "동그랗지 않은 과일 4개를 집어서",
+    "msg:ko": "동그랗지 않은 과일 4개를 집어서",
+    "msg:en": "Get four non-round fruit",
     "img": "/img/jangoon/jangoon0.png"
   },{
-    "msg": "카트에 집어 넣어보자!",
+    "msg:ko": "카트에 집어 넣어보자!",
+    "msg:en": "And add to cart",
     "img": "/img/jangoon/kart.png"
   }]
 }
