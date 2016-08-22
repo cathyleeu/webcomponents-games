@@ -41,10 +41,12 @@
     "itemCount": 2
   }],
   "tutorial": [{
-    "msg": "형 쿠키먹고 싶어~",
+    "msg:ko": "형 쿠키먹고 싶어~",
+    "msg:en": "I want to eat Cookies",
     "img": "/img/woong/in0.png"
   },{
-    "msg": "인이에게 쿠키를 전달하자!",
+    "msg:ko": "인이에게 쿠키를 전달하자!",
+    "msg:en": "Deliver Cookies to In",
     "img": "/img/woong/woong0.png"
   }]
 }

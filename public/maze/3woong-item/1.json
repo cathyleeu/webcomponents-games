@@ -33,16 +33,20 @@
     "itemCount": 1
   }],
   "tutorial": [{
-    "msg": "형 쿠키먹고 싶어~",
+    "msg:ko": "형 쿠키먹고 싶어~",
+    "msg:en": "I want to eat Cookies",
     "img": "/img/woong/in0.png"
   },{
-    "msg": "쿠키로 이동해 아이템 가져오기를 해보자",
+    "msg:ko": "쿠키로 이동해 아이템 가져오기를 해보자",
+    "msg:en": "Move to Cookie And then Use 'get item' Block",
     "img": "/img/woong/cookie.png"
   },{
-    "msg": "그리고나서 동생곰 인이에게 이동하고",
+    "msg:ko": "그리고나서 동생곰 인이에게 이동하고",
+    "msg:en": "then move Brother bear In",
     "img": "/img/woong/in0.png"
   },{
-    "msg": "동생곰 인이에게 아이템 사용하기를 해보자",
+    "msg:ko": "동생곰 인이에게 아이템 사용하기를 해보자",
+    "msg:en": "Use 'use item' Block to Brother bear In",
     "img": "/img/woong/in0.png"
   }]
 }

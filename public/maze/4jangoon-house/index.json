@@ -23,36 +23,46 @@
     "img":"build",
     "obstacle": false,
     "tutorial": [{
-      "msg": "장군이가 자신의 집을 찾아가려고 해요~ ",
+      "msg:ko": "장군이가 자신의 집을 찾아가려고 해요~ ",
+      "msg:en": "Jangoon want to find jangoon's house~ ",
       "img": "/img/jangoon/house0.png"
     }]
   }],
   "tutorial": [{
-    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:en": "Press 'Next' Button~ 　　　　　　　↘",
     "img": "/img/jangoon/jangoon0.png"
   }, {
-    "msg": "오른쪽의 별로 이동하여 　'장군이의 집 찾기'를　완료하면",
+    "msg:ko": "오른쪽별로 이동하여 　'즐거운 우리집'을 　　완료하면",
+    "msg:en": "Go Star on the right, if you complete 'my happy House' stage,",
     "img": "/img/jangoon/house0.png"
   }, {
-    "msg": "옆의 맵으로 이동할 수 있어요",
+    "msg:ko": "옆의 맵으로 이동할 수 있어요",
+    "msg:en": "you will be able to move next stage",
     "img": "/img/jangoon/house0.png"
   }, {
-    "msg": "가상 키보드를 이용하여 장군이를 움직일 수 있어요",
+    "msg:ko": "가상 키보드를 이용하여 장군이를 움직일 수 있어요",
+    "msg:en": "you can move 'Jangoon' character by virtual keyboard",
     "img": "/img/woong/key.png"
   }, {
-    "msg": "↑위 버튼을 누르면 장군이가 위로 가요",
+    "msg:ko": "↑위 버튼을 누르면 장군이가 위로 가요",
+    "msg:en": "If you press '↑' Button, Jangoon will move up",
     "img": "/img/woong/up.png"
   }, {
-    "msg": "↓아래 버튼을 누르면 장군이가 아래로 가요",
+    "msg:ko": "↓아래 버튼을 누르면 장군이가 아래로 가요",
+    "msg:en": "If you press '↓' Button, Jangoon will move down",
     "img": "/img/woong/down.png"
   }, {
-    "msg": "→오른쪽 버튼을 누르면 장군이가 아래로 가요",
+    "msg:ko": "→오른쪽 버튼을 누르면 장군이가 오른쪽으로 가요",
+    "msg:en": "If you press '→' Button, Jangoon will move right",
     "img": "/img/woong/right.png"
   }, {
-    "msg": "←왼쪽 버튼을 누르면 장군이가 아래로 가요",
+    "msg:ko": "←왼쪽 버튼을 누르면 장군이가 왼쪽으로 가요",
+    "msg:en": "If you press '←' Button, Jangoon will move left",
     "img": "/img/woong/left.png"
   }, {
-    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play Coding",
     "img": "/img/jangoon/jangoon0.png"
   }]
 }

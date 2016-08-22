@@ -27,7 +27,8 @@
     "img":"house3"
   }],
   "tutorial": [{
-    "msg": "장군이의 집은 두번째로 작은 숫자의 주소를 가지고 있어요!",
+    "msg:ko": "장군이의 집은 두번째로 작은 숫자의 주소를 가지고 있어요!",
+    "msg:en": "The Address of jangoon's house is the sencond smallest number",
     "img": "/img/jangoon/jangoon0.png"
   }]
 }

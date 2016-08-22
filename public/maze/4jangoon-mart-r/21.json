@@ -49,13 +49,16 @@
     "itemCount": 2
   }],
   "tutorial": [{
-    "msg": "모든 과일을 집어서",
+    "msg:ko": "모든 과일을 집어서",
+    "msg:en": "Get all fruit",
     "img": "/img/jangoon/jangoon0.png"
   },{
-    "msg": "카트에 집어 넣어보자!",
+    "msg:ko": "카트에 집어 넣어보자!",
+    "msg:en": "And add to cart",
     "img": "/img/jangoon/kart.png"
   }],
   "success": [{
-    "msg": "성공! 4권의 모든 콘텐츠를 해결했어요! "
+    "msg:ko": "성공! 4권의 모든 콘텐츠를 해결했어요! ",
+    "msg:en": "Success! All Contents Clear in 4th book"
   }]
 }

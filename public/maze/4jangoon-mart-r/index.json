@@ -126,7 +126,8 @@
     "img":"normal",
     "obstacle": false,
     "tutorial": [{
-      "msg": "카트를 1개 얻을 수 있어!",
+      "msg:ko": "카트를 1개 얻을 수 있어!",
+      "msg:en": "You can get 1 cart!",
       "img": "/img/guide/normal.png"
     }]
   },  {
@@ -135,36 +136,45 @@
     "img":"hard",
     "obstacle": false,
     "tutorial": [{
-      "msg": "카트를 3개 얻을 수 있어!",
+      "msg:ko": "카트를 3개 얻을 수 있어!",
+      "msg:en": "You can get 3 cart!",
       "img": "/img/guide/hard.png"
     }]
 
   }],
   "tutorial": [{
-    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:en": "Press 'Next' Button~ 　　　　　　　↘",
     "img": "/img/jangoon/jangoon0.png"
   }, {
-    "msg": "장군이의 심부름을 해결하고",
+    "msg:ko": "장군이의 심부름을 해결하고",
+    "msg:en": "Do jangoon's errands",
     "img": "/img/jangoon/mart0.png"
   }, {
-    "msg": "카트를 모으자!!",
+    "msg:ko": "카트를 모으자!!",
+    "msg:en": "Collect the Cart",
     "img": "/img/jangoon/kart.png"
   },{
-    "msg": "보통 난이도를 해결하면 카트 1개를",
+    "msg:ko": "보통 난이도를 해결하면 카트 1개를",
+    "msg:en": "if you clear normal problem, you will get 1 Cart",
     "img": "/img/guide/normal.png"
   },{
-    "msg": "어려운 난이도를 해결하면 카트 3개를 얻을 수 있어요",
+    "msg:ko": "어려운 난이도를 해결하면 카트 3개를 얻을 수 있어요",
+    "msg:en": "if you clear hard problem, you will get 3 Cart",
     "img": "/img/guide/hard.png"
   },{
-    "msg": "카트를 35개 얻으면 성공!",
+    "msg:ko": "카트를 35개 얻으면 성공!",
+    "msg:en": "if you collect 35 Carts,",
     "img": "/img/jangoon/jangoon0.png"
   },{
-    "msg": "카트를 35점 모으면 별에게 가요",
+    "msg:ko": "카트를 35점 모으면 별에게 가요",
+    "msg:en": "you can move 'Star'",
     "img": "/img/map/star.png",
     "x" : 23,
     "y" : 4
   },{
-    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play Coding",
     "img": "/img/jangoon/jangoon0.png"
   }]
 }

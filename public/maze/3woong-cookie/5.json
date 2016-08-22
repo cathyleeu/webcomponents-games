@@ -23,7 +23,8 @@
     "########"
   ],
   "tutorial": [{
-    "msg": "주먹은 보자기로 이길 수 있어",
+    "msg:ko": "주먹은 보자기로 이길 수 있어",
+    "msg:en": "Rock is weaker than Scissors",
     "img": "/img/woong/rp.png"
   }]
 }

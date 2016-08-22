@@ -33,10 +33,12 @@
     "img":"fruit_ap"
   }],
   "tutorial": [{
-    "msg": "두번째로 큰 과일 1개를 집어서",
+    "msg:ko": "두번째로 큰 과일 1개를 집어서",
+    "msg:en": "Get the second biggest fruit",
     "img": "/img/jangoon/jangoon0.png"
   },{
-    "msg": "카트에 집어 넣어보자!",
+    "msg:ko": "카트에 집어 넣어보자!",
+    "msg:en": "And add to cart",
     "img": "/img/jangoon/kart.png"
   }]
 }

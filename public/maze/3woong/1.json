@@ -26,11 +26,13 @@
     "img":"father"
   }],
   "tutorial": [{
-    "msg": "아빠곰에게로 가보자!",
+    "msg:ko": "아빠곰에게로 가보자!",
+    "msg:en": "Go Dady Bear!",
     "img": "/img/woong/father.png"
   }],
   "success": [{
-    "msg": "성공! 참 잘했어요~",
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Succes! Good Job!",
     "link": "3woong/2"
   }]
 }

@@ -78,24 +78,30 @@
 
   }],
   "tutorial": [{
-    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:en": "Press 'Next' Button~ 　　　　　　　↘",
     "img": "/img/woong/woong0.png",
     "x":7,
     "y":0
   }, {
-    "msg": "덧셈을 해보자!",
+    "msg:ko": "덧셈을 해보자!",
+    "msg:en": "Let's solve the 'Plus' problem!",
     "img": "/img/woong/plus.png"
   }, {
-    "msg": "만약 3 + 1 = ? 이라는 문제가 나오면",
+    "msg:ko": "만약 3 + 1 = ? 이라는 문제가 나오면",
+    "msg:en": "If you want to solve the 'Plus' problem '3 + 1 = ? '",
     "img": "/img/woong/3plus1.png"
   }, {
-    "msg": "4가 답이니까 코딩맵에서 4를 찾아가면 되는거야!",
+    "msg:ko": "4가 답이니까 코딩맵에서 4를 찾아가면 되는거야!",
+    "msg:en": "you will move to '4'in coding map",
     "img": "/img/woong/woong0.png"
   }, {
-    "msg": "총 8문제를 깨야 다음 단계로 넘어갈 수 있어",
+    "msg:ko": "총 8문제를 깨야 다음 단계로 넘어갈 수 있어",
+    "msg:en": "To move next stage, you have to solve 8 problems",
     "img": "/img/woong/woong0.png"
   },{
-    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play Coding",
     "img": "/img/woong/woong0.png"
   }]
 }

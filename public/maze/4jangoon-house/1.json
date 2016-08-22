@@ -26,11 +26,13 @@
     "img":"house7"
   }],
   "tutorial": [{
-    "msg": "장군이의 집은 가장 큰 숫자의 주소를 가지고 있어요!",
+    "msg:ko": "장군이의 집은 가장 큰 숫자의 주소를 가지고 있어요!",
+    "msg:en": "The Address of jangoon's house is the biggest number",
     "img": "/img/jangoon/jangoon0.png"
   }],
-  "success": [{
-    "msg": "성공! 장군이가 집으로 찾아갔어요~",
+  "success": [{    
+    "msg:ko": "성공! 장군이가 집으로 찾아갔어요~",
+    "msg:en": "Success! jangoon find his house",
     "link": "4jangoon-house/2"
   }]
 }

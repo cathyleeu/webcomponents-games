@@ -46,13 +46,16 @@
     "itemCount": 1
   }],
   "tutorial": [{
-    "msg": "형 쿠키먹고 싶어~",
+    "msg:ko": "형 쿠키먹고 싶어~",
+    "msg:en": "I want to eat Cookies",
     "img": "/img/woong/in0.png"
   },{
-    "msg": "인이에게 쿠키를 전달하자!",
+    "msg:ko": "인이에게 쿠키를 전달하자!",
+    "msg:en": "Deliver Cookies to In",
     "img": "/img/woong/woong0.png"
   }],
   "success": [{
-    "msg": "성공! 3권의 모든 콘텐츠를 해결했어요! "
+    "msg:ko": "성공! 3권의 모든 콘텐츠를 해결했어요! ",
+    "msg:en": "Success! All Contents Clear in 3th book"
   }]
 }

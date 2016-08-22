@@ -62,20 +62,24 @@
     "min_score": 6
   }],
   "tutorial": [{
-    "msg": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:en": "Press 'Next' Button~ 　　　　　　　↘",
     "img": "/img/jangoon/jangoon0.png",
     "x":7,
     "y":0
   }, {
-    "msg": "씩씩한 개 장군이는 심부름으로 마트로 가야해요!",
+    "msg:ko": "씩씩한 개 장군이는 심부름으로 마트로 가야해요!",
+    "msg:en": "Dog Jangoon have to go mart to do errands",
     "img": "/img/jangoon/mart0.png"
   }, {
-    "msg": "총 6곳의 마트로 가서 물건을 사야 집으로 돌아갈 수 있어요",
+    "msg:ko": "총 6곳의 마트로 가서 물건을 사야 집으로 돌아갈 수 있어요",
+    "msg:en": "To go back Home, Jangoon buy someting on 6 marts",
     "img": "/img/jangoon/house0.png",
     "x": 21,
     "y": 3
   },{
-    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play Coding",
     "img": "/img/jangoon/jangoon0.png"
   }]
 }
