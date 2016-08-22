@@ -53,9 +53,11 @@
     "msg:en": "If you press '↓' Button, Woong will move down",
     "img": "/img/woong/down.png"
   }, {
+    "msg:ko": "→오른쪽 버튼을 누르면 웅이가 오른쪽으로 가요",
     "msg:en": "If you press '→' Button, Woong will move right",
     "img": "/img/woong/right.png"
   }, {
+    "msg:ko": "←왼쪽 버튼을 누르면 웅이가 왼쪽으로 가요",
     "msg:en": "If you press '←' Button, Woong will move left",
     "img": "/img/woong/left.png"
   }, {
