@@ -282,6 +282,30 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [6,7,8,6]
         };
       }
+      if(character.src.indexOf('cobot') >= 0) {
+        animations = {
+          stand_u: 3,
+          walk_u: [3,4,3,5,3],
+          stand_r: 9,
+          walk_r: [9,10,9,11,9],
+          stand_d: 0,
+          walk_d: [0,1,0,2,0],
+          stand_l: 6,
+          walk_l: [6,7,6,8,6]
+        };
+      }
+      if(character.src.indexOf('dingbot') >= 0) {
+        animations = {
+          stand_u: 3,
+          walk_u: [3,4,3,5,3],
+          stand_r: 9,
+          walk_r: [9,10,9,11,9],
+          stand_d: 0,
+          walk_d: [0,1,0,2,0],
+          stand_l: 6,
+          walk_l: [6,7,6,8,6]
+        };
+      }
       for(var key in animations) {
         if($.isArray(animations[key])) {
           animations[key] = {
