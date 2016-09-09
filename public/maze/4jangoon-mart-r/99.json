@@ -1,0 +1,38 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwww.",
+    "wxxxxxxw",
+    "wx...c%w",
+    "wxexxxxw",
+    "wxfxxxxw",
+    "wxd....w",
+    "wxxxxjkw",
+    "wwwwwwww"
+  ],
+  "tutorial": [{
+    "msg:ko": "모든 과일을 집어서",
+    "msg:en": "Get all fruit",
+    "img": "/img/jangoon/jangoon0.png"
+  },{
+    "msg:ko": "카트에 집어 넣어보자!",
+    "msg:en": "And add to cart",
+    "img": "/img/jangoon/kart.png"
+  }],
+  "success": [{
+    "msg:ko": "성공! 4권의 모든 콘텐츠를 해결했어요! ",
+    "msg:en": "Success! All Contents Clear in 4th book"
+  }]
+}

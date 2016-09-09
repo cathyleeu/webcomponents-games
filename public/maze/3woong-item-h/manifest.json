@@ -1,7 +1,7 @@
 [
   {"book": "3", "title": "쿠키 전달하기 심화"},
-  {"id": "bg1", "src": "/img/woong/tile1.png"},
-  {"id": "bg2", "src": "/img/woong/tile2.png"},
+  {"id": "bg1", "src": "/img/jangoon/new_bg1.png"},
+  {"id": "bg2", "src": "/img/jangoon/new_bg2.png"},
   {"id": "land0", "src": "/img/map32/0.png"},
   {"id": "land1", "src": "/img/map32/1.png"},
   {"id": "land2", "src": "/img/map32/2.png"},
@@ -26,7 +26,9 @@
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
-  {"id": "tree", "src": "/img/village/z.png", "obstacle": true},
+  {"id": "tr0", "src": "/img/woong/tree0.png", "obstacle": true},
+  {"id": "tr1", "src": "/img/woong/tree1.png", "obstacle": true},
+  {"id": "tr2", "src": "/img/woong/tree2.png", "obstacle": true},
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
@@ -37,7 +39,7 @@
   {"id": "rock2", "src": "/img/map/rock2.png"},
   {"id": "rock1", "src": "/img/map/rock1.png"},
   {"id": "star", "src": "/img/map/star.png"},
-  {"tile": "b", "id": "in", "src": "/img/woong/in.png", "obstacle": false},
+  {"tile": "b", "id": "in", "src": "/img/woong/in100.png", "obstacle": false},
   {"tile": "c", "id": "cookie", "src": "/img/woong/cookie.png", "obstacle": false},
   {"tile": "x", "id": "x", "src": "/img/frog/rock.png", "obstacle": false}
 ]
