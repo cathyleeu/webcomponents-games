@@ -152,21 +152,13 @@
   ],
   "YBM 데모": [
     ["1권 : 클릭연습", "/click"],
+    ["1권 : 드래그앤드랍 연습", "/dragndrop"],
     ["1권 : 올챙이의 모험 1", "/maze#!story09/1"],
-    ["1권 : 올챙이의 모험 2", "/maze#!story09/14"],
-    ["1권 : 개미왕자", "/maze#!alldirections/1"],
-    ["2권 : 드래그앤드랍 연습", "/dragndrop"],
-    ["2권 : 순차이동 [초급]", "/maze#!2frog/1"],
-    ["2권 : 순차이동 [중급]", "/maze#!2frog/16"],
-    ["2권 : 순차이동 [고급]", "/maze#!2frog/31"],
+    ["2권 : 순차이동", "/maze#!2frog/1"],
     ["3권 : 즐거운 우리집", "/maze#!3woong/1"],
-    ["3권 : 덧셈 놀이", "/maze#!3woong-plus/1"],
     ["3권 : 가위바위보", "/maze#!3woong-cookie/1"],
-    ["3권 : 쿠키 전달하기", "/maze#!3woong-item/1"],
-    ["3권 : 쿠키 전달하기 심화", "/maze#!3woong-item-h/1"],
-    ["4권 : 장군이의 집찾기", "/maze#!4jangoon-house/index"],
-    ["4권 : 장군이의 심부름", "/maze#!4jangoon-mart/index"],
-    ["4권 : 장군이의 집찾기 - 반복", "/maze#!4jangoon-house-r/index"],
-    ["4권 : 장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"]
+    ["3권 : 쿠키 전달하기", "/maze#!3woong-item-h/1"],
+    ["4권 : 장군이의 집찾기", "/maze#!4jangoon-house-r/index"],
+    ["4권 : 장군이의 심부름", "/maze#!4jangoon-mart-r/index"]
   ]
 }
