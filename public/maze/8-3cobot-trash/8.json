@@ -1,0 +1,71 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item",
+    "check",
+    "condition3_trash"
+  ],
+  "map": [
+    "########",
+    "##.#...#",
+    "#..#d.##",
+    "#..#..##",
+    "#..%&%##",
+    "###.%.##",
+    "#..#...#",
+    "########"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 4,
+    "img": "trash",
+    "contents" : [{
+        "img": "can",
+        "role": "item",
+        "order": "if"
+      },{
+        "img": "paper",
+        "role": "item",
+        "order": "else_if"
+      },{
+        "img": "bottle",
+        "role": "item",
+        "order": "else"
+    }]
+  },{
+    "x": 4,
+    "y": 4,
+    "img": "can_tc",
+    "order": "if",
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 5,
+    "img": "paper_tc",
+    "order": "else_if",
+    "useItem": true
+  },{
+    "x": 5,
+    "y": 4,
+    "img": "bottle_tc",
+    "order": "else",
+    "useItem": true
+  }],
+  "tutorial": [{
+    "msg": "코봇은 코딩마을을 청소해야해요"
+  },{
+    "msg": "마을에 있는 쓰레기를 주워서 분리수거 종류를 확인한뒤",
+    "img": "/img/cobot/trash.png"
+  },{
+    "msg": "올바른 분리수거 쓰레기통에 집어넣어 보자"
+  }]
+}

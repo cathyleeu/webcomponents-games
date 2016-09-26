@@ -201,6 +201,17 @@ Blocks["check"] = {
   ],
   action: ["check"]
 };
+Blocks["together"] = {
+  rgbColor: "#33B1B1",
+  message0: {
+    ko: "%1 함께가기",
+    en: "%1 Together"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cobot/together.png", width: 24, height: 24}
+  ],
+  action: ["together"]
+};
 Blocks["wait"] = {
   rgbColor: "#8D69AE",
   message0: {
@@ -968,6 +979,164 @@ Blocks['condition2_itemkey_triangle'] = {
     name: "else_statements"
   }],
   action: ["conditioncheck2","itemkey"]
+};
+Blocks['condition3_trash'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If can"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cobot/can.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If paper"
+  },
+  args2: [
+    {type: "field_image", src: "/img/cobot/paper.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: "%1 이라면",//TODO:이 부분에 영어를 넣으면 에러남
+  args4: [
+    {type: "field_image", src: "/img/cobot/bottle.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","trash"]
+};
+Blocks['condition2_guide_tr'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If can"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cobot/toilet.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If paper"
+  },
+  args2: [
+    {type: "field_image", src: "/img/cobot/restaurant.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  action: ["conditioncheck2","guide"]
+};
+Blocks['condition2_guide_rm'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If can"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cobot/restaurant.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If paper"
+  },
+  args2: [
+    {type: "field_image", src: "/img/cobot/machine.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  action: ["conditioncheck2","guide"]
+};
+Blocks['condition2_guide_tm'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If can"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cobot/toilet.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If paper"
+  },
+  args2: [
+    {type: "field_image", src: "/img/cobot/machine.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  action: ["conditioncheck2","guide"]
+};
+Blocks['condition3_guide'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If can"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cobot/toilet.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If paper"
+  },
+  args2: [
+    {type: "field_image", src: "/img/cobot/restaurant.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: "%1 이라면",//TODO:이 부분에 영어를 넣으면 에러남
+  args4: [
+    {type: "field_image", src: "/img/cobot/machine.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","guide"]
 };
 Blocks["move_right1"] = {
   colour: 260,

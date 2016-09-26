@@ -1,0 +1,67 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start","move_down","move_right","move_right","check","together","condition3_guide"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "together",
+    "check",
+    "condition3_guide"
+  ],
+  "map": [
+    "########",
+    "##.#%#.#",
+    "#..#..##",
+    "#..#..##",
+    "#r..&.%#",
+    "###...##",
+    "#..#%..#",
+    "########"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 4,
+    "img": "dingbot50",
+    "contents" : [{
+        "img": "dingbot_t",
+        "role": "friend",
+        "order": "if"
+      },{
+        "img": "dingbot_r",
+        "role": "friend",
+        "order": "else_if"
+      },{
+        "img": "dingbot_m",
+        "role": "friend",
+        "order": "else"
+    }]
+  },{
+    "x": 4,
+    "y": 1,
+    "img": "toilet",
+    "order": "if"
+  },{
+    "x": 6,
+    "y": 4,
+    "img": "restaurant",
+    "order": "else_if"
+  },{
+    "x": 4,
+    "y": 6,
+    "img": "machine",
+    "order": "else"
+  }],
+  "tutorial": [{
+    "msg": "딩봇이 길을 잃었어요",
+    "img": "/img/cobot/dingbot0.png"
+  },{
+    "msg": "코봇으로 딩봇이 가야할 곳을 확인한 뒤"
+  },{
+    "msg": "가야할 곳까지 바려다 주자"
+  }]
+}
