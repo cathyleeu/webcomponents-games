@@ -129,6 +129,13 @@
     ["봄이의 먹이 구하기", "/maze#!6-23bomi-food/index"],
     ["봄이와 횡단보도", "/maze#!6-4bomi-traffic/index"]
   ],
+  "5&6권": [
+    ["토드의 규칙찾기", "/maze#!5tode_pattern/index"],
+    ["라나의 선물하기", "/maze#!5lana_gift/index"],
+    ["봄이와 보물상자", "/maze#!6-1bomi-chest/index"],
+    ["봄이의 먹이 구하기", "/maze#!6-23bomi-food/index"],
+    ["봄이와 횡단보도", "/maze#!6-4bomi-traffic/index"]
+  ],
   "7권": [
     ["뺄셈 놀이", "/maze#!7-1jack-minus/index"],
     ["짹스패로우와 먹이찾기", "/maze#!7-2jack-food/index"],
