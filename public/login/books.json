@@ -143,9 +143,9 @@
   ],
   "숙명키즈": [
     ["딩봇의 10 만들기", "/maze#!8-1cobot-maketen/index"],
-    ["딩봇과 99까지의 수", "/maze#!7-2cobot-99/index"],
-    ["코봇과 분리수거", "/maze#!7-3cobot-trash/index"],
-    ["코봇의 길안내", "/maze#!7-4jcobot-guide/index"]
+    ["딩봇과 99까지의 수", "/maze#!8-2cobot-99/index"],
+    ["코봇과 분리수거", "/maze#!8-3cobot-trash/index"],
+    ["코봇의 길안내", "/maze#!8-4jcobot-guide/index"]
   ],
   "코딩캠프":[
     ["연습문제","/maze#!2frog/1"],
