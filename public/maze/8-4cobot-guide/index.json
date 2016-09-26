@@ -1,0 +1,203 @@
+{
+  "type": "world",
+  "view_size": 10,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".tttttttttttttttttttttt.",
+    "t#######.%#..#%##%####%t",
+    "t.##%.%..##e.#..%.##%##t",
+    "t.#%.#..%##..#%..%....%t",
+    "t%#%....###..##.%###%.#t",
+    "t....%#................t",
+    "t%.%##.u..###.%.%...%.%t",
+    "t#####....##%..###%.#.#t",
+    "t.........##%..%.%..#%#t",
+    ".tttttttttttttttttttttt."
+  ],
+  "extra": [{
+    "x": 3,
+    "y": 3,
+    "link": "8-4cobot-guide/1"
+  },{
+    "x": 4,
+    "y": 2,
+    "link": "8-4cobot-guide/2"
+  },{
+    "x": 6,
+    "y": 2,
+    "link": "8-4cobot-guide/3"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "8-4cobot-guide/4"
+  },{
+    "x": 8,
+    "y": 3,
+    "link": "8-4cobot-guide/5"
+  },{
+    "x": 1,
+    "y": 4,
+    "link": "8-4cobot-guide/6"
+  },{
+    "x": 3,
+    "y": 4,
+    "link": "8-4cobot-guide/7"
+  },{
+    "x": 1,
+    "y": 6,
+    "link": "8-4cobot-guide/8"
+  },{
+    "x": 3,
+    "y": 6,
+    "link": "8-4cobot-guide/9"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "8-4cobot-guide/10"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "8-4cobot-guide/11"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "8-4cobot-guide/12"
+  },{
+    "x": 20,
+    "y": 2,
+    "link": "8-4cobot-guide/13"
+  },{
+    "x": 22,
+    "y": 1,
+    "link": "8-4cobot-guide/14"
+  },{
+    "x": 22,
+    "y": 3,
+    "link": "8-4cobot-guide/15"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "8-4cobot-guide/16"
+  },{
+    "x": 17,
+    "y": 1,
+    "link": "8-4cobot-guide/17"
+  },{
+    "x": 14,
+    "y": 3,
+    "link": "8-4cobot-guide/18"
+  },{
+    "x": 16,
+    "y": 4,
+    "link": "8-4cobot-guide/19"
+  },{
+    "x": 20,
+    "y": 4,
+    "link": "8-4cobot-guide/20"
+  },{
+    "x": 16,
+    "y": 6,
+    "link": "8-4cobot-guide/21"
+  },{
+    "x": 18,
+    "y": 7,
+    "link": "8-4cobot-guide/22"
+  },{
+    "x": 17,
+    "y": 8,
+    "link": "8-4cobot-guide/23"
+  },{
+    "x": 22,
+    "y": 6,
+    "link": "8-4cobot-guide/24"
+  },{
+    "x": 21,
+    "y": 8,
+    "link": "8-4cobot-guide/25"
+  },{
+    "x": 14,
+    "y": 6,
+    "link": "8-4cobot-guide/26"
+  },{
+    "x": 12,
+    "y": 7,
+    "link": "8-4cobot-guide/27"
+  },{
+    "x": 12,
+    "y": 8,
+    "link": "8-4cobot-guide/28"
+  },{
+    "x": 15,
+    "y": 8,
+    "link": "8-4cobot-guide/29"
+  },{
+    "x": 20,
+    "y": 6,
+    "link": "8-4cobot-guide/30"
+  },{
+    "x": 11,
+    "y": 2,
+    "img": "star",
+    "link": "8-4cobot-guide/31",
+    "min_score": 35
+  },  {
+    "x": 7,
+    "y": 8,
+    "img": "question",
+    "obstacle": false,
+    "tutorial": [
+       {
+      "msg": "빨간색 글자 표지판 : 딩봇마크 3개를 얻을 수 있습니다. 매우 어렵습니다.",
+      "img": "/img/guide/hard.png"
+    }, {
+      "msg": "노란색 글자 표지판 : 딩봇마크 2개를 얻을 수 있습니다.",
+      "img": "/img/guide/normal.png"
+    }, {
+      "msg": "초록색 글자 표지판 : 딩봇마크 1개를 얻을 수 있습니다. 다소 쉽습니다.",
+      "img": "/img/guide/easy.png"
+    }]
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "easy",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "딩봇마크를 1개 얻을 수 있어!",
+      "img": "/img/guide/easy.png"
+    }]
+
+  },  {
+    "x": 13,
+    "y": 4,
+    "img": "normal",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "딩봇마크를 2개 얻을 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 12,
+    "y": 6,
+    "img": "hard",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "딩봇마크를 3개 얻을 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+}],
+  "tutorial": [{
+    "msg": "로봇인 코봇은 코딩 마을의 안내원이야"
+  }, {
+    "msg": "이런! 딩봇이 코딩 마을에세 길을 잃었어",
+    "img": "/img/cobot/dingbot0.png"
+  }, {
+    "msg": "코봇은 딩봇을 도와주고 딩봇마크를 얻을 수 있어",
+    "img": "/img/cobot/dingbot0.png"
+  }, {
+    "msg": "딩봇마크 35개를 모아서 별로 이동하자!",
+    "img": "/img/map/star.png"
+  }]
+}

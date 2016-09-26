@@ -1,0 +1,33 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":100,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "ttttttttt",
+    "t.......t",
+    "t.##.##.t",
+    "t.##.##.t",
+    "t..d.%..t",
+    "t.##.##.t",
+    "t.##.##.t",
+    "t.......t",
+    "ttttttttt"
+  ],
+  "tutorial": [{
+    "msg": "코봇이 딩봇의 가야할 곳을 잘 알려줘서"
+  },{
+    "msg": "코봇과 딩봇은 친구가 되었어! ",
+    "img": "/img/cobot/dingbot0.png"
+  },{
+    "msg": "이것으로 키즈코딩 8권의 모든 문제를 해결했으니"
+  },{
+    "msg": "키즈코딩 9권에서 보자! 안녕~~"
+  }]
+}
