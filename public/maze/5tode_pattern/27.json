@@ -42,10 +42,10 @@
     "img":"lana4"
   }],
   "tutorial": [{
-    "msg": "토드는 규칙찾기 놀이를 하고 싶어!",
+    "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어!",
     "img": "/img/frog/tode0.png"
   },{
-    "msg": "물음표에 들어갈 라나 마리 수를 찾아가보자!",
+    "msg:ko": "물음표에 들어갈 라나 마리 수를 찾아가보자!",
     "img": "/img/5pattern/lana_pattern_q3_1.png"
   }]
 }
