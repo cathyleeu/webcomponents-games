@@ -393,7 +393,7 @@ Blocks['condition_light'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 만약에 빨간 불이라면",
-    en: "If Red Light"
+    en: "If %1 is red light"
   },
   args0: [
     {type: "field_image", src: "/img/bomi/trf_rot_red.png", width: 24, height: 24}
@@ -409,7 +409,7 @@ Blocks['condition2_food_apple'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/apple.png", width: 30, height: 30}
@@ -434,7 +434,7 @@ Blocks['condition2_food_bam'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/bam.png", width: 30, height: 30}
@@ -459,7 +459,7 @@ Blocks['condition2_food_gam'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/gam.png", width: 30, height: 30}
@@ -484,7 +484,7 @@ Blocks['condition2_food_pear'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/pear.png", width: 30, height: 30}
@@ -509,7 +509,7 @@ Blocks['condition2_food_pumpkin'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/pumpkin.png", width: 30, height: 30}
@@ -534,7 +534,7 @@ Blocks['condition2_food_seed'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/seed.png", width: 30, height: 30}
@@ -559,7 +559,7 @@ Blocks['condition2_food_walnut'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/walnut.png", width: 30, height: 30}
@@ -584,7 +584,7 @@ Blocks['condition2_food_wandu'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/wandu.png", width: 30, height: 30}
@@ -609,7 +609,7 @@ Blocks['condition2_direction_up'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "안전한 길이 %1 라면",
-    en: "If Red Light"
+    en: "If %1 is safe road"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/b_up.png", width: 30, height: 30}
@@ -634,7 +634,7 @@ Blocks['condition2_direction_down'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 안전한 길이라면",
-    en: "If Red Light"
+    en: "If %1 is safe road"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/b_down.png", width: 30, height: 30}
@@ -659,7 +659,7 @@ Blocks['condition2_direction_left'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 안전한 길이라면",
-    en: "If Red Light"
+    en: "If %1 is safe road"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/b_left.png", width: 30, height: 30}
@@ -684,7 +684,7 @@ Blocks['condition2_direction_right'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 안전한 길이라면",
-    en: "If Red Light"
+    en: "If %1 is safe road"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/b_right.png", width: 30, height: 30}
@@ -709,7 +709,7 @@ Blocks['condition2_itemfood_apple'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/apple.png", width: 30, height: 30}
@@ -734,7 +734,7 @@ Blocks['condition2_itemfood_bam'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/bam.png", width: 30, height: 30}
@@ -759,7 +759,7 @@ Blocks['condition2_itemfood_gam'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/gam.png", width: 30, height: 30}
@@ -784,7 +784,7 @@ Blocks['condition2_itemfood_pear'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/pear.png", width: 30, height: 30}
@@ -809,7 +809,7 @@ Blocks['condition2_itemfood_pumpkin'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/pumpkin.png", width: 30, height: 30}
@@ -834,7 +834,7 @@ Blocks['condition2_itemfood_seed'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/seed.png", width: 30, height: 30}
@@ -859,7 +859,7 @@ Blocks['condition2_itemfood_walnut'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/walnut.png", width: 30, height: 30}
@@ -884,7 +884,7 @@ Blocks['condition2_itemfood_wandu'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/wandu.png", width: 30, height: 30}
@@ -909,7 +909,7 @@ Blocks['condition2_itemkey_circle'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/bomi/circle_key.png", width: 30, height: 30}
@@ -934,7 +934,7 @@ Blocks['condition2_itemkey_rectangle'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/bomi/rectangle_key.png", width: 30, height: 30}
@@ -959,7 +959,7 @@ Blocks['condition2_itemkey_triangle'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If Red Light"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/bomi/triangle_key.png", width: 30, height: 30}
@@ -984,7 +984,7 @@ Blocks['condition3_trash'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If can"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/can.png", width: 30, height: 30}
@@ -996,7 +996,7 @@ Blocks['condition3_trash'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If paper"
+    en: "If %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/paper.png", width: 30, height: 30}
@@ -1006,7 +1006,10 @@ Blocks['condition3_trash'] = {
     type: "input_statement",
     name: "else_if_statements"
   }],
-  message4: "%1 이라면",//TODO:이 부분에 영어를 넣으면 에러남
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
   args4: [
     {type: "field_image", src: "/img/cobot/bottle.png", width: 30, height: 30}
   ],
@@ -1021,7 +1024,7 @@ Blocks['condition2_guide_tr'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If can"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/toilet.png", width: 30, height: 30}
@@ -1033,7 +1036,7 @@ Blocks['condition2_guide_tr'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If paper"
+    en: "If %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/restaurant.png", width: 30, height: 30}
@@ -1049,7 +1052,7 @@ Blocks['condition2_guide_rm'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If can"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/restaurant.png", width: 30, height: 30}
@@ -1061,7 +1064,7 @@ Blocks['condition2_guide_rm'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If paper"
+    en: "If %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/machine.png", width: 30, height: 30}
@@ -1077,7 +1080,7 @@ Blocks['condition2_guide_tm'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If can"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/toilet.png", width: 30, height: 30}
@@ -1089,7 +1092,7 @@ Blocks['condition2_guide_tm'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If paper"
+    en: "If %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/machine.png", width: 30, height: 30}
@@ -1105,7 +1108,7 @@ Blocks['condition3_guide'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If can"
+    en: "If %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/toilet.png", width: 30, height: 30}
@@ -1117,7 +1120,7 @@ Blocks['condition3_guide'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If paper"
+    en: "If %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/restaurant.png", width: 30, height: 30}
@@ -1127,7 +1130,10 @@ Blocks['condition3_guide'] = {
     type: "input_statement",
     name: "else_if_statements"
   }],
-  message4: "%1 이라면",//TODO:이 부분에 영어를 넣으면 에러남
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
   args4: [
     {type: "field_image", src: "/img/cobot/machine.png", width: 30, height: 30}
   ],

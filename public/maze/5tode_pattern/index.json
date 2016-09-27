@@ -149,13 +149,16 @@
     "obstacle": false,
     "tutorial": [
        {
-      "msg": "빨간색 글자 표지판 : 별 3개를 얻을 수 있습니다. 매우 어렵습니다.",
+      "msg:ko": "빨간색 글자 표지판 : 꽃 3개를 얻을 수 있습니다. 매우 어렵습니다.",
+      "msg:en": "Red sign : Tree flower point. very hard",
       "img": "/img/guide/hard.png"
     }, {
-      "msg": "노란색 글자 표지판 : 별 2개를 얻을 수 있습니다.",
+      "msg:ko": "노란색 글자 표지판 : 꽃 2개를 얻을 수 있습니다.",
+      "msg:en": "Yellow sign : Two flower point. very hard",
       "img": "/img/guide/normal.png"
     }, {
-      "msg": "초록색 글자 표지판 : 별 1개를 얻을 수 있습니다. 다소 쉽습니다.",
+      "msg:ko": "초록색 글자 표지판 : 꽃 1개를 얻을 수 있습니다. 다소 쉽습니다.",
+      "msg:en": "Green sign : One flower point. very hard",
       "img": "/img/guide/easy.png"
     }]
   },{
@@ -164,7 +167,8 @@
     "img": "easy",
     "obstacle": false,
     "tutorial": [{
-      "msg": "꽃을 1개 얻을 수 있어!",
+      "msg:ko": "꽃을 1개 얻을 수 있어!",
+      "msg:en": "You can get one flower point",
       "img": "/img/guide/easy.png"
     }]
 
@@ -174,7 +178,8 @@
     "img": "normal",
     "obstacle": false,
     "tutorial": [{
-      "msg": "꽃을 2개 얻을 수 있어!",
+      "msg:ko": "꽃을 2개 얻을 수 있어!",
+      "msg:en": "You can get two flower point",
       "img": "/img/guide/normal.png"
     }]
   },  {
@@ -183,22 +188,27 @@
     "img": "hard",
     "obstacle": false,
     "tutorial": [{
-      "msg": "꽃을 3개 얻을 수 있어!",
+      "msg:ko": "꽃을 3개 얻을 수 있어!",
+      "msg:en": "You can get three flower point",
       "img": "/img/guide/hard.png"
     }]
 
 }],
   "tutorial": [{
-    "msg": "안녕! 나는 개구리 토드라고해!",
+    "msg:kr": "안녕! 나는 개구리 토드라고해!",
+    "msg:en": "Hi, I'm Tode forg",
     "img": "/img/frog/tode0.png"
   }, {
-    "msg": "나는 규칙찾기 놀이를 매우 좋아해!",
+    "msg:kr": "나는 규칙찾기 놀이를 매우 좋아해!",
+    "msg:en": "I like solving the problem of finding pattern",
     "img": "/img/frog/tode0.png"
   }, {
-    "msg": "규칙놀이 문제를 풀고 별 36개을 모아서",
+    "msg:kr": "규칙놀이 문제를 풀고 꽃 36개을 모아서",
+    "msg:en": "Collect 36 flower point to sovle the pattern problem",
     "img": "/img/frog/flower0.png"
   }, {
-    "msg": "개구리 라나에게 전달해보자!",
+    "msg:kr": "개구리 라나에게 전달해보자!",
+    "msg:en": "And then give the flowers Lana frog",
     "img": "/img/frog/lana0.png"
   }]
 }

@@ -50,6 +50,15 @@ KidsCoding.prototype = {
       if(typeof options.message2 == "object") {
         options.message2 = options.message2[lang];
       }
+      if(typeof options.message3 == "object") {
+        options.message3 = options.message3[lang];
+      }
+      if(typeof options.message4 == "object") {
+        options.message4 = options.message4[lang];
+      }
+      if(typeof options.message5 == "object") {
+        options.message5 = options.message5[lang];
+      }
       options = $.extend({
         colour: 0,
         message0: "",

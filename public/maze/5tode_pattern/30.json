@@ -42,10 +42,10 @@
     "img":"lotus5"
   }],
   "tutorial": [{
-    "msg": "토드는 규칙찾기 놀이를 하고 싶어!",
+    "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어!",
     "img": "/img/frog/tode0.png"
   },{
-    "msg": "빈 연잎 위의 숫자를 찾아가보자!",
+    "msg:ko": "빈 연잎 위의 숫자를 찾아가보자!",
     "img": "/img/5pattern/lotus_pattern_q3_2.png"
   }]
 }
