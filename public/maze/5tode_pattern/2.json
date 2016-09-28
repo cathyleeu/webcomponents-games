@@ -39,9 +39,11 @@
   }],
   "tutorial": [{
     "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어!",
+    "msg:en": "Tode want to play the pattern problem",
     "img": "/img/frog/tode0.png"
   },{
     "msg:ko": "빈칸에 들어갈 클로버 모양을 찾아가보자!",
+    "msg:en": "Find the shape of clover in the blank",
     "img": "/img/5pattern/clover_pattern_q1_2.png"
   }]
 }
