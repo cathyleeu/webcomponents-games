@@ -40,9 +40,11 @@
   }],
   "tutorial": [{
     "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어!",
+    "msg:en": "Tode want to play the pattern problem",
     "img": "/img/frog/tode0.png"
   },{
     "msg:ko": "물음표에 들어갈 라나 마리 수를 찾아가보자!",
+    "msg:en": "Find the number of lana in the question mark",
     "img": "/img/5pattern/lana_pattern_q2_1.png"
   }]
 }
