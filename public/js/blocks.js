@@ -1044,7 +1044,7 @@ Blocks['condition2_guide_tr'] = {
   message3: "%1",
   args3: [{
     type: "input_statement",
-    name: "else_if_statements"
+    name: "else_statements"
   }],
   action: ["conditioncheck2","guide"]
 };
@@ -1072,7 +1072,7 @@ Blocks['condition2_guide_rm'] = {
   message3: "%1",
   args3: [{
     type: "input_statement",
-    name: "else_if_statements"
+    name: "else_statements"
   }],
   action: ["conditioncheck2","guide"]
 };
