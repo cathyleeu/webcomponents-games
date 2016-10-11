@@ -2,7 +2,7 @@
   "tile_size": 50,
   "render": "pixel",
   "score":1,
-  "workspace": ["start","move_left","move_left","check","together","condition2_guide_rm"],
+  "workspace": ["start","move_left","move_left","check","together","condition2_guide_tm"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -11,7 +11,7 @@
     "repeat",
     "together",
     "check",
-    "condition2_guide_rm"
+    "condition2_guide_tm"
   ],
   "map": [
     "########",
