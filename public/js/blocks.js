@@ -1100,7 +1100,7 @@ Blocks['condition2_guide_tm'] = {
   message3: "%1",
   args3: [{
     type: "input_statement",
-    name: "else_if_statements"
+    name: "else_statements"
   }],
   action: ["conditioncheck2","guide"]
 };
