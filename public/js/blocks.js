@@ -201,6 +201,17 @@ Blocks["check"] = {
   ],
   action: ["check"]
 };
+Blocks["check2"] = {
+  rgbColor: "#33B1B1",
+  message0: {
+    ko: "%1 확인하기",
+    en: "%1 Inspect"
+  },
+  args0: [
+    {type: "field_image", src: "/img/check.png", width: 24, height: 24}
+  ],
+  action: ["check2"]
+};
 Blocks["together"] = {
   rgbColor: "#33B1B1",
   message0: {
@@ -211,6 +222,17 @@ Blocks["together"] = {
     {type: "field_image", src: "/img/cobot/together.png", width: 24, height: 24}
   ],
   action: ["together"]
+};
+Blocks["present"] = {
+  rgbColor: "#33B1B1",
+  message0: {
+    ko: "%1 선물하기",
+    en: "%1 Present"
+  },
+  args0: [
+    {type: "field_image", src: "/img/frog/gift.png", width: 24, height: 24}
+  ],
+  action: ["present"]
 };
 Blocks["wait"] = {
   rgbColor: "#8D69AE",
@@ -1143,6 +1165,172 @@ Blocks['condition3_guide'] = {
     name: "else_statements"
   }],
   action: ["conditioncheck3","guide"]
+};
+Blocks['condition3_aClock123'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/rudolph/a0100.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/rudolph/a0200.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args4: [
+    {type: "field_image", src: "/img/rudolph/a0300.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","aClock"]
+};
+Blocks['condition3_aClock456'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/rudolph/a0400.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/rudolph/a0500.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args4: [
+    {type: "field_image", src: "/img/rudolph/a0600.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","aClock"]
+};
+Blocks['condition3_aClock789'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/rudolph/a0700.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/rudolph/a0800.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args4: [
+    {type: "field_image", src: "/img/rudolph/a0900.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","aClock"]
+};
+Blocks['condition3_dClock'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 ~ %2 이라면 %3",
+    en: "If %1 ~ %2 %3"
+  },
+  args0: [
+    {type: "field_image", src: "/img/rudolph/d1200.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/rudolph/d0130.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/rudolph/house_r.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 ~ %2 이라면 %3",
+    en: "If %1 ~ %2 %3"
+  },
+  args2: [
+    {type: "field_image", src: "/img/rudolph/d0200.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/rudolph/d0330.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/rudolph/house_g.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 ~ %2 이라면 %3",
+    en: "If %1 ~ %2 %3"
+  },
+  args4: [
+    {type: "field_image", src: "/img/rudolph/d0400.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/rudolph/d0600.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/rudolph/house_y.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","dClock"]
 };
 Blocks["move_right1"] = {
   colour: 260,
