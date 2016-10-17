@@ -1,0 +1,46 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item2",
+    "use_item2",
+    "repeat"
+  ],
+  "map": [
+    "########",
+    "#.#.h..#",
+    "#...#..#",
+    "#..)...#",
+    "##.##.j#",
+    "#.u....#",
+    "#...#%.#",
+    "########"
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 6,
+    "img": "bolt3_poket",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 3,
+    "img": "bolt7",
+    "itemImg":"bolt10"
+  }],
+  "tutorial": [{
+    "msg": "딩봇은 주머니에 10개의 볼트를 모으고 싶어요"
+  },{
+    "msg": "현재 주머니에는 3개의 볼트가 있어요",
+    "img": "/img/cobot/bolt3_poket.png"
+  },{
+    "msg": "10개의 볼트가 되기 위해서 필요하는 만큼의 볼트를 집어서"
+  },{
+    "msg": "주머니에 넣어보자"
+  }]
+}

@@ -1,0 +1,33 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":100,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "ttttttttt",
+    "t.......t",
+    "t.##.##.t",
+    "t.##.##.t",
+    "t..d.%..t",
+    "t.##.##.t",
+    "t.##.##.t",
+    "t.......t",
+    "ttttttttt"
+  ],
+  "tutorial": [{
+    "msg": "루돌프는 모든 집에"
+  },{
+    "msg": "크리스마스 선물을 나누어 주었어요 ",
+    "img": "/img/frog/gift.png"
+  },{
+    "msg": "이것으로 키즈코딩 9권의 모든 문제를 해결했으니"
+  },{
+    "msg": "키즈코딩 10권에서 보자! 안녕~~"
+  }]
+}
