@@ -590,9 +590,9 @@ Actions.prototype.check2 = function(block, callback) {
   // 바위 위에서 아이템 사용
   var chest = this._getCanvasObject(character.px, character.py, "chest");
   if(chest) {
-    var namesOfif = ["d1200","d1230","d0100","d0130"];
-    var namesOfelseif = ["d0200","d0230","d0300","d0330"];
-    var namesOfelse = ["d0400","d0430","d0500","d0530","d0600"];
+    var namesOfif = chest.contents[0].if;
+    var namesOfelseif = chest.contents[0].elseif;
+    var namesOfelse = chest.contents[0].else;
 
     var orderNum = parseInt(Math.random()*3, 10);
 
