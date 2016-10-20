@@ -605,13 +605,11 @@ Actions.prototype.check2 = function(block, callback) {
       chest.role = "item";
       chest.order = "else_if";
       var imgNum = parseInt(Math.random()*namesOfelseif.length, 10);
-      debugger
       chest.bitmap.image = _this.loader.getResult(namesOfelseif[imgNum]);
     } else {
       chest.role = "item";
       chest.order = "else";
       var imgNum = parseInt(Math.random()*namesOfelse.length, 10);
-      debugger
       chest.bitmap.image = _this.loader.getResult(namesOfelse[imgNum]);
     }
     _this.setCoord(chest, chest.px, chest.py);
