@@ -47,7 +47,7 @@
     "msg": "선물을 받아야 해요",
     "img": "/img/frog/gift0.png"
   },{
-    "msg": "현재 시간은 두시에요",
+    "msg": "현재 시각은 두시에요",
     "img": "/img/rudolph/d0200.png"
   },{
     "msg": "올바른 시계로 이동해 보아요"
