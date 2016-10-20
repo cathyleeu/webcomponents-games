@@ -92,17 +92,17 @@
     "msg": "12:00~1:30 사이의 시간이라면"
   },{
     "msg": "빨간색 집에",
-    "img": "/img/rudolph/house_r.png"
+    "img": "/img/rudolph/house_r0.png"
   },{
     "msg": "2:00~3:30 사이의 시간이라면"
   },{
     "msg": "초록색 집에",
-    "img": "/img/rudolph/house_g.png"
+    "img": "/img/rudolph/house_g0.png"
   },{
     "msg": "4:00~6:00 사이의 시간이라면"
   },{
     "msg": "노락색 집에",
-    "img": "/img/rudolph/house_y.png"
+    "img": "/img/rudolph/house_y0.png"
   },{
     "msg": "선물을 나누어 주면 되요",
     "img": "/img/frog/gift0.png"

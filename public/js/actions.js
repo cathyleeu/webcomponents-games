@@ -600,7 +600,6 @@ Actions.prototype.check2 = function(block, callback) {
       chest.role = "item";
       chest.order = "if";
       var imgNum = parseInt(Math.random()*namesOfif.length, 10);
-      debugger
       chest.bitmap.image = _this.loader.getResult(namesOfif[imgNum]);
     } else if(orderNum == 1){
       chest.role = "item";
