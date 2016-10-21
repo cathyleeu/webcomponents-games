@@ -21,10 +21,11 @@
     "ttttttttt"
   ],
   "tutorial": [{
-    "msg": "루돌프는 모든 집에"
+    "msg": "루돌프는 모든 집에",
+    "img": "/img/rudolph/rudolph0.png"
   },{
     "msg": "크리스마스 선물을 나누어 주었어요 ",
-    "img": "/img/frog/gift.png"
+    "img": "/img/frog/gift0.png"
   },{
     "msg": "이것으로 키즈코딩 9권의 모든 문제를 해결했으니"
   },{
