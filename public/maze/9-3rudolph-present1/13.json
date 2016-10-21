@@ -15,18 +15,18 @@
   ],
   "map": [
     "#########",
-    "##.#%..##",
-    "#..#%.###",
-    "#..#%.###",
-    "#..r&%%%#",
-    "###.%.###",
-    "#..#%..##",
-    "####%####",
+    "##.#.#..#",
+    "#%%%..l.#",
+    "##..&.#.#",
+    "####.%%%#",
+    "##..%#.##",
+    "#.##%...#",
+    "##..%#..#",
     "#########"
   ],
   "extra":[{
     "x": 4,
-    "y": 4,
+    "y": 3,
     "img": "clock_top",
     "contents" : [{
         "img": "a0100",
@@ -42,39 +42,39 @@
         "order": "else"
     }]
   },{
-    "x": 4,
-    "y": 3,
-    "img": "house_1",
-    "order": "if",
-    "useItem": true
-  },{
-    "x": 4,
+    "x": 1,
     "y": 2,
-    "img": "house_1",
+    "img": "house_9",
     "order": "if",
     "useItem": true
   },{
-    "x": 4,
-    "y": 1,
-    "img": "house_1",
+    "x": 2,
+    "y": 2,
+    "img": "house_9",
+    "order": "if",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "house_9",
     "order": "if",
     "useItem": true
   },{
     "x": 5,
     "y": 4,
-    "img": "house_2",
+    "img": "house_7",
     "order": "else_if",
     "useItem": true
   },{
     "x": 6,
     "y": 4,
-    "img": "house_2",
+    "img": "house_7",
     "order": "else_if",
     "useItem": true
   },{
     "x": 7,
     "y": 4,
-    "img": "house_2",
+    "img": "house_7",
     "order": "else_if",
     "useItem": true
   },{
@@ -97,22 +97,22 @@
     "useItem": true
   }],
   "tutorial": [{
-    "msg": "루돌프를 코딩 마을 사람들에게 선물을 나누어 주어야 해요"
+    "msg": "루돌프는 코딩 마을 사람들에게 선물을 나누어 주어야 해요"
   },{
     "msg": "마을에 있는 시계탑의 시간을 확인한 뒤",
     "img": "/img/rudolph/top0.png"
   },{
-    "msg": "1시이면",
-    "img": "/img/rudolph/a0100_0.png"
+    "msg": "9시이면",
+    "img": "/img/rudolph/a0900_0.png"
   },{
-    "msg": "'1'번 주소의 집에",
-    "img": "/img/rudolph/house_10.png"
+    "msg": "'9'번 주소의 집에",
+    "img": "/img/rudolph/house_90.png"
   },{
-    "msg": "2시이면",
-    "img": "/img/rudolph/a0200_0.png"
+    "msg": "7시이면",
+    "img": "/img/rudolph/a0700_0.png"
   },{
-    "msg": "'2'번 주소의 집에",
-    "img": "/img/rudolph/house_20.png"
+    "msg": "'7'번 주소의 집에",
+    "img": "/img/rudolph/house_70.png"
   },{
     "msg": "3시이면",
     "img": "/img/rudolph/a0300_0.png"

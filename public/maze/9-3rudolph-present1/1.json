@@ -15,89 +15,53 @@
   ],
   "map": [
     "#########",
-    "##.#%..##",
-    "#..#%.###",
-    "#..#%.###",
-    "#..r&%%%#",
-    "###.%.###",
-    "#..#%..##",
-    "####%####",
+    "#...#..##",
+    "###%.#..#",
+    "#.r&%...#",
+    "#.#%#.#.#",
+    "##...#..#",
+    "#.##....#",
+    "#...#.#.#",
     "#########"
   ],
   "extra":[{
-    "x": 4,
-    "y": 4,
+    "x": 3,
+    "y": 3,
     "img": "clock_top",
     "contents" : [{
         "img": "a0100",
         "role": "item",
         "order": "if"
       },{
-        "img": "a0200",
+        "img": "a0400",
         "role": "item",
         "order": "else_if"
       },{
-        "img": "a0300",
+        "img": "a0800",
         "role": "item",
         "order": "else"
     }]
   },{
-    "x": 4,
-    "y": 3,
-    "img": "house_1",
-    "order": "if",
-    "useItem": true
-  },{
-    "x": 4,
+    "x": 3,
     "y": 2,
     "img": "house_1",
     "order": "if",
     "useItem": true
   },{
     "x": 4,
-    "y": 1,
-    "img": "house_1",
-    "order": "if",
-    "useItem": true
-  },{
-    "x": 5,
-    "y": 4,
-    "img": "house_2",
+    "y": 3,
+    "img": "house_4",
     "order": "else_if",
     "useItem": true
   },{
-    "x": 6,
+    "x": 3,
     "y": 4,
-    "img": "house_2",
-    "order": "else_if",
-    "useItem": true
-  },{
-    "x": 7,
-    "y": 4,
-    "img": "house_2",
-    "order": "else_if",
-    "useItem": true
-  },{
-    "x": 4,
-    "y": 5,
-    "img": "house_3",
-    "order": "else",
-    "useItem": true
-  },{
-    "x": 4,
-    "y": 6,
-    "img": "house_3",
-    "order": "else",
-    "useItem": true
-  },{
-    "x": 4,
-    "y": 7,
-    "img": "house_3",
+    "img": "house_8",
     "order": "else",
     "useItem": true
   }],
   "tutorial": [{
-    "msg": "루돌프를 코딩 마을 사람들에게 선물을 나누어 주어야 해요"
+    "msg": "루돌프는 코딩마을 사람들에게 선물을 나누어 주어야 해요"
   },{
     "msg": "마을에 있는 시계탑의 시간을 확인한 뒤",
     "img": "/img/rudolph/top0.png"
@@ -108,17 +72,17 @@
     "msg": "'1'번 주소의 집에",
     "img": "/img/rudolph/house_10.png"
   },{
-    "msg": "2시이면",
-    "img": "/img/rudolph/a0200_0.png"
+    "msg": "4시이면",
+    "img": "/img/rudolph/a0400_0.png"
   },{
-    "msg": "'2'번 주소의 집에",
-    "img": "/img/rudolph/house_20.png"
+    "msg": "'4'번 주소의 집에",
+    "img": "/img/rudolph/house_40.png"
   },{
-    "msg": "3시이면",
-    "img": "/img/rudolph/a0300_0.png"
+    "msg": "8시이면",
+    "img": "/img/rudolph/a0800_0.png"
   },{
-    "msg": "'3'번 주소의 집에",
-    "img": "/img/rudolph/house_30.png"
+    "msg": "'8'번 주소의 집에",
+    "img": "/img/rudolph/house_80.png"
   },{
     "msg": "선물을 나누어 주면 되요",
     "img": "/img/frog/gift0.png"
