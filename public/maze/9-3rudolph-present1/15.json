@@ -1,7 +1,7 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "score":1,
+  "score":3,
   "workspace": ["start","move_right","check","condition3_aClock123"],
   "toolbox": [
     "move_up",
