@@ -9,63 +9,106 @@
     "move_right",
     "move_left",
     "repeat",
-    "get_item",
-    "use_item",
-    "check",
-    "condition3_trash"
+    "check2",
+    "present",
+    "condition3_dClock"
   ],
   "map": [
     "########",
-    "##.....#",
-    "#d.#..##",
-    "#..#..##",
-    "#.#.&.##",
-    "###%%%##",
-    "#..#...#",
+    "#.r&...#",
+    "#%#.#%##",
+    "#.#.#.##",
+    "#%#%#%##",
+    "#.#%#.##",
+    "#%.%.%.#",
     "########"
   ],
   "extra":[{
-    "x": 4,
-    "y": 4,
-    "img": "trash",
+    "x": 3,
+    "y": 1,
+    "img": "clock_top",
     "contents" : [{
-        "img": "can",
-        "role": "item",
-        "order": "if"
-      },{
-        "img": "paper",
-        "role": "item",
-        "order": "else_if"
-      },{
-        "img": "bottle",
-        "role": "item",
-        "order": "else"
+        "if":["a1200","a1230","a0100","a0130"],
+        "elseif":["a0200","a0230","a0300","a0330"],
+        "else":["a0400","a0430","a0500","a0530","a0600"]
     }]
   },{
-    "x": 4,
-    "y": 5,
-    "img": "can_tc",
+    "x": 1,
+    "y": 2,
+    "img": "house_r",
     "order": "if",
     "useItem": true
   },{
-    "x": 4,
+    "x": 1,
+    "y": 4,
+    "img": "house_r",
+    "order": "if",
+    "useItem": true
+  },{
+    "x": 1,
+    "y": 6,
+    "img": "house_r",
+    "order": "if",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 4,
+    "img": "house_g",
+    "order": "else_if",
+    "useItem": true
+  },{
+    "x": 3,
     "y": 5,
-    "img": "paper_tc",
+    "img": "house_g",
+    "order": "else_if",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 6,
+    "img": "house_g",
     "order": "else_if",
     "useItem": true
   },{
     "x": 5,
-    "y": 5,
-    "img": "bottle_tc",
+    "y": 2,
+    "img": "house_y",
+    "order": "else",
+    "useItem": true
+  },{
+    "x": 5,
+    "y": 4,
+    "img": "house_y",
+    "order": "else",
+    "useItem": true
+  },{
+    "x": 5,
+    "y": 6,
+    "img": "house_y",
     "order": "else",
     "useItem": true
   }],
   "tutorial": [{
-    "msg": "코봇은 코딩마을을 청소해야해요"
+    "msg": "루돌프는 마을 사람들에게 선물을 나누어 주어야 해요"
   },{
-    "msg": "마을에 있는 쓰레기를 주워서 분리수거 종류를 확인한뒤",
-    "img": "/img/cobot/trash.png"
+    "msg": "마을에 있는 시계탑의 시간을 확인한 뒤",
+    "img": "/img/rudolph/top0.png"
   },{
-    "msg": "올바른 분리수거 쓰레기통에 집어넣어 보자"
+    "msg": "12:00~1:30 사이의 시간이라면"
+  },{
+    "msg": "빨간색 집에",
+    "img": "/img/rudolph/house_r0.png"
+  },{
+    "msg": "2:00~3:30 사이의 시간이라면"
+  },{
+    "msg": "초록색 집에",
+    "img": "/img/rudolph/house_g0.png"
+  },{
+    "msg": "4:00~6:00 사이의 시간이라면"
+  },{
+    "msg": "노락색 집에",
+    "img": "/img/rudolph/house_y0.png"
+  },{
+    "msg": "선물을 나누어 주면 돼요",
+    "img": "/img/frog/gift0.png"
   }]
 }
