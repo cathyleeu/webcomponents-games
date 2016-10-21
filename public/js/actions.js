@@ -1022,33 +1022,34 @@ Actions.prototype.conditioncheck3 = function(options, block, callback) {
     }
   } else if(options == "aClock" || options == "dClock"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
-
-    for(var i = foods.length-1; i>=0;i--){
-      if(tileInfo.order!=foods[i].order){
-          foods.splice(i,1);
+    this._splitObjects(tileInfo, function() {
+      for(var i = foods.length-1; i>=0;i--){
+        if(tileInfo.order!=foods[i].order){
+            foods.splice(i,1);
+        }
       }
-    }
-    character.hasItem = true;
-    //character.itemBitmap = tileInfo;
-    if(tileInfo.order == "if"){
-      if_block = block.getInputTargetBlock("if_statements");
-      setTimeout(function() {
-        block.removeSelect();
-        _this.run(if_block, callback);
-      }, 500);
-    }else if(tileInfo.order == "else_if"){
-      if_block = block.getInputTargetBlock("else_if_statements");
-      setTimeout(function() {
-        block.removeSelect();
-        _this.run(if_block, callback);
-      }, 500);
-    }else{
-      else_block = block.getInputTargetBlock("else_statements");
-      setTimeout(function() {
-        block.removeSelect();
-        _this.run(else_block, callback);
-      }, 500);
-    }
+      character.hasItem = true;
+      //character.itemBitmap = tileInfo;
+      if(tileInfo.order == "if"){
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else if(tileInfo.order == "else_if"){
+        if_block = block.getInputTargetBlock("else_if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        else_block = block.getInputTargetBlock("else_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      }
+    });
   }
 };
 
