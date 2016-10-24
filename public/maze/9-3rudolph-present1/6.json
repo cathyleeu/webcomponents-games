@@ -2,7 +2,7 @@
   "tile_size": 50,
   "render": "pixel",
   "score":2,
-  "workspace": ["start","move_right","check","condition3_aClock123"],
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -11,7 +11,7 @@
     "repeat",
     "check",
     "present",
-    "condition3_aClock123"
+    "condition3_aClock235"
   ],
   "map": [
     "#########",
