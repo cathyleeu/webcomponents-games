@@ -149,6 +149,20 @@
     ["짹스패로우의 갈림길", "/maze#!7-3jack-direction/index"],
     ["짹스패로우와 아이템", "/maze#!7-4jack-item/index"]
   ],
+  "5권&여름특별호&6권&7권": [
+    ["토드의 규칙찾기", "/maze#!5tode_pattern/index"],
+    ["라나의 선물하기", "/maze#!5lana_gift/index"],
+    ["라나와 토드의 선물준비", "/maze#!5_5-1present/index"],
+    ["지미와 장군이의 선물사기", "/maze#!5_5-2mart/index"],
+    ["인이의 돌잔치", "/maze#!5_5-3inparty/index"],
+    ["봄이와 보물상자", "/maze#!6-1bomi-chest/index"],
+    ["봄이의 먹이 구하기", "/maze#!6-23bomi-food/index"],
+    ["봄이와 횡단보도", "/maze#!6-4bomi-traffic/index"],
+    ["뺄셈 놀이", "/maze#!7-1jack-minus/index"],
+    ["짹스패로우와 먹이찾기", "/maze#!7-2jack-food/index"],
+    ["짹스패로우의 갈림길", "/maze#!7-3jack-direction/index"],
+    ["짹스패로우와 아이템", "/maze#!7-4jack-item/index"]
+  ],
   "8권": [
     ["딩봇의 10 만들기", "/maze#!8-1cobot-maketen/index"],
     ["딩봇과 99까지의 수", "/maze#!8-2cobot-99/index"],
