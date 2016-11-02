@@ -138,6 +138,24 @@
     ["지미와 장군이의 선물사기", "/maze#!5_5-2mart/index"],
     ["인이의 돌잔치", "/maze#!5_5-3inparty/index"]
   ],
+  "1권&2권&3권&4권": [
+    ["클릭연습", "/click"],
+    ["드래그앤드랍 연습", "/dragndrop"],
+    ["올챙이의 모험 1", "/maze#!story09/1"],
+    ["올챙이의 모험 2", "/maze#!story09/14"],
+    ["순차이동 [초급]", "/maze#!2frog/1"],
+    ["순차이동 [중급]", "/maze#!2frog/16"],
+    ["순차이동 [고급]", "/maze#!2frog/31"],
+    ["즐거운 우리집", "/maze#!3woong/index"],
+    ["덧셈 놀이", "/maze#!3woong-plus/index"],
+    ["가위바위보", "/maze#!3woong-cookie/index"],
+    ["쿠키 전달하기", "/maze#!3woong-item/index"],
+    ["쿠키 전달하기 - 심화", "/maze#!3woong-item-h/index"],
+    ["장군이의 집찾기", "/maze#!4jangoon-house/index"],
+    ["장군이의 심부름", "/maze#!4jangoon-mart/index"],
+    ["장군이의 집찾기 - 반복", "/maze#!4jangoon-house-r/index"],
+    ["장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"]
+  ],
   "6권": [
     ["봄이와 보물상자", "/maze#!6-1bomi-chest/index"],
     ["봄이의 먹이 구하기", "/maze#!6-23bomi-food/index"],
@@ -158,7 +176,7 @@
     ["봄이와 보물상자", "/maze#!6-1bomi-chest/index"],
     ["봄이의 먹이 구하기", "/maze#!6-23bomi-food/index"],
     ["봄이와 횡단보도", "/maze#!6-4bomi-traffic/index"],
-    ["뺄셈 놀이", "/maze#!7-1jack-minus/index"],
+    ["뺄셈 놀이", "/maze#!7-1jacminus/index"],
     ["짹스패로우와 먹이찾기", "/maze#!7-2jack-food/index"],
     ["짹스패로우의 갈림길", "/maze#!7-3jack-direction/index"],
     ["짹스패로우와 아이템", "/maze#!7-4jack-item/index"]
@@ -170,10 +188,10 @@
     ["코봇의 길안내", "/maze#!8-4cobot-guide/index"]
   ],
   "숙명키즈": [
-    ["루돌프와 시간1", "/maze#!9-1rudolph-clock1/index"],
-    ["루돌프와 시간2", "/maze#!9-2rudolph-clock2/index"],
-    ["루돌프와 선물1", "/maze#!9-3rudolph-present1/index"],
-    ["루돌프와 선물2", "/maze#!9-4rudolph-present2/index"]
+    ["딩봇의 10 만들기", "/maze#!8-1cobot-maketen/index"],
+    ["딩봇과 99까지의 수", "/maze#!8-2cobot-99/index"],
+    ["코봇과 분리수거", "/maze#!8-3cobot-trash/index"],
+    ["코봇의 길안내", "/maze#!8-4cobot-guide/index"]
   ],
   "코딩캠프":[
     ["연습문제","/maze#!2frog/1"],
