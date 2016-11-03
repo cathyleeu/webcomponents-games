@@ -66,7 +66,8 @@
     "img":"normal",
     "obstacle": false,
     "tutorial": [{
-      "msg": "먹이 1개 얻을 수 있어!",
+      "msg:ko": "먹이 1개 얻을 수 있어!",
+      "msg:en": "You can get a meal",
       "img": "/img/guide/normal.png"
     }]
   },  {
@@ -75,29 +76,36 @@
     "img":"hard",
     "obstacle": false,
     "tutorial": [{
-      "msg": "먹이 2개 얻을 수 있어!",
+      "msg:ko": "먹이 2개 얻을 수 있어!",
+      "msg:en": "You can get 2 meals",
       "img": "/img/guide/hard.png"
     }]
 
   }],
   "tutorial": [{
-    "msg": "참새 짹스패로우는 "
+    "msg:ko": "참새 짹스패로우는 ",
+    "msg:en": "Jack Sparrow "
   }, {
-    "msg": "아기새들을 위해서 먹이를 모아야 해요",
+    "msg:ko": "아기새들을 위해서 먹이를 모아야 해요",
+    "msg:en": "Have to save meals for children",
     "img": "/img/jsparrow/seed0.png"
   },{
-    "msg": "보통 난이도를 해결하면 먹이 1개를",
+    "msg:ko": "보통 난이도를 해결하면 먹이 1개를",
+    "msg:en": "If you solve normal level, You can get a meal",
     "img": "/img/guide/normal.png"
   },{
-    "msg": "어려운 난이도를 해결하면 먹이 2개를 얻을 수 있어요",
+    "msg:ko": "어려운 난이도를 해결하면 먹이 2개를 얻을 수 있어요",
+    "msg:en": "If you solve Hard level, You can get 2 meals",
     "img": "/img/guide/hard.png"
   },{
-    "msg": "먹이 15개를 모으고 아기새들에게 가보아요",
+    "msg:ko": "먹이 15개를 모으고 아기새들에게 가보아요",
+    "msg:en": "After save 15 meals and Go to children",
     "img": "/img/jsparrow/baby0.png",
     "x" : 27,
     "y" : 4
   },{
-    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play Coding",
     "x" : 8,
     "y" : 3
   }]
