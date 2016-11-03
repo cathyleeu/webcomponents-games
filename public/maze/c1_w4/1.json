@@ -1,0 +1,34 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "workspace": ["start","hello1"],
+  "toolbox": [
+    "hello2",
+    "hello3",
+    "hello4"
+  ],
+  "map": [
+    "#######",
+    "##.d.##",
+    "##...##",
+    "##...##",
+    "##...##",
+    "##.%.##",
+    "#######"
+  ],
+  "tutorial": [{
+    "msg:ko": "코스는 컴퓨터와 친구가 되고 싶어",
+    "msg:en": "Cos wants to be friends with Computer"
+  },{
+    "msg:ko": "컴퓨터에게 인사하면",
+    "msg:en": "Say hello ",
+    "img": "/img/c1_w4/computer.png"
+  },{
+    "msg:ko": "친구가 될 수 있어",
+    "msg:en": "make friends"
+  }],
+  "success": [{
+    "msg:ko": "성공! 코스와 컴퓨터는 친구가 되었어요! ",
+    "msg:en": "Success! Cos made Computer friend."
+  }]
+}

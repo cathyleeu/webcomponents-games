@@ -13,6 +13,38 @@ Blocks["start"] = {
   deletable: false,
   movable: false
 };
+Blocks["hello1"] = {
+  rgbColor: "#EE4E34",
+  message0: {
+    ko: "안녕",
+    en: "Hello"
+  },
+  action: ["hello", "step1"]
+};
+Blocks["hello2"] = {
+  rgbColor: "#EE4E34",
+  message0: {
+    ko: "나는",
+    en: "I am"
+  },
+  action: ["hello", "step2"]
+};
+Blocks["hello3"] = {
+  rgbColor: "#EE4E34",
+  message0: {
+    ko: "코스야",
+    en: "Cos."
+  },
+  action: ["hello", "step3"]
+};
+Blocks["hello4"] = {
+  rgbColor: "#EE4E34",
+  message0: {
+    ko: "반가워",
+    en: "Nice to meet you."
+  },
+  action: ["hello", "step4"]
+};
 Blocks["move_up"] = {
   rgbColor: "#EE4E34",
   message0: {

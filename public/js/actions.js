@@ -319,6 +319,43 @@ Actions.prototype.move = function(type, block, callback) {
   }
 };
 
+Actions.prototype.hello = function(type, block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      obstacles = this.canvas.obstacles,
+      spiders = this.canvas.spiders,
+      x_next = character.px,
+      y_next = character.py+1,
+      stepList = ["step1","step2","step3","step4"],
+      obj;
+
+  if(character.step){
+    var idx_pre = stepList.indexOf(character.step);
+    var idx_cur = stepList.indexOf(type);
+    if(idx_cur-idx_pre != 1){
+      callback("인사를 잘못했어요");
+      return;
+    }
+    character.step = type;
+  }else{
+    character.step = "step1";
+  }
+
+  var food = this._getCanvasObject(x_next, y_next, "food");
+  obj = this._getCanvasObject(x_next, y_next);
+  if(food) {
+    foods.splice(0,foods.length)
+    this.canvas.stage.update();
+    createjs.Sound.play("success");
+    callback();
+  }else{
+    this._moveCharacter(x_next, y_next, function() {
+      callback(obj);
+    });
+  }
+};
+
 Actions.prototype.rotate = function(type, block, callback) {
   var character = this.canvas.character,
       direct = character.direct,
