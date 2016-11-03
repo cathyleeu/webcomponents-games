@@ -216,12 +216,19 @@ public.get('/click', function *(next) {
 public.get('/click_history', function *(next) {
   yield this.render('click_history');
 });
+public.get('/c1_w2', function *(next) {
+  yield this.render('c1_w2');
+});
 
 public.get('/dragndrop', function *(next) {
   yield this.render('dragndrop');
 });
 public.get('/dragndrop_suwon', function *(next) {
   yield this.render('dragndrop_suwon');
+});
+
+public.get('/c1_w3', function *(next) {
+  yield this.render('c1_w3');
 });
 
 public.get('/maze', function *(next) {

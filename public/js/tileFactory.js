@@ -318,6 +318,18 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [0,1,0,2,0]
         };
       }
+      if(character.src.indexOf('cos') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: [9,10,9,11,9],
+          stand_r: 3,
+          walk_r: [3,4,3,5,3],
+          stand_d: 6,
+          walk_d: [6,7,6,8,6],
+          stand_l: 0,
+          walk_l: [0,1,0,2,0]
+        };
+      }
       for(var key in animations) {
         if($.isArray(animations[key])) {
           animations[key] = {

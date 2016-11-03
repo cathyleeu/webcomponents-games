@@ -1,0 +1,110 @@
+<style>
+#container {
+  position: relative;
+}
+
+.head {
+  position: relative;
+}
+
+.instruction {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+  background: #2C3E50;
+  color: white;
+}
+
+.hint {
+  position: relative;
+  height: 50px;
+  text-align: center;
+  background: #18BC9C;
+  color: white;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.workspace {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 600px; width: 400px;
+}
+.workspace .background {
+  height: 600px;
+  width: auto;
+  margin-left: 30px;
+  display: block;
+  float:left;
+}
+.sel-box {
+  position: absolute;
+  border:2px dashed transparent;
+  padding:10px;
+  height: 70px;
+  width: 70px;
+  top: 300px;
+  left: 295px;
+}
+.drink {
+  position: absolute;
+  top: 200px;
+  width: 200px;
+  height: auto;
+  margin-left: 400px;
+  display: block;
+  float:left;
+  visibility: hidden;
+}
+
+</style>
+<div id="container">
+  <div class="head">
+    <div class="instruction">자판기 놀이를 해봐요</div>
+    <div class="hint">음료수를 뽑기 위해서 돈을 넣어봐요!</div>
+  </div>
+  <div class="workspace">
+    <div class="sel-box"></div>
+    <img class="background" src="img/c1_w2/vm0.png"/>
+  </div>
+  <img class="drink" src="img/c1_w2/drink.jpg"/>
+</div>
+
+<script>
+  var step = 1;
+  var audio1 = new Audio('img/c1_w2/vm1.wav');
+  var audio2 = new Audio('img/c1_w2/vm2.mp3');
+  var audio3 = new Audio('img/c1_w2/vm3.wav');
+  $(".sel-box").click(function() {
+  	if(step==1){
+      audio1.play();
+      this.style.height = "270px";
+      this.style.width = "270px";
+      this.style.top = "40px";
+      this.style.left = "60px";
+      $(".hint").text('돈이 들어 갔아요! 음료수를 골라봐요!');
+      $(".background").attr("src","img/c1_w2/vm1.png");
+      step = 2;
+    }else if(step==2){
+      audio2.play();
+      this.style.height = "70px";
+      this.style.width = "220px";
+      this.style.top = "440px";
+      this.style.left = "80px";
+      $(".hint").text('음료수가 떨어졌어요! 음료수를 꺼내봐요!');
+      $(".background").attr("src","img/c1_w2/vm2.png");
+      step = 3;
+    }else{
+      audio3.play();
+      $(".hint").text('음료수를 얻었어요! 맛있게 먹어요!');
+      $(".background").attr("src","img/c1_w2/vm3.png");
+      $(".drink").css("visibility","visible")
+    }
+  });
+
+</script>
