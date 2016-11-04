@@ -221,7 +221,7 @@
     ["C : 짹스패로우와 먹이찾기", "/maze#!7-2jack-food/index"],
     ["C : 짹스패로우의 갈림길", "/maze#!7-3jack-direction/index"]
   ],
-  "키즈영문코딩데모": [
+  "키즈코딩영문데모": [
     ["A : 가위바위보", "/maze#!3woong-cookie/1"],
     ["A : 쿠키 전달하기", "/maze#!3woong-item-h/1"],
     ["B : 장군이의 집찾기", "/maze#!4jangoon-house-r/index"],
