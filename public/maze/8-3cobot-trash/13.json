@@ -42,7 +42,7 @@
         "order": "else"
     }]
   },{
-    "x": 4,
+    "x": 3,
     "y": 5,
     "img": "can_tc",
     "order": "if",
