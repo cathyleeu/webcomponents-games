@@ -75,7 +75,7 @@ $(function(){
                 return arr.concat(item.classes[key])
               }, []),
               eachClass = classes.map(function(className){
-                return "<option value=''>" + className + "</option>"
+                return "<option value='"+className+"'>" + className + "</option>"
               });
           $("#className").append(eachClass);
         }
@@ -87,5 +87,11 @@ $(function(){
       $("#code").append('<option value="'+item.code+'-'+item.school+'">'+item.school+'</option>');
     });
   });
+  $("#submit").click(function(){
+    var selectClass = $("select#className").val() || "";
+    if(selectClass == ""){
+      alert("원을 선택해 주세요.");
+    }
+  })
 });
 </script>
