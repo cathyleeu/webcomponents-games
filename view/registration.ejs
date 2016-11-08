@@ -39,8 +39,10 @@
   <div class="col-md-4">
     <select id="code" name="code" class="form-control input-md">
       <option value="">== 원 선택 ==</option>
-      <option value="3c2c0-데모유치원">데모유치원</option>
-
+      <option value="3c2c0-이레유치원">이레유치원</option>
+      <option value="1e1e2-경희과학자연유치원">경희과학자연유치원</option>
+      <option value="2b36c-와튼킨디엘리">와튼킨디엘리</option>
+      <option value="323e6-러닝서초어학학원">러닝서초어학학원</option>
     </select>
   </div>
 </div>
@@ -72,7 +74,16 @@ $("#code").change(function(e) {
   if(code.slice(0, 5) == "3c2c0") {
     // 이레유치원
     options.push("백옥반", "진주반", "실버반");
-  } 
+   }  else if(code.slice(0, 5) == "1e1e2") {
+   // 경희유치원
+     options.push("슈바이처", "다윈");
+   } else if(code.slice(0, 5) == "323e6") {
+     // 서초러닝트리
+     options.push("Afterschool 코딩반");
+   } else if(code.slice(0, 5) == "2b36c") {
+     // 와튼킨디엘리
+     options.push("Purple", "Navy");
+   }
   $("#className").html("");
   options.forEach(function(item) {
     $("#className").append("<option>" + item + "</option>");
