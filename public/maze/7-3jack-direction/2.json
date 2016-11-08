@@ -39,11 +39,14 @@
     "img": "bam"
   }],
   "tutorial": [{
-    "msg": "참새 짹스패로우는 먹이를 찾고 싶어"
+    "msg:ko": "참새 짹스패로우는 먹이를 찾고 싶어",
+    "msg:en": "Jack Sparrow want to find seed!"
   },{
-    "msg": "표시판에서 먹이로 가는 안전한 길을 확인하고",
+    "msg:ko": "표시판에서 먹이로 가는 안전한 길을 확인하고",
+    "msg:en": "Check the safe course from the board",
     "img": "/img/jsparrow/board0.png"
   },{
-    "msg": "<만약에~아니라면> 조건 블록을 사용하여 먹이 위치로 이동해보자!"
+    "msg:ko": "<만약에~아니라면> 조건 블록을 사용하여 먹이 위치로 이동해보자!",
+    "msg:en": "Let's go to where has seed using If ~ Else block"
   }]
 }
