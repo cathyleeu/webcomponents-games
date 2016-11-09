@@ -219,6 +219,9 @@ public.get('/click_history', function *(next) {
 public.get('/c1_w2', function *(next) {
   yield this.render('c1_w2');
 });
+public.get('/b1_w3', function *(next) {
+  yield this.render('b1_w3');
+});
 
 public.get('/dragndrop', function *(next) {
   yield this.render('dragndrop');
