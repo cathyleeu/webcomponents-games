@@ -195,7 +195,8 @@ function init() {
       kidscoding.workspace.updateToolbox('<xml>' + toolbox + '</xml>');
     }
   }
-  kidscoding.workspace.addChangeListener(blockLimitsHandler);
+  // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
+  // kidscoding.workspace.addChangeListener(blockLimitsHandler);
 
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);

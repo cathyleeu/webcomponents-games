@@ -23,12 +23,14 @@ KidsCoding = function() {
     return "<block " + str + "><next>" + this.createXml(blocks.slice(1)) + "</next></block>";
   };
   var labelInit = Blockly.FieldLabel.prototype.init;
+  // 텍스트 라벨의 위치 조정
   Blockly.FieldLabel.prototype.init = function() {
-    // 텍스트 라벨의 위치 조정
     labelInit.call(this);
     var y = +this.textElement_.getAttribute("y");
     this.textElement_.setAttribute("y", y + 5);
   };
+  // 일부 태블릿에서 블럭이 움직이지 않는 현상 수정
+  Blockly.longStart_ = function() {};
 };
 KidsCoding.prototype = {
 
@@ -41,6 +43,9 @@ KidsCoding.prototype = {
         lang = store.get("lang") || "ko";
     this.blockLimits = {};
     $.each(Blocks, function(name, options) {
+      if(name != "start" && toolbox.indexOf(name) < 0) {
+        return;
+      }
       if(typeof options.message0 == "object") {
         options.message0 = options.message0[lang];
       }
@@ -107,7 +112,7 @@ KidsCoding.prototype = {
         maxScale: 1.2,
         minScale: 0.6,
         scaleSpeed: 1.2
-      },
+      }
     });
     if(!workspace) {
       workspace = ["start"];
