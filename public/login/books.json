@@ -196,8 +196,8 @@
   "10권": [
     ["핑핑이와 덧셈과 뺄셈", "/maze#!10-1pingping-plusminus/index"],
     ["핑핑이와 바다사자1", "/maze#!10-2pingping-while1/index"],
-    ["핑핑이와 바다사자2", "/maze#!10-2pingping-while2/index"],
-    ["핑핑이와 얼음구멍", "/maze#!10-2pingping-while3/index"]
+    ["핑핑이와 바다사자2", "/maze#!10-3pingping-while2/index"],
+    ["핑핑이와 얼음구멍", "/maze#!10-4pingping-while3/index"]
   ],
   "숙명키즈": [
     ["딩봇의 10 만들기", "/maze#!8-1cobot-maketen/index"],
