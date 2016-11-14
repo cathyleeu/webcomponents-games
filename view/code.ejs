@@ -78,6 +78,18 @@ if(location.hash) {
     }, []);
     classes.forEach(function(className) {
       var button = '<a href="/login#' + code + '-' + className + '" class="btn btn-lg btn-default">' + className + '</a>';
+      if(code == "a819b") {
+        var book = Object.keys(info.classes).filter(function(item) {
+          return info.classes[item].indexOf(className) >= 0;
+        })[0];
+        // TODO: 시연용 페이지에서 로그인 건너뛸때 가정학습 기능은 지원하지 않음
+        // book = kids ? tokens[1] || "가정심화학습": tokens[0];
+        var tokens = book.split(":"),
+            kids = false;
+        book = tokens[0];
+
+        button = '<a href="/book#' + code + '-' + className + '-' + book + '" class="btn btn-lg btn-default">' + className + '</a>';
+      }
       $(button).appendTo("#classes");
     });
 

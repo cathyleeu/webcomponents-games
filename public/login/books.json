@@ -217,11 +217,15 @@
     ["엘리베이터 놀이", "/c1_w2"],
     ["끌어다 놓기 연습", "/dragndrop"]
   ],
-  "키즈코딩데모": [
+  "데모A레벨": [
     ["A : 가위바위보", "/maze#!3woong-cookie/1"],
-    ["A : 쿠키 전달하기", "/maze#!3woong-item-h/1"],
+    ["A : 쿠키 전달하기", "/maze#!3woong-item-h/1"]
+  ],
+  "데모B레벨": [
     ["B : 장군이의 집찾기", "/maze#!4jangoon-house-r/index"],
-    ["B : 장군이의 심부름", "/maze#!4jangoon-mart-r/index"],
+    ["B : 장군이의 심부름", "/maze#!4jangoon-mart-r/index"]
+  ],
+  "데모C레벨": [
     ["C : 짹스패로우와 먹이찾기", "/maze#!7-2jack-food/index"],
     ["C : 짹스패로우의 갈림길", "/maze#!7-3jack-direction/index"]
   ],
