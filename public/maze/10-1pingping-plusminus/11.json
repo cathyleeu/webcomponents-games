@@ -1,0 +1,31 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.ipimf.#",
+    "#########",
+    "#o.....i#",
+    "#.......#",
+    "#...d...#",
+    "#.......#",
+    "#%.....j#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 7,
+    "img":"n7"
+  }],
+  "tutorial": [{
+    "msg": "4 + 4 - 1 = ?"
+  }]
+}

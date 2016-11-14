@@ -1195,6 +1195,27 @@ Actions.prototype.condition = function(type, block, callback) {
     _this.run(child, callback);
   }, 500);
 };
+Actions.prototype.condition_nodirentio = function(type, block, callback) {
+  var character = this.canvas.character,
+      isUpIndex = type == "no_up" ? -1 : 0,
+      isDownIndex = type == "no_down" ? 1 : 0,
+      isLeftIndex = type == "no_left" ? -1 : 0,
+      isRigthIndex = type == "no_right" ? 1 : 0,
+      idx = isLeftIndex + isRigthIndex;
+      idy = isUpIndex + isDownIndex;
+      x_next = character.px + idx,
+      y_next = character.py + idy,
+      tile = this.map[y_next][x_next],
+      move_forward = tile == "." || tile == ")" || tile == "%",
+      if_block = block.getInputTargetBlock("if_statements"),
+      else_block = block.getInputTargetBlock("else_statements"),
+      child = move_forward ? else_block : if_block,
+      _this = this;
+  setTimeout(function() {
+    block.removeSelect();
+    _this.run(child, callback);
+  }, 100);
+};
 
 Actions.prototype.repeat = function(type, block, callback) {
   var character = this.canvas.character,

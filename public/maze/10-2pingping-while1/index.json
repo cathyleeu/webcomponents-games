@@ -1,0 +1,131 @@
+{
+  "type": "world",
+  "view_size": 10,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".######################.",
+    "###.####.%#..#.#..###.%#",
+    "#.##%.%..#.e.#..%...%#.#",
+    "#.#%.#...##..#...%...#.#",
+    "#.#.....#.#..##..##....#",
+    "#.....#...............##",
+    "#.#.##.u...##...%#####%#",
+    "####.....#.#...#..%....#",
+    "#......#..##....#%..#..#",
+    ".######################."
+  ],
+  "extra": [{
+    "x": 3,
+    "y": 3,
+    "link": "10-2pingping-while1/1"
+  },{
+    "x": 4,
+    "y": 2,
+    "link": "10-2pingping-while1/2"
+  },{
+    "x": 6,
+    "y": 2,
+    "link": "10-2pingping-while1/3"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "10-2pingping-while1/4"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "10-2pingping-while1/5"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "10-2pingping-while1/6"
+  },{
+    "x": 20,
+    "y": 2,
+    "link": "10-2pingping-while1/7"
+  },{
+    "x": 22,
+    "y": 1,
+    "link": "10-2pingping-while1/8"
+  },{
+    "x": 16,
+    "y": 6,
+    "link": "10-2pingping-while1/9"
+  },{
+    "x": 18,
+    "y": 7,
+    "link": "10-2pingping-while1/10"
+  },{
+    "x": 17,
+    "y": 8,
+    "link": "10-2pingping-while1/11"
+  },{
+    "x": 22,
+    "y": 6,
+    "link": "10-2pingping-while1/12"
+  },{
+    "x": 11,
+    "y": 2,
+    "img": "egg",
+    "link": "10-3pingping-while2/index",
+    "min_score": 18
+  },  {
+    "x": 7,
+    "y": 8,
+    "img": "question",
+    "obstacle": false,
+    "tutorial": [
+       {
+      "msg": "빨간색 글자 표지판 : 퐁퐁이와 3번 만날 수 있습니다. 매우 어렵습니다.",
+      "img": "/img/guide/hard.png"
+    }, {
+      "msg": "노란색 글자 표지판 : 퐁퐁이와 2번 만날 수 있습니다.",
+      "img": "/img/guide/normal.png"
+    }, {
+      "msg": "초록색 글자 표지판 : 퐁퐁이와 1번 만날 수 있습니다. 다소 쉽습니다.",
+      "img": "/img/guide/easy.png"
+    }]
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "easy",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "퐁퐁이와 1번 만날 수 있어!",
+      "img": "/img/guide/easy.png"
+    }]
+
+  },  {
+    "x": 13,
+    "y": 4,
+    "img": "normal",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "퐁퐁이와 2번 만날 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 12,
+    "y": 6,
+    "img": "hard",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "퐁퐁이와 3번 만날 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+}],
+  "tutorial": [{
+    "msg": "사냥에서 돌아온 핑핑이는 "
+  }, {
+    "msg": "바다 사자를 피해서",
+    "img": "/img/pingping/sealion.png"
+  }, {
+    "msg": "퐁퐁이에게 먹이를 전달해야",
+    "img": "/img/pingping/pongpong.png"
+  }, {
+    "msg": "퐁퐁이에게  18번 먹이를 나누어주고 알에게 이동하자",
+    "img": "/img/pingping/egg.png"
+  }]
+}
