@@ -417,6 +417,256 @@ Blocks['condition_ifMoveRight'] = {
   }],
   action: ["condition", "if_move_right"]
 };
+Blocks['repeat_until_pongpong'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "퐁퐁이를 만날 때까지 반복",
+    en: "Repeat Until meeting Pongpong"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  action: ["repeat", "repeat_until"]
+};
+Blocks['repeat_until_friend'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "친구들를 만날 때까지 반복",
+    en: "Repeat Until meeting friend"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  action: ["repeat", "repeat_until"]
+};
+Blocks['condition_ifsealion_up'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "위에 %1 O 라면",
+    en: "If up-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "위에 %1 X 라면",
+    en: "Else"
+  },
+  args2: [
+    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_up"]
+};
+Blocks['condition_ifsealion_down'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "아래에 %1 O 라면",
+    en: "If down-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아래에 %1 X 라면",
+    en: "Else"
+  },
+  args2: [
+    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_down"]
+};
+Blocks['condition_ifsealion_left'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "왼쪽에 %1 O 라면",
+    en: "If left-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "왼쪽에 %1 X 라면",
+    en: "Else"
+  },
+  args2: [
+    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_left"]
+};
+Blocks['condition_ifsealion_right'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "오른쪽에 %1 O 라면",
+    en: "If right-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "오른쪽에 %1 X 라면",
+    en: "Else"
+  },
+  args2: [
+    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_right"]
+};
+Blocks['condition_ificehole_up'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "위에 %1 O 라면",
+    en: "If up-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "위에 %1 X 라면",
+    en: "Else"
+  },
+  args2: [
+    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_up"]
+};
+Blocks['condition_ificehole_down'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "아래에 %1 O 라면",
+    en: "If down-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아래에 %1 X 라면",
+    en: "Else"
+  },
+  args2: [
+    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_down"]
+};
+Blocks['condition_ificehole_left'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "왼쪽에 %1 O 라면",
+    en: "If left-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "왼쪽에 %1 X 라면",
+    en: "Else"
+  },
+  args2: [
+    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_left"]
+};
+Blocks['condition_ificehole_right'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "오른쪽에 %1 O 라면",
+    en: "If right-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "오른쪽에 %1 X 라면",
+    en: "Else"
+  },
+  args2: [
+    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_right"]
+};
 Blocks['condition_foodget'] = {
   rgbColor: "#E11376",
   message0: {

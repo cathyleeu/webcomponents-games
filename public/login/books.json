@@ -187,6 +187,18 @@
     ["코봇과 분리수거", "/maze#!8-3cobot-trash/index"],
     ["코봇의 길안내", "/maze#!8-4cobot-guide/index"]
   ],
+  "9권": [
+    ["루돌프와 시간1", "/maze#!9-1rudolph-clock1/index"],
+    ["루돌프와 시간2", "/maze#!9-2rudolph-clock2/index"],
+    ["루돌프와 선물1", "/maze#!9-3rudolph-present1/index"],
+    ["루돌프와 선물2", "/maze#!9-4rudolph-present2/index"]
+  ],
+  "10권": [
+    ["핑핑이와 덧셈과 뺄셈", "/maze#!10-1pingping-plusminus/index"],
+    ["핑핑이와 바다사자1", "/maze#!10-2pingping-while1/index"],
+    ["핑핑이와 바다사자2", "/maze#!10-2pingping-while2/index"],
+    ["핑핑이와 얼음구멍", "/maze#!10-2pingping-while3/index"]
+  ],
   "숙명키즈": [
     ["딩봇의 10 만들기", "/maze#!8-1cobot-maketen/index"],
     ["딩봇과 99까지의 수", "/maze#!8-2cobot-99/index"],
@@ -214,7 +226,7 @@
     ["인사하기 연습", "/maze#!c1_w4/1"]
   ],
   "B레벨 1권": [
-    ["엘리베이터 놀이", "/c1_w2"],
+    ["엘리베이터 놀이", "/b1_w3"],
     ["끌어다 놓기 연습", "/dragndrop"]
   ],
   "데모A레벨": [
