@@ -41,6 +41,9 @@ KidsCoding.prototype = {
   initBlockly: function(toolbox, workspace) {
     var _this = this,
         lang = store.get("lang") || "ko";
+    if(!workspace) {
+      workspace = ["start"];
+    }
     this.blockLimits = {};
     $.each(Blocks, function(name, options) {
       if(name != "start" && toolbox.indexOf(name) < 0 && workspace.indexOf(name) < 0) {
@@ -114,9 +117,6 @@ KidsCoding.prototype = {
         scaleSpeed: 1.2
       }
     });
-    if(!workspace) {
-      workspace = ["start"];
-    }
     var startblock = '<xml>' + this.createXml(workspace) + '</xml>';
   	Blockly.Xml.domToWorkspace(this.workspace,$(startblock).get(0));
   }
