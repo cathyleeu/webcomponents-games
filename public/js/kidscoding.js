@@ -43,7 +43,7 @@ KidsCoding.prototype = {
         lang = store.get("lang") || "ko";
     this.blockLimits = {};
     $.each(Blocks, function(name, options) {
-      if(name != "start" && toolbox.indexOf(name) < 0) {
+      if(name != "start" && toolbox.indexOf(name) < 0 && workspace.indexOf(name) < 0) {
         return;
       }
       if(typeof options.message0 == "object") {
