@@ -21,12 +21,13 @@
     "#..#####"
   ],
   "tutorial": [{
-    "msg": "사냥에서 돌아온 핑핑이는 "
+    "msg": "사냥에서 돌아온 핑핑이는 ",
+    "img": "/img/pingping/pingping0.png"
   },{
     "msg": "무서운 바다사자를 피해서",
-    "img": "/img/pingping/sealion.png"
+    "img": "/img/pingping/sealion0.png"
   },{
     "msg": "퐁퐁이에게 먹이를 전달해야해",
-    "img": "/img/pingping/pongpong.png"
+    "img": "/img/pingping/pongpong0.png"
   }]
 }
