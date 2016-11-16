@@ -105,7 +105,8 @@
 
   }],
   "tutorial": [{
-    "msg": "팽귄 핑핑이는"
+    "msg": "팽귄 핑핑이는",
+    "img": "/img/pingping/pingping0.png"
   }, {
     "msg": "더하기 빼기 문제를 풀면"
   }, {
@@ -119,7 +120,7 @@
     "img": "/img/guide/hard.png"
   },{
     "msg": "알를 20점 모으고 퐁퐁에게 가요",
-    "img": "/img/pingping/pongpong.png",
+    "img": "/img/pingping/pongpong0.png",
     "x" : 27,
     "y" : 4
   },{

@@ -54,16 +54,17 @@
     "min_score": 8
   }],
   "tutorial": [{
-    "msg": "사냥에서 돌아온 핑핑이는 "
+    "msg": "사냥에서 돌아온 핑핑이는 ",
+    "img": "/img/pingping/pingping0.png"
   }, {
     "msg": "차가운 얼음 구덩이를를 피해서",
-    "img": "/img/pingping/icehole.png"
+    "img": "/img/pingping/icehole0.png"
   }, {
     "msg": "친구들에게 먹이를 전달해야",
-    "img": "/img/pingping/pongpong.png"
+    "img": "/img/pingping/pongpong0.png"
   }, {
     "msg": "친구들에게  8번 먹이를 나누어주고 아기 팽귄에게 이동하자",
-    "img": "/img/pingping/baby.png",
+    "img": "/img/pingping/baby0.png",
     "x" : 27,
     "y" : 4
   },{

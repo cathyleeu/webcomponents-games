@@ -22,7 +22,8 @@
     "ppppp%.#"
   ],
   "tutorial": [{
-    "msg": "사냥에서 돌아온 핑핑이는 "
+    "msg": "사냥에서 돌아온 핑핑이는 ",
+    "img": "/img/pingping/pingping0.png"
   },{
     "msg": "차가운 얼음 구덩이를 피해서",
     "img": "/img/pingping/icehole.png"

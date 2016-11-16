@@ -42,10 +42,11 @@
     "img": "egg"
   }],
   "tutorial": [{
-    "msg": "핑핑이는 퐁퐁이에게 충분한 먹이를 주었어요"
+    "msg": "핑핑이는 퐁퐁이에게 충분한 먹이를 주었어요",
+    "img": "/img/pingping/fish0.png"
   },{
     "msg": "핑핑이와 퐁퐁이는 새끼팽귄과 알을 잘 보살피게 되었어요",
-    "img": "/img/pingping/baby.png"
+    "img": "/img/pingping/baby0.png"
   },{
     "msg": "키즈코딩 10권의 모든 문제를 해결했어요"
   },{
