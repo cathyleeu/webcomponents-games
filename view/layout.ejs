@@ -7,9 +7,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <title><%- locals.title ? title : "키즈코딩" %></title>
+  <title><%- locals.title ? title : "키즈씽킹" %></title>
   <link rel="stylesheet" href="/components/jquery-ui/themes/base/jquery-ui.min.css">
   <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+
+
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-starturl" content="/code/<?=manifest?>">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/homescreen196x196.png"> <!--주소창 이미지-->
+  <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/img/homescreen196x196.png"> <!--사파리에서 저장할 때 -->
+  <meta name="msapplication-navbutton-color" content="#18bc9c">
+  <meta name="apple-mobile-web-app-title" content="키즈씽킹">
+  <meta name="application-name" content="키즈씽킹">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- startbootstrap-freelancer -->
   <link rel="stylesheet" href="/css/freelancer.css">
