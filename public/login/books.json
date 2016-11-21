@@ -210,10 +210,10 @@
     ["핑핑이와 얼음구멍", "/maze#!10-4pingping-while3/index"]
   ],
   "숙명키즈": [
-    ["딩봇의 10 만들기", "/maze#!8-1cobot-maketen/index"],
-    ["딩봇과 99까지의 수", "/maze#!8-2cobot-99/index"],
-    ["코봇과 분리수거", "/maze#!8-3cobot-trash/index"],
-    ["코봇의 길안내", "/maze#!8-4cobot-guide/index"]
+    ["핑핑이와 덧셈과 뺄셈", "/maze#!10-1pingping-plusminus/index"],
+    ["핑핑이와 바다사자1", "/maze#!10-2pingping-while1/index"],
+    ["핑핑이와 바다사자2", "/maze#!10-3pingping-while2/index"],
+    ["핑핑이와 얼음구멍", "/maze#!10-4pingping-while3/index"]
   ],
   "코딩캠프":[
     ["연습문제","/maze#!2frog/1"],
