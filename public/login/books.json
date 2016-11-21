@@ -181,6 +181,16 @@
     ["짹스패로우의 갈림길", "/maze#!7-3jack-direction/index"],
     ["짹스패로우와 아이템", "/maze#!7-4jack-item/index"]
   ],
+  "8권&9권":[
+    ["딩봇의 10 만들기", "/maze#!8-1cobot-maketen/index"],
+    ["딩봇과 99까지의 수", "/maze#!8-2cobot-99/index"],
+    ["코봇과 분리수거", "/maze#!8-3cobot-trash/index"],
+    ["코봇의 길안내", "/maze#!8-4cobot-guide/index"],
+    ["루돌프와 시간1", "/maze#!9-1rudolph-clock1/index"],
+    ["루돌프와 시간2", "/maze#!9-2rudolph-clock2/index"],
+    ["루돌프와 선물1", "/maze#!9-3rudolph-present1/index"],
+    ["루돌프와 선물2", "/maze#!9-4rudolph-present2/index"]
+  ],
   "8권": [
     ["딩봇의 10 만들기", "/maze#!8-1cobot-maketen/index"],
     ["딩봇과 99까지의 수", "/maze#!8-2cobot-99/index"],
