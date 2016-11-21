@@ -153,8 +153,12 @@
           className = hash.split("-")[1],
           kids = (hash.split("-")[2] || "") == "kids",
           yearmonth = info.date,
-          imgs = getImgs(yearmonth, code, className);
+          imgs = getImgs(yearmonth, code, className),
           //학급 영어이름 분리해주는 코드
+          levelLogin = Object.keys(info.classes).filter(function(item) {
+            return info.classes[item].indexOf(className) >= 0;
+          })[0];
+          levelLogin = levelLogin.split("-")[0];
       if(names[info.school + "-" + className]) {
         names = names[info.school + "-" + className]
       } else {
@@ -166,14 +170,16 @@
         $(button).appendTo("#names");
       });
 
-      if(level["default"]){
+      // if(level[booklevel+"레벨"]){
+      if(level[levelLogin+"레벨"]) {
+        level = level[levelLogin+"레벨"];
+      } else {
         level = level["default"];
       }
       level.forEach(function(level_pw, index) {
         var img = '<img class="character" data-img="'+(index+1)+'" src="'+level_pw+'"/>';
         $(img).appendTo("#characters");
       });
-      // <img class="character" src="img/login/07.png" data-img="07"/>
 
       $("#login").click(function(e) {
         if($("#characters .selected").length == 0 || $("#names .selected").length == 0) {
