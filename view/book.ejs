@@ -123,10 +123,9 @@
           info = url.filter(function(item) {
             return item.code == code;
           })[0];
-      if(book == 'A'){ book = 'A-'+ hash.split("-")[3]; }
-       else if (book == 'B') { book = 'B-'+ hash.split("-")[3]; }
-       else if (book == 'C') { book = 'C-'+ hash.split("-")[3]; }
-       else { book = book; }
+      if(book == "A" || book == "B" || book == "C") {
+        book = book + "-" + hash.split("-")[3];
+      }
       if(!info) {
         alert("잘못된 경로로 접근하였습니다.");
         location.href = "/";

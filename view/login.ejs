@@ -168,12 +168,7 @@
         $(button).appendTo("#names");
       });
 
-      if(level[levelLogin+"레벨"]) {
-        level = level[levelLogin+"레벨"];
-      } else {
-        level = level["default"];
-      }
-      
+      level = level[levelLogin] || level["default"];
       level.forEach(function(level_pw, index) {
         var img = '<img class="character" data-img="'+(index+1)+'" src="'+level_pw+'"/>';
         $(img).appendTo("#characters");
