@@ -50,19 +50,6 @@
                 </div>
                 <h3>2. 자신의 캐릭터를 선택하세요</h3>
                 <div id="characters">
-                  <img class="character" src="img/login/01.png" data-img="01"/>
-                  <img class="character" src="img/login/02.png" data-img="02"/>
-                  <img class="character" src="img/login/03.png" data-img="03"/>
-                  <img class="character" src="img/login/04.png" data-img="04"/>
-                  <img class="character" src="img/login/05.png" data-img="05"/>
-                  <img class="character" src="img/login/06.png" data-img="06"/>
-                  <img class="character" src="img/login/07.png" data-img="07"/>
-                  <img class="character" src="img/login/08.png" data-img="08"/>
-                  <img class="character" src="img/login/09.png" data-img="09"/>
-                  <img class="character" src="img/login/10.png" data-img="10"/>
-                  <img class="character" src="img/login/11.png" data-img="11"/>
-                  <img class="character" src="img/login/12.png" data-img="12"/>
-                  <img class="character" src="img/login/13.png" data-img="13"/>
                 </div>
                 <button id="login" class="btn btn-lg btn-outline" style="width:140px;height:60px">로그인</button>
             </div>
@@ -129,7 +116,8 @@
 <script>
   $(function() {
     var d1 = $.Deferred(),
-        d2 = $.Deferred();
+        d2 = $.Deferred(),
+        d3 = $.Deferred();
     $.get("login/url.json", function(url) {
       var hash = decodeURI(location.hash).slice(1),
           code = hash.split("-")[0],
@@ -148,6 +136,9 @@
     $.get("login/names.json", function(names) {
       d2.resolve(names);
     });
+    $.get("login/level_pw.json", function(level) {
+      d3.resolve(level);
+    });
     $("#names").click('button', function(e) {
       $("#names button").removeClass("selected");
       $(e.target).addClass("selected");
@@ -156,13 +147,15 @@
       $("#characters img").removeClass("selected");
       $(e.target).addClass("selected");
     });
-    $.when(d1, d2).done(function(info, names) {
+    $.when(d1, d2, d3).done(function(info, names, level) {
       var hash = decodeURI(location.hash).slice(1),
           code = hash.split("-")[0],
           className = hash.split("-")[1],
           kids = (hash.split("-")[2] || "") == "kids",
           yearmonth = info.date,
-          imgs = getImgs(yearmonth, code, className);
+          levelLogin = Object.keys(info.classes).filter(function(item) {
+            return info.classes[item].indexOf(className) >= 0;
+          })[0].split("-")[0];
 
       if(names[info.school + "-" + className]) {
         names = names[info.school + "-" + className]
@@ -174,6 +167,13 @@
         var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning">' + (index+1) + " : " + ($.isArray(name) ? name[1] : name) + '</button>';
         $(button).appendTo("#names");
       });
+
+      level = level[levelLogin] || level["default"];
+      level.forEach(function(level_pw, index) {
+        var img = '<img class="character" data-img="'+(index+1)+'" src="'+level_pw+'"/>';
+        $(img).appendTo("#characters");
+      });
+      var imgs = getImgs(yearmonth, code, className, level);
 
       $("#login").click(function(e) {
         if($("#characters .selected").length == 0 || $("#names .selected").length == 0) {

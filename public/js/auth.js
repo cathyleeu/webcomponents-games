@@ -1,4 +1,4 @@
-function getImgs(yearmonth, code, className) {
+function getImgs(yearmonth, code, className, level) {
   var year = yearmonth.slice(0, 4),
       month = yearmonth.slice(4, 6),
       day = yearmonth.slice(6, 8) || "01",
@@ -7,13 +7,14 @@ function getImgs(yearmonth, code, className) {
       sum = Number(year) + Number(month) + Number(day) + 16,
       imgs = [],
       num;
+
   for(var i = 0; i < 40; i++) {
     if(i % 2) {
       sum += Number(key.charAt(i)) + Number(key.charAt(i+1));
     } else {
       sum -= Number(key.charAt(i)) + Number(key.charAt(i+1));
     }
-    sum = Math.abs(sum) % 13;
+    sum = Math.abs(sum) % level.length;
     num = sum + 1;
     if(num < 10) {
       num = '0' + num;
