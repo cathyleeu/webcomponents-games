@@ -25,12 +25,3 @@ function getImgs(yearmonth, code, className, level) {
   }
   return imgs;
 }
-
-// level.length
-
-// if(levelLogin == 'A'){ levelLogin = 'A레벨' }
-//   else if (levelLogin == 'B') { levelLogin = 'B레벨' }
-//   else if (levelLogin == 'C') { levelLogin = 'C레벨' }
-//   else { levelLogin = 'default' }
-
-// Math.floor(Math.random()*(Object.keys(level.default).length))+1;
