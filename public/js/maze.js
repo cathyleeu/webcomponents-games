@@ -553,6 +553,9 @@ function addEvents() {
     });
   }
   $(document).keydown(handleMove);
+  $("#virtualKeypad").on("touchstart", function(e) {
+    e.stopPropagation();
+  });
   $("#virtualKeypad .key").click(handleMove);
 
   $("#modal .tutorial").click(function handleClick(e) {
