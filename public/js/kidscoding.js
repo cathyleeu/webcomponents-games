@@ -22,13 +22,13 @@ KidsCoding = function() {
     }).join(" ");
     return "<block " + str + "><next>" + this.createXml(blocks.slice(1)) + "</next></block>";
   };
-  var labelInit = Blockly.FieldLabel.prototype.init;
-  // 텍스트 라벨의 위치 조정
-  Blockly.FieldLabel.prototype.init = function() {
-    labelInit.call(this);
-    var y = +this.textElement_.getAttribute("y");
-    this.textElement_.setAttribute("y", y + 5);
-  };
+  // var labelInit = Blockly.FieldLabel.prototype.init;
+  // // 텍스트 라벨의 위치 조정
+  // Blockly.FieldLabel.prototype.init = function() {
+  //   labelInit.call(this);
+  //   var y = +this.textElement_.getAttribute("y");
+  //   this.textElement_.setAttribute("y", y + 5);
+  // };
   // 일부 태블릿에서 블럭이 움직이지 않는 현상 수정
   Blockly.longStart_ = function() {};
 };
@@ -68,7 +68,7 @@ KidsCoding.prototype = {
         options.message5 = options.message5[lang];
       }
       options = $.extend({
-        colour: 0,
+        // colour: 0,
         message0: "",
         deletable: true,
         movable: true,
@@ -83,6 +83,9 @@ KidsCoding.prototype = {
       }
       Blockly.Blocks[name] = {
         init: function() {
+          if(options.rgbColor) {
+            options.colour = options.rgbColor;
+          }
           this.jsonInit(options);
           if(options.id) {
             this.id = options.id;
@@ -90,9 +93,6 @@ KidsCoding.prototype = {
           this.setDeletable(!!options.deletable);
           this.setMovable(!!options.movable);
           this.contextMenu = false;
-          if(options.rgbColor) {
-            this.colour_ = options.rgbColor;
-          }
         }
       };
     });
@@ -106,7 +106,7 @@ KidsCoding.prototype = {
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
       toolbox: '<xml>' + toolbox + '</xml>',
-      media: '/components/GoogleBlockly/media/',
+      media: '/scratch-blocks/media/',
       trashcan: true,
       zoom: {
         controls: true,
@@ -118,6 +118,6 @@ KidsCoding.prototype = {
       }
     });
     var startblock = '<xml>' + this.createXml(workspace) + '</xml>';
-  	Blockly.Xml.domToWorkspace(this.workspace,$(startblock).get(0));
+  	Blockly.Xml.domToWorkspace($(startblock).get(0),this.workspace);
   }
 };
