@@ -1,9 +1,8 @@
 {
   "tile_size": 50,
   "render": "pixel",
-  "workspace": ["start"],
-  "toolbox": [
-    "hello1",
+  "workspace": ["start","hello1"],
+  "toolbox": [    
     "hello2",
     "hello3",
     "hello4"
