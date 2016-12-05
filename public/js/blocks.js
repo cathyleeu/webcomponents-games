@@ -16,35 +16,50 @@ Blocks["start"] = {
 Blocks["hello1"] = {
   rgbColor: "#EE4E34",
   message0: {
-    ko: "안녕",
-    en: "Hello"
+    ko: "%1 안녕",
+    en: "%1 Hello"
   },
+  args0: [
+    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+  ],
   action: ["hello", "step1"]
 };
 Blocks["hello2"] = {
   rgbColor: "#EE4E34",
   message0: {
-    ko: "나는",
-    en: "I am"
+    ko: "%1 나는",
+    en: "%1 I am"
   },
+  args0: [
+    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+  ],
   action: ["hello", "step2"]
 };
 Blocks["hello3"] = {
   rgbColor: "#EE4E34",
   message0: {
-    ko: "코스야",
-    en: "Cos."
+    ko: "%1 코스야",
+    en: "%1 Cos."
   },
+  args0: [
+    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+  ],
   action: ["hello", "step3"]
 };
 Blocks["hello4"] = {
   rgbColor: "#EE4E34",
   message0: {
-    ko: "반가워",
-    en: "Nice to meet you."
+    ko: "%1 반가워",
+    en: "%1 Nice to meet you."
   },
+  args0: [
+    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+  ],
   action: ["hello", "step4"]
 };
+args0: [
+  {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+],
 Blocks["move_up"] = {
   rgbColor: "#EE4E34",
   message0: {

@@ -22,8 +22,7 @@
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
-  {"id": "tr1", "src": "/img/c1_w4/tree1.png", "obstacle": true},
-  {"id": "tr2", "src": "/img/c1_w4/tree2.png", "obstacle": true},
-  {"id": "tr3", "src": "/img/c1_w4/tree3.png", "obstacle": true},
-  {"id": "tr4", "src": "/img/c1_w4/tree4.png", "obstacle": true}
+  {"id": "tr1", "src": "/img/c1_w4/tree0.png", "obstacle": true},
+  {"id": "tr2", "src": "/img/c1_w4/tree1.png", "obstacle": true},
+  {"id": "tr3", "src": "/img/c1_w4/tree2.png", "obstacle": true}
 ]
