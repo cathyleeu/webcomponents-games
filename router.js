@@ -233,9 +233,6 @@ public.get('/dragndrop_suwon', function *(next) {
 public.get('/c1_w3', function *(next) {
   yield this.render('c1_w3');
 });
-public.get('/b1_w4', function *(next) {
-  yield this.render('b1_w4');
-});
 
 public.get('/maze', function *(next) {
   yield this.render('maze');
