@@ -47,9 +47,9 @@
   border:2px dashed transparent;
   padding:10px;
   height: 70px;
-  width: 70px;
-  top: 300px;
-  left: 295px;
+  width: 80px;
+  top: 320px;
+  left: 350px;
   cursor:pointer;
 }
 .drink {
@@ -57,7 +57,7 @@
   top: 200px;
   width: 200px;
   height: auto;
-  margin-left: 400px;
+  margin-left: 500px;
   display: block;
   float:left;
   visibility: hidden;
@@ -73,7 +73,7 @@
     <div class="sel-box"></div>
     <img class="background" src="img/c1_w2/vm0.png"/>
   </div>
-  <img class="drink" src="img/c1_w2/drink.jpg"/>
+  <img class="drink" src="img/c1_w2/drink.png"/>
 </div>
 
 <script>
@@ -81,30 +81,38 @@
   var audio1 = new Audio('img/c1_w2/vm1.mp3');
   var audio2 = new Audio('img/c1_w2/vm2.mp3');
   var audio3 = new Audio('img/c1_w2/vm3.mp3');
+  var audio4 = new Audio('sound/complete.mp3');
   $(".sel-box").click(function() {
   	if(step==1){
       audio1.play();
       this.style.height = "270px";
-      this.style.width = "270px";
+      this.style.width = "350px";
       this.style.top = "40px";
       this.style.left = "60px";
-      $(".hint").text('돈이 들어 갔아요! 음료수를 골라봐요!');
-      $(".background").attr("src","img/c1_w2/vm1.png");
-      step = 2;
+      setTimeout( function () {
+        $(".hint").text('돈이 들어 갔아요! 음료수를 골라봐요!');
+        $(".background").attr("src","img/c1_w2/vm1.png");
+        step = 2;
+      }, 3000);
     }else if(step==2){
       audio2.play();
-      this.style.height = "70px";
-      this.style.width = "220px";
-      this.style.top = "440px";
-      this.style.left = "80px";
-      $(".hint").text('음료수가 떨어졌어요! 음료수를 꺼내봐요!');
-      $(".background").attr("src","img/c1_w2/vm2.png");
-      step = 3;
+      this.style.height = "80px";
+      this.style.width = "260px";
+      this.style.top = "450px";
+      this.style.left = "75px";
+      setTimeout( function () {
+        $(".hint").text('음료수가 떨어졌어요! 음료수를 꺼내봐요!');
+        $(".background").attr("src","img/c1_w2/vm2.png");
+        step = 3;
+      }, 3500);
     }else{
       audio3.play();
       $(".hint").text('음료수를 얻었어요! 맛있게 먹어요!');
       $(".background").attr("src","img/c1_w2/vm3.png");
       $(".drink").css("visibility","visible")
+      setTimeout( function () {
+        audio4.play();
+      }, 2500);
     }
   });
 
