@@ -25,7 +25,7 @@ Blocks["hello1"] = {
   action: ["hello", "step1"]
 };
 Blocks["hello2"] = {
-  rgbColor: "#EE4E34",
+  rgbColor: "#FCAF30",
   message0: {
     ko: "%1 나는",
     en: "%1 I am"
@@ -36,7 +36,7 @@ Blocks["hello2"] = {
   action: ["hello", "step2"]
 };
 Blocks["hello3"] = {
-  rgbColor: "#EE4E34",
+  rgbColor: "#11AF59",
   message0: {
     ko: "%1 코스야",
     en: "%1 Cos."
@@ -47,7 +47,7 @@ Blocks["hello3"] = {
   action: ["hello", "step3"]
 };
 Blocks["hello4"] = {
-  rgbColor: "#EE4E34",
+  rgbColor: "#00A1E1",
   message0: {
     ko: "%1 반가워",
     en: "%1 Nice to meet you."
