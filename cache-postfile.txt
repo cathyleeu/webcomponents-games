@@ -5,10 +5,6 @@
 /login/books.json
 /login/level_pw.json
 /book
-/click
-/dragndrop
-/maze
-/camera
 /components/jquery-ui/themes/base/jquery-ui.min.css
 /components/jquery/dist/jquery.min.js
 /components/jquery-ui/jquery-ui.min.js

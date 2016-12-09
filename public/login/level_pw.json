@@ -51,5 +51,8 @@
     "/img/login/C/08.png",
     "/img/login/C/09.png",
     "/img/login/C/10.png"
+  ],
+  "buttons": [
+    "/img/login/button.png"
   ]
 }

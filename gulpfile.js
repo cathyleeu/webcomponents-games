@@ -81,7 +81,8 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
   var loginImgs = level_pw["default"]
       .concat(level_pw["A"])
       .concat(level_pw["B"])
-      .concat(level_pw["C"]);
+      .concat(level_pw["C"])
+      .concat(level_pw["buttons"]);
   var commonImgs = fs.readdirSync("public/img")
       .filter(function(item) {
         var stat = fs.statSync("public/img/" + item);
@@ -119,25 +120,29 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
   url.forEach(function(school, index) {
     var bookArr = Object.keys(school.classes),
         manifests = [],
+        pages = [],
         jsons = [],
         imgs = [],
         cache = [],
         cachePath = path.join(cacheDirPath, school.code + ".manifest"),
-        output = "CACHE MANIFEST\n",
-        suwonCheck = false;
+        output = "CACHE MANIFEST\n";
     bookArr.forEach(function(bookName) {
       bookName = bookName.split(":")[0];
       books[bookName].forEach(function(contentInfo) {
-        var maniPath = contentInfo[1];
-        if(maniPath == "/dragndrop_suwon") {
-          suwonCheck = true;
-        }
+        var maniPath = contentInfo[1],
+            pagePath = contentInfo[1];
         if(maniPath.indexOf("#!") >= 0) {
           maniPath = maniPath.slice(maniPath.indexOf("#!") + 2);
         }
         maniPath = maniPath.slice(0, maniPath.lastIndexOf("/"));
         if(maniPath && manifests.indexOf(maniPath) < 0) {
           manifests.push(maniPath);
+        }
+        if(pagePath.indexOf("#!") >= 0) {
+          pagePath = pagePath.slice(0, pagePath.indexOf("#!"));
+        }
+        if(pages.indexOf(pagePath) < 0) {
+          pages.push(pagePath);
         }
       });
     });
@@ -149,7 +154,6 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
           cache.push(item.src);
         }
       });
-
       jsons = jsons.concat(fs.readdirSync(path.join("public/maze", maniPath))
       .map(function(item) {
         if(item != "manifest.json") {
@@ -187,6 +191,9 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
     // timestamp
     output += '#' + new Date().toISOString() + '\n';
 
+    output += "# pages\n";
+    output += pages.join("\n") + "\n";
+
     output += "# jsons\n";
     output += jsons.join("\n") + "\n";
 
@@ -201,10 +208,6 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
     output += commonImgs.join("\n") + "\n";
     output += blocklyImgs.join("\n") + "\n";
     output += msgJsons.join("\n") + "\n";
-    if(suwonCheck) {
-      output += "/click_history\n/dragndrop_suwon\n";
-      output += suwonImgs.join("\n") + "\n";
-    }
 
     output += "# js and css\n";
     output += jsList.join("\n") + "\n";
