@@ -22,18 +22,20 @@ KidsCoding = function() {
     }).join(" ");
     return "<block " + str + "><next>" + this.createXml(blocks.slice(1)) + "</next></block>";
   };
-  // var labelInit = Blockly.FieldLabel.prototype.init;
-  // // 텍스트 라벨의 위치 조정
-  // Blockly.FieldLabel.prototype.init = function() {
-  //   labelInit.call(this);
-  //   var y = +this.textElement_.getAttribute("y");
-  //   this.textElement_.setAttribute("y", y + 5);
-  // };
+  this.isHorizontal = location.pathname.indexOf("mazeh") >= 0;
+  if(!this.isHorizontal) {
+    var labelInit = Blockly.FieldLabel.prototype.init;
+    // 텍스트 라벨의 위치 조정
+    Blockly.FieldLabel.prototype.init = function() {
+      labelInit.call(this);
+      var y = +this.textElement_.getAttribute("y");
+      this.textElement_.setAttribute("y", y + 5);
+    };
+  }
   // 일부 태블릿에서 블럭이 움직이지 않는 현상 수정
   Blockly.longStart_ = function() {};
 };
 KidsCoding.prototype = {
-
   init: function(loader, mazeInfo, run, tileFactory) {
     this.tileFactory = tileFactory;
     this.Actions = new Actions(this, loader, mazeInfo, run);
@@ -68,7 +70,7 @@ KidsCoding.prototype = {
         options.message5 = options.message5[lang];
       }
       options = $.extend({
-        // colour: 0,
+        colour: 0,
         message0: "",
         deletable: true,
         movable: true,
@@ -83,8 +85,8 @@ KidsCoding.prototype = {
       }
       Blockly.Blocks[name] = {
         init: function() {
-          if(options.rgbColor) {
-            options.colour = options.rgbColor;
+          if(_this.isHorizontal && options.message0) {
+            options.message0 = "%1";
           }
           this.jsonInit(options);
           if(options.id) {
@@ -93,6 +95,9 @@ KidsCoding.prototype = {
           this.setDeletable(!!options.deletable);
           this.setMovable(!!options.movable);
           this.contextMenu = false;
+          if(options.rgbColor) {
+            this.colour_ = options.rgbColor;
+          }
         }
       };
     });
@@ -106,7 +111,7 @@ KidsCoding.prototype = {
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
       toolbox: '<xml>' + toolbox + '</xml>',
-      media: '/scratch-blocks/media/',
+      media: this.isHorizontal ? '/scratch-blocks/media/' : '/GoogleBlockly/media/',
       trashcan: true,
       zoom: {
         controls: true,

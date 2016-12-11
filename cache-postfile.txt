@@ -19,12 +19,15 @@
 /components/font-awesome/fonts/fontawesome-webfont.svg?v=4.4.0
 /components/store/store.min.js
 /components/bootstrap/dist/js/bootstrap.min.js
-# /components/GoogleBlockly/blockly_compressed.js
-# /components/GoogleBlockly/blocks_compressed.js
-# /components/GoogleBlockly/javascript_compressed.js
-# /components/GoogleBlockly/msg/js/ko.js
 /components/EaselJS/lib/easeljs-0.8.2.min.js
 /components/PreloadJS/lib/preloadjs-0.6.2.min.js
 /components/SoundJS/lib/soundjs-0.6.2.min.js
 /components/TweenJS/lib/tweenjs-0.6.2.min.js
 /components/page/page.js
+/GoogleBlockly/blockly_compressed.js
+/GoogleBlockly/blocks_compressed.js
+/GoogleBlockly/javascript_compressed.js
+/GoogleBlockly/ko.js
+/scratch-blocks/blockly_compressed_horizontal.js
+/scratch-blocks/blocks_compressed.js
+/scratch-blocks/msg/js/en.js

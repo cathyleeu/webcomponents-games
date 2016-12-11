@@ -90,12 +90,19 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
       .map(function(item) {
         return "/img/" + item;
       });
-  var blocklyImgs = fs.readdirSync("public/components/GoogleBlockly/media")
+  var blocklyImgs = fs.readdirSync("public/GoogleBlockly/media")
       .filter(function(item) {
         return item != ".DS_Store" && item != "Thumbs.db";
       })
       .map(function(item) {
-        return "/components/GoogleBlockly/media/" + item;
+        return "/GoogleBlockly/media/" + item;
+      });
+  var scratchBlocksImgs = fs.readdirSync("public/scratch-blocks/media")
+      .filter(function(item) {
+        return item != ".DS_Store" && item != "Thumbs.db";
+      })
+      .map(function(item) {
+        return "/scratch-blocks/media/" + item;
       });
   var suwonImgs = fs.readdirSync("public/img/dragndrop_suwon")
       .filter(function(item) {
@@ -200,6 +207,7 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
     output += loginImgs.join("\n") + "\n";
     output += commonImgs.join("\n") + "\n";
     output += blocklyImgs.join("\n") + "\n";
+    output += scratchBlocksImgs.join("\n") + "\n";
     output += msgJsons.join("\n") + "\n";
     if(suwonCheck) {
       output += "/click_history\n/dragndrop_suwon\n";
