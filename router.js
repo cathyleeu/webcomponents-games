@@ -238,7 +238,15 @@ public.get('/b1_w4', function *(next) {
 });
 
 public.get('/maze', function *(next) {
-  yield this.render('maze');
+  yield this.render('maze', {
+    mazeType: "vertical"
+  });
+});
+
+public.get('/mazeh', function *(next) {
+  yield this.render('maze', {
+    mazeType: "horizontal"
+  });
 });
 
 public.post('/api/login', function*(next) {

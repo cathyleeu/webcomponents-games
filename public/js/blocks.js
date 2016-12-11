@@ -329,7 +329,7 @@ Blocks["repeat"] = {
   rgbColor: "#242786",
   message0: {
     ko: "반복 %1",
-    en: "Paper %1"
+    en: "Repeat %1"
   },
   args0: [{
     type: "field_dropdown",
