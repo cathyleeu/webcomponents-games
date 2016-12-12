@@ -100,10 +100,19 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
       });
   var scratchBlocksImgs = fs.readdirSync("public/scratch-blocks/media")
       .filter(function(item) {
-        return item != ".DS_Store" && item != "Thumbs.db";
+        var stat = fs.statSync("public/scratch-blocks/media/" + item);
+        return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
       })
       .map(function(item) {
         return "/scratch-blocks/media/" + item;
+      });
+  var scratchBlocksIcons = fs.readdirSync("public/scratch-blocks/media/icons")
+      .filter(function(item) {
+        var stat = fs.statSync("public/scratch-blocks/media/icons/" + item);
+        return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
+      })
+      .map(function(item) {
+        return "/scratch-blocks/media/icons/" + item;
       });
   var suwonImgs = fs.readdirSync("public/img/dragndrop_suwon")
       .filter(function(item) {
@@ -215,6 +224,7 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
     output += commonImgs.join("\n") + "\n";
     output += blocklyImgs.join("\n") + "\n";
     output += scratchBlocksImgs.join("\n") + "\n";
+    output += scratchBlocksIcons.join("\n") + "\n";
     output += msgJsons.join("\n") + "\n";
 
     output += "# js and css\n";
