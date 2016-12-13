@@ -2,7 +2,7 @@
   "tile_size": 50,
   "render": "pixel",
   "score":1,
-  "workspace": ["start","move_left","move_up","move_left","check","condition3_guide"],
+  "workspace": ["start","move_left","move_up","move_left","check","condition3_rsp"],
   "toolbox": [
     "move_up",
     "move_down",
