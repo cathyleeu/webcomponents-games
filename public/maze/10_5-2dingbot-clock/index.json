@@ -1,0 +1,81 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".##########################.",
+    "#......#..#....%.....%..#...",
+    "#......#...%.....%.....%#...",
+    "#.....#.u.#############.####",
+    "#......#..#....%.....%......",
+    "#......#..#..%...%......%...",
+    ".##########################."
+  ],
+  "extra": [{
+    "x": 11,
+    "y": 2,
+    "link": "10_5-2dingbot-clock/1"
+  },  {
+    "x": 15,
+    "y": 1,
+    "link": "10_5-2dingbot-clock/2"
+  },  {
+    "x": 17,
+    "y": 2,
+    "link": "10_5-2dingbot-clock/3"
+  },  {
+    "x": 21,
+    "y": 1,
+    "link": "10_5-2dingbot-clock/4"
+  },  {
+    "x": 23,
+    "y": 2,
+    "link": "10_5-2dingbot-clock/5"
+  },  {
+    "x": 13,
+    "y": 5,
+    "link": "10_5-2dingbot-clock/10"
+  },  {
+    "x": 15,
+    "y": 4,
+    "link": "10_5-2dingbot-clock/9"
+  },  {
+    "x": 17,
+    "y": 5,
+    "link": "10_5-2dingbot-clock/8"
+  },  {
+    "x": 21,
+    "y": 4,
+    "link": "10_5-2dingbot-clock/7"
+  },  {
+    "x": 24,
+    "y": 5,
+    "link": "10_5-2dingbot-clock/6"
+  },  {
+    "img":"teacher",
+    "x": 27,
+    "y": 3,
+    "obstacle": false,
+    "link": "10_5-3cobot-hanbok/index",
+    "min_score": 10
+  }],
+  "tutorial": [{
+    "msg": "설날이 왔어요"
+  }, {
+    "msg": "선생님은 아이들에게 선물을 줄꺼에요",
+    "img": "/img/winterspecial/gift0.png"
+  }, {
+    "msg": "딩봇은 선생님을 도와 선물을 모아서 선생님에게 가져다 줄꺼에요"
+  },{
+    "msg": "선물 10개를 모으고 선생님에게 가보아요",
+    "img": "/img/winterspecial/teacher0.png",
+    "x" : 27,
+    "y" : 4
+  },{
+    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "x" : 8,
+    "y" : 3
+  }]
+}

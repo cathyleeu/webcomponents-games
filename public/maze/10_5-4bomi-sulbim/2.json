@@ -1,0 +1,75 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start","move_up","move_left","move_left","check","condition3_bok"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition3_bok"
+  ],
+  "map": [
+    "########",
+    "#p.p...#",
+    "#.%pppp#",
+    "##.p..p#",
+    "#..&..p#",
+    "#%.p.lp#",
+    "#..p%..#",
+    "########"
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 4,
+    "img": "cobot",
+    "contents" : [{
+      "img": "cobot_o",
+      "role": "friend",
+      "order": "if"
+    },{
+      "img": "cobot_sqr",
+      "role": "friend",
+      "order": "else_if"
+    },{
+      "img": "cobot_tri",
+      "role": "friend",
+      "order": "else"
+    }]
+  },{
+    "x": 2,
+    "y": 2,
+    "img": "luck_o",
+    "order": "if"
+  },{
+    "x": 1,
+    "y": 5,
+    "img": "luck_sqr",
+    "order": "else_if"
+  },{
+    "x": 4,
+    "y": 6,
+    "img": "luck_tri",
+    "order": "else"
+  }],
+  "tutorial": [{
+    "msg": "봄이는 선생님이 주신 설빔 주머니를 찾아야 해요"
+  },{
+    "msg": "코봇에게 설빔 주머니 모양을 확인한 뒤",
+    "img": "/img/cobot/cobot0.png"
+  },{
+    "msg": "동그라미모양의 주머니",
+    "img": "/img/winterspecial/luck_o0.png"
+  },{
+    "msg": "네모모양의 주머니",
+    "img": "/img/winterspecial/luck_sqr0.png"
+  },{
+    "msg": "삼각모양의 주머니",
+    "img": "/img/winterspecial/luck_tri0.png"
+  },{
+    "msg": "를 찾아가 보자"
+  }]
+}

@@ -1,0 +1,51 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":100,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "#########",
+    "#.......#",
+    "#.##.##.#",
+    "#.##.##.#",
+    "#..d%#..#",
+    "#.##.##.#",
+    "#.##.##.#",
+    "#.......#",
+    "#########"
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 3,
+    "img": "bomi"
+  },{
+    "x": 5,
+    "y": 3,
+    "img": "rudolph"
+  },{
+    "x": 3,
+    "y": 5,
+    "img": "pingping"
+  },{
+    "x": 5,
+    "y": 5,
+    "img": "cobot"
+  },{
+    "x": 5,
+    "y": 4,
+    "img": "teacher"
+  }],
+  "tutorial": [{
+    "msg": "키즈코딩의 모든 문제를 해결했어요",
+    "img": "/img/winterspecial/teacher0.png"
+  },{
+    "msg": "1년동안 키즈코딩하고 함께 해서 고마워요 안녕 ~~",
+    "img": "/img/winterspecial/teacher0.png"
+  }]
+}

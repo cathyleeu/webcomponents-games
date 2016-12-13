@@ -1,0 +1,103 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".######.###################.",
+    "#......#..#..%....%.........",
+    "#......#...%...%............",
+    "#.......r.##.#.#.#.#.#.###.#",
+    "#......#.......%.....%......",
+    "#......#..#..%...%..........",
+    ".######.###################."
+  ],
+  "extra": [{
+    "x": 11,
+    "y": 2,
+    "link": "10_5-2rudolph-plusminus/1"
+  },  {
+    "x": 13,
+    "y": 1,
+    "link": "10_5-2rudolph-plusminus/2"
+  },  {
+    "x": 15,
+    "y": 2,
+    "link": "10_5-2rudolph-plusminus/3"
+  },  {
+    "x": 18,
+    "y": 1,
+    "link": "10_5-2rudolph-plusminus/4"
+  },  {
+    "x": 13,
+    "y": 5,
+    "link": "10_5-2rudolph-plusminus/5"
+  },  {
+    "x": 15,
+    "y": 4,
+    "link": "10_5-2rudolph-plusminus/6"
+  },  {
+    "x": 17,
+    "y": 5,
+    "link": "10_5-2rudolph-plusminus/7"
+  },  {
+    "x": 21,
+    "y": 4,
+    "link": "10_5-2rudolph-plusminus/8"
+  },  {
+    "img":"teacher",
+    "x": 27,
+    "y": 3,
+    "obstacle": false,
+    "link": "10_5-2dingbot-clock/index",
+    "min_score": 10
+  },  {
+    "x": 10,
+    "y": 1,
+    "img":"normal",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "떡 1개 얻을 수 있어!",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 10,
+    "y": 5,
+    "img":"hard",
+    "obstacle": false,
+    "tutorial": [{
+      "msg": "떡 2개 얻을 수 있어!",
+      "img": "/img/guide/hard.png"
+    }]
+
+  }],
+  "tutorial": [{
+    "msg": "설날이 왔어요"
+  }, {
+    "msg": "선생님은 아이들에게 떡국을 해줄 줄꺼에요",
+    "img": "/img/winterspecial/ddukguk.png"
+  }, {
+    "msg": "루돌프는 선생님을 도와 떡을 모아서 선생님에게 가져다 줄꺼에요"
+  }, {
+    "msg": "더하기 빼기 문제를 풀면"
+  }, {
+    "msg": "떡을 얻을 수 있어요",
+    "img": "/img/winterspecial/dduk0.png"
+  },{
+    "msg": "보통 난이도를 해결하면 떡 1개를",
+    "img": "/img/guide/normal.png"
+  },{
+    "msg": "어려운 난이도를 해결하면 떡 2개를 얻을 수 있어요",
+    "img": "/img/guide/hard.png"
+  },{
+    "msg": "떡 10개를 모으고 선생님에게 가요",
+    "img": "/img/winterspecial/teacher0.png",
+    "x" : 27,
+    "y" : 4
+  },{
+    "msg": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "x" : 8,
+    "y" : 3
+  }]
+}

@@ -1,0 +1,58 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition2_hanbok"
+  ],
+  "map": [
+    "########",
+    "#p.p...#",
+    "#.p...p#",
+    "#..p.%.#",
+    "#..%.&p#",
+    "#.ppp..#",
+    "#pr...p#",
+    "########"
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 4,
+    "img": "jsparrow",
+    "contents" : [{
+        "img": "jsparrow_m",
+        "role": "if"
+      },{
+        "img": "jsparrow_w",
+        "role": "else"
+    }]
+  },{
+    "x": 5,
+    "y": 3,
+    "img": "hanbok_girl",
+    "order": "else"
+  },{
+    "x": 3,
+    "y": 4,
+    "img": "hanbok_boy",
+    "order": "if"
+  }],
+  "tutorial": [{
+    "msg:ko": "코봇은 친구들에게 한복 선물을 주어야 해요",
+    "msg:en": "Jack Sparrow want to find seed!"
+  },{
+    "msg:ko": "짹스페로우에게 좋아하는 한복을 확인하고",
+    "msg:en": "Check the favorite seed from the board",
+    "img": "/img/winterspecial/jsparrow0.png"
+  },{
+    "msg:ko": "조건 블록을 사용하여 한복 위치로 이동해보자!",
+    "msg:en": "Let's go to where has seed using If ~ Else block"
+  }]
+}
