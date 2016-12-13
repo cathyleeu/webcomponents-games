@@ -504,8 +504,8 @@ function addEvents() {
   });
   function handleMove(e) {
     //개발전 주석처리
-    //e.preventDefault();
-    //e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
     if(createjs.Tween.hasActiveTweens()) {
       return;
     }
@@ -557,14 +557,14 @@ function addEvents() {
   }
   $(document).keydown(handleMove);
   //개발전 주석처리
-  $("#virtualKeypad").on("touchstart", function(e) {
-  //$("#virtualKeypad").on("touchstart click", function(e) {
-  //  e.preventDefault();
+  //$("#virtualKeypad").on("touchstart", function(e) {
+  $("#virtualKeypad").on("touchstart click", function(e) {
+    e.preventDefault();
     e.stopPropagation();
   });
   //개발전 주석처리
-  $("#virtualKeypad .key").click(handleMove);
-  //$("#virtualKeypad .key").on("touchstart click", handleMove);
+  //$("#virtualKeypad .key").click(handleMove);
+  $("#virtualKeypad .key").on("touchstart click", handleMove);
 
   $("#modal .tutorial").click(function handleClick(e) {
     var tItem = tutorial[tutorialIdx],
