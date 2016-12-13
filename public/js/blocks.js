@@ -458,6 +458,22 @@ Blocks['repeat_until_friend'] = {
   }],
   action: ["repeat", "repeat_until"]
 };
+Blocks['repeat_until_bok'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1 갈 때까지 반복",
+    en: "Repeat Until meeting luckky poket"
+  },
+  args0: [
+    {type: "field_image", src: "/img/winterspecial/lucks.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  action: ["repeat", "repeat_until"]
+};
 Blocks['condition_ifsealion_up'] = {
   rgbColor: "#E11376",
   message0: {
@@ -675,6 +691,106 @@ Blocks['condition_ificehole_right'] = {
   args2: [
     {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
   ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_right"]
+};
+Blocks['condition_ifblock_up'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 막혀있다면",
+    en: "If right-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/up.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_up"]
+};
+Blocks['condition_ifblock_down'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 막혀있다면",
+    en: "If right-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_down"]
+};
+Blocks['condition_ifblock_left'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 막혀있다면",
+    en: "If right-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/left.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_nodirentio", "no_left"]
+};
+Blocks['condition_ifblock_right'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 막혀있다면",
+    en: "If right-side %1 O"
+  },
+  args0: [
+    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
   message3: "%1",
   args3: [{
     type: "input_statement",
@@ -1338,6 +1454,34 @@ Blocks['condition3_trash'] = {
     name: "else_statements"
   }],
   action: ["conditioncheck3","trash"]
+};
+Blocks['condition2_hanbok'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/winterspecial/hanbok_boy.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/winterspecial/hanbok_girl.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","food"]
 };
 Blocks['condition2_guide_tr'] = {
   rgbColor: "#E11376",
@@ -2069,6 +2213,86 @@ Blocks['condition3_dClock'] = {
     name: "else_statements"
   }],
   action: ["conditioncheck3","dClock"]
+};
+Blocks['condition3_rsp'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/hand_rock.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/hand_scissors.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args4: [
+    {type: "field_image", src: "/img/hand_paper.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","rsp"]
+};
+Blocks['condition3_bok'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/winterspecial/luck_o.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/winterspecial/luck_sqr.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1"
+  },
+  args4: [
+    {type: "field_image", src: "/img/winterspecial/luck_tri.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","bok"]
 };
 Blocks["move_right1"] = {
   colour: 260,

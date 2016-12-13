@@ -503,8 +503,9 @@ function addEvents() {
     runTutorial(maze.tutorial);
   });
   function handleMove(e) {
-    e.preventDefault();
-    e.stopPropagation();
+    //개발전 주석처리
+    //e.preventDefault();
+    //e.stopPropagation();
     if(createjs.Tween.hasActiveTweens()) {
       return;
     }
@@ -555,11 +556,15 @@ function addEvents() {
     });
   }
   $(document).keydown(handleMove);
-  $("#virtualKeypad").on("touchstart click", function(e) {
-    e.preventDefault();
+  //개발전 주석처리
+  $("#virtualKeypad").on("touchstart", function(e) {
+  //$("#virtualKeypad").on("touchstart click", function(e) {
+  //  e.preventDefault();
     e.stopPropagation();
   });
-  $("#virtualKeypad .key").on("touchstart click", handleMove);
+  //개발전 주석처리
+  $("#virtualKeypad .key").click(handleMove);
+  //$("#virtualKeypad .key").on("touchstart click", handleMove);
 
   $("#modal .tutorial").click(function handleClick(e) {
     var tItem = tutorial[tutorialIdx],

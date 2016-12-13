@@ -1,0 +1,63 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition3_rsp",
+    "item_rock",
+    "item_scissors",
+    "item_paper"
+  ],
+  "map": [
+    "%#######",
+    "#p.p...#",
+    "#.%pppp#",
+    "#p.p..p#",
+    "#..&..p#",
+    "#..p.lp#",
+    "#..p...#",
+    "########"
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 4,
+    "img": "cobot",
+    "contents" : [{
+        "img": "cobot_r",
+        "role": "spider",
+        "order": "if"
+      },{
+        "img": "cobot_s",
+        "role": "spider",
+        "order": "else_if"
+      },{
+        "img": "cobot_p",
+        "role": "spider",
+        "order": "else"
+    }]
+  },{
+    "x": 2,
+    "y": 2,
+    "img": "teacher"
+  },{
+    "x": 0,
+    "y": 0,
+    "img": "bricks"
+  }],
+  "tutorial": [{
+    "msg": "선생님께 세배를 하러 가야해요"
+  },{
+    "msg": "코봇을 가위바위보로 이기고",
+    "img": "/img/cobot/cobot0.png"
+  },{
+    "msg": "선생님에게 가보자",
+    "img": "/img/winterspecial/teacher0.png"
+  }]
+}

@@ -1,0 +1,112 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 50,
+  "render": "pixel",
+  "toolbox": [],
+  "map": [
+    ".##########################.",
+    "#......#..#....%.....%..#...",
+    "#......#...%.....%.....%#...",
+    "#.....#.u.#############.####",
+    "#......#..#....%.....%......",
+    "#......#..#..%...%......%...",
+    ".##########################."
+  ],
+  "extra": [{
+    "x": 11,
+    "y": 2,
+    "link": "10_5-4bomi-sulbim/1"
+  },  {
+    "x": 15,
+    "y": 1,
+    "link": "10_5-4bomi-sulbim/2"
+  },  {
+    "x": 17,
+    "y": 2,
+    "link": "10_5-4bomi-sulbim/3"
+  },  {
+    "x": 21,
+    "y": 1,
+    "link": "10_5-4bomi-sulbim/4"
+  },  {
+    "x": 23,
+    "y": 2,
+    "link": "10_5-4bomi-sulbim/5"
+  },  {
+    "x": 13,
+    "y": 5,
+    "link": "10_5-4bomi-sulbim/10"
+  },  {
+    "x": 15,
+    "y": 4,
+    "link": "10_5-4bomi-sulbim/9"
+  },  {
+    "x": 17,
+    "y": 5,
+    "link": "10_5-4bomi-sulbim/8"
+  },  {
+    "x": 21,
+    "y": 4,
+    "link": "10_5-4bomi-sulbim/7"
+  },  {
+    "x": 24,
+    "y": 5,
+    "link": "10_5-4bomi-sulbim/6"
+  },  {
+    "img":"teacher",
+    "x": 27,
+    "y": 3,
+    "obstacle": false,
+    "link": "10_5-4jack-bok/index",
+    "min_score": 10
+  },  {
+    "x": 10,
+    "y": 1,
+    "img":"normal",
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "설빔 주머니 1개 얻을 수 있어!",
+      "msg:en": "You can get a meal",
+      "img": "/img/guide/normal.png"
+    }]
+  },  {
+    "x": 10,
+    "y": 5,
+    "img":"hard",
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "설빔 주머니 2개 얻을 수 있어!",
+      "msg:en": "You can get 2 meals",
+      "img": "/img/guide/hard.png"
+    }]
+
+  }],
+  "tutorial": [{
+    "msg": "설날이 왔어요"
+  }, {
+    "msg": "봄이는 선생님에게 받은 설빔 주머니를 찾으러 갈꺼에요",
+    "img": "/img/winterspecial/teacher0.png"
+  }, {
+    "msg": "문제를 해결하면"
+  }, {
+    "msg": "설빔 주머니를 얻을 수 있어요",
+    "img": "/img/winterspecial/luck_o0.png"
+  },{
+    "msg": "보통 난이도를 해결하면 주머니 1개를",
+    "img": "/img/guide/normal.png"
+  },{
+    "msg": "어려운 난이도를 해결하면 주머니 2개를 얻을 수 있어요",
+    "img": "/img/guide/hard.png"
+  },{
+    "msg": "주머니 10개를 모으고 선생님에게 가요",
+    "img": "/img/winterspecial/teacher0.png",
+    "x" : 27,
+    "y" : 4
+  },{
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 코딩을 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play Coding",
+    "x" : 8,
+    "y" : 3
+  }]
+}

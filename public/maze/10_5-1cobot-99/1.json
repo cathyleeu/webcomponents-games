@@ -1,0 +1,57 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item2",
+    "use_item2",
+    "repeat"
+  ],
+  "map": [
+    "########",
+    "##ghij##",
+    "#r.).###",
+    "###..###",
+    "###..###",
+    "###.).%#",
+    "##abcf##",
+    "########"
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 5,
+    "img": "p99_1",
+    "useItem": 3
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "candy10",
+    "itemImg":"candy10",
+    "itemCount": 1
+  },{
+    "x": 4,
+    "y": 5,
+    "img": "candy1",
+    "itemImg":"candy1",
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg": "코봇은 볼트를 모으고 싶어요"
+  },{
+    "msg": "주머니에 적혀 있는 숫자만큼 사탕을 모아야 해요",
+    "img": "/img/cobot/p99_1.png"
+  },{
+    "msg": "10개 묶음의 사탕과",
+    "img": "/img/cobot/bolt10_0.png"
+  },{
+    "msg": "1개 사탕을 필요한 개수만큼 집어서",
+    "img": "/img/cobot/bolt1_0.png"
+  },{
+    "msg": "주머니에 넣어보자"
+  }]
+}

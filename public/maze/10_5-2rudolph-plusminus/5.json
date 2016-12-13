@@ -1,0 +1,31 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.gphpi.#",
+    "#########",
+    "#%.....o#",
+    "#.......#",
+    "#s..d...#",
+    "#......q#",
+    "#.......#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"n9"
+  }],
+  "tutorial": [{
+    "msg": "2 + 3 + 4 = ?"
+  }]
+}
