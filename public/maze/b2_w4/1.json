@@ -1,0 +1,36 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#.###...#",
+    "#.......#",
+    "#...#%..#",
+    "#...#...#",
+    "#..u###.#",
+    "#....#..#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "올챙이 토드는 장구벌레를 배물리 먹었어요",
+    "msg:en": "Tode ate Longworm vary well."
+  },{
+    "msg:ko": "드디어 개구리가 되었어",
+    "msg:en": "I became a frog"
+  },{
+    "msg:ko": "코스야 함께 놀자!",
+    "msg:en": "Cos! Let's Play!"
+  },{
+    "msg:ko": "코스가 있는곳으로 이동해보자!",
+    "msg:en": "Let's move up to Cos"
+  }]
+}
