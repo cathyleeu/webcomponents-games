@@ -1,0 +1,28 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#####.",
+    "#.....#",
+    "#.....#",
+    "#..%..#",
+    "#.....#",
+    "#..d..#",
+    ".#####."
+  ],
+  "tutorial": [{
+    "msg:ko": "개굴개굴~ 연잎 위로 가고 싶어!",
+    "msg:en": "Ribbit~ Ribbit! I want to go lotus"
+  },{
+    "msg:ko": "↑위로 이동 블록을 이용해서 위로 가보자!",
+    "msg:en": "Let's move up using [Move Up] block"
+  }]
+}

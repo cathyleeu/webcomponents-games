@@ -1,0 +1,34 @@
+{
+  "tile_size": 50,
+  "render": "pixel",
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#.###...#",
+    "##......#",
+    "#.......#",
+    "#.#.#...#",
+    "#...#u#.#",
+    "#...%#..#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "코스야 함께 놀자!",
+    "msg:en": "Cos! Let's Play!"
+  },{
+    "msg:ko": "코스가 있는곳으로 이동해보자!",
+    "msg:en": "Let's move up to Cos"
+  }],
+  "success": [{
+    "msg:ko": "2권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Succes! Good Job!"
+  }]
+}
