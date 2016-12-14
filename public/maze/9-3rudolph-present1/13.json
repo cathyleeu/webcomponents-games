@@ -29,11 +29,11 @@
     "y": 3,
     "img": "clock_top",
     "contents" : [{
-        "img": "a0100",
+        "img": "a0900",
         "role": "item",
         "order": "if"
       },{
-        "img": "a0200",
+        "img": "a0700",
         "role": "item",
         "order": "else_if"
       },{
