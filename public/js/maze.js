@@ -383,7 +383,9 @@ function addEvents() {
     e.preventDefault();
   });
   $(window).on("resize", handle_resize);
-  $("#modal .go-next").click(function(e) {
+  $("#modal .go-next").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     var queries = store.get("queries") || {};
     if(queries.back) {
       var localData = store.get('data') || {},
@@ -416,13 +418,17 @@ function addEvents() {
     store.set("queries", {});
     page( path.join("/") );
   });
-  $("#modal .reset-maze").click(function(e) {
+  $("#modal .reset-maze").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     $("#runCode .start").show();
     $("#runCode .reset").hide();
     createjs.Tween.removeAllTweens();
     resetMaze(mazeInfo, maze, loader, tileFactory);
   });
-  $("#runCode").click(function(e) {
+  $("#runCode").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     e.preventDefault();
     if($(this).find("i:visible").hasClass("fa-play")) {
       var blocks = kidscoding.workspace.getAllBlocks(),
@@ -486,7 +492,9 @@ function addEvents() {
     }
   });
 
-  $("#playstop a").click(function(e) {
+  $("#playstop a").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     e.preventDefault();
     if($("#playstop i").hasClass("fa-play")) {
       $("#playstop i").addClass("fa-stop");
@@ -498,7 +506,9 @@ function addEvents() {
       createjs.Sound.stop("bgm");
     }
   });
-  $("#runTutorial a").click(function(e) {
+  $("#runTutorial a").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     e.preventDefault();
     runTutorial(maze.tutorial);
   });
@@ -556,17 +566,15 @@ function addEvents() {
     });
   }
   $(document).keydown(handleMove);
-  //개발전 주석처리
-  //$("#virtualKeypad").on("touchstart", function(e) {
   $("#virtualKeypad").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
   });
-  //개발전 주석처리
-  //$("#virtualKeypad .key").click(handleMove);
   $("#virtualKeypad .key").on("touchstart click", handleMove);
 
-  $("#modal .tutorial").click(function handleClick(e) {
+  $("#modal .tutorial").on("touchstart click", function handleClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
     var tItem = tutorial[tutorialIdx],
         link = tutorial[tutorialIdx-1] ? tutorial[tutorialIdx-1].link : null;
     if(link) {
@@ -597,7 +605,9 @@ function addEvents() {
     tutorialIdx++;
   });
 
-  $("#modal .character1-modal, #modal .character2-modal").click(function(e) {
+  $("#modal .character1-modal, #modal .character2-modal").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     var isFirst = $(e.currentTarget).hasClass("character1-modal"),
         character = isFirst ? "character" : "character2",
         message = isFirst ? "message" : "message2";
@@ -605,7 +615,9 @@ function addEvents() {
     store.set("message_id", message);
     init();
   });
-  $("#fullScreen").click(function(e){
+  $("#fullScreen").on("touchstart click", function(e){
+    e.preventDefault();
+    e.stopPropagation();
     FullScreen();
   })
 }
