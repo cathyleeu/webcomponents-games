@@ -137,6 +137,7 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
     var bookArr = Object.keys(school.classes),
         manifests = [],
         pages = [],
+        page_manifests = [],
         jsons = [],
         imgs = [],
         cache = [],
@@ -199,6 +200,27 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
       }));
     });
 
+    // maze가 아닌 개별 페이지들의 manifest 로드
+    pages.filter(function(item) {
+      var item_path = path.join("public", "img", item),
+          exist = fs.existsSync(item_path),
+          stat = exist && fs.statSync(item_path);
+      return exist && stat.isDirectory();
+    })
+    .forEach(function(page) {
+      var page_path = path.join("public", "img", page),
+          files = fs.readdirSync(page_path)
+          .filter(function(item) {
+            return item != ".DS_Store" && item != "Thumbs.db";
+          });
+      files.forEach(function(item) {
+        var file_path = path.join("/img", page, item);
+        if(page_manifests.indexOf(file_path) < 0) {
+          page_manifests.push(file_path);
+        }
+      });
+    });
+
     // imgs에 속한 이미지중 cache에 속한 이미지는 제거
     imgs = imgs.filter(function(item) {
       return cache.indexOf(item) < 0;
@@ -209,6 +231,9 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
 
     output += "# pages\n";
     output += pages.join("\n") + "\n";
+
+    output += "# files in pages\n";
+    output += page_manifests.join("\n") + "\n";
 
     output += "# jsons\n";
     output += jsons.join("\n") + "\n";
