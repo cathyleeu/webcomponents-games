@@ -27,3 +27,6 @@
 /scratch-blocks/blockly_compressed_horizontal.js
 /scratch-blocks/blocks_compressed.js
 /scratch-blocks/msg/js/en.js
+/sound/complete.mp3
+/sound/success.mp3
+/sound/fail.mp3
