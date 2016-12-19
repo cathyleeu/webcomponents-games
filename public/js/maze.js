@@ -242,15 +242,19 @@ function initMaze() {
   mazeInfo.canvas.stage.removeAllChildren();
   mazeInfo.canvas.stage.canvas.width = Math.min(mazeInfo.view_size || map_width, map_width) * mazeInfo.tile_size;
   mazeInfo.canvas.stage.canvas.height = Math.min(mazeInfo.view_size || map_height, map_height) * mazeInfo.tile_size;
+  var ctx = mazeInfo.canvas.stage.canvas.getContext("2d");
   if(maze.render == "pixel") {
-    var ctx = mazeInfo.canvas.stage.canvas.getContext("2d");
     ctx.imageSmoothingEnabled = false;
     ctx.mozImageSmoothingEnabled = false;
     ctx.oImageSmoothingEnabled = false;
     ctx.webkitImageSmoothingEnabled = false;
-    $("#display").addClass("pixel");
+    $("#display, modal-character, modal-character1, modal-character2").addClass("pixel");
   } else {
-    $("#display").removeClass("pixel");
+    ctx.imageSmoothingEnabled = true;
+    ctx.mozImageSmoothingEnabled = true;
+    ctx.oImageSmoothingEnabled = true;
+    ctx.webkitImageSmoothingEnabled = true;
+    $("#display, modal-character, modal-character1, modal-character2").removeClass("pixel");
   }
 
   if(!mazeInfo.land && loader.getItem("background")) {
