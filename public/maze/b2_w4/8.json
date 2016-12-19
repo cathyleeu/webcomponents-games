@@ -1,6 +1,6 @@
 {
-  "tile_size": 50,
-  "render": "pixel",
+  "tile_size": 256,
+
   "score":5,
   "workspace": ["start"],
   "toolbox": [
