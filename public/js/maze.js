@@ -386,6 +386,7 @@ function addEvents() {
   $("#modal .go-next").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
+    $('#modal').modal('hide');
     var queries = store.get("queries") || {};
     if(queries.back) {
       var localData = store.get('data') || {},
@@ -414,13 +415,13 @@ function addEvents() {
     if(isNaN(path[path.length-1])) {
       alert("주소가 잘못 설정되었습니다.");
     }
-    $('#modal').modal('hide');
     store.set("queries", {});
     page( path.join("/") );
   });
   $("#modal .reset-maze").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
+    $('#modal').modal('hide');
     $("#runCode .start").show();
     $("#runCode .reset").hide();
     createjs.Tween.removeAllTweens();
@@ -495,7 +496,6 @@ function addEvents() {
   $("#playstop a").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
-    e.preventDefault();
     if($("#playstop i").hasClass("fa-play")) {
       $("#playstop i").addClass("fa-stop");
       $("#playstop i").removeClass("fa-play");
@@ -509,7 +509,6 @@ function addEvents() {
   $("#runTutorial a").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
-    e.preventDefault();
     runTutorial(maze.tutorial);
   });
   function handleMove(e) {
