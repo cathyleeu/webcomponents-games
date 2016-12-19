@@ -342,6 +342,54 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [6,7,6,8,6]
         };
       }
+      if(character.src.indexOf('SpriteToad1_128') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: [9,10,9,11,9],
+          stand_r: 3,
+          walk_r: [3,4,3,5,3],
+          stand_d: 0,
+          walk_d: [0,1,0,2,0],
+          stand_l: 6,
+          walk_l: [6,7,6,8,6]
+        };
+      }
+      if(character.src.indexOf('SpriteToad2_128') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: [9,10,9,11,9],
+          stand_r: 3,
+          walk_r: [3,4,3,5,3],
+          stand_d: 0,
+          walk_d: [0,1,0,2,0],
+          stand_l: 6,
+          walk_l: [6,7,6,8,6]
+        };
+      }
+      if(character.src.indexOf('SpriteToad3_128') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: [9,10,9,11,9],
+          stand_r: 3,
+          walk_r: [3,4,3,5,3],
+          stand_d: 0,
+          walk_d: [0,1,0,2,0],
+          stand_l: 6,
+          walk_l: [6,7,6,8,6]
+        };
+      }
+      if(character.src.indexOf('SpriteToad4_128') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: [9,10,11,9],
+          stand_r: 3,
+          walk_r: [3,4,5,3],
+          stand_d: 0,
+          walk_d: [0,1,2,0],
+          stand_l: 6,
+          walk_l: [6,7,8,6]
+        };
+      }
       for(var key in animations) {
         if($.isArray(animations[key])) {
           animations[key] = {

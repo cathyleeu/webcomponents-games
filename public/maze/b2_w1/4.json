@@ -23,22 +23,11 @@
     "msg:en": "Tode is hungry!"
   },{
     "msg:ko": "장구벌레를 먹어야 해요 ",
-    "msg:en": "Tode have to eat Longworm"
+    "msg:en": "Tode have to eat Longworm",
+    "img": "/img/b2_w1/larva_256.png"
   },{
     "msg:ko": "→오른쪽으로 이동 블록을 이용해서 장구벌레에게로 가보자!",
-    "msg:en": "Let's move right using [Move Right] block"
-  }],
-  "success": [{
-    "msg:ko": "올챙이 토드는 장구벌레를 배물리 먹었어요",
-    "msg:en": "Tode ate Longworm vary well."
-  },{
-    "msg:ko": "코스야 뒷다리가 나왔어",
-    "msg:en": "Cos! My Hind leg is growing",
-    "img": "/img/b2_w2/tadpole2_0.png"
-  },{
-    "msg:ko": "더 많은 장구벌레를 먹으러가자!",
-    "msg:en": "I want to eat more Longworm",
-    "img": "/img/b2_w2/tadpole2_0.png",
-    "link": "b2_w2/1"
+    "msg:en": "Let's move right using [Move Right] block",
+    "img": "/img/b2_w1/mRightBtn_256.png"
   }]
 }

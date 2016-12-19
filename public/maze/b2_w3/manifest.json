@@ -1,7 +1,8 @@
 [
-  {"book": "b2", "title": "3주차 : 토드의 앞다리도 나왔어요"},
-  {"id": "bg1", "src": "/img/b2_w1/water1.png"},
-  {"id": "bg2", "src": "/img/b2_w1/water2.png"},
+  {"book": "b2", "title": "3주차 : 토드의 앞다리도 자랐어요"},
+
+  {"id": "bg1", "src": "/img/b2_w1/Pond1_256.png"},
+  {"id": "bg2", "src": "/img/b2_w1/Pond2_256.png"},
   {"id": "land0", "src": "/img/map32/0.png"},
   {"id": "land1", "src": "/img/map32/1.png"},
   {"id": "land2", "src": "/img/map32/2.png"},
@@ -14,22 +15,26 @@
   {"id": "land9", "src": "/img/map32/9.png"},
   {"id": "land10", "src": "/img/map32/10.png"},
   {"id": "land11", "src": "/img/map32/11.png"},
-  {"id": "character", "src": "/img/b2_w3/tadpole3.png", "sprite": true, "size": 32},
-  {"id": "message", "src": "/img/b2_w3/tadpole3_0.png", "size": 32},
-  {"id": "food", "src": "/img/b2_w1/larva.png"},
+
+  {"id": "character", "src": "/img/b2_w3/SpriteToad3_128.png", "sprite": true, "size": 128},
+  {"id": "message", "src": "/img/b2_w3/TutoToad3_256.png", "size": 256},
+  {"id": "food", "src": "/img/b2_w1/larva_256.png"},
+
+  {"id": "log1", "src": "/img/b2_w1/log1_256.png", "obstacle": true},
+  {"id": "log2", "src": "/img/b2_w1/log2_256.png", "obstacle": true},
+  {"id": "stone1", "src": "/img/b2_w1/PondStone1_256.png", "obstacle": true},
+  {"id": "stone2", "src": "/img/b2_w1/PondStone2_256.png", "obstacle": true},
+  {"id": "weed1", "src": "/img/b2_w1/Weed1_256.png", "obstacle": true},
+  {"id": "weed2", "src": "/img/b2_w1/Weed2_256.png", "obstacle": true},
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
-  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
-  {"id": "tree1", "src": "/img/b2_w1/tree1.png", "obstacle": true},
-  {"id": "tree2", "src": "/img/b2_w1/tree2.png", "obstacle": true},
-  {"id": "tree3", "src": "/img/b2_w1/tree3.png", "obstacle": true},
-  {"id": "plant1", "src": "/img/b2_w1/plant1.png", "obstacle": true},
-  {"id": "plant2", "src": "/img/b2_w1/plant2.png", "obstacle": true},
-  {"id": "plant3", "src": "/img/b2_w1/plant3.png", "obstacle": true},
-  {"id": "plant4", "src": "/img/b2_w1/plant4.png", "obstacle": true},
-  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false}
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"}
+
 ]
