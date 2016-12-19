@@ -18,10 +18,10 @@
 
   {"id": "character", "src": "/img/b2_w2/SpriteToad2_128.png", "sprite": true, "size": 128},
   {"id": "message", "src": "/img/b2_w2/TutoToad2_256.png", "size": 256},
-  {"id": "food", "src": "/img/b2_w1/larva_256.png"},
+  {"id": "food", "src": "/img/b2_w1/Larva_256.png"},
 
-  {"id": "log1", "src": "/img/b2_w1/log1_256.png", "obstacle": true},
-  {"id": "log2", "src": "/img/b2_w1/log2_256.png", "obstacle": true},
+  {"id": "log1", "src": "/img/b2_w1/Log1_256.png", "obstacle": true},
+  {"id": "log2", "src": "/img/b2_w1/Log2_256.png", "obstacle": true},
   {"id": "stone1", "src": "/img/b2_w1/PondStone1_256.png", "obstacle": true},
   {"id": "stone2", "src": "/img/b2_w1/PondStone2_256.png", "obstacle": true},
   {"id": "weed1", "src": "/img/b2_w1/Weed1_256.png", "obstacle": true},
