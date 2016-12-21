@@ -20,7 +20,7 @@ Blocks["hello1"] = {
     en: "%1 Hello"
   },
   args0: [
-    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/kidsblocks/mDown.png", width: 24, height: 24}
   ],
   action: ["hello", "step1"]
 };
@@ -31,7 +31,7 @@ Blocks["hello2"] = {
     en: "%1 I am"
   },
   args0: [
-    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/kidsblocks/mDown.png", width: 24, height: 24}
   ],
   action: ["hello", "step2"]
 };
@@ -42,7 +42,7 @@ Blocks["hello3"] = {
     en: "%1 Cos."
   },
   args0: [
-    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/kidsblocks/mDown.png", width: 24, height: 24}
   ],
   action: ["hello", "step3"]
 };
@@ -53,13 +53,11 @@ Blocks["hello4"] = {
     en: "%1 Nice to meet you."
   },
   args0: [
-    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/kidsblocks/mDown.png", width: 50, height: 50}
   ],
   action: ["hello", "step4"]
 };
-args0: [
-  {type: "field_image", src: "/img/down.png", width: 24, height: 24}
-],
+
 Blocks["move_up"] = {
   rgbColor: "#EE4E34",
   message0: {
