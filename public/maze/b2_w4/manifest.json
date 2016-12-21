@@ -16,9 +16,9 @@
   {"id": "land10", "src": "/img/map32/10.png"},
   {"id": "land11", "src": "/img/map32/11.png"},
 
-  {"id": "character", "src": "/img/b2_w4/SpriteToad4_128.png", "sprite": true, "size": 128},
+  {"id": "character", "src": "/img/b2_w4/SpriteToad4_256.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/b2_w4/TutoToad4_256.png", "size": 256},
-  {"id": "food", "src": "/img/b2_w4/cos0.png"},
+  {"id": "food", "src": "/img/c1_w4/cos0.png"},
 
   {"tile" : "w", "id": "fence1", "src": "/img/b2_w4/Fence1_256.png", "wall": true},
   {"tile" : "a", "id": "fence2", "src": "/img/b2_w4/Fence2_256.png", "wall": true},
