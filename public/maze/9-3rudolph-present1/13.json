@@ -31,7 +31,7 @@
     "contents" : [{
         "img": "a0900",
         "role": "item",
-        "order": "if"
+        "order": "else"
       },{
         "img": "a0700",
         "role": "item",
@@ -39,25 +39,25 @@
       },{
         "img": "a0300",
         "role": "item",
-        "order": "else"
+        "order": "if"
     }]
   },{
     "x": 1,
     "y": 2,
     "img": "house_9",
-    "order": "if",
+    "order": "else",
     "useItem": true
   },{
     "x": 2,
     "y": 2,
     "img": "house_9",
-    "order": "if",
+    "order": "else",
     "useItem": true
   },{
     "x": 3,
     "y": 2,
     "img": "house_9",
-    "order": "if",
+    "order": "else",
     "useItem": true
   },{
     "x": 5,
@@ -81,19 +81,19 @@
     "x": 4,
     "y": 5,
     "img": "house_3",
-    "order": "else",
+    "order": "if",
     "useItem": true
   },{
     "x": 4,
     "y": 6,
     "img": "house_3",
-    "order": "else",
+    "order": "if",
     "useItem": true
   },{
     "x": 4,
     "y": 7,
     "img": "house_3",
-    "order": "else",
+    "order": "if",
     "useItem": true
   }],
   "tutorial": [{
