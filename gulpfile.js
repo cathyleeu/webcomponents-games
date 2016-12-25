@@ -114,6 +114,14 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
       .map(function(item) {
         return "/scratch-blocks/media/icons/" + item;
       });
+  var kidsblocks = fs.readdirSync("public/img/kidsblocks")
+      .filter(function(item) {
+        var stat = fs.statSync("public/img/kidsblocks/" + item);
+        return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
+      })
+      .map(function(item) {
+        return "public/img/kidsblocks/" + item;
+      });
   var suwonImgs = fs.readdirSync("public/img/dragndrop_suwon")
       .filter(function(item) {
         var stat = fs.statSync("public/img/dragndrop_suwon/" + item);
@@ -250,6 +258,7 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
     output += blocklyImgs.join("\n") + "\n";
     output += scratchBlocksImgs.join("\n") + "\n";
     output += scratchBlocksIcons.join("\n") + "\n";
+    output += kidsblocks.join("\n") + "\n";
     output += msgJsons.join("\n") + "\n";
 
     output += "# js and css\n";
