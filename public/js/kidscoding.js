@@ -51,23 +51,21 @@ KidsCoding.prototype = {
       if(name != "start" && toolbox.indexOf(name) < 0 && workspace.indexOf(name) < 0) {
         return;
       }
-      if(typeof options.message0 == "object") {
-        options.message0 = options.message0[lang];
-      }
-      if(typeof options.message1 == "object") {
-        options.message1 = options.message1[lang];
-      }
-      if(typeof options.message2 == "object") {
-        options.message2 = options.message2[lang];
-      }
-      if(typeof options.message3 == "object") {
-        options.message3 = options.message3[lang];
-      }
-      if(typeof options.message4 == "object") {
-        options.message4 = options.message4[lang];
-      }
-      if(typeof options.message5 == "object") {
-        options.message5 = options.message5[lang];
+      for(var item in options) {
+        if(item.slice(0, -1) == "message" && typeof options[item] == "object") {
+          options[item] = options[item][lang];
+        }
+        if(_this.isHorizontal && item.slice(0, 5) == "argsh") {
+          options["args" + item.slice(-1)] = options[item];
+        }
+        if(item.slice(0, 4) == "args") {
+          options[item].forEach(function(obj) {
+            if(obj.type == "field_image" && !obj.width) {
+              obj.width = _this.isHorizontal ? 40 : 25;
+              obj.height = _this.isHorizontal ? 40 : 25;
+            }
+          });
+        }
       }
       options = $.extend({
         colour: 0,
@@ -113,14 +111,15 @@ KidsCoding.prototype = {
       toolbox: '<xml>' + toolbox + '</xml>',
       media: this.isHorizontal ? '/scratch-blocks/media/' : '/GoogleBlockly/media/',
       trashcan: true,
-      zoom: {
+      zoom: this.isHorizontal ? null : {
         controls: true,
         wheel: true,
         startScale: 1.0,
         maxScale: 1.2,
         minScale: 0.6,
         scaleSpeed: 1.2
-      }
+      },
+      horizontalLayout: this.isHorizontal
     });
     var startblock = '<xml>' + this.createXml(workspace) + '</xml>';
   	Blockly.Xml.domToWorkspace($(startblock).get(0),this.workspace);

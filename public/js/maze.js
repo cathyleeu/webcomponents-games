@@ -365,9 +365,18 @@ function setBitmapCoord(bitmap, px, py) {
 }
 
 function handle_resize(e) {
-  var size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .bottom-row").height();
-  if($(window).width() / 2 < size) {
-    size = parseInt($(window).width() / 2, 10);
+  var size,
+      workspace_height = 200;
+  if(kidscoding.isHorizontal) {
+    size = $(window).height() - $("#navbarMaze").height() - workspace_height;
+    if($(window).width() < size) {
+      size = $(window).width();
+    }
+  } else {
+    size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .bottom-row").height();
+    if($(window).width() / 2 < size) {
+      size = parseInt($(window).width() / 2, 10);
+    }
   }
   var view_width = Math.min(mazeInfo.view_size || mazeInfo.width, mazeInfo.width),
       view_height = Math.min(mazeInfo.view_size || mazeInfo.height, mazeInfo.height),
@@ -377,9 +386,20 @@ function handle_resize(e) {
     height: view_height * mazeInfo.tile_size * zoom
   });
 
-  var real_width = $("#display").width();
-  $(".sidebar").width(real_width);
-  $(".workspace").css("left", real_width + "px");
+  if(kidscoding.isHorizontal) {
+    var real_height = $("#display").height();
+    $(".sidebar").height(real_height);
+    workspace_height = $(window).height() - $("#navbarMaze").height() - real_height;
+    $("#maze-container .workspace").css({
+      top: ($(window).height() - $("#navbarMaze").height() - workspace_height) + "px",
+      height: workspace_height + "px"
+    });
+  } else {
+    var real_width = $("#display").width();
+    $(".sidebar").width(real_width);
+    $(".workspace").css("left", real_width + "px");
+  }
+  Blockly.svgResize(kidscoding.workspace);
 };
 
 function addEvents() {

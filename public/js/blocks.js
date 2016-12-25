@@ -7,7 +7,10 @@ Blocks["start"] = {
     en: "%1 Start"
   },
   args0: [
-    {type: "field_image", src: "/img/start.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/start.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Start.png"}
   ],
   previousStatement: false,
   deletable: false,
@@ -20,7 +23,7 @@ Blocks["hello1"] = {
     en: "%1 Hello"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/mDown.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/kidsblocks/mDown.png"}
   ],
   action: ["hello", "step1"]
 };
@@ -31,7 +34,7 @@ Blocks["hello2"] = {
     en: "%1 I am"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/mDown.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/kidsblocks/mDown.png"}
   ],
   action: ["hello", "step2"]
 };
@@ -42,7 +45,7 @@ Blocks["hello3"] = {
     en: "%1 Cos."
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/mDown.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/kidsblocks/mDown.png"}
   ],
   action: ["hello", "step3"]
 };
@@ -53,7 +56,7 @@ Blocks["hello4"] = {
     en: "%1 Nice to meet you."
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/mDown.png", width: 50, height: 50}
+    {type: "field_image", src: "/img/kidsblocks/mDown.png"}
   ],
   action: ["hello", "step4"]
 };
@@ -65,7 +68,10 @@ Blocks["move_up"] = {
     en: "%1 Move Up"
   },
   args0: [
-    {type: "field_image", src: "/img/up.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/up.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/mUp.png"}
   ],
   action: ["move", "up"]
 };
@@ -76,7 +82,10 @@ Blocks["move_down"] = {
     en: "%1 Move Down"
   },
   args0: [
-    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/down.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/mDown.png"}
   ],
   action: ["move", "down"]
 };
@@ -87,7 +96,10 @@ Blocks["move_left"] = {
     en: "%1 Move Left"
   },
   args0: [
-    {type: "field_image", src: "/img/left.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/left.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/mLeft.png"}
   ],
   action: ["move", "left"]
 };
@@ -98,7 +110,10 @@ Blocks["move_right"] = {
     en: "%1 Move Right"
   },
   args0: [
-    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/right.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/mRight.png"}
   ],
   action: ["move", "right"]
 };
@@ -109,7 +124,7 @@ Blocks["move_forward"] = {
     en: "%1 Move Forward"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/move_forward.png"}
   ],
   action: ["move", "forward"]
 };
@@ -120,7 +135,7 @@ Blocks["jump_forward"] = {
     en: "%1 Jump Forward"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/move_forward.png"}
   ],
   action: ["move", "jump_forward"]
 };
@@ -131,7 +146,7 @@ Blocks["move_forward2"] = {
     en: "%1 Move Forward Twice"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/move_forward.png"}
   ],
   action: ["func", {
     type: "repeat",
@@ -148,7 +163,7 @@ Blocks["move_forward3"] = {
     en: "%1 Move Forward Three Times"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/move_forward.png"}
   ],
   action: ["func", {
     type: "repeat",
@@ -165,7 +180,7 @@ Blocks["move_forward4"] = {
     en: "%1 Move Forward Four Times"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/move_forward.png"}
   ],
   action: ["func", {
     type: "repeat",
@@ -182,7 +197,7 @@ Blocks["rotate_left"] = {
     en: "%1 Turn Left"
   },
   args0: [
-    {type: "field_image", src: "/img/rotate_left.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/rotate_left.png"}
   ],
   action: ["rotate", "couter_clock_wise"]
 };
@@ -193,7 +208,7 @@ Blocks["rotate_right"] = {
     en: "%1 Turn Right"
   },
   args0: [
-    {type: "field_image", src: "/img/rotate_right.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/rotate_right.png"}
   ],
   action: ["rotate", "clock_wise"]
 };
@@ -204,7 +219,10 @@ Blocks["get_item"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/get_item.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/get_item.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
   ],
   action: ["getItem"]
 };
@@ -215,23 +233,32 @@ Blocks["use_item"] = {
     en: "%1 Use Item"
   },
   args0: [
-    {type: "field_image", src: "/img/get_item.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/get_item.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Using.png"}
   ],
   action: ["useItem"]
 };
 Blocks["get_item2"] = {
   rgbColor: "#9C1881",
-  message0: "%1 아이템 가져오기",
+  message0: {
+    ko: "%1 아이템 가져오기",
+    en: "%1 Get Item"
+  },
   args0: [
-    {type: "field_image", src: "/img/get_item.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/get_item.png"}
   ],
   action: ["getItem2"]
 };
 Blocks["use_item2"] = {
   rgbColor: "#ED95AE",
-  message0: "%1 아이템 사용하기",
+  message0: {
+    ko: "%1 아이템 사용하기",
+    en: "%1 Use Item"
+  },
   args0: [
-    {type: "field_image", src: "/img/get_item.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/get_item.png"}
   ],
   action: ["useItem2"]
 };
@@ -242,7 +269,7 @@ Blocks["check"] = {
     en: "%1 Inspect"
   },
   args0: [
-    {type: "field_image", src: "/img/check.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/check.png"}
   ],
   action: ["check"]
 };
@@ -253,7 +280,7 @@ Blocks["check2"] = {
     en: "%1 Inspect"
   },
   args0: [
-    {type: "field_image", src: "/img/check.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/check.png"}
   ],
   action: ["check2"]
 };
@@ -264,7 +291,7 @@ Blocks["together"] = {
     en: "%1 Together"
   },
   args0: [
-    {type: "field_image", src: "/img/cobot/together.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/cobot/together.png"}
   ],
   action: ["together"]
 };
@@ -275,7 +302,7 @@ Blocks["present"] = {
     en: "%1 Present"
   },
   args0: [
-    {type: "field_image", src: "/img/frog/gift.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/frog/gift.png"}
   ],
   action: ["present"]
 };
@@ -286,7 +313,7 @@ Blocks["wait"] = {
     en: "%1 Wait for Green Light"
   },
   args0: [
-    {type: "field_image", src: "/img/bomi/trf_rot_green.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/bomi/trf_rot_green.png"}
   ],
   action: ["wait"]
 };
@@ -297,7 +324,10 @@ Blocks["item_scissors"] = {
     en: "%1 Scissors"
   },
   args0: [
-    {type: "field_image", src: "/img/hand_scissors.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/hand_scissors.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Scissors.png"}
   ],
   action: ["action", "scissors"]
 };
@@ -308,7 +338,10 @@ Blocks["item_rock"] = {
     en: "%1 Rock"
   },
   args0: [
-    {type: "field_image", src: "/img/hand_rock.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/hand_rock.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Rock.png"}
   ],
   action: ["action", "rock"]
 };
@@ -319,7 +352,10 @@ Blocks["item_paper"] = {
     en: "%1 Paper"
   },
   args0: [
-    {type: "field_image", src: "/img/hand_paper.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/hand_paper.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Paper.png"}
   ],
   action: ["action", "paper"]
 };
@@ -330,6 +366,21 @@ Blocks["repeat"] = {
     en: "Repeat %1"
   },
   args0: [{
+    type: "field_dropdown",
+    name: "count",
+    options: [
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"],
+      ["10", "10"]
+    ]
+  }],
+  argsh0: [{
     type: "field_dropdown",
     name: "count",
     options: [
@@ -463,7 +514,7 @@ Blocks['repeat_until_bok'] = {
     en: "Repeat Until meeting luckky poket"
   },
   args0: [
-    {type: "field_image", src: "/img/winterspecial/lucks.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/winterspecial/lucks.png"}
   ],
   message1: "%1",
   args1: [{
@@ -479,7 +530,7 @@ Blocks['condition_ifsealion_up'] = {
     en: "If up-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/sealion.png"}
   ],
   message1: "%1",
   args1: [{
@@ -491,7 +542,7 @@ Blocks['condition_ifsealion_up'] = {
     en: "Else"
   },
   args2: [
-    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/sealion.png"}
   ],
   message3: "%1",
   args3: [{
@@ -507,7 +558,7 @@ Blocks['condition_ifsealion_down'] = {
     en: "If down-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/sealion.png"}
   ],
   message1: "%1",
   args1: [{
@@ -519,7 +570,7 @@ Blocks['condition_ifsealion_down'] = {
     en: "Else"
   },
   args2: [
-    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/sealion.png"}
   ],
   message3: "%1",
   args3: [{
@@ -535,7 +586,7 @@ Blocks['condition_ifsealion_left'] = {
     en: "If left-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/sealion.png"}
   ],
   message1: "%1",
   args1: [{
@@ -547,7 +598,7 @@ Blocks['condition_ifsealion_left'] = {
     en: "Else"
   },
   args2: [
-    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/sealion.png"}
   ],
   message3: "%1",
   args3: [{
@@ -563,7 +614,7 @@ Blocks['condition_ifsealion_right'] = {
     en: "If right-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/sealion.png"}
   ],
   message1: "%1",
   args1: [{
@@ -575,7 +626,7 @@ Blocks['condition_ifsealion_right'] = {
     en: "Else"
   },
   args2: [
-    {type: "field_image", src: "/img/pingping/sealion.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/sealion.png"}
   ],
   message3: "%1",
   args3: [{
@@ -591,7 +642,7 @@ Blocks['condition_ificehole_up'] = {
     en: "If up-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/icehole.png"}
   ],
   message1: "%1",
   args1: [{
@@ -603,7 +654,7 @@ Blocks['condition_ificehole_up'] = {
     en: "Else"
   },
   args2: [
-    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/icehole.png"}
   ],
   message3: "%1",
   args3: [{
@@ -619,7 +670,7 @@ Blocks['condition_ificehole_down'] = {
     en: "If down-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/icehole.png"}
   ],
   message1: "%1",
   args1: [{
@@ -631,7 +682,7 @@ Blocks['condition_ificehole_down'] = {
     en: "Else"
   },
   args2: [
-    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/icehole.png"}
   ],
   message3: "%1",
   args3: [{
@@ -647,7 +698,7 @@ Blocks['condition_ificehole_left'] = {
     en: "If left-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/icehole.png"}
   ],
   message1: "%1",
   args1: [{
@@ -659,7 +710,7 @@ Blocks['condition_ificehole_left'] = {
     en: "Else"
   },
   args2: [
-    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/icehole.png"}
   ],
   message3: "%1",
   args3: [{
@@ -675,7 +726,7 @@ Blocks['condition_ificehole_right'] = {
     en: "If right-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/icehole.png"}
   ],
   message1: "%1",
   args1: [{
@@ -687,7 +738,7 @@ Blocks['condition_ificehole_right'] = {
     en: "Else"
   },
   args2: [
-    {type: "field_image", src: "/img/pingping/icehole.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/pingping/icehole.png"}
   ],
   message3: "%1",
   args3: [{
@@ -703,7 +754,7 @@ Blocks['condition_ifblock_up'] = {
     en: "If right-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/up.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/up.png"}
   ],
   message1: "%1",
   args1: [{
@@ -728,7 +779,7 @@ Blocks['condition_ifblock_down'] = {
     en: "If right-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/down.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/down.png"}
   ],
   message1: "%1",
   args1: [{
@@ -753,7 +804,7 @@ Blocks['condition_ifblock_left'] = {
     en: "If right-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/left.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/left.png"}
   ],
   message1: "%1",
   args1: [{
@@ -778,7 +829,7 @@ Blocks['condition_ifblock_right'] = {
     en: "If right-side %1 O"
   },
   args0: [
-    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/right.png"}
   ],
   message1: "%1",
   args1: [{
@@ -829,7 +880,7 @@ Blocks['condition_light'] = {
     en: "If %1 is red light"
   },
   args0: [
-    {type: "field_image", src: "/img/bomi/trf_rot_red.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/bomi/trf_rot_red.png"}
   ],
   message1: "%1",
   args1: [{
@@ -2296,7 +2347,7 @@ Blocks["move_right1"] = {
   colour: 260,
   message0: "%1 앞으로 1칸 가기",
   args0: [
-    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/right.png"}
   ],
   action: ["move", "right"]
 };
@@ -2304,7 +2355,7 @@ Blocks["move_right2"] = {
   colour: 260,
   message0: "%1 앞으로 2칸 가기",
   args0: [
-    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/right.png"}
   ],
   action: ["func", {
     type: "repeat",
@@ -2318,7 +2369,7 @@ Blocks["move_right4"] = {
   colour: 260,
   message0: "%1 앞으로 4칸 가기",
   args0: [
-    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/right.png"}
   ],
   action: ["func", {
     type: "repeat",
@@ -2332,7 +2383,7 @@ Blocks["move_right8"] = {
   colour: 260,
   message0: "%1 앞으로 8칸 가기",
   args0: [
-    {type: "field_image", src: "/img/right.png", width: 24, height: 24}
+    {type: "field_image", src: "/img/right.png"}
   ],
   action: ["func", {
     type: "repeat",
