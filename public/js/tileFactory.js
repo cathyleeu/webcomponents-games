@@ -342,7 +342,7 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [6,7,6,8,6]
         };
       }
-      if(character.src.indexOf('SpriteToad1_128') >= 0) {
+      if(character.src.indexOf('SpriteToad1_256') >= 0) {
         animations = {
           stand_u: 9,
           walk_u: [9,10,9,11,9],
@@ -354,7 +354,7 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [6,7,6,8,6]
         };
       }
-      if(character.src.indexOf('SpriteToad2_128') >= 0) {
+      if(character.src.indexOf('SpriteToad2_256') >= 0) {
         animations = {
           stand_u: 9,
           walk_u: [9,10,9,11,9],
@@ -366,7 +366,7 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [6,7,6,8,6]
         };
       }
-      if(character.src.indexOf('SpriteToad3_128') >= 0) {
+      if(character.src.indexOf('SpriteToad3_256') >= 0) {
         animations = {
           stand_u: 9,
           walk_u: [9,10,9,11,9],
@@ -378,7 +378,7 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [6,7,6,8,6]
         };
       }
-      if(character.src.indexOf('SpriteToad4_128') >= 0) {
+      if(character.src.indexOf('SpriteToad4_256') >= 0) {
         animations = {
           stand_u: 9,
           walk_u: [9,10,11,9],
