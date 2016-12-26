@@ -1281,6 +1281,9 @@ Actions.prototype.repeat = function(type, block, callback) {
       child = block.getInputTargetBlock("statements"),
       count = +block.getFieldValue("count"),
       _this = this;
+  if(_this.kidscoding.isHorizontal) {
+    count = +block.getInputTargetBlock("count").getFieldValue("count");
+  }
   function proc() {
     var tile = _this.map[character.py][character.px];
     if(child && ((tile != "%" && type == "repeat_until") || count > 0)) {
