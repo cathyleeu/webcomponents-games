@@ -51,20 +51,39 @@ KidsCoding.prototype = {
       if(name != "start" && toolbox.indexOf(name) < 0 && workspace.indexOf(name) < 0) {
         return;
       }
+      // 가로 블럭 처리
+      if(_this.isHorizontal) {
+        // messageh와 argsh 처리
+        for(var item in options) {
+          if(item.slice(0, 8) == "messageh" || item.slice(0, 5) == "argsh") {
+            if(options[item] == null) {
+              delete options[item.slice(0, -2) + item.slice(-1)];
+            } else {
+              options[item.slice(0, -2) + item.slice(-1)] = options[item];
+            }
+            delete options[item];
+          }
+        }
+      } else {
+        // messageh와 argsh 삭제
+        for(var item in options) {
+          if(item.slice(0, 8) == "messageh" || item.slice(0, 5) == "argsh") {
+            delete options[item];
+          }
+        }
+      }
       for(var item in options) {
-        // 다국어 기능
-        if(item.slice(0, -1) == "message" && typeof options[item] == "object") {
-          options[item] = options[item][lang];
-        }
-        // 가로 블럭 처리
-        if(_this.isHorizontal) {
-          if(item.slice(0, 8) == "messageh") {
-            options["message" + item.slice(-1)] = options[item];
+        if(item.slice(0, -1) == "message") {
+          // 다국어 기능
+          if(typeof options[item] == "object") {
+            options[item] = options[item][lang];
           }
-          if(item.slice(0, 5) == "argsh") {
-            options["args" + item.slice(-1)] = options[item];
+          // 가로 블럭에서 텍스트 제거
+          if(_this.isHorizontal) {
+            options[item] = (options[item].match(/%[\d+]/g) || ["%1"]).join(" ")
           }
         }
+        // 이미지 기본 크기 설정
         if(item.slice(0, 4) == "args") {
           options[item].forEach(function(obj) {
             if(obj.type == "field_image" && !obj.width) {
@@ -74,17 +93,6 @@ KidsCoding.prototype = {
           });
         }
       }
-      // 가로 블럭에서 텍스트 제거
-      if(_this.isHorizontal) {
-        for(var item in options) {
-          if(item.slice(0, -1) == "message") {
-            options[item] = (options[item].match(/%[\d+]/g) || ["%1"]).join(" ")
-          }
-        }
-      }
-      // if(options.message0) {
-      //   options.message0 = "%1";
-      // }
       options = $.extend({
         colour: 0,
         message0: "",
@@ -120,7 +128,7 @@ KidsCoding.prototype = {
       if(tokens.length >= 2) {
         _this.blockLimits[tokens[0]] = +tokens[1];
       }
-      if(tokens[0]=="repeat") {
+      if(_this.isHorizontal && tokens[0]=="repeat") {
         value_str = '<value name="count">' +
           '<shadow type="dropdown">' +
           '<field name="count">2</field>' +

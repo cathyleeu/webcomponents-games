@@ -383,7 +383,7 @@ Blocks["repeat"] = {
   message1: "%1",
   args1: [{
     type: "input_statement",
-    name: "if_statements"
+    name: "statements"
   }],
   messageh0: "%1 %2 %3",
   argsh0: [{
@@ -396,6 +396,8 @@ Blocks["repeat"] = {
     type: "input_value",
     name: "count"
   }],
+  messageh1: null,
+  argsh1: null,
   action: ["repeat", "count"]
 };
 
