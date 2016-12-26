@@ -120,7 +120,7 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
         return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
       })
       .map(function(item) {
-        return "public/img/kidsblocks/" + item;
+        return "/img/kidsblocks/" + item;
       });
   var suwonImgs = fs.readdirSync("public/img/dragndrop_suwon")
       .filter(function(item) {

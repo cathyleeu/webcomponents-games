@@ -52,11 +52,18 @@ KidsCoding.prototype = {
         return;
       }
       for(var item in options) {
+        // 다국어 기능
         if(item.slice(0, -1) == "message" && typeof options[item] == "object") {
           options[item] = options[item][lang];
         }
-        if(_this.isHorizontal && item.slice(0, 5) == "argsh") {
-          options["args" + item.slice(-1)] = options[item];
+        // 가로 블럭 처리
+        if(_this.isHorizontal) {
+          if(item.slice(0, 8) == "messageh") {
+            options["message" + item.slice(-1)] = options[item];
+          }
+          if(item.slice(0, 5) == "argsh") {
+            options["args" + item.slice(-1)] = options[item];
+          }
         }
         if(item.slice(0, 4) == "args") {
           options[item].forEach(function(obj) {
@@ -67,6 +74,17 @@ KidsCoding.prototype = {
           });
         }
       }
+      // 가로 블럭에서 텍스트 제거
+      if(_this.isHorizontal) {
+        for(var item in options) {
+          if(item.slice(0, -1) == "message") {
+            options[item] = (options[item].match(/%[\d+]/g) || ["%1"]).join(" ")
+          }
+        }
+      }
+      // if(options.message0) {
+      //   options.message0 = "%1";
+      // }
       options = $.extend({
         colour: 0,
         message0: "",
@@ -83,9 +101,6 @@ KidsCoding.prototype = {
       }
       Blockly.Blocks[name] = {
         init: function() {
-          if(_this.isHorizontal && options.message0) {
-            options.message0 = "%1";
-          }
           this.jsonInit(options);
           if(options.id) {
             this.id = options.id;
@@ -100,11 +115,19 @@ KidsCoding.prototype = {
       };
     });
   	var toolbox = toolbox.map(function(item) {
-      var tokens = item.split(":");
+      var tokens = item.split(":"),
+          value_str = "";
       if(tokens.length >= 2) {
         _this.blockLimits[tokens[0]] = +tokens[1];
       }
-      return '<block type="' + tokens[0] + '"></block>';
+      if(tokens[0]=="repeat") {
+        value_str = '<value name="count">' +
+          '<shadow type="dropdown">' +
+          '<field name="count">2</field>' +
+          '</shadow>' +
+          '</value>';
+      }
+      return '<block type="' + tokens[0] + '">' + value_str + '</block>';
     }).join("");
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {

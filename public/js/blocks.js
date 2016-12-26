@@ -380,28 +380,49 @@ Blocks["repeat"] = {
       ["10", "10"]
     ]
   }],
-  argsh0: [{
-    type: "field_dropdown",
-    name: "count",
-    options: [
-      ["2", "2"],
-      ["3", "3"],
-      ["4", "4"],
-      ["5", "5"],
-      ["6", "6"],
-      ["7", "7"],
-      ["8", "8"],
-      ["9", "9"],
-      ["10", "10"]
-    ]
-  }],
   message1: "%1",
   args1: [{
     type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2 %3",
+  argsh0: [{
+    type: "input_statement",
     name: "statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/Repeat.png"
+  }, {
+    type: "input_value",
+    name: "count"
   }],
   action: ["repeat", "count"]
 };
+
+Blockly.Blocks['dropdown'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          ["2", "2"],
+          ["3", "3"],
+          ["4", "4"],
+          ["5", "5"],
+          ["6", "6"],
+          ["7", "7"],
+          ["8", "8"],
+          ["9", "9"],
+          ["10", "10"]
+        ]), 'count');
+    this.setOutput(true);
+    this.setColour(Blockly.Colours.event.primary,
+      Blockly.Colours.event.secondary,
+      Blockly.Colours.event.tertiary
+    );
+  }
+};
+
+
+
 Blocks['repeat_until'] = {
   rgbColor: "#242786",
   message0: {
