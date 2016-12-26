@@ -366,7 +366,7 @@ function setBitmapCoord(bitmap, px, py) {
 
 function handle_resize(e) {
   var size,
-      workspace_height = 200;
+      workspace_height = 230;
   if(kidscoding.isHorizontal) {
     size = $(window).height() - $("#navbarMaze").height() - workspace_height;
     if($(window).width() < size) {
