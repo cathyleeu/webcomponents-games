@@ -218,6 +218,27 @@
     ["봄이의 설빔찾기", "/maze#!10_5-4bomi-sulbim/index"],
     ["짹스페로우와 복주머니", "/maze#!10_5-4jack-bok/index"]
   ],
+  "8권&9권&10권&겨울특별호":[
+    ["딩봇의 10 만들기", "/maze#!8-1cobot-maketen/index"],
+    ["딩봇과 99까지의 수", "/maze#!8-2cobot-99/index"],
+    ["코봇과 분리수거", "/maze#!8-3cobot-trash/index"],
+    ["코봇의 길안내", "/maze#!8-4cobot-guide/index"],
+    ["루돌프와 시간1", "/maze#!9-1rudolph-clock1/index"],
+    ["루돌프와 시간2", "/maze#!9-2rudolph-clock2/index"],
+    ["루돌프와 선물1", "/maze#!9-3rudolph-present1/index"],
+    ["루돌프와 선물2", "/maze#!9-4rudolph-present2/index"],
+    ["핑핑이와 덧셈과 뺄셈", "/maze#!10-1pingping-plusminus/index"],
+    ["핑핑이와 바다사자1", "/maze#!10-2pingping-while1/index"],
+    ["핑핑이와 바다사자2", "/maze#!10-3pingping-while2/index"],
+    ["핑핑이와 얼음구멍", "/maze#!10-4pingping-while3/index"],
+    ["코봇과 99까지의 수", "/maze#!10_5-1cobot-99/index"],
+    ["딩봇과 시계읽기", "/maze#!10_5-2dingbot-clock/index"],
+    ["루돌프와 덧셈뺄셈", "/maze#!10_5-2rudolph-plusminus/index"],
+    ["코봇의 한복선물", "/maze#!10_5-3cobot-hanbok/index"],
+    ["핑핑이와 가위바위보", "/maze#!10_5-3pingping-rsp/index"],
+    ["봄이의 설빔찾기", "/maze#!10_5-4bomi-sulbim/index"],
+    ["짹스페로우와 복주머니", "/maze#!10_5-4jack-bok/index"]
+  ],
   "숙명키즈": [
     ["핑핑이와 덧셈과 뺄셈", "/maze#!10-1pingping-plusminus/index"],
     ["핑핑이와 바다사자1", "/maze#!10-2pingping-while1/index"],
