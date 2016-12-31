@@ -2,30 +2,20 @@ KidsCoding = function() {
   this.q_idx = 0;
   this.queue = [];
   this.workspace = null;
-  this.createXml = function(blocks) {
-    if(blocks.length == 0) {
-      return "";
-    }
-    var block = blocks[0],
-        str;
-    if(typeof block == "string") {
-      block = {
-        type: block
-      };
-      if(block.type == "start") {
-        block.x = 30;
-        block.y = 20;
-      }
-    }
-    block.deletable = false;
-    block.movable = false;
-    str = Object.keys(block).map(function(attr) {
-      return attr + '="' + block[attr] + '"';
-    }).join(" ");
-    return "<block " + str + "><next>" + this.createXml(blocks.slice(1)) + "</next></block>";
-  };
   this.isHorizontal = location.pathname.indexOf("mazeh") >= 0;
-  if(!this.isHorizontal) {
+  if(this.isHorizontal) {
+    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 100;
+
+    var position = Blockly.VerticalFlyout.prototype.position;
+    Blockly.VerticalFlyout.prototype.position = function() {
+      position.call(this);
+      this.height_ = $("#display").height();
+      this.setBackgroundPath_(this.width_, this.height_);
+      if (this.scrollbar_) {
+        this.scrollbar_.resize();
+      }
+    };
+  } else {
     var labelInit = Blockly.FieldLabel.prototype.init;
     // 텍스트 라벨의 위치 조정
     Blockly.FieldLabel.prototype.init = function() {
@@ -41,6 +31,29 @@ KidsCoding.prototype = {
   init: function(loader, mazeInfo, run, tileFactory) {
     this.tileFactory = tileFactory;
     this.Actions = new Actions(this, loader, mazeInfo, run);
+  },
+  createXml: function(blocks) {
+    if(blocks.length == 0) {
+      return "";
+    }
+    var block = blocks[0],
+        str;
+    if(typeof block == "string") {
+      block = {
+        type: block
+      };
+      if(block.type == "start") {
+        block.x = 30 - (this.isHorizontal ? Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH : 0);
+        block.y = 20;
+
+      }
+    }
+    block.deletable = false;
+    block.movable = false;
+    str = Object.keys(block).map(function(attr) {
+      return attr + '="' + block[attr] + '"';
+    }).join(" ");
+    return "<block " + str + "><next>" + this.createXml(blocks.slice(1)) + "</next></block>";
   },
   initBlockly: function(toolbox, workspace) {
     var _this = this,
@@ -143,7 +156,7 @@ KidsCoding.prototype = {
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
       toolbox: '<xml>' + toolbox + '</xml>',
       media: this.isHorizontal ? '/scratch-blocks/media/' : '/GoogleBlockly/media/',
-      trashcan: true,
+      trashcan: !this.isHorizontal,
       zoom: this.isHorizontal ? null : {
         controls: true,
         wheel: true,
@@ -151,8 +164,7 @@ KidsCoding.prototype = {
         maxScale: 1.2,
         minScale: 0.6,
         scaleSpeed: 1.2
-      },
-      horizontalLayout: this.isHorizontal
+      }
     });
     var startblock = '<xml>' + this.createXml(workspace) + '</xml>';
   	Blockly.Xml.domToWorkspace($(startblock).get(0),this.workspace);
