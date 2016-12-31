@@ -12,9 +12,7 @@ Blocks["start"] = {
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Start.png"}
   ],
-  previousStatement: false,
-  deletable: false,
-  movable: false
+  previousStatement: false
 };
 Blocks["hello1"] = {
   rgbColor: "#EE4E34",
