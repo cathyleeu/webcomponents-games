@@ -17,6 +17,8 @@ KidsCoding = function() {
         block.y = 20;
       }
     }
+    block.deletable = false;
+    block.movable = false;
     str = Object.keys(block).map(function(attr) {
       return attr + '="' + block[attr] + '"';
     }).join(" ");
