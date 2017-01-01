@@ -1,4 +1,5 @@
 KidsCoding = function() {
+  var _this = this;
   this.q_idx = 0;
   this.queue = [];
   this.workspace = null;
@@ -26,13 +27,40 @@ KidsCoding = function() {
   }
   // 일부 태블릿에서 블럭이 움직이지 않는 현상 수정
   Blockly.longStart_ = function() {};
+  // movable=false 인 블럭 클릭이 되지 않는 현상 처리
+  // https://github.com/google/blockly/issues/742
+  var onMouseDown_ = Blockly.BlockSvg.prototype.onMouseDown_;
+  Blockly.BlockSvg.prototype.onMouseDown_ = function(e) {
+    e.stopPropagation();
+    onMouseDown_.call(this, e);
+  };
+  // 가로블럭에서 드랍다운 메뉴가 화면 밖으로 나가는 현상 수정
+  var showEditor_ = Blockly.FieldDropdown.prototype.showEditor_;
+  Blockly.FieldDropdown.prototype.showEditor_ = function() {
+    var getBoundingClientRect = this.fieldGroup_.getBoundingClientRect;
+    this.fieldGroup_.getBoundingClientRect = function() {
+      var position = getBoundingClientRect.call(this);
+      return {
+        top: position.top - 300,
+        bottom: position.bottom,
+        left: position.left,
+        right: position.right,
+        width: position.width,
+        height: position.height
+      };
+    };
+    showEditor_.call(this);
+    delete this.fieldGroup_.getBoundingClientRect;
+  };
 };
 KidsCoding.prototype = {
   init: function(loader, mazeInfo, run, tileFactory) {
     this.tileFactory = tileFactory;
     this.Actions = new Actions(this, loader, mazeInfo, run);
+    // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
+    // this.blockLimits = {};
   },
-  createXml: function(blocks) {
+  createXml: function(blocks, isToolbox) {
     if(blocks.length == 0) {
       return "";
     }
@@ -43,17 +71,30 @@ KidsCoding.prototype = {
         type: block
       };
       if(block.type == "start") {
-        block.x = 30 - (this.isHorizontal ? Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH : 0);
+        block.x = 30;
         block.y = 20;
-
       }
     }
-    block.deletable = false;
-    block.movable = false;
+    if(!isToolbox) {
+      block.deletable = false;
+      block.movable = false;
+    }
     str = Object.keys(block).map(function(attr) {
       return attr + '="' + block[attr] + '"';
     }).join(" ");
-    return "<block " + str + "><next>" + this.createXml(blocks.slice(1)) + "</next></block>";
+    var value_str = "";
+    if(this.isHorizontal && block.type=="repeat") {
+      value_str = '<value name="count">' +
+        '<shadow type="dropdown">' +
+        '<field name="count">2</field>' +
+        '</shadow>' +
+        '</value>';
+    }
+    if(isToolbox) {
+      return "<block " + str + ">" + value_str + "</block>" + this.createXml(blocks.slice(1), isToolbox);
+    } else {
+      return "<block " + str + ">" + value_str + "<next>" + this.createXml(blocks.slice(1), isToolbox) + "</next></block>";
+    }
   },
   initBlockly: function(toolbox, workspace) {
     var _this = this,
@@ -61,7 +102,6 @@ KidsCoding.prototype = {
     if(!workspace) {
       workspace = ["start"];
     }
-    this.blockLimits = {};
     $.each(Blocks, function(name, options) {
       if(name != "start" && toolbox.indexOf(name) < 0 && workspace.indexOf(name) < 0) {
         return;
@@ -137,24 +177,18 @@ KidsCoding.prototype = {
         }
       };
     });
-  	var toolbox = toolbox.map(function(item) {
-      var tokens = item.split(":"),
-          value_str = "";
-      if(tokens.length >= 2) {
-        _this.blockLimits[tokens[0]] = +tokens[1];
-      }
-      if(_this.isHorizontal && tokens[0]=="repeat") {
-        value_str = '<value name="count">' +
-          '<shadow type="dropdown">' +
-          '<field name="count">2</field>' +
-          '</shadow>' +
-          '</value>';
-      }
-      return '<block type="' + tokens[0] + '">' + value_str + '</block>';
-    }).join("");
+    // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
+    // var toolbox = toolbox.map(function(item) {
+    //   var tokens = item.split(":"),
+    //       value_str = "";
+    //   if(tokens.length >= 2) {
+    //     _this.blockLimits[tokens[0]] = +tokens[1];
+    //   }
+    //   return '<block type="' + tokens[0] + '"></block>';
+    // }).join("");
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
-      toolbox: '<xml>' + toolbox + '</xml>',
+      toolbox: '<xml>' + this.createXml(toolbox, true) + '</xml>',
       media: this.isHorizontal ? '/scratch-blocks/media/' : '/GoogleBlockly/media/',
       trashcan: !this.isHorizontal,
       zoom: this.isHorizontal ? null : {
