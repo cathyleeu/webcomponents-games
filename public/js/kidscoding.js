@@ -3,36 +3,6 @@ KidsCoding = function() {
   this.q_idx = 0;
   this.queue = [];
   this.workspace = null;
-  this.createXml = function(blocks) {
-    if(blocks.length == 0) {
-      return "";
-    }
-    var block = blocks[0],
-        str;
-    if(typeof block == "string") {
-      block = {
-        type: block
-      };
-      if(block.type == "start") {
-        block.x = 30;
-        block.y = 20;
-      }
-    }
-    block.deletable = false;
-    block.movable = false;
-    str = Object.keys(block).map(function(attr) {
-      return attr + '="' + block[attr] + '"';
-    }).join(" ");
-    var value_str = "";
-    if(this.isHorizontal && block.type=="repeat") {
-      value_str = '<value name="count">' +
-        '<shadow type="dropdown">' +
-        '<field name="count">2</field>' +
-        '</shadow>' +
-        '</value>';
-    }
-    return "<block " + str + ">" + value_str + "<next>" + this.createXml(blocks.slice(1)) + "</next></block>";
-  };
   this.isHorizontal = location.pathname.indexOf("mazeh") >= 0;
   if(!this.isHorizontal) {
     var labelInit = Blockly.FieldLabel.prototype.init;
@@ -77,6 +47,42 @@ KidsCoding.prototype = {
     this.Actions = new Actions(this, loader, mazeInfo, run);
     // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
     // this.blockLimits = {};
+  },
+  createXml: function(blocks, isToolbox) {
+    if(blocks.length == 0) {
+      return "";
+    }
+    var block = blocks[0],
+        str;
+    if(typeof block == "string") {
+      block = {
+        type: block
+      };
+      if(block.type == "start") {
+        block.x = 30;
+        block.y = 20;
+      }
+    }
+    if(!isToolbox) {
+      block.deletable = false;
+      block.movable = false;
+    }
+    str = Object.keys(block).map(function(attr) {
+      return attr + '="' + block[attr] + '"';
+    }).join(" ");
+    var value_str = "";
+    if(this.isHorizontal && block.type=="repeat") {
+      value_str = '<value name="count">' +
+        '<shadow type="dropdown">' +
+        '<field name="count">2</field>' +
+        '</shadow>' +
+        '</value>';
+    }
+    if(isToolbox) {
+      return "<block " + str + ">" + value_str + "</block>" + this.createXml(blocks.slice(1), isToolbox);
+    } else {
+      return "<block " + str + ">" + value_str + "<next>" + this.createXml(blocks.slice(1), isToolbox) + "</next></block>";
+    }
   },
   initBlockly: function(toolbox, workspace) {
     var _this = this,
@@ -170,7 +176,7 @@ KidsCoding.prototype = {
     // }).join("");
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
-      toolbox: '<xml>' + this.createXml(toolbox) + '</xml>',
+      toolbox: '<xml>' + this.createXml(toolbox, true) + '</xml>',
       media: this.isHorizontal ? '/scratch-blocks/media/' : '/GoogleBlockly/media/',
       trashcan: true,
       zoom: this.isHorizontal ? null : {
