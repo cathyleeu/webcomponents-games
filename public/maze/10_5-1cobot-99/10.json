@@ -47,10 +47,10 @@
     "img": "/img/cobot/p99_10.png"
   },{
     "msg": "10개 묶음의 사탕과",
-    "img": "/img/cobot/bolt10_0.png"
+    "img": "/img/winterspecial/candy10.png"
   },{
     "msg": "1개 사탕을 필요한 개수만큼 집어서",
-    "img": "/img/cobot/bolt1_0.png"
+    "img": "/img/winterspecial/candy1.png"
   },{
     "msg": "주머니에 넣어보자"
   }]
