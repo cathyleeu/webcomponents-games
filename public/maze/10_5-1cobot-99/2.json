@@ -41,16 +41,16 @@
     "itemCount": 8
   }],
   "tutorial": [{
-    "msg": "코봇은 볼트를 모으고 싶어요"
+    "msg": "코봇은 사탕를 모으고 싶어요"
   },{
     "msg": "주머니에 적혀 있는 숫자만큼 사탕을 모아야 해요",
     "img": "/img/cobot/p99_2.png"
   },{
     "msg": "10개 묶음의 사탕과",
-    "img": "/img/cobot/bolt10_0.png"
+    "img": "/img/winterspecial/candy10.png"
   },{
     "msg": "1개 사탕을 필요한 개수만큼 집어서",
-    "img": "/img/cobot/bolt1_0.png"
+    "img": "/img/winterspecial/candy1.png"
   },{
     "msg": "주머니에 넣어보자"
   }]
