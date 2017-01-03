@@ -537,8 +537,8 @@ function addEvents() {
   });
   function handleMove(e) {
     //개발전 주석처리
-    //e.preventDefault();
-    //e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
     if(createjs.Tween.hasActiveTweens()) {
       return;
     }
