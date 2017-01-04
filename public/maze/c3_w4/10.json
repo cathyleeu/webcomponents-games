@@ -1,0 +1,43 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w..#.j..w",
+    "w....#.#w",
+    "w.w%...dw",
+    "w.w.www.w",
+    "w.w..#..w",
+    "w.#...).w",
+    "w..i#...w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 3,
+    "img":"f_granma",
+    "useItem": 3
+  }, {
+    "x": 6,
+    "y": 6,
+    "img":"cookie",
+    "itemCount": 3
+  }],
+  "tutorial": [{
+    "msg:ko": "엄마에게 쿠키를 받았어",
+    "msg:en": "Mom give me cookies."
+  },{
+    "msg:ko": "친할머니에게 쿠키를 전달하자!",
+    "msg:en": "Deliver Cookies to granma",
+    "img": "/img/c3_w1/f_granma.png"
+  }]
+}

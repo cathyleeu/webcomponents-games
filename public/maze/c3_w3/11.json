@@ -1,0 +1,46 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#.####..#",
+    "#....#%.#",
+    "###....##",
+    "#....#..#",
+    "#...).l##",
+    "#.#..####",
+    "#......##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "useItem": 3
+  }, {
+    "x": 4,
+    "y": 5,
+    "img":"hunny_pot",
+    "itemCount": 3
+  }],
+  "tutorial": [{
+    "msg:ko": "집으로 꿀단지를 가져갈꺼야",
+    "msg:en": "I'm going to take hunny pot's to my house"
+  },{
+    "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자",
+    "msg:en": "Move to 꿀단지 And then Use 'get item' Block",
+    "img": "/img/c3_w2/hunny_pot.png"
+  },{
+    "msg:ko": "그리고나서 집으로 이동하고, 아이템 사용하기를 해보자",
+    "msg:en": "then move my house, Use 'use item' Block",
+    "img": "/img/c3_w1/house.png"
+  }]
+}
