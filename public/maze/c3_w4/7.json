@@ -1,0 +1,43 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.wwww..w",
+    "w..j..%.w",
+    "wwww...#w",
+    "w....#..w",
+    "w...).l.w",
+    "w.#..wwww",
+    "w....o.#w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img":"father",
+    "useItem": 2
+  }, {
+    "x": 4,
+    "y": 5,
+    "img":"cookie",
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "엄마에게 쿠키를 받았어",
+    "msg:en": "Mom give me cookies."
+  },{
+    "msg:ko": "아빠에게 쿠키를 전달하자!",
+    "msg:en": "Deliver Cookies to father",
+    "img": "/img/c3_w1/father.png"
+  }]
+}

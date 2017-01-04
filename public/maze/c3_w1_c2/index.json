@@ -1,0 +1,94 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "##.##############.",
+    "..#..%...%....%..#",
+    "..#....%...%.....#",
+    ".#.r............#.",
+    "..#..%...%....%..#",
+    "..#....%....%....#",
+    "##.##############."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 1,
+    "link": "c3_w1_c2/1"
+  },{
+    "x": 5,
+    "y": 4,
+    "link": "c3_w1_c2/2"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "c3_w1_c2/3"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c3_w1_c2/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c3_w1_c2/5"
+  },{
+    "x": 9,
+    "y": 4,
+    "link": "c3_w1_c2/6"
+  },{
+    "x": 11,
+    "y": 2,
+    "link": "c3_w1_c2/7"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c3_w1_c2/8"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "c3_w1_c2/9"
+  },{
+    "x": 14,
+    "y": 4,
+    "link": "c3_w1_c2/10"
+  },{
+    "img":"hunny_pot",
+    "x": 16,
+    "y": 3,
+    "obstacle": false,
+    "link": "c3_w2/index",
+    "min_score": 10
+  }],
+  "tutorial": [{
+    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:en": "Press 'Next' Button~ 　　　　　　　↘"
+  }, {
+    "msg:ko": "덧셈을 해보자!",
+    "msg:en": "Let's solve the 'Plus' problem!",
+    "img": "/img/c3_w1/plus_title.png"
+  }, {
+    "msg:ko": "만약 1 + 3 = ? 이라는 문제가 나오면",
+    "msg:en": "If you want to solve the 'Plus' problem '1 + 3 = ? '",
+    "img": "/img/c3_w1/1plus3.png"
+  }, {
+    "msg:ko": "4가 답이니까 코딩맵에서 4를 찾아가면 되는거야!",
+    "msg:en": "you will move to '4'in coding map"
+  }, {
+    "msg:ko": "총 10문제를 깨야 다음 단계로 넘어갈 수 있어",
+    "msg:en": "To move next stage, you have to solve 10 problems"
+  }, {
+    "msg:ko": "10개의 별을 모은뒤,",
+    "msg:en": "Collect 10 stars and,"
+  }, {
+    "msg:ko": "꿀단지로 이동하자!",
+    "msg:en": "Move to Hunny pot!",
+    "x" : 16,
+    "y" : 3
+  },{
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }]
+}

@@ -1,0 +1,30 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "##..###.#",
+    "##......#",
+    "#.u#....#",
+    "#..##...#",
+    "#....#..#",
+    "#..###%.#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "저기 꿀단지가 있어",
+    "msg:en": "There is Hunny pot!",
+    "img": "/img/c3_w2/hunny_pot.png"
+  },{
+    "msg:ko": "꿀단지로 이동해 보자!",
+    "msg:en": "Let's move to hunny pot"
+  }]
+}
