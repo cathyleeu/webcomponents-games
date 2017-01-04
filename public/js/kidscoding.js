@@ -73,6 +73,9 @@ KidsCoding.prototype = {
       if(block.type == "start") {
         block.x = 30;
         block.y = 20;
+        if(this.isHorizontal) {
+          block.x -= this.workspace.getFlyout().getWidth();
+        }
       }
     }
     if(!isToolbox) {
