@@ -1,0 +1,34 @@
+{
+  "tile_size": 256,
+  "view_size": 8,
+  "workspace": ["start","immigrant"],
+  "toolbox": [
+
+  ],
+  "map": [
+    "#.###.#..##...",
+    ".@....#..#.#..",
+    "##..#..#.#...#",
+    "#..#..#.#..#..",
+    "..#.#....#.#%.",
+    "#...##.#....#.",
+    ".#.#.#..##..##"
+  ],
+  "tutorial": [{
+    "msg:ko": "코스네 가족은 지구로 이사를 갈꺼에요",
+    "msg:en": "Cos's family move to earth"
+  },{
+    "msg:ko": "지구로 이사가기 블록을 조립해서",
+    "msg:en": "Assemble the 'move to earth'block",
+    "img": "/img/a3_w3/move_block.png"
+  },{
+    "msg:ko": "우주선을 지구로 이동시켜보아요",
+    "msg:en": "Move ufo to earth",
+    "img": "/img/a3_w3/earth.png"
+  }],
+  "success": [{
+    "msg:ko": "성공! 코스네 가족이 지구로 도착했어요! ",
+    "msg:en": "Success! Cos's family arrived in earth",
+    "link": "a3_w3/2"
+  }]
+}

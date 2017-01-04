@@ -58,6 +58,17 @@ Blocks["hello4"] = {
   ],
   action: ["hello", "step4"]
 };
+Blocks["immigrant"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 지구로 이사 가기",
+    en: "%1 move to earth."
+  },
+  args0: [
+    {type: "field_image", src: "/img/b3_w1/ufo.png"}
+  ],
+  action: ["immigrant"]
+};
 
 Blocks["move_up"] = {
   rgbColor: "#EE4E34",

@@ -356,6 +356,38 @@ Actions.prototype.hello = function(type, block, callback) {
   }
 };
 
+Actions.prototype.immigrant = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      obstacles = this.canvas.obstacles,
+      spiders = this.canvas.spiders,
+      x_next = character.px+1,
+      y_next = character.py,
+      stepList = ["r","r","r","d","d","d","r","r","r","d","r","r","u","u","u","r","r","d","d"],
+      obj;
+  travel(x_next,y_next);
+  function travel(a,b){
+    obj = _this._getCanvasObject(a, b);
+    _this._moveCharacter(a, b, function() {
+      if(stepList.length>0){
+        var direction = stepList.shift();
+        setTimeout(function() {
+          if(direction == "r"){
+            travel(a+1,b);
+          }else if(direction == "d"){
+            travel(a,b+1);
+          }else{
+            travel(a,b-1);
+          }
+        }, 500);
+      }else{
+        callback(obj);
+      }
+    });
+  }
+};
+
 Actions.prototype.rotate = function(type, block, callback) {
   var character = this.canvas.character,
       direct = character.direct,
