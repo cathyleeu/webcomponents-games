@@ -1,0 +1,35 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#..#....#",
+    "#......##",
+    "#.u##...#",
+    "#.#....##",
+    "#...#...#",
+    "###%..#.#",
+    "#......##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 6,
+    "img":"glasses"
+  }],
+  "tutorial": [{
+    "msg:ko": "저기 흔적이 있어",
+    "msg:en": "There is trace!"
+  },{
+    "msg:ko": "안경으로 이동해 보자!",
+    "msg:en": "Let's move to glasses",
+    "img": "/img/b3_w3/glasses.png"
+  }]
+}

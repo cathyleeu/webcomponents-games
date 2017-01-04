@@ -1,0 +1,37 @@
+{
+  "tile_size": 256,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "##....i.#",
+    "#%....###",
+    "#.......#",
+    "#.j#.#d.#",
+    "##.....##",
+    "#......q#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"m_granma"
+  }],
+  "tutorial": [{
+    "msg:ko": "외할머니에게로 가보자!",
+    "msg:en": "Go granma!",
+    "img": "/img/c3_w1/m_granma.png"
+  }],
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Succes! Good Job!",
+    "link": "b3_w2/index"
+  }]
+}
