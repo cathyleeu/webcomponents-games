@@ -1,0 +1,30 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#..#....#",
+    "#......##",
+    "#.u##...#",
+    "#.#....##",
+    "#...#...#",
+    "###...#.#",
+    "#....%.##",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "저기 우주선이 있어",
+    "msg:en": "There is UFO!",
+    "img": "/img/b3_w1/ufo.png"
+  },{
+    "msg:ko": "우주선로 이동해 보자!",
+    "msg:en": "Let's move to UFO"
+  }]
+}
