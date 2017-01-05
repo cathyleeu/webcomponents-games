@@ -97,14 +97,14 @@
               var info_url = siteUrl + "/info#" + item.code + "-" + className + '-' + year + month;
               return "<div>"
                   +   "<label>" + className + "</label> : "
-                  +   "<a class= \"info_url\" href=\"" + info_url + "\">" + info_url + "</a>";
+                  +   "<a class= \"info_url\" href=\"" + info_url + "\" target=\"_blank\">" + info_url + "</a>";
                   + "</div>";
             });
         $("<div>")
             .append("<label>" + item.school + "</label> : ")
             .append("<span>" + item.code + "</span><br/>")
             .append("<label>로그인 주소</label> : ")
-            .append("<a href=\"" + url + "\">" + url + "</a>")
+            .append("<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>")
             .append(info)
             .appendTo(".page");
 
