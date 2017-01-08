@@ -547,8 +547,11 @@ function addEvents() {
     runTutorial(maze.tutorial);
   });
   function handleMove(e) {
-    //개발전 주석처리
-    e.preventDefault();
+    if(e.type != "keydown") {
+      // touchstart, click은 화면 확대가 되기 때문에 prevent 처리
+      // keydown은 개발자도구를 불러오기가 불편하므로 예외처리
+      e.preventDefault();
+    }
     e.stopPropagation();
     if(createjs.Tween.hasActiveTweens()) {
       return;
