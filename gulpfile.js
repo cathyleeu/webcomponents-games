@@ -191,6 +191,10 @@ gulp.task('appcache', ['less', 'makeUrl'], function(cb) {
               }
             });
           }
+          // goal에 들어있는 이미지 추가
+          if(maze.goal && maze.goal.img && imgs.indexOf(maze.goal.img) < 0) {
+            imgs.push(maze.goal.img);
+          }
           // extra안에 들어있는 tutorial에 들어있는 이미지 추가
           if(maze.extra) {
             maze.extra.forEach(function(extra) {
