@@ -400,6 +400,10 @@ function handle_resize(e) {
       height: real_height,
       left: flyout.getWidth() + "px"
     });
+    $(".goal").css({
+      height: real_height,
+      left: $("#display").width() + "px"
+    });
     startblock.moveBy(dx, dy);
   } else {
     var real_width = $("#display").width();
@@ -860,7 +864,7 @@ function showModal(options) {
   }
   var img_src = options.img || message_url;
   $(".modal-msg-box img").attr("src", img_src);
-  $("#modal .modal-msg").html(options.msg);
+  $(".modal-msg-box .modal-msg").html(options.msg);
   $('#modal').modal({
     backdrop: "static"
   });
