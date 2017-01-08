@@ -210,6 +210,10 @@ function init() {
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
   } else {
+    var lang = store.get("lang") || "ko",
+        goal = maze.goal || maze.tutorial[maze.tutorial.length - 1];
+    $(".goal .goal-img").attr("src", goal.img);
+    $(".goal .goal-msg").html(goal["msg" + (lang ? ":" + lang : "")] || goal["msg"]);
     $("#runTutorial").removeClass("hidden");
     runTutorial(maze.tutorial);
   }
