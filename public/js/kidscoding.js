@@ -4,7 +4,19 @@ KidsCoding = function() {
   this.queue = [];
   this.workspace = null;
   this.isHorizontal = location.pathname.indexOf("mazeh") >= 0;
-  if(!this.isHorizontal) {
+  if(this.isHorizontal) {
+    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 100;
+
+    var position = Blockly.VerticalFlyout.prototype.position;
+    Blockly.VerticalFlyout.prototype.position = function() {
+      position.call(this);
+      this.height_ = $("#display").height();
+      this.setBackgroundPath_(this.width_, this.height_);
+      if (this.scrollbar_) {
+        this.scrollbar_.resize();
+      }
+    };
+  } else {
     var labelInit = Blockly.FieldLabel.prototype.init;
     // 텍스트 라벨의 위치 조정
     Blockly.FieldLabel.prototype.init = function() {
@@ -61,6 +73,9 @@ KidsCoding.prototype = {
       if(block.type == "start") {
         block.x = 30;
         block.y = 20;
+        if(this.isHorizontal) {
+          block.x -= this.workspace.getFlyout().getWidth();
+        }
       }
     }
     if(!isToolbox) {
@@ -166,7 +181,7 @@ KidsCoding.prototype = {
       };
     });
     // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
-  	// var toolbox = toolbox.map(function(item) {
+    // var toolbox = toolbox.map(function(item) {
     //   var tokens = item.split(":"),
     //       value_str = "";
     //   if(tokens.length >= 2) {
@@ -178,7 +193,7 @@ KidsCoding.prototype = {
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
       toolbox: '<xml>' + this.createXml(toolbox, true) + '</xml>',
       media: this.isHorizontal ? '/scratch-blocks/media/' : '/GoogleBlockly/media/',
-      trashcan: true,
+      trashcan: !this.isHorizontal,
       zoom: this.isHorizontal ? null : {
         controls: true,
         wheel: true,
@@ -186,8 +201,7 @@ KidsCoding.prototype = {
         maxScale: 1.2,
         minScale: 0.6,
         scaleSpeed: 1.2
-      },
-      horizontalLayout: this.isHorizontal
+      }
     });
     var startblock = '<xml>' + this.createXml(workspace) + '</xml>';
   	Blockly.Xml.domToWorkspace($(startblock).get(0),this.workspace);

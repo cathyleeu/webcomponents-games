@@ -92,7 +92,9 @@ html {
       }
     }
   }
-
+  .goal {
+    display: none;
+  }
 }
 /* Maze.horizontal */
 #maze-container.horizontal {
@@ -101,20 +103,42 @@ html {
     top: 0;
     left: 0;
     right: 0;
-    #display {
-      margin: 0 auto;
-    }
+    z-index: 100;
     .bottom-row {
       position: absolute;
-      bottom: 20px;
+      bottom: -100px;
       right: 20px;
+      #runCode {
+        background: yellow;
+        color: black;
+      }
     }
   }
   .workspace {
     position: absolute;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    .blocklySvg {
+      background-color: #2c3e50 !important;
+    }
+  }
+  .goal {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: white;
+    .modal-character {
+      width: 100%;
+      max-width: 200px;
+    }
+    .modal-msg {
+      color: black;
+    }
   }
 }
 

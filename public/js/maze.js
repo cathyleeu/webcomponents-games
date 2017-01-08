@@ -366,9 +366,9 @@ function setBitmapCoord(bitmap, px, py) {
 
 function handle_resize(e) {
   var size,
-      workspace_height = 230;
+      workspace_height = 200;
   if(kidscoding.isHorizontal) {
-    size = $(window).height() - $("#navbarMaze").height() - workspace_height;
+    size = $(window).height() - workspace_height;
     if($(window).width() < size) {
       size = $(window).width();
     }
@@ -380,20 +380,31 @@ function handle_resize(e) {
   }
   var view_width = Math.min(mazeInfo.view_size || mazeInfo.width, mazeInfo.width),
       view_height = Math.min(mazeInfo.view_size || mazeInfo.height, mazeInfo.height),
-      zoom = parseInt(100 * size / (view_width * mazeInfo.tile_size), 10) / 100;
+      zoom = parseInt(100 * size / (view_width * mazeInfo.tile_size), 10) / 100,
+      real_height = parseInt(view_height * mazeInfo.tile_size * zoom, 10);
   $("#display").css({
-    width: view_width * mazeInfo.tile_size * zoom,
-    height: view_height * mazeInfo.tile_size * zoom
+    width: parseInt(view_width * mazeInfo.tile_size * zoom, 10),
+    height: real_height
   });
 
   if(kidscoding.isHorizontal) {
-    var real_height = $("#display").height();
-    $(".sidebar").height(real_height);
-    workspace_height = $(window).height() - $("#navbarMaze").height() - real_height;
-    $("#maze-container .workspace").css({
-      top: ($(window).height() - $("#navbarMaze").height() - workspace_height) + "px",
-      height: workspace_height + "px"
+    var flyout = kidscoding.workspace.getFlyout(),
+        blocks = kidscoding.workspace.getAllBlocks(),
+        startblock = blocks.filter(function(block) {
+          return block.type === "start";
+        })[0],
+        coord = startblock.getRelativeToSurfaceXY(),
+        dx = 0,
+        dy = (real_height + 30) - coord.y;
+    $(".sidebar").css({
+      height: real_height,
+      left: flyout.getWidth() + "px"
     });
+    $(".goal").css({
+      height: real_height,
+      left: $("#display").width() + "px"
+    });
+    startblock.moveBy(dx, dy);
   } else {
     var real_width = $("#display").width();
     $(".sidebar").width(real_width);
@@ -853,7 +864,7 @@ function showModal(options) {
   }
   var img_src = options.img || message_url;
   $(".modal-msg-box img").attr("src", img_src);
-  $("#modal .modal-msg").html(options.msg);
+  $(".modal-msg-box .modal-msg").html(options.msg);
   $('#modal').modal({
     backdrop: "static"
   });
