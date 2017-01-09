@@ -97,5 +97,10 @@
     "msg:en": "Press 'Next' Button & Let's play",
     "x" : 3,
     "y" : 3
-  }]
+  }],
+  "goal": {
+    "msg:ko": "15번 꿀과자를 나누어주자!",
+    "msg:en": "Give away 15 times Cookies",
+    "img": "/img/c3_w4/cookie.png"
+  }
 }

@@ -97,5 +97,10 @@
     "msg:en": "Press 'Next' Button & Let's play",
     "x" : 3,
     "y" : 3
-  }]
+  }],
+  "goal": {
+    "msg:ko": "15번 집으로 꿀단지를 가져가자!",
+    "msg:en": "Take 15 times hunny pots",
+    "img": "/img/c3_w2/hunny_pot.png"
+  }
 }

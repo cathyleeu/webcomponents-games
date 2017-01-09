@@ -81,7 +81,8 @@
   var audio1 = new Audio('img/c1_w2/vm1.mp3');
   var audio2 = new Audio('img/c1_w2/vm2.mp3');
   var audio3 = new Audio('img/c1_w2/vm3.mp3');
-  var audio4 = new Audio('sound/complete.mp3');
+  var audio4 = new Audio('img/c1_w2/vm4.mp3');
+  var audio5 = new Audio('sound/complete.mp3');
   $(".sel-box").click(function() {
   	if(step==1){
       audio1.play();
@@ -93,7 +94,7 @@
         $(".hint").text('돈이 들어 갔아요! 음료수를 골라봐요!');
         $(".background").attr("src","img/c1_w2/vm1.png");
         step = 2;
-      }, 3000);
+      }, 1500);
     }else if(step==2){
       audio2.play();
       this.style.height = "80px";
@@ -104,16 +105,27 @@
         $(".hint").text('음료수가 떨어졌어요! 음료수를 꺼내봐요!');
         $(".background").attr("src","img/c1_w2/vm2.png");
         step = 3;
-      }, 3500);
+      }, 1500);
     }else{
       audio3.play();
+      sleep(1000);
+      audio4.play();
       $(".hint").text('음료수를 얻었어요! 맛있게 먹어요!');
       $(".background").attr("src","img/c1_w2/vm3.png");
       $(".drink").css("visibility","visible")
       setTimeout( function () {
-        audio4.play();
-      }, 2500);
+        audio5.play();
+      }, 8000);
     }
   });
+
+  function sleep(num){	//[1/1000초]
+	 var now = new Date();
+	   var stop = now.getTime() + num;
+	   while(true){
+		 now = new Date();
+		 if(now.getTime() > stop)return;
+	   }
+	}
 
 </script>

@@ -33,6 +33,11 @@
     "msg:en": "Tell my father that granma&granfa has arrived",
     "img": "/img/b3_w3/gran.png"
   }],
+  "goal": {
+    "msg:ko": "아버지에게 이동해 보자!",
+    "msg:en": "Let's move to my father",
+    "img": "/img/c3_w1/father.png"
+  },
   "success": [{
     "msg:ko": "성공! 모든 가족이 만났어요!",
     "msg:en": "Success! Every family meets",

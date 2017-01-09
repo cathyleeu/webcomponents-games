@@ -26,5 +26,10 @@
   },{
     "msg:ko": "↑→ 블록을 이용해서 연잎 위로 가보자!",
     "msg:en": "Let's move up using [Move Up][Move Right] block"
-  }]
+  }],
+  "goal": {
+    "msg:ko": "↑→ 블록을 이용해서 연잎 위로 가보자!",
+    "msg:en": "Let's move up using [Move Up][Move Right] block",
+    "img": "/img/c2_w1/lotus.png"
+  }
 }

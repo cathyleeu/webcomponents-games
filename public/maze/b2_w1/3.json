@@ -28,5 +28,10 @@
     "msg:ko": "↓아래로 이동 블록을 이용해서 장구벌레에게로 가보자!",
     "msg:en": "Let's move down using [Move Down] block",
     "img": "/img/b2_w1/mDownBtn_256.png"
-  }]
+  }],
+  "goal": {
+    "msg:ko": "↓아래로 이동 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move down using [Move Down] block",
+    "img": "/img/b2_w1/Larva_256.png"
+  }
 }

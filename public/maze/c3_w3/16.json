@@ -45,6 +45,11 @@
     "msg:en": "Let's bring the hunny pot to my Mom",
     "img": "/img/c3_w1/mother.png"
   }],
+  "goal": {
+    "msg:ko": "엄마에게 꿀단지를 가져가자!",
+    "msg:en": "Bring the hunny pot to my Mom",
+    "img": "/img/c3_w2/hunny_pot.png"
+  },
   "success": [{
     "msg:ko": "성공! 엄마가 과자를 만들여 주셨어~",
     "msg:en": "Mom give me cookies.",

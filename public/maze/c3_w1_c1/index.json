@@ -50,5 +50,10 @@
   }, {
     "msg:ko": "다음버튼 혹은 아무곳이나 눌러서 시작하세요",
     "msg:en": "Press 'Next' Button & Let's play"
-  }]
+  }],
+  "goal": {
+    "msg:ko": "오른쪽 집으로 이동해요",
+    "msg:en": "Go House on the right",
+    "img": "/img/c3_w1/house.png"
+  }
 }

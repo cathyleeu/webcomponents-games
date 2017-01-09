@@ -104,5 +104,10 @@
     "msg:en": "Press 'Next' Button & Let's play",
     "x" : 3,
     "y" : 3
-  }]
+  }],
+  "goal": {
+    "msg:ko": "15개의 꿀단지를 모으자!",
+    "msg:en": "Collect 15 hunny pots",
+    "img": "/img/c3_w2/hunny_pot.png"
+  }
 }

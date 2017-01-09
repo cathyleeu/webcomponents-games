@@ -26,5 +26,10 @@
   },{
     "msg:ko": "우주선로 이동해 보자!",
     "msg:en": "Let's move to UFO"
-  }]
+  }],
+  "goal": {
+    "msg:ko": "우주선로 이동해 보자!",
+    "msg:en": "Let's move to UFO",
+    "img": "/img/b3_w1/ufo.png"
+  }
 }
