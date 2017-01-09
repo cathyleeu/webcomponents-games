@@ -24,6 +24,11 @@
     "msg:ko": "→오른쪽으로 이동 블록을 이용해서 오른쪽으로 가보자!",
     "msg:en": "Let's move right using [Move Right] block"
   }],
+  "goal": {
+    "msg:ko": "→오른쪽으로 이동 블록을 이용해서 연잎 위로 가보자!",
+    "msg:en": "Let's move up using [Move Right] block",
+    "img": "/img/c2_w1/lotus.png"
+  },
   "success": [{
     "msg:ko": "성공! 참 잘했어요~ 다음 단계로 가봐요!",
     "msg:en": "Succes! Good Job!",

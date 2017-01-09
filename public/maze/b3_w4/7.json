@@ -26,5 +26,10 @@
   },{
     "msg:ko": "집으로 이동해 보자!",
     "msg:en": "Let's move to my house"
-  }]
+  }],
+  "goal": {
+    "msg:ko": "집으로 이동해 보자!",
+    "msg:en": "Let's move to my house",
+    "img": "/img/c3_w1/house.png"
+  }
 }

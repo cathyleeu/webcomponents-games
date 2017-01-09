@@ -25,6 +25,7 @@
     "img":"dog5"
   }],
   "tutorial": [{
-    "msg": "4 + 1 = ?"
+    "msg": "4 + 1 = ?",
+    "img": "/img/c3_w1/cos0.png"
   }]
 }

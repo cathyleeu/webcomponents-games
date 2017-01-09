@@ -26,5 +26,10 @@
   },{
     "msg:ko": "꿀단지로 이동해 보자!",
     "msg:en": "Let's move to hunny pot"
-  }]
+  }],
+  "goal": {
+    "msg:ko": "꿀단지로 이동해 보자!",
+    "msg:en": "Let's move to hunny pot",
+    "img": "/img/c3_w2/hunny_pot.png"
+  }
 }

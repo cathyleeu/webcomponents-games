@@ -43,5 +43,10 @@
     "msg:ko": "그리고나서 집으로 이동하고, 아이템 사용하기를 해보자",
     "msg:en": "then move my house, Use 'use item' Block",
     "img": "/img/c3_w1/house.png"
-  }]
+  }],
+  "goal": {
+    "msg:ko": "집으로 꿀단지를 가져가자!",
+    "msg:en": "Take hunny pots",
+    "img": "/img/c3_w2/hunny_pot.png"
+  }
 }

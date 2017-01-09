@@ -90,5 +90,10 @@
     "msg:en": "Press 'Next' Button & Let's play",
     "x" : 3,
     "y" : 3
-  }]
+  }],
+  "goal": {
+    "msg:ko": "10개의 문제를 해결해보자!",
+    "msg:en": "solve 10 problems",
+    "img": "/img/map/star.png"
+  }
 }

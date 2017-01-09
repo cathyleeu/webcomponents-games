@@ -74,7 +74,7 @@
   }, {
     "msg:ko": "사슴 디어와 할머니 할아버지의 흔적을 찾아보아요",
     "msg:en": "Let's find out granma&granfa's trace with Deer",
-    "img": "/img/b3_w1/ufo.png"
+    "img": "/img/b3_w1/gran_picture.png"
   }, {
     "msg:ko": "10개의 흔적을 찾은 뒤,",
     "msg:en": "Find 10 times traces and,"
@@ -88,5 +88,10 @@
     "msg:en": "Press 'Next' Button & Let's play",
     "x" : 3,
     "y" : 3
-  }]
+  }],
+  "goal": {
+    "msg:ko": "사슴 디어와 할머니 할아버지의 흔적 10개를 찾아보자",
+    "msg:en": "Let's find out granma&granfa's trace 10 times",
+    "img": "/img/b3_w1/gran_picture.png"
+  }
 }

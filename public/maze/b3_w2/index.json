@@ -84,5 +84,10 @@
     "msg:en": "Press 'Next' Button & Let's play",
     "x" : 3,
     "y" : 3
-  }]
+  }],
+  "goal": {
+    "msg:ko": "10번 우주선을 찾아요",
+    "msg:en": "Find 10 times UFO",
+    "img": "/img/b3_w1/ufo.png"
+  }
 }
