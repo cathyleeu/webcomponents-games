@@ -8,6 +8,8 @@
   "retry": "다시 해보기",
   "select": "선택",
   "next": "다음",
+  "request_fullscreen":"네",
+  "cancel_fullscreen":"아니오",
   "next_stage": "다음 단계로 이동",
   "select_character": "캐릭터를 선택해 보세요.",
   "success": "성공!",

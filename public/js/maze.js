@@ -43,10 +43,13 @@ page('*', function(ctx, next) {
     map_qs = ctx.querystring;
     // back link로 온것이 아님 -> 주소로 접속함 -> localData 삭제
     if(map_qs.split("&").indexOf("back") < 0) {
+      var fullscreen = store.get("fullscreen");
       store.clear();
       // index나 1번 map 이라면 lang 설정을 초기화, 이외에는 유지
       if(map_path[map_path.length-1] == "index" || map_path[map_path.length-1] == "1") {
         lang = "ko";
+      } else {
+        store.set("fullscreen", fullscreen);
       }
     }
     // 다국어 설정
@@ -131,12 +134,14 @@ function preInit() {
   var queries = store.get("queries") || {};
 
   if(maze.select_character && !queries.hasOwnProperty("x") && !queries.hasOwnProperty("y")) {
+
     showModal({
       select_character: true,
       character1: loader.getItem("message").src,
       character2: loader.getItem("message2").src
     });
   } else {
+
     init();
   }
 }
@@ -202,7 +207,21 @@ function init() {
     gameMode(loader, maze.type, tileFactory);
   }
   handle_resize();
-
+  $("#doFS").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    FullScreen();
+    store.set('fullscreen', true)
+    $("#runTutorial").removeClass("hidden");
+    runTutorial(maze.tutorial);
+  })
+  $("#notFS").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    store.set('fullscreen', false)
+    $("#runTutorial").removeClass("hidden");
+    runTutorial(maze.tutorial);
+  })
   var queries = store.get("queries") || {};
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
@@ -211,11 +230,19 @@ function init() {
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
   } else {
     var lang = store.get("lang") || "ko",
+        fullscreen = store.get("fullscreen"),
         goal = maze.goal || maze.tutorial[maze.tutorial.length - 1];
     $(".goal .goal-img").attr("src", goal.img);
     $(".goal .goal-msg").html(goal["msg" + (lang ? ":" + lang : "")] || goal["msg"]);
-    $("#runTutorial").removeClass("hidden");
-    runTutorial(maze.tutorial);
+    if(fullscreen == undefined) {
+      showModal({
+        msg: "풀스크린으로 하시겠습니까?",
+        fullscreen: true
+      })
+    } else {
+      $("#runTutorial").removeClass("hidden");
+      runTutorial(maze.tutorial);
+    }
   }
 }
 
@@ -416,7 +443,6 @@ function handle_resize(e) {
   }
   Blockly.svgResize(kidscoding.workspace);
 };
-
 function addEvents() {
   $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
@@ -656,11 +682,7 @@ function addEvents() {
     store.set("message_id", message);
     init();
   });
-  $("#fullScreen").on("touchstart click", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    FullScreen();
-  })
+
 }
 function FullScreen(el) {
   var doc = window.document;
@@ -686,6 +708,7 @@ function runTutorial(input_tutorial) {
   $('#modal').modal('hide');
   $("#modal .tutorial").click();
 }
+
 
 function gameMode(loader, type, tileFactory) {
   var character = mazeInfo.canvas.character,
@@ -837,7 +860,8 @@ function showModal(options) {
     options = {
       msg: options,
       goNext: false,
-      tutorial: false
+      tutorial: false,
+      fullscreen: false
     };
   }
   $("#modal .btn").hide();
@@ -845,6 +869,9 @@ function showModal(options) {
     $("#modal .go-next, #modal .reset-maze").show();
   } else if(options.tutorial) {
     $("#modal .tutorial").show();
+  } else if (options.fullscreen) {
+    $("#modal .requestfullscreen").show();
+    $("#modal .cancelfullscreen").show();
   } else {
     $("#modal .close-modal").show();
   }

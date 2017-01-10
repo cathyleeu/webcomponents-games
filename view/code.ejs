@@ -69,8 +69,8 @@ if(location.hash) {
     }).reduce(function(init, arr) {
       return init.concat(arr);
     }, []);
-    classes.forEach(function(className) {
-      var button = '<a href="/login#' + code + '-' + className + '" class="btn btn-lg btn-default">' + className + '</a>';
+    classes.forEach(function(className, i) {
+      var button = '<a href="/login#' + code + '-' + className +'" id="Fullclass'+i+'" class="btn btn-lg btn-default">' + className + '</a>';
       if(code == "a819b") {
         var book = Object.keys(info.classes).filter(function(item) {
           return info.classes[item].indexOf(className) >= 0;
@@ -80,11 +80,35 @@ if(location.hash) {
         var tokens = book.split(":"),
             kids = false;
         book = tokens[0];
-
         button = '<a href="/book#' + code + '-' + className + '-' + book + '" class="btn btn-lg btn-default">' + className + '</a>';
       }
       $(button).appendTo("#classes");
+      // $("#Fullclass"+i).on("touchstart click", function(e){
+      //   e.preventDefault();
+      //   e.stopPropagation();
+      //   location.href = "/login#" + code + "-" + className;
+      //   FullScreen();
+      //
+      // })
     });
-
   });
+  // $("#Fullclass0").click(function(e) {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   FullScreen();
+  // })
+  function FullScreen(el) {
+    var doc = window.document;
+    var docEl = doc.documentElement;
+
+    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+    if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+      requestFullScreen.call(docEl);
+    }
+    else {
+      cancelFullScreen.call(doc);
+    };
+  };
 </script>
