@@ -684,6 +684,11 @@ function addEvents() {
   });
 
 }
+$("#fullScreen").on("touchstart click", function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  FullScreen();
+})
 function FullScreen(el) {
   var doc = window.document;
   var docEl = doc.documentElement;
