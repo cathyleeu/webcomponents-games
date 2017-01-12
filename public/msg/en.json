@@ -8,6 +8,8 @@
   "retry": "Reset",
   "select": "Select",
   "next": "Next",
+  "request_fullscreen":"Yes",
+  "cancel_fullscreen":"No",
   "next_stage": "Next Stage",
   "select_character": "Select your character.",
   "success": "Good Job!",

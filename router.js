@@ -133,7 +133,7 @@ public.get('/login', function *(next) {
 });
 
 public.get('/book', function *(next) {
-  yield this.render('book');
+  yield this.render('book')
 });
 
 public.get('/school', function *(next) {

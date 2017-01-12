@@ -69,8 +69,8 @@ if(location.hash) {
     }).reduce(function(init, arr) {
       return init.concat(arr);
     }, []);
-    classes.forEach(function(className) {
-      var button = '<a href="/login#' + code + '-' + className + '" class="btn btn-lg btn-default">' + className + '</a>';
+    classes.forEach(function(className, i) {
+      var button = '<a href="/login#' + code + '-' + className +'" id="Fullclass'+i+'" class="btn btn-lg btn-default">' + className + '</a>';
       if(code == "a819b") {
         var book = Object.keys(info.classes).filter(function(item) {
           return info.classes[item].indexOf(className) >= 0;
@@ -80,11 +80,9 @@ if(location.hash) {
         var tokens = book.split(":"),
             kids = false;
         book = tokens[0];
-
         button = '<a href="/book#' + code + '-' + className + '-' + book + '" class="btn btn-lg btn-default">' + className + '</a>';
       }
       $(button).appendTo("#classes");
     });
-
   });
 </script>
