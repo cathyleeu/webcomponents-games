@@ -1,7 +1,7 @@
 Blocks = {};
 
 Blocks["start"] = {
-  rgbColor: "#18BC9C",
+  rgbColor: "#FFDE00",
   message0: {
     ko: "%1 시작하면",
     en: "%1 Start"
@@ -71,7 +71,7 @@ Blocks["immigrant"] = {
 };
 
 Blocks["move_up"] = {
-  rgbColor: "#EE4E34",
+  rgbColor: "#F28C00",
   message0: {
     ko: "%1 위로 이동",
     en: "%1 Move Up"
@@ -85,7 +85,7 @@ Blocks["move_up"] = {
   action: ["move", "up"]
 };
 Blocks["move_down"] = {
-  rgbColor: "#E5DA58",
+  rgbColor: "#D9629E",
   message0: {
     ko: "%1 아래로 이동",
     en: "%1 Move Down"
@@ -99,7 +99,7 @@ Blocks["move_down"] = {
   action: ["move", "down"]
 };
 Blocks["move_left"] = {
-  rgbColor: "#359CC9",
+  rgbColor: "#60B12F",
   message0: {
     ko: "%1 왼쪽으로 이동",
     en: "%1 Move Left"
@@ -113,7 +113,7 @@ Blocks["move_left"] = {
   action: ["move", "left"]
 };
 Blocks["move_right"] = {
-  rgbColor: "#83B359",
+  rgbColor: "#34BEEF",
   message0: {
     ko: "%1 오른쪽으로 이동",
     en: "%1 Move Right"
@@ -222,7 +222,7 @@ Blocks["rotate_right"] = {
   action: ["rotate", "clock_wise"]
 };
 Blocks["get_item"] = {
-  rgbColor: "#9C1881",
+  rgbColor: "#E75051",
   message0: {
     ko: "%1 아이템 가져오기",
     en: "%1 Get Item"
@@ -236,7 +236,7 @@ Blocks["get_item"] = {
   action: ["getItem"]
 };
 Blocks["use_item"] = {
-  rgbColor: "#ED95AE",
+  rgbColor: "#81CBD8",
   message0: {
     ko: "%1 아이템 사용하기",
     en: "%1 Use Item"
@@ -250,7 +250,7 @@ Blocks["use_item"] = {
   action: ["useItem"]
 };
 Blocks["get_item2"] = {
-  rgbColor: "#9C1881",
+  rgbColor: "#E75051",
   message0: {
     ko: "%1 아이템 가져오기",
     en: "%1 Get Item"
@@ -261,7 +261,7 @@ Blocks["get_item2"] = {
   action: ["getItem2"]
 };
 Blocks["use_item2"] = {
-  rgbColor: "#ED95AE",
+  rgbColor: "#81CBD8",
   message0: {
     ko: "%1 아이템 사용하기",
     en: "%1 Use Item"
