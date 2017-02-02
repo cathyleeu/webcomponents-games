@@ -24,6 +24,7 @@
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
   {"id": "tree1", "src": "/img/c3_w1/tree1.png", "obstacle": true},
   {"id": "tree2", "src": "/img/c3_w1/tree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/c3_w1/tree3.png", "obstacle": true},
   {"id": "flower1", "src": "/img/c3_w1/flower1.png", "obstacle": true},
   {"id": "flower2", "src": "/img/c3_w1/flower2.png", "obstacle": true},
   {"id": "yardstone1", "src": "/img/c3_w1/yardstone1.png", "obstacle": true},

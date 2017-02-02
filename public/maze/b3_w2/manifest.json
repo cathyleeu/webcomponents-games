@@ -1,7 +1,7 @@
 [
   {"book": "b3", "title": "2주차 : 우주선을 찾아요"},
-  {"id": "bg1", "src": "/img/c3_w1/tile1.png"},
-  {"id": "bg2", "src": "/img/c3_w1/tile2.png"},
+  {"id": "bg1", "src": "/img/b3_w1/tile1.png"},
+  {"id": "bg2", "src": "/img/b3_w1/tile2.png"},
   {"id": "land0", "src": "/img/map32/0.png"},
   {"id": "land1", "src": "/img/map32/1.png"},
   {"id": "land2", "src": "/img/map32/2.png"},

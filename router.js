@@ -229,12 +229,14 @@ public.get('/dragndrop', function *(next) {
 public.get('/dragndrop_suwon', function *(next) {
   yield this.render('dragndrop_suwon');
 });
-
 public.get('/c1_w3', function *(next) {
   yield this.render('c1_w3');
 });
 public.get('/b1_w4', function *(next) {
   yield this.render('b1_w4');
+});
+public.get('/a4_w3', function *(next) {
+  yield this.render('a4_w3');
 });
 
 public.get('/maze', function *(next) {
