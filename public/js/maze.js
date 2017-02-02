@@ -535,14 +535,21 @@ function addEvents() {
               }
             }
             if(i == foods.length) {
-              createjs.Sound.play("complete");
-              if(maze.success) {
-                runTutorial(maze.success);
+              if( foods.length == 1 &&
+                  !(foods[0].px == mazeInfo.canvas.character.px &&
+                  foods[0].py == mazeInfo.canvas.character.py)) {
+                createjs.Sound.play("fail");
+                showModal(messages.fail_done);
               } else {
-                showModal({
-                  msg: messages.success,
-                  goNext: true
-                });
+                createjs.Sound.play("complete");
+                if(maze.success) {
+                  runTutorial(maze.success);
+                } else {
+                  showModal({
+                    msg: messages.success,
+                    goNext: true
+                  });
+                }
               }
             }
           }
