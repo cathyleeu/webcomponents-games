@@ -26,10 +26,10 @@
   }],
   "tutorial": [{
     "msg:ko": "저기 흔적이 있어",
-    "msg:en": "There is trace!"
+    "msg:en": "There is a trace!"
   },{
     "msg:ko": "안경으로 이동해 보자!",
-    "msg:en": "Let's move to glasses",
+    "msg:en": "Let's move to the glasses",
     "img": "/img/b3_w3/glasses.png"
   }]
 }

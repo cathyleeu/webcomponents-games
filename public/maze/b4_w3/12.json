@@ -1,0 +1,49 @@
+{
+  "tile_size": 256,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors",
+    "get_item"
+  ],
+  "map": [
+    ".######.",
+    "###.####",
+    "#.#..d##",
+    "###.#.##",
+    "#..S...#",
+    "#.#.##.#",
+    "#)..##.#",
+    ".######."
+  ],
+  "extra" : [{
+    "x" : 3,
+    "y" : 4,
+    "img" : "father"
+  },{
+    "x" : 1,
+    "y" : 6,
+    "img" : "chest",
+    "itemCount" : 2
+  }],
+  "tutorial": [{
+    "msg:ko": "가위는 주먹으로 이길 수 있어!",
+    "msg:en": "Rock wins Scissors!",
+    "img": "/img/woong/sr.png"
+  },{
+    "msg:ko": "아빠를 이기고 보물상자에 가 보렴.",
+    "msg:en": "Win daddy to go to the chest!",
+    "img": "/img/b4/chest.png"
+  }],
+  "success": [{
+      "msg:ko": "성공! 참 잘했어요~",
+      "msg:en": "Succes! Good Job!"
+  }]
+}

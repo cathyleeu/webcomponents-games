@@ -1,0 +1,46 @@
+{
+  "tile_size": 256,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item"
+  ],
+  "map": [
+    "########",
+    "#.#....#",
+    "#.#.)#.#",
+    "#..#.#.#",
+    "#......#",
+    "#.##..l#",
+    "#...##.#",
+    "########"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 2,
+    "img": "chest",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "보물 상자로 가보자",
+    "msg:en": "Go to the chest.",
+    "img": "/img/b4/chest.png"
+  },{
+    "msg:ko": "새로운 키즈블록인 '가져오기'를 사용해 봐!",
+    "msg:en": "Try to use the new Kidsblock, 'Bring' block!",
+    "img": "/img/blocks/bring.png"
+  }],
+  "goal": {
+    "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
+    "msg:en": "Let's use 'Bring' block on the chest",
+    "img": "/img/b4/chest.png"
+  },
+  "success": [{
+      "msg:ko": "성공! 참 잘했어요~",
+      "msg:en": "Succes! Good Job!"
+  }]
+}

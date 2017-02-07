@@ -1,0 +1,97 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "##.##############.",
+    "..#..%...%....%..#",
+    "..#....%...%.....#",
+    ".#.r............#.",
+    "..#..%...%....%..#",
+    "..#....%....%....#",
+    "##.##############."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 1,
+    "link": "b3_w3/1"
+  },{
+    "x": 5,
+    "y": 4,
+    "link": "b3_w3/2"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "b3_w3/3"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b3_w3/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b3_w3/5"
+  },{
+    "x": 9,
+    "y": 4,
+    "link": "b3_w3/6"
+  },{
+    "x": 11,
+    "y": 2,
+    "link": "b3_w3/7"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b3_w3/8"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "b3_w3/9"
+  },{
+    "x": 14,
+    "y": 4,
+    "link": "b3_w3/10"
+  },{
+    "img":"gran",
+    "x": 16,
+    "y": 3,
+    "obstacle": false,
+    "link": "b3_w3/11",
+    "min_score": 10
+  }],
+  "tutorial": [{
+    "msg:ko": "할머니 할아버지가 우주선 없어요 ",
+    "msg:en": "granma&granfa are not in the UFO",
+    "img": "/img/b3_w2/grandp.png"
+  }, {
+    "msg:ko": "할머니 할아버지는 어디 가셨지?",
+    "msg:en": "Where is granma&granfa"
+  }, {
+    "msg:ko": "내가 도와줄까?",
+    "msg:en": "Can I help you?",
+    "img": "/img/b3_w2/deer.png"
+  }, {
+    "msg:ko": "사슴 디어와 할머니 할아버지의 흔적을 찾아보아요",
+    "msg:en": "Let's find out granma&granfa's trace with Deer",
+    "img": "/img/b3_w3/gran_picture.png"
+  }, {
+    "msg:ko": "10개의 흔적을 찾은 뒤,",
+    "msg:en": "Find 10 times traces and,"
+  }, {
+    "msg:ko": "할머니 할아머지에게 이동하자!",
+    "msg:en": "Move to granma&granfa!",
+    "x" : 16,
+    "y" : 3
+  },{
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "사슴 디어와 할머니 할아버지의 흔적 10개를 찾아보자",
+    "msg:en": "Let's find out granma&granfa's trace 10 times",
+    "img": "/img/b3_w1/gran_picture.png"
+  }
+}

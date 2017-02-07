@@ -62,25 +62,25 @@
   }],
   "tutorial": [{
     "msg:ko": "할머니 할아버지가 우주선 없어요 ",
-    "msg:en": "granma&granfa are not in the UFO",
+    "msg:en": "Cos' grandparents are not in the UFO",
     "img": "/img/b3_w2/grandp.png"
   }, {
     "msg:ko": "할머니 할아버지는 어디 가셨지?",
-    "msg:en": "Where is granma&granfa"
+    "msg:en": "Where is my grandparents?"
   }, {
     "msg:ko": "내가 도와줄까?",
     "msg:en": "Can I help you?",
     "img": "/img/b3_w2/deer.png"
   }, {
     "msg:ko": "사슴 디어와 할머니 할아버지의 흔적을 찾아보아요",
-    "msg:en": "Let's find out granma&granfa's trace with Deer",
+    "msg:en": "Let's find out Cos' grandparents' trace with Deer",
     "img": "/img/b3_w3/gran_picture.png"
   }, {
     "msg:ko": "10개의 흔적을 찾은 뒤,",
-    "msg:en": "Find 10 times traces and,"
+    "msg:en": "Find out ten traces"
   }, {
-    "msg:ko": "할머니 할아머지에게 이동하자!",
-    "msg:en": "Move to granma&granfa!",
+    "msg:ko": "할머니 할아버지에게 이동하자!",
+    "msg:en": "and move to Cos' grandparents!",
     "x" : 16,
     "y" : 3
   },{
@@ -91,7 +91,7 @@
   }],
   "goal": {
     "msg:ko": "사슴 디어와 할머니 할아버지의 흔적 10개를 찾아보자",
-    "msg:en": "Let's find out granma&granfa's trace 10 times",
+    "msg:en": "Let's find out her grandparents' traces ten-times.",
     "img": "/img/b3_w1/gran_picture.png"
   }
 }
