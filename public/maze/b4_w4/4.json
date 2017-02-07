@@ -1,0 +1,61 @@
+{
+  "tile_size": 256,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors",
+    "get_item"
+  ],
+  "map": [
+    "########",
+    "#.#.#..#",
+    "#...#..#",
+    "#).)S.P#",
+    "#.#.##.#",
+    "#S#R#..#",
+    "#..u...#",
+    "########"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 5,
+    "img":"grandpa"
+  },{
+    "x": 6,
+    "y": 3,
+    "img":"mother"
+  },{
+    "x": 4,
+    "y": 3,
+    "img":"father"
+  },{
+    "x": 3,
+    "y": 3,
+    "img": "chest",
+    "itemCount": 1
+  },{
+    "x": 1,
+    "y": 3,
+    "img": "chest",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "가위바위보!",
+    "msg:en": "Rock scissors paper!"
+  },{
+    "msg:ko": "보물 상자를 모두 열 거야!",
+    "msg:en": "I'll open all the chests!",
+    "img": "/img/b4/chest.png"
+  }],
+  "success": [{
+      "msg:ko": "성공! 참 잘했어요~",
+      "msg:en": "Succes! Good Job!"
+  }]
+}

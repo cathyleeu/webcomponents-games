@@ -19,7 +19,8 @@
   ],
     "tutorial": [{
       "msg:ko": "개굴개굴~ 연잎 위로 가고 싶어!",
-      "msg:en": "Ribbit~ Ribbit! I want to go lotus"
+      "msg:en": "Ribbit~ Ribbit! I want to go lotus",
+      "img" : "/img/c2_w1/lotus2.png"
     },{
       "msg:ko": "↑위로 이동 블록을 이용해서 위로 가보자!",
       "msg:en": "Let's move up using [Move Up] block"
@@ -27,6 +28,6 @@
     "goal": {
       "msg:ko": "↑위로 이동 블록을 이용해서 연잎 위로 가보자!",
       "msg:en": "Let's move up using [Move Up] block",
-      "img": "/img/c2_w1/lotus.png"
+      "img": "/img/c2_w1/lotus2.png"
     }
   }

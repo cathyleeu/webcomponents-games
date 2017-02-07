@@ -26,15 +26,15 @@
   }],
   "tutorial": [{
     "msg:ko": "저기 할머니 할아버지가 있어",
-    "msg:en": "There is granma&granfa!"
+    "msg:en": "There are my grandma and grandpa!"
   },{
     "msg:ko": "할머니 할아버지와 만나보자!",
-    "msg:en": "Let's meet to her granma&granfa",
+    "msg:en": "Let's meet her grandparents.",
     "img": "/img/b3_w3/gran.png"
   }],
   "success": [{
     "msg:ko": "성공! 할머니 할마버지와 만났어!",
-    "msg:en": "Success! Cos met her granma&granfa",
+    "msg:en": "Success! Cos met her grandparents.",
     "img": "/img/b3_w2/grandp.png",
     "link": "b3_w4/index"
   }]

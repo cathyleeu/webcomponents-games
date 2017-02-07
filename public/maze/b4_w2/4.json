@@ -1,0 +1,50 @@
+{
+  "tile_size": 256,
+  "score":0,
+  "workspace": ["start", "move_down","move_down","move_down","move_right"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item"
+  ],
+  "map": [
+    "########",
+    "#.#....#",
+    "#.#..#.#",
+    "#d#.)#.#",
+    "#..#...#",
+    "#.#..#.#",
+    "#...####",
+    "########"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 3,
+    "img": "chest",
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "보물 상자로 가보자",
+    "msg:en": "Go to the chest.",
+    "img": "/img/b4/chest.png"
+  },{
+    "msg:ko": "보물 상자 하나에 보물이 여러 개 있네.",
+    "msg:en": "There are more than one things in the chest.",
+    "img": "/img/b4/chest.png"
+  },{
+    "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
+    "msg:en": "Try to use 'Bring' block more than once!",
+    "img": "/img/blocks/bring.png"
+  }],
+  "goal": {
+    "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
+    "msg:en": "Let's use 'Bring' block on the chest",
+    "img": "/img/b4/chest.png"
+  },
+  "success": [{
+      "msg:ko": "성공! 참 잘했어요~",
+      "msg:en": "Succes! Good Job!"
+  }]
+}

@@ -16,7 +16,7 @@
   {"id": "land11", "src": "/img/map32/11.png"},
   {"id": "character", "src": "/img/c2_w1/SpriteLana_256.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c2_w1/lana0.png", "size": 256},
-  {"id": "food", "src": "/img/c2_w1/lotus.png"},
+  {"id": "food", "src": "/img/c2_w1/lotus2.png"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},

@@ -1,0 +1,59 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    ".######.####",
+    "#......#....",
+    "#......#....",
+    "#.r....%....",
+    "#......#....",
+    "#......#....",
+    ".######.####"
+  ],
+  "extra": [{
+    "x": 7,
+    "y": 3,
+    "link": "b4_w1/1"
+  }],
+  "tutorial": [{
+    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
+    "msg:en": "Press 'Next' Button~ 　　　　　　　↘"
+  }, {
+    "msg:ko": "오른쪽 깃발로 이동하여 　'엄마가 보물을 숨겨요'를 　　완료하면",
+    "msg:en": "Go to the flag on the right and complete 'Hide your treasure' stage,",
+    "img": "/img/b4/flag.png"
+  }, {
+    "msg:ko": "다른 곳으로 이동할 수 있어요",
+    "msg:en": "then you can go to the next stage"
+  }, {
+    "msg:ko": "가상 키보드를 이용하여 엄마를 움직일 수 있어요",
+    "msg:en": "you can move 'Mom' character by virtual keyboard",
+    "img": "/img/c3_w1/key.png"
+  }, {
+    "msg:ko": "↑위 버튼을 누르면 엄마가 위로 가요",
+    "msg:en": "If you press '↑' Button, Mom will move up",
+    "img": "/img/c3_w1/up.png"
+  }, {
+    "msg:ko": "↓아래 버튼을 누르면 코스가 아래로 가요",
+    "msg:en": "If you press '↓' Button, Mom will move down",
+    "img": "/img/c3_w1/down.png"
+  }, {
+    "msg:ko": "→오른쪽 버튼을 누르면 코스가 오른쪽으로 가요",
+    "msg:en": "If you press '→' Button, Mom will move right",
+    "img": "/img/c3_w1/right.png"
+  }, {
+    "msg:ko": "←왼쪽 버튼을 누르면 코스가 왼쪽으로 가요",
+    "msg:en": "If you press '←' Button, Mom will move left",
+    "img": "/img/c3_w1/left.png"
+  }, {
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러서 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play"
+  }],
+  "goal": {
+    "msg:ko": "오른쪽 우주선으로 이동해요",
+    "msg:en": "Go to the Flag on the right",
+    "img": "/img/b4/flag.png"
+  }
+}
