@@ -27,5 +27,6 @@
   {"id": "space1", "src": "/img/a3_w3/space1.png", "obstacle": true},
   {"id": "space2", "src": "/img/a3_w3/space2.png", "obstacle": true},
   {"id": "space3", "src": "/img/a3_w3/space3.png", "obstacle": true},
-  {"id": "space4", "src": "/img/a3_w3/space4.png", "obstacle": true}
+  {"id": "space4", "src": "/img/a3_w3/space4.png", "obstacle": true},
+  {"id": "space4", "src": "/img/a3_w3/space5.png", "obstacle": true}
 ]
