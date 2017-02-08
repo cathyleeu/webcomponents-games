@@ -39,7 +39,8 @@
   }],
   "tutorial": [{
     "msg:ko": "가위바위보!",
-    "msg:en": "Rock scissors paper!"
+    "msg:en": "Rock scissors paper!",
+"img":"/img/b4/rsp.png"
   },{
     "msg:ko": "보물 상자를 열자!",
     "msg:en": "Let's open the chest!",

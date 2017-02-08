@@ -52,7 +52,7 @@
     "msg:en": "Press 'Next' Button & Let's play"
   }],
   "goal": {
-    "msg:ko": "오른쪽 우주선으로 이동해요",
+    "msg:ko": "오른쪽 깃발로 이동해요",
     "msg:en": "Go to the Flag on the right",
     "img": "/img/b4/flag.png"
   }

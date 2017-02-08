@@ -1,6 +1,6 @@
 {
   "tile_size": 256,
-  "score":0,
+  "score":1,
   "workspace": ["start", "move_down","move_down","move_down","move_right"],
   "toolbox": [
     "move_up",
