@@ -271,6 +271,20 @@ Blocks["use_item2"] = {
   ],
   action: ["useItem2"]
 };
+Blocks["get_item3"] = {
+  rgbColor: "#E75051",
+  message0: {
+    ko: "%1 아이템 가져오기",
+    en: "%1 Get Item"
+  },
+  args0: [
+    {type: "field_image", src: "/img/get_item.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
+  ],
+  action: ["getItem3"]
+};
 Blocks["check"] = {
   rgbColor: "#33B1B1",
   message0: {
