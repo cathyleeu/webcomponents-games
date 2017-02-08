@@ -446,6 +446,7 @@ Actions.prototype.getItem = function(block, callback) {
   }
 };
 
+//이미지 정보를 가져와서 목적지위에 드러나게 하는 기능
 Actions.prototype.getItem2 = function(block, callback) {
   var _this = this,
       character = this.canvas.character,
@@ -483,6 +484,64 @@ Actions.prototype.getItem2 = function(block, callback) {
   setTimeout(function() {
     callback();
   }, 500);
+};
+
+//목적지에서 대상이 되는 모든 물건을 전부 가져오기만 하면 끝나는 기능
+Actions.prototype.getItem3 = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      items = this.canvas.items,
+      item = this._getCanvasObject(character.px, character.py, "item");
+
+  var total_itemCount = 0;
+  if(items.length){
+    for(var i =0; i<items.length;i++){
+      total_itemCount = total_itemCount + items[i].itemCount;
+    }
+  }
+      debugger
+  if( !item ) {
+    // 아이템을 가져올 수 없다면
+    callback("아이템을 가져올 수 없어요");
+    return;
+  }
+  character.hasItem = true;
+  if(item.itemCount) {
+    // 다수의 아이템
+    // 아이템의 개수 감소
+    var itemCount = this.getItemCount(item);
+    if(itemCount == 0) {
+      callback("아이템을 가져올 수 없어요");
+      return;
+    }
+    this._splitObjects(item, function() {
+      if(itemCount - 1 == 0) {
+        item.visible = false;
+      }
+      _this.setItemCount(item, itemCount - 1);
+      // 캐릭터의 아이템 소유 개수 증가
+      itemCount = _this.getItemCount(character);
+      _this.setItemCount(character, itemCount + 1);
+      _this.canvas.stage.update();
+      createjs.Sound.play("success");
+      setTimeout(function() {
+        if(total_itemCount == _this.getItemCount(character)){
+          foods.splice(0,foods.length);
+        }
+        callback();
+      }, 500);
+    });
+  } else {
+    // 곡괭이, 연꽃(숫자 없는 아이템)
+    item.visible = false;
+    character.itemBitmap = item;
+    this.canvas.stage.update();
+    createjs.Sound.play("success");
+    setTimeout(function() {
+      callback();
+    }, 500);
+  }
 };
 
 Actions.prototype.useItem = function(block, callback) {

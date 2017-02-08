@@ -1,16 +1,16 @@
 {
   "tile_size": 256,
   "score":0,
-  "workspace": ["start", "move_down","move_down","move_down","move_right", "get_item", "get_item"],
+  "workspace": ["start", "move_down","move_down","move_down","move_right", "get_item3", "get_item3"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
     "move_left",
-    "get_item"
+    "get_item3"
   ],
   "map": [
-    "########",
+    "%#######",
     "#.#....#",
     "#.#..#.#",
     "#d#.)#.#",
@@ -20,6 +20,10 @@
     "########"
   ],
   "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
     "x": 4,
     "y": 3,
     "img": "chest",
