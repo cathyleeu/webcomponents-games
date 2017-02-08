@@ -1,0 +1,52 @@
+{
+  "tile_size": 256,
+  "score":10,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3"
+  ],
+  "map": [
+    "%#####",
+    "#psqi#",
+    "#r)))#",
+    "#....#",
+    "######"
+  ],
+  "extra":[{
+    "x": 0,
+    "y": 0,
+    "img": "tree1"
+  },{
+    "x": 2,
+    "y": 2,
+    "img":"hs",
+    "itemCount":1
+  },{
+    "x": 3,
+    "y": 2,
+    "img":"hr",
+    "itemCount":1
+  },{
+    "x": 4,
+    "y": 2,
+    "img":"hp",
+    "itemCount":1
+  }],
+  "tutorial": [{
+    "msg:ko": "새로 배운 키즈 블록을 가지고 가자!",
+    "msg:en": "Let's take the new Kidsblocks we learned!"
+  },{
+    "msg:ko": "가위바위보 블록을 가지고 와요",
+    "msg:en": "Take the Rock, Scissors and Paper blocks.",
+    "img": "/img/b4/rsp.png"
+  }],
+  "success": [{
+    "msg:ko": "다음 권에서 만나요! 안녕!",
+    "msg:en": "See you next time!",
+    "img": "img/b4/cos0.png"
+  }]
+}

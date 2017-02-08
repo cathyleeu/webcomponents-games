@@ -34,12 +34,14 @@
   {"id": "flower1", "src": "/img/b4/flower1.png", "obstacle": true},
   {"id": "flower2", "src": "/img/b4/flower2.png", "obstacle": true},
 
-  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
 
   {"tile": "p", "id": "f_granfa", "src": "/img/b4/f_granfa.png"},
   {"tile": "s", "id": "f_granma", "src": "/img/b4/f_granma.png"},
   {"tile": "q", "id": "father", "src": "/img/b4/father.png"},
-  {"tile": "i", "id": "mother", "src": "/img/b4/mother.png"}
+  {"tile": "i", "id": "mother", "src": "/img/b4/mother.png"},
+
+  {"id": "rsp", "src": "/img/b4/rsp.png"}
 ]
