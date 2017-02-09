@@ -43,7 +43,8 @@
   }],
   "tutorial": [{
     "msg:ko": "가위바위보!",
-    "msg:en": "Rock scissors paper!"
+    "msg:en": "Rock scissors paper!",
+"img":"/img/b4/rsp.png"
   },{
     "msg:ko": "모두 이기고 보물 상자에 갈 거야!",
     "msg:en": "Win all to go to the chest!",

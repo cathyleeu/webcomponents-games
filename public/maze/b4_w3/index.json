@@ -7,9 +7,9 @@
     "##.##################.",
     "..#..e..%...n...%....#",
     "..#..e.%.%..n..%.%...#",
-    ".#.r..%###%..#%...%..#.",
-    "..#..##%.%#hh#.#.#####",
-    "..#..#%.%.%.....#....#",
+    ".#.r.%%...%.n%%...%%.#.",
+    "..#..e......####.#####",
+    "..#..e......#...#...#",
     "##.###################."
   ],
   "extra": [{
@@ -29,6 +29,22 @@
       "img": "/img/b4/chest.png"
     }]
   },{
+    "x": 5,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "보물 상자를 1개 얻을 수 있어.",
+      "msg:en": "You can get one chest at once.",
+      "img": "/img/b4/chest.png"
+    }]
+  },{
+    "x": 5,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "보물 상자를 1개 얻을 수 있어.",
+      "msg:en": "You can get one chest at once.",
+      "img": "/img/b4/chest.png"
+    }]
+  },{
     "x": 12,
     "y": 1,
     "tutorial": [{
@@ -45,88 +61,72 @@
       "img": "/img/b4/chest.png"
     }]
   },{
-    "x": 11,
-    "y": 4,
-    "tutorial": [{
-      "msg:ko": "보물 상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three chests at once.",
-      "img": "/img/b4/chest.png"
-    }]
-  },{
     "x": 12,
-    "y": 4,
+    "y": 3,
     "tutorial": [{
-      "msg:ko": "보물 상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three chests at once.",
+      "msg:ko": "보물 상자를 2개 얻을 수 있어.",
+      "msg:en": "You can get two chests at once.",
       "img": "/img/b4/chest.png"
     }]
   },{
-    "x": 6,
+    "x": 5,
     "y": 3,
     "link": "b4_w3/1"
   },{
+    "x": 6,
+    "y": 3,
+    "link": "b4_w3/2"
+  },{
     "x": 7,
     "y": 2,
-    "link": "b4_w3/2"
+    "link": "b4_w3/3"
   },{
     "x": 8,
     "y": 1,
-    "link": "b4_w3/3"
+    "link": "b4_w3/4"
   },{
     "x": 9,
     "y": 2,
-    "link": "b4_w3/4"
-  },{
-    "x": 10,
-    "y": 3,
     "link": "b4_w3/5"
   },{
-    "x": 14,
+    "x": 10,
     "y": 3,
     "link": "b4_w3/6"
   },{
-    "x": 15,
-    "y": 2,
+    "x": 13,
+    "y": 3,
     "link": "b4_w3/7"
   },{
-    "x": 16,
-    "y": 1,
+    "x": 14,
+    "y": 3,
     "link": "b4_w3/8"
   },{
-    "x": 17,
+    "x": 15,
     "y": 2,
     "link": "b4_w3/9"
   },{
-    "x": 18,
-    "y": 3,
+    "x": 16,
+    "y": 1,
     "link": "b4_w3/10"
   },{
-    "x": 10,
-    "y": 5,
+    "x": 17,
+    "y": 2,
     "link": "b4_w3/11"
   },{
-    "x": 9,
-    "y": 4,
+    "x": 18,
+    "y": 3,
     "link": "b4_w3/12"
   },{
-    "x": 8,
-    "y": 5,
+    "x": 19,
+    "y": 3,
     "link": "b4_w3/13"
   },{
-    "x": 7,
-    "y": 4,
-    "link": "b4_w3/14"
-  },{
-    "x": 6,
-    "y": 5,
-    "link": "b4_w3/15"
-  },{
-    "img":"grandma",
+    "img":"grandpa",
     "x": 16,
     "y": 5,
     "obstacle": false,
-    "link": "b4_w4/16",
-    "min_score": 25,
+    "link": "b4_w4/index",
+    "min_score": 30,
     "tutorial":[{
         "msg:ko": "참 잘했어요. 다음에 또 만나요!",
         "msg:en": "You did grate job! See you again."
@@ -136,23 +136,22 @@
   "tutorial": [{
     "msg:ko": "가위바위보를 해요!",
     "msg:en": "Let's play rock, scissors, paper!",
-    "img" : "/img/b4/rsp.png"
+    "img":"/img/b4/rsp.png"
   }, {
     "msg:ko": "쉬운 문제는 보물 상자 1 개를 주어요.",
     "msg:en": "An easy problem gives you one chest.",
-    "img":"/img/b4/chest.png"
+    "img": "/img/b4/chest.png"
   }, {
     "msg:ko": "보통 문제는 보물 상자 2 개를 주어요.",
     "msg:en": "A normal problem gives you two chests.",
-    "img":"/img/b4/chest.png"
+    "img": "/img/b4/chest.png"
   }, {
-    "msg:ko": "어려운 문제는 보물 상자 3 개를 주어요.",
-    "msg:en": "A normal problem gives you three chests.",
-    "img":"/img/b4/chest.png"
+    "msg:ko": "이번 주는 문제를 모두 풀어야 해요.",
+    "msg:en": "You have to solve all the problems."
   }, {
-    "msg:ko": "보물 상자 25개를 모으면 할머니에게로 가요.",
-    "msg:en": "Go to grandma with more than 25 chests.",
-    "img": "/img/b4/f_granma.png",
+    "msg:ko": "문제를 모두 풀면 할아버지에게 가요.",
+    "msg:en": "Go to grandpa if you solve all the problems.",
+    "img": "/img/b4/f_granfa.png",
     "x" : 16,
     "y" : 5
   }, {
@@ -162,8 +161,8 @@
     "y" : 3
   }],
   "goal": {
-    "msg:ko": "할머니에게 가자!",
-    "msg:en": "Let's go to grandma!",
-    "img":"/img/b4/f_granma.png"
+    "msg:ko": "할아버지에게 가자!",
+    "msg:en": "Let's go to grandpa!",
+    "img": "/img/b4/g_granfa.png"
   }
 }
