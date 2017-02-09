@@ -11,16 +11,16 @@
     "item_rock",
     "item_paper",
     "item_scissors",
-    "get_item3"
+    "get_item"
   ],
   "map": [
-    "%######.",
+    "#######.",
     "###.####",
     "#.#..d##",
     "###.#.##",
     "#..S...#",
     "#.#.##.#",
-    "#)..##.#",
+    "#%..##.#",
     ".######."
   ],
   "extra":[{
@@ -45,9 +45,5 @@
     "msg:ko": "아빠를 이기고 보물상자에 가 보렴.",
     "msg:en": "Win daddy to go to the chest!",
     "img": "/img/b4/chest.png"
-  }],
-  "success": [{
-      "msg:ko": "성공! 참 잘했어요~",
-      "msg:en": "Succes! Good Job!"
   }]
 }

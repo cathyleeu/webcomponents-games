@@ -126,11 +126,7 @@
     "y": 5,
     "obstacle": false,
     "link": "b4_w4/16",
-    "min_score": 25,
-    "tutorial":[{
-        "msg:ko": "참 잘했어요. 다음에 또 만나요!",
-        "msg:en": "You did grate job! See you again."
-      }]
+    "min_score": 25
   }],
 
   "tutorial": [{
