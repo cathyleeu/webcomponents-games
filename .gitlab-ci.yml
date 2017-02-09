@@ -1,4 +1,4 @@
-deploy to toycode.org:
+toycode.org:
   script:
   - "npm install --production"
   - "bower install --production"
@@ -6,13 +6,12 @@ deploy to toycode.org:
   - "forever stop kidscoding || true"
   - "forever start --uid \"kidscoding\" -a index.js --url=http://toycode.org"
   type: deploy
-  job:
-    tags:
-    - production
+  tags:
+  - production
   only:
   - master
 
-deploy to dev.toycode.org:
+dev.toycode.org:
   script:
   - "npm install --production"
   - "bower install --production"
@@ -20,8 +19,7 @@ deploy to dev.toycode.org:
   - "forever stop kidscoding || true"
   - "forever start --uid \"kidscoding\" -a index.js --url=http://dev.toycode.org"
   type: deploy
-  job:
-    tags:
-    - dev
+  tags:
+  - dev
   only:
   - master
