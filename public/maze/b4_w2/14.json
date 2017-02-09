@@ -52,9 +52,5 @@
     "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
     "msg:en": "Let's use 'Bring' block on the chest",
     "img": "/img/b4/chest.png"
-  },
-  "success": [{
-      "msg:ko": "성공! 참 잘했어요~",
-      "msg:en": "Succes! Good Job!"
-  }]
+  }
 }

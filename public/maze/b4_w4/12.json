@@ -53,9 +53,5 @@
     "msg:ko": "모두 이기고 보물 상자에 갈 거야!",
     "msg:en": "Win all to go to the chest!",
     "img": "/img/b4/chest.png"
-  }],
-  "success": [{
-      "msg:ko": "성공! 참 잘했어요~",
-      "msg:en": "Succes! Good Job!"
   }]
 }
