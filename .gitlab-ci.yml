@@ -6,7 +6,8 @@ deploy to toycode.org:
   - "forever stop kidscoding || true"
   - "forever start --uid \"kidscoding\" -a index.js --url=http://toycode.org"
   type: deploy
-  tags: production
+  tags:
+  - production
   only:
   - master
 
@@ -18,6 +19,7 @@ deploy to dev.toycode.org:
   - "forever stop kidscoding || true"
   - "forever start --uid \"kidscoding\" -a index.js --url=http://dev.toycode.org"
   type: deploy
-  tags: dev
+  tags:
+  - dev
   only:
   - master
