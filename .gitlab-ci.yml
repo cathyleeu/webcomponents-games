@@ -1,3 +1,15 @@
+deploy to toycode.org:
+  script:
+  - "npm install --production"
+  - "bower install --production"
+  - "./node_modules/.bin/gulp appcache"
+  - "forever stop kidscoding || true"
+  - "forever start --uid \"kidscoding\" -a index.js --url=http://toycode.org"
+  type: deploy
+  tags:
+  only:
+  - master
+
 deploy to dev.toycode.org:
   script:
   - "npm install --production"
