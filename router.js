@@ -268,6 +268,14 @@ public.get('/camera', function *(next) {
   yield this.render('camera');
 });
 
+public.get('/contents', function *(next) {
+  this.redirect('https://drive.google.com/embeddedfolderview?id=0B1Aeb4WZ7p9uWGE2NVM2QmRobXM#list');
+});
+
+public.get('/office', function *(next) {
+  yield this.render('underconstruct');
+});
+
 module.exports = {
   public: public,
   secured: secured
