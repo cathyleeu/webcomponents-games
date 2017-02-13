@@ -273,7 +273,7 @@ public.get('/contents', function *(next) {
 });
 
 public.get('/office', function *(next) {
-  yield this.render('underconstruct');
+  this.redirect('http://office.toycode.org');
 });
 
 module.exports = {
