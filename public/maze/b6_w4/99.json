@@ -1,0 +1,46 @@
+{
+  "tile_size": 256,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    "ijijijiji",
+    "jijijijij",
+    "bbbbbbbbb",
+    "bbbbbbbbb",
+    "#.....#%#",
+    "#..#.#..#",
+    "###.#..##",
+    "#..#r.###",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 4,
+    "img":"airplane"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스는 비행기를 타러 가요",
+    "msg:en": "Let's take the airplane!",
+    "img": "/img/b6_w4/airplane.png"
+  }],
+  "goal": {
+    "msg:ko": "비행기를 타러 가자",
+    "msg:en": "Let's take the airplane!",
+    "img": "/img/b6_w4/airplane.png"
+  },
+  "success": [{
+    "msg:ko": "성공! 비행기를 타고 하늘을 날았어요~",
+    "msg:en": "Succes! Good Job!",
+    "img": "/img/b6_w4/airplane.png"
+  },{
+    "msg:ko": "6권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Book 6 is over! See you Book 7!"
+  }]
+}

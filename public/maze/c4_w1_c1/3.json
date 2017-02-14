@@ -1,0 +1,42 @@
+{
+  "tile_size": 256,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "##......#",
+    "#...g.###",
+    "#.k...%.#",
+    "#..#.#..#",
+    "##i....##",
+    "#...u...#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 4,
+    "img":"hospital"
+  }],
+  "tutorial": [{
+    "msg:ko": "병원으로 가보자!",
+    "msg:en": "Go to the hospital!",
+    "img": "/img/c4_w1_c1/hospital.png"
+  }],
+  "goal": {
+    "msg:ko": "병원으로 가보자!",
+    "msg:en": "Go to the hospital!",
+    "img": "/img/c4_w1_c1/hospital.png"
+  },
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Succes! Good Job!",
+    "link": "c4_w1_c1/4"
+  }]
+}

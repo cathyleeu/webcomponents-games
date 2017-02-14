@@ -1,0 +1,32 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##...##",
+    "#....#%.#",
+    "#.#..#..#",
+    "#.......#",
+    "#.#....##",
+    "#.##..u##",
+    "#....##.#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "코스는 버스정류장에 가야해요",
+    "msg:en": "Let's go to the bus terminal!",
+    "img": "/img/b6_w1/busterminal.png"
+  }],
+  "goal": {
+    "msg:ko": "버스정류장에 가자",
+    "msg:en": "Let's go to the bus terminal!",
+    "img": "/img/b6_w1/busterminal.png"
+  }
+}

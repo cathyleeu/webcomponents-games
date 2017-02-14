@@ -1,0 +1,37 @@
+{
+  "tile_size": 256,
+  "score":2,
+  "workspace": ["start","move_right","repeat","move_left","repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.##..##w",
+    "w#..r...w",
+    "w.e##.##w",
+    "w......fw",
+    "w#a#.#..w",
+    "w#..%.c#w",
+    "w#.###..w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 6,
+    "img":"fruit_ch"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스는 체리를 사야해요!",
+    "msg:en": "'Cos' have to buy cherry",
+    "img": "/img/c4_w2/fruit_ch.png"
+  }],
+  "goal": {
+    "msg:ko": "체리를 사보자!",
+    "msg:en": "Take cherry",
+    "img": "/img/c4_w2/fruit_ch.png"
+  }
+}

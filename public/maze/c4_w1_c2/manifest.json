@@ -1,0 +1,54 @@
+[
+  {"book": "c4", "title": "1주차 : 숫자 크기 비교"},
+  {"id": "bg1", "src": "/img/c4_w4/bg1.png"},
+  {"id": "bg2", "src": "/img/c4_w4/bg2.png"},
+
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/c4_w4/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c4_w4/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c4_w4/house_blank.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "house", "src": "/img/c4_w4/house_blank.png", "obstacle": false},
+  {"id": "mother", "src": "/img/c4_w3/mother.png", "obstacle": false},
+
+  {"id": "tree1", "src": "/img/c4_w4/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/c4_w4/tree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/c4_w4/tree3.png", "obstacle": true},
+  {"id": "flower1", "src": "/img/c4_w4/flower1.png", "obstacle": true},
+  {"id": "flower2", "src": "/img/c4_w4/flower2.png", "obstacle": true},
+  {"id": "yardstone1", "src": "/img/c4_w4/yardstone1.png", "obstacle": true},
+  {"id": "yardstone2", "src": "/img/c4_w4/yardstone2.png", "obstacle": true},
+
+  {"tile": "a", "id": "house1", "src": "/img/c4_w4/house1.png", "obstacle": false},
+  {"tile": "b", "id": "house2", "src": "/img/c4_w4/house2.png", "obstacle": false},
+  {"tile": "c", "id": "house3", "src": "/img/c4_w4/house3.png", "obstacle": false},
+  {"tile": "e", "id": "house4", "src": "/img/c4_w4/house4.png", "obstacle": false},
+  {"tile": "f", "id": "house5", "src": "/img/c4_w4/house5.png", "obstacle": false},
+  {"tile": "g", "id": "house6", "src": "/img/c4_w4/house6.png", "obstacle": false},
+  {"tile": "h", "id": "house7", "src": "/img/c4_w4/house7.png", "obstacle": false},
+  {"tile": "i", "id": "house8", "src": "/img/c4_w4/house8.png", "obstacle": false},
+  {"tile": "j", "id": "house9", "src": "/img/c4_w4/house9.png", "obstacle": false}
+
+]

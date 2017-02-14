@@ -1,0 +1,118 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "##.###################.",
+    "..#..%...%....%...%...#",
+    "..#....%...%....%..%..#",
+    ".#.r.................#.",
+    "..#..%...%....%...%...#",
+    "..#....%....%...%.....#",
+    "##.###################."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 1,
+    "link": "c4_w4/1"
+  },{
+    "x": 5,
+    "y": 4,
+    "link": "c4_w4/2"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "c4_w4/3"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c4_w4/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c4_w4/5"
+  },{
+    "x": 9,
+    "y": 4,
+    "link": "c4_w4/6"
+  },{
+    "x": 11,
+    "y": 2,
+    "link": "c4_w4/7"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c4_w4/8"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "c4_w4/9"
+  },{
+    "x": 14,
+    "y": 4,
+    "link": "c4_w4/10"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "c4_w4/11"
+  },{
+    "x": 16,
+    "y": 5,
+    "link": "c4_w4/12"
+  },{
+    "x": 18,
+    "y": 1,
+    "link": "c4_w4/13"
+  },{
+    "x": 18,
+    "y": 4,
+    "link": "c4_w4/14"
+  },{
+    "x": 19,
+    "y": 2,
+    "link": "c4_w4/15"
+  },{
+    "img":"mother",
+    "x": 21,
+    "y": 3,
+    "obstacle": false,
+    "link": "c4_w4/16",
+    "min_score": 15
+  }],
+  "tutorial": [{
+    "msg:ko": "숫자의 크기를 비교해보자!",
+    "msg:en": "Let's compare the number!",
+    "img": "/img/c4_w4/num_compare.png"
+  }, {
+    "msg:ko": "만약 '더 큰 숫자의 집'을 찾아야하면",
+    "msg:en": "If you need to buy the bigger fruit",
+    "img": "/img/c4_w4/bigger_num.png"
+  }, {
+    "msg:ko": "'9번 집'을 찾아가면 되는거야!",
+    "msg:en": "you will move to 'House 9'",
+    "img": "/img/c4_w4/house9.png"
+  }, {
+    "msg:ko": "집을 모아서 엄마에게 갈거야",
+    "msg:en": "Collect the house and go to mom",
+    "img": "/img/c4_w4/house_blank.png"
+  }, {
+    "msg:ko": "21개의 집을 모은 뒤,",
+    "msg:en": "Collect 21 house and,",
+    "img": "/img/c4_w4/house_blank.png"
+  }, {
+    "msg:ko": "엄마에게 이동하자!",
+    "msg:en": "Move to mother!",
+    "img": "/img/c4_w4/mother.png"
+  },{
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "집을 21개 모으자!",
+    "msg:en": "Collect 21 house",
+    "img": "/img/c4_w4/house_blank.png"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.####.##",
+    "#%...#.##",
+    "###...###",
+    "#.#..#..#",
+    "#....#d##",
+    "#.#....##",
+    "#....####",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "코스는 공항에 가야해요",
+    "msg:en": "Let's go to the airport!",
+    "img": "/img/b6_w4/airport.png"
+  }],
+  "goal": {
+    "msg:ko": "공항에 가자",
+    "msg:en": "Let's go to the airport!",
+    "img": "/img/b6_w4/airport.png"
+  }
+}

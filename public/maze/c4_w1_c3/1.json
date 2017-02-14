@@ -1,0 +1,37 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.....##w",
+    "w..#.##%w",
+    "w.#..#..w",
+    "w..#r...w",
+    "w.#..#.#w",
+    "w..#...#w",
+    "wc....#.w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 2,
+    "img":"fruit_st"
+  }],
+  "tutorial": [{
+    "msg:ko": "둘 중에 작은 과일을 사야해요!",
+    "msg:en": "'Cos' have to buy the smaller fruit",
+    "img": "/img/c4_w3/smaller.png"
+  }],
+  "goal": {
+    "msg:ko": "둘 중에 작은 과일을 사보자!",
+    "msg:en": "Take the smaller fruit",
+    "img": "/img/c4_w3/smaller.png"
+  }
+}

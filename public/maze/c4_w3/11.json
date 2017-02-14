@@ -1,0 +1,38 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.##d##.w",
+    "w#.#....w",
+    "w##..#f.w",
+    "w##.#...w",
+    "w#..g...w",
+    "w#.##..aw",
+    "w%..#.##w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 7,
+    "img":"fruit_pi"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스는 2번째로 큰 과일을 사야해요!",
+    "msg:en": "'Cos' have to buy the second biggest fruit",
+    "img": "/img/c4_w3/bigger.png"
+  }],
+  "goal": {
+    "msg:ko": "2번째로 큰 과일을 사보자!",
+    "msg:en": "Take the second biggest fruit",
+    "img": "/img/c4_w3/bigger.png"
+  }
+}
