@@ -1,0 +1,32 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start", "repeat", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "##.#.##.#",
+    "#.#.#.###",
+    "#....%..#",
+    "#..#.#..#",
+    "###.###.#",
+    "#......u#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "코스는 기차역에 가야해요",
+    "msg:en": "Let's go to the train station!",
+    "img": "/img/b6_w2/trainstation.png"
+  }],
+  "goal": {
+    "msg:ko": "기차역에 가자",
+    "msg:en": "Let's go to the train station!",
+    "img": "/img/b6_w2/trainstation.png"
+  }
+}

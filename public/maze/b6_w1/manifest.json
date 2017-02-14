@@ -1,0 +1,54 @@
+[
+  {"book": "B6", "title": "1주차 : 버스정류장에 가요"},
+  {"id": "bg1", "src": "/img/b6_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b6_w1/bg2.png"},
+
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/b6_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b6_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b6_w1/busterminal.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "bus", "src": "/img/b6_w1/bus.png"},
+  {"id": "bd1", "src": "/img/b6_w1/bd1.png","obstacle": true},
+  {"id": "bd2", "src": "/img/b6_w1/bd2.png","obstacle": true},
+  {"id": "bd3", "src": "/img/b6_w1/bd3.png","obstacle": true},
+  {"id": "bd4", "src": "/img/b6_w1/bd4.png","obstacle": true},
+  {"id": "bd5", "src": "/img/b6_w1/bd5.png","obstacle": true},
+  {"id": "bd6", "src": "/img/b6_w1/bd6.png","obstacle": true},
+  {"id": "bd7", "src": "/img/b6_w1/bd7.png","obstacle": true},
+
+  {"tile": "a", "id": "road11", "src": "/img/b6_w1/road11.png", "wall": true},
+  {"tile": "b", "id": "road12", "src": "/img/b6_w1/road12.png", "wall": true},
+  {"tile": "c", "id": "street", "src": "/img/b6_w1/street.png", "wall": true},
+
+  {"tile": "q", "id": "road21", "src": "/img/b6_w1/road21.png", "wall": true},
+  {"tile": "w", "id": "road22", "src": "/img/b6_w1/road22.png", "wall": true},
+  {"tile": "e", "id": "road23", "src": "/img/b6_w1/road23.png", "wall": true},
+  {"tile": "g", "id": "road24", "src": "/img/b6_w1/road24.png", "wall": true},
+
+  {"tile": "z", "id": "crosswalk_col", "src": "/img/b6_w1/crosswalk_col.png"},
+  {"tile": "x", "id": "crosswalk_row", "src": "/img/b6_w1/crosswalk_row.png"}
+
+]

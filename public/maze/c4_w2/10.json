@@ -1,0 +1,37 @@
+{
+  "tile_size": 256,
+  "score":2,
+  "workspace": ["start","repeat","repeat","move_down","repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "wi##..##w",
+    "w...f#..w",
+    "w....##.w",
+    "w.#.....w",
+    "w%..##.#w",
+    "w.#..bu#w",
+    "w.#..##.w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 5,
+    "img":"fruit_or"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스는 오렌지를 사야해요!",
+    "msg:en": "'Cos' have to buy Orange",
+    "img": "/img/c4_w2/fruit_or.png"
+  }],
+  "goal": {
+    "msg:ko": "오렌지를 사보자!",
+    "msg:en": "Take Orange",
+    "img": "/img/c4_w2/fruit_or.png"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start","repeat","repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.%...##w",
+    "w.g#.#e.w",
+    "w.#..#..w",
+    "w..#...kw",
+    "w.#..#.#w",
+    "w..#.c.#w",
+    "w...u.#.w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 1,
+    "img":"fruit_st"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스는 딸기를 사야해요!",
+    "msg:en": "'Cos' have to buy Strawberry",
+    "img": "/img/c4_w2/fruit_st.png"
+  }],
+  "goal": {
+    "msg:ko": "딸기를 사보자!",
+    "msg:en": "Take Strawberry",
+    "img": "/img/c4_w2/fruit_st.png"
+  }
+}

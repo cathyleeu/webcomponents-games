@@ -1,0 +1,38 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#b####%.#",
+    "#......##",
+    "###...###",
+    "#i...#..#",
+    "#..#..f##",
+    "#.u#.####",
+    "#......##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 1,
+    "img":"house6"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스네 집은 3번째로 작은 숫자의 주소를 가지고 있어요!",
+    "msg:en": "The Address of Cos's house is the third smallest number",
+    "img": "/img/c4_w4/smaller_num.png"
+  }],
+  "goal": {
+    "msg:ko": "3번째로 작은 숫자의 주소를 찾아가자!",
+    "msg:en": "Go to the third smallest number of address",
+    "img": "/img/c4_w4/smaller_num.png"
+  }
+}
