@@ -100,7 +100,7 @@
     "y": 5,
     "link": "b6_w3/15"
   },{
-    "img":"train",
+    "img":"ship",
     "x": 11,
     "y": 5,
     "obstacle": false,
