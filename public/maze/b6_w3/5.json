@@ -1,0 +1,32 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start", "repeat", "repeat", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "i#######.",
+    "j.##..###",
+    "i#...d..#",
+    "j%###.###",
+    "i..#..###",
+    "j.###...#",
+    "i.....###",
+    "j#.###..#",
+    "i#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "코스는 선착장에 가야해요",
+    "msg:en": "Let's go to the ship port!",
+    "img": "/img/b6_w3/shipport.png"
+  }],
+  "goal": {
+    "msg:ko": "선착장에 가자",
+    "msg:en": "Let's go to the ship port!",
+    "img": "/img/b6_w3/shipport.png"
+  }
+}
