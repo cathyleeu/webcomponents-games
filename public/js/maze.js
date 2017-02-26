@@ -232,7 +232,14 @@ function init() {
     var lang = store.get("lang") || "ko",
         fullscreen = store.get("fullscreen"),
         goal = maze.goal || maze.tutorial[maze.tutorial.length - 1];
-    $(".goal .goal-img").attr("src", goal.img);
+    if(!$.isArray(goal.img)) {
+      goal.img = [goal.img];
+    }
+    $(".goal-imgs .goal-img").remove();
+    goal.img.forEach(function(attrs) {
+      attrs = (typeof attrs == "object") ? attrs : {"src": attrs};
+      $('<img class="goal-img">').attr(attrs).appendTo(".goal-imgs");
+    });
     $(".goal .goal-msg").html(goal["msg" + (lang ? ":" + lang : "")] || goal["msg"]);
     if(fullscreen == undefined) {
       showModal({

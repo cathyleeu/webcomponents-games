@@ -33,7 +33,16 @@
   "goal": {
     "msg:ko": "엄마에게 가자!",
     "msg:en": "Let's go to the mom!",
-    "img": "/img/c4_w4/mother.png"
+    "img": [{
+      "src": "/img/c4_w4/house1.png",
+      "style": "width:33%"
+    }, {
+      "src": "/img/c4_w4/house2.png",
+      "style": "width:33%"
+    }, {
+      "src": "/img/c4_w4/house3.png",
+      "style": "width:33%"
+    }]
   },
   "success": [{
     "msg:ko": "성공! 엄마의 심부름을 모두 마쳤어요~",
