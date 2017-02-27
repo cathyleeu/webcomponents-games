@@ -33,6 +33,6 @@
   "goal": {
     "msg:ko": "셋 중에 큰 과일을 사보자!",
     "msg:en": "Take the biggest fruit",
-    "img": "/img/c4_w3/biggest.png"
+    "img": "/img/c4_w3/biggest_goal.png"
   }
 }
