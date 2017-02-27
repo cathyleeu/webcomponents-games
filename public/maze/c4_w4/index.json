@@ -4,81 +4,108 @@
   "tile_size": 256,
   "toolbox": [],
   "map": [
-    "##.###################.",
-    "..#..%...%....%...%...#",
-    "..#....%...%....%..%..#",
-    ".#.r.................#.",
-    "..#..%...%....%...%...#",
-    "..#....%....%...%.....#",
-    "##.###################."
+    "##.##################.",
+    "..#.#...%.#...##..#..#",
+    "..#.#.%%.%#..%..%..%.#",
+    ".#.re%.#..n%..%..%..#.",
+    "..#.#.%...########h###",
+    "..#.#.....#%.%.%..%.##",
+    "##.###################"
   ],
   "extra": [{
+    "x": 4,
+    "y": 3,
+    "img":"easy", "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "집을 1개 얻을 수 있어.",
+      "msg:en": "You can get one house at once.",
+      "img": "/img/c4_w4/house_blank.png"
+    }]
+  },{
+    "x": 10,
+    "y": 3,
+    "img":"normal",
+    "tutorial": [{
+      "msg:ko": "집을 2개 얻을 수 있어.",
+      "msg:en": "You can get two houses at once.",
+      "img": "/img/c4_w4/house_blank.png"
+    }]
+  },{
+    "x": 18,
+    "y": 4,
+    "img":"hard",
+    "tutorial": [{
+      "msg:ko": "집을 3개 얻을 수 있어.",
+      "msg:en": "You can get three houses at once.",
+      "img": "/img/c4_w4/house_blank.png"
+    }]
+  },{
     "x": 5,
-    "y": 1,
+    "y": 3,
     "link": "c4_w4/1"
   },{
-    "x": 5,
-    "y": 4,
+    "x": 6,
+    "y": 2,
     "link": "c4_w4/2"
   },{
-    "x": 7,
-    "y": 2,
+    "x": 6,
+    "y": 4,
     "link": "c4_w4/3"
   },{
     "x": 7,
-    "y": 5,
+    "y": 2,
     "link": "c4_w4/4"
   },{
-    "x": 9,
+    "x": 8,
     "y": 1,
     "link": "c4_w4/5"
   },{
     "x": 9,
-    "y": 4,
+    "y": 2,
     "link": "c4_w4/6"
   },{
     "x": 11,
-    "y": 2,
+    "y": 3,
     "link": "c4_w4/7"
   },{
-    "x": 12,
-    "y": 5,
+    "x": 13,
+    "y": 2,
     "link": "c4_w4/8"
   },{
     "x": 14,
-    "y": 1,
+    "y": 3,
     "link": "c4_w4/9"
-  },{
-    "x": 14,
-    "y": 4,
-    "link": "c4_w4/10"
   },{
     "x": 16,
     "y": 2,
+    "link": "c4_w4/10"
+  },{
+    "x": 17,
+    "y": 3,
     "link": "c4_w4/11"
-  },{
-    "x": 16,
-    "y": 5,
-    "link": "c4_w4/12"
-  },{
-    "x": 18,
-    "y": 1,
-    "link": "c4_w4/13"
-  },{
-    "x": 18,
-    "y": 4,
-    "link": "c4_w4/14"
   },{
     "x": 19,
     "y": 2,
+    "link": "c4_w4/12"
+  },{
+    "x": 18,
+    "y": 5,
+    "link": "c4_w4/13"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "c4_w4/14"
+  },{
+    "x": 13,
+    "y": 5,
     "link": "c4_w4/15"
   },{
     "img":"mother",
-    "x": 21,
-    "y": 3,
+    "x": 11,
+    "y": 5,
     "obstacle": false,
-    "link": "c4_w4/16",
-    "min_score": 15
+    "link": "c4_w4/99",
+    "min_score": 21
   }],
   "tutorial": [{
     "msg:ko": "숫자의 크기를 비교해보자!",
@@ -93,18 +120,28 @@
     "msg:en": "you will move to 'House 9'",
     "img": "/img/c4_w4/house9.png"
   }, {
-    "msg:ko": "집을 모아서 엄마에게 갈거야",
-    "msg:en": "Collect the house and go to mom",
+    "msg:ko": "집을 모아서 엄마에게 가져갈꺼야",
+    "msg:en": "Collect the house and go to my house",
     "img": "/img/c4_w4/house_blank.png"
   }, {
-    "msg:ko": "21개의 집을 모은 뒤,",
-    "msg:en": "Collect 21 house and,",
-    "img": "/img/c4_w4/house_blank.png"
+    "msg:ko": "쉬운 문제는 집 1 개를 주어요.",
+    "msg:en": "An easy problem gives you one house.",
+    "img": "/img/guide/easy.png"
   }, {
-    "msg:ko": "엄마에게 이동하자!",
-    "msg:en": "Move to mother!",
-    "img": "/img/c4_w4/mother.png"
-  },{
+    "msg:ko": "보통 문제는 집 2 개를 주어요.",
+    "msg:en": "A normal problem gives you two houses.",
+    "img": "/img/guide/normal.png"
+  }, {
+    "msg:ko": "어려운 문제는 집 3개를 주어요.",
+    "msg:en": "A hard problem gives you three houses.",
+    "img": "/img/guide/hard.png"
+  }, {
+    "msg:ko": "집 21개를 모은 뒤, 엄마에게 이동하자!",
+    "msg:en": "Collect 21 houses and, Go to mother",
+    "img": "/img/c4_w4/mother.png",
+    "x" : 11,
+    "y" : 5
+  }, {
     "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
     "msg:en": "Press 'Next' Button & Let's play",
     "x" : 3,
@@ -112,7 +149,7 @@
   }],
   "goal": {
     "msg:ko": "집을 21개 모으자!",
-    "msg:en": "Collect 21 house",
+    "msg:en": "Let's get 21 houses!",
     "img": "/img/c4_w4/house_blank.png"
   }
 }
