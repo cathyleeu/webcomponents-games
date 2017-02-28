@@ -8,9 +8,11 @@ var public = require('koa-router')(),
     nev = require('email-verification')(mongoose);
     fs = require('fs'),
     path = require('path'),
+    pmongo = require('promised-mongo'),
     argv = require('minimist')(process.argv.slice(2)),
     siteUrl = argv.url || 'http://localhost:3000',
-    config = require('./config.json'); //[argv.production ? 'production' : 'development'];
+    config = require('./config.json'), //[argv.production ? 'production' : 'development'];
+    auth_db = pmongo(config.auth_db, "user");
 
 // See: http://stackoverflow.com/questions/19877246/nodemailer-with-gmail-and-nodejs
 nev.configure({
@@ -142,8 +144,34 @@ public.get('/school', function *(next) {
   });
 });
 
+public.get('/show_users', function *(next) {
+  var users = yield auth_db.user.find({});
+  users = users.filter(function(user) {
+    return user.userType == "branch";
+  }).map(function(user) {
+    return {
+      name: user.branch.name,
+      code: user.code,
+      kinders: user.kinders.map(function(kinder) {
+        return {
+          name: kinder.name,
+          code: kinder.code,
+          classes: kinder.kinderClasses.map(function(obj) {
+            return obj.className;
+          })
+        };
+      })
+    };
+  });
+  this.body = JSON.stringify(users, null, 2);
+});
+
 public.get('/info', function *(next) {
   yield this.render('info');
+});
+
+public.post('/issue', function *(next) {
+  yield this.render('issue', this.request.body);
 });
 
 public.get('/kids', function *(next) {

@@ -30,7 +30,8 @@
     "koa-static": "^1.4.9",
     "minimist": "^1.2.0",
     "mongoose": "~4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "promised-mongo": "^1.2.0"
   },
   "devDependencies": {
     "browser-sync": "^2.11.0"
