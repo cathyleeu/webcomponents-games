@@ -1,0 +1,145 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start", "memi_step1", "memi_step2", "memi_step3", "memi_step4", "memi_step5"],
+  "toolbox": [
+
+  ],
+  "map": [
+    "%qqqq",
+    "&q&&@",
+    "qq&qq",
+    "qqqqq",
+    "qq&qq"
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 0,
+    "img": "bg20"
+  },{
+    "x": 3,
+    "y": 0,
+    "img": "bg30"
+  },{
+    "x": 4,
+    "y": 0,
+    "img": "bg40"
+  },{
+    "x": 0,
+    "y": 1,
+    "img": "bg01",
+    "contents" : [{
+        "img": "bg01_step5"
+      },{
+        "img": "bg01"
+    }]
+  },{
+    "x": 1,
+    "y": 1,
+    "img": "bg11"
+  },{
+    "x": 2,
+    "y": 1,
+    "img": "bg21",
+    "contents" : [{
+        "img": "bg21_step4"
+      },{
+        "img": "bg21"
+    }]
+  },{
+    "x": 3,
+    "y": 1,
+    "img": "bg31",
+    "contents" : [{
+        "img": "bg31_step1"
+      },{
+        "img": "bg31"
+    }]
+  },{
+    "x": 0,
+    "y": 2,
+    "img": "bg02"
+  },{
+    "x": 1,
+    "y": 2,
+    "img": "bg12"
+  },{
+    "x": 2,
+    "y": 2,
+    "img": "bg22",
+    "contents" : [{
+        "img": "bg22_step3"
+      },{
+        "img": "bg22"
+    }]
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "bg32"
+  },{
+    "x": 4,
+    "y": 2,
+    "img": "bg42"
+  },{
+    "x": 0,
+    "y": 3,
+    "img": "bg03"
+  },{
+    "x": 1,
+    "y": 3,
+    "img": "bg13"
+  },{
+    "x": 2,
+    "y": 3,
+    "img": "bg23"
+  },{
+    "x": 3,
+    "y": 3,
+    "img": "bg33"
+  },{
+    "x": 4,
+    "y": 3,
+    "img": "bg43"
+  },{
+    "x": 0,
+    "y": 4,
+    "img": "bg04"
+  },{
+    "x": 1,
+    "y": 4,
+    "img": "bg14"
+  },{
+    "x": 2,
+    "y": 4,
+    "img": "bg24",
+    "contents" : [{
+        "img": "bg24_step2"
+      },{
+        "img": "bg24"
+    }]
+  },{
+    "x": 3,
+    "y": 4,
+    "img": "bg34"
+  },{
+    "x": 4,
+    "y": 4,
+    "img": "bg44"
+  }],
+  "tutorial": [{
+    "msg:ko": "매미의 성장 과정을 알아보자",
+    "msg:en": "Let's look at the growth of cicada"
+  },{
+    "msg:ko": "매미의 성장 순서대로 블록을 조립하면",
+    "msg:en": "Assemble blocks in the order of cicada's growing, "
+  },{
+    "msg:ko": "매미가 될꺼야!",
+    "msg:en": "Became a cicada!",
+    "img": "/img/a5_w3/bg01_step5.png"
+  }],
+  "success": [{
+    "msg:ko": "성공! 매미가 되었어요~",
+    "msg:en": "Succes! Became a cicada!",
+    "link": "a5_w3/2"
+  }]
+}
