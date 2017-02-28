@@ -915,8 +915,15 @@ function showModal(options) {
     $("#modal .modal-msg-box").show();
     $("#modal .modal-select").hide();
   }
-  var img_src = options.img || message_url;
-  $(".modal-msg-box img").attr("src", img_src);
+  var imgs = options.img || message_url;
+  if(!$.isArray(imgs)) {
+    imgs = [imgs];
+  }
+  $(".modal-msg-box img").remove();
+  imgs.forEach(function(attrs) {
+    attrs = (typeof attrs == "object") ? attrs : {src:attrs};
+    $('<img class="modal-character">').attr(attrs).appendTo(".modal-imgs");
+  });
   $(".modal-msg-box .modal-msg").html(options.msg);
   $('#modal').modal({
     backdrop: "static"

@@ -356,16 +356,28 @@ Actions.prototype.hello = function(type, block, callback) {
   }
 };
 
-Actions.prototype.immigrant = function(block, callback) {
+Actions.prototype.steploop = function(type, block, callback) {
   var _this = this,
       character = this.canvas.character,
       foods = this.canvas.foods,
       obstacles = this.canvas.obstacles,
       spiders = this.canvas.spiders,
-      x_next = character.px+1,
+      x_next = character.px,
       y_next = character.py,
-      stepList = ["r","r","r","d","d","d","r","r","r","d","r","r","u","u","u","r","r","d","d"],
+      stepList = [""],
       obj;
+
+  if(type == "immigrant") {
+    stepList = ["r","r","r","r","d","d","d","r","r","r","d","r","r","u","u","u","r","r","d","d"];
+  } else if(type == "frog_left") {
+    stepList = ["l","l"];
+  } else if(type == "frog_up") {
+    stepList = ["u","u"];
+  } else if(type == "frog_right") {
+    stepList = ["r","r","r"];
+  } else if(type == "frog_down") {
+    stepList = ["d","d","d"];
+  }
   travel(x_next,y_next);
   function travel(a,b){
     obj = _this._getCanvasObject(a, b);
@@ -375,6 +387,8 @@ Actions.prototype.immigrant = function(block, callback) {
         setTimeout(function() {
           if(direction == "r"){
             travel(a+1,b);
+          }else if(direction == "l"){
+            travel(a-1,b);
           }else if(direction == "d"){
             travel(a,b+1);
           }else{
@@ -385,6 +399,79 @@ Actions.prototype.immigrant = function(block, callback) {
         callback(obj);
       }
     });
+  }
+};
+
+Actions.prototype.memigrowing = function(type, block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      obstacles = this.canvas.obstacles,
+      spiders = this.canvas.spiders,
+      x_next = character.px,
+      y_next = character.py,
+      stepList = [""],
+      obj;
+
+  var chest = this._getCanvasObject(character.px, character.py, "chest");
+
+  if(chest) {
+    chest.bitmap.image = _this.loader.getResult(chest.contents[1].img);
+    _this.setCoord(chest, chest.px, chest.py);
+    createjs.Sound.play("success");
+    _this.canvas.stage.update();
+  }
+
+  if(type == "memi_step1") {
+    stepList = ["l"];
+  } else if(type == "memi_step2") {
+    stepList = ["d","d","d","l"];
+  } else if(type == "memi_step3") {
+    stepList = ["u","u"];
+  } else if(type == "memi_step4") {
+    stepList = ["u"];
+  } else if(type == "memi_step5") {
+    stepList = ["l", "l"];
+  }
+  travel(x_next,y_next);
+  function travel(a,b){
+    obj = _this._getCanvasObject(a, b);
+    _this._moveCharacter(a, b, function() {
+      if(stepList.length>0){
+        var direction = stepList.shift();
+        setTimeout(function() {
+          if(direction == "r"){
+            travel(a+1,b);
+          }else if(direction == "l"){
+            travel(a-1,b);
+          }else if(direction == "d"){
+            travel(a,b+1);
+          }else{
+            travel(a,b-1);
+          }
+        }, 10);
+      }else{
+        changeImage(a,b);
+      }
+    });
+  }
+
+  function changeImage(a,b){
+    chest = _this._getCanvasObject(a, b, "chest");
+    if(chest) {
+      chest.bitmap.image = _this.loader.getResult(chest.contents[0].img);
+      _this.setCoord(chest, chest.px, chest.py);
+      createjs.Sound.play("success");
+      _this.canvas.stage.update();
+      if(chest.contents[0].img == "bg01_step5"){
+        foods.splice(0,foods.length);
+        callback(obj);
+      }else{
+        setTimeout(function() {
+          callback(obj);
+        }, 2000);
+      }
+    }
   }
 };
 

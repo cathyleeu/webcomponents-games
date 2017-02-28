@@ -65,9 +65,109 @@ Blocks["immigrant"] = {
     en: "%1 move to earth."
   },
   args0: [
-    {type: "field_image", src: "/img/b3_w1/ufo.png"}
+    {type: "field_image", src: "/img/a3_w3/ufo.png"}
   ],
-  action: ["immigrant"]
+  action: ["steploop", "immigrant"]
+};
+Blocks["frog_left"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 뒷다리가 나오기",
+    en: "%1 have back legs"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a5_w4/TutoToad2_256.png"}
+  ],
+  action: ["steploop", "frog_left"]
+};
+Blocks["frog_up"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 앞다리가 나오기",
+    en: "%1 have front legs"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a5_w4/TutoToad3_256.png"}
+  ],
+  action: ["steploop", "frog_up"]
+};
+Blocks["frog_right"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 개구리 되기",
+    en: "%1 becom frog"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a5_w4/TutoToad4_256.png"}
+  ],
+  action: ["steploop", "frog_right"]
+};
+Blocks["frog_down"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 연잎으로 가기",
+    en: "%1 move to lotus."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a5_w4/lotus.png"}
+  ],
+  action: ["steploop", "frog_down"]
+};
+
+Blocks["memi_step1"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 매미알",
+    en: "%1 cicada eggs"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a5_w3/memi_step1.png"}
+  ],
+  action: ["memigrowing", "memi_step1"]
+};
+Blocks["memi_step2"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 땅속 유충",
+    en: "%1 larva under ground"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a5_w3/memi_step2.png"}
+  ],
+  action: ["memigrowing", "memi_step2"]
+};
+Blocks["memi_step3"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 나무 위 유충",
+    en: "%1 larva on the tree"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a5_w3/memi_step3.png"}
+  ],
+  action: ["memigrowing", "memi_step3"]
+};
+Blocks["memi_step4"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 매미 변태",
+    en: "%1 metamorphosis of cicada"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a5_w3/memi_step4.png"}
+  ],
+  action: ["memigrowing", "memi_step4"]
+};
+Blocks["memi_step5"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 매미 변태",
+    en: "%1 cicada imago"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a5_w3/memi_step5.png"}
+  ],
+  action: ["memigrowing", "memi_step5"]
 };
 
 Blocks["move_up"] = {

@@ -32,6 +32,6 @@
   "goal": {
     "msg:ko": "가장 큰 숫자의 주소를 찾아가자!",
     "msg:en": "Go to the largest number of address",
-    "img": "/img/c4_w4/biggest_num.png"
+    "img": "/img/c4_w4/biggest_num_goal.png"
   }
 }

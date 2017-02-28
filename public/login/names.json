@@ -31,6 +31,30 @@
     ["C","프린스톤","Princeton"],
     ["C","레슬리","Leslie"]
   ],
+  "석계ECC-Dartmouth":[
+    "Louis","Alice","Amber","Ronny","Walter"
+  ],
+  "석계ECC-Yale":[
+    "Louis","Alice","Amber","Ronny","Walter","Sophia","Enabel"
+  ],
+  "석계ECC-Brown":[
+    "Louis","Alice","Amber","Ronny","Walter","Sophia","Enabel"
+  ],
+  "석계ECC-Cornell":[
+    "Louis","Alice","Amber","Ronny","Walter","Sophia"
+  ],
+  "석계ECC-Duke":[
+    "Louis","Alice","Amber","Ronny","Walter","Sophia","Enabel"
+  ],
+  "석계ECC-Chicago":[
+    "Louis","Alice","Amber","Ronny","Walter","Sophia","Enabel","Denis","Jason","Prone"
+  ],
+  "석계ECC-Pennsylvania":[
+    "Louis","Alice","Amber","Ronny","Walter","Sophia","Enabel","Denis","Jason"
+  ],
+  "석계ECC-Princeton":[
+    "Louis","Alice","Amber","Ronny","Walter"
+  ],
   "문정유치원-푸른들반": [
     "로버트","리안","에이미","던컨","앨리스","아이리스","엠마","크리스","크리스티나","더스틴","엘레나","피터","루이스","린","릴리","데이빗","루시","아바","칼라","토비","펄","노라","아담","소피아","제시카","데이지","사브리나","벤","썬"
   ],
