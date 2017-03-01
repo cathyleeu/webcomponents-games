@@ -7,6 +7,38 @@ if(location.hash) {
   .btn-default {
     margin: 20px;
   }
+  .btn-warning {
+    margin: 20px;
+    width: 130px;
+    padding: 10px;
+  }
+  .btn-warning.selected {
+    background-color: #E53;
+  }
+  .btn-outline {
+     width: 300px;
+     height: 60px;
+     line-height: 60px;
+     display: block;
+     margin: 10px auto;
+     padding: 0;
+  }
+  #characters {
+    margin-bottom: 50px;
+  }
+  .character {
+    width: 128px;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 5px;
+  }
+  .character.selected {
+    background-color: #E53;
+    border: 2px solid yellow;
+  }
+  h3 {
+    margin-bottom: 50px;
+  }
 </style>
 
 <!-- Navigation -->
@@ -23,17 +55,43 @@ if(location.hash) {
 
 <!-- Header -->
 <header>
-    <div class="container">
+    <div class="container" data-view="0">
         <div class="row">
             <div class="col-lg-12">
                 <h1>안녕하세요. 키즈씽킹입니다.</h1>
-                <h2><span id="school"></span> 홈페이지입니다.</h2>
+                <h2><span class="school"></span> 홈페이지입니다.</h2>
                 <img class="img-responsive" src="/img/kidsthinking_big.png" alt="">
                 <div class="intro-text">
                     <div id="classes">
                     </div>
-                    <hr class="star-light">
-                    <span class="skills">키즈씽킹</span>
+                    <!--hr class="star-light">
+                    <span class="skills">키즈씽킹</span-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" data-view="1">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>키즈씽킹 로그인</h1>
+                <h2><span class="school"></span> - <span class="className"></span></h2>
+                <h3><strong style="color:yellow">로그인 스티커</strong>를 확인해주세요.</h3>
+                <h3>1. 이름을 선택하세요</h3>
+                <div id="names">
+                </div>
+                <h3>2. 비밀캐릭터나 비밀번호를 선택하세요</h3>
+                <div id="characters">
+                </div>
+                <img id="login" src="/img/login/button.png">
+            </div>
+        </div>
+    </div>
+    <div class="container" data-view="2">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2><span class="school"></span> - <span class="className"></span></h2>
+                <h3>키즈씽킹 <span class="book"></span></h3>
+                <div class="contents">
                 </div>
             </div>
         </div>
@@ -53,24 +111,85 @@ if(location.hash) {
     </div>
 </footer>
 
+<div id="modal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">키즈씽킹</h4>
+      </div>
+      <div class="modal-body text-center">
+        <img class="character" />
+        로그인에 성공하였습니다!
+      </div>
+      <div class="modal-footer">
+        <a id="goNext" href="#" data-dismiss="modal" class="close-modal btn btn-default" tabindex="0">확인</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="modal-fail" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">키즈씽킹</h4>
+      </div>
+      <div class="modal-body text-center">
+        로그인에 실패하였습니다!<br>
+        다시 시도해주세요.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0">확인</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <script>
-  $.get("/login/url.json", function(url) {
-    var code = location.href.slice(location.href.lastIndexOf("/") + 1),
-        info = url.filter(function(item) {
-          return item.code == code
-        })[0];
-    if(!info) {
-      alert("잘못된 경로로 접근하였습니다.");
-      location.href = "/";
-    }
-    $("#school").text(info.school);
+  var code = "<%=code%>";
+  var info = <%-info%>;
+  if(code == "") {
+    alert("잘못된 경로로 접근하였습니다. 원별 접속 주소를 확인하여 주세요.");
+  }
+
+  var names, level, books;
+  $.get("/login/names.json", function(data) {
+    names = data;
+  });
+  $.get("/login/level_pw.json", function(data) {
+    level = data;
+  });
+  $.get("/login/books.json", function(data) {
+    books = data;
+  });
+
+  $("#names").click('button', function(e) {
+    $("#names button").removeClass("selected");
+    $(e.target).addClass("selected");
+  });
+  $("#characters").click('img', function(e) {
+    $("#characters img").removeClass("selected");
+    $(e.target).addClass("selected");
+  });
+
+  var view = 0,
+      sClassName = null,
+      sBook = null;
+  showClass();
+
+  function showClass() {
+    $("[data-view]").hide();
+    $("[data-view=" + view + "]").show();
+    $(".school").text(info.school);
     var classes = Object.keys(info.classes).map(function(item) {
       return info.classes[item];
     }).reduce(function(init, arr) {
       return init.concat(arr);
     }, []);
     classes.forEach(function(className, i) {
-      var button = '<a href="/login#' + code + '-' + className +'" id="Fullclass'+i+'" class="btn btn-lg btn-default">' + className + '</a>';
+      var $button = $('<a href="#" data-classname="' + className + '" class="btn btn-lg btn-default">' + className + '</a>');
       if(code == "a819b") {
         var book = Object.keys(info.classes).filter(function(item) {
           return info.classes[item].indexOf(className) >= 0;
@@ -79,10 +198,91 @@ if(location.hash) {
         // book = kids ? tokens[1] || "가정심화학습": tokens[0];
         var tokens = book.split(":"),
             kids = false;
-        book = tokens[0];
-        button = '<a href="/book#' + code + '-' + className + '-' + book + '" class="btn btn-lg btn-default">' + className + '</a>';
+        $button.data("book", tokens[0]);
       }
-      $(button).appendTo("#classes");
+      $button.click(function(e) {
+        e.preventDefault();
+        sClassName = $(this).data("classname");
+        var book = $(this).data("book");
+        if(book) {
+          sBook = book;
+          $(".className").text(sClassName);
+          showBook();
+        } else {
+          showLogin();
+        }
+      }).appendTo("#classes");
     });
-  });
+  }
+
+  function showLogin() {
+    view = 1;
+    $("[data-view]").hide();
+    $("[data-view=" + view + "]").show();
+    $(window).scrollTop(0);
+    $(".className").text(sClassName);
+    var yearmonth = info.date,
+        levelLogin = Object.keys(info.classes).filter(function(item) {
+          return info.classes[item].indexOf(sClassName) >= 0;
+        })[0].split("-")[0];
+
+    if(names[info.school + "-" + sClassName]) {
+      names = names[info.school + "-" + sClassName]
+    } else {
+      names = names["default"];
+    }
+
+    names.forEach(function(name, index) {
+      var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning">' + (index+1) + " : " + ($.isArray(name) ? name[1] : name) + '</button>';
+      $(button).appendTo("#names");
+    });
+
+    level = level[levelLogin] || level["default"];
+    level.forEach(function(level_pw, index) {
+      var img = '<img class="character" data-img="'+(index+1)+'" src="'+level_pw+'"/>';
+      $(img).appendTo("#characters");
+    });
+    var imgs = getImgs(yearmonth, code, sClassName, level);
+
+    $("#login").click(function(e) {
+      if($("#characters .selected").length == 0 || $("#names .selected").length == 0) {
+        $("#modal-fail").modal('show');
+        return;
+      }
+      var index = $("#names .selected").data("index"),
+          img = $("#characters .selected").data("img");
+      if(img != imgs[index]) {
+        $("#modal-fail").modal('show');
+        return;
+      }
+      var src = $("#characters .selected").attr("src");
+      $("#modal img").attr("src", src);
+      $("#modal").modal('show');
+    });
+    $("#goNext").click(function(e) {
+      e.preventDefault();
+      var book = Object.keys(info.classes).filter(function(item) {
+        return info.classes[item].indexOf(sClassName) >= 0;
+      })[0];
+      var tokens = book.split(":");
+      // book = kids ? tokens[1] || "가정심화학습": tokens[0];
+      sBook = tokens[0];
+      showBook();
+    });
+  }
+
+  function showBook() {
+    view = 2;
+    $("[data-view]").hide();
+    $("[data-view=" + view + "]").show();
+    $(window).scrollTop(0);
+    $(".book").text(sBook);
+    var lang = info.lang ? "lang=" + info.lang : "";
+    books[sBook].forEach(function(item) {
+      var conn = item[1].indexOf("#!") >= 0 ? "?" : "#",
+          lang2 = lang ? conn + lang : "";
+      $('<a class="btn btn-lg btn-outline">').attr("href", item[1] + lang2).text(item[0]).appendTo(".contents");
+    });
+  }
+
 </script>
