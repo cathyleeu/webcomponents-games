@@ -12,7 +12,32 @@ var public = require('koa-router')(),
     argv = require('minimist')(process.argv.slice(2)),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
-    auth_db = pmongo(config.auth_db, "user");
+    auth_db = pmongo(config.auth_db, "user"),
+    url_json = require('./public/login/url.json');
+
+function getCode( bId , kId ) {
+  let sum = 0;
+  sum += bId.charCodeAt(0) * 17;
+  sum += bId.charCodeAt(1) * 13;
+  if(kId.slice(0, 2) === "러닝") {
+    if(kId.slice(2, 4) !== "서초") {
+      sum += kId.charCodeAt(2) * 13;
+      sum += kId.charCodeAt(3) * 29;
+    }
+  }
+  if(kId.slice(0, 2) === "이화") {
+    sum += kId.charCodeAt(2) * 13;
+    sum += kId.charCodeAt(3) * 29;
+  }
+  sum += kId.charCodeAt(0) * 11;
+  sum += kId.slice(-1).charCodeAt(0) * 19;
+  sum += kId.slice(parseInt(kId / 2, 10)).charCodeAt(0) * 7;
+  let code = sum.toString(16).slice(1),
+      l = parseInt(kId.length / 2),
+      mid = kId.slice(l-1, l+1);
+  code = (code + mid.charCodeAt(0).toString(16).slice(0, 2) + mid.charCodeAt(1).toString(16).slice(0, 2)).slice(0, 5);
+  return code;
+}
 
 // See: http://stackoverflow.com/questions/19877246/nodemailer-with-gmail-and-nodejs
 nev.configure({
@@ -121,12 +146,46 @@ public.get('/old', function *(next) {
 });
 
 public.get('/code', function *(next) {
-  yield this.render('code');
+  yield this.render('code', {
+    code: ""
+  });
 });
 
 public.get('/code/:code', function *(next) {
+  var code = this.params.code;
+  var info = url_json.filter(function(obj) {
+    return obj.code == code;
+  })[0];
+  if(!info) {
+    var users = yield auth_db.user.find({});
+    users = users.forEach(function(user) {
+      if(user.userType == "branch") {
+        user.kinders.forEach(function(kinder) {
+          var kcode = getCode(user.branch.name, kinder.name);
+          if(code == kcode) {
+            var classes = {};
+            kinder.kinderClasses.forEach(function(classObj) {
+              var book = classObj.level + "-1:" + classObj.level + "-1";
+              if(!classes[book]) {
+                classes[book] = [];
+              }
+              classes[book].push(classObj.className);
+            });
+            info = {
+              school: kinder.name,
+              code: code,
+              date: "20170301",
+              classes: classes
+            };
+          }
+        });
+      }
+    });
+  }
   yield this.render('code', {
-    manifest: this.params.code
+    manifest: code,
+    code: code,
+    info: JSON.stringify(info)
   });
 });
 
