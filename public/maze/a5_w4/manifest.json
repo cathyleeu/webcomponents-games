@@ -26,7 +26,6 @@
   {"id": "log2", "src": "/img/a5_w4/Log2_256.png", "obstacle": true},
   {"id": "stone1", "src": "/img/a5_w4/PondStone1_256.png", "obstacle": true},
   {"id": "stone2", "src": "/img/a5_w4/PondStone2_256.png", "obstacle": true},
-  {"id": "weed1", "src": "/img/a5_w4/Weed1_256.png", "obstacle": true},
   {"id": "weed2", "src": "/img/a5_w4/Weed2_256.png", "obstacle": true},
   {"id": "weed3", "src": "/img/a5_w4/Weed3_256.png", "obstacle": true},
   {"id": "weed4", "src": "/img/a5_w4/Weed4_256.png", "obstacle": true},

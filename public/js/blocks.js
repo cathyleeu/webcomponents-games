@@ -72,7 +72,7 @@ Blocks["immigrant"] = {
 Blocks["frog_left"] = {
   rgbColor: "#00A1E1",
   message0: {
-    ko: "%1 뒷다리가 나오기",
+    ko: "%1 뒷다리가 쏘옥",
     en: "%1 have back legs"
   },
   args0: [
@@ -83,7 +83,7 @@ Blocks["frog_left"] = {
 Blocks["frog_up"] = {
   rgbColor: "#00A1E1",
   message0: {
-    ko: "%1 앞다리가 나오기",
+    ko: "%1 앞다리가 쏘옥",
     en: "%1 have front legs"
   },
   args0: [
@@ -94,7 +94,7 @@ Blocks["frog_up"] = {
 Blocks["frog_right"] = {
   rgbColor: "#00A1E1",
   message0: {
-    ko: "%1 개구리 되기",
+    ko: "%1 개구리로 변신",
     en: "%1 becom frog"
   },
   args0: [
@@ -128,7 +128,7 @@ Blocks["memi_step1"] = {
 Blocks["memi_step2"] = {
   rgbColor: "#00A1E1",
   message0: {
-    ko: "%1 땅속 유충",
+    ko: "%1 땅 속 애벌레",
     en: "%1 larva under ground"
   },
   args0: [
@@ -150,7 +150,7 @@ Blocks["memi_step3"] = {
 Blocks["memi_step4"] = {
   rgbColor: "#00A1E1",
   message0: {
-    ko: "%1 매미 변태",
+    ko: "%1 허물 벗는 매미",
     en: "%1 metamorphosis of cicada"
   },
   args0: [
@@ -161,7 +161,7 @@ Blocks["memi_step4"] = {
 Blocks["memi_step5"] = {
   rgbColor: "#00A1E1",
   message0: {
-    ko: "%1 매미 변태",
+    ko: "%1 매미",
     en: "%1 cicada imago"
   },
   args0: [
