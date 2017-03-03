@@ -275,6 +275,7 @@ public.get('/code/:code', function *(next) {
 });
 
 public.get('/cache/:manifest', function *(next) {
+  this.type = "text/cache-manifest";
   var manifest = this.params.manifest;
   var code = manifest.split(".")[0];
   var school = url_json.filter(function(obj) {
