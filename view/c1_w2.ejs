@@ -86,12 +86,12 @@
   $(".sel-box").click(function() {
   	if(step==1){
       audio1.play();
-      this.style.height = "270px";
-      this.style.width = "350px";
-      this.style.top = "40px";
-      this.style.left = "60px";
+      this.style.height = "80px";
+      this.style.width = "100px";
+      this.style.top = "140px";
+      this.style.left = "70px";
       setTimeout( function () {
-        $(".hint").text('돈이 들어 갔아요! 음료수를 골라봐요!');
+        $(".hint").text('돈이 들어 갔아요! 불이 들어온 버튼을 눌러봐요!');
         $(".background").attr("src","img/c1_w2/vm1.png");
         step = 2;
       }, 1500);
@@ -115,6 +115,7 @@
       $(".drink").css("visibility","visible")
       setTimeout( function () {
         audio5.play();
+        $(".hint").text('성공!');
       }, 8000);
     }
   });
