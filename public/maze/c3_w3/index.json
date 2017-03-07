@@ -101,6 +101,12 @@
   "goal": {
     "msg:ko": "15번 집으로 꿀단지를 가져가자!",
     "msg:en": "Take 15 times hunny pots",
-    "img": "/img/c3_w2/hunny_pot.png"
+    "img": [{
+      "src": "/img/c3_w1/house.png",
+      "style": "width:55%"
+    }, {
+      "src": "/img/c3_w2/hunny_pot.png",
+      "style": "width:55%"
+    }]
   }
 }
