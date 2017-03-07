@@ -436,17 +436,23 @@ function handle_resize(e) {
         dy = (real_height + 30) - coord.y;
     $(".sidebar").css({
       height: real_height,
-      left: flyout.getWidth() + "px"
+      left: (maze.type == "world" ? 0 : flyout.getWidth()) + "px"
     });
     $(".goal").css({
       height: real_height,
       left: $("#display").width() + "px"
     });
+    if(maze.type == "world") {
+      $(".bottom-row").addClass("horizontal_world");
+    } else {
+      $(".bottom-row").removeClass("horizontal_world");
+    }
     startblock.moveBy(dx, dy);
   } else {
     var real_width = $("#display").width();
     $(".sidebar").width(real_width);
     $(".workspace").css("left", real_width + "px");
+    $(".bottom-row").removeClass("horizontal_world");
   }
   Blockly.svgResize(kidscoding.workspace);
 };
