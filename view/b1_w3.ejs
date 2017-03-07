@@ -70,8 +70,8 @@
 </style>
 <div id="container">
   <div class="head">
-    <div class="instruction">엘리베이터 놀이를 해봐요</div>
-    <div class="hint">화살표 버튼을 눌러 엘레베이터를 불러봐요!</div>
+    <div class="instruction" data-msg="instruction">엘리베이터 놀이를 해봐요</div>
+    <div class="hint" data-msg="hint">화살표 버튼을 눌러 엘레베이터를 불러봐요!</div>
   </div>
   <div class="workspace">
     <div class="text-box">1</div>
@@ -82,12 +82,35 @@
 </div>
 
 <script>
+  var hash = location.hash,
+      lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+      msg = {
+        ko: {
+          instruction: "엘리베이터 놀이를 해봐요",
+          hint: "화살표 버튼을 눌러 엘레베이터를 불러봐요!",
+          hint1: "엘리베이터가 왔어요! 안으로 들어가봐요!",
+          hint2: "엘리베이터 안으로 들어왔어요! 5층을 눌러봐요!",
+          hint3: "엘리베이터가 5층에 도착했어요! 밖으로 나가봐요!",
+          success: "성공!"
+        },
+        en: {
+          instruction: "Elevator Practice",
+          hint: "Press the button to call the elevator!",
+          hint1: "The elevator is here. Go inside.",
+          hint2: "Press the fifth floor.",
+          hint3: "The elevator arrived on the fifth floor. Go out.",
+          success: "Success!"
+        }
+      };
   var step = 1;
   var audio0 = new Audio('img/b1_w3/el_sound0.mp3');
   var audio1 = new Audio('img/b1_w3/el_sound1.mp3');
   var audio2 = new Audio('img/b1_w3/el_sound2.mp3');
   var audio4 = new Audio('img/b1_w3/walk.mp3');
   var audio5 = new Audio('sound/complete.mp3');
+  $("[data-msg]").each(function(idx, el) {
+    $(el).text(msg[lang][$(el).data("msg")]);
+  });
   $(".sel-box").click(function() {
   	if(step==1){
       audio0.play();
@@ -98,7 +121,7 @@
       this.style.top = "133px";
       this.style.left = "115px";
       setTimeout( function () {
-        $(".hint").text('엘리베이터가 왔어요! 안으로 들어가봐요!');
+        $(".hint").text(msg[lang].hint1);
         $(".background").attr("src","img/b1_w3/el_img2.png");
       }, 4500);
       step = 2;
@@ -109,7 +132,7 @@
       this.style.top = "270px";
       this.style.left = "530px";
       setTimeout( function () {
-        $(".hint").text('엘리베이터 안으로 들어왔어요! 5층을 눌러봐요!');
+        $(".hint").text(msg[lang].hint2);
         $(".background").attr("src","img/b1_w3/el_img3.png");
       }, 1000);
       step = 3;
@@ -128,7 +151,7 @@
           audio1.play();
           setTimeout( function () {
             $(".background").attr("src","img/b1_w3/el_img5.png");
-            $(".hint").text('엘리베이터가 5층에 도착했어요! 밖으로 나가봐요!');
+            $(".hint").text(msg[lang].hint3);
           }, 4500);
           step = 4;
           clearInterval(uploop);
@@ -142,7 +165,7 @@
       audio4.play();
       setTimeout( function () {
         audio5.play();
-        $(".hint").text('성공!');
+        $(".hint").text(msg[lang].success);
         step = 5;
       }, 1000);
     }
