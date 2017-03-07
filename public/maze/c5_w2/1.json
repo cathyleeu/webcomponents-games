@@ -1,0 +1,63 @@
+{
+
+  "tilesize":256,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+
+  "map": [
+    ".#######.",
+    "#A...E.d#",
+    "#.B.#...#",
+    "#....%..#",
+    "##.C#J..#",
+    "#...#...#",
+    "#.H.###.#",
+    "#....F..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 3,
+    "img":"I"
+  }],
+  "tutorial": [{
+    "msg:ko": "토드는 어느 숫자 위에 있을까요?",
+    "msg:en": "What number Tode sit on?",
+    "img": [{
+      "src": "/img/c5/lotus/nlotus2.png",
+      "style": "width:25%"
+    }, {
+      "src": "/img/c5/lotus/nlotus4.png",
+      "style": "width:25%"
+    }, {
+      "src": "/img/c5/lotus/nlotus6.png",
+      "style": "width:25%"
+    }, {
+      "src": "/img/c5/lotus/nlotus0.png",
+      "style": "width:25%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "토드는 어느 숫자 위에 있을까요?",
+    "msg:en": "What number Tode sit on?",
+    "img": [{
+      "src": "/img/c5/lotus/nlotus2.png",
+      "style": "width:25%"
+    }, {
+      "src": "/img/c5/lotus/nlotus4.png",
+      "style": "width:25%"
+    }, {
+      "src": "/img/c5/lotus/nlotus6.png",
+      "style": "width:25%"
+    }, {
+      "src": "/img/c5/lotus/nlotus0.png",
+      "style": "width:25%"
+    }]
+  }
+}
