@@ -110,6 +110,10 @@ function getCode( bId , kId ) {
       sum += kId.charCodeAt(3) * 29;
     }
   }
+  if(kId.slice(0, 4) === "와이비엠" || kId.slice(0, 3) === "YBM") {
+    sum += kId.charCodeAt(3) * 11;
+    sum += kId.charCodeAt(4) * 31;
+  }
   if(kId.slice(0, 2) === "이화") {
     sum += kId.charCodeAt(2) * 13;
     sum += kId.charCodeAt(3) * 29;
