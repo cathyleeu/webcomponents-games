@@ -79,5 +79,10 @@
     "msg:en": "Press 'Next' Button & Let's play",
     "x" : 3,
     "y" : 3
-  }]
+  }],
+  "goal": {
+    "msg:ko": "코스네 집을 10번 찾아봐요",
+    "msg:en": "Find Cos's house 10 times",
+    "img": "/img/c3_w1/house.png"
+  }
 }

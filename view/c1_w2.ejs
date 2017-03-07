@@ -66,8 +66,8 @@
 </style>
 <div id="container">
   <div class="head">
-    <div class="instruction">자판기 놀이를 해봐요</div>
-    <div class="hint">음료수를 뽑기 위해서 돈을 넣어봐요!</div>
+    <div class="instruction" data-msg="instruction">자판기 놀이를 해봐요</div>
+    <div class="hint" data-msg="hint">음료수를 뽑기 위해서 돈을 넣어봐요!</div>
   </div>
   <div class="workspace">
     <div class="sel-box"></div>
@@ -77,21 +77,44 @@
 </div>
 
 <script>
+var hash = location.hash,
+    lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+    msg = {
+      ko: {
+        instruction: "자판기 놀이를 해봐요",
+        hint: "음료수를 뽑기 위해서 동전을 넣어봐요!",
+        hint1: "동전이 들어 갔아요! 불이 들어온 버튼을 눌러봐요!",
+        hint2: "캔이 떨어졌어요! 음료수를 꺼내봐요!",
+        hint3: "음료수를 얻었어요! 맛있게 마셔요!",
+        success: "성공!"
+      },
+      en: {
+        instruction: "Vending Machine Practice",
+        hint: "Try to put a coin to pull out a drink!",
+        hint1: "A coin went in! Press the button that lights up!",
+        hint2: "The can is down! Take out the soda!",
+        hint3: "I got a drink! Have a delicious drink!",
+        success: "Success!"
+      }
+    };
   var step = 1;
   var audio1 = new Audio('img/c1_w2/vm1.mp3');
   var audio2 = new Audio('img/c1_w2/vm2.mp3');
   var audio3 = new Audio('img/c1_w2/vm3.mp3');
   var audio4 = new Audio('img/c1_w2/vm4.mp3');
   var audio5 = new Audio('sound/complete.mp3');
+  $("[data-msg]").each(function(idx, el) {
+    $(el).text(msg[lang][$(el).data("msg")]);
+  });
   $(".sel-box").click(function() {
   	if(step==1){
       audio1.play();
-      this.style.height = "270px";
-      this.style.width = "350px";
-      this.style.top = "40px";
-      this.style.left = "60px";
+      this.style.height = "80px";
+      this.style.width = "100px";
+      this.style.top = "140px";
+      this.style.left = "70px";
       setTimeout( function () {
-        $(".hint").text('돈이 들어 갔아요! 음료수를 골라봐요!');
+        $(".hint").text(msg[lang].hint1);
         $(".background").attr("src","img/c1_w2/vm1.png");
         step = 2;
       }, 1500);
@@ -102,7 +125,7 @@
       this.style.top = "450px";
       this.style.left = "75px";
       setTimeout( function () {
-        $(".hint").text('음료수가 떨어졌어요! 음료수를 꺼내봐요!');
+        $(".hint").text(msg[lang].hint2);
         $(".background").attr("src","img/c1_w2/vm2.png");
         step = 3;
       }, 1500);
@@ -110,11 +133,12 @@
       audio3.play();
       sleep(1000);
       audio4.play();
-      $(".hint").text('음료수를 얻었어요! 맛있게 먹어요!');
+      $(".hint").text(msg[lang].hint3);
       $(".background").attr("src","img/c1_w2/vm3.png");
       $(".drink").css("visibility","visible")
       setTimeout( function () {
         audio5.play();
+        $(".hint").text(msg[lang].success);
       }, 8000);
     }
   });

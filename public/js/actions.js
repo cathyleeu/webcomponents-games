@@ -422,17 +422,30 @@ Actions.prototype.memigrowing = function(type, block, callback) {
     _this.canvas.stage.update();
   }
 
-  if(type == "memi_step1") {
-    stepList = ["l"];
-  } else if(type == "memi_step2") {
-    stepList = ["d","d","d","l"];
-  } else if(type == "memi_step3") {
-    stepList = ["u","u"];
-  } else if(type == "memi_step4") {
-    stepList = ["u"];
-  } else if(type == "memi_step5") {
-    stepList = ["l", "l"];
+  if(!character.step){
+    character.step = 1;
   }
+
+  if(type == "memi_step1" && character.step==1) {
+    stepList = ["l"];
+    character.step++;
+  } else if(type == "memi_step2" && character.step==2) {
+    stepList = ["d","d","d","l"];
+    character.step++;
+  } else if(type == "memi_step3" && character.step==3) {
+    stepList = ["u","u"];
+    character.step++;
+  } else if(type == "memi_step4" && character.step==4) {
+    stepList = ["u"];
+    character.step++;
+  } else if(type == "memi_step5" && character.step==5) {
+    stepList = ["l", "l"];
+    character.step++;
+  } else{
+    callback("매미의 성장과정이 잘못되었어요!");
+    return;
+  }
+
   travel(x_next,y_next);
   function travel(a,b){
     obj = _this._getCanvasObject(a, b);

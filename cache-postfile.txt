@@ -1,4 +1,3 @@
-/code
 /login
 /login/names.json
 /login/url.json

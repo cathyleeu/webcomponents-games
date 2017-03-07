@@ -12,7 +12,123 @@ var public = require('koa-router')(),
     argv = require('minimist')(process.argv.slice(2)),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
-    auth_db = pmongo(config.auth_db, "user");
+    auth_db = pmongo(config.auth_db, "user"),
+    url_json = require('./public/login/url.json');
+
+var timestamp = new Date().toISOString();
+
+// js와 css파일 리스트를 생성 및 cache-postfile.txt 로딩
+var jsList = fs.readdirSync(path.join("public", "js"))
+    .filter(function(item) {
+      return item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return "/" + path.join("js", item);
+    }),
+    cssList = fs.readdirSync(path.join("public", "css"))
+    .filter(function(item) {
+      return item.slice(item.lastIndexOf(".")) == ".css";
+    })
+    .map(function(item) {
+      return "/" + path.join("css", item);
+    }),
+    postfile = fs.readFileSync('cache-postfile.txt');
+
+// 로그인 및 공통 이미지, 블록클리 리소스 파일들 로딩
+var level_pw = JSON.parse(fs.readFileSync("public/login/level_pw.json"));
+var loginImgs = level_pw["default"]
+    .concat(level_pw["A"])
+    .concat(level_pw["B"])
+    .concat(level_pw["C"])
+    .concat(level_pw["buttons"]);
+var commonImgs = fs.readdirSync("public/img")
+    .filter(function(item) {
+      var stat = fs.statSync("public/img/" + item);
+      return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return "/img/" + item;
+    });
+var blocklyImgs = fs.readdirSync("public/GoogleBlockly/media")
+    .filter(function(item) {
+      return item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return "/GoogleBlockly/media/" + item;
+    });
+var scratchBlocksImgs = fs.readdirSync("public/scratch-blocks/media")
+    .filter(function(item) {
+      var stat = fs.statSync("public/scratch-blocks/media/" + item);
+      return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return "/scratch-blocks/media/" + item;
+    });
+var scratchBlocksIcons = fs.readdirSync("public/scratch-blocks/media/icons")
+    .filter(function(item) {
+      var stat = fs.statSync("public/scratch-blocks/media/icons/" + item);
+      return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return "/scratch-blocks/media/icons/" + item;
+    });
+var kidsblocks = fs.readdirSync("public/img/kidsblocks")
+    .filter(function(item) {
+      var stat = fs.statSync("public/img/kidsblocks/" + item);
+      return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return "/img/kidsblocks/" + item;
+    });
+var suwonImgs = fs.readdirSync("public/img/dragndrop_suwon")
+    .filter(function(item) {
+      var stat = fs.statSync("public/img/dragndrop_suwon/" + item);
+      return !stat.isDirectory() && item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return "/img/dragndrop_suwon/" + item;
+    });
+var msgJsons = fs.readdirSync("public/msg")
+    .filter(function(item) {
+      return item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return "/msg/" + item;
+    });
+
+// 각 원별 cache 생성
+var url = JSON.parse(fs.readFileSync('public/login/url.json')),
+    books = JSON.parse(fs.readFileSync('public/login/books.json'));
+
+function getCode( bId , kId ) {
+  let sum = 0;
+  sum += bId.charCodeAt(0) * 17;
+  sum += bId.charCodeAt(1) * 13;
+  if(kId.slice(0, 2) === "러닝") {
+    if(kId.slice(2, 4) !== "서초") {
+      sum += kId.charCodeAt(2) * 13;
+      sum += kId.charCodeAt(3) * 29;
+    }
+  }
+  if(kId.slice(0, 4) === "와이비엠") {
+    if(kId.slice(4, 6) !== "개금") {
+      sum += kId.charCodeAt(4) * 11;
+      sum += kId.charCodeAt(5) * 31;
+    }
+  }
+  if(kId.slice(0, 2) === "이화") {
+    sum += kId.charCodeAt(2) * 13;
+    sum += kId.charCodeAt(3) * 29;
+  }
+  sum += kId.charCodeAt(0) * 11;
+  sum += kId.slice(-1).charCodeAt(0) * 19;
+  sum += kId.slice(parseInt(kId / 2, 10)).charCodeAt(0) * 7;
+  let code = sum.toString(16).slice(1),
+      l = parseInt(kId.length / 2),
+      mid = kId.slice(l-1, l+1);
+  code = (code + mid.charCodeAt(0).toString(16).slice(0, 2) + mid.charCodeAt(1).toString(16).slice(0, 2)).slice(0, 5);
+  return code;
+}
 
 // See: http://stackoverflow.com/questions/19877246/nodemailer-with-gmail-and-nodejs
 nev.configure({
@@ -121,13 +237,215 @@ public.get('/old', function *(next) {
 });
 
 public.get('/code', function *(next) {
-  yield this.render('code');
+  yield this.render('code', {
+    code: ""
+  });
 });
 
 public.get('/code/:code', function *(next) {
+  var code = this.params.code;
+  var info = url_json.filter(function(obj) {
+    return obj.code == code;
+  })[0];
+  if(!info) {
+    var users = yield auth_db.user.find({});
+    users = users.forEach(function(user) {
+      if(user.userType == "branch") {
+        user.kinders.forEach(function(kinder) {
+          var kcode = getCode(user.branch.name, kinder.name);
+          if(code == kcode) {
+            var classes = {};
+            kinder.kinderClasses.forEach(function(classObj) {
+              var book = classObj.level + "-1:" + classObj.level + "-1";
+              if(!classes[book]) {
+                classes[book] = [];
+              }
+              classes[book].push(classObj.className);
+            });
+            info = {
+              school: kinder.name,
+              code: code,
+              date: "20170301",
+              classes: classes
+            };
+          }
+        });
+      }
+    });
+  }
   yield this.render('code', {
-    manifest: this.params.code
+    manifest: code,
+    code: code,
+    info: JSON.stringify(info)
   });
+});
+
+public.get('/cache/:manifest', function *(next) {
+  this.type = "text/cache-manifest";
+  var manifest = this.params.manifest;
+  var code = manifest.split(".")[0];
+  var school = url_json.filter(function(obj) {
+    return obj.code == code;
+  })[0];
+  if(!school) {
+    var users = yield auth_db.user.find({});
+    users = users.forEach(function(user) {
+      if(user.userType == "branch") {
+        user.kinders.forEach(function(kinder) {
+          var kcode = getCode(user.branch.name, kinder.name);
+          if(code == kcode) {
+            var classes = {};
+            kinder.kinderClasses.forEach(function(classObj) {
+              var book = classObj.level + "-1:" + classObj.level + "-1";
+              if(!classes[book]) {
+                classes[book] = [];
+              }
+              classes[book].push(classObj.className);
+            });
+            school = {
+              school: kinder.name,
+              code: code,
+              date: "20170301",
+              classes: classes
+            };
+          }
+        });
+      }
+    });
+  }
+  var bookArr = Object.keys(school.classes),
+      manifests = [],
+      pages = [],
+      page_manifests = [],
+      jsons = [],
+      imgs = [],
+      cache = [],
+      output = "CACHE MANIFEST\n";
+  bookArr.forEach(function(bookName) {
+    bookName = bookName.split(":")[0];
+    books[bookName].forEach(function(contentInfo) {
+      var maniPath = contentInfo[1],
+          pagePath = contentInfo[1];
+      if(maniPath.indexOf("#!") >= 0) {
+        maniPath = maniPath.slice(maniPath.indexOf("#!") + 2);
+      }
+      maniPath = maniPath.slice(0, maniPath.lastIndexOf("/"));
+      if(maniPath && manifests.indexOf(maniPath) < 0) {
+        manifests.push(maniPath);
+      }
+      if(pagePath.indexOf("#!") >= 0) {
+        pagePath = pagePath.slice(0, pagePath.indexOf("#!"));
+      }
+      if(pages.indexOf(pagePath) < 0) {
+        pages.push(pagePath);
+      }
+    });
+  });
+  manifests.forEach(function(maniPath) {
+    var manifest = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, "manifest.json")));
+    manifest.forEach(function(item) {
+      // bgm을 제외한 파일을 중복 없이 추가
+      if(item.id != "bgm" && cache.indexOf(item.src) < 0) {
+        cache.push(item.src);
+      }
+    });
+    jsons = jsons.concat(fs.readdirSync(path.join("public/maze", maniPath))
+    .map(function(item) {
+      if(item != "manifest.json") {
+        var maze = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, item)));
+        // tutorial에 들어있는 이미지 추가
+        if(maze.tutorial) {
+          maze.tutorial.forEach(function(item) {
+            if(item.img && imgs.indexOf(item.img) < 0) {
+              imgs.push(item.img);
+            }
+          });
+        }
+        // goal에 들어있는 이미지 추가
+        if(maze.goal && maze.goal.img && imgs.indexOf(maze.goal.img) < 0) {
+          imgs.push(maze.goal.img);
+        }
+        // extra안에 들어있는 tutorial에 들어있는 이미지 추가
+        if(maze.extra) {
+          maze.extra.forEach(function(extra) {
+            if(extra.tutorial) {
+              extra.tutorial.forEach(function(item) {
+                if(item.img && imgs.indexOf(item.img) < 0) {
+                  imgs.push(item.img);
+                }
+              });
+            }
+          });
+        }
+      }
+      return path.join("/maze", maniPath, item);
+    }));
+  });
+
+  // maze가 아닌 개별 페이지들의 manifest 로드
+  pages.filter(function(item) {
+    var item_path = path.join("public", "img", item),
+        exist = fs.existsSync(item_path),
+        stat = exist && fs.statSync(item_path);
+    return exist && stat.isDirectory();
+  })
+  .forEach(function(page) {
+    var page_path = path.join("public", "img", page),
+        files = fs.readdirSync(page_path)
+        .filter(function(item) {
+          return item != ".DS_Store" && item != "Thumbs.db";
+        });
+    files.forEach(function(item) {
+      var file_path = path.join("/img", page, item);
+      if(page_manifests.indexOf(file_path) < 0) {
+        page_manifests.push(file_path);
+      }
+    });
+  });
+
+  // imgs에 속한 이미지중 cache에 속한 이미지는 제거
+  imgs = imgs.filter(function(item) {
+    return cache.indexOf(item) < 0;
+  });
+
+  // timestamp
+  output += '#' + timestamp + '\n';
+
+  output += "# pages\n";
+  output += pages.join("\n") + "\n";
+
+  output += "# files in pages\n";
+  output += page_manifests.join("\n") + "\n";
+
+  output += "# jsons\n";
+  output += jsons.join("\n") + "\n";
+
+  output += "# files in manifest\n";
+  output += cache.join("\n") + "\n";
+
+  output += "# images in jsons\n";
+  output += imgs.join("\n") + "\n";
+
+  output += "# common resouces\n";
+  output += loginImgs.join("\n") + "\n";
+  output += commonImgs.join("\n") + "\n";
+  output += blocklyImgs.join("\n") + "\n";
+  output += scratchBlocksImgs.join("\n") + "\n";
+  output += scratchBlocksIcons.join("\n") + "\n";
+  output += kidsblocks.join("\n") + "\n";
+  output += msgJsons.join("\n") + "\n";
+
+  output += "# js and css\n";
+  output += jsList.join("\n") + "\n";
+  output += cssList.join("\n") + "\n";
+
+  output += "# postfile\n";
+  output += postfile;
+
+  output += "NETWORK:\n*\n";
+
+  this.body = output;
+
 });
 
 public.get('/login', function *(next) {
