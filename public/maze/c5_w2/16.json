@@ -1,0 +1,26 @@
+{
+  "tile_size": 256,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#d.%#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":1,
+    "img":"lana"
+  }],
+  "tutorial": [{
+    "msg:ko": "토드야, 다음에는 같이 놀자.",
+    "msg:en": "Tode, play with me next time!"
+  }]
+}

@@ -1,0 +1,69 @@
+{
+
+
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+
+  "map": [
+    ".#######.",
+    "#j#.#h.q#",
+    "#...#...#",
+    "##.%#m.##",
+    "##i.....#",
+    "#..m#..s#",
+    "#.n..u..#",
+    "#t..o#..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 3,
+    "img":"p"
+  }],
+  "tutorial": [{
+    "msg:ko": "토드는 어떤 꽃 위에 있을까요?",
+    "msg:en": "What flower Tode sit on?",
+    "img": [{
+      "src": "/img/c5/flowers/flower35.png",
+      "style": "width:20%"
+    }, {
+      "src": "/img/c5/flowers/flower14.png",
+      "style": "width:20%"
+    }, {
+      "src": "/img/c5/flowers/flower0.png",
+      "style": "width:20%"
+    }, {
+      "src": "/img/c5/flowers/flower13.png",
+      "style": "width:20%"
+    }, {
+      "src": "/img/c5/flowers/flower24.png",
+      "style": "width:20%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "토드는 어떤 꽃 위에 있을까요?",
+    "msg:en": "What flower Tode sit on?",
+    "img": [{
+      "src": "/img/c5/flowers/flower35.png",
+      "style": "width:20%"
+    }, {
+      "src": "/img/c5/flowers/flower14.png",
+      "style": "width:20%"
+    }, {
+      "src": "/img/c5/flowers/flower0.png",
+      "style": "width:20%"
+    }, {
+      "src": "/img/c5/flowers/flower13.png",
+      "style": "width:20%"
+    }, {
+      "src": "/img/c5/flowers/flower24.png",
+      "style": "width:20%"
+    }]
+  }
+}
