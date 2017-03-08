@@ -297,7 +297,10 @@ function initMaze() {
 
   if(!mazeInfo.land && loader.getItem("background")) {
     // 1-image background
-    var background = new createjs.Bitmap(loader.getResult("background"));
+    var background = new createjs.Bitmap(loader.getResult("background")),
+        bounds = background.getBounds();
+    background.scaleX = mazeInfo.tile_size * mazeInfo.width / bounds.width;
+    background.scaleY = mazeInfo.tile_size * mazeInfo.height / bounds.height;
     mazeInfo.canvas.stage.addChild(background);
   } else if(!mazeInfo.land && loader.getItem("bg1")) {
     // mosaic background
