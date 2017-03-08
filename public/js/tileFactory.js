@@ -342,7 +342,7 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [6,7,6,8,6]
         };
       }
-      if(character.src.indexOf('Sprite_Mama_256') >= 0) {
+      if(character.src.indexOf('SpriteMama_256') >= 0) {
         animations = {
           stand_u: 9,
           walk_u: [9,10,9,11,9],

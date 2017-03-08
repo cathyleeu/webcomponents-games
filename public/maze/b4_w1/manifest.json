@@ -15,7 +15,7 @@
   {"id": "land10", "src": "/img/map32/10.png"},
   {"id": "land11", "src": "/img/map32/11.png"},
 
-  {"id": "character", "src": "/img/b4/Sprite_Mama_256.png", "sprite": true, "size": 256},
+  {"id": "character", "src": "/img/b4/SpriteMama_256.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/b4/mother.png", "size": 256},
   {"id": "food", "src": "/img/b4/flag.png"},
 
