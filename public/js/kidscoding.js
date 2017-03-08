@@ -52,6 +52,15 @@ KidsCoding = function() {
     showEditor_.call(this);
     delete this.fieldGroup_.getBoundingClientRect;
   };
+  var translateSurface = Blockly.DragSurfaceSvg.prototype.translateSurface;
+  Blockly.DragSurfaceSvg.prototype.translateSurface = function(x, y) {
+    translateSurface.call(this, x, y);
+    if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == 0 && this.SVG_.getBoundingClientRect().right == $(document).width())) {
+      x = (x + _this.workspace.getFlyout().getWidth()) * this.scale_;
+      y *= this.scale_;
+      this.SVG_.setAttribute("style", this.SVG_.getAttribute("style") + ";left:" + x.toFixed(2) + "px;top:" + y.toFixed(2) + "px;");
+    }
+  }
 };
 KidsCoding.prototype = {
   init: function(loader, mazeInfo, run, tileFactory) {
