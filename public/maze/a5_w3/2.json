@@ -10,125 +10,57 @@
     "memi_step5"
   ],
   "map": [
-    "%qqqq",
-    "&q&&@",
-    "qq&qq",
-    "qqqqq",
-    "qq&qq"
+    "%....",
+    "&.&&@",
+    "..&..",
+    ".....",
+    "..&.."
   ],
   "extra":[{
-    "x": 2,
-    "y": 0,
-    "img": "bg20"
-  },{
-    "x": 3,
-    "y": 0,
-    "img": "bg30"
-  },{
-    "x": 4,
-    "y": 0,
-    "img": "bg40"
-  },{
     "x": 0,
     "y": 1,
-    "img": "bg01",
+    "img": "invisibl",
     "contents" : [{
         "img": "bg01_step5"
       },{
-        "img": "bg01"
+        "img": "invisibl"
     }]
-  },{
-    "x": 1,
-    "y": 1,
-    "img": "bg11"
   },{
     "x": 2,
     "y": 1,
-    "img": "bg21",
+    "img": "invisibl",
     "contents" : [{
         "img": "bg21_step4"
       },{
-        "img": "bg21"
+        "img": "invisibl"
     }]
   },{
     "x": 3,
     "y": 1,
-    "img": "bg31",
+    "img": "invisibl",
     "contents" : [{
         "img": "bg31_step1"
       },{
-        "img": "bg31"
+        "img": "invisibl"
     }]
-  },{
-    "x": 0,
-    "y": 2,
-    "img": "bg02"
-  },{
-    "x": 1,
-    "y": 2,
-    "img": "bg12"
   },{
     "x": 2,
     "y": 2,
-    "img": "bg22",
+    "img": "invisibl",
     "contents" : [{
         "img": "bg22_step3"
       },{
-        "img": "bg22"
+        "img": "invisibl"
     }]
   },{
-    "x": 3,
-    "y": 2,
-    "img": "bg32"
-  },{
-    "x": 4,
-    "y": 2,
-    "img": "bg42"
-  },{
-    "x": 0,
-    "y": 3,
-    "img": "bg03"
-  },{
-    "x": 1,
-    "y": 3,
-    "img": "bg13"
-  },{
-    "x": 2,
-    "y": 3,
-    "img": "bg23"
-  },{
-    "x": 3,
-    "y": 3,
-    "img": "bg33"
-  },{
-    "x": 4,
-    "y": 3,
-    "img": "bg43"
-  },{
-    "x": 0,
-    "y": 4,
-    "img": "bg04"
-  },{
-    "x": 1,
-    "y": 4,
-    "img": "bg14"
-  },{
     "x": 2,
     "y": 4,
-    "img": "bg24",
+    "img": "invisibl",
     "contents" : [{
         "img": "bg24_step2"
       },{
-        "img": "bg24"
+        "img": "invisibl"
     }]
-  },{
-    "x": 3,
-    "y": 4,
-    "img": "bg34"
-  },{
-    "x": 4,
-    "y": 4,
-    "img": "bg44"
   }],
   "tutorial": [{
     "msg:ko": "매미의 성장 과정을 알아보자",
@@ -143,6 +75,7 @@
   }],
   "success": [{
     "msg:ko": "성공! 매미가 되었어요~",
-    "msg:en": "Succes! Became a cicada!"
+    "msg:en": "Succes! Became a cicada!",
+    "link": "a5_w3/2"
   }]
 }
