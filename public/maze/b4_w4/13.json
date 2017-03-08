@@ -48,10 +48,19 @@
   "tutorial": [{
     "msg:ko": "가위바위보!",
     "msg:en": "Rock scissors paper!",
-"img":"/img/b4/rsp.png"
+"img": [{
+  "src": "/img/b4/rock.png",
+  "style": "width:33%"
+},{
+  "src": "/img/b4/scissors.png",
+  "style": "width:33%"
+},{
+  "src": "/img/b4/paper.png",
+  "style": "width:33%"
+}]
   },{
     "msg:ko": "모두 이기고 보물 상자에 갈 거야!",
     "msg:en": "Win all to go to the chest!",
-    "img": "/img/b4/chest.png"
+    "img": "/img/b4/chest3.png"
   }]
 }

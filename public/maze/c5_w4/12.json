@@ -1,0 +1,49 @@
+{
+  "tile_size": 256,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#..i....#",
+    "#...)...#",
+    "#....t..#",
+    "#.q.%TO.#",
+    "#...TxT.#",
+    "#v..OTO.#",
+    "#..u....#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 4,
+    "img":"bclover0",
+    "useItem": true
+  }, {
+    "x": 4,
+    "y": 2,
+    "img":"c13"
+  }],
+  "tutorial": [{
+    "msg:ko": "라나는 토드가 원하는 것을 찾아 선물로 주고 싶어.",
+    "msg:en": "Lana wants to give Tode something he think about!",
+    "img": "/img/frog/lana0.png"
+  },{
+    "msg:ko": "토드는 어떤 클로버를 원할까?",
+    "msg:en": "What clover Tode want?",
+    "img": "/img/c5/clovers/clover0.png"
+  }],
+  "goal": {
+    "msg:ko": "빈 자리에 선물을 놓아보아요. (클로버는 장애물이 아니에요.)",
+    "msg:en": "Put your present on the empty spot. (You can walk on any clovers.)",
+    "img": "/img/c5/clovers/clover0.png"
+  }
+}

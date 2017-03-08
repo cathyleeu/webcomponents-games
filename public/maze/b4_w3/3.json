@@ -40,10 +40,19 @@
   "tutorial": [{
     "msg:ko": "가위는 주먹으로 이길 수 있어!",
     "msg:en": "Rock wins scissors!",
-    "img": "/img/woong/sr.png"
+    "img": [{
+      "src": "/img/b4/scissors.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/(.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/rock.png",
+      "style": "width:33%"
+    }]
   },{
     "msg:ko": "엄마를 이기고 보물상자에 가 보렴.",
     "msg:en": "Win mommy to go to the chest!",
-    "img": "/img/b4/chest.png"
+    "img": "/img/b4/chest2.png"
   }]
 }

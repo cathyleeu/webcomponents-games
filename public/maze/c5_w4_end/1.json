@@ -1,0 +1,56 @@
+{
+  "tile_size": 256,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".###.",
+    "#d)%#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":1,
+    "img":"lana",
+    "useItem" :true
+  },{
+    "x":2,
+    "y":1,
+    "img":"food"
+  }],
+  "tutorial": [{
+    "msg:ko": "라나야, 정말 즐거웠어. 나도 선물을 준비했어.",
+    "msg:en": "I enjoyed with you, Lana. I have a present for you.",
+    "img" : "/img/c5/TutoToad4_256.png"
+  },{
+    "msg:ko": "고마워, 토드야.",
+    "msg:en": "Thank you, Tode.",
+    "img": "/img/c5/lana.png"
+  },{
+    "msg:ko": "선물을 라나에게 가져다 주자.",
+    "msg:en": "Give Lana my present.",
+    "img": [{
+      "src": "/img/c5/TutoToad4_256.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/c5/gift0.png",
+      "style": "width:33%"
+    }, {
+      "src": "/img/c5/lana.png",
+      "style": "width:33%"
+    }]
+  }],
+  "success": [{
+    "msg:ko": "라나와 토드는 짝꿍이 되었어요. 키즈씽킹 친구들 고마워요.",
+    "msg:en": "Lana and Tode became a couple. Thank you all!",
+    "img" : "/img/c5/lanantode.png"
+  }]
+}

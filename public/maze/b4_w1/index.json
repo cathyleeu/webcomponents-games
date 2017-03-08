@@ -36,15 +36,15 @@
     "msg:en": "If you press '↑' Button, Mom will move up",
     "img": "/img/c3_w1/up.png"
   }, {
-    "msg:ko": "↓아래 버튼을 누르면 코스가 아래로 가요",
+    "msg:ko": "↓아래 버튼을 누르면 엄마가 아래로 가요",
     "msg:en": "If you press '↓' Button, Mom will move down",
     "img": "/img/c3_w1/down.png"
   }, {
-    "msg:ko": "→오른쪽 버튼을 누르면 코스가 오른쪽으로 가요",
+    "msg:ko": "→오른쪽 버튼을 누르면 엄마가 오른쪽으로 가요",
     "msg:en": "If you press '→' Button, Mom will move right",
     "img": "/img/c3_w1/right.png"
   }, {
-    "msg:ko": "←왼쪽 버튼을 누르면 코스가 왼쪽으로 가요",
+    "msg:ko": "←왼쪽 버튼을 누르면 엄마가 왼쪽으로 가요",
     "msg:en": "If you press '←' Button, Mom will move left",
     "img": "/img/c3_w1/left.png"
   }, {

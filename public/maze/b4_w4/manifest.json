@@ -1,7 +1,7 @@
 [
   {"book": "b4", "title": "4주차 : 할머니 할아버지도 가위바위보"},
-  {"id": "bg1", "src": "/img/b3_w1/tile1.png"},
-  {"id": "bg2", "src": "/img/b3_w1/tile2.png"},
+  {"id": "bg2", "src": "/img/b4/parktile2.png"},
+  {"id": "bg1", "src": "/img/b4/parktile1.png"},
   {"id": "land0", "src": "/img/map32/0.png"},
   {"id": "land1", "src": "/img/map32/1.png"},
   {"id": "land2", "src": "/img/map32/2.png"},
@@ -17,8 +17,8 @@
 
   {"id": "character", "src": "/img/b4/cos.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/b4/cos0.png", "size": 256},
-  {"id": "food", "src": "/img/b4/chest.png"},
-  {"id": "chest", "src": "/img/b4/chest.png"},
+  {"id": "food", "src": "/img/b4/chest3.png"},
+  {"id": "chest", "src": "/img/b4/chest3.png"},
 
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
@@ -33,6 +33,8 @@
   {"id": "tree2", "src": "/img/b4/bush2.png", "obstacle": true},
   {"id": "flower1", "src": "/img/b4/flower1.png", "obstacle": true},
   {"id": "flower2", "src": "/img/b4/flower2.png", "obstacle": true},
+  {"id": "bench", "src": "/img/b4/bench.png", "obstacle": true},
+  {"id": "lamp", "src": "/img/b4/lamp.png", "obstacle": true},
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},

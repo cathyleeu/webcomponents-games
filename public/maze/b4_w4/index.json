@@ -18,7 +18,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 1개 얻을 수 있어.",
       "msg:en": "You can get one chest at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest3.png"
     }]
   },{
     "x": 5,
@@ -26,7 +26,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 1개 얻을 수 있어.",
       "msg:en": "You can get one chest at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest3.png"
     }]
   },{
     "x": 12,
@@ -34,7 +34,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest3.png"
     }]
   },{
     "x": 12,
@@ -42,7 +42,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest3.png"
     }]
   },{
     "x": 11,
@@ -50,7 +50,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest3.png"
     }]
   },{
     "x": 12,
@@ -58,68 +58,68 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest3.png"
     }]
   },{
     "x": 6,
     "y": 3,
-    "link": "b4_w3/1"
+    "link": "b4_w4/1"
   },{
     "x": 7,
     "y": 2,
-    "link": "b4_w3/2"
+    "link": "b4_w4/2"
   },{
     "x": 8,
     "y": 1,
-    "link": "b4_w3/3"
+    "link": "b4_w4/3"
   },{
     "x": 9,
     "y": 2,
-    "link": "b4_w3/4"
+    "link": "b4_w4/4"
   },{
     "x": 10,
     "y": 3,
-    "link": "b4_w3/5"
+    "link": "b4_w4/5"
   },{
     "x": 14,
     "y": 3,
-    "link": "b4_w3/6"
+    "link": "b4_w4/6"
   },{
     "x": 15,
     "y": 2,
-    "link": "b4_w3/7"
+    "link": "b4_w4/7"
   },{
     "x": 16,
     "y": 1,
-    "link": "b4_w3/8"
+    "link": "b4_w4/8"
   },{
     "x": 17,
     "y": 2,
-    "link": "b4_w3/9"
+    "link": "b4_w4/9"
   },{
     "x": 18,
     "y": 3,
-    "link": "b4_w3/10"
+    "link": "b4_w4/10"
   },{
     "x": 10,
     "y": 5,
-    "link": "b4_w3/11"
+    "link": "b4_w4/11"
   },{
     "x": 9,
     "y": 4,
-    "link": "b4_w3/12"
+    "link": "b4_w4/12"
   },{
     "x": 8,
     "y": 5,
-    "link": "b4_w3/13"
+    "link": "b4_w4/13"
   },{
     "x": 7,
     "y": 4,
-    "link": "b4_w3/14"
+    "link": "b4_w4/14"
   },{
     "x": 6,
     "y": 5,
-    "link": "b4_w3/15"
+    "link": "b4_w4/15"
   },{
     "img":"grandma",
     "x": 16,
@@ -132,19 +132,28 @@
   "tutorial": [{
     "msg:ko": "가위바위보를 해요!",
     "msg:en": "Let's play rock, scissors, paper!",
-    "img" : "/img/b4/rsp.png"
+    "img": [{
+      "src": "/img/b4/rock.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/scissors.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/paper.png",
+      "style": "width:33%"
+    }]
   }, {
     "msg:ko": "쉬운 문제는 보물 상자 1 개를 주어요.",
     "msg:en": "An easy problem gives you one chest.",
-    "img":"/img/b4/chest.png"
+    "img":"/img/b4/chest3.png"
   }, {
     "msg:ko": "보통 문제는 보물 상자 2 개를 주어요.",
     "msg:en": "A normal problem gives you two chests.",
-    "img":"/img/b4/chest.png"
+    "img":"/img/b4/chest3.png"
   }, {
     "msg:ko": "어려운 문제는 보물 상자 3 개를 주어요.",
     "msg:en": "A normal problem gives you three chests.",
-    "img":"/img/b4/chest.png"
+    "img":"/img/b4/chest3.png"
   }, {
     "msg:ko": "보물 상자 25개를 모으면 할머니에게로 가요.",
     "msg:en": "Go to grandma with more than 25 chests.",

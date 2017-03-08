@@ -1,7 +1,7 @@
 {
 
   "tilesize":256,
-  "score":5,
+  "score":1,
   "workspace": ["start"],
   "toolbox": [
     "move_up",

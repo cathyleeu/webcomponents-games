@@ -1,7 +1,7 @@
 {
   "tile_size": 256,
 
-  "score":1,
+  "score":100,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -20,7 +20,11 @@
     "img":"lana"
   }],
   "tutorial": [{
-    "msg:ko": "나는 규칙 찾기를 잘 하는 짝꿍을 구하고 싶어.",
-    "msg:en": "I want to be a couple with a frog good at finding patterns!"
+    "msg:ko": "모두 모두 참 잘했어요.",
+    "msg:en": "You did great job!"
+  },{
+    "msg:ko": "다음 주에 만나자!",
+    "msg:en": "See you again!",
+    "img": "/img/c5/TutoToad4_256.png"
   }]
 }

@@ -1,0 +1,50 @@
+{
+  "tile_size": 256,
+
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#d...h..#",
+    "#.#.....#",
+    "#....G.F#",
+    "#.#..HxK#",
+    "#..)..%.#",
+    "#...k...#",
+    "#..f....#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 5,
+    "img":"bflower0",
+    "useItem": true
+  }, {
+    "x": 3,
+    "y": 5,
+    "img":"flower4"
+  }],
+  "tutorial": [{
+    "msg:ko": "라나는 토드가 원하는 것을 찾아 선물로 주고 싶어.",
+    "msg:en": "Lana wants to give Tode something he think about!",
+    "img": "/img/frog/lana0.png"
+  },{
+    "msg:ko": "토드는 어떤 꽃을 원할까?",
+    "msg:en": "What flower Tode want?",
+    "img": "/img/c5/flowers/flower0.png"
+  }],
+  "goal": {
+    "msg:ko": "빈 자리에 선물을 놓아보아요. (꽃은 장애물이 아니에요.)",
+    "msg:en": "Put your present on the empty spot. (You can walk on any flowers.)",
+    "img": "/img/c5/flowers/flower0.png"
+  }
+}

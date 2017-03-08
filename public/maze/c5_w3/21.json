@@ -1,0 +1,52 @@
+{
+  "tile_size": 256,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".###.",
+    "#d)%#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":1,
+    "img":"tode",
+    "useItem" :true
+  },{
+    "x":2,
+    "y":1,
+    "img":"food"
+  }],
+  "tutorial": [{
+    "msg:ko": "모두 모두 참 잘했어요.",
+    "msg:en": "You did great job!"
+  },{
+    "msg:ko": "선물을 토드에게 가져다 주자.",
+    "msg:en": "Give Tode my present.",
+    "img": [{
+      "src": "/img/c5/lana.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/c5/gift0.png",
+      "style": "width:33%"
+    }, {
+      "src": "/img/c5/TutoToad4_256.png",
+      "style": "width:33%"
+    }]
+  }],
+  "success": [{
+    "msg:ko": "선물 고마워, 라나야",
+    "msg:en": "Thank you, Lana!",
+    "img" : "/img/c5/TutoToad4_256.png",
+    "link": "c5_w4/index"
+  }]
+}
