@@ -39,11 +39,20 @@
   }],
   "tutorial": [{
     "msg:ko": "주먹은 보자기로 이길 수 있어!",
-    "msg:en": "Scissors win rock!",
-    "img": "/img/woong/rp.png"
+    "msg:en": "Paper wins rock!",
+    "img": [{
+      "src": "/img/b4/rock.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/(.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/paper.png",
+      "style": "width:33%"
+    }]
   },{
     "msg:ko": "엄마를 이기고 보물상자에 가 보렴.",
     "msg:en": "Win mommy to go to the chest!",
-    "img": "/img/b4/chest.png"
+    "img": "/img/b4/chest2.png"
   }]
 }

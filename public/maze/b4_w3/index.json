@@ -18,7 +18,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 1개 얻을 수 있어.",
       "msg:en": "You can get one chest at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest2.png"
     }]
   },{
     "x": 5,
@@ -26,7 +26,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 1개 얻을 수 있어.",
       "msg:en": "You can get one chest at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest2.png"
     }]
   },{
     "x": 5,
@@ -34,7 +34,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 1개 얻을 수 있어.",
       "msg:en": "You can get one chest at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest2.png"
     }]
   },{
     "x": 5,
@@ -42,7 +42,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 1개 얻을 수 있어.",
       "msg:en": "You can get one chest at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest2.png"
     }]
   },{
     "x": 12,
@@ -50,7 +50,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest2.png"
     }]
   },{
     "x": 12,
@@ -58,7 +58,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest2.png"
     }]
   },{
     "x": 12,
@@ -66,7 +66,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": "/img/b4/chest.png"
+      "img": "/img/b4/chest2.png"
     }]
   },{
     "x": 5,
@@ -132,15 +132,24 @@
   "tutorial": [{
     "msg:ko": "가위바위보를 해요!",
     "msg:en": "Let's play rock, scissors, paper!",
-    "img":"/img/b4/rsp.png"
+    "img": [{
+      "src": "/img/b4/rock.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/scissors.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/paper.png",
+      "style": "width:33%"
+    }]
   }, {
     "msg:ko": "쉬운 문제는 보물 상자 1 개를 주어요.",
     "msg:en": "An easy problem gives you one chest.",
-    "img": "/img/b4/chest.png"
+    "img": "/img/b4/chest2.png"
   }, {
     "msg:ko": "보통 문제는 보물 상자 2 개를 주어요.",
     "msg:en": "A normal problem gives you two chests.",
-    "img": "/img/b4/chest.png"
+    "img": "/img/b4/chest2.png"
   }, {
     "msg:ko": "이번 주는 문제를 모두 풀어야 해요.",
     "msg:en": "You have to solve all the problems."

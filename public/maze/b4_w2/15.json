@@ -42,7 +42,7 @@
   "tutorial": [{
     "msg:ko": "보물 상자가 여러 개 있어.",
     "msg:en": "There are several chests.",
-    "img": "/img/b4/chest.png"
+    "img": "/img/b4/chest1.png"
   },{
     "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
     "msg:en": "Let's use 'Bring' block on the chests!",
@@ -51,6 +51,6 @@
   "goal": {
     "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
     "msg:en": "Let's use 'Bring' block on the chest",
-    "img": "/img/b4/chest.png"
+    "img": "/img/b4/chest1.png"
   }
 }

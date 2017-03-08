@@ -18,6 +18,7 @@
   {"id": "character", "src": "/img/c5/SpriteLana_256.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c5/lana.png", "size": 256},
   {"id": "food", "src": "/img/c5/lotus_flower.png"},
+  {"id": "tode", "src": "/img/c5/TutoToad4_256.png"},
 
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
@@ -32,9 +33,9 @@
   {"id": "weed3", "src": "/img/b2_w1/Weed3_256.png", "obstacle": true},
   {"id": "weed4", "src": "/img/b2_w1/Weed4_256.png", "obstacle": true},
 
-  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "k", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "w", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "v", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
 
   {"tile": "A", "id": "A", "src": "/img/c5/lotus/nlotus1.png", "obstacle": false},
   {"tile": "B", "id": "B", "src": "/img/c5/lotus/nlotus2.png", "obstacle": false},
@@ -61,14 +62,7 @@
   {"tile": "p", "id": "p", "src": "/img/c5/flowers/flower25.png", "obstacle": false},
   {"tile": "q", "id": "q", "src": "/img/c5/flowers/flower34.png", "obstacle": false},
   {"tile": "s", "id": "s", "src": "/img/c5/flowers/flower35.png", "obstacle": false},
-  {"tile": "t", "id": "t", "src": "/img/c5/flowers/flower45.png", "obstacle": false},
+  {"tile": "t", "id": "t", "src": "/img/c5/flowers/flower45.png", "obstacle": false}
 
-  {"id": "hr", "src": "/img/blocks/rock.png"},
-  {"id": "hp", "src": "/img/blocks/paper.png"},
-  {"id": "hs", "src": "/img/blocks/scissors.png"},
 
-  {"id": "hand_rock", "src": "/img/kidsblocks/Rock.png"},
-  {"id": "hand_paper", "src": "/img/kidsblocks/Paper.png"},
-  {"id": "hand_scissors", "src": "/img/kidsblocks/Scissors.png"},
-  {"id": "spider", "src": "/img/b4/f_granma.png"}
 ]

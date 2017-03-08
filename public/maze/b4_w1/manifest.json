@@ -1,7 +1,7 @@
 [
   {"book": "b4", "title": "1주차 : 엄마가 보물을 숨겨요"},
-  {"id": "bg1", "src": "/img/b3_w1/tile1.png"},
-  {"id": "bg2", "src": "/img/b3_w1/tile2.png"},
+  {"id": "bg2", "src": "/img/b4/parktile2.png"},
+  {"id": "bg1", "src": "/img/b4/parktile1.png"},
   {"id": "land0", "src": "/img/map32/0.png"},
   {"id": "land1", "src": "/img/map32/1.png"},
   {"id": "land2", "src": "/img/map32/2.png"},
@@ -15,7 +15,7 @@
   {"id": "land10", "src": "/img/map32/10.png"},
   {"id": "land11", "src": "/img/map32/11.png"},
 
-  {"id": "character", "src": "/img/b4/cos_bear.png", "sprite": true, "size": 256},
+  {"id": "character", "src": "/img/b4/SpriteMama_256.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/b4/mother.png", "size": 256},
   {"id": "food", "src": "/img/b4/flag.png"},
 
@@ -33,6 +33,9 @@
   {"id": "bush2", "src": "/img/b4/bush2.png", "obstacle": true},
   {"id": "flower1", "src": "/img/b4/flower1.png", "obstacle": true},
   {"id": "flower2", "src": "/img/b4/flower2.png", "obstacle": true},
+  {"id": "bench", "src": "/img/b4/bench.png", "obstacle": true},
+  {"id": "lamp", "src": "/img/b4/lamp.png", "obstacle": true},
+
 
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},

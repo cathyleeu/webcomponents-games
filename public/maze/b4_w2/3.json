@@ -32,7 +32,7 @@
   "tutorial": [{
     "msg:ko": "보물 상자로 가보자",
     "msg:en": "Go to the chest.",
-    "img": "/img/b4/chest.png"
+    "img": "/img/b4/chest1.png"
   },{
     "msg:ko": "새로운 키즈블록인 '가져오기'를 사용해 봐!",
     "msg:en": "Try to use the new Kidsblock, 'Bring' block!",
@@ -41,6 +41,6 @@
   "goal": {
     "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
     "msg:en": "Let's use 'Bring' block on the chest",
-    "img": "/img/b4/chest.png"
+    "img": "/img/b4/chest1.png"
   }
 }

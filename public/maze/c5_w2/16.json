@@ -1,7 +1,7 @@
 {
   "tile_size": 256,
 
-  "score":1,
+  "score":100,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -17,10 +17,14 @@
   "extra":[{
     "x":3,
     "y":1,
-    "img":"lana"
+    "img":"tode"
   }],
   "tutorial": [{
-    "msg:ko": "토드야, 다음에는 같이 놀자.",
-    "msg:en": "Tode, play with me next time!"
+    "msg:ko": "모두 모두 참 잘했어요.",
+    "msg:en": "You did great job!"
+  },{
+    "msg:ko": "다음 주에 만나자!",
+    "msg:en": "See you again!",
+    "img": "/img/c5/lana.png"
   }]
 }
