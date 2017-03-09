@@ -278,7 +278,8 @@ public.get('/code/:code', function *(next) {
               school: kinder.name,
               code: code,
               date: "20170301",
-              classes: classes
+              classes: classes,
+              lang: kinder.lang || ""
             };
           }
         });
