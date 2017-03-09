@@ -20,14 +20,14 @@
     "msg:en": "Cos wants to be friends with Computer"
   },{
     "msg:ko": "컴퓨터에게 인사하면",
-    "msg:en": "Say hello ",
+    "msg:en": "Say hello to Computer",
     "img": "/img/c1_w4/computer.png"
   },{
     "msg:ko": "친구가 될 수 있어",
-    "msg:en": "make friends"
+    "msg:en": "Let's be friends with the computer"
   }],
   "success": [{
-    "msg:ko": "성공! 코스와 컴퓨터는 친구가 되었어요! ",
-    "msg:en": "Success! Cos made Computer friend."
+    "msg:ko": "성공! 코스와 컴퓨터는 친구가 되었어요!",
+    "msg:en": "Success! Cos and Computer became friends."
   }]
 }

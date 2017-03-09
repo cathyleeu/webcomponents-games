@@ -23,8 +23,8 @@
   }
 
   function handleCacheError(e) {
-    alert('키즈씽킹 캐시 다운로드에 실패하였습니다. 저장 공간을 확인해주세요.');
-    $("#appcache").modal("hide");
+    // alert('키즈씽킹 캐시 다운로드에 실패하였습니다. 저장 공간을 확인해주세요.');
+    // $("#appcache").modal("hide");
   };
 
   // Fired after the first cache of the manifest.
