@@ -116,6 +116,12 @@ function getCode( bId , kId ) {
       sum += kId.charCodeAt(5) * 31;
     }
   }
+  if(kId.slice(0, 8) === "(주)와이비엠넷") {
+    if(kId.slice(8, 10) !== "송도") {
+      sum += kId.charCodeAt(8) * 11;
+      sum += kId.charCodeAt(9) * 31;
+    }
+  }
   if(kId.slice(0, 3) === "ECC") {
     if(kId.slice(3, 5) === "석계") {
       sum += kId.charCodeAt(3) * 11;
