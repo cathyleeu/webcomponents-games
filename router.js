@@ -484,16 +484,19 @@ public.get('/school', function *(next) {
   });
 });
 
-public.get('/show_users', function *(next) {
-  var users = yield auth_db.user.find({});
+public.get('/show_collision', function *(next) {
+  var users = yield auth_db.user.find({}),
+      urls = {};
   users = users.filter(function(user) {
     return user.userType == "branch";
   }).map(function(user) {
     return {
       name: user.branch.name,
       code: user.code,
+      address: user.branch.address.roadAddr,
       kinders: user.kinders.map(function(kinder) {
         return {
+          url: getCode(user.branch.name, kinder.name),
           name: kinder.name,
           code: kinder.code,
           classes: kinder.kinderClasses.map(function(obj) {
@@ -503,7 +506,20 @@ public.get('/show_users', function *(next) {
       })
     };
   });
-  this.body = JSON.stringify(users, null, 2);
+  users.forEach(function(user) {
+    user.kinders.forEach(function(kinder) {
+      if(!urls[kinder.url]) {
+        urls[kinder.url] = [];
+      }
+      urls[kinder.url].push(user.code + " " + user.name + ":" + kinder.name + " - " + user.address);
+    });
+  });
+  for(code in urls) {
+    if(urls[code].length <= 1) {
+      delete urls[code];
+    }
+  }
+  this.body = JSON.stringify(urls, null, 2);
 });
 
 public.get('/info', function *(next) {
