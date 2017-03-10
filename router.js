@@ -354,6 +354,19 @@ public.get('/cache/:manifest', function *(next) {
       }
     });
   });
+  function addImg(arr) {
+    if(!Array.isArray(arr)) {
+      arr = [arr];
+    }
+    arr.forEach(function(img) {
+      if(typeof img != "string") {
+        img = (img && img.src) ? img.src : null;
+      }
+      if(img && imgs.indexOf(img) < 0) {
+        imgs.push(img);
+      }
+    });
+  }
   manifests.forEach(function(maniPath) {
     var manifest = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, "manifest.json")));
     manifest.forEach(function(item) {
@@ -369,23 +382,19 @@ public.get('/cache/:manifest', function *(next) {
         // tutorial에 들어있는 이미지 추가
         if(maze.tutorial) {
           maze.tutorial.forEach(function(item) {
-            if(item.img && imgs.indexOf(item.img) < 0) {
-              imgs.push(item.img);
-            }
+            addImg(item.img);
           });
         }
         // goal에 들어있는 이미지 추가
-        if(maze.goal && maze.goal.img && imgs.indexOf(maze.goal.img) < 0) {
-          imgs.push(maze.goal.img);
+        if(maze.goal && maze.goal.img) {
+          addImg(maze.goal.img);
         }
         // extra안에 들어있는 tutorial에 들어있는 이미지 추가
         if(maze.extra) {
           maze.extra.forEach(function(extra) {
             if(extra.tutorial) {
               extra.tutorial.forEach(function(item) {
-                if(item.img && imgs.indexOf(item.img) < 0) {
-                  imgs.push(item.img);
-                }
+                addImg(item.img);
               });
             }
           });
