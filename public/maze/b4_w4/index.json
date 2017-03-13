@@ -167,8 +167,14 @@
     "y" : 3
   }],
   "goal": {
-    "msg:ko": "할머니에게 가자!",
-    "msg:en": "Let's go to grandma!",
-    "img":"/img/b4/f_granma.png"
+    "msg:ko": "보물 상자를 25개 모아서 할머니에게 가자!",
+    "msg:en": "Let's get twenty five chests and go to grandma!",
+    "img": [{
+      "src": "/img/b4/chest3.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b4/f_granma.png",
+      "style": "width:50%"
+    }]
   }
 }
