@@ -33,9 +33,9 @@
   {"id": "weed3", "src": "/img/b2_w1/Weed3_256.png", "obstacle": true},
   {"id": "weed4", "src": "/img/b2_w1/Weed4_256.png", "obstacle": true},
 
-  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "U", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "D", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "L", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
 
   {"id": "clover0", "src": "/img/c5/clovers/clover0.png", "obstacle": false},
   {"id": "bclover0", "src": "/img/c5/clovers/bclover0.png", "obstacle": false},
