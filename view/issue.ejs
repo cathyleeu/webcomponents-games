@@ -78,7 +78,9 @@
       code = "<%=code%>",
       className = "<%=className%>",
       yearmonth = "<%=yearmonth%>",
-      levelLogin = "<%=level%>";
+      levelLogin = "<%=level%>",
+      students = "<%=students%>";
+  students = students ? students.split(",") : null;
   $(function() {
     var d2 = $.Deferred(),
         d3 = $.Deferred();
@@ -95,12 +97,11 @@
       var str = $("#template").html(),
           template = ejs.compile(str),
           month = Number(yearmonth.slice(4, 6));
-      names = names["default"];
+      names = students || names["default"];
       if(levelLogin != 'A' && levelLogin != 'B' && levelLogin != 'C'){
         levelLogin = "default";
       }
       var row = [];
-      debugger
       level = level[levelLogin] || level["default"];
       var imgs = getImgs(yearmonth, code, className, level);
       names.forEach(function(nameArr, index) {
