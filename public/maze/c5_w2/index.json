@@ -133,16 +133,16 @@
     "msg:ko": "규칙을 찾아보아요!",
     "msg:en": "Let's find patterns!",
     "img" : [{
-      "src": "/img/c5/clovers/clover1.png",
+      "src": "/img/c5/lotus/nlotus1.png",
       "style": "width:25%"
     },{
-      "src": "/img/c5/clovers/clover2.png",
+      "src": "/img/c5/lotus/nlotus2.png",
       "style": "width:25%"
     },{
-      "src": "/img/c5/clovers/clover3.png",
+      "src": "/img/c5/lotus/nlotus3.png",
       "style": "width:25%"
     },{
-      "src": "/img/c5/clovers/clover4.png",
+      "src": "/img/c5/lotus/nlotus4.png",
       "style": "width:25%"
     }]
   }, {
@@ -185,8 +185,14 @@
     "y" : 3
   }],
   "goal": {
-    "msg:ko": "연꽃을 모아 토드에게 가자!",
+    "msg:ko": "연꽃을 30개 모아 토드에게 가자!",
     "msg:en": "Let's go to Tode with 30 lotus flowers!",
-    "img":"/img/c5/TutoToad4_256.png"
+    "img":  [{
+      "src": "/img/c5/lotus_flower.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/c5/TutoToad4_256.png",
+      "style": "width:33%"
+    }]
   }
 }

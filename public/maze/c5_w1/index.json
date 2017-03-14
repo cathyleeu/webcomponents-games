@@ -18,10 +18,10 @@
     "link": "c5_w1/1"
   }],
   "tutorial": [{
-    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
-    "msg:en": "Press 'Next' Button~ 　　　　　　　↘"
+    "msg:ko": "다음 버튼을 눌러주세요",
+    "msg:en": "Press 'Next' Button"
   }, {
-    "msg:ko": "오른쪽 클로버로 이동하여 　'토드가 규칙 찾기 놀이를 해요'를 　　완료하면",
+    "msg:ko": "오른쪽 클로버로 이동하여 '토드가 규칙 찾기 놀이를 해요'를 완료하면",
     "msg:en": "Go to the flag on the right and complete 'Tode plays pattern matching game' stage,",
     "img": "/img/c5/clovers/clover0.png"
   }, {
@@ -54,6 +54,6 @@
   "goal": {
     "msg:ko": "오른쪽 클로버로 이동해요",
     "msg:en": "Go to the clover on the right",
-    "img": "/img/c5/clovers/clover0.png"
+    "img": "/img/c5/clovers/clover.png"
   }
 }
