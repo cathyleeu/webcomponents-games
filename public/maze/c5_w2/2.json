@@ -1,6 +1,6 @@
 {
 
-  "tilesize":256,
+  "tile_size":256,
   "score":1,
   "workspace": ["start"],
   "toolbox": [
