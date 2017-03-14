@@ -386,8 +386,8 @@ public.get('/cache/:manifest', function *(next) {
   bookArr.forEach(function(bookName) {
     bookName = bookName.split(":")[0];
     books[bookName].forEach(function(contentInfo) {
-      var maniPath = contentInfo[1],
-          pagePath = contentInfo[1];
+      var maniPath = contentInfo[contentInfo.length - 1],
+          pagePath = contentInfo[contentInfo.length - 1];
       if(maniPath.indexOf("#!") >= 0) {
         maniPath = maniPath.slice(maniPath.indexOf("#!") + 2);
       }

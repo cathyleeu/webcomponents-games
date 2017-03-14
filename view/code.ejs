@@ -58,8 +58,8 @@ if(location.hash) {
     <div class="container" data-view="0">
         <div class="row">
             <div class="col-lg-12">
-                <h1>안녕하세요. 키즈씽킹입니다.</h1>
-                <h2><span class="school"></span> 홈페이지입니다.</h2>
+                <h1 data-msg="welcome">안녕하세요. 키즈씽킹입니다.</h1>
+                <h2><span class="school"></span> <span data-msg="school">홈페이지입니다.</span></h2>
                 <img class="img-responsive" src="/img/kidsthinking_big.png" alt="">
                 <div class="intro-text">
                     <div id="classes">
@@ -73,13 +73,13 @@ if(location.hash) {
     <div class="container" data-view="1">
         <div class="row">
             <div class="col-lg-12">
-                <h1>키즈씽킹 로그인</h1>
+                <h1 data-msg="login">키즈씽킹 로그인</h1>
                 <h2><span class="school"></span> - <span class="className"></span></h2>
-                <h3><strong style="color:yellow">로그인 스티커</strong>를 확인해주세요.</h3>
-                <h3>1. 이름을 선택하세요</h3>
+                <h3><strong data-msg="login1" style="color:yellow">로그인 스티커</strong><span data-msg="login2">를 확인해주세요.</span></h3>
+                <h3 data-msg="select_name">1. 이름을 선택하세요</h3>
                 <div id="names">
                 </div>
-                <h3>2. 비밀캐릭터나 비밀번호를 선택하세요</h3>
+                <h3 data-msg="select_password">2. 비밀캐릭터나 비밀번호를 선택하세요</h3>
                 <div id="characters">
                 </div>
                 <img id="login" src="/img/login/button.png">
@@ -90,7 +90,7 @@ if(location.hash) {
         <div class="row">
             <div class="col-lg-12">
                 <h2><span class="school"></span> - <span class="className"></span></h2>
-                <h3>키즈씽킹 <span class="book"></span></h3>
+                <h3><span data-msg="kidsthinking">키즈씽킹</span> <span class="book"></span></h3>
                 <div class="contents">
                 </div>
             </div>
@@ -153,6 +153,33 @@ if(location.hash) {
   if(code == "") {
     alert("잘못된 경로로 접근하였습니다. 원별 접속 주소를 확인하여 주세요.");
   }
+
+  var lang = info.lang || "ko",
+      msg = {
+        ko: {
+          welcome: "안녕하세요. 키즈씽킹입니다.",
+          school: "홈페이지 입니다.",
+          login: "키즈씽킹 로그인",
+          login1: "로그인 스티커",
+          login2: "를 확인해주세요.",
+          select_name: "1. 이름을 선택하세요",
+          select_password: "2. 비밀캐릭터나 비밀번호를 선택하세요",
+          kidsthinking: "키즈씽킹"
+        },
+        en: {
+          welcome: "Welcome to KidsThinking",
+          school: "",
+          login: "Login",
+          login1: "Check your login information.",
+          login2: "",
+          select_name: "1. Select your name.",
+          select_password: "2. Select your password.",
+          kidsthinking: "KidsThinking"
+        }
+      };
+  $("[data-msg]").each(function(idx, el) {
+    $(el).text(msg[lang][$(el).data("msg")]);
+  });
 
   var names, level, books;
   $.get("/login/names.json", function(data) {
@@ -226,7 +253,7 @@ if(location.hash) {
           return info.classes[item].indexOf(sClassName) >= 0;
         })[0].split("-")[0];
 
-    var classObj = info.logins.filter(function(obj) {
+    var classObj = info.logins && info.logins.filter(function(obj) {
       return obj.className == sClassName
     })[0];
     if(classObj && classObj.students && classObj.students.length > 0) {
@@ -284,9 +311,12 @@ if(location.hash) {
     $(".book").text(sBook);
     var lang = info.lang ? "lang=" + info.lang : "";
     books[sBook].forEach(function(item) {
-      var conn = item[1].indexOf("#!") >= 0 ? "?" : "#",
+      var isEnTitle = info.lang == "en" && item.length == 3,
+          title = isEnTitle ? item[1] : item[0],
+          link = isEnTitle ? item[2] : item[1],
+          conn = link.indexOf("#!") >= 0 ? "?" : "#",
           lang2 = lang ? conn + lang : "";
-      $('<a class="btn btn-lg btn-outline">').attr("href", item[1] + lang2).text(item[0]).appendTo(".contents");
+      $('<a class="btn btn-lg btn-outline">').attr("href", link + lang2).text(title).appendTo(".contents");
     });
   }
 
