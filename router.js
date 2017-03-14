@@ -12,7 +12,7 @@ var public = require('koa-router')(),
     argv = require('minimist')(process.argv.slice(2)),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
-    auth_db = pmongo(config.auth_db, "user"),
+    auth_db = pmongo(config.auth_db, ["user", "logins"]),
     url_json = require('./public/login/url.json');
 
 var defaultTimeStamp = new Date().toISOString();
@@ -154,6 +154,7 @@ function getInfoByCode(code) {
           if(code != kinder.url) {
             return;
           }
+          found = true;
           var classes = {};
           kinder.kinderClasses.forEach(function(classObj) {
             var book = classObj.level + "-1:" + classObj.level + "-1";
@@ -162,16 +163,18 @@ function getInfoByCode(code) {
             }
             classes[book].push(classObj.className);
           });
-          var time = user.updateOn || user.createdOn;
-          resolve({
-            school: kinder.name,
-            code: code,
-            date: "20170301",
-            classes: classes,
-            lang: kinder.lang || "",
-            updateOn: time ? time.toISOString() : null
+          auth_db.logins.find({kinderId:kinder.code}).then(function(logins) {
+            var time = user.updateOn || user.createdOn;
+            resolve({
+              school: kinder.name,
+              code: code,
+              date: "20170301",
+              classes: classes,
+              lang: kinder.lang || "",
+              updateOn: time ? time.toISOString() : null,
+              logins: logins
+            });
           });
-          found = true;
         });
       });
       if(!found) {
@@ -472,6 +475,7 @@ public.get('/cache/:manifest', function *(next) {
 
   // timestamp
   output += '#' + timestamp + '\n';
+  output += '#' + defaultTimeStamp + '\n';
 
   output += "# pages\n";
   output += pages.join("\n") + "\n";
