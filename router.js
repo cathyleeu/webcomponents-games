@@ -15,7 +15,7 @@ var public = require('koa-router')(),
     auth_db = pmongo(config.auth_db, "user"),
     url_json = require('./public/login/url.json');
 
-var timestamp = new Date().toISOString();
+var defaultTimeStamp = new Date().toISOString();
 
 // js와 css파일 리스트를 생성 및 cache-postfile.txt 로딩
 var jsList = fs.readdirSync(path.join("public", "js"))
@@ -142,6 +142,45 @@ function getCode( bId , kId ) {
   return code;
 }
 
+function getInfoByCode(code) {
+  return new Promise(function(resolve, reject) {
+    auth_db.user.find({}).then(function(users) {
+      var found = false;
+      users.forEach(function(user) {
+        if(user.userType != "branch") {
+          return;
+        }
+        user.kinders.forEach(function(kinder) {
+          if(code != kinder.url) {
+            return;
+          }
+          var classes = {};
+          kinder.kinderClasses.forEach(function(classObj) {
+            var book = classObj.level + "-1:" + classObj.level + "-1";
+            if(!classes[book]) {
+              classes[book] = [];
+            }
+            classes[book].push(classObj.className);
+          });
+          var time = user.updateOn || user.createdOn;
+          resolve({
+            school: kinder.name,
+            code: code,
+            date: "20170301",
+            classes: classes,
+            lang: kinder.lang || "",
+            updateOn: time ? time.toISOString() : null
+          });
+          found = true;
+        });
+      });
+      if(!found) {
+        resolve(null);
+      }
+    });
+  });
+}
+
 // See: http://stackoverflow.com/questions/19877246/nodemailer-with-gmail-and-nodejs
 nev.configure({
   verificationURL: siteUrl + '/confirmTempUser/${URL}',
@@ -258,7 +297,7 @@ public.get('/code/:code', function *(next) {
   var code = this.params.code;
   var info = url_json.filter(function(obj) {
     return obj.code == code;
-  })[0];
+  })[0] || (yield getInfoByCode(code));
   if(!info) {
     var users = yield auth_db.user.find({});
     users = users.forEach(function(user) {
@@ -299,7 +338,7 @@ public.get('/cache/:manifest', function *(next) {
   var code = manifest.split(".")[0];
   var school = url_json.filter(function(obj) {
     return obj.code == code;
-  })[0];
+  })[0] || (yield getInfoByCode(code));
   if(!school) {
     var users = yield auth_db.user.find({});
     users = users.forEach(function(user) {
@@ -327,6 +366,7 @@ public.get('/cache/:manifest', function *(next) {
     });
   }
   var bookArr = Object.keys(school.classes),
+      timestamp = school.updateOn || defaultTimeStamp,
       manifests = [],
       pages = [],
       page_manifests = [],
