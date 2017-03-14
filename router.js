@@ -342,6 +342,12 @@ public.get('/cache/:manifest', function *(next) {
   var school = url_json.filter(function(obj) {
     return obj.code == code;
   })[0] || (yield getInfoByCode(code));
+  var loginStamp = "# login stamp dose not exist";
+  if(school.logins && school.logins.length > 0) {
+    loginStamp = school.logins.map(function(obj) {
+      return "#" + obj.className + " : " + (obj.updateOn || "noupdate");
+    }).join("\n");
+  }
   if(!school) {
     var users = yield auth_db.user.find({});
     users = users.forEach(function(user) {
@@ -476,6 +482,7 @@ public.get('/cache/:manifest', function *(next) {
   // timestamp
   output += '#' + timestamp + '\n';
   output += '#' + defaultTimeStamp + '\n';
+  output += loginStamp + '\n';
 
   output += "# pages\n";
   output += pages.join("\n") + "\n";
