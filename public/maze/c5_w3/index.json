@@ -185,8 +185,14 @@
     "y" : 3
   }],
   "goal": {
-    "msg:ko": "선물을 모아 토드에게 가자!",
+    "msg:ko": "선물을 36개 모아 토드에게 가자!",
     "msg:en": "Let's go to Tode with 36 gifts!",
-    "img":"/img/c5/TutoToad4_256.png"
+    "img":  [{
+      "src": "/img/c5/gift0.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/c5/TutoToad4_256.png",
+      "style": "width:33%"
+    }]
   }
 }

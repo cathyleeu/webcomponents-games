@@ -104,7 +104,7 @@
   {"id": "bf25", "src": "/img/c5/flowers/bflower25.png", "obstacle": false},
   {"id": "bf34", "src": "/img/c5/flowers/bflower34.png", "obstacle": false},
   {"id": "bf35", "src": "/img/c5/flowers/bflower35.png", "obstacle": false},
-  {"id": "bf45", "src": "/img/c5/flowers/flower45.png", "obstacle": false},
+  {"id": "bf45", "src": "/img/c5/flowers/bflower45.png", "obstacle": false},
 
   {"id": "s12", "src": "/img/c5/stars/star12.png", "obstacle": false},
   {"id": "s13", "src": "/img/c5/stars/star13.png", "obstacle": false},
