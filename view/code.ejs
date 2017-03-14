@@ -226,7 +226,12 @@ if(location.hash) {
           return info.classes[item].indexOf(sClassName) >= 0;
         })[0].split("-")[0];
 
-    if(names[info.school + "-" + sClassName]) {
+    var classObj = info.logins.filter(function(obj) {
+      return obj.className == sClassName
+    })[0];
+    if(classObj && classObj.students && classObj.students.length > 0) {
+      names = classObj.students;
+    } else if(names[info.school + "-" + sClassName]) {
       names = names[info.school + "-" + sClassName]
     } else {
       names = names["default"];
