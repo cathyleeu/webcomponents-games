@@ -313,7 +313,7 @@ if(location.hash) {
     books[sBook].forEach(function(item) {
       var isEnTitle = info.lang == "en" && item.length == 3,
           title = isEnTitle ? item[1] : item[0],
-          link = isEnTitle ? item[2] : item[1],
+          link = item[item.length - 1],
           conn = link.indexOf("#!") >= 0 ? "?" : "#",
           lang2 = lang ? conn + lang : "";
       $('<a class="btn btn-lg btn-outline">').attr("href", link + lang2).text(title).appendTo(".contents");
