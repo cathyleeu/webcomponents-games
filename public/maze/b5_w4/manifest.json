@@ -1,0 +1,45 @@
+[
+  {"book": "b5", "title": "4주차 : 갯벌 생물을 잡아요"},
+  {"id": "bg1", "src": "/img/b5_w4/tile1.png"},
+  {"id": "bg2", "src": "/img/b5_w4/tile2.png"},
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/b5_w4/cos_boots.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b5_w4/cos_boots0.png", "size": 256},
+  {"id": "food", "src": "/img/b5_w4/basket.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hole", "src": "/img/b5_w4/hole.png", "obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"tile": "s","id": "seatile", "src": "/img/b5_w2/seatile.png", "wall": true},
+
+  {"tile": "a","id": "clam", "src": "/img/b5_w4/clam.png"},
+  {"tile": "b","id": "conch", "src": "/img/b5_w4/conch.png"},
+  {"tile": "c","id": "crab", "src": "/img/b5_w4/crab.png"},
+  {"tile": "f","id": "nakji", "src": "/img/b5_w4/nakji.png"},
+  {"tile": "g","id": "grill", "src": "/img/b5_w4/grill.png"},
+
+  {"tile": "n","id": "father_summer", "src": "/img/b5_w1/father_summer.png"},
+  {"tile": "o","id": "cos_summer0", "src": "/img/b5_w1/cos_summer0.png"},
+  {"tile": "m","id": "mother_summer", "src": "/img/b5_w2/mother_summer.png"}
+]

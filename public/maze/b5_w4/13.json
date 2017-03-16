@@ -1,0 +1,107 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    ".#######.",
+    "#...##..#",
+    "#....#%.#",
+    "#.#.)))ss",
+    "#....#.ss",
+    "#...d.sss",
+    "#.#..ssss",
+    "sssssssss",
+    "sssssssss"
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "useItem": 3
+  }, {
+    "x": 4,
+    "y": 3,
+    "img":"crab",
+    "itemImg":"crab",
+    "disappear":true,
+    "itemCount": 1
+  }, {
+    "x": 5,
+    "y": 3,
+    "img":"nakji",
+    "itemImg":"nakji",
+    "disappear":true,
+    "itemCount": 1
+  }, {
+    "x": 6,
+    "y": 3,
+    "img":"clam",
+    "itemImg":"clam",
+    "disappear":true,
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "바구니에 갯벌 생물들을 넣어야 해요",
+    "msg:en": "I'm going to take tidal creatures to basket",
+    "img": [{
+      "src": "/img/b5_w4/basket.png",
+      "style": "width:25%"
+    },{
+      "src": "/img/b5_w4/crab.png",
+      "style" : "width:25%"
+    },{
+      "src": "/img/b5_w4/nakji.png",
+      "style" : "width:25%"
+    },{
+      "src": "/img/b5_w4/clam.png",
+      "style" : "width:25%"
+    }]
+  },{
+    "msg:ko": "가져와야할 갯벌 생물들이 여러 개 있어.",
+    "msg:en": "There are several tidal creatures.",
+    "img": [{
+      "src": "/img/b5_w4/crab.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b5_w4/nakji.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b5_w4/clam.png",
+      "style" : "width:33%"
+    }]
+  },{
+    "msg:ko": "'가져오기'와 사용하기 블록을 여러 번 사용해 봐!",
+    "msg:en": "Try to use 'Bring' & 'Use' block more than once!",
+    "img": [{
+      "src": "/img/blocks/bring.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/blocks/use.png",
+      "style" : "width:50%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "바구니에 갯벌 생물들을 넣어보자!",
+    "msg:en": "Take tidal creatures to basket",
+    "img": [{
+      "src": "/img/b5_w4/basket.png",
+      "style": "width:25%"
+    },{
+      "src": "/img/b5_w4/crab.png",
+      "style" : "width:25%"
+    },{
+      "src": "/img/b5_w4/nakji.png",
+      "style" : "width:25%"
+    },{
+      "src": "/img/b5_w4/clam.png",
+      "style" : "width:25%"
+    }]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start","move_up","move_up","move_up","move_up","get_item","get_item"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "sssssssss",
+    "sssssssst",
+    "tss..#%.#",
+    "###.)..##",
+    "#....#..#",
+    "#.t....##",
+    "#.#..####",
+    "#...d..##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img": "father_summer",
+    "useItem": 2
+  }, {
+    "x": 4,
+    "y": 3,
+    "img":"fishing_rod",
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "낚시를 하기 위해서",
+    "msg:en": "For fishiing,"
+  },{
+    "msg:ko": "아빠에게 낚시대를 가지고 가야해",
+    "msg:en": "I'm going to take fishing rod to my father",
+    "img": [{
+      "src": "/img/b5_w1/father_summer.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b5_w1/fishing_rod.png",
+      "style" : "width:50%"
+    }]
+  },{
+    "msg:ko": "가져와야할 낚시대가 여러 개 있어.",
+    "msg:en": "There are several fishing rods.",
+    "img": [{
+      "src": "/img/b5_w1/fishing_rod.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b5_w1/fishing_rod.png",
+      "style" : "width:50%"
+    }]
+  },{
+    "msg:ko": "'가져오기'와 사용하기 블록을 여러 번 사용해 봐!",
+    "msg:en": "Try to use 'Bring' & 'Use' block more than once!",
+    "img": [{
+      "src": "/img/blocks/bring.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/blocks/use.png",
+      "style" : "width:50%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "아빠에게 낚시대를 가져가자!",
+    "msg:en": "Take fishing rods to my father",
+    "img": [{
+      "src": "/img/b5_w1/fishing_rod.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b5_w1/father_summer.png",
+      "style" : "width:50%"
+    }]
+  }
+}
