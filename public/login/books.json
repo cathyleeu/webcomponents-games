@@ -379,6 +379,12 @@
     ["엄마 아빠와 가위바위보", "/mazeh#!b4_w3/index"],
     ["할머니 할아버지도 가위바위보", "/mazeh#!b4_w4/index"]
   ],
+  "B-5":[
+    ["해변으로 놀러가요", "/mazeh#!b5_w1/index"],
+    ["바닷가 물놀이 준비를 해요", "/mazeh#!b5_w2/index"],
+    ["낚시를 준비해요", "/mazeh#!b5_w3/index"],
+    ["갯벌 생물을 잡아요", "/mazeh#!b5_w4/index"]
+  ],
   "C-1":[
     ["클릭연습", "Click", "/click"],
     ["자판기 놀이", "Vending Machine", "/c1_w2"],

@@ -1,0 +1,73 @@
+{
+  "tile_size": 256,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "sssssssss",
+    "#sssssss#",
+    "#.#.%.#.#",
+    "#.#...#.#",
+    "#.#.).#.#",
+    "#.#...#.#",
+    "#.#.d.#.#",
+    "#.......#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 2,
+    "img": "mother_summer",
+    "useItem": 1
+  }, {
+    "x": 4,
+    "y": 4,
+    "img":"tube",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "안전한 물놀이를 위해서",
+    "msg:en": "For safety swimming,"
+  },{
+    "msg:ko": "엄마에게 튜브를 가지고 가야해",
+    "msg:en": "I'm going to take tube to my mother"
+  },{
+    "msg:ko": "튜브로 이동해 아이템 가져오기를 해보자",
+    "msg:en": "Move to tube And then Use 'get item' Block",
+    "img": [{
+      "src": "/img/b5_w1/tube.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/blocks/bring.png",
+      "style" : "width:50%"
+    }]
+  },{
+    "msg:ko": "그리고나서 엄마에게 이동하고, 아이템 사용하기를 해보자",
+    "msg:en": "then move my mother, Use 'use item' Block",
+    "img": [{
+      "src": "/img/b5_w2/mother_summer.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/blocks/use.png",
+      "style" : "width:50%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "엄마에게 튜브를 가져가자!",
+    "msg:en": "Take tube to my mother",
+    "img": [{
+      "src": "/img/b5_w1/tube.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b5_w2/mother_summer.png",
+      "style" : "width:50%"
+    }]
+  }
+}

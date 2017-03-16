@@ -1,0 +1,83 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    "sssssssss",
+    "#sssstss#",
+    "#....#%.#",
+    "t###)..##",
+    "#....#..#",
+    "#.......#",
+    "#.#..t###",
+    "#...d...#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img":"father_summer",
+    "useItem": 3
+  }, {
+    "x": 4,
+    "y": 3,
+    "img":"lure",
+    "itemCount": 3
+  }],
+  "tutorial": [{
+    "msg:ko": "낚시를 하기 위해서",
+    "msg:en": "For fishiing,"
+  },{
+    "msg:ko": "아빠에게 미끼를 가지고 가야해",
+    "msg:en": "I'm going to take lure to my father",
+    "img": [{
+      "src": "/img/b5_w1/father_summer.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b5_w3/lure.png",
+      "style" : "width:50%"
+    }]
+  },{
+    "msg:ko": "가져와야할 미끼가 여러 개 있어.",
+    "msg:en": "There are several lures.",
+    "img": [{
+      "src": "/img/b5_w3/lure.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b5_w3/lure.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b5_w3/lure.png",
+      "style" : "width:33%"
+    }]
+  },{
+    "msg:ko": "'가져오기'와 사용하기 블록을 여러 번 사용해 봐!",
+    "msg:en": "Try to use 'Bring' & 'Use' block more than once!",
+    "img": [{
+      "src": "/img/blocks/bring.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/blocks/use.png",
+      "style" : "width:50%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "아빠에게 미끼를 가져가자!",
+    "msg:en": "Take lures to my father",
+    "img": [{
+      "src": "/img/b5_w3/lure.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b5_w1/father_summer.png",
+      "style" : "width:50%"
+    }]
+  }
+}

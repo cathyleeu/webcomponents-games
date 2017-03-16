@@ -1,0 +1,73 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#.#....l#",
+    "#...).#.#",
+    "###..####",
+    "#.##....#",
+    "#..#%..##",
+    "#.##ss#.#",
+    "#sssssss#",
+    "sssssssss"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "img": "mother_summer",
+    "useItem": 1
+  }, {
+    "x": 4,
+    "y": 2,
+    "img":"life_jacket",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "안전한 물놀이를 위해서",
+    "msg:en": "For safety swimming,"
+  },{
+    "msg:ko": "엄마에게 구명조끼를 가지고 가야해",
+    "msg:en": "I'm going to take life jacket to my mother"
+  },{
+    "msg:ko": "구명조끼로 이동해 아이템 가져오기를 해보자",
+    "msg:en": "Move to life jacket And then Use 'get item' Block",
+    "img": [{
+      "src": "/img/b5_w1/life_jacket.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/blocks/bring.png",
+      "style" : "width:50%"
+    }]
+  },{
+    "msg:ko": "그리고나서 엄마에게 이동하고, 아이템 사용하기를 해보자",
+    "msg:en": "then move my mother, Use 'use item' Block",
+    "img": [{
+      "src": "/img/b5_w2/mother_summer.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/blocks/use.png",
+      "style" : "width:50%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "엄마에게 구명조끼를 가져가자!",
+    "msg:en": "Take life jacket to my mother",
+    "img": [{
+      "src": "/img/b5_w1/life_jacket.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b5_w2/mother_summer.png",
+      "style" : "width:50%"
+    }]
+  }
+}
