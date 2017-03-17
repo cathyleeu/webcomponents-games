@@ -39,7 +39,7 @@
   {"tile": "f","id": "nakji", "src": "/img/b5_w4/nakji.png"},
   {"tile": "g","id": "grill", "src": "/img/b5_w4/grill.png"},
 
-  {"tile": "n","id": "father_summer", "src": "/img/b5_w1/father_summer.png"},
+  {"tile": "p","id": "father_summer", "src": "/img/b5_w1/father_summer.png"},
   {"tile": "o","id": "cos_summer0", "src": "/img/b5_w1/cos_summer0.png"},
   {"tile": "m","id": "mother_summer", "src": "/img/b5_w2/mother_summer.png"}
 ]
