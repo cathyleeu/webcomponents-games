@@ -16,7 +16,7 @@
     "x": 5,
     "y": 1,
     "tutorial": [{
-      "msg:ko": "물고기을 1개 얻을 수 있어.",
+      "msg:ko": "물고기를 1개 얻을 수 있어.",
       "msg:en": "You can get one fish at once.",
       "img": "/img/b5_w3/fish.png"
     }]
@@ -24,7 +24,7 @@
     "x": 5,
     "y": 2,
     "tutorial": [{
-      "msg:ko": "물고기을 1개 얻을 수 있어.",
+      "msg:ko": "물고기를 1개 얻을 수 있어.",
       "msg:en": "You can get one fish at once.",
       "img": "/img/b5_w3/fish.png"
     }]
@@ -32,7 +32,7 @@
     "x": 12,
     "y": 1,
     "tutorial": [{
-      "msg:ko": "물고기을 2개 얻을 수 있어.",
+      "msg:ko": "물고기를 2개 얻을 수 있어.",
       "msg:en": "You can get two fishs at once.",
       "img": "/img/b5_w3/fish.png"
     }]
@@ -40,7 +40,7 @@
     "x": 12,
     "y": 2,
     "tutorial": [{
-      "msg:ko": "물고기을 2개 얻을 수 있어.",
+      "msg:ko": "물고기를 2개 얻을 수 있어.",
       "msg:en": "You can get two fishs at once.",
       "img": "/img/b5_w3/fish.png"
     }]
@@ -48,7 +48,7 @@
     "x": 11,
     "y": 4,
     "tutorial": [{
-      "msg:ko": "물고기을 3개 얻을 수 있어.",
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
       "msg:en": "You can get three fishs at once.",
       "img": "/img/b5_w3/fish.png"
     }]
@@ -56,7 +56,7 @@
     "x": 12,
     "y": 4,
     "tutorial": [{
-      "msg:ko": "물고기을 3개 얻을 수 있어.",
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
       "msg:en": "You can get three fishs at once.",
       "img": "/img/b5_w3/fish.png"
     }]
@@ -158,7 +158,7 @@
     "y" : 3
   }],
   "goal": {
-    "msg:ko": "물고기을 20개 모아서 아빠에게 가자!",
+    "msg:ko": "물고기를 20개 모아서 아빠에게 가자!",
     "msg:en": "Let's get twenty one fishs and go to father!",
     "img": [{
       "src": "/img/b5_w3/fish.png",
