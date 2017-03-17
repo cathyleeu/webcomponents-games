@@ -57,13 +57,13 @@
 <script id="template" type="text/x-ejs-template">
 <div class="card">
   <img class="kidscoding" src="/img/kidsthinking.png"/>
-  <h1>키즈씽킹 로그인<br/><small><?=school?> <?=className?> (<?=month?>월)</small></h1>
+  <h1><?=title?><br/><small><?=school?> <?=className?> (<?=month?>)</small></h1>
   <div class="sub-row">
     <button class="btn btn-lg btn-warning selected"><?=index?> : <?=name?></button>
     <img class="character" src="img/login/<?=imgUrl?>/<?=img?>.png" />
   </div>
   <div class="sub-row">
-    <label class="left">로그인 아이디</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="right">비밀 캐릭터</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="left"><?=id?></label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="right"><?=password?></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 </div>
 </script>
@@ -79,8 +79,21 @@
       className = "<%=className%>",
       yearmonth = "<%=yearmonth%>",
       levelLogin = "<%=level%>",
-      students = "<%=students%>";
+      students = "<%=students%>",
+      lang = "<%=global.lang||''%>" || "ko";
   students = students ? students.split(",") : null;
+  var msg = {
+        ko: {
+          title: "키즈씽킹 로그인",
+          id: "로그인 아이디",
+          password: "비밀 캐릭터"
+        },
+        en: {
+          title: "KidsThinking Login",
+          id: "ID",
+          password: "Password"
+        }
+      };
   $(function() {
     var d2 = $.Deferred(),
         d3 = $.Deferred();
@@ -112,7 +125,10 @@
           className: className,
           month: '' + month,
           img: imgs[index],
-          imgUrl: levelLogin
+          imgUrl: levelLogin,
+          title: msg[lang].title,
+          id: msg[lang].id,
+          password: msg[lang].password
         }));
         if(row.length == 2 || index + 1 == names.length) {
           var $row = $('<div class="card-row">').append(row[0]).append(row[1]);
