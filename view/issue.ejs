@@ -42,11 +42,19 @@
     position: relative;
     text-align: center;
   }
+  .sub-row .selected {
+    font-size: 14px;
+    width: 80px;
+    height: 34px;
+  }
   .row label {
     position: absolute;
     display: inline-block;
     left: 5px;
     top: 10px;
+  }
+  .row label.left {
+    width: 100px;
   }
   .kidscoding {
     float: left;
@@ -86,12 +94,14 @@
         ko: {
           title: "키즈씽킹 로그인",
           id: "로그인 아이디",
-          password: "비밀 캐릭터"
+          password: "비밀 캐릭터",
+          month: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]
         },
         en: {
           title: "KidsThinking Login",
           id: "ID",
-          password: "Password"
+          password: "Password",
+          month: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
         }
       };
   $(function() {
@@ -123,7 +133,7 @@
           name: $.isArray(nameArr) ? nameArr[1] : nameArr,
           school: school,
           className: className,
-          month: '' + month,
+          month: msg[lang].month[month],
           img: imgs[index],
           imgUrl: levelLogin,
           title: msg[lang].title,
