@@ -162,9 +162,9 @@
     "msg:en": "A hard problem gives you three chest.",
     "img": "/img/b4/chest1.png"
   }, {
-    "msg:ko": "보물 상자 21개를 모으면 엄마에게 가요.",
+    "msg:ko": "보물 상자 21개를 모으면 아빠에게 가요.",
     "msg:en": "Go to mommy with more than 21 chests.",
-    "img": "/img/b4/mother.png",
+    "img": "/img/b4/father.png",
     "x" : 20,
     "y" : 5
   }, {
