@@ -1,0 +1,59 @@
+{
+  "tile_size": 256,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3"
+  ],
+  "map": [
+    "%#######",
+    "#.#...l#",
+    "#.#)#s##",
+    "#......#",
+    "#..).#.#",
+    "#.##...#",
+    "#...##.#",
+    "########"
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "fishing_rod",
+    "itemCount": 1
+  },{
+    "x": 3,
+    "y": 4,
+    "img": "life_jacket",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "가져와야할 것들이 여러 개 있어.",
+    "msg:en": "There are several things."
+  },{
+    "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
+    "msg:en": "Try to use 'Bring' block more than once!",
+    "img": "/img/blocks/bring.png"
+  }],
+  "goal": {
+    "msg:ko": "가져올 물건 위에서 '가져오기' 블록을 사용하자.",
+    "msg:en": "Let's use 'Bring' block on the things",
+    "img": [{
+      "src": "/img/b5_w1/fishing_rod.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b5_w1/life_jacket.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/blocks/bring.png",
+      "style" : "width:33%"
+    }]
+  }
+}

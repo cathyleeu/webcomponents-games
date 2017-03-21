@@ -358,6 +358,9 @@ Blocks["get_item2"] = {
   args0: [
     {type: "field_image", src: "/img/get_item.png"}
   ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
+  ],
   action: ["getItem2"]
 };
 Blocks["use_item2"] = {
@@ -368,6 +371,9 @@ Blocks["use_item2"] = {
   },
   args0: [
     {type: "field_image", src: "/img/get_item.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Using.png"}
   ],
   action: ["useItem2"]
 };

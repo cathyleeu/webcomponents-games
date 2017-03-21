@@ -342,6 +342,10 @@ public.get('/cache/:manifest', function *(next) {
   var school = url_json.filter(function(obj) {
     return obj.code == code;
   })[0] || (yield getInfoByCode(code));
+  if(school == null) {
+    this.body = "# cannot generate manifest";
+    return;
+  }
   var loginStamp = "# login stamp dose not exist";
   if(school.logins && school.logins.length > 0) {
     loginStamp = school.logins.map(function(obj) {

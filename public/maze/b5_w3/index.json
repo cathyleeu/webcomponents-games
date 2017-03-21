@@ -1,0 +1,171 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "##.###############ssss",
+    "..#..e..%...n...%.tsss",
+    "..#..e.%.%..n..%.%.#ss",
+    ".t.r..%#t#%..t%...%#ss.",
+    "..#..t#%.%#hh#.#.t#sss",
+    "..#..#%.%.%.....#.ssss",
+    "##.##############sssss"
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "물고기를 1개 얻을 수 있어.",
+      "msg:en": "You can get one fish at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 5,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "물고기를 1개 얻을 수 있어.",
+      "msg:en": "You can get one fish at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 12,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "물고기를 2개 얻을 수 있어.",
+      "msg:en": "You can get two fishs at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 12,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "물고기를 2개 얻을 수 있어.",
+      "msg:en": "You can get two fishs at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 11,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+      "msg:en": "You can get three fishs at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 12,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+      "msg:en": "You can get three fishs at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 6,
+    "y": 3,
+    "link": "b5_w3/1"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "b5_w3/2"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b5_w3/3"
+  },{
+    "x": 9,
+    "y": 2,
+    "link": "b5_w3/4"
+  },{
+    "x": 10,
+    "y": 3,
+    "link": "b5_w3/5"
+  },{
+    "x": 14,
+    "y": 3,
+    "link": "b5_w3/6"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b5_w3/7"
+  },{
+    "x": 16,
+    "y": 1,
+    "link": "b5_w3/8"
+  },{
+    "x": 17,
+    "y": 2,
+    "link": "b5_w3/9"
+  },{
+    "x": 18,
+    "y": 3,
+    "link": "b5_w3/10"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b5_w3/11"
+  },{
+    "x": 9,
+    "y": 4,
+    "link": "b5_w3/12"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "b5_w3/13"
+  },{
+    "x": 7,
+    "y": 4,
+    "link": "b5_w3/14"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "b5_w3/15"
+  },{
+    "img":"father_summer",
+    "x": 16,
+    "y": 5,
+    "obstacle": false,
+    "link": "b5_w4/index",
+    "min_score": 20
+  }],
+
+  "tutorial": [{
+    "msg:ko": "물고기를 잡으려면 낚시용품이 필요해요",
+    "msg:en": "Let's collect the things for fishing!",
+    "img": "/img/b5_w1/cos_summer0.png"
+  }, {
+    "msg:ko": "쉬운 문제는 물고기 1 개를 주어요.",
+    "msg:en": "An easy problem gives you one fish.",
+    "img": "/img/b5_w3/fish.png"
+  }, {
+    "msg:ko": "보통 문제는 물고기 2 개를 주어요.",
+    "msg:en": "A normal problem gives you two fishs.",
+    "img": "/img/b5_w3/fish.png"
+  }, {
+    "msg:ko": "어려운 문제는 물고기 3개를 주어요.",
+    "msg:en": "A hard problem gives you three fish.",
+    "img": "/img/b5_w3/fish.png"
+  }, {
+    "msg:ko": "물고기 20개를 모으면 아빠에게 가요.",
+    "msg:en": "Go to dad with more than 20 fishs.",
+    "img": "/img/b5_w1/father_summer.png",
+    "x" : 20,
+    "y" : 5
+  }, {
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "물고기를 20개 모아서 아빠에게 가자!",
+    "msg:en": "Let's get twenty one fishs and go to father!",
+    "img": [{
+      "src": "/img/b5_w3/fish.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b5_w1/father_summer.png",
+      "style": "width:50%"
+    }]
+  }
+}
