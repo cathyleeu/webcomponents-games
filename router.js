@@ -318,6 +318,7 @@ public.get('/code/:code', function *(next) {
             });
             info = {
               school: kinder.name,
+              school_name: user.branch.sub_name || "",
               code: code,
               date: "20170301",
               classes: classes,
