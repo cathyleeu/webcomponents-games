@@ -678,6 +678,9 @@ public.get('/b1_w4', function *(next) {
 public.get('/a4_w3', function *(next) {
   yield this.render('a4_w3');
 });
+public.get('/a5_5_w3', function *(next) {
+  yield this.render('a5_5_w3');
+});
 
 public.get('/maze', function *(next) {
   yield this.render('maze', {

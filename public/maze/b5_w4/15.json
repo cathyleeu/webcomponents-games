@@ -11,15 +11,15 @@
     "use_item2"
   ],
   "map": [
-    ".#####sss",
-    "#.#..ssss",
-    "###.%#sss",
-    "#.#...sss",
-    "#.#.)ssss",
-    "#r.)).sss",
-    "#.###ssss",
-    "#..ssssss",
-    ".ssssssss"
+    ".#####wsw",
+    "#.#..wsws",
+    "###.%#wsw",
+    "#.#...sws",
+    "#.#.)swsw",
+    "#r.)).sws",
+    "#.###swsw",
+    "#..wswsws",
+    ".swswswsw"
   ],
   "extra":[{
     "x": 4,

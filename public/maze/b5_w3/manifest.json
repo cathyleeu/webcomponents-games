@@ -25,13 +25,15 @@
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
-  {"id": "seawall", "src": "/img/b5_w3/seawall.png", "obstacle": true},
+  {"id": "seawall1", "src": "/img/b5_w3/seawall1.png", "obstacle": true},
+  {"id": "seawall2", "src": "/img/b5_w3/seawall2.png", "obstacle": true},
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
 
-  {"tile": "s","id": "seatile", "src": "/img/b5_w2/seatile.png", "wall": true},
+  {"tile": "s","id": "seatile1", "src": "/img/b5_w2/seatile1.png", "wall": true},
+  {"tile": "w","id": "seatile2", "src": "/img/b5_w2/seatile2.png", "wall": true},
   {"tile": "t","id": "lighthouse", "src": "/img/b5_w3/lighthouse.png"},
 
   {"id": "fishing_rod", "src": "/img/b5_w1/fishing_rod.png"},

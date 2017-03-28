@@ -26,15 +26,18 @@
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
   {"id": "parasol", "src": "/img/b5_w2/parasol.png", "obstacle": true},
-  {"id": "seastone", "src": "/img/b5_w2/seastone.png", "obstacle": true},
   {"id": "seawood", "src": "/img/b5_w2/seawood.png", "obstacle": true},
+  {"id": "seastone1", "src": "/img/b5_w2/seastone1.png", "obstacle": true},
+  {"id": "seastone2", "src": "/img/b5_w2/seastone2.png", "obstacle": true},
+  {"id": "seastone3", "src": "/img/b5_w2/seastone3.png", "obstacle": true},
 
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
 
-  {"tile": "s","id": "seatile", "src": "/img/b5_w2/seatile.png", "wall": true},
+  {"tile": "s","id": "seatile1", "src": "/img/b5_w2/seatile1.png", "wall": true},
+  {"tile": "w","id": "seatile2", "src": "/img/b5_w2/seatile2.png", "wall": true},
 
   {"id": "life_jacket", "src": "/img/b5_w1/life_jacket.png"},
   {"id": "tube", "src": "/img/b5_w1/tube.png"},
