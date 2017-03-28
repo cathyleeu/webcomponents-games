@@ -167,6 +167,7 @@ function getInfoByCode(code) {
             var time = user.updateOn || user.createdOn;
             resolve({
               school: kinder.name,
+              school_name: user.branch.sub_name || "",
               code: code,
               date: "20170301",
               classes: classes,
@@ -318,7 +319,6 @@ public.get('/code/:code', function *(next) {
             });
             info = {
               school: kinder.name,
-              school_name: user.branch.sub_name || "",
               code: code,
               date: "20170301",
               classes: classes,
