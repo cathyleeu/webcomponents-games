@@ -34,8 +34,7 @@
   }],
   "tutorial": [{
     "msg:ko": "라나는 토드가 원하는 것을 찾아 선물로 주고 싶어.",
-    "msg:en": "Lana wants to give Tode something he think about!",
-    "img": "/img/frog/lana0.png"
+    "msg:en": "Lana wants to give Tode something he think about!"
   },{
     "msg:ko": "토드는 어떤 꽃을 원할까?",
     "msg:en": "What flower Tode want?",
