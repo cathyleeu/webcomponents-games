@@ -67,7 +67,8 @@
     "msg:en": "Let's look at the growth of cicada"
   },{
     "msg:ko": "매미의 성장 순서대로 블록을 조립하면",
-    "msg:en": "Assemble blocks in the order of cicada's growing, "
+    "msg:en": "Assemble blocks in the order of cicada's growing, ",
+    "img": "/img/a5_w3/memi_block.png"
   },{
     "msg:ko": "매미가 될꺼야!",
     "msg:en": "Became a cicada!",
@@ -76,6 +77,7 @@
   "success": [{
     "msg:ko": "성공! 매미가 되었어요~",
     "msg:en": "Succes! Became a cicada!",
+    "img": "/img/a5_w3/bg01_step5.png",
     "link": "a5_w3/2"
   }]
 }

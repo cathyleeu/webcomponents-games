@@ -17,10 +17,11 @@
   {"id": "land11", "src": "/img/map32/11.png"},
 
   {"id": "character", "src": "/img/a5_w4/todepolefrog.png", "sprite": true, "size": 256},
-  {"id": "message", "src": "/img/a5_w4/TutoToad1_256.png", "size": 256},
+  {"id": "message", "src": "/img/a5_w4/frog.png", "size": 256},
   {"id": "food", "src": "/img/a5_w4/Larva_256.png"},
 
   {"id": "lotus", "src": "/img/a5_w4/lotus.png"},
+  {"tile": "a", "id": "eggs", "src": "/img/a5_w4/eggs_256.png"},
 
   {"id": "log1", "src": "/img/a5_w4/Log1_256.png", "obstacle": true},
   {"id": "log2", "src": "/img/a5_w4/Log2_256.png", "obstacle": true},

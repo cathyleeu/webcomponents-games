@@ -374,7 +374,7 @@ Actions.prototype.steploop = function(type, block, callback) {
   } else if(type == "frog_up") {
     stepList = ["u","u"];
   } else if(type == "frog_right") {
-    stepList = ["r","r","r"];
+    stepList = ["r","r","r","r"];
   } else if(type == "frog_down") {
     stepList = ["d","d","d"];
   }
