@@ -220,7 +220,7 @@ if(location.hash) {
   function showClass() {
     $("[data-view]").hide();
     $("[data-view=" + view + "]").show();
-    $(".school").text(info.school);
+    $(".school").text(info.school_name || info.school);
     var classes = Object.keys(info.classes).map(function(item) {
       return info.classes[item];
     }).reduce(function(init, arr) {
