@@ -11,14 +11,14 @@
   "map": [
     ".#####.",
     "#.#.#.#",
-    "#%..%##",
-    "#.##..#",
-    "#%.l.##",
-    "#.#.%.#",
+    "#%...%#",
+    "#.#a#.#",
+    "#%.la.#",
+    "#.#a#%#",
     ".#####."
   ],
   "extra":[{
-    "x": 4,
+    "x": 5,
     "y": 5,
     "img": "lotus"
   }],
@@ -28,7 +28,7 @@
   },{
     "msg:ko": "개구리의 성장 순서에 따라 블록을 조립하고,",
     "msg:en": "Assemble blocks in the order of frog's growing,",
-    "img": "/img/a5_w4/TutoToad4_256.png"
+    "img": "/img/a5_w4/frog_block.png"
   },{
     "msg:ko": "연잎으로 이동해 보아요!",
     "msg:en": "Move to Lotus leaves",
@@ -36,7 +36,6 @@
   }],
   "success": [{
     "msg:ko": "성공! 개구리가 되었어요~",
-    "msg:en": "Succes! The tadpole becomes a frog!",
-    "img": "/img/a5_w4/TutoToad4_256.png"
+    "msg:en": "Succes! The tadpole becomes a frog!"
   }]
 }

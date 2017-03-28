@@ -98,7 +98,7 @@ Blocks["frog_right"] = {
     en: "%1 becom frog"
   },
   args0: [
-    {type: "field_image", src: "/img/a5_w4/TutoToad4_256.png"}
+    {type: "field_image", src: "/img/a5_w4/frog.png"}
   ],
   action: ["steploop", "frog_right"]
 };
@@ -121,7 +121,7 @@ Blocks["memi_step1"] = {
     en: "%1 cicada eggs"
   },
   args0: [
-    {type: "field_image", src: "/img/a5_w3/memi_step1.png"}
+    {type: "field_image", src: "/img/a5_w3/bg31_step1.png"}
   ],
   action: ["memigrowing", "memi_step1"]
 };
@@ -132,7 +132,7 @@ Blocks["memi_step2"] = {
     en: "%1 larva under ground"
   },
   args0: [
-    {type: "field_image", src: "/img/a5_w3/memi_step2.png"}
+    {type: "field_image", src: "/img/a5_w3/bg24_step2.png"}
   ],
   action: ["memigrowing", "memi_step2"]
 };
@@ -143,7 +143,7 @@ Blocks["memi_step3"] = {
     en: "%1 larva on the tree"
   },
   args0: [
-    {type: "field_image", src: "/img/a5_w3/memi_step3.png"}
+    {type: "field_image", src: "/img/a5_w3/bg22_step3.png"}
   ],
   action: ["memigrowing", "memi_step3"]
 };
@@ -154,7 +154,7 @@ Blocks["memi_step4"] = {
     en: "%1 metamorphosis of cicada"
   },
   args0: [
-    {type: "field_image", src: "/img/a5_w3/memi_step4.png"}
+    {type: "field_image", src: "/img/a5_w3/bg21_step4.png"}
   ],
   action: ["memigrowing", "memi_step4"]
 };
@@ -165,7 +165,7 @@ Blocks["memi_step5"] = {
     en: "%1 cicada imago"
   },
   args0: [
-    {type: "field_image", src: "/img/a5_w3/memi_step5.png"}
+    {type: "field_image", src: "/img/a5_w3/bg01_step5.png"}
   ],
   action: ["memigrowing", "memi_step5"]
 };
