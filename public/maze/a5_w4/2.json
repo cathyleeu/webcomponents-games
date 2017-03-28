@@ -34,6 +34,11 @@
     "msg:en": "Move to Lotus leaves",
     "img": "/img/a5_w4/lotus.png"
   }],
+  "goal": {
+    "msg:ko": "개구리의 성장 순서에 따라 블록을 조립해보자!",
+    "msg:en": "Let's Assemble blocks in the order of frog's growing!",
+    "img": "/img/a5_w4/frog_block.png"
+  },
   "success": [{
     "msg:ko": "성공! 개구리가 되었어요~",
     "msg:en": "Succes! The tadpole becomes a frog!"
