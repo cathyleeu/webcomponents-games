@@ -164,15 +164,17 @@ function getInfoByCode(code) {
             classes[book].push(classObj.className);
           });
           auth_db.logins.find({kinderId:kinder.code}).then(function(logins) {
-            var time = user.updateOn || user.createdOn;
+            var time = user.updateOn || user.createdOn,
+                month = String((new Date()).getMonth() + 1);
+            month = month.length == 1 ? "0" + month : month;
             resolve({
               school: kinder.name,
               school_name: user.branch.sub_name || "",
               code: code,
-              date: "20170301",
+              date: "2017" + month + "01",
               classes: classes,
               lang: kinder.lang || "",
-              updateOn: time ? time.toISOString() : null,
+              updateOn: time ? time["$date"] : null,
               logins: logins
             });
           });
@@ -309,7 +311,9 @@ public.get('/code/:code', function *(next) {
         user.kinders.forEach(function(kinder) {
           var kcode = getCode(user.branch.name, kinder.name);
           if(code == kcode) {
-            var classes = {};
+            var classes = {},
+                month = String((new Date()).getMonth() + 1);
+            month = month.length == 1 ? "0" + month : month;
             kinder.kinderClasses.forEach(function(classObj) {
               var book = classObj.level + "-1:" + classObj.level + "-1";
               if(!classes[book]) {
@@ -320,7 +324,7 @@ public.get('/code/:code', function *(next) {
             info = {
               school: kinder.name,
               code: code,
-              date: "20170301",
+              date: "2017" + month + "01",
               classes: classes,
               lang: kinder.lang || ""
             };
