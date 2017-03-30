@@ -4,6 +4,9 @@ if(location.hash) {
 }
 </script>
 <style>
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: capitalize !important;
+  }
   .btn-default {
     margin: 20px;
   }
@@ -59,7 +62,7 @@ if(location.hash) {
         <div class="row">
             <div class="col-lg-12">
                 <h1 data-msg="welcome">안녕하세요. 키즈씽킹입니다.</h1>
-                <h2><span class="school"></span> <span data-msg="school"></span></h2>
+                <h2><span class="school"></span> <span data-msg="school"></span> (<span class="yearmonth"></span>)</h2>
                 <img class="img-responsive" src="/img/kidsthinking_big.png" alt="">
                 <div class="intro-text">
                     <div id="classes">
@@ -165,7 +168,8 @@ if(location.hash) {
           select_name: "1. 이름을 선택하세요",
           select_password: "2. 비밀캐릭터나 비밀번호를 선택하세요",
           kidsthinking: "키즈씽킹",
-          error: "원별 접속주소를 확인해주세요."
+          error: "원별 접속주소를 확인해주세요.",
+          month: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]
         },
         en: {
           welcome: "Welcome to KidsThinking",
@@ -176,7 +180,8 @@ if(location.hash) {
           select_name: "1. Select your name.",
           select_password: "2. Select your password.",
           kidsthinking: "KidsThinking",
-          error: "Check your url, Please."
+          error: "Check your url, Please.",
+          month: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
         }
       };
 
@@ -221,6 +226,7 @@ if(location.hash) {
     $("[data-view]").hide();
     $("[data-view=" + view + "]").show();
     $(".school").text(info.school_name || info.school);
+    $(".yearmonth").text(msg[lang].month[Number(info.date.slice(4,6))-1]);
     var classes = Object.keys(info.classes).map(function(item) {
       return info.classes[item];
     }).reduce(function(init, arr) {
