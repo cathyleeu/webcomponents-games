@@ -139,6 +139,10 @@ var hash = location.hash,
       setTimeout( function () {
         audio5.play();
         $(".hint").text(msg[lang].success);
+        setTimeout( function () {
+          var link = document.location.href;
+          location.href=link+"_2";
+        }, 3000);
       }, 8000);
     }
   });

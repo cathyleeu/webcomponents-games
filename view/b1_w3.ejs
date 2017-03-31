@@ -46,128 +46,100 @@
   position: absolute;
   border:2px dashed transparent;
   padding:10px;
-  height: 60px;
-  width: 60px;
-  top: 270px;
-  left: 540px;
+  height: 70px;
+  width: 80px;
+  top: 320px;
+  left: 350px;
   cursor:pointer;
 }
-.text-box {
+.drink {
   position: absolute;
-  border:2px dashed transparent;
-  background-color: #000000;
-  text-align: center;
-  color: yellow;
-  font-size: 22px;
-  padding:10px;
-  height: 45px;
-  width: 160px;
-  top: 20px;
-  left: 195px;
+  top: 200px;
+  width: 200px;
+  height: auto;
+  margin-left: 500px;
+  display: block;
+  float:left;
+  visibility: hidden;
 }
-
 
 </style>
 <div id="container">
   <div class="head">
-    <div class="instruction" data-msg="instruction">엘리베이터 놀이를 해봐요</div>
-    <div class="hint" data-msg="hint">화살표 버튼을 눌러 엘레베이터를 불러봐요!</div>
+    <div class="instruction" data-msg="instruction">자판기 놀이를 해봐요</div>
+    <div class="hint" data-msg="hint">음료수를 뽑기 위해서 돈을 넣어봐요!</div>
   </div>
   <div class="workspace">
-    <div class="text-box">1</div>
     <div class="sel-box"></div>
-    <img class="background" src="img/b1_w3/el_img1.png"/>
+    <img class="background" src="img/c1_w2/vm0.png"/>
   </div>
-
+  <img class="drink" src="img/c1_w2/drink.png"/>
 </div>
 
 <script>
-  var hash = location.hash,
-      lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
-      msg = {
-        ko: {
-          instruction: "엘리베이터 놀이를 해봐요",
-          hint: "화살표 버튼을 눌러 엘레베이터를 불러봐요!",
-          hint1: "엘리베이터가 왔어요! 안으로 들어가봐요!",
-          hint2: "엘리베이터 안으로 들어왔어요! 5층을 눌러봐요!",
-          hint3: "엘리베이터가 5층에 도착했어요! 밖으로 나가봐요!",
-          success: "성공!"
-        },
-        en: {
-          instruction: "Elevator Practice",
-          hint: "Press the button to call the elevator!",
-          hint1: "The elevator is here. Go inside.",
-          hint2: "Press the fifth floor.",
-          hint3: "The elevator arrived on the fifth floor. Go out.",
-          success: "Success!"
-        }
-      };
+var hash = location.hash,
+    lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+    msg = {
+      ko: {
+        instruction: "자판기 놀이를 해봐요",
+        hint: "음료수를 뽑기 위해서 동전을 넣어봐요!",
+        hint1: "동전이 들어 갔아요! 불이 들어온 버튼을 눌러봐요!",
+        hint2: "캔이 떨어졌어요! 음료수를 꺼내봐요!",
+        hint3: "음료수를 얻었어요! 맛있게 마셔요!",
+        success: "성공!"
+      },
+      en: {
+        instruction: "Vending Machine Practice",
+        hint: "Try to put a coin to pull out a drink!",
+        hint1: "A coin went in! Press the button that lights up!",
+        hint2: "The can is down! Take out the soda!",
+        hint3: "I got a drink! Have a delicious drink!",
+        success: "Success!"
+      }
+    };
   var step = 1;
-  var audio0 = new Audio('img/b1_w3/el_sound0.mp3');
-  var audio1 = new Audio('img/b1_w3/el_sound1.mp3');
-  var audio2 = new Audio('img/b1_w3/el_sound2.mp3');
-  var audio4 = new Audio('img/b1_w3/walk.mp3');
+  var audio1 = new Audio('img/c1_w2/vm1.mp3');
+  var audio2 = new Audio('img/c1_w2/vm2.mp3');
+  var audio3 = new Audio('img/c1_w2/vm3.mp3');
+  var audio4 = new Audio('img/c1_w2/vm4.mp3');
   var audio5 = new Audio('sound/complete.mp3');
   $("[data-msg]").each(function(idx, el) {
     $(el).text(msg[lang][$(el).data("msg")]);
   });
   $(".sel-box").click(function() {
   	if(step==1){
-      audio0.play();
-      sleep(1000);
       audio1.play();
-      this.style.height = "445px";
-      this.style.width = "320px";
-      this.style.top = "133px";
-      this.style.left = "115px";
+      this.style.height = "80px";
+      this.style.width = "100px";
+      this.style.top = "140px";
+      this.style.left = "70px";
       setTimeout( function () {
         $(".hint").text(msg[lang].hint1);
-        $(".background").attr("src","img/b1_w3/el_img2.png");
-      }, 4500);
-      step = 2;
+        $(".background").attr("src","img/c1_w2/vm1.png");
+        step = 2;
+      }, 1500);
     }else if(step==2){
-      audio4.play();
-      this.style.height = "50px";
-      this.style.width = "50px";
-      this.style.top = "270px";
-      this.style.left = "530px";
+      audio2.play();
+      this.style.height = "80px";
+      this.style.width = "260px";
+      this.style.top = "450px";
+      this.style.left = "75px";
       setTimeout( function () {
         $(".hint").text(msg[lang].hint2);
-        $(".background").attr("src","img/b1_w3/el_img3.png");
-      }, 1000);
-      step = 3;
-    }else if(step==3){
-      audio0.play();
+        $(".background").attr("src","img/c1_w2/vm2.png");
+        step = 3;
+      }, 1500);
+    }else{
+      audio3.play();
       sleep(1000);
-      $(".background").attr("src","img/b1_w3/el_img4.png");
-      audio2.play();
-      var i=1;
-      var uploop = setInterval(function(){
-        if(i<5){
-          i++;
-          var num = i.toString();
-          $(".text-box").text(num);
-        }else{
-          audio1.play();
-          setTimeout( function () {
-            $(".background").attr("src","img/b1_w3/el_img5.png");
-            $(".hint").text(msg[lang].hint3);
-          }, 4500);
-          step = 4;
-          clearInterval(uploop);
-        }
-      }, 2000);
-      this.style.height = "445px";
-      this.style.width = "320px";
-      this.style.top = "133px";
-      this.style.left = "115px";
-    }else if(step==4){
       audio4.play();
+      $(".hint").text(msg[lang].hint3);
+      $(".background").attr("src","img/c1_w2/vm3.png");
+      $(".drink").css("visibility","visible")
       setTimeout( function () {
         audio5.play();
         $(".hint").text(msg[lang].success);
-        step = 5;
-      }, 1000);
+      }, 8000);
     }
   });
 
