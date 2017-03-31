@@ -157,7 +157,7 @@ function getInfoByCode(code) {
           found = true;
           var classes = {};
           kinder.kinderClasses.forEach(function(classObj) {
-            var book = classObj.level + "-1:" + classObj.level + "-1";
+            var book = classObj.level + "-2:" + classObj.level + "-2";
             if(!classes[book]) {
               classes[book] = [];
             }
@@ -315,7 +315,7 @@ public.get('/code/:code', function *(next) {
                 month = String((new Date()).getMonth() + 1);
             month = month.length == 1 ? "0" + month : month;
             kinder.kinderClasses.forEach(function(classObj) {
-              var book = classObj.level + "-1:" + classObj.level + "-1";
+              var book = classObj.level + "-2:" + classObj.level + "-2";
               if(!classes[book]) {
                 classes[book] = [];
               }
@@ -366,7 +366,7 @@ public.get('/cache/:manifest', function *(next) {
           if(code == kcode) {
             var classes = {};
             kinder.kinderClasses.forEach(function(classObj) {
-              var book = classObj.level + "-1:" + classObj.level + "-1";
+              var book = classObj.level + "-2:" + classObj.level + "-2";
               if(!classes[book]) {
                 classes[book] = [];
               }
