@@ -1,5 +1,5 @@
 <script>
-if(location.hash) {
+if(location.pathname == "/code" && location.hash) {
   location.href = "/code/" + location.hash.slice(1);
 }
 </script>
@@ -40,7 +40,7 @@ if(location.hash) {
     border: 2px solid yellow;
   }
   h3 {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   .book-idx {
     padding: 0 10px;
@@ -58,6 +58,9 @@ if(location.hash) {
     height: 24px;
     line-height: 24px;
     font-size: 14px;
+  }
+  .star-light {
+    margin: 50px auto 30px !important;
   }
 </style>
 
@@ -110,7 +113,6 @@ if(location.hash) {
         <div class="row">
             <div class="col-lg-12">
                 <h2><span class="school"></span> - <span class="className"></span></h2>
-                <h3><span data-msg="kidsthinking">키즈씽킹</span> <span class="book"></span></h3>
                 <div class="contents">
                 </div>
             </div>
@@ -167,13 +169,14 @@ if(location.hash) {
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<script src="/components/page/page.js"></script>
 <script>
   var code = "<%=code%>";
   var info = <%-typeof info == "undefined" ? "{}" : info%>;
   var names, level, books;
   var view = 0,
       sClassName = null,
-      sBook = null;
+      imgs = [];
   var lang = info ? (info.lang || "ko") : "ko",
       msg = {
         ko: {
@@ -206,8 +209,6 @@ if(location.hash) {
     $(el).text(msg[lang][$(el).data("msg")]);
   });
   if(code == "" || info == null) {
-    $("[data-view]").hide();
-    $("[data-view=" + view + "]").show();
     $("[data-msg=school]").text(msg[lang].error);
     setTimeout(function() {
       alert("잘못된 경로로 접근하였습니다. 원별 접속 주소를 확인하여 주세요.");
@@ -217,15 +218,22 @@ if(location.hash) {
   }
 
   function init() {
+    var d1 = $.Deferred(),
+        d2 = $.Deferred(),
+        d3 = $.Deferred();
     $.get("/login/names.json", function(data) {
       names = data;
+      d1.resolve();
     });
     $.get("/login/level_pw.json", function(data) {
       level = data;
+      d2.resolve();
     });
     $.get("/login/books.json", function(data) {
       books = data;
+      d3.resolve();
     });
+    $.when( d1, d2, d3 ).done(load);
 
     $("#names").click('button', function(e) {
       $("#names button").removeClass("selected");
@@ -235,81 +243,6 @@ if(location.hash) {
       $("#characters img").removeClass("selected");
       $(e.target).addClass("selected");
     });
-
-    showClass();
-  }
-
-  function showClass() {
-    $("[data-view]").hide();
-    $("[data-view=" + view + "]").show();
-    $(".school").text(info.school_name || info.school);
-    $(".yearmonth").text(msg[lang].month[Number(info.date.slice(4,6))-1]);
-    var classes = Object.keys(info.classes).map(function(item) {
-      return info.classes[item];
-    }).reduce(function(init, arr) {
-      return init.concat(arr);
-    }, []);
-    classes.forEach(function(className, i) {
-      var $button = $('<a href="#" data-classname="' + className + '" class="btn btn-lg btn-default">' + className + '</a>');
-      if(code == "a819b") {
-        var book = Object.keys(info.classes).filter(function(item) {
-          return info.classes[item].indexOf(className) >= 0;
-        })[0];
-        // TODO: 시연용 페이지에서 로그인 건너뛸때 가정학습 기능은 지원하지 않음
-        // book = kids ? tokens[1] || "가정심화학습": tokens[0];
-        var tokens = book.split(":"),
-            kids = false;
-        $button.data("book", tokens[0]);
-      }
-      $button.click(function(e) {
-        e.preventDefault();
-        sClassName = $(this).data("classname");
-        var book = $(this).data("book");
-        if(book) {
-          sBook = book;
-          $(".className").text(sClassName);
-          showBook();
-        } else {
-          showLogin();
-        }
-      }).appendTo("#classes");
-    });
-  }
-
-  function showLogin() {
-    view = 1;
-    $("[data-view]").hide();
-    $("[data-view=" + view + "]").show();
-    $(window).scrollTop(0);
-    $(".className").text(sClassName);
-    var yearmonth = info.date,
-        levelLogin = Object.keys(info.classes).filter(function(item) {
-          return info.classes[item].indexOf(sClassName) >= 0;
-        })[0].split("-")[0];
-
-    var classObj = info.logins && info.logins.filter(function(obj) {
-      return obj.className == sClassName
-    })[0];
-    if(classObj && classObj.students && classObj.students.length > 0) {
-      names = classObj.students;
-    } else if(names[info.school + "-" + sClassName]) {
-      names = names[info.school + "-" + sClassName]
-    } else {
-      names = names["default"];
-    }
-
-    names.forEach(function(name, index) {
-      var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning">' + (index+1) + " : " + ($.isArray(name) ? name[1] : name) + '</button>';
-      $(button).appendTo("#names");
-    });
-
-    level = level[levelLogin] || level["default"];
-    level.forEach(function(level_pw, index) {
-      var img = '<img class="character" data-img="'+(index+1)+'" src="'+level_pw+'"/>';
-      $(img).appendTo("#characters");
-    });
-    var imgs = getImgs(yearmonth, code, sClassName, level);
-
     $("#login").click(function(e) {
       if($("#characters .selected").length == 0 || $("#names .selected").length == 0) {
         $("#modal-fail").modal('show');
@@ -327,38 +260,112 @@ if(location.hash) {
     });
     $("#goNext").click(function(e) {
       e.preventDefault();
-      var book = Object.keys(info.classes).filter(function(item) {
-        return info.classes[item].indexOf(sClassName) >= 0;
-      })[0];
-      var tokens = book.split(":");
-      // book = kids ? tokens[1] || "가정심화학습": tokens[0];
-      sBook = tokens[0];
-      showBook();
+      page(location.hash + "&book=true");
     });
   }
 
-  function showBook() {
-    view = 2;
-    $("[data-view]").hide();
-    $("[data-view=" + view + "]").show();
-    $(window).scrollTop(0);
-    $(".book").text(sBook);
-    var lang = info.lang ? "lang=" + info.lang : "";
-    books[sBook].forEach(function(item, idx) {
-      var isEnTitle = info.lang == "en" && item.length == 3,
-          title = isEnTitle ? item[1] : item[0],
-          link = item[item.length - 1],
-          conn = link.indexOf("#!") >= 0 ? "?" : "#",
-          lang2 = lang ? conn + lang : "",
-          $el = $('<a class="btn btn-lg btn-outline">').attr("href", link + lang2).appendTo(".contents");
-      if(title.indexOf(":") >= 0) {
-        $el.append('<div class="book-idx">' + (idx+1) + '</div>');
-        title.split(":").forEach(function(text, i) {
-          $el.append('<div class="book-' + i + '">' + text + '</div>');
-        });
+  function load() {
+    page('*', function(ctx, next) {
+      var hash = ctx.hash,
+          qs = {};
+      hash.split("&").forEach(function(str) {
+        var token = str.split("=");
+        qs[token[0]] = token[1];
+      });
+      if(hash == "") {
+        view = 0;
+        showClass();
+      } else if(qs.className && !qs.book) {
+        view = 1;
+        sClassName = qs.className;
+        showLogin();
       } else {
-        $el.text(title);
+        view = 2;
+        sClassName = qs.className;
+        showBook();
       }
+      $(".school").text(info.school_name || info.school);
+      qs.className && $(".className").text(qs.className);
+      $("[data-view]").hide();
+      $("[data-view=" + view + "]").show();
+      $(window).scrollTop(0);
+    });
+    page();
+  }
+
+  function showClass() {
+    $(".yearmonth").text(msg[lang].month[Number(info.date.slice(4,6))-1]);
+    $("#classes").empty();
+    var classes = Object.keys(info.classes).map(function(item) {
+      return info.classes[item];
+    }).reduce(function(init, arr) {
+      return init.concat(arr);
+    }, []);
+    classes.forEach(function(className, i) {
+      $('<a href="#className=' + className + '" class="btn btn-lg btn-default">' + className + '</a>').appendTo("#classes");
+    });
+  }
+
+  function showLogin() {
+    var yearmonth = info.date,
+        levelLogin = Object.keys(info.classes).filter(function(item) {
+          return info.classes[item].indexOf(sClassName) >= 0;
+        })[0].split("-")[0],
+        sel_names = null,
+        sel_levels = null,
+        classObj = info.logins && info.logins.filter(function(obj) {
+          return obj.className == sClassName
+        })[0];
+
+    $("#names,#characters").empty();
+
+    if(classObj && classObj.students && classObj.students.length > 0) {
+      sel_names = classObj.students;
+    } else if(names[info.school + "-" + sClassName]) {
+      sel_names = names[info.school + "-" + sClassName]
+    } else {
+      sel_names = names["default"];
+    }
+
+    sel_names.forEach(function(name, index) {
+      var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning">' + (index+1) + " : " + ($.isArray(name) ? name[1] : name) + '</button>';
+      $(button).appendTo("#names");
+    });
+
+    sel_levels = level[levelLogin] || level["default"];
+    sel_levels.forEach(function(level_pw, index) {
+      var img = '<img class="character" data-img="'+(index+1)+'" src="'+level_pw+'"/>';
+      $(img).appendTo("#characters");
+    });
+    imgs = getImgs(yearmonth, code, sClassName, sel_levels);
+  }
+
+  function showBook() {
+    $(".contents").empty();
+    var book_titles = Object.keys(info.classes).filter(function(item) {
+      return info.classes[item].indexOf(sClassName) >= 0;
+    })[0].split(",");
+    book_titles.forEach(function(book_title) {
+      $(".contents")
+          .append('<hr class="star-light">')
+          .append('<h3><span data-msg="kidsthinking">' + msg[lang].kidsthinking + '</span> <span class="book">' + book_title + '</span></h3>');
+      var lang_str = info.lang ? "lang=" + info.lang : "";
+      books[book_title].forEach(function(item, idx) {
+        var isEnTitle = info.lang == "en" && item.length == 3,
+            title = isEnTitle ? item[1] : item[0],
+            link = item[item.length - 1],
+            conn = link.indexOf("#!") >= 0 ? "?" : "#",
+            $el = $('<a class="btn btn-lg btn-outline" rel="external">').appendTo(".contents");
+        $el.attr("href", link + (lang_str ? conn + lang_str : ""));
+        if(title.indexOf(":") >= 0) {
+          $el.append('<div class="book-idx">' + (idx+1) + '</div>');
+          title.split(":").forEach(function(text, i) {
+            $el.append('<div class="book-' + i + '">' + text + '</div>');
+          });
+        } else {
+          $el.text(title);
+        }
+      });
     });
   }
 
