@@ -5,7 +5,7 @@ KidsCoding = function() {
   this.workspace = null;
   this.isHorizontal = location.pathname.indexOf("mazeh") >= 0;
   if(this.isHorizontal) {
-    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 100;
+    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 150;
 
     var position = Blockly.VerticalFlyout.prototype.position;
     Blockly.VerticalFlyout.prototype.position = function() {
@@ -17,12 +17,25 @@ KidsCoding = function() {
       }
     };
 
-    // 안드로이드 구형 브라우저에서 블럭 이동 안되는 현상 수정
-    // SEE: https://gitlab.com/toycode/kidscoding/merge_requests/638
+    var getClientRect = Blockly.VerticalFlyout.prototype.getClientRect;
+    Blockly.VerticalFlyout.prototype.getClientRect = function() {
+      var rect = getClientRect.call(this);
+      if(rect) {
+        rect.height = -rect.top + this.height_;
+      }
+      return rect;
+    }
+
     var translateSurface = Blockly.DragSurfaceSvg.prototype.translateSurface;
     Blockly.DragSurfaceSvg.prototype.translateSurface = function(x, y) {
       translateSurface.call(this, x, y);
-      if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == 0 && this.SVG_.getBoundingClientRect().right == $(document).width())) {
+      if(goog.userAgent.EDGE_OR_IE) {
+        // Edge나 IE에서 블럭 위치 이상 현상 수정
+        x = _this.workspace.getFlyout().getWidth() * this.scale_;
+        this.SVG_.setAttribute("style", this.SVG_.getAttribute("style") + ";left:" + x.toFixed(2) + "px;");
+      } else if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == 0 && this.SVG_.getBoundingClientRect().right == $(document).width())) {
+        // 안드로이드 구형 브라우저에서 블럭 이동 안되는 현상 수정
+        // SEE: https://gitlab.com/toycode/kidscoding/merge_requests/638
         x = (x + _this.workspace.getFlyout().getWidth()) * this.scale_;
         y *= this.scale_;
         this.SVG_.setAttribute("style", this.SVG_.getAttribute("style") + ";left:" + x.toFixed(2) + "px;top:" + y.toFixed(2) + "px;");
