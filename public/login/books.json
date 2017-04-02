@@ -402,10 +402,10 @@
     ["컴퓨터에서 끌어다 놓기:인사하기 연습", "Say Hello", "/maze#!c1_w4/1"]
   ],
   "C-2":[
-    ["라나를 움직여보아요:라나를 움직여요", "Rana moves", "/mazeh#!c2_w1/1"],
+    ["라나를 움직여보아요:라나를 움직여요", "Lana moves", "/mazeh#!c2_w1/1"],
     ["여러 가지 모양을 알아보아요:더 멀리 움직여요", "Move Further", "/mazeh#!c2_w2/1"],
     ["마당의 보물을 찾아서:보물 찾기", "Find the Treasure", "/mazeh#!c2_w3/1"],
-    ["라나의 선물을 찾아서:선물 찾기", "Rana’s Hidden Gifts", "/mazeh#!c2_w4/1"]
+    ["라나의 선물을 찾아서:선물 찾기", "Lana’s Hidden Gifts", "/mazeh#!c2_w4/1"]
   ],
   "C-3":[
     ["즐거운 우리집&가족이 늘었어요:코스네 가족&덧셈 연습", "/mazeh#!c3_w1_c1/index"],

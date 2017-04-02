@@ -157,7 +157,7 @@ function getInfoByCode(code) {
           found = true;
           var classes = {};
           kinder.kinderClasses.forEach(function(classObj) {
-            var book = classObj.level + "-2:" + classObj.level + "-2";
+            var book = classObj.level + "-1," + classObj.level + "-2";
             if(!classes[book]) {
               classes[book] = [];
             }
@@ -315,7 +315,7 @@ public.get('/code/:code', function *(next) {
                 month = String((new Date()).getMonth() + 1);
             month = month.length == 1 ? "0" + month : month;
             kinder.kinderClasses.forEach(function(classObj) {
-              var book = classObj.level + "-2:" + classObj.level + "-2";
+              var book = classObj.level + "-1," + classObj.level + "-2";
               if(!classes[book]) {
                 classes[book] = [];
               }
@@ -366,7 +366,7 @@ public.get('/cache/:manifest', function *(next) {
           if(code == kcode) {
             var classes = {};
             kinder.kinderClasses.forEach(function(classObj) {
-              var book = classObj.level + "-2:" + classObj.level + "-2";
+              var book = classObj.level + "-1," + classObj.level + "-2";
               if(!classes[book]) {
                 classes[book] = [];
               }
@@ -392,24 +392,25 @@ public.get('/cache/:manifest', function *(next) {
       imgs = [],
       cache = [],
       output = "CACHE MANIFEST\n";
-  bookArr.forEach(function(bookName) {
-    bookName = bookName.split(":")[0];
-    books[bookName].forEach(function(contentInfo) {
-      var maniPath = contentInfo[contentInfo.length - 1],
-          pagePath = contentInfo[contentInfo.length - 1];
-      if(maniPath.indexOf("#!") >= 0) {
-        maniPath = maniPath.slice(maniPath.indexOf("#!") + 2);
-      }
-      maniPath = maniPath.slice(0, maniPath.lastIndexOf("/"));
-      if(maniPath && manifests.indexOf(maniPath) < 0) {
-        manifests.push(maniPath);
-      }
-      if(pagePath.indexOf("#!") >= 0) {
-        pagePath = pagePath.slice(0, pagePath.indexOf("#!"));
-      }
-      if(pages.indexOf(pagePath) < 0) {
-        pages.push(pagePath);
-      }
+  bookArr.forEach(function(bookNames) {
+    bookNames.split(",").forEach(function(bookName) {
+      books[bookName].forEach(function(contentInfo) {
+        var maniPath = contentInfo[contentInfo.length - 1],
+            pagePath = contentInfo[contentInfo.length - 1];
+        if(maniPath.indexOf("#!") >= 0) {
+          maniPath = maniPath.slice(maniPath.indexOf("#!") + 2);
+        }
+        maniPath = maniPath.slice(0, maniPath.lastIndexOf("/"));
+        if(maniPath && manifests.indexOf(maniPath) < 0) {
+          manifests.push(maniPath);
+        }
+        if(pagePath.indexOf("#!") >= 0) {
+          pagePath = pagePath.slice(0, pagePath.indexOf("#!"));
+        }
+        if(pages.indexOf(pagePath) < 0) {
+          pages.push(pagePath);
+        }
+      });
     });
   });
   function addImg(arr) {

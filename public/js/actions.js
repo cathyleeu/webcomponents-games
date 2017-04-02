@@ -603,7 +603,6 @@ Actions.prototype.getItem3 = function(block, callback) {
       total_itemCount = total_itemCount + items[i].itemCount;
     }
   }
-      debugger
   if( !item ) {
     // 아이템을 가져올 수 없다면
     callback("아이템을 가져올 수 없어요");
@@ -729,7 +728,6 @@ Actions.prototype.useItem2 = function(block, callback) {
 
   // 목표 위에서 아이템 사용(패턴 매칭)
   var food = this._getCanvasObject(character.px, character.py, "food");
-  debugger
   if(food && food.useItem) {
     if(character.itemList && character.itemList.length>0) {
       // 다수의 아이템
