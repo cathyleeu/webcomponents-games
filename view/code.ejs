@@ -169,7 +169,7 @@ if(location.pathname == "/code" && location.hash) {
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<script src="/components/page/page.js"></script>
+<script src="/page/page.js"></script>
 <script>
   var code = "<%=code%>";
   var info = <%-typeof info == "undefined" ? "{}" : info%>;
@@ -290,7 +290,9 @@ if(location.pathname == "/code" && location.hash) {
       $("[data-view=" + view + "]").show();
       $(window).scrollTop(0);
     });
-    page();
+    page({
+      hashChange: true
+    });
   }
 
   function showClass() {

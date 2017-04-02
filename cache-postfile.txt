@@ -19,7 +19,7 @@
 /components/PreloadJS/lib/preloadjs-0.6.2.min.js
 /components/SoundJS/lib/soundjs-0.6.2.min.js
 /components/TweenJS/lib/tweenjs-0.6.2.min.js
-/components/page/page.js
+/page/page.js
 /GoogleBlockly/blockly_compressed.js
 /GoogleBlockly/blocks_compressed.js
 /GoogleBlockly/javascript_compressed.js
