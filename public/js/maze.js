@@ -207,6 +207,11 @@ function init() {
     gameMode(loader, maze.type, tileFactory);
   }
   handle_resize();
+  if(document.fullscreenEnabled) {
+    $("#fullscreen").show();
+  } else {
+    $("#fullscreen").hide();
+  }
   $("#doFS").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -241,9 +246,14 @@ function init() {
       $('<img class="goal-img">').attr(attrs).appendTo(".goal-imgs");
     });
     $(".goal .goal-msg").html(goal["msg" + (lang ? ":" + lang : "")] || goal["msg"]);
-    if(fullscreen == undefined) {
+    var fullscreenEnabled =
+        document.fullscreenEnabled ||
+      	document.webkitFullscreenEnabled ||
+      	document.mozFullScreenEnabled ||
+      	document.msFullscreenEnabled;
+    if(fullscreen == undefined && fullscreenEnabled) {
       showModal({
-        msg: "풀스크린으로 하시겠습니까?",
+        msg: messages.ask_fullscreen,
         fullscreen: true
       })
     } else {
