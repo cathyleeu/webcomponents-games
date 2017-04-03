@@ -24,6 +24,7 @@ KidsCoding = function() {
       var rect = getClientRect.call(this);
       if(rect) {
         rect.height = -rect.top + this.height_;
+        rect.width += 1E9;
       }
       return rect;
     }
