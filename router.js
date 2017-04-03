@@ -166,6 +166,9 @@ function getInfoByCode(code) {
           auth_db.logins.find({kinderId:kinder.code}).then(function(logins) {
             var time = user.updateOn || user.createdOn,
                 month = String((new Date()).getMonth() + 1);
+            if(user.code == "C00071") {
+              month = "3";
+            }
             month = month.length == 1 ? "0" + month : month;
             resolve({
               school: kinder.name,
