@@ -5,7 +5,9 @@ KidsCoding = function() {
   this.workspace = null;
   this.isHorizontal = location.pathname.indexOf("mazeh") >= 0;
   if(this.isHorizontal) {
-    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 150;
+    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 160;
+    Blockly.Flyout.prototype.MARGIN = 25;
+    Blockly.Colours.flyout = "#EEEEEE";
 
     var position = Blockly.VerticalFlyout.prototype.position;
     Blockly.VerticalFlyout.prototype.position = function() {
