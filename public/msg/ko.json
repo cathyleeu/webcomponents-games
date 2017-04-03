@@ -8,6 +8,7 @@
   "retry": "다시 해보기",
   "select": "선택",
   "next": "다음",
+  "ask_fullscreen":"전체화면 모드로 진행할까요?",
   "request_fullscreen":"네",
   "cancel_fullscreen":"아니오",
   "next_stage": "다음 단계로 이동",
@@ -17,5 +18,5 @@
   "fail_done": "블럭을 다 썼지만 끝나지 않았어요",
   "fail_noBlocks": "블럭이 하나도 없어요!",
   "fail_notEnough": "%1 개 이상 모아야 해요",
-  "fullscreen": "풀스크린"
+  "fullscreen": "전체화면"
 }
