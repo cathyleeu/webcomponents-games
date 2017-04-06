@@ -13,7 +13,8 @@ var public = require('koa-router')(),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
     auth_db = pmongo(config.auth_db, ["user", "logins"]),
-    url_json = require('./public/login/url.json');
+    url_json = require('./public/login/url.json'),
+    books_json = require('./public/login/books.json');
 
 var defaultTimeStamp = new Date().toISOString();
 
@@ -532,6 +533,13 @@ public.get('/cache/:manifest', function *(next) {
 
   this.body = output;
 
+});
+
+public.get('/nav/:book', function *(next) {
+  yield this.render('nav', {
+    name: this.params.book,
+    contents: books_json[this.params.book]
+  });
 });
 
 public.get('/login', function *(next) {
