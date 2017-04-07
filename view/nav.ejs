@@ -14,7 +14,7 @@
     background-color: #E53;
   }
   .btn-outline {
-     width: 300px;
+     width: 100%;
      height: 60px;
      line-height: 60px;
      display: block;
@@ -37,22 +37,58 @@
   h3 {
     margin-bottom: 30px;
   }
-  .book-idx {
+  .book {
+    display: flex;
+    margin: 10px auto;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+    border: solid 2px white;
+    background: transparent;
+    border-radius: 6px;
+  }
+  .book-header {
     padding: 0 10px;
     border-right: 1px solid white;
-    display: inline-block;
-    height: 58px;
-    float: left;
     font-weight: bold;
+    width: 40px;
+    line-height: 58px;
+  }
+  .book-title {
+    width: 240px;
+    text-align: center;
+    float: left;
+    border-right: 1px solid white;
+    padding-right: 10px;
   }
   .book-0 {
-    height: 32px;
     line-height: 32px;
   }
   .book-1 {
-    height: 24px;
     line-height: 24px;
     font-size: 14px;
+  }
+  .book-list {
+    text-align: left;
+    flex: 1;
+    padding: 0 10px;
+  }
+  .book-problem {
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 0 8px;
+    height: 40px;
+    line-height: 40px;
+    margin: 9px 0;
+    min-width: 40px;
+    text-align: center;
+  }
+  .book-problem:hover {
+    background-color: white;
+    color: #18bc9c;
+    text-decoration: none;
   }
   .star-light {
     margin: 50px auto 30px !important;
@@ -76,13 +112,26 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>키즈씽킹 <%=name%></h2>
+                <h2>키즈씽킹 <%=book%></h2>
                 <% for(i = 0; i < contents.length; i++) { %>
-                  <a class="btn btn-lg btn-outline" rel="external" href="<%=contents[i][2]%>">
-                    <div class="book-idx"><%=i+1%></div>
-                    <div class="book-0"><%=contents[i][0].split(":")[0]%></div>
-                    <div class="book-1"><%=contents[i][0].split(":")[0]%></div>
-                  </a>
+                  <div class="book">
+                    <div class="book-header">
+                      <%=i+1%>
+                    </div>
+                    <div class="book-title">
+                      <div class="book-0"><%=contents[i].title%></div>
+                      <div class="book-1"><%=contents[i].subtitle%></div>
+                    </div>
+                    <div class="book-list">
+                      <% if(contents[i].problems.length > 0) { %>
+                        <% for(j = 0; j < contents[i].problems.length; j++) { %>
+                          <a class="book-problem" rel="external" href="<%=contents[i].href + '/' + contents[i].problems[j]%>"><%=contents[i].problems[j]%></a>
+                        <% } %>
+                      <% } else { %>
+                      <a class="book-problem" rel="external" href="<%=contents[i].href%>">문제 풀기</a>
+                      <% } %>
+                    </div>
+                  </div>
                 <% } %>
             </div>
         </div>

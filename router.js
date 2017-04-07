@@ -530,10 +530,37 @@ public.get('/cache/:manifest', function *(next) {
 
 });
 
-public.get('/nav/:book', function *(next) {
+public.post('/nav', function *(next) {
+  var list = books_json[this.request.body.book].slice(0, Number(this.request.body.week)),
+      contents = list.map(function(item) {
+        var problems = [],
+            href = item[2];
+        if(href.slice(0, 5) == "/maze") {
+          var path = href.slice(href.indexOf("#!")+2, href.lastIndexOf("/")),
+              dir = fs.readdirSync("public/maze/" + path);
+          dir.forEach(function(item) {
+            if(item.slice(-5) == ".json" && item != "manifest.json") {
+              problems.push(item.slice(0, -5));
+            }
+          });
+        }
+        problems.sort(function(a, b) {
+          return Number(a) - Number(b);
+        });
+        if(problems.length > 0) {
+          href = href = href.slice(0, href.lastIndexOf("/"));
+        }
+        return {
+          title: item[0].split(":")[0],
+          subtitle: item[0].split(":")[1],
+          href: href,
+          problems: problems
+        };
+      });
+
   yield this.render('nav', {
-    name: this.params.book,
-    contents: books_json[this.params.book]
+    book: this.request.body.book,
+    contents: contents
   });
 });
 
