@@ -166,11 +166,8 @@ function getInfoByCode(code) {
           });
           auth_db.logins.find({kinderId:kinder.code}).then(function(logins) {
             var time = user.updateOn || user.createdOn,
-                month = String((new Date()).getMonth() + 1);
-            if(user.code == "C00071") {
-              month = "3";
-            }
-            month = month.length == 1 ? "0" + month : month;
+                month = user.code == "C00071" ? "03" : "04";
+            // 대구지사 03월로 고정 예외처리
             resolve({
               school: kinder.name,
               school_name: user.branch.sub_name || "",
@@ -316,8 +313,6 @@ public.get('/code/:code', function *(next) {
           var kcode = getCode(user.branch.name, kinder.name);
           if(code == kcode) {
             var classes = {},
-                month = String((new Date()).getMonth() + 1);
-            month = month.length == 1 ? "0" + month : month;
             kinder.kinderClasses.forEach(function(classObj) {
               var book = classObj.level + "-1," + classObj.level + "-2";
               if(!classes[book]) {
@@ -328,7 +323,7 @@ public.get('/code/:code', function *(next) {
             info = {
               school: kinder.name,
               code: code,
-              date: "2017" + month + "01",
+              date: "20170401",
               classes: classes,
               lang: kinder.lang || ""
             };
