@@ -312,7 +312,7 @@ public.get('/code/:code', function *(next) {
         user.kinders.forEach(function(kinder) {
           var kcode = getCode(user.branch.name, kinder.name);
           if(code == kcode) {
-            var classes = {},
+            var classes = {};
             kinder.kinderClasses.forEach(function(classObj) {
               var book = classObj.level + "-1," + classObj.level + "-2";
               if(!classes[book]) {
