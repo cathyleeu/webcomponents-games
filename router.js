@@ -188,6 +188,22 @@ function getInfoByCode(code) {
   });
 }
 
+function getKinder(kinderId) {
+  var code = kinderId.split("-")[0];
+  return new Promise(function(resolve, reject) {
+    auth_db.user.findOne({code:code}).then(function(user) {
+      if(user) {
+        var kinder = user.kinders.filter(function(kinder) {
+          return kinder.code == kinderId;
+        })[0];
+        resolve(kinder || {});
+        return;
+      }
+      resolve({});
+    });
+  });
+}
+
 // See: http://stackoverflow.com/questions/19877246/nodemailer-with-gmail-and-nodejs
 nev.configure({
   verificationURL: siteUrl + '/confirmTempUser/${URL}',
@@ -202,17 +218,12 @@ nev.configure({
     }
   },
   verifyMailOptions: {
-    from: '키즈코딩 <toycodeinc_do_not_reply@gmail.com>',
-    subject: '키즈코딩 회원 이메일 인증',
-    html: '<p>다음의 링크를 클릭하시면 이메일 인증이 완료됩니다 : </p><p>${URL}</p>',
+    from: '키즈씽킹 <toycodeinc_do_not_reply@gmail.com>',
+    subject: '키즈씽킹 회원 이메일 인증',
+    html: '<h1>키즈씽킹 회원 이메일 인증</h1><p>다음의 링크를 클릭하시면 이메일 인증이 완료됩니다 : </p><p>${URL}</p>',
     text: '다음의 링크를 클릭하시면 이메일 인증이 완료됩니다 : ${URL}'
   },
-  confirmMailOptions: {
-    from: '키즈코딩 <toycodeinc_do_not_reply@gmail.com>',
-    subject: '키즈코딩 회원 가입 완료',
-    html: '<p>키즈코딩 회원 가입이 완료 되었습니다.</p>',
-    text: '키즈코딩 회원 가입이 완료 되었습니다.'
-  }
+  shouldSendConfirmation: false
 });
 nev.generateTempUserModel(Users);
 
@@ -337,6 +348,28 @@ public.get('/code/:code', function *(next) {
     code: code,
     info: JSON.stringify(info)
   });
+});
+
+secured.get('/homeschool/:classId', function *(next) {
+  var classId = this.params.classId,
+      kinderId = classId.split("-").slice(0, 2).join("-"),
+      kinder = yield getKinder(kinderId),
+      info = yield getInfoByCode(kinder.url),
+      className = kinder.kinderClasses.filter(function(item) {
+        return item.code == classId;
+      })[0].className;
+
+  yield this.render('code', {
+    code: kinder.url,
+    info: JSON.stringify(info),
+    className: className
+  });
+});
+
+public.get('/kinder/:kinderId', function *(next) {
+  var kinder = yield getKinder(this.params.kinderId);
+  this.type = "application/json";
+  this.body = JSON.stringify(kinder);
 });
 
 public.get('/cache/:manifest', function *(next) {
@@ -639,12 +672,9 @@ public.get('/registration', function *(next) {
 public.post('/createTempUser', function *(next) {
   var code = this.request.body.code.split("-");
   var newUser = Users({
-    name: this.request.body.name,
     email: this.request.body.email,
     password: this.request.body.password,
-    code: code[0],
-    school: code[1],
-    className: this.request.body.className
+    code: this.request.body["kinder-class"]
   });
 
   var result = yield createTempUser(newUser),
@@ -664,7 +694,7 @@ public.post('/createTempUser', function *(next) {
       console.log(err);
       this.body = "유저 등록 에러";
     }
-    this.body = "입력하신 메일로 이메일 인증 메세지를 보냈습니다. \n이메일 인증을 하시면 로그인하실수 있습니다.";
+    this.redirect("/login-home?verify");
   } else {
     // user already exists in our temporary collection
     console.log("ERROR: user already exists");
@@ -681,7 +711,7 @@ public.get('/confirmTempUser/:url', function *(next) {
   }
   if(result.user) {
     // redirect to their profile
-    this.redirect('/login-home');
+    this.redirect('/login-home?registered');
   } else {
     // redirect to sign-up
     this.redirect('/registration');
@@ -741,14 +771,14 @@ public.get('/mazeh', function *(next) {
 public.post('/api/login', function*(next) {
   var user = yield Users.findOne({email: this.request.body.email});
   yield passport.authenticate('local', {
-    successRedirect: '/login#' + user.code + '-' + encodeURI(user.className) + '-kids',
-    failureRedirect: '/login-home'
+    successRedirect: '/homeschool/' + (user ? user.code : ""),
+    failureRedirect: '/login-home?loginfailed'
   });
 });
 
 public.get('/api/logout', function*(next) {
   this.logout();
-  this.redirect('/login-home');
+  this.redirect('/login-home?loggedout');
 });
 
 public.get('/camera', function *(next) {

@@ -173,10 +173,10 @@ if(location.pathname == "/code" && location.hash) {
 <script>
   var code = "<%=code%>";
   var info = <%-typeof info == "undefined" ? "{}" : info%>;
-  var names, level, books;
+  var sClassName = <%-typeof className == "undefined" ? "null" : '"'+className+'"'%>;
   var view = 0,
-      sClassName = null,
       imgs = [];
+  var names, level, books;
   var lang = info ? (info.lang || "ko") : "ko",
       msg = {
         ko: {
@@ -260,7 +260,11 @@ if(location.pathname == "/code" && location.hash) {
     });
     $("#goNext").click(function(e) {
       e.preventDefault();
-      page(location.hash + "&book=true");
+      if(location.hash) {
+        page(location.hash + "&book=true");
+      } else {
+        page(location.pathname + "#book=true");
+      }
     });
   }
 
@@ -272,20 +276,30 @@ if(location.pathname == "/code" && location.hash) {
         var token = str.split("=");
         qs[token[0]] = token[1];
       });
-      if(hash == "") {
-        view = 0;
-        showClass();
-      } else if(qs.className && !qs.book) {
-        view = 1;
-        sClassName = qs.className;
-        showLogin();
+      if(ctx.path.slice(0, 6) == "/code/") {
+        if(hash == "") {
+          view = 0;
+          showClass();
+        } else if(qs.className && !qs.book) {
+          view = 1;
+          sClassName = qs.className;
+          showLogin();
+        } else {
+          view = 2;
+          sClassName = qs.className;
+          showBook();
+        }
       } else {
-        view = 2;
-        sClassName = qs.className;
-        showBook();
+        if(hash == "") {
+          view = 1;
+          showLogin();
+        } else {
+          view = 2;
+          showBook();
+        }
       }
       $(".school").text(info.school_name || info.school);
-      qs.className && $(".className").text(qs.className);
+      sClassName && $(".className").text(sClassName);
       $("[data-view]").hide();
       $("[data-view=" + view + "]").show();
       $(window).scrollTop(0);

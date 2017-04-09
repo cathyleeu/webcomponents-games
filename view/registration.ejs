@@ -1,97 +1,124 @@
-<form class="form-horizontal" action="/createTempUser" method="post">
-<fieldset>
+<style>
+#kinder-info {
+  height: 38px;
+  line-height: 38px;
+  display: inline-block;
+}
+</style>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="name">성명</label>
-  <div class="col-md-4">
-    <input id="name" name="name" type="text" placeholder="이름을 입력해주세요" class="form-control input-md" required="">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>키즈씽킹 가정학습</h1>
+      <h2>학부모 회원가입 안내</h2>
+      <div>
+        * 키즈씽킹 가정학습 기능은 원에서 키즈씽킹을 사용하시는 경우에만 사용하실 수 있습니다.
+      </div>
+      <div>
+        * 키즈씽킹 가정학습 회원가입을 하시려면 "원 코드"가 필요합니다. "원 코드"는 각 유치원이나 어린이집에 부여된 고유한 코드입니다.
+      </div>
+
+      <h2>학부모 회원가입</h2>
+      <form class="form-horizontal" action="/createTempUser" method="post">
+      <fieldset>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="code">원 코드 입력 </label>
+        <div class="col-md-4">
+          <input id="code" name="code" type="text" placeholder="원코드를 입력해주세요" class="form-control input-md" required="">
+          <button style="margin-top:10px;" id="code-check" name="code-check" class="btn btn-primary">원코드 확인</button>
+          <div id="kinder-info">원 코드를 입력하셔야 가입하실 수 있습니다.</div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="kinder-class">반 선택</label>
+        <div class="col-md-4">
+          <select id="kinder-class" name="kinder-class" class="form-control input-md" required="" disabled="">
+          </select>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="email">이메일</label>
+        <div class="col-md-4">
+          <input id="email" name="email" type="text" placeholder="이메일주소" class="form-control input-md" required="" disabled="">
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="password">비밀번호</label>
+        <div class="col-md-4">
+          <input id="password" name="password" type="password" placeholder="비밀번호" class="form-control input-md" required="" disabled="">
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="password-confirm">비밀번호 확인</label>
+        <div class="col-md-4">
+          <input id="password-confirm" name="password-confirm" type="password" placeholder="비밀번호 확인" class="form-control input-md" required="" disabled="">
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="submit"></label>
+        <div class="col-md-4">
+          <button id="submit" name="submit" class="btn btn-primary" disabled="">가입</button>
+        </div>
+      </div>
+
+      </fieldset>
+      </form>
+    </div>
   </div>
 </div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="email">이메일</label>
-  <div class="col-md-4">
-    <input id="email" name="email" type="text" placeholder="이메일주소" class="form-control input-md" required="">
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="password">비밀번호</label>
-  <div class="col-md-4">
-    <input id="password" name="password" type="password" placeholder="비밀번호" class="form-control input-md" required="">
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="password-confirm">비밀번호 확인</label>
-  <div class="col-md-4">
-    <input id="password-confirm" name="password-confirm" type="password" placeholder="비밀번호 확인" class="form-control input-md" required="">
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="code">원 선택</label>
-  <div class="col-md-4">
-    <select id="code" name="code" class="form-control input-md">
-      <option value="">== 원 선택 ==</option>
-    </select>
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="className">반 선택</label>
-  <div class="col-md-4">
-    <select id="className" name="className" class="form-control input-md">
-      <option value="">== 반 선택 ==</option>
-    </select>
-  </div>
-</div>
-
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="submit"></label>
-  <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-primary">가입</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
 <script>
 $(function(){
-  $("#code").change(function(e){
-    var code = $(e.target).val().slice(0, 5);
-    $("#className").html("");
-    $.get("login/url.json", function(urls){
-      urls.forEach(function(item){
-        if(code == item.code){
-          var classes = Object.keys(item.classes).reduce(function(arr, key) {
-                return arr.concat(item.classes[key])
-              }, []),
-              eachClass = classes.map(function(className){
-                return "<option value='"+className+"'>" + className + "</option>"
-              });
-          $("#className").append(eachClass);
-        }
-      })
+  $("#code").blur(function() {
+    var val = $("#code").val().trim().toUpperCase();
+    $("#code").val(val);
+  });
+  $("#code-check").click(function(e) {
+    e.preventDefault();
+    var kinder = $("#code").val().trim().toUpperCase();
+    $.get("/kinder/" + kinder, function(kinder) {
+      $("#kinder-class").empty();
+      if(kinder._id) {
+        $("#kinder-class,#email,#password,#password-confirm,#submit").prop("disabled", false);
+        $("#kinder-info").text("원 코드 조회 결과 : " + kinder.name);
+        $("#kinder-class").append("<option value=\"\">- 반 선택 -</option>");
+        kinder.kinderClasses.forEach(function(item) {
+          $("#kinder-class").append("<option value=\"" + item.code + "\">" + item.className + "</option>");
+        });
+      } else {
+        $("#kinder-class,#email,#password,#password-confirm,#submit").prop("disabled", true);
+        $("#kinder-info").text("원 코드를 조회할 수 없습니다.");
+      }
     })
   });
-  $.get("login/url.json", function(urls){
-    urls.forEach(function(item){
-      $("#code").append('<option value="'+item.code+'-'+item.school+'">'+item.school+'</option>');
-    });
-  });
-  $("#submit").click(function(){
-    var selectClass = $("select#className").val() || "";
-    if(selectClass == ""){
-      alert("원을 선택해 주세요.");
+  $("#submit").click(function(e) {
+    function validateEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     }
-  })
+    if(!validateEmail($("#email").val())) {
+      e.preventDefault();
+      alert("유효한 이메일 형식이 아닙니다.");
+    }
+    if($("#password").val() != $("#password-confirm").val()) {
+      e.preventDefault();
+      alert("비밀번호가 일치하지 않습니다.");
+    }
+    if($("#password").val().length < 8) {
+      e.preventDefault();
+      alert("비밀번호는 8자리 이상이여야 합니다.");
+    }
+  });
 });
 </script>
