@@ -14,7 +14,9 @@
 
 
   <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-starturl" content="/code/<?=manifest?>">
+  <% if(typeof manifest !== 'undefined') { %>
+  <meta name="msapplication-starturl" content="/code/<%=manifest%>">
+  <% } %>
   <link rel="icon" type="image/png" sizes="192x192" href="/img/homescreen192x192.png"> <!--주소창 이미지-->
   <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/img/homescreen192x192.png"> <!--사파리에서 저장할 때 -->
   <meta name="msapplication-navbutton-color" content="#18bc9c">

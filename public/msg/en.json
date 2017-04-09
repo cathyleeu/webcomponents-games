@@ -18,5 +18,6 @@
   "fail_done": "Try it again.",
   "fail_noBlocks": "No blocks!",
   "fail_notEnough": "You need %1",
-  "fullscreen": "FullScreen"
+  "fullscreen": "FullScreen",
+  "goal": "Goal"
 }
