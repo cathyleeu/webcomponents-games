@@ -1,18 +1,36 @@
 <link href="/css/signin.css" rel="stylesheet">
-<div class="container">
 
-  <form class="form-signin" action="/api/login" method="post">
-    <h2 class="form-signin-heading">키즈코딩 가정학습 <sup style="color:#27D27B">beta</sup></h2>
-    <label for="email" class="sr-only">이메일</label>
-    <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
-    <label for="password" class="sr-only">비밀번호</label>
-    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
-    <br/>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
-  </form>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <form class="form-signin" action="/api/login" method="post">
+        <h2 class="form-signin-heading">키즈코딩 가정학습 <sup style="color:#27D27B">beta</sup></h2>
+        <label for="email" class="sr-only">이메일</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="password" class="sr-only">비밀번호</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+        <div><a style="margin-top:10px;float:right" href="/registration">회원 가입 하기</a></div>
+      </form>
+    </div>
+  </div>
 
 </div> <!-- /container -->
 
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <!--script src="../../assets/js/ie10-viewport-bug-workaround.js"></script-->
+
+<script>
+var qs = location.search;
+if(qs == "?loginfailed") {
+  alert("로그인 실패 : 아이디와 패스워드를 확인해주세요.");
+} else if(qs == "?loggedout") {
+  alert("로그아웃 완료");
+} else if(qs == "?registered") {
+  alert("회원가입 완료 : 로그인 해주세요.");
+} else if(qs == "?verify") {
+  alert("입력하신 메일로 이메일 인증 메세지를 보냈습니다. \n이메일 인증을 하시면 로그인하실수 있습니다.");
+}
+</script>
