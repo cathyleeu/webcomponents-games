@@ -564,7 +564,10 @@ public.get('/cache/:manifest', function *(next) {
 });
 
 public.post('/nav', function *(next) {
-  var list = books_json[this.request.body.book].slice(0, Number(this.request.body.week)),
+  var books = books_json[this.request.body.book],
+      list = this.request.body.week.split(",").map(function(idx) {
+        return books[Number(idx)-1];
+      }),
       contents = list.map(function(item) {
         var problems = [],
             href = item[2];
@@ -593,6 +596,7 @@ public.post('/nav', function *(next) {
 
   yield this.render('nav', {
     book: this.request.body.book,
+    week: this.request.body.week,
     contents: contents
   });
 });
