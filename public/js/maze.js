@@ -681,8 +681,9 @@ function addEvents() {
       if(link.slice(0, 7) == "http://" || link.slice(0, 1) == "/") {
         location.href = link;
       } else {
+        var lang = store.get("lang");
         store.set("queries", {});
-        page(link);
+        page(link + (lang ? "?lang=" + lang : ""));
       }
       return;
     }
