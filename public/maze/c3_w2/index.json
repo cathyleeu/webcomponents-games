@@ -81,22 +81,16 @@
     "min_score": 15
   }],
   "tutorial": [{
-    "msg:ko": "숲속에는 꿀단지가 있대 ",
-    "msg:en": "There are hunnu pot in the forest",
-    "img": "/img/c3_w2/hunny_pot.png"
-  }, {
-    "msg:ko": "코스는 숲길을 안전하게 가기 위해서 곰옷을 입었어",
-    "msg:en": "Cos put on the bear's clothes for safe"
-  }, {
     "msg:ko": "꿀단지를 모아서 집으로 가져 갈꺼야",
-    "msg:en": "Collect the hunny pot and go to my house",
-    "img": "/img/c3_w1/house.png"
+    "msg:en": "Collect the hunny pot and go to my house"
   }, {
     "msg:ko": "15개의 꿀단지를 모은뒤,",
-    "msg:en": "Collect 15 hunny pots and,"
+    "msg:en": "Collect 15 hunny pots and,",
+    "img": "/img/c3_w2/hunny_pot.png"
   }, {
     "msg:ko": "집으로 이동하자!",
     "msg:en": "Move to my house!",
+    "img": "/img/c3_w1/house.png",
     "x" : 21,
     "y" : 3
   },{

@@ -61,28 +61,13 @@
     "min_score": 10
   }],
   "tutorial": [{
-    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
-    "msg:en": "Press 'Next' Button~ 　　　　　　　↘"
+    "msg:ko": "덧셈 문제를 해결하면, 별 1개를 모을 수 있어",
+    "msg:en": "When solve the addition problem, You can get a star",
+    "img": "/img/c3_w1/star.png"
   }, {
-    "msg:ko": "덧셈을 해보자!",
-    "msg:en": "Let's solve the 'Plus' problem!",
-    "img": "/img/c3_w1/plus_title.png"
-  }, {
-    "msg:ko": "만약 1 + 3 = ? 이라는 문제가 나오면",
-    "msg:en": "If you want to solve the 'Plus' problem '1 + 3 = ? '",
-    "img": "/img/c3_w1/1plus3.png"
-  }, {
-    "msg:ko": "4가 답이니까 코딩맵에서 4를 찾아가면 되는거야!",
-    "msg:en": "you will move to '4'in coding map"
-  }, {
-    "msg:ko": "총 10문제를 깨야 다음 단계로 넘어갈 수 있어",
-    "msg:en": "To move next stage, you have to solve 10 problems"
-  }, {
-    "msg:ko": "10개의 별을 모은뒤,",
-    "msg:en": "Collect 10 stars and,"
-  }, {
-    "msg:ko": "꿀단지로 이동하자!",
-    "msg:en": "Move to Hunny pot!",
+    "msg:ko": "10개의 별을 모은뒤, 꿀단지로 이동하자!",
+    "msg:en": "Collect 10 stars and, Move to Hunny pot!",
+    "img": "/img/c3_w1/hunny_pot.png",
     "x" : 16,
     "y" : 3
   },{

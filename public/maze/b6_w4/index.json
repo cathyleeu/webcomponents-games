@@ -112,18 +112,6 @@
     "msg:en": "Let's go to the airport!",
     "img": "/img/b6_w4/airport.png"
   }, {
-    "msg:ko": "쉬운 문제는 공항 1 개를 주어요.",
-    "msg:en": "An easy problem gives you one airport.",
-    "img": "/img/guide/easy.png"
-  }, {
-    "msg:ko": "보통 문제는 공항 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two airports.",
-    "img": "/img/guide/normal.png"
-  }, {
-    "msg:ko": "어려운 문제는 공항 3개를 주어요.",
-    "msg:en": "A hard problem gives you three airports.",
-    "img": "/img/guide/hard.png"
-  }, {
     "msg:ko": "공항 21개를 모으면 비행기를 타러 가요.",
     "msg:en": "Take the airplane with more than 21 airports.",
     "img": "/img/b6_w4/airplane.png",

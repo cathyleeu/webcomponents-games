@@ -61,26 +61,12 @@
     "min_score": 10
   }],
   "tutorial": [{
-    "msg:ko": "할머니 할아버지가 우주선 없어요 ",
-    "msg:en": "Cos' grandparents are not in the UFO",
-    "img": "/img/b3_w2/grandp.png"
-  }, {
-    "msg:ko": "할머니 할아버지는 어디 가셨지?",
-    "msg:en": "Where is my grandparents?"
-  }, {
-    "msg:ko": "내가 도와줄까?",
-    "msg:en": "Can I help you?",
-    "img": "/img/b3_w2/deer.png"
-  }, {
     "msg:ko": "사슴 디어와 할머니 할아버지의 흔적을 찾아보아요",
     "msg:en": "Let's find out Cos' grandparents' trace with Deer",
     "img": "/img/b3_w3/gran_picture.png"
   }, {
-    "msg:ko": "10개의 흔적을 찾은 뒤,",
-    "msg:en": "Find out ten traces"
-  }, {
-    "msg:ko": "할머니 할아버지에게 이동하자!",
-    "msg:en": "and move to Cos' grandparents!",
+    "msg:ko": "10개의 흔적을 찾은 뒤,할머니 할아버지에게 이동하자!",
+    "msg:en": "Find out ten traces and move to Cos' grandparents!",
     "x" : 16,
     "y" : 3
   },{
