@@ -21,12 +21,9 @@
     "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
     "msg:en": "Press 'Next' Button~ 　　　　　　　↘"
   }, {
-    "msg:ko": "오른쪽 우주선으로 이동하여 　'코스네 가족'을 　　완료하면",
+    "msg:ko": "오른쪽 우주선으로 이동하여 　'코스네 가족'을 　　완료하자",
     "msg:en": "Go to the UFO on the right and complete 'Cos' Family' stage,",
     "img": "/img/b3_w1/ufo.png"
-  }, {
-    "msg:ko": "다른 곳으로 이동할 수 있어요",
-    "msg:en": "then you can go the next stage"
   }, {
     "msg:ko": "가상 키보드를 이용하여 코스를 움직일 수 있어요",
     "msg:en": "you can move 'Cos' character by virtual keyboard",

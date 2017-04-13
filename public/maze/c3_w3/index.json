@@ -85,11 +85,8 @@
     "msg:en": "I'm going to take hunny pot's to my house",
     "img": "/img/c3_w1/house.png"
   }, {
-    "msg:ko": "15번 집으로 꿀단지를 가져간 뒤,",
-    "msg:en": "Take 15 times hunny pots and,"
-  }, {
-    "msg:ko": "엄마에게 이동하자!",
-    "msg:en": "Move to my mom!",
+    "msg:ko": "15번 집으로 꿀단지를 가져간 뒤, 엄마에게 이동하자!",
+    "msg:en": "Take 15 times hunny pots and,Move to my mom!",
     "x" : 21,
     "y" : 3
   },{

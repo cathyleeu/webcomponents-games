@@ -150,29 +150,6 @@
       "style": "width:25%"
     }]
   }, {
-    "msg:ko": "보통 문제는 선물 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two gifts.",
-    "img":  [{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    }]
-  }, {
-    "msg:ko": "어려운 문제는 선물 3 개를 주어요.",
-    "msg:en": "A normal problem gives you three gifts.",
-    "img":  [{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    }]
-  }, {
     "msg:ko": "선물 36개를 모으면 토드에게로 가요.",
     "msg:en": "Go to Tode with more than 36 gifts.",
     "img": "/img/c5/TutoToad4_256.png",

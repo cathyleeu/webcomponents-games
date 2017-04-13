@@ -146,34 +146,7 @@
       "style": "width:25%"
     }]
   }, {
-    "msg:ko": "쉬운 문제는 연꽃 1 개를 주어요.",
-    "msg:en": "An easy problem gives you one lotus flower.",
-    "img":"/img/c5/lotus_flower.png"
-  }, {
-    "msg:ko": "보통 문제는 연꽃 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two lotus flowers.",
-    "img":  [{
-      "src": "/img/c5/lotus_flower.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/lotus_flower.png",
-      "style": "width:33%"
-    }]
-  }, {
-    "msg:ko": "어려운 문제는 연꽃 3 개를 주어요.",
-    "msg:en": "A normal problem gives you three lotus flowers.",
-    "img":  [{
-      "src": "/img/c5/lotus_flower.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/lotus_flower.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/lotus_flower.png",
-      "style": "width:33%"
-    }]
-  }, {
-    "msg:ko": "연꽃 30개를 모으면 토드에게로 가요.",
+    "msg:ko": "연꽃 30개를 모으고 토드에게로 가요.",
     "msg:en": "Go to Tode with more than 30 lotus flowers.",
     "img": "/img/c5/TutoToad4_256.png",
     "x" : 16,

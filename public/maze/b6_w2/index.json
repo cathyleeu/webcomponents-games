@@ -112,18 +112,6 @@
     "msg:en": "Let's go to the train station!",
     "img": "/img/b6_w2/trainstation.png"
   }, {
-    "msg:ko": "쉬운 문제는 기차역 1 개를 주어요.",
-    "msg:en": "An easy problem gives you one train station.",
-    "img": "/img/guide/easy.png"
-  }, {
-    "msg:ko": "보통 문제는 기차역 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two train stations.",
-    "img": "/img/guide/normal.png"
-  }, {
-    "msg:ko": "어려운 문제는 기차역 3개를 주어요.",
-    "msg:en": "A hard problem gives you three train station.",
-    "img": "/img/guide/hard.png"
-  }, {
     "msg:ko": "기차역 21개를 모으면 기차를 타러 가요.",
     "msg:en": "Take the train with more than 21 train stations.",
     "img": "/img/b6_w2/train.png",
