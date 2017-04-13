@@ -5,7 +5,7 @@ KidsCoding = function() {
   this.workspace = null;
   this.isHorizontal = location.pathname.indexOf("mazeh") >= 0;
   if(this.isHorizontal) {
-    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 180;
+    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 200;
     Blockly.Flyout.prototype.MARGIN = 20;
     Blockly.Colours.flyout = "#EEEEEE";
 
@@ -236,7 +236,7 @@ KidsCoding.prototype = {
     // flyout 내의 블럭들을 오른쪽으로 20px씩 이동
     // (블럭들이 너무 왼쪽으로 붙어있어서 윈도우 태블릿에서 화면전화이 일어나는 문제가 있음)
     this.workspace.flyout_.workspace_.topBlocks_.forEach(function(block) {
-      block.moveBy(20,0);
+      block.moveBy(50,0);
     });
   }
 };
