@@ -134,18 +134,6 @@
     "msg:en": "Let's collect the safety things for swimming!",
     "img": "/img/b5_w1/cos_summer0.png"
   }, {
-    "msg:ko": "쉬운 문제는 별 1 개를 주어요.",
-    "msg:en": "An easy problem gives you one star.",
-    "img": "/img/b5_w2/star.png"
-  }, {
-    "msg:ko": "보통 문제는 별 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two stars.",
-    "img": "/img/b5_w2/star.png"
-  }, {
-    "msg:ko": "어려운 문제는 별 3개를 주어요.",
-    "msg:en": "A hard problem gives you three star.",
-    "img": "/img/b5_w2/star.png"
-  }, {
     "msg:ko": "별 20개를 모으면 엄마에게 가요.",
     "msg:en": "Go to mom with more than 20 stars.",
     "img": "/img/b5_w2/mother_summer.png",

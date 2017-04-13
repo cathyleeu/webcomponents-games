@@ -134,18 +134,6 @@
     "msg:en": "Let's collect the baskets for Tidal creature!",
     "img": "/img/b5_w1/cos_summer0.png"
   }, {
-    "msg:ko": "쉬운 문제는 바구니 1 개를 주어요.",
-    "msg:en": "An easy problem gives you one fish.",
-    "img": "/img/b5_w4/basket.png"
-  }, {
-    "msg:ko": "보통 문제는 바구니 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two baskets.",
-    "img": "/img/b5_w4/basket.png"
-  }, {
-    "msg:ko": "어려운 문제는 바구니 3개를 주어요.",
-    "msg:en": "A hard problem gives you three basket.",
-    "img": "/img/b5_w4/basket.png"
-  }, {
     "msg:ko": "바구니 20개를 모으면 엄마에게 가요.",
     "msg:en": "Go to mom with more than 20 baskets.",
     "img": "/img/b5_w2/mother_summer.png",
