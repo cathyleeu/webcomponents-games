@@ -1,0 +1,38 @@
+{
+  "tile_size": 256,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "###.#####",
+    "#...%...#",
+    "###.##.##",
+    "##..#...#",
+    "#..##.###",
+    "#.......#",
+    "#..#u#..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 2,
+    "img":"todelana"
+  }],
+  "tutorial": [{
+    "msg:ko": "토드와 라나에게 초대장을 주러 가자!",
+    "msg:en": "Let's go to tode and lana for invitation",
+    "img": "/img/c55_w2/todelana.png"
+  }],
+  "goal": {
+    "msg:ko": "토드와 라나에게 초대장을 주러 가자!",
+    "msg:en": "Let's go to tode and lana for invitation",
+    "img": "/img/c55_w2/todelana.png"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start", "move_up", "move_up", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.##..##w",
+    "w...#)a.w",
+    "w#......w",
+    "w...#%..w",
+    "w.#....#w",
+    "w.###u.#w",
+    "w....##.w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 4,
+    "img":"table0",
+    "useItem": true
+  },{
+    "x": 5,
+    "y": 2,
+    "img":"juice",
+    "itemCount": 3
+  }],
+  "tutorial": [{
+    "msg:ko": "주스 3잔을 상에 가져다주어요!",
+    "msg:en": "Serve three cups of juice to the table",
+    "img":  [{
+      "src": "/img/c55_w4/juice.png",
+      "style": "width:25%"
+    },{
+      "src": "/img/c55_w4/table0.png",
+      "style": "width:25%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "주스 3잔을 상에 가져다주어요!",
+    "msg:en": "Serve three cups of juice to the table",
+    "img":  [{
+      "src": "/img/c55_w4/juice.png",
+      "style": "width:25%"
+    },{
+      "src": "/img/c55_w4/table0.png",
+      "style": "width:25%"
+    }]
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {"book": "c5.5", "title": "2주차 : 초대장을 보내요"},
+  {"id": "bg1", "src": "/img/c55_w2/bg1.png"},
+  {"id": "bg2", "src": "/img/c55_w2/bg2.png"},
+
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/c55_w2/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c55_w2/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c55_w2/invitation.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"tile": "U", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "D", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "L", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "house", "src": "/img/c55_w2/house.png", "obstacle": false},
+  {"id": "mother", "src": "/img/c55_w2/mother.png", "obstacle": false},
+  {"id": "father", "src": "/img/c55_w2/father.png", "obstacle": false},
+
+  {"id": "tree1", "src": "/img/c55_w2/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/c55_w2/tree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/c55_w2/tree3.png", "obstacle": true},
+  {"id": "flower1", "src": "/img/c55_w2/flower1.png", "obstacle": true},
+  {"id": "flower2", "src": "/img/c55_w2/flower2.png", "obstacle": true},
+  {"id": "yardstone1", "src": "/img/c55_w2/yardstone1.png", "obstacle": true},
+  {"id": "yardstone2", "src": "/img/c55_w2/yardstone2.png", "obstacle": true},
+
+  {"id": "d_grandfather", "src": "/img/c55_w2/d_grandfather.png", "obstacle": false},
+  {"id": "d_grandmother", "src": "/img/c55_w2/d_grandmother.png", "obstacle": false},
+  {"id": "m_grandfather", "src": "/img/c55_w2/m_grandfather.png", "obstacle": false},
+  {"id": "m_grandmother", "src": "/img/c55_w2/m_grandmother.png", "obstacle": false},
+  {"id": "deer", "src": "/img/c55_w2/deer.png", "obstacle": false},
+  {"id": "todelana", "src": "/img/c55_w2/todelana.png", "obstacle": false}
+
+]

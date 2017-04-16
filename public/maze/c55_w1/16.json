@@ -1,0 +1,44 @@
+{
+  "tile_size": 256,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#d.%#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":2,
+    "img":"father"
+  }],
+  "tutorial": [{
+    "msg:ko": "아빠에게 가자",
+    "msg:en": "Go to Daddy",
+    "img": [{
+      "src": "/img/c55_w1/cos0.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/c55_w1/father.png",
+      "style": "width:33%"
+    }]
+  }],
+  "success": [{
+    "msg:ko": "아빠! 집을 다 정리했어요~",
+    "msg:en": "Daddy! I cleaned home.",
+    "img" : "/img/c55_w1/cos0.png"
+  },{
+    "msg:ko": "수고했어, 코스야.",
+    "msg:en": "Thank you, Cos.",
+    "img": "/img/c55_w1/father.png"
+  }]
+}

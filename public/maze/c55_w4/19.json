@@ -1,0 +1,44 @@
+{
+  "tile_size": 256,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#.d.#",
+    "#...#",
+    "#.%.#",
+    ".###."
+  ],
+  "extra":[{
+    "x":2,
+    "y":3,
+    "img":"mother"
+  }],
+  "tutorial": [{
+    "msg:ko": "엄마에게 가자",
+    "msg:en": "Go to mom",
+    "img": [{
+      "src": "/img/c55_w4/cos0.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/c55_w4/mother.png",
+      "style": "width:33%"
+    }]
+  }],
+  "success": [{
+    "msg:ko": "엄마! 음식을 다 대접했어요~",
+    "msg:en": "Mom! I served all.",
+    "img" : "/img/c55_w4/cos0.png"
+  },{
+    "msg:ko": "수고했어, 코스야.",
+    "msg:en": "Thank you, Cos.",
+    "img": "/img/c55_w4/mother.png"
+  }]
+}

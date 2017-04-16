@@ -1,0 +1,64 @@
+[
+  {"book": "c5.5", "title": "1주차 : 집을 정리해요"},
+  {"id": "bg1", "src": "/img/c55_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/c55_w1/bg2.png"},
+
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/c55_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c55_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c55_w1/box.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"tile": "U", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "D", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "L", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "father", "src": "/img/c55_w1/father.png", "obstacle": false},
+
+  {"id": "cooker", "src": "/img/c55_w1/cooker_desk.png", "obstacle": true},
+  {"id": "microwave", "src": "/img/c55_w1/microwave_desk.png", "obstacle": true},
+  {"id": "plant", "src": "/img/c55_w1/plant.png", "obstacle": true},
+  {"id": "sofa1", "src": "/img/c55_w1/sofa1.png", "obstacle": true},
+  {"id": "sofa2", "src": "/img/c55_w1/sofa2.png", "obstacle": true},
+  {"id": "vacuum", "src": "/img/c55_w1/vacuum.png", "obstacle": true},
+
+  {"tile": "a", "id": "ball1", "src": "/img/c55_w1/ball1.png", "obstacle": false},
+  {"tile": "b", "id": "ball2", "src": "/img/c55_w1/ball2.png", "obstacle": false},
+  {"tile": "c", "id": "ball3", "src": "/img/c55_w1/ball3.png", "obstacle": false},
+  {"tile": "e", "id": "ball4", "src": "/img/c55_w1/ball4.png", "obstacle": false},
+  {"tile": "f", "id": "ball5", "src": "/img/c55_w1/ball5.png", "obstacle": false},
+  {"tile": "g", "id": "cylinder1", "src": "/img/c55_w1/cylinder1.png", "obstacle": false},
+  {"tile": "h", "id": "cylinder2", "src": "/img/c55_w1/cylinder2.png", "obstacle": false},
+  {"tile": "i", "id": "cylinder3", "src": "/img/c55_w1/cylinder3.png", "obstacle": false},
+  {"tile": "j", "id": "cylinder4", "src": "/img/c55_w1/cylinder4.png", "obstacle": false},
+  {"tile": "k", "id": "cylinder5", "src": "/img/c55_w1/cylinder5.png", "obstacle": false},
+  {"tile": "m", "id": "rec1", "src": "/img/c55_w1/rec1.png", "obstacle": false},
+  {"tile": "n", "id": "rec2", "src": "/img/c55_w1/rec2.png", "obstacle": false},
+  {"tile": "o", "id": "rec3", "src": "/img/c55_w1/rec3.png", "obstacle": false},
+  {"tile": "p", "id": "rec4", "src": "/img/c55_w1/rec4.png", "obstacle": false},
+  {"tile": "q", "id": "rec5", "src": "/img/c55_w1/rec5.png", "obstacle": false},
+  {"tile": "s", "id": "etc1", "src": "/img/c55_w1/etc1.png", "obstacle": false},
+  {"tile": "t", "id": "etc2", "src": "/img/c55_w1/etc2.png", "obstacle": false},
+  {"tile": "v", "id": "etc3", "src": "/img/c55_w1/etc3.png", "obstacle": false},
+  {"tile": "x", "id": "etc4", "src": "/img/c55_w1/etc4.png", "obstacle": false},
+
+  {"tile": "w", "id": "desk", "src": "/img/c55_w1/desk.png", "obstacle": true}
+
+]
