@@ -1,0 +1,57 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.##..##w",
+    "w...#...w",
+    "w#...%A.w",
+    "w...#)..w",
+    "w.#....#w",
+    "w.###u.#w",
+    "w....##.w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 4,
+    "img":"fruit_wa"
+  },{
+    "x": 5,
+    "y": 3,
+    "img":"table4",
+    "useItem": true
+  }],
+  "tutorial": [{
+    "msg:ko": "수박을 가장 큰 숫자의 상에 가져다주어요!",
+    "msg:en": "Pick watermelon and bring it to table with the larger number",
+    "img":  [{
+      "src": "/img/c55_w4/fruit_wa.png",
+      "style": "width:25%"
+    },{
+      "src": "/img/c4_w4/bigger_num.png",
+      "style": "width:25%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "수박을 가장 큰 숫자의 상에 가져다주자!",
+    "msg:en": "Pick watermelon and bring it to table with the larger number",
+    "img":  [{
+      "src": "/img/c55_w4/fruit_wa.png",
+      "style": "width:25%"
+    },{
+      "src": "/img/c4_w4/bigger_num.png",
+      "style": "width:25%"
+    }]
+  }
+}
