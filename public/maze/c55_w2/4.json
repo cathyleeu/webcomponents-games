@@ -28,11 +28,11 @@
   "tutorial": [{
     "msg:ko": "외할아버지에게 초대장을 드리러 가자!",
     "msg:en": "Let's go to grandfather for invitation",
-    "img": "/img/c55_w2/m_grandfather.png"
+    "img": "/img/c55_w2/m_grandf.png"
   }],
   "goal": {
     "msg:ko": "외할아버지에게 초대장을 드리러 가자!",
     "msg:en": "Let's go to grandfather for invitation",
-    "img": "/img/c55_w2/m_grandfather.png"
+    "img": "/img/c55_w2/m_grandf.png"
   }
 }
