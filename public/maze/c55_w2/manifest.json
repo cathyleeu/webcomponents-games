@@ -42,10 +42,10 @@
   {"id": "yardstone1", "src": "/img/c55_w2/yardstone1.png", "obstacle": true},
   {"id": "yardstone2", "src": "/img/c55_w2/yardstone2.png", "obstacle": true},
 
-  {"id": "d_grandfather", "src": "/img/c55_w2/d_grandfather.png", "obstacle": false},
-  {"id": "d_grandmother", "src": "/img/c55_w2/d_grandmother.png", "obstacle": false},
-  {"id": "m_grandfather", "src": "/img/c55_w2/m_grandfather.png", "obstacle": false},
-  {"id": "m_grandmother", "src": "/img/c55_w2/m_grandmother.png", "obstacle": false},
+  {"id": "d_grandfather", "src": "/img/c55_w2/d_grandf.png", "obstacle": false},
+  {"id": "d_grandmother", "src": "/img/c55_w2/d_grandm.png", "obstacle": false},
+  {"id": "m_grandfather", "src": "/img/c55_w2/m_grandf.png", "obstacle": false},
+  {"id": "m_grandmother", "src": "/img/c55_w2/m_grandm.png", "obstacle": false},
   {"id": "deer", "src": "/img/c55_w2/deer.png", "obstacle": false},
   {"id": "todelana", "src": "/img/c55_w2/todelana.png", "obstacle": false}
 

@@ -3,6 +3,7 @@
   "view_size": 8,
   "tile_size": 256,
   "toolbox": [],
+  "select_character": true,
   "map": [
     "##.##################.",
     "..#..D..%...U...%....#",
