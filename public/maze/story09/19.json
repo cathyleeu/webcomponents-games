@@ -24,6 +24,7 @@
   ],
   "tutorial": [{
     "msg:ko": "앞다리가 생겨서 더 멀리 갈 수 있어!",
-    "msg:en": "Now I have front legs!"
+    "msg:en": "Now I have front legs!",
+    "msg:cn": "长出了前腿，能游得更远了。"
 }]
 }

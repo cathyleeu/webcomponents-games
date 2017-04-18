@@ -35,10 +35,12 @@
   "tutorial": [{
     "msg:ko": "두번째로 큰 과일 1개를 집어서",
     "msg:en": "Get the second biggest fruit",
+    "msg:cn": "夹1个第二大的水果",
     "img": "/img/jangoon/jangoon0.png"
   },{
     "msg:ko": "카트에 집어 넣어보자!",
     "msg:en": "And add to cart",
+    "msg:cn": "放入购物车内！",
     "img": "/img/jangoon/kart.png"
   }]
 }

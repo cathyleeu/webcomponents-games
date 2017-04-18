@@ -1,0 +1,23 @@
+{
+  "kidscoding": "KidsCoding",
+  "start": "Start",
+  "reset": "Reset",
+  "tutorial": "Show Tutorial",
+  "bgm": "Play BGM",
+  "close": "Close",
+  "retry": "Reset",
+  "select": "Select",
+  "next": "Next",
+  "ask_fullscreen":"View on FullScreen?",
+  "request_fullscreen":"Yes",
+  "cancel_fullscreen":"No",
+  "next_stage": "Next Stage",
+  "select_character": "Select your character.",
+  "success": "Good Job!",
+  "fail_wall": "There is no way",
+  "fail_done": "Try it again.",
+  "fail_noBlocks": "No blocks!",
+  "fail_notEnough": "You need %1",
+  "fullscreen": "FullScreen",
+  "goal": "Goal"
+}

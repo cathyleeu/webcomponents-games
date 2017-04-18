@@ -25,6 +25,7 @@
   "tutorial": [{
     "msg:ko": "보자기는 가위로 이길 수 있어",
     "msg:en": "Paper is weaker than Scissors",
+    "msg:cn": "出剪子就能赢布。",
     "img": "/img/woong/ps.png"
   }]
 }

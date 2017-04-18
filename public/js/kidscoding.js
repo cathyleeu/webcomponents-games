@@ -235,8 +235,10 @@ KidsCoding.prototype = {
   	Blockly.Xml.domToWorkspace($(startblock).get(0),this.workspace);
     // flyout 내의 블럭들을 오른쪽으로 20px씩 이동
     // (블럭들이 너무 왼쪽으로 붙어있어서 윈도우 태블릿에서 화면전화이 일어나는 문제가 있음)
-    this.workspace.flyout_.workspace_.topBlocks_.forEach(function(block) {
-      block.moveBy(50,0);
-    });
+    if(this.isHorizontal) {
+      this.workspace.flyout_.workspace_.topBlocks_.forEach(function(block) {
+        block.moveBy(50,0);
+      });
+    }
   }
 };
