@@ -16,7 +16,7 @@
   {"id": "land11", "src": "/img/map32/11.png"},
   {"id": "character", "src": "/img/c3_w2/cos_bear.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c3_w2/cos_bear0.png", "size": 256},
-  {"id": "food", "src": "/img/c3_w2/hunny_pot.png"},
+  {"id": "food", "src": "/img/c3_w2/honey_pot.png"},
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},

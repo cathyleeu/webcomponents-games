@@ -7,7 +7,7 @@
     "##.###################.",
     "..#..%.#.%....%...%...#",
     "..#..#.%.#.%....%..%..#",
-    ".#.r.#####...........#.",
+    ".#.r...#..............#",
     "..#.#%...%....%...%...#",
     "..#.#..%....%...%.....#",
     "##.###################."
@@ -74,34 +74,32 @@
     "link": "c3_w2/15"
   },{
     "img":"house",
-    "x": 21,
+    "x": 6,
     "y": 3,
     "obstacle": false,
     "link": "c3_w3/index",
     "min_score": 15
   }],
   "tutorial": [{
-    "msg:ko": "꿀단지를 모아서 집으로 가져 갈꺼야",
-    "msg:en": "Collect the hunny pot and go to my house"
-  }, {
-    "msg:ko": "15개의 꿀단지를 모은뒤,",
-    "msg:en": "Collect 15 hunny pots and,",
-    "img": "/img/c3_w2/hunny_pot.png"
-  }, {
-    "msg:ko": "집으로 이동하자!",
-    "msg:en": "Move to my house!",
-    "img": "/img/c3_w1/house.png",
-    "x" : 21,
-    "y" : 3
-  },{
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
+    "msg:ko": "꿀단지로 가면 문제를 풀 수 있어요. 문제 한 개를 풀면 꿀단지 하나를 얻을 수 있어요. 15개의 꿀단지를 모아서 집으로 가요.",
+    "msg:en": "You can solve a problem at any honey pot. A problem gives you a honey pot. Take fifteen honey pots home.",
+    "img": [{
+      "src":"/img/c3_w2/honey_pot.png",
+      "style":"width:50%"
+    },{
+      "src": "/img/c3_w1/house.png",
+      "style":"width:50%"
+    }]
   }],
   "goal": {
-    "msg:ko": "15개의 꿀단지를 모으자!",
-    "msg:en": "Collect 15 hunny pots",
-    "img": "/img/c3_w2/hunny_pot.png"
+    "msg:ko": "15개의 꿀단지를 모아서 집으로 가요.",
+    "msg:en": "Take fifteen honey pots home.",
+    "img": [{
+      "src":"/img/c3_w2/honey_pot.png",
+      "style":"width:50%"
+    },{
+      "src": "/img/c3_w1/house.png",
+      "style":"width:50%"
+    }]
   }
 }

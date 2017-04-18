@@ -2,7 +2,7 @@
   "tile_size": 256,
 
   "score":3,
-  "workspace": ["start"],
+  "workspace": ["start","move_left","move_left","move_left","move_up"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -15,12 +15,12 @@
   ],
   "map": [
     "%#######",
-    "#d...P.#",
-    "#.###R##",
-    "#S#....#",
-    "#R...).#",
-    "#.#.#.##",
-    "#......#",
+    "##.)PS.#",
+    "#.#S##.#",
+    "#.#R##.#",
+    "#.....u#",
+    "###.##.#",
+    "#..#...#",
     "########"
   ],
   "extra":[{
@@ -28,20 +28,20 @@
   "y": 0,
   "img": "tree1"
 },{
-    "x": 5,
+    "x": 4,
     "y": 1,
     "img":"grandpa"
   },{
-    "x": 1,
-    "y": 4,
+    "x": 3,
+    "y": 2,
     "img":"mother"
   },{
-    "x": 1,
+    "x": 3,
     "y": 3,
     "img":"father"
   },{
-    "x": 5,
-    "y": 4,
+    "x": 3,
+    "y": 1,
     "img": "chest",
     "itemCount": 2
   }],
@@ -58,9 +58,9 @@
   "src": "/img/b4/paper.png",
   "style": "width:33%"
 }]
-  },{
-    "msg:ko": "모두 이기고 보물 상자에 갈 거야!",
-    "msg:en": "Win all to go to the chest!",
-    "img": "/img/b4/chest3.png"
-  }]
+}],"goal":{
+  "msg:ko": "모두 이기고 보물 상자에 갈 거야!",
+  "msg:en": "Win all to go to the chest!",
+  "img": "/img/b4/chest3.png"
+}
 }

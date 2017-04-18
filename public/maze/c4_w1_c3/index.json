@@ -7,7 +7,7 @@
     "##.#########.",
     "..#.%....%..#",
     "..#...%.....#",
-    ".#.r.......#.",
+    ".#.r..#....#.",
     "..#.%.......#",
     "..#....%....#",
     "##.#########."
@@ -33,30 +33,33 @@
     "y": 1,
     "link": "c4_w1_c3/5"
   },{
-    "img":"house",
-    "x": 11,
+    "img":"mother",
+    "x": 6,
     "y": 3,
     "obstacle": false,
     "link": "c4_w2/index",
     "min_score": 5
   }],
   "tutorial": [{
-    "msg:ko": "과일의 크기를 비교하고, 카트를 얻자!",
-    "msg:en": "Let's compare the size of fruits and get a cart!",
-    "img": "/img/c4_w3/cart.png"
-  }, {
-    "msg:ko": "5개의 카트를 모은뒤, 엄마에게 이동하자!",
-    "msg:en": "Collect 5 carts and, Move to mother!",
-    "img": "/img/c4_w2/mother.png"
-  },{
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
+    "msg:ko": "카트로 가면 숫자를 비교하는 문제를 풀 수 있어요. 문제 한 개를 풀면 집 하나를 얻을 수 있어요. 5개의 카트를 모아서 엄마께 가요.",
+    "msg:en": "You can solve a fruit-size-comparing-problem at any cart. A problem gives you a cart. Get five carts and go to mother.",
+    "img": [{
+      "src":"/img/c4_w2/cart.png",
+      "style":"width:50%"
+    },{
+      "src": "/img/c4_w3/mother.png",
+      "style":"width:50%"
+    }]
   }],
   "goal": {
-    "msg:ko": "5개의 카트를 모으자!",
-    "msg:en": "Collect 5 carts",
-    "img": "/img/c4_w2/cart.png"
+    "msg:ko": "5개의 카트를 모아서 엄마께 가요.",
+    "msg:en": "Get five carts and go to mother.",
+    "img": [{
+      "src":"/img/c4_w2/cart.png",
+      "style":"width:50%"
+    },{
+      "src": "/img/c4_w3/mother.png",
+      "style":"width:50%"
+    }]
   }
 }

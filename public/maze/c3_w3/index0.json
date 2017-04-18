@@ -1,0 +1,109 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "##.###################.",
+    "..#..%.#.%....%...%...#",
+    "..#..#.%.#.%....%..%..#",
+    ".#.r######...........#.",
+    "..#.#%...%....%...%...#",
+    "..#.#..%....%...%.....#",
+    "##.###################."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 1,
+    "link": "c3_w3/1"
+  },{
+    "x": 5,
+    "y": 4,
+    "link": "c3_w3/2"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "c3_w3/3"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c3_w3/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c3_w3/5"
+  },{
+    "x": 9,
+    "y": 4,
+    "link": "c3_w3/6"
+  },{
+    "x": 11,
+    "y": 2,
+    "link": "c3_w3/7"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c3_w3/8"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "c3_w3/9"
+  },{
+    "x": 14,
+    "y": 4,
+    "link": "c3_w3/10"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "c3_w3/11"
+  },{
+    "x": 16,
+    "y": 5,
+    "link": "c3_w3/12"
+  },{
+    "x": 18,
+    "y": 1,
+    "link": "c3_w3/13"
+  },{
+    "x": 18,
+    "y": 4,
+    "link": "c3_w3/14"
+  },{
+    "x": 19,
+    "y": 2,
+    "link": "c3_w3/15"
+  },{
+    "img":"mother",
+    "x": 21,
+    "y": 3,
+    "obstacle": false,
+    "link": "c3_w3/16",
+    "min_score": 15
+  }],
+  "tutorial": [{
+    "msg:ko": "모은 꿀단지를 집으로 가져 갈꺼야",
+    "msg:en": "I'm going to take honey pot's to my house",
+    "img": "/img/c3_w1/house.png"
+  }, {
+    "msg:ko": "15번 집으로 꿀단지를 가져간 뒤, 엄마에게 이동하자!",
+    "msg:en": "Take 15 times honey pots and,Move to my mom!",
+    "x" : 21,
+    "y" : 3
+  },{
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "15번 집으로 꿀단지를 가져가자!",
+    "msg:en": "Take 15 times honey pots",
+    "img": [{
+      "src": "/img/c3_w1/house.png",
+      "style": "width:55%"
+    }, {
+      "src": "/img/c3_w2/honey_pot.png",
+      "style": "width:55%"
+    }]
+  }
+}

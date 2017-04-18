@@ -2,7 +2,7 @@
   "tile_size": 256,
 
   "score":3,
-  "workspace": ["start"],
+  "workspace": ["start","move_left","move_up"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -58,9 +58,9 @@
   "src": "/img/b4/paper.png",
   "style": "width:33%"
 }]
-  },{
+  }],"goal":{
     "msg:ko": "모두 이기고 보물 상자에 갈 거야!",
     "msg:en": "Win all to go to the chest!",
     "img": "/img/b4/chest3.png"
-  }]
+  }
 }

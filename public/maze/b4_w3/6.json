@@ -2,7 +2,7 @@
   "tile_size": 256,
 
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start", "move_up","move_up","item_scissors","move_up","move_up","move_up"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -20,7 +20,7 @@
     "#.#.##.#",
     "#.#P...#",
     "#.#.##.#",
-    "#r....##",
+    "#..u..##",
     ".######."
   ],
   "extra":[{
@@ -30,7 +30,7 @@
 },{
     "x" : 3,
     "y" : 4,
-    "img" : "mother"
+    "img" : "father"
   },{
     "x" : 3,
     "y" : 1,
@@ -50,9 +50,15 @@
       "src": "/img/b4/paper.png",
       "style": "width:33%"
     }]
-  },{
-    "msg:ko": "엄마를 이기고 보물상자에 가 보렴.",
-    "msg:en": "Win mommy to go to the chest!",
-    "img": "/img/b4/chest2.png"
-  }]
+    }],"goal" : {
+      "msg:ko": "아빠를 이기고 보물상자에 가서 보물 두 개를 가져오자.",
+      "msg:en": "Win daddy to go to the chest and bring two treasures",
+      "img": [{
+          "src": "/img/b4/chest2.png",
+          "style" : "width:50"
+        },{
+            "src": "/img/b4/chest2.png",
+            "style" : "width:50"
+        }]
+    }
 }

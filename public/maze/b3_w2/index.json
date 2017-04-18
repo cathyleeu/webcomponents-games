@@ -7,7 +7,7 @@
     "##.##############.",
     "..#..%.#.%....%..#",
     "..#..#.%.#.%.....#",
-    ".#.r######......#.",
+    ".#.r..#..........#",
     "..##.%...%....%..#",
     "..#....%....%....#",
     "##.##############."
@@ -54,30 +54,36 @@
     "link": "b3_w2/10"
   },{
     "img":"deer",
-    "x": 16,
+    "x": 6,
     "y": 3,
     "obstacle": false,
     "link": "b3_w3/index",
     "min_score": 10
   }],
   "tutorial": [{
-    "msg:ko": "할머니 할아버지의 우주선을 찾아보아요",
-    "msg:en": "Let's find out her grandparents' UFO",
-    "img": "/img/b3_w1/ufo.png"
-  }, {
-    "msg:ko": "우주선을 10 번 찾은 뒤,사슴 디어에게 이동하자!",
-    "msg:en": "Find out the UFO ten-times, and move to Deer!",
-    "x" : 16,
-    "y" : 3
+    "msg:ko": "이 곳에서는 가상 키보드를 이용하여 코스를 움직일 수 있어요. ↑ ↓ ← → 버튼을 눌러 코스를 움직여보아요.",
+    "msg:en": "you can move 'Cos' character by virtual keyboard on this map. Press ↑ ↓ ← → botton to move Cos.",
+    "img": "/img/kidsblocks/key.png"
   },{
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
+    "msg:ko": "할머니, 할아버지의 우주선으로 가서 문제를 풀어요. 우주선 찾기 문제를 풀면 우주선 한 개를 얻을 수 있어요. 우주선 열 개를 모아서 사슴 디어에게 가요.",
+    "msg:en": "You can solve a problem at any grandparents' UFO. Finding out a UFO gives you a UFO. Solve ten problems and go to Deer.",
+    "img": [{
+        "src":"/img/b3_w1/ufo.png",
+        "style":"width:50%"
+      },{
+          "src":"/img/b3_w2/deer.png",
+          "style":"width:50%"
+      }]
   }],
   "goal": {
-    "msg:ko": "우주선을 열 번 찾아 보아요.",
-    "msg:en": "Try to find out the UFO tem-times.",
-    "img": "/img/b3_w1/ufo.png"
+    "msg:ko": "우주선을 열 개를 모아 디어에게 가자.",
+    "msg:en": "Get ten UFOs and go to Deer",
+    "img": [{
+        "src":"/img/b3_w1/ufo.png",
+        "style":"width:50%"
+      },{
+          "src":"/img/b3_w2/deer.png",
+          "style":"width:50%"
+      }]
   }
 }
