@@ -4,140 +4,309 @@
   "tile_size": 256,
   "toolbox": [],
   "map": [
-    "##.##################.",
-    "..#.#...%.#...##..#..#",
-    "..#.#.%%.%#..%..%..%.#",
-    ".#.re%.#..n%..%..%..#.",
-    "..#.#.%...########h###",
-    "..#.#.....#%.%.%..%.##",
-    "##.###################"
+    "#####EEEEE########.",
+    "..r..%%%%%.....%n.#",
+    ".##############%n.#",
+    "##...#########.%n.#",
+    "..#............%n.#",
+    "##.......%%%%%.%n.#",
+    "#########HHHHH#####."
   ],
   "extra": [{
-    "x": 4,
-    "y": 3,
-    "img":"easy", "obstacle": false,
+    "x": 5,
+    "y": 0,
     "tutorial": [{
       "msg:ko": "카트를 1개 얻을 수 있어.",
       "msg:en": "You can get one cart at once.",
       "img": "/img/c4_w2/cart.png"
     }]
   },{
-    "x": 10,
-    "y": 3,
-    "img":"normal",
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "카트를 1개 얻을 수 있어.",
+      "msg:en": "You can get one cart at once.",
+      "img": "/img/c4_w2/cart.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "카트를 1개 얻을 수 있어.",
+      "msg:en": "You can get one cart at once.",
+      "img": "/img/c4_w2/cart.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "카트를 1개 얻을 수 있어.",
+      "msg:en": "You can get one cart at once.",
+      "img": "/img/c4_w2/cart.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "카트를 1개 얻을 수 있어.",
+      "msg:en": "You can get one cart at once.",
+      "img": "/img/c4_w2/cart.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
     "tutorial": [{
       "msg:ko": "카트를 2개 얻을 수 있어.",
       "msg:en": "You can get two carts at once.",
-      "img": "/img/c4_w2/cart.png"
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      }]
     }]
-  },{
-    "x": 18,
-    "y": 4,
-    "img":"hard",
-    "tutorial": [{
-      "msg:ko": "카트를 3개 얻을 수 있어.",
-      "msg:en": "You can get three carts at once.",
-      "img": "/img/c4_w2/cart.png"
-    }]
-  },{
-    "x": 5,
-    "y": 3,
-    "link": "c4_w3/1"
-  },{
-    "x": 6,
-    "y": 2,
-    "link": "c4_w3/2"
-  },{
-    "x": 6,
-    "y": 4,
-    "link": "c4_w3/3"
-  },{
-    "x": 7,
-    "y": 2,
-    "link": "c4_w3/4"
-  },{
-    "x": 8,
-    "y": 1,
-    "link": "c4_w3/5"
-  },{
-    "x": 9,
-    "y": 2,
-    "link": "c4_w3/6"
-  },{
-    "x": 11,
-    "y": 3,
-    "link": "c4_w3/7"
-  },{
-    "x": 13,
-    "y": 2,
-    "link": "c4_w3/8"
-  },{
-    "x": 14,
-    "y": 3,
-    "link": "c4_w3/9"
   },{
     "x": 16,
     "y": 2,
-    "link": "c4_w3/10"
+    "tutorial": [{
+      "msg:ko": "카트를 2개 얻을 수 있어.",
+      "msg:en": "You can get two carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      }]
+    }]
   },{
-    "x": 17,
+    "x": 16,
     "y": 3,
-    "link": "c4_w3/11"
+    "tutorial": [{
+      "msg:ko": "카트를 2개 얻을 수 있어.",
+      "msg:en": "You can get two carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      }]
+    }]
   },{
-    "x": 19,
-    "y": 2,
-    "link": "c4_w3/12"
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "카트를 2개 얻을 수 있어.",
+      "msg:en": "You can get two carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      }]
+    }]
   },{
-    "x": 18,
+    "x": 16,
     "y": 5,
-    "link": "c4_w3/13"
+    "tutorial": [{
+      "msg:ko": "카트를 2개 얻을 수 있어.",
+      "msg:en": "You can get two carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w2/cart.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c4_w3/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c4_w3/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "c4_w3/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c4_w3/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c4_w3/5"
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "c4_w3/6"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "c4_w3/7"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "c4_w3/8"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "c4_w3/9"
   },{
     "x": 15,
     "y": 5,
-    "link": "c4_w3/14"
+    "link": "c4_w3/10"
   },{
     "x": 13,
+    "y": 5,
+    "link": "c4_w3/11"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c4_w3/12"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "c4_w3/13"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "c4_w3/14"
+  },{
+    "x": 9,
     "y": 5,
     "link": "c4_w3/15"
   },{
     "img":"mother",
-    "x": 11,
-    "y": 5,
+    "x": 2,
+    "y": 4,
     "obstacle": false,
     "link": "c4_w4/index",
     "min_score": 21
   }],
+
   "tutorial": [{
-    "msg:ko": "카트를 모아서 엄마에게 가져갈꺼야",
-    "msg:en": "Collect the cart and go to my house",
-    "img": "/img/c4_w3/mother.png"
-  }, {
-    "msg:ko": "쉬운 문제는 카트 1 개를 주어요.",
-    "msg:en": "An easy problem gives you one cart.",
-    "img": "/img/guide/easy.png"
-  }, {
-    "msg:ko": "보통 문제는 카트 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two carts.",
-    "img": "/img/guide/normal.png"
-  }, {
-    "msg:ko": "어려운 문제는 카트 3개를 주어요.",
-    "msg:en": "A hard problem gives you three carts.",
-    "img": "/img/guide/hard.png"
-  }, {
-    "msg:ko": "카트 21개를 모은 뒤, 엄마에게 이동하자!",
-    "msg:en": "Collect 21 carts and, Go to mother",
-    "img": "/img/c4_w3/mother.png",
-    "x" : 11,
-    "y" : 5
-  }, {
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
+    "msg:ko": "과일을 사요! 쉬운 문제는 카트 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's buy some fruits! An easy problem gives you one cart, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/c4_w2/cart.png"
   }],
   "goal": {
-    "msg:ko": "카트를 21개 모으자!",
-    "msg:en": "Let's get 21 carts!",
-    "img": "/img/c4_w2/cart.png"
+    "msg:ko": "카트를 21개 모아서 엄마께 가요.",
+    "msg:en": "Let's get twenty one carts and go to mother.",
+    "img": [{
+      "src": "/img/c4_w2/cart.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/c4_w3/mother.png",
+      "style": "width:50%"
+    }]
   }
 }

@@ -1,0 +1,64 @@
+{
+  "tile_size": 256,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors",
+    "get_item3"
+  ],
+  "map": [
+    "%######.",
+    "##.....#",
+    "##d##.##",
+    "##.##.##",
+    "#...R..#",
+    "##.#.#.#",
+    "#..#.)##",
+    ".######."
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
+    "x" : 4,
+    "y" : 4,
+    "img" : "father"
+  },{
+    "x" : 5,
+    "y" : 6,
+    "img" : "chest",
+    "itemCount" : 2
+  }],
+  "tutorial": [{
+    "msg:ko": "주먹은 보자기로 이길 수 있어!",
+    "msg:en": "Paper wins rock!",
+    "img": [{
+      "src": "/img/b4/rock.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/(.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/paper.png",
+      "style": "width:33%"
+    }]
+    }],"goal" : {
+      "msg:ko": "아빠를 이기고 보물상자에 가서 보물 두 개를 가져오자.",
+      "msg:en": "Win daddy to go to the chest and bring two treasures",
+      "img": [{
+          "src": "/img/b4/chest2.png",
+          "style" : "width:50"
+        },{
+            "src": "/img/b4/chest2.png",
+            "style" : "width:50"
+        }]
+    }
+}

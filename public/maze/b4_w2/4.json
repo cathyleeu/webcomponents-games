@@ -1,7 +1,7 @@
 {
   "tile_size": 256,
   "score":1,
-  "workspace": ["start", "move_down","move_down","move_down","move_right"],
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -12,11 +12,11 @@
   "map": [
     "%#######",
     "#.#....#",
-    "#.#..#.#",
-    "#d#.)#.#",
-    "#..#...#",
-    "#.#..#.#",
-    "#...####",
+    "#.#.)#.#",
+    "#..#.#.#",
+    "#......#",
+    "#.##..l#",
+    "#...##.#",
     "########"
   ],
   "extra":[{
@@ -25,22 +25,20 @@
   "img": "tree1"
 },{
     "x": 4,
-    "y": 3,
+    "y": 2,
     "img": "chest",
-    "itemCount": 2
+    "itemCount": 1
   }],
   "tutorial": [{
-    "msg:ko": "보물 상자로 가보자",
-    "msg:en": "Go to the chest.",
-    "img": "/img/b4/chest1.png"
-  },{
-    "msg:ko": "보물 상자 하나에 보물이 여러 개 있네.",
-    "msg:en": "There are more than one things in the chest.",
-    "img": "/img/b4/chest1.png"
-  },{
-    "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
-    "msg:en": "Try to use 'Bring' block more than once!",
-    "img": "/img/blocks/bring.png"
+    "msg:ko": "보물 상자로 가서 새로운 키즈블록인 '가져오기'를 사용해 봐!",
+    "msg:en": "Go to the chest and try to use the new Kidsblock, 'Bring' block!",
+    "img": [{
+        "src": "/img/b4/chest1.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/blocks/bring.png",
+        "style": "width:50%"
+      }]
   }],
   "goal": {
     "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",

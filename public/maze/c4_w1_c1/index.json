@@ -19,12 +19,12 @@
   }],
   "tutorial": [{
     "msg:ko": "오른쪽 집으로 이동하여 '우리 동네 산책'을 완료하자",
-    "msg:en": "Go House on the right, and you complete this stage,",
+    "msg:en": "Go to the house on the right, and complete this stage,",
     "img": "/img/c4_w1_c1/house.png"
   }],
   "goal": {
     "msg:ko": "오른쪽 집으로 이동해요",
-    "msg:en": "Go House on the right",
+    "msg:en": "Go to the house on the right",
     "img": "/img/c4_w1_c1/house.png"
   }
 }

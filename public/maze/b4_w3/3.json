@@ -1,8 +1,8 @@
 {
   "tile_size": 256,
 
-  "score":2,
-  "workspace": ["start"],
+  "score":1,
+  "workspace": ["start", "move_left", "move_left"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -50,9 +50,9 @@
       "src": "/img/b4/rock.png",
       "style": "width:33%"
     }]
-  },{
-    "msg:ko": "엄마를 이기고 보물상자에 가 보렴.",
+  }],"goal" : {
+    "msg:ko": "엄마를 이기고 보물상자에 가보자.",
     "msg:en": "Win mommy to go to the chest!",
     "img": "/img/b4/chest2.png"
-  }]
+  }
 }

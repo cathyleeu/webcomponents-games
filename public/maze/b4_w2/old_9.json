@@ -1,0 +1,57 @@
+{
+  "tile_size": 256,
+  "score":2,
+  "workspace": ["start", "move_right", "move_down", "move_down", "move_down", "get_item3", "get_item3"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3"
+  ],
+  "map": [
+    "%#######",
+    "#....r.#",
+    "#.#..#.#",
+    "#..###.#",
+    "#.#)..)#",
+    "#.##.#.#",
+    "#...##.#",
+    "########"
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
+    "x": 6,
+    "y": 4,
+    "img": "chest",
+    "itemCount": 2
+  },{
+    "x": 3,
+    "y": 4,
+    "img": "chest",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "보물 상자가 여러 개 있어.",
+    "msg:en": "There are several chests.",
+    "img": "/img/b4/chest1.png"
+  },{
+    "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
+    "msg:en": "Let's use 'Bring' block on the chests!",
+    "img": "/img/blocks/bring.png"
+  }],
+  "goal": {
+    "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
+    "msg:en": "Let's use 'Bring' block on the chest",
+    "img": [{
+      "src": "/img/b4/chest1.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/blocks/bring.png",
+      "style" : "width:50%"
+    }]
+  }
+}

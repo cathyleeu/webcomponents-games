@@ -7,7 +7,7 @@
     "##.##############.",
     "..#..%.#.%....%..#",
     "..#..#.%.#.%.....#",
-    ".#.r######......#.",
+    ".#.r..#..........#",
     "..##.%...%....%..#",
     "..#....%....%....#",
     "##.##############."
@@ -54,29 +54,32 @@
     "link": "b3_w4/10"
   },{
     "img":"father",
-    "x": 16,
+    "x": 6,
     "y": 3,
     "obstacle": false,
     "link": "b3_w4/11",
     "min_score": 10
   }],
   "tutorial": [{
-    "msg:ko": "할머니 할아버지와 만났어요! 이제 다 같이 집을 찾아 가면되요",
-    "msg:en": "I met my granma&granfa, go together My house!"
-  }, {
-    "msg:ko": "10번 집을 찾은 뒤, 직장에서 일하고 있는 아빠에게 이동하자!",
-    "msg:en": "Find 10 times my house and, Move to working father!",
-    "x" : 16,
-    "y" : 3
-  },{
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
+    "msg:ko": "할머니 할아버지와 만났어요! 함께 집으로 갈 거에요. 집으로 이동하면 문제를 풀 수 있어요. 문제 열 개를 풀고 아빠께 가요.",
+    "msg:en": "I met my grandparents! Cos will go home together. You can solve a problem at any House. Solve ten problems and go to father.",
+    "img": [{
+      "src":"/img/c3_w1/house.png",
+      "style":"width:50%"
+    },{
+      "src": "/img/c3_w1/father.png",
+      "style":"width:50%"
+    }]
   }],
   "goal": {
-    "msg:ko": "코스네 집을 10번 찾아봐요",
-    "msg:en": "Find Cos's house 10 times",
-    "img": "/img/c3_w1/house.png"
+    "msg:ko": "문제 열 개를 풀고 아빠께 가요.",
+    "msg:en": "Solve ten problems and go to father.",
+    "img": [{
+      "src":"/img/c3_w1/house.png",
+      "style":"width:50%"
+    },{
+      "src": "/img/c3_w1/father.png",
+      "style":"width:50%"
+    }]
   }
 }

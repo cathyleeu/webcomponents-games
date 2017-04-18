@@ -11,36 +11,35 @@
   ],
   "map": [
     "%#######",
-    "#.d....#",
-    "#)#).#.#",
-    "#....#.#",
-    "#.#....#",
-    "#.##.#.#",
-    "#....#.#",
+    "#.#..l.#",
+    "#.#.#.##",
+    "#......#",
+    "#..).#.#",
+    "#.##...#",
+    "#...##.#",
     "########"
   ],
   "extra":[{
-    "x": 0,
-    "y": 0,
-    "img": "tree1"
-  },{
-    "x": 1,
-    "y": 2,
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
+    "x": 3,
+    "y": 4,
     "img": "chest",
     "itemCount": 2
-  },{
-    "x": 3,
-    "y": 2,
-    "img": "chest",
-    "itemCount": 1
   }],
   "tutorial": [{
-    "msg:ko": "보물 상자가 여러 개 있어.",
-    "msg:en": "There are several chests.",
+    "msg:ko": "보물 상자로 가보자",
+    "msg:en": "Go to the chest.",
     "img": "/img/b4/chest1.png"
   },{
-    "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
-    "msg:en": "Let's use 'Bring' block on the chests!",
+    "msg:ko": "보물 상자 하나에 보물이 여러 개 있네.",
+    "msg:en": "There are more than one things in the chest.",
+    "img": "/img/b4/chest1.png"
+  },{
+    "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
+    "msg:en": "Try to use 'Bring' block more than once!",
     "img": "/img/blocks/bring.png"
   }],
   "goal": {

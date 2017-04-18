@@ -1,0 +1,84 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "##.##############.",
+    "..#..%...%....%..#",
+    "..#####%...%.....#",
+    ".#.r###.........#.",
+    "..#..%###%....%..#",
+    "..#....%..#.%....#",
+    "##.##############."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 1,
+    "link": "c3_w1_c2/1"
+  },{
+    "x": 5,
+    "y": 4,
+    "link": "c3_w1_c2/2"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "c3_w1_c2/3"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c3_w1_c2/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c3_w1_c2/5"
+  },{
+    "x": 9,
+    "y": 4,
+    "link": "c3_w1_c2/6"
+  },{
+    "x": 11,
+    "y": 2,
+    "link": "c3_w1_c2/7"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c3_w1_c2/8"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "c3_w1_c2/9"
+  },{
+    "x": 14,
+    "y": 4,
+    "link": "c3_w1_c2/10"
+  },{
+    "img":"honey_pot",
+    "x": 16,
+    "y": 3,
+    "obstacle": false,
+    "link": "c3_w2/index",
+    "min_score": 10
+  }],
+  "tutorial": [{
+    "msg:ko": "덧셈 문제를 해결하면, 별 1개를 모을 수 있어",
+    "msg:en": "When solve the addition problem, You can get a star",
+    "img": "/img/c3_w1/star.png"
+  }, {
+    "msg:ko": "10개의 별을 모은뒤, 꿀단지로 이동하자!",
+    "msg:en": "Collect 10 stars and, Move to honey pot!",
+    "img": "/img/c3_w1/honey_pot.png",
+    "x" : 16,
+    "y" : 3
+  },{
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "10개의 문제를 해결해보자!",
+    "msg:en": "solve 10 problems",
+    "img": "/img/c3_w1/star.png"
+  }
+}

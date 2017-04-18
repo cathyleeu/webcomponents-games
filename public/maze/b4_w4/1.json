@@ -2,7 +2,7 @@
   "tile_size": 256,
 
   "score":1,
-  "workspace": ["start"],
+  "workspace": ["start", "move_left", "move_up","move_up"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -18,9 +18,9 @@
     "#.)...##",
     "#P#.##.#",
     "#.#R##.#",
-    "#...#..#",
+    "#.d.#..#",
     "###.##.#",
-    "#..u...#",
+    "#......#",
     "########"
   ],
   "extra":[{
@@ -50,9 +50,9 @@
       "src": "/img/b4/paper.png",
       "style": "width:33%"
     }]
-  },{
+  }],"goal" : {
     "msg:ko": "보물 상자를 열자!",
     "msg:en": "Let's open the chest!",
     "img": "/img/b4/chest3.png"
-  }]
+  }
 }
