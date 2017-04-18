@@ -57,6 +57,8 @@ page('*', function(ctx, next) {
       lang = "en";
     } else if(map_qs.split("&").indexOf("lang=ko") >= 0) {
       lang = "ko";
+    } else if(map_qs.split("&").indexOf("lang=cn") >= 0) {
+      lang = "cn";
     }
     store.set("lang", lang);
     $.getJSON("/msg/" + lang + ".json", function(msg_obj) {

@@ -22,6 +22,7 @@
   ],
   "tutorial": [{
     "msg:ko": "올챙올챙~ 뒷다리가 생겼으니 방향 전환을 할 수 있어!",
-    "msg:en": "Now I have legs and I can rotate!"
+    "msg:en": "Now I have legs and I can rotate!",
+    "msg:en": "长出了后腿，可以改变方向了。"
   }]
 }

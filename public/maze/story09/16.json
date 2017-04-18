@@ -22,6 +22,7 @@
   ],
   "tutorial": [{
     "msg:ko": "길이 꼬불꼬불하니 잘 세어보고 가보자!",
-    "msg:en": "Long way to go. Let's count the steps."
+    "msg:en": "Long way to go. Let's count the steps.",
+    "msg:cn": "道路弯弯曲曲，应该好好记道。"
 }]
 }

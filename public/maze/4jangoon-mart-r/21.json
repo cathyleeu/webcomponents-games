@@ -51,14 +51,17 @@
   "tutorial": [{
     "msg:ko": "모든 과일을 집어서",
     "msg:en": "Get all fruit",
+    "msg:cn": "回家的时候，所有的水果",
     "img": "/img/jangoon/jangoon0.png"
   },{
     "msg:ko": "카트에 집어 넣어보자!",
     "msg:en": "And add to cart",
+    "msg:cn": "放入购物车内！",
     "img": "/img/jangoon/kart.png"
   }],
   "success": [{
     "msg:ko": "성공! 4권의 모든 콘텐츠를 해결했어요! ",
-    "msg:en": "Success! All Contents Clear in 4th book"
+    "msg:en": "Success! All Contents Clear in 4th book",
+    "msg:cn": "成功了！解完所有题了。"
   }]
 }

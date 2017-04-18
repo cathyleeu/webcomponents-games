@@ -20,9 +20,11 @@
   ],
   "tutorial": [{
     "msg:ko": "올챙올챙~ 장구벌레가 왼쪽에 있어",
-    "msg:en": "There is a bug on my left!"
+    "msg:en": "There is a bug on my left!",
+    "msg:cn": "虫子在左侧。"
   },{
     "msg:ko": "←왼쪽으로이동 블록을 이용해서 왼쪽으로 가보자!",
-    "msg:en": "Let's move left using [Move Left] block."
+    "msg:en": "Let's move left using [Move Left] block.",
+    "msg:cn": "利用向左移动的积木，试着向左移动看看。"
   }]
 }

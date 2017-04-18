@@ -4,7 +4,8 @@ Blocks["start"] = {
   rgbColor: "#FFDE00",
   message0: {
     ko: "%1 시작하면",
-    en: "%1 Start"
+    en: "%1 Start",
+    cn: "%1 入门"
   },
   args0: [
     {type: "field_image", src: "/img/start.png"}
@@ -174,7 +175,8 @@ Blocks["move_up"] = {
   rgbColor: "#F28C00",
   message0: {
     ko: "%1 위로 이동",
-    en: "%1 Move Up"
+    en: "%1 Move Up",
+    cn: "%1 向上移"
   },
   args0: [
     {type: "field_image", src: "/img/up.png"}
@@ -188,7 +190,8 @@ Blocks["move_down"] = {
   rgbColor: "#D9629E",
   message0: {
     ko: "%1 아래로 이동",
-    en: "%1 Move Down"
+    en: "%1 Move Down",
+    cn: "%1 向下移"
   },
   args0: [
     {type: "field_image", src: "/img/down.png"}
@@ -202,7 +205,8 @@ Blocks["move_left"] = {
   rgbColor: "#60B12F",
   message0: {
     ko: "%1 왼쪽으로 이동",
-    en: "%1 Move Left"
+    en: "%1 Move Left",
+    cn: "%1 向左移"
   },
   args0: [
     {type: "field_image", src: "/img/left.png"}
@@ -216,7 +220,8 @@ Blocks["move_right"] = {
   rgbColor: "#34BEEF",
   message0: {
     ko: "%1 오른쪽으로 이동",
-    en: "%1 Move Right"
+    en: "%1 Move Right",
+    cn: "%1 向右移"
   },
   args0: [
     {type: "field_image", src: "/img/right.png"}
@@ -395,7 +400,8 @@ Blocks["check"] = {
   rgbColor: "#33B1B1",
   message0: {
     ko: "%1 확인하기",
-    en: "%1 Inspect"
+    en: "%1 Inspect",
+    cn: "%1 检查"
   },
   args0: [
     {type: "field_image", src: "/img/check.png"}
@@ -406,7 +412,8 @@ Blocks["check2"] = {
   rgbColor: "#33B1B1",
   message0: {
     ko: "%1 확인하기",
-    en: "%1 Inspect"
+    en: "%1 Inspect",
+    cn: "%1 检查"
   },
   args0: [
     {type: "field_image", src: "/img/check.png"}
@@ -492,7 +499,8 @@ Blocks["repeat"] = {
   rgbColor: "#242786",
   message0: {
     ko: "반복 %1",
-    en: "Repeat %1"
+    en: "Repeat %1",
+    cn: "重复 %1"
   },
   args0: [{
     type: "field_dropdown",
@@ -1045,7 +1053,8 @@ Blocks['condition2_food_apple'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/apple.png", width: 30, height: 30}
@@ -1057,7 +1066,8 @@ Blocks['condition2_food_apple'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1070,7 +1080,8 @@ Blocks['condition2_food_bam'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/bam.png", width: 30, height: 30}
@@ -1082,7 +1093,8 @@ Blocks['condition2_food_bam'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1095,7 +1107,8 @@ Blocks['condition2_food_gam'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/gam.png", width: 30, height: 30}
@@ -1107,7 +1120,8 @@ Blocks['condition2_food_gam'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1120,7 +1134,8 @@ Blocks['condition2_food_pear'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/pear.png", width: 30, height: 30}
@@ -1132,7 +1147,8 @@ Blocks['condition2_food_pear'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1145,7 +1161,8 @@ Blocks['condition2_food_pumpkin'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/pumpkin.png", width: 30, height: 30}
@@ -1157,7 +1174,8 @@ Blocks['condition2_food_pumpkin'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1170,7 +1188,8 @@ Blocks['condition2_food_seed'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/seed.png", width: 30, height: 30}
@@ -1182,7 +1201,8 @@ Blocks['condition2_food_seed'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1195,7 +1215,8 @@ Blocks['condition2_food_walnut'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/walnut.png", width: 30, height: 30}
@@ -1207,7 +1228,8 @@ Blocks['condition2_food_walnut'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1220,7 +1242,8 @@ Blocks['condition2_food_wandu'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/wandu.png", width: 30, height: 30}
@@ -1232,7 +1255,8 @@ Blocks['condition2_food_wandu'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1307,7 +1331,7 @@ Blocks['condition2_direction_left'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1345,7 +1369,8 @@ Blocks['condition2_itemfood_apple'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/apple.png", width: 30, height: 30}
@@ -1357,7 +1382,8 @@ Blocks['condition2_itemfood_apple'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1370,7 +1396,8 @@ Blocks['condition2_itemfood_bam'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/bam.png", width: 30, height: 30}
@@ -1382,7 +1409,8 @@ Blocks['condition2_itemfood_bam'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1395,7 +1423,8 @@ Blocks['condition2_itemfood_gam'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/gam.png", width: 30, height: 30}
@@ -1407,7 +1436,8 @@ Blocks['condition2_itemfood_gam'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1420,7 +1450,8 @@ Blocks['condition2_itemfood_pear'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/pear.png", width: 30, height: 30}
@@ -1432,7 +1463,8 @@ Blocks['condition2_itemfood_pear'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1445,7 +1477,8 @@ Blocks['condition2_itemfood_pumpkin'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/pumpkin.png", width: 30, height: 30}
@@ -1457,7 +1490,8 @@ Blocks['condition2_itemfood_pumpkin'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1470,7 +1504,8 @@ Blocks['condition2_itemfood_seed'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/seed.png", width: 30, height: 30}
@@ -1482,7 +1517,8 @@ Blocks['condition2_itemfood_seed'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1495,7 +1531,8 @@ Blocks['condition2_itemfood_walnut'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/walnut.png", width: 30, height: 30}
@@ -1507,7 +1544,8 @@ Blocks['condition2_itemfood_walnut'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1520,7 +1558,8 @@ Blocks['condition2_itemfood_wandu'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/jsparrow/wandu.png", width: 30, height: 30}
@@ -1532,7 +1571,8 @@ Blocks['condition2_itemfood_wandu'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1545,7 +1585,8 @@ Blocks['condition2_itemkey_circle'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/bomi/circle_key.png", width: 30, height: 30}
@@ -1557,7 +1598,8 @@ Blocks['condition2_itemkey_circle'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1570,7 +1612,8 @@ Blocks['condition2_itemkey_rectangle'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/bomi/rectangle_key.png", width: 30, height: 30}
@@ -1582,7 +1625,8 @@ Blocks['condition2_itemkey_rectangle'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1595,7 +1639,8 @@ Blocks['condition2_itemkey_triangle'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/bomi/triangle_key.png", width: 30, height: 30}
@@ -1607,7 +1652,8 @@ Blocks['condition2_itemkey_triangle'] = {
   }],
   message2: {
     ko: "아니라면",
-    en: "Else"
+    en: "Else",
+    cn: "其他"
   },
   message3: "%1",
   args3: [{
@@ -1620,7 +1666,8 @@ Blocks['condition3_trash'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/can.png", width: 30, height: 30}
@@ -1632,7 +1679,8 @@ Blocks['condition3_trash'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/paper.png", width: 30, height: 30}
@@ -1644,7 +1692,8 @@ Blocks['condition3_trash'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/cobot/bottle.png", width: 30, height: 30}
@@ -1660,7 +1709,8 @@ Blocks['condition2_hanbok'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/winterspecial/hanbok_boy.png", width: 30, height: 30}
@@ -1672,7 +1722,8 @@ Blocks['condition2_hanbok'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/winterspecial/hanbok_girl.png", width: 30, height: 30}
@@ -1688,7 +1739,8 @@ Blocks['condition2_guide_tr'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/toilet.png", width: 30, height: 30}
@@ -1700,7 +1752,8 @@ Blocks['condition2_guide_tr'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/restaurant.png", width: 30, height: 30}
@@ -1716,7 +1769,8 @@ Blocks['condition2_guide_rm'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/restaurant.png", width: 30, height: 30}
@@ -1728,7 +1782,8 @@ Blocks['condition2_guide_rm'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/machine.png", width: 30, height: 30}
@@ -1744,7 +1799,8 @@ Blocks['condition2_guide_tm'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/toilet.png", width: 30, height: 30}
@@ -1756,7 +1812,8 @@ Blocks['condition2_guide_tm'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/machine.png", width: 30, height: 30}
@@ -1772,7 +1829,8 @@ Blocks['condition3_guide'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/cobot/toilet.png", width: 30, height: 30}
@@ -1784,7 +1842,8 @@ Blocks['condition3_guide'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/cobot/restaurant.png", width: 30, height: 30}
@@ -1796,7 +1855,8 @@ Blocks['condition3_guide'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/cobot/machine.png", width: 30, height: 30}
@@ -1812,7 +1872,8 @@ Blocks['condition3_aClock123'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0100.png", width: 30, height: 30}
@@ -1824,7 +1885,8 @@ Blocks['condition3_aClock123'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0200.png", width: 30, height: 30}
@@ -1836,7 +1898,8 @@ Blocks['condition3_aClock123'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0300.png", width: 30, height: 30}
@@ -1852,7 +1915,8 @@ Blocks['condition3_aClock789'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0700.png", width: 30, height: 30}
@@ -1864,7 +1928,8 @@ Blocks['condition3_aClock789'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0800.png", width: 30, height: 30}
@@ -1876,7 +1941,8 @@ Blocks['condition3_aClock789'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0900.png", width: 30, height: 30}
@@ -1892,7 +1958,8 @@ Blocks['condition3_aClock148'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0100.png", width: 30, height: 30}
@@ -1904,7 +1971,8 @@ Blocks['condition3_aClock148'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0400.png", width: 30, height: 30}
@@ -1916,7 +1984,8 @@ Blocks['condition3_aClock148'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0800.png", width: 30, height: 30}
@@ -1932,7 +2001,8 @@ Blocks['condition3_aClock679'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0600.png", width: 30, height: 30}
@@ -1944,7 +2014,8 @@ Blocks['condition3_aClock679'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0700.png", width: 30, height: 30}
@@ -1956,7 +2027,8 @@ Blocks['condition3_aClock679'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0900.png", width: 30, height: 30}
@@ -1972,7 +2044,8 @@ Blocks['condition3_aClock589'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0500.png", width: 30, height: 30}
@@ -1984,7 +2057,8 @@ Blocks['condition3_aClock589'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0800.png", width: 30, height: 30}
@@ -1996,7 +2070,8 @@ Blocks['condition3_aClock589'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0900.png", width: 30, height: 30}
@@ -2012,7 +2087,8 @@ Blocks['condition3_aClock379'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0300.png", width: 30, height: 30}
@@ -2024,7 +2100,8 @@ Blocks['condition3_aClock379'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0700.png", width: 30, height: 30}
@@ -2036,7 +2113,8 @@ Blocks['condition3_aClock379'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0900.png", width: 30, height: 30}
@@ -2052,7 +2130,8 @@ Blocks['condition3_aClock468'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0400.png", width: 30, height: 30}
@@ -2064,7 +2143,8 @@ Blocks['condition3_aClock468'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0600.png", width: 30, height: 30}
@@ -2076,7 +2156,8 @@ Blocks['condition3_aClock468'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0800.png", width: 30, height: 30}
@@ -2092,7 +2173,8 @@ Blocks['condition3_aClock136'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0100.png", width: 30, height: 30}
@@ -2104,7 +2186,8 @@ Blocks['condition3_aClock136'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0300.png", width: 30, height: 30}
@@ -2116,7 +2199,8 @@ Blocks['condition3_aClock136'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0600.png", width: 30, height: 30}
@@ -2132,7 +2216,8 @@ Blocks['condition3_aClock235'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0200.png", width: 30, height: 30}
@@ -2144,7 +2229,8 @@ Blocks['condition3_aClock235'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0300.png", width: 30, height: 30}
@@ -2156,7 +2242,8 @@ Blocks['condition3_aClock235'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0500.png", width: 30, height: 30}
@@ -2172,7 +2259,8 @@ Blocks['condition3_aClock167'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0100.png", width: 30, height: 30}
@@ -2184,7 +2272,8 @@ Blocks['condition3_aClock167'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0600.png", width: 30, height: 30}
@@ -2196,7 +2285,8 @@ Blocks['condition3_aClock167'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0700.png", width: 30, height: 30}
@@ -2212,7 +2302,8 @@ Blocks['condition3_aClock359'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0300.png", width: 30, height: 30}
@@ -2224,7 +2315,8 @@ Blocks['condition3_aClock359'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0500.png", width: 30, height: 30}
@@ -2236,7 +2328,8 @@ Blocks['condition3_aClock359'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0900.png", width: 30, height: 30}
@@ -2252,7 +2345,8 @@ Blocks['condition3_aClock478'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0400.png", width: 30, height: 30}
@@ -2264,7 +2358,8 @@ Blocks['condition3_aClock478'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0700.png", width: 30, height: 30}
@@ -2276,7 +2371,8 @@ Blocks['condition3_aClock478'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0800.png", width: 30, height: 30}
@@ -2292,7 +2388,8 @@ Blocks['condition3_aClock149'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0100.png", width: 30, height: 30}
@@ -2304,7 +2401,8 @@ Blocks['condition3_aClock149'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0400.png", width: 30, height: 30}
@@ -2316,7 +2414,8 @@ Blocks['condition3_aClock149'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0900.png", width: 30, height: 30}
@@ -2332,7 +2431,8 @@ Blocks['condition3_aClock348'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/rudolph/a0300.png", width: 30, height: 30}
@@ -2344,7 +2444,8 @@ Blocks['condition3_aClock348'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/rudolph/a0400.png", width: 30, height: 30}
@@ -2356,7 +2457,8 @@ Blocks['condition3_aClock348'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/rudolph/a0800.png", width: 30, height: 30}
@@ -2419,7 +2521,8 @@ Blocks['condition3_rsp'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/hand_rock.png", width: 30, height: 30}
@@ -2431,7 +2534,8 @@ Blocks['condition3_rsp'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/hand_scissors.png", width: 30, height: 30}
@@ -2443,7 +2547,8 @@ Blocks['condition3_rsp'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/hand_paper.png", width: 30, height: 30}
@@ -2459,7 +2564,8 @@ Blocks['condition3_bok'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args0: [
     {type: "field_image", src: "/img/winterspecial/luck_o.png", width: 30, height: 30}
@@ -2471,7 +2577,8 @@ Blocks['condition3_bok'] = {
   }],
   message2: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args2: [
     {type: "field_image", src: "/img/winterspecial/luck_sqr.png", width: 30, height: 30}
@@ -2483,7 +2590,8 @@ Blocks['condition3_bok'] = {
   }],
   message4: {
     ko: "%1 이라면",
-    en: "If %1"
+    en: "If %1",
+    cn: "如果 %1"
   },
   args4: [
     {type: "field_image", src: "/img/winterspecial/luck_tri.png", width: 30, height: 30}

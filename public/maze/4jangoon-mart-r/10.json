@@ -40,10 +40,12 @@
   "tutorial": [{
     "msg:ko": "동그랗지 않은 과일 2개를 집어서",
     "msg:en": "Get two non-round fruit",
+    "msg:cn": "夹2个不圆的水果",
     "img": "/img/jangoon/jangoon0.png"
   },{
     "msg:ko": "카트에 집어 넣어보자!",
     "msg:en": "And add to cart",
+    "msg:cn": "放入购物车内！",
     "img": "/img/jangoon/kart.png"
   }]
 }

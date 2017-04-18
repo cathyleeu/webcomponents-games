@@ -178,7 +178,7 @@ if(location.pathname == "/code" && location.hash) {
       imgs = [];
   var names, level, books;
   var lang = info ? (info.lang || "ko") : "ko",
-      msg = {
+      _msg = {
         ko: {
           welcome: "안녕하세요. 키즈씽킹입니다.",
           school: "홈페이지입니다.",
@@ -203,13 +203,14 @@ if(location.pathname == "/code" && location.hash) {
           error: "Check your url, Please.",
           month: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
         }
-      };
+      },
+      msg = _msg[lang] || _msg.en;
 
   $("[data-msg]").each(function(idx, el) {
-    $(el).text(msg[lang][$(el).data("msg")]);
+    $(el).text(msg[$(el).data("msg")]);
   });
   if(code == "" || info == null) {
-    $("[data-msg=school]").text(msg[lang].error);
+    $("[data-msg=school]").text(msg.error);
     setTimeout(function() {
       alert("잘못된 경로로 접근하였습니다. 원별 접속 주소를 확인하여 주세요.");
     }, 1);
@@ -310,7 +311,7 @@ if(location.pathname == "/code" && location.hash) {
   }
 
   function showClass() {
-    $(".yearmonth").text(msg[lang].month[Number(info.date.slice(4,6))-1]);
+    $(".yearmonth").text(msg.month[Number(info.date.slice(4,6))-1]);
     $("#classes").empty();
     var classes = Object.keys(info.classes).map(function(item) {
       return info.classes[item];
@@ -318,7 +319,11 @@ if(location.pathname == "/code" && location.hash) {
       return init.concat(arr);
     }, []);
     classes.forEach(function(className, i) {
-      $('<a href="#className=' + className + '" class="btn btn-lg btn-default">' + className + '</a>').appendTo("#classes");
+      if(info.code == "e91d5") {
+        $('<a href="#className=' + className + '&book=true" class="btn btn-lg btn-default">' + className + '</a>').appendTo("#classes");
+      } else {
+        $('<a href="#className=' + className + '" class="btn btn-lg btn-default">' + className + '</a>').appendTo("#classes");
+      }
     });
   }
 
@@ -364,10 +369,10 @@ if(location.pathname == "/code" && location.hash) {
     book_titles.forEach(function(book_title) {
       $(".contents")
           .append('<hr class="star-light">')
-          .append('<h3><span data-msg="kidsthinking">' + msg[lang].kidsthinking + '</span> <span class="book">' + book_title + '</span></h3>');
+          .append('<h3><span data-msg="kidsthinking">' + msg.kidsthinking + '</span> <span class="book">' + book_title + '</span></h3>');
       var lang_str = info.lang ? "lang=" + info.lang : "";
       books[book_title].forEach(function(item, idx) {
-        var isEnTitle = info.lang == "en" && item.length == 3,
+        var isEnTitle = (info.lang == "en" || info.lang == "cn") && item.length == 3,
             title = isEnTitle ? item[1] : item[0],
             link = item[item.length - 1],
             conn = link.indexOf("#!") >= 0 ? "?" : "#",

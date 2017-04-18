@@ -20,9 +20,11 @@
   ],
   "tutorial": [{
     "msg:ko": "올챙올챙~ 장구벌레가 아래쪽에 있어",
-    "msg:en": "There is a bug down below!"
+    "msg:en": "There is a bug down below!",
+    "msg:cn": "虫子在下面。"
   },{
     "msg:ko": "↓아래로이동 블록을 이용해서 아래로 가보자!",
-    "msg:en": "Let's move down using [Move Down] block."
+    "msg:en": "Let's move down using [Move Down] block.",
+    "msg:cn": "利用向下移动的积木，试着向下移动看看。"
   }]
 }
