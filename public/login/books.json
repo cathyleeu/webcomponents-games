@@ -298,13 +298,6 @@
     ["가위바위보", "Rock Paper Scissors", "/maze#!3woong-cookie/1"],
     ["쿠키 전달하기", "Bringing Cookies", "/maze#!3woong-item-h/1"]
   ],
-  "DemoA": [
-    ["올챙이의 모험", "Tadpole's Adventure", "/maze#!story09/1"],
-    ["가위바위보", "Rock Paper Scissors", "/maze#!3woong-cookie/1"],
-    ["장군이의 집찾기", "Let's Go Home.", "/maze#!4jangoon-house-r/1"],
-    ["장군이의 심부름", "Go to the Mart", "/maze#!4jangoon-mart-r/1"],
-    ["짹스패로우와 먹이찾기", "Go Find the Food", "/maze#!7-2jack-food/1"]
-  ],
   "데모B레벨": [
     ["장군이의 집찾기", "/maze#!4jangoon-house-r/index"],
     ["장군이의 심부름", "/maze#!4jangoon-mart-r/index"]
@@ -312,6 +305,17 @@
   "데모C레벨": [
     ["짹스패로우와 먹이찾기", "/maze#!7-2jack-food/index"],
     ["짹스패로우의 갈림길", "/maze#!7-3jack-direction/index"]
+  ],
+  "DemoA": [
+    ["올챙이의 모험", "Tadpole's Adventure", "/maze#!story09/1"],
+    ["가위바위보", "Rock Paper Scissors", "/maze#!3woong-cookie/1"],
+    ["장군이의 집찾기", "Let's Go Home.", "/maze#!4jangoon-house-r/1"],
+    ["장군이의 심부름", "Go to the Mart", "/maze#!4jangoon-mart-r/1"],
+    ["짹스패로우와 먹이찾기", "Go Find the Food", "/maze#!7-2jack-food/1"]
+  ],
+  "DemoB": [
+    ["자판기 놀이&엘리베이터 놀이", "Vending Machine", "/c1_w2"],
+    ["코스네 가족", "My Family", "/mazeh#!b3_w1/index"]
   ],
   "키즈코딩영문데모": [
     ["가위바위보", "/maze#!3woong-cookie/1"],

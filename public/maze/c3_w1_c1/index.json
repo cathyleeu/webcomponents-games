@@ -19,11 +19,11 @@
   }],
   "tutorial": [{
     "msg:ko": "이 곳에서는 가상 키보드를 이용하여 코스를 움직일 수 있어요. ↑ ↓ ← → 버튼을 눌러 코스를 움직여보아요.",
-    "msg:en": "you can move 'Cos' character by virtual keyboard on this map. Press ↑ ↓ ← → botton to move Cos.",
+    "msg:en": "you can move 'Cos' character by virtual keyboard on this map. Press ↑ ↓ ← → button to move Cos.",
     "img": "/img/kidsblocks/key.png"
   },{
     "msg:ko": "→ 버튼을 눌러 집으로 이동하여 '코스네 가족'을 시작해보아요.",
-    "msg:en": "Press → botton to go home and complete 'Cos' Family' stage.",
+    "msg:en": "Press → button to go home and complete 'Cos' Family' stage.",
     "img": [{
       "src": "/img/kidsblocks/mRight.png",
       "style": "width:50%"

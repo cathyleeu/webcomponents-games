@@ -83,7 +83,7 @@
 
 <script>
   var hash = location.hash,
-      lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+      lang = hash.indexOf("lang=en") >= 0 ? "en" : hash.indexOf("lang=cn") >= 0 ? "cn" : "ko",
       msg = {
         ko: {
           instruction: "엘리베이터 놀이를 해봐요",
@@ -100,6 +100,14 @@
           hint2: "Press the fifth floor.",
           hint3: "The elevator arrived on the fifth floor. Go out.",
           success: "Success!"
+        },
+        cn: {
+          instruction: "玩一玩电梯游戏吧。",
+          hint: "请按下箭头键，叫一下电梯！",
+          hint1: "电梯来了！进电梯吧！",
+          hint2: "进入电梯了！请按5层！",
+          hint3: "电梯到5层了！从电梯出来！",
+          success: "成功了！做得很棒。"
         }
       };
   var step = 1;
