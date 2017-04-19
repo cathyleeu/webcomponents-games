@@ -55,43 +55,53 @@ KidsCoding = function() {
   }
   // 일부 태블릿에서 블럭이 움직이지 않는 현상 수정
   Blockly.longStart_ = function() {};
+
   // movable=false 인 블럭 클릭이 되지 않는 현상 처리
   // https://github.com/google/blockly/issues/742
+  var downBlock = null;
   var onMouseDown_ = Blockly.BlockSvg.prototype.onMouseDown_;
   Blockly.BlockSvg.prototype.onMouseDown_ = function(e) {
     e.stopPropagation();
+    if(this.isInFlyout) {
+      downBlock = this;
+    }
     onMouseDown_.call(this, e);
   };
   // flyout에서 클릭시 맨 마지막에 블럭 추가하는 기능
-  // TODO: block에서 onMouseUp이 발생하지 않으므로 다른 방법 필요
-  var onMouseUp_ = Blockly.BlockSvg.prototype.onMouseUp_;
-  Blockly.BlockSvg.prototype.onMouseUp_ = function(e) {
+  var onMouseMove_ = Blockly.BlockSvg.prototype.onMouseMove_;
+  Blockly.BlockSvg.prototype.onMouseMove_ = function(e) {
+    onMouseMove_.call(this, e);
+    downBlock = null;
+  };
+  var onMouseUp_ = Blockly.Flyout.prototype.onMouseUp_;
+  Blockly.Flyout.prototype.onMouseUp_ = function(e) {
     onMouseUp_.call(this, e);
-    if(this.isInFlyout) {
-      var blockId = Blockly.genUid(),
-          groupId = Blockly.genUid(),
-          dom = Blockly.Xml.blockToDomWithXY(this, true),
-          blocks = _this.workspace.getAllBlocks(),
-          target = blocks.filter(function(block) {
-            return block.type === "start";
-          })[0];
-      while(target.getNextBlock()) {
-        target = target.getNextBlock();
-      }
-      dom.setAttribute("id", blockId);
-      Blockly.Events.fromJson({
-        type: "create",
-        blockId: blockId,
-        group: groupId,
-        xml: Blockly.Xml.domToText(dom)
-      }, _this.workspace).run(true);
-      Blockly.Events.fromJson({
-        type: "move",
-        blockId: blockId,
-        group: groupId,
-        newParentId: target.id
-      }, _this.workspace).run(true);
+    if(!downBlock) {
+      return;
     }
+    var blockId = Blockly.genUid(),
+        groupId = Blockly.genUid(),
+        dom = Blockly.Xml.blockToDomWithXY(downBlock, true),
+        blocks = _this.workspace.getAllBlocks(),
+        target = blocks.filter(function(block) {
+          return block.type === "start";
+        })[0];
+    while(target.getNextBlock()) {
+      target = target.getNextBlock();
+    }
+    dom.setAttribute("id", blockId);
+    Blockly.Events.fromJson({
+      type: "create",
+      blockId: blockId,
+      group: groupId,
+      xml: Blockly.Xml.domToText(dom)
+    }, _this.workspace).run(true);
+    Blockly.Events.fromJson({
+      type: "move",
+      blockId: blockId,
+      group: groupId,
+      newParentId: target.id
+    }, _this.workspace).run(true);
   }
 
   // 가로블럭에서 드랍다운 메뉴가 화면 밖으로 나가는 현상 수정
