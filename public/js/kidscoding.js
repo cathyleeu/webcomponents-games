@@ -61,7 +61,12 @@ KidsCoding = function() {
   Blockly.BlockSvg.prototype.onMouseDown_ = function(e) {
     e.stopPropagation();
     onMouseDown_.call(this, e);
-    // flyout에서 클릭시 맨 마지막에 블럭 추가하는 기능
+  };
+  // flyout에서 클릭시 맨 마지막에 블럭 추가하는 기능
+  // TODO: block에서 onMouseUp이 발생하지 않으므로 다른 방법 필요
+  var onMouseUp_ = Blockly.BlockSvg.prototype.onMouseUp_;
+  Blockly.BlockSvg.prototype.onMouseUp_ = function(e) {
+    onMouseUp_.call(this, e);
     if(this.isInFlyout) {
       var blockId = Blockly.genUid(),
           groupId = Blockly.genUid(),
@@ -87,7 +92,8 @@ KidsCoding = function() {
         newParentId: target.id
       }, _this.workspace).run(true);
     }
-  };
+  }
+
   // 가로블럭에서 드랍다운 메뉴가 화면 밖으로 나가는 현상 수정
   var showEditor_ = Blockly.FieldDropdown.prototype.showEditor_;
   Blockly.FieldDropdown.prototype.showEditor_ = function() {
