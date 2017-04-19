@@ -61,6 +61,32 @@ KidsCoding = function() {
   Blockly.BlockSvg.prototype.onMouseDown_ = function(e) {
     e.stopPropagation();
     onMouseDown_.call(this, e);
+    // flyout에서 클릭시 맨 마지막에 블럭 추가하는 기능
+    if(this.isInFlyout) {
+      var blockId = Blockly.genUid(),
+          groupId = Blockly.genUid(),
+          dom = Blockly.Xml.blockToDomWithXY(this, true),
+          blocks = _this.workspace.getAllBlocks(),
+          target = blocks.filter(function(block) {
+            return block.type === "start";
+          })[0];
+      while(target.getNextBlock()) {
+        target = target.getNextBlock();
+      }
+      dom.setAttribute("id", blockId);
+      Blockly.Events.fromJson({
+        type: "create",
+        blockId: blockId,
+        group: groupId,
+        xml: Blockly.Xml.domToText(dom)
+      }, _this.workspace).run(true);
+      Blockly.Events.fromJson({
+        type: "move",
+        blockId: blockId,
+        group: groupId,
+        newParentId: target.id
+      }, _this.workspace).run(true);
+    }
   };
   // 가로블럭에서 드랍다운 메뉴가 화면 밖으로 나가는 현상 수정
   var showEditor_ = Blockly.FieldDropdown.prototype.showEditor_;
