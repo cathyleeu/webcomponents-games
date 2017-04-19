@@ -62,7 +62,7 @@
   }],
   "tutorial": [{
     "msg:ko": "이 곳에서는 가상 키보드를 이용하여 코스를 움직일 수 있어요. ↑ ↓ ← → 버튼을 눌러 코스를 움직여보아요.",
-    "msg:en": "you can move 'Cos' character by virtual keyboard on this map. Press ↑ ↓ ← → botton to move Cos.",
+    "msg:en": "you can move 'Cos' character by virtual keyboard on this map. Press ↑ ↓ ← → button to move Cos.",
     "img": "/img/kidsblocks/key.png"
   },{
     "msg:ko": "별로 이동하면 덧셈 문제를 풀 수 있어. 문제를 하나 풀면 별을 한 개 얻지. 열 문제를 풀고 꿀단지로 가자.",
