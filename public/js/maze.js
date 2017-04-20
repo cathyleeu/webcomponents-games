@@ -152,7 +152,12 @@ function init() {
   var message_id = maze.message || maze.character,
       message_item = loader.getItem(message_id)
                   || loader.getItem("message")
-                  || loader.getItem("character");
+                  || loader.getItem("character"),
+      fullscreenEnabled =
+          document.fullscreenEnabled ||
+          document.webkitFullscreenEnabled ||
+          document.mozFullScreenEnabled ||
+          document.msFullscreenEnabled;
   // TODO: sprite일 경우도 message 캐릭터를 보여줄 수 있어야 함
   if(message_item && !message_item.sprite) {
     message_url = message_item.src;
@@ -182,6 +187,11 @@ function init() {
     $("#scoreBox").show();
     $("#runCode").hide();
   }
+  if(fullscreenEnabled) {
+    $("#fullscreen").show();
+  } else {
+    $("#fullscreen").hide();
+  }
   drawMaze();
   kidscoding.init(loader, mazeInfo, run, tileFactory);
   kidscoding.initBlockly(maze.toolbox, maze.workspace);
@@ -209,26 +219,17 @@ function init() {
     gameMode(loader, maze.type, tileFactory);
   }
   handle_resize();
-  if(document.fullscreenEnabled) {
-    $("#fullscreen").show();
-  } else {
-    $("#fullscreen").hide();
+  var lang = store.get("lang") || "ko",
+      goal = maze.goal || maze.tutorial[maze.tutorial.length - 1];
+  if(!$.isArray(goal.img)) {
+    goal.img = [goal.img];
   }
-  $("#doFS").on("touchstart click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    FullScreen();
-    store.set('fullscreen', true)
-    $("#runTutorial").removeClass("hidden");
-    runTutorial(maze.tutorial);
-  })
-  $("#notFS").on("touchstart click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    store.set('fullscreen', false)
-    $("#runTutorial").removeClass("hidden");
-    runTutorial(maze.tutorial);
-  })
+  $(".goal-imgs .goal-img").remove();
+  goal.img.forEach(function(attrs) {
+    attrs = (typeof attrs == "object") ? attrs : {"src": attrs};
+    $('<img class="goal-img">').attr(attrs).appendTo(".goal-imgs");
+  });
+  $(".goal .goal-msg").html(goal["msg" + (lang ? ":" + lang : "")] || goal["msg"]);
   var queries = store.get("queries") || {};
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
@@ -236,23 +237,7 @@ function init() {
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
   } else {
-    var lang = store.get("lang") || "ko",
-        fullscreen = store.get("fullscreen"),
-        goal = maze.goal || maze.tutorial[maze.tutorial.length - 1];
-    if(!$.isArray(goal.img)) {
-      goal.img = [goal.img];
-    }
-    $(".goal-imgs .goal-img").remove();
-    goal.img.forEach(function(attrs) {
-      attrs = (typeof attrs == "object") ? attrs : {"src": attrs};
-      $('<img class="goal-img">').attr(attrs).appendTo(".goal-imgs");
-    });
-    $(".goal .goal-msg").html(goal["msg" + (lang ? ":" + lang : "")] || goal["msg"]);
-    var fullscreenEnabled =
-        document.fullscreenEnabled ||
-      	document.webkitFullscreenEnabled ||
-      	document.mozFullScreenEnabled ||
-      	document.msFullscreenEnabled;
+    var fullscreen = store.get("fullscreen");
     if(fullscreen == undefined && fullscreenEnabled) {
       showModal({
         msg: messages.ask_fullscreen,
@@ -735,12 +720,28 @@ function addEvents() {
     init();
   });
 
+  $("#doFS").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    FullScreen();
+    store.set('fullscreen', true)
+    $("#runTutorial").removeClass("hidden");
+    runTutorial(maze.tutorial);
+  })
+  $("#notFS").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    store.set('fullscreen', false)
+    $("#runTutorial").removeClass("hidden");
+    runTutorial(maze.tutorial);
+  })
+  $("#fullScreen").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    FullScreen();
+  })
 }
-$("#fullScreen").on("touchstart click", function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  FullScreen();
-})
+
 function FullScreen(el) {
   var doc = window.document;
   var docEl = doc.documentElement;
