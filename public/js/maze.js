@@ -472,6 +472,16 @@ function handle_resize(e) {
   Blockly.svgResize(kidscoding.workspace);
 };
 function addEvents() {
+  if(window.name) {
+    $("#logout").removeClass("hidden");
+  }
+  $("#logout a").click(function(e) {
+    e.preventDefault();
+    if(window.name) {
+      store.clear();
+      location.href = "/code/" + window.name.split("#")[0];
+    }
+  });
   $("a.navbar-brand").click(function(e) {
     e.preventDefault();
     if(window.name) {
