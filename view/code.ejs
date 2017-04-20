@@ -243,6 +243,13 @@ if(location.pathname == "/code" && location.hash) {
         page(location.pathname + "#book=true");
       }
     });
+    $(".contents").click("a[rel=\"external\"]", function(e) {
+      e.preventDefault();
+      var href = $(e.target).closest("a").attr("href"),
+          data = location.pathname.split("/")[2] + location.hash;
+      window.name = data;
+      window.open(href, data, "fullscreen=yes", true);
+    });
   }
 
   function load() {
