@@ -28,13 +28,13 @@
       "src": "/img/kidsblocks/mRight.png",
       "style": "width:50%"
     },{
-      "src": "/img/b3_w1/ufo.png",
+      "src": "/img/c3_w1/house.png",
       "style": "width:50%"
     }]
   }],
   "goal": {
-    "msg:ko": "오른쪽 우주선으로 이동해요",
+    "msg:ko": "오른쪽 집으로 이동해요",
     "msg:en": "Go home on the right",
-    "img": "/img/b3_w1/ufo.png"
+    "img": "/img/c3_w1/house.png"
   }
 }
