@@ -158,7 +158,7 @@ function getInfoByCode(code) {
           found = true;
           var classes = {};
           kinder.kinderClasses.forEach(function(classObj) {
-            var book = classObj.level + "-1," + classObj.level + "-2";
+            var book = classObj.level + "-2," + classObj.level + "-3";
             if(!classes[book]) {
               classes[book] = [];
             }
@@ -325,7 +325,7 @@ public.get('/code/:code', function *(next) {
           if(code == kcode) {
             var classes = {};
             kinder.kinderClasses.forEach(function(classObj) {
-              var book = classObj.level + "-1," + classObj.level + "-2";
+              var book = classObj.level + "-2," + classObj.level + "-3";
               if(!classes[book]) {
                 classes[book] = [];
               }
@@ -398,7 +398,7 @@ public.get('/cache/:manifest', function *(next) {
           if(code == kcode) {
             var classes = {};
             kinder.kinderClasses.forEach(function(classObj) {
-              var book = classObj.level + "-1," + classObj.level + "-2";
+              var book = classObj.level + "-2," + classObj.level + "-3";
               if(!classes[book]) {
                 classes[book] = [];
               }
