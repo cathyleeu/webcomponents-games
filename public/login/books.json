@@ -384,10 +384,10 @@
     ["이리 저리 움직여요:토드가 개구리가 되었어요", "Tod the Baby Frog", "/mazeh#!b2_w4/1"]
   ],
   "B-3":[
-    ["나와 가족:코스네 가족", "/mazeh#!b3_w1/index"],
-    ["방향을 바꾸며 움직여요:우주선을 찾아요", "/mazeh#!b3_w2/index"],
-    ["더 멀리 움직여요:할머니 할아버지를 만나요", "/mazeh#!b3_w3/index"],
-    ["이리 저리 움직여요:다 같이 집으로 가요", "/mazeh#!b3_w4/index"]
+    ["나와 가족:코스네 가족", "Cos' Family", "/mazeh#!b3_w1/index"],
+    ["방향을 바꾸며 움직여요:우주선을 찾아요", "Go Find the UFO", "/mazeh#!b3_w2/index"],
+    ["더 멀리 움직여요:할머니 할아버지를 만나요", "Meet Grandparents", "/mazeh#!b3_w3/index"],
+    ["이리 저리 움직여요:다 같이 집으로 가요", "Go Home Together", "/mazeh#!b3_w4/index"]
   ],
   "B-4":[
     ["공원으로 소풍을 가요:엄마가 보물을 숨겨요", "/mazeh#!b4_w1/index"],
@@ -420,10 +420,10 @@
     ["라나의 선물을 찾아서:선물 찾기", "Lana’s Hidden Gifts", "/mazeh#!c2_w4/1"]
   ],
   "C-3":[
-    ["즐거운 우리집&가족이 늘었어요:코스네 가족&덧셈 연습", "/mazeh#!c3_w1_c1/index"],
-    ["여러 가지 길을 찾아보아요:꿀단지를 찾아요", "/mazeh#!c3_w2/index"],
-    ["가져오기와 사용하기를 이해해요:꿀단지를 가져와요", "/mazeh#!c3_w3/index"],
-    ["가져오기와 사용하기를 써보아요:꿀과자를 선물해요", "/mazeh#!c3_w4/index"]
+    ["즐거운 우리집&가족이 늘었어요:코스네 가족&덧셈 연습", "Cos' Family", "/mazeh#!c3_w1_c1/index"],
+    ["여러 가지 길을 찾아보아요:꿀단지를 찾아요", "Go Find the Honey Jar", "/mazeh#!c3_w2/index"],
+    ["가져오기와 사용하기를 이해해요:꿀단지를 가져와요", "Bring the Honey Jar", "/mazeh#!c3_w3/index"],
+    ["가져오기와 사용하기를 써보아요:꿀과자를 선물해요", "Present the Honey Cookies", "/mazeh#!c3_w4/index"]
   ],
   "C-4":[
     ["우리동네를 알아보아요&숫자와 크기를 비교해요:우리 동네 산책&숫자와 과일 크기비교", "/mazeh#!c4_w1_c1/index"],

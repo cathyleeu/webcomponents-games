@@ -66,7 +66,7 @@
     "img": "/img/c3_w1/star.png"
   }, {
     "msg:ko": "10개의 별을 모은뒤, 꿀단지로 이동하자!",
-    "msg:en": "Collect 10 stars and, Move to honey pot!",
+    "msg:en": "Collect 10 stars and, Move to honey jar!",
     "img": "/img/c3_w1/honey_pot.png",
     "x" : 16,
     "y" : 3

@@ -42,12 +42,12 @@
     "msg:en": "Mommy make Cookies with honey"
   },{
     "msg:ko": "엄마에게 꿀단지를 가져다 드리자",
-    "msg:en": "Let's bring the honey pot to my Mom",
+    "msg:en": "Let's bring the honey jars to my Mom",
     "img": "/img/c3_w1/mother.png"
   }],
   "goal": {
     "msg:ko": "엄마에게 꿀단지를 가져가자!",
-    "msg:en": "Bring the honey pot to my Mom",
+    "msg:en": "Bring the honey jars to my Mom",
     "img": "/img/c3_w2/honey_pot.png"
   },
   "success": [{
