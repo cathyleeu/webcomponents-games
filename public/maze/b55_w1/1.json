@@ -1,0 +1,32 @@
+{
+  "tile_size": 256,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".######.",
+    "#.d....#",
+    "#.%....#",
+    "#......#",
+    "#....q.#",
+    "#......#",
+    "#......#",
+    ".######."
+  ],
+  "extra":[{
+  "x": 2,
+  "y": 2,
+  "img": "rhkdghkans"
+}],
+  "tutorial": [{
+    "msg:ko": "광화문으로 가보자.",
+    "msg:en": "Let's go to Gwanghwamoon",
+    "img": "/img/b55/rhkdghkans.png"
+  }]
+}

@@ -1,0 +1,32 @@
+{
+  "tile_size": 256,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "#.U....#",
+    "#.t....#",
+    "#....%.#",
+    "#......#",
+    "#..b.c.#",
+    "#s.....#",
+    "#.u....#",
+    "#.....n#"
+  ],
+  "extra":[{
+  "x": 5,
+  "y": 2,
+  "img": "qhtlsrkr"
+}],
+"tutorial": [{
+  "msg:ko": "보신각으로 가보자.",
+  "msg:en": "Let's go to Boshingak.",
+  "img": "/img/b55/qhtlsrkr.png"
+}]
+}
