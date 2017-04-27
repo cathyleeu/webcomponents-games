@@ -455,6 +455,11 @@ function handle_resize(e) {
     $(".bottom-row").removeClass("horizontal_world");
   }
   Blockly.svgResize(kidscoding.workspace);
+  // 늑대와여우 안드로이드에서 캔버스가 사라지는 문제를 해결하기 위함
+  $("#display").css({display:"none"});
+  setTimeout(function() {
+    $("#display").css({display:"block"});
+  }, 1);
 };
 function addEvents() {
   if(window.name) {
