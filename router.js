@@ -159,6 +159,10 @@ function getInfoByCode(code) {
           var classes = {};
           kinder.kinderClasses.forEach(function(classObj) {
             var book = classObj.level + "-2," + classObj.level + "-3";
+            // 용인지사 컨텐츠 추가
+            if(classObj.code == "A00088-K1-KC1") {
+              book += ",추가컨텐츠";
+            }
             if(!classes[book]) {
               classes[book] = [];
             }
