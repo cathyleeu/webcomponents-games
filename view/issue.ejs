@@ -4,7 +4,6 @@
     width: 70px;
     font-size: 10px;
     padding: 5px;
-    margin-right: 20px;
   }
   .btn-warning.selected {
     background-color: #E53;
@@ -27,10 +26,10 @@
   .card {
     position: relative;
     display: inline-block;
-    width: 280px;
+    width: 300px;
     margin: 17px 35px;
     /* border: 1px solid black; */
-    padding: 10px 25px;
+    padding: 10px 15px;
   }
   .card h1 {
     text-align: center;
@@ -43,9 +42,11 @@
     text-align: center;
   }
   .sub-row .selected {
-    font-size: 11px;
-    width: 90px;
-    height: 34px;
+    font-size: 18px;
+    width: 120px;
+    height: 33px;
+    margin-left: -20px;
+    margin-bottom: 2px;
   }
   .sub-row label.left, .sub-row label.right {
     width: 90px;
@@ -60,14 +61,15 @@
     float: left;
     width: 60px;
     padding-top: 5px;
+    margin-left: 35px;
   }
 </style>
 <script id="template" type="text/x-ejs-template">
 <div class="card">
   <img class="kidscoding" src="/img/kidsthinking.png"/>
-  <h1><?=title?><br/><small><?=school?> <?=className?> (<?=month?>)</small></h1>
+  <h1><?=title?><br/><small><?=school?> <?=className?></small></h1>
   <div class="sub-row">
-    <button class="btn btn-lg btn-warning selected"><?=index?> : <?=name?></button>
+    <button class="btn btn-lg btn-warning selected"><?=index?>:<?=name?></button>
     <img class="character" src="img/login/<?=imgUrl?>/<?=img?>.png" />
   </div>
   <div class="sub-row">
@@ -94,14 +96,12 @@
         ko: {
           title: "키즈씽킹 로그인",
           id: "로그인 아이디",
-          password: "비밀 캐릭터",
-          month: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]
+          password: "비밀 캐릭터"
         },
         en: {
           title: "KidsThinking Login",
           id: "ID",
-          password: "Password",
-          month: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+          password: "Password"
         }
       };
   $(function() {
@@ -118,8 +118,7 @@
       ejs.open = '<?';
       ejs.close = '?>';
       var str = $("#template").html(),
-          template = ejs.compile(str),
-          month = Number(yearmonth.slice(4, 6));
+          template = ejs.compile(str);
       names = students || names["default"];
       if(levelLogin != 'A' && levelLogin != 'B' && levelLogin != 'C'){
         levelLogin = "default";
@@ -133,7 +132,6 @@
           name: $.isArray(nameArr) ? nameArr[1] : nameArr,
           school: school,
           className: className,
-          month: msg[lang].month[month-1],
           img: imgs[index],
           imgUrl: levelLogin,
           title: msg[lang].title,
