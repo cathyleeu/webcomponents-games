@@ -1,0 +1,50 @@
+{
+  "tile_size": 256,
+  "score":100,
+  "workspace": ["start","move_right","move_right","move_right"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".####.",
+    "#cFMm#",
+    "#hbsg#",
+    "#d..%#",
+    ".####."
+  ],
+  "extra": [{
+    "x": 4,
+    "y": 3,
+    "img":"mkt"
+  }],
+  "tutorial": [{
+    "msg:ko": "엄마, 아빠, 배고파요 우리 이제 먹으러 가요!",
+    "msg:en": "I'm hungry! Let's go to eat!",
+    "img": [{
+      "src": "/img/b55/cos0.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b55/mkt1.png",
+      "style" : "width:33%"
+    }]
+  }],
+  "goal": [{
+    "msg:ko": "시작 버튼을 눌러서 시장으로 가요.",
+    "msg:en": "Press the start button",
+    "img": [{
+      "src": "/img/blocks/start.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b55/mkt1.png",
+      "style" : "width:33%"
+    }]
+  }],
+  "success": [{
+    "msg:ko": "다음 주에 만나요!",
+    "msg:en": "See you next week!",
+    "img": "/img/b55/cos0.png"
+  }]
+}

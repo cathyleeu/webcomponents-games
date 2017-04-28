@@ -1,0 +1,59 @@
+{
+  "tile_size": 80,
+  "render": "pixel",
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    ".#######.",
+    "#..###.##",
+    "##...#.##",
+    "##.)...##",
+    "##..##).#",
+    "##.%..u##",
+    "##.....##",
+    "#....####",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 5,
+    "img": "mother",
+    "useItem": 3
+  }, {
+    "x": 6,
+    "y": 4,
+    "img":"hotdog",
+    "itemImg":"hotdog",
+    "disappear":true,
+    "itemCount": 1
+  }, {
+    "x": 3,
+    "y": 3,
+    "img":"chicken",
+    "itemImg":"chicken",
+    "disappear":true,
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "먹거리를 가지고 엄마께 가요.",
+    "msg:en": "Go to mother with foods.",
+    "img": [{
+      "src": "/img/b55/mother.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b55/hotdog.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b55/chicken.png",
+      "style" : "width:33%"
+    }]
+  }]
+}

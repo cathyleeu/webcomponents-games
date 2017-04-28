@@ -1,0 +1,508 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "####eeeeeeeeee####.",
+    "..r.%%%%%%%%%%.%n.#",
+    ".###........#..%n.#",
+    "wwwwwwwwwwwww..%n.#",
+    "..#............%n.#",
+    "##.%%%%%%%%%%..%n.#",
+    "###hhhhhhhhhh######."
+  ],
+  "extra": [{
+    "x": 4,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 10,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 11,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 12,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 13,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "손바닥을 1개 얻을 수 있어.",
+      "msg:en": "You can get one Hand at once.",
+      "img": "/img/kidsblocks/Paper.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "손바닥을 2개 얻을 수 있어.",
+      "msg:en": "You can get two Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "손바닥을 2개 얻을 수 있어.",
+      "msg:en": "You can get two Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "손바닥을 2개 얻을 수 있어.",
+      "msg:en": "You can get two Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "손바닥을 2개 얻을 수 있어.",
+      "msg:en": "You can get two Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "손바닥을 2개 얻을 수 있어.",
+      "msg:en": "You can get two Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 3,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "손바닥을 3개 얻을 수 있어.",
+      "msg:en": "You can get three Hands at once.",
+      "img": [{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/kidsblocks/Paper.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 4,
+    "y": 1,
+    "link": "b55_w2/1",
+    "img": "hand_paper"
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "b55_w2/2",
+    "img": "hand_paper"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b55_w2/3",
+    "img": "hand_paper"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b55_w2/4",
+    "img": "hand_paper"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b55_w2/5",
+    "img": "hand_paper"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b55_w2/6",
+    "img": "hand_paper"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "b55_w2/7",
+    "img": "hand_paper"
+  },{
+    "x": 11,
+    "y": 1,
+    "link": "b55_w2/8",
+    "img": "hand_paper"
+  },{
+    "x": 12,
+    "y": 1,
+    "link": "b55_w2/9",
+    "img": "hand_paper"
+  },{
+    "x": 13,
+    "y": 1,
+    "link": "b55_w2/10",
+    "img": "hand_paper"
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b55_w2/11",
+    "img": "hand_paper"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b55_w2/12",
+    "img": "hand_paper"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b55_w2/13",
+    "img": "hand_paper"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b55_w2/14",
+    "img": "hand_paper"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "b55_w2/15",
+    "img": "hand_paper"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b55_w2/16",
+    "img": "hand_paper"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "b55_w2/17",
+    "img": "hand_paper"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b55_w2/18",
+    "img": "hand_paper"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b55_w2/19",
+    "img": "hand_paper"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "b55_w2/20",
+    "img": "hand_paper"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b55_w2/21",
+    "img": "hand_paper"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "b55_w2/22",
+    "img": "hand_paper"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "b55_w2/23",
+    "img": "hand_paper"
+  },{
+    "x": 4,
+    "y": 5,
+    "link": "b55_w2/24",
+    "img": "hand_paper"
+  },{
+    "x": 3,
+    "y": 5,
+    "link": "b55_w2/25",
+    "img": "hand_paper"
+  },{
+    "img":"food",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "b55_w3/index",
+    "min_score": 20
+  }],
+
+  "tutorial": [{
+    "msg:ko": "문지기 아저씨와 가위바위보 놀이를 해요! 쉬운 문제는 손바닥 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's play Rock, Scissors, Paper! An easy problem gives you one Hand, a normal one gives you two and a hard one gives you three.",
+    "img": [{
+      "src": "/img/b55/keeper.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/kidsblocks/Paper.png",
+      "style": "width:50%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "손바닥 20개를 모으면 숭례문으로 가요.",
+    "msg:en": "Go to Sungryemoon with more than 20 Hands.",
+    "img": [{
+      "src": "/img/kidsblocks/Paper.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/b55/skaeoans.png",
+      "style": "width:50%"
+    }]
+  }
+}
