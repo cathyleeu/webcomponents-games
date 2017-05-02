@@ -25,6 +25,7 @@
   "tutorial": [{
     "msg:ko": "가위는 주먹으로 이길 수 있어",
     "msg:en": "Scissors is weaker than Rock",
+    "msg:cn": "出石头就能赢剪子。",
     "img": "/img/woong/sr.png"
   }]
 }

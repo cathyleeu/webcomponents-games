@@ -5,7 +5,7 @@ KidsCoding = function() {
   this.workspace = null;
   this.isHorizontal = location.pathname.indexOf("mazeh") >= 0;
   if(this.isHorizontal) {
-    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 180;
+    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 200;
     Blockly.Flyout.prototype.MARGIN = 20;
     Blockly.Colours.flyout = "#EEEEEE";
 
@@ -55,13 +55,55 @@ KidsCoding = function() {
   }
   // 일부 태블릿에서 블럭이 움직이지 않는 현상 수정
   Blockly.longStart_ = function() {};
+
   // movable=false 인 블럭 클릭이 되지 않는 현상 처리
   // https://github.com/google/blockly/issues/742
+  var downBlock = null;
   var onMouseDown_ = Blockly.BlockSvg.prototype.onMouseDown_;
   Blockly.BlockSvg.prototype.onMouseDown_ = function(e) {
     e.stopPropagation();
+    if(this.isInFlyout) {
+      downBlock = this;
+    }
     onMouseDown_.call(this, e);
   };
+  // flyout에서 클릭시 맨 마지막에 블럭 추가하는 기능
+  var onMouseMove_ = Blockly.BlockSvg.prototype.onMouseMove_;
+  Blockly.BlockSvg.prototype.onMouseMove_ = function(e) {
+    onMouseMove_.call(this, e);
+    downBlock = null;
+  };
+  var onMouseUp_ = Blockly.Flyout.prototype.onMouseUp_;
+  Blockly.Flyout.prototype.onMouseUp_ = function(e) {
+    onMouseUp_.call(this, e);
+    if(!downBlock) {
+      return;
+    }
+    var blockId = Blockly.genUid(),
+        groupId = Blockly.genUid(),
+        dom = Blockly.Xml.blockToDomWithXY(downBlock, true),
+        blocks = _this.workspace.getAllBlocks(),
+        target = blocks.filter(function(block) {
+          return block.type === "start";
+        })[0];
+    while(target.getNextBlock()) {
+      target = target.getNextBlock();
+    }
+    dom.setAttribute("id", blockId);
+    Blockly.Events.fromJson({
+      type: "create",
+      blockId: blockId,
+      group: groupId,
+      xml: Blockly.Xml.domToText(dom)
+    }, _this.workspace).run(true);
+    Blockly.Events.fromJson({
+      type: "move",
+      blockId: blockId,
+      group: groupId,
+      newParentId: target.id
+    }, _this.workspace).run(true);
+  }
+
   // 가로블럭에서 드랍다운 메뉴가 화면 밖으로 나가는 현상 수정
   var showEditor_ = Blockly.FieldDropdown.prototype.showEditor_;
   Blockly.FieldDropdown.prototype.showEditor_ = function() {
@@ -235,8 +277,10 @@ KidsCoding.prototype = {
   	Blockly.Xml.domToWorkspace($(startblock).get(0),this.workspace);
     // flyout 내의 블럭들을 오른쪽으로 20px씩 이동
     // (블럭들이 너무 왼쪽으로 붙어있어서 윈도우 태블릿에서 화면전화이 일어나는 문제가 있음)
-    this.workspace.flyout_.workspace_.topBlocks_.forEach(function(block) {
-      block.moveBy(20,0);
-    });
+    if(this.isHorizontal) {
+      this.workspace.flyout_.workspace_.topBlocks_.forEach(function(block) {
+        block.moveBy(50,0);
+      });
+    }
   }
 };

@@ -1,0 +1,44 @@
+[
+  {"book": "b5.5", "title": "4주차 : 시장에서 먹거리를 사요"},
+  {"id": "bg2", "src": "/img/b55/tile2.png"},
+  {"id": "bg1", "src": "/img/b55/tile1.png"},
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/b55/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b55/cos0.png", "size": 256},
+  {"tile": "k", "id": "food", "src": "/img/b55/bag.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "mkt1", "src": "/img/b55/mkt1.png", "obstacle": true},
+  {"id": "mkt2", "src": "/img/b55/mkt2.png", "obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"tile": "F", "id": "father", "src": "/img/b55/father.png"},
+  {"tile": "M", "id": "mother", "src": "/img/b55/mother.png"},
+
+  {"tile": "a", "id": "chicken", "src":"/img/b55/chicken.png", "obstacle": false},
+  {"tile": "b", "id": "dduck", "src":"/img/b55/dduck.png", "obstacle": false},
+  {"tile": "c", "id": "donut", "src":"/img/b55/donut.png", "obstacle": false},
+  {"tile": "f", "id": "hotdog", "src":"/img/b55/hotdog.png", "obstacle": false},
+  {"tile": "g", "id": "prawn", "src":"/img/b55/prawn.png", "obstacle": false}
+
+]

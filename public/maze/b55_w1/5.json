@@ -1,0 +1,32 @@
+{
+  "tile_size": 256,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".######.",
+    "#......#",
+    "#..b.%.#",
+    "#s.....#",
+    "#......#",
+    "#......#",
+    "#.....u#",
+    ".######."
+  ],
+  "extra":[{
+  "x": 5,
+  "y": 2,
+  "img": "church"
+}],
+  "tutorial": [{
+    "msg:ko": "명동 성당으로 가보자.",
+    "msg:en": "Let's go to Myeongdong church.",
+    "img": "/img/b55/church.png"
+  }]
+}

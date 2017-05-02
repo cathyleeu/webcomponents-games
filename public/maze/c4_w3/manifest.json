@@ -26,9 +26,9 @@
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
-  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"n","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
 
   {"id": "mother", "src": "/img/c4_w3/mother.png", "obstacle": false},
   {"id": "display", "src": "/img/c4_w2/display.png", "obstacle": true},

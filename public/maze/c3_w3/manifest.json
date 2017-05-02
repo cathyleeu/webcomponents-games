@@ -31,5 +31,5 @@
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
   {"id": "mother", "src": "/img/c3_w1/mother.png"},
-  {"id": "hunny_pot", "src": "/img/c3_w2/hunny_pot.png"}
+  {"id": "honey_pot", "src": "/img/c3_w2/honey_pot.png"}
 ]

@@ -27,11 +27,13 @@
   "tutorial": [{
     "msg:ko": "아빠에게로 가보자!",
     "msg:en": "Go Daddy!",
+    "msg:cn": "去爸爸那里吧！",
     "img": "/img/c3_w1/father.png"
   }],
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
     "msg:en": "Succes! Good Job!",
+    "msg:cn": "成功了！做得很棒。",
     "link": "b3_w1/2"
   }]
 }

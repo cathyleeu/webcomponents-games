@@ -27,11 +27,13 @@
   "tutorial": [{
     "msg:ko": "엄마에게로 가보자",
     "msg:en": "Go Mommy!",
+    "msg:cn": "去妈妈那里吧",
     "img": "/img/c3_w1/mother.png"
   }],
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
     "msg:en": "Succes! Good Job!",
+    "msg:cn": "成功了！做得很棒。",
     "link": "b3_w1/3"
   }]
 }

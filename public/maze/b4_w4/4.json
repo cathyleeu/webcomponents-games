@@ -2,7 +2,7 @@
   "tile_size": 256,
 
   "score":1,
-  "workspace": ["start"],
+  "workspace": ["start", "move_right", "move_up"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -15,12 +15,12 @@
   ],
   "map": [
     "%#######",
-    "#.#.#..#",
-    "#...#..#",
-    "#).)S.P#",
-    "#.#.##.#",
-    "#S#R#..#",
-    "#..u...#",
+    "#...).##",
+    "##....##",
+    "#.#P#S.#",
+    "#...d..#",
+    "###..#.#",
+    "#......#",
     "########"
   ],
   "extra":[{
@@ -28,44 +28,31 @@
   "y": 0,
   "img": "tree1"
 },{
-    "x": 1,
-    "y": 5,
-    "img":"grandpa"
-  },{
-    "x": 6,
-    "y": 3,
-    "img":"mother"
-  },{
-    "x": 4,
-    "y": 3,
-    "img":"father"
-  },{
     "x": 3,
     "y": 3,
-    "img": "chest",
-    "itemCount": 1
+    "img":"grandpa"
   },{
-    "x": 1,
-    "y": 3,
+    "x": 4,
+    "y": 1,
     "img": "chest",
     "itemCount": 1
   }],
   "tutorial": [{
     "msg:ko": "가위바위보!",
     "msg:en": "Rock scissors paper!",
-"img": [{
-  "src": "/img/b4/rock.png",
-  "style": "width:33%"
-},{
-  "src": "/img/b4/scissors.png",
-  "style": "width:33%"
-},{
-  "src": "/img/b4/paper.png",
-  "style": "width:33%"
-}]
-  },{
-    "msg:ko": "보물 상자를 모두 열 거야!",
-    "msg:en": "I'll open all the chests!",
-    "img": "/img/b4/chest3.png"
-  }]
+    "img": [{
+      "src": "/img/b4/rock.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/scissors.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b4/paper.png",
+      "style": "width:33%"
+    }]
+    }],"goal" : {
+      "msg:ko": "보물 상자를 열자!",
+      "msg:en": "Let's open the chest!",
+      "img": "/img/b4/chest3.png"
+    }
 }

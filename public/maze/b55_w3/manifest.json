@@ -1,0 +1,49 @@
+[
+  {"book": "b5.5", "title": "3주차 : 조선시대 물건을 찾아와요"},
+  {"id": "bg2", "src": "/img/b55/tile2.png"},
+  {"id": "bg1", "src": "/img/b55/tile1.png"},
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/b55/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b55/cos0.png", "size": 256},
+  {"tile": "m", "id": "food", "src": "/img/b55/coin.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "tree1", "src": "/img/b4/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/b4/tree2.png", "obstacle": true},
+  {"id": "tree1", "src": "/img/b4/tree3.png", "obstacle": true},
+  {"id": "house1", "src": "/img/b55/house1.png", "obstacle": true},
+  {"id": "house2", "src": "/img/b55/house2.png", "obstacle": true},
+
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"tile": "F", "id": "father", "src": "/img/b55/father.png"},
+  {"tile": "M", "id": "mother", "src": "/img/b55/mother.png"},
+
+  {"tile": "c", "id": "cigar", "src":"/img/b55/cigar.png", "obstacle": false},
+  {"tile": "H", "id": "hat", "src":"/img/b55/hat.png", "obstacle": false},
+  {"tile": "b", "id": "boys", "src":"/img/b55/boys.png", "obstacle": false},
+  {"tile": "g", "id": "girls", "src":"/img/b55/girls.png", "obstacle": false},
+  {"tile": "s", "id": "socks", "src":"/img/b55/socks.png", "obstacle": false},
+  {"tile": "t", "id": "mkt", "src":"/img/b55/mkt1.png", "obstacle": false}
+
+]

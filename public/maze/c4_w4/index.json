@@ -4,152 +4,308 @@
   "tile_size": 256,
   "toolbox": [],
   "map": [
-    "##.##################.",
-    "..#.#...%.#...##..#..#",
-    "..#.#.%%.%#..%..%..%.#",
-    ".#.re%.#..n%..%..%..#.",
-    "..#.#.%...########h###",
-    "..#.#.....#%.%.%..%.##",
-    "##.###################"
+    "#####EEEEE########.",
+    "..r..%%%%%.....%n.#",
+    ".##############%n.#",
+    "##...#########.%n.#",
+    "..#............%n.#",
+    "##.......%%%%%.%n.#",
+    "#########HHHHH#####."
   ],
   "extra": [{
-    "x": 4,
-    "y": 3,
-    "img":"easy", "obstacle": false,
+    "x": 5,
+    "y": 0,
     "tutorial": [{
       "msg:ko": "집을 1개 얻을 수 있어.",
-      "msg:en": "You can get one house at once.",
+      "msg:en": "You can get one cart at once.",
       "img": "/img/c4_w4/house_blank.png"
     }]
-  },{
-    "x": 10,
-    "y": 3,
-    "img":"normal",
-    "tutorial": [{
-      "msg:ko": "집을 2개 얻을 수 있어.",
-      "msg:en": "You can get two houses at once.",
-      "img": "/img/c4_w4/house_blank.png"
-    }]
-  },{
-    "x": 18,
-    "y": 4,
-    "img":"hard",
-    "tutorial": [{
-      "msg:ko": "집을 3개 얻을 수 있어.",
-      "msg:en": "You can get three houses at once.",
-      "img": "/img/c4_w4/house_blank.png"
-    }]
-  },{
-    "x": 5,
-    "y": 3,
-    "link": "c4_w4/1"
   },{
     "x": 6,
-    "y": 2,
-    "link": "c4_w4/2"
-  },{
-    "x": 6,
-    "y": 4,
-    "link": "c4_w4/3"
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "집을 1개 얻을 수 있어.",
+      "msg:en": "You can get one cart at once.",
+      "img": "/img/c4_w4/house_blank.png"
+    }]
   },{
     "x": 7,
-    "y": 2,
-    "link": "c4_w4/4"
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "집을 1개 얻을 수 있어.",
+      "msg:en": "You can get one cart at once.",
+      "img": "/img/c4_w4/house_blank.png"
+    }]
   },{
     "x": 8,
-    "y": 1,
-    "link": "c4_w4/5"
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "집을 1개 얻을 수 있어.",
+      "msg:en": "You can get one cart at once.",
+      "img": "/img/c4_w4/house_blank.png"
+    }]
   },{
     "x": 9,
-    "y": 2,
-    "link": "c4_w4/6"
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "집을 1개 얻을 수 있어.",
+      "msg:en": "You can get one cart at once.",
+      "img": "/img/c4_w4/house_blank.png"
+    }]
   },{
-    "x": 11,
-    "y": 3,
-    "link": "c4_w4/7"
-  },{
-    "x": 13,
-    "y": 2,
-    "link": "c4_w4/8"
-  },{
-    "x": 14,
-    "y": 3,
-    "link": "c4_w4/9"
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "집을 2개 얻을 수 있어.",
+      "msg:en": "You can get two carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      }]
+    }]
   },{
     "x": 16,
     "y": 2,
-    "link": "c4_w4/10"
+    "tutorial": [{
+      "msg:ko": "집을 2개 얻을 수 있어.",
+      "msg:en": "You can get two carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      }]
+    }]
   },{
-    "x": 17,
+    "x": 16,
     "y": 3,
-    "link": "c4_w4/11"
+    "tutorial": [{
+      "msg:ko": "집을 2개 얻을 수 있어.",
+      "msg:en": "You can get two carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      }]
+    }]
   },{
-    "x": 19,
-    "y": 2,
-    "link": "c4_w4/12"
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "집을 2개 얻을 수 있어.",
+      "msg:en": "You can get two carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      }]
+    }]
   },{
-    "x": 18,
+    "x": 16,
     "y": 5,
-    "link": "c4_w4/13"
+    "tutorial": [{
+      "msg:ko": "집을 2개 얻을 수 있어.",
+      "msg:en": "You can get two carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "집을 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "집을 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "집을 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "집을 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "집을 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "집을 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": [{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c4_w4/house_blank.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c4_w4/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c4_w4/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "c4_w4/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c4_w4/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c4_w4/5"
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "c4_w4/6"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "c4_w4/7"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "c4_w4/8"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "c4_w4/9"
   },{
     "x": 15,
     "y": 5,
-    "link": "c4_w4/14"
+    "link": "c4_w4/10"
   },{
     "x": 13,
+    "y": 5,
+    "link": "c4_w4/11"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c4_w4/12"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "c4_w4/13"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "c4_w4/14"
+  },{
+    "x": 9,
     "y": 5,
     "link": "c4_w4/15"
   },{
     "img":"mother",
-    "x": 11,
-    "y": 5,
+    "x": 2,
+    "y": 4,
     "obstacle": false,
-    "link": "c4_w4/16",
+    "link": "c4_w4/index",
     "min_score": 21
   }],
   "tutorial": [{
-    "msg:ko": "숫자의 크기를 비교해보자!",
-    "msg:en": "Let's compare the number!",
-    "img": "/img/c4_w4/num_compare.png"
-  }, {
-    "msg:ko": "만약 '더 큰 숫자의 집'을 찾아야하면",
-    "msg:en": "If you need to buy the bigger fruit",
-    "img": "/img/c4_w4/bigger_num.png"
-  }, {
-    "msg:ko": "'9번 집'을 찾아가면 되는거야!",
-    "msg:en": "you will move to 'House 9'",
-    "img": "/img/c4_w4/house9.png"
-  }, {
-    "msg:ko": "집을 모아서 엄마에게 가져갈꺼야",
-    "msg:en": "Collect the house and go to my house",
+    "msg:ko": "집을 찾아가요! 쉬운 문제는 집 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's find house! An easy problem gives you one house, a normal one gives you two and a hard one gives you three.",
     "img": "/img/c4_w4/house_blank.png"
-  }, {
-    "msg:ko": "쉬운 문제는 집 1 개를 주어요.",
-    "msg:en": "An easy problem gives you one house.",
-    "img": "/img/guide/easy.png"
-  }, {
-    "msg:ko": "보통 문제는 집 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two houses.",
-    "img": "/img/guide/normal.png"
-  }, {
-    "msg:ko": "어려운 문제는 집 3개를 주어요.",
-    "msg:en": "A hard problem gives you three houses.",
-    "img": "/img/guide/hard.png"
-  }, {
-    "msg:ko": "집 21개를 모은 뒤, 엄마에게 이동하자!",
-    "msg:en": "Collect 21 houses and, Go to mother",
-    "img": "/img/c4_w4/mother.png",
-    "x" : 11,
-    "y" : 5
-  }, {
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
   }],
   "goal": {
-    "msg:ko": "집을 21개 모으자!",
-    "msg:en": "Let's get 21 houses!",
-    "img": "/img/c4_w4/house_blank.png"
+    "msg:ko": "집을 21개 모아서 엄마께 가요.",
+    "msg:en": "Let's get twenty one houses and go to mother.",
+    "img": [{
+      "src": "/img/c4_w4/house_blank.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/c4_w4/mother.png",
+      "style": "width:50%"
+    }]
   }
 }

@@ -35,6 +35,7 @@
   "tutorial": [{
     "msg:ko": "주황색 과일 1개를 집어서",
     "msg:en": "Get a orange color fruit",
+    "msg:cn": "试着夹1个桔黄色水果，",
     "img": "/img/jangoon/jangoon0.png"
   },{
     "msg:ko": "카트에 집어 넣어보자!",

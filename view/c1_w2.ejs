@@ -78,7 +78,7 @@
 
 <script>
 var hash = location.hash,
-    lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+    lang = hash.indexOf("lang=en") >= 0 ? "en" : hash.indexOf("lang=cn") >= 0 ? "cn" : "ko",
     msg = {
       ko: {
         instruction: "자판기 놀이를 해봐요",
@@ -95,6 +95,14 @@ var hash = location.hash,
         hint2: "The can is down! Take out the soda!",
         hint3: "I got a drink! Have a delicious drink!",
         success: "Success!"
+      },
+      cn: {
+        instruction: "玩玩自动售货机游戏吧。",
+        hint: "请投硬币，购买饮料吧！",
+        hint1: "硬币投进去了！请按下亮灯的按钮！",
+        hint2: "易拉罐掉下来了！请拿出饮料罐！",
+        hint3: "我拿到饮料了！请尽情享用吧！",
+        success: "成功了！做得很棒。"
       }
     };
   var step = 1;
@@ -140,8 +148,7 @@ var hash = location.hash,
         audio5.play();
         $(".hint").text(msg[lang].success);
         setTimeout( function () {
-          var link = document.location.href;
-          location.href=link+"_2";
+          location.href = document.location.origin + "/c1_w2_2" + document.location.hash
         }, 3000);
       }, 8000);
     }

@@ -28,16 +28,16 @@
   }, {
     "x": 4,
     "y": 2,
-    "img":"hunny_pot",
+    "img":"honey_pot",
     "itemCount": 2
   }],
   "tutorial": [{
     "msg:ko": "집으로 꿀단지를 가져갈꺼야",
-    "msg:en": "I'm going to take hunny pot's to my house"
+    "msg:en": "I'm going to take honey jars to my house"
   },{
     "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자",
-    "msg:en": "Move to hunny pot And then Use 'get item' Block",
-    "img": "/img/c3_w2/hunny_pot.png"
+    "msg:en": "Move to honey jar And then Use 'get item' Block",
+    "img": "/img/c3_w2/honey_pot.png"
   },{
     "msg:ko": "그리고나서 집으로 이동하고, 아이템 사용하기를 해보자",
     "msg:en": "then move my house, Use 'use item' Block",
@@ -45,7 +45,7 @@
   }],
   "goal": {
     "msg:ko": "집으로 꿀단지를 가져가자!",
-    "msg:en": "Take hunny pots",
-    "img": "/img/c3_w2/hunny_pot.png"
+    "msg:en": "Take honey jars",
+    "img": "/img/c3_w2/honey_pot.png"
   }
 }

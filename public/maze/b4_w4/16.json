@@ -1,61 +1,71 @@
 {
   "tile_size": 256,
-  "score":10,
+
+  "score":1,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
     "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors",
     "get_item3"
   ],
   "map": [
-    "%#####",
-    "#psqi#",
-    "#r)))#",
-    "#....#",
-    "######"
+    "%#######",
+    "#.#.#..#",
+    "#...#..#",
+    "#).)S.P#",
+    "#.#.##.#",
+    "#S#R#..#",
+    "#..u...#",
+    "########"
   ],
   "extra":[{
-    "x": 0,
-    "y": 0,
-    "img": "tree1"
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
+    "x": 1,
+    "y": 5,
+    "img":"grandpa"
   },{
-    "x": 2,
-    "y": 2,
-    "img":"hs",
-    "itemCount":1
-  },{
-    "x": 3,
-    "y": 2,
-    "img":"hr",
-    "itemCount":1
+    "x": 6,
+    "y": 3,
+    "img":"mother"
   },{
     "x": 4,
-    "y": 2,
-    "img":"hp",
-    "itemCount":1
+    "y": 3,
+    "img":"father"
+  },{
+    "x": 3,
+    "y": 3,
+    "img": "chest",
+    "itemCount": 1
+  },{
+    "x": 1,
+    "y": 3,
+    "img": "chest",
+    "itemCount": 1
   }],
   "tutorial": [{
-    "msg:ko": "새로 배운 키즈 블록을 가지고 가자!",
-    "msg:en": "Let's take the new Kidsblocks we learned!"
+    "msg:ko": "가위바위보!",
+    "msg:en": "Rock scissors paper!",
+"img": [{
+  "src": "/img/b4/rock.png",
+  "style": "width:33%"
+},{
+  "src": "/img/b4/scissors.png",
+  "style": "width:33%"
+},{
+  "src": "/img/b4/paper.png",
+  "style": "width:33%"
+}]
   },{
-    "msg:ko": "가위바위보 블록을 가지고 와요",
-    "msg:en": "Take the Rock, Scissors and Paper blocks.",
-    "img": [{
-      "src": "/img/b4/rock.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/b4/scissors.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/b4/paper.png",
-      "style": "width:33%"
-    }]
-  }],
-  "success": [{
-    "msg:ko": "다음 권에서 만나요! 안녕!",
-    "msg:en": "See you next time!",
-    "img": "img/b4/cos0.png"
+    "msg:ko": "보물 상자를 모두 열 거야!",
+    "msg:en": "I'll open all the chests!",
+    "img": "/img/b4/chest3.png"
   }]
 }

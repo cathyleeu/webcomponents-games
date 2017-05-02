@@ -1,0 +1,49 @@
+{
+  "tile_size": 256,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#..#..d.#",
+    "###.)##.#",
+    "#....#%.#",
+    "#......##",
+    "#.##.####",
+    "#..#.#..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 4,
+    "img": "father",
+    "useItem": 2
+  }, {
+    "x": 4,
+    "y": 3,
+    "img":"hat",
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "옛날 물건을 아빠께 가져다 드려요.",
+    "msg:en": "Bring old things to father.",
+    "img": [{
+      "src": "/img/blocks/bring.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/blocks/use.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b55/father.png",
+      "style": "width:33%"
+    }]
+  }]
+}

@@ -18,42 +18,13 @@
     "link": "c4_w1_c1/1"
   }],
   "tutorial": [{
-    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
-    "msg:en": "Press 'Next' Button~ 　　　　　　　↘"
-  }, {
-    "msg:ko": "오른쪽 집으로 이동하여 '우리 동네 산책'을 완료하면",
-    "msg:en": "Go House on the right, if you complete '*****' stage,",
+    "msg:ko": "오른쪽 집으로 이동하여 '우리 동네 산책'을 완료하자",
+    "msg:en": "Go to the house on the right, and complete this stage,",
     "img": "/img/c4_w1_c1/house.png"
-  }, {
-    "msg:ko": "다음 목적지로 이동할 수 있어요",
-    "msg:en": "you will be able to move other stage"
-  }, {
-    "msg:ko": "가상 키보드를 이용하여 코스를 움직일 수 있어요",
-    "msg:en": "you can move 'Cos' character by virtual keyboard",
-    "img": "/img/c4_w1_c1/key.png"
-  }, {
-    "msg:ko": "↑위 버튼을 누르면 코스가 위로 가요",
-    "msg:en": "If you press '↑' Button, Cos will move up",
-    "img": "/img/c4_w1_c1/key_up.png"
-  }, {
-    "msg:ko": "↓아래 버튼을 누르면 코스가 아래로 가요",
-    "msg:en": "If you press '↓' Button, Cos will move down",
-    "img": "/img/c4_w1_c1/key_down.png"
-  }, {
-    "msg:ko": "→오른쪽 버튼을 누르면 코스가 오른쪽으로 가요",
-    "msg:en": "If you press '→' Button, Cos will move right",
-    "img": "/img/c4_w1_c1/key_right.png"
-  }, {
-    "msg:ko": "←왼쪽 버튼을 누르면 코스가 왼쪽으로 가요",
-    "msg:en": "If you press '←' Button, Cos will move left",
-    "img": "/img/c4_w1_c1/key_left.png"
-  }, {
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러서 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play"
   }],
   "goal": {
     "msg:ko": "오른쪽 집으로 이동해요",
-    "msg:en": "Go House on the right",
+    "msg:en": "Go to the house on the right",
     "img": "/img/c4_w1_c1/house.png"
   }
 }

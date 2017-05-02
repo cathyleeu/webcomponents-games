@@ -7,7 +7,7 @@
     "##.##############.",
     "..#..%...%....%..#",
     "..#....%...%.....#",
-    ".#.r............#.",
+    ".#.r..#..........#",
     "..#..%...%....%..#",
     "..#....%....%....#",
     "##.##############."
@@ -53,47 +53,37 @@
     "y": 4,
     "link": "c3_w1_c2/10"
   },{
-    "img":"hunny_pot",
-    "x": 16,
+    "img":"honey_pot",
+    "x": 6,
     "y": 3,
     "obstacle": false,
     "link": "c3_w2/index",
     "min_score": 10
   }],
   "tutorial": [{
-    "msg:ko": "다음 버튼을 눌러주세요~ 　　　　　　　↘",
-    "msg:en": "Press 'Next' Button~ 　　　　　　　↘"
-  }, {
-    "msg:ko": "덧셈을 해보자!",
-    "msg:en": "Let's solve the 'Plus' problem!",
-    "img": "/img/c3_w1/plus_title.png"
-  }, {
-    "msg:ko": "만약 1 + 3 = ? 이라는 문제가 나오면",
-    "msg:en": "If you want to solve the 'Plus' problem '1 + 3 = ? '",
-    "img": "/img/c3_w1/1plus3.png"
-  }, {
-    "msg:ko": "4가 답이니까 코딩맵에서 4를 찾아가면 되는거야!",
-    "msg:en": "you will move to '4'in coding map"
-  }, {
-    "msg:ko": "총 10문제를 깨야 다음 단계로 넘어갈 수 있어",
-    "msg:en": "To move next stage, you have to solve 10 problems"
-  }, {
-    "msg:ko": "10개의 별을 모은뒤,",
-    "msg:en": "Collect 10 stars and,"
-  }, {
-    "msg:ko": "꿀단지로 이동하자!",
-    "msg:en": "Move to Hunny pot!",
-    "x" : 16,
-    "y" : 3
+    "msg:ko": "이 곳에서는 가상 키보드를 이용하여 코스를 움직일 수 있어요. ↑ ↓ ← → 버튼을 눌러 코스를 움직여보아요.",
+    "msg:en": "you can move 'Cos' character by virtual keyboard on this map. Press ↑ ↓ ← → button to move Cos.",
+    "img": "/img/kidsblocks/key.png"
   },{
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
+    "msg:ko": "별로 이동하면 덧셈 문제를 풀 수 있어. 문제를 하나 풀면 별을 한 개 얻지. 열 문제를 풀고 꿀단지로 가자.",
+    "msg:en": "You can solve an addition problem at any star. A problem gives you a star. Solve ten problems and go to the honey jar.",
+    "img": [{
+      "src" :"/img/c3_w1/star.png",
+      "style": "width:50%"
+      },{
+        "src" :"/img/c3_w1/honey_pot.png",
+        "style": "width:50%"
+      }]
   }],
   "goal": {
-    "msg:ko": "10개의 문제를 해결해보자!",
-    "msg:en": "solve 10 problems",
-    "img": "/img/c3_w1/star.png"
+    "msg:ko": "별 열 개를 모아 꿀단지로 가자.",
+    "msg:en": "Get ten stars and go to the honey jar.",
+    "img": [{
+        "src":"/img/c3_w1/star.png",
+        "style":"width:50%"
+      },{
+        "src" :"/img/c3_w1/honey_pot.png",
+        "style": "width:50%"
+      }]
   }
 }

@@ -1,0 +1,38 @@
+{
+  "tile_size": 256,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "#...##..#",
+    "##d.....#",
+    "#...##..#",
+    "#.#....##",
+    "#.###.###",
+    "#....%#.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 7,
+    "img":"d_grandfather"
+  }],
+  "tutorial": [{
+    "msg:ko": "할아버지에게 초대장을 드리러 가자!",
+    "msg:en": "Let's go to grandfather for invitation",
+    "img": "/img/c55_w2/d_grandf.png"
+  }],
+  "goal": {
+    "msg:ko": "할아버지에게 초대장을 드리러 가자!",
+    "msg:en": "Let's go to grandfather for invitation",
+    "img": "/img/c55_w2/d_grandf.png"
+  }
+}

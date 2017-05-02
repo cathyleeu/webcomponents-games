@@ -7,7 +7,7 @@
     "##.#########.",
     "..#.%....%..#",
     "..#...%.....#",
-    ".#.r.......#.",
+    ".#.r..#....#.",
     "..#.%.......#",
     "..#....%....#",
     "##.#########."
@@ -33,46 +33,33 @@
     "y": 1,
     "link": "c4_w1_c3/5"
   },{
-    "img":"house",
-    "x": 11,
+    "img":"mother",
+    "x": 6,
     "y": 3,
     "obstacle": false,
     "link": "c4_w2/index",
     "min_score": 5
   }],
   "tutorial": [{
-    "msg:ko": "과일의 크기를 비교해보자!",
-    "msg:en": "Let's compare the size of fruits!",
-    "img": "/img/c4_w3/fruit_compare.png"
-  }, {
-    "msg:ko": "만약 '더 큰 과일'을 사야하면",
-    "msg:en": "If you need to buy the bigger fruit",
-    "img": "/img/c4_w3/bigger.png"
-  }, {
-    "msg:ko": "수박을 찾아가면 되는거야!",
-    "msg:en": "you will move to 'watermelon'",
-    "img": "/img/c4_w2/fruit_wa.png"
-  }, {
-    "msg:ko": "카트를 모아서 엄마에게 가져가자",
-    "msg:en": "Collect the cart and bring to mom",
-    "img": "/img/c4_w2/cart.png"
-  }, {
-    "msg:ko": "5개의 카트를 모은뒤,",
-    "msg:en": "Collect 5 carts and,",
-    "img": "/img/c4_w2/cart.png"
-  }, {
-    "msg:ko": "엄마에게 이동하자!",
-    "msg:en": "Move to mother!",
-    "img": "/img/c4_w3/mother.png"
-  },{
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
+    "msg:ko": "카트로 가면 숫자를 비교하는 문제를 풀 수 있어요. 문제 한 개를 풀면 집 하나를 얻을 수 있어요. 5개의 카트를 모아서 엄마께 가요.",
+    "msg:en": "You can solve a fruit-size-comparing-problem at any cart. A problem gives you a cart. Get five carts and go to mother.",
+    "img": [{
+      "src":"/img/c4_w2/cart.png",
+      "style":"width:50%"
+    },{
+      "src": "/img/c4_w3/mother.png",
+      "style":"width:50%"
+    }]
   }],
   "goal": {
-    "msg:ko": "5개의 카트를 모으자!",
-    "msg:en": "Collect 5 carts",
-    "img": "/img/c4_w2/cart.png"
+    "msg:ko": "5개의 카트를 모아서 엄마께 가요.",
+    "msg:en": "Get five carts and go to mother.",
+    "img": [{
+      "src":"/img/c4_w2/cart.png",
+      "style":"width:50%"
+    },{
+      "src": "/img/c4_w3/mother.png",
+      "style":"width:50%"
+    }]
   }
 }

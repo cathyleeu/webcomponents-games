@@ -31,7 +31,7 @@
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
   {"id": "house", "src": "/img/c3_w1/house.png"},
-  {"id": "hunny_pot", "src": "/img/c3_w2/hunny_pot.png"},
+  {"id": "honey_pot", "src": "/img/c3_w2/honey_pot.png"},
   {"id": "cookie", "src": "/img/c3_w4/cookie.png"},
   {"tile": "f", "id": "brother", "src": "/img/c3_w1/brother.png"},
   {"tile": "g", "id": "f_granfa", "src": "/img/c3_w1/f_granfa.png"},

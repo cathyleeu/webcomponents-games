@@ -70,28 +70,32 @@ html {
         line-height: 100px;
         text-align: center;
         border-radius: 10px;
-        background-color: lightgray;
+        background: lightgray center top/cover no-repeat;
         color: black;
       }
       .up {
         left: 50%;
         margin-left: -50px;
         bottom: 130px;
+        background-image: url(/img/kidsblocks/mUp.png);
       }
       .down {
         left: 50%;
         margin-left: -50px;
         bottom: 20px;
+        background-image: url(/img/kidsblocks/mDown.png);
       }
       .left {
         left: 50%;
         margin-left: -160px;
         bottom: 20px;
+        background-image: url(/img/kidsblocks/mLeft.png);
       }
       .right {
         left: 50%;
         margin-left: 60px;
         bottom: 20px;
+        background-image: url(/img/kidsblocks/mRight.png);
       }
     }
   }
@@ -189,6 +193,7 @@ html {
       .goal-img {
         width: 100%;
         max-width: 200px;
+        min-width: 128px;
       }
     }
     .goal-msg {
@@ -199,15 +204,26 @@ html {
 }
 
 #modal {
-  .modal-msg {
+  .modal-title {
+    font-size: 24px;
+  }
+  .close {
     font-size: 30px;
+  }
+  .modal-msg {
+    font-size: 20px;
+  }
+  .btn {
+    font-size: 30px;
+    padding: 8px 15px;
   }
   .modal-imgs {
     text-align: center;
     margin: 20px 0;
     img {
-      max-width: 100%;
-      max-height: 185px;
+      width: 100%;
+      max-width: 200px;
+      min-width: 128px;
     }
   }
   .modal-div {

@@ -19,14 +19,17 @@
   "tutorial": [{
     "msg:ko": "개굴개굴~",
     "msg:en": "Ribbit~ Ribbit!",
+    "msg:cn": "呱呱",
     "img": "/img/story08/frog.png"
     },{
     "msg:ko": "앗! 개구리가 되었어!!",
     "msg:en": "Wow, I am a fog now!",
+    "msg:cn": "啊，长大成青蛙了。",
     "img": "/img/story08/frog.png"
     },{
     "msg:ko": "고마워! 덕분에 멋진 개구리가 되었어",
     "msg:en": "Thank you for helping me.",
+    "msg:cn": "谢谢！多亏你，我才变成了帅气的青蛙。",
     "img": "/img/story08/frog.png"
   }]
 }

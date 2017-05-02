@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">KIDSTHINKING</a>
+            <a class="navbar-brand" href="#">KIDSTHINKING</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -26,7 +26,10 @@
                     <a href="#"><i class="fa fa-question-circle"></i><span data-msg="tutorial">설명 다시보기</span></a>
                 </li>
                 <li id="playstop" class="hidden">
-                    <a href="#"><i class="fa fa-play"></i> <span data-msg="bgm">배경음악 재생</span></a>
+                    <a href="#"><i class="fa fa-play"></i><span data-msg="bgm">배경음악 재생</span></a>
+                </li>
+                <li id="logout" class="hidden">
+                    <a href="#"><i class="fa fa-sign-out"></i><span data-msg="logout">로그아웃</span></a>
                 </li>
                 <!--li class="page-scroll">
                     <a href="#about">문제 만들기</a>
@@ -118,8 +121,8 @@
       <!-- id="doFScreen" -->
       <div class="modal-footer">
         <div></div>
-        <button type="button" id="doFS" class="requestfullscreen btn btn-primary" data-dismiss="modal" tabindex="0"><span data-msg="request_fullscreen">네</span></button>
         <button type="button" id="notFS" class="cancelfullscreen btn btn-default" data-dismiss="modal" tabindex="0"><span data-msg="cancel_fullscreen">아니오</span></button>
+        <button type="button" id="doFS" class="requestfullscreen btn btn-primary" data-dismiss="modal" tabindex="0"><span data-msg="request_fullscreen">네</span></button>
         <button type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0"><i class="fa fa-times-circle-o"></i> <span data-msg="close">닫기</span></button>
         <button type="button" class="reset-maze btn btn-default" data-dismiss="modal" tabindex="0"><i class="fa fa-repeat"></i> <span data-msg="retry">다시 해보기</span></button>
         <button type="button" class="go-next btn btn-primary" data-dismiss="modal" tabindex="0"><span data-msg="next_stage">다음 단계로 이동</span> <i class="fa fa-chevron-right"></i></button>

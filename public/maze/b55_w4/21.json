@@ -1,0 +1,75 @@
+{
+  "tile_size": 256,
+  "score":100,
+  "workspace": ["start","move_right", "get_item2","move_right", "get_item2","move_right", "get_item2","move_up", "move_up", "get_item2","move_left","get_item2","move_left","use_item2","use_item2","use_item2","use_item2","use_item2"],
+  "toolbox": [
+  ],
+  "map": [
+    ".####.",
+    "#M%))#",
+    "####.#",
+    "#r)))#",
+    ".####."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 1,
+    "useItem": 5
+  }, {
+    "x": 3,
+    "y": 1,
+    "img":"hotdog",
+    "itemImg":"hotdog",
+    "disappear":true,
+    "itemCount": 1
+  }, {
+    "x": 4,
+    "y": 1,
+    "img":"chicken",
+    "itemImg":"chicken",
+    "disappear":true,
+    "itemCount": 1
+  }, {
+    "x": 4,
+    "y": 3,
+    "img":"prawn",
+    "itemImg":"prawn",
+    "disappear":true,
+    "itemCount": 1
+  }, {
+    "x": 3,
+    "y": 3,
+    "img":"dduck",
+    "itemImg":"dduck",
+    "disappear":true,
+    "itemCount": 1
+  }, {
+    "x": 2,
+    "y": 3,
+    "img":"donut",
+    "itemImg":"donut",
+    "disappear":true,
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "집에 가서 또 먹어야지! 너무 맛있어요!",
+    "msg:en": "I'll eat them again at home! So delicious!",
+    "img": "/img/b55/cos0.png"
+  }],
+  "goal": [{
+    "msg:ko": "시작 버튼을 눌러서 장바구니에 먹거리를 담아요.",
+    "msg:en": "Press the start button.",
+    "img": [{
+      "src": "/img/blocks/start.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b55/bag.png",
+      "style" : "width:33%"
+    }]
+  }],
+  "success": [{
+    "msg:ko": "다음 주에 만나요!",
+    "msg:en": "See you next week!",
+    "img": "/img/b55/cos0.png"
+  }]
+}

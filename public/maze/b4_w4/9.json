@@ -2,7 +2,7 @@
   "tile_size": 256,
 
   "score":2,
-  "workspace": ["start","move_up","move_left"],
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -15,12 +15,12 @@
   ],
   "map": [
     "%#######",
-    "##..PR.#",
-    "#.#.##u#",
-    "#.#)##.#",
-    "#....#.#",
-    "###.##.#",
-    "#..#...#",
+    "#.#..#.#",
+    "#..#)..#",
+    "##.#R#.#",
+    "##..P#.#",
+    "#.#.#.##",
+    "#..u...#",
     "########"
   ],
   "extra":[{
@@ -29,11 +29,11 @@
   "img": "tree1"
 },{
     "x": 4,
-    "y": 1,
+    "y": 4,
     "img":"grandpa"
   },{
-    "x": 3,
-    "y": 3,
+    "x": 4,
+    "y": 2,
     "img": "chest",
     "itemCount": 1
   }],
@@ -50,9 +50,9 @@
   "src": "/img/b4/paper.png",
   "style": "width:33%"
 }]
-  },{
-    "msg:ko": "보물 상자를 모두 열 거야!",
-    "msg:en": "I'll open all the chests!",
-    "img": "/img/b4/chest3.png"
-  }]
+}],"goal": {
+  "msg:ko": "모두 이기고 보물 상자를 열자",
+  "msg:en": "Win all to open the chest!",
+  "img": "/img/b4/chest3.png"
+}
 }

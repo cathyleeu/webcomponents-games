@@ -1,7 +1,7 @@
 {
   "tile_size": 256,
 
-  "score":3,
+  "score":2,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -15,12 +15,12 @@
   ],
   "map": [
     "%######.",
-    "####..l#",
-    "#..#.###",
-    "#.##.###",
-    "#)..S..#",
-    "#.##.###",
-    "#....###",
+    "#.#)..##",
+    "#.#.##.#",
+    "#.#.##.#",
+    "#.#P...#",
+    "#.#.##.#",
+    "#..u..##",
     ".######."
   ],
   "extra":[{
@@ -28,31 +28,37 @@
   "y": 0,
   "img": "tree1"
 },{
-    "x" : 4,
+    "x" : 3,
     "y" : 4,
     "img" : "father"
   },{
-    "x" : 1,
-    "y" : 4,
+    "x" : 3,
+    "y" : 1,
     "img" : "chest",
     "itemCount" : 2
   }],
   "tutorial": [{
-    "msg:ko": "가위는 주먹으로 이길 수 있어!",
-    "msg:en": "Rock wins scissors!",
+    "msg:ko": "보자기는 가위로 이길 수 있어!",
+    "msg:en": "Scissors win paper!",
     "img": [{
-      "src": "/img/b4/rock.png",
+      "src": "/img/b4/scissors.png",
       "style": "width:33%"
     },{
       "src": "/img/b4/).png",
       "style": "width:33%"
     },{
-      "src": "/img/b4/scissors.png",
+      "src": "/img/b4/paper.png",
       "style": "width:33%"
     }]
-  },{
-    "msg:ko": "아빠를 이기고 보물상자에 가 보렴.",
-    "msg:en": "Win daddy to go to the chest!",
-    "img": "/img/b4/chest2.png"
-  }]
+    }],"goal" : {
+      "msg:ko": "아빠를 이기고 보물상자에 가서 보물 두 개를 가져오자.",
+      "msg:en": "Win daddy to go to the chest and bring two treasures",
+      "img": [{
+          "src": "/img/b4/chest2.png",
+          "style" : "width:50"
+        },{
+            "src": "/img/b4/chest2.png",
+            "style" : "width:50"
+        }]
+    }
 }

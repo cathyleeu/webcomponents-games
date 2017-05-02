@@ -1,0 +1,83 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "##.##############.",
+    "..#..%.#.%....%..#",
+    "..#..#.%.#.%.....#",
+    ".#.r######......#.",
+    "..##.%...%....%..#",
+    "..#....%....%....#",
+    "##.##############."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 1,
+    "link": "b3_w2/1"
+  },{
+    "x": 5,
+    "y": 4,
+    "link": "b3_w2/2"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "b3_w2/3"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b3_w2/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b3_w2/5"
+  },{
+    "x": 9,
+    "y": 4,
+    "link": "b3_w2/6"
+  },{
+    "x": 11,
+    "y": 2,
+    "link": "b3_w2/7"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b3_w2/8"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "b3_w2/9"
+  },{
+    "x": 14,
+    "y": 4,
+    "link": "b3_w2/10"
+  },{
+    "img":"deer",
+    "x": 16,
+    "y": 3,
+    "obstacle": false,
+    "link": "b3_w3/index",
+    "min_score": 10
+  }],
+  "tutorial": [{
+    "msg:ko": "할머니 할아버지의 우주선을 찾아보아요",
+    "msg:en": "Let's find out her grandparents' UFO",
+    "img": "/img/b3_w1/ufo.png"
+  }, {
+    "msg:ko": "우주선을 10 번 찾은 뒤,사슴 디어에게 이동하자!",
+    "msg:en": "Find out the UFO ten-times, and move to Deer!",
+    "x" : 16,
+    "y" : 3
+  },{
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "우주선을 열 번 찾아 보아요.",
+    "msg:en": "Try to find out the UFO tem-times.",
+    "img": "/img/b3_w1/ufo.png"
+  }
+}

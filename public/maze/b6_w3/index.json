@@ -112,18 +112,6 @@
     "msg:en": "Let's go to the ship port!",
     "img": "/img/b6_w3/shipport.png"
   }, {
-    "msg:ko": "쉬운 문제는 선착장 1 개를 주어요.",
-    "msg:en": "An easy problem gives you one ship port.",
-    "img": "/img/guide/easy.png"
-  }, {
-    "msg:ko": "보통 문제는 선착장 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two ship ports.",
-    "img": "/img/guide/normal.png"
-  }, {
-    "msg:ko": "어려운 문제는 선착장 3개를 주어요.",
-    "msg:en": "A hard problem gives you three ship port.",
-    "img": "/img/guide/hard.png"
-  }, {
     "msg:ko": "선착장 21개를 모으면 배를 타러 가요.",
     "msg:en": "Take the ship with more than 21 ship ports.",
     "img": "/img/b6_w3/ship.png",

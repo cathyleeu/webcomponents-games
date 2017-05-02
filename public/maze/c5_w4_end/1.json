@@ -36,8 +36,9 @@
     "msg:ko": "고마워, 토드야.",
     "msg:en": "Thank you, Tode.",
     "img": "/img/c5/lana.png"
-  },{
-    "msg:ko": "선물을 라나에게 가져다 주자.",
+  }],
+  "goal": {
+    "msg:ko": "선물을 라나에게 가져다 주어요.",
     "msg:en": "Give Lana my present.",
     "img": [{
       "src": "/img/c5/TutoToad4_256.png",
@@ -49,7 +50,7 @@
       "src": "/img/c5/lana.png",
       "style": "width:33%"
     }]
-  }],
+  },
   "success": [{
     "msg:ko": "라나와 토드는 짝꿍이 되었어요. 키즈씽킹 친구들 고마워요.",
     "msg:en": "Lana and Tode became a couple. Thank you all!",

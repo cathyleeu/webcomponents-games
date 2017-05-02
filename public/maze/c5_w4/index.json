@@ -4,138 +4,485 @@
   "tile_size": 256,
   "toolbox": [],
   "map": [
-    "##.##################.",
-    "..#..D..%...U...%....#",
-    "..#..D.%.%..U..%.%...#",
-    ".#.r..%...%.#.%.%.%..#.",
-    "..#..#.%.%..#%.%.%.%##",
-    "..#..#%.%.%.#...#....#",
-    "##.###################."
+    "#####DDDDDDDDDD###.",
+    "..r..%%%%%%%%%%.#.#",
+    ".##############.#.#",
+    "##...#########..#.#",
+    "..#.............#.#",
+    "##..%%%%%%%%%%..#.#",
+    "####UUUUUUUUUU#####."
   ],
   "extra": [{
     "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 10,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 11,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 12,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 13,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 14,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 16,
     "y": 1,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
-      "msg:en": "You can get two gift at once.",
-      "img": "/img/c5/gift0.png"
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어.",
+      "msg:en": "You can get two gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어.",
+      "msg:en": "You can get three gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
     }]
   },{
     "x": 5,
-    "y": 2,
-    "tutorial": [{
-      "msg:ko": "선물을 2개 얻을 수 있어.",
-      "msg:en": "You can get two gift at once.",
-      "img": "/img/c5/gift0.png"
-    }]
-  },{
-    "x": 12,
-    "y": 1,
+    "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
       "msg:en": "You can get three gifts at once.",
-      "img": "/img/c5/gift0.png"
-    }]
-  },{
-    "x": 12,
-    "y": 2,
-    "tutorial": [{
-      "msg:ko": "선물을 3개 얻을 수 있어.",
-      "msg:en": "You can get three gifts at once.",
-      "img": "/img/c5/gift0.png"
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
     }]
   },{
     "x": 6,
-    "y": 3,
-    "link": "c5_w4/1"
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어.",
+      "msg:en": "You can get three gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
+    }]
   },{
     "x": 7,
-    "y": 2,
-    "link": "c5_w4/2"
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어.",
+      "msg:en": "You can get three gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
+    }]
   },{
     "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어.",
+      "msg:en": "You can get three gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어.",
+      "msg:en": "You can get three gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어.",
+      "msg:en": "You can get three gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어.",
+      "msg:en": "You can get three gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어.",
+      "msg:en": "You can get three gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어.",
+      "msg:en": "You can get three gifts at once.",
+      "img": [{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/gift0.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c5_w4/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c5_w4/2"
+  },{
+    "x": 7,
     "y": 1,
     "link": "c5_w4/3"
   },{
-    "x": 9,
-    "y": 2,
+    "x": 8,
+    "y": 1,
     "link": "c5_w4/4"
   },{
-    "x": 10,
-    "y": 3,
+    "x": 9,
+    "y": 1,
     "link": "c5_w4/5"
   },{
+    "x": 10,
+    "y": 1,
+    "link": "c5_w4/6"
+  },{
+    "x": 11,
+    "y": 1,
+    "link": "c5_w4/7"
+  },{
+    "x": 12,
+    "y": 1,
+    "link": "c5_w4/8"
+  },{
+    "x": 13,
+    "y": 1,
+    "link": "c5_w4/9"
+  },{
     "x": 14,
-    "y": 3,
+    "y": 1,
+    "link": "c5_w4/10"
+  },{
+    "x": 13,
+    "y": 5,
     "link": "c5_w4/11"
   },{
-    "x": 15,
-    "y": 2,
+    "x": 12,
+    "y": 5,
     "link": "c5_w4/12"
   },{
-    "x": 16,
-    "y": 1,
+    "x": 11,
+    "y": 5,
     "link": "c5_w4/13"
-  },{
-    "x": 17,
-    "y": 2,
-    "link": "c5_w4/14"
-  },{
-    "x": 18,
-    "y": 3,
-    "link": "c5_w4/15"
   },{
     "x": 10,
     "y": 5,
-    "link": "c5_w4/6"
+    "link": "c5_w4/14"
   },{
     "x": 9,
-    "y": 4,
-    "link": "c5_w4/7"
+    "y": 5,
+    "link": "c5_w4/15"
   },{
     "x": 8,
     "y": 5,
-    "link": "c5_w4/8"
+    "link": "c5_w4/16"
   },{
     "x": 7,
-    "y": 4,
-    "link": "c5_w4/9"
+    "y": 5,
+    "link": "c5_w4/17"
   },{
     "x": 6,
     "y": 5,
-    "link": "c5_w4/10"
-  },{
-    "x": 16,
-    "y": 3,
-    "link": "c5_w4/16"
-  },{
-    "x": 13,
-    "y": 4,
-    "link": "c5_w4/17"
-  },{
-    "x": 15,
-    "y": 4,
     "link": "c5_w4/18"
   },{
-    "x": 17,
-    "y": 4,
+    "x": 5,
+    "y": 5,
     "link": "c5_w4/19"
   },{
-    "x": 19,
-    "y": 4,
+    "x": 4,
+    "y": 5,
     "link": "c5_w4/20"
   },{
     "img":"tode",
-    "x": 16,
-    "y": 5,
+    "x": 2,
+    "y": 4,
     "obstacle": false,
     "link": "c5_w4_end/1",
     "min_score": 36
   }],
-
   "tutorial": [{
-    "msg:ko": "규칙을 찾아보아요!",
-    "msg:en": "Let's find patterns!",
+    "msg:ko": "규칙을 찾아보아요! 보통 문제는 선물을 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's find patterns! An normal problem gives you two lotus flowers and a hard one gives you three.",
     "img" : [{
       "src": "/img/c5/clovers/clover1.png",
       "style": "width:25%"
@@ -149,44 +496,16 @@
       "src": "/img/c5/clovers/clover4.png",
       "style": "width:25%"
     }]
-  }, {
-    "msg:ko": "보통 문제는 선물 2 개를 주어요.",
-    "msg:en": "A normal problem gives you two gifts.",
-    "img":  [{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    }]
-  }, {
-    "msg:ko": "어려운 문제는 선물 3 개를 주어요.",
-    "msg:en": "A normal problem gives you three gifts.",
-    "img":  [{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    }]
-  }, {
-    "msg:ko": "선물 36개를 모으면 토드에게로 가요.",
-    "msg:en": "Go to Tode with more than 36 gifts.",
-    "img": "/img/c5/TutoToad4_256.png",
-    "x" : 16,
-    "y" : 5
-  }, {
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
   }],
   "goal": {
-    "msg:ko": "선물 36개를 모아 토드에게 가자!",
-    "msg:en": "Let's go to Tode with 36 gifts!",
-    "img":"/img/c5/TutoToad4_256.png"
+    "msg:ko": "선물을 36개 모아 토드에게 가요.",
+    "msg:en": "Let's go to Tode with 36 gifts.",
+    "img":  [{
+      "src": "/img/c5/gift0.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/c5/TutoToad4_256.png",
+      "style": "width:33%"
+    }]
   }
 }

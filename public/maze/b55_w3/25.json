@@ -1,0 +1,54 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#.#...#.#",
+    "#...###.#",
+    "#.#%...d#",
+    "#.#.###.#",
+    "#.#..#..#",
+    "#.#)..).#",
+    "#...#...#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 3,
+    "img":"mother",
+    "useItem": 2
+  }, {
+    "x": 3,
+    "y": 6,
+    "img":"socks",
+    "itemCount": 1
+  }, {
+    "x": 6,
+    "y": 6,
+    "img":"hat",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "옛날 물건을 엄마께 가져다 드려요.",
+    "msg:en": "Bring old things to mother.",
+    "img": [{
+      "src": "/img/blocks/bring.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/blocks/use.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b55/mother.png",
+      "style": "width:33%"
+    }]
+  }]
+}

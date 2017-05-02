@@ -32,7 +32,7 @@
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
-  {"id": "hunny_pot", "src": "/img/c3_w1/hunny_pot.png"},
+  {"id": "honey_pot", "src": "/img/c3_w1/honey_pot.png"},
   {"tile": "f", "id": "dog1", "src": "/img/c3_w1/dog1.png", "obstacle": false},
   {"tile": "g", "id": "dog2", "src": "/img/c3_w1/dog2.png", "obstacle": false},
   {"tile": "h", "id": "dog3", "src": "/img/c3_w1/dog3.png", "obstacle": false},

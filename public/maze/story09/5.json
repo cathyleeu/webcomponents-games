@@ -20,9 +20,11 @@
   ],
   "tutorial": [{
     "msg:ko": "올챙올챙~ 장구벌레가 위쪽에 있어",
-    "msg:en": "There is a bug up above!"
+    "msg:en": "There is a bug up above!",
+    "msg:cn": "虫子在上面。"
   },{
     "msg:ko": "↑위로이동 블록을 이용해서 위로 가보자!",
-    "msg:en": "Let's move up using [Move Up] block."
+    "msg:en": "Let's move up using [Move Up] block.",
+    "msg:cn": "利用向上移动的积木，试着向上移动看看。"
   }]
 }

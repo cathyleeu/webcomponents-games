@@ -29,26 +29,26 @@
   }, {
     "x": 4,
     "y": 1,
-    "img":"hunny_pot",
+    "img":"honey_pot",
     "itemCount": 1
   }, {
     "x": 4,
     "y": 3,
-    "img":"hunny_pot",
+    "img":"honey_pot",
     "itemCount": 1
   }],
   "tutorial": [{
     "msg:ko": "엄마가 꿀로 과자를 만들어 주신데",
-    "msg:en": "Mommy make Cookies with hunny"
+    "msg:en": "Mommy make Cookies with honey"
   },{
     "msg:ko": "엄마에게 꿀단지를 가져다 드리자",
-    "msg:en": "Let's bring the hunny pot to my Mom",
+    "msg:en": "Let's bring the honey jars to my Mom",
     "img": "/img/c3_w1/mother.png"
   }],
   "goal": {
     "msg:ko": "엄마에게 꿀단지를 가져가자!",
-    "msg:en": "Bring the hunny pot to my Mom",
-    "img": "/img/c3_w2/hunny_pot.png"
+    "msg:en": "Bring the honey jars to my Mom",
+    "img": "/img/c3_w2/honey_pot.png"
   },
   "success": [{
     "msg:ko": "성공! 엄마가 과자를 만들여 주셨어~",

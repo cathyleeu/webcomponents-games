@@ -1,9 +1,10 @@
 {
-  "kidscoding": "KidsCoding",
+  "kidscoding": "KidsThinking",
   "start": "Start",
   "reset": "Reset",
   "tutorial": "Show Tutorial",
   "bgm": "Play BGM",
+  "logout": "Logout",
   "close": "Close",
   "retry": "Reset",
   "select": "Select",
@@ -17,7 +18,7 @@
   "fail_wall": "There is no way",
   "fail_done": "Try it again.",
   "fail_noBlocks": "No blocks!",
-  "fail_notEnough": "You need %1",
+  "fail_notEnough": "You need %1 points.",
   "fullscreen": "FullScreen",
   "goal": "Goal"
 }
