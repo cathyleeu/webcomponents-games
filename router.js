@@ -158,11 +158,7 @@ function getInfoByCode(code) {
           found = true;
           var classes = {};
           kinder.kinderClasses.forEach(function(classObj) {
-            var book = classObj.level + "-2," + classObj.level + "-3";
-            // 용인지사 컨텐츠 추가
-            if(classObj.code == "A00088-K1-KC1") {
-              book += ",추가컨텐츠";
-            }
+            var book = getBook(classObj);
             if(!classes[book]) {
               classes[book] = [];
             }
@@ -206,6 +202,19 @@ function getKinder(kinderId) {
       resolve({});
     });
   });
+}
+
+function getBook(classObj) {
+  var book = classObj.level + "-2," + classObj.level + "-3";
+  // 용인지사 컨텐츠 추가
+  if(classObj.code == "A00088-K1-KC1") {
+    book += ",추가컨텐츠";
+  }
+  // 청아유치원(시범원)
+  if(classObj.code == "A00083-K1-KC1") {
+    book = classObj.level + "-5";
+  }
+  return book;
 }
 
 // See: http://stackoverflow.com/questions/19877246/nodemailer-with-gmail-and-nodejs
@@ -329,7 +338,7 @@ public.get('/code/:code', function *(next) {
           if(code == kcode) {
             var classes = {};
             kinder.kinderClasses.forEach(function(classObj) {
-              var book = classObj.level + "-2," + classObj.level + "-3";
+              var book = getBook(classObj);
               if(!classes[book]) {
                 classes[book] = [];
               }
@@ -402,7 +411,7 @@ public.get('/cache/:manifest', function *(next) {
           if(code == kcode) {
             var classes = {};
             kinder.kinderClasses.forEach(function(classObj) {
-              var book = classObj.level + "-2," + classObj.level + "-3";
+              var book = getBook(classObj);
               if(!classes[book]) {
                 classes[book] = [];
               }
