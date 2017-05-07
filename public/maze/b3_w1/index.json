@@ -25,7 +25,7 @@
   },{
     "msg:ko": "→ 버튼을 눌러 우주선으로 이동하여 '코스네 가족'을 시작해보아요.",
     "msg:en": "Press → button to go to the UFO and complete 'Cos' Family' stage.",
-    "msg:en": "按→按钮进入UFO。",
+    "msg:cn": "按→按钮进入UFO。",
     "img": [{
       "src": "/img/kidsblocks/mRight.png",
       "style": "width:50%"

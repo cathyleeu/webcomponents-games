@@ -12,8 +12,9 @@ if(location.pathname == "/code" && location.hash) {
   }
   .btn-warning {
     margin: 20px;
-    width: 130px;
+    width: 200px;
     padding: 10px;
+    font-size: 22px;
   }
   .btn-warning.selected {
     background-color: #E53;
@@ -82,7 +83,7 @@ if(location.pathname == "/code" && location.hash) {
         <div class="row">
             <div class="col-lg-12">
                 <h1 data-msg="welcome">안녕하세요. 키즈씽킹입니다.</h1>
-                <h2><span class="school"></span> <span data-msg="school"></span> (<span class="yearmonth"></span>)</h2>
+                <h2><span class="school"></span> <span data-msg="school"></span></h2>
                 <img class="img-responsive" src="/img/kidsthinking_big.png" alt="">
                 <div class="intro-text">
                     <div id="classes">
@@ -170,8 +171,7 @@ if(location.pathname == "/code" && location.hash) {
           select_name: "1. 이름을 선택하세요",
           select_password: "2. 비밀캐릭터나 비밀번호를 선택하세요",
           kidsthinking: "키즈씽킹",
-          error: "원별 접속주소를 확인해주세요.",
-          month: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]
+          error: "원별 접속주소를 확인해주세요."
         },
         en: {
           welcome: "Welcome to KidsThinking",
@@ -182,8 +182,7 @@ if(location.pathname == "/code" && location.hash) {
           select_name: "1. Select your name.",
           select_password: "2. Select your password.",
           kidsthinking: "KidsThinking",
-          error: "Check your url, Please.",
-          month: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+          error: "Check your url, Please."
         }
       },
       msg = _msg[lang] || _msg.en;
@@ -294,19 +293,17 @@ if(location.pathname == "/code" && location.hash) {
   }
 
   function showClass() {
-    $(".yearmonth").text(msg.month[Number(info.date.slice(4,6))-1]);
     $("#classes").empty();
     var classes = Object.keys(info.classes).map(function(item) {
-      return info.classes[item];
+      return info.classes[item].map(function(className) {
+        return [className, item];
+      });
     }).reduce(function(init, arr) {
       return init.concat(arr);
     }, []);
-    classes.forEach(function(className, i) {
-      if(info.code == "e91d5") {
-        $('<a href="#className=' + className + '&book=true" class="btn btn-lg btn-default">' + className + '</a>').appendTo("#classes");
-      } else {
-        $('<a href="#className=' + className + '" class="btn btn-lg btn-default">' + className + '</a>').appendTo("#classes");
-      }
+    classes.forEach(function(item, i) {
+      var book_true = info.code == "e91d5" ? "&book=true" : "";
+      $('<a href="#className=' + item[0] + book_true + '" class="btn btn-lg btn-default">' + item[0] + '</a>').appendTo("#classes");
     });
   }
 
