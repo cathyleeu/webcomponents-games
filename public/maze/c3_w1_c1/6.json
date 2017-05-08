@@ -26,12 +26,12 @@
   }],
   "tutorial": [{
     "msg:ko": "외할아버지에게로 가보자!",
-    "msg:en": "Go granfa!",
+    "msg:en": "Go to grandpa!",
     "img": "/img/c3_w1/m_granfa.png"
   }],
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
-    "msg:en": "Succes! Good Job!",
+    "msg:en": "Success! Good Job!",
     "link": "c3_w1_c1/7"
   }]
 }

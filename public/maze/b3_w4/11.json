@@ -30,7 +30,7 @@
     "img": "/img/c3_w1/father.png"
   },{
     "msg:ko": "아버지에게 가서 할머지 할아버지가 지구로 왔다는 걸 알려줘요!",
-    "msg:en": "Tell my father that granma&granfa has arrived",
+    "msg:en": "Tell my father that grandma&grandpa has arrived",
     "img": "/img/b3_w3/gran.png"
   }],
   "goal": {
