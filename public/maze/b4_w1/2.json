@@ -26,7 +26,7 @@
   }],
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
-    "msg:en": "Succes! Good Job!",
+    "msg:en": "Success! Good Job!",
     "link": "b4_w1/3"
   }]
 }

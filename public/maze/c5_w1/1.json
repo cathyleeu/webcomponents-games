@@ -72,7 +72,7 @@
   },
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
-    "msg:en": "Succes! Good Job!",
+    "msg:en": "Success! Good Job!",
     "img" : "/img/c5/clovers/clover4.png",
     "link": "c5_w1/2"
   }]

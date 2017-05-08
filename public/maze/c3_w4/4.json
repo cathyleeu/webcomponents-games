@@ -34,10 +34,10 @@
   }],
   "tutorial": [{
     "msg:ko": "엄마에게 쿠키를 받았어",
-    "msg:en": "Mom give me cookies."
+    "msg:en": "Mom gives me cookies."
   },{
     "msg:ko": "친할머니에게 쿠키를 전달하자!",
-    "msg:en": "Deliver Cookies to granma",
+    "msg:en": "Deliver Cookies to grandma",
     "img": "/img/c3_w1/f_granma.png"
   }]
 }
