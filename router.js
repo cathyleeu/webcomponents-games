@@ -97,6 +97,11 @@ var msgJsons = fs.readdirSync("public/msg")
       return "/msg/" + item;
     });
 
+var mazeDirs = fs.readdirSync('public/maze')
+    .filter(function(file) {
+      return fs.lstatSync(path.join('public/maze', file)).isDirectory();
+    });
+
 // 각 원별 cache 생성
 var url = JSON.parse(fs.readFileSync('public/login/url.json')),
     books = JSON.parse(fs.readFileSync('public/login/books.json'));
@@ -452,6 +457,18 @@ public.get('/cache/:manifest', function *(next) {
         maniPath = maniPath.slice(0, maniPath.lastIndexOf("/"));
         if(maniPath && manifests.indexOf(maniPath) < 0) {
           manifests.push(maniPath);
+          var maniTokens = maniPath.split("_"),
+              maniHeading = maniTokens.slice(0,2).join("_");
+          // c3_w1_c1이 있다면 c3_w1_c2도 추가
+          if(maniTokens.length == 2 || maniTokens.length == 3) {
+            mazeDirs.forEach(function(dir) {
+              if(maniPath != dir &&
+                  maniHeading == dir.split("_").slice(0,2).join("_") &&
+                  manifests.indexOf(dir) < 0) {
+                manifests.push(dir);
+              }
+            });
+          }
         }
         if(pagePath.indexOf("#!") >= 0) {
           pagePath = pagePath.slice(0, pagePath.indexOf("#!"));
