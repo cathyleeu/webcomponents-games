@@ -214,8 +214,8 @@ function getBook(classObj) {
   if(classObj.code.slice(0,9) == "A00083-K1") {
     book = classObj.level + "-5";
   }
-  // 청아유치원(시범원)
-  if(classObj.code == "E00076-K1") {
+  // 설리번
+  if(classObj.code.slice(0,9) == "E00076-K1") {
     book = classObj.level + "-1," + classObj.level + "-2";
   }
   return book;
