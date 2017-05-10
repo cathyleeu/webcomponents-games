@@ -496,7 +496,7 @@ public.get('/cache/:manifest', function *(next) {
     var manifest = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, "manifest.json")));
     manifest.forEach(function(item) {
       // bgm을 제외한 파일을 중복 없이 추가
-      if(item.id != "bgm" && cache.indexOf(item.src) < 0) {
+      if(item.id != "bgm" && item.src && cache.indexOf(item.src) < 0) {
         cache.push(item.src);
       }
     });
