@@ -211,8 +211,8 @@ function getKinder(kinderId) {
 
 function getBook(classObj) {
   var book = classObj.level + "-2," + classObj.level + "-3";
-  // 용인지사 컨텐츠 추가
-  if(classObj.code == "A00088-K1-KC1") {
+  // 용인지사 성음유치원, 영업부 일산지사 홍익유치원 컨텐츠 추가
+  if(classObj.code == "A00088-K1-KC1" || classObj.code.slice(0,9) == "C00149-K1") {
     book += ",추가컨텐츠";
   }
   // 청아유치원(시범원)
