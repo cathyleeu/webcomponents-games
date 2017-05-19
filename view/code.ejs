@@ -302,7 +302,7 @@ if(location.pathname == "/code" && location.hash) {
       return init.concat(arr);
     }, []);
     classes.forEach(function(item, i) {
-      var book_true = info.code == "e91d5" ? "&book=true" : "";
+      var book_true = (info.code == "e91d5" || info.code == "c7b46") ? "&book=true" : "";
       $('<a href="#className=' + item[0] + book_true + '" class="btn btn-lg btn-default">' + item[0] + '</a>').appendTo("#classes");
     });
   }

@@ -52,7 +52,7 @@
   },
   "success": [{
     "msg:ko": "성공! 엄마가 과자를 만들여 주셨어~",
-    "msg:en": "Mom give me cookies.",
+    "msg:en": "Mom gives me cookies.",
     "img": "/img/c3_w4/cookie.png",
     "link": "c3_w4/index"
   }]

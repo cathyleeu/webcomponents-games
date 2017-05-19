@@ -38,7 +38,7 @@
   },
   "success": [{
     "msg:ko": "성공! 개구리가 되었어요~",
-    "msg:en": "Succes! The tadpole becomes a frog!",
+    "msg:en": "Success! The tadpole becomes a frog!",
     "link": "a5_w4/2"
   }]
 }

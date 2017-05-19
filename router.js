@@ -97,6 +97,11 @@ var msgJsons = fs.readdirSync("public/msg")
       return "/msg/" + item;
     });
 
+var mazeDirs = fs.readdirSync('public/maze')
+    .filter(function(file) {
+      return fs.lstatSync(path.join('public/maze', file)).isDirectory();
+    });
+
 // 각 원별 cache 생성
 var url = JSON.parse(fs.readFileSync('public/login/url.json')),
     books = JSON.parse(fs.readFileSync('public/login/books.json'));
@@ -206,13 +211,17 @@ function getKinder(kinderId) {
 
 function getBook(classObj) {
   var book = classObj.level + "-2," + classObj.level + "-3";
-  // 용인지사 컨텐츠 추가
-  if(classObj.code == "A00088-K1-KC1") {
+  // 용인지사 성음유치원, 영업부 일산지사 홍익유치원 컨텐츠 추가
+  if(classObj.code == "A00088-K1-KC1" || classObj.code.slice(0,9) == "C00149-K1") {
     book += ",추가컨텐츠";
   }
   // 청아유치원(시범원)
   if(classObj.code.slice(0,9) == "A00083-K1") {
     book = classObj.level + "-5";
+  }
+  // 설리번
+  if(classObj.code.slice(0,9) == "E00076-K1") {
+    book = classObj.level + "-1," + classObj.level + "-2";
   }
   return book;
 }
@@ -448,6 +457,18 @@ public.get('/cache/:manifest', function *(next) {
         maniPath = maniPath.slice(0, maniPath.lastIndexOf("/"));
         if(maniPath && manifests.indexOf(maniPath) < 0) {
           manifests.push(maniPath);
+          var maniTokens = maniPath.split("_"),
+              maniHeading = maniTokens.slice(0,2).join("_");
+          // c3_w1_c1이 있다면 c3_w1_c2도 추가
+          if(maniTokens.length == 2 || maniTokens.length == 3) {
+            mazeDirs.forEach(function(dir) {
+              if(maniPath != dir &&
+                  maniHeading == dir.split("_").slice(0,2).join("_") &&
+                  manifests.indexOf(dir) < 0) {
+                manifests.push(dir);
+              }
+            });
+          }
         }
         if(pagePath.indexOf("#!") >= 0) {
           pagePath = pagePath.slice(0, pagePath.indexOf("#!"));
@@ -475,7 +496,7 @@ public.get('/cache/:manifest', function *(next) {
     var manifest = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, "manifest.json")));
     manifest.forEach(function(item) {
       // bgm을 제외한 파일을 중복 없이 추가
-      if(item.id != "bgm" && cache.indexOf(item.src) < 0) {
+      if(item.id != "bgm" && item.src && cache.indexOf(item.src) < 0) {
         cache.push(item.src);
       }
     });

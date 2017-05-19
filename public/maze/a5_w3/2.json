@@ -76,7 +76,7 @@
   }],
   "success": [{
     "msg:ko": "성공! 매미가 되었어요~",
-    "msg:en": "Succes! Became a cicada!",
+    "msg:en": "Success! Became a cicada!",
     "img": "/img/a5_w3/bg01_step5.png",
     "link": "a5_w3/2"
   }]

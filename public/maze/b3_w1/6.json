@@ -26,13 +26,13 @@
   }],
   "tutorial": [{
     "msg:ko": "외할머니에게로 가보자!",
-    "msg:en": "Go grandma!",
+    "msg:en": "Go to grandma!",
     "msg:cn": "去奶奶那里吧！",
     "img": "/img/c3_w1/m_granma.png"
   }],
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
-    "msg:en": "Succes! Good Job!",
+    "msg:en": "Success! Good Job!",
     "msg:cn": "成功了！做得很棒。",
     "link": "b3_w2/index"
   }]
