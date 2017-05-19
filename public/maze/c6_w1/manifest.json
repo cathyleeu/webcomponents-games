@@ -1,0 +1,42 @@
+[
+  {"book": "c6", "title": "1주차 : 안전용품을 꼭 챙겨요."},
+  {"id": "bg2", "src": "/img/c6/yardbg2.png"},
+  {"id": "bg1", "src": "/img/c6/yardbg1.png"},
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/b55/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b55/cos0.png", "size": 256},
+  {"tile": "b", "id": "food", "src": "/img/c6/bike.png"},
+  {"tile" : "i", "id": "inline", "src": "/img/c6/inline.png"},
+  {"tile" : "a", "id": "safety1", "src": "/img/c6/safety1.png"},
+  {"tile" : "b", "id": "safety2", "src": "/img/c6/safety2.png"},
+  {"tile" : "c", "id": "safety3", "src": "/img/c6/safety3.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"tile" : "h", "id": "house", "src": "/img/b5_w1/house.png"},
+
+  {"tile" : "t", "id": "tree1", "src": "/img/b2_w4/Tree1_256.png", "obstacle": true},
+  {"tile" : "T", "id": "tree2", "src": "/img/b2_w4/Tree2_256.png", "obstacle": true},
+  {"tile" : "f", "id": "flower1", "src": "/img/b2_w4/Flower1_256.png", "obstacle": true},
+  {"tile" : "F", "id": "flower2", "src": "/img/b2_w4/Flower2_256.png", "obstacle": true},
+
+  {"id": "stone1", "src": "/img/b2_w4/YardStone1_256.png", "obstacle": true},
+  {"id": "stone2", "src": "/img/b2_w4/YardStone2_256.png", "obstacle": true}
+
+]

@@ -1,0 +1,64 @@
+{
+  "tile_size": 256,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item",
+    "check",
+    "condition_foodget"
+  ],
+  "map": [
+    ".#######.",
+    "#.####..#",
+    "#..%.#..#",
+    "###..&.##",
+    "##..#...#",
+    "#......##",
+    "#.#.#.###",
+    "#d.....##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 2,
+    "img": "kitties"
+
+    },{
+    "x": 5,
+    "y": 3,
+    "contents" : [{
+      "img": "food1",
+      "role": "item"
+    },{
+      "img": "food2",
+      "role": "item"
+    },{
+      "img": "food3",
+      "role": "item"
+    },{
+      "img": "trash1",
+      "role": "img"
+    },{
+      "img": "trash2",
+      "role": "img"
+    }]
+  }],
+  "tutorial": [{
+    "msg:ko": "상자를 확인하고 아기 고양이에게 가요. 상자에서 먹이가 나오면 가지고 가요.",
+    "msg:en": "Check the box and go to the kitties with food if there is.",
+    "img": [{
+      "src": "/img/c6/box_open.png",
+      "style": "width:33%"
+    }, {
+      "src": "/img/c6/kitties.png",
+      "style": "width:33%"
+    }]
+  }]
+}

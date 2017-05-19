@@ -1,0 +1,50 @@
+
+[
+  {"book": "c6", "title": "2주차 : 상자를 열어 확인해요"},
+  {"id": "bg2", "src": "/img/c6/bg2.png"},
+  {"id": "bg1", "src": "/img/c6/bg1.png"},
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/c6/bomi.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c6/bomi0.png", "size": 256},
+  {"tile": "b", "id": "food", "src": "/img/c6/box.png"},
+  {"id": "chest", "src": "/img/c6/box.png"},
+  {"id": "chestopen", "src": "/img/c6/box_open.png"},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "bd1", "src": "/img/c6/bd1.png","obstacle": true},
+  {"id": "bd2", "src": "/img/c6/bd2.png","obstacle": true},
+  {"id": "bd3", "src": "/img/c6/bd3.png","obstacle": true},
+  {"id": "bd4", "src": "/img/c6/bd4.png","obstacle": true},
+  {"id": "bd5", "src": "/img/c6/bd5.png","obstacle": true},
+  {"id": "tree1", "src": "/img/b4/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/b4/tree2.png", "obstacle": true},
+  {"id": "tree1", "src": "/img/b4/tree3.png", "obstacle": true},
+
+  {"id": "food1", "src": "/img/c6/food1.png"},
+  {"id": "food2", "src": "/img/c6/food2.png"},
+  {"id": "food3", "src": "/img/c6/food3.png"},
+  {"id": "trash1", "src": "/img/c6/trash1.png"},
+  {"id": "trash2", "src": "/img/c6/trash2.png"},
+
+]

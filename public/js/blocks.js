@@ -406,6 +406,9 @@ Blocks["check"] = {
   args0: [
     {type: "field_image", src: "/img/check.png"}
   ],
+  argsh0: [
+    {type: "field_image", src: "/img/check.png"}
+  ],
   action: ["check"]
 };
 Blocks["check2"] = {
@@ -450,6 +453,9 @@ Blocks["wait"] = {
   },
   args0: [
     {type: "field_image", src: "/img/bomi/trf_rot_green.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/wait.png"}
   ],
   action: ["wait"]
 };
@@ -1018,6 +1024,16 @@ Blocks['condition_foodget'] = {
     type: "input_statement",
     name: "if_statements"
   }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/foodexists.png"
+  }],
+  messageh1: null,
+  argsh1: null,
   action: ["conditioncheck","tile"]
 };
 Blocks['condition_fooduse'] = {
@@ -1047,6 +1063,16 @@ Blocks['condition_light'] = {
     type: "input_statement",
     name: "if_statements"
   }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/redlight.png"
+  }],
+  messageh1: null,
+  argsh1: null,
   action: ["conditioncheck","sign"]
 };
 Blocks['condition2_food_apple'] = {

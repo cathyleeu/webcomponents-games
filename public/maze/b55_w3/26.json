@@ -31,7 +31,7 @@
       "style" : "width:33%"
     }]
   }],
-  "goal": [{
+  "goal": {
     "msg:ko": "시작 버튼을 눌러서 시장으로 가요.",
     "msg:en": "Press the start button",
     "img": [{
@@ -41,7 +41,7 @@
       "src": "/img/b55/mkt1.png",
       "style" : "width:33%"
     }]
-  }],
+  },
   "success": [{
     "msg:ko": "다음 주에 만나요!",
     "msg:en": "See you next week!",
