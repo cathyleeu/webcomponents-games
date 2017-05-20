@@ -56,7 +56,7 @@
     "msg:en": "I'll eat them again at home! So delicious!",
     "img": "/img/b55/cos0.png"
   }],
-  "goal": [{
+  "goal": {
     "msg:ko": "시작 버튼을 눌러서 장바구니에 먹거리를 담아요.",
     "msg:en": "Press the start button.",
     "img": [{
@@ -66,7 +66,7 @@
       "src": "/img/b55/bag.png",
       "style" : "width:33%"
     }]
-  }],
+  },
   "success": [{
     "msg:ko": "다음 주에 만나요!",
     "msg:en": "See you next week!",

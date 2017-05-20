@@ -41,7 +41,7 @@
     "min_score": 5
   }],
   "tutorial": [{
-    "msg:ko": "카트로 가면 숫자를 비교하는 문제를 풀 수 있어요. 문제 한 개를 풀면 집 하나를 얻을 수 있어요. 5개의 카트를 모아서 엄마께 가요.",
+    "msg:ko": "카트로 가면 숫자를 비교하는 문제를 풀 수 있어요. 문제 한 개를 풀면 카트 하나를 얻을 수 있어요. 5개의 카트를 모아서 엄마께 가요.",
     "msg:en": "You can solve a fruit-size-comparing-problem at any cart. A problem gives you a cart. Get five carts and go to mother.",
     "img": [{
       "src":"/img/c4_w2/cart.png",
