@@ -421,7 +421,7 @@ Blocks["check"] = {
     {type: "field_image", src: "/img/check.png"}
   ],
   argsh0: [
-    {type: "field_image", src: "/img/check.png"}
+    {type: "field_image", src: "/img/kidsblocks/check.png"}
   ],
   action: ["check"]
 };
@@ -434,6 +434,9 @@ Blocks["check2"] = {
   },
   args0: [
     {type: "field_image", src: "/img/check.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/check.png"}
   ],
   action: ["check2"]
 };
@@ -448,7 +451,7 @@ Blocks["checkfinish"] = {
     {type: "field_image", src: "/img/check.png"}
   ],
   argsh0: [
-    {type: "field_image", src: "/img/check.png"}
+    {type: "field_image", src: "/img/kidsblocks/check.png"}
   ],
   action: ["checkfinish"]
 };

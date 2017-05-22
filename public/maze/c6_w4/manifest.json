@@ -46,6 +46,8 @@
   {"id": "trash1", "src": "/img/c6/trash1.png"},
   {"id": "trash2", "src": "/img/c6/trash2.png"},
   {"tile": "k", "id": "kitties", "src": "/img/c6/kitties.png"},
+  {"id": "kittieseating", "src": "/img/c6/kittieseating.png"},
+
 
   {"id": "trf_green", "src": "/img/c6/trf_green.png"},
   {"id": "trf_red", "src": "/img/c6/trf_red.png"},

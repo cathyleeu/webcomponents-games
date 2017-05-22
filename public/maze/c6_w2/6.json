@@ -8,10 +8,7 @@
     "move_down",
     "move_right",
     "move_left",
-    "get_item",
-    "use_item",
-    "check",
-    "condition_foodget"
+    "checkfinish"
   ],
   "map": [
     ".#######.",
@@ -46,6 +43,9 @@
       "role": "img"
     },{
       "img": "trash2",
+      "role": "img"
+    },{
+      "img": "blank",
       "role": "img"
     }]
   }],

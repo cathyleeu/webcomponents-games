@@ -51,6 +51,9 @@
     },{
       "img": "trash2",
       "role": "img"
+    },{
+      "img": "blank",
+      "role": "img"
     }]
   }],
   "tutorial": [{
