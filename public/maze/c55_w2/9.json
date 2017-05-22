@@ -28,11 +28,11 @@
   "tutorial": [{
     "msg:ko": "사슴 디어에게 초대장을 주러 가자!",
     "msg:en": "Let's go to deer for invitation",
-    "img": "/img/c55_w2/deer.png"
+    "img": "/img/c55_w2/deer_120.png"
   }],
   "goal": {
     "msg:ko": "사슴 디어에게 초대장을 주러 가자!",
     "msg:en": "Let's go to deer for invitation",
-    "img": "/img/c55_w2/deer.png"
+    "img": "/img/c55_w2/deer_120.png"
   }
 }

@@ -340,6 +340,20 @@ Blocks["get_item"] = {
   ],
   action: ["getItem"]
 };
+Blocks["get_item_notuse"] = {
+  rgbColor: "#E75051",
+  message0: {
+    ko: "%1 아이템 가져오기",
+    en: "%1 Get Item"
+  },
+  args0: [
+    {type: "field_image", src: "/img/get_item.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
+  ],
+  action: ["getItemNotuse"]
+};
 Blocks["use_item"] = {
   rgbColor: "#81CBD8",
   message0: {
@@ -422,6 +436,21 @@ Blocks["check2"] = {
     {type: "field_image", src: "/img/check.png"}
   ],
   action: ["check2"]
+};
+Blocks["checkfinish"] = {
+  rgbColor: "#33B1B1",
+  message0: {
+    ko: "%1 확인하기",
+    en: "%1 Inspect",
+    cn: "%1 检查"
+  },
+  args0: [
+    {type: "field_image", src: "/img/check.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/check.png"}
+  ],
+  action: ["checkfinish"]
 };
 Blocks["together"] = {
   rgbColor: "#33B1B1",
@@ -1024,6 +1053,19 @@ Blocks['condition_foodget'] = {
     type: "input_statement",
     name: "if_statements"
   }],
+  action: ["conditioncheck","tile"]
+};
+Blocks['condition_foodget_notuse'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "먹이가 나오면",
+    en: "If There is Food"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
   messageh0: "%1 %2",
   argsh0: [{
     type: "input_statement",
@@ -1034,7 +1076,7 @@ Blocks['condition_foodget'] = {
   }],
   messageh1: null,
   argsh1: null,
-  action: ["conditioncheck","tile"]
+  action: ["conditioncheck","item_notuse"]
 };
 Blocks['condition_fooduse'] = {
   rgbColor: "#E11376",

@@ -46,7 +46,7 @@
   {"id": "d_grandmother", "src": "/img/c55_w2/d_grandm.png", "obstacle": false},
   {"id": "m_grandfather", "src": "/img/c55_w2/m_grandf.png", "obstacle": false},
   {"id": "m_grandmother", "src": "/img/c55_w2/m_grandm.png", "obstacle": false},
-  {"id": "deer", "src": "/img/c55_w2/deer.png", "obstacle": false},
+  {"id": "deer", "src": "/img/c55_w2/deer_120.png", "obstacle": false},
   {"id": "todelana", "src": "/img/c55_w2/todelana.png", "obstacle": false}
 
 ]

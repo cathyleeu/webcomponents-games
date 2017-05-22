@@ -7,8 +7,8 @@
     "move_down",
     "move_right",
     "move_left",
-    "get_item",
-    "use_item",
+    "get_item2",
+    "use_item2",
     "repeat"
   ],
   "map": [
@@ -25,7 +25,8 @@
   "extra":[{
     "x": 6,
     "y": 2,
-    "img":"fruit_ki"
+    "img":"fruit_ki",
+     "itemImg":"fruit_ki"
   },{
     "x": 7,
     "y": 4,
