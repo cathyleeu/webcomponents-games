@@ -2,19 +2,19 @@
   "tile_size": 256,
 
   "score":1,
-  "workspace": ["start","move_left","move_down","check","condition_foodget"],
+  "workspace": ["start","move_left","move_down","check","condition_foodget_notuse"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
     "move_left",
-    "get_item",
+    "get_item_notuse",
     "use_item",
     "check",
-    "condition_foodget"
+    "condition_foodget_notuse"
   ],
   "map": [
-    ".#######.",
+    ".%######.",
     "#.##..###",
     "##.d....#",
     "#.&##.###",
@@ -25,6 +25,10 @@
     ".#######."
   ],
   "extra":[{
+    "x": 1,
+    "y": 0,
+    "img": "tree1"
+    },{
     "x": 2,
     "y": 5,
     "img": "kitties"

@@ -546,6 +546,29 @@ Actions.prototype.getItem = function(block, callback) {
   }
 };
 
+Actions.prototype.getItemNotuse = function(block, callback) {
+  var _this = this,
+      foods = this.canvas.foods,
+      character = this.canvas.character,
+      item = this._getCanvasObject(character.px, character.py, "item");
+  if( !item ) {
+    // 아이템을 가져올 수 없다면
+    callback("아이템을 가져올 수 없어요");
+    return;
+  }
+    character.hasItem = true;
+    // 곡괭이, 연꽃(숫자 없는 아이템)
+    item.visible = false;
+    character.itemBitmap = item;
+    foods.splice(0,1);
+    this.canvas.stage.update();
+    createjs.Sound.play("success");
+    setTimeout(function() {
+      callback();
+    }, 500);
+
+};
+
 //이미지 정보를 가져와서 목적지위에 드러나게 하는 기능
 Actions.prototype.getItem2 = function(block, callback) {
   var _this = this,
@@ -580,7 +603,13 @@ Actions.prototype.getItem2 = function(block, callback) {
     }
   }else{
     item.visible = false;
+    var itemCount = this.getItemCount(character);
+    this.setItemCount(character, itemCount + 1);
     character.itemBitmap = item;
+    if(!character.itemList){
+      character.itemList = [];
+    }
+    character.itemList.push(item);
   }
   this.canvas.stage.update();
   createjs.Sound.play("success");
@@ -859,6 +888,29 @@ Actions.prototype.check2 = function(block, callback) {
   callback("확인할 것이 없어요");
 }
 
+Actions.prototype.checkfinish = function(block, callback) {
+  var _this = this,
+      foods = this.canvas.foods,
+      character = this.canvas.character;
+  // 바위 위에서 아이템 사용
+  var chest = this._getCanvasObject(character.px, character.py, "chest");
+  if(chest) {
+    this._splitObjects(chest, function() {
+      var ranNum = parseInt(Math.random()*chest.contents.length, 10);
+      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
+      foods.splice(0,1);
+      _this.setCoord(chest, chest.px, chest.py);
+      createjs.Sound.play("success");
+      _this.canvas.stage.update();
+      setTimeout(function() {
+        callback();
+      }, 1000);
+    });
+    return;
+  }
+  callback("확인할 것이 없어요");
+}
+
 Actions.prototype.action = function(hand, block, callback) {
   var character = this.canvas.character;
   var spider = this._getCanvasObject(character.px, character.py, "spider");
@@ -889,6 +941,7 @@ Actions.prototype.action = function(hand, block, callback) {
 
 Actions.prototype.conditioncheck = function(options, block, callback) {
   var character = this.canvas.character,
+      foods = this.canvas.foods,
       _this = this;
   if(options == "tile"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
@@ -903,6 +956,23 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
         callback();
       }, 500);
     }
+  }else if(options == "item_notuse"){
+
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      if(tileInfo.role == "item"){
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        foods.splice(0,1);
+        setTimeout(function() {
+          callback();
+        }, 500);
+      }
+    });
   } else if(options == "character"){
     var itemBitmap = character.itemBitmap;
     if(itemBitmap){

@@ -8,13 +8,13 @@
     "move_down",
     "move_right",
     "move_left",
-    "get_item",
+    "get_item_notuse",
     "use_item",
     "check",
-    "condition_foodget"
+    "condition_foodget_notuse"
   ],
   "map": [
-    ".#######.",
+    ".%######.",
     "#.##.%###",
     "##r..&..#",
     "#..##.###",
@@ -25,6 +25,10 @@
     ".#######."
   ],
   "extra":[{
+    "x": 1,
+    "y": 0,
+    "img": "tree1"
+    },{
     "x": 5,
     "y": 1,
     "img": "kitties"

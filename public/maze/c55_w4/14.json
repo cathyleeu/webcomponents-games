@@ -7,16 +7,16 @@
     "move_down",
     "move_right",
     "move_left",
-    "get_item",
-    "use_item",
+    "get_item2",
+    "use_item2",
     "repeat"
   ],
   "map": [
     ".wwwwwww.",
     "w.##..##w",
     "w...##..w",
-    "w#......w",
-    "w...#...w",
+    "w#..#...w",
+    "w.......w",
     "w.%.)..#w",
     "wu###..#w",
     "w....##.w",
@@ -31,6 +31,8 @@
     "x": 4,
     "y": 5,
     "img":"water",
+    "itemImg":"water",
+    "disappear":true,
     "itemCount": 4
   }],
   "tutorial": [{
