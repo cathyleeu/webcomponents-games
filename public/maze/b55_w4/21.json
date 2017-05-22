@@ -19,27 +19,32 @@
     "x": 3,
     "y": 1,
     "img":"hotdog",
-    "itemImg":"hotdog"
+    "itemImg":"hotdog",
+    "disappear":true
   }, {
     "x": 4,
     "y": 1,
     "img":"chicken",
-    "itemImg":"chicken"
+    "itemImg":"chicken",
+    "disappear":true
   }, {
     "x": 4,
     "y": 3,
     "img":"prawn",
-    "itemImg":"prawn"
+    "itemImg":"prawn",
+    "disappear":true
   }, {
     "x": 3,
     "y": 3,
     "img":"dduck",
-    "itemImg":"dduck"
+    "itemImg":"dduck",
+    "disappear":true
   }, {
     "x": 2,
     "y": 3,
     "img":"donut",
-    "itemImg":"donut"
+    "itemImg":"donut",
+    "disappear":true
   }],
   "tutorial": [{
     "msg:ko": "집에 가서 또 먹어야지! 너무 맛있어요!",
