@@ -603,13 +603,17 @@ Actions.prototype.getItem2 = function(block, callback) {
     }
   }else{
     item.visible = false;
-    var itemCount = this.getItemCount(character);
-    this.setItemCount(character, itemCount + 1);
     character.itemBitmap = item;
-    if(!character.itemList){
-      character.itemList = [];
+    if(item.disappear){
+      var itemCount = this.getItemCount(character);
+      this.setItemCount(character, itemCount + 1);
+
+      if(!character.itemList){
+        character.itemList = [];
+      }
+      character.itemList.push(item);
     }
-    character.itemList.push(item);
+
   }
   this.canvas.stage.update();
   createjs.Sound.play("success");

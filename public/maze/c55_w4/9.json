@@ -26,7 +26,8 @@
     "x": 5,
     "y": 4,
     "img":"fruit_or",
-     "itemImg":"fruit_or"
+     "itemImg":"fruit_or",
+     "disappear":true
   },{
     "x": 6,
     "y": 7,
