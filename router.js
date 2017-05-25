@@ -221,7 +221,7 @@ function getBook(classObj) {
   }
   // 설리번
   if(classObj.code.slice(0,9) == "E00076-K1") {
-    book = classObj.level + "-2," + classObj.level + "-3";
+    book = classObj.level + "-1," + classObj.level + "-2";
   }
   return book;
 }
