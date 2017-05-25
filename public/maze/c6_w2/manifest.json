@@ -16,11 +16,10 @@
   {"id": "land10", "src": "/img/map32/10.png"},
   {"id": "land11", "src": "/img/map32/11.png"},
 
-  {"id": "character", "src": "/img/c6/bomi.png", "sprite": true, "size": 256},
+  {"id": "character", "src": "/img/c6/SpriteBomi_256.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c6/bomi0.png", "size": 256},
   {"tile": "b", "id": "food", "src": "/img/c6/box.png"},
   {"id": "chest", "src": "/img/c6/box.png"},
-  {"id": "chestopen", "src": "/img/c6/box_open.png"},
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
@@ -46,5 +45,6 @@
   {"id": "food3", "src": "/img/c6/food3.png"},
   {"id": "trash1", "src": "/img/c6/trash1.png"},
   {"id": "trash2", "src": "/img/c6/trash2.png"},
+  {"id": "blank", "src": "/img/c6/box_open.png"}
 
 ]
