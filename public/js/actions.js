@@ -377,6 +377,8 @@ Actions.prototype.steploop = function(type, block, callback) {
     stepList = ["r","r","r","r"];
   } else if(type == "frog_down") {
     stepList = ["d","d","d"];
+  } else if(type == "a6w1_move") {
+    stepList = ["u","u","u","u","u","u"];
   }
   travel(x_next,y_next);
   function travel(a,b){
@@ -795,6 +797,113 @@ Actions.prototype.useItem2 = function(block, callback) {
           callback();
         }, 500);
       });
+      return;
+    }
+    callback("아이템을 사용할 수 없어요");
+    return;
+  }
+  // 아이템을 사용할 수 없는 경우
+  callback("아이템을 사용할 수 없어요");
+}
+
+//이미지 정보를 가져와서 목적지위에 드러나게 하는 기능
+Actions.prototype.ride = function(type, block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      item;
+  if(type = "right"){
+    item = this._getCanvasObject(character.px + 1, character.py, "item");
+  }
+
+  if(!item) {
+    // 아이템을 가져올 수 없다면
+    callback("태울 수 있는 사람이 없어요");
+    return;
+  }
+  character.hasItem = true;
+  var itemCount = this.getItemCount(item);
+
+  if(item.itemCount) {
+    if(itemCount == 0) {
+      callback("태울 수 있는 사람이 없어요");
+      return;
+    }
+    // 다수의 아이템
+    //아이템의 소유 개수 감소
+    this.setItemCount(item, itemCount - 1);
+    // 캐릭터의 아이템 소유 개수 증가
+    var itemCount = this.getItemCount(character);
+    this.setItemCount(character, itemCount + 1);
+    if(!character.itemList){
+      character.itemList = [];
+    }
+    character.itemList.push(item);
+    if(item.disappear && this.getItemCount(item)==0){
+      item.visible = false;
+    }
+  }else{
+    item.visible = false;
+    character.itemBitmap = item;
+    //탈것 위에 캐릭터 올리기
+    this.addItemImage(character, item.img, "one");
+  }
+  this.canvas.stage.update();
+  createjs.Sound.play("success");
+  setTimeout(function() {
+    callback();
+  }, 500);
+};
+Actions.prototype.getout = function(type, block, callback) {
+  var _this = this,
+      foods = this.canvas.foods,
+      character = this.canvas.character,
+      itemBitmap = character.itemBitmap;
+  if(!character.hasItem) {
+    callback("아이템을 가지고 있지 않아요");
+    return;
+  }
+
+  // 목표 위에서 아이템 사용(패턴 매칭)
+  var food;
+  if(type = "left"){
+    food = this._getCanvasObject(character.px-1, character.py, "food");
+  }
+  if(food && food.useItem) {
+    var itemCount = this.getItemCount(character);
+    if(itemCount>1) {
+      // 다수의 아이템
+      this._splitObjects(food, function() {
+        var itemCount = _this.getItemCount(character);
+        if(itemCount == 0) {
+          callback("아이템을 가지고 있지 않아요");
+          return;
+        }
+        _this.setItemCount(character, itemCount - 1);
+        var dropItem = character.itemList.shift();
+        _this.addItemImage(food, dropItem.itemImg);
+        _this.canvas.stage.update();
+        createjs.Sound.play("success");
+        setTimeout(function() {
+          callback();
+        }, 500);
+      });
+      return;
+    }else if(itemBitmap){
+      food.visible = false;
+      itemBitmap.bitmap.image = _this.loader.getResult(itemBitmap.img);
+      //자동차 위의 캐릭터 지우기
+      character.removeChildAt(1);
+      itemBitmap.visible = true;
+      itemBitmap.px = food.px;
+      itemBitmap.py = food.py;
+      itemBitmap.x = food.x;
+      itemBitmap.y = food.y;
+      foods.splice(0,1);
+      _this.canvas.stage.update();
+      createjs.Sound.play("success");
+      setTimeout(function() {
+        callback();
+      }, 500);
       return;
     }
     callback("아이템을 사용할 수 없어요");

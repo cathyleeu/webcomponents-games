@@ -1,0 +1,48 @@
+{
+  "tile_size": 256,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "ride_right", "a6w1_carmove", "getout_left"
+  ],
+  "map": [
+    "#h%..#.",
+    ".#..#.#",
+    "###.#.#",
+    "waw.waw",
+    "###.#..",
+    ".#...##",
+    ".##@)#."
+  ],
+  "character": "character",
+  "extra":[{
+    "x": 2,
+    "y": 0,
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 6,
+    "img": "cos0"
+  }],
+  "tutorial": [{
+    "msg:ko": "차를 타고 집으로 갈 거에요.",
+    "msg:en": "I'm going home in the car.",
+    "img": [{
+      "src": "/img/a6_w1/car.png",
+      "style": "width:33%"
+    }, {
+      "src": "/img/a6_w1/house.png",
+      "style": "width:33%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "차를 타고 이동하는 순서에 따라 블록을 조립해보자!",
+    "msg:en": "Let's Assemble blocks in the order of Riding a car!",
+    "img": "/img/a6_w1/carblock.png"
+  },
+  "success": [{
+    "msg:ko": "성공! 집에 도착했어요.",
+    "msg:en": "Success! Arrive home!",
+    "link": "a6_w1/3"
+  }]
+}

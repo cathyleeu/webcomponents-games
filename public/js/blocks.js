@@ -171,6 +171,74 @@ Blocks["memi_step5"] = {
   action: ["memigrowing", "memi_step5"]
 };
 
+Blocks["ride_right"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 타기",
+    en: "%1 ride"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a6_w1/enter.png"}
+  ],
+  action: ["ride", "right"]
+};
+
+Blocks["getout_left"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 타기",
+    en: "%1 ride"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a6_w1/exit.png"}
+  ],
+  action: ["getout", "left"]
+};
+Blocks["a6w1_carmove"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 차 이동",
+    en: "%1 car move"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a6_w1/car.png"}
+  ],
+  action: ["steploop", "a6w1_move"]
+};
+Blocks["a6w1_bikemove"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 자전거 이동",
+    en: "%1 bike move"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a6_w1/bike.png"}
+  ],
+  action: ["steploop", "a6w1_move"]
+};
+Blocks["a6w1_busmove"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 버스 이동",
+    en: "%1 bike move"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a6_w1/bus.png"}
+  ],
+  action: ["steploop", "a6w1_move"]
+};
+Blocks["a6w1_trainmove"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 가차 이동",
+    en: "%1 train move"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a6_w1/train.png"}
+  ],
+  action: ["steploop", "a6w1_move"]
+};
+
 Blocks["move_up"] = {
   rgbColor: "#F28C00",
   message0: {

@@ -576,20 +576,32 @@ TileFactory.prototype.setItemCount = function(container, count) {
   container.itemCountBitmap.visible = !!count;
 };
 
-TileFactory.prototype.addItemImage = function(container, img) {
+TileFactory.prototype.addItemImage = function(container, img, type) {
   if(!container.itemList) {
     container.itemList = [];
   }
   var bounds = container.getBounds();
   var bitmap = new createjs.Bitmap();
-  var px = container.itemList.length % 3;
-  var py = parseInt(container.itemList.length / 3, 10);
-  var size = bounds.width / 3;
-  bitmap.image = this.loader.getResult(img);
-  bitmap.x = px * size;
-  bitmap.y = py * size;
-  bitmap.scaleX = size / bounds.width;
-  bitmap.scaleY = size / bounds.height;
+  if(type == "one"){
+    var px = 1;
+    var py = 1;
+    var size = bounds.width / 4;
+    bitmap.image = this.loader.getResult(img);
+    bitmap.x = px * size;
+    bitmap.y = py * size;
+    bitmap.scaleX = 1.0/2.0;
+    bitmap.scaleY = 1.0/2.0;
+  }  else{
+    var px = container.itemList.length % 3;
+    var py = parseInt(container.itemList.length / 3, 10);
+    var size = bounds.width / 3;
+    bitmap.image = this.loader.getResult(img);
+    bitmap.x = px * size;
+    bitmap.y = py * size;
+    bitmap.scaleX = 1.0/3.0;
+    bitmap.scaleY = 1.0/3.0;
+  }
+
   container.addChild(bitmap);
   container.itemList.push(bitmap);
 };
