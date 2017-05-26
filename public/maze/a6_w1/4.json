@@ -1,0 +1,48 @@
+{
+  "tile_size": 256,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "ride_right", "a6w1_bikemove", "getout_left"
+  ],
+  "map": [
+    "#h%..#.",
+    ".#..#.#",
+    "###.#.#",
+    "waw.waw",
+    "###.#..",
+    ".#...##",
+    ".##@)#."
+  ],
+  "character": "character2",
+  "extra":[{
+    "x": 2,
+    "y": 0,
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 6,
+    "img": "cos0"
+  }],
+  "tutorial": [{
+    "msg:ko": "자전거를 타고 집으로 갈 거에요.",
+    "msg:en": "I'm going home in the bike.",
+    "img": [{
+      "src": "/img/a6_w1/bike.png",
+      "style": "width:33%"
+    }, {
+      "src": "/img/a6_w1/house.png",
+      "style": "width:33%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "자전거를 타고 이동하는 순서에 따라 블록을 조립해보자!",
+    "msg:en": "Let's Assemble blocks in the order of Riding a bike!",
+    "img": "/img/a6_w1/bikeblock.png"
+  },
+  "success": [{
+    "msg:ko": "성공! 집에 도착했어요.",
+    "msg:en": "Success! Arrive home!",
+    "link": "a6_w1/5"
+  }]
+}

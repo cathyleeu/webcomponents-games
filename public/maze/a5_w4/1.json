@@ -33,7 +33,7 @@
   }],
   "goal": {
     "msg:ko": "시작버튼을 눌러보아요",
-    "msg:en": "Press the start button ufo to earth",
+    "msg:en": "Press the start button",
     "img": "/img/a5_w4/start_block.png"
   },
   "success": [{
