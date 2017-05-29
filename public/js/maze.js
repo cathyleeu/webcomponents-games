@@ -725,7 +725,7 @@ function addEvents() {
     init();
   });
 
-  $("#doFS").on("touchstart click", function(e) {
+  $("#doFS").click(function(e) {
     e.preventDefault();
     e.stopPropagation();
     FullScreen();
@@ -740,7 +740,7 @@ function addEvents() {
     $("#runTutorial").removeClass("hidden");
     runTutorial(maze.tutorial);
   })
-  $("#fullScreen").on("touchstart click", function(e) {
+  $("#fullScreen").click(function(e) {
     e.preventDefault();
     e.stopPropagation();
     FullScreen();
