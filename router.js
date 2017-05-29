@@ -217,7 +217,7 @@ function getBook(classObj) {
   }
   // 청아유치원(시범원)
   if(classObj.code.slice(0,9) == "A00083-K1") {
-    book = classObj.level + "-5";
+    book = classObj.level + "-5," + classObj.level + "-5-5";
   }
   // 설리번
   if(classObj.code.slice(0,9) == "E00076-K1") {
