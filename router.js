@@ -223,6 +223,10 @@ function getBook(classObj) {
   if(classObj.code.slice(0,9) == "E00076-K1") {
     book = classObj.level + "-1," + classObj.level + "-2";
   }
+  // 부산지사 동성어학원
+  if(classObj.code.slice(0,9) == "A00066-K2") {
+    book = classObj.level + "-2," + classObj.level + "-3";
+  }
   return book;
 }
 
