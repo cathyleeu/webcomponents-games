@@ -2,7 +2,7 @@
   "tile_size": 256,
 
   "score":1,
-  "workspace": ["start","move_up","checkfinish"],
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -14,17 +14,21 @@
     ".#######.",
     "#.##..###",
     "##......#",
-    "#%.##.###",
-    "##.&#...#",
-    "#..u.#..#",
-    "##.#...##",
+    "#&..#.###",
+    "##..#...#",
+    "#.#..#..#",
+    "##.u...##",
     "#.....###",
-    ".#######."
+    ".######%."
   ],
   "extra":[{
+    "x": 7,
+    "y": 8,
+    "img": "tree1"
+  },{
     "x": 1,
     "y": 3,
-    "img": "kitties"
+    "img": "food"
 
     },{
     "x": 3,
@@ -50,13 +54,13 @@
     }]
   }],
   "tutorial": [{
-    "msg:ko": "상자를 확인하고 아기 고양이에게 가요. 상자에서 먹이가 나오면 가지고 가요.",
-    "msg:en": "Check the box and go to the kitties with food if there is.",
+    "msg:ko": "상자를 확인해서 상자안에서 무엇이 나왔는지 이야기해보아요.",
+    "msg:en": "Check the box and see what's coming out.",
     "img": [{
-      "src": "/img/c6/box_open.png",
+      "src": "/img//blocks/check.png",
       "style": "width:33%"
     }, {
-      "src": "/img/c6/kitties.png",
+      "src": "/img/c6/box_open.png",
       "style": "width:33%"
     }]
   }]

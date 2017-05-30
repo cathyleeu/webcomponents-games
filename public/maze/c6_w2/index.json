@@ -9,8 +9,8 @@
     ".##############%n.#",
     "##...#########.%n.#",
     "..#...........#%n.#",
-    "##.%%%%%.%%%%%.%n.#",
-    "###hhhhh#hhhhh#####."
+    "##.......%%%%%.%n.#",
+    "#########hhhhh#####."
   ],
   "extra": [{
     "x": 5,
@@ -57,7 +57,7 @@
     "y": 1,
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
-      "msg:en": "You can get two boxs at once.",
+      "msg:en": "You can get two boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:50%"
@@ -71,7 +71,7 @@
     "y": 2,
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
-      "msg:en": "You can get two boxs at once.",
+      "msg:en": "You can get two boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:50%"
@@ -85,7 +85,7 @@
     "y": 3,
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
-      "msg:en": "You can get two boxs at once.",
+      "msg:en": "You can get two boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:50%"
@@ -99,7 +99,7 @@
     "y": 4,
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
-      "msg:en": "You can get two boxs at once.",
+      "msg:en": "You can get two boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:50%"
@@ -113,7 +113,7 @@
     "y": 5,
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
-      "msg:en": "You can get two boxs at once.",
+      "msg:en": "You can get two boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:50%"
@@ -127,7 +127,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -144,7 +144,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -161,7 +161,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -178,7 +178,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -195,7 +195,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -212,7 +212,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -229,7 +229,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -246,7 +246,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -263,7 +263,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -280,7 +280,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
-      "msg:en": "You can get three boxs at once.",
+      "msg:en": "You can get three boxes at once.",
       "img": [{
         "src": "/img/c6/box.png",
         "style": "width:33%"
@@ -295,95 +295,75 @@
   },{
     "x": 5,
     "y": 1,
-    "link": "b55_w4/1"
+    "link": "c6_w2/1"
   },{
     "x": 6,
     "y": 1,
-    "link": "b55_w4/2"
+    "link": "c6_w2/2"
   },{
     "x": 7,
     "y": 1,
-    "link": "b55_w4/3"
+    "link": "c6_w2/3"
   },{
     "x": 8,
     "y": 1,
-    "link": "b55_w4/4"
+    "link": "c6_w2/4"
   },{
     "x": 9,
     "y": 1,
-    "link": "b55_w4/5"
+    "link": "c6_w2/5"
   },{
     "x": 15,
     "y": 1,
-    "link": "b55_w4/6"
+    "link": "c6_w2/6"
   },{
     "x": 15,
     "y": 2,
-    "link": "b55_w4/7"
+    "link": "c6_w2/7"
   },{
     "x": 15,
     "y": 3,
-    "link": "b55_w4/8"
+    "link": "c6_w2/8"
   },{
     "x": 15,
     "y": 4,
-    "link": "b55_w4/9"
+    "link": "c6_w2/9"
   },{
     "x": 15,
     "y": 5,
-    "link": "b55_w4/10"
+    "link": "c6_w2/10"
   },{
     "x": 13,
     "y": 5,
-    "link": "b55_w4/11"
+    "link": "c6_w2/11"
   },{
     "x": 12,
     "y": 5,
-    "link": "b55_w4/12"
+    "link": "c6_w2/12"
   },{
     "x": 11,
     "y": 5,
-    "link": "b55_w4/13"
+    "link": "c6_w2/13"
   },{
     "x": 10,
     "y": 5,
-    "link": "b55_w4/14"
+    "link": "c6_w2/14"
   },{
     "x": 9,
     "y": 5,
-    "link": "b55_w4/15"
+    "link": "c6_w2/15"
   },{
-    "x": 7,
-    "y": 5,
-    "link": "b55_w4/16"
-  },{
-    "x": 6,
-    "y": 5,
-    "link": "b55_w4/17"
-  },{
-    "x": 5,
-    "y": 5,
-    "link": "b55_w4/18"
-  },{
-    "x": 4,
-    "y": 5,
-    "link": "b55_w4/19"
-  },{
-    "x": 3,
-    "y": 5,
-    "link": "b55_w4/20"
-  },{
-    "img":"mother",
+    "img":"kitties",
     "x": 2,
     "y": 4,
     "obstacle": false,
-    "link": "b55_w4/21",
-    "min_score": 20
+    "link": "c6_w3/1",
+    "min_score": 15
   }],
 
   "tutorial": [{
-    "msg:ko": "남대문 시장에서 맛있는 음식을 먹어요! 쉬운 문제는 상자 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
-    "msg:en": "Let's eat tasty foods in Namdaemoon market! An easy problem gives you one box, a normal one gives you two and a hard one gives you three.",
+    "msg:ko": "상자 안에 무엇이 들어있는지 확인해보아요! 쉬운 문제는 상자 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's check the box! An easy problem gives you one box, a normal one gives you two and a hard one gives you three.",
     "img": [{
       "src": "/img/c6/bomi0.png",
       "style": "width:50%"
@@ -393,13 +373,13 @@
     }]
   }],
   "goal": {
-    "msg:ko": "상자 20개를 모으면 엄마께 가요.",
-    "msg:en": "Go to mother with more than 20 boxs.",
+    "msg:ko": "상자 15개를 모으면 아기 고양이에게 가요.",
+    "msg:en": "Go to kitties with more than 15 boxes.",
     "img": [{
       "src": "/img/c6/box.png",
       "style": "width:50%"
     },{
-      "src": "/img/b55/father.png",
+      "src": "/img/c6/kitties.png",
       "style": "width:50%"
     }]
   }
