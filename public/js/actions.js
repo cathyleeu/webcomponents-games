@@ -1016,7 +1016,6 @@ Actions.prototype.checkfinish = function(block, callback) {
       createjs.Sound.play("success");
       _this.canvas.stage.update();
       setTimeout(function() {
-        callback();
       }, 1000);
     });
     return;

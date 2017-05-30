@@ -479,7 +479,7 @@ Blocks["get_item3"] = {
   action: ["getItem3"]
 };
 Blocks["check"] = {
-  rgbColor: "#33B1B1",
+  rgbColor: "#6699D0",
   message0: {
     ko: "%1 확인하기",
     en: "%1 Inspect",
@@ -494,7 +494,7 @@ Blocks["check"] = {
   action: ["check"]
 };
 Blocks["check2"] = {
-  rgbColor: "#33B1B1",
+  rgbColor: "#6699D0",
   message0: {
     ko: "%1 확인하기",
     en: "%1 Inspect",
@@ -509,7 +509,7 @@ Blocks["check2"] = {
   action: ["check2"]
 };
 Blocks["checkfinish"] = {
-  rgbColor: "#33B1B1",
+  rgbColor: "#6699D0",
   message0: {
     ko: "%1 확인하기",
     en: "%1 Inspect",
