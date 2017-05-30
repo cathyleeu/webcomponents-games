@@ -20,6 +20,7 @@
   {"id": "message", "src": "/img/c6/bomi0.png", "size": 256},
   {"tile": "b", "id": "food", "src": "/img/c6/box.png"},
   {"id": "chest", "src": "/img/c6/box.png"},
+  {"id": "kitties", "src": "/img/c6/kitties.png"},
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
