@@ -1011,12 +1011,10 @@ Actions.prototype.checkfinish = function(block, callback) {
     this._splitObjects(chest, function() {
       var ranNum = parseInt(Math.random()*chest.contents.length, 10);
       chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
-      foods.splice(0,1);
-      _this.setCoord(chest, chest.px, chest.py);
       createjs.Sound.play("success");
       _this.canvas.stage.update();
       setTimeout(function() {
-        callback();
+        callback("성공#!"+_this.loader.getImgsrc(chest.contents[ranNum].img));
       }, 1000);
     });
     return;
