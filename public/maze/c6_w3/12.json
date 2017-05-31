@@ -10,7 +10,7 @@
     "move_left",
     "repeat",
     "get_item_notuse",
-    "use_item",
+    
     "check",
     "condition_foodget_notuse"
   ],
