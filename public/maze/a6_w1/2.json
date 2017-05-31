@@ -43,6 +43,6 @@
   "success": [{
     "msg:ko": "성공! 집에 도착했어요.",
     "msg:en": "Success! Arrive home!",
-    "link": "a6_w1/3"
+    "link": "a6_w1_bike/3"
   }]
 }
