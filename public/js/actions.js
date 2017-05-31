@@ -1068,8 +1068,9 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
       }, 500);
     }
   }else if(options == "item_notuse"){
-
     var tileInfo = this._getCanvasObject(character.px, character.py);
+    var errorMsg = "확인하기 블록을 사용한 다음에 조건 블록을 사용해 주세요.";
+    if(!tileInfo) callback(errorMsg);
     this._splitObjects(tileInfo, function() {
       if(tileInfo.role == "item"){
         if_block = block.getInputTargetBlock("if_statements");
@@ -1077,10 +1078,18 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
           block.removeSelect();
           _this.run(if_block, callback);
         }, 500);
-      }else{
+      }else if(tileInfo.role == "img") {
         foods.splice(0,1);
         setTimeout(function() {
           callback();
+        }, 500);
+      }else if (tileInfo.role == "chest"){
+        setTimeout(function() {
+          callback(errorMsg);
+        }, 500);
+      }else{
+        setTimeout(function() {
+          callback(errorMsg);
         }, 500);
       }
     });
