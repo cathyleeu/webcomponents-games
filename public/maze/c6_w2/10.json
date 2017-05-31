@@ -29,11 +29,7 @@
   },{
     "x": 6,
     "y": 3,
-    "img": "food"
 
-    },{
-    "x": 6,
-    "y": 5,
     "contents" : [{
       "img": "food1",
       "role": "item"
