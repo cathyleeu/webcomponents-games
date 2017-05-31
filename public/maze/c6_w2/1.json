@@ -28,7 +28,7 @@
   },{
     "x": 4,
     "y": 3,
-    "img": "food",
+
     "contents" : [{
       "img": "food1",
       "role": "item"
