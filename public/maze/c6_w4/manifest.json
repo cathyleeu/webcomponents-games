@@ -23,7 +23,7 @@
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "E", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
 
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},

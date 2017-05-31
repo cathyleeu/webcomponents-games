@@ -4,7 +4,7 @@
   "tile_size": 256,
   "toolbox": [],
   "map": [
-    "#####eeeee########.",
+    "#####EEEEE########.",
     "..r..%%%%%.....%n.#",
     ".##############%n.#",
     "##...#########.%n.#",
@@ -393,7 +393,7 @@
     }]
   }],
   "goal": {
-    "msg:ko": "신호등 20개를 아기 고양이에게 가요.",
+    "msg:ko": "신호등 20개를 모아서 아기 고양이에게 가요.",
     "msg:en": "Go to kitties with more than 20 traffic lights.",
     "img": [{
       "src": "/img/c6/trf_lights.png",

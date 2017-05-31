@@ -9,7 +9,7 @@
     "move_right",
     "move_left",
     "get_item_notuse",
-    "use_item",
+    
     "check",
     "condition_foodget_notuse"
   ],
