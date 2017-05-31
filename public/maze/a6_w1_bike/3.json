@@ -1,9 +1,9 @@
 {
   "tile_size": 256,
   "score":5,
-  "workspace": ["start"],
+  "workspace": ["start", "ride_right", "a6w1_bikemove", "getout_left"],
   "toolbox": [
-    "ride_right", "a6w1_bikemove", "getout_left"
+
   ],
   "map": [
     "#h%..#.",
@@ -14,7 +14,6 @@
     ".#...##",
     ".##@)#."
   ],
-  "character": "character2",
   "extra":[{
     "x": 2,
     "y": 0,
@@ -36,13 +35,13 @@
     }]
   }],
   "goal": {
-    "msg:ko": "자전거를 타고 이동하는 순서에 따라 블록을 조립해보자!",
-    "msg:en": "Let's Assemble blocks in the order of Riding a bike!",
-    "img": "/img/a6_w1/bikeblock.png"
+    "msg:ko": "시작버튼을 눌러보아요",
+    "msg:en": "Press the start button",
+    "img": "/img/a6_w1/start_block.png"
   },
   "success": [{
     "msg:ko": "성공! 집에 도착했어요.",
     "msg:en": "Success! Arrive home!",
-    "link": "a6_w1/5"
+    "link": "a6_w1_bike/4"
   }]
 }
