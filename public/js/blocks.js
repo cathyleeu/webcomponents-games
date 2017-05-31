@@ -71,7 +71,7 @@ Blocks["immigrant"] = {
   action: ["steploop", "immigrant"]
 };
 Blocks["frog_left"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#DC6195",
   message0: {
     ko: "%1 뒷다리가 쏘옥",
     en: "%1 have back legs"
@@ -82,7 +82,7 @@ Blocks["frog_left"] = {
   action: ["steploop", "frog_left"]
 };
 Blocks["frog_up"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#E07A2A",
   message0: {
     ko: "%1 앞다리가 쏘옥",
     en: "%1 have front legs"
@@ -93,7 +93,7 @@ Blocks["frog_up"] = {
   action: ["steploop", "frog_up"]
 };
 Blocks["frog_right"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#A14289",
   message0: {
     ko: "%1 개구리로 변신",
     en: "%1 becom frog"
@@ -104,7 +104,7 @@ Blocks["frog_right"] = {
   action: ["steploop", "frog_right"]
 };
 Blocks["frog_down"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#FBC61D",
   message0: {
     ko: "%1 연잎으로 가기",
     en: "%1 move to lotus."
@@ -116,7 +116,7 @@ Blocks["frog_down"] = {
 };
 
 Blocks["memi_step1"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#67B453",
   message0: {
     ko: "%1 매미알",
     en: "%1 cicada eggs"
@@ -127,7 +127,7 @@ Blocks["memi_step1"] = {
   action: ["memigrowing", "memi_step1"]
 };
 Blocks["memi_step2"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#00B1EC",
   message0: {
     ko: "%1 땅 속 애벌레",
     en: "%1 larva under ground"
@@ -138,7 +138,7 @@ Blocks["memi_step2"] = {
   action: ["memigrowing", "memi_step2"]
 };
 Blocks["memi_step3"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#E94D96",
   message0: {
     ko: "%1 나무 위 유충",
     en: "%1 larva on the tree"
@@ -149,7 +149,7 @@ Blocks["memi_step3"] = {
   action: ["memigrowing", "memi_step3"]
 };
 Blocks["memi_step4"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#A2478C",
   message0: {
     ko: "%1 허물 벗는 매미",
     en: "%1 metamorphosis of cicada"
@@ -160,7 +160,7 @@ Blocks["memi_step4"] = {
   action: ["memigrowing", "memi_step4"]
 };
 Blocks["memi_step5"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#FBC61D",
   message0: {
     ko: "%1 매미",
     en: "%1 cicada imago"
@@ -172,7 +172,7 @@ Blocks["memi_step5"] = {
 };
 
 Blocks["ride_right"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#E75051",
   message0: {
     ko: "%1 타기",
     en: "%1 ride"
@@ -184,10 +184,10 @@ Blocks["ride_right"] = {
 };
 
 Blocks["getout_left"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#81CBD8",
   message0: {
-    ko: "%1 타기",
-    en: "%1 ride"
+    ko: "%1 내리기",
+    en: "%1 get out"
   },
   args0: [
     {type: "field_image", src: "/img/a6_w1/exit.png"}
@@ -195,7 +195,7 @@ Blocks["getout_left"] = {
   action: ["getout", "left"]
 };
 Blocks["a6w1_carmove"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#F28C00",
   message0: {
     ko: "%1 차 이동",
     en: "%1 car move"
@@ -206,7 +206,7 @@ Blocks["a6w1_carmove"] = {
   action: ["steploop", "a6w1_move"]
 };
 Blocks["a6w1_bikemove"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#F28C00",
   message0: {
     ko: "%1 자전거 이동",
     en: "%1 bike move"
@@ -217,7 +217,7 @@ Blocks["a6w1_bikemove"] = {
   action: ["steploop", "a6w1_move"]
 };
 Blocks["a6w1_busmove"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#F28C00",
   message0: {
     ko: "%1 버스 이동",
     en: "%1 bike move"
@@ -228,7 +228,7 @@ Blocks["a6w1_busmove"] = {
   action: ["steploop", "a6w1_move"]
 };
 Blocks["a6w1_trainmove"] = {
-  rgbColor: "#00A1E1",
+  rgbColor: "#F28C00",
   message0: {
     ko: "%1 가차 이동",
     en: "%1 train move"
@@ -479,7 +479,7 @@ Blocks["get_item3"] = {
   action: ["getItem3"]
 };
 Blocks["check"] = {
-  rgbColor: "#33B1B1",
+  rgbColor: "#6699D0",
   message0: {
     ko: "%1 확인하기",
     en: "%1 Inspect",
@@ -494,7 +494,7 @@ Blocks["check"] = {
   action: ["check"]
 };
 Blocks["check2"] = {
-  rgbColor: "#33B1B1",
+  rgbColor: "#6699D0",
   message0: {
     ko: "%1 확인하기",
     en: "%1 Inspect",
@@ -509,7 +509,7 @@ Blocks["check2"] = {
   action: ["check2"]
 };
 Blocks["checkfinish"] = {
-  rgbColor: "#33B1B1",
+  rgbColor: "#6699D0",
   message0: {
     ko: "%1 확인하기",
     en: "%1 Inspect",

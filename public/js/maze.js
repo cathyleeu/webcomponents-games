@@ -91,6 +91,13 @@ page('*', function(ctx, next) {
     };
     var noBgm = false;
 
+    var newGetimgsrc = function(imageId) {
+      for(var i = 0; i<manifest.length;i++){
+        if(manifest[i].id==imageId) return manifest[i].src;
+      }
+      throw("[Cannot find \"" + imageId + "\" on manifest.json]");
+    };
+
     // loader for images
     image_loader.loadManifest(manifest.filter(function(item) {
       return item.type != "sound";
@@ -100,6 +107,7 @@ page('*', function(ctx, next) {
       d2.resolve(image_loader);
     });
     image_loader.getResult = newGetResult;
+    image_loader.getImgsrc = newGetimgsrc;
 
     // loader for sounds
     createjs.Sound.alternateExtensions = ["mp3", "wav"];
@@ -837,10 +845,32 @@ function run(block, callback) {
         // TODO: fix this later
         // jQuery's class manipulation functions do not work with the SVG elements
         // See: http://stackoverflow.com/questions/8638621/jquery-svg-why-cant-i-addclass
+        //성공이라는 단어를 callback했을 경우 바로 성공 메시지가 뜨도록하기
+        if(obj.substring(0,2) == "성공"){
+          var imgsrc = obj.split("#!");
+          createjs.Sound.play("complete");
+          if(maze.success) {
+            runTutorial(maze.success);
+          } else {
+            if(imgsrc.length == 1){
+              showModal({
+                msg: messages.success,
+                goNext: true
+              });
+            }else{
+              showModal({
+                msg: messages.success,
+                img: imgsrc[1],
+                goNext: true
+              });
+            }
+          }
+          return;
+        }
+        //일반적인 메시지가 callback했을 경우 해당 메시지를 띄우고 실패
         var $svg = $(block.svgGroup_).find(".blocklyPath"),
             className = $svg.attr("class");
         $svg.attr("class", className + " error");
-
         createjs.Sound.play("fail");
         showModal(obj);
         return;
