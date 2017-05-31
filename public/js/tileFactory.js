@@ -583,14 +583,14 @@ TileFactory.prototype.addItemImage = function(container, img, type) {
   var bounds = container.getBounds();
   var bitmap = new createjs.Bitmap();
   if(type == "one"){
-    var px = 1;
-    var py = 1;
-    var size = bounds.width / 4;
+    var px = 2;
+    var py = 0;
+    var size = bounds.width / 3;
     bitmap.image = this.loader.getResult(img);
     bitmap.x = px * size;
     bitmap.y = py * size;
-    bitmap.scaleX = 1.0/2.0;
-    bitmap.scaleY = 1.0/2.0;
+    bitmap.scaleX = 1.0/3.0;
+    bitmap.scaleY = 1.0/3.0;
   }  else{
     var px = container.itemList.length % 3;
     var py = parseInt(container.itemList.length / 3, 10);
