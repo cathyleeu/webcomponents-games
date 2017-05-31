@@ -393,10 +393,10 @@
     ["이리 저리 움직여요:다 같이 집으로 가요", "Go Home Together", "/mazeh#!b3_w4/index"]
   ],
   "B-4":[
-    ["공원으로 소풍을 가요:엄마가 보물을 숨겨요", "Cos' mother hides treasures", "/mazeh#!b4_w1/index"],
-    ["가져오기 블록을 이해해요:보물을 찾아요", "Hunt for treasure", "/mazeh#!b4_w2/index"],
-    ["가위바위보를 해요:엄마 아빠와 가위바위보", "Beat parents at rock, paper, scissors", "/mazeh#!b4_w3/index"],
-    ["가위바위보 블록을 써보아요:할머니 할아버지도 가위바위보", "Beat grandparents at rock, paper, scissors", "/mazeh#!b4_w4/index"]
+    ["공원으로 소풍을 가요:엄마가 보물을 숨겨요", "Mom hides the treasure", "/mazeh#!b4_w1/index"],
+    ["가져오기 블록을 이해해요:보물을 찾아요", "Find the treasure", "/mazeh#!b4_w2/index"],
+    ["가위바위보를 해요:엄마 아빠와 가위바위보", "Rock, paper, scissors with mom and dad", "/mazeh#!b4_w3/index"],
+    ["가위바위보 블록을 써보아요:할머니 할아버지도 가위바위보", "Rock, paper, scissors with grandparents", "/mazeh#!b4_w4/index"]
   ],
   "B-5":[
     ["무더운 여름, 바다에 가요:해변으로 놀러가요", "/mazeh#!b5_w1/index"],
@@ -435,10 +435,10 @@
     ["가져오기와 사용하기를 써보아요:꿀과자를 선물해요", "Present the Honey Cookies", "/mazeh#!c3_w4/index"]
   ],
   "C-4":[
-    ["우리동네를 알아보아요:우리 동네 산책", "Taking a walk our town", "/mazeh#!c4_w1_c1/index"],
-    ["반복 블록을 이해해요:심부름을 가요", "Go to the supermarket", "/mazeh#!c4_w2/index"],
-    ["반복 블록을 연습해요:과일을 사요", "Buy some fruits", "/mazeh#!c4_w3/index"],
-    ["반복 블록을 써보아요:집으로 돌아가요", "Go home", "/mazeh#!c4_w4/index"]
+    ["우리동네를 알아보아요:우리 동네 산책", "Walk around my town", "/mazeh#!c4_w1_c1/index"],
+    ["반복 블록을 이해해요:심부름을 가요", "Go on an errand", "/mazeh#!c4_w2/index"],
+    ["반복 블록을 연습해요:과일을 사요", "Buy fruits", "/mazeh#!c4_w3/index"],
+    ["반복 블록을 써보아요:집으로 돌아가요", "Go back home", "/mazeh#!c4_w4/index"]
   ],
   "C-5":[
     ["우리 주변의 규칙을 알아보아요:토드가 규칙 찾기 놀이를 해요", "/mazeh#!c5_w1/index"],
