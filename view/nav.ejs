@@ -120,10 +120,13 @@
                     </div>
                     <div class="book-title">
                       <div class="book-0"><%=contents[i].title%></div>
-                      <div class="book-1"><%=contents[i].subtitle%></div>
+                      <div class="book-1"><%=contents[i].subtitle ? contents[i].subtitle : ""%></div>
                     </div>
                     <div class="book-list">
                       <% if(contents[i].problems.length > 0) { %>
+                        <% if(contents[i].hasIndex) { %>
+                          <a class="book-problem" rel="external" href="<%=contents[i].href + '/index'%>">문제 풀기</a>
+                        <% } %>
                         <% for(j = 0; j < contents[i].problems.length; j++) { %>
                           <a class="book-problem" rel="external" href="<%=contents[i].href + '/' + contents[i].problems[j]%>"><%=contents[i].problems[j]%></a>
                         <% } %>

@@ -601,20 +601,24 @@ public.get('/cache/:manifest', function *(next) {
 
 });
 
-public.post('/nav', function *(next) {
-  var books = books_json[this.request.body.book],
-      list = this.request.body.week.split(",").map(function(idx) {
+function getContents(book, week) {
+  var books = books_json[book],
+      list = week.split(",").map(function(idx) {
         return books[Number(idx)-1];
-      }),
+      }).filter(function(idx) {return !!idx}),
       contents = list.map(function(item) {
-        var problems = [],
+        var hasIndex = false,
+            problems = [],
             href = item[2];
         if(href.slice(0, 5) == "/maze") {
           var path = href.slice(href.indexOf("#!")+2, href.lastIndexOf("/")),
               dir = fs.readdirSync("public/maze/" + path);
           dir.forEach(function(item) {
-            if(item.slice(-5) == ".json" && item != "manifest.json") {
-              problems.push(item.slice(0, -5));
+            var filename = item.slice(0, -5);
+            if(filename == "index") {
+              hasIndex = true;
+            } else if(item.slice(-5) == ".json" && item != "manifest.json" && !isNaN(Number(filename))) {
+              problems.push(filename);
             }
           });
         }
@@ -628,14 +632,30 @@ public.post('/nav', function *(next) {
           title: item[0].split(":")[0],
           subtitle: item[0].split(":")[1],
           href: href,
-          problems: problems
+          problems: problems,
+          hasIndex: hasIndex
         };
       });
+  return contents;
+}
 
+public.get('/nav/:book', function *(next) {
+  if(siteUrl != "http://localhost:3000") {
+    this.body = "<html><head><script>alert('잘못된 접근 입니다.');location.href='/';</script></head></html>";
+    return;
+  }
+  yield this.render('nav', {
+    book: this.params.book,
+    week: "1,2,3,4",
+    contents: getContents(this.params.book, "1,2,3,4")
+  });
+});
+
+public.post('/nav', function *(next) {
   yield this.render('nav', {
     book: this.request.body.book,
     week: this.request.body.week,
-    contents: contents
+    contents: getContents(this.request.body.book, this.request.body.week)
   });
 });
 
