@@ -609,7 +609,7 @@ function getContents(book, week) {
       contents = list.map(function(item) {
         var hasIndex = false,
             problems = [],
-            href = item[2];
+            href = item[item.length - 1];
         if(href.slice(0, 5) == "/maze") {
           var path = href.slice(href.indexOf("#!")+2, href.lastIndexOf("/")),
               dir = fs.readdirSync("public/maze/" + path);
