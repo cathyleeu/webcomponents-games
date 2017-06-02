@@ -210,22 +210,26 @@ function getKinder(kinderId) {
 }
 
 function getBook(classObj) {
-  var book = classObj.level + "-3," + classObj.level + "-4";
-  // 용인지사 성음유치원, 영업부 일산지사 홍익유치원 컨텐츠 추가
-  if(classObj.code == "A00088-K1-KC1" || classObj.code.slice(0,9) == "C00149-K1") {
-    book += ",추가컨텐츠";
-  }
+  var school = classObj.code.slice(0,9),
+      book = [3, 4];
   // 청아유치원(시범원)
-  if(classObj.code.slice(0,9) == "A00083-K1") {
-    book = classObj.level + "-5," + classObj.level + "-5-5";
+  if(school == "A00083-K1") {
+    book = [5, "5-5"];
   }
-  // 설리번
-  if(classObj.code.slice(0,9) == "E00076-K1") {
-    book = classObj.level + "-1," + classObj.level + "-2";
+  // 직영 설리번, 울산지사 교차로원
+  if(school == "E00076-K1" || school == "A00072-K9") {
+    book = [1, 2];
   }
   // 부산지사 동성어학원
-  if(classObj.code.slice(0,9) == "A00066-K2") {
-    book = classObj.level + "-2," + classObj.level + "-3";
+  if(school == "A00066-K2") {
+    book = [2, 3];
+  }
+  book = book.map(function(num) {
+    return classObj.level + "-" + num;
+  }).join(",");
+  // 용인지사 성음유치원, 영업부 일산지사 홍익유치원 컨텐츠 추가
+  if(classObj.code == "A00088-K1-KC1" || school == "C00149-K1") {
+    book += ",추가컨텐츠";
   }
   return book;
 }
