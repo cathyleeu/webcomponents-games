@@ -1,0 +1,63 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "a7w1_pear"
+  ],
+  "map": [
+    "caaae",
+    "b...b",
+    "%&&&l",
+    "b...b",
+    "faaag"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 2,
+    "img": "pear_tree",
+    "contents" : [{
+        "img": "blank_tree"
+    },{
+        "img": "pear0"
+    }]
+  },{
+    "x": 2,
+    "y": 2,
+    "img": "pear_tree",
+    "contents" : [{
+        "img": "blank_tree"
+    },{
+        "img": "pear0"
+    }]
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "pear_tree",
+    "contents" : [{
+        "img": "blank_tree"
+    },{
+        "img": "pear0"
+    }]
+  }],
+  "tutorial": [{
+    "msg:ko": "블록을 조립하여 베를 수확해 보아요",
+    "msg:en": "Harvest pear, by assemling the blocks",
+    "img": [{
+      "src": "/img/a7_w2/pear_tree.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/a7_w2/pear_block.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/a7_w2/pear0.png",
+      "style": "width:33%"
+    }]
+  }],
+  "success": [{
+    "msg:ko": "성공! 베를 모두 수확했어요",
+    "msg:en": "Success! Harvesting all pear!",
+    "img": "/img/a7_w2/pear0.png",
+    "link": "a7_w2/1"
+  }]
+}

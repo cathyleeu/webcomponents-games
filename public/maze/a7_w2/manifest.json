@@ -1,0 +1,47 @@
+[
+  {"book": "a7", "title": "2주차 : 곡식과 열매를 수확해요"},
+  {"id": "bg1", "src": "/img/a7_w2/bg1.png"},
+  {"id": "bg2", "src": "/img/a7_w2/bg2.png"},
+
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/a7_w2/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/a7_w2/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/invisiblex256.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "corn0", "src": "/img/a7_w2/corn0.png"},
+  {"id": "rice0", "src": "/img/a7_w2/rice0.png"},
+  {"id": "corn9", "src": "/img/a7_w2/corn9.png"},
+  {"id": "rice9", "src": "/img/a7_w2/rice9.png"},
+  {"id": "blank_yard", "src": "/img/a7_w2/blank_yard.png"},
+
+  {"id": "apple0", "src": "/img/a7_w2/apple0.png"},
+  {"id": "pear0", "src": "/img/a7_w2/pear0.png"},
+  {"id": "apple_tree", "src": "/img/a7_w2/apple_tree.png"},
+  {"id": "pear_tree", "src": "/img/a7_w2/pear_tree.png"},
+  {"id": "blank_tree", "src": "/img/a7_w2/blank_tree.png"},
+
+  {"tile": "a", "id": "fence1", "src": "/img/a7_w2/fence1.png", "obstacle": false},
+  {"tile": "b", "id": "fence2", "src": "/img/a7_w2/fence2.png", "obstacle": false},
+  {"tile": "c", "id": "fence3", "src": "/img/a7_w2/fence3.png", "obstacle": false},
+  {"tile": "e", "id": "fence4", "src": "/img/a7_w2/fence4.png", "obstacle": false},
+  {"tile": "f", "id": "fence5", "src": "/img/a7_w2/fence5.png", "obstacle": false},
+  {"tile": "g", "id": "fence6", "src": "/img/a7_w2/fence6.png", "obstacle": false}
+]
