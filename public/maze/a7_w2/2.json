@@ -1,0 +1,63 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "a7w1_rice"
+  ],
+  "map": [
+    "caaae",
+    "b...b",
+    "%&&&l",
+    "b...b",
+    "faaag"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 2,
+    "img": "rice9",
+    "contents" : [{
+        "img": "blank_yard"
+    },{
+        "img": "rice0"
+    }]
+  },{
+    "x": 2,
+    "y": 2,
+    "img": "rice9",
+    "contents" : [{
+        "img": "blank_yard"
+    },{
+        "img": "rice0"
+    }]
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "rice9",
+    "contents" : [{
+        "img": "blank_yard"
+    },{
+        "img": "rice0"
+    }]
+  }],
+  "tutorial": [{
+    "msg:ko": "블록을 조립하여 벼를 수확해 보아요",
+    "msg:en": "Harvest rice, by assemling the blocks",
+    "img": [{
+      "src": "/img/a7_w2/rice9.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/a7_w2/rice_block.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/a7_w2/rice0.png",
+      "style": "width:33%"
+    }]
+  }],
+  "success": [{
+    "msg:ko": "성공! 벼를 모두 수확했어요",
+    "msg:en": "Success! Harvesting all rice!",
+    "img": "/img/a7_w2/rice0.png",
+    "link": "a7_w2/3"
+  }]
+}

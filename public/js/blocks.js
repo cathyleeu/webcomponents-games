@@ -239,6 +239,51 @@ Blocks["a6w1_trainmove"] = {
   action: ["steploop", "a6w1_move"]
 };
 
+Blocks["a7w1_corn"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 옥수수 수확",
+    en: "%1 corn harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/corn0.png"}
+  ],
+  action: ["harvesting"]
+};
+Blocks["a7w1_rice"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 벼 수확",
+    en: "%1 rice harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/rice0.png"}
+  ],
+  action: ["harvesting"]
+};
+Blocks["a7w1_apple"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 사과 수확",
+    en: "%1 apple harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/apple0.png"}
+  ],
+  action: ["harvesting"]
+};
+Blocks["a7w1_pear"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 배 수확",
+    en: "%1 pear harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/pear0.png"}
+  ],
+  action: ["harvesting"]
+};
+
 Blocks["move_up"] = {
   rgbColor: "#F28C00",
   message0: {
@@ -450,6 +495,20 @@ Blocks["get_item2"] = {
   ],
   action: ["getItem2"]
 };
+Blocks["get_item2_split"] = {
+  rgbColor: "#E75051",
+  message0: {
+    ko: "%1 아이템 가져오기",
+    en: "%1 Get Item"
+  },
+  args0: [
+    {type: "field_image", src: "/img/get_item.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
+  ],
+  action: ["getItem2split"]
+};
 Blocks["use_item2"] = {
   rgbColor: "#81CBD8",
   message0: {
@@ -533,6 +592,17 @@ Blocks["together"] = {
     {type: "field_image", src: "/img/cobot/together.png"}
   ],
   action: ["together"]
+};
+Blocks["support"] = {
+  rgbColor: "#33B1B1",
+  message0: {
+    ko: "%1 부축하기",
+    en: "%1 Support"
+  },
+  args0: [
+    {type: "field_image", src: "/img/c8_w3/support.png"}
+  ],
+  action: ["support"]
 };
 Blocks["present"] = {
   rgbColor: "#33B1B1",
@@ -1187,6 +1257,110 @@ Blocks['condition_light'] = {
   messageh1: null,
   argsh1: null,
   action: ["conditioncheck","sign"]
+};
+Blocks['condition_bad'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 만약에 응급 상황이라면",
+    en: "If %1 Emergency"
+  },
+  args0: [
+    {type: "field_image", src: "/img/c8_w3/siren.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c8_w3/siren.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","emergency"]
+};
+Blocks['condition_notbad'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 만약에 응급 상황이 아니라면",
+    en: "If %1 not Emergency"
+  },
+  args0: [
+    {type: "field_image", src: "/img/c8_w3/siren_x.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c8_w3/siren_x.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","not_emergency"]
+};
+Blocks['condition_recycle'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 만약에 재활용 가능하다면",
+    en: "If %1 recyclable"
+  },
+  args0: [
+    {type: "field_image", src: "/img/c8_w4/recycle.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c8_w4/recycle.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","recycle"]
+};
+Blocks['condition_notrecycle'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "%1 만약에 재활용 가능하지 않다면",
+    en: "If %1 not recyclable"
+  },
+  args0: [
+    {type: "field_image", src: "/img/c8_w4/recycle_x.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c8_w4/recycle_x.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","notrecycle"]
 };
 Blocks['condition2_food_apple'] = {
   rgbColor: "#E11376",

@@ -490,6 +490,57 @@ Actions.prototype.memigrowing = function(type, block, callback) {
   }
 };
 
+Actions.prototype.harvesting = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      obstacles = this.canvas.obstacles,
+      spiders = this.canvas.spiders,
+      x_next = character.px,
+      y_next = character.py,
+      chest;
+      stepList = ["l","l","l","l"],
+      obj = null;
+
+  travel(x_next,y_next);
+  function travel(a,b){
+    debugger
+    obj = _this._getCanvasObject(a, b);
+    _this._moveCharacter(a, b, function() {
+      debugger
+      if(stepList.length>0){
+        if(stepList.length<4){
+          changeImage(a,b);
+        }
+        var direction = stepList.shift();
+        setTimeout(function() {
+          if(direction == "r"){
+            travel(a+1,b);
+          }else if(direction == "l"){
+            travel(a-1,b);
+          }else if(direction == "d"){
+            travel(a,b+1);
+          }else{
+            travel(a,b-1);
+          }
+        }, 500);
+      }else{
+        callback(obj);
+      }
+    });
+  }
+  function changeImage(a,b){
+    chest = _this._getCanvasObject(a, b, "chest");
+    if(chest) {
+      chest.bitmap.image = _this.loader.getResult(chest.contents[0].img);
+      _this.addItemImage(character, chest.contents[1].img);
+      _this.setCoord(chest, chest.px, chest.py);
+      createjs.Sound.play("success");
+      _this.canvas.stage.update();
+    }
+  }
+};
+
 Actions.prototype.rotate = function(type, block, callback) {
   var character = this.canvas.character,
       direct = character.direct,
@@ -622,6 +673,59 @@ Actions.prototype.getItem2 = function(block, callback) {
   setTimeout(function() {
     callback();
   }, 500);
+};
+
+Actions.prototype.getItem2split = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      item = this._getCanvasObject(character.px, character.py, "item");
+  if( !item ) {
+    // 아이템을 가져올 수 없다면
+    callback("아이템을 가져올 수 없어요");
+    return;
+  }
+
+  character.hasItem = true;
+  var itemCount = this.getItemCount(item);
+  this._splitObjects(item, function() {
+    if(item.itemCount) {
+      if(itemCount == 0) {
+        callback("아이템을 가져올 수 없어요");
+        return;
+      }
+      // 다수의 아이템
+      //아이템의 소유 개수 감소
+      _this.setItemCount(item, itemCount - 1);
+      // 캐릭터의 아이템 소유 개수 증가
+      var itemCount = this.getItemCount(character);
+      _this.setItemCount(character, itemCount + 1);
+      if(!character.itemList){
+        character.itemList = [];
+      }
+      character.itemList.push(item);
+      if(item.disappear && _this.getItemCount(item)==0){
+        item.visible = false;
+      }
+    }else{
+      item.visible = false;
+      character.itemBitmap = item;
+      if(item.disappear){
+        var itemCount = _this.getItemCount(character);
+        _this.setItemCount(character, itemCount + 1);
+
+        if(!character.itemList){
+          character.itemList = [];
+        }
+        character.itemList.push(item);
+      }
+
+    }
+    _this.canvas.stage.update();
+    createjs.Sound.play("success");
+    setTimeout(function() {
+      callback();
+    }, 500);
+  });
 };
 
 //목적지에서 대상이 되는 모든 물건을 전부 가져오기만 하면 끝나는 기능
@@ -934,9 +1038,14 @@ Actions.prototype.check = function(block, callback) {
       chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = "item";
       chest.order = chest.contents[ranNum].order;
+      if(chest.contents[ranNum].disappear){
+        chest.itemImg = chest.contents[ranNum].itemImg;
+        chest.disappear = true;
+      }
       _this.setCoord(chest, chest.px, chest.py);
     }else if(chest.contents[ranNum].role == "friend") {
       chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
+      chest.img = chest.contents[ranNum].img;
       chest.role = "friend";
       chest.order = chest.contents[ranNum].order;
       _this.setCoord(chest, chest.px, chest.py);
@@ -1139,7 +1248,127 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
         }, 500);
       }
     });
+  }else if(options == "emergency"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo && tileInfo.role == "friend") {
+      if(tileInfo.order == "if"){
+        for(var i = 0; i<foods.length;i++){
+          if(tileInfo.order==foods[i].order){
+            foods.push(foods[i]);
+            foods.splice(0,foods.length-1);
+          }
+        }
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        callback();
+      }
+    }else{
+      callback();
+    }
+  }else if(options == "not_emergency"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo && tileInfo.role == "friend") {
+      this._splitObjects(tileInfo, function() {
+        if(tileInfo.order == "else"){
+          for(var i = 0; i<foods.length;i++){
+            if(tileInfo.order==foods[i].order){
+              foods[i].useItem = false;
+              foods.push(foods[i]);
+              foods.splice(0,foods.length-1);
+            }
+          }
+          if_block = block.getInputTargetBlock("if_statements");
+          setTimeout(function() {
+            block.removeSelect();
+            _this.run(if_block, callback);
+          }, 500);
+        }else{
+          callback();
+        }
+      });
+    }else{
+      callback();
+    }
+  }else if(options == "recycle"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo && tileInfo.role == "item") {
+      if(tileInfo.order == "if"){
+        for(var i = 0; i<foods.length;i++){
+          if(tileInfo.order==foods[i].order){
+            foods.push(foods[i]);
+            foods.splice(0,foods.length-1);
+          }
+        }
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        callback();
+      }
+    }else{
+      if(character.itemList.length == 1){
+        if(character.itemList[0].order == "if"){
+          for(var i = 0; i<foods.length;i++){
+            if(character.itemList[0].order==foods[i].order){
+              foods.push(foods[i]);
+              foods.splice(0,foods.length-1);
+            }
+          }
+          if_block = block.getInputTargetBlock("if_statements");
+          setTimeout(function() {
+            block.removeSelect();
+            _this.run(if_block, callback);
+          }, 500);
+        }else{
+          callback();
+        }
+      }
+    }
+  }else if(options == "notrecycle"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo && tileInfo.role == "item") {
+      if(tileInfo.order == "else"){
+        for(var i = 0; i<foods.length;i++){
+          if(tileInfo.order==foods[i].order){
+            foods.push(foods[i]);
+            foods.splice(0,foods.length-1);
+          }
+        }
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        callback();
+      }
+    }else{
+      if(character.itemList.length == 1){
+        if(character.itemList[0].order == "else"){
+          for(var i = 0; i<foods.length;i++){
+            if(character.itemList[0].order==foods[i].order){
+              foods.push(foods[i]);
+              foods.splice(0,foods.length-1);
+            }
+          }
+          if_block = block.getInputTargetBlock("if_statements");
+          setTimeout(function() {
+            block.removeSelect();
+            _this.run(if_block, callback);
+          }, 500);
+        }else{
+          callback();
+        }
+      }
+    }
   }
+
 };
 
 Actions.prototype.conditioncheck2 = function(options, block, callback) {
@@ -1546,6 +1775,35 @@ Actions.prototype.together = function(block, callback) {
           createjs.Sound.play("success");
         }, 500);
         character.itemBitmap = tileInfo;
+        _this.canvas.stage.update();
+        setTimeout(function() {
+          callback();
+        }, 500);
+    });
+  }
+};
+
+Actions.prototype.support = function(block, callback) {
+  var character = this.canvas.character,
+      foods = this.canvas.foods,
+      _this = this;
+  var tileInfo = this._getCanvasObject(character.px, character.py);
+  if(!tileInfo || tileInfo.role != "friend") {
+   callback("부축할 사람이 없어요");
+   return;
+  }
+  if(foods.length != 1){
+    callback("조건 블록을 사용하지 않았어요");
+    return;
+  }
+  if(tileInfo.order == "if"){
+    this._splitObjects(tileInfo, function() {
+          if(foods.length == 1){
+            foods[0].useItem = false;
+          }
+          tileInfo.visible = false;
+          _this.addItemImage(character, tileInfo.img, "one");
+          createjs.Sound.play("success");
         _this.canvas.stage.update();
         setTimeout(function() {
           callback();
