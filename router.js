@@ -224,6 +224,10 @@ function getBook(classObj) {
   if(school == "A00066-K2") {
     book = [2, 3];
   }
+  // 인천지사 유원유치원
+  if(school == "A00114-K3") {
+    book = [1, 2];
+  }
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
