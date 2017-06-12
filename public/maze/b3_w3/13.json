@@ -1,0 +1,35 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "##..###.#",
+    "##......#",
+    "#.u#..#.#",
+    "#..##.%.#",
+    "#....#..#",
+    "#..###..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 5,
+    "img":"stick"
+  }],
+  "tutorial": [{
+    "msg:ko": "저기 흔적이 있어",
+    "msg:en": "There is a trace!"
+  },{
+    "msg:ko": "지팡이로 이동해 보자!",
+    "msg:en": "Let's move to the stick",
+    "img": "/img/b3_w3/stick.png"
+  }]
+}

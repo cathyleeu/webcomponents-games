@@ -1,0 +1,32 @@
+{
+  "tile_size": 256,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "##i..d..#",
+    "#.....###",
+    "#......o#",
+    "#..#.#..#",
+    "#....%.##",
+    "#..q#...#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 6,
+    "img":"m_granfa"
+  }],
+  "tutorial": [{
+    "msg:ko": "외할아버지에게로 가보자!",
+    "msg:en": "Go to grandpa!",
+    "img": "/img/c3_w1/m_granfa.png"
+  }]
+}

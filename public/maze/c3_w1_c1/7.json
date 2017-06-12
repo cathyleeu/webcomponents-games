@@ -11,27 +11,22 @@
   "map": [
     ".#######.",
     "#.##..###",
-    "##....i.#",
-    "#%....###",
+    "##f...%.#",
+    "#.....###",
     "#.......#",
-    "#.j#.#d.#",
-    "##.....##",
-    "#......q#",
+    "#h.#.#..#",
+    "#i.....##",
+    "#...d...#",
     ".#######."
   ],
   "extra":[{
-    "x": 1,
-    "y": 3,
-    "img":"m_granma"
+    "x": 6,
+    "y": 2,
+    "img":"f_granfa"
   }],
   "tutorial": [{
-    "msg:ko": "외할머니에게로 가보자!",
-    "msg:en": "Go to grandma!",
-    "img": "/img/c3_w1/m_granma.png"
-  }],
-  "success": [{
-    "msg:ko": "성공! 참 잘했어요~",
-    "msg:en": "Success! Good Job!",
-    "link": "c3_w1_c2/index"
+    "msg:ko": "친할아버지에게로 가보자!",
+    "msg:en": "Go to grandpa!",
+    "img": "/img/c3_w1/f_granfa.png"
   }]
 }

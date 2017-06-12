@@ -1,0 +1,39 @@
+{
+  "tile_size": 256,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "##h...%.#",
+    "#.....###",
+    "#.......#",
+    "#..#.#..#",
+    "#i.....##",
+    "#...d...#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img":"f_granfa"
+  }],
+  "tutorial": [{
+    "msg:ko": "친할아버지에게로 가보자!",
+    "msg:en": "Go to grandpa!",
+    "msg:cn": "去爷爷那里吧！",
+    "img": "/img/c3_w1/f_granfa.png"
+  }],
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Success! Good Job!",
+    "msg:cn": "成功了！做得很棒。",
+    "link": "b3_w1/9"
+  }]
+}

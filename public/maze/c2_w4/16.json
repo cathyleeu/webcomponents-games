@@ -9,32 +9,32 @@
     "move_left"
   ],
   "map": [
-    ".###.",
-    "#...#",
-    "##.##",
-    "#...#",
-    ".###."
+    ".#######.",
+    "#.......#",
+    "##..###.#",
+    "##......#",
+    "#.u#....#",
+    "#..##...#",
+    "#....#..#",
+    "#..###%.#",
+    ".#######."
   ],
   "extra":[{
-    "x": 1,
-    "y": 2,
-    "img": "cos_frog"
-  },{
-    "x": 3,
-    "y": 2,
-    "img": "lana"
+    "x": 6,
+    "y": 7,
+    "img": "shirt"
   }],
   "tutorial": [{
-    "msg:ko": "코스가 라나가 준 옷을 모두 찾았어요",
-    "msg:en": "Lana found the cloth to present from Lana",
+    "msg:ko": "라나가 코스를 위하여 옷을 준비했어요",
+    "msg:en": "Lana set the cloth to present to Cos",
     "img": "/img/c2_w1/lana0.png"
   },{
-    "msg:ko": "이제 코스는 개구리로 변신할 수 있어요",
-    "msg:en": "Cos can change to frog with the cloth.",
-    "img": "/img/c2_w4/cos_frog.png"
-  },{
-    "msg:ko": "2권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
-    "msg:en": "Success! Good Job!",
-    "img": "/img/c2_w4/cos_frog.png"
-  }]
+    "msg:ko": "이동 블록을 이용하여 라나가 준 옷을 찾아보자",
+    "msg:en": "Let's find the cloths using move block"
+  }],
+  "goal": {
+    "msg:ko": "이동 블록을 이용하여 라나가 준 옷을 찾아보자",
+    "msg:en": "Let's find the cloths using move block",
+    "img": "/img/c2_w4/shirt.png"
+  }
 }
