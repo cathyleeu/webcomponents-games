@@ -1,0 +1,34 @@
+{
+  "tile_size": 256,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#####.",
+    "#.....#",
+    "#..d..#",
+    "#.....#",
+    "#.....#",
+    "#..%..#",
+    ".#####."
+  ],
+  "tutorial": [{
+    "msg:ko": "더 많은 장구벌레를 먹어야해!",
+    "msg:en": "I want to eat more Longworm",
+    "img": "/img/b2_w1/Larva_256.png"
+  },{
+    "msg:ko": "↓아래로 이동 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move down using [Move Down] block",
+    "img": "/img/blocks/down.png"
+  }],
+  "goal": {
+    "msg:ko": "←왼쪽으로 이동 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move left using [Move Left] block",
+    "img": "/img/b2_w1/Larva_256.png"
+  }
+}

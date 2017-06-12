@@ -12,24 +12,37 @@
   ],
   "map": [
     ".#######.",
-    "#..###..#",
-    "#.%%.%%.#",
-    "#.%i.q%.#",
-    "#.%d.f%.#",
-    "#.%g.h%.#",
-    "#.%j.o%.#",
-    "#..###..#",
+    "#.#....l#",
+    "#j..).#.#",
+    "###..####",
+    "#.##...h#",
+    "#..#%..##",
+    "#.##..#.#",
+    "#...#...#",
     ".#######."
   ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "img":"father",
+    "useItem": 1
+  }, {
+    "x": 4,
+    "y": 2,
+    "img":"cookie",
+    "itemCount": 1
+  }],
   "tutorial": [{
-    "msg:ko": "엄마가 만들어준 꿀과자를 가족들에게 나누어 주었어요",
-    "msg:en": "I gave cookies to my family.",
-    "img": "/img/c3_w4/cookie.png"
+    "msg:ko": "엄마에게 쿠키를 받았어",
+    "msg:en": "Mom gives me cookies."
   },{
-    "msg:ko": "다같이 맛있게 먹었어요",
-    "msg:en": "I eat the cookies all together."
-  },{
-    "msg:ko": "3권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
-    "msg:en": "Success! Good Job!"
+    "msg:ko": "아빠에게 쿠키를 전달하자!",
+    "msg:en": "Deliver Cookies to father",
+    "img": "/img/c3_w1/father.png"
+  }],
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Success! Good Job!",
+    "link": "c3_w4/17"
   }]
 }

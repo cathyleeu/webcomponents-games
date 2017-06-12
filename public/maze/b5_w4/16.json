@@ -1,7 +1,8 @@
 {
-  "tile_size": 256,
+  "tile_size": 80,
+  "render": "pixel",
   "score":1,
-  "workspace": ["start"],
+  "workspace": ["start","move_right","move_right","move_down","get_item2","move_down","move_left","move_left","move_left","get_item2","get_item2"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -11,47 +12,87 @@
     "use_item2"
   ],
   "map": [
-    "wswswswsw",
-    "swswswsws",
-    "wsw.w.wsw",
-    ".w.....w.",
-    "...pom...",
-    "..fagbc..",
-    "..bc.fa..",
-    "...%%%...",
-    "........."
+    "sws#####.",
+    "wsw###.##",
+    "sws..#.##",
+    "wsw%d..##",
+    "sws.##).#",
+    "ws.)...##",
+    "sws....##",
+    "ws...####",
+    "sws#####."
   ],
+  "extra":[{
+    "x": 3,
+    "y": 3,
+    "useItem": 3
+  }, {
+    "x": 6,
+    "y": 4,
+    "img":"nakji",
+    "itemImg":"nakji",
+    "disappear":true,
+    "itemCount": 1
+  }, {
+    "x": 3,
+    "y": 5,
+    "img":"clam",
+    "itemImg":"clam",
+    "disappear":true,
+    "itemCount": 2
+  }],
   "tutorial": [{
-    "msg:ko": "갯벌에서 잡은 것들을 엄마에게 가져다 주었어요",
-    "msg:en": "I gave tidal creatures to my family.",
+    "msg:ko": "바구니에 갯벌 생물들을 넣어야 해요",
+    "msg:en": "I'm going to take tidal creatures to basket",
     "img": [{
+      "src": "/img/b5_w4/basket.png",
+      "style": "width:33%"
+    },{
       "src": "/img/b5_w4/nakji.png",
-      "style": "width:25%"
+      "style" : "width:33%"
     },{
       "src": "/img/b5_w4/clam.png",
-      "style" : "width:25%"
-    },{
-      "src": "/img/b5_w4/conch.png",
-      "style" : "width:25%"
-    },{
-      "src": "/img/b5_w4/crab.png",
-      "style" : "width:25%"
+      "style" : "width:33%"
     }]
   },{
-    "msg:ko": "가족 모두와 구워서 다같이 맛있게 먹었어요",
-    "msg:en": "I eat the baked things all together.",
+    "msg:ko": "가져와야할 갯벌 생물들이 여러 개 있어.",
+    "msg:en": "There are several tidal creatures.",
     "img": [{
-      "src": "/img/b5_w1/father_summer.png",
-      "style" : "width:33%"
+      "src": "/img/b5_w4/nakji.png",
+      "style" : "width:50%"
     },{
-      "src": "/img/b5_w1/cos_summer0.png",
-      "style" : "width:33%"
-    },{
-      "src": "/img/b5_w2/mother_summer.png",
-      "style" : "width:33%"
+      "src": "/img/b5_w4/clam.png",
+      "style" : "width:50%"
     }]
   },{
-    "msg:ko": "4권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
-    "msg:en": "Success! Good Job!"
+    "msg:ko": "'가져오기'와 사용하기 블록을 여러 번 사용해 봐!",
+    "msg:en": "Try to use 'Bring' & 'Use' block more than once!",
+    "img": [{
+      "src": "/img/blocks/bring.png",
+      "style": "width:50%"
+    },{
+      "src": "/img/blocks/use.png",
+      "style" : "width:50%"
+    }]
+  }],
+  "goal": {
+    "msg:ko": "바구니에 갯벌 생물들을 넣어보자!",
+    "msg:en": "Take tidal creatures to basket",
+    "img": [{
+      "src": "/img/b5_w4/basket.png",
+      "style": "width:33%"
+    },{
+      "src": "/img/b5_w4/nakji.png",
+      "style" : "width:33%"
+    },{
+      "src": "/img/b5_w4/clam.png",
+      "style" : "width:33%"
+    }]
+  },
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Success! Good Job!",
+    "msg:cn": "成功了！做得很棒。",
+    "link": "b5_w4/17"
   }]
 }

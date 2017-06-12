@@ -12,48 +12,45 @@
   ],
   "map": [
     ".#######.",
-    "#...).d.#",
-    "#....#..#",
-    "###.)##.#",
-    "#....#..#",
-    "#...%..##",
-    "#.##.#.##",
-    "#......##",
+    "#.......#",
+    "#.#.%.#.#",
+    "#.#...#.#",
+    "#.#..).##",
+    "#.#...#.#",
+    "#.#.d.#.#",
+    "#.......#",
     ".#######."
   ],
   "extra":[{
     "x": 4,
-    "y": 5,
-    "img":"mother",
-    "useItem": 2
+    "y": 2,
+    "useItem": 1
   }, {
-    "x": 4,
-    "y": 1,
-    "img":"honey_pot",
-    "itemCount": 1
-  }, {
-    "x": 4,
-    "y": 3,
+    "x": 5,
+    "y": 4,
     "img":"honey_pot",
     "itemCount": 1
   }],
   "tutorial": [{
-    "msg:ko": "엄마가 꿀로 과자를 만들어 주신데",
-    "msg:en": "Mommy make Cookies with honey"
+    "msg:ko": "집으로 꿀단지를 가져갈꺼야",
+    "msg:en": "I'm going to take honey jars to my house"
   },{
-    "msg:ko": "엄마에게 꿀단지를 가져다 드리자",
-    "msg:en": "Let's bring the honey jars to my Mom",
-    "img": "/img/c3_w1/mother.png"
+    "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자",
+    "msg:en": "Move to honey jar And then Use 'get item' Block",
+    "img": "/img/c3_w2/honey_pot.png"
+  },{
+    "msg:ko": "그리고나서 집으로 이동하고, 아이템 사용하기를 해보자",
+    "msg:en": "then move my house, Use 'use item' Block",
+    "img": "/img/c3_w1/house.png"
   }],
   "goal": {
-    "msg:ko": "엄마에게 꿀단지를 가져가자!",
-    "msg:en": "Bring the honey jars to my Mom",
+    "msg:ko": "집으로 꿀단지를 가져가자!",
+    "msg:en": "Take honey jars",
     "img": "/img/c3_w2/honey_pot.png"
   },
   "success": [{
-    "msg:ko": "성공! 엄마가 과자를 만들여 주셨어~",
-    "msg:en": "Mom gives me cookies.",
-    "img": "/img/c3_w4/cookie.png",
-    "link": "c3_w4/index"
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Success! Good Job!",
+    "link": "c3_w3/17"
   }]
 }
