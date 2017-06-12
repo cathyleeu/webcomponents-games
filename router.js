@@ -233,9 +233,9 @@ function getBook(classObj) {
   }).join(",");
   // 대구지사 에나 어린이집 5세반에 6세 컨텐츠 추가
   if(school == "C00071-K6" && classObj.level == "A") {
-    book = book.concat(book.map(function(bname) {
+    book += "," + book.split(",").map(function(bname) {
       return "B-" + bname.split("-")[1];
-    }));
+    });
   }
   // 용인지사 성음유치원, 영업부 일산지사 홍익유치원 컨텐츠 추가
   if(classObj.code == "A00088-K1-KC1" || school == "C00149-K1") {
