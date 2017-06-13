@@ -7,7 +7,7 @@
     "move_down",
     "move_right",
     "move_left",
-    "get_item3",
+    "get_item2",
     "use_item2",
     "repeat"
   ],
@@ -30,7 +30,8 @@
     "x": 4,
     "y": 2,
     "img":"safety2",
-    "itemImg":"safety2"
+    "itemImg":"safety2",
+    "disappear":true
   }],
   "tutorial": [{
     "msg:ko": "코스는 안전용품을 들고 가서 안전하게 자전거를 탈 거에요.",

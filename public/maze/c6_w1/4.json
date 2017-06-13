@@ -31,7 +31,8 @@
     "x": 4,
     "y": 7,
     "img":"safety1",
-    "itemImg":"safety1"
+    "itemImg":"safety1",
+    "disappear":true
   }],
   "tutorial": [{
     "msg:ko": "코스는 안전용품을 들고 가서 안전하게 자전거를 탈 거에요.",
