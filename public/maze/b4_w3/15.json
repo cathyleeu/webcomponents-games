@@ -1,6 +1,5 @@
 {
   "tile_size": 256,
-
   "score":3,
   "workspace": ["start"],
   "toolbox": [
@@ -14,45 +13,42 @@
     "get_item3"
   ],
   "map": [
-    "%######.",
-    "##.....#",
-    "##d##.##",
-    "##.##.##",
-    "#...R..#",
-    "##.#.#.#",
-    "#..#.)##",
-    ".######."
+    "%#######",
+    "#.#....#",
+    "#.#..#.#",
+    "#d#.)#.#",
+    "#..#...#",
+    "#.#S.#.#",
+    "#...####",
+    "########"
   ],
   "extra":[{
   "x": 0,
   "y": 0,
   "img": "tree1"
 },{
-    "x" : 4,
-    "y" : 4,
-    "img" : "father"
-  },{
-    "x" : 5,
-    "y" : 6,
-    "img" : "chest",
-    "itemCount" : 2
+    "x": 4,
+    "y": 3,
+    "img": "chest",
+    "itemCount": 2
   }],
+
   "tutorial": [{
-    "msg:ko": "주먹은 보자기로 이길 수 있어!",
-    "msg:en": "Paper wins rock!",
+    "msg:ko": "가위는 주먹으로 이길 수 있어!",
+    "msg:en": "Rock wins scissors!",
     "img": [{
       "src": "/img/b4/rock.png",
       "style": "width:33%"
     },{
-      "src": "/img/b4/(.png",
+      "src": "/img/b4/).png",
       "style": "width:33%"
     },{
-      "src": "/img/b4/paper.png",
+      "src": "/img/b4/scissors.png",
       "style": "width:33%"
     }]
     }],"goal" : {
-      "msg:ko": "아빠를 이기고 보물상자에 가서 보물 두 개를 가져오자.",
-      "msg:en": "Win daddy to go to the chest and bring two treasures",
+      "msg:ko": "엄마를 이기고 보물상자에 가서 보물 두 개를 가져오자.",
+      "msg:en": "Win mommy to go to the chest and bring two treasures",
       "img": [{
           "src": "/img/b4/chest2.png",
           "style" : "width:50"

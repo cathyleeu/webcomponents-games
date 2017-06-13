@@ -9,8 +9,8 @@
     ".##############%w.#",
     "##...#########.%w.#",
     "..#............%w.#",
-    "##.......%%%%%.%w.#",
-    "#########kkkkk#####."
+    "##.%%%%%.%%%%%.%w.#",
+    "###kkkkk#kkkkk#####."
   ],
   "extra": [{
     "x": 5,
@@ -120,6 +120,74 @@
       },{
         "src": "/img/c5/lotus_flower.png",
         "style": "width:50%"
+      }]
+    }]
+  },{
+    "x": 3,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "연꽃을 3개 얻을 수 있어.",
+      "msg:en": "You can get three lotus flowers at once.",
+      "img": [{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "연꽃을 3개 얻을 수 있어.",
+      "msg:en": "You can get three lotus flowers at once.",
+      "img": [{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "연꽃을 3개 얻을 수 있어.",
+      "msg:en": "You can get three lotus flowers at once.",
+      "img": [{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "연꽃을 3개 얻을 수 있어.",
+      "msg:en": "You can get three lotus flowers at once.",
+      "img": [{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/c5/lotus_flower.png",
+        "style": "width:33%"
       }]
     }]
   },{
@@ -285,11 +353,31 @@
     "y": 5,
     "link": "c5_w2/15"
   },{
+    "x": 7,
+    "y": 5,
+    "link": "c5_w2/16"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "c5_w2/17"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "c5_w2/18"
+  },{
+    "x": 4,
+    "y": 5,
+    "link": "c5_w2/19"
+  },{
+    "x": 3,
+    "y": 5,
+    "link": "c5_w2/20"
+  },{
     "img":"tode",
     "x": 2,
     "y": 4,
     "obstacle": false,
-    "link": "c5_w2/16",
+    "link": "c5_w2/21",
     "min_score": 30
   }],
 

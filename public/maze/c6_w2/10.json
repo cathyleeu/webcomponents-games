@@ -51,8 +51,8 @@
     }]
   }],
   "tutorial": [{
-    "msg:ko": "상자를 확인해서 상자안에서 무엇이 나왔는지 이야기해보아요.",
-    "msg:en": "Check the box and see what's coming out.",
+    "msg:ko": "상자를 확인해서 상자안에서 무엇이 나왔는지 교재에 표시해보아요.",
+    "msg:en": "Check the box and see what's coming out and mark it in the textbook.",
     "img": [{
       "src": "/img//blocks/check.png",
       "style": "width:33%"

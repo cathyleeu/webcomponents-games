@@ -1,0 +1,35 @@
+{
+  "tile_size": 256,
+
+  "score":100,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#d.%#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":1,
+    "img":"lana"
+  }],
+  "success": [{
+    "msg:ko": "모두 모두 참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did great job! See you again!",
+    "img": "/img/c5/TutoToad4_256.png",
+    "link" : "c5_w2/1"
+  }],
+   "tutorial": [{
+      "msg:ko": "모두 모두 참 잘했어요. 다음 주에 또 만나요!",
+      "msg:en": "You did great job! See you again!",
+      "img": "/img/c5/TutoToad4_256.png"
+  }]
+}

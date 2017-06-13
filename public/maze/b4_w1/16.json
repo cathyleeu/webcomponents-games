@@ -1,0 +1,32 @@
+{
+  "tile_size": 256,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##r.###",
+    "#...#...#",
+    "#.#.#.###",
+    "#.......#",
+    "#.#..#.%#",
+    "##..#..##",
+    "#...#...#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "깃발에 가서 보물을 숨겨야지",
+    "msg:en": "Go to the flag to hide my treasure",
+    "img": "/img/b4/flag.png"
+  }],
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Success! Good Job!",
+    "link": "b4_w1/17"
+  }]
+}

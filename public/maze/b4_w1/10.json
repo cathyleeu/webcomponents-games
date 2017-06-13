@@ -25,8 +25,8 @@
     "img": "/img/b4/flag.png"
   }],
   "success": [{
-    "msg:ko": "성공! 참 잘했어요~",
-    "msg:en": "Success! Good Job!",
+    "msg:ko": "성공! 벌써 열 문제나 해결했어요. 다음을 누르면 더 풀 수 있어요.",
+    "msg:en": "Success! You've already solved ten problems! You can try more problems. ",
     "link": "b4_w1/11"
   }]
 }

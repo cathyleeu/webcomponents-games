@@ -1,0 +1,51 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors",
+    "get_item3"
+  ],
+  "map": [
+    "%#######",
+    "#...#..#",
+    "#.#r..R#",
+    "#..###.#",
+    "#.#)..)#",
+    "#.##.#.#",
+    "#...##.#",
+    "########"
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
+    "x": 6,
+    "y": 4,
+    "img": "chest",
+    "itemCount": 2
+  },{
+    "x": 3,
+    "y": 4,
+    "img": "chest",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+      "msg:ko": "엄마를 이기고 보물상자에 가서 보물 두 개를 가져오자.",
+      "msg:en": "Win mommy to go to the chest and bring two treasures",
+      "img": [{
+          "src": "/img/b4/chest2.png",
+          "style" : "width:50"
+        },{
+            "src": "/img/b4/chest2.png",
+            "style" : "width:50"
+        }]
+    }]
+}
