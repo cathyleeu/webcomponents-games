@@ -10,32 +10,32 @@
   ],
   "map": [
     ".#######.",
-    "#....#..#",
-    "#.%#.##.#",
-    "##..#..##",
-    "#.#..#.##",
-    "#.d#..#.#",
-    "#..#....#",
     "#.......#",
+    "#.......#",
+    "#..##...#",
+    "#.u#%...#",
+    "#..#..#.#",
+    "#..#....#",
+    "#..###..#",
     ".#######."
   ],
   "extra":[{
-    "x": 2,
-    "y": 2,
-    "img":"gran"
+    "x": 4,
+    "y": 4,
+    "img":"f_picture"
   }],
   "tutorial": [{
-    "msg:ko": "저기 할머니 할아버지가 있어",
-    "msg:en": "There are my grandma and grandpa!"
+    "msg:ko": "저기 흔적이 있어",
+    "msg:en": "There is a trace!"
   },{
-    "msg:ko": "할머니 할아버지와 만나보자!",
-    "msg:en": "Let's meet her grandparents.",
-    "img": "/img/b3_w3/gran.png"
+    "msg:ko": "가족 사진으로 이동해 보자!",
+    "msg:en": "Let's move to the Cos' family picture",
+    "img": "/img/b3_w3/f_picture.png"
   }],
   "success": [{
-    "msg:ko": "성공! 할머니 할마버지와 만났어!",
-    "msg:en": "Success! Cos met her grandparents.",
-    "img": "/img/b3_w2/grandp.png",
-    "link": "b3_w4/index"
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Success! Good Job!",
+    "msg:cn": "成功了！做得很棒。",
+    "link": "b3_w3/12"
   }]
 }

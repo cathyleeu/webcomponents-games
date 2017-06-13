@@ -1,0 +1,54 @@
+{
+  "tile_size": 256,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#.###...#",
+    "#%....#.#",
+    "####....#",
+    "#...#...#",
+    "#....u#.#",
+    "#....#..#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "개구리가 되려면 더 많은 장구벌레를 먹어야해!",
+    "msg:en": "I want to eat more Longworm",
+    "img": "/img/b2_w1/Larva_256.png"
+  },{
+    "msg:ko": "↑← 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move up using [Move Up][Move Left] block",
+    "img": "/img/b2_w1/Larva_256.png"
+  }],
+  "goal": {
+    "msg:ko": "↑← 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move up using [Move Up][Move Left] block",
+    "img": "/img/b2_w1/Larva_256.png"
+  },
+  "success": [{
+    "msg:ko": "올챙이 토드는 장구벌레를 배불리 먹었어요",
+    "msg:en": "Tode ate Longworm vary well.",
+    "img": "/img/b2_w1/Larva_256.png"
+  },{
+    "msg:ko": "코스야, 내 꼬리가 사라졌어",
+    "msg:en": "Cos, My Tail disappeared!",
+    "img": "/img/b2_w4/TutoToad4_256.png"
+  },{
+    "msg:ko": "난 이제 어엿한 어른 개구리야",
+    "msg:en": "I finally became a Frog",
+    "img": "/img/b2_w4/TutoToad4_256.png"
+  },{
+    "msg:ko": "이제 나랑 뛰어 놀자!",
+    "msg:en": "Let's play with me!",
+    "img": "/img/b2_w4/TutoToad4_256.png",
+    "link": "b2_w4/1"
+  }]
+}

@@ -1,0 +1,46 @@
+{
+  "tile_size": 256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#....#..#",
+    "#..#..#.#",
+    "#%.##..##",
+    "#.#.d#.##",
+    "#..#....#",
+    "#..#....#",
+    "#..#....#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"father"
+  }],
+  "tutorial": [{
+    "msg:ko": "저기 일하고 있는 아빠가 있어",
+    "msg:en": "There is working father!",
+    "img": "/img/c3_w1/father.png"
+  },{
+    "msg:ko": "아버지에게 가서 할머지 할아버지가 지구로 왔다는 걸 알려줘요!",
+    "msg:en": "Tell my father that grandma&grandpa has arrived",
+    "img": "/img/b3_w3/gran.png"
+  }],
+  "goal": {
+    "msg:ko": "아버지에게 이동해 보자!",
+    "msg:en": "Let's move to my father",
+    "img": "/img/c3_w1/father.png"
+  },
+  "success": [{
+    "msg:ko": "성공! 모든 가족이 만났어요!",
+    "msg:en": "Success! Every family meets",
+    "link": "b3_w4/12"
+  }]
+}

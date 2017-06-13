@@ -6,30 +6,30 @@
     "move_up",
     "move_down",
     "move_right",
-    "move_left",
-    "get_item",
-    "use_item"
+    "move_left"
   ],
   "map": [
     ".#######.",
-    "#..###..#",
-    "#...%...#",
-    "#..i.q..#",
-    "#..d.f..#",
-    "#..g.h..#",
-    "#..j.o..#",
+    "#.......#",
+    "##..##%.#",
+    "##....#.#",
+    "#..#....#",
+    "#..##..##",
+    "#..r....#",
     "#..###..#",
     ".#######."
   ],
   "tutorial": [{
-    "msg:ko": "모든 가족이 모였어요",
-    "msg:en": "Every family is here."
+    "msg:ko": "저기 우리 집이 있어",
+    "msg:en": "There is my house!",
+    "img": "/img/c3_w1/house.png"
   },{
-    "msg:ko": "사슴 디어야 도와줘서 고마워",
-    "msg:en": "Deer! Thanks for your help!",
-    "img": "/img/b3_w2/deer.png"
-  },{
-    "msg:ko": "3권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
-    "msg:en": "Success! Good Job!"
-  }]
+    "msg:ko": "집으로 이동해 보자!",
+    "msg:en": "Let's move to my house"
+  }],
+  "goal": {
+    "msg:ko": "집으로 이동해 보자!",
+    "msg:en": "Let's move to my house",
+    "img": "/img/c3_w1/house.png"
+  }
 }
