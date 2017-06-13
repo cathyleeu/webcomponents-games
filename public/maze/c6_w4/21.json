@@ -20,12 +20,6 @@
   "tutorial": [{
     "msg:ko": "다음 주에 만나자!",
     "msg:en": "See you next week!",
-    "img": [{
-      "src": "/img/c6/bomi0.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/c6/kittieseating.png",
-      "style": "width:50%"
-    }]
+    "img": ["/img/c6/bomi0.png","/img/c6/kittieseating.png"]
   }]
 }
