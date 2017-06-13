@@ -52,18 +52,6 @@
   "tutorial": [{
     "msg:ko": "신호등을 확인하고 안전하게 횡단보도를 건너서 생선을 들고 아기 고양이에게 가요.",
     "msg:en": "Check the traffic light to cross the street safely, and go to the kitties with fish.",
-    "img": [{
-      "src": "/img/c6/trf_lights.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/c6/crosswalk_row.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/c6/food1.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/c6/kittieseating.png",
-      "style": "width:25%"
-    }]
+    "img": ["/img/c6/trf_lights.png","/img/c6/crosswalk_row.png","/img/c6/food1.png","/img/c6/kittieseating.png"]
   }]
   }
