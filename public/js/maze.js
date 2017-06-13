@@ -228,16 +228,19 @@ function init() {
   }
   handle_resize();
   var lang = store.get("lang") || "ko",
-      goal = maze.goal || maze.tutorial[maze.tutorial.length - 1];
+      goal = maze.goal || maze.tutorial[maze.tutorial.length - 1],
+      goal_msg = goal["msg" + (lang ? ":" + lang : "")] || goal["msg"];
   if(!$.isArray(goal.img)) {
     goal.img = [goal.img];
   }
   $(".goal-imgs .goal-img").remove();
-  goal.img.forEach(function(attrs) {
-    attrs = (typeof attrs == "object") ? attrs : {"src": attrs};
-    $('<img class="goal-img">').attr(attrs).appendTo(".goal-imgs");
+  goal.img.forEach(function(src, i) {
+    $('<img class="goal-img">')
+      .attr("src", src)
+      .css("width", (100 / goal.img.length).toFixed(2) + "%")
+      .appendTo(".goal-imgs");
   });
-  $(".goal .goal-msg").html(goal["msg" + (lang ? ":" + lang : "")] || goal["msg"]);
+  $(".goal .goal-msg").html(goal_msg.replace(/\n/g, "<br/>"));
   var queries = store.get("queries") || {};
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
@@ -994,11 +997,13 @@ function showModal(options) {
     imgs = [imgs];
   }
   $(".modal-msg-box img").remove();
-  imgs.forEach(function(attrs) {
-    attrs = (typeof attrs == "object") ? attrs : {src:attrs};
-    $('<img class="modal-character">').attr(attrs).appendTo(".modal-imgs");
+  imgs.forEach(function(src) {
+    $('<img class="modal-character">')
+      .attr("src", src)
+      .css("width", (100 / imgs.length).toFixed(2) + "%")
+      .appendTo(".modal-imgs");
   });
-  $(".modal-msg-box .modal-msg").html(options.msg);
+  $(".modal-msg-box .modal-msg").html(options.msg.replace(/\n/g, "<br/>"));
   $('#modal').modal({
     backdrop: "static"
   });
