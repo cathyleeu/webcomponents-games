@@ -21,12 +21,15 @@
     "y":1,
     "img":"tode"
   }],
-  "tutorial": [{
-    "msg:ko": "모두 모두 참 잘했어요.",
-    "msg:en": "You did great job!"
-  },{
-    "msg:ko": "다음 주에 만나자!",
-    "msg:en": "See you again!",
-    "img": "/img/c5/lana.png"
+  "success": [{
+    "msg:ko": "모두 모두 참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did great job! See you again!",
+    "img": "/img/c5/lana.png",
+    "link" : "c5_w3/1"
+  }],
+   "tutorial": [{
+      "msg:ko": "모두 모두 참 잘했어요. 다음 주에 또 만나요!",
+      "msg:en": "You did great job! See you again!",
+      "img": "/img/c5/lana.png"
   }]
 }
