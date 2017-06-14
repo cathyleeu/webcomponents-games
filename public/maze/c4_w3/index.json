@@ -300,7 +300,7 @@
   }],
   "goal": {
     "msg:ko": "카트를 21개 모아서 엄마께 가요.",
-    "msg:en": "Let's get twenty one carts and go to mother.",
+    "msg:en": "Let's get twenty carts and go to mother.",
     "img": [{
       "src": "/img/c4_w2/cart.png",
       "style": "width:50%"

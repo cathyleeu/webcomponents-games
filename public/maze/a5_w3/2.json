@@ -64,14 +64,14 @@
   }],
   "tutorial": [{
     "msg:ko": "매미의 성장 과정을 알아보자",
-    "msg:en": "Let's look at the growth of cicada"
+    "msg:en": "Let’s learn about the life cycle of a cicada."
   },{
     "msg:ko": "매미의 성장 순서대로 블록을 조립하여",
-    "msg:en": "Assemble blocks in the order of cicada's growing, ",
+    "msg:en": "Assemble blocks to complete the life cycle of a cicada step by step, ",
     "img": "/img/a5_w3/memi_block.png"
   },{
     "msg:ko": "매미로 성장시켜 보아요",
-    "msg:en": "Grow into cicada!",
+    "msg:en": "Make a cicada emerge!",
     "img": "/img/a5_w3/bg01_step5.png"
   }],
   "success": [{

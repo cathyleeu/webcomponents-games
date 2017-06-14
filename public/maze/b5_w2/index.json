@@ -147,7 +147,7 @@
   }],
   "goal": {
     "msg:ko": "별을 20개 모아서 엄마에게 가자!",
-    "msg:en": "Let's get twenty one stars and go to mother!",
+    "msg:en": "Let's get twenty stars and go to mother!",
     "img": [{
       "src": "/img/b5_w2/star.png",
       "style": "width:50%"
