@@ -299,7 +299,7 @@
   }],
   "goal": {
     "msg:ko": "집을 21개 모아서 엄마께 가요.",
-    "msg:en": "Let's get twenty one houses and go to mother.",
+    "msg:en": "Let's get twenty houses and go to mother.",
     "img": [{
       "src": "/img/c4_w4/house_blank.png",
       "style": "width:50%"

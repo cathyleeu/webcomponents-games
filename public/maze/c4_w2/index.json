@@ -380,7 +380,7 @@
   }],
   "goal": {
     "msg:ko": "카트를 21개 모아서 집으로 가자!",
-    "msg:en": "Let's get twenty one carts and go back home.",
+    "msg:en": "Let's get twenty carts and go back home.",
     "img": [{
       "src": "/img/c4_w2/cart.png",
       "style": "width:50%"

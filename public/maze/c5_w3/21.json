@@ -30,7 +30,7 @@
   }],
   "tutorial": [{
     "msg:ko": "참 잘했어요. 선물을 토드에게 가져다 주어요.",
-    "msg:en": "You did great job! Give Tod my present.",
+    "msg:en": "You did a great job! Give Tode my present.",
     "img": [{
       "src": "/img/c5/lana.png",
       "style": "width:33%"

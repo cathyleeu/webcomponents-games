@@ -28,7 +28,7 @@
   }],
   "tutorial": [{
     "msg:ko": "토드는 어느 숫자 위에 있을까요?",
-    "msg:en": "What number Tod sit on?",
+    "msg:en": "Which number is Tod sitting on?",
     "img": [{
       "src": "/img/c5/lotus/nlotus2.png",
       "style": "width:16.6%"
@@ -51,7 +51,7 @@
   }],
   "goal": {
     "msg:ko": "토드는 어느 숫자 위에 있을까요?",
-    "msg:en": "What number Tod sit on?",
+    "msg:en": "Which number is Tod sitting on?",
     "img": [{
       "src": "/img/c5/lotus/nlotus2.png",
       "style": "width:16.6%"

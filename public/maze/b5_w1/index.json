@@ -33,7 +33,7 @@
     "y": 1,
     "tutorial": [{
       "msg:ko": "아이스 박스를 2개 얻을 수 있어.",
-      "msg:en": "You can get two ice boxs at once.",
+      "msg:en": "You can get two ice boxes at once.",
       "img": "/img/b5_w1/ice_box.png"
     }]
   },{
@@ -41,7 +41,7 @@
     "y": 2,
     "tutorial": [{
       "msg:ko": "아이스 박스를 2개 얻을 수 있어.",
-      "msg:en": "You can get two ice boxs at once.",
+      "msg:en": "You can get two ice boxes at once.",
       "img": "/img/b5_w1/ice_box.png"
     }]
   },{
@@ -49,7 +49,7 @@
     "y": 4,
     "tutorial": [{
       "msg:ko": "아이스 박스를 3개 얻을 수 있어.",
-      "msg:en": "You can get three ice boxs at once.",
+      "msg:en": "You can get three ice boxes at once.",
       "img": "/img/b5_w1/ice_box.png"
     }]
   },{
@@ -57,7 +57,7 @@
     "y": 4,
     "tutorial": [{
       "msg:ko": "아이스 박스를 3개 얻을 수 있어.",
-      "msg:en": "You can get three ice boxs at once.",
+      "msg:en": "You can get three ice boxes at once.",
       "img": "/img/b5_w1/ice_box.png"
     }]
   },{
@@ -135,7 +135,7 @@
     "img": "/img/b5_w1/cos_summer0.png"
   }, {
     "msg:ko": "아이스 박스 20개를 모으면 아빠에게 가요.",
-    "msg:en": "Go to dad with more than 20 ice boxs.",
+    "msg:en": "Go to dad with more than 20 ice boxes.",
     "img": "/img/b5_w1/father_summer.png",
     "x" : 20,
     "y" : 5
@@ -147,7 +147,7 @@
   }],
   "goal": {
     "msg:ko": "아이스 박스를 20개 모아서 아빠에게 가자!",
-    "msg:en": "Let's get twenty one ice boxs and go to father!",
+    "msg:en": "Let's get twenty ice boxs and go to father!",
     "img": [{
       "src": "/img/b5_w1/ice_box.png",
       "style": "width:50%"
