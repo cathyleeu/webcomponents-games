@@ -28,7 +28,7 @@
   }],
   "tutorial": [{
     "msg:ko": "토드는 어떤 꽃 위에 있을까요?",
-    "msg:en": "What flower Tode sit on?",
+    "msg:en": "What flower Tod sit on?",
     "img": [{
       "src": "/img/c5/flowers/flower35.png",
       "style": "width:20%"
@@ -48,7 +48,7 @@
   }],
   "goal": {
     "msg:ko": "토드는 어떤 꽃 위에 있을까요?",
-    "msg:en": "What flower Tode sit on?",
+    "msg:en": "What flower Tod sit on?",
     "img": [{
       "src": "/img/c5/flowers/flower35.png",
       "style": "width:20%"

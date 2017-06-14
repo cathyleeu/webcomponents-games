@@ -499,7 +499,7 @@
   }],
   "goal": {
     "msg:ko": "선물을 36개 모아 토드에게 가요.",
-    "msg:en": "Let's go to Tode with 36 gifts.",
+    "msg:en": "Let's go to Tod with 36 gifts.",
     "img":  [{
       "src": "/img/c5/gift0.png",
       "style": "width:33%"
