@@ -43,23 +43,11 @@
   "tutorial": [{
     "msg:ko": "집으로 가면 숫자를 비교하는 문제를 풀 수 있어요. 문제 한 개를 풀면 집 하나를 얻을 수 있어요. 5개의 집을 모아서 엄마께 가요.",
     "msg:en": "You can solve a number-comparing-problem at any house. A problem gives you a house. Get five houses and go to mother.",
-    "img": [{
-      "src":"/img/c4_w4/house_blank.png",
-      "style":"width:50%"
-    },{
-      "src": "/img/c4_w4/mother.png",
-      "style":"width:50%"
-    }]
+    "img": ["/img/c4_w4/house_blank.png","/img/c4_w4/mother.png"]
   }],
   "goal": {
     "msg:ko": "5개의 집을 모아서 엄마께 가요.",
     "msg:en": "Get five houses and go to mother.",
-    "img": [{
-      "src":"/img/c4_w4/house_blank.png",
-      "style":"width:50%"
-    },{
-      "src": "/img/c4_w4/mother.png",
-      "style":"width:50%"
-    }]
+    "img": ["/img/c4_w4/house_blank.png","/img/c4_w4/mother.png"]
   }
 }

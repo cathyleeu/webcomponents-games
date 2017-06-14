@@ -69,24 +69,12 @@
     "msg:ko": "할머니, 할아버지의 우주선으로 가서 문제를 풀어요. 우주선 찾기 문제를 풀면 우주선 한 개를 얻을 수 있어요. 우주선 열 개를 모아서 사슴 디어에게 가요.",
     "msg:en": "You can solve a problem at any grandparents' UFO. Finding out a UFO gives you a UFO. Solve ten problems and go to Deer.",
     "msg:cn": "你可以解决任何祖父母UFO的问题。找出一个UFO给你一个UFO。解决十个问题，去鹿。",
-    "img": [{
-        "src":"/img/b3_w1/ufo.png",
-        "style":"width:50%"
-      },{
-        "src":"/img/b3_w2/deer.png",
-        "style":"width:50%"
-      }]
+    "img": ["/img/b3_w1/ufo.png","/img/b3_w2/deer.png"]
   }],
   "goal": {
     "msg:ko": "우주선을 열 개를 모아 디어에게 가자.",
     "msg:en": "Get ten UFOs and go to Deer.",
     "msg:cn": "得到十个不明飞行物，去鹿。",
-    "img": [{
-        "src":"/img/b3_w1/ufo.png",
-        "style":"width:50%"
-      },{
-          "src":"/img/b3_w2/deer.png",
-          "style":"width:50%"
-      }]
+    "img": ["/img/b3_w1/ufo.png","/img/b3_w2/deer.png"]
   }
 }

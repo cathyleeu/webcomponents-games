@@ -27,13 +27,7 @@
     "tutorial": [{
       "msg:ko": "상 2개를 얻을 수 있어",
       "msg:en": "You can get two tables at once",
-      "img":  [{
-        "src": "/img/c55_w4/table0.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c55_w4/table0.png",
-        "style": "width:33%"
-      }]
+      "img":  ["/img/c55_w4/table0.png","/img/c55_w4/table0.png"]
     }]
   },{
     "x": 18,
@@ -42,16 +36,7 @@
     "tutorial": [{
       "msg:ko": "상 3개를 얻을 수 있어",
       "msg:en": "You can get three tables at once",
-      "img":  [{
-        "src": "/img/c55_w4/table0.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c55_w4/table0.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c55_w4/table0.png",
-        "style": "width:33%"
-      }]
+      "img":  ["/img/c55_w4/table0.png","/img/c55_w4/table0.png","/img/c55_w4/table0.png"]
     }]
   },{
     "x": 5,
@@ -140,13 +125,7 @@
   }, {
     "msg:ko": "상 21개를 모으면, 엄마에게 가요.",
     "msg:en": "Collect 21 tables and go to mom",
-    "img":  [{
-      "src": "/img/c55_w4/table0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w4/mother.png",
-      "style": "width:33%"
-    }],
+    "img":  ["/img/c55_w4/table0.png","/img/c55_w4/mother.png"],
     "x" : 16,
     "y" : 5
   }, {
@@ -158,12 +137,6 @@
   "goal": {
     "msg:ko": "상을 21개 모은 후 엄마에게 가자!",
     "msg:en": "Let's get 21 carts and go to mom!",
-    "img":  [{
-      "src": "/img/c55_w4/table0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w4/mother.png",
-      "style": "width:33%"
-    }]
+    "img":  ["/img/c55_w4/table0.png","/img/c55_w4/mother.png"]
   }
 }

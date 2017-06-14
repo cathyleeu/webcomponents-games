@@ -24,23 +24,11 @@
   "tutorial": [{
     "msg:ko": "집으로 가자",
     "msg:en": "Go to the house",
-    "img": [{
-      "src": "/img/c55_w2/cos0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w2/house.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/c55_w2/cos0.png","/img/c55_w2/house.png"]
   }],
   "success": [{
     "msg:ko": "초대장을 다 돌리고 집에 도착했어요~",
     "msg:en": "I sent all invitations and arrived home.",
-    "img": [{
-      "src": "/img/c55_w2/invitation.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w2/house.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/c55_w2/invitation.png","/img/c55_w2/house.png"]
   }]
 }

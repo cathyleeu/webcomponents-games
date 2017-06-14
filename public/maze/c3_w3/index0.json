@@ -98,12 +98,6 @@
   "goal": {
     "msg:ko": "15번 집으로 꿀단지를 가져가자!",
     "msg:en": "Take 15 times honey pots",
-    "img": [{
-      "src": "/img/c3_w1/house.png",
-      "style": "width:55%"
-    }, {
-      "src": "/img/c3_w2/honey_pot.png",
-      "style": "width:55%"
-    }]
+    "img": ["/img/c3_w1/house.png", "/img/c3_w2/honey_pot.png"]
   }
 }

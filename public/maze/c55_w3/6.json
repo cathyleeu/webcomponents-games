@@ -43,12 +43,6 @@
   "goal": {
     "msg:ko": "연꽃을 가지고 선물상자에 가서 포장하자",
     "msg:en": "Get the lotus and gift-wrap the lotus",
-    "img":  [{
-      "src": "/img/c55_w3/lotus_flower.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w3/gift.png",
-      "style": "width:33%"
-    }]
+    "img":  ["/img/c55_w3/lotus_flower.png","/img/c55_w3/gift.png"]
   }
 }

@@ -26,13 +26,7 @@
   "tutorial": [{
     "msg:ko": "기차를 타고 집으로 갈 거에요.",
     "msg:en": "I'm going home in the train.",
-    "img": [{
-      "src": "/img/a6_w1/train.png",
-      "style": "width:33%"
-    }, {
-      "src": "/img/a6_w1/house.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/a6_w1/train.png", "/img/a6_w1/house.png"]
   }],
   "goal": {
     "msg:ko": "기차를 타고 이동하는 순서에 따라 블록을 조립해보자!",

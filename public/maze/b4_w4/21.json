@@ -42,16 +42,7 @@
   }],"goal":{
     "msg:ko": "가위바위보 블록을 가지고 와요",
     "msg:en": "Take the Rock, Scissors and Paper blocks.",
-    "img": [{
-      "src": "/img/blocks/rock.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/blocks/scissors.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/blocks/paper.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/blocks/rock.png","/img/blocks/scissors.png","/img/blocks/paper.png"]
   },
   "success": [{
     "msg:ko": "다음 권에서 만나요! 안녕!",

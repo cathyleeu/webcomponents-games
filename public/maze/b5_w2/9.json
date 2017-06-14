@@ -41,33 +41,15 @@
   },{
     "msg:ko": "튜브로 이동해 아이템 가져오기를 해보자",
     "msg:en": "Move to tube And then Use 'get item' Block",
-    "img": [{
-      "src": "/img/b5_w1/tube.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/blocks/bring.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w1/tube.png","/img/blocks/bring.png"]
   },{
     "msg:ko": "그리고나서 엄마에게 이동하고, 아이템 사용하기를 해보자",
     "msg:en": "then move my mother, Use 'use items' Block",
-    "img": [{
-      "src": "/img/b5_w2/mother_summer.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/blocks/use.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w2/mother_summer.png","/img/blocks/use.png"]
   }],
   "goal": {
     "msg:ko": "엄마에게 튜브를 가져가자!",
     "msg:en": "Take tube to my mother",
-    "img": [{
-      "src": "/img/b5_w1/tube.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/b5_w2/mother_summer.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w1/tube.png","/img/b5_w2/mother_summer.png"]
   }
 }

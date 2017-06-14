@@ -98,13 +98,7 @@
     "tutorial": [{
       "msg:ko": "동전을 2개 얻을 수 있어.",
       "msg:en": "You can get two coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 16,
@@ -112,13 +106,7 @@
     "tutorial": [{
       "msg:ko": "동전을 2개 얻을 수 있어.",
       "msg:en": "You can get two coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 16,
@@ -126,13 +114,7 @@
     "tutorial": [{
       "msg:ko": "동전을 2개 얻을 수 있어.",
       "msg:en": "You can get two coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 16,
@@ -140,13 +122,7 @@
     "tutorial": [{
       "msg:ko": "동전을 2개 얻을 수 있어.",
       "msg:en": "You can get two coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 16,
@@ -154,13 +130,7 @@
     "tutorial": [{
       "msg:ko": "동전을 2개 얻을 수 있어.",
       "msg:en": "You can get two coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 3,
@@ -168,16 +138,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 4,
@@ -185,16 +146,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 5,
@@ -202,16 +154,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 6,
@@ -219,16 +162,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 7,
@@ -236,16 +170,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 8,
@@ -253,16 +178,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 9,
@@ -270,16 +186,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 10,
@@ -287,16 +194,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 11,
@@ -304,16 +202,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 12,
@@ -321,16 +210,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 13,
@@ -338,16 +218,7 @@
     "tutorial": [{
       "msg:ko": "동전을 3개 얻을 수 있어.",
       "msg:en": "You can get three coins at once.",
-      "img": [{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b55/coin.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b55/coin.png","/img/b55/coin.png","/img/b55/coin.png"]
     }]
   },{
     "x": 4,
@@ -486,29 +357,11 @@
   "tutorial": [{
     "msg:ko": "옛날 물건들을 모아보아요. 쉬운 문제는 동전 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
     "msg:en": "Let's gather old things. An easy problem gives you one coin, a normal one gives you two and a hard one gives you three.",
-    "img": [{
-      "src": "/img/b55/cigar.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/b55/boys.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/b55/hat.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/b55/socks.png",
-      "style": "width:25%"
-    }]
+    "img": ["/img/b55/cigar.png","/img/b55/boys.png","/img/b55/hat.png","/img/b55/socks.png"]
   }],
   "goal": {
     "msg:ko": "동전 20개를 모으면 아빠께 가요.",
     "msg:en": "Go to father with more than 20 coins.",
-    "img": [{
-      "src": "/img/b55/coin.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/b55/father.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/b55/coin.png","/img/b55/father.png"]
   }
 }

@@ -43,49 +43,19 @@
   "tutorial": [{
     "msg:ko": "바구니에 갯벌 생물들을 넣어야 해요",
     "msg:en": "I'm going to take tidal creatures to basket",
-    "img": [{
-      "src": "/img/b5_w4/basket.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/b5_w4/crab.png",
-      "style" : "width:33%"
-    },{
-      "src": "/img/b5_w4/nakji.png",
-      "style" : "width:33%"
-    }]
+    "img": ["/img/b5_w4/basket.png","/img/b5_w4/crab.png","/img/b5_w4/nakji.png"]
   },{
     "msg:ko": "가져와야할 갯벌 생물들이 여러 개 있어.",
     "msg:en": "There are several tidal creatures.",
-    "img": [{
-      "src": "/img/b5_w4/crab.png",
-      "style" : "width:50%"
-    },{
-      "src": "/img/b5_w4/nakji.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w4/crab.png","/img/b5_w4/nakji.png"]
   },{
     "msg:ko": "'가져오기'와 사용하기 블록을 여러 번 사용해 봐!",
     "msg:en": "Try to use 'get and use items' block more than once!",
-    "img": [{
-      "src": "/img/blocks/bring.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/blocks/use.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/blocks/bring.png","/img/blocks/use.png"]
   }],
   "goal": {
     "msg:ko": "바구니에 갯벌 생물들을 넣어보자!",
     "msg:en": "Take tidal creatures to basket",
-    "img": [{
-      "src": "/img/b5_w4/basket.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/b5_w4/crab.png",
-      "style" : "width:33%"
-    },{
-      "src": "/img/b5_w4/nakji.png",
-      "style" : "width:33%"
-    }]
+    "img": ["/img/b5_w4/basket.png","/img/b5_w4/crab.png","/img/b5_w4/nakji.png"]
   }
 }

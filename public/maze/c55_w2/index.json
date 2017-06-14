@@ -27,13 +27,7 @@
     "tutorial": [{
       "msg:ko": "초대장 2개를 얻을 수 있어",
       "msg:en": "You can get two invitations at once",
-      "img":  [{
-        "src": "/img/c55_w2/invitation.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c55_w2/invitation.png",
-        "style": "width:33%"
-      }]
+      "img":  ["/img/c55_w2/invitation.png","/img/c55_w2/invitation.png"]
     }]
   },{
     "x": 18,
@@ -42,16 +36,7 @@
     "tutorial": [{
       "msg:ko": "초대장 3개를 얻을 수 있어",
       "msg:en": "You can get three invitations at once",
-      "img":  [{
-        "src": "/img/c55_w2/invitation.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c55_w2/invitation.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c55_w2/invitation.png",
-        "style": "width:33%"
-      }]
+      "img":  ["/img/c55_w2/invitation.png","/img/c55_w2/invitation.png","/img/c55_w2/invitation.png"]
     }]
   },{
     "x": 5,
@@ -128,13 +113,7 @@
   }, {
     "msg:ko": "초대장을 21개를 보낸 뒤, 집으로 이동하자!",
     "msg:en": "Send 21 invitations and, Go back to house",
-    "img":  [{
-      "src": "/img/c55_w2/invitation.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w2/house.png",
-      "style": "width:33%"
-    }]
+    "img":  ["/img/c55_w2/invitation.png","/img/c55_w2/house.png"]
         ,
     "x" : 11,
     "y" : 5
@@ -147,12 +126,6 @@
   "goal": {
     "msg:ko": "초대장을 21개를 보낸 뒤, 집으로 이동하자!",
     "msg:en": "Send 21 invitations and, Go back to house",
-    "img":  [{
-      "src": "/img/c55_w2/invitation.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w2/house.png",
-      "style": "width:33%"
-    }]
+    "img":  ["/img/c55_w2/invitation.png","/img/c55_w2/house.png"]
   }
 }

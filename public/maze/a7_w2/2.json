@@ -43,16 +43,7 @@
   "tutorial": [{
     "msg:ko": "블록을 조립하여 벼를 수확해 보아요",
     "msg:en": "Harvest rice, by assemling the blocks",
-    "img": [{
-      "src": "/img/a7_w2/rice9.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/a7_w2/rice_block.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/a7_w2/rice0.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/a7_w2/rice9.png","/img/a7_w2/rice_block.png","/img/a7_w2/rice0.png"]
   }],
   "success": [{
     "msg:ko": "성공! 벼를 모두 수확했어요",

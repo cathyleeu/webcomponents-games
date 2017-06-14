@@ -45,12 +45,6 @@
   "goal": {
     "msg:ko": "아이스박스에서 '가져오기' 블록을 사용하자.",
     "msg:en": "Let's use 'get items' block on the ice box",
-    "img": [{
-      "src": "/img/b5_w1/ice_box.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/blocks/bring.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w1/ice_box.png","/img/blocks/bring.png"]
   }
 }

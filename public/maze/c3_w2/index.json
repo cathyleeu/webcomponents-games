@@ -84,24 +84,12 @@
     "msg:ko": "꿀단지로 가면 문제를 풀 수 있어요. 문제 한 개를 풀면 꿀단지 하나를 얻을 수 있어요. 15개의 꿀단지를 모아서 집으로 가요.",
     "msg:en": "You can solve a problem at any honey jar. A problem gives you a honey jar. Take fifteen honey jars home.",
     "msg:cn": "你可以在任何一个蜜罐解决问题。一个问题给你一个蜜罐。把十五个蜜罐放在家里。",
-    "img": [{
-      "src":"/img/c3_w2/honey_pot.png",
-      "style":"width:50%"
-    },{
-      "src": "/img/c3_w1/house.png",
-      "style":"width:50%"
-    }]
+    "img": ["/img/c3_w2/honey_pot.png","/img/c3_w1/house.png"]
   }],
   "goal": {
     "msg:ko": "15개의 꿀단지를 모아서 집으로 가요.",
     "msg:en": "Take fifteen honey jars home.",
     "msg:cn": "把十五个蜜罐放在家里。",
-    "img": [{
-      "src":"/img/c3_w2/honey_pot.png",
-      "style":"width:50%"
-    },{
-      "src": "/img/c3_w1/house.png",
-      "style":"width:50%"
-    }]
+    "img": ["/img/c3_w2/honey_pot.png","/img/c3_w1/house.png"]
   }
 }

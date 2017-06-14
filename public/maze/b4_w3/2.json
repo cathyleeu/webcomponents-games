@@ -39,16 +39,7 @@
   "tutorial": [{
     "msg:ko": "주먹은 보자기로 이길 수 있어!",
     "msg:en": "Rock wins paper!",
-    "img": [{
-      "src": "/img/b4/rock.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/b4/(.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/b4/paper.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/b4/rock.png","/img/b4/(.png","/img/b4/paper.png"]
   }],"goal" : {
     "msg:ko": "엄마를 이기고 보물상자에 가보자.",
     "msg:en": "Win mommy to go to the chest!",

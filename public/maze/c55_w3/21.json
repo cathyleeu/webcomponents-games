@@ -23,23 +23,11 @@
   "tutorial": [{
     "msg:ko": "모스에게 가자",
     "msg:en": "Go to Mos",
-    "img": [{
-      "src": "/img/c55_w2/cos0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w3/mos.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/c55_w2/cos0.png","/img/c55_w3/mos.png"]
   }],
   "success": [{
     "msg:ko": "모스야, 네 선물이야!",
     "msg:en": "These are you presents, Mos!",
-    "img": [{
-      "src": "/img/c55_w3/gift.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w3/mos.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/c55_w3/gift.png","/img/c55_w3/mos.png"]
   }]
 }

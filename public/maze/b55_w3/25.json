@@ -40,15 +40,6 @@
   "tutorial": [{
     "msg:ko": "옛날 물건을 엄마께 가져다 드려요.",
     "msg:en": "Bring old things to mother.",
-    "img": [{
-      "src": "/img/blocks/bring.png",
-      "style" : "width:33%"
-    },{
-      "src": "/img/blocks/use.png",
-      "style" : "width:33%"
-    },{
-      "src": "/img/b55/mother.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/blocks/bring.png","/img/blocks/use.png","/img/b55/mother.png"]
   }]
 }

@@ -40,25 +40,10 @@
   "tutorial": [{
     "msg:ko": "가위는 주먹으로 이길 수 있어!",
     "msg:en": "Rock wins Scissors!",
-    "img": [{
-      "src": "/img/b4/rock.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/b4/).png",
-      "style": "width:33%"
-    },{
-      "src": "/img/b4/scissors.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/b4/rock.png","/img/b4/).png","/img/b4/scissors.png"]
     }],"goal" : {
       "msg:ko": "아빠를 이기고 보물상자에 가서 보물 두 개를 가져오자.",
       "msg:en": "Win daddy to go to the chest and bring two treasures",
-      "img": [{
-          "src": "/img/b4/chest2.png",
-          "style" : "width:50"
-        },{
-            "src": "/img/b4/chest2.png",
-            "style" : "width:50"
-        }]
+      "img": ["/img/b4/chest2.png","/img/b4/chest2.png"]
     }
 }

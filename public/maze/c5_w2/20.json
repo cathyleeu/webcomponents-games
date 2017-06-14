@@ -30,47 +30,11 @@
   "tutorial": [{
     "msg:ko": "토드는 어떤 꽃 위에 있을까요?",
     "msg:en": "Which flower is Tod sitting on?",
-    "img": [{
-      "src": "/img/c5/flowers/flower1.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/flowers/flower23.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/flowers/flower4.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/flowers/flower15.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/flowers/flower2.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/TutoToad4_256.png",
-      "style": "width:16.6%"
-    }]
+    "img": ["/img/c5/flowers/flower1.png", "/img/c5/flowers/flower23.png", "/img/c5/flowers/flower4.png", "/img/c5/flowers/flower15.png", "/img/c5/flowers/flower2.png", "/img/c5/TutoToad4_256.png"]
   }],
   "goal": {
     "msg:ko": "토드는 어떤 꽃 위에 있을까요?",
     "msg:en": "Which flower is Tod sitting on?",
-    "img": [{
-      "src": "/img/c5/flowers/flower1.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/flowers/flower23.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/flowers/flower4.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/flowers/flower15.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/flowers/flower2.png",
-      "style": "width:16.6%"
-    }, {
-      "src": "/img/c5/TutoToad4_256.png",
-      "style": "width:16.6%"
-    }]
+    "img": ["/img/c5/flowers/flower1.png", "/img/c5/flowers/flower23.png", "/img/c5/flowers/flower4.png", "/img/c5/flowers/flower15.png", "/img/c5/flowers/flower2.png", "/img/c5/TutoToad4_256.png"]
   }
 }

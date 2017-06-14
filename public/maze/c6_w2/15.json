@@ -53,12 +53,6 @@
   "tutorial": [{
     "msg:ko": "상자를 확인해서 상자안에서 무엇이 나왔는지 이야기해보아요.",
     "msg:en": "Check the box and see what's coming out.",
-    "img": [{
-      "src": "/img//blocks/check.png",
-      "style": "width:33%"
-    }, {
-      "src": "/img/c6/box_open.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img//blocks/check.png", "/img/c6/box_open.png"]
   }]
 }

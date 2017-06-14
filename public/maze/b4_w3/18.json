@@ -44,12 +44,6 @@
   "tutorial": [{
     "msg:ko": "엄마, 아빠를 이기고 보물 두 개를 가져오자.",
     "msg:en": "Win mommy and daddy to bring two treasures!",
-    "img": [{
-        "src": "/img/b4/chest2.png",
-        "style" : "width:50"
-      },{
-          "src": "/img/b4/chest2.png",
-          "style" : "width:50"
-      }]
+    "img": ["/img/b4/chest2.png","/img/b4/chest2.png"]
   }]
 }

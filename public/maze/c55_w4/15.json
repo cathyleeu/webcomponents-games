@@ -38,23 +38,11 @@
   "tutorial": [{
     "msg:ko": "주스 6잔을 상에 가져다주어요!",
     "msg:en": "Serve six cups of juice to the table",
-    "img":  [{
-      "src": "/img/c55_w4/juice.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/c55_w4/table0.png",
-      "style": "width:25%"
-    }]
+    "img":  ["/img/c55_w4/juice.png","/img/c55_w4/table0.png"]
   }],
   "goal": {
     "msg:ko": "주스 6잔을 상에 가져다주어요!",
     "msg:en": "Serve six cups of juice to the table",
-    "img":  [{
-      "src": "/img/c55_w4/juice.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/c55_w4/table0.png",
-      "style": "width:25%"
-    }]
+    "img":  ["/img/c55_w4/juice.png","/img/c55_w4/table0.png"]
   }
 }

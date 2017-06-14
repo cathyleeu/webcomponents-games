@@ -54,13 +54,7 @@
   "goal": {
     "msg:ko": "시작 버튼을 눌러서 장바구니에 먹거리를 담아요.",
     "msg:en": "Press the start button.",
-    "img": [{
-      "src": "/img/blocks/start.png",
-      "style" : "width:33%"
-    },{
-      "src": "/img/b55/bag.png",
-      "style" : "width:33%"
-    }]
+    "img": ["/img/blocks/start.png","/img/b55/bag.png"]
   },
   "success": [{
     "msg:ko": "다음 주에 만나요!",

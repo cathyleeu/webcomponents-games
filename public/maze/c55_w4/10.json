@@ -37,23 +37,11 @@
   "tutorial": [{
     "msg:ko": "키위를 가장 작은 숫자의 상에 가져다주어요!",
     "msg:en": "Pick kiwi and bring it to table with the smallest number",
-    "img":  [{
-      "src": "/img/c55_w4/fruit_ki.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/c4_w4/smallest_num.png",
-      "style": "width:25%"
-    }]
+    "img":  ["/img/c55_w4/fruit_ki.png","/img/c4_w4/smallest_num.png"]
   }],
   "goal": {
     "msg:ko": "키위를 가장 작은 숫자의 상에 가져다주자!",
     "msg:en": "Pick kiwi and bring it to table with the smallest number",
-    "img":  [{
-      "src": "/img/c55_w4/fruit_ki.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/c4_w4/smallest_num.png",
-      "style": "width:25%"
-    }]
+    "img":  ["/img/c55_w4/fruit_ki.png","/img/c4_w4/smallest_num.png"]
   }
 }

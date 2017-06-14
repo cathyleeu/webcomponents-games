@@ -40,36 +40,12 @@
   "tutorial": [{
     "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어. 빈칸에 들어갈 클로버 모양을 찾아가보자.",
     "msg:en": "Tod wants to complete the pattern.",
-    "img": [{
-      "src": "/img/c5/clovers/clover1.png",
-      "style": "width:25%"
-    }, {
-      "src": "/img/c5/clovers/clover0.png",
-      "style": "width:25%"
-    }, {
-      "src": "/img/c5/clovers/clover3.png",
-      "style": "width:25%"
-    }, {
-      "src": "/img/c5/clovers/clover2.png",
-      "style": "width:25%"
-    }]
+    "img": ["/img/c5/clovers/clover1.png", "/img/c5/clovers/clover0.png", "/img/c5/clovers/clover3.png", "/img/c5/clovers/clover2.png"]
   }],
   "goal": {
     "msg:ko": "빈칸에 들어갈 클로버 모양을 찾아가보자.",
     "msg:en": "Find the right shape of clover in the blank.",
-    "img": [{
-      "src": "/img/c5/clovers/clover1.png",
-      "style": "width:25%"
-    }, {
-      "src": "/img/c5/clovers/clover0.png",
-      "style": "width:25%"
-    }, {
-      "src": "/img/c5/clovers/clover3.png",
-      "style": "width:25%"
-    }, {
-      "src": "/img/c5/clovers/clover2.png",
-      "style": "width:25%"
-    }]
+    "img": ["/img/c5/clovers/clover1.png", "/img/c5/clovers/clover0.png", "/img/c5/clovers/clover3.png", "/img/c5/clovers/clover2.png"]
   },
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",

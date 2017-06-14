@@ -23,24 +23,12 @@
   "tutorial": [{
     "msg:ko": "엄마, 아빠, 배고파요 우리 이제 먹으러 가요!",
     "msg:en": "I'm hungry! Let's go to eat!",
-    "img": [{
-      "src": "/img/b55/cos0.png",
-      "style" : "width:33%"
-    },{
-      "src": "/img/b55/mkt1.png",
-      "style" : "width:33%"
-    }]
+    "img": ["/img/b55/cos0.png","/img/b55/mkt1.png"]
   }],
   "goal": {
     "msg:ko": "시작 버튼을 눌러서 시장으로 가요.",
     "msg:en": "Press the start button",
-    "img": [{
-      "src": "/img/blocks/start.png",
-      "style" : "width:33%"
-    },{
-      "src": "/img/b55/mkt1.png",
-      "style" : "width:33%"
-    }]
+    "img": ["/img/blocks/start.png","/img/b55/mkt1.png"]
   },
   "success": [{
     "msg:ko": "다음 주에 만나요!",

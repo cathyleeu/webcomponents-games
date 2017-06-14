@@ -24,13 +24,7 @@
   "tutorial": [{
     "msg:ko": "아빠에게 가자",
     "msg:en": "Go to Daddy",
-    "img": [{
-      "src": "/img/c55_w1/cos0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w1/father.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/c55_w1/cos0.png","/img/c55_w1/father.png"]
   }],
   "success": [{
     "msg:ko": "아빠! 집을 다 정리했어요~",

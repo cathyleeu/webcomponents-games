@@ -148,12 +148,6 @@
   "goal": {
     "msg:ko": "물고기를 20개 모아서 아빠에게 가자!",
     "msg:en": "Let's get twenty fishs and go to father!",
-    "img": [{
-      "src": "/img/b5_w3/fish.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/b5_w1/father_summer.png",
-      "style": "width:50%"
-    }]
+    "img": ["/img/b5_w3/fish.png","/img/b5_w1/father_summer.png"]
   }
 }

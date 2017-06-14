@@ -41,12 +41,6 @@
   "goal": {
     "msg:ko": "고무보트에서 '가져오기' 블록을 사용하자.",
     "msg:en": "Let's use 'get items' block on the Rubber boats",
-    "img": [{
-      "src": "/img/b5_w1/Rubber_boats.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/blocks/bring.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w1/Rubber_boats.png","/img/blocks/bring.png"]
   }
 }

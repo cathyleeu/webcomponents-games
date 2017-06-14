@@ -40,16 +40,7 @@
   "tutorial": [{
     "msg:ko": "가위바위보!",
     "msg:en": "Rock scissors paper!",
-"img": [{
-  "src": "/img/b4/rock.png",
-  "style": "width:33%"
-},{
-  "src": "/img/b4/scissors.png",
-  "style": "width:33%"
-},{
-  "src": "/img/b4/paper.png",
-  "style": "width:33%"
-}]
+"img": ["/img/b4/rock.png","/img/b4/scissors.png","/img/b4/paper.png"]
 }],"goal": {
   "msg:ko": "모두 이기고 보물 두 개를 가져오자.",
   "msg:en": "Win all to bring two treasures.",

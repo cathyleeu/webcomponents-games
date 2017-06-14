@@ -45,12 +45,6 @@
   "goal": {
     "msg:ko": "튜브에서 '가져오기' 블록을 사용하자.",
     "msg:en": "Let's use 'get items' block on the tube",
-    "img": [{
-      "src": "/img/b5_w1/tube.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/blocks/bring.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w1/tube.png","/img/blocks/bring.png"]
   }
 }

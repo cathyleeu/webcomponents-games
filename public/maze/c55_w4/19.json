@@ -24,13 +24,7 @@
   "tutorial": [{
     "msg:ko": "엄마에게 가자",
     "msg:en": "Go to mom",
-    "img": [{
-      "src": "/img/c55_w4/cos0.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c55_w4/mother.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/c55_w4/cos0.png","/img/c55_w4/mother.png"]
   }],
   "success": [{
     "msg:ko": "엄마! 음식을 다 대접했어요~",

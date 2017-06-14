@@ -41,13 +41,7 @@
   "goal": {
     "msg:ko": "구명조끼에서 '가져오기' 블록을 사용하자.",
     "msg:en": "Let's use 'get items' block on the life jacket",
-    "img": [{
-      "src": "/img/b5_w1/life_jacket.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/blocks/bring.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w1/life_jacket.png","/img/blocks/bring.png"]
   },
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",

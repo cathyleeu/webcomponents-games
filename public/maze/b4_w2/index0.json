@@ -176,12 +176,6 @@
   "goal": {
     "msg:ko": "보물 상자를 21개 모아서 아빠에게 가자!",
     "msg:en": "Let's get twenty chests and go to father!",
-    "img": [{
-      "src": "/img/b4/chest1.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/b4/father.png",
-      "style": "width:50%"
-    }]
+    "img": ["/img/b4/chest1.png","/img/b4/father.png"]
   }
 }

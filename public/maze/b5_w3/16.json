@@ -38,44 +38,20 @@
   },{
     "msg:ko": "아빠에게 낚시대를 가지고 가야해",
     "msg:en": "I'm going to take fishing rod to my father",
-    "img": [{
-      "src": "/img/b5_w1/father_summer.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/b5_w1/fishing_rod.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w1/father_summer.png","/img/b5_w1/fishing_rod.png"]
   },{
     "msg:ko": "가져와야할 낚시대가 여러 개 있어.",
     "msg:en": "There are several fishing rods.",
-    "img": [{
-      "src": "/img/b5_w1/fishing_rod.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/b5_w1/fishing_rod.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w1/fishing_rod.png","/img/b5_w1/fishing_rod.png"]
   },{
     "msg:ko": "'가져오기'와 사용하기 블록을 여러 번 사용해 봐!",
     "msg:en": "Try to use 'get and use items' block more than once!",
-    "img": [{
-      "src": "/img/blocks/bring.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/blocks/use.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/blocks/bring.png","/img/blocks/use.png"]
   }],
   "goal": {
     "msg:ko": "아빠에게 낚시대를 가져가자!",
     "msg:en": "Take fishing rods to my father",
-    "img": [{
-      "src": "/img/b5_w1/fishing_rod.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/b5_w1/father_summer.png",
-      "style" : "width:50%"
-    }]
+    "img": ["/img/b5_w1/fishing_rod.png","/img/b5_w1/father_summer.png"]
   },
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",

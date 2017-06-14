@@ -35,12 +35,6 @@
   "tutorial": [{
       "msg:ko": "엄마를 이기고 보물상자에 가서 보물 두 개를 가져오자.",
       "msg:en": "Win mommy to go to the chest and bring two treasures",
-      "img": [{
-          "src": "/img/b4/chest2.png",
-          "style" : "width:50"
-        },{
-            "src": "/img/b4/chest2.png",
-            "style" : "width:50"
-        }]
+      "img": ["/img/b4/chest2.png","/img/b4/chest2.png"]
     }]
 }

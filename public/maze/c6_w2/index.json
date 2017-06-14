@@ -58,13 +58,7 @@
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 16,
@@ -72,13 +66,7 @@
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 16,
@@ -86,13 +74,7 @@
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 16,
@@ -100,13 +82,7 @@
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 16,
@@ -114,13 +90,7 @@
     "tutorial": [{
       "msg:ko": "상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 3,
@@ -128,16 +98,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 4,
@@ -145,16 +106,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 5,
@@ -162,16 +114,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 6,
@@ -179,16 +122,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 7,
@@ -196,16 +130,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 9,
@@ -213,16 +138,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 10,
@@ -230,16 +146,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 11,
@@ -247,16 +154,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 12,
@@ -264,16 +162,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 13,
@@ -281,16 +170,7 @@
     "tutorial": [{
       "msg:ko": "상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three boxes at once.",
-      "img": [{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/c6/box.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/c6/box.png","/img/c6/box.png","/img/c6/box.png"]
     }]
   },{
     "x": 5,
@@ -364,23 +244,11 @@
   "tutorial": [{
     "msg:ko": "상자 안에 무엇이 들어있는지 확인해보아요! 쉬운 문제는 상자 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
     "msg:en": "Let's check the box! An easy problem gives you one box, a normal one gives you two and a hard one gives you three.",
-    "img": [{
-      "src": "/img/c6/bomi0.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/c6/box.png",
-      "style": "width:50%"
-    }]
+    "img": ["/img/c6/bomi0.png","/img/c6/box.png"]
   }],
   "goal": {
     "msg:ko": "상자 15개를 모으면 아기 고양이에게 가요.",
     "msg:en": "Go to kitties with more than 15 boxes.",
-    "img": [{
-      "src": "/img/c6/box.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/c6/kitties.png",
-      "style": "width:50%"
-    }]
+    "img": ["/img/c6/box.png","/img/c6/kitties.png"]
   }
 }

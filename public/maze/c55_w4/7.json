@@ -37,23 +37,11 @@
   "tutorial": [{
     "msg:ko": "수박을 가장 큰 숫자의 상에 가져다주어요!",
     "msg:en": "Pick watermelon and bring it to table with the larger number",
-    "img":  [{
-      "src": "/img/c55_w4/fruit_wa.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/c4_w4/bigger_num.png",
-      "style": "width:25%"
-    }]
+    "img":  ["/img/c55_w4/fruit_wa.png","/img/c4_w4/bigger_num.png"]
   }],
   "goal": {
     "msg:ko": "수박을 가장 큰 숫자의 상에 가져다주자!",
     "msg:en": "Pick watermelon and bring it to table with the larger number",
-    "img":  [{
-      "src": "/img/c55_w4/fruit_wa.png",
-      "style": "width:25%"
-    },{
-      "src": "/img/c4_w4/bigger_num.png",
-      "style": "width:25%"
-    }]
+    "img":  ["/img/c55_w4/fruit_wa.png","/img/c4_w4/bigger_num.png"]
   }
 }

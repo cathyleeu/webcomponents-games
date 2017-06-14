@@ -58,13 +58,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 16,
@@ -72,13 +66,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 16,
@@ -86,13 +74,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 16,
@@ -100,13 +82,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 16,
@@ -114,13 +90,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 2개 얻을 수 있어.",
       "msg:en": "You can get two chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:50%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 3,
@@ -128,16 +98,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 4,
@@ -145,16 +106,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 5,
@@ -162,16 +114,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 6,
@@ -179,16 +122,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 7,
@@ -196,16 +130,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 9,
@@ -213,16 +138,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 10,
@@ -230,16 +146,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 11,
@@ -247,16 +154,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 12,
@@ -264,16 +162,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 13,
@@ -281,16 +170,7 @@
     "tutorial": [{
       "msg:ko": "보물 상자를 3개 얻을 수 있어.",
       "msg:en": "You can get three chests at once.",
-      "img": [{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      },{
-        "src": "/img/b4/chest1.png",
-        "style": "width:33%"
-      }]
+      "img": ["/img/b4/chest1.png","/img/b4/chest1.png","/img/b4/chest1.png"]
     }]
   },{
     "x": 5,
@@ -384,23 +264,11 @@
   "tutorial": [{
     "msg:ko": "보물 찾기 놀이를 해요! 쉬운 문제는 보물 상자 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
     "msg:en": "Let's play treasure hunt! An easy problem gives you one chest, a normal one gives you two and a hard one gives you three.",
-    "img": [{
-      "src": "/img/b4/cos0.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/b4/chest1.png",
-      "style": "width:50%"
-    }]
+    "img": ["/img/b4/cos0.png","/img/b4/chest1.png"]
   }],
   "goal": {
     "msg:ko": "보물 상자를 21개 모아서 아빠에게 가자!",
     "msg:en": "Let's get twenty chests and go to father!",
-    "img": [{
-      "src": "/img/b4/chest1.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/b4/father.png",
-      "style": "width:50%"
-    }]
+    "img": ["/img/b4/chest1.png","/img/b4/father.png"]
   }
 }

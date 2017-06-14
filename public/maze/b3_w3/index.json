@@ -63,23 +63,11 @@
   "tutorial": [{
     "msg:ko": "가족사진으로 가면 디어와 할머니, 할아버지의 흔적을 찾는 문제를 풀 수 있어요. 문제 한 개를 풀면 가족사진 하나를 얻을 수 있어요. 열 개의 문제를 풀고 할머니, 할아버지께 가요.",
     "msg:en": "You can solve a trace-finding-problem with Deer at any family picture. A problem gives you a family picture. Solve ten problems and go to grandparents.",
-    "img": [{
-      "src":"/img/b3_w3/gran_picture.png",
-      "style":"width:50%"
-    },{
-      "src": "/img/b3_w3/gran.png",
-      "style":"width:50%"
-    }]
+    "img": ["/img/b3_w3/gran_picture.png","/img/b3_w3/gran.png"]
   }],
   "goal": {
     "msg:ko": "사슴 디어와 할머니, 할아버지의 흔적 열 개를 찾고 할머니, 할아버지께 가자.",
     "msg:en": "Let's find her grandparents' traces ten-times and go to grandparents.",
-    "img": [{
-      "src":"/img/b3_w3/gran_picture.png",
-      "style":"width:50%"
-    },{
-      "src": "/img/b3_w3/gran.png",
-      "style":"width:50%"
-    }]
+    "img": ["/img/b3_w3/gran_picture.png","/img/b3_w3/gran.png"]
   }
 }

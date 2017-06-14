@@ -24,13 +24,7 @@
   },{
     "msg:ko": "→ 버튼을 눌러 집으로 이동하여 '코스네 가족'을 시작해보아요.",
     "msg:en": "Press → button to go home and complete 'Cos' Family' stage.",
-    "img": [{
-      "src": "/img/kidsblocks/mRight.png",
-      "style": "width:50%"
-    },{
-      "src": "/img/c3_w1/house.png",
-      "style": "width:50%"
-    }]
+    "img": ["/img/kidsblocks/mRight.png","/img/c3_w1/house.png"]
   }],
   "goal": {
     "msg:ko": "오른쪽 집으로 이동해요",

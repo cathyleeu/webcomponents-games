@@ -40,16 +40,7 @@
   "goal": {
     "msg:ko": "선물을 라나에게 가져다 주어요.",
     "msg:en": "Give Lana my present.",
-    "img": [{
-      "src": "/img/c5/TutoToad4_256.png",
-      "style": "width:33%"
-    },{
-      "src": "/img/c5/gift0.png",
-      "style": "width:33%"
-    }, {
-      "src": "/img/c5/lana.png",
-      "style": "width:33%"
-    }]
+    "img": ["/img/c5/TutoToad4_256.png", "/img/c5/gift0.png", "/img/c5/lana.png"]
   },
   "success": [{
     "msg:ko": "라나와 토드는 짝꿍이 되었어요. 키즈씽킹 친구들 고마워요.",

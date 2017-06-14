@@ -84,23 +84,11 @@
   "tutorial": [{
     "msg:ko": "꿀과자로 가면 가족에게 과자를 주는 문제를 풀 수 있어요. 문제 한 개를 풀면 꿀과자 하나를 얻을 수 있어요. 15개의 꿀과자를 모아서 집으로 가요.",
     "msg:en": "You can solve a cookie-sharing-problem at any cookie. A problem gives you a cookie. Get fifteen cookies and go home.",
-    "img": [{
-      "src":"/img/c3_w4/cookie.png",
-      "style":"width:50%"
-    },{
-      "src": "/img/c3_w1/house.png",
-      "style":"width:50%"
-    }]
+    "img": ["/img/c3_w4/cookie.png","/img/c3_w1/house.png"]
   }],
   "goal": {
     "msg:ko": "15개의 꿀과자를 모아서 집으로 가요.",
     "msg:en": "Get fifteen cookies and go home.",
-    "img": [{
-      "src":"/img/c3_w4/cookie.png",
-      "style":"width:50%"
-    },{
-      "src": "/img/c3_w1/house.png",
-      "style":"width:50%"
-    }]
+    "img": ["/img/c3_w4/cookie.png","/img/c3_w1/house.png"]
   }
 }
