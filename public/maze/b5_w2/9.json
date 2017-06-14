@@ -50,7 +50,7 @@
     }]
   },{
     "msg:ko": "그리고나서 엄마에게 이동하고, 아이템 사용하기를 해보자",
-    "msg:en": "then move my mother, Use 'use item' Block",
+    "msg:en": "then move my mother, Use 'use items' Block",
     "img": [{
       "src": "/img/b5_w2/mother_summer.png",
       "style": "width:50%"

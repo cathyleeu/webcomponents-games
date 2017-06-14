@@ -400,7 +400,7 @@
   }],
   "goal": {
     "msg:ko": "연꽃을 30개 모아 토드에게 가요.",
-    "msg:en": "Let's go to Tode with 30 lotus flowers.",
+    "msg:en": "Let's go to Tod with 30 lotus flowers.",
     "img":  [{
       "src": "/img/c5/lotus_flower.png",
       "style": "width:33%"

@@ -40,7 +40,7 @@
 
 "tutorial": [{
     "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어. 빈칸에 들어갈 별 모양을 찾아가보자.",
-    "msg:en": "Tode want to play the pattern problem. Find the shape of star in the blank.",
+    "msg:en": "Tod want to play the pattern problem. Find the shape of star in the blank.",
     "img": [{
       "src": "/img/c5/stars/star4.png",
       "style": "width:20%"

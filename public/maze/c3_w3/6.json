@@ -40,7 +40,7 @@
     "img": "/img/c3_w2/honey_pot.png"
   },{
     "msg:ko": "그리고나서 집으로 이동하고, 아이템 사용하기를 해보자",
-    "msg:en": "then move my house, Use 'use item' Block",
+    "msg:en": "then move my house, Use 'use items' Block",
     "img": "/img/c3_w1/house.png"
   }],
   "goal": {

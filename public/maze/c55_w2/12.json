@@ -27,12 +27,12 @@
   }],
   "tutorial": [{
     "msg:ko": "토드와 라나에게 초대장을 주러 가자!",
-    "msg:en": "Let's go to tode and lana for invitation",
+    "msg:en": "Let's go to Tod and lana for invitation",
     "img": "/img/c55_w2/todelana.png"
   }],
   "goal": {
     "msg:ko": "토드와 라나에게 초대장을 주러 가자!",
-    "msg:en": "Let's go to tode and lana for invitation",
+    "msg:en": "Let's go to Tod and lana for invitation",
     "img": "/img/c55_w2/todelana.png"
   }
 }
