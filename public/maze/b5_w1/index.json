@@ -147,7 +147,7 @@
   }],
   "goal": {
     "msg:ko": "아이스 박스를 20개 모아서 아빠에게 가자!",
-    "msg:en": "Let's get twenty ice boxs and go to father!",
+    "msg:en": "Let's get twenty ice boxes and go to father!",
     "img": ["/img/b5_w1/ice_box.png","/img/b5_w1/father_summer.png"]
   }
 }
