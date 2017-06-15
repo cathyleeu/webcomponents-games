@@ -220,8 +220,8 @@ function getBook(classObj) {
   if(school == "E00076-K1" || school == "A00072-K9") {
     book = [1, 2];
   }
-  // 부산지사 동성어학원
-  if(school == "A00066-K2") {
+  // 부산지사 동성어학원, 영업부 일산지사 홍익유치원
+  if(school == "A00066-K2" || school == "C00149-K1") {
     book = [2, 3];
   }
   // 인천지사 유원유치원
