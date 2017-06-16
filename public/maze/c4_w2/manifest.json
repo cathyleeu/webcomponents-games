@@ -36,6 +36,8 @@
   {"id": "sale", "src": "/img/c4_w2/sale.png", "obstacle": true},
   {"id": "walls", "src": "/img/c4_w2/walls.png", "obstacle": true},
 
+  {"id": "cart", "src": "/img/c4_w2/cart.png"},
+
   {"tile": "a", "id": "fruit_ap", "src": "/img/c4_w2/fruit_ap.png", "obstacle": false},
   {"tile": "b", "id": "fruit_ch", "src": "/img/c4_w2/fruit_ch.png", "obstacle": false},
   {"tile": "c", "id": "fruit_ki", "src": "/img/c4_w2/fruit_ki.png", "obstacle": false},

@@ -5,10 +5,10 @@
   "toolbox": [],
   "map": [
     "##.###############ssss",
-    "..#..e#.%...n...%.tsss",
-    "..#..e.%#%..n..%.%.#ss",
-    ".t.r..%#t#%..t%...%#ss.",
-    "..#..t#%.%#hh#.#.t#sss",
+    "..#..e#.%..#nn..%.tsss",
+    "..#..e.%#%.#...%.%.#ss",
+    ".t.r..%#t#%#.t%...%#ss.",
+    "..#..t#%.%#h.h.#.t#sss",
     "..#..#%.%.%.....#.ssss",
     "##.##############sssss"
   ],
@@ -81,6 +81,15 @@
     "y": 3,
     "link": "b5_w3/5"
   },{
+    "img":"fish",
+    "x": 11,
+    "y": 3,
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
     "x": 14,
     "y": 3,
     "link": "b5_w3/6"
@@ -126,7 +135,7 @@
     "y": 5,
     "obstacle": false,
     "link": "b5_w3/16",
-    "min_score": 20
+    "min_score": 15
   }],
 
   "tutorial": [{
@@ -134,8 +143,8 @@
     "msg:en": "Let's collect the things for fishing!",
     "img": "/img/b5_w1/cos_summer0.png"
   }, {
-    "msg:ko": "물고기 20개를 모으면 아빠에게 가요.",
-    "msg:en": "Go to dad with more than 20 fishs.",
+    "msg:ko": "물고기 15개를 모으면 아빠에게 가요.",
+    "msg:en": "Go to dad with more than 15 fishs.",
     "img": "/img/b5_w1/father_summer.png",
     "x" : 20,
     "y" : 5
@@ -146,8 +155,8 @@
     "y" : 3
   }],
   "goal": {
-    "msg:ko": "물고기를 20개 모아서 아빠에게 가자!",
-    "msg:en": "Let's get twenty fishs and go to father!",
+    "msg:ko": "물고기를 15개 모아서 아빠에게 가자!",
+    "msg:en": "Let's get 15 fishs and go to father!",
     "img": ["/img/b5_w3/fish.png","/img/b5_w1/father_summer.png"]
   }
 }

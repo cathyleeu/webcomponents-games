@@ -5,10 +5,10 @@
   "toolbox": [],
   "map": [
     "##.##################.",
-    "..#..e#.%...n...%....#",
-    "..#..e.%#%..n..%.%...#",
-    ".#.r..%###%..#%...%..#.",
-    "..#..##%.%#hh#.#.#####",
+    "..#..e#.%..#nn..%....#",
+    "..#..e.%#%.#...%.%...#",
+    ".#.r..%###%#..%...%..#.",
+    "..#..##%.%#hh..#.#####",
     "..#..#%.%.%.....#....#",
     "##.###################"
   ],
@@ -81,6 +81,15 @@
     "y": 3,
     "link": "b5_w1/5"
   },{
+    "img":"ice_box",
+    "x": 11,
+    "y": 3,
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
     "x": 14,
     "y": 3,
     "link": "b5_w1/6"
@@ -126,7 +135,7 @@
     "y": 5,
     "obstacle": false,
     "link": "b5_w1/16",
-    "min_score": 20
+    "min_score": 15
   }],
 
   "tutorial": [{
@@ -134,8 +143,8 @@
     "msg:en": "Let's collect the things for sea travel!",
     "img": "/img/b5_w1/cos_summer0.png"
   }, {
-    "msg:ko": "아이스 박스 20개를 모으면 아빠에게 가요.",
-    "msg:en": "Go to dad with more than 20 ice boxes.",
+    "msg:ko": "아이스 박스 15개를 모으면 아빠에게 가요.",
+    "msg:en": "Go to dad with more than 15 ice boxes.",
     "img": "/img/b5_w1/father_summer.png",
     "x" : 20,
     "y" : 5
@@ -146,8 +155,8 @@
     "y" : 3
   }],
   "goal": {
-    "msg:ko": "아이스 박스를 20개 모아서 아빠에게 가자!",
-    "msg:en": "Let's get twenty ice boxes and go to father!",
+    "msg:ko": "아이스 박스를 15개 모아서 아빠에게 가자!",
+    "msg:en": "Let's get 15 ice boxes and go to father!",
     "img": ["/img/b5_w1/ice_box.png","/img/b5_w1/father_summer.png"]
   }
 }

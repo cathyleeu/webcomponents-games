@@ -33,6 +33,8 @@
   {"id": "house", "src": "/img/c4_w4/house_blank.png", "obstacle": false},
   {"id": "mother", "src": "/img/c4_w3/mother.png", "obstacle": false},
 
+  {"id": "house_blank", "src": "/img/c4_w4/house_blank.png"},
+
   {"id": "tree1", "src": "/img/c4_w4/tree1.png", "obstacle": true},
   {"id": "tree2", "src": "/img/c4_w4/tree2.png", "obstacle": true},
   {"id": "tree3", "src": "/img/c4_w4/tree3.png", "obstacle": true},
