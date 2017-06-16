@@ -5,10 +5,10 @@
   "toolbox": [],
   "map": [
     "#####EEEEEE#######.",
-    "..r..%%%%%%....%n.#",
-    ".##############%n.#",
+    "..r..%%%%%%.#..%n.#",
+    ".#############.%n.#",
     "##...#########.%n.#",
-    "..#..........#.%n.#",
+    "..#............%n.#",
     "##.......%%%%..%n.#",
     "#########HHHH######."
   ],
@@ -205,6 +205,15 @@
     "y": 1,
     "link": "c4_w2/6"
   },{
+    "img":"cart",
+    "x": 12,
+    "y": 1,
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
     "x": 15,
     "y": 1,
     "link": "c4_w2/7"
@@ -250,7 +259,7 @@
     "y": 4,
     "obstacle": false,
     "link": "c4_w3/index",
-    "min_score": 20
+    "min_score": 15
   }],
 
   "tutorial": [{
@@ -259,8 +268,8 @@
     "img": "/img/c4_w2/cart.png"
   }],
   "goal": {
-    "msg:ko": "카트를 21개 모아서 집으로 가자!",
-    "msg:en": "Let's get twenty carts and go back home.",
+    "msg:ko": "카트를 15개 모아서 집으로 가자!",
+    "msg:en": "Let's get 15 carts and go back home.",
     "img": ["/img/c4_w2/cart.png","/img/c4_w2/house.png"]
   }
 }

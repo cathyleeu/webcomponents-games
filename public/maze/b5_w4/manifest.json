@@ -28,6 +28,8 @@
   {"id": "hole1", "src": "/img/b5_w4/hole1.png", "obstacle": true},
   {"id": "hole2", "src": "/img/b5_w4/hole2.png", "obstacle": true},
 
+  {"id": "basket", "src": "/img/b5_w4/basket.png"},
+
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},

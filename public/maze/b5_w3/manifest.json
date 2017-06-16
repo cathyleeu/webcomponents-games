@@ -38,6 +38,7 @@
 
   {"id": "fishing_rod", "src": "/img/b5_w1/fishing_rod.png"},
   {"id": "lure", "src": "/img/b5_w3/lure.png"},
+  {"id": "fish", "src": "/img/b5_w3/fish.png"},
 
   {"id": "father_summer", "src": "/img/b5_w1/father_summer.png"}
 ]

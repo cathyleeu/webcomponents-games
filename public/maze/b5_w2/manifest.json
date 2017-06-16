@@ -41,6 +41,7 @@
 
   {"id": "life_jacket", "src": "/img/b5_w1/life_jacket.png"},
   {"id": "tube", "src": "/img/b5_w1/tube.png"},
+  {"id": "star", "src": "/img/b5_w2/star.png"},
 
   {"id": "mother_summer", "src": "/img/b5_w2/mother_summer.png"}
 ]

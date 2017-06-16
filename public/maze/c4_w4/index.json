@@ -5,8 +5,8 @@
   "toolbox": [],
   "map": [
     "#####EEEEE########.",
-    "..r..%%%%%.....%n.#",
-    ".##############%n.#",
+    "..r..%%%%%.#...%n.#",
+    ".#############.%n.#",
     "##...#########.%n.#",
     "..#............%n.#",
     "##.......%%%%%.%n.#",
@@ -161,6 +161,15 @@
     "y": 1,
     "link": "c4_w4/5"
   },{
+    "img":"house_blank",
+    "x": 11,
+    "y": 1,
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
     "x": 15,
     "y": 1,
     "link": "c4_w4/6"
@@ -206,7 +215,7 @@
     "y": 4,
     "obstacle": false,
     "link": "c4_w4/index",
-    "min_score": 21
+    "min_score": 15
   }],
   "tutorial": [{
     "msg:ko": "집을 찾아가요! 쉬운 문제는 집 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
@@ -214,8 +223,8 @@
     "img": "/img/c4_w4/house_blank.png"
   }],
   "goal": {
-    "msg:ko": "집을 21개 모아서 엄마께 가요.",
-    "msg:en": "Let's get twenty houses and go to mother.",
+    "msg:ko": "집을 15개 모아서 엄마께 가요.",
+    "msg:en": "Let's get 15 houses and go to mother.",
     "img": ["/img/c4_w4/house_blank.png","/img/c4_w4/mother.png"]
   }
 }
