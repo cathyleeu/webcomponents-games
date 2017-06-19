@@ -1,0 +1,35 @@
+{
+
+  "tile_size":256,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "#.....I.#",
+    "#.t.#...#",
+    "#.#.....#",
+    "#....%#.#",
+    "#.u..#..#",
+    "#...i#.o#",
+    "#.B#....#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 4,
+    "img":"red2"
+  }],
+  "tutorial": [{
+    "msg:ko": "'?'에 들어갈 색으로 이동해요'",
+    "msg:en": "Let's find color to fill the ? space and move there",
+    "img": ["/img/b7_w3/red1.png","/img/b7_w3/red3.png","/img/b7_w3/red4.png","/img/b7_w2/question.png"]
+  }]
+}

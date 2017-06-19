@@ -1,0 +1,64 @@
+[
+  {"book": "B7", "title": "1주차 : 사계절 알아보기"},
+  {"id": "bg1", "src": "/img/b7_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b7_w1/bg2.png"},
+
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/b7_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b7_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b7_w1/korea.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "spring", "src": "/img/b7_w1/spring.png"},
+  {"id": "summer", "src": "/img/b7_w1/summer.png"},
+  {"id": "fall", "src": "/img/b7_w1/fall.png"},
+  {"id": "winter", "src": "/img/b7_w1/winter.png"},
+
+  {"id": "father", "src": "/img/b7_w1/father.png"},
+  {"id": "table0", "src": "/img/b7_w1/table0.png"},
+
+  {"id": "korea", "src": "/img/b7_w1/korea.png"},
+
+  {"id": "wall", "src": "/img/b7_w1/wall.png","obstacle": true},
+
+  {"tile": "a", "id": "spring0", "src": "/img/b7_w1/spring0.png"},
+  {"tile": "b", "id": "spring1", "src": "/img/b7_w1/spring1.png"},
+  {"tile": "c", "id": "spring2", "src": "/img/b7_w1/spring2.png"},
+  {"tile": "f", "id": "spring3", "src": "/img/b7_w1/spring3.png"},
+
+  {"tile": "g", "id": "summer0", "src": "/img/b7_w1/summer0.png"},
+  {"tile": "i", "id": "summer1", "src": "/img/b7_w1/summer1.png"},
+  {"tile": "j", "id": "summer2", "src": "/img/b7_w1/summer2.png"},
+  {"tile": "k", "id": "summer3", "src": "/img/b7_w1/summer3.png"},
+
+  {"tile": "m", "id": "fall0", "src": "/img/b7_w1/fall0.png"},
+  {"tile": "o", "id": "fall1", "src": "/img/b7_w1/fall1.png"},
+  {"tile": "p", "id": "fall2", "src": "/img/b7_w1/fall2.png"},
+  {"tile": "q", "id": "fall3", "src": "/img/b7_w1/fall3.png"},
+
+  {"tile": "s", "id": "winter0", "src": "/img/b7_w1/winter0.png"},
+  {"tile": "t", "id": "winter1", "src": "/img/b7_w1/winter1.png"},
+  {"tile": "v", "id": "winter2", "src": "/img/b7_w1/winter2.png"},
+  {"tile": "w", "id": "winter3", "src": "/img/b7_w1/winter3.png"}
+]

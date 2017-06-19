@@ -1,0 +1,35 @@
+{
+
+  "tile_size":256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "#....%..#",
+    "#..#..#.#",
+    "#..r....#",
+    "#.##....#",
+    "#.#...G.#",
+    "#...#...#",
+    "#.#.#...#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 1,
+    "img":"soap4"
+  }],
+  "tutorial": [{
+    "msg:ko": "'?'에 들어갈 순서에 맞는 크기의 이미지로 이동해요'",
+    "msg:en": "Let's find order of size to fill the ? space and move there",
+    "img": ["/img/b7_w4/soap1.png","/img/b7_w4/soap2.png","/img/b7_w4/soap3.png","/img/b7_w2/question.png"]
+  }]
+}

@@ -1,0 +1,60 @@
+{
+  "tile_size": 256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    ".#######.",
+    "#.###..##",
+    "#r..#...#",
+    "#.#.#.###",
+    "#)###...#",
+    "#))).%.##",
+    "#.#.#..##",
+    "#....#.##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 5,
+    "img":"table0",
+    "useItem": 4
+  },{
+    "x": 1,
+    "y": 4,
+    "img":"spring0",
+    "itemImg":"spring0",
+    "disappear":true
+  },{
+    "x": 1,
+    "y": 5,
+    "img":"summer0",
+    "itemImg":"summer0",
+    "disappear":true
+  },{
+    "x": 2,
+    "y": 5,
+    "img":"fall0",
+    "itemImg":"fall0",
+    "disappear":true
+  },{
+    "x": 3,
+    "y": 5,
+    "img":"winter0",
+    "itemImg":"winter0",
+    "disappear":true
+  }],
+  "tutorial": [{
+    "msg:ko": "봄,여름,가을,겨울을 나타내는 이미지를 4개를 탁자에 가져가자",
+    "msg:en": "Let'bring four seasons images to the table!",
+    "img": ["/img/b7_w1/spring.png","/img/b7_w1/summer.png","/img/b7_w1/fall.png","/img/b7_w1/winter.png","/img/b7_w1/table0.png"]
+  }]
+}

@@ -1,0 +1,73 @@
+[
+  {"book": "b7", "title": "2주차 : 같은 모양을 찾아보기"},
+  {"id": "bg1", "src": "/img/b7_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b7_w1/bg2.png"},
+
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/b7_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b7_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b7_w2/book.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "table0", "src": "/img/b7_w1/table0.png"},
+  {"id": "books", "src": "/img/b7_w2/books.png"},
+
+  {"id": "book", "src": "/img/b7_w2/book.png"},
+
+  {"id": "wall", "src": "/img/b7_w1/wall.png","obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"tile": "z", "id": "question", "src": "/img/b7_w2/question.png", "obstacle": false},
+
+  {"tile": "a", "id": "circle1", "src": "/img/b7_w2/circle1.png"},
+  {"tile": "b", "id": "circle2", "src": "/img/b7_w2/circle2.png"},
+  {"tile": "c", "id": "circle3", "src": "/img/b7_w2/circle3.png"},
+  {"tile": "f", "id": "circle4", "src": "/img/b7_w2/circle4.png"},
+
+  {"tile": "g", "id": "square1", "src": "/img/b7_w2/square1.png"},
+  {"tile": "i", "id": "square2", "src": "/img/b7_w2/square2.png"},
+  {"tile": "j", "id": "square3", "src": "/img/b7_w2/square3.png"},
+  {"tile": "k", "id": "square4", "src": "/img/b7_w2/square4.png"},
+
+  {"tile": "m", "id": "triangle1", "src": "/img/b7_w2/triangle1.png"},
+  {"tile": "o", "id": "triangle2", "src": "/img/b7_w2/triangle2.png"},
+  {"tile": "p", "id": "triangle3", "src": "/img/b7_w2/triangle3.png"},
+  {"tile": "q", "id": "triangle4", "src": "/img/b7_w2/triangle4.png"},
+
+  {"tile": "s", "id": "star1", "src": "/img/b7_w2/star1.png"},
+  {"tile": "t", "id": "star2", "src": "/img/b7_w2/star2.png"},
+  {"tile": "v", "id": "star3", "src": "/img/b7_w2/star3.png"},
+  {"tile": "w", "id": "star4", "src": "/img/b7_w2/star4.png"},
+
+  {"tile": "A", "id": "sun1", "src": "/img/b7_w2/sun1.png"},
+  {"tile": "B", "id": "sun2", "src": "/img/b7_w2/sun2.png"},
+  {"tile": "C", "id": "sun3", "src": "/img/b7_w2/sun3.png"},
+  {"tile": "F", "id": "sun4", "src": "/img/b7_w2/sun4.png"},
+
+  {"tile": "G", "id": "moon1", "src": "/img/b7_w2/moon1.png"},
+  {"tile": "I", "id": "moon2", "src": "/img/b7_w2/moon2.png"},
+  {"tile": "J", "id": "moon3", "src": "/img/b7_w2/moon3.png"},
+  {"tile": "K", "id": "moon4", "src": "/img/b7_w2/moon4.png"}
+
+
+]

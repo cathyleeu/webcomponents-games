@@ -1,0 +1,240 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "#####eeeee########.",
+    "..r..%%%%%.#...%n.#",
+    ".############..%n.#",
+    "##...########..%n.#",
+    "..#............%n.#",
+    "##.......%%%%%.%n.#",
+    "#########hhhhh#####."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "쿠키을 1개 얻을 수 있어.",
+      "msg:en": "You can get one book at once.",
+      "img": "/img/b7_w4/cookie.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "쿠키을 1개 얻을 수 있어.",
+      "msg:en": "You can get one cookie at once.",
+      "img": "/img/b7_w4/cookie.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "쿠키을 1개 얻을 수 있어.",
+      "msg:en": "You can get one cookie at once.",
+      "img": "/img/b7_w4/cookie.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "쿠키을 1개 얻을 수 있어.",
+      "msg:en": "You can get one cookie at once.",
+      "img": "/img/b7_w4/cookie.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "쿠키을 1개 얻을 수 있어.",
+      "msg:en": "You can get one cookie at once.",
+      "img": "/img/b7_w4/cookie.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "쿠키을 2개 얻을 수 있어.",
+      "msg:en": "You can get two cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "쿠키을 2개 얻을 수 있어.",
+      "msg:en": "You can get two cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "쿠키을 2개 얻을 수 있어.",
+      "msg:en": "You can get two cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "쿠키을 2개 얻을 수 있어.",
+      "msg:en": "You can get two cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "쿠키을 2개 얻을 수 있어.",
+      "msg:en": "You can get two cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "쿠키을 3개 얻을 수 있어.",
+      "msg:en": "You can get three cookies at once.",
+      "img": [{
+        "src": "/img/b7_w4/cookie.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/b7_w4/cookie.png",
+        "style": "width:33%"
+      },{
+        "src": "/img/b7_w4/cookie.png",
+        "style": "width:33%"
+      }]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "쿠키을 3개 얻을 수 있어.",
+      "msg:en": "You can get three cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "쿠키을 3개 얻을 수 있어.",
+      "msg:en": "You can get three cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "쿠키을 3개 얻을 수 있어.",
+      "msg:en": "You can get three cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "쿠키을 3개 얻을 수 있어.",
+      "msg:en": "You can get three cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "쿠키을 3개 얻을 수 있어.",
+      "msg:en": "You can get three cookies at once.",
+      "img": ["/img/b7_w4/cookie.png","/img/b7_w4/cookie.png","/img/b7_w4/cookie.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "b7_w4/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b7_w4/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b7_w4/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b7_w4/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b7_w4/5"
+  },{
+    "img":"cookie",
+    "x": 11,
+    "y": 1,
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b7_w4/6"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b7_w4/7"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b7_w4/8"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b7_w4/9"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "b7_w4/10"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "b7_w4/11"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b7_w4/12"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "b7_w4/13"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b7_w4/14"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b7_w4/15"
+  },{
+    "img":"mother",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "b7_w4/16",
+    "min_score": 20
+  }],
+
+  "tutorial": [{
+    "msg:ko": "크기의 순서에 맞도록 찾아보아요! 쉬운 문제는 쿠키 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's find order of size! An easy problem gives you one cookie, a normal one gives you two and a hard one gives you three.",
+    "img" : ["/img/b7_w4/bowl1.png","/img/b7_w4/bowl2.png","/img/b7_w4/bowl3.png","/img/b7_w4/bowl4.png"]
+  }],
+  "goal": {
+    "msg:ko": "쿠키를 20개 모아 엄마에게 가요.",
+    "msg:en": "Let's go to Cos's mother with 20 cookies.",
+    "img":  ["/img/b7_w4/cookie.png","/img/b7_w4/mother.png"]
+  }
+}
