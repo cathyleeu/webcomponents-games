@@ -17,9 +17,11 @@
 
   {"id": "character", "src": "/img/c6/SpriteBomi_256.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c6/bomi0.png", "size": 256},
-  {"tile": "b", "id": "food", "src": "/img/c6/box.png"},
+  {"id": "food", "src": "/img/c6/trf_lights_map.png"},
   {"id": "chest", "src": "/img/c6/box.png"},
   {"id": "chestopen", "src": "/img/c6/box_open.png"},
+
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
@@ -51,6 +53,7 @@
 
   {"id": "trf_green", "src": "/img/c6/trf_green.png"},
   {"id": "trf_red", "src": "/img/c6/trf_red.png"},
+  {"tile": "t", "id": "trf_lights", "src": "/img/c6/trf_lights_map.png", "wall": true},
   {"tile": "t", "id": "trf_lights", "src": "/img/c6/trf_lights.png", "wall": true},
   {"tile": "z", "id": "crosswalk_col", "src": "/img/c6/crosswalk_col.png", "wall": true},
   {"tile": "x", "id": "crosswalk_row", "src": "/img/c6/crosswalk_row.png", "wall": true},

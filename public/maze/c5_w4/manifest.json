@@ -20,11 +20,14 @@
   {"id": "food", "src": "/img/c5/gift0.png"},
   {"tile": "x", "id": "tode","src": "/img/c5/TutoToad4_256.png", "obstacle":false},
 
+
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"tile" : "X", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
 
   {"id": "log1", "src": "/img/b2_w1/Log1_256.png", "obstacle": true},
   {"id": "log2", "src": "/img/b2_w1/Log2_256.png", "obstacle": true},

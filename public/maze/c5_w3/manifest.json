@@ -20,6 +20,8 @@
   {"id": "food", "src": "/img/c5/gift0.png"},
   {"tile": "x", "id": "tode","src": "/img/c5/TutoToad4_256.png", "obstacle": false},
 
+  {"tile": "X", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},

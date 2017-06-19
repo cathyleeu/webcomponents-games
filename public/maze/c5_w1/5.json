@@ -49,8 +49,8 @@
     "img": ["/img/c5/stars/star4.png", "/img/c5/stars/star0.png", "/img/c5/stars/star1.png", "/img/c5/stars/star2.png", "/img/c5/stars/star3.png"]
   },
   "success": [{
-    "msg:ko": "성공! 참 잘했어요~",
-    "msg:en": "Success! Good Job!",
+    "msg:ko": "벌써 다섯 문제나 풀었어요!",
+    "msg:en": "You've solved five problems already!",
     "img" : "/img/c5/stars/star5.png",
     "link": "c5_w1/6"
   }]

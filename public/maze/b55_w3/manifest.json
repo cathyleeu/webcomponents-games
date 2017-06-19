@@ -19,6 +19,8 @@
   {"id": "message", "src": "/img/b55/cos0.png", "size": 256},
   {"tile": "m", "id": "food", "src": "/img/b55/coin.png"},
 
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},

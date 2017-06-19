@@ -44,5 +44,10 @@
     "msg:ko": "안전용품을 가지고 자전거에서 사용해보아요.",
     "msg:en": "Bring the safety supplies to her bike.",
     "img": ["/img/c6/bike.png", "/img/c6/safety1.png"]
-  }
+  },
+  "success":[{
+    "msg:ko": "축하해요! 모든 문제를 다 풀었어요!",
+    "msg:en": "Congratulations! You solved all the problems!",
+    "link": "c6_w2/index"
+  }]
 }
