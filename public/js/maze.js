@@ -467,10 +467,12 @@ function handle_resize(e) {
   }
   Blockly.svgResize(kidscoding.workspace);
   // 늑대와여우 안드로이드에서 캔버스가 사라지는 문제를 해결하기 위함
-  $("#display").css({display:"none"});
   setTimeout(function() {
-    $("#display").css({display:"block"});
-  }, 1);
+    $("#display").css({display:"none"});
+    setTimeout(function() {
+      $("#display").css({display:"block"});
+    }, 1);
+  }, 100);
 };
 function addEvents() {
   if(window.name) {
@@ -756,6 +758,11 @@ function addEvents() {
     e.stopPropagation();
     FullScreen();
   })
+  // 캔버스 여러번 터치시 화면 확대 되는 현상 막음
+  $("#display").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
 }
 
 function FullScreen(el) {
