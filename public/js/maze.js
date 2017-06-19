@@ -471,7 +471,7 @@ function handle_resize(e) {
     $("#display").css({display:"none"});
     setTimeout(function() {
       $("#display").css({display:"block"});
-    }, 1);
+    }, 100);
   }, 100);
 };
 function addEvents() {
