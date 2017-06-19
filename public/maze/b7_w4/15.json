@@ -1,0 +1,41 @@
+{
+
+  "tile_size":256,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".###stv%.",
+    "#.s.###.#",
+    "#.....).#",
+    "##..#...#",
+    "##...r..#",
+    "#...#.###",
+    "#..#....#",
+    "#...##.##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 0,
+    "img":"question",
+    "useItem": true
+  },{
+    "x": 6,
+    "y": 2,
+    "img":"eraser4"
+  }],
+  "tutorial": [{
+    "msg:ko": "'?'에 들어갈 크기의 이미지를 가져와요'",
+    "msg:en": "Let's find order of size to fill the ? space and put it there",
+    "img": ["/img/b7_w2/question.png","/img/blocks/bring.png","/img/blocks/use.png"]
+  }]
+}

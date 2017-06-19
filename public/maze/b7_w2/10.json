@@ -1,0 +1,35 @@
+{
+
+  "tile_size":256,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "#.#.#...#",
+    "#..p#.j.#",
+    "##..#...#",
+    "##J..%..#",
+    "#...##.c#",
+    "#.r.....#",
+    "#...##C.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 4,
+    "img":"star3"
+  }],
+  "tutorial": [{
+    "msg:ko": "'?'에 들어갈 모양으로 이동해요'",
+    "msg:en": "Let's find shape to fill the ? space and move there",
+    "img": ["/img/b7_w2/star1.png","/img/b7_w2/star2.png","/img/b7_w2/star4.png","/img/b7_w2/question.png"]
+  }]
+}

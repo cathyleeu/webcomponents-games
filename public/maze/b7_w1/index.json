@@ -1,0 +1,203 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 256,
+  "toolbox": [],
+  "map": [
+    "####eeee##########.",
+    "..r.%%%%.#....%%n.#",
+    ".##.######....%%n.#",
+    "#############.%%n.#",
+    "..#...........%%n.#",
+    "##.......%%%%.....#",
+    "#########hhhh######."
+  ],
+  "extra": [{
+    "x": 4,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "1점을 얻을 수 있어.",
+      "msg:en": "You can get one point at once.",
+      "img": "/img/b7_w1/korea.png"
+    }]
+  },{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "1점을 얻을 수 있어.",
+      "msg:en": "You can get one point at once.",
+      "img": "/img/b7_w1/korea.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "1점을 얻을 수 있어.",
+      "msg:en": "You can get one point at once.",
+      "img": "/img/b7_w1/korea.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "1점을 얻을 수 있어.",
+      "msg:en": "You can get one point at once.",
+      "img": "/img/b7_w1/korea.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": ["/img/b7_w1/korea.png", "/img/b7_w1/korea.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": ["/img/b7_w1/korea.png", "/img/b7_w1/korea.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": ["/img/b7_w1/korea.png", "/img/b7_w1/korea.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": ["/img/b7_w1/korea.png", "/img/b7_w1/korea.png"]
+    }]
+  },{
+    "x": 3,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/b7_w1/korea.png", "/img/b7_w1/korea.png", "/img/b7_w1/korea.png"]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+    "img": ["/img/b7_w1/korea.png", "/img/b7_w1/korea.png", "/img/b7_w1/korea.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+    "img": ["/img/b7_w1/korea.png", "/img/b7_w1/korea.png", "/img/b7_w1/korea.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+    "img": ["/img/b7_w1/korea.png", "/img/b7_w1/korea.png", "/img/b7_w1/korea.png"]
+    }]
+  },{
+    "x": 4,
+    "y": 1,
+    "link": "b7_w1/1"
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "b7_w1/2"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b7_w1/3"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b7_w1/4"
+  },{
+    "img":"korea",
+    "x": 9,
+    "y": 1,
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "b7_w1/5"
+  },{
+    "x": 14,
+    "y": 2,
+    "link": "b7_w1/6"
+  },{
+    "x": 14,
+    "y": 3,
+    "link": "b7_w1/7"
+  },{
+    "x": 14,
+    "y": 4,
+    "link": "b7_w1/8"
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b7_w1/9"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b7_w1/10"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b7_w1/11"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b7_w1/12"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b7_w1/13"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "b7_w1/14"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b7_w1/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b7_w1/16"
+  },{
+    "img":"father",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "b7_w1/17",
+    "min_score": 20
+  }],
+
+  "tutorial": [{
+    "msg:ko": "한반도의 4계절을 알아보아요! 쉬운 문제는 1점, 보통은 2점, 어려운 문제는 3점를 주어요. ",
+    "msg:en": "Let's find four seasons of Korea ! An easy problem gives you one point, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/b7_w1/korea.png"
+  }],
+  "goal": {
+    "msg:ko": "20점를 모으면 아빠에게 가요.",
+    "msg:en": "Go to Cos's father with more than 20 points.",
+    "img": ["/img/b7_w1/korea.png", "/img/b7_w1/father.png"]
+  }
+}

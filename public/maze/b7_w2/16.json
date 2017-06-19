@@ -1,0 +1,40 @@
+{
+  "tile_size":256,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "#.....#.#",
+    "#B.##...#",
+    "#.#...#.#",
+    "#.i..%..#",
+    "#u.....t#",
+    "#..##...#",
+    "#...I...#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 4,
+    "img":"triangle2"
+  }],
+  "tutorial": [{
+    "msg:ko": "'?'에 들어갈 모양으로 이동해요'",
+    "msg:en": "Let's find shape to fill the ? space and move there",
+    "img": ["/img/b7_w2/triangle1.png","/img/b7_w2/triangle3.png","/img/b7_w2/triangle4.png","/img/b7_w2/question.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Success! Good Job!",
+    "msg:cn": "成功了！做得很棒。",
+    "link": "b7_w2/17"
+  }]
+}

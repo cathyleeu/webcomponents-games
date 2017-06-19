@@ -1,0 +1,48 @@
+{
+  "tile_size": 256,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    ".#######.",
+    "#.##q..##",
+    "#.p..#%.#",
+    "#.#..#..#",
+    "#.r.).).#",
+    "#.#....##",
+    "#.##...##",
+    "#....##.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img":"table0",
+    "useItem": 2
+  },{
+    "x": 6,
+    "y": 4,
+    "img":"summer2",
+    "itemImg":"summer2",
+    "disappear":true
+  },{
+    "x": 4,
+    "y": 4,
+    "img":"summer3",
+    "itemImg":"summer3",
+    "disappear":true
+  }],
+  "tutorial": [{
+    "msg:ko": "여름을 나타내는 이미지를 2개를 탁자에 가져가자",
+    "msg:en": "Let'bring two summer images to the table!",
+    "img": ["/img/b7_w1/summer.png", "/img/b7_w1/summer.png","/img/b7_w1/table0.png"]
+  }]
+}
