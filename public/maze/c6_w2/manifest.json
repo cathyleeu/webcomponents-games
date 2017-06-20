@@ -22,6 +22,8 @@
   {"id": "chest", "src": "/img/c6/box.png"},
   {"id": "kitties", "src": "/img/c6/kitties.png"},
 
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},

@@ -29,8 +29,9 @@
     "msg:en": "Let's go to Myeongdong church.",
     "img": "/img/b55/church.png"
   }],
-  "success": [{
-    "msg:ko": "참 잘했어요! 다음 주에 만나요.",
-    "msg:en": "You did great! See you next week."
+  "success":[{
+    "msg:ko": "축하해요! 모든 문제를 다 풀었어요!",
+    "msg:en": "Congratulations! You solved all the problems!",
+    "link": "b55_w2/index"
   }]
 }

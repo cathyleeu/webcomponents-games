@@ -19,6 +19,8 @@
   {"id": "message", "src": "/img/c5/lana.png", "size": 256},
   {"id": "food", "src": "/img/c5/lotus_flower.png"},
   {"id": "tode", "src": "/img/c5/TutoToad4_256.png"},
+  {"tile": "X", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
 
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},

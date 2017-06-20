@@ -25,8 +25,8 @@
     "img": "/img/b4/flag.png"
   }],
   "success": [{
-    "msg:ko": "성공! 모든 문제를 다 풀었어요.",
-    "msg:en": "Success! You've solved all the problems!",
-    "link": "b4_w2/1"
+    "msg:ko": "축하해요! 모든 문제를 다 풀었어요!",
+    "msg:en": "Congratulations! You solved all the problems!",
+    "link": "b4_w2/index"
   }]
 }
