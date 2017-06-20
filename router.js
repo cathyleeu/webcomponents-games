@@ -228,6 +228,13 @@ function getBook(classObj) {
   if(school == "A00114-K3") {
     book = [1, 2];
   }
+  // 송도ECC 추가반
+  if(school == "B00136-K1") {
+    var classNum = classObj.code.slice(-3);
+    if(classNum == "KC7" || classNum == "KC8" || classNum == "KC9") {
+      book = [1, 2];
+    }
+  }
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
