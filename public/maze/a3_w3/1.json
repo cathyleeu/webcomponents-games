@@ -1,5 +1,5 @@
 {
-  "tile_size": 256,
+  "tile_size": 128,
   "view_size": 8,
   "workspace": ["start","immigrant"],
   "toolbox": [

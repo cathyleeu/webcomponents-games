@@ -1,5 +1,5 @@
 {
-  "tile_size": 256,
+  "tile_size": 128,
   "score":1,
   "workspace": ["start", "memi_step1", "memi_step2", "memi_step3", "memi_step4", "memi_step5"],
   "toolbox": [

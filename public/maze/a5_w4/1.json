@@ -1,5 +1,5 @@
 {
-  "tile_size": 256,
+  "tile_size": 128,
   "score":5,
   "workspace": ["start", "frog_left",  "frog_up",  "frog_right",  "frog_down"],
   "toolbox": [
