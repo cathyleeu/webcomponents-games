@@ -12,7 +12,9 @@ var d1,
     message_url = "",
     messages = null,
     map_path = null,
-    map_qs;
+    map_qs,
+    resize_debounce = 200,
+    resize_timeoutkey;
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
@@ -226,7 +228,10 @@ function init() {
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);
   }
-  handle_resize();
+  clearTimeout(resize_timeoutkey);
+  resize_timeoutkey = setTimeout(function() {
+    handle_resize();
+  }, resize_debounce);
   var lang = store.get("lang") || "ko",
       goal = maze.goal || maze.tutorial[maze.tutorial.length - 1],
       goal_msg = goal["msg" + (lang ? ":" + lang : "")] || goal["msg"];
@@ -248,8 +253,13 @@ function init() {
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
   } else {
-    var fullscreen = store.get("fullscreen");
-    if(fullscreen == undefined && fullscreenEnabled) {
+    var fullscreen = store.get("fullscreen"),
+        fullscreenElement =
+            document.fullscreenElement ||
+            document.webkitFullscreenElement ||
+            document.mozFullScreenElement ||
+            document.msFullscreenElement;
+    if(fullscreen == undefined && fullscreenEnabled && !fullscreenElement) {
       showModal({
         msg: messages.ask_fullscreen,
         fullscreen: true
@@ -466,13 +476,6 @@ function handle_resize(e) {
     $(".bottom-row").removeClass("horizontal_world");
   }
   Blockly.svgResize(kidscoding.workspace);
-  // 늑대와여우 안드로이드에서 캔버스가 사라지는 문제를 해결하기 위함
-  setTimeout(function() {
-    $("#display").css({display:"none"});
-    setTimeout(function() {
-      $("#display").css({display:"block"});
-    }, 100);
-  }, 100);
 };
 function addEvents() {
   if(window.name) {
@@ -494,7 +497,12 @@ function addEvents() {
   $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
   });
-  $(window).on("resize", handle_resize);
+  $(window).on("resize", function(e) {
+    clearTimeout(resize_timeoutkey);
+    resize_timeoutkey = setTimeout(function() {
+      handle_resize(e);
+    }, resize_debounce);
+  });
   $("#modal .go-next").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
