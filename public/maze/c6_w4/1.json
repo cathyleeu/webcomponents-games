@@ -1,5 +1,5 @@
 {
-  "tile_size": 256,
+  "tile_size": 128,
 
   "score":1,
   "workspace": ["start","move_up","check","condition_light","move_up","move_up"],

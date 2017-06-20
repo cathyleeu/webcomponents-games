@@ -1,5 +1,5 @@
 {
-  "tile_size": 256,
+  "tile_size": 128,
   "score":100,
   "workspace": ["start","move_right", "get_item2","move_right", "get_item2","move_right", "get_item2","move_up", "move_up", "get_item2","move_left","get_item2","move_left","use_item2","use_item2","use_item2","use_item2","use_item2"],
   "toolbox": [
