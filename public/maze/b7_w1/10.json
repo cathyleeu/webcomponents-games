@@ -25,7 +25,6 @@
   "extra":[{
     "x": 6,
     "y": 2,
-    "img":"table0",
     "useItem": 2
   },{
     "x": 6,
@@ -41,8 +40,8 @@
     "disappear":true
   }],
   "tutorial": [{
-    "msg:ko": "여름을 나타내는 이미지를 2개를 탁자에 가져가자",
-    "msg:en": "Let'bring two summer images to the table!",
-    "img": ["/img/b7_w1/summer.png", "/img/b7_w1/summer.png","/img/b7_w1/table0.png"]
+    "msg:ko": "여름을 나타내는 이미지를 2개를 한반도로 가져가자",
+    "msg:en": "Let'bring two summer images to the Korean Peninsula!",
+    "img": ["/img/b7_w1/summer.png", "/img/b7_w1/summer.png","/img/b7_w1/korea.png"]
   }]
 }

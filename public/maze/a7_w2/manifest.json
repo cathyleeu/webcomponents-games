@@ -17,6 +17,8 @@
   {"id": "corn9", "src": "/img/a7_w2/corn9.png"},
   {"id": "rice9", "src": "/img/a7_w2/rice9.png"},
   {"id": "blank_yard", "src": "/img/a7_w2/blank_yard.png"},
+  {"id": "blank_pear_tree", "src": "/img/a7_w2/blank_pear_tree.png"},
+  {"id": "blank_apple_tree", "src": "/img/a7_w2/blank_apple_tree.png"},
 
   {"id": "apple0", "src": "/img/a7_w2/apple0.png"},
   {"id": "pear0", "src": "/img/a7_w2/pear0.png"},
