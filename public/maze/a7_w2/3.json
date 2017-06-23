@@ -17,7 +17,7 @@
     "y": 2,
     "img": "apple_tree",
     "contents" : [{
-        "img": "blank_tree"
+        "img": "blank_apple_tree"
     },{
         "img": "apple0"
     }]
@@ -26,7 +26,7 @@
     "y": 2,
     "img": "apple_tree",
     "contents" : [{
-        "img": "blank_tree"
+        "img": "blank_apple_tree"
     },{
         "img": "apple0"
     }]
@@ -35,7 +35,7 @@
     "y": 2,
     "img": "apple_tree",
     "contents" : [{
-        "img": "blank_tree"
+        "img": "blank_apple_tree"
     },{
         "img": "apple0"
     }]

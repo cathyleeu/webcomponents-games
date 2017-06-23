@@ -25,7 +25,6 @@
   "extra":[{
     "x": 1,
     "y": 2,
-    "img":"table0",
     "useItem": 1
   }, {
     "x": 3,
@@ -35,8 +34,8 @@
     "disappear":true
   }],
   "tutorial": [{
-    "msg:ko": "겨울을 나타내는 이미지를 탁자에 가져가자",
-    "msg:en": "Let'bring a winter image to the table!",
-    "img": ["/img/b7_w1/winter.png", "/img/b7_w1/table0.png"]
+    "msg:ko": "겨울을 나타내는 이미지를 한반도로 가져가자",
+    "msg:en": "Let'bring a winter image to the Korean Peninsula!",
+    "img": ["/img/b7_w1/winter.png", "/img/b7_w1/korea.png"]
   }]
 }
