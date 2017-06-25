@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start","repeat","repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -11,28 +11,28 @@
   ],
   "map": [
     ".#######.",
-    "#.##..###",
-    "#.##.%..#",
-    "#.#..##.#",
-    "#..#.#..#",
-    "###..#.##",
-    "#.r..#.##",
-    "#.##....#",
+    "#.......#",
+    "#..##..##",
+    "##..#.#.#",
+    "##....%.#",
+    "##.##...#",
+    "#...##.##",
+    "#.u.....#",
     ".#######."
   ],
   "extra":[{
-    "x": 5,
-    "y": 2,
-    "img":"d_grandmother"
+    "x": 6,
+    "y": 4,
+    "img":"deer"
   }],
   "tutorial": [{
-    "msg:ko": "할머니에게 초대장을 드리러 가자!",
-    "msg:en": "Let's go to grandmother for invitation",
-    "img": "/img/c55_w2/d_grandm.png"
+    "msg:ko": "사슴 디어에게 초대장을 주러 가자!",
+    "msg:en": "Let's go to deer for invitation",
+    "img": "/img/c55_w2/deer_120.png"
   }],
   "goal": {
-    "msg:ko": "할머니에게 초대장을 드리러 가자!",
-    "msg:en": "Let's go to grandmother for invitation",
-    "img": "/img/c55_w2/d_grandm.png"
+    "msg:ko": "사슴 디어에게 초대장을 주러 가자!",
+    "msg:en": "Let's go to deer for invitation",
+    "img": "/img/c55_w2/deer_120.png"
   }
 }

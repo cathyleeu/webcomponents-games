@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start", "repeat", "move_up", "repeat"],
+  "workspace": ["start", "repeat", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -11,28 +11,28 @@
   ],
   "map": [
     ".#######.",
-    "#.##..###",
+    "#%##..###",
     "#...##..#",
-    "##...#..#",
-    "#%...##.#",
-    "#.##...l#",
-    "#.###..##",
-    "#.....#.#",
+    "#....##.#",
+    "#......l#",
+    "###....##",
+    "#.#..#.##",
+    "#.#..##.#",
     ".#######."
   ],
   "extra":[{
     "x": 1,
-    "y": 4,
-    "img":"m_grandmother"
+    "y": 1,
+    "img":"d_grandmother"
   }],
   "tutorial": [{
-    "msg:ko": "외할머니에게 초대장을 드리러 가자!",
+    "msg:ko": "할머니에게 초대장을 드리러 가자!",
     "msg:en": "Let's go to grandmother for invitation",
-    "img": "/img/c55_w2/m_grandm.png"
+    "img": "/img/c55_w2/d_grandm.png"
   }],
   "goal": {
-    "msg:ko": "외할머니에게 초대장을 드리러 가자!",
+    "msg:ko": "할머니에게 초대장을 드리러 가자!",
     "msg:en": "Let's go to grandmother for invitation",
-    "img": "/img/c55_w2/m_grandm.png"
+    "img": "/img/c55_w2/d_grandm.png"
   }
 }

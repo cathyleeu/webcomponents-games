@@ -1,6 +1,6 @@
 {
   "tile_size": 128,
-  "score":3,
+  "score":2,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -11,28 +11,28 @@
   ],
   "map": [
     ".#######.",
-    "#.##..###",
-    "#...d...#",
-    "#..#.##.#",
-    "##..##..#",
-    "#.#..#.##",
-    "#.##.%.##",
-    "#.#.#.#.#",
+    "#.......#",
+    "#..##..##",
+    "##..#.#.#",
+    "##..#.%.#",
+    "##.##...#",
+    "#.u.###.#",
+    "#.......#",
     ".#######."
   ],
   "extra":[{
-    "x": 5,
-    "y": 6,
-    "img":"d_grandfather"
+    "x": 6,
+    "y": 4,
+    "img":"deer"
   }],
   "tutorial": [{
-    "msg:ko": "할아버지에게 초대장을 드리러 가자!",
-    "msg:en": "Let's go to grandfather for invitation",
-    "img": "/img/c55_w2/d_grandf.png"
+    "msg:ko": "사슴 디어에게 초대장을 주러 가자!",
+    "msg:en": "Let's go to deer for invitation",
+    "img": "/img/c55_w2/deer_120.png"
   }],
   "goal": {
-    "msg:ko": "할아버지에게 초대장을 드리러 가자!",
-    "msg:en": "Let's go to grandfather for invitation",
-    "img": "/img/c55_w2/d_grandf.png"
+    "msg:ko": "사슴 디어에게 초대장을 주러 가자!",
+    "msg:en": "Let's go to deer for invitation",
+    "img": "/img/c55_w2/deer_120.png"
   }
 }

@@ -5,150 +5,278 @@
   "toolbox": [],
   "select_character": true,
   "map": [
-    "##.##################.",
-    "..#..D..%...U...%....#",
-    "..#..D.%.%..U..%.%...#",
-    ".#.r..%...%.#.%.%.%..#.",
-    "..#..#.%.%..#%.%.%.%##",
-    "..#..#%.%.%.#...#....#",
-    "##.###################."
+    "#####EEEEE########.",
+    "..r..%%%%%....I%N.#",
+    ".###.#########.%N.#",
+    "##...#########.%N.#",
+    "..#............%N.#",
+    "##.%%%%%.%%%%%.%N.#",
+    "###HHHHH#HHHHH####."
   ],
   "extra": [{
-    "x": 5,
+    "x": 14,
     "y": 1,
     "tutorial": [{
-      "msg:ko": "선물을 2개 얻을 수 있어.",
-      "msg:en": "You can get two gift at once.",
-      "img":  ["/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
     }]
   },{
     "x": 5,
-    "y": 2,
+    "y": 0,
     "tutorial": [{
-      "msg:ko": "선물을 2개 얻을 수 있어.",
-      "msg:en": "You can get two gift at once.",
-      "img":  ["/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
-    }]
-  },{
-    "x": 12,
-    "y": 1,
-    "tutorial": [{
-      "msg:ko": "선물을 3개 얻을 수 있어.",
-      "msg:en": "You can get three gifts at once.",
-      "img":  ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
-    }]
-  },{
-    "x": 12,
-    "y": 2,
-    "tutorial": [{
-      "msg:ko": "선물을 3개 얻을 수 있어.",
-      "msg:en": "You can get three gifts at once.",
-      "img":  ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+      "msg:ko": "선물을 1개 얻을 수 있어",
+      "msg:en": "You can get one gift at once",
+      "img": "/img/c55_w3/gift.png"
     }]
   },{
     "x": 6,
-    "y": 3,
-    "link": "c55_w3/1"
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 1개 얻을 수 있어",
+      "msg:en": "You can get one gift at once",
+      "img": "/img/c55_w3/gift.png"
+    }]
   },{
     "x": 7,
-    "y": 2,
-    "link": "c55_w3/2"
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 1개 얻을 수 있어",
+      "msg:en": "You can get one gift at once",
+      "img": "/img/c55_w3/gift.png"
+    }]
   },{
     "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 1개 얻을 수 있어",
+      "msg:en": "You can get one gift at once",
+      "img": "/img/c55_w3/gift.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선물을 1개 얻을 수 있어",
+      "msg:en": "You can get one gift at once",
+      "img": "/img/c55_w3/gift.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어",
+      "msg:en": "You can get two gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어",
+      "msg:en": "You can get two gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어",
+      "msg:en": "You can get two gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어",
+      "msg:en": "You can get two gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "선물을 2개 얻을 수 있어",
+      "msg:en": "You can get two gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 3,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선물을 3개 얻을 수 있어",
+      "msg:en": "You can get three gifts at once",
+      "img": ["/img/c55_w3/gift.png","/img/c55_w3/gift.png","/img/c55_w3/gift.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c55_w3/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c55_w3/2"
+  },{
+    "x": 7,
     "y": 1,
     "link": "c55_w3/3"
   },{
-    "x": 9,
-    "y": 2,
+    "x": 8,
+    "y": 1,
     "link": "c55_w3/4"
   },{
-    "x": 10,
-    "y": 3,
+    "x": 9,
+    "y": 1,
     "link": "c55_w3/5"
   },{
-    "x": 14,
-    "y": 3,
-    "link": "c55_w3/11"
+    "x": 15,
+    "y": 1,
+    "link": "c55_w3/6"
   },{
     "x": 15,
     "y": 2,
-    "link": "c55_w3/12"
-  },{
-    "x": 16,
-    "y": 1,
-    "link": "c55_w3/13"
-  },{
-    "x": 17,
-    "y": 2,
-    "link": "c55_w3/14"
-  },{
-    "x": 18,
-    "y": 3,
-    "link": "c55_w3/15"
-  },{
-    "x": 10,
-    "y": 5,
-    "link": "c55_w3/6"
-  },{
-    "x": 9,
-    "y": 4,
     "link": "c55_w3/7"
   },{
-    "x": 8,
-    "y": 5,
+    "x": 15,
+    "y": 3,
     "link": "c55_w3/8"
   },{
-    "x": 7,
+    "x": 15,
     "y": 4,
     "link": "c55_w3/9"
   },{
-    "x": 6,
+    "x": 15,
     "y": 5,
     "link": "c55_w3/10"
   },{
-    "x": 16,
-    "y": 3,
+    "x": 13,
+    "y": 5,
+    "link": "c55_w3/11"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c55_w3/12"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "c55_w3/13"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "c55_w3/14"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "c55_w3/15"
+  },{
+    "x": 7,
+    "y": 5,
     "link": "c55_w3/16"
   },{
-    "x": 13,
-    "y": 4,
+    "x": 6,
+    "y": 5,
     "link": "c55_w3/17"
   },{
-    "x": 15,
-    "y": 4,
+    "x": 5,
+    "y": 5,
     "link": "c55_w3/18"
   },{
-    "x": 17,
-    "y": 4,
+    "x": 4,
+    "y": 5,
     "link": "c55_w3/19"
   },{
-    "x": 19,
-    "y": 4,
+    "x": 3,
+    "y": 5,
     "link": "c55_w3/20"
   },{
     "img":"mos",
-    "x": 16,
-    "y": 5,
+    "x": 2,
+    "y": 4,
     "obstacle": false,
-    "link": "c55_w3/21",
-    "min_score": 36
+    "link": "c55_w3/99",
+    "min_score": 21
   }],
 
   "tutorial": [{
-    "msg:ko": "선물 36개를 모으면 모스에게로 가요.",
-    "msg:en": "Go to Mos with more than 36 gifts.",
-    "img":  ["/img/c55_w3/gift.png","/img/c55_w3/mos.png"],
-    "x" : 16,
-    "y" : 5
-  }, {
-    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
+    "msg:ko": "선물을 모아요! 쉬운 문제는 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's collect gifts! An easy problem gives you one gift, a normal one gives you two and a hard one gives you three.",
+    "img":  "/img/c55_w3/gift.png"
   }],
   "goal": {
-    "msg:ko": "선물을 36개 모아 모스에게 가자!",
-    "msg:en": "Let's go to Mos with 36 gifts!",
+    "msg:ko": "선물을 21개 모아 모스에게 가자!",
+    "msg:en": "Let's go to Mos with 21 gifts!",
     "img":  ["/img/c55_w3/gift.png","/img/c55_w3/mos.png"]
   }
 }

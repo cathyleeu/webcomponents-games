@@ -8,15 +8,16 @@
   {"id": "message", "src": "/img/c55_w3/lana0.png", "size": 256},
   {"id": "message2", "src": "/img/c55_w3/tode0.png", "size": 256},
   {"id": "food", "src": "/img/c55_w3/gift.png"},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
-  {"tile": "U", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"tile": "D", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"tile": "L", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "H", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "N", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "E", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
 
   {"id": "tree1", "src": "/img/c55_w3/tree1.png", "obstacle": true},
   {"id": "tree2", "src": "/img/c55_w3/tree2.png", "obstacle": true},
