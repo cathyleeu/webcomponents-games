@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start","repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -12,27 +12,27 @@
   "map": [
     ".#######.",
     "#.##..###",
-    "##....e.#",
-    "#g....###",
-    "##..##%.#",
-    "#..#....#",
-    "##...#.##",
-    "#d.#.#..#",
+    "#.g..#..#",
+    "#%#..#.c#",
+    "#.##....#",
+    "#....#.##",
+    "#.#.##.##",
+    "##...l..#",
     ".#######."
   ],
   "extra":[{
-    "x": 6,
-    "y": 4,
-    "img":"house3"
+    "x": 1,
+    "y": 3,
+    "img":"house7"
   }],
   "tutorial": [{
-    "msg:ko": "코스네 집은 가장 작은 숫자의 주소를 가지고 있어요!",
-    "msg:en": "The Address of Cos's house is the smallest number",
-    "img": "/img/c4_w4/smallest_num.png"
+    "msg:ko": "코스네 집은 가장 큰 숫자의 주소를 가지고 있어요!",
+    "msg:en": "The Address of Cos's house is the largest number",
+    "img": "/img/c4_w4/biggest_num.png"
   }],
   "goal": {
-    "msg:ko": "가장 작은 숫자의 주소를 찾아가자!",
-    "msg:en": "Go to the smallest number of address",
-    "img": "/img/c4_w4/smallest_num_goal.png"
+    "msg:ko": "가장 큰 숫자의 주소를 찾아가자!",
+    "msg:en": "Go to the largest number of address",
+    "img": "/img/c4_w4/biggest_num_goal.png"
   }
 }

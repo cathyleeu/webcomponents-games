@@ -28,12 +28,16 @@
   "tutorial": [{
     "msg:ko": "엄마에게 가요!",
     "msg:en": "Let's go to the mom!",
-    "img": ["/img/c4_w4/house1.png", "/img/c4_w4/house2.png", "/img/c4_w4/house3.png"]
+    "img": [{
+      "src": "/img/c4_w4/mother.png"
+    }]
   }],
   "goal": {
     "msg:ko": "엄마에게 가자!",
     "msg:en": "Let's go to the mom!",
-    "img": ["/img/c4_w4/house1.png", "/img/c4_w4/house2.png", "/img/c4_w4/house3.png"]
+    "img": [{
+      "src": "/img/c4_w4/mother.png"
+    }]
   },
   "success": [{
     "msg:ko": "성공! 엄마의 심부름을 모두 마쳤어요~",

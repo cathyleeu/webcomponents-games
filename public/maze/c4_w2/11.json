@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start","repeat","repeat","repeat","move_down"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -11,28 +11,28 @@
   ],
   "map": [
     ".wwwwwww.",
-    "w.#%..##w",
-    "w#b.....w",
-    "w#..#.##w",
-    "w#..#..gw",
-    "w#...#..w",
-    "w##...l#w",
-    "w..h..##w",
+    "w.##..##w",
+    "w.f..#b.w",
+    "w....#..w",
+    "w.......w",
+    "w%####.#w",
+    "w.#r...#w",
+    "w.#..##.w",
     ".wwwwwww."
   ],
   "extra":[{
-    "x": 3,
-    "y": 1,
-    "img":"fruit_pi"
+    "x": 1,
+    "y": 5,
+    "img":"fruit_wa"
   }],
   "tutorial": [{
-    "msg:ko": "코스는 파인애플을 사야해요!",
-    "msg:en": "'Cos' have to buy pineapple",
-    "img": "/img/c4_w2/fruit_pi.png"
+    "msg:ko": "코스는 수박을 사야해요!",
+    "msg:en": "'Cos' have to buy watermelon",
+    "img": "/img/c4_w2/fruit_wa.png"
   }],
   "goal": {
-    "msg:ko": "파인애플을 사보자!",
-    "msg:en": "Take pineapple",
-    "img": "/img/c4_w2/fruit_pi.png"
+    "msg:ko": "수박을 사보자!",
+    "msg:en": "Take watermelon",
+    "img": "/img/c4_w2/fruit_wa.png"
   }
 }
