@@ -146,7 +146,6 @@ function preInit() {
   var queries = store.get("queries") || {};
 
   if(maze.select_character && !queries.hasOwnProperty("x") && !queries.hasOwnProperty("y")) {
-
     showModal({
       select_character: true,
       character1: loader.getItem("message").src,
@@ -1018,7 +1017,10 @@ function showModal(options) {
       .css("width", (100 / imgs.length).toFixed(2) + "%")
       .appendTo(".modal-imgs");
   });
-  $(".modal-msg-box .modal-msg").html(options.msg.replace(/\n/g, "<br/>"));
+  //캐릭터 선택 오류 options.msg가 null이 되는 문제 수정
+  if(!options.select_character){
+    $(".modal-msg-box .modal-msg").html(options.msg.replace(/\n/g, "<br/>"));
+  }
   $('#modal').modal({
     backdrop: "static"
   });
