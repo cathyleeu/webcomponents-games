@@ -11,28 +11,28 @@
   ],
   "map": [
     ".#######.",
-    "#.####.j#",
-    "#...##..#",
-    "###%...##",
-    "#f..##..#",
-    "##.....##",
-    "#.#..####",
-    "#..b..l##",
+    "#.##..%##",
+    "##g##...#",
+    "##.#.#.##",
+    "#c......#",
+    "#..#.##.#",
+    "####...##",
+    "#.r..##.#",
     ".#######."
   ],
   "extra":[{
-    "x": 3,
-    "y": 3,
-    "img":"house3"
+    "x": 6,
+    "y": 1,
+    "img":"house2"
   }],
   "tutorial": [{
-    "msg:ko": "코스네 집은 3번째로 큰 숫자의 주소를 가지고 있어요!",
-    "msg:en": "The Address of Cos's house is the third largest number",
-    "img": "/img/c4_w4/bigger_num.png"
+    "msg:ko": "코스네 집은 가장 작은 숫자의 주소를 가지고 있어요!",
+    "msg:en": "The Address of Cos's house is the smallest number",
+    "img": "/img/c4_w4/smallest_num.png"
   }],
   "goal": {
-    "msg:ko": "3번째로 큰 숫자의 주소를 찾아가자!",
-    "msg:en": "Go to the third largest number of address",
-    "img": "/img/c4_w4/bigger_num.png"
+    "msg:ko": "가장 작은 숫자의 주소를 찾아가자!",
+    "msg:en": "Go to the smallest number of address",
+    "img": "/img/c4_w4/smallest_num_goal.png"
   }
 }

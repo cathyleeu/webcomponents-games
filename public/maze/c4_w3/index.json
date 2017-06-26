@@ -4,13 +4,13 @@
   "tile_size": 128,
   "toolbox": [],
   "map": [
-    "#####EEEEE########.",
-    "..r..%%%%%.#...%n.#",
+    "#####EEEEEE#######.",
+    "..r..%%%%%%.I..%n.#",
     ".#############.%n.#",
     "##...#########.%n.#",
     "..#............%n.#",
-    "##.......%%%%%.%n.#",
-    "#########HHHHH#####."
+    "##...%%%%%%%%%.%n.#",
+    "#####HHHHHHHHH#####."
   ],
   "extra": [{
     "x": 5,
@@ -46,6 +46,14 @@
     }]
   },{
     "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "카트를 1개 얻을 수 있어.",
+      "msg:en": "You can get one cart at once.",
+      "img": "/img/c4_w2/cart.png"
+    }]
+  },{
+    "x": 10,
     "y": 0,
     "tutorial": [{
       "msg:ko": "카트를 1개 얻을 수 있어.",
@@ -93,7 +101,31 @@
       "img": ["/img/c4_w2/cart.png","/img/c4_w2/cart.png"]
     }]
   },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": ["/img/c4_w2/cart.png","/img/c4_w2/cart.png","/img/c4_w2/cart.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": ["/img/c4_w2/cart.png","/img/c4_w2/cart.png","/img/c4_w2/cart.png"]
+    }]
+  },{
     "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three carts at once.",
+      "img": ["/img/c4_w2/cart.png","/img/c4_w2/cart.png","/img/c4_w2/cart.png"]
+    }]
+  },{
+    "x": 8,
     "y": 6,
     "tutorial": [{
       "msg:ko": "카트를 3개 얻을 수 있어.",
@@ -161,10 +193,12 @@
     "y": 1,
     "link": "c4_w3/5"
   },{
-    "img":"cart",
-    "x": 11,
+    "x": 10,
     "y": 1,
-    "obstacle": false,
+    "link": "c4_w3/6"
+  },{
+    "x": 12,
+    "y": 1,
     "tutorial": [{
       "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
       "msg:en": "Easy problems is over, Let's solve the problem freely"
@@ -172,43 +206,59 @@
   },{
     "x": 15,
     "y": 1,
-    "link": "c4_w3/6"
-  },{
-    "x": 15,
-    "y": 2,
     "link": "c4_w3/7"
   },{
     "x": 15,
-    "y": 3,
+    "y": 2,
     "link": "c4_w3/8"
   },{
     "x": 15,
-    "y": 4,
+    "y": 3,
     "link": "c4_w3/9"
   },{
     "x": 15,
-    "y": 5,
+    "y": 4,
     "link": "c4_w3/10"
   },{
-    "x": 13,
+    "x": 15,
     "y": 5,
     "link": "c4_w3/11"
   },{
-    "x": 12,
+    "x": 13,
     "y": 5,
     "link": "c4_w3/12"
   },{
-    "x": 11,
+    "x": 12,
     "y": 5,
     "link": "c4_w3/13"
   },{
-    "x": 10,
+    "x": 11,
     "y": 5,
     "link": "c4_w3/14"
   },{
-    "x": 9,
+    "x": 10,
     "y": 5,
     "link": "c4_w3/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "c4_w3/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "c4_w3/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c4_w3/18"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "c4_w3/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "c4_w3/20"
   },{
     "img":"mother",
     "x": 2,

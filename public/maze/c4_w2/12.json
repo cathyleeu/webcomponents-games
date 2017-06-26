@@ -11,28 +11,28 @@
   ],
   "map": [
     ".wwwwwww.",
-    "w.####%.w",
-    "w......#w",
-    "w##...##w",
-    "wg...#..w",
-    "w.....f#w",
-    "w.##.###w",
-    "w...u..#w",
+    "w.#%..##w",
+    "w#b.....w",
+    "w#..#.##w",
+    "w#..#..gw",
+    "w#...#..w",
+    "w##...l#w",
+    "w..h..##w",
     ".wwwwwww."
   ],
   "extra":[{
-    "x": 6,
+    "x": 3,
     "y": 1,
-    "img":"fruit_ap"
+    "img":"fruit_pi"
   }],
   "tutorial": [{
-    "msg:ko": "코스는 사과를 사야해요!",
-    "msg:en": "'Cos' have to buy Apple",
-    "img": "/img/c4_w2/fruit_ap.png"
+    "msg:ko": "코스는 파인애플을 사야해요!",
+    "msg:en": "'Cos' have to buy pineapple",
+    "img": "/img/c4_w2/fruit_pi.png"
   }],
   "goal": {
-    "msg:ko": "사과를 사보자!",
-    "msg:en": "Take Apple",
-    "img": "/img/c4_w2/fruit_ap.png"
+    "msg:ko": "파인애플을 사보자!",
+    "msg:en": "Take pineapple",
+    "img": "/img/c4_w2/fruit_pi.png"
   }
 }

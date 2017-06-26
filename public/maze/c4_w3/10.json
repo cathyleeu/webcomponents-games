@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start","repeat","repeat","repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -12,18 +12,18 @@
   "map": [
     ".wwwwwww.",
     "w.##..##w",
-    "w#i.....w",
-    "w%..#.##w",
-    "w##.#..gw",
-    "w#......w",
-    "w#.##.##w",
-    "w..h.u##w",
+    "w#....c.w",
+    "w..i#.##w",
+    "w#.##...w",
+    "w#.....%w",
+    "w#.##h##w",
+    "w....l##w",
     ".wwwwwww."
   ],
   "extra":[{
-    "x": 1,
-    "y": 3,
-    "img":"fruit_or"
+    "x": 7,
+    "y": 5,
+    "img":"fruit_st"
   }],
   "tutorial": [{
     "msg:ko": "셋 중에 작은 과일을 사야해요!",

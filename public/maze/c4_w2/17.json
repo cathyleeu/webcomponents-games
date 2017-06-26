@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.####g.w",
+    "w......#w",
+    "w##...##w",
+    "w##.#.cw",
+    "wr.....#w",
+    "w.##.###w",
+    "w##...%#w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 7,
+    "img":"fruit_ap"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스는 사과를 사야해요!",
+    "msg:en": "'Cos' have to buy Apple",
+    "img": "/img/c4_w2/fruit_ap.png"
+  }],
+  "goal": {
+    "msg:ko": "사과를 사보자!",
+    "msg:en": "Take Apple",
+    "img": "/img/c4_w2/fruit_ap.png"
+  }
+}

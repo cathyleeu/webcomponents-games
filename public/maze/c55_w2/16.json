@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
-  "score":1,
-  "workspace": ["start", "repeat"],
+  "score":2,
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -10,25 +10,29 @@
     "repeat"
   ],
   "map": [
-    ".###.",
-    "#.%.#",
-    "#...#",
-    "#.u.#",
-    ".###."
+    ".#######.",
+    "#.#.....#",
+    "#.#.##..#",
+    "##...#..#",
+    "#r..###.#",
+    "#.##...%#",
+    "#.###..##",
+    "#.....#.#",
+    ".#######."
   ],
   "extra":[{
-    "x":2,
-    "y":1,
-    "img":"house"
+    "x": 7,
+    "y": 5,
+    "img":"m_grandmother"
   }],
   "tutorial": [{
-    "msg:ko": "집으로 가자",
-    "msg:en": "Go to the house",
-    "img": ["/img/c55_w2/cos0.png","/img/c55_w2/house.png"]
+    "msg:ko": "외할머니에게 초대장을 드리러 가자!",
+    "msg:en": "Let's go to grandmother for invitation",
+    "img": "/img/c55_w2/m_grandm.png"
   }],
-  "success": [{
-    "msg:ko": "초대장을 다 돌리고 집에 도착했어요~",
-    "msg:en": "I sent all invitations and arrived home.",
-    "img": ["/img/c55_w2/invitation.png","/img/c55_w2/house.png"]
-  }]
+  "goal": {
+    "msg:ko": "외할머니에게 초대장을 드리러 가자!",
+    "msg:en": "Let's go to grandmother for invitation",
+    "img": "/img/c55_w2/m_grandm.png"
+  }
 }

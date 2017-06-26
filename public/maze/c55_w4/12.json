@@ -1,6 +1,6 @@
 {
   "tile_size": 128,
-  "score":1,
+  "score":2,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
@@ -13,35 +13,35 @@
   ],
   "map": [
     ".wwwwwww.",
-    "wd##..##w",
-    "w....)..w",
+    "w.##.h##w",
+    "w#.....Aw",
+    "w..###.Bw",
+    "w#)....%w",
+    "w..#.#.Dw",
+    "w#u#.#..w",
     "w..#..##w",
-    "w#..#...w",
-    "wh.#DC%Aw",
-    "w#.#...#w",
-    "w.......w",
     ".wwwwwww."
   ],
   "extra":[{
-    "x": 5,
-    "y": 2,
-    "img":"fruit_pi",
-     "itemImg":"fruit_pi",
+    "x": 2,
+    "y": 4,
+    "img":"fruit_ap",
+     "itemImg":"fruit_ap",
      "disappear":true
   },{
-    "x": 6,
-    "y": 5,
-    "img":"table2",
+    "x": 7,
+    "y": 4,
+    "img":"table3",
     "useItem": true
   }],
   "tutorial": [{
-    "msg:ko": "파인애플을 2번째로 작은 숫자의 상에 가져다주어요!",
-    "msg:en": "Pick pineapple and bring it to table with the second smallest number",
-    "img":  ["/img/c55_w4/fruit_pi.png","/img/c4_w4/smaller_num.png"]
+    "msg:ko": "사과를 2번째로 큰 숫자의 상에 가져다주어요!",
+    "msg:en": "Pick apple and bring it to table with the second largest number",
+    "img":  ["/img/c55_w4/fruit_ap.png","/img/c4_w4/bigger_num.png"]
   }],
   "goal": {
-    "msg:ko": "파인애플을 2번째로 작은 숫자의 상에 가져다주자!",
-    "msg:en": "Pick pineapple and bring it to table with the second smallest number",
-    "img":  ["/img/c55_w4/fruit_pi.png","/img/c4_w4/smaller_num.png"]
+    "msg:ko": "사과를 2번째로 큰 숫자의 상에 가져다주자!",
+    "msg:en": "Pick apple and bring it to table with the second largest number",
+    "img":  ["/img/c55_w4/fruit_ap.png","/img/c4_w4/bigger_num.png"]
   }
 }

@@ -13,35 +13,35 @@
   ],
   "map": [
     ".wwwwwww.",
-    "w.##.d##w",
-    "w.#.....w",
-    "w.%.#.##w",
-    "w.C..)..w",
-    "w.D.##..w",
-    "w#....##w",
-    "w#.###..w",
+    "w.##..##w",
+    "w...#...w",
+    "w#...#..w",
+    "wr...)..w",
+    "w.#....#w",
+    "w.##...#w",
+    "w...AB%.w",
     ".wwwwwww."
   ],
   "extra":[{
     "x": 5,
     "y": 4,
-    "img":"fruit_ki",
-     "itemImg":"fruit_ki",
+    "img":"fruit_or",
+     "itemImg":"fruit_or",
      "disappear":true
   },{
-    "x": 2,
-    "y": 3,
-    "img":"table1",
+    "x": 6,
+    "y": 7,
+    "img":"table4",
     "useItem": true
   }],
   "tutorial": [{
-    "msg:ko": "키위를 가장 작은 숫자의 상에 가져다주어요!",
-    "msg:en": "Pick kiwi and bring it to table with the smallest number",
-    "img":  ["/img/c55_w4/fruit_ki.png","/img/c4_w4/smallest_num.png"]
+    "msg:ko": "오렌지를 가장 큰 숫자의 상에 가져다주어요!",
+    "msg:en": "Pick orange and bring it to table with the largest number",
+    "img":  ["/img/c55_w4/fruit_or.png","/img/c4_w4/biggest_num.png"]
   }],
   "goal": {
-    "msg:ko": "키위를 가장 작은 숫자의 상에 가져다주자!",
-    "msg:en": "Pick kiwi and bring it to table with the smallest number",
-    "img":  ["/img/c55_w4/fruit_ki.png","/img/c4_w4/smallest_num.png"]
+    "msg:ko": "오렌지를 가장 큰 숫자의 상에 가져다주자!",
+    "msg:en": "Pick orange and bring it to table with the largest number",
+    "img":  ["/img/c55_w4/fruit_or.png","/img/c4_w4/biggest_num.png"]
   }
 }

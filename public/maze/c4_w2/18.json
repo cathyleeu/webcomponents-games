@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.##..##w",
+    "w#c....lw",
+    "w..##.##w",
+    "w#......w",
+    "w.%#.#e.w",
+    "w#.#.#.#w",
+    "w#.a..##w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 5,
+    "img":"milk"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스는 우유를 사야해요!",
+    "msg:en": "'Cos' have to buy milk",
+    "img": "/img/c4_w2/milk.png"
+  }],
+  "goal": {
+    "msg:ko": "우유를 사보자!",
+    "msg:en": "Take milk",
+    "img": "/img/c4_w2/milk.png"
+  }
+}

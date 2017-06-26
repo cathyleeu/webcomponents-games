@@ -1,38 +1,48 @@
 {
   "tile_size": 128,
-
-  "score":1,
+  "score":3,
   "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left"
+    "move_left",
+    "get_item2",
+    "use_item2",
+    "repeat"
   ],
   "map": [
-    ".###.",
-    "#.d.#",
-    "#...#",
-    "#.%.#",
-    ".###."
+    ".wwwwwww.",
+    "w.##..##w",
+    "w.......w",
+    "w)......w",
+    "w...#...w",
+    "w%#....#w",
+    "w.#.#..#w",
+    "w...l##.w",
+    ".wwwwwww."
   ],
   "extra":[{
-    "x":2,
-    "y":3,
-    "img":"mother"
+    "x": 1,
+    "y": 5,
+    "img":"table0",
+    "useItem": true
+  },{
+    "x": 1,
+    "y": 3,
+    "img":"juice",
+    "itemImg":"juice",
+    "disappear":true,
+    "itemCount": 4
   }],
   "tutorial": [{
-    "msg:ko": "엄마에게 가자",
-    "msg:en": "Go to mom",
-    "img": ["/img/c55_w4/cos0.png","/img/c55_w4/mother.png"]
+    "msg:ko": "주스 4잔을 상에 가져다주어요!",
+    "msg:en": "Serve four cups of juice to the table",
+    "img":  ["/img/c55_w4/juice.png","/img/c55_w4/table0.png"]
   }],
-  "success": [{
-    "msg:ko": "엄마! 음식을 다 대접했어요~",
-    "msg:en": "Mom! I served all.",
-    "img" : "/img/c55_w4/cos0.png"
-  },{
-    "msg:ko": "수고했어, 코스야.",
-    "msg:en": "Thank you, Cos.",
-    "img": "/img/c55_w4/mother.png"
-  }]
+  "goal": {
+    "msg:ko": "주스 4잔을 상에 가져다주어요!",
+    "msg:en": "Serve four cups of juice to the table",
+    "img":  ["/img/c55_w4/juice.png","/img/c55_w4/table0.png"]
+  }
 }

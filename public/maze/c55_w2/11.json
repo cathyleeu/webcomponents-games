@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
-  "score":2,
-  "workspace": ["start"],
+  "score":1,
+  "workspace": ["start", "move_left", "repeat", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -11,28 +11,28 @@
   ],
   "map": [
     ".#######.",
-    "#.#.....#",
-    "#.#.##..#",
-    "##...#..#",
-    "#r..###.#",
-    "#.##...%#",
-    "#.###..##",
-    "#.....#.#",
+    "###.##.l#",
+    "#...#...#",
+    "##.###.##",
+    "##......#",
+    "#..##..##",
+    "#.%.....#",
+    "#...##..#",
     ".#######."
   ],
   "extra":[{
-    "x": 7,
-    "y": 5,
-    "img":"m_grandmother"
+    "x": 2,
+    "y": 6,
+    "img":"todelana"
   }],
   "tutorial": [{
-    "msg:ko": "외할머니에게 초대장을 드리러 가자!",
-    "msg:en": "Let's go to grandmother for invitation",
-    "img": "/img/c55_w2/m_grandm.png"
+    "msg:ko": "토드와 라나에게 초대장을 주러 가자!",
+    "msg:en": "Let's go to Tod and lana for invitation",
+    "img": "/img/c55_w2/todelana.png"
   }],
   "goal": {
-    "msg:ko": "외할머니에게 초대장을 드리러 가자!",
-    "msg:en": "Let's go to grandmother for invitation",
-    "img": "/img/c55_w2/m_grandm.png"
+    "msg:ko": "토드와 라나에게 초대장을 주러 가자!",
+    "msg:en": "Let's go to Tod and lana for invitation",
+    "img": "/img/c55_w2/todelana.png"
   }
 }

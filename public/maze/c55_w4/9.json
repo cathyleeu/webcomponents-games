@@ -14,34 +14,34 @@
   "map": [
     ".wwwwwww.",
     "w.##..##w",
-    "w...#...w",
-    "w#...#..w",
-    "wr...)..w",
-    "w.#....#w",
-    "w.##...#w",
-    "w...AB%.w",
+    "w#.r.)..w",
+    "w..#..##w",
+    "w#..#...w",
+    "wh.#.%C.w",
+    "w#.#...#w",
+    "w.......w",
     ".wwwwwww."
   ],
   "extra":[{
     "x": 5,
-    "y": 4,
-    "img":"fruit_or",
-     "itemImg":"fruit_or",
+    "y": 2,
+    "img":"fruit_st",
+     "itemImg":"fruit_st",
      "disappear":true
   },{
-    "x": 6,
-    "y": 7,
-    "img":"table4",
+    "x": 5,
+    "y": 5,
+    "img":"table1",
     "useItem": true
   }],
   "tutorial": [{
-    "msg:ko": "오렌지를 가장 큰 숫자의 상에 가져다주어요!",
-    "msg:en": "Pick orange and bring it to table with the largest number",
-    "img":  ["/img/c55_w4/fruit_or.png","/img/c4_w4/biggest_num.png"]
+    "msg:ko": "딸기를 가장 작은 숫자의 상에 가져다주어요!",
+    "msg:en": "Pick strawberry and bring it to table with the smaller number",
+    "img":  ["/img/c55_w4/fruit_st.png","/img/c4_w4/smaller_num.png"]
   }],
   "goal": {
-    "msg:ko": "오렌지를 가장 큰 숫자의 상에 가져다주자!",
-    "msg:en": "Pick orange and bring it to table with the largest number",
-    "img":  ["/img/c55_w4/fruit_or.png","/img/c4_w4/biggest_num.png"]
+    "msg:ko": "딸기를 가장 작은 숫자의 상에 가져다주자!",
+    "msg:en": "Pick strawberry and bring it to table with the smaller number",
+    "img":  ["/img/c55_w4/fruit_st.png","/img/c4_w4/smaller_num.png"]
   }
 }

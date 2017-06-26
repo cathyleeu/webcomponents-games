@@ -1,0 +1,131 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "##.##################.",
+    "..#.#...%.#...##..#..#",
+    "..#.#.%%.%#..%..%..%.#",
+    ".#.rL%.#..D%..%..%..#.",
+    "..#.#.%...########U###",
+    "..#.#.....#%.%.%..%.##",
+    "##.###################"
+  ],
+  "extra": [{
+    "x": 4,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "초대장 1개를 얻을 수 있어",
+      "msg:en": "You can get one invitation at once",
+      "img": "/img/c55_w2/invitation.png"
+    }]
+  },{
+    "x": 10,
+    "y": 3,
+    "img":"normal",
+    "tutorial": [{
+      "msg:ko": "초대장 2개를 얻을 수 있어",
+      "msg:en": "You can get two invitations at once",
+      "img":  ["/img/c55_w2/invitation.png","/img/c55_w2/invitation.png"]
+    }]
+  },{
+    "x": 18,
+    "y": 4,
+    "img":"hard",
+    "tutorial": [{
+      "msg:ko": "초대장 3개를 얻을 수 있어",
+      "msg:en": "You can get three invitations at once",
+      "img":  ["/img/c55_w2/invitation.png","/img/c55_w2/invitation.png","/img/c55_w2/invitation.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 3,
+    "link": "c55_w2/1"
+  },{
+    "x": 6,
+    "y": 2,
+    "link": "c55_w2/2"
+  },{
+    "x": 6,
+    "y": 4,
+    "link": "c55_w2/3"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "c55_w2/4"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c55_w2/5"
+  },{
+    "x": 9,
+    "y": 2,
+    "link": "c55_w2/6"
+  },{
+    "x": 11,
+    "y": 3,
+    "link": "c55_w2/7"
+  },{
+    "x": 13,
+    "y": 2,
+    "link": "c55_w2/8"
+  },{
+    "x": 14,
+    "y": 3,
+    "link": "c55_w2/9"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "c55_w2/10"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "c55_w2/11"
+  },{
+    "x": 19,
+    "y": 2,
+    "link": "c55_w2/12"
+  },{
+    "x": 18,
+    "y": 5,
+    "link": "c55_w2/13"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "c55_w2/14"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "c55_w2/15"
+  },{
+    "img":"house",
+    "x": 11,
+    "y": 5,
+    "obstacle": false,
+    "link": "c55_w2/16",
+    "min_score": 21
+  }],
+  "tutorial": [{
+    "msg:ko": "초대장을 보내자!",
+    "msg:en": "Let's send the invitations",
+    "img": "/img/c55_w2/invitation.png"
+  }, {
+    "msg:ko": "초대장을 21개를 보낸 뒤, 집으로 이동하자!",
+    "msg:en": "Send 21 invitations and, Go back to house",
+    "img":  ["/img/c55_w2/invitation.png","/img/c55_w2/house.png"]
+        ,
+    "x" : 11,
+    "y" : 5
+  }, {
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "초대장을 21개를 보낸 뒤, 집으로 이동하자!",
+    "msg:en": "Send 21 invitations and, Go back to house",
+    "img":  ["/img/c55_w2/invitation.png","/img/c55_w2/house.png"]
+  }
+}
