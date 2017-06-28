@@ -848,6 +848,10 @@ public.get('/a6_w4', function *(next) {
   yield this.render('a6_w4');
 });
 
+public.get('/card_flip', function *(next) {
+  yield this.render('card_flip');
+});
+
 public.get('/maze', function *(next) {
   yield this.render('maze', {
     mazeType: "vertical"
