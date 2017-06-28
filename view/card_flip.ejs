@@ -2,24 +2,17 @@
 <script type="text/javascript" src="/components/webcomponentsjs/webcomponents-lite.js"></script>
 <link rel="import" href="/webcomponents/flip-card.html">
 
-
 <flip-card id="flip-game"></flip-card>
 
 <script>
-
-let link = document.querySelector('link[rel="import"]');
-link.addEventListener('load', function(e) {
-  // let importedDoc = link.import;
-  // importedDoc points to the document under component.html
-  let data =[
-     "http://cfile208.uf.daum.net/image/26593E3E56D913C5287674"
-    ,"http://file2.instiz.net/data/file2/2016/02/03/8/d/e/8deda8ace3c8604873373de3abbbf156.png"
-    ,"http://cfile201.uf.daum.net/image/2365DD3E56D9151C2137B0"
-    ,"http://img2.kakao.co.kr/assets/friends/kakaofriends_09-01f0fe49970fc21aa09f788fab419539.png"
-  ]
-
+window.addEventListener('WebComponentsReady', function(e) {
+  let data = [
+    "http://cfile208.uf.daum.net/image/26593E3E56D913C5287674",
+    "http://file2.instiz.net/data/file2/2016/02/03/8/d/e/8deda8ace3c8604873373de3abbbf156.png",
+    "http://cfile201.uf.daum.net/image/2365DD3E56D9151C2137B0",
+    "http://img2.kakao.co.kr/assets/friends/kakaofriends_09-01f0fe49970fc21aa09f788fab419539.png"
+  ];
   let flip = document.getElementById("flip-game");
   flip.setData(data);
 });
-
 </script>
