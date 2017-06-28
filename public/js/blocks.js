@@ -230,13 +230,35 @@ Blocks["a6w1_busmove"] = {
 Blocks["a6w1_trainmove"] = {
   rgbColor: "#F28C00",
   message0: {
-    ko: "%1 가차 이동",
+    ko: "%1 기차 이동",
     en: "%1 train move"
   },
   args0: [
     {type: "field_image", src: "/img/a6_w1/train.png"}
   ],
   action: ["steploop", "a6w1_move"]
+};
+Blocks["a6w1_shipmove"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 배 이동",
+    en: "%1 ship move"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a6_w2/ship.png"}
+  ],
+  action: ["steploop", "a6w1_move_right"]
+};
+Blocks["a6w1_airplanemove"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 비행기 이동",
+    en: "%1 airplane move"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a6_w2/airplane.png"}
+  ],
+  action: ["steploop", "a6w1_move_right"]
 };
 
 Blocks["a7w1_corn"] = {

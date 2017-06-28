@@ -1,0 +1,30 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    ".######.####",
+    "#......#....",
+    "#......#....",
+    "#.r....%....",
+    "#......#....",
+    "#......#....",
+    ".######.####"
+  ],
+  "extra": [{
+    "x": 7,
+    "y": 3,
+    "link": "b6_w1/1"
+  }],
+  "tutorial": [{
+    "msg:ko": "오른쪽 버스정류장으로 이동하고, '버스정류장으로 가요'를 모두 해결해요 ",
+    "msg:en": "Go the busterminal on the right and complete 'Go to bus terminal' stage",
+    "img": "/img/b6_w1/busterminal.png"
+  }],
+  "goal": {
+    "msg:ko": "오른쪽 버스정류장으로 이동해 보아요",
+    "msg:en": "Go the busterminal on the right",
+    "img": "/img/b6_w1/busterminal.png"
+  }
+}

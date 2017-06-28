@@ -1,0 +1,40 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start", "a6w1_airplanemove"],
+  "toolbox": [
+
+  ],
+  "map": [
+    "#....#.",
+    ".#..#..",
+    ".......",
+    "@.....%",
+    "....#..",
+    ".#.....",
+    "...#..."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 0,
+    "useItem": true
+  },{
+    "x": 0,
+    "y": 4,
+    "img": "cos0"
+  }],
+  "tutorial": [{
+    "msg:ko": "비행기를 타요",
+    "msg:en": "I'm going to take the airplane",
+    "img": ["/img/a6_w2/airplane.png"]
+  }],
+  "goal": {
+    "msg:ko": "시작버튼을 눌러보아요",
+    "msg:en": "Press the start button",
+    "img": "/img/a6_w1/start_block.png"
+  },
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+  }]
+}

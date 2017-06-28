@@ -1,0 +1,131 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "##.##################.",
+    "..#.#...%.#...##..#..#",
+    "..#.#.%%.%#..%..%..%.#",
+    ".#.re%.#..n%..%..%..#.",
+    "..#.#.%...########h###",
+    "..#.#.....#%.%.%..%.##",
+    "##.###################"
+  ],
+  "extra": [{
+    "x": 4,
+    "y": 3,
+    "img":"easy", "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "기차역을 1개 얻을 수 있어.",
+      "msg:en": "You can get one train station at once.",
+      "img": "/img/b6_w2/trainstation.png"
+    }]
+  },{
+    "x": 10,
+    "y": 3,
+    "img":"normal",
+    "tutorial": [{
+      "msg:ko": "기차역을 2개 얻을 수 있어.",
+      "msg:en": "You can get two train station at once.",
+      "img": "/img/b6_w2/trainstation.png"
+    }]
+  },{
+    "x": 18,
+    "y": 4,
+    "img":"hard",
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어.",
+      "msg:en": "You can get three train station at once.",
+      "img": "/img/b6_w2/trainstation.png"
+    }]
+  },{
+    "x": 5,
+    "y": 3,
+    "link": "b6_w2/1"
+  },{
+    "x": 6,
+    "y": 2,
+    "link": "b6_w2/2"
+  },{
+    "x": 6,
+    "y": 4,
+    "link": "b6_w2/3"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "b6_w2/4"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b6_w2/5"
+  },{
+    "x": 9,
+    "y": 2,
+    "link": "b6_w2/6"
+  },{
+    "x": 11,
+    "y": 3,
+    "link": "b6_w2/7"
+  },{
+    "x": 13,
+    "y": 2,
+    "link": "b6_w2/8"
+  },{
+    "x": 14,
+    "y": 3,
+    "link": "b6_w2/9"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "b6_w2/10"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "b6_w2/11"
+  },{
+    "x": 19,
+    "y": 2,
+    "link": "b6_w2/12"
+  },{
+    "x": 18,
+    "y": 5,
+    "link": "b6_w2/13"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "b6_w2/14"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "b6_w2/15"
+  },{
+    "img":"train",
+    "x": 11,
+    "y": 5,
+    "obstacle": false,
+    "link": "b6_w2/99",
+    "min_score": 21
+  }],
+  "tutorial": [{
+    "msg:ko": "기차역에 가보아요! ",
+    "msg:en": "Let's go to the train station!",
+    "img": "/img/b6_w2/trainstation.png"
+  }, {
+    "msg:ko": "기차역 21개를 모으면 기차를 타러 가요.",
+    "msg:en": "Take the train with more than 21 train stations.",
+    "img": "/img/b6_w2/train.png",
+    "x" : 11,
+    "y" : 5
+  }, {
+    "msg:ko": "다음 버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "기차역를 21개 모으자!",
+    "msg:en": "Let's get 21 train stations!",
+    "img": "/img/b6_w2/trainstation.png"
+  }
+}

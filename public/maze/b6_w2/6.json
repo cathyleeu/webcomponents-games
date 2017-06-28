@@ -1,23 +1,24 @@
 {
   "tile_size": 128,
-  "score":2,
-  "workspace": ["start", "repeat", "repeat"],
+  "score":1,
+  "workspace": ["start", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left"
+    "move_left",
+    "repeat"
   ],
   "map": [
     ".#######.",
-    "#.##..###",
-    "#r......#",
-    "#..##.###",
-    "##..#...#",
-    "#...#..#",
-    "##.#...##",
-    "#....%###",
-    ".#######."
+    "#.##d.###",
+    "##......#",
+    "#.#..#.##",
+    "#..#....#",
+    "#..#.#..#",
+    "##.....##",
+    "#...%...#",
+    "jjjjjjjjj"
   ],
   "tutorial": [{
     "msg:ko": "코스는 기차역에 가야해요",

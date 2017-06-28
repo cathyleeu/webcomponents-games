@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start", "repeat", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -10,15 +10,15 @@
     "repeat"
   ],
   "map": [
-    ".###wbbbe",
-    "#%##a#..a",
-    "#.#.a...a",
-    "#...a..#a",
-    "bbzbg...a",
-    "#..#...#a",
-    "#......#a",
-    "#..#.#u#a",
-    ".#######a"
+    ".#######.",
+    "#.####.##",
+    "#....#.##",
+    "###...l##",
+    "#.#.##..#",
+    "bbbzbbbbb",
+    "#.#....##",
+    "#.%..####",
+    "mnmnmnmnm"
   ],
   "tutorial": [{
     "msg:ko": "코스는 공항에 가야해요",

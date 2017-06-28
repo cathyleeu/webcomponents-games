@@ -1,0 +1,28 @@
+[
+  {"book": "a6", "title": "1주차 : 땅에서 이동하기"},
+
+  {"id": "background", "src": "/img/a6_w2/airplane_bg.png"},
+
+  {"id": "character", "src": "/img/a6_w2/airplane.png", "size": 256},
+
+  {"id": "message", "src": "/img/a6_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/invisiblex256.png"},
+  {"id": "cos0", "src": "/img/a6_w1/cos0.png"},
+
+  {"id": "airplane1", "src": "/img/a6_w2/airplane1.png","obstacle": true},
+  {"id": "airplane2", "src": "/img/a6_w2/airplane2.png","obstacle": true},
+  {"id": "airplane3", "src": "/img/a6_w2/airplane3.png","obstacle": true},
+  {"id": "airplane4", "src": "/img/a6_w2/airplane4.png","obstacle": true},
+  {"id": "airplane5", "src": "/img/a6_w2/airplane5.png","obstacle": true},
+  {"id": "airplane6", "src": "/img/a6_w2/airplane6.png","obstacle": true},
+
+  {"tile": "a", "id": "seawall1", "src": "/img/a6_w2/seawall1.png"},
+  {"tile": "b", "id": "seawall2", "src": "/img/a6_w2/seawall2.png"},
+  {"tile": "c", "id": "lighthouse", "src": "/img/a6_w2/lighthouse.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"}
+
+]
