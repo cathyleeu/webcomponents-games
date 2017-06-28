@@ -12,6 +12,7 @@
   "ask_fullscreen":"전체화면 모드로 진행할까요?",
   "ask_logout":"로그아웃 하시겠습니까?",
   "ask_select":"문제를 다시 선택하시겠습니까?",
+  "ask_continue":"이전에 하던 문제를 이어서 하시겠습니까?",
   "confirm_yes":"네",
   "confirm_no":"아니오",
   "next_stage": "다음 단계로 이동",

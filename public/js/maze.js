@@ -39,19 +39,23 @@ page('*', function(ctx, next) {
 
   // load map json file
   $.getJSON(map_url, function(json) {
-    var lang = store.get("lang") || "ko";
+    var lang = store.get("lang") || "ko",
+        fullscreen = null,
+        last_path = null;
     maze = json;
     map_path = path;
     map_qs = ctx.querystring;
     // back link로 온것이 아님 -> 주소로 접속함 -> localData 삭제
     if(map_qs.split("&").indexOf("back") < 0) {
-      var fullscreen = store.get("fullscreen");
+      fullscreen = store.get("fullscreen");
+      last_path = store.get("last_path");
       store.clear();
       // index나 1번 map 이라면 lang 설정을 초기화, 이외에는 유지
       if(map_path[map_path.length-1] == "index" || map_path[map_path.length-1] == "1") {
         lang = "ko";
       } else {
         store.set("fullscreen", fullscreen);
+        last_path = null;
       }
     }
     // 다국어 설정
@@ -62,14 +66,29 @@ page('*', function(ctx, next) {
     } else if(map_qs.split("&").indexOf("lang=cn") >= 0) {
       lang = "cn";
     }
+    store.set("last_path", ctx.path);
     store.set("lang", lang);
     $.getJSON("/msg/" + lang + ".json", function(msg_obj) {
       messages = msg_obj;
       Object.keys(msg_obj).forEach(function(key) {
         $("[data-msg=" + key + "]").text(msg_obj[key]);
       });
+      if(last_path && last_path != ctx.path) {
+        showModal({
+          msg: messages.ask_continue,
+          confirm: true,
+          confirmYes: function() {
+
+            page(last_path);
+          },
+          confirmNo: function() {
+            d1.resolve(json);
+          }
+        });
+      } else {
+        d1.resolve(json);
+      }
     });
-    d1.resolve(json);
   }).fail(function(jqXHR, msg, err) {
     console.log( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
     alert("잘못된 주소입니다. 이전 페이지로 이동합니다.");
@@ -738,7 +757,7 @@ function addEvents() {
       } else {
         var lang = store.get("lang");
         store.set("queries", {});
-        page(link + (lang ? "?lang=" + lang : ""));
+        page(link + ((lang && link.split("/")[0] != map_path[0])? "?lang=" + lang : ""));
       }
       return;
     }

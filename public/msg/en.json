@@ -12,6 +12,7 @@
   "ask_fullscreen":"View on FullScreen?",
   "ask_logout":"Are you sure you want to logout?",
   "ask_select":"Are you sure you want to select another problem?",
+  "ask_continue":"Would you like to continue with the previous problem?",
   "confirm_yes":"Yes",
   "confirm_no":"No",
   "next_stage": "Next Stage",
