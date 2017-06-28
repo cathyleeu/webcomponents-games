@@ -261,8 +261,19 @@ function init() {
     if(fullscreen == undefined && fullscreenEnabled && !fullscreenElement) {
       showModal({
         msg: messages.ask_fullscreen,
-        fullscreen: true
-      })
+        confirm: true,
+        confirmYes: function() {
+          FullScreen();
+          store.set('fullscreen', true)
+          $("#runTutorial").removeClass("hidden");
+          runTutorial(maze.tutorial);
+        },
+        confirmNo: function() {
+          store.set('fullscreen', false)
+          $("#runTutorial").removeClass("hidden");
+          runTutorial(maze.tutorial);
+        }
+      });
     } else {
       $("#runTutorial").removeClass("hidden");
       runTutorial(maze.tutorial);
@@ -482,16 +493,32 @@ function addEvents() {
   }
   $("#logout a").click(function(e) {
     e.preventDefault();
-    if(window.name) {
-      store.clear();
-      location.href = "/code/" + window.name.split("#")[0];
-    }
+    e.stopPropagation();
+    showModal({
+      msg: messages.ask_logout,
+      confirm: true,
+      confirmYes: function() {
+        if(window.name) {
+          store.clear();
+          location.href = "/code/" + window.name.split("#")[0];
+        }
+      },
+      confirmNo: function() {}
+    });
   });
   $("a.navbar-brand").click(function(e) {
     e.preventDefault();
-    if(window.name) {
-      location.href = "/code/" + window.name;
-    }
+    e.stopPropagation();
+    showModal({
+      msg: messages.ask_select,
+      confirm: true,
+      confirmYes: function() {
+        if(window.name) {
+          location.href = "/code/" + window.name;
+        }
+      },
+      confirmNo: function() {}
+    });
   });
   $(document).on("contextmenu mousewheel", function(e) {
     e.preventDefault();
@@ -745,21 +772,12 @@ function addEvents() {
     init();
   });
 
-  $("#doFS").click(function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    FullScreen();
-    store.set('fullscreen', true)
-    $("#runTutorial").removeClass("hidden");
-    runTutorial(maze.tutorial);
-  })
-  $("#notFS").on("touchstart click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    store.set('fullscreen', false)
-    $("#runTutorial").removeClass("hidden");
-    runTutorial(maze.tutorial);
-  })
+  $("#modal .confirm-yes, #modal .confirm-no").click(function(e) {
+    var callback = $(this).data("callback");
+    if($.isFunction(callback)) {
+      callback.call(this, e);
+    }
+  });
   $("#fullScreen").click(function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -971,7 +989,7 @@ function showModal(options) {
       msg: options,
       goNext: false,
       tutorial: false,
-      fullscreen: false
+      confirm: false
     };
   }
   $("#modal .btn").hide();
@@ -979,9 +997,9 @@ function showModal(options) {
     $("#modal .go-next, #modal .reset-maze").show();
   } else if(options.tutorial) {
     $("#modal .tutorial").show();
-  } else if (options.fullscreen) {
-    $("#modal .requestfullscreen").show();
-    $("#modal .cancelfullscreen").show();
+  } else if (options.confirm) {
+    $("#modal .confirm-yes").data("callback", options.confirmYes).show();
+    $("#modal .confirm-no").data("callback", options.confirmNo).show();
   } else {
     $("#modal .close-modal").show();
   }
