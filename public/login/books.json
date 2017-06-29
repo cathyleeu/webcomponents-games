@@ -368,8 +368,8 @@
     ["방을 정리해요", "Tidy up", "/a4_w3"]
   ],
   "A-5":[
-    ["매미의 성장", "/mazeh#!a5_w3/1"],
-    ["개구리의 성장", "/mazeh#!a5_w4/1"]
+    ["매미의 성장", "Life cycle of a cicada", "/mazeh#!a5_w3/1"],
+    ["개구리의 성장", "Life cycle of a frog", "/mazeh#!a5_w4/1"]
   ],
   "A-5-5":[
     ["목욕용품 정리", "/a5_5_w3"]
@@ -407,10 +407,10 @@
     ["가위바위보 블록을 써보아요:할머니 할아버지도 가위바위보", "Rock, paper, scissors with grandparents", "/mazeh#!b4_w4/index"]
   ],
   "B-5":[
-    ["무더운 여름, 바다에 가요:해변으로 놀러가요", "/mazeh#!b5_w1/index"],
-    ["가져오기와 사용하기를 이해해요:바닷가 물놀이 준비를 해요", "/mazeh#!b5_w2/index"],
-    ["가져오기와 사용하기를 연습해요:낚시를 준비해요", "/mazeh#!b5_w3/index"],
-    ["가져오기와 사용하기를 써보아요:갯벌 생물을 잡아요", "/mazeh#!b5_w4/index"]
+    ["무더운 여름, 바다에 가요:해변으로 놀러가요", "Let’s go to the beach", "/mazeh#!b5_w1/index"],
+    ["가져오기와 사용하기를 이해해요:바닷가 물놀이 준비를 해요", "Swimming at the beach", "/mazeh#!b5_w2/index"],
+    ["가져오기와 사용하기를 연습해요:낚시를 준비해요", "Prepare for fishing", "/mazeh#!b5_w3/index"],
+    ["가져오기와 사용하기를 써보아요:갯벌 생물을 잡아요", "Catch the sea creatures", "/mazeh#!b5_w4/index"]
   ],
   "B-5-5":[
     ["경복궁 근처에 무엇이 있나요:경복궁 주변을 구경해요", "/mazeh#!b55_w1/index"],
@@ -455,10 +455,10 @@
     ["반복 블록을 써보아요:집으로 돌아가요", "Go back home", "/mazeh#!c4_w4/index"]
   ],
   "C-5":[
-    ["우리 주변의 규칙을 알아보아요:토드가 규칙 찾기 놀이를 해요", "/mazeh#!c5_w1/index"],
-    ["여러 가지 규칙을 찾아요:라나와 규칙을 찾아보아요", "/mazeh#!c5_w2/index"],
-    ["동작 블록을 사용해요:토드에게 선물해요", "/mazeh#!c5_w3/index"],
-    ["반복 블록을 함께 사용해요:토드와 짝꿍이 되어요", "/mazeh#!c5_w4/index"]
+    ["우리 주변의 규칙을 알아보아요:토드가 규칙 찾기 놀이를 해요", "Tod completes the pattern", "/mazeh#!c5_w1/index"],
+    ["여러 가지 규칙을 찾아요:라나와 규칙을 찾아보아요", "Spot pattern with Lana", "/mazeh#!c5_w2/index"],
+    ["동작 블록을 사용해요:토드에게 선물해요", "A gift for Tod", "/mazeh#!c5_w3/index"],
+    ["반복 블록을 함께 사용해요:토드와 짝꿍이 되어요", "Became Tod's mate", "/mazeh#!c5_w4/index"]
   ],
   "C-5-5":[
     ["우리나라 전통 돌잔치 & 집을 정리해요 : 집을 정리해요", "/mazeh#!c55_w1/index"],
