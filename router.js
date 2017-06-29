@@ -214,25 +214,21 @@ function getBook(classObj) {
       book = [3, 4];
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
-    book = [5, "5-5"];
+    book = ["5-5", 6];
   }
-  // 직영 설리번, 울산지사 교차로원
-  if(school == "E00076-K1" || school == "A00072-K9") {
-    book = [1, 2];
+  // 직영 설리번, 울산지사 교차로원, 인천지사 유원유치원
+  if(school == "E00076-K1" || school == "A00072-K9" || school == "A00114-K3") {
+    book = [2, 3];
   }
   // 부산지사 동성어학원, 영업부 일산지사 홍익유치원
   if(school == "A00066-K2" || school == "C00149-K1") {
-    book = [2, 3];
-  }
-  // 인천지사 유원유치원
-  if(school == "A00114-K3") {
-    book = [1, 2];
+    book = [3, 4];
   }
   // 송도ECC 추가반
   if(school == "B00136-K1") {
     var classNum = classObj.code.slice(-3);
     if(classNum == "KC7" || classNum == "KC8" || classNum == "KC9") {
-      book = [1, 2];
+      book = [2, 3];
     }
   }
   book = book.map(function(num) {
