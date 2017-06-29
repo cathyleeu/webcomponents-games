@@ -24,9 +24,9 @@
     "img": "cos0"
   }],
   "tutorial": [{
-    "msg:ko": "비행기를 타요",
-    "msg:en": "I'm going to take the airplane",
-    "img": ["/img/a6_w2/airplane.png"]
+    "msg:ko": "배를 타요",
+    "msg:en": "I'm going to take the ship",
+    "img": ["/img/a6_w2/ship.png"]
   }],
   "goal": {
     "msg:ko": "시작버튼을 눌러보아요",
@@ -36,5 +36,6 @@
   "success": [{
     "msg:ko": "성공!",
     "msg:en": "Success!",
+    "link": "b6_w4/index"
   }]
 }

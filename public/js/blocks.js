@@ -247,7 +247,7 @@ Blocks["a6w1_shipmove"] = {
   args0: [
     {type: "field_image", src: "/img/a6_w2/ship.png"}
   ],
-  action: ["steploop", "a6w1_move_right"]
+  action: ["steploop", "a6w1_move"]
 };
 Blocks["a6w1_airplanemove"] = {
   rgbColor: "#F28C00",
@@ -258,7 +258,7 @@ Blocks["a6w1_airplanemove"] = {
   args0: [
     {type: "field_image", src: "/img/a6_w2/airplane.png"}
   ],
-  action: ["steploop", "a6w1_move_right"]
+  action: ["steploop", "a6w1_move"]
 };
 
 Blocks["a7w1_corn"] = {

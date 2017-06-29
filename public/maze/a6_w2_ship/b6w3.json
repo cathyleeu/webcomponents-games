@@ -1,26 +1,26 @@
 {
   "tile_size": 128,
   "score":5,
-  "workspace": ["start", "a6w1_shipmove"],
+  "workspace": ["start", "ride_right", "a6w1_shipmove"],
   "toolbox": [
 
   ],
   "map": [
-    "#..#.#.",
-    ".#..#.#",
-    "#..#.#.",
-    "@.....%",
-    "aba.b..",
-    ".a...ba",
-    ".ac.ba."
+    "#..%.#.",
+    ".#....#",
+    "#....#.",
+    ".......",
+    "....aba",
+    "#....a.",
+    "...@)ac"
   ],
   "extra":[{
     "x": 2,
     "y": 0,
     "useItem": true
   },{
-    "x": 0,
-    "y": 4,
+    "x": 4,
+    "y": 6,
     "img": "cos0"
   }],
   "tutorial": [{
