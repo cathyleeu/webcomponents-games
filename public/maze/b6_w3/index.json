@@ -4,128 +4,278 @@
   "tile_size": 128,
   "toolbox": [],
   "map": [
-    "##.##################.",
-    "..#.#...%.#...##..#..#",
-    "..#.#.%%.%#..%..%..%.#",
-    ".#.re%.#..n%..%..%..#.",
-    "..#.#.%...########h###",
-    "..#.#.....#%.%.%..%.##",
-    "##.###################"
+    "#####EEEEEE#######.",
+    "..r..%%%%%%...I%N.#",
+    ".#############.%N.#",
+    "##...#########.%N.#",
+    "..#............%N.#",
+    "##...%%%%%%%%%.%N.#",
+    "#####HHHHHHHHH#####."
   ],
   "extra": [{
-    "x": 4,
-    "y": 3,
-    "img":"easy", "obstacle": false,
+    "x": 5,
+    "y": 0,
     "tutorial": [{
-      "msg:ko": "선착장을 1개 얻을 수 있어.",
-      "msg:en": "You can get one ship port at once.",
+      "msg:ko": "선착장을 1개 얻을 수 있어",
+      "msg:en": "You can get one ship port at once",
+      "img": "/img/b6_w3/shipport.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선착장을 1개 얻을 수 있어",
+      "msg:en": "You can get one ship port at once",
+      "img": "/img/b6_w3/shipport.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선착장을 1개 얻을 수 있어",
+      "msg:en": "You can get one ship port at once",
+      "img": "/img/b6_w3/shipport.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선착장을 1개 얻을 수 있어",
+      "msg:en": "You can get one ship port at once",
+      "img": "/img/b6_w3/shipport.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "선착장을 1개 얻을 수 있어",
+      "msg:en": "You can get one ship port at once",
       "img": "/img/b6_w3/shipport.png"
     }]
   },{
     "x": 10,
-    "y": 3,
-    "img":"normal",
+    "y": 0,
     "tutorial": [{
-      "msg:ko": "선착장을 2개 얻을 수 있어.",
-      "msg:en": "You can get two ship port at once.",
+      "msg:ko": "선착장을 1개 얻을 수 있어",
+      "msg:en": "You can get one ship port at once",
       "img": "/img/b6_w3/shipport.png"
     }]
   },{
-    "x": 18,
-    "y": 4,
-    "img":"hard",
-    "tutorial": [{
-      "msg:ko": "선착장을 3개 얻을 수 있어.",
-      "msg:en": "You can get three ship port at once.",
-      "img": "/img/b6_w3/shipport.png"
-    }]
-  },{
-    "x": 5,
-    "y": 3,
-    "link": "b6_w3/1"
-  },{
-    "x": 6,
-    "y": 2,
-    "link": "b6_w3/2"
-  },{
-    "x": 6,
-    "y": 4,
-    "link": "b6_w3/3"
-  },{
-    "x": 7,
-    "y": 2,
-    "link": "b6_w3/4"
-  },{
-    "x": 8,
+    "x": 16,
     "y": 1,
-    "link": "b6_w3/5"
-  },{
-    "x": 9,
-    "y": 2,
-    "link": "b6_w3/6"
-  },{
-    "x": 11,
-    "y": 3,
-    "link": "b6_w3/7"
-  },{
-    "x": 13,
-    "y": 2,
-    "link": "b6_w3/8"
-  },{
-    "x": 14,
-    "y": 3,
-    "link": "b6_w3/9"
+    "tutorial": [{
+      "msg:ko": "선착장을 2개 얻을 수 있어",
+      "msg:en": "You can get two ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
   },{
     "x": 16,
     "y": 2,
-    "link": "b6_w3/10"
+    "tutorial": [{
+      "msg:ko": "선착장을 2개 얻을 수 있어",
+      "msg:en": "You can get two ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
   },{
-    "x": 17,
+    "x": 16,
     "y": 3,
-    "link": "b6_w3/11"
+    "tutorial": [{
+      "msg:ko": "선착장을 2개 얻을 수 있어",
+      "msg:en": "You can get two ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
   },{
-    "x": 19,
-    "y": 2,
-    "link": "b6_w3/12"
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "선착장을 2개 얻을 수 있어",
+      "msg:en": "You can get two ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
   },{
-    "x": 18,
+    "x": 16,
     "y": 5,
-    "link": "b6_w3/13"
+    "tutorial": [{
+      "msg:ko": "선착장을 2개 얻을 수 있어",
+      "msg:en": "You can get two ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선착장을 3개 얻을 수 있어",
+      "msg:en": "You can get three ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선착장을 3개 얻을 수 있어",
+      "msg:en": "You can get three ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선착장을 3개 얻을 수 있어",
+      "msg:en": "You can get three ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선착장을 3개 얻을 수 있어",
+      "msg:en": "You can get three ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선착장을 3개 얻을 수 있어",
+      "msg:en": "You can get three ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선착장을 3개 얻을 수 있어",
+      "msg:en": "You can get three ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선착장을 3개 얻을 수 있어",
+      "msg:en": "You can get three ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선착장을 3개 얻을 수 있어",
+      "msg:en": "You can get three ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "선착장을 3개 얻을 수 있어",
+      "msg:en": "You can get three ship ports at once",
+      "img": ["/img/b6_w3/shipport.png","/img/b6_w3/shipport.png","/img/b6_w3/shipport.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "b6_w3/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b6_w3/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b6_w3/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b6_w3/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b6_w3/5"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "b6_w3/6"
+  },{
+    "x": 14,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b6_w3/7"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b6_w3/8"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b6_w3/9"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b6_w3/10"
   },{
     "x": 15,
     "y": 5,
-    "link": "b6_w3/14"
+    "link": "b6_w3/11"
   },{
     "x": 13,
     "y": 5,
-    "link": "b6_w3/15"
+    "link": "b6_w3/12"
   },{
-    "img":"ship",
+    "x": 12,
+    "y": 5,
+    "link": "b6_w3/13"
+  },{
     "x": 11,
     "y": 5,
+    "link": "b6_w3/14"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b6_w3/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b6_w3/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "b6_w3/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b6_w3/18"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "b6_w3/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "b6_w3/20"
+  },{
+    "img":"ship",
+    "x": 2,
+    "y": 4,
     "obstacle": false,
-    "link": "b6_w3/99",
-    "min_score": 21
+    "link": "a6_w2_ship/b6w3",
+    "min_score": 15
   }],
+
   "tutorial": [{
-    "msg:ko": "선착장에 가보아요! ",
-    "msg:en": "Let's go to the ship port!",
+    "msg:ko": "선착장에 가보아요! 쉬운 문제는 선착장 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's go to the ship port! An easy problem gives you one ship port, a normal one gives you two and a hard one gives you three.",
     "img": "/img/b6_w3/shipport.png"
-  }, {
-    "msg:ko": "선착장 21개를 모으면 배를 타러 가요.",
-    "msg:en": "Take the ship with more than 21 ship ports.",
-    "img": "/img/b6_w3/ship.png",
-    "x" : 11,
-    "y" : 5
-  }, {
-    "msg:ko": "다음 버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
   }],
   "goal": {
-    "msg:ko": "선착장을 21개 모으자!",
-    "msg:en": "Let's get 21 ship ports!",
-    "img": "/img/b6_w3/shipport.png"
+    "msg:ko": "선착장을 15개 모아서 배를 타러 가요.",
+    "msg:en": "Let's get 15 ship ports and go to take ship.",
+    "img": ["/img/b6_w3/shipport.png","/img/b6_w3/ship.png"]
   }
 }

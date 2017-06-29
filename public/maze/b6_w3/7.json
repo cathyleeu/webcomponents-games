@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start", "move_right", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -13,11 +13,11 @@
     "ijijijiji",
     "jijijijij",
     "#..%.#..#",
-    "bbbbzbbbb",
     "#..#.#..#",
-    "###...l##",
-    "#.#..#.##",
-    "#.#..##.#",
+    "###....##",
+    "#.##.#.##",
+    "bbbbzbbbb",
+    "#.#r.##.#",
     ".#######."
   ],
   "tutorial": [{

@@ -4,128 +4,278 @@
   "tile_size": 128,
   "toolbox": [],
   "map": [
-    "##.##################.",
-    "..#.#...%.#...##..#..#",
-    "..#.#.%%.%#..%..%..%.#",
-    ".#.re%.#..n%..%..%..#.",
-    "..#.#.%...########h###",
-    "..#.#.....#%.%.%..%.##",
-    "##.###################"
+    "#####EEEEEE#######.",
+    "..r..%%%%%%...I%N.#",
+    ".#############.%N.#",
+    "##...#########.%N.#",
+    "..#............%N.#",
+    "##...%%%%%%%%%.%N.#",
+    "#####HHHHHHHHH#####."
   ],
   "extra": [{
-    "x": 4,
-    "y": 3,
-    "img":"easy", "obstacle": false,
+    "x": 5,
+    "y": 0,
     "tutorial": [{
-      "msg:ko": "기차역을 1개 얻을 수 있어.",
-      "msg:en": "You can get one train station at once.",
+      "msg:ko": "기차역을 1개 얻을 수 있어",
+      "msg:en": "You can get one train station at once",
+      "img": "/img/b6_w2/trainstation.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "기차역을 1개 얻을 수 있어",
+      "msg:en": "You can get one train station at once",
+      "img": "/img/b6_w2/trainstation.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "기차역을 1개 얻을 수 있어",
+      "msg:en": "You can get one train station at once",
+      "img": "/img/b6_w2/trainstation.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "기차역을 1개 얻을 수 있어",
+      "msg:en": "You can get one train station at once",
+      "img": "/img/b6_w2/trainstation.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "기차역을 1개 얻을 수 있어",
+      "msg:en": "You can get one train station at once",
       "img": "/img/b6_w2/trainstation.png"
     }]
   },{
     "x": 10,
-    "y": 3,
-    "img":"normal",
+    "y": 0,
     "tutorial": [{
-      "msg:ko": "기차역을 2개 얻을 수 있어.",
-      "msg:en": "You can get two train station at once.",
+      "msg:ko": "기차역을 1개 얻을 수 있어",
+      "msg:en": "You can get one train station at once",
       "img": "/img/b6_w2/trainstation.png"
     }]
   },{
-    "x": 18,
-    "y": 4,
-    "img":"hard",
-    "tutorial": [{
-      "msg:ko": "기차역을 3개 얻을 수 있어.",
-      "msg:en": "You can get three train station at once.",
-      "img": "/img/b6_w2/trainstation.png"
-    }]
-  },{
-    "x": 5,
-    "y": 3,
-    "link": "b6_w2/1"
-  },{
-    "x": 6,
-    "y": 2,
-    "link": "b6_w2/2"
-  },{
-    "x": 6,
-    "y": 4,
-    "link": "b6_w2/3"
-  },{
-    "x": 7,
-    "y": 2,
-    "link": "b6_w2/4"
-  },{
-    "x": 8,
+    "x": 16,
     "y": 1,
-    "link": "b6_w2/5"
-  },{
-    "x": 9,
-    "y": 2,
-    "link": "b6_w2/6"
-  },{
-    "x": 11,
-    "y": 3,
-    "link": "b6_w2/7"
-  },{
-    "x": 13,
-    "y": 2,
-    "link": "b6_w2/8"
-  },{
-    "x": 14,
-    "y": 3,
-    "link": "b6_w2/9"
+    "tutorial": [{
+      "msg:ko": "기차역을 2개 얻을 수 있어",
+      "msg:en": "You can get two train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
   },{
     "x": 16,
     "y": 2,
-    "link": "b6_w2/10"
+    "tutorial": [{
+      "msg:ko": "기차역을 2개 얻을 수 있어",
+      "msg:en": "You can get two train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
   },{
-    "x": 17,
+    "x": 16,
     "y": 3,
-    "link": "b6_w2/11"
+    "tutorial": [{
+      "msg:ko": "기차역을 2개 얻을 수 있어",
+      "msg:en": "You can get two train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
   },{
-    "x": 19,
-    "y": 2,
-    "link": "b6_w2/12"
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "기차역을 2개 얻을 수 있어",
+      "msg:en": "You can get two train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
   },{
-    "x": 18,
+    "x": 16,
     "y": 5,
-    "link": "b6_w2/13"
+    "tutorial": [{
+      "msg:ko": "기차역을 2개 얻을 수 있어",
+      "msg:en": "You can get two train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어",
+      "msg:en": "You can get three train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어",
+      "msg:en": "You can get three train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어",
+      "msg:en": "You can get three train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어",
+      "msg:en": "You can get three train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어",
+      "msg:en": "You can get three train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어",
+      "msg:en": "You can get three train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어",
+      "msg:en": "You can get three train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어",
+      "msg:en": "You can get three train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "기차역을 3개 얻을 수 있어",
+      "msg:en": "You can get three train stations at once",
+      "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png","/img/b6_w2/trainstation.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "b6_w2/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b6_w2/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b6_w2/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b6_w2/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b6_w2/5"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "b6_w2/6"
+  },{
+    "x": 14,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b6_w2/7"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b6_w2/8"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b6_w2/9"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b6_w2/10"
   },{
     "x": 15,
     "y": 5,
-    "link": "b6_w2/14"
+    "link": "b6_w2/11"
   },{
     "x": 13,
     "y": 5,
-    "link": "b6_w2/15"
+    "link": "b6_w2/12"
   },{
-    "img":"train",
+    "x": 12,
+    "y": 5,
+    "link": "b6_w2/13"
+  },{
     "x": 11,
     "y": 5,
+    "link": "b6_w2/14"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b6_w2/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b6_w2/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "b6_w2/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b6_w2/18"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "b6_w2/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "b6_w2/20"
+  },{
+    "img":"train",
+    "x": 2,
+    "y": 4,
     "obstacle": false,
-    "link": "b6_w2/99",
-    "min_score": 21
+    "link": "a6_w1_train/b6w2",
+    "min_score": 15
   }],
+
   "tutorial": [{
-    "msg:ko": "기차역에 가보아요! ",
-    "msg:en": "Let's go to the train station!",
+    "msg:ko": "기차역에 가보아요! 쉬운 문제는 기차역 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's go to the train station! An easy problem gives you one train station, a normal one gives you two and a hard one gives you three.",
     "img": "/img/b6_w2/trainstation.png"
-  }, {
-    "msg:ko": "기차역 21개를 모으면 기차를 타러 가요.",
-    "msg:en": "Take the train with more than 21 train stations.",
-    "img": "/img/b6_w2/train.png",
-    "x" : 11,
-    "y" : 5
-  }, {
-    "msg:ko": "다음 버튼 혹은 아무곳이나 눌러 시작하세요",
-    "msg:en": "Press 'Next' Button & Let's play",
-    "x" : 3,
-    "y" : 3
   }],
   "goal": {
-    "msg:ko": "기차역를 21개 모으자!",
-    "msg:en": "Let's get 21 train stations!",
-    "img": "/img/b6_w2/trainstation.png"
+    "msg:ko": "기차역을 15개 모아서 기차를 타러 가요.",
+    "msg:en": "Let's get 15 train stations and go to take train.",
+    "img": ["/img/b6_w2/trainstation.png","/img/b6_w2/train.png"]
   }
 }

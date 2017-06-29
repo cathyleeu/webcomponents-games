@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start", "move_left", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -12,12 +12,12 @@
   "map": [
     "ij#.##.##",
     "ji####..#",
-    "ij...#..#",
-    "ji%....##",
-    "bbbbzbe.#",
+    "ij%#.#..#",
+    "ji.....##",
+    "bbbzbbe.#",
     "ij....a##",
-    "ji#..#a##",
-    "ijr...a##",
+    "ji#.##a##",
+    "ij..l.a##",
     "ji####a#."
   ],
   "tutorial": [{

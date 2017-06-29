@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start","move_up", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -15,10 +15,10 @@
     "##.#.##.#",
     "#.#.#.###",
     "#.......#",
-    "#.%#.#..#",
+    "#.%#.#.u#",
     "iji.###.#",
-    "jij#...u#",
-    "iji#####."
+    "jiji....#",
+    "ijiji###."
   ],
   "tutorial": [{
     "msg:ko": "코스는 선착장에 가야해요",

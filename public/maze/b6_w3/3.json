@@ -1,19 +1,20 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start", "move_right", "repeat", "repeat"],
+  "workspace": ["start", "move_right", "repeat", "move_left"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left"
+    "move_left",
+    "repeat"
   ],
   "map": [
     ".####ijij",
     "#.##.jiji",
     "##.#.ijij",
     "#.#.#jiji",
-    "#....%..#",
+    "#.....%.#",
     "#..#.#..#",
     "###.###.#",
     "#.....r.#",
