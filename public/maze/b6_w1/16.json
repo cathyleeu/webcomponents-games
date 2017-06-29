@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
-  "score":1,
-  "workspace": ["start", "repeat", "repeat"],
+  "score":3,
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -9,34 +9,24 @@
     "move_left"
   ],
   "map": [
-    ".#####aa.",
-    "#.##..aa#",
-    "#%...#aa#",
-    "bbbbzbgqb",
-    "bbbbzbewb",
-    "###.u.aa#",
-    "#.#..#aa#",
-    "#.#..#aa#",
-    ".#####aa."
+    ".#######.",
+    "#.##..###",
+    "##.....l#",
+    "bbbbbzbbb",
+    "##%.....#",
+    "#..#....#",
+    "##.#...##",
+    "#.....###",
+    ".#######."
   ],
-  "extra":[{
-    "x": 1,
-    "y": 2,
-    "img":"bus"
-  }],
   "tutorial": [{
-    "msg:ko": "코스는 버스를 타러 가요",
-    "msg:en": "Let's take the bus!",
-    "img": "/img/b6_w1/bus.png"
+    "msg:ko": "코스는 버스정류장에 가야해요",
+    "msg:en": "Let's go to the bus terminal!",
+    "img": "/img/b6_w1/busterminal.png"
   }],
   "goal": {
-    "msg:ko": "버스를 타러 가자",
-    "msg:en": "Let's take the bus!",
-    "img": "/img/b6_w1/bus.png"
-  },
-  "success": [{
-    "msg:ko": "성공! 참 잘했어요~",
-    "msg:en": "Success! Good Job!",
-    "link": "b6_w2/index"
-  }]
+    "msg:ko": "버스정류장에 가자",
+    "msg:en": "Let's go to the bus terminal!",
+    "img": "/img/b6_w1/busterminal.png"
+  }
 }

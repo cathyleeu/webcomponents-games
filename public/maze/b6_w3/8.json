@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start"],
+  "workspace": ["start", "repeat", "move_down"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -13,10 +13,10 @@
     ".##a####i",
     "#.#a##.#j",
     "#.rx...#i",
-    "###a...#j",
+    "###a...%j",
     "#.#a##..i",
     "#..a...#j",
-    "#..a.#.%i",
+    "#..a.#..i",
     "#..a.###j",
     ".##a####i"
   ],

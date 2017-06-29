@@ -1,7 +1,7 @@
 [
   {"book": "B6", "title": "3주차 : 선착장에 가요"},
-  {"id": "bg1", "src": "/img/b6_w1/bg1.png"},
-  {"id": "bg2", "src": "/img/b6_w1/bg2.png"},
+  {"id": "bg1", "src": "/img/b6_w3/bg1.png"},
+  {"id": "bg2", "src": "/img/b6_w3/bg2.png"},
 
   {"id": "character", "src": "/img/b6_w1/cos.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/b6_w1/cos0.png", "size": 256},
@@ -12,18 +12,16 @@
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
-  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
 
   {"id": "ship", "src": "/img/b6_w3/ship.png"},
-  {"id": "bd1", "src": "/img/b6_w1/bd1.png","obstacle": true},
-  {"id": "bd2", "src": "/img/b6_w1/bd2.png","obstacle": true},
-  {"id": "bd3", "src": "/img/b6_w1/bd3.png","obstacle": true},
-  {"id": "bd4", "src": "/img/b6_w1/bd4.png","obstacle": true},
-  {"id": "bd5", "src": "/img/b6_w1/bd5.png","obstacle": true},
-  {"id": "bd6", "src": "/img/b6_w1/bd6.png","obstacle": true},
-  {"id": "bd7", "src": "/img/b6_w1/bd7.png","obstacle": true},
+  {"tile": "t","id": "lighthouse", "src": "/img/b5_w3/lighthouse.png"},
+  {"id": "seawall1", "src": "/img/b5_w3/seawall1.png", "obstacle": true},
+  {"id": "seawall2", "src": "/img/b5_w3/seawall2.png", "obstacle": true},
+
 
   {"tile": "a", "id": "road11", "src": "/img/b6_w1/road11.png", "wall": true},
   {"tile": "b", "id": "road12", "src": "/img/b6_w1/road12.png", "wall": true},

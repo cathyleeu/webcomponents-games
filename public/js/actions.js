@@ -379,6 +379,8 @@ Actions.prototype.steploop = function(type, block, callback) {
     stepList = ["d","d","d"];
   } else if(type == "a6w1_move") {
     stepList = ["u","u","u","u","u","u"];
+  } else if(type == "a6w1_move_right") {
+    stepList = ["r","r","r","r","r","r"];
   }
   travel(x_next,y_next);
   function travel(a,b){

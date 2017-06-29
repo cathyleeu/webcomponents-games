@@ -4,27 +4,278 @@
   "tile_size": 128,
   "toolbox": [],
   "map": [
-    ".######.####",
-    "#......#....",
-    "#......#....",
-    "#.r....%....",
-    "#......#....",
-    "#......#....",
-    ".######.####"
+    "#####EEEEEE#######.",
+    "..r..%%%%%%...I%N.#",
+    ".#############.%N.#",
+    "##...#########.%N.#",
+    "..#............%N.#",
+    "##...%%%%%%%%%.%N.#",
+    "#####HHHHHHHHH#####."
   ],
   "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 1개 얻을 수 있어",
+      "msg:en": "You can get one busterminal at once",
+      "img": "/img/b6_w1/busterminal.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 1개 얻을 수 있어",
+      "msg:en": "You can get one busterminal at once",
+      "img": "/img/b6_w1/busterminal.png"
+    }]
+  },{
     "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 1개 얻을 수 있어",
+      "msg:en": "You can get one busterminal at once",
+      "img": "/img/b6_w1/busterminal.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 1개 얻을 수 있어",
+      "msg:en": "You can get one busterminal at once",
+      "img": "/img/b6_w1/busterminal.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 1개 얻을 수 있어",
+      "msg:en": "You can get one busterminal at once",
+      "img": "/img/b6_w1/busterminal.png"
+    }]
+  },{
+    "x": 10,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 1개 얻을 수 있어",
+      "msg:en": "You can get one busterminal at once",
+      "img": "/img/b6_w1/busterminal.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 2개 얻을 수 있어",
+      "msg:en": "You can get two busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 2개 얻을 수 있어",
+      "msg:en": "You can get two busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 16,
     "y": 3,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 2개 얻을 수 있어",
+      "msg:en": "You can get two busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 2개 얻을 수 있어",
+      "msg:en": "You can get two busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 2개 얻을 수 있어",
+      "msg:en": "You can get two busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 3개 얻을 수 있어",
+      "msg:en": "You can get three busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 3개 얻을 수 있어",
+      "msg:en": "You can get three busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 3개 얻을 수 있어",
+      "msg:en": "You can get three busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 3개 얻을 수 있어",
+      "msg:en": "You can get three busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 3개 얻을 수 있어",
+      "msg:en": "You can get three busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 3개 얻을 수 있어",
+      "msg:en": "You can get three busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 3개 얻을 수 있어",
+      "msg:en": "You can get three busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 3개 얻을 수 있어",
+      "msg:en": "You can get three busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "버스정류장을 3개 얻을 수 있어",
+      "msg:en": "You can get three busterminals at once",
+      "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png","/img/b6_w1/busterminal.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
     "link": "b6_w1/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b6_w1/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b6_w1/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b6_w1/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b6_w1/5"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "b6_w1/6"
+  },{
+    "x": 14,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b6_w1/7"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b6_w1/8"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b6_w1/9"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b6_w1/10"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "b6_w1/11"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "b6_w1/12"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b6_w1/13"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "b6_w1/14"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b6_w1/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b6_w1/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "b6_w1/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b6_w1/18"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "b6_w1/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "b6_w1/20"
+  },{
+    "img":"bus",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "a6_w1/b6w1",
+    "min_score": 15
   }],
+
   "tutorial": [{
-    "msg:ko": "오른쪽 버스정류장으로 이동하고, '버스정류장으로 가요'를 모두 해결해요 ",
-    "msg:en": "Go the busterminal on the right and complete 'Go to bus terminal' stage",
+    "msg:ko": "버스정류장에 가요! 쉬운 문제는 버스 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's go to the busterminal! An easy problem gives you one busterminal, a normal one gives you two and a hard one gives you three.",
     "img": "/img/b6_w1/busterminal.png"
   }],
   "goal": {
-    "msg:ko": "오른쪽 버스정류장으로 이동해 보아요",
-    "msg:en": "Go the busterminal on the right",
-    "img": "/img/b6_w1/busterminal.png"
+    "msg:ko": "버스정류장을 15개 모아서 버스를 타러 가요.",
+    "msg:en": "Let's get 15 busterminals and go to take bus.",
+    "img": ["/img/b6_w1/busterminal.png","/img/b6_w1/bus.png"]
   }
 }

@@ -1,22 +1,23 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start", "repeat", "repeat"],
+  "workspace": ["start", "repeat"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left"
+    "move_left",
+    "repeat"
   ],
   "map": [
     ".#######.",
     "#.##..###",
-    "#..#..%.#",
-    "#....#..#",
-    "#..#.#..#",
-    "###....##",
-    "#.#.u#.##",
-    "#.#..##.#",
+    "#...d#..#",
+    "#.#..#..#",
+    "#..#....#",
+    "#.##.#.##",
+    "#...%..##",
+    "jjjjjjjjj",
     ".#######."
   ],
   "tutorial": [{

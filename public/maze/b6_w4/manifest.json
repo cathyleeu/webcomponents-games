@@ -12,9 +12,10 @@
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
-  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
 
   {"id": "airplane", "src": "/img/b6_w4/airplane.png"},
   {"id": "bd1", "src": "/img/b6_w1/bd1.png","obstacle": true},
@@ -24,6 +25,9 @@
   {"id": "bd5", "src": "/img/b6_w1/bd5.png","obstacle": true},
   {"id": "bd6", "src": "/img/b6_w1/bd6.png","obstacle": true},
   {"id": "bd7", "src": "/img/b6_w1/bd7.png","obstacle": true},
+  {"id": "tree1", "src": "/img/b4/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/b4/tree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/b4/tree3.png", "obstacle": true},
 
   {"tile": "a", "id": "road11", "src": "/img/b6_w1/road11.png", "wall": true},
   {"tile": "b", "id": "road12", "src": "/img/b6_w1/road12.png", "wall": true},
@@ -37,7 +41,9 @@
   {"tile": "z", "id": "crosswalk_col", "src": "/img/b6_w1/crosswalk_col.png"},
   {"tile": "x", "id": "crosswalk_row", "src": "/img/b6_w1/crosswalk_row.png"},
 
-  {"tile": "i", "id": "sea1", "src": "/img/b6_w4/sea1.png", "wall": true},
-  {"tile": "j", "id": "sea2", "src": "/img/b6_w4/sea2.png", "wall": true}
+  {"tile": "i", "id": "airway1", "src": "/img/b6_w4/airway1.png", "wall": true},
+  {"tile": "j", "id": "airway11", "src": "/img/b6_w4/airway11.png", "wall": true},
+  {"tile": "m", "id": "airway2", "src": "/img/b6_w4/airway2.png", "wall": true},
+  {"tile": "n", "id": "airway21", "src": "/img/b6_w4/airway21.png", "wall": true}
 
 ]
