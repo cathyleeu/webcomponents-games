@@ -6,22 +6,18 @@
 
   ],
   "map": [
-    "#....#.",
-    ".#..#..",
-    ".......",
-    "@.....%",
+    "#..%.#.",
+    ".#.....",
+    ".....#.",
+    "#......",
     "....#..",
     ".#.....",
-    "...#..."
+    "...@..."
   ],
   "extra":[{
     "x": 2,
     "y": 0,
     "useItem": true
-  },{
-    "x": 0,
-    "y": 4,
-    "img": "cos0"
   }],
   "tutorial": [{
     "msg:ko": "비행기를 타요",
@@ -34,7 +30,11 @@
     "img": "/img/a6_w1/start_block.png"
   },
   "success": [{
-    "msg:ko": "성공!",
-    "msg:en": "Success!",
+    "msg:ko": "성공! 비행기를 타고 하늘을 날았어요~",
+    "msg:en": "Success! Good Job!",
+    "img": "/img/b6_w4/airplane.png"
+  },{
+    "msg:ko": "6권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Book 6 is over! See you Book 7!"
   }]
 }
