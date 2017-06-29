@@ -228,7 +228,7 @@ function getBook(classObj) {
   if(school == "B00136-K1") {
     var classNum = classObj.code.slice(-3);
     if(classNum == "KC7" || classNum == "KC8" || classNum == "KC9") {
-      book = [2, 3];
+      book = [1, 2];
     }
   }
   book = book.map(function(num) {
