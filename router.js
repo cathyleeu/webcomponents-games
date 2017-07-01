@@ -677,7 +677,10 @@ function getContents(book, week) {
                 dir = fs.readdirSync("public/maze/" + path);
             dir.forEach(function(item) {
               var filename = item.slice(0, -5);
-              if(item.slice(-5) == ".json" && item != "manifest.json" && (filename == "index" || !isNaN(Number(filename)))) {
+              if( item.slice(-5) == ".json" &&
+                  item != "manifest.json" &&
+                  item != "99.json" &&
+                  (filename == "index" || !isNaN(Number(filename)))) {
                 items.push(filename);
               }
             });
