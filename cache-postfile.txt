@@ -1,6 +1,5 @@
 /login
 /login/names.json
-/login/url.json
 /login/books.json
 /login/level_pw.json
 /book

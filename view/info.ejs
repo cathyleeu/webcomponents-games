@@ -88,10 +88,10 @@
 
 <script>
   $(function() {
-    var d1 = $.Deferred(),
-        d2 = $.Deferred(),
-        d3 = $.Deferred();
-    var msg = {
+    var url = <%-url%>,
+        names = <%-names%>,
+        level = <%-level%>,
+        msg = {
           ko: {
             title: "키즈씽킹 로그인",
             id: "로그인 아이디",
@@ -104,73 +104,63 @@
           }
         },
         lang = "ko";
-    $.get("login/url.json", function(url) {
-      var hash = decodeURI(location.hash).slice(1),
-          code = hash.split("-")[0],
-          className = hash.split("-")[1],
-          yearmonth = hash.split("-")[2],
-          info = url.filter(function(item) {
-            return item.code == code
-          })[0],
-          classNameChk = Object.keys(info.classes).reduce(function(init, book) {
-            return init.concat(info.classes[book]);
-          }, []).filter(function(item) {
-            return item == className;
-          })[0];
-      info.date = yearmonth || info.date;
-      if(!info || className != classNameChk) {
-        alert("잘못된 경로로 접근하였습니다.");
-        location.href = "/";
-      }
-      d1.resolve(info);
-    });
-    $.get("login/names.json", function(names) {
-      d2.resolve(names);
-    });
-    $.get("login/level_pw.json", function(level) {
-      d3.resolve(level);
-    });
-    $.when(d1, d2, d3).done(function(info, names, level) {
-      ejs.open = '<?';
-      ejs.close = '?>';
-      var str = $("#template").html(),
-          template = ejs.compile(str),
-          className = decodeURI(location.hash).split("-")[1],
-          levelLogin = Object.keys(info.classes).filter(function(item) {
-            return info.classes[item].indexOf(className) >= 0;
-          })[0].split("-")[0];
-      if(levelLogin != 'A' && levelLogin != 'B' && levelLogin != 'C'){
-        levelLogin = "default";
-      }
-      var row = [];
-      if(names[info.school + "-" + className]) {
-        names = names[info.school + "-" + className]
-      } else {
-        names = names["default"];
-      }
-      level = level[levelLogin] || level["default"];
-      var imgs = getImgs(info.date, info.code, className, level);
-      names.forEach(function(nameArr, index) {
-        row.push(template({
-          index: (index+1),
-          name: $.isArray(nameArr) ? nameArr[1] : nameArr,
-          school: info.school,
-          className: className,
-          img: imgs[index],
-          imgUrl: levelLogin,
-          title: msg[lang].title,
-          id: msg[lang].id,
-          password: msg[lang].password
-        }));
-        if(row.length == 2 || index + 1 == names.length) {
-          var $row = $('<div class="card-row">').append(row[0]).append(row[1]);
-          $(".page").append($row);
-          if(row.length < 2 && index + 1 == names.length) {
-            $row.append('<div class="card" style="width:280px;">');
-          }
-          row = [];
+
+    var hash = decodeURI(location.hash).slice(1),
+        code = hash.split("-")[0],
+        className = hash.split("-")[1],
+        yearmonth = hash.split("-")[2],
+        info = url.filter(function(item) {
+          return item.code == code
+        })[0],
+        classNameChk = Object.keys(info.classes).reduce(function(init, book) {
+          return init.concat(info.classes[book]);
+        }, []).filter(function(item) {
+          return item == className;
+        })[0];
+    info.date = yearmonth || info.date;
+    if(!info || className != classNameChk) {
+      alert("잘못된 경로로 접근하였습니다.");
+      location.href = "/";
+    }
+    ejs.open = '<?';
+    ejs.close = '?>';
+    var str = $("#template").html(),
+        template = ejs.compile(str),
+        className = decodeURI(location.hash).split("-")[1],
+        levelLogin = Object.keys(info.classes).filter(function(item) {
+          return info.classes[item].indexOf(className) >= 0;
+        })[0].split("-")[0];
+    if(levelLogin != 'A' && levelLogin != 'B' && levelLogin != 'C'){
+      levelLogin = "default";
+    }
+    var row = [];
+    if(names[info.school + "-" + className]) {
+      names = names[info.school + "-" + className]
+    } else {
+      names = names["default"];
+    }
+    level = level[levelLogin] || level["default"];
+    var imgs = getImgs(info.date, info.code, className, level);
+    names.forEach(function(nameArr, index) {
+      row.push(template({
+        index: (index+1),
+        name: $.isArray(nameArr) ? nameArr[1] : nameArr,
+        school: info.school,
+        className: className,
+        img: imgs[index],
+        imgUrl: levelLogin,
+        title: msg[lang].title,
+        id: msg[lang].id,
+        password: msg[lang].password
+      }));
+      if(row.length == 2 || index + 1 == names.length) {
+        var $row = $('<div class="card-row">').append(row[0]).append(row[1]);
+        $(".page").append($row);
+        if(row.length < 2 && index + 1 == names.length) {
+          $row.append('<div class="card" style="width:280px;">');
         }
-      });
+        row = [];
+      }
     });
   });
 </script>
