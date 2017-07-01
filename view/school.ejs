@@ -68,7 +68,8 @@
 
 <script>
   $(function() {
-    var siteUrl = "<%= siteUrl %>";
+    var siteUrl = "<%= siteUrl %>",
+        urls = <%-url%>;
     var date = new Date()
         year = '' + date.getFullYear(),
         month = date.getMonth() + 1;
@@ -87,29 +88,27 @@
         $(dom).attr("href", info_url).text(info_url);
       });
     });
-    $.get("login/url.json", function(urls) {
-      urls.forEach(function(item) {
-        var url = siteUrl + "/code/" + item.code,
-            classes = Object.keys(item.classes).reduce(function(arr, key) {
-              return arr.concat(item.classes[key])
-            }, []),
-            info = classes.map(function(className) {
-              var info_url = siteUrl + "/info#" + item.code + "-" + className + '-' + year + month;
-              return "<div>"
-                  +   "<label>" + className + "</label> : "
-                  +   "<a class= \"info_url\" href=\"" + info_url + "\" target=\"_blank\">" + info_url + "</a>";
-                  + "</div>";
-            });
-        $("<div>")
-            .append("<label>" + item.school + "</label> : ")
-            .append("<span>" + item.code + "</span><br/>")
-            .append("<label>로그인 주소</label> : ")
-            .append("<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>")
-            .append(info)
-            .appendTo(".page");
+    urls.forEach(function(item) {
+      var url = siteUrl + "/code/" + item.code,
+          classes = Object.keys(item.classes).reduce(function(arr, key) {
+            return arr.concat(item.classes[key])
+          }, []),
+          info = classes.map(function(className) {
+            var info_url = siteUrl + "/info#" + item.code + "-" + className + '-' + year + month;
+            return "<div>"
+                +   "<label>" + className + "</label> : "
+                +   "<a class= \"info_url\" href=\"" + info_url + "\" target=\"_blank\">" + info_url + "</a>";
+                + "</div>";
+          });
+      $("<div>")
+          .append("<label>" + item.school + "</label> : ")
+          .append("<span>" + item.code + "</span><br/>")
+          .append("<label>로그인 주소</label> : ")
+          .append("<a href=\"" + url + "\" target=\"_blank\">" + url + "</a>")
+          .append(info)
+          .appendTo(".page");
 
-      })
-    });
+    })
 
   });
 </script>

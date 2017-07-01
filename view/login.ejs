@@ -108,30 +108,21 @@
 
 <script>
   $(function() {
-    var d1 = $.Deferred(),
-        d2 = $.Deferred(),
-        d3 = $.Deferred();
-    $.get("login/url.json", function(url) {
-      var hash = decodeURI(location.hash).slice(1),
-          code = hash.split("-")[0],
-          className = hash.split("-")[1],
-          info = url.filter(function(item) {
-            return item.code == code
-          })[0];
-      if(!info) {
-        alert("잘못된 경로로 접근하였습니다.");
-        location.href = "/";
-      }
-      $("#school").text(info.school);
-      $("#className").text(className);
-      d1.resolve(info);
-    });
-    $.get("login/names.json", function(names) {
-      d2.resolve(names);
-    });
-    $.get("login/level_pw.json", function(level) {
-      d3.resolve(level);
-    });
+    var url = <%-url%>,
+        names = <%-names%>,
+        level = <%-level%>,
+        hash = decodeURI(location.hash).slice(1),
+        code = hash.split("-")[0],
+        className = hash.split("-")[1],
+        info = url.filter(function(item) {
+          return item.code == code
+        })[0];
+    if(!info) {
+      alert("잘못된 경로로 접근하였습니다.");
+      location.href = "/";
+    }
+    $("#school").text(info.school);
+    $("#className").text(className);
     $("#names").click('button', function(e) {
       $("#names button").removeClass("selected");
       $(e.target).addClass("selected");
@@ -140,58 +131,56 @@
       $("#characters img").removeClass("selected");
       $(e.target).addClass("selected");
     });
-    $.when(d1, d2, d3).done(function(info, names, level) {
-      var hash = decodeURI(location.hash).slice(1),
-          code = hash.split("-")[0],
-          className = hash.split("-")[1],
-          kids = (hash.split("-")[2] || "") == "kids",
-          yearmonth = info.date,
-          levelLogin = Object.keys(info.classes).filter(function(item) {
-            return info.classes[item].indexOf(className) >= 0;
-          })[0].split("-")[0];
-
-      if(names[info.school + "-" + className]) {
-        names = names[info.school + "-" + className]
-      } else {
-        names = names["default"];
-      }
-
-      names.forEach(function(name, index) {
-        var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning">' + (index+1) + " : " + ($.isArray(name) ? name[1] : name) + '</button>';
-        $(button).appendTo("#names");
-      });
-
-      level = level[levelLogin] || level["default"];
-      level.forEach(function(level_pw, index) {
-        var img = '<img class="character" data-img="'+(index+1)+'" src="'+level_pw+'"/>';
-        $(img).appendTo("#characters");
-      });
-      var imgs = getImgs(yearmonth, code, className, level);
-
-      $("#login").click(function(e) {
-        if($("#characters .selected").length == 0 || $("#names .selected").length == 0) {
-          $("#modal-fail").modal('show');
-          return;
-        }
-        var index = $("#names .selected").data("index"),
-            img = $("#characters .selected").data("img");
-        if(img != imgs[index]) {
-          $("#modal-fail").modal('show');
-          return;
-        }
-        var src = $("#characters .selected").attr("src");
-        $("#modal img").attr("src", src);
-        $("#modal").modal('show');
-      });
-      $("#goNext").click(function(e) {
-        e.preventDefault();
-        var book = Object.keys(info.classes).filter(function(item) {
+    var hash = decodeURI(location.hash).slice(1),
+        code = hash.split("-")[0],
+        className = hash.split("-")[1],
+        kids = (hash.split("-")[2] || "") == "kids",
+        yearmonth = info.date,
+        levelLogin = Object.keys(info.classes).filter(function(item) {
           return info.classes[item].indexOf(className) >= 0;
-        })[0];
-        var tokens = book.split(":");
-        book = kids ? tokens[1] || "가정심화학습": tokens[0];
-        location.href = "book#" + code + "-" + className + "-" + book;
-      });
+        })[0].split("-")[0];
+
+    if(names[info.school + "-" + className]) {
+      names = names[info.school + "-" + className]
+    } else {
+      names = names["default"];
+    }
+
+    names.forEach(function(name, index) {
+      var button = '<button data-index="'+index+'" class="btn btn-lg btn-warning">' + (index+1) + " : " + ($.isArray(name) ? name[1] : name) + '</button>';
+      $(button).appendTo("#names");
+    });
+
+    level = level[levelLogin] || level["default"];
+    level.forEach(function(level_pw, index) {
+      var img = '<img class="character" data-img="'+(index+1)+'" src="'+level_pw+'"/>';
+      $(img).appendTo("#characters");
+    });
+    var imgs = getImgs(yearmonth, code, className, level);
+
+    $("#login").click(function(e) {
+      if($("#characters .selected").length == 0 || $("#names .selected").length == 0) {
+        $("#modal-fail").modal('show');
+        return;
+      }
+      var index = $("#names .selected").data("index"),
+          img = $("#characters .selected").data("img");
+      if(img != imgs[index]) {
+        $("#modal-fail").modal('show');
+        return;
+      }
+      var src = $("#characters .selected").attr("src");
+      $("#modal img").attr("src", src);
+      $("#modal").modal('show');
+    });
+    $("#goNext").click(function(e) {
+      e.preventDefault();
+      var book = Object.keys(info.classes).filter(function(item) {
+        return info.classes[item].indexOf(className) >= 0;
+      })[0];
+      var tokens = book.split(":");
+      book = kids ? tokens[1] || "가정심화학습": tokens[0];
+      location.href = "book#" + code + "-" + className + "-" + book;
     });
   });
 </script>

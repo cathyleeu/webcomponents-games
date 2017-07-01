@@ -108,31 +108,30 @@
 
 <script>
   $(function() {
-    $.get("login/url.json", function(url) {
-      var hash = decodeURI(location.hash).slice(1),
-          code = hash.split("-")[0],
-          className = hash.split("-")[1],
-          book = hash.split("-")[2],
-          info = url.filter(function(item) {
-            return item.code == code;
-          })[0];
-      if(book == "A" || book == "B" || book == "C") {
-        book = book + "-" + hash.split("-")[3];
-      }
-      if(!info) {
-        alert("잘못된 경로로 접근하였습니다.");
-        location.href = "/";
-      }
-      $("#school").text(info.school);
-      $("#className").text(className);
-      $("#book").text(book);
-      $.get("login/books.json", function(books) {
-        var lang = info.lang ? "lang=" + info.lang : "";
-        books[book].forEach(function(item) {
-          var conn = item[1].indexOf("#!") >= 0 ? "?" : "#",
-              lang2 = lang ? conn + lang : "";
-          $('<a class="btn btn-lg btn-outline">').attr("href", item[1] + lang2).text(item[0]).appendTo(".contents");
-        });
+    var url = <%-url%>;
+    var hash = decodeURI(location.hash).slice(1),
+        code = hash.split("-")[0],
+        className = hash.split("-")[1],
+        book = hash.split("-")[2],
+        info = url.filter(function(item) {
+          return item.code == code;
+        })[0];
+    if(book == "A" || book == "B" || book == "C") {
+      book = book + "-" + hash.split("-")[3];
+    }
+    if(!info) {
+      alert("잘못된 경로로 접근하였습니다.");
+      location.href = "/";
+    }
+    $("#school").text(info.school);
+    $("#className").text(className);
+    $("#book").text(book);
+    $.get("login/books.json", function(books) {
+      var lang = info.lang ? "lang=" + info.lang : "";
+      books[book].forEach(function(item) {
+        var conn = item[1].indexOf("#!") >= 0 ? "?" : "#",
+            lang2 = lang ? conn + lang : "";
+        $('<a class="btn btn-lg btn-outline">').attr("href", item[1] + lang2).text(item[0]).appendTo(".contents");
       });
     });
   });

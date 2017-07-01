@@ -13,8 +13,11 @@ var public = require('koa-router')(),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
     auth_db = pmongo(config.auth_db, ["user", "logins"]),
-    url_json = require('./public/login/url.json'),
-    books_json = require('./public/login/books.json');
+    schools_json = require('./login/schools.json'),
+    names_json = require('./public/login/names.json'),
+    level_json = require('./public/login/level_pw.json'),
+    books_json = require('./public/login/books.json'),
+    url_json = getUrlJson();
 
 var defaultTimeStamp = new Date().toISOString();
 
@@ -103,9 +106,6 @@ var mazeDirs = fs.readdirSync('public/maze')
     });
 
 // 각 원별 cache 생성
-var url = JSON.parse(fs.readFileSync('public/login/url.json')),
-    books = JSON.parse(fs.readFileSync('public/login/books.json'));
-
 function getCode( bId , kId ) {
   let sum = 0;
   sum += bId.charCodeAt(0) * 17;
@@ -251,6 +251,25 @@ function getBook(classObj) {
     book += ",추가컨텐츠";
   }
   return book;
+}
+
+function getUrlJson() {
+  var result = [];
+  Object.keys(schools_json).forEach(function(key) {
+    var school = key.split(":"),
+        date = school[2];
+    if(date.length == 6) {
+      date += "01";
+    }
+    result.push({
+      date: date,
+      school: school[1],
+      code: getCode(school[0], school[1]),
+      classes: schools_json[key],
+      lang: school[3] || ""
+    });
+  });
+  return result;
 }
 
 // See: http://stackoverflow.com/questions/19877246/nodemailer-with-gmail-and-nodejs
@@ -475,7 +494,7 @@ public.get('/cache/:manifest', function *(next) {
       output = "CACHE MANIFEST\n";
   bookArr.forEach(function(bookNames) {
     bookNames.split(",").forEach(function(bookName) {
-      books[bookName].forEach(function(contentInfo) {
+      books_json[bookName].forEach(function(contentInfo) {
         var maniPath = contentInfo[contentInfo.length - 1],
             pagePath = contentInfo[contentInfo.length - 1];
         if(maniPath.indexOf("#!") >= 0) {
@@ -683,16 +702,23 @@ public.post('/nav', function *(next) {
 });
 
 public.get('/login', function *(next) {
-  yield this.render('login');
+  yield this.render('login', {
+    url: JSON.stringify(url_json),
+    names: JSON.stringify(names_json),
+    level: JSON.stringify(level_json),
+  });
 });
 
 public.get('/book', function *(next) {
-  yield this.render('book')
+  yield this.render('book', {
+    url: JSON.stringify(url_json)
+  });
 });
 
 public.get('/school', function *(next) {
   yield this.render('school', {
-    siteUrl: siteUrl
+    siteUrl: siteUrl,
+    url: JSON.stringify(url_json)
   });
 });
 
@@ -735,7 +761,11 @@ public.get('/show_collision', function *(next) {
 });
 
 public.get('/info', function *(next) {
-  yield this.render('info');
+  yield this.render('info', {
+    url: JSON.stringify(url_json),
+    names: JSON.stringify(names_json),
+    level: JSON.stringify(level_json),
+  });
 });
 
 public.post('/issue', function *(next) {
