@@ -73,21 +73,22 @@ page('*', function(ctx, next) {
       Object.keys(msg_obj).forEach(function(key) {
         $("[data-msg=" + key + "]").text(msg_obj[key]);
       });
-      if(last_path && last_path != ctx.path) {
-        showModal({
-          msg: messages.ask_continue,
-          confirm: true,
-          confirmYes: function() {
-
-            page(last_path);
-          },
-          confirmNo: function() {
-            d1.resolve(json);
-          }
-        });
-      } else {
+      // TODO: 이어하기 기능
+      // if(last_path && last_path != ctx.path) {
+      //   showModal({
+      //     msg: messages.ask_continue,
+      //     confirm: true,
+      //     confirmYes: function() {
+      //
+      //       page(last_path);
+      //     },
+      //     confirmNo: function() {
+      //       d1.resolve(json);
+      //     }
+      //   });
+      // } else {
         d1.resolve(json);
-      }
+      // }
     });
   }).fail(function(jqXHR, msg, err) {
     console.log( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);

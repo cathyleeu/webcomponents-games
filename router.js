@@ -648,34 +648,60 @@ function getContents(book, week) {
       list = week.split(",").map(function(idx) {
         return books[Number(idx)-1];
       }).filter(function(idx) {return !!idx}),
+      dirs = fs.readdirSync("public/maze"),
       contents = list.map(function(item) {
-        var hasIndex = false,
-            problems = [],
-            href = item[item.length - 1];
+        var href = item[item.length - 1],
+            heading = href.slice(0, href.indexOf("#!"))
+            path = href.slice(href.indexOf("#!")+2, href.lastIndexOf("/")),
+            pathTokens = path.split("_"),
+            pattern = pathTokens.slice(0,2).join("_"),
+            targets = [],
+            problems = [];
         if(href.slice(0, 5) == "/maze") {
-          var path = href.slice(href.indexOf("#!")+2, href.lastIndexOf("/")),
-              dir = fs.readdirSync("public/maze/" + path);
-          dir.forEach(function(item) {
-            var filename = item.slice(0, -5);
-            if(filename == "index") {
-              hasIndex = true;
-            } else if(item.slice(-5) == ".json" && item != "manifest.json" && !isNaN(Number(filename))) {
-              problems.push(filename);
-            }
-          });
+          if(pathTokens.length == 3) {
+            dirs.forEach(function(dir) {
+              if(dir.startsWith(pattern)) {
+                targets.push(heading + "#!" + dir);
+              }
+            });
+          } else {
+            targets.push(heading + "#!" + path);
+          }
+        } else {
+          targets.push(href);
         }
-        problems.sort(function(a, b) {
-          return Number(a) - Number(b);
+        targets.forEach(function(href) {
+          var items = [];
+          if(href.slice(0, 5) == "/maze") {
+            var path = href.slice(href.indexOf("#!")+2),
+                dir = fs.readdirSync("public/maze/" + path);
+            dir.forEach(function(item) {
+              var filename = item.slice(0, -5);
+              if(item.slice(-5) == ".json" && item != "manifest.json" && (filename == "index" || !isNaN(Number(filename)))) {
+                items.push(filename);
+              }
+            });
+            items.sort(function(a, b) {
+              if(a == "index") {
+                return -1;
+              } else if(b == "index") {
+                return 1;
+              }
+              return Number(a) - Number(b);
+            });
+            items = items.map(function(problem) {
+              return href + "/" + problem;
+            });
+          } else {
+            items = [href];
+          }
+          problems = problems.concat(items);
         });
-        if(problems.length > 0) {
-          href = href = href.slice(0, href.lastIndexOf("/"));
-        }
+
         return {
           title: item[0].split(":")[0],
           subtitle: item[0].split(":")[1],
-          href: href,
-          problems: problems,
-          hasIndex: hasIndex
+          problems: problems
         };
       });
   return contents;
