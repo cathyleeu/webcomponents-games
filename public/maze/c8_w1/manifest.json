@@ -1,0 +1,48 @@
+[
+  {"book": "c8", "title": "1주차 : 10을 만들어요"},
+  {"id": "bg1", "src": "/img/c8_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/c8_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/c8_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c8_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c8_w1/block_blue.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "table0", "src": "/img/c8_w1/table0.png"},
+  {"id": "brother", "src": "/img/c8_w1/brother.png"},
+
+  {"id": "wall", "src": "/img/c8_w1/wall.png","obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "block_blue", "src": "/img/c8_w1/block_blue.png"},
+  {"id": "block_green", "src": "/img/c8_w1/block_green.png"},
+  {"id": "block_red", "src": "/img/c8_w1/block_red.png"},
+  {"id": "block_yellow", "src": "/img/c8_w1/block_yellow.png"},
+
+  {"tile": "a", "id": "block_blue9", "src": "/img/c8_w1/block_blue9.png"},
+  {"tile": "b", "id": "block_green9", "src": "/img/c8_w1/block_green9.png"},
+  {"tile": "c", "id": "block_red8", "src": "/img/c8_w1/block_red8.png"},
+  {"tile": "f", "id": "block_yellow8", "src": "/img/c8_w1/block_yellow8.png"},
+  {"tile": "g", "id": "block_blue8", "src": "/img/c8_w1/block_blue8.png"},
+
+  {"tile": "i", "id": "block_green7", "src": "/img/c8_w1/block_green7.png"},
+  {"tile": "j", "id": "block_red7", "src": "/img/c8_w1/block_red7.png"},
+  {"tile": "k", "id": "block_yellow6", "src": "/img/c8_w1/block_yellow6.png"},
+  {"tile": "m", "id": "block_blue6", "src": "/img/c8_w1/block_blue6.png"},
+  {"tile": "o", "id": "block_green5", "src": "/img/c8_w1/block_green5.png"},
+
+  {"tile": "p", "id": "block_red5", "src": "/img/c8_w1/block_red5.png"},
+  {"tile": "q", "id": "block_yellow4", "src": "/img/c8_w1/block_yellow4.png"},
+  {"tile": "s", "id": "block_blue4", "src": "/img/c8_w1/block_blue4.png"},
+  {"tile": "t", "id": "block_green3", "src": "/img/c8_w1/block_green3.png"},
+  {"tile": "v", "id": "block_red3", "src": "/img/c8_w1/block_red3.png"}
+
+
+]

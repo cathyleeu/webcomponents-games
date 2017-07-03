@@ -1,0 +1,63 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#...#...#",
+    "#..###..#",
+    "#..d.#..#",
+    "#..###..#",
+    "#...#...#",
+    "#.......#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 2,
+    "img":"recycle_can"
+  },{
+    "x": 3,
+    "y": 3,
+    "img":"bottle"
+  },{
+    "x": 4,
+    "y": 3,
+    "img":"can"
+  },{
+    "x": 5,
+    "y": 3,
+    "img":"paper"
+  },{
+    "x": 3,
+    "y": 5,
+    "img":"bone"
+  },{
+    "x": 4,
+    "y": 5,
+    "img":"egg"
+  },{
+    "x": 5,
+    "y": 5,
+    "img":"trash"
+  },{
+    "x": 4,
+    "y": 6,
+    "img":"tresh_can"
+  },{
+    "x": 5,
+    "y": 4,
+    "img":"new_cobot0"
+  }],
+  "tutorial": [{
+    "msg:ko": "8권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Success! Good Job!"
+  }]
+}

@@ -1,0 +1,42 @@
+[
+  {"book": "c8", "title": "3주차 : 할머니, 할아버지를 도와드려요"},
+  {"id": "bg1", "src": "/img/c8_w3/bg1.png"},
+  {"id": "bg2", "src": "/img/c8_w3/bg2.png"},
+
+  {"id": "character", "src": "/img/c8_w3/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c8_w3/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/c8_w3/grandp.png"},
+  {"id": "chest", "src": "/img/c8_w3/granfa_house.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "bd1", "src": "/img/c8_w3/bd1.png","obstacle": true},
+  {"id": "bd2", "src": "/img/c8_w3/bd2.png","obstacle": true},
+  {"id": "bd3", "src": "/img/c8_w3/bd3.png","obstacle": true},
+  {"id": "bd4", "src": "/img/c8_w3/bd4.png","obstacle": true},
+  {"id": "tree1", "src": "/img/c8_w3/tree1.png","obstacle": true},
+  {"id": "tree2", "src": "/img/c8_w3/tree2.png","obstacle": true},
+  {"id": "tree3", "src": "/img/c8_w3/tree3.png","obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "cobot_home", "src": "/img/c8_w3/cobot_home.png"},
+  {"id": "hospital", "src": "/img/c8_w3/hospital.png"},
+
+  {"id": "grandp", "src": "/img/c8_w3/grandp.png"},
+
+  {"id": "recycle_can", "src": "/img/c8_w4/recycle_can.png"},
+  {"id": "granfa", "src": "/img/c8_w3/granfa.png"},
+  {"id": "granma", "src": "/img/c8_w3/granma.png"},
+  {"id": "granfa_good", "src": "/img/c8_w3/granfa_good.png"},
+  {"id": "granma_good", "src": "/img/c8_w3/granma_good.png"},
+  {"id": "granfa_bad", "src": "/img/c8_w3/granfa_bad.png"},
+  {"id": "granma_bad", "src": "/img/c8_w3/granma_bad.png"},
+  {"id": "granfa_house", "src": "/img/c8_w3/granfa_house.png"},
+  {"id": "granma_house", "src": "/img/c8_w3/granma_house.png"}
+]

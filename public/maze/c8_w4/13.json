@@ -1,0 +1,87 @@
+{
+  "tile_size":128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition_recycle",
+    "condition_notrecycle",
+    "get_item2_split",
+    "use_item2"
+  ],
+
+  "map": [
+    ".#######.",
+    "#.#.###.#",
+    "##....%.#",
+    "####..#.#",
+    "##r.&##.#",
+    "#..#..%.#",
+    "#...#####",
+    "#.......#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 4,
+    "contents" : [{
+        "img": "bottle",
+        "itemImg":"bottle",
+        "disappear":true,
+        "role": "item",
+        "order": "if"
+      },{
+        "img": "can",
+        "itemImg":"can",
+        "disappear":true,
+        "role": "item",
+        "order": "if"
+      },{
+        "img": "can",
+        "itemImg":"can",
+        "disappear":true,
+        "role": "item",
+        "order": "if"
+      },{
+        "img": "bone",
+        "itemImg":"bone",
+        "disappear":true,
+        "role": "item",
+        "order": "else"
+      },{
+        "img": "egg",
+        "itemImg":"egg",
+        "disappear":true,
+        "role": "item",
+        "order": "else"
+      },{
+        "img": "trash",
+        "itemImg":"trash",
+        "disappear":true,
+        "role": "item",
+        "order": "else"
+    }]
+  },{
+    "x": 6,
+    "y": 2,
+    "img": "recycle_can",
+    "order": "if",
+    "useItem": 1
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "tresh_can",
+    "order": "else",
+    "useItem": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "검은 봉투를 확인하고, 재활용 가능하면 재활용 쓰레기통에, 재활용이 불가능하면 일반 쓰레기 통에 버려요 ",
+    "msg:en": "Let's check inside of black bag and if it was recyclable, Cobot is throwing out it to recycle can or if not, to trash can",
+    "img": ["/img/c8_w4/recycle.png","/img/c8_w4/recycle_can.png","/img/c8_w4/recycle_x.png","/img/c8_w4/tresh_can.png"]
+  }]
+}

@@ -1,0 +1,59 @@
+{
+
+  "tile_size":128,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition_bad",
+    "condition_notbad",
+    "support"
+  ],
+  "map": [
+    ".#######.",
+    "#.#.#...#",
+    "#.#%%##.#",
+    "##..&.#.#",
+    "#..#.#..#",
+    "#..#....#",
+    "#..#u#..#",
+    "##.###..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 3,
+    "img": "granma_house",
+    "contents" : [{
+        "img": "granma_bad",
+        "role": "friend",
+        "order": "if"
+      },{
+        "img": "granma_good",
+        "role": "friend",
+        "order": "else"
+    }]
+  },{
+    "x": 4,
+    "y": 2,
+    "img": "hospital",
+    "order": "if",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "cobot_home",
+    "order": "else",
+    "useItem": true
+  }],
+  "tutorial": [{
+    "msg:ko": "할머니의 상태를 확인하고, 아프시면 병원으로 모시고 가고, 아프지 않으시면 코봇의 집으로 가요.",
+    "msg:en": "Let's check status of grandmother and if she was sick, Cobot is go to hospital with grandmother or if not, go to Cobot's house",
+    "img": ["/img/c8_w3/siren.png","/img/c8_w3/hospital.png","/img/c8_w3/siren_x.png","/img/c8_w3/cobot_home.png"]
+  }]
+}

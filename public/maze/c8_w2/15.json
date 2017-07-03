@@ -1,0 +1,51 @@
+{
+
+  "tile_size":128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    ".#######.",
+    "#.#.#.#.#",
+    "#...r)#.#",
+    "##..#)..#",
+    "##....%##",
+    "#...#...#",
+    "#..##...#",
+    "#...##.##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 4,
+    "img":"table0",
+    "useItem": 6
+  },{
+    "x": 5,
+    "y": 2,
+    "img":"block_red10",
+    "itemImg":"block_red10",
+    "disappear":true,
+    "itemCount": 5
+  },{
+    "x": 5,
+    "y": 3,
+    "img":"block_yellow",
+    "itemImg":"block_yellow",
+    "disappear":true,
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "빨간색 블록 묶음 5개와 과 노란색 블록 1개를 가져와서 총 51개의 블록을 만들어 보아요",
+    "msg:en": "Let's bring 5 red block bundles & 1 yellow block for collecting 51 blocks ",
+    "img": ["/img/c8_w1/block_red10.png","/img/c8_w2/number5.png","/img/c8_w2/number1.png","/img/c8_w1/block_yellow.png"]
+  }]
+}

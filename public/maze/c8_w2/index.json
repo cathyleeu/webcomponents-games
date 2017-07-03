@@ -1,0 +1,231 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####eeeee########.",
+    "..r..%%%%%.#...%n.#",
+    ".##############%n.#",
+    "##...#########.%n.#",
+    "..#............%n.#",
+    "##.......%%%%%.%n.#",
+    "#########hhhhh#####."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 1개 얻을 수 있어.",
+      "msg:en": "You can get one block bundle at once.",
+      "img": "/img/c8_w1/block_blue10.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 1개 얻을 수 있어.",
+      "msg:en": "You can get one block bundle at once.",
+      "img": "/img/c8_w1/block_blue10.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 1개 얻을 수 있어.",
+      "msg:en": "You can get one block bundle at once.",
+      "img": "/img/c8_w1/block_blue10.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 1개 얻을 수 있어.",
+      "msg:en": "You can get one block bundle at once.",
+      "img": "/img/c8_w1/block_blue10.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 1개 얻을 수 있어.",
+      "msg:en": "You can get one block bundle at once.",
+      "img": "/img/c8_w1/block_blue10.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 2개 얻을 수 있어.",
+      "msg:en": "You can get two block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 2개 얻을 수 있어.",
+      "msg:en": "You can get two block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 2개 얻을 수 있어.",
+      "msg:en": "You can get two block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 2개 얻을 수 있어.",
+      "msg:en": "You can get two block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 2개 얻을 수 있어.",
+      "msg:en": "You can get two block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 3개 얻을 수 있어.",
+      "msg:en": "You can get three block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 3개 얻을 수 있어.",
+      "msg:en": "You can get three block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 3개 얻을 수 있어.",
+      "msg:en": "You can get three block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 3개 얻을 수 있어.",
+      "msg:en": "You can get three block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 3개 얻을 수 있어.",
+      "msg:en": "You can get three block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "블록 묶음 3개 얻을 수 있어.",
+      "msg:en": "You can get three block bundles at once.",
+      "img": ["/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png","/img/c8_w1/block_blue10.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c8_w2/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c8_w2/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "c8_w2/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c8_w2/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c8_w2/5"
+  },{
+    "img":"block_blue10",
+    "x": 11,
+    "y": 1,
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "c8_w2/6"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "c8_w2/7"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "c8_w2/8"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "c8_w2/9"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "c8_w2/10"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "c8_w2/11"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c8_w2/12"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "c8_w2/13"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "c8_w2/14"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "c8_w2/15"
+  },{
+    "img":"grandp",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "c8_w2/16",
+    "min_score": 20
+  }],
+
+  "tutorial": [{
+    "msg:ko": "블록과 블록 묶음을 이용하여 99까지의 수를 만들어보아요! 쉬운 문제는 묶음 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's make number using a block & block bundle! An easy problem gives you one bundle, a normal one gives you two and a hard one gives you three.",
+    "img" : ["/img/c8_w1/block.png","/img/c8_w1/block_blue10.png"]
+  }],
+  "goal": {
+    "msg:ko": "블록 묶음 20개 모아 할머니, 할아버지에게 가요.",
+    "msg:en": "Let's go to grandparents with 20 block bundles.",
+    "img":  ["/img/c8_w1/block_blue10.png","/img/c8_w1/grandp.png"]
+  }
+}

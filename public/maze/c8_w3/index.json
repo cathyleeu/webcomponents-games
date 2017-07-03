@@ -1,0 +1,231 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####eeeee########.",
+    "..r..%%%%%.#...%n.#",
+    ".##############%n.#",
+    "##...#########.%n.#",
+    "..#............%n.#",
+    "##.......%%%%%.%n.#",
+    "#########hhhhh#####."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "1점을 얻을 수 있어.",
+      "msg:en": "You can get one point at once.",
+      "img": "/img/c8_w3/grandp.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "1점을 얻을 수 있어.",
+      "msg:en": "You can get one point at once.",
+      "img": "/img/c8_w3/grandp.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "1점을 얻을 수 있어.",
+      "msg:en": "You can get one point at once.",
+      "img": "/img/c8_w3/grandp.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "1점을 얻을 수 있어.",
+      "msg:en": "You can get one point at once.",
+      "img": "/img/c8_w3/grandp.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "1점을 얻을 수 있어.",
+      "msg:en": "You can get one point at once.",
+      "img": "/img/c8_w3/grandp.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c8_w3/grandp.png","/img/c8_w3/grandp.png","/img/c8_w3/grandp.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c8_w3/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c8_w3/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "c8_w3/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c8_w3/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c8_w3/5"
+  },{
+    "img":"grandp",
+    "x": 11,
+    "y": 1,
+    "obstacle": false,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "c8_w3/6"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "c8_w3/7"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "c8_w3/8"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "c8_w3/9"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "c8_w3/10"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "c8_w3/11"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c8_w3/12"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "c8_w3/13"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "c8_w3/14"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "c8_w3/15"
+  },{
+    "img":"recycle_can",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "c8_w3/16",
+    "min_score": 20
+  }],
+
+  "tutorial": [{
+    "msg:ko": "할머니, 할아버지를 돌봐요! 쉬운 문제는 1점, 보통은 2점, 어려운 문제는 3점을 주어요. ",
+    "msg:en": "Let's take care of Cos's grandparents! An easy problem gives you one point, a normal one gives you two and a hard one gives you three.",
+    "img" : ["/img/c8_w3/granfa.png","/img/c8_w3/granma.png"]
+  }],
+  "goal": {
+    "msg:ko": "20점을 얻고 재활용 쓰레기통으로 가요.",
+    "msg:en": "Let's go to recycle can with 20 points.",
+    "img":  ["/img/c8_w3/grandp.png","/img/c8_w4/recycle_can.png"]
+  }
+}

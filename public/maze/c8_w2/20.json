@@ -1,0 +1,52 @@
+{
+
+  "tile_size":128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+
+  "map": [
+    ".#######.",
+    "#.#.#..##",
+    "#...#..##",
+    "##.###.##",
+    "##.%....#",
+    "#.)##..##",
+    "#.)l.#..#",
+    "##.####.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 4,
+    "img":"table0",
+    "useItem": 6
+  },{
+    "x": 2,
+    "y": 6,
+    "img":"block_green10",
+    "itemImg":"block_green10",
+    "disappear":true,
+    "itemCount": 4
+  },{
+    "x": 2,
+    "y": 5,
+    "img":"block_red",
+    "itemImg":"block_red",
+    "disappear":true,
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "초록색 블록 묶음 4개와 과 빨간색 블록 2개를 가져와서 총 42개의 블록을 만들어 보아요",
+    "msg:en": "Let's bring 4 green block bundles & 2 red blocks for collecting 42 blocks ",
+    "img": ["/img/c8_w1/block_green10.png","/img/c8_w2/number4.png","/img/c8_w2/number2.png","/img/c8_w1/block_red.png"]
+  }]
+}

@@ -1,0 +1,44 @@
+{
+
+  "tile_size":128,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    ".#######.",
+    "#.#.#...#",
+    "#.#.###.#",
+    "##..#...#",
+    "#..r....#",
+    "#..##.).#",
+    "#.......#",
+    "##.###..#",
+    ".####j%#."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 8,
+    "img":"table0",
+    "useItem": 3
+  },{
+    "x": 6,
+    "y": 5,
+    "img":"block_yellow",
+    "itemImg":"block_yellow",
+    "disappear":true,
+    "itemCount": 3
+  }],
+  "tutorial": [{
+    "msg:ko": "블록 10개를 모으기 위하여 노란색 블록 3개를 가져와요",
+    "msg:en": "Let's bring three yellow blocks for collect 10 blocks",
+    "img": ["/img/c8_w1/block_yellow3.png","/img/blocks/bring.png","/img/blocks/use.png"]
+  }]
+}

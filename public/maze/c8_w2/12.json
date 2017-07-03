@@ -1,0 +1,50 @@
+{
+  "tile_size":128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    ".#######.",
+    "#.#.#...#",
+    "#.#.###.#",
+    "##..#...#",
+    "#..%.)).#",
+    "#..###d.#",
+    "#.......#",
+    "##.###..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 4,
+    "img":"table0",
+    "useItem": 6
+  },{
+    "x": 6,
+    "y": 4,
+    "img":"block_yellow10",
+    "itemImg":"block_yellow10",
+    "disappear":true,
+    "itemCount": 2
+  },{
+    "x": 5,
+    "y": 4,
+    "img":"block_blue",
+    "itemImg":"block_blue",
+    "disappear":true,
+    "itemCount": 4
+  }],
+  "tutorial": [{
+    "msg:ko": "노란색 블록 묶음 2개와 과 파란색 블록 4개를 가져와서 총 24개의 블록을 만들어 보아요",
+    "msg:en": "Let's bring 2 yellow block bundles & 4 blue blocks for collecting 24 blocks ",
+    "img": ["/img/c8_w1/block_yellow10.png","/img/c8_w2/number2.png","/img/c8_w2/number4.png","/img/c8_w1/block_blue.png"]
+  }]
+}
