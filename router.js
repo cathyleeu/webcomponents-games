@@ -652,8 +652,8 @@ function getContents(book, week) {
       contents = list.map(function(item) {
         var href = item[item.length - 1],
             heading = href.slice(0, href.indexOf("#!"))
-            path = href.slice(href.indexOf("#!")+2, href.lastIndexOf("/")),
-            pathTokens = path.split("_"),
+            mazePath = href.slice(href.indexOf("#!")+2, href.lastIndexOf("/")),
+            pathTokens = mazePath.split("_"),
             pattern = pathTokens.slice(0,2).join("_"),
             targets = [],
             problems = [];
@@ -665,7 +665,7 @@ function getContents(book, week) {
               }
             });
           } else {
-            targets.push(heading + "#!" + path);
+            targets.push(heading + "#!" + mazePath);
           }
         } else {
           targets.push(href);
@@ -673,8 +673,8 @@ function getContents(book, week) {
         targets.forEach(function(href) {
           var items = [];
           if(href.slice(0, 5) == "/maze") {
-            var path = href.slice(href.indexOf("#!")+2),
-                dir = fs.readdirSync("public/maze/" + path);
+            var mazePath = href.slice(href.indexOf("#!")+2),
+                dir = fs.readdirSync("public/maze/" + mazePath);
             dir.forEach(function(item) {
               var filename = item.slice(0, -5);
               if( item.slice(-5) == ".json" &&
