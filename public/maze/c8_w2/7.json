@@ -1,0 +1,51 @@
+{
+
+  "tile_size":128,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    ".#######.",
+    "#.#.#...#",
+    "#.#.###.#",
+    "##..#...#",
+    "#..r....#",
+    "#..###).#",
+    "#..%.)..#",
+    "##.###..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 6,
+    "img":"table0",
+    "useItem": 5
+  },{
+    "x": 6,
+    "y": 5,
+    "img":"block_red10",
+    "itemImg":"block_red10",
+    "disappear":true,
+    "itemCount": 1
+  },{
+    "x": 5,
+    "y": 6,
+    "img":"block_yellow",
+    "itemImg":"block_yellow",
+    "disappear":true,
+    "itemCount": 4
+  }],
+  "tutorial": [{
+    "msg:ko": "빨간색 블록 묶음 1개와 과 노란색 블록 4개를 가져와서 총 14개의 블록을 만들어 보아요",
+    "msg:en": "Let's bring 1 red block bundle & 4 yellow blocks for collecting 14 blocks ",
+    "img": ["/img/c8_w1/block_red10.png","/img/c8_w2/number1.png","/img/c8_w2/number4.png","/img/c8_w1/block_yellow.png"]
+  }]
+}
