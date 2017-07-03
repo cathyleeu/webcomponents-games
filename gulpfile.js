@@ -9,19 +9,39 @@ var gulp = require('gulp'),
     child = require('child_process'),
     glob = require('glob'),
     path = require('path'),
-    polymerJson = require('./webcomponents/polymer.json'),
-    project = new PolymerProject(polymerJson),
-    sourcesHtmlSplitter = new HtmlSplitter();
+    polymerJson = require('./polymer.json'),
+    project = new PolymerProject(polymerJson);
 
-gulp.task('build', ['less']);
-
-gulp.task('less', function () {
+function task_less() {
   return gulp.src('public/css/**/*.less')
     .pipe($.less())
     .pipe(gulp.dest('public/css'));
-});
+}
 
-gulp.task('default', function() {
+function task_webcomponents() {
+  let dependenciesStreamSplitter = new HtmlSplitter();
+  let dependenciesStream = project.dependencies()
+    .pipe(dependenciesStreamSplitter.split())
+    .pipe($.if(/\.js$/, $.babel({
+      presets: ['es2015'],
+      plugins: ['external-helpers', 'transform-custom-element-classes', 'transform-es2015-classes']
+    })))
+    .pipe(dependenciesStreamSplitter.rejoin());
+  return mergeStream(project.sources(), dependenciesStream)
+    .pipe($.cleanDest('public/build'))
+    .pipe(project.addBabelHelpersInEntrypoint())
+    .pipe(project.addCustomElementsEs5Adapter())
+    // .pipe(project.bundler())
+    .pipe(gulp.dest('public/build'));
+}
+
+gulp.task('less', task_less);
+
+gulp.task('webcomponents', task_webcomponents);
+
+gulp.task('build', ['less', 'webcomponents']);
+
+gulp.task('default', ['less', 'webcomponents'], function() {
   var server = child.spawn('node', ['index']);
   server.stdout.on('data', function(data) {
     process.stdout.write(data.toString());
@@ -29,15 +49,6 @@ gulp.task('default', function() {
   server.stderr.on('data', function(data) {
     process.stdout.write(data.toString());
   });
-  $.watch('public/css/**/*.less', { ignoreInitial: false })
-    .pipe($.less())
-    .pipe(gulp.dest('public/css'));
-  $.watch('webcomponents/*.html', { ignoreInitial: false }, function () {
-    mergeStream(project.sources(), project.dependencies())
-      .pipe($.cleanDest('public'))
-      .pipe(sourcesHtmlSplitter.split())
-      .pipe(project.bundler())
-      .pipe(project.addCustomElementsEs5Adapter())
-      .pipe(gulp.dest('public'));
-  });
+  $.watch('public/css/**/*.less', task_less);
+  $.watch('public/webcomponents/*.html', task_webcomponents);
 });

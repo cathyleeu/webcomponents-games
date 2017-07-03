@@ -1,0 +1,22 @@
+{
+  "entrypoint": "webcomponents/index.html",
+  "root": "public",
+  "fragments": [],
+  "sources": [
+    "components/d3/d3.min.js",
+    "components/webcomponentsjs/custom-elements-es5-adapter.js",
+    "js/polyfill.min.js"
+  ],
+  "builds": [{
+    "js": {"minify": true, "compile": true},
+    "css": {"minify": true},
+    "html": {"minify": true}
+  }],
+  "extraDependencies": [
+  ],
+  "lint": {
+    "rules": [
+      "polymer-2"
+    ]
+  }
+}

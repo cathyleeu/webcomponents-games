@@ -1,9 +1,0 @@
-{
-  "entrypoint": "webcomponents/index.html",
-  "fragments": ["webcomponents/flip-card.html"],
-  "builds": [{
-    "js": {"minify": true, "compile": true},
-    "css": {"minify": true},
-    "html": {"minify": true}
-  }]
-}
