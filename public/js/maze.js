@@ -13,8 +13,10 @@ var d1,
     messages = null,
     map_path = null,
     map_qs,
-    resize_debounce = 200,
-    resize_timeoutkey;
+    resize_debounce = 50,
+    resize_timeoutkey,
+    blink_debounce = 50,
+    blink_timeoutkey;
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
@@ -470,11 +472,8 @@ function handle_resize(e) {
   var view_width = Math.min(mazeInfo.view_size || mazeInfo.width, mazeInfo.width),
       view_height = Math.min(mazeInfo.view_size || mazeInfo.height, mazeInfo.height),
       zoom = parseInt(100 * size / (view_width * mazeInfo.tile_size), 10) / 100,
-      real_height = parseInt(view_height * mazeInfo.tile_size * zoom, 10);
-  $("#display").css({
-    width: parseInt(view_width * mazeInfo.tile_size * zoom, 10),
-    height: real_height
-  });
+      display_height = parseInt(view_height * mazeInfo.tile_size * zoom, 10),
+      display_width = parseInt(view_width * mazeInfo.tile_size * zoom, 10);
 
   if(kidscoding.isHorizontal) {
     var flyout = kidscoding.workspace.getFlyout(),
@@ -484,14 +483,14 @@ function handle_resize(e) {
         })[0],
         coord = startblock.getRelativeToSurfaceXY(),
         dx = 0,
-        dy = (real_height + 30) - coord.y;
+        dy = (display_height + 30) - coord.y;
     $(".sidebar").css({
-      height: real_height,
+      height: display_height,
       left: (maze.type == "world" ? 0 : flyout.getWidth()) + "px"
     });
     $(".goal").css({
-      height: real_height,
-      left: $("#display").width() + "px"
+      height: display_height,
+      left: display_width + "px"
     });
     if(maze.type == "world") {
       $(".bottom-row").addClass("horizontal_world");
@@ -500,12 +499,26 @@ function handle_resize(e) {
     }
     startblock.moveBy(dx, dy);
   } else {
-    var real_width = $("#display").width();
-    $(".sidebar").width(real_width);
-    $(".workspace").css("left", real_width + "px");
+    $(".sidebar").width(display_width);
+    $(".workspace").css("left", display_width + "px");
     $(".bottom-row").removeClass("horizontal_world");
   }
+  $("#display").css({
+    width: display_width,
+    height: display_height
+  });
+  // 늑대와여우 안드로이드 태블릿에서 캔버스 없어지는 현상 수정
+  var ex0 = navigator.userAgent.indexOf("Linux; Android 5.1.1; NYTSSA")>=0;
+  if(ex0) {
+    $("#display").hide();
+  }
   Blockly.svgResize(kidscoding.workspace);
+  if(ex0) {
+    clearTimeout(blink_timeoutkey);
+    blink_timeoutkey = setTimeout(function() {
+      $("#display").show();
+    }, blink_debounce);
+  }
 };
 function addEvents() {
   if(window.name) {

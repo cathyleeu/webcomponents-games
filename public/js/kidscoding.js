@@ -1,5 +1,7 @@
 KidsCoding = function() {
-  var _this = this;
+  var _this = this,
+      blink_debounce = 150,
+      blink_timeoutkey;
   this.q_idx = 0;
   this.queue = [];
   this.workspace = null;
@@ -103,12 +105,23 @@ KidsCoding = function() {
   // https://github.com/google/blockly/issues/742
   var downBlock = null;
   var onMouseDown_ = Blockly.BlockSvg.prototype.onMouseDown_;
+  // 늑대와여우 안드로이드 태블릿에서 캔버스 없어지는 현상 수정
+  var ex0 = navigator.userAgent.indexOf("Linux; Android 5.1.1; NYTSSA")>=0;
   Blockly.BlockSvg.prototype.onMouseDown_ = function(e) {
     e.stopPropagation();
     if(this.isInFlyout) {
       downBlock = this;
     }
     onMouseDown_.call(this, e);
+    // 블록 이동시 리프레시는 최초 1번만 수행하면 됨
+    if(ex0 && !_this.ex0_applied) {
+      _this.ex0_applied = true;
+      $("#display").hide();
+      clearTimeout(blink_timeoutkey);
+      blink_timeoutkey = setTimeout(function() {
+        $("#display").show();
+      }, blink_debounce);
+    }
   };
   // flyout에서 클릭시 맨 마지막에 블럭 추가하는 기능
   var onMouseMove_ = Blockly.BlockSvg.prototype.onMouseMove_;
