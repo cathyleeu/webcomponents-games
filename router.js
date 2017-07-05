@@ -224,6 +224,10 @@ function getBook(classObj) {
   if(school == "A00066-K2" || school == "C00149-K1" || school == "D00086-K1") {
     book = [3, 4];
   }
+  // 압구정 PSA
+  if(school == "D00121-K1") {
+    book = [3, 4, 5];
+  }
   // 송도ECC 추가반
   if(school == "B00136-K1") {
     var classNum = classObj.code.slice(-3);
