@@ -321,13 +321,12 @@
     ["코스네 가족", "My Family", "/mazeh#!b3_w1/index"],
     ["꿀단지를 찾아요", "Go Find the Honey Pot", "/mazeh#!c3_w2/index"]
   ],
-  "키즈코딩영문데모": [
-    ["가위바위보", "/maze#!3woong-cookie/1"],
-    ["쿠키 전달하기", "/maze#!3woong-item-h/1"],
-    ["장군이의 집찾기", "/maze#!4jangoon-house-r/index"],
-    ["장군이의 심부름", "/maze#!4jangoon-mart-r/index"],
-    ["짹스패로우와 먹이찾기", "/maze#!7-2jack-food/index"],
-    ["짹스패로우의 갈림길", "/maze#!7-3jack-direction/index"]
+  "KidscodingDemo": [
+    ["가위바위보", "Rock, paper, scissors", "/maze#!3woong-cookie/1"],
+    ["쿠키 전달하기", "Bringing Cookies", "/maze#!3woong-item-h/1"],
+    ["장군이의 집찾기", "Let's Go Home", "/maze#!4jangoon-house-r/index"],
+    ["장군이의 심부름", "Go to the Mart", "/maze#!4jangoon-mart-r/index"],
+    ["짹스패로우와 먹이찾기", "Go Find the Food", "/maze#!7-2jack-food/index"]
   ],
   "A-교사교육": [
     ["1권:엘리베이터 놀이", "/b1_w2"],
