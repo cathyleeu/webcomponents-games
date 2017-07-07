@@ -39,12 +39,11 @@ var jsList = fs.readdirSync(path.join("public", "js"))
     postfile = fs.readFileSync('cache-postfile.txt');
 
 // 로그인 및 공통 이미지, 블록클리 리소스 파일들 로딩
-var level_pw = JSON.parse(fs.readFileSync("public/login/level_pw.json"));
-var loginImgs = level_pw["default"]
-    .concat(level_pw["A"])
-    .concat(level_pw["B"])
-    .concat(level_pw["C"])
-    .concat(level_pw["buttons"]);
+var loginImgs = level_json["default"]
+    .concat(level_json["A"])
+    .concat(level_json["B"])
+    .concat(level_json["C"])
+    .concat(level_json["buttons"]);
 var commonImgs = fs.readdirSync("public/img")
     .filter(function(item) {
       var stat = fs.statSync("public/img/" + item);
