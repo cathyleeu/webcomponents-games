@@ -616,7 +616,7 @@ Blocks["together"] = {
   action: ["together"]
 };
 Blocks["support"] = {
-  rgbColor: "#33B1B1",
+  rgbColor: "#6969AE",
   message0: {
     ko: "%1 부축하기",
     en: "%1 Support"
@@ -1281,7 +1281,7 @@ Blocks['condition_light'] = {
   action: ["conditioncheck","sign"]
 };
 Blocks['condition_bad'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "%1 만약에 응급 상황이라면",
     en: "If %1 Emergency"
@@ -1307,7 +1307,7 @@ Blocks['condition_bad'] = {
   action: ["conditioncheck","emergency"]
 };
 Blocks['condition_notbad'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "%1 만약에 응급 상황이 아니라면",
     en: "If %1 not Emergency"
@@ -1333,7 +1333,7 @@ Blocks['condition_notbad'] = {
   action: ["conditioncheck","not_emergency"]
 };
 Blocks['condition_recycle'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "%1 만약에 재활용 가능하다면",
     en: "If %1 recyclable"
@@ -1359,7 +1359,7 @@ Blocks['condition_recycle'] = {
   action: ["conditioncheck","recycle"]
 };
 Blocks['condition_notrecycle'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "%1 만약에 재활용 가능하지 않다면",
     en: "If %1 not recyclable"
