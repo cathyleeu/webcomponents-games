@@ -209,7 +209,7 @@ function getKinder(kinderId) {
 }
 
 function getBook(classObj) {
-  var school = classObj.code.slice(0,9),
+  var school = classObj.code.split("-").slice(0, 2).join("-"),
       book = [4, 5];
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
@@ -234,14 +234,16 @@ function getBook(classObj) {
       book = [1, 2];
     }
   }
+  // 울산 이화유치원 7세만 여름특별호 추가
+  if(school == "A00072-K6" && classObj.level == "C") {
+    book.push("5-5");
+  }
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
-  // 대구지사 에나 어린이집 5세반에 6세 컨텐츠 추가
-  if(school == "C00071-K6" && classObj.level == "A") {
-    book += "," + book.split(",").map(function(bname) {
-      return "B-" + (Number(bname.split("-")[1])-1);
-    });
+  // 대구지사 에나어린이집, 청솔유치원 5세반에 6세 컨텐츠 추가
+  if((school == "C00071-K6" || school == "C00071-K14") && classObj.level == "A") {
+    book += ",B-1,B-2";
   }
   // 울산지사 소속원 5세반에 6세 컨텐츠 추가
   if(school.slice(0,6) == "A00072" && classObj.level == "A") {
