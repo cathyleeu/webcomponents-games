@@ -1,0 +1,179 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="line-card">
+  <template></template>
+  <script>
+    class LineCard extends Polymer.Element {
+      static get is() { return 'line-card'; }
+      connectedCallback() {
+        super.connectedCallback();
+        this.shadowRoot.namespaceURI = d3.namespaces.xhtml;
+      }
+      setData(val){
+        let w = 700, h = 700,
+            svg = d3.select('body').append('svg')
+              .attr('width', w)
+              .attr('height', h),
+            boardName = ["boardL", "boardR"];
+        let defs = svg.append('defs').selectAll('pattern')
+
+        let leftCard = defs.data(val).enter()
+          .append('pattern')
+          .attr("id", (d, i) => `left_${i}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox");
+
+
+        svg.append('svg:defs').append('svg:marker')
+            .attr('id', 'marker')
+            .attr('viewBox', '0 -5 10 10')
+            .attr('refX', 6)
+            .attr('markerWidth', 3)
+            .attr('markerHeight', 3)
+            .attr('orient', 'auto')
+            .append('svg:path')
+            .attr('d', 'M0,-5L10,0L0,5')
+            .attr('fill', 'steelblue');
+
+
+        leftCard.append('filter')
+          .attr('id','desaturate')
+          .append('feColorMatrix')
+          .attr('type','matrix')
+          .attr('values',"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0")
+
+        leftCard.append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("width", 100).attr("height", 100)
+          .attr("xlink:href", d => `${d}`)
+          .style('filter', "url(#desaturate)")
+
+
+        let shuffledCard = d3.shuffle(val.slice())
+        let rightCard = defs.data(shuffledCard).enter()
+          .append('pattern')
+          .attr("id", (d, i) => `right_${i}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox")
+          .append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("width", 100).attr("height", 100)
+          .attr("xlink:href", (d, i) => `${d}`)
+
+
+        let rectGroup = svg.selectAll("g")
+          .data(boardName).enter()
+          .append("g")
+          .attr("class", d => `${d}`)
+          .attr("transform", (d, i) => `translate(10, 0)`);
+
+        let LeftSide = svg.select('.boardL');
+        LeftSide.selectAll("rect")
+            .data(val).enter()
+            .append('rect')
+            .attr("rx", 5).attr("ry", 5)
+            .attr('x', 10 ).attr('y', (d, i) => (110*i+10) + (30*i))
+            .attr("width", 110).attr("height", 110)
+            .style("fill", (d,i) => `url(#left_${i})`)
+            .style("stroke-width",8)
+            .style("stroke","#2ECC98")
+
+
+
+
+        let circlesL = LeftSide.selectAll("g.node")
+          .data(val).enter()
+          .append('g')
+          .attr("transform", (d, i) => `translate( 140 , ${55+ 145*i})`)
+
+        circlesL.on("mousedown", pencilingStart )
+        svg.on("mouseup", pencilingEnd)
+        circlesL.append("circle").attr("r", 5)
+
+        let RightSide = svg.select('.boardR');
+        RightSide.selectAll("rect")
+            .data(shuffledCard).enter()
+            .append('rect')
+            .attr("rx", 5).attr("ry", 5)
+                .attr('x', 450 ).attr('y', (d, i) => (110*i+10) + (30*i))
+            .attr("width", 110).attr("height", 110)
+            .style("fill", "#fff")
+            .style("fill", (d,i) => `url(#right_${i})`)
+            .style("stroke-width",8)
+            .style("stroke","#2ECC98")
+
+
+        RightSide.selectAll("g")
+            .data(shuffledCard).enter()
+
+        let circlesR = RightSide.selectAll("g.node")
+          .data(shuffledCard).enter()
+          .append('g')
+          .attr("transform", (d, i) => `translate( 430 , ${55+ 145*i})`)
+
+        circlesR.append("circle")
+                .attr("r", 5)
+                .attr('pointer-events', 'none');
+
+        circlesR.append("circle")
+                .attr("r", 20)
+                .attr("opacity", 0.0)
+
+        circlesR.attr('pointer-events', 'mouseover')
+
+
+        var line;
+        let matchLine, startX, startY;
+
+        function pencilingStart (d, i) {
+          let getXY = d3.select(this).attr("transform").match(/\d+/g),
+              numX = parseInt(getXY[0], 10),
+              numY = parseInt(getXY[1], 10);
+              startX = numX;
+              startY = numY;
+
+          line = svg.append("line")
+                .attr("x1", numX+10)
+                .attr("y1", numY)
+                .attr("x2", numX+10)
+                .attr("y2", numY);
+          matchLine = d;
+          svg.on("mousemove", pencilingMove);
+          circlesR.on('mouseover', checkInField)
+        }
+
+        function pencilingMove() {
+            let m = d3.mouse(this);
+            line.attr("x2", m[0])
+                .attr("y2", m[1]);
+        }
+
+        function pencilingEnd() {
+            svg.on("mousemove", null);
+        }
+
+
+        function checkInField(d) {
+            let getXY = d3.select(this).attr("transform").match(/\d+/g),
+                numX = parseInt(getXY[0], 10),
+                numY = parseInt(getXY[1], 10);
+
+          if(matchLine === d) {
+            console.log("its matched!!!", numX+10, numY)
+            line.attr("x2", numX+10)
+                .attr("y2", numY);
+          } else {
+            console.log("itsnt matched!!!", startX, startY)
+            alert("다시 시도해 주세요.");
+            line.remove();
+          }
+           circlesR.on('mouseover', null); // 중복되는 것 금지
+           svg.on("mousemove", null); // 점에 딱 맞추는 것
+        }
+      }
+    }
+    window.customElements.define(LineCard.is, LineCard);
+  </script>
+</dom-module>

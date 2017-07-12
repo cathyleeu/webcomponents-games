@@ -1,0 +1,145 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="range-card">
+  <template></template>
+  <script>
+    class RangeCard extends Polymer.Element {
+      static get is() { return 'range-card'; }
+      connectedCallback() {
+        super.connectedCallback();
+        this.shadowRoot.namespaceURI = d3.namespaces.xhtml;
+      }
+      setData(val){
+        let w = 600, h = 700,
+        		svg = d3.select(this.shadowRoot).append("svg")
+                    .attr( "width", w )
+                    .attr( "height", h ),
+            boardName = ["dropB", "dragB"];
+
+        let defs = svg.append('defs')
+              			.selectAll('pattern')
+
+        let dropCardB = defs.data(val).enter()
+                    .append('pattern')
+                    .attr("id", (d, i) => `drop_${i}`)
+                    .attr("x", 0).attr("y", 0)
+                    .attr("width", 1).attr("height", 1)
+                    .attr("patternUnits", "objectBoundingBox");
+
+        dropCardB.append('filter')
+          .attr('id','desaturate')
+          .append('feColorMatrix')
+          .attr('type','matrix')
+          .attr('values',"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0")
+        dropCardB.append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("width", 100).attr("height", 100)
+          .attr("xlink:href", d => `${d}`)
+          .style('filter', "url(#desaturate)")
+
+        let shuffledCard = d3.shuffle(val.slice())
+
+        let dragCardB = defs.data(shuffledCard).enter()
+          .append('pattern')
+          .attr("id", (d, i) => `drag_${i}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox")
+          .append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("width", 100).attr("height", 100)
+          .attr("xlink:href", (d, i) => `${d}`)
+
+        let rectGroup = svg.selectAll("g")
+          .data(boardName).enter()
+          .append("g")
+          .attr("class", d => `${d}`)
+          .attr("transform", (d, i) => `translate(10, 0)`);
+
+        let dropItem = svg.select('.dropB')
+          .selectAll("rect")
+          .data(val).enter()
+          .append('rect')
+          .attr("rx", 5).attr("ry", 5)
+          .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
+          .attr("width", 110).attr("height", 110)
+          .style("fill", (d,i) => `url(#drop_${i})`)
+          .style("stroke-width",8)
+          .style("stroke","#2ECC98")
+          .on('mouseover', (d) => {
+            let target = d3.select(d3.event.target),
+                DnD = DragDropManager;
+            DnD.droppable = d;
+            DnD.droppableX = target.attr('x')
+            DnD.droppableY = target.attr('y')
+          })
+        let dragB = svg.select('.dragB')
+            .selectAll("rect")
+            .data(shuffledCard).enter()
+            .append('rect')
+            .attr("rx", 5).attr("ry", 5)
+            .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 300)
+            .attr("width", 110).attr("height", 110)
+            .style("fill", "#fff")
+            .style("fill", (d,i) => `url(#drag_${i})`)
+            .style("stroke-width",8)
+            .style("stroke","#2ECC98")
+            .call(d3.drag()
+                .on("start", dragstarted )
+                .on("drag", dragged)
+                .on("end", dragended));
+
+        // var drag_behavior = d3.behavior.drag()
+
+        let DragDropManager = {
+          dragged: null, //엘리먼트
+          droppable: null, //세트
+          droppableX: null,
+          droppableY: null,
+          draggedMatchesTarget: function() {
+            // drag 하지 않는 상황, 마우스 이벤트가 없을 때
+            if (!this.droppable) return false
+            return (this.dragged === this.droppable);
+          }
+        }
+  			let startX, startY;
+
+        function dragstarted(d) {
+          startX = d3.select(this).attr('x');
+          startY = d3.select(this).attr('y');
+          d3.select(this)
+            .attr("x", d3.event.x)
+            .attr("y", d3.event.y);
+          DragDropManager.dragged = d3.event.subject
+        }
+
+        function dragged(d) {
+          d3.select(this)
+            .attr("x", d3.event.x)
+            .attr("y", d3.event.y);
+          let matches = DragDropManager.draggedMatchesTarget();
+
+        }
+
+        function dragended(d) {
+          let DnD = DragDropManager,
+              result = DnD.draggedMatchesTarget();
+          if (!result) {
+            console.log("result false")
+            d3.select(this)
+              .attr("x", startX )
+              .attr("y", startY );
+          } else {
+            console.log("result true", DnD.droppableX, DnD.droppableY)
+            d3.select(this)
+              .attr("x", DnD.droppableX )
+              .attr("y", DnD.droppableY )
+          }
+          DnD.dragged = null;
+          DnD.droppable = null;
+        }
+      }
+    }
+    window.customElements.define(RangeCard.is, RangeCard);
+  </script>
+</dom-module>
