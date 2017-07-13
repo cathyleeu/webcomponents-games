@@ -911,7 +911,12 @@ public.get('/a6_w4', function *(next) {
 public.get('/card_flip', function *(next) {
   yield this.render('card_flip');
 });
-
+public.get('/card_line', function *(next) {
+  yield this.render('card_line');
+});
+public.get('/card_range', function *(next) {
+  yield this.render('card_range');
+});
 public.get('/maze', function *(next) {
   yield this.render('maze', {
     mazeType: "vertical"
