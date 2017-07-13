@@ -732,8 +732,9 @@ function addEvents() {
         if(!obj.min_score || score >= obj.min_score) {
           if(obj.link.slice(-5) == "index") {
             // 새로운 index로 넘어갈때 : 돌아올 필요 없음
+            var lang = store.get("lang");
             store.set("queries", {});
-            page(obj.link);
+            page(obj.link + ((lang && obj.link.split("/")[0] != map_path[0])? "?lang=" + lang : ""));
           } else {
             // 문제 풀이 화면으로 넘어갈때 : back link를 저장
             store.set("queries", {

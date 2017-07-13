@@ -19,6 +19,9 @@
   {"id": "weed3", "src": "/img/a5_w4/Weed3_256.png", "obstacle": true},
   {"id": "weed4", "src": "/img/a5_w4/Weed4_256.png", "obstacle": true},
 
+  {"id": "toad2", "src": "/img/a5_w4/TutoToad2_256.png"},
+  {"id": "toad3", "src": "/img/a5_w4/TutoToad3_256.png"},
+
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
