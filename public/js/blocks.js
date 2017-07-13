@@ -1241,6 +1241,29 @@ Blocks['condition_foodget_notuse'] = {
   argsh1: null,
   action: ["conditioncheck","item_notuse"]
 };
+Blocks['condition_seedget_notuse'] = {
+  rgbColor: "#E11376",
+  message0: {
+    ko: "호박씨가 나오면",
+    en: "If pumkinseed exists"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/pumkinseed.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","item_notuse"]
+};
 Blocks['condition_fooduse'] = {
   rgbColor: "#E11376",
   message0: {
@@ -1279,6 +1302,52 @@ Blocks['condition_light'] = {
   messageh1: null,
   argsh1: null,
   action: ["conditioncheck","sign"]
+};
+Blocks['condition_apple'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 사과라면",
+    en: "If apple"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/apple.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck2","food"]
+};
+Blocks['condition_persimmon'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 감이라면",
+    en: "If persimmon"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/persimmon.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck2","food"]
 };
 Blocks['condition_bad'] = {
   rgbColor: "#309E4A",

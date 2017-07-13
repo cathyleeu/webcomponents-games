@@ -46,6 +46,8 @@
   {"tile": "v", "id": "etc3", "src": "/img/c55_w1/etc3.png", "obstacle": false},
   {"tile": "x", "id": "etc4", "src": "/img/c55_w1/etc4.png", "obstacle": false},
 
-  {"tile": "w", "id": "desk", "src": "/img/c55_w1/desk.png", "obstacle": true}
+  {"tile": "w", "id": "desk", "src": "/img/c55_w1/desk.png", "obstacle": true},
+  {"id": "drawer", "src": "/img/c55_w1/drawer.png", "obstacle": true},
+  {"id": "bookshelf", "src": "/img/c55_w1/bookshelf.png", "obstacle": true}
 
 ]
