@@ -37,12 +37,12 @@
   }],
   "tutorial": [{
     "msg:ko": "주스 6잔을 상에 가져다주어요!",
-    "msg:en": "Serve six cups of juice to the table",
+    "msg:en": "Take 6 glasses of juice and put them on the table.",
     "img":  ["/img/c55_w4/juice.png","/img/c55_w4/table0.png"]
   }],
   "goal": {
     "msg:ko": "주스 6잔을 상에 가져다주어요!",
-    "msg:en": "Serve six cups of juice to the table",
+    "msg:en": "Take 6 glasses of juice and put them on the table.",
     "img":  ["/img/c55_w4/juice.png","/img/c55_w4/table0.png"]
   }
 }

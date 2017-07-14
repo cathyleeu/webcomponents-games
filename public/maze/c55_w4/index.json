@@ -269,7 +269,7 @@
 
   "goal": {
     "msg:ko": "상을 21개 모은 후 엄마에게 가자!",
-    "msg:en": "Let's get 21 carts and go to mom!",
+    "msg:en": "Let's get 21 tables and go to mom!",
     "img":  ["/img/c55_w4/table0.png","/img/c55_w4/mother.png"]
   }
 }

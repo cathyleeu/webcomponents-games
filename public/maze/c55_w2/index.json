@@ -275,7 +275,7 @@
   }],
   "goal": {
     "msg:ko": "초대장을 21개를 보낸 뒤, 집으로 이동하자!",
-    "msg:en": "Send 21 invitations and, Go back to house",
+    "msg:en": "Send 21 invitations and go back to the house!",
     "img":  ["/img/c55_w2/invitation.png","/img/c55_w2/house.png"]
   }
 }
