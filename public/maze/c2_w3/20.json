@@ -30,7 +30,7 @@
     "img": "/img/c2_w3/cos0.png"
   },{
     "msg:ko": "라나는 상자 모양의 물건을 가지고 싶어요",
-    "msg:en": "Lana want to get a box shape",
+    "msg:en": "Lana want to get a box-shaped thing.",
     "img": "/img/c2_w3/box.png"
   },{
     "msg:ko": "이동 블록을 이용하여 물건을 찾아보자",
@@ -38,7 +38,7 @@
   }],
   "goal": {
     "msg:ko": "상자 모양의 물건으로 가보자!",
-    "msg:en": "Let's go to a box shape",
+    "msg:en": "Let's go to a box-shaped thing.",
     "img": "/img/c2_w3/box.png"
   },
   "success": [{

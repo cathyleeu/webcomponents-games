@@ -37,12 +37,12 @@
   }],
   "tutorial": [{
     "msg:ko": "물 4잔을 상에 가져다주어요!",
-    "msg:en": "Serve four cups of water to the table",
+    "msg:en": "Take 4 glasses of water and put them on the table.",
     "img":  ["/img/c55_w4/water.png","/img/c55_w4/table0.png"]
   }],
   "goal": {
     "msg:ko": "물 4잔을 상에 가져다주어요!",
-    "msg:en": "Serve four cups of water to the table",
+    "msg:en": "Take 4 glasses of water and put them on the table.",
     "img":  ["/img/c55_w4/water.png","/img/c55_w4/table0.png"]
   }
 }

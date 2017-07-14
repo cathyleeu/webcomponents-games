@@ -34,12 +34,12 @@
   }],
   "tutorial": [{
     "msg:ko": "연꽃을 가지고 선물상자로 가서 포장하자",
-    "msg:en": "Get the lotus and gift-wrap the lotus",
+    "msg:en": "Take the lotus flower to the gift box and pack it.",
     "img": ["/img/c55_w3/lotus_flower.png", "/img/c55_w3/gift.png"]
   }],
   "goal": {
     "msg:ko": "연꽃을 가지고 선물상자에 가서 포장하자",
-    "msg:en": "Get the lotus and gift-wrap the lotus",
+    "msg:en": "Take the lotus flower to the gift box and pack it.",
     "img":  ["/img/c55_w3/lotus_flower.png","/img/c55_w3/gift.png"]
   }
 }

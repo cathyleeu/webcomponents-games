@@ -24,7 +24,7 @@
   ],
   "tutorial": [{
     "msg:ko": "문지기 아저씨를 이기고 숭례문까지 가자.",
-    "msg:en": "Winning the keepers and go to Sungryemoon.",
+    "msg:en": "Win the gatekeepers and go to Sungryemoon.",
     "img": ["/img/b55/keeper.png","/img/b55/skaeoans.png"]
   }]
 }

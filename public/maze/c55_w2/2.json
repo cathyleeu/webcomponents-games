@@ -27,12 +27,12 @@
   }],
   "tutorial": [{
     "msg:ko": "외할머니에게 초대장을 드리러 가자!",
-    "msg:en": "Let's go to grandmother for invitation",
+    "msg:en": "Let's go to grandma to give an invitation!",
     "img": "/img/c55_w2/m_grandm.png"
   }],
   "goal": {
     "msg:ko": "외할머니에게 초대장을 드리러 가자!",
-    "msg:en": "Let's go to grandmother for invitation",
+    "msg:en": "Let's go to grandma to give an invitation!",
     "img": "/img/c55_w2/m_grandm.png"
   }
 }
