@@ -1242,7 +1242,7 @@ Blocks['condition_foodget_notuse'] = {
   action: ["conditioncheck","item_notuse"]
 };
 Blocks['condition_seedget_notuse'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "호박씨가 나오면",
     en: "If pumkinseed exists"
@@ -1324,7 +1324,7 @@ Blocks['condition_apple'] = {
   }],
   messageh1: null,
   argsh1: null,
-  action: ["conditioncheck2","food"]
+  action: ["conditioncheck","move_wo_item_if"]
 };
 Blocks['condition_persimmon'] = {
   rgbColor: "#309E4A",
@@ -1347,7 +1347,122 @@ Blocks['condition_persimmon'] = {
   }],
   messageh1: null,
   argsh1: null,
-  action: ["conditioncheck2","food"]
+  action: ["conditioncheck","move_wo_item_else"]
+};
+Blocks['condition_key_triangle'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 세모 열쇠라면",
+    en: "If triangle key"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/key_triangle.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_if"]
+};
+Blocks['condition_key_square'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 네모 열쇠라면",
+    en: "If square key"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/key_square.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_else"]
+};
+Blocks['condition_key_circle'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 동그라미 열쇠라면",
+    en: "If circle key"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/key_circle.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_elseif"]
+};
+Blocks['condition_acorn'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 도토리라면",
+    en: "If acorn"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/acorn.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_if"]
+};
+Blocks['condition_rice'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 쌀이라면",
+    en: "If rice"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/rice.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_else"]
 };
 Blocks['condition_bad'] = {
   rgbColor: "#309E4A",

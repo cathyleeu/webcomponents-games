@@ -9,7 +9,8 @@
     "move_left",
     "get_item_notuse",
     "check",
-    "condition_seedget_notuse"
+    "condition_seedget_notuse",
+    "repeat"
   ],
   "map": [
     ".%######.",
@@ -49,7 +50,7 @@
   }],
   "tutorial": [{
     "msg:ko": "상자를 확인하고 짹에게 가요. \n 상자에서 호박씨가 나오면 가지고 가요.",
-    "msg:en": "Check the box and go to the Jack with pumkin seed if there is.",
+    "msg:en": "Check the box \n and go to the Jack \n with pumkin seed if there is.",
     "img": ["/img/c7/box_open.png", "/img/c7/jack0.png"]
   }]
 }

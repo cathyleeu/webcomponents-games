@@ -6,7 +6,7 @@
 
   {"id": "character", "src": "/img/c7/SpriteJack_256.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c7/jack0.png", "size": 256},
-  {"id": "food", "src": "/img/c7/pumkinseed.png"},
+  {"id": "food", "src": "/img/c7/c7_w2_food.png"},
   {"id": "chest", "src": "/img/c7/box.png"},
   {"id": "chestopen", "src": "/img/c7/box_open.png"},
 
@@ -26,6 +26,9 @@
   {"id": "tree", "src": "/img/c7/tree.png","obstacle": true},
   {"id": "reed", "src": "/img/c7/reed.png","obstacle": true},
   {"id": "scarecrow", "src": "/img/c7/scarecrow.png","obstacle": true},
+
+  {"id": "cos_apple", "src": "/img/c7/cos_apple.png", "obstacle": false},
+  {"id": "cos_persimmon", "src": "/img/c7/cos_persimmon.png", "obstacle": false},
 
   {"id": "apple", "src": "/img/c7/apple.png", "obstacle": false},
   {"id": "persimmon", "src": "/img/c7/persimmon.png", "obstacle": false},

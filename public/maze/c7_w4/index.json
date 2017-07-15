@@ -269,13 +269,13 @@
   }],
 
   "tutorial": [{
-    "msg:ko": "아기새로 가요! 쉬운 문제는 아기새 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
-    "msg:en": "Let's go to the baby bird! An easy problem gives you one baby bird, a normal one gives you two and a hard one gives you three.",
-    "img": "/img/c7/babybird.png"
+    "msg:ko": "도토리&쌀로 가요! 쉬운 문제는 도토리&쌀 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's go to the acorn&rice! An easy problem gives you one acorn&rice, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/c7/c7_w4_food.png"
   }],
   "goal": {
-    "msg:ko": "아기새를 15개 모아 아기새에게 가요!",
-    "msg:en": "Let's get 15 baby birds and go to baby birds.",
-    "img": ["/img/c7/babybird.png","/img/c7/babybird.png"]
+    "msg:ko": "도토리&쌀을 15개 모아 아기새에게 가요!",
+    "msg:en": "Let's get 15 acorn&rice and go to baby birds.",
+    "img": ["/img/c7/c7_w4_food.png","/img/c7/babybird.png"]
   }
 }

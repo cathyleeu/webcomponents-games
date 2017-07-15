@@ -1056,6 +1056,12 @@ Actions.prototype.check = function(block, callback) {
       chest.role = "spider";
       chest.order = chest.contents[ranNum].order;
       _this.setCoord(chest, chest.px, chest.py);
+    }else if(chest.contents[ranNum].role == "justmove") {
+      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
+      chest.img = chest.contents[ranNum].img;
+      chest.role = "justmove";
+      chest.order = chest.contents[ranNum].order;
+      _this.setCoord(chest, chest.px, chest.py);
     }else{
       chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = chest.contents[ranNum].role;
@@ -1368,6 +1374,75 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
           callback();
         }
       }
+    }
+  }else if(options == "move_wo_item_if"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo && tileInfo.role == "justmove") {
+      this._splitObjects(tileInfo, function() {
+        if(tileInfo.order == "if"){
+          for(var i = 0; i<foods.length;i++){
+            if(tileInfo.order==foods[i].order){
+              foods.push(foods[i]);
+              foods.splice(0,foods.length-1);
+            }
+          }
+          if_block = block.getInputTargetBlock("if_statements");
+          setTimeout(function() {
+            block.removeSelect();
+            _this.run(if_block, callback);
+          }, 500);
+        }else{
+          callback();
+        }
+      });
+    }else{
+      callback();
+    }
+  }else if(options == "move_wo_item_elseif"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo && tileInfo.role == "justmove") {
+      this._splitObjects(tileInfo, function() {
+        if(tileInfo.order == "elseif"){
+          for(var i = 0; i<foods.length;i++){
+            if(tileInfo.order==foods[i].order){
+              foods.push(foods[i]);
+              foods.splice(0,foods.length-1);
+            }
+          }
+          if_block = block.getInputTargetBlock("if_statements");
+          setTimeout(function() {
+            block.removeSelect();
+            _this.run(if_block, callback);
+          }, 500);
+        }else{
+          callback();
+        }
+      });
+    }else{
+      callback();
+    }
+  }else if(options == "move_wo_item_else"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo && tileInfo.role == "justmove") {
+      this._splitObjects(tileInfo, function() {
+        if(tileInfo.order == "else"){
+          for(var i = 0; i<foods.length;i++){
+            if(tileInfo.order==foods[i].order){
+              foods.push(foods[i]);
+              foods.splice(0,foods.length-1);
+            }
+          }
+          if_block = block.getInputTargetBlock("if_statements");
+          setTimeout(function() {
+            block.removeSelect();
+            _this.run(if_block, callback);
+          }, 500);
+        }else{
+          callback();
+        }
+      });
+    }else{
+      callback();
     }
   }
 

@@ -6,7 +6,7 @@
 
   {"id": "character", "src": "/img/c7/SpriteJack_256.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c7/jack0.png", "size": 256},
-  {"id": "food", "src": "/img/c7/babybird.png"},
+  {"id": "food", "src": "/img/c7/c7_w4_food.png"},
 
   {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
@@ -26,6 +26,8 @@
   {"id": "reed", "src": "/img/c7/reed.png","obstacle": true},
   {"id": "scarecrow", "src": "/img/c7/scarecrow.png","obstacle": true},
 
+  {"id": "babybird_acorn", "src": "/img/c7/babybird_acorn.png", "obstacle": false},
+  {"id": "babybird_rice", "src": "/img/c7/babybird_rice.png", "obstacle": false},
   {"id": "acorn", "src": "/img/c7/acorn.png", "obstacle": false},
   {"id": "blackbeans", "src": "/img/c7/blackbeans.png", "obstacle": false},
   {"id": "rice", "src": "/img/c7/rice.png", "obstacle": false},

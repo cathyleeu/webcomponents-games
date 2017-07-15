@@ -1,0 +1,56 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item_notuse",
+    "check",
+    "condition_seedget_notuse",
+    "repeat"
+  ],
+  "map": [
+    ".%######.",
+    "#.##..###",
+    "#....%..#",
+    "#.#.##.##",
+    "#..#.##.#",
+    "#.#.#..##",
+    "#&...#.##",
+    "#.##u##.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 0,
+    "img": "tree"
+    },{
+    "x": 5,
+    "y": 2,
+    "img": "jack"
+    },{
+    "x": 1,
+    "y": 6,
+    "contents" : [{
+      "img": "pumkinseed",
+      "role": "item"
+    },{
+      "img": "chestnut",
+      "role": "img"
+    },{
+      "img": "walnut",
+      "role": "img"
+    },{
+      "img": "blank",
+      "role": "img"
+    }]
+  }],
+  "tutorial": [{
+    "msg:ko": "상자를 확인하고 짹에게 가요. \n 상자에서 호박씨가 나오면 가지고 가요.",
+    "msg:en": "Check the box \n and go to the Jack \n with pumkin seed if there is.",
+    "img": ["/img/c7/box_open.png", "/img/c7/jack0.png"]
+  }]
+}

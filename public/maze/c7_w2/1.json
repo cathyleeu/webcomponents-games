@@ -14,7 +14,7 @@
     "repeat"
   ],
   "map": [
-    ".%######.",
+    ".#######.",
     "#.#.###.#",
     "##....#.#",
     "####%.#.#",
@@ -25,20 +25,16 @@
     ".#######."
   ],
   "extra":[{
-    "x": 1,
-    "y": 0,
-    "img": "tree"
-    },{
     "x": 4,
     "y": 4,
     "img": "cos",
     "contents" : [{
-        "img": "apple",
-        "role": "guide",
+        "img": "cos_apple",
+        "role": "justmove",
         "order": "if"
       },{
-        "img": "persimmon",
-        "role": "guide",
+        "img": "cos_persimmon",
+        "role": "justmove",
         "order": "else"
     }]
   },{
@@ -54,7 +50,7 @@
   }],
   "tutorial": [{
     "msg:ko": "코스가 좋아하는 열매를 확인해요. \n 코스가 사과를 좋아하면 사과로 가고, \n 감을 좋아하면 감으로 가요.",
-    "msg:en": "Let's check which fruit Cos likes. \n If Cos likes apple, go to apple. \n If Cos likes persimmon, go to persimmon",
+    "msg:en": "Let's check the fruit Cos likes. \n If Cos likes apple, go to apple. \n If Cos likes persimmon, go to persimmon",
     "img": ["/img/c7/cos0.png","/img/c7/apple.png","/img/c7/persimmon.png"]
   }]
 }

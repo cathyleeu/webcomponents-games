@@ -1,16 +1,15 @@
 {
-
   "tile_size":128,
   "score":1,
-  "workspace": ["start","move_right","move_right","check","condition_apple","condition_persimmon"],
+  "workspace": ["start","move_right","move_right","check","condition_acorn","condition_rice"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
     "move_left",
     "check",
-    "condition_apple",
-    "condition_persimmon",
+    "condition_acorn",
+    "condition_rice",
     "repeat"
   ],
   "map": [
@@ -33,14 +32,14 @@
     "y": 4,
     "img": "babybird",
     "contents" : [{
-        "img": "acorn",
-        "role": "guide",
+        "img": "babybird_acorn",
+        "role": "justmove",
         "order": "if"
       },{
-        "img": "rice",
-        "role": "guide",
+        "img": "babybird_rice",
+        "role": "justmove",
         "order": "else"
-    }]
+      }]
   },{
     "x": 4,
     "y": 3,
@@ -54,7 +53,7 @@
   }],
   "tutorial": [{
     "msg:ko": "아기새가 좋아하는 열매를 확인해요. \n 코스가 도토리를 좋아하면 도토리로 가고, \n 쌀을 좋아하면 쌀로 가요.",
-    "msg:en": "Let's check which grain baby bird likes. \n If baby bird likes acorn, go to acorn. \n If baby bird likes rice, go to rice",
+    "msg:en": "Let's check the grain baby birds like. \n If baby birds like acorn, go to acorn. \n If baby birds like rice, go to rice",
     "img": ["/img/c7/babybird.png","/img/c7/acorn.png","/img/c7/rice.png"]
   }]
 }

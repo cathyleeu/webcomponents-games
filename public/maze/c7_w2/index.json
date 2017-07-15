@@ -6,7 +6,7 @@
   "map": [
     "#####EEEEEE#######.",
     "..r..%%%%%%...I%N.#",
-    ".#############.%N.#",
+    ".###.#########.%N.#",
     "##...#########.%N.#",
     "..#............%N.#",
     "##...%%%%%%%%%.%N.#",
@@ -16,161 +16,161 @@
     "x": 5,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "호박씨를 1개 얻을 수 있어",
-      "msg:en": "You can get one pumkin seed at once",
-      "img": "/img/c7/pumkinseed.png"
+      "msg:ko": "사과&감을 1개 얻을 수 있어",
+      "msg:en": "You can get one apple&persimmon at once",
+      "img": "/img/c7/c7_w2_food.png"
     }]
   },{
     "x": 6,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "호박씨를 1개 얻을 수 있어",
-      "msg:en": "You can get one pumkin seed at once",
-      "img": "/img/c7/pumkinseed.png"
+      "msg:ko": "사과&감을 1개 얻을 수 있어",
+      "msg:en": "You can get one apple&persimmon at once",
+      "img": "/img/c7/c7_w2_food.png"
     }]
   },{
     "x": 7,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "호박씨를 1개 얻을 수 있어",
-      "msg:en": "You can get one pumkin seed at once",
-      "img": "/img/c7/pumkinseed.png"
+      "msg:ko": "사과&감을 1개 얻을 수 있어",
+      "msg:en": "You can get one apple&persimmon at once",
+      "img": "/img/c7/c7_w2_food.png"
     }]
   },{
     "x": 8,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "호박씨를 1개 얻을 수 있어",
-      "msg:en": "You can get one pumkin seed at once",
-      "img": "/img/c7/pumkinseed.png"
+      "msg:ko": "사과&감을 1개 얻을 수 있어",
+      "msg:en": "You can get one apple&persimmon at once",
+      "img": "/img/c7/c7_w2_food.png"
     }]
   },{
     "x": 9,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "호박씨를 1개 얻을 수 있어",
-      "msg:en": "You can get one pumkin seed at once",
-      "img": "/img/c7/pumkinseed.png"
+      "msg:ko": "사과&감을 1개 얻을 수 있어",
+      "msg:en": "You can get one apple&persimmon at once",
+      "img": "/img/c7/c7_w2_food.png"
     }]
   },{
     "x": 10,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "호박씨를 1개 얻을 수 있어",
-      "msg:en": "You can get one pumkin seed at once",
-      "img": "/img/c7/pumkinseed.png"
+      "msg:ko": "사과&감을 1개 얻을 수 있어",
+      "msg:en": "You can get one apple&persimmon at once",
+      "img": "/img/c7/c7_w2_food.png"
     }]
   },{
     "x": 16,
     "y": 1,
     "tutorial": [{
-      "msg:ko": "호박씨를 2개 얻을 수 있어",
-      "msg:en": "You can get two pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 2개 얻을 수 있어",
+      "msg:en": "You can get two apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 16,
     "y": 2,
     "tutorial": [{
-      "msg:ko": "호박씨를 2개 얻을 수 있어",
-      "msg:en": "You can get two pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 2개 얻을 수 있어",
+      "msg:en": "You can get two apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 16,
     "y": 3,
     "tutorial": [{
-      "msg:ko": "호박씨를 2개 얻을 수 있어",
-      "msg:en": "You can get two pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 2개 얻을 수 있어",
+      "msg:en": "You can get two apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 16,
     "y": 4,
     "tutorial": [{
-      "msg:ko": "호박씨를 2개 얻을 수 있어",
-      "msg:en": "You can get two pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 2개 얻을 수 있어",
+      "msg:en": "You can get two apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 16,
     "y": 5,
     "tutorial": [{
-      "msg:ko": "호박씨를 2개 얻을 수 있어",
-      "msg:en": "You can get two pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 2개 얻을 수 있어",
+      "msg:en": "You can get two apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 5,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "호박씨를 3개 얻을 수 있어",
-      "msg:en": "You can get three pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 3개 얻을 수 있어",
+      "msg:en": "You can get three apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 6,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "호박씨를 3개 얻을 수 있어",
-      "msg:en": "You can get three pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 3개 얻을 수 있어",
+      "msg:en": "You can get three apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 7,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "호박씨를 3개 얻을 수 있어",
-      "msg:en": "You can get three pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 3개 얻을 수 있어",
+      "msg:en": "You can get three apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 8,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "호박씨를 3개 얻을 수 있어",
-      "msg:en": "You can get three pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 3개 얻을 수 있어",
+      "msg:en": "You can get three apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 9,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "호박씨를 3개 얻을 수 있어",
-      "msg:en": "You can get three pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 3개 얻을 수 있어",
+      "msg:en": "You can get three apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 10,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "호박씨를 3개 얻을 수 있어",
-      "msg:en": "You can get three pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 3개 얻을 수 있어",
+      "msg:en": "You can get three apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 11,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "호박씨를 3개 얻을 수 있어",
-      "msg:en": "You can get three pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 3개 얻을 수 있어",
+      "msg:en": "You can get three apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 12,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "호박씨를 3개 얻을 수 있어",
-      "msg:en": "You can get three pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 3개 얻을 수 있어",
+      "msg:en": "You can get three apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 13,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "호박씨를 3개 얻을 수 있어",
-      "msg:en": "You can get three pumkin seeds at once",
-      "img": ["/img/c7/pumkinseed.png","/img/c7/pumkinseed.png","/img/c7/pumkinseed.png"]
+      "msg:ko": "사과&감을 3개 얻을 수 있어",
+      "msg:en": "You can get three apple&persimmons at once",
+      "img": ["/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png","/img/c7/c7_w2_food.png"]
     }]
   },{
     "x": 5,
@@ -265,17 +265,17 @@
     "y": 4,
     "obstacle": false,
     "link": "c7_w2/99",
-    "min_score": 15
+    "min_score": 20
   }],
 
   "tutorial": [{
-    "msg:ko": "호박씨로 가요! 쉬운 문제는 호박씨 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
-    "msg:en": "Let's go to the pumkin seed! An easy problem gives you one pumkin seed, a normal one gives you two and a hard one gives you three.",
-    "img": "/img/c7/pumkinseed.png"
+    "msg:ko": "사과&감으로 가요! 쉬운 문제는 사과&감 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's go to the apple&persimmon! An easy problem gives you one apple&persimmon, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/c7/c7_w2_food.png"
   }],
   "goal": {
-    "msg:ko": "호박씨를 15개 모아 코스에게 가요!",
-    "msg:en": "Let's get 15 pumkin seeds and go to Cos.",
-    "img": ["/img/c7/pumkinseed.png","/img/c7/cos0.png"]
+    "msg:ko": "사과&감을 20개 모아 코스에게 가요!",
+    "msg:en": "Let's get 20 apple&persimmon and go to Cos.",
+    "img": ["/img/c7/c7_w2_food.png","/img/c7/cos0.png"]
   }
 }
