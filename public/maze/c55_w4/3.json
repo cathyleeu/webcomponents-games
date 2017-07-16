@@ -36,12 +36,12 @@
   }],
   "tutorial": [{
     "msg:ko": "셋 중에 큰 과일을 상으로 가지고가요!",
-    "msg:en": "Pick the biggest fruit and put it on the table",
+    "msg:en": "Pick the biggest fruit and put it on the table!",
     "img":  ["/img/c4_w3/biggest.png","/img/c55_w4/table0.png"]
   }],
   "goal": {
     "msg:ko": "셋 중에 큰 과일을 상에 가져다놓자!",
-    "msg:en": "Pick the biggest fruit and put it on the table",
+    "msg:en": "Pick the biggest fruit and put it on the table!",
     "img":  ["/img/c4_w3/biggest.png","/img/c55_w4/table0.png"]
   }
 }

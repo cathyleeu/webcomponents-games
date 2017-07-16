@@ -26,12 +26,12 @@
   }],
   "tutorial": [{
     "msg:ko": "공 모양의 물건으로 가보자!",
-    "msg:en": "Let's go to a Ball shape",
+    "msg:en": "Let's go to a ball-shaped thing.",
     "img": "/img/c55_w1/ball.png"
   }],
   "goal": {
     "msg:ko": "공 모양의 물건으로 가보자!",
-    "msg:en": "Let's go to a Ball shape",
+    "msg:en": "Let's go to a ball-shaped thing.",
     "img": "/img/c55_w1/ball.png"
   }
 }

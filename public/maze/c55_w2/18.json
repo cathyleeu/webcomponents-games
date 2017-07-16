@@ -27,12 +27,12 @@
   }],
   "tutorial": [{
     "msg:ko": "사슴 디어에게 초대장을 주러 가자!",
-    "msg:en": "Let's go to Deer for invitation",
+    "msg:en": "Let's go to Deer to give an invitation!",
     "img": "/img/c55_w2/deer_120.png"
   }],
   "goal": {
     "msg:ko": "사슴 디어에게 초대장을 주러 가자!",
-    "msg:en": "Let's go to Deer for invitation",
+    "msg:en": "Let's go to Deer to give an invitation!",
     "img": "/img/c55_w2/deer_120.png"
   }
 }

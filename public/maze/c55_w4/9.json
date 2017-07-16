@@ -35,13 +35,13 @@
     "useItem": true
   }],
   "tutorial": [{
-    "msg:ko": "딸기를 작은 숫자의 상에 가져다주어요!",
-    "msg:en": "Pick strawberry and bring it to table with the smaller number",
+    "msg:ko": "딸기를 가장 작은 숫자의 상에 가져다주어요!",
+    "msg:en": "Take the strawberry and place it on the smaller number of table.",
     "img":  ["/img/c55_w4/fruit_st.png","/img/c4_w4/smaller_num.png"]
   }],
   "goal": {
-    "msg:ko": "딸기를 작은 숫자의 상에 가져다주자!",
-    "msg:en": "Pick strawberry and bring it to table with the smaller number",
+    "msg:ko": "딸기를 가장 작은 숫자의 상에 가져다주자!",
+    "msg:en": "Take the strawberry and place it on the smaller number of table.",
     "img":  ["/img/c55_w4/fruit_st.png","/img/c4_w4/smaller_num.png"]
   }
 }
