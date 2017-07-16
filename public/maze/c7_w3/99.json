@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#d.%#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":2,
+    "img":"jack"
+  }],
+  "tutorial": [{
+    "msg:ko": "짹에게 가자",
+    "msg:en": "Go to Jack",
+    "img": ["/img/c7/cos0.png","/img/c7/jack0.png"]
+  }],
+  "success": [{
+    "msg:ko": "짹! 보물상자 열쇠를 찾아왔어~",
+    "msg:en": "Jack, I found the key to open the chest!",
+    "img" : ["/img/c7/cos0.png", "/img/c7/chest.png"]
+  },{
+    "msg:ko": "고마워, 코스야. 열어보자!",
+    "msg:en": "Thank you, Cos. Let's open the chest!",
+    "img": ["/img/c7/jack0.png", "/img/c7/chest.png"]
+  }]
+}
