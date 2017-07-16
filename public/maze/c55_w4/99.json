@@ -34,5 +34,8 @@
     "msg:ko": "수고했어, 코스야.",
     "msg:en": "Thank you, Cos.",
     "img": "/img/c55_w4/mother.png"
+  },{
+    "msg:ko": "특별(상)권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Book Special 1 is over! See you Book 6!"
   }]
 }

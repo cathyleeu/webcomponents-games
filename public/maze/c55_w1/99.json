@@ -34,5 +34,10 @@
     "msg:ko": "수고했어, 코스야.",
     "msg:en": "Thank you, Cos.",
     "img": "/img/c55_w1/father.png"
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/c7/cos0.png",
+    "link" : "c55_w2/index"
   }]
 }

@@ -12,7 +12,7 @@
   "map": [
     ".###.",
     "#...#",
-    "#d.%#",
+    "#r.%#",
     "#...#",
     ".###."
   ],
@@ -34,5 +34,10 @@
     "msg:ko": "고마워, 코스야. 맛있게 먹을게!",
     "msg:en": "Thank you, Cos. I'll enjoy it!",
     "img": ["/img/c7/c7_w1_success.png"]
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/c7/cos0.png",
+    "link" : "c7_w2/index"
   }]
 }

@@ -29,5 +29,10 @@
     "msg:ko": "모스야, 네 선물이야!",
     "msg:en": "These are you presents, Mos!",
     "img": ["/img/c55_w3/gift.png","/img/c55_w3/mos.png"]
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/c7/cos0.png",
+    "link" : "c55_w4/index"
   }]
 }

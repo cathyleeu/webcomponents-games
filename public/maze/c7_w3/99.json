@@ -11,14 +11,14 @@
   ],
   "map": [
     ".###.",
+    "#.d.#",
     "#...#",
-    "#d.%#",
-    "#...#",
+    "#.%.#",
     ".###."
   ],
   "extra":[{
-    "x":3,
-    "y":2,
+    "x":2,
+    "y":3,
     "img":"jack"
   }],
   "tutorial": [{
@@ -34,5 +34,10 @@
     "msg:ko": "고마워, 코스야. 보물상자를 열어보자!",
     "msg:en": "Thank you, Cos. Let's open the chest!",
     "img": ["/img/c7/jack0.png", "/img/c7/c7_w3_success.png"]
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/c7/cos0.png",
+    "link" : "c7_w4/index"
   }]
 }

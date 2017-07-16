@@ -12,7 +12,7 @@
   "map": [
     ".###.",
     "#...#",
-    "#d.%#",
+    "#r.%#",
     "#...#",
     ".###."
   ],
@@ -34,5 +34,8 @@
     "msg:ko": "고마워요, 엄마. 맛있게 먹을게요!",
     "msg:en": "Thank you, Mom. We'll enjoy it!",
     "img": ["/img/c7/c7_w4_success.png"]
+  },{
+    "msg:ko": "7권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Book 7 is over! See you Book 8!"
   }]
 }
