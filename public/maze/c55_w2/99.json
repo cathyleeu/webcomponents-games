@@ -30,5 +30,10 @@
     "msg:ko": "초대장을 다 돌리고 집에 도착했어요~",
     "msg:en": "I sent all invitations and arrived home.",
     "img": ["/img/c55_w2/invitation.png","/img/c55_w2/house.png"]
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/c7/cos0.png",
+    "link" : "c55_w3/index"
   }]
 }

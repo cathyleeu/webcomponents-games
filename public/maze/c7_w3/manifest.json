@@ -1,6 +1,6 @@
 
 [
-  {"book": "c7", "title": "2주차 : 만약에 블록을 이해해요"},
+  {"book": "c7", "title": "3주차 : 여러 가지 모양의 열쇠를 찾아보아요"},
   {"id": "bg1", "src": "/img/c7/bg1.png"},
   {"id": "bg2", "src": "/img/c7/bg2.png"},
 
@@ -29,6 +29,9 @@
   {"id": "key_circle", "src": "/img/c7/key_circle.png", "obstacle": false},
   {"id": "key_square", "src": "/img/c7/key_square.png", "obstacle": false},
   {"id": "key_triangle", "src": "/img/c7/key_triangle.png", "obstacle": false},
+  {"id": "chest_key_circle", "src": "/img/c7/chest_key_circle.png", "obstacle": false},
+  {"id": "chest_key_square", "src": "/img/c7/chest_key_square.png", "obstacle": false},
+  {"id": "chest_key_triangle", "src": "/img/c7/chest_key_triangle.png", "obstacle": false},
 
   {"id": "apple", "src": "/img/c7/apple.png", "obstacle": false},
   {"id": "persimmon", "src": "/img/c7/persimmon.png", "obstacle": false},

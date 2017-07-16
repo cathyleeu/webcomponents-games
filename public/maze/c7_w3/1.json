@@ -1,53 +1,49 @@
 {
   "tile_size":128,
   "score":1,
-  "workspace": ["start","move_right","move_right","check","condition_apple","condition_persimmon"],
+  "workspace": ["start","move_right","check","condition_key_triangle","condition_key_square"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
     "move_left",
     "check",
-    "condition_apple",
-    "condition_persimmon",
+    "condition_key_triangle",
+    "condition_key_square",
     "repeat"
   ],
   "map": [
-    ".%######.",
+    ".#######.",
     "#.#.###.#",
-    "##....#.#",
-    "####%.#.#",
-    "##r.&##.#",
-    "#.##%.#.#",
-    "#...#####",
-    "#.......#",
+    "##.%..#.#",
+    "####..#.#",
+    "##.r&##.#",
+    "#.##.##.#",
+    "#..#.%###",
+    "#...#...#",
     ".#######."
   ],
   "extra":[{
-    "x": 1,
-    "y": 0,
-    "img": "tree"
-    },{
     "x": 4,
     "y": 4,
     "img": "chest",
     "contents" : [{
-        "img": "key_triangle",
-        "role": "guide",
+        "img": "chest_key_triangle",
+        "role": "justmove",
         "order": "if"
       },{
-        "img": "key_square",
-        "role": "guide",
+        "img": "chest_key_square",
+        "role": "justmove",
         "order": "else"
     }]
   },{
-    "x": 4,
-    "y": 3,
+    "x": 3,
+    "y": 2,
     "img": "key_triangle",
     "order": "if"
   },{
-    "x": 4,
-    "y": 5,
+    "x": 5,
+    "y": 6,
     "img": "key_square",
     "order": "else"
   }],

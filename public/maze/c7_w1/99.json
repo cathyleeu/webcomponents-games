@@ -1,0 +1,43 @@
+{
+  "tile_size": 128,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#r.%#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":2,
+    "img":"jack"
+  }],
+  "tutorial": [{
+    "msg:ko": "짹에게 가자",
+    "msg:en": "Go to Jack",
+    "img": ["/img/c7/cos0.png","/img/c7/jack0.png"]
+  }],
+  "success": [{
+    "msg:ko": "짹! 호박씨를 가져왔어~",
+    "msg:en": "Jack, I brought pumpkin seeds!",
+    "img" : ["/img/c7/cos0.png", "/img/c7/pumkinseed.png"]
+  },{
+    "msg:ko": "고마워, 코스야. 맛있게 먹을게!",
+    "msg:en": "Thank you, Cos. I'll enjoy it!",
+    "img": ["/img/c7/c7_w1_success.png"]
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/c7/cos0.png",
+    "link" : "c7_w2/index"
+  }]
+}

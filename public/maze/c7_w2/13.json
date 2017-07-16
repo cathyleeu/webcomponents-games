@@ -1,0 +1,55 @@
+{
+  "tile_size":128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "check",
+    "condition_apple",
+    "condition_persimmon",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#d##..###",
+    "#.#.%#..#",
+    "#.#.#.#.#",
+    "#&..##.##",
+    "###%#.#.#",
+    "#.#..##.#",
+    "##.###.##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 4,
+    "img": "cos",
+    "contents" : [{
+        "img": "cos_apple",
+        "role": "justmove",
+        "order": "if"
+      },{
+        "img": "cos_persimmon",
+        "role": "justmove",
+        "order": "else"
+    }]
+  },{
+    "x": 4,
+    "y": 2,
+    "img": "apple",
+    "order": "if"
+  },{
+    "x": 3,
+    "y": 5,
+    "img": "persimmon",
+    "order": "else"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스가 좋아하는 열매를 확인해요. \n 코스가 사과를 좋아하면 사과로 가고, \n 감을 좋아하면 감으로 가요.",
+    "msg:en": "Let's check the fruit Cos likes. \n If Cos likes apple, go to apple. \n If Cos likes persimmon, go to persimmon",
+    "img": ["/img/c7/cos0.png","/img/c7/apple.png","/img/c7/persimmon.png"]
+  }]
+}

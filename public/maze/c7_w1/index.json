@@ -265,7 +265,7 @@
     "y": 4,
     "obstacle": false,
     "link": "c7_w1/99",
-    "min_score": 15
+    "min_score": 20
   }],
 
   "tutorial": [{
@@ -274,8 +274,8 @@
     "img": "/img/c7/pumkinseed.png"
   }],
   "goal": {
-    "msg:ko": "호박씨를 15개 모아 짹에게 가요!",
-    "msg:en": "Let's get 15 pumkin seeds and go to Jack.",
+    "msg:ko": "호박씨를 20개 모아 짹에게 가요!",
+    "msg:en": "Let's get 20 pumkin seeds and go to Jack.",
     "img": ["/img/c7/pumkinseed.png","/img/c7/jack0.png"]
   }
 }
