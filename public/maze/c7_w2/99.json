@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#d.%#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":2,
+    "img":"cos"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스에게 가자",
+    "msg:en": "Go to Cos",
+    "img": ["/img/c7/jack0.png","/img/c7/cos0.png"]
+  }],
+  "success": [{
+    "msg:ko": "코스! 네가 좋아하는 과일을 가져왔어~",
+    "msg:en": "Cos, I brought fruit you like!",
+    "img" : ["/img/c7/jack0.png", "/img/c7/c7_w2_food.png"]
+  },{
+    "msg:ko": "고마워, 짹. 맛있게 먹을게!",
+    "msg:en": "Thank you, Jack. I'll enjoy it!",
+    "img": ["/img/c7/cos0.png", "/img/c7/c7_w2_food.png"]
+  }]
+}

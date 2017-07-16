@@ -265,7 +265,7 @@
     "y": 4,
     "obstacle": false,
     "link": "c7_w3/99",
-    "min_score": 15
+    "min_score": 20
   }],
 
   "tutorial": [{
@@ -274,8 +274,8 @@
     "img": "/img/c7/chest.png"
   }],
   "goal": {
-    "msg:ko": "보물상자를 15개 모아 짹에게 가요!",
-    "msg:en": "Let's get 15 chests and go to Jack.",
+    "msg:ko": "보물상자를 20개 모아 짹에게 가요!",
+    "msg:en": "Let's get 20 chests and go to Jack.",
     "img": ["/img/c7/chest.png","/img/c7/jack0.png"]
   }
 }
