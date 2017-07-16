@@ -265,7 +265,7 @@
     "y": 4,
     "obstacle": false,
     "link": "c7_w4/99",
-    "min_score": 15
+    "min_score": 20
   }],
 
   "tutorial": [{
@@ -274,8 +274,8 @@
     "img": "/img/c7/c7_w4_food.png"
   }],
   "goal": {
-    "msg:ko": "도토리&쌀을 15개 모아 아기새에게 가요!",
-    "msg:en": "Let's get 15 acorn&rice and go to baby birds.",
+    "msg:ko": "도토리&쌀을 20개 모아 아기새에게 가요!",
+    "msg:en": "Let's get 20 acorn&rice and go to baby birds.",
     "img": ["/img/c7/c7_w4_food.png","/img/c7/babybird.png"]
   }
 }

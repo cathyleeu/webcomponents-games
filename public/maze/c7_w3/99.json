@@ -31,8 +31,8 @@
     "msg:en": "Jack, I found the key to open the chest!",
     "img" : ["/img/c7/cos0.png", "/img/c7/chest.png"]
   },{
-    "msg:ko": "고마워, 코스야. 열어보자!",
+    "msg:ko": "고마워, 코스야. 보물상자를 열어보자!",
     "msg:en": "Thank you, Cos. Let's open the chest!",
-    "img": ["/img/c7/jack0.png", "/img/c7/chest.png"]
+    "img": ["/img/c7/jack0.png", "/img/c7/c7_w3_success.png"]
   }]
 }

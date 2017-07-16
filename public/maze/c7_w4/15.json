@@ -1,7 +1,7 @@
 {
   "tile_size":128,
-  "score":1,
-  "workspace": ["start","move_right","check","condition_acorn","condition_rice"],
+  "score":3,
+  "workspace": ["start"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -14,18 +14,18 @@
   ],
   "map": [
     ".#######.",
-    "#.#.%##.#",
-    "##....#.#",
-    "####..#.#",
-    "##.r&##.#",
-    "#.##..#.#",
     "#.##..###",
-    "#...%...#",
+    "#.#.##.l#",
+    "##%.#..##",
+    "#..#%#.##",
+    "##.#.#..#",
+    "##....&##",
+    "##.##.#.#",
     ".#######."
   ],
   "extra":[{
-    "x": 4,
-    "y": 4,
+    "x": 6,
+    "y": 6,
     "img": "babybird",
     "contents" : [{
         "img": "babybird_acorn",
@@ -37,13 +37,13 @@
         "order": "else"
       }]
   },{
-    "x": 4,
-    "y": 1,
+    "x": 2,
+    "y": 3,
     "img": "acorn",
     "order": "if"
   },{
     "x": 4,
-    "y": 7,
+    "y": 4,
     "img": "rice",
     "order": "else"
   }],
