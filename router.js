@@ -213,7 +213,7 @@ function getBook(classObj) {
       book = [4, 5];
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
-    book = ["5-5", 6];
+    book = [6, 7];
   }
   // 직영 설리번, 울산지사 교차로원, 인천지사 유원유치원
   if(school == "E00076-K1" || school == "A00072-K9" || school == "A00114-K3") {
