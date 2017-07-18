@@ -186,6 +186,13 @@
     ["장군이의 집찾기 - 반복", "/maze#!4jangoon-house-r/index"],
     ["장군이의 심부름 - 반복", "/maze#!4jangoon-mart-r/index"]
   ],
+  "5&6권": [
+    ["토드의 규칙찾기", "/maze#!5tode_pattern/index"],
+    ["라나의 선물하기", "/maze#!5lana_gift/index"],
+    ["봄이와 보물상자", "/maze#!6-1bomi-chest/index"],
+    ["봄이의 먹이 구하기", "/maze#!6-23bomi-food/index"],
+    ["봄이와 횡단보도", "/maze#!6-4bomi-traffic/index"]
+  ],
   "6권": [
     ["봄이와 보물상자", "/maze#!6-1bomi-chest/index"],
     ["봄이의 먹이 구하기", "/maze#!6-23bomi-food/index"],
