@@ -1,0 +1,15 @@
+[
+  {"book": "a8", "title": "2주차 : 물의 여행"},
+
+  {"id": "background", "src": "/img/a8/nature.png"},
+
+  {"id": "character", "src": "/img/a8/waterboy.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/a8/waterboy0.png", "size": 256},
+  {"id": "food", "src": "/img/invisiblex256.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"}
+
+]

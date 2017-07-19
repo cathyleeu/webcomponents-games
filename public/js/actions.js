@@ -381,6 +381,16 @@ Actions.prototype.steploop = function(type, block, callback) {
     stepList = ["u","u","u","u","u","u"];
   } else if(type == "a6w1_move_right") {
     stepList = ["r","r","r","r","r","r"];
+  } else if(type == "go_rain") {
+    stepList = ["u","u","u","u","r","r","r","d","d"];
+  } else if(type == "go_snow") {
+    stepList = ["u","u","u","u","r","r","r","r","r","d","d"];
+  } else if(type == "go_sea1") {
+    stepList = ["d","r","d","l","l","l","l","l","l"];
+  } else if(type == "go_sea2") {
+    stepList = ["d","r","d","l","d","d","l","l","l","l","l","u","u"];
+  } else if(type == "go_sea3") {
+    stepList = ["d","r","d","l","l","l","d","d","l","l","l","u","u"];
   }
   travel(x_next,y_next);
   function travel(a,b){

@@ -305,7 +305,61 @@ Blocks["a7w1_pear"] = {
   ],
   action: ["harvesting"]
 };
-
+Blocks["go_rain"] = {
+  rgbColor: "#A14289",
+  message0: {
+    ko: "%1 비가 되기",
+    en: "%1 become rain"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/rain.png"}
+  ],
+  action: ["steploop", "go_rain"]
+};
+Blocks["go_snow"] = {
+  rgbColor: "#A14289",
+  message0: {
+    ko: "%1 눈이 되기",
+    en: "%1 become snow"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/snow.png"}
+  ],
+  action: ["steploop", "go_snow"]
+};
+Blocks["go_sea1"] = {
+  rgbColor: "#A14289",
+  message0: {
+    ko: "%1 바다로 가기",
+    en: "%1 Go sea"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/sea.png"}
+  ],
+  action: ["steploop", "go_sea1"]
+};
+Blocks["go_sea2"] = {
+  rgbColor: "#A14289",
+  message0: {
+    ko: "%1 바다로 가기",
+    en: "%1 Go sea"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/sea.png"}
+  ],
+  action: ["steploop", "go_sea2"]
+};
+Blocks["go_sea3"] = {
+  rgbColor: "#A14289",
+  message0: {
+    ko: "%1 바다로 가기",
+    en: "%1 Go sea"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/sea.png"}
+  ],
+  action: ["steploop", "go_sea3"]
+};
 Blocks["move_up"] = {
   rgbColor: "#F28C00",
   message0: {
