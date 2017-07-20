@@ -87,7 +87,7 @@
     "obstacle": false,
     "tutorial": [{
       "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
-      "msg:en": "Easy problems is over, Let's solve the problem freely"
+      "msg:en": "The basic problems are over. Now you can solve the problem freely."
     }]
   },{
     "x": 14,
