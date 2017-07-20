@@ -28,8 +28,8 @@
     "img":"star4"
   }],
   "tutorial": [{
-    "msg:ko": "'?'에 들어갈 모양으로 이동해요'",
+    "msg:ko": "'?'에 들어갈 모양으로 이동해요",
     "msg:en": "Let's find shape to fill the ? space and move there",
-    "img": ["/img/b7_w2/star1.png""/img/b7_w2/star2.png""/img/b7_w2/star3.png","/img/b7_w2/question.png"]
+    "img": ["/img/b7_w2/star1.png","/img/b7_w2/star2.png","/img/b7_w2/star3.png","/img/b7_w2/question.png"]
   }]
 }
