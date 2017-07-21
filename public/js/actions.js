@@ -381,38 +381,52 @@ Actions.prototype.steploop = function(type, block, callback) {
     stepList = ["u","u","u","u","u","u"];
   } else if(type == "a6w1_move_right") {
     stepList = ["r","r","r","r","r","r"];
+  } else if(type == "go_cloud") {
+    stepList = ["u","u","u","u"];
   } else if(type == "go_rain") {
-    stepList = ["u","u","u","u","r","r","r","d","d"];
+    stepList = ["r","r","r","d","d"];
   } else if(type == "go_snow") {
-    stepList = ["u","u","u","u","r","r","r","r","r","d","d"];
+    stepList = ["r","r","r","r","r","d","d"];
+  } else if(type == "go_valley") {
+    stepList = ["d","r"];
+  } else if(type == "go_lake") {
+    stepList = ["d","l"];
+  } else if(type == "go_river") {
+    stepList = ["l","l"];
+  } else if(type == "go_under") {
+    stepList = ["d","d"];
   } else if(type == "go_sea1") {
-    stepList = ["d","r","d","l","l","l","l","l","l"];
+    stepList = ["l","l","l"];
   } else if(type == "go_sea2") {
-    stepList = ["d","r","d","l","d","d","l","l","l","l","l","u","u"];
+    stepList = ["l","l","l","l","l","u","u"];
   } else if(type == "go_sea3") {
-    stepList = ["d","r","d","l","l","l","d","d","l","l","l","u","u"];
+    stepList = ["l","l","l","u","u"];
   }
-  travel(x_next,y_next);
-  function travel(a,b){
-    obj = _this._getCanvasObject(a, b);
-    _this._moveCharacter(a, b, function() {
-      if(stepList.length>0){
-        var direction = stepList.shift();
-        setTimeout(function() {
-          if(direction == "r"){
-            travel(a+1,b);
-          }else if(direction == "l"){
-            travel(a-1,b);
-          }else if(direction == "d"){
-            travel(a,b+1);
-          }else{
-            travel(a,b-1);
-          }
-        }, 500);
+
+  setNextMove(stepList.shift(),x_next,y_next);
+
+  function travel(p1,p2){
+    obj = _this._getCanvasObject(p1, p2);
+    _this._moveCharacter(p1, p2, function() {
+      setNextMove(stepList.shift(),p1,p2);
+    });
+  }
+  function setNextMove(direction,a,b){
+    setTimeout(function() {
+      if(direction){
+        if(direction == "r"){
+          travel(a+1,b);
+        }else if(direction == "l"){
+          travel(a-1,b);
+        }else if(direction == "d"){
+          travel(a,b+1);
+        }else{
+          travel(a,b-1);
+        }
       }else{
         callback(obj);
       }
-    });
+    }, 500);
   }
 };
 
@@ -502,7 +516,7 @@ Actions.prototype.memigrowing = function(type, block, callback) {
   }
 };
 
-Actions.prototype.harvesting = function(block, callback) {
+Actions.prototype.harvesting = function(type, block, callback) {
   var _this = this,
       character = this.canvas.character,
       foods = this.canvas.foods,
@@ -512,34 +526,43 @@ Actions.prototype.harvesting = function(block, callback) {
       y_next = character.py,
       chest;
       stepList = ["l","l","l","l"],
+      changePoint = 2;
       obj = null;
 
-  travel(x_next,y_next);
-  function travel(a,b){
-    debugger
-    obj = _this._getCanvasObject(a, b);
-    _this._moveCharacter(a, b, function() {
-      debugger
-      if(stepList.length>0){
-        if(stepList.length<4){
-          changeImage(a,b);
+  if(type == "type2"){
+    stepList = ["l","l"],
+    changePoint = 1;
+  }else if(type == "type3"){
+    changeImage(x_next,y_next);
+    stepList = [];
+  }
+  setNextMove(stepList.shift(),x_next,y_next);
+  function travel(p1,p2){
+    obj = _this._getCanvasObject(p1, p2);
+    _this._moveCharacter(p1, p2, function() {
+
+      if(stepList.length==changePoint){
+        changeImage(p1,p2);
+      }
+      setNextMove(stepList.shift(),p1,p2);
+    });
+  }
+  function setNextMove(direction,a,b){
+    setTimeout(function() {
+      if(direction){
+        if(direction == "r"){
+          travel(a+1,b);
+        }else if(direction == "l"){
+          travel(a-1,b);
+        }else if(direction == "d"){
+          travel(a,b+1);
+        }else{
+          travel(a,b-1);
         }
-        var direction = stepList.shift();
-        setTimeout(function() {
-          if(direction == "r"){
-            travel(a+1,b);
-          }else if(direction == "l"){
-            travel(a-1,b);
-          }else if(direction == "d"){
-            travel(a,b+1);
-          }else{
-            travel(a,b-1);
-          }
-        }, 500);
       }else{
         callback(obj);
       }
-    });
+    }, 500);
   }
   function changeImage(a,b){
     chest = _this._getCanvasObject(a, b, "chest");
