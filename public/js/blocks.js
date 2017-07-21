@@ -270,7 +270,18 @@ Blocks["a7w1_corn"] = {
   args0: [
     {type: "field_image", src: "/img/a7_w2/corn0.png"}
   ],
-  action: ["harvesting"]
+  action: ["harvesting","type1"]
+};
+Blocks["a7w1_corn2"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 옥수수 수확",
+    en: "%1 corn harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/corn0.png"}
+  ],
+  action: ["harvesting","type2"]
 };
 Blocks["a7w1_rice"] = {
   rgbColor: "#F28C00",
@@ -281,7 +292,29 @@ Blocks["a7w1_rice"] = {
   args0: [
     {type: "field_image", src: "/img/a7_w2/rice0.png"}
   ],
-  action: ["harvesting"]
+  action: ["harvesting","type1"]
+};
+Blocks["a7w1_rice2"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 벼 수확",
+    en: "%1 rice harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/rice0.png"}
+  ],
+  action: ["harvesting","type2"]
+};
+Blocks["a7w1_rice3"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 벼 수확",
+    en: "%1 rice harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/rice0.png"}
+  ],
+  action: ["harvesting","type3"]
 };
 Blocks["a7w1_apple"] = {
   rgbColor: "#F28C00",
@@ -292,7 +325,29 @@ Blocks["a7w1_apple"] = {
   args0: [
     {type: "field_image", src: "/img/a7_w2/apple0.png"}
   ],
-  action: ["harvesting"]
+  action: ["harvesting","type1"]
+};
+Blocks["a7w1_apple2"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 사과 수확",
+    en: "%1 apple harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/apple0.png"}
+  ],
+  action: ["harvesting","type2"]
+};
+Blocks["a7w1_apple3"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 사과 수확",
+    en: "%1 apple harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/apple0.png"}
+  ],
+  action: ["harvesting","type3"]
 };
 Blocks["a7w1_pear"] = {
   rgbColor: "#F28C00",
@@ -303,10 +358,32 @@ Blocks["a7w1_pear"] = {
   args0: [
     {type: "field_image", src: "/img/a7_w2/pear0.png"}
   ],
-  action: ["harvesting"]
+  action: ["harvesting","type1"]
+};
+Blocks["a7w1_pear2"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 배 수확",
+    en: "%1 pear harvest"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a7_w2/pear0.png"}
+  ],
+  action: ["harvesting","type2"]
+};
+Blocks["go_cloud"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 구름이 되기",
+    en: "%1 become cloud"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/cloud.png"}
+  ],
+  action: ["steploop", "go_cloud"]
 };
 Blocks["go_rain"] = {
-  rgbColor: "#A14289",
+  rgbColor: "#D9629E",
   message0: {
     ko: "%1 비가 되기",
     en: "%1 become rain"
@@ -317,7 +394,7 @@ Blocks["go_rain"] = {
   action: ["steploop", "go_rain"]
 };
 Blocks["go_snow"] = {
-  rgbColor: "#A14289",
+  rgbColor: "#D9629E",
   message0: {
     ko: "%1 눈이 되기",
     en: "%1 become snow"
@@ -326,6 +403,50 @@ Blocks["go_snow"] = {
     {type: "field_image", src: "/img/a8/snow.png"}
   ],
   action: ["steploop", "go_snow"]
+};
+Blocks["go_valley"] = {
+  rgbColor: "#F28C00",
+  message0: {
+    ko: "%1 계곡으로 가기",
+    en: "%1 Go valley"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/valley.png"}
+  ],
+  action: ["steploop", "go_valley"]
+};
+Blocks["go_lake"] = {
+  rgbColor: "#D9629E",
+  message0: {
+    ko: "%1 호수로 가기",
+    en: "%1 Go lake"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/lake.png"}
+  ],
+  action: ["steploop", "go_lake"]
+};
+Blocks["go_river"] = {
+  rgbColor: "#60B12F",
+  message0: {
+    ko: "%1 강으로 가기",
+    en: "%1 Go river"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/river.png"}
+  ],
+  action: ["steploop", "go_river"]
+};
+Blocks["go_under"] = {
+  rgbColor: "#34BEEF",
+  message0: {
+    ko: "%1 지하로 가기",
+    en: "%1 Go ungerground"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/under.png"}
+  ],
+  action: ["steploop", "go_under"]
 };
 Blocks["go_sea1"] = {
   rgbColor: "#A14289",

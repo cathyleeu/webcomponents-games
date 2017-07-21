@@ -1,0 +1,46 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "a7w1_apple2",
+    "a7w1_pear2"
+  ],
+  "map": [
+    "caaae",
+    "b...b",
+    "%&.&l",
+    "b...b",
+    "faaag"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 2,
+    "img": "pear_tree",
+    "contents" : [{
+        "img": "blank_pear_tree"
+    },{
+        "img": "pear0"
+    }]
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "apple_tree",
+    "contents" : [{
+        "img": "blank_apple_tree"
+    },{
+        "img": "apple0"
+    }]
+  }],
+  "tutorial": [{
+    "msg:ko": "블록을 조립하여 사과와 배를 수확해 보아요",
+    "msg:en": "Harvest apple & pear, by assemling the blocks",
+    "img": ["/img/a7_w2/apple_tree.png","/img/a7_w2/apple_block.png","/img/a7_w2/pear_tree.png","/img/a7_w2/pear_block.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공! 사과와 배를 모두 수확했어요",
+    "msg:en": "Success! Harvesting apple & pear!",
+    "img": ["/img/a7_w2/apple0.png","/img/a7_w2/pear0.png"],
+    "link": "a7_w2/7"
+  }]
+}

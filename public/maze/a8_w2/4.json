@@ -3,15 +3,16 @@
   "score":5,
   "workspace": ["start"],
   "toolbox": [
-    "go_sea2"
+    "go_cloud",
+    "go_snow"
   ],
   "map": [
     "........",
     "........",
     "........",
-    "......d.",
+    "......%.",
     "........",
-    ".%......",
+    ".d......",
     "........",
     "........"
   ],
@@ -19,14 +20,14 @@
     "msg:ko": "물방울의 여행을 따라가보아요.",
     "msg:en": "Let’s follow the journey of trickle."
   },{
-    "msg:ko": "산에서 지하의 강을 거쳐서 바다로 이동해요.",
-    "msg:en": "Trickle moves from the mountains to the sea through the under river.",
-    "img": ["/img/a8/sea.png"]
+    "msg:ko": "바다에서 구름으로 이동한뒤 눈이 되어 내려와요.",
+    "msg:en": "Trickle moves from the sea to the cloud and then it snows.",
+    "img": ["/img/a8/cloud.png","/img/a8/snow.png"]
   }],
   "goal": {
-    "msg:ko": "산에서 지하의 강을 거쳐서 바다로 이동해요.",
-    "msg:en": "Trickle moves from the mountains to the sea through the under river.",
-    "img": ["/img/a8/waterboy0.png","/img/a8/sea.png"]
+    "msg:ko": "바다에서 구름으로 이동한뒤 눈이 되어 내려와요.\n블록을 순서대로 조립해보아요.",
+    "msg:en": "Trickle moves from the sea to the cloud and then it snows.\nLet's Assemble blocks in the order!",
+    "img": ["/img/a8/answer_block2.png","/img/a8/start_block.png"]
   },
   "success": [{
     "msg:ko": "성공!",

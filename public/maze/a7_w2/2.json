@@ -8,30 +8,12 @@
   "map": [
     "caaae",
     "b...b",
-    "%&&&l",
+    "%.&.l",
     "b...b",
     "faaag"
   ],
   "extra":[{
-    "x": 1,
-    "y": 2,
-    "img": "rice9",
-    "contents" : [{
-        "img": "blank_yard"
-    },{
-        "img": "rice0"
-    }]
-  },{
     "x": 2,
-    "y": 2,
-    "img": "rice9",
-    "contents" : [{
-        "img": "blank_yard"
-    },{
-        "img": "rice0"
-    }]
-  },{
-    "x": 3,
     "y": 2,
     "img": "rice9",
     "contents" : [{
@@ -46,8 +28,8 @@
     "img": ["/img/a7_w2/rice9.png","/img/a7_w2/rice_block.png","/img/a7_w2/rice0.png"]
   }],
   "success": [{
-    "msg:ko": "성공! 벼를 모두 수확했어요",
-    "msg:en": "Success! Harvesting all rice!",
+    "msg:ko": "성공! 벼를 수확했어요",
+    "msg:en": "Success! Harvesting a rice!",
     "img": "/img/a7_w2/rice0.png",
     "link": "a7_w2/3"
   }]

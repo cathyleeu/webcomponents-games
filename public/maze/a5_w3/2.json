@@ -74,6 +74,11 @@
     "msg:en": "Make a cicada emerge!",
     "img": "/img/a5_w3/bg01_step5.png"
   }],
+  "goal": {
+    "msg:ko": "매미의 성장 순서에 따라 블록을 조립해보자!",
+    "msg:en": "Let's Assemble blocks to complete the life cycle of a cicada step by step!",
+    "img": "/img/a5_w3/memi_block.png"
+  },
   "success": [{
     "msg:ko": "성공! 매미가 되었어요~",
     "msg:en": "Success! Became a cicada!",
