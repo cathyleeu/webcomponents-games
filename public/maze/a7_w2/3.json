@@ -8,30 +8,12 @@
   "map": [
     "caaae",
     "b...b",
-    "%&&&l",
+    "%.&.l",
     "b...b",
     "faaag"
   ],
   "extra":[{
-    "x": 1,
-    "y": 2,
-    "img": "apple_tree",
-    "contents" : [{
-        "img": "blank_apple_tree"
-    },{
-        "img": "apple0"
-    }]
-  },{
     "x": 2,
-    "y": 2,
-    "img": "apple_tree",
-    "contents" : [{
-        "img": "blank_apple_tree"
-    },{
-        "img": "apple0"
-    }]
-  },{
-    "x": 3,
     "y": 2,
     "img": "apple_tree",
     "contents" : [{
@@ -46,8 +28,8 @@
     "img": ["/img/a7_w2/apple_tree.png","/img/a7_w2/apple_block.png","/img/a7_w2/apple0.png"]
   }],
   "success": [{
-    "msg:ko": "성공! 사과를 모두 수확했어요",
-    "msg:en": "Success! Harvesting all apple!",
+    "msg:ko": "성공! 사과를 수확했어요",
+    "msg:en": "Success! Harvesting a apple!",
     "img": "/img/a7_w2/apple0.png",
     "link": "a7_w2/4"
   }]

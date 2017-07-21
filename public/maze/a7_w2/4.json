@@ -8,30 +8,12 @@
   "map": [
     "caaae",
     "b...b",
-    "%&&&l",
+    "%.&.l",
     "b...b",
     "faaag"
   ],
   "extra":[{
-    "x": 1,
-    "y": 2,
-    "img": "pear_tree",
-    "contents" : [{
-        "img": "blank_pear_tree"
-    },{
-        "img": "pear0"
-    }]
-  },{
     "x": 2,
-    "y": 2,
-    "img": "pear_tree",
-    "contents" : [{
-        "img": "blank_pear_tree"
-    },{
-        "img": "pear0"
-    }]
-  },{
-    "x": 3,
     "y": 2,
     "img": "pear_tree",
     "contents" : [{
@@ -46,9 +28,9 @@
     "img": ["/img/a7_w2/pear_tree.png","/img/a7_w2/pear_block.png","/img/a7_w2/pear0.png"]
   }],
   "success": [{
-    "msg:ko": "성공! 베를 모두 수확했어요",
-    "msg:en": "Success! Harvesting all pear!",
+    "msg:ko": "성공! 베를 수확했어요",
+    "msg:en": "Success! Harvesting a pear!",
     "img": "/img/a7_w2/pear0.png",
-    "link": "a7_w2/1"
+    "link": "a7_w2/5"
   }]
 }

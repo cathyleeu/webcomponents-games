@@ -1,9 +1,12 @@
 {
   "tile_size": 128,
   "score":5,
-  "workspace": ["start","go_valley",  "go_lake",  "go_river",  "go_sea1"],
+  "workspace": ["start"],
   "toolbox": [
-
+    "go_valley",
+    "go_lake",
+    "go_river",
+    "go_sea1"
   ],
   "map": [
     "........",
@@ -24,13 +27,13 @@
     "img": ["/img/a8/valley.png","/img/a8/lake.png","/img/a8/river.png","/img/a8/sea.png"]
   }],
   "goal": {
-    "msg:ko": "계곡,호수,강을 거쳐서 바다로 이동해요.\n시작버튼을 불러보아요.",
-    "msg:en": "Trickle moves to the sea through valley,lake,river.\nPress Start button.",
-    "img": ["/img/a8/valley.png","/img/a8/lake.png","/img/a8/river.png","/img/a8/sea.png","/img/a8/start_block.png"]
+    "msg:ko": "계곡,호수,강을 거쳐서 바다로 이동해요.\n블록을 순서대로 조립해보아요.",
+    "msg:en": "Trickle moves to the sea through valley,lake,river.\nLet's Assemble blocks in the order!",
+    "img": ["/img/a8/answer_block3.png","/img/a8/start_block.png"]
   },
   "success": [{
     "msg:ko": "성공!",
     "msg:en": "Success!",
-    "link": "a8_w2/6"
+    "link": "a8_w2/7"
   }]
 }

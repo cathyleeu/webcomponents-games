@@ -8,30 +8,12 @@
   "map": [
     "caaae",
     "b...b",
-    "%&&&l",
+    "%.&.l",
     "b...b",
     "faaag"
   ],
   "extra":[{
-    "x": 1,
-    "y": 2,
-    "img": "corn9",
-    "contents" : [{
-        "img": "blank_yard"
-    },{
-        "img": "corn0"
-    }]
-  },{
     "x": 2,
-    "y": 2,
-    "img": "corn9",
-    "contents" : [{
-        "img": "blank_yard"
-    },{
-        "img": "corn0"
-    }]
-  },{
-    "x": 3,
     "y": 2,
     "img": "corn9",
     "contents" : [{
@@ -46,8 +28,8 @@
     "img": ["/img/a7_w2/corn9.png","/img/a7_w2/corn_block.png","/img/a7_w2/corn0.png"]
   }],
   "success": [{
-    "msg:ko": "성공! 옥수수를 모두 수확했어요",
-    "msg:en": "Success! Harvesting all corn!",
+    "msg:ko": "성공! 옥수수를 수확했어요",
+    "msg:en": "Success! Harvesting a corn!",
     "img": "/img/a7_w2/corn0.png",
     "link": "a7_w2/2"
   }]
