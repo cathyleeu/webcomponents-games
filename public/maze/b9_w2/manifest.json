@@ -1,0 +1,46 @@
+[
+  {"book": "B9", "title": "2주차 : 청소를 해요"},
+  {"id": "bg1", "src": "/img/b9_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b9_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/b9_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b9_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b9_w1/vacuum.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "father", "src": "/img/b9_w1/father.png"},
+  {"id": "mother", "src": "/img/b9_w1/mother.png"},
+
+  {"tile": "w", "id": "desk", "src": "/img/b9_w1/desk.png", "wall": true},
+  {"id": "bookshelf", "src": "/img/b9_w1/bookshelf.png","obstacle": true},
+  {"id": "drawer", "src": "/img/b9_w1/drawer.png","obstacle": true},
+  {"id": "plant", "src": "/img/b9_w1/plant.png","obstacle": true},
+  {"id": "sofa1", "src": "/img/b9_w1/sofa1.png","obstacle": true},
+  {"id": "sofa2", "src": "/img/b9_w1/sofa2.png","obstacle": true},
+
+  {"id": "trashcan", "src": "/img/b9_w2/trashcan.png"},
+  {"id": "can_recycle", "src": "/img/b9_w2/can_recycle.png"},
+  {"id": "can_garbage", "src": "/img/b9_w2/can_garbage.png"},
+
+  {"tile": "a", "id": "recycle1", "src": "/img/b9_w2/recycle1.png"},
+  {"tile": "b", "id": "recycle2", "src": "/img/b9_w2/recycle2.png"},
+  {"tile": "c", "id": "recycle3", "src": "/img/b9_w2/recycle3.png"},
+  {"tile": "e", "id": "recycle4", "src": "/img/b9_w2/recycle4.png"},
+  {"tile": "g", "id": "recycle5", "src": "/img/b9_w2/recycle5.png"},
+
+  {"tile": "h", "id": "garbage1", "src": "/img/b9_w2/garbage1.png"},
+  {"tile": "i", "id": "garbage2", "src": "/img/b9_w2/garbage2.png"},
+  {"tile": "j", "id": "garbage3", "src": "/img/b9_w2/garbage3.png"},
+  {"tile": "m", "id": "garbage4", "src": "/img/b9_w2/garbage4.png"},
+  {"tile": "n", "id": "garbage5", "src": "/img/b9_w2/garbage5.png"}
+
+]
