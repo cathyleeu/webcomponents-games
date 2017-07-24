@@ -75,6 +75,8 @@ page('*', function(ctx, next) {
       Object.keys(msg_obj).forEach(function(key) {
         $("[data-msg=" + key + "]").text(msg_obj[key]);
       });
+      $("[data-msg=title]").text(/^\w\d/.test(map_path[0]) ? messages.kidsthinking : messages.kidscoding);
+      $("[data-msg=header]").text(/^\w\d/.test(map_path[0]) ? messages.header_kidsthinking : messages.header_kidscoding);
       // TODO: 이어하기 기능
       // if(last_path && last_path != ctx.path) {
       //   showModal({
@@ -195,6 +197,9 @@ function init() {
   } else {
     message_url = "/img/ladybug.png";
   }
+
+  // 키즈씽킹 / 키즈코딩 타이틀 설정
+  document.title = /^\w\d/.test(map_path[0]) ? messages.kidsthinking : messages.kidscoding;
 
   tileFactory.init(maze, loader);
   if(store.get('character')) {
