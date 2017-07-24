@@ -8,12 +8,14 @@
 <link rel="import" href="flip-card.html">
 <link rel="import" href="range-card.html">
 <link rel="import" href="line-card.html">
+<link rel="import" href="puzzle-game.html">
 </head>
 
 <body>
   <!-- <flip-card id="flip-game"></flip-card> -->
   <!-- <range-card id="range-game"></range-card> -->
-  <line-card id="line-game"></line-card>
+  <!-- <line-card id="line-game"></line-card> -->
+  <puzzle-game id="puzzle-game"></puzzle-game>
   <script>
     window.addEventListener('WebComponentsReady', function(e) {
       let data = [
@@ -22,12 +24,15 @@
         "http://cfile201.uf.daum.net/image/2365DD3E56D9151C2137B0",
         "http://img2.kakao.co.kr/assets/friends/kakaofriends_09-01f0fe49970fc21aa09f788fab419539.png"
       ];
+      let pzUrl = "https://s-media-cache-ak0.pinimg.com/originals/53/a8/e6/53a8e6c361aed07b560ef9ab8756824b.gif"
       // let flip = document.getElementById("flip-game");
       // flip.setData(data);
       // let range = document.getElementById("range-game");
       // range.setData(data);
-      let line = document.getElementById("line-game");
-      line.setData(data);
+      // let line = document.getElementById("line-game");
+      let puzzle = document.getElementById("puzzle-game");
+      // line.setData(data);
+      puzzle.setVal(pzUrl, 3, 250)
     });
   </script>
 </body>
