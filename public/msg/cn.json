@@ -1,5 +1,8 @@
 {
-  "kidscoding": "KidsThinking",
+  "kidscoding": "KidsCoding",
+  "kidsthinking": "KidsThinking",
+  "header_kidscoding": "KIDSCODING",
+  "header_kidsthinking": "KIDSTHINKING",
   "start": "Start",
   "reset": "Reset",
   "tutorial": "Show Tutorial",

@@ -1,5 +1,8 @@
 {
-  "kidscoding": "키즈씽킹",
+  "kidscoding": "키즈코딩",
+  "kidsthinking": "키즈씽킹",
+  "header_kidscoding": "KIDSCODING",
+  "header_kidsthinking": "KIDSTHINKING",
   "start": "시작",
   "reset": "처음상태로",
   "tutorial": "설명 다시보기",
