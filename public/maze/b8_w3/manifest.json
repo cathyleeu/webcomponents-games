@@ -1,0 +1,34 @@
+[
+  {"book": "B8", "title": "3주차 : 반복블록을 이해해요"},
+  {"id": "bg1", "src": "/img/b8_w3/bg1.png"},
+  {"id": "bg2", "src": "/img/b8_w3/bg2.png"},
+
+  {"id": "character", "src": "/img/b8_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b8_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b8_w3/basket.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "father", "src": "/img/b8_w1/father.png"},
+  {"id": "mother", "src": "/img/b8_w1/mother.png"},
+  {"id": "basket", "src": "/img/b8_w3/basket.png"},
+
+  {"id": "tree", "src": "/img/b8_w3/tree.png","obstacle": true},
+  {"id": "reed", "src": "/img/b8_w3/reed.png","obstacle": true},
+  {"id": "scarecrow", "src": "/img/b8_w3/scarecrow.png","obstacle": true},
+
+  {"id": "apple", "src": "/img/b8_w2/apple.png", "obstacle": false},
+  {"id": "persimmon", "src": "/img/b8_w2/persimmon.png", "obstacle": false},
+  {"id": "pear", "src": "/img/b8_w2/pear.png", "obstacle": false},
+
+  {"id": "chestnut", "src": "/img/b8_w2/chestnut.png", "obstacle": false},
+  {"id": "walnut", "src": "/img/b8_w2/walnut.png", "obstacle": false}
+]

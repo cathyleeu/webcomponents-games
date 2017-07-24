@@ -1,0 +1,281 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####EEEEEE#######.",
+    "..r..%%%%%%...I%N.#",
+    ".###.#########.%N.#",
+    "##...#########.%N.#",
+    "..#............%N.#",
+    "##...%%%%%%%%%.%N.#",
+    "#####HHHHHHHHH#####."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "김치를 1개 얻을 수 있어",
+      "msg:en": "You can get one Kimchi at once",
+      "img": "/img/b8_w4/kimchi.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "김치를 1개 얻을 수 있어",
+      "msg:en": "You can get one Kimchi at once",
+      "img": "/img/b8_w4/kimchi.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "김치를 1개 얻을 수 있어",
+      "msg:en": "You can get one Kimchi at once",
+      "img": "/img/b8_w4/kimchi.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "김치를 1개 얻을 수 있어",
+      "msg:en": "You can get one Kimchi at once",
+      "img": "/img/b8_w4/kimchi.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "김치를 1개 얻을 수 있어",
+      "msg:en": "You can get one Kimchi at once",
+      "img": "/img/b8_w4/kimchi.png"
+    }]
+  },{
+    "x": 10,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "김치를 1개 얻을 수 있어",
+      "msg:en": "You can get one Kimchi at once",
+      "img": "/img/b8_w4/kimchi.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "김치를 2개 얻을 수 있어",
+      "msg:en": "You can get two Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "김치를 2개 얻을 수 있어",
+      "msg:en": "You can get two Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "김치를 2개 얻을 수 있어",
+      "msg:en": "You can get two Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "김치를 2개 얻을 수 있어",
+      "msg:en": "You can get two Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "김치를 2개 얻을 수 있어",
+      "msg:en": "You can get two Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "김치를 3개 얻을 수 있어",
+      "msg:en": "You can get three Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "김치를 3개 얻을 수 있어",
+      "msg:en": "You can get three Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "김치를 3개 얻을 수 있어",
+      "msg:en": "You can get three Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "김치를 3개 얻을 수 있어",
+      "msg:en": "You can get three Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "김치를 3개 얻을 수 있어",
+      "msg:en": "You can get three Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "김치를 3개 얻을 수 있어",
+      "msg:en": "You can get three Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "김치를 3개 얻을 수 있어",
+      "msg:en": "You can get three Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "김치를 3개 얻을 수 있어",
+      "msg:en": "You can get three Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "김치를 3개 얻을 수 있어",
+      "msg:en": "You can get three Kimchis at once",
+      "img": ["/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png","/img/b8_w4/kimchi.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "b8_w4/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b8_w4/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b8_w4/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b8_w4/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b8_w4/5"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "b8_w4/6"
+  },{
+    "x": 14,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b8_w4/7"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b8_w4/8"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b8_w4/9"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b8_w4/10"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "b8_w4/11"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "b8_w4/12"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b8_w4/13"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "b8_w4/14"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b8_w4/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b8_w4/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "b8_w4/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b8_w4/18"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "b8_w4/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "b8_w4/20"
+  },{
+    "img":"mother",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "b8_w4/99",
+    "min_score": 20
+  }],
+
+  "tutorial": [{
+    "msg:ko": "김치로 가보아요! 쉬운 문제는 김치 1개, 보통은 2개, 어려운 문제는 3개를 주어요.",
+    "msg:en": "Let's go to the Kimchi! An easy problem gives you one Kimchi, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/b8_w4/kimchi.png"
+  }],
+  "goal": {
+    "msg:ko": "김치를 20개 모아서 엄마에게 가요.",
+    "msg:en": "Let's get 20 Kimchis and go to mother.",
+    "img": ["/img/b8_w4/kimchi.png","/img/b8_w1/mother.png"]
+  }
+}

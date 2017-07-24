@@ -1,0 +1,46 @@
+{
+
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start","repeat","move_left","get_item","move_left","repeat","use_item"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".#a%aba#.",
+    "#.#.###.#",
+    "##..)..##",
+    "##..#.#.#",
+    "##..a...#",
+    "#...#...#",
+    "#...#.###",
+    "#...#u..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 0,
+    "img":"question",
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 2,
+    "img":"blackbeans"
+  }],
+  "tutorial": [{
+    "msg:ko": "'?'에 알맞은 곡식을 가져다 놓아요.",
+    "msg:en": "Let's find the appropriate grain for '?' space and put it there",
+    "img": ["/img/b7_w2/question.png","/img/blocks/bring.png","/img/blocks/use.png"]
+  }],
+  "goal": {
+    "msg:ko": "'?'에 알맞은 곡식을 가져다 놓아요.",
+    "msg:en": "Let's find the appropriate grain for '?' space and put it there",
+    "img": ["/img/b7_w2/question.png","/img/blocks/bring.png","/img/blocks/use.png"]
+  }
+}
