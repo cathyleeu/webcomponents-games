@@ -6,10 +6,14 @@
 <script type="text/javascript" src="../js/polyfill.min.js"></script>
 <script type="text/javascript" src="../components/webcomponentsjs/webcomponents-lite.js"></script>
 <link rel="import" href="flip-card.html">
+<link rel="import" href="range-card.html">
+<link rel="import" href="line-card.html">
 </head>
 
 <body>
-  <flip-card id="flip-game"></flip-card>
+  <!-- <flip-card id="flip-game"></flip-card> -->
+  <!-- <range-card id="range-game"></range-card> -->
+  <line-card id="line-game"></line-card>
   <script>
     window.addEventListener('WebComponentsReady', function(e) {
       let data = [
@@ -18,8 +22,12 @@
         "http://cfile201.uf.daum.net/image/2365DD3E56D9151C2137B0",
         "http://img2.kakao.co.kr/assets/friends/kakaofriends_09-01f0fe49970fc21aa09f788fab419539.png"
       ];
-      let flip = document.getElementById("flip-game");
-      flip.setData(data);
+      // let flip = document.getElementById("flip-game");
+      // flip.setData(data);
+      // let range = document.getElementById("range-game");
+      // range.setData(data);
+      let line = document.getElementById("line-game");
+      line.setData(data);
     });
   </script>
 </body>

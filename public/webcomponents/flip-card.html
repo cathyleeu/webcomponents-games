@@ -14,50 +14,57 @@
         height: 180px;
         display:inline-block;
         position: relative;
-        perspective: 180px;
         margin: 0.5em 0.5em 0;
+        perspective: 500px;
+        -ms-perspective: 500px;
       }
 
-      [id^="card"] {
+      [class^="flip"] {
         width: 100%;
         height: 100%;
         position: absolute;
         -webkit-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
           /* -moz-transform-style: preserve-3d;
              -o-transform-style: preserve-3d; */
                 transform-style: preserve-3d;
 
         -webkit-transition: transform 1s;
+        -ms-transition: transform 1s;
          /*  -moz-transition: transform 1s;
              -o-transition: transform 1s; */
                 transition: transform 1s;
       }
+      [class^="flip"]:hover {
+        cursor: pointer;
+      }
 
-      [id^="card"] figure{
+      [class^="flip"] figure{
         margin: 0;
         display: block;
         position: absolute;
         width: 100%;
         height: 100%;
+        border-radius: 5px;
+        border: 5px solid #2ECC98;
+        transition: transform 1s;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
+        perspective: 500px;
+        -ms-perspective: 500px;
       }
 
-      [id^="card"] .front{
-        border-radius: 5px;
-        border: 5px solid #2ECC98;
+
+      [class^="flip"] .front{
         background: white;
+        transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
       }
-      [id^="card"] .back {
-        border-radius: 5px;
-        border: 5px solid #2ECC98;
+      [class^="flip"] .back {
         background: #2ECC98;
-        left: -10px;
+        /*left: -10px;*/
         transform: rotateY(180deg);
-      }
-
-      [id^="card"].flipped {
-        transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
       }
 
       .card-img{
@@ -96,8 +103,8 @@
           this.data[j] = temp;
         }
         var board = d3.select(this.shadowRoot);
-        var tags = ["front", "back"],
-            flipped = 0;
+        var tags = ["front", "back"];
+            // flipped = 0;
 
         board.selectAll('div').remove();
         let card = board.selectAll('div')
@@ -107,23 +114,28 @@
 
         const transition_end_events = 'webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd';
         let flipper = card.append('xhtml:div')
-            .attr('id', (d,i) => `card-${i}`)
+            .attr('class', (d,i) => `flip-${i}`)
             .on('click', function(d, i) {
               const flipped_el = board.selectAll('.flipped');
               if(flipped_el.size() < 2) {
-                d3.select(this).classed("flipped", true);
+                let selectedFlip = d3.select(this)
+                selectedFlip.classed("flipped", true)
+                selectedFlip.select(`.flip-${i} > .front`).style("transform", "rotateY(-180deg)");
+                selectedFlip.select(`.flip-${i} > .back`).style("transform", "rotateY(0deg)");
+                //FIXME: 자잘한 에러가 있음... 
               }
             })
             .on(transition_end_events, function(d, i) {
               if(d3.select(this).classed("flipped")) {
-                flipped++;
+                const flipped = board.selectAll('.flipped').size();
                 if(flipped == 2) {
                   const flipped_el = board.selectAll('.flipped');
-                  flipped = 0;
                   if(flipped_el.data()[0] == flipped_el.data()[1]) {
                     flipped_el.remove();
                   } else {
                     flipped_el.classed("flipped", false);
+                    flipped_el.selectAll('.front').attr('style', null);
+                    flipped_el.selectAll('.back').attr('style', null);
                   }
                 }
               }
@@ -133,12 +145,12 @@
             .data(tags).enter()
             .append('xhtml:figure')
             .attr('class', (d,i) => d)
-        this.data.map( (item,i) => board.selectAll(`#card-${i}`)
+        this.data.map( (item,i) => board.selectAll(`.flip-${i}`)
                 .select('.back')
                 .html(`<img src=${item} class="card-img" />`)
             );
 
-        this.data.map( (_,i) => board.selectAll(`#card-${i}`)
+        this.data.map( (_,i) => board.selectAll(`.flip-${i}`)
                 .select('.front')
                 .html('<img src="https://toycode.org/img/kidsthinking_big.png" class="card-front-logo"/>'));
       }
