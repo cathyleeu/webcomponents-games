@@ -26,13 +26,23 @@ function task_webcomponents() {
       presets: ['es2015'],
       plugins: ['external-helpers', 'transform-custom-element-classes', 'transform-es2015-classes']
     })))
-    .pipe(dependenciesStreamSplitter.rejoin());
-  return mergeStream(project.sources(), dependenciesStream)
+    .pipe(dependenciesStreamSplitter.rejoin())
     .pipe($.cleanDest('public/build'))
-    .pipe(project.addBabelHelpersInEntrypoint())
+    .pipe($.rename(function (path) {
+      if(path.dirname.indexOf("polymer") >= 0) {
+        path.dirname = path.dirname.replace("polymer", "polymer-es5");
+      }
+      if(path.dirname == "public/webcomponents") {
+        path.dirname = path.dirname + "-es5";
+      }
+    }))
+    .pipe($.if(/webcomponents-es5\/[^.]*.html/, $.change(function(contents) {
+      return contents.replace("/polymer/", "/polymer-es5/");
+    })))
+    .pipe(project.addBabelHelpersInEntrypoint(project.config.entrypoint.replace("/webcomponents/", "/webcomponents-es5/")))
     .pipe(project.addCustomElementsEs5Adapter())
     // .pipe(project.bundler())
-    .pipe(gulp.dest('public/build'));
+    .pipe(gulp.dest('./'));
 }
 
 gulp.task('less', task_less);

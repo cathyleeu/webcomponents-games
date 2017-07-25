@@ -2,7 +2,7 @@ node_modules/
 public/components
 public/css/*.css
 public/cache
-public/build
+public/webcomponents-es5
 npm-debug.log
 .DS_Store
 Thumbs.db
