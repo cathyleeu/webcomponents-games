@@ -215,6 +215,10 @@ function getBook(classObj) {
   if(school == "A00083-K1") {
     book = [6, 7];
   }
+  // YBM영업부(내부용)
+  if(school == "A00083-K3") {
+    book = [1, 2, 3, 4, 5];
+  }
   // 직영 설리번, 울산지사 교차로원, 인천지사 유원유치원
   if(school == "E00076-K1" || school == "A00072-K9" || school == "A00114-K3") {
     book = [2, 3];
