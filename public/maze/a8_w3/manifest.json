@@ -1,12 +1,12 @@
 [
-  {"book": "a8", "title": "2주차 : 물이 돌고 돌아요"},
+  {"book": "a8", "title": "3주차 : 수돗물의 여행"},
 
-  {"id": "background", "src": "/img/a8/nature.png"},
+  {"id": "background", "src": "/img/a8/map3.png"},
 
   {"id": "character", "src": "/img/a8/waterboy.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/a8/waterboy0.png", "size": 256},
   {"id": "food", "src": "/img/invisiblex256.png"},
-
+  {"id": "obs", "src": "/img/invisiblex256.png","obstacle":true},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},

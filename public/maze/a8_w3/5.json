@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start","go_sewage"],
+  "toolbox": [
+
+  ],
+  "map": [
+    "........",
+    ".....l..",
+    "........",
+    "#%#.....",
+    ".#......",
+    "........",
+    "........",
+    "........"
+  ],
+
+  "tutorial": [{
+    "msg:ko": "물이 우리집까지 강까지 가는 길을 알아보아요. 물이 집에서 하수처리장까지 가요.",
+    "msg:en": "Let's see how the water flows from our house to the river. Water goes from our house to the sewage treatment plant.",
+    "img": ["/img/a8/house.png","/img/a8/sewage.png"]
+  }],
+  "goal": {
+    "msg:ko": "물이 집에서 하수처리장까지 가요.\n시작버튼을 불러보아요.",
+    "msg:en": "Water goes from our house to the sewage treatment plant.\nPress Start button.",
+    "img": ["/img/a8/house.png","/img/a8/sewage.png","/img/a8/start_block.png"]
+  },
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "a8_w3/6"
+  }]
+}

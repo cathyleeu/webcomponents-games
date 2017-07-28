@@ -401,6 +401,12 @@ Actions.prototype.steploop = function(type, block, callback) {
     stepList = ["l","l","l","l","l","u","u"];
   } else if(type == "go_sea3") {
     stepList = ["l","l","l","u","u"];
+  } else if(type == "go_filter") {
+    stepList = ["r","r","u","u","l","u"];
+  } else if(type == "go_sewage") {
+    stepList = ["l","l","l","l","d","d"];
+  } else if(type == "go_dam") {
+    stepList = ["d","d","d","r","r","r"];
   }
 
   setNextMove(stepList.shift(),x_next,y_next);

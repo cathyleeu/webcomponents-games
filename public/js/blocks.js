@@ -481,6 +481,55 @@ Blocks["go_sea3"] = {
   ],
   action: ["steploop", "go_sea3"]
 };
+
+Blocks["go_filter"] = {
+  rgbColor: "red",
+  message0: {
+    ko: "%1 정수장으로",
+    en: "%1 to purification plant"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/filter.png"}
+  ],
+  action: ["steploop", "go_filter"]
+};
+
+Blocks["go_house"] = {
+  rgbColor: "orange",
+  message0: {
+    ko: "%1 정수장으로",
+    en: "%1 to purification plant"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/house.png"}
+  ],
+  action: ["steploop", "frog_up"]
+};
+
+Blocks["go_sewage"] = {
+  rgbColor: "green",
+  message0: {
+    ko: "%1 정수장으로",
+    en: "%1 to purification plant"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/sewage.png"}
+  ],
+  action: ["steploop", "go_sewage"]
+};
+
+Blocks["go_dam"] = {
+  rgbColor: "blue",
+  message0: {
+    ko: "%1 정수장으로",
+    en: "%1 to purification plant"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/dam.png"}
+  ],
+  action: ["steploop", "go_dam"]
+};
+
 Blocks["move_up"] = {
   rgbColor: "#F28C00",
   message0: {
