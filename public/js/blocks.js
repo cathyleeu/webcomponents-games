@@ -530,6 +530,18 @@ Blocks["go_dam"] = {
   action: ["steploop", "go_dam"]
 };
 
+Blocks["go_dam_1"] = {
+  rgbColor: "blue",
+  message0: {
+    ko: "%1 정수장으로",
+    en: "%1 to purification plant"
+  },
+  args0: [
+    {type: "field_image", src: "/img/a8/dam.png"}
+  ],
+  action: ["steploop", "go_dam_1"]
+};
+
 Blocks["move_up"] = {
   rgbColor: "#F28C00",
   message0: {
