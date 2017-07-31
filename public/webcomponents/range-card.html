@@ -1,7 +1,13 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 
 <dom-module id="range-card">
-  <template></template>
+  <template>
+    <h1>[[_title(title)]]</h1>
+    <div>
+      <p>시도 횟수 : {{total}}</p>
+      <p>맞춘 갯수: {{matched}}/{{cards}}</p>
+    </div>
+  </template>
   <script>
     class RangeCard extends Polymer.Element {
       static get is() { return 'range-card'; }
@@ -9,13 +15,28 @@
         super.connectedCallback();
         // this.shadowRoot.namespaceURI = d3.namespaces.xhtml;
       }
-      setData(val){
-        let w = 600, h = 700,
-        		svg = d3.select(this.shadowRoot).append("svg")
+      static get properties() {
+        return {
+          title: String,
+          total: Number,
+          matched: Number,
+          cards: Number,
+          success: String
+        }
+      }
+      ready() {
+        // 미리 설정해 놓는 것....
+        super.ready();
+        this.set('total', 0)
+        this.set('matched', 0)
+      }
+      setData(val, w, h){
+        let _this = this,
+            svg = d3.select(this.shadowRoot).append("svg")
                     .attr( "width", w )
                     .attr( "height", h ),
             boardName = ["dropB", "dragB"];
-
+        _this.set('cards', val.length )
         let defs = svg.append('defs')
               			.selectAll('pattern')
 
@@ -87,7 +108,7 @@
             .call(d3.drag()
                 .on("start", dragstarted )
                 .on("drag", dragged)
-                .on("end", dragended));
+                .on("end", dragended ));
 
         // var drag_behavior = d3.behavior.drag()
 
@@ -120,24 +141,31 @@
           let matches = DragDropManager.draggedMatchesTarget();
 
         }
-
         function dragended(d) {
           let DnD = DragDropManager,
               result = DnD.draggedMatchesTarget();
           if (!result) {
-            console.log("result false")
+            console.log("result false" )
             d3.select(this)
               .attr("x", startX )
               .attr("y", startY );
           } else {
-            console.log("result true", DnD.droppableX, DnD.droppableY)
+            console.log("result true", DnD.droppableX, DnD.droppableY, this)
+            _this.set('matched', _this.matched+1)
             d3.select(this)
               .attr("x", DnD.droppableX )
               .attr("y", DnD.droppableY )
+            if(_this.matched === _this.cards) {
+               alert(_this.success)
+            }
           }
+          _this.set('total', _this.total+1)
           DnD.dragged = null;
           DnD.droppable = null;
         }
+      }
+      _title(title) {
+        return `${title}`
       }
     }
     window.customElements.define(RangeCard.is, RangeCard);

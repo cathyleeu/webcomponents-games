@@ -13,26 +13,30 @@
 
 <body>
   <!-- <flip-card id="flip-game"></flip-card> -->
-  <!-- <range-card id="range-game"></range-card> -->
+  <range-card
+    id="range-game"
+    title="그림에 맞춰, 목욕도구를 정리해보세요."
+    success="참 잘했어요!"
+  >
+  </range-card>
   <!-- <line-card id="line-game"></line-card> -->
-  <puzzle-game id="puzzle-game"></puzzle-game>
+  <!-- <puzzle-game id="puzzle-game"></puzzle-game> -->
   <script>
     window.addEventListener('WebComponentsReady', function(e) {
-      let data = [
-        "http://cfile208.uf.daum.net/image/26593E3E56D913C5287674",
-        "http://file2.instiz.net/data/file2/2016/02/03/8/d/e/8deda8ace3c8604873373de3abbbf156.png",
-        "http://cfile201.uf.daum.net/image/2365DD3E56D9151C2137B0",
-        "http://img2.kakao.co.kr/assets/friends/kakaofriends_09-01f0fe49970fc21aa09f788fab419539.png"
+      let rangeData = [
+        "../img/a5_5_w3/bath0.png", "../img/a5_5_w3/bath1.png",
+        "../img/a5_5_w3/bath2.png", "../img/a5_5_w3/bath3.png",
+        "../img/a5_5_w3/bath4.png","../img/a5_5_w3/bath5.png","../img/a5_5_w3/bath6.png"
       ];
       let pzUrl = "https://s-media-cache-ak0.pinimg.com/originals/53/a8/e6/53a8e6c361aed07b560ef9ab8756824b.gif"
       // let flip = document.getElementById("flip-game");
       // flip.setData(data);
-      // let range = document.getElementById("range-game");
-      // range.setData(data);
+      let range = document.getElementById("range-game");
+      range.setData(rangeData, 1000, 700);
       // let line = document.getElementById("line-game");
-      let puzzle = document.getElementById("puzzle-game");
       // line.setData(data);
-      puzzle.setVal(pzUrl, 3, 250)
+      // let puzzle = document.getElementById("puzzle-game");
+      // puzzle.setVal(pzUrl, 3, 250)
     });
   </script>
 </body>
