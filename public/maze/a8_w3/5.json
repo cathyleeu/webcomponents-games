@@ -22,7 +22,7 @@
     "img": ["/img/a8/house.png","/img/a8/sewage.png"]
   }],
   "goal": {
-    "msg:ko": "물이 집에서 하수처리장까지 가요.\n시작버튼을 불러보아요.",
+    "msg:ko": "물이 집에서 하수처리장까지 가요.\n시작버튼을 눌러보아요.",
     "msg:en": "Water goes from our house to the sewage treatment plant.\nPress Start button.",
     "img": ["/img/a8/house.png","/img/a8/sewage.png","/img/a8/start_block.png"]
   },
