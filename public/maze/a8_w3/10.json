@@ -3,7 +3,7 @@
   "score":5,
   "workspace": ["start"],
   "toolbox": [
-    "go_filter","go_house","go_sewage","go_dam"
+    "go_filter","go_house","go_sewage","go_dam_1"
   ],
   "map": [
     "........",

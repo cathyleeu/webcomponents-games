@@ -407,6 +407,8 @@ Actions.prototype.steploop = function(type, block, callback) {
     stepList = ["l","l","l","l","d","d"];
   } else if(type == "go_dam") {
     stepList = ["d","d","d","r","r","r"];
+  } else if(type == "go_dam_1") {
+    stepList = ["d","d","d","r","r"];
   }
 
   setNextMove(stepList.shift(),x_next,y_next);

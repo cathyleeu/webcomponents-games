@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":5,
-  "workspace": ["start","go_filter","go_house","go_sewage","go_dam"],
+  "workspace": ["start","go_filter","go_house","go_sewage","go_dam_1"],
   "toolbox": [
 
   ],
