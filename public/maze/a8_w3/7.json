@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start","go_sewage", "go_dam"],
+  "toolbox": [
+
+  ],
+  "map": [
+    "........",
+    ".....l..",
+    "........",
+    "........",
+    "........",
+    "....#...",
+    "....%#..",
+    "....#..."
+  ],
+
+  "tutorial": [{
+    "msg:ko": "물이 집에서 하수처리장을 거쳐서 강까지 가요.",
+    "msg:en": "Water goes from the house through the sewage treatment plant to the river.",
+    "img": ["/img/a8/house.png","/img/a8/sewage.png","/img/a8/dam.png"]
+  }],
+  "goal": {
+    "msg:ko": "물이 집에서 하수처리장을 거쳐서 강까지 가요.\n시작버튼을 불러보아요.",
+    "msg:en": "Water goes from the house through the sewage treatment plant to the river.\nPress Start button.",
+    "img": ["/img/a8/house.png","/img/a8/sewage.png","/img/a8/dam.png"]
+  },
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "a8_w3/8"
+  }]
+}
