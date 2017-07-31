@@ -22,7 +22,7 @@
     "img": ["/img/a8/dam.png","/img/a8/filter.png","/img/a8/house.png","/img/a8/sewage.png","/img/a8/dam.png"]
   }],
   "goal": {
-    "msg:ko": "물은 강에서 출발하여 강으로 돌아가요.\n시작버튼을 불러보아요.",
+    "msg:ko": "물은 강에서 출발하여 강으로 돌아가요.\n시작버튼을 눌러보아요.",
     "msg:en": "The water starts from the river and returns to the river.\nPress Start button.",
     "img": ["/img/a8/dam.png","/img/a8/start_block.png"]
   },

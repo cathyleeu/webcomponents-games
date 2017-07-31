@@ -24,7 +24,7 @@
   "goal": {
     "msg:ko": "물은 강에서 출발하여 강으로 돌아가요.\n블록을 순서대로 조립해보아요.",
     "msg:en": "The water starts from the river and returns to the river.\nLet's Assemble blocks in the order!",
-    "img": ["/img/a8/dam.png","/img/a8/start_block.png"]
+    "img": ["/img/a8/w3_10.png","/img/a8/start_block.png"]
   },
   "success": [{
     "msg:ko": "성공!",

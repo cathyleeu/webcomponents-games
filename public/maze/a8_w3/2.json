@@ -24,7 +24,7 @@
   "goal": {
     "msg:ko": "물이 강의 댐에서 정수장까지 가요.\n블록을 순서대로 조립해보아요.",
     "msg:en": "Trickle moves from the sea to the cloud and then it rains.\nLet's Assemble blocks in the order!",
-    "img": ["/img/a8/filter.png","/img/a8/house.png","/img/a8/start_block.png"]
+    "img": ["/img/a8/w3_2.png","/img/a8/start_block.png"]
   },
   "success": [{
     "msg:ko": "성공!",

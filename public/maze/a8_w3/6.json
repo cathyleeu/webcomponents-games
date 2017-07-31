@@ -24,7 +24,7 @@
   "goal": {
     "msg:ko": "물이 집에서 하수처리장까지 가요.\n블록을 순서대로 조립해보아요.",
     "msg:en": "Water goes from our house to the sewage treatment plant.\nLet's Assemble blocks in the order!",
-    "img": ["/img/a8/house.png","/img/a8/sewage.png","/img/a8/start_block.png"]
+    "img": ["/img/a8/w3_6.png","/img/a8/start_block.png"]
   },
   "success": [{
     "msg:ko": "성공!",
