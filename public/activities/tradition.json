@@ -1,0 +1,12 @@
+{
+  "element": "line-card",
+  "attributes": {
+    "title": "옛날에 쓰던 생활 용품을 요즘 물건과 짝지어보아요."
+  },
+  "data": [
+    "../img/b55/cigar.png",
+    "../img/b55/coin.png",
+    "../img/b55/hat.png",
+    "../img/b55/socks.png"
+  ]
+}

@@ -9,7 +9,11 @@
       marker-end: url(#marker);
     }
   </style>
-  <template></template>
+  <template>
+    <h1>[[_title(title)]]</h1>
+    <p>시도 횟수 : {{total}}</p>
+    <p>맞춘 갯수: {{matched}}/{{cards}}</p>
+  </template>
   <script>
     class LineCard extends Polymer.Element {
       static get is() { return 'line-card'; }
@@ -17,14 +21,32 @@
         super.connectedCallback();
         // this.shadowRoot.namespaceURI = d3.namespaces.xhtml;
       }
+      static get properties() {
+        return {
+          title: String,
+          total: Number,
+          cards: Number
+        }
+      }
+      ready() {
+        // 미리 설정해 놓는 것....
+        super.ready();
+        this.set('total', 0)
+        this.set('matched', 0)
+      }
+      _title(title) {
+        return `${title}`
+      }
       setData(val){
-        let w = 700, h = 700,
-            svg = d3.select('body').append('svg')
-              .attr('width', w)
-              .attr('height', h),
+        let _this = this,
+            svg = d3.select(this.shadowRoot).append('svg')
+              .attr('width', this.offsetWidth )
+              .attr('height', this.offsetHeight ),
             boardName = ["boardL", "boardR"];
-        let defs = svg.append('defs').selectAll('pattern')
 
+        _this.set('cards', val.length )
+
+        let defs = svg.append('defs').selectAll('pattern')
         let leftCard = defs.data(val).enter()
           .append('pattern')
           .attr("id", (d, i) => `left_${i}`)
@@ -170,6 +192,7 @@
 
           if(matchLine === d) {
             console.log("its matched!!!", numX+10, numY)
+            _this.set('matched', _this.matched+1)
             line.attr("x2", numX+10)
                 .attr("y2", numY);
           } else {
@@ -177,6 +200,7 @@
             alert("다시 시도해 주세요.");
             line.remove();
           }
+           _this.set('total', _this.total+1)
            circlesR.on('mouseover', null); // 중복되는 것 금지
            svg.on("mousemove", null); // 점에 딱 맞추는 것
         }

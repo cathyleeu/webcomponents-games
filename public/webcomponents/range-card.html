@@ -2,6 +2,11 @@
 
 <dom-module id="range-card">
   <template>
+    <style>
+      :host {
+        overflow: hidden;
+      }
+    </style>
     <h1>[[_title(title)]]</h1>
     <div>
       <p>시도 횟수 : {{total}}</p>
@@ -33,8 +38,8 @@
       setData(val, w, h){
         let _this = this,
             svg = d3.select(this.shadowRoot).append("svg")
-                    .attr( "width", w )
-                    .attr( "height", h ),
+                    .attr( "width", this.offsetWidth )
+                    .attr( "height", this.offsetHeight ),
             boardName = ["dropB", "dragB"];
         _this.set('cards', val.length )
         let defs = svg.append('defs')

@@ -1,0 +1,12 @@
+{
+  "element": "flip-card",
+  "attributes": {
+    "title": "카드를 뒤집어 짝을 맞추어보아요."
+  },
+  "data": [
+    "../img/b55/cigar.png",
+    "../img/b55/coin.png",
+    "../img/b55/hat.png",
+    "../img/b55/socks.png"
+  ]
+}
