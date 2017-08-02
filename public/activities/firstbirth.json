@@ -1,0 +1,19 @@
+{
+  "element": "line-card",
+  "attributes": {
+    "title": "전통 돌잡이와 같은 의미를 지닌 현대 돌잡이 용품을 연결해보아요."
+  },
+  "data": [
+    [
+      {"no":0 , "url": "../img/b55/brush.png"},
+      {"no":1 , "url": "../img/b55/coin.png"},
+      {"no":2 , "url": "../img/b55/arrow.png"},
+      {"no":3 , "url": "../img/b55/coloredpaper.png"}
+    ],[
+      {"no":0 , "url": "../img/b55/pencil.png"},
+      {"no":1 , "url": "../img/b55/money.png"},
+      {"no":2 , "url": "../img/b55/ball.png"},
+      {"no":3 , "url": "../img/b55/mic.png"}
+    ]
+  ]
+}
