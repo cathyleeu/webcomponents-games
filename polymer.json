@@ -1,21 +1,21 @@
 {
-  "entrypoint": "webcomponents/index.html",
   "root": "public",
-  "fragments": [],
+  "entrypoint": "webcomponents/index.html",
   "sources": [
     "components/d3/d3.min.js",
     "components/webcomponentsjs/custom-elements-es5-adapter.js",
     "components/webcomponentsjs/webcomponents-lite.js",
     "js/polyfill.min.js"
   ],
+  "extraDependencies": [
+    "webcomponents/*.html"
+  ],
+  "fragments": [],
   "builds": [{
     "js": {"minify": true, "compile": true},
     "css": {"minify": true},
     "html": {"minify": true}
   }],
-  "extraDependencies": [
-    "webcomponents/index.html"
-  ],
   "lint": {
     "rules": [
       "polymer-2"

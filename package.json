@@ -43,7 +43,6 @@
     "promised-mongo": "^1.2.0"
   },
   "devDependencies": {
-    "gulp-clean-dest": "^0.2.0",
     "gulp-watch": "^4.3.11"
   }
 }

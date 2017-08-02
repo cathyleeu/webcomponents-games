@@ -18,7 +18,7 @@ function task_less() {
     .pipe(gulp.dest('public/css'));
 }
 
-function task_webcomponents() {
+function task_webcomponents(cb) {
   let dependenciesStreamSplitter = new HtmlSplitter();
   let dependenciesStream = project.dependencies()
     .pipe(dependenciesStreamSplitter.split())
@@ -27,7 +27,6 @@ function task_webcomponents() {
       plugins: ['external-helpers', 'transform-custom-element-classes', 'transform-es2015-classes']
     })))
     .pipe(dependenciesStreamSplitter.rejoin())
-    .pipe($.cleanDest('public/build'))
     .pipe($.rename(function (path) {
       if(path.dirname.indexOf("polymer") >= 0) {
         path.dirname = path.dirname.replace("polymer", "polymer-es5");
@@ -37,12 +36,13 @@ function task_webcomponents() {
       }
     }))
     .pipe($.if(/webcomponents-es5\/[^.]*.html/, $.change(function(contents) {
-      return contents.replace("/polymer/", "/polymer-es5/");
+      return contents.replace("/polymer/", "/polymer-es5/").replace("/webcomponents/", "/webcomponents-es5/");
     })))
     .pipe(project.addBabelHelpersInEntrypoint(project.config.entrypoint.replace("/webcomponents/", "/webcomponents-es5/")))
     .pipe(project.addCustomElementsEs5Adapter())
     // .pipe(project.bundler())
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./'))
+    .on('end', cb);
 }
 
 gulp.task('less', task_less);
@@ -59,6 +59,10 @@ gulp.task('default', ['less', 'webcomponents'], function() {
   server.stderr.on('data', function(data) {
     process.stdout.write(data.toString());
   });
-  $.watch('public/css/**/*.less', task_less);
-  $.watch('public/webcomponents/*.html', task_webcomponents);
+  $.watch('public/css/**/*.less', function() {
+    gulp.start('less');
+  });
+  $.watch('public/webcomponents/*.html', function() {
+    gulp.start('webcomponents');
+  });
 });
