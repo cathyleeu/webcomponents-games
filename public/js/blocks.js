@@ -930,6 +930,11 @@ Blocks["item_paper"] = {
   action: ["action", "paper"]
 };
 Blocks["repeat"] = {
+  name: {
+    ko: "반복",
+    en: "Repeat",
+    cn: "重复"
+  },
   rgbColor: "#242786",
   message0: {
     ko: "반복 %1",
