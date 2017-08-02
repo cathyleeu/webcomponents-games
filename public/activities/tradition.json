@@ -4,9 +4,16 @@
     "title": "옛날에 쓰던 생활 용품을 요즘 물건과 짝지어보아요."
   },
   "data": [
-    "../img/b55/cigar.png",
-    "../img/b55/coin.png",
-    "../img/b55/hat.png",
-    "../img/b55/socks.png"
+    [
+      {"no":0 , "url": "../img/b55/handmill.png"},
+      {"no":1 , "url": "../img/b55/coin.png"},
+      {"no":2 , "url": "../img/b55/hat.png"},
+      {"no":3 , "url": "../img/b55/socks.png"}
+    ],[
+      {"no":0 , "url": "../img/b55/blender.png"},
+      {"no":1 , "url": "../img/b55/money.png"},
+      {"no":2 , "url": "../img/b55/hat2.png"},
+      {"no":3 , "url": "../img/b55/socks2.png"}
+    ]
   ]
 }
