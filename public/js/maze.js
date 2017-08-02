@@ -323,6 +323,7 @@ function initMaze() {
     height: map_height,
     view_size: maze.view_size || null,
     tile_size: maze.tile_size || 50,
+    mandatory: maze.mandatory || null,
     canvas: {
       stage: new createjs.Stage("display"),
       character: null,
@@ -627,39 +628,19 @@ function addEvents() {
         kidscoding.workspace.getAllBlocks().map(function(block) {
           block.removeSelect()
         });
-        run(startblock, function() {
-          var foods = mazeInfo.canvas.foods;
-          if(foods.length == 1 && (foods[0].itemCountBitmap || foods[0].itemList)) {
-            var itemCount = tileFactory.getItemCount(foods[0]);
-            if(foods[0].useItem <= itemCount) {
-              createjs.Sound.play("complete");
-              if(maze.success) {
-                runTutorial(maze.success);
-              } else {
-                showModal({
-                  msg: messages.success,
-                  goNext: true
-                });
-              }
-            } else {
-              createjs.Sound.play("fail");
-              showModal(messages.fail_done);
-            }
-          } else {
-            for(var i = 0; i < foods.length; i++) {
-              if(foods[i].visible == true) {
-                createjs.Sound.play("fail");
-                showModal(messages.fail_done);
-                break;
-              }
-            }
-            if(i == foods.length) {
-              if( foods.length == 1 &&
-                  !(foods[0].px == mazeInfo.canvas.character.px &&
-                  foods[0].py == mazeInfo.canvas.character.py)) {
-                createjs.Sound.play("fail");
-                showModal(messages.fail_done);
-              } else {
+        // check mandatory
+        var failed = checkMandatory(startblock, mazeInfo.mandatory);
+        if(failed) {
+          var lang = store.get("lang") || "ko",
+              blockName = Blocks[failed].name[lang],
+              msg = messages.fail_mandatory.split("%1").join(blockName);
+          showModal(msg);
+        } else {
+          run(startblock, function() {
+            var foods = mazeInfo.canvas.foods;
+            if(foods.length == 1 && (foods[0].itemCountBitmap || foods[0].itemList)) {
+              var itemCount = tileFactory.getItemCount(foods[0]);
+              if(foods[0].useItem <= itemCount) {
                 createjs.Sound.play("complete");
                 if(maze.success) {
                   runTutorial(maze.success);
@@ -669,10 +650,39 @@ function addEvents() {
                     goNext: true
                   });
                 }
+              } else {
+                createjs.Sound.play("fail");
+                showModal(messages.fail_done);
+              }
+            } else {
+              for(var i = 0; i < foods.length; i++) {
+                if(foods[i].visible == true) {
+                  createjs.Sound.play("fail");
+                  showModal(messages.fail_done);
+                  break;
+                }
+              }
+              if(i == foods.length) {
+                if( foods.length == 1 &&
+                    !(foods[0].px == mazeInfo.canvas.character.px &&
+                    foods[0].py == mazeInfo.canvas.character.py)) {
+                  createjs.Sound.play("fail");
+                  showModal(messages.fail_done);
+                } else {
+                  createjs.Sound.play("complete");
+                  if(maze.success) {
+                    runTutorial(maze.success);
+                  } else {
+                    showModal({
+                      msg: messages.success,
+                      goNext: true
+                    });
+                  }
+                }
               }
             }
-          }
-        });
+          });
+        }
       } else {
         showModal(messages.fail_noBlocks);
       }
@@ -1082,6 +1092,22 @@ function showModal(options) {
     backdrop: "static"
   });
   $('#modal').modal('show');
+}
+
+function checkMandatory(startblock, mandatory) {
+  var block = startblock,
+      type,
+      idx;
+  mandatory = mandatory.slice();
+  do {
+    type = block.type;
+    idx = mandatory.indexOf(type);
+    if(idx >= 0) {
+      mandatory.splice(idx, 1);
+    }
+    block = block.getNextBlock();
+  } while(block);
+  return mandatory[0];
 }
 
 })(jQuery);

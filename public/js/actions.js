@@ -2043,6 +2043,10 @@ Actions.prototype.repeat = function(type, block, callback) {
   if(_this.kidscoding.isHorizontal) {
     count = +block.getInputTargetBlock("count").getFieldValue("count");
   }
+  if(!child) {
+    callback("반복 블록이 비었어요");
+    return;
+  }
   function proc() {
     var tile = _this.map[character.py][character.px];
     if(child && ((tile != "%" && type == "repeat_until") || count > 0)) {
