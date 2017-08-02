@@ -411,7 +411,7 @@
     ["개구리의 성장", "Life cycle of a frog", "/mazeh#!a5_w4/1"]
   ],
   "A-5-5":[
-    ["목욕용품 정리", "/a5_5_w3"]
+    ["목욕용품 정리", "Tidy up after bathing", "/a5_5_w3"]
   ],
   "A-6":[
     ["땅에서 탈 수 있는 것을 알아보아요", "/mazeh#!a6_w1/1"],
@@ -452,10 +452,10 @@
     ["가져오기와 사용하기를 써보아요:갯벌 생물을 잡아요", "Catch the sea creatures", "/mazeh#!b5_w4/index"]
   ],
   "B-5-5":[
-    ["경복궁 근처에 무엇이 있나요:경복궁 주변을 구경해요", "/mazeh#!b55_w1/index"],
-    ["사대문을 알아보아요:문지기와 가위바위보", "/mazeh#!b55_w2/index"],
-    ["옛날 물건을 알아보아요:조선시대 물건을 찾아와요", "/mazeh#!b55_w3/index"],
-    ["시장 음식을 사 먹어요:시장에서 먹거리를 사요", "/mazeh#!b55_w4/index"]
+    ["경복궁 근처에 무엇이 있나요:경복궁 주변을 구경해요", "Look around Gyeongbok Palace", "/mazeh#!b55_w1/index"],
+    ["사대문을 알아보아요:문지기와 가위바위보", "Rock-Paper-Scissors", "/mazeh#!b55_w2/index"],
+    ["옛날 물건을 알아보아요:조선시대 물건을 찾아와요", "Find the household", "/mazeh#!b55_w3/index"],
+    ["시장 음식을 사 먹어요:시장에서 먹거리를 사요", "Buy food in the market", "/mazeh#!b55_w4/index"]
   ],
   "B-6":[
     ["버스정류장에 가요", "/mazeh#!b6_w1/index"],
@@ -512,10 +512,10 @@
     ["반복 블록을 함께 사용해요:토드와 짝꿍이 되어요", "Became Tod's mate", "/mazeh#!c5_w4/index"]
   ],
   "C-5-5":[
-    ["우리나라 전통 돌잔치 & 집을 정리해요 : 집을 정리해요", "/mazeh#!c55_w1/index"],
-    ["친구에게 초대장을 주러가요 : 초대장을 보내요", "/mazeh#!c55_w2/index"],
-    ["선물을 준비해요 : 선물을 준비해요", "/mazeh#!c55_w3/index"],
-    ["음식을 대접해요 : 음식을 대접해요", "/mazeh#!c55_w4/index"]
+    ["우리나라 전통 돌잔치 & 집을 정리해요 : 집을 정리해요", "Tidy the house", "/mazeh#!c55_w1/index"],
+    ["친구에게 초대장을 주러가요 : 초대장을 보내요", "Send out invitations", "/mazeh#!c55_w2/index"],
+    ["선물을 준비해요 : 선물을 준비해요", "Prepare a gift", "/mazeh#!c55_w3/index"],
+    ["음식을 대접해요 : 음식을 대접해요", "Serve some food", "/mazeh#!c55_w4/index"]
   ],
   "C-6":[
     ["1주차: 교통 안전 규칙", "/mazeh#!c6_w1/index"],
