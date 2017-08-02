@@ -1098,6 +1098,9 @@ function checkMandatory(startblock, mandatory) {
   var block = startblock,
       type,
       idx;
+  if(!mandatory) {
+    return null;
+  }
   mandatory = mandatory.slice();
   do {
     type = block.type;
