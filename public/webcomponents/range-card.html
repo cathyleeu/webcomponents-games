@@ -1,4 +1,5 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="./status-bar.html">
 
 <dom-module id="range-card">
   <template>
@@ -7,25 +8,17 @@
         overflow: hidden;
       }
     </style>
-    <h1>[[_title(title)]]</h1>
-    <div>
-      <p>시도 횟수 : {{total}}</p>
-      <p>맞춘 갯수: {{matched}}/{{cards}}</p>
-    </div>
+    <status-bar title="{{title}}" total="{{total}}" matched="{{matched}}" cards="{{cards}}"></status-bar>
   </template>
   <script>
     class RangeCard extends Polymer.Element {
       static get is() { return 'range-card'; }
       connectedCallback() {
         super.connectedCallback();
-        // this.shadowRoot.namespaceURI = d3.namespaces.xhtml;
       }
       static get properties() {
         return {
           title: String,
-          total: Number,
-          matched: Number,
-          cards: Number,
           success: String
         }
       }
@@ -38,8 +31,9 @@
       setData(val, w, h){
         let _this = this,
             svg = d3.select(this.shadowRoot).append("svg")
-                    .attr( "width", this.offsetWidth )
-                    .attr( "height", this.offsetHeight ),
+              .attr('width', `${(this.offsetWidth/4)*3}`)
+              .attr('height', `${this.offsetHeight-60}` )
+              .attr('style', `margin-left: ${this.offsetWidth/7}px;`),
             boardName = ["dropB", "dragB"];
         _this.set('cards', val.length )
         let defs = svg.append('defs')

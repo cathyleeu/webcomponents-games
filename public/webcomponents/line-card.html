@@ -1,35 +1,32 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="./status-bar.html">
+
 
 <dom-module id="line-card">
-  <style>
-    line {
-      stroke: steelblue;
-      stroke-width: 2px;
-      stroke-linecap: round;
-      marker-end: url(#marker);
-    }
-  </style>
+
   <template>
-    <h1>[[_title(title)]]</h1>
-    <p>시도 횟수 : {{total}}</p>
-    <p>맞춘 갯수: {{matched}}/{{cards}}</p>
+    <style>
+      line {
+        stroke: steelblue;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        marker-end: url(#marker);
+      }
+    </style>
+    <status-bar title="{{title}}" total="{{total}}" matched="{{matched}}" cards="{{cards}}"></status-bar>
   </template>
   <script>
     class LineCard extends Polymer.Element {
       static get is() { return 'line-card'; }
       connectedCallback() {
         super.connectedCallback();
-        // this.shadowRoot.namespaceURI = d3.namespaces.xhtml;
       }
       static get properties() {
         return {
-          title: String,
-          total: Number,
-          cards: Number
+          title: String
         }
       }
       ready() {
-        // 미리 설정해 놓는 것....
         super.ready();
         this.set('total', 0)
         this.set('matched', 0)
@@ -40,9 +37,11 @@
       setData(val){
         let _this = this,
             svg = d3.select(this.shadowRoot).append('svg')
-              .attr('width', this.offsetWidth )
-              .attr('height', this.offsetHeight ),
+              .attr('width', `${(this.offsetWidth/4)*3}`)
+              .attr('height', `${this.offsetHeight-60}` )
+              .attr('style', `margin-left: ${this.offsetWidth/4}px;margin-top: 20px`),
             boardName = ["boardL", "boardR"];
+        console.log(this.offsetWidth, this.offsetHeight)
 
         _this.set('cards', val.length )
 

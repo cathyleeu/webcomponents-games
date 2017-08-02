@@ -1,0 +1,57 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="status-bar">
+  <template>
+    <style>
+      .bar_cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 40px;
+        width: 100%;
+        background-color: #263647;
+        padding: 0.3em;
+      }
+      h1, p {
+        color: white;
+        display: block;
+        margin: 0;
+        text-align: center;
+      }
+      .title {
+        width: 70%;
+        height: 100%;
+      }
+      .score_cont {
+        width: 30%;
+        height: 100%;
+      }
+    </style>
+    <div class="bar_cont">
+      <div class="title">
+        <h1>{{title}}</h1>
+      </div>
+      <div class="score_cont">
+        <p>시도 횟수 : {{total}}</p>
+        <p>맞춘 갯수: {{matched}}/{{cards}}</p>
+      </div>
+    </div>
+  </template>
+  <script>
+    class StatusBar extends Polymer.Element {
+      static get is() {
+        return "status-bar";
+      }
+      static get properties() {
+        return {
+          title: String,
+          total: Number,
+          matched: Number,
+          cards: Number
+        }
+      }
+    }
+    window.customElements.define(StatusBar.is, StatusBar);
+  </script>
+</dom-module>
