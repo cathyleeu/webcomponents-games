@@ -223,12 +223,12 @@ function getBook(classObj) {
   if(school == "A00083-K3") {
     book = [1, 2, 3, 4, 5, "5-5"];
   }
-  // 직영 설리번, 울산지사 교차로원, 인천지사 유원유치원
-  if(school == "E00076-K1" || school == "A00072-K9" || school == "A00114-K3") {
+  // 직영 설리번, 울산지사 교차로원, 인천지사 유원유치원, 부산지사 동성어학원
+  if(school == "E00076-K1" || school == "A00072-K9" || school == "A00114-K3" || school == "A00066-K2") {
     book = [3, 4];
   }
-  // 부산지사 동성어학원, 영업부 일산지사 홍익유치원, 부산PSA, 울산 설리번 영어어린이집
-  if(school == "A00066-K2" || school == "C00149-K1" || school == "D00086-K1" || school == "A00072-K2") {
+  // 영업부 일산지사 홍익유치원, 부산PSA, 울산 설리번 영어어린이집
+  if(school == "C00149-K1" || school == "D00086-K1" || school == "A00072-K2") {
     book = [4, 5];
   }
   // 압구정 PSA
