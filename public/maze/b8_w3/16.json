@@ -1,0 +1,39 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "####.l#.#",
+    "##.#.#..#",
+    "#.#..##.#",
+    "#.#.#..##",
+    "##..##..#",
+    "#..##..##",
+    "##%#.#..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 7,
+    "img":"pear"
+  }],
+  "tutorial": [{
+    "msg:ko": "배로 이동해요.",
+    "msg:en": "Let's go to the pear!",
+    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w3/pear.png"]
+  }],
+  "goal": {
+    "msg:ko": "배로 이동해요.",
+    "msg:en": "Let's go to the pear!",
+    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w3/pear.png"]
+  }
+}

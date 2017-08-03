@@ -2,7 +2,7 @@
 
   "tile_size": 128,
   "score":3,
-  "workspace": ["start","repeat","move_left","get_item","move_left","repeat","use_item"],
+  "workspace": ["start","repeat","get_item","repeat","use_item"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -13,14 +13,14 @@
     "repeat"
   ],
   "map": [
-    ".#a%aba#.",
-    "#.#.###.#",
-    "##..)..##",
-    "##..#.#.#",
-    "##..a...#",
-    "#...#...#",
-    "#...#.###",
-    "#...#u..#",
+    "wca%acacw",
+    "www.wwwww",
+    "#...#####",
+    "#.......#",
+    "##.)..#.#",
+    "##..#a#.#",
+    "##......#",
+    "#..u....#",
     ".#######."
   ],
   "extra":[{
@@ -29,9 +29,9 @@
     "img":"question",
     "useItem": true
   },{
-    "x": 4,
-    "y": 2,
-    "img":"blackbeans"
+    "x": 3,
+    "y": 4,
+    "img":"rice"
   }],
   "tutorial": [{
     "msg:ko": "'?'에 알맞은 곡식을 가져다 놓아요.",

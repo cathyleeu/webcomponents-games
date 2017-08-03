@@ -16,161 +16,161 @@
     "x": 5,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "과일바구니를 1개 얻을 수 있어",
-      "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w2/basket.png"
+      "msg:ko": "곡식을 1개 얻을 수 있어",
+      "msg:en": "You can get one grain at once",
+      "img": "/img/b8_w2/b8_w2_food.png"
     }]
   },{
     "x": 6,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "과일바구니를 1개 얻을 수 있어",
-      "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w2/basket.png"
+      "msg:ko": "곡식을 1개 얻을 수 있어",
+      "msg:en": "You can get one grain at once",
+      "img": "/img/b8_w2/b8_w2_food.png"
     }]
   },{
     "x": 7,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "과일바구니를 1개 얻을 수 있어",
-      "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w2/basket.png"
+      "msg:ko": "곡식을 1개 얻을 수 있어",
+      "msg:en": "You can get one grain at once",
+      "img": "/img/b8_w2/b8_w2_food.png"
     }]
   },{
     "x": 8,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "과일바구니를 1개 얻을 수 있어",
-      "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w2/basket.png"
+      "msg:ko": "곡식을 1개 얻을 수 있어",
+      "msg:en": "You can get one grain at once",
+      "img": "/img/b8_w2/b8_w2_food.png"
     }]
   },{
     "x": 9,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "과일바구니를 1개 얻을 수 있어",
-      "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w2/basket.png"
+      "msg:ko": "곡식을 1개 얻을 수 있어",
+      "msg:en": "You can get one grain at once",
+      "img": "/img/b8_w2/b8_w2_food.png"
     }]
   },{
     "x": 10,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "과일바구니를 1개 얻을 수 있어",
-      "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w2/basket.png"
+      "msg:ko": "곡식을 1개 얻을 수 있어",
+      "msg:en": "You can get one grain at once",
+      "img": "/img/b8_w2/b8_w2_food.png"
     }]
   },{
     "x": 16,
     "y": 1,
     "tutorial": [{
-      "msg:ko": "과일바구니를 2개 얻을 수 있어",
-      "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 2개 얻을 수 있어",
+      "msg:en": "You can get two grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 16,
     "y": 2,
     "tutorial": [{
-      "msg:ko": "과일바구니를 2개 얻을 수 있어",
-      "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 2개 얻을 수 있어",
+      "msg:en": "You can get two grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 16,
     "y": 3,
     "tutorial": [{
-      "msg:ko": "과일바구니를 2개 얻을 수 있어",
-      "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 2개 얻을 수 있어",
+      "msg:en": "You can get two grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 16,
     "y": 4,
     "tutorial": [{
-      "msg:ko": "과일바구니를 2개 얻을 수 있어",
-      "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 2개 얻을 수 있어",
+      "msg:en": "You can get two grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 16,
     "y": 5,
     "tutorial": [{
-      "msg:ko": "과일바구니를 2개 얻을 수 있어",
-      "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 2개 얻을 수 있어",
+      "msg:en": "You can get two grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 5,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "과일바구니를 3개 얻을 수 있어",
-      "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 3개 얻을 수 있어",
+      "msg:en": "You can get three grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 6,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "과일바구니를 3개 얻을 수 있어",
-      "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 3개 얻을 수 있어",
+      "msg:en": "You can get three grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 7,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "과일바구니를 3개 얻을 수 있어",
-      "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 3개 얻을 수 있어",
+      "msg:en": "You can get three grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 8,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "과일바구니를 3개 얻을 수 있어",
-      "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 3개 얻을 수 있어",
+      "msg:en": "You can get three grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 9,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "과일바구니를 3개 얻을 수 있어",
-      "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 3개 얻을 수 있어",
+      "msg:en": "You can get three grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 10,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "과일바구니를 3개 얻을 수 있어",
-      "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 3개 얻을 수 있어",
+      "msg:en": "You can get three grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 11,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "과일바구니를 3개 얻을 수 있어",
-      "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 3개 얻을 수 있어",
+      "msg:en": "You can get three grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 12,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "과일바구니를 3개 얻을 수 있어",
-      "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 3개 얻을 수 있어",
+      "msg:en": "You can get three grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 13,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "과일바구니를 3개 얻을 수 있어",
-      "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w2/basket.png","/img/b8_w2/basket.png","/img/b8_w2/basket.png"]
+      "msg:ko": "곡식을 3개 얻을 수 있어",
+      "msg:en": "You can get three grains at once",
+      "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png","/img/b8_w2/b8_w2_food.png"]
     }]
   },{
     "x": 5,
@@ -260,7 +260,7 @@
     "y": 5,
     "link": "b8_w2/20"
   },{
-    "img":"mother",
+    "img":"father",
     "x": 2,
     "y": 4,
     "obstacle": false,
@@ -269,13 +269,13 @@
   }],
 
   "tutorial": [{
-    "msg:ko": "과일바구니로 가보아요! 쉬운 문제는 과일바구니 1개, 보통은 2개, 어려운 문제는 3개를 주어요.",
-    "msg:en": "Let's go to the fruit basket! An easy problem gives you one basket, a normal one gives you two and a hard one gives you three.",
-    "img": "/img/b8_w2/basket.png"
+    "msg:ko": "곡식으로 가보아요! 쉬운 문제는 곡식 1개, 보통은 2개, 어려운 문제는 3개를 주어요.",
+    "msg:en": "Let's go to the grain! An easy problem gives you one grain, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/b8_w2/b8_w2_food.png"
   }],
   "goal": {
-    "msg:ko": "과일바구니를 20개 모아서 엄마에게 가요.",
-    "msg:en": "Let's get 20 fruit baskets and go to mother.",
-    "img": ["/img/b8_w2/basket.png","/img/b8_w1/mother.png"]
+    "msg:ko": "곡식을 20개 모아서 아빠에게 가요.",
+    "msg:en": "Let's get 20 grains and go to father.",
+    "img": ["/img/b8_w2/b8_w2_food.png","/img/b8_w1/father.png"]
   }
 }

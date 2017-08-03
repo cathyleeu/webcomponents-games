@@ -1,0 +1,40 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#%.l#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":1,
+    "y":2,
+    "img":"mother"
+  }],
+  "tutorial": [{
+    "msg:ko": "엄마에게 가자",
+    "msg:en": "Go to mom",
+    "img": ["/img/b9_w1/cos0.png","/img/b9_w1/mother.png"]
+  }],
+  "success": [{
+    "msg:ko": "엄마! 상을 다 차렸어요~",
+    "msg:en": "Mom, Tteok-bokki is ready!",
+    "img": ["/img/b9_w1/cos0.png","/img/b9_w4/table0.png"]
+  },{
+    "msg:ko": "잘했어, 코스야. 떡볶이를 먹자!",
+    "msg:en": "Good job, Cos. Enjoy Tteok-bokki",
+    "img": ["/img/b9_w1/mother.png", "/img/b9_w4/tteok.png"]
+  },{
+    "msg:ko": "9권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Book 9 is over! See you Book 10!"
+  }]
+}

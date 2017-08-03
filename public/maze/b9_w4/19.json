@@ -1,0 +1,46 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.##.d##w",
+    "w#.##.#.w",
+    "w..#..##w",
+    "w#.#.#..w",
+    "w..%.##.w",
+    "w)#.###.w",
+    "w#..#..#w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 5,
+    "img":"table0",
+    "useItem": 4
+  },{
+    "x": 1,
+    "y": 6,
+    "img":"water",
+    "itemCount": 4
+  }],
+  "tutorial": [{
+    "msg:ko": "물을 탁자에 가져다 두어요. \n 한 번에 한 잔씩 가져와요.",
+    "msg:en": "Let's get the water \n and bring them to the table! \n Bring one cup at a time.",
+    "img": ["/img/b9_w1/cos0.png", "/img/b9_w4/water.png", "/img/b9_w4/table0.png"]
+  }],
+  "goal": {
+    "msg:ko": "물을 탁자에 가져다 두어요. \n 한 번에 한 잔씩 가져와요.",
+    "msg:en": "Let's get the water \n and bring them to the table! \n Bring one cup at a time.",
+    "img": ["/img/b9_w1/cos0.png", "/img/b9_w4/water.png", "/img/b9_w4/table0.png"]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start", "repeat", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.##..##w",
+    "w##.###.w",
+    "w%.#..##w",
+    "w#.##...w",
+    "w#..##.#w",
+    "w##.###.w",
+    "w.#....lw",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"mixer"
+  }],
+  "tutorial": [{
+    "msg:ko": "믹서기로 가요",
+    "msg:en": "Let's go to the mixer!",
+    "img": "/img/b9_w1/mixer.png"
+  }],
+  "goal": {
+    "msg:ko": "믹서기로 가요",
+    "msg:en": "Let's go to the mixer!",
+    "img": "/img/b9_w1/mixer.png"
+  }
+}

@@ -18,7 +18,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 1개 얻을 수 있어",
       "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w3/basket.png"
+      "img": "/img/b8_w3/basket_fruit.png"
     }]
   },{
     "x": 6,
@@ -26,7 +26,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 1개 얻을 수 있어",
       "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w3/basket.png"
+      "img": "/img/b8_w3/basket_fruit.png"
     }]
   },{
     "x": 7,
@@ -34,7 +34,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 1개 얻을 수 있어",
       "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w3/basket.png"
+      "img": "/img/b8_w3/basket_fruit.png"
     }]
   },{
     "x": 8,
@@ -42,7 +42,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 1개 얻을 수 있어",
       "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w3/basket.png"
+      "img": "/img/b8_w3/basket_fruit.png"
     }]
   },{
     "x": 9,
@@ -50,7 +50,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 1개 얻을 수 있어",
       "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w3/basket.png"
+      "img": "/img/b8_w3/basket_fruit.png"
     }]
   },{
     "x": 10,
@@ -58,7 +58,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 1개 얻을 수 있어",
       "msg:en": "You can get one fruit basket at once",
-      "img": "/img/b8_w3/basket.png"
+      "img": "/img/b8_w3/basket_fruit.png"
     }]
   },{
     "x": 16,
@@ -66,7 +66,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 2개 얻을 수 있어",
       "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 16,
@@ -74,7 +74,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 2개 얻을 수 있어",
       "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 16,
@@ -82,7 +82,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 2개 얻을 수 있어",
       "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 16,
@@ -90,7 +90,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 2개 얻을 수 있어",
       "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 16,
@@ -98,7 +98,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 2개 얻을 수 있어",
       "msg:en": "You can get two fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 5,
@@ -106,7 +106,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 3개 얻을 수 있어",
       "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 6,
@@ -114,7 +114,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 3개 얻을 수 있어",
       "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 7,
@@ -122,7 +122,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 3개 얻을 수 있어",
       "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 8,
@@ -130,7 +130,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 3개 얻을 수 있어",
       "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 9,
@@ -138,7 +138,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 3개 얻을 수 있어",
       "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 10,
@@ -146,7 +146,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 3개 얻을 수 있어",
       "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 11,
@@ -154,7 +154,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 3개 얻을 수 있어",
       "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 12,
@@ -162,7 +162,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 3개 얻을 수 있어",
       "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 13,
@@ -170,7 +170,7 @@
     "tutorial": [{
       "msg:ko": "과일바구니를 3개 얻을 수 있어",
       "msg:en": "You can get three fruit baskets at once",
-      "img": ["/img/b8_w3/basket.png","/img/b8_w3/basket.png","/img/b8_w3/basket.png"]
+      "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png","/img/b8_w3/basket_fruit.png"]
     }]
   },{
     "x": 5,
@@ -260,7 +260,7 @@
     "y": 5,
     "link": "b8_w3/20"
   },{
-    "img":"mother",
+    "img":"d_grandparents",
     "x": 2,
     "y": 4,
     "obstacle": false,
@@ -271,11 +271,11 @@
   "tutorial": [{
     "msg:ko": "과일바구니로 가보아요! 쉬운 문제는 과일바구니 1개, 보통은 2개, 어려운 문제는 3개를 주어요.",
     "msg:en": "Let's go to the fruit basket! An easy problem gives you one basket, a normal one gives you two and a hard one gives you three.",
-    "img": "/img/b8_w3/basket.png"
+    "img": "/img/b8_w3/basket_fruit.png"
   }],
   "goal": {
-    "msg:ko": "과일바구니를 20개 모아서 엄마에게 가요.",
-    "msg:en": "Let's get 20 fruit baskets and go to mother.",
-    "img": ["/img/b8_w3/basket.png","/img/b8_w1/mother.png"]
+    "msg:ko": "과일바구니를 20개 모아서 할머니&할아버지에게 가요.",
+    "msg:en": "Let's get 20 fruit baskets and go to grandparents.",
+    "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/d_grandparents.png"]
   }
 }

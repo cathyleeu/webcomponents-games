@@ -1,0 +1,42 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#%.l#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":1,
+    "y":2,
+    "img":"d_grandparents"
+  }],
+  "tutorial": [{
+    "msg:ko": "할머니, 할아버지에게 가자",
+    "msg:en": "Go to grandparents",
+    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w3/d_grandparents.png"]
+  }],
+  "success": [{
+    "msg:ko": "할머니, 할아버지! 과일바구니를 가져왔어요~",
+    "msg:en": "Granma & Grampa, I brought fruits!",
+    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w3/basket_fruit.png"]
+  },{
+    "msg:ko": "잘했어, 코스야.",
+    "msg:en": "Good job, Cos.",
+    "img": ["/img/b8_w3/d_grandparents.png"]
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/b8_w2/cos_fall0.png",
+    "link" : "b8_w4/index"
+  }]
+}

@@ -1,0 +1,43 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "##..##r.#",
+    "#.#.#.#.#",
+    "##.####.#",
+    "###.#.#.#",
+    "#.......#",
+    "##.##.###",
+    "#%.Z##..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 7,
+    "img":"samecolor3"
+  },{
+    "x": 1,
+    "y": 7,
+    "img":"sameleaf4"
+  }],
+  "tutorial": [{
+    "msg:ko": "'?'에 알맞은 낙엽으로 이동해요.",
+    "msg:en": "Let's find the appropriate leaf for '?' space and move there",
+    "img": ["/img/b8_w1/sameleaf1.png","/img/b8_w1/sameleaf5.png","/img/b8_w1/sameleaf3.png","/img/b8_w1/question.png"]
+  }],
+  "goal": {
+    "msg:ko": "'?'에 알맞은 낙엽으로 이동해요.",
+    "msg:en": "Let's find the appropriate leaf for '?' space and move there",
+    "img": ["/img/b8_w1/sameleaf1.png","/img/b8_w1/sameleaf5.png","/img/b8_w1/sameleaf3.png","/img/b8_w1/question.png"]
+  }
+}

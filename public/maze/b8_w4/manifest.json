@@ -3,8 +3,8 @@
   {"id": "bg1", "src": "/img/b8_w4/bg1.png"},
   {"id": "bg2", "src": "/img/b8_w4/bg2.png"},
 
-  {"id": "character", "src": "/img/b8_w1/cos.png", "sprite": true, "size": 256},
-  {"id": "message", "src": "/img/b8_w1/cos0.png", "size": 256},
+  {"id": "character", "src": "/img/b8_w2/cos_fall_sprite.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b8_w2/cos_fall0.png", "size": 256},
   {"id": "food", "src": "/img/b8_w4/kimchi.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
@@ -19,11 +19,11 @@
 
   {"id": "father", "src": "/img/b8_w1/father.png"},
   {"id": "mother", "src": "/img/b8_w1/mother.png"},
-  {"id": "basket", "src": "/img/b8_w3/basket.png"},
 
-  {"id": "tree", "src": "/img/b8_w3/tree.png","obstacle": true},
-  {"id": "reed", "src": "/img/b8_w3/reed.png","obstacle": true},
-  {"id": "scarecrow", "src": "/img/b8_w3/scarecrow.png","obstacle": true},
+  {"id": "broom", "src": "/img/b8_w4/broom.png","obstacle": true},
+  {"id": "furnace", "src": "/img/b8_w4/furnace.png","obstacle": true},
+  {"id": "jars1", "src": "/img/b8_w4/jars1.png","obstacle": true},
+  {"id": "jars2", "src": "/img/b8_w4/jars2.png","obstacle": true},
 
   {"id": "kimchi", "src": "/img/b8_w4/kimchi.png"},
   {"id": "kimchi1", "src": "/img/b8_w4/kimchi1.png"},

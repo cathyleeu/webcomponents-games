@@ -23,16 +23,16 @@
   "extra":[{
     "x": 3,
     "y": 2,
-    "img":"cooker"
+    "img":"washer"
   }],
   "tutorial": [{
-    "msg:ko": "코스는 생활도구로 가요",
-    "msg:en": "Let's go to the living tool!",
-    "img": "/img/b9_w1/cooker.png"
+    "msg:ko": "세탁기로 가요",
+    "msg:en": "Let's go to the washer!",
+    "img": "/img/b9_w1/washer.png"
   }],
   "goal": {
-    "msg:ko": "생활도구로 가요",
-    "msg:en": "Let's go to the living tool!",
-    "img": "/img/b9_w1/cooker.png"
+    "msg:ko": "세탁기로 가요",
+    "msg:en": "Let's go to the washer!",
+    "img": "/img/b9_w1/washer.png"
   }
 }

@@ -28,17 +28,19 @@
   {"id": "sofa2", "src": "/img/b9_w1/sofa2.png","obstacle": true},
 
   {"id": "washer", "src": "/img/b9_w3/washer.png"},
+  {"id": "basket_empty", "src": "/img/b9_w3/basket_empty.png"},
+  {"id": "basket_laundry", "src": "/img/b9_w3/basket_laundry.png"},
 
-  {"tile": "a", "id": "dark0", "src": "/img/b9_w3/dark0.png"},
-  {"tile": "b", "id": "dark1", "src": "/img/b9_w3/dark1.png"},
-  {"tile": "c", "id": "dark2", "src": "/img/b9_w3/dark2.png"},
-  {"tile": "e", "id": "dark3", "src": "/img/b9_w3/dark3.png"},
-  {"tile": "g", "id": "dark4", "src": "/img/b9_w3/dark4.png"},
+  {"tile": "a", "id": "dark1", "src": "/img/b9_w3/dark1.png"},
+  {"tile": "b", "id": "dark2", "src": "/img/b9_w3/dark2.png"},
+  {"tile": "c", "id": "dark3", "src": "/img/b9_w3/dark3.png"},
+  {"tile": "e", "id": "dark4", "src": "/img/b9_w3/dark4.png"},
+  {"tile": "g", "id": "dark0", "src": "/img/b9_w3/dark0.png"},
 
-  {"tile": "h", "id": "bright0", "src": "/img/b9_w3/bright0.png"},
-  {"tile": "i", "id": "bright1", "src": "/img/b9_w3/bright1.png"},
-  {"tile": "j", "id": "bright2", "src": "/img/b9_w3/bright2.png"},
-  {"tile": "m", "id": "bright3", "src": "/img/b9_w3/bright3.png"},
-  {"tile": "n", "id": "bright4", "src": "/img/b9_w3/bright4.png"}
+  {"tile": "h", "id": "bright1", "src": "/img/b9_w3/bright1.png"},
+  {"tile": "i", "id": "bright2", "src": "/img/b9_w3/bright2.png"},
+  {"tile": "j", "id": "bright3", "src": "/img/b9_w3/bright3.png"},
+  {"tile": "m", "id": "bright4", "src": "/img/b9_w3/bright4.png"},
+  {"tile": "n", "id": "bright0", "src": "/img/b9_w3/bright0.png"}
 
 ]

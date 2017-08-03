@@ -14,11 +14,11 @@
     ".%wwwwww.",
     "w.##..##w",
     "w#..###.w",
-    "w.#...##w",
-    "w#.##...w",
+    "w#.##.#.w",
+    "w.#)))l#w",
     "w..#.##.w",
     "w##.###.w",
-    "w).).).lw",
+    "w..#..##w",
     ".wwwwwww."
   ],
   "extra":[{
@@ -26,18 +26,18 @@
     "y": 0,
     "img":"desk"
   },{
-    "x": 1,
-    "y": 7,
-    "img":"recycle1",
+    "x": 3,
+    "y": 4,
+    "img":"recycle4",
     "itemCount": 1
   },{
-    "x": 3,
-    "y": 7,
+    "x": 4,
+    "y": 4,
     "img":"recycle2",
     "itemCount": 1
   },{
     "x": 5,
-    "y": 7,
+    "y": 4,
     "img":"recycle3",
     "itemCount": 1
   }],
