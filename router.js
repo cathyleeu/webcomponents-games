@@ -242,6 +242,10 @@ function getBook(classObj) {
       book = [3, 4];
     }
   }
+  // 용인지사 성음유치원 A레벨 추가반
+  if(classObj.code == "A00088-K1-KC2") {
+    book = [1, 2, 3];
+  }
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
@@ -255,8 +259,8 @@ function getBook(classObj) {
       return "B-" + (Number(bname.split("-")[1])-1);
     });
   }
-  // 용인지사 성음유치원, 영업부 일산지사 홍익유치원 컨텐츠 추가
-  if(classObj.code == "A00088-K1-KC1" || school == "C00149-K1") {
+  // 영업부 일산지사 홍익유치원 컨텐츠 추가
+  if(school == "C00149-K1") {
     book += ",추가컨텐츠";
   }
   return book;
