@@ -6,6 +6,9 @@
 
   <template>
     <style>
+      :host {
+        overflow: hidden;
+      }
       line {
         stroke: #2ECC98;
         stroke-width: 3px;
@@ -37,9 +40,9 @@
       setData(val){
         let _this = this,
             svg = d3.select(this.shadowRoot).append('svg')
-              .attr('width', `${(this.offsetWidth/4)*3}`)
-              .attr('height', `${this.offsetHeight-60}` )
-              .attr('style', `margin-left: ${this.offsetWidth/4}px;margin-top: 20px`),
+              .attr('width', this.offsetWidth)
+              .attr('height', `${this.offsetHeight-60}`),
+              // .attr('style', `margin-left: ${this.offsetWidth/4}px;margin-top: 20px`),
             boardName = ["boardL", "boardR"];
         console.log(this.offsetWidth, this.offsetHeight)
         let leftData = val[0], rightData = val[1];
@@ -91,12 +94,12 @@
           .attr("width", 100).attr("height", 100)
           .attr("xlink:href", (d, i) => `${d.url}`)
 
-
+        let center = (this.offsetWidth - 560)/2
         let rectGroup = svg.selectAll("g")
           .data(boardName).enter()
           .append("g")
           .attr("class", d => `${d}`)
-          .attr("transform", (d, i) => `translate(10, 0)`);
+          .attr("transform", (d, i) => `translate(${center-10}, 0)`);
 
         let LeftSide = svg.select('.boardL');
         LeftSide.selectAll("rect")
