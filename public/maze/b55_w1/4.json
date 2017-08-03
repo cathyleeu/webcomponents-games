@@ -28,5 +28,10 @@
     "msg:ko": "N 서울 타워로 가보자.",
     "msg:en": "Let's go to N-seoul tower.",
     "img": "/img/b55/ntower.png"
+  }],
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:en": "Success! Good Job!",
+    "link": "b55_w1/5"
   }]
 }
