@@ -4,9 +4,15 @@
     "title": "카드를 뒤집어 짝을 맞추어보아요."
   },
   "data": [
-    "../img/b55/cigar.png",
-    "../img/b55/coin.png",
-    "../img/b55/hat.png",
-    "../img/b55/socks.png"
+    "cigar",
+    "coin",
+    "hat",
+    "socks"
+  ],
+  "manifest": [
+    {"id": "cigar", "src": "/img/b55/cigar.png"},
+    {"id": "coin", "src": "/img/b55/coin.png"},
+    {"id": "hat", "src": "/img/b55/hat.png"},
+    {"id": "socks", "src": "/img/b55/socks.png"}
   ]
 }

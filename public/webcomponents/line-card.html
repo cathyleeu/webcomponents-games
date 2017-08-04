@@ -37,16 +37,18 @@
       _title(title) {
         return `${title}`
       }
-      setData(val){
+      setData(data, manifest){
         let _this = this,
             svg = d3.select(this.shadowRoot).append('svg')
               .attr('width', this.offsetWidth)
               .attr('height', `${this.offsetHeight-60}`),
-              // .attr('style', `margin-left: ${this.offsetWidth/4}px;margin-top: 20px`),
             boardName = ["boardL", "boardR"];
-        console.log(this.offsetWidth, this.offsetHeight)
-        let leftData = val[0], rightData = val[1];
-        _this.set('cards', val[0].length )
+        let leftData = manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src})),
+            rightData = manifest.filter(l => l.set).map(l => ({["no"]:l.no, ["src"]:l.src}));
+
+
+        // data = data.map(id=>manifest[id]);
+        _this.set('cards', leftData.length )
 
         let defs = svg.append('defs').selectAll('pattern')
         let leftCard = defs.data(leftData).enter()
@@ -78,7 +80,7 @@
         leftCard.append('image')
           .attr("x", 5).attr("y", 5)
           .attr("width", 100).attr("height", 100)
-          .attr("xlink:href", d => `${d.url}`)
+          .attr("xlink:href", d => `${d.src}`)
           .style('filter', "url(#desaturate)")
 
 
@@ -92,14 +94,14 @@
           .append('image')
           .attr("x", 5).attr("y", 5)
           .attr("width", 100).attr("height", 100)
-          .attr("xlink:href", (d, i) => `${d.url}`)
+          .attr("xlink:href", (d, i) => `${d.src}`)
 
         let center = (this.offsetWidth - 560)/2
         let rectGroup = svg.selectAll("g")
           .data(boardName).enter()
           .append("g")
           .attr("class", d => `${d}`)
-          .attr("transform", (d, i) => `translate(${center-10}, 0)`);
+          .attr("transform", (d, i) => `translate(${center}, 0)`);
 
         let LeftSide = svg.select('.boardL');
         LeftSide.selectAll("rect")
@@ -161,15 +163,16 @@
 
         function pencilingStart (d, i) {
           let getXY = d3.select(this).attr("transform").match(/\d+/g),
-              numX = parseInt(getXY[0], 10),
+              numX = center+parseInt(getXY[0], 10),
               numY = parseInt(getXY[1], 10);
               startX = numX;
               startY = numY;
+          console.log(getXY, numX, numY,  startX, startY, center);
 
           line = svg.append("line")
-                .attr("x1", numX+10)
+                .attr("x1", numX)
                 .attr("y1", numY)
-                .attr("x2", numX+10)
+                .attr("x2", numX)
                 .attr("y2", numY);
           matchLine = d.no;
           svg.on("mousemove", pencilingMove);
@@ -189,14 +192,14 @@
 
         function checkInField(d, i) {
             let getXY = d3.select(this).attr("transform").match(/\d+/g),
-                numX = parseInt(getXY[0], 10),
+                numX = center+parseInt(getXY[0], 10),
                 numY = parseInt(getXY[1], 10);
 
           if(matchLine === d.no) {
 
-            console.log("its matched!!!", numX+10, numY)
+            console.log("its matched!!!", numX, numY)
             _this.set('matched', _this.matched+1)
-            line.attr("x2", numX+10)
+            line.attr("x2", numX)
                 .attr("y2", numY);
           } else {
             console.log("itsnt matched!!!", startX, startY, matchLine, d.no)

@@ -32,7 +32,6 @@
         let _this = this,
             svg = d3.select(this.shadowRoot)
               .append("svg")
-              // .attr('width', `${120*val.length}px`)
               .attr('width', this.offsetWidth )
               .attr('height', `${this.offsetHeight-60}`),
             boardName = ["dropB", "dragB"];
@@ -73,7 +72,7 @@
           .attr("width", 100).attr("height", 100)
           .attr("xlink:href", (d, i) => `${d}`)
 
-        let center = (this.offsetWidth - (120*val.length))/2
+        let center = (this.offsetWidth - (120*data.length))/2
         let rectGroup = svg.selectAll("g")
           .data(boardName).enter()
           .append("g")

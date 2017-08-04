@@ -28,14 +28,14 @@
         position: absolute;
         -webkit-transform-style: preserve-3d;
         -ms-transform-style: preserve-3d;
-          /* -moz-transform-style: preserve-3d;
-             -o-transform-style: preserve-3d; */
+           -moz-transform-style: preserve-3d;
+             -o-transform-style: preserve-3d;
                 transform-style: preserve-3d;
 
         -webkit-transition: transform 1s;
         -ms-transition: transform 1s;
-         /*  -moz-transition: transform 1s;
-             -o-transition: transform 1s; */
+           -moz-transition: transform 1s;
+             -o-transition: transform 1s;
                 transition: transform 1s;
       }
       [class^="flip"]:hover {
@@ -108,15 +108,18 @@
         this.set('total', 0)
         this.set('matched', 0)
       }
-      setData(val){
+      setData(data, manifest){
         let _this = this,
-            flipData = d3.shuffle(val.concat(val)),
             board = d3.select(this.shadowRoot)
               .append('xhtml:div')
               .attr('id', "cont"),
             tags = ["front", "back"];
-        _this.set('cards', val.length )
-        
+
+        manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
+        data = data.map(id=>manifest[id]);
+        _this.set('cards', data.length )
+
+        let flipData = d3.shuffle(data.concat(data));
         let card = board.selectAll('div')
             .data(flipData).enter()
             .append('xhtml:div')
@@ -141,7 +144,6 @@
                 if(flipped == 2) {
                   const flipped_el = board.selectAll('.flipped');
                   if(flipped_el.data()[0] == flipped_el.data()[1]) {
-                    console.log(_this , "_this");
                     _this.set('matched', _this.matched+1)
                     flipped_el.remove();
                   } else {
