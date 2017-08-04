@@ -21,6 +21,7 @@
   {"id": "mother", "src": "/img/b8_w1/mother.png"},
 
   {"id": "leaf", "src": "/img/b8_w1/leaf.png"},
+  {"tile": "Z", "id": "leaf0", "src": "/img/b8_w1/leaf0.png"},
 
   {"id": "tree1", "src": "/img/b8_w1/tree1.png", "obstacle": true},
   {"id": "tree2", "src": "/img/b8_w1/tree2.png", "obstacle": true},

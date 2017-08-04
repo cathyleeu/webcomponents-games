@@ -1,0 +1,39 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "##.##.#.#",
+    "#.##.%#.#",
+    "##.##.###",
+    "#.#...#.#",
+    "###.###.#",
+    "#r..#..##",
+    "#.#..#..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 2,
+    "img":"kimchi2"
+  }],
+  "tutorial": [{
+    "msg:ko": "마늘로 이동해요.",
+    "msg:en": "Let's go to the garlic!",
+    "img": ["/img/b8_w1/cos0.png","/img/b8_w4/kimchi2.png"]
+  }],
+  "goal": {
+    "msg:ko": "마늘로 이동해요.",
+    "msg:en": "Let's go to the garlic!",
+    "img": ["/img/b8_w1/cos0.png","/img/b8_w4/kimchi2.png"]
+  }
+}

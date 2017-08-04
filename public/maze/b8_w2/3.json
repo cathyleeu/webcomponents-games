@@ -1,0 +1,43 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start","repeat","repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "##.##.#.#",
+    "#....%#.#",
+    "#.#..####",
+    "#..#.#.z",
+    "#.#.#.#.#",
+    "#.#.###.#",
+    "#u......#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 2,
+    "img":"rice"
+  },{
+    "x": 7,
+    "y": 4,
+    "img":"pumkinseed"
+  }],
+  "tutorial": [{
+    "msg:ko": "'?'에 알맞은 곡식으로 이동해요.",
+    "msg:en": "Let's find the appropriate grain for '?' space and move there",
+    "img": ["/img/b8_w2/rice.png","/img/b8_w2/pumkinseed.png","/img/b8_w2/rice.png","/img/b8_w2/pumkinseed.png","/img/b8_w1/question.png"]
+  }],
+  "goal": {
+    "msg:ko": "'?'에 알맞은 곡식으로 이동해요.",
+    "msg:en": "Let's find the appropriate grain for '?' space and move there",
+    "img": ["/img/b8_w2/rice.png","/img/b8_w2/pumkinseed.png","/img/b8_w2/rice.png","/img/b8_w2/pumkinseed.png","/img/b8_w1/question.png"]
+  }
+}

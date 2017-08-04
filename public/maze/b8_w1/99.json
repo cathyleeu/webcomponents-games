@@ -1,0 +1,42 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#r.%#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":2,
+    "img":"mother"
+  }],
+  "tutorial": [{
+    "msg:ko": "엄마에게 가자",
+    "msg:en": "Go to mom",
+    "img": ["/img/b8_w1/cos0.png","/img/b8_w1/mother.png"]
+  }],
+  "success": [{
+    "msg:ko": "엄마! 낙엽을 다 모았어요~",
+    "msg:en": "Mom, I collected colorful leaves!",
+    "img": ["/img/b8_w1/cos0.png","/img/b8_w1/leaf.png"]
+  },{
+    "msg:ko": "잘했어, 코스야. 책갈피를 만들자!",
+    "msg:en": "Good job, Cos. Let's make a bookmark!",
+    "img": ["/img/b8_w1/mother.png"]
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/b8_w1/cos0.png",
+    "link" : "b8_w2/index"
+  }]
+}

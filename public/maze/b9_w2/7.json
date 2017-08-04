@@ -1,0 +1,49 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start", "repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3",
+    "repeat"
+  ],
+  "map": [
+    ".%wwwwww.",
+    "w.##..##w",
+    "wr..###.w",
+    "w.#)..##w",
+    "w#.##)..w",
+    "w..#.##.w",
+    "w##.###.w",
+    "w#..#..#w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 0,
+    "img":"desk"
+  },{
+    "x": 3,
+    "y": 3,
+    "img":"recycle5",
+    "itemCount": 1
+  },{
+    "x": 5,
+    "y": 4,
+    "img":"recycle2",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "재활용 쓰레기를 모아요",
+    "msg:en": "Let's collect the recyclabl wastes!",
+    "img": ["/img/b9_w1/cos0.png", "/img/b9_w2/can_recycle.png"]
+  }],
+  "goal": {
+    "msg:ko": "재활용 쓰레기를 모아요",
+    "msg:en": "Let's collect the recyclabl wastes!",
+    "img": ["/img/b9_w1/cos0.png", "/img/b9_w2/can_recycle.png"]
+  }
+}

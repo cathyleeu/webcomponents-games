@@ -1,0 +1,39 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "#%..##..#",
+    "#.#.##.##",
+    "###...###",
+    "##.##.#.#",
+    "##.##...#",
+    "#.##.##.#",
+    "#.#.###u#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img":"tangerine"
+  }],
+  "tutorial": [{
+    "msg:ko": "귤로 이동해요.",
+    "msg:en": "Let's go to the tangerine!",
+    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w3/tangerine.png"]
+  }],
+  "goal": {
+    "msg:ko": "귤로 이동해요.",
+    "msg:en": "Let's go to the tangerine!",
+    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w3/tangerine.png"]
+  }
+}

@@ -13,11 +13,11 @@
   "map": [
     ".#######.",
     "##.##.#.#",
-    "###r.#..#",
+    "#.#r.#..#",
     "#.##.##.#",
-    "##.#..##",
-    "##.##..#",
-    "###.#%#.#",
+    "#..#..##",
+    "##.##.##",
+    "#.#.#%#.#",
     "#..#.#..#",
     ".#######."
   ],
@@ -27,13 +27,13 @@
     "img":"kimchi1"
   }],
   "tutorial": [{
-    "msg:ko": "배추로 이동해요.",
-    "msg:en": "Let's go to the cabbage!",
-    "img": ["/img/b8_w1/cos0.png","/img/b8_w4/kimchi1.png"]
+    "msg:ko": "고추로 이동해요.",
+    "msg:en": "Let's go to the pepper!",
+    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w4/kimchi1.png"]
   }],
   "goal": {
-    "msg:ko": "배추로 이동해요.",
-    "msg:en": "Let's go to the cabbage!",
-    "img": ["/img/b8_w1/cos0.png","/img/b8_w4/kimchi1.png"]
+    "msg:ko": "고추로 이동해요.",
+    "msg:en": "Let's go to the pepper!",
+    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w4/kimchi1.png"]
   }
 }

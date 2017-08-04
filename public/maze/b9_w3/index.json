@@ -16,161 +16,161 @@
     "x": 5,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "세탁기를 1개 얻을 수 있어",
-      "msg:en": "You can get one washing machine at once",
-      "img": "/img/b9_w3/washer.png"
+      "msg:ko": "빨래바구니를 1개 얻을 수 있어",
+      "msg:en": "You can get one landry basket at once",
+      "img": "/img/b9_w3/basket_laundry.png"
     }]
   },{
     "x": 6,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "세탁기를 1개 얻을 수 있어",
-      "msg:en": "You can get one washing machine at once",
-      "img": "/img/b9_w3/washer.png"
+      "msg:ko": "빨래바구니를 1개 얻을 수 있어",
+      "msg:en": "You can get one landry basket at once",
+      "img": "/img/b9_w3/basket_laundry.png"
     }]
   },{
     "x": 7,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "세탁기를 1개 얻을 수 있어",
-      "msg:en": "You can get one washing machine at once",
-      "img": "/img/b9_w3/washer.png"
+      "msg:ko": "빨래바구니를 1개 얻을 수 있어",
+      "msg:en": "You can get one landry basket at once",
+      "img": "/img/b9_w3/basket_laundry.png"
     }]
   },{
     "x": 8,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "세탁기를 1개 얻을 수 있어",
-      "msg:en": "You can get one washing machine at once",
-      "img": "/img/b9_w3/washer.png"
+      "msg:ko": "빨래바구니를 1개 얻을 수 있어",
+      "msg:en": "You can get one landry basket at once",
+      "img": "/img/b9_w3/basket_laundry.png"
     }]
   },{
     "x": 9,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "세탁기를 1개 얻을 수 있어",
-      "msg:en": "You can get one washing machine at once",
-      "img": "/img/b9_w3/washer.png"
+      "msg:ko": "빨래바구니를 1개 얻을 수 있어",
+      "msg:en": "You can get one landry basket at once",
+      "img": "/img/b9_w3/basket_laundry.png"
     }]
   },{
     "x": 10,
     "y": 0,
     "tutorial": [{
-      "msg:ko": "세탁기를 1개 얻을 수 있어",
-      "msg:en": "You can get one washing machine at once",
-      "img": "/img/b9_w3/washer.png"
+      "msg:ko": "빨래바구니를 1개 얻을 수 있어",
+      "msg:en": "You can get one landry basket at once",
+      "img": "/img/b9_w3/basket_laundry.png"
     }]
   },{
     "x": 16,
     "y": 1,
     "tutorial": [{
-      "msg:ko": "세탁기를 2개 얻을 수 있어",
-      "msg:en": "You can get two washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 2개 얻을 수 있어",
+      "msg:en": "You can get two landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 16,
     "y": 2,
     "tutorial": [{
-      "msg:ko": "세탁기를 2개 얻을 수 있어",
-      "msg:en": "You can get two washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 2개 얻을 수 있어",
+      "msg:en": "You can get two landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 16,
     "y": 3,
     "tutorial": [{
-      "msg:ko": "세탁기를 2개 얻을 수 있어",
-      "msg:en": "You can get two washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 2개 얻을 수 있어",
+      "msg:en": "You can get two landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 16,
     "y": 4,
     "tutorial": [{
-      "msg:ko": "세탁기를 2개 얻을 수 있어",
-      "msg:en": "You can get two washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 2개 얻을 수 있어",
+      "msg:en": "You can get two landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 16,
     "y": 5,
     "tutorial": [{
-      "msg:ko": "세탁기를 2개 얻을 수 있어",
-      "msg:en": "You can get two washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 2개 얻을 수 있어",
+      "msg:en": "You can get two landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 5,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "세탁기를 3개 얻을 수 있어",
-      "msg:en": "You can get three washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 3개 얻을 수 있어",
+      "msg:en": "You can get three landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 6,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "세탁기를 3개 얻을 수 있어",
-      "msg:en": "You can get three washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 3개 얻을 수 있어",
+      "msg:en": "You can get three landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 7,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "세탁기를 3개 얻을 수 있어",
-      "msg:en": "You can get three washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 3개 얻을 수 있어",
+      "msg:en": "You can get three landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 8,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "세탁기를 3개 얻을 수 있어",
-      "msg:en": "You can get three washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 3개 얻을 수 있어",
+      "msg:en": "You can get three landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 9,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "세탁기를 3개 얻을 수 있어",
-      "msg:en": "You can get three washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 3개 얻을 수 있어",
+      "msg:en": "You can get three landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 10,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "세탁기를 3개 얻을 수 있어",
-      "msg:en": "You can get three washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 3개 얻을 수 있어",
+      "msg:en": "You can get three landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 11,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "세탁기를 3개 얻을 수 있어",
-      "msg:en": "You can get three washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 3개 얻을 수 있어",
+      "msg:en": "You can get three landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 12,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "세탁기를 3개 얻을 수 있어",
-      "msg:en": "You can get three washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 3개 얻을 수 있어",
+      "msg:en": "You can get three landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 13,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "세탁기를 3개 얻을 수 있어",
-      "msg:en": "You can get three washing machines at once",
-      "img": ["/img/b9_w3/washer.png","/img/b9_w3/washer.png","/img/b9_w3/washer.png"]
+      "msg:ko": "빨래바구니를 3개 얻을 수 있어",
+      "msg:en": "You can get three landry baskets at once",
+      "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png","/img/b9_w3/basket_laundry.png"]
     }]
   },{
     "x": 5,
@@ -269,13 +269,13 @@
   }],
 
   "tutorial": [{
-    "msg:ko": "세탁기로 가보아요! 쉬운 문제는 세탁기 1개, 보통은 2개, 어려운 문제는 3개를 주어요.",
-    "msg:en": "Let's go to the washing machine! An easy problem gives you one tool, a normal one gives you two and a hard one gives you three.",
-    "img": "/img/b9_w3/washer.png"
+    "msg:ko": "빨래바구니로 가보아요! 쉬운 문제는 빨래바구니 1개, 보통은 2개, 어려운 문제는 3개를 주어요.",
+    "msg:en": "Let's go to the laundry basket! An easy problem gives you one basket, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/b9_w3/basket_laundry.png"
   }],
   "goal": {
-    "msg:ko": "세탁기를 20개 모아서 아빠에게 가요.",
-    "msg:en": "Let's get 20 washing machines and go to father.",
-    "img": ["/img/b9_w3/washer.png","/img/b9_w1/father.png"]
+    "msg:ko": "빨래바구니를 20개 모아서 아빠에게 가요.",
+    "msg:en": "Let's get 20 laundry baskets and go to father.",
+    "img": ["/img/b9_w3/basket_laundry.png","/img/b9_w1/father.png"]
   }
 }

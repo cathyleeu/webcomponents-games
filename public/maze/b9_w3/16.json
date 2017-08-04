@@ -1,0 +1,56 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w%...)##w",
+    "w#.##.#.w",
+    "w.#.).##w",
+    "w#.#.#..w",
+    "w.#).##.w",
+    "w##.###.w",
+    "w.r.#.#w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img":"washer",
+    "useItem": 3
+  },{
+    "x": 5,
+    "y": 1,
+    "img":"bright1",
+    "itemCount": 1
+  },{
+    "x": 4,
+    "y": 3,
+    "img":"bright3",
+    "itemCount": 1
+  },{
+    "x": 3,
+    "y": 5,
+    "img":"bright4",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "밝은색 빨래를 모아 \n 세탁기에 넣어요",
+    "msg:en": "Let's collect the bright clothes \n and put in the washing machine!",
+    "img": ["/img/b9_w1/cos0.png", "/img/b9_w3/bright0.png", "/img/b9_w3/washer.png"]
+  }],
+  "goal": {
+    "msg:ko": "밝은색 빨래를 모아 \n 세탁기에 넣어요",
+    "msg:en": "Let's collect the bright clothes \n and put in the washing machine!",
+    "img": ["/img/b9_w1/cos0.png", "/img/b9_w3/bright0.png", "/img/b9_w3/washer.png"]
+  }
+}
