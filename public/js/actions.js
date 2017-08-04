@@ -13,6 +13,7 @@ Actions = function(kidscoding, loader, mazeInfo, run) {
   this.setItemCount = kidscoding.tileFactory.setItemCount;
   this.addItemImage = kidscoding.tileFactory.addItemImage;
   this.setCoord = kidscoding.tileFactory.setCoord;
+  this.delay = 0;
 };
 
 Actions.prototype._rotateCharacter = function(direct, callback) {
@@ -43,7 +44,7 @@ Actions.prototype._rotateCharacter = function(direct, callback) {
       rotation = 360;
     }
     var tween = createjs.Tween.get(character);
-    tween.to({rotation: rotation}, 300)
+    tween.to({rotation: rotation}, 3 * this.delay)
         .call(function() {
           character.rotation = (character.rotation + 360) % 360;
           callback();
@@ -72,11 +73,11 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
         character.bitmap.gotoAndPlay( (jump ? "jump_" : "walk_") + direct);
       }
       var tween = createjs.Tween.get(character);
-      tween.wait(character.sprite ? 0 : 100)
+      tween.wait(character.sprite ? 0 : _this.delay)
            .to({
              x: _this.tile_size*x_next + _this.tile_size/2,
              y: _this.tile_size*y_next + _this.tile_size/2
-           }, 500)
+           }, 5 * _this.delay)
            .call(function() {
 
              character.rotation = (character.rotation + 360) % 360;
@@ -90,7 +91,7 @@ Actions.prototype._moveCharacter = function(x_next, y_next, callback) {
            .addEventListener("change", function(e) {
              _this.canvas.stage.update();
            });
-      _this._setFocus(x_next, y_next, character.sprite ? 0 : 100, 500);
+      _this._setFocus(x_next, y_next, character.sprite ? 0 : _this.delay, 500);
     });
   });
 };
@@ -114,21 +115,21 @@ Actions.prototype._splitObjects = function(spider, callback) {
   this.canvas.stage.addChild(character);
   var tweens = [
     createjs.Tween.get(character)
-        .wait(character.sprite ? 0 : 100)
+        .wait(character.sprite ? 0 : _this.delay)
         .to({
           x: _this.tile_size*(px - 0.5) + _this.tile_size/2,
           y: _this.tile_size*py + _this.tile_size/2
-        }, 500)
+        }, 5 * _this.delay)
         .call(callback)
         .addEventListener("change", function(e) {
           _this.canvas.stage.update();
         }),
     createjs.Tween.get(spider)
-        .wait(character.sprite ? 0 : 100)
+        .wait(character.sprite ? 0 : _this.delay)
         .to({
           x: _this.tile_size*(px + 0.5) + _this.tile_size/2,
           y: _this.tile_size*py + _this.tile_size/2
-        }, 500)
+        }, 5 * _this.delay)
   ];
   var timeline = new createjs.Timeline(tweens, "split", {
     loop: false,
@@ -147,21 +148,21 @@ Actions.prototype._restoreObject = function(callback) {
       py = character.py;
       tweens = [
         createjs.Tween.get(character)
-            .wait(character.sprite ? 0 : 100)
+            .wait(character.sprite ? 0 : _this.delay)
             .to({
               x: _this.tile_size*px + _this.tile_size/2,
               y: _this.tile_size*py + _this.tile_size/2
-            }, 500)
+            }, 5 * _this.delay)
             .call(callback)
             .addEventListener("change", function(e) {
               _this.canvas.stage.update();
             }),
         createjs.Tween.get(character._splitObject)
-            .wait(character.sprite ? 0 : 100)
+            .wait(character.sprite ? 0 : _this.delay)
             .to({
               x: _this.tile_size*px + _this.tile_size/2,
               y: _this.tile_size*py + _this.tile_size/2
-            }, 500)
+            }, 5 * _this.delay)
       ];
   character._splitObject = null;
   var timeline = new createjs.Timeline(tweens, "split", {
@@ -218,15 +219,15 @@ Actions.prototype._bounceCharacter = function(x_next, y_next, callback) {
   y_next = (character.py + y_next) / 2;
   this._rotateCharacter(direct, function() {
     var tween = createjs.Tween.get(character);
-    tween.wait(200)
+    tween.wait(2 * _this.delay)
          .to({
            x: _this.tile_size*x_next + _this.tile_size/2,
            y: _this.tile_size*y_next + _this.tile_size/2}
-          , 350)
+          , 3.5 * _this.delay)
          .to({
            x: _this.tile_size*character.px + _this.tile_size/2,
            y: _this.tile_size*character.py + _this.tile_size/2},
-          350)
+          3.5 * _this.delay)
          .to({rotation: rotation+720}, 1000)
          .call(function() {
            character.rotation = (character.rotation + 360) % 360;
@@ -2053,6 +2054,7 @@ Actions.prototype.repeat = function(type, block, callback) {
       _this.setTimeoutKey = setTimeout(function() {
         block.removeSelect();
         count--;
+        _this.delay = 50;
         _this.run(child, function() {
           block.addSelect();
           proc();
@@ -2060,6 +2062,7 @@ Actions.prototype.repeat = function(type, block, callback) {
       }, 0);
     } else {
       block.addSelect();
+      _this.delay = 100;
       _this.setTimeoutKey = setTimeout(callback, 0);
     }
   };

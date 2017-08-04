@@ -636,52 +636,9 @@ function addEvents() {
               msg = messages.fail_mandatory.split("%1").join(blockName);
           showModal(msg);
         } else {
-          run(startblock, function() {
-            var foods = mazeInfo.canvas.foods;
-            if(foods.length == 1 && (foods[0].itemCountBitmap || foods[0].itemList)) {
-              var itemCount = tileFactory.getItemCount(foods[0]);
-              if(foods[0].useItem <= itemCount) {
-                createjs.Sound.play("complete");
-                if(maze.success) {
-                  runTutorial(maze.success);
-                } else {
-                  showModal({
-                    msg: messages.success,
-                    goNext: true
-                  });
-                }
-              } else {
-                createjs.Sound.play("fail");
-                showModal(messages.fail_done);
-              }
-            } else {
-              for(var i = 0; i < foods.length; i++) {
-                if(foods[i].visible == true) {
-                  createjs.Sound.play("fail");
-                  showModal(messages.fail_done);
-                  break;
-                }
-              }
-              if(i == foods.length) {
-                if( foods.length == 1 &&
-                    !(foods[0].px == mazeInfo.canvas.character.px &&
-                    foods[0].py == mazeInfo.canvas.character.py)) {
-                  createjs.Sound.play("fail");
-                  showModal(messages.fail_done);
-                } else {
-                  createjs.Sound.play("complete");
-                  if(maze.success) {
-                    runTutorial(maze.success);
-                  } else {
-                    showModal({
-                      msg: messages.success,
-                      goNext: true
-                    });
-                  }
-                }
-              }
-            }
-          });
+          // start run
+          kidscoding.Actions.delay = 100;
+          run(startblock, checkEnd);
         }
       } else {
         showModal(messages.fail_noBlocks);
@@ -995,6 +952,53 @@ function run(block, callback) {
       block.removeSelect();
       run(block.getNextBlock(), callback);
     }, 500);
+  }
+}
+
+function checkEnd() {
+  var foods = mazeInfo.canvas.foods;
+  if(foods.length == 1 && (foods[0].itemCountBitmap || foods[0].itemList)) {
+    var itemCount = tileFactory.getItemCount(foods[0]);
+    if(foods[0].useItem <= itemCount) {
+      createjs.Sound.play("complete");
+      if(maze.success) {
+        runTutorial(maze.success);
+      } else {
+        showModal({
+          msg: messages.success,
+          goNext: true
+        });
+      }
+    } else {
+      createjs.Sound.play("fail");
+      showModal(messages.fail_done);
+    }
+  } else {
+    for(var i = 0; i < foods.length; i++) {
+      if(foods[i].visible == true) {
+        createjs.Sound.play("fail");
+        showModal(messages.fail_done);
+        break;
+      }
+    }
+    if(i == foods.length) {
+      if( foods.length == 1 &&
+          !(foods[0].px == mazeInfo.canvas.character.px &&
+          foods[0].py == mazeInfo.canvas.character.py)) {
+        createjs.Sound.play("fail");
+        showModal(messages.fail_done);
+      } else {
+        createjs.Sound.play("complete");
+        if(maze.success) {
+          runTutorial(maze.success);
+        } else {
+          showModal({
+            msg: messages.success,
+            goNext: true
+          });
+        }
+      }
+    }
   }
 }
 
