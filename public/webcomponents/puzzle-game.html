@@ -1,23 +1,40 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="./status-bar.html">
 
 <dom-module id="puzzle-game">
-  <template></template>
+  <template>
+    <status-bar title="{{title}}" total="{{total}}" matched="{{matched}}" cards="{{cards}}"></status-bar>
+  </template>
   <script>
     class PuzzleGame extends Polymer.Element {
       static get is() { return 'puzzle-game'; }
       connectedCallback() {
         super.connectedCallback();
       }
-      setData( pzUrl, pzNum, pzSize ) {
-        let  pieces=[], piece=[], group={},
-             w = 800, h = 700,
+      static get properties() {
+        return {
+          title: String,
+          pznum: Number,
+          pzsize: Number
+        }
+      }
+      ready() {
+        super.ready();
+        this.set('total', 0)
+        this.set('matched', 0)
+        this.set('cards', Math.pow(this.pznum, 2))
+      }
+      setData( pzUrl ) {
+        let  _this = this,
+             pieces=[], piece=[], group={},
              count = 0, // 퍼즐판 줄 생성
-             eachPiece = pzSize/pzNum,
-             svg = d3.select('body').append('svg')
-              .attr( "width", w ).attr( "height", h ),
+             eachPiece = this.pzsize/this.pznum,
+             svg = d3.select(this.shadowRoot).append('svg')
+              .attr( "width", `${(this.offsetWidth/5)*4}` )
+              .attr( "height", `${this.offsetHeight-60}` )
+              .attr('style', `margin-left: ${this.offsetWidth/5}px;margin-top: 20px`),
              defs = svg.append('defs');
 
-        genPieceId(pzNum)
         function genPieceId(num) {
           let f = 0; pieces=[]; piece=[]; group={};
           for (let i=0; i < num; i++){
@@ -32,6 +49,7 @@
             f = s;
           }
         }
+        genPieceId(this.pznum)
 
         let resultImg = defs.append('pattern')
           .attr("id" , 'result')
@@ -51,14 +69,14 @@
           .style("stroke-width", 1).style("stroke", 'gray');
 
         let jigsawBoard = svg.append("g")
-          .attr("width", pzSize)
-          .attr("height", pzSize)
+          .attr("width", this.pzsize)
+          .attr("height", this.pzsize)
           .attr('id', 'jigsaw')
           .attr('transform', 'translate(400,100)');
 
         let shuffleBoard = svg.append("g")
-          .attr("width", pzSize)
-          .attr("height", pzSize)
+          .attr("width", this.pzsize)
+          .attr("height", this.pzsize)
           .attr('transform', 'translate(0,100)');
 
 
@@ -95,9 +113,9 @@
         }
 
         let imgIdsX = [], imgIdsY = [], imgId;
-        for (let i= 0 ; i < pzNum; i++){
+        for (let i= 0 ; i < this.pznum; i++){
           imgId = i;
-          for(let j= 0 ; j < pzNum; j++){
+          for(let j= 0 ; j < this.pznum; j++){
             imgIdsY.push(imgId);
             imgIdsX.push(j);
           }
@@ -112,7 +130,7 @@
           .append('image')
           .attr("x", d => axisXforImg(d))
           .attr("y", d => axisYforImg(d))
-          .attr("width", pzSize).attr("height", pzSize)
+          .attr("width", this.pzsize).attr("height", this.pzsize)
           .attr("xlink:href", pzUrl);
 
         shuffleRect.data(piece).enter()
@@ -144,7 +162,7 @@
         }
 
         function axisX(d) {
-          if(count > pzNum-1){
+          if(count > _this.pznum-1){
             count = 0;
           }
           pieces.map(i => {
@@ -193,8 +211,11 @@
               .attr("y", parseInt(DnD.puzzleY, 10))
               .call(d3.drag()
                     .on("start", null))
+            _this.set('matched', _this.matched+1)
+
             DnD.droppablePiece = null;
           }
+          _this.set('total', _this.total+1)
           // DnD.droppablePiece = null;
           DnD.draggedPiece = null;
         }

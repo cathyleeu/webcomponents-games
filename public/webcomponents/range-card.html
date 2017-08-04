@@ -30,10 +30,11 @@
       }
       setData(data, manifest){
         let _this = this,
-            svg = d3.select(this.shadowRoot).append("svg")
-              .attr('width', `${(this.offsetWidth/4)*3}`)
-              .attr('height', `${this.offsetHeight-60}` )
-              .attr('style', `margin-left: ${this.offsetWidth/7}px;`),
+            svg = d3.select(this.shadowRoot)
+              .append("svg")
+              // .attr('width', `${120*val.length}px`)
+              .attr('width', this.offsetWidth )
+              .attr('height', `${this.offsetHeight-60}`),
             boardName = ["dropB", "dragB"];
         manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
         data = data.map(id=>manifest[id]);
@@ -72,11 +73,12 @@
           .attr("width", 100).attr("height", 100)
           .attr("xlink:href", (d, i) => `${d}`)
 
+        let center = (this.offsetWidth - (120*val.length))/2
         let rectGroup = svg.selectAll("g")
           .data(boardName).enter()
           .append("g")
           .attr("class", d => `${d}`)
-          .attr("transform", (d, i) => `translate(10, 0)`);
+          .attr("transform", (d, i) => `translate(${center}, 0)`);
 
         let dropItem = svg.select('.dropB')
           .selectAll("rect")

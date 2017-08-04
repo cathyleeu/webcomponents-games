@@ -1,11 +1,14 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="./status-bar.html">
 
 <dom-module id="flip-card">
   <template>
     <style>
-      :host {
+      #cont {
         width: 800px;
-        height: 800px;
+        left: 50%;
+        margin-top: 20px;
+        margin-left: -400px;
         position: absolute;
       }
 
@@ -85,6 +88,7 @@
         background-repeat: no-repeat;
       }
     </style>
+    <status-bar title="{{title}}" total="{{total}}" matched="{{matched}}" cards="{{cards}}"></status-bar>
   </template>
 
   <script>
@@ -93,22 +97,28 @@
       connectedCallback() {
         super.connectedCallback();
       }
-      setData(val){
-        let i, j, temp;
-        this.data = val.concat(val);
-        for(i = 1; i < this.data.length; i++) {
-          j = Math.floor(Math.random() * (i+1));
-          temp = this.data[i];
-          this.data[i] = this.data[j];
-          this.data[j] = temp;
+      static get properties() {
+        return {
+          title: String
         }
-        var board = d3.select(this.shadowRoot);
-        var tags = ["front", "back"];
-            // flipped = 0;
-
-        board.selectAll('div').remove();
+      }
+      ready() {
+        // 미리 설정해 놓는 것....
+        super.ready();
+        this.set('total', 0)
+        this.set('matched', 0)
+      }
+      setData(val){
+        let _this = this,
+            flipData = d3.shuffle(val.concat(val)),
+            board = d3.select(this.shadowRoot)
+              .append('xhtml:div')
+              .attr('id', "cont"),
+            tags = ["front", "back"];
+        _this.set('cards', val.length )
+        
         let card = board.selectAll('div')
-            .data(this.data).enter()
+            .data(flipData).enter()
             .append('xhtml:div')
             .classed('card-cont', true);
 
@@ -131,12 +141,15 @@
                 if(flipped == 2) {
                   const flipped_el = board.selectAll('.flipped');
                   if(flipped_el.data()[0] == flipped_el.data()[1]) {
+                    console.log(_this , "_this");
+                    _this.set('matched', _this.matched+1)
                     flipped_el.remove();
                   } else {
                     flipped_el.classed("flipped", false);
                     flipped_el.selectAll('.front').attr('style', null);
                     flipped_el.selectAll('.back').attr('style', null);
                   }
+                  _this.set('total', _this.total+1)
                 }
               }
             });
@@ -145,12 +158,12 @@
             .data(tags).enter()
             .append('xhtml:figure')
             .attr('class', (d,i) => d)
-        this.data.map( (item,i) => board.selectAll(`.flip-${i}`)
+        flipData.map( (item,i) => board.selectAll(`.flip-${i}`)
                 .select('.back')
                 .html(`<img src=${item} class="card-img" />`)
             );
 
-        this.data.map( (_,i) => board.selectAll(`.flip-${i}`)
+        flipData.map( (_,i) => board.selectAll(`.flip-${i}`)
                 .select('.front')
                 .html('<img src="https://toycode.org/img/kidsthinking_big.png" class="card-front-logo"/>'));
       }
