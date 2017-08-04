@@ -2,6 +2,7 @@
   "root": "public",
   "entrypoint": "webcomponents/index.html",
   "sources": [
+    "page/page.js",
     "components/d3/d3.min.js",
     "components/webcomponentsjs/custom-elements-es5-adapter.js",
     "components/webcomponentsjs/webcomponents-lite.js",

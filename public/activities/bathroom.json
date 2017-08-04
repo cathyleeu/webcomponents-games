@@ -5,12 +5,21 @@
     "success": "참 잘했어요!"
   },
   "data": [
-    "../img/a5_5_w3/bath0.png",
-    "../img/a5_5_w3/bath1.png",
-    "../img/a5_5_w3/bath2.png",
-    "../img/a5_5_w3/bath3.png",
-    "../img/a5_5_w3/bath4.png",
-    "../img/a5_5_w3/bath5.png",
-    "../img/a5_5_w3/bath6.png"
+    "bath0",
+    "bath1",
+    "bath2",
+    "bath3",
+    "bath4",
+    "bath5",
+    "bath6"
+  ],
+  "manifest": [
+    {"id": "bath0", "src": "/img/a5_5_w3/bath0.png"},
+    {"id": "bath1", "src": "/img/a5_5_w3/bath1.png"},
+    {"id": "bath2", "src": "/img/a5_5_w3/bath2.png"},
+    {"id": "bath3", "src": "/img/a5_5_w3/bath3.png"},
+    {"id": "bath4", "src": "/img/a5_5_w3/bath4.png"},
+    {"id": "bath5", "src": "/img/a5_5_w3/bath5.png"},
+    {"id": "bath6", "src": "/img/a5_5_w3/bath6.png"}
   ]
 }

@@ -28,18 +28,20 @@
         this.set('total', 0)
         this.set('matched', 0)
       }
-      setData(val, w, h){
+      setData(data, manifest){
         let _this = this,
             svg = d3.select(this.shadowRoot).append("svg")
               .attr('width', `${(this.offsetWidth/4)*3}`)
               .attr('height', `${this.offsetHeight-60}` )
               .attr('style', `margin-left: ${this.offsetWidth/7}px;`),
             boardName = ["dropB", "dragB"];
-        _this.set('cards', val.length )
+        manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
+        data = data.map(id=>manifest[id]);
+        _this.set('cards', data.length );
         let defs = svg.append('defs')
               			.selectAll('pattern')
 
-        let dropCardB = defs.data(val).enter()
+        let dropCardB = defs.data(data).enter()
                     .append('pattern')
                     .attr("id", (d, i) => `drop_${i}`)
                     .attr("x", 0).attr("y", 0)
@@ -57,7 +59,7 @@
           .attr("xlink:href", d => `${d}`)
           .style('filter', "url(#desaturate)")
 
-        let shuffledCard = d3.shuffle(val.slice())
+        let shuffledCard = d3.shuffle(data.slice())
 
         let dragCardB = defs.data(shuffledCard).enter()
           .append('pattern')
@@ -78,7 +80,7 @@
 
         let dropItem = svg.select('.dropB')
           .selectAll("rect")
-          .data(val).enter()
+          .data(data).enter()
           .append('rect')
           .attr("rx", 5).attr("ry", 5)
           .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)

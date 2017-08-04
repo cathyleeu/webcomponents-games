@@ -454,7 +454,8 @@ public.get('/cache/:manifest', function *(next) {
   var loginStamp = "# login stamp dose not exist";
   if(school.logins && school.logins.length > 0) {
     loginStamp = school.logins.map(function(obj) {
-      return "#" + obj.className + " : " + (obj.updateOn || "noupdate");
+      var updateOn = obj.updateOn ? (obj.updateOn.$date || obj.updateOn) : "noupdate";
+      return "#" + obj.className + " : " + updateOn;
     }).join("\n");
   }
   if(!school) {
@@ -487,6 +488,7 @@ public.get('/cache/:manifest', function *(next) {
       timestamp = school.updateOn || defaultTimeStamp,
       manifests = [],
       pages = [],
+      activities = [],
       page_manifests = [],
       jsons = [],
       imgs = [],
@@ -496,9 +498,14 @@ public.get('/cache/:manifest', function *(next) {
     bookNames.split(",").forEach(function(bookName) {
       books_json[bookName].forEach(function(contentInfo) {
         var maniPath = contentInfo[contentInfo.length - 1],
-            pagePath = contentInfo[contentInfo.length - 1];
-        if(maniPath.indexOf("#!") >= 0) {
-          maniPath = maniPath.slice(maniPath.indexOf("#!") + 2);
+            pagePath = contentInfo[contentInfo.length - 1],
+            isMaze = maniPath.match(/mazeh?#!(.*)/),
+            isActivity = maniPath.match(/activity#!(.*)/);
+        if(isMaze) {
+          maniPath = isMaze[1];
+        }
+        if(isActivity) {
+          activities.push(isActivity[1]);
         }
         maniPath = maniPath.slice(0, maniPath.lastIndexOf("/"));
         if(maniPath && manifests.indexOf(maniPath) < 0) {
@@ -595,6 +602,21 @@ public.get('/cache/:manifest', function *(next) {
       }
     });
   });
+
+  // activity의 manifest 로드
+  activities.forEach(function(activity) {
+    var file_path = path.join("/activities", activity + ".json");
+    if(page_manifests.indexOf(file_path) < 0) {
+      page_manifests.push(file_path);
+    }
+    var activity = JSON.parse(fs.readFileSync(path.join("public", file_path)));
+    activity.manifest.forEach(function(obj) {
+      console.log(obj.src)
+      if(page_manifests.indexOf(obj.src) < 0) {
+        page_manifests.push(obj.src);
+      }
+    });
+  })
 
   // imgs에 속한 이미지중 cache에 속한 이미지는 제거
   imgs = imgs.filter(function(item) {
@@ -907,10 +929,11 @@ public.get('/card_flip', function *(next) {
   yield this.render('card_flip');
 });
 
-public.get('/maze', function *(next) {
-  yield this.render('maze', {
-    mazeType: "vertical"
-  });
+var activityIndex = fs.readFileSync("./public/webcomponents-es5/index.html");
+
+public.get('/activity', function *(next) {
+  this.type = "text/html";
+  this.body = activityIndex;
 });
 
 public.get('/mazeh', function *(next) {
