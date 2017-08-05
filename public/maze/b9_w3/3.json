@@ -2,6 +2,7 @@
   "tile_size": 128,
   "score":1,
   "workspace": ["start", "repeat","move_up","repeat"],
+  "mandatory": ["repeat"],
   "toolbox": [
     "move_up",
     "move_down",

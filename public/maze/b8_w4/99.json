@@ -18,21 +18,21 @@
   "extra":[{
     "x":2,
     "y":3,
-    "img":"mother"
+    "img":"f_granma"
   }],
   "tutorial": [{
-    "msg:ko": "엄마에게 가자",
-    "msg:en": "Go to mom",
-    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w1/mother.png"]
+    "msg:ko": "할머니에게 가자",
+    "msg:en": "Go to grandmother",
+    "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w1/f_granma.png"]
   }],
   "success": [{
-    "msg:ko": "엄마! 김장재료를 가져왔어요~",
-    "msg:en": "Mom, I brought kimchi ingredients!",
+    "msg:ko": "할머니! 김장재료를 가져왔어요~",
+    "msg:en": "Granma, I brought kimchi ingredients!",
     "img": ["/img/b8_w2/cos_fall0.png","/img/b8_w4/kimchi1.png","/img/b8_w4/kimchi4.png"]
   },{
     "msg:ko": "고마워, 코스야. 김장김치를 맛보렴!",
     "msg:en": "Thanks, Cos. Enjoy Kimchi!",
-    "img": ["/img/b8_w1/mother.png","/img/b8_w4/kimchi.png"]
+    "img": ["/img/b8_w1/f_granma.png","/img/b8_w4/kimchi.png"]
   },{
     "msg:ko": "8권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
     "msg:en": "Book 8 is over! See you Book 9!"

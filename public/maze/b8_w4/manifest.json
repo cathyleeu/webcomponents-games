@@ -19,6 +19,7 @@
 
   {"id": "father", "src": "/img/b8_w1/father.png"},
   {"id": "mother", "src": "/img/b8_w1/mother.png"},
+  {"id": "f_granma", "src": "/img/b8_w1/f_granma.png"},
 
   {"id": "broom", "src": "/img/b8_w4/broom.png","obstacle": true},
   {"id": "furnace", "src": "/img/b8_w4/furnace.png","obstacle": true},
