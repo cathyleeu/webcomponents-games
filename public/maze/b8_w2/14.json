@@ -3,6 +3,7 @@
   "tile_size": 128,
   "score":3,
   "workspace": ["start","repeat","repeat","get_item","move_right","repeat","use_item"],
+  "mandatory": ["repeat"],
   "toolbox": [
     "move_up",
     "move_down",

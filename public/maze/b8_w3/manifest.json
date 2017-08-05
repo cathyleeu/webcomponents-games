@@ -19,12 +19,11 @@
 
   {"id": "father", "src": "/img/b8_w1/father.png"},
   {"id": "mother", "src": "/img/b8_w1/mother.png"},
-  {"id": "d_grandparents", "src": "/img/b8_w3/d_grandparents.png"},
+  {"id": "f_granfa", "src": "/img/b8_w1/f_granfa.png"},
   {"id": "basket_fruit", "src": "/img/b8_w3/basket_fruit.png"},
   {"id": "basket_empty", "src": "/img/b8_w3/basket_empty.png"},
 
   {"id": "ftree1", "src": "/img/b8_w3/fruittree1.png","obstacle": true},
-  {"id": "ftree2", "src": "/img/b8_w3/fruittree2.png","obstacle": true},
   {"id": "ftree3", "src": "/img/b8_w3/fruittree3.png","obstacle": true},
   {"id": "ftree4", "src": "/img/b8_w3/fruittree4.png","obstacle": true},
   {"id": "ladder", "src": "/img/b8_w3/ladder.png","obstacle": true},

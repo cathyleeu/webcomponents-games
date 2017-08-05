@@ -20,12 +20,8 @@
   {"id": "father", "src": "/img/b9_w1/father.png"},
   {"id": "mother", "src": "/img/b9_w1/mother.png"},
 
-  {"tile": "w", "id": "desk", "src": "/img/b9_w1/desk.png", "wall": true},
-  {"id": "bookshelf", "src": "/img/b9_w1/bookshelf.png","obstacle": true},
-  {"id": "drawer", "src": "/img/b9_w1/drawer.png","obstacle": true},
+  {"tile": "w", "id": "desk", "src": "/img/b9_w1/desk.png", "wall": true,"obstacle": true},
   {"id": "plant", "src": "/img/b9_w1/plant.png","obstacle": true},
-  {"id": "cooker_desk", "src": "/img/b9_w4/cooker_desk.png","obstacle": true},
-  {"id": "microwave_desk", "src": "/img/b9_w4/microwave_desk.png","obstacle": true},
 
   {"id": "refrigerator", "src": "/img/b9_w4/refrigerator.png"},
   {"id": "microwave", "src": "/img/b9_w4/microwave.png"},

@@ -6,7 +6,7 @@
   "map": [
     "#####EEEEEE#######.",
     "..r..%%%%%%...I%N.#",
-    ".###.#########.%N.#",
+    ".#############.%N.#",
     "##...#########.%N.#",
     "..#............%N.#",
     "##...%%%%%%%%%.%N.#",
@@ -260,7 +260,7 @@
     "y": 5,
     "link": "b8_w3/20"
   },{
-    "img":"d_grandparents",
+    "img":"f_granfa",
     "x": 2,
     "y": 4,
     "obstacle": false,
@@ -274,8 +274,8 @@
     "img": "/img/b8_w3/basket_fruit.png"
   }],
   "goal": {
-    "msg:ko": "과일바구니를 20개 모아서 할머니&할아버지에게 가요.",
-    "msg:en": "Let's get 20 fruit baskets and go to grandparents.",
-    "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w3/d_grandparents.png"]
+    "msg:ko": "과일바구니를 20개 모아서 할아버지에게 가요.",
+    "msg:en": "Let's get 20 fruit baskets and go to grandpa.",
+    "img": ["/img/b8_w3/basket_fruit.png","/img/b8_w1/f_granfa.png"]
   }
 }
