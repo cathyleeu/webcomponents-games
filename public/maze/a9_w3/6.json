@@ -1,0 +1,27 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#.#.#.",
+    "#.#..##",
+    "##.##.#",
+    "...%..l",
+    "###.#.#",
+    "#.###.#",
+    ".#.#.#."
+  ],
+  "tutorial": [{
+    "msg:ko": "엄마 곰이 새끼 곰이 있는 곳으로 가야해요.  ",
+    "msg:en": "The mother bear has to go to the baby bear.",
+    "img": ["/img/a9_w3/icebear0.png","/img/a9_w3/kidsbear.png"]
+  },{
+    "msg:ko": "이동 블록 3개를 이용하여 ←왼쪽으로 움직여요!",
+    "msg:en": "Let's move left using three [Move Left] block",
+    "img": ["/img/blocks/left.png","/img/blocks/left.png","/img/blocks/left.png"]
+  }]
+}
