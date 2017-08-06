@@ -1,0 +1,27 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down"
+  ],
+  "map": [
+    ".#..##.",
+    "#.#..##",
+    "##..#.#",
+    ".#.%.##",
+    "###u#.#",
+    "#.#.#.#",
+    ".#...#."
+  ],
+  "tutorial": [{
+    "msg:ko": "엄마 펭귄이 가족이 있는 곳으로 가야해요.  ",
+    "msg:en": "The mother penguin has to go to the her family.",
+    "img": ["/img/a9_w4/penguin0.png","/img/a9_w4/pengfamily.png"]
+  },{
+    "msg:ko": "이동 블록을 이용하여 ↑위로 움직여요!",
+    "msg:en": "Let's move up using [Move Up] block",
+    "img": "/img/blocks/up.png"
+  }]
+}
