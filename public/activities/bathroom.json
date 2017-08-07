@@ -21,10 +21,14 @@
   "msg": {
     "ko": {
       "title": "그림에 맞춰, 목욕도구를 정리해보세요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
       "success": "참 잘했어요!"
     },
     "en": {
       "title": "Along with the picture, arrange the bath tools.",
+      "score": "score",
+      "lefted": "matched",
       "success": "Good job!"
     }
   }

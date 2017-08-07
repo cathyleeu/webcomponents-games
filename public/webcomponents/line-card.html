@@ -1,4 +1,5 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
 
 
@@ -16,26 +17,45 @@
         marker-end: url(#marker);
       }
     </style>
-    <status-bar title="{{title}}" total="{{total}}" matched="{{matched}}" cards="{{cards}}"></status-bar>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      total="{{total}}"
+      matched="{{matched}}"
+      cards="{{cards}}"></status-bar>
   </template>
   <script>
-    class LineCard extends Polymer.Element {
+    class LineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
       static get is() { return 'line-card'; }
       connectedCallback() {
         super.connectedCallback();
       }
       static get properties() {
         return {
-          title: String
+          language: {
+            value: "ko"
+          },
+          resources: {
+            value() {
+              return {
+                "ko": {
+                  "title": "짝 맞추기",
+                  "success": "참 잘했어요!"
+                },
+                "en": {
+                  "title": "Match the Pairs 2",
+                  "success": "Good job!"
+                }
+              }
+            }
+          }
         }
       }
       ready() {
         super.ready();
         this.set('total', 0)
         this.set('matched', 0)
-      }
-      _title(title) {
-        return `${title}`
       }
       setData(data, manifest){
         let _this = this,

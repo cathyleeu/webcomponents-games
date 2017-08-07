@@ -1,7 +1,6 @@
 {
   "element": "line-card",
   "attributes": {
-    "title": "전통 돌잡이와 같은 의미를 지닌 현대 돌잡이 용품을 연결해보아요."
   },
   "data": [
     "brush",
@@ -22,5 +21,19 @@
     {"no": 1 , "set": 1, "id": "money", "src": "/img/b55/money.png"},
     {"no": 2 , "set": 1, "id": "ball", "src": "/img/b55/ball.png"},
     {"no": 3 , "set": 1, "id": "mic", "src": "/img/b55/mic.png"}
-  ]
+  ],
+  "msg": {
+    "ko": {
+      "title": "전통 돌잡이와 같은 의미를 지닌 현대 돌잡이 용품을 연결해보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!"
+    },
+    "en": {
+      "title": "Matching the cards with Old and New",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!"
+    }
+  }
 }

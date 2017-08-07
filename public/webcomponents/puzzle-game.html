@@ -1,21 +1,44 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
 
 <dom-module id="puzzle-game">
   <template>
-    <status-bar title="{{title}}" total="{{total}}" matched="{{matched}}" cards="{{cards}}"></status-bar>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      total="{{total}}"
+      matched="{{matched}}"
+      cards="{{cards}}"></status-bar>
   </template>
   <script>
-    class PuzzleGame extends Polymer.Element {
+    class PuzzleGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element)  {
       static get is() { return 'puzzle-game'; }
       connectedCallback() {
         super.connectedCallback();
       }
       static get properties() {
         return {
-          title: String,
           pznum: Number,
-          pzsize: Number
+          pzsize: Number,
+          language: {
+            value: "ko"
+          },
+          resources: {
+            value() {
+              return {
+                "ko": {
+                  "title": "퍼즐 맞추기",
+                  "success": "참 잘했어요!"
+                },
+                "en": {
+                  "title": "Puzzle Game",
+                  "success": "Good job!"
+                }
+              }
+            }
+          }
         }
       }
       ready() {
