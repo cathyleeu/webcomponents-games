@@ -211,8 +211,8 @@ function getKinder(kinderId) {
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
       book = [5, "5-5"];
-  // PSA는 여름특별호 사용 안함
-  if(school.slice(0, 1) == "D") {
+  // PSA는 여름특별호 사용 안함(목동 러닝트리 제외)
+  if(school.slice(0, 1) == "D" && school != "D00120-K1") {
     book = [4, 5];
   }
   // 청아유치원(시범원)
