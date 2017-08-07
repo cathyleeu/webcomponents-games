@@ -689,6 +689,7 @@ function addEvents() {
       return;
     }
     e.preventDefault();
+    kidscoding.Actions.delay = 100;
     kidscoding.Actions.move(direct, {}, function(obj) {
       if(maze.type == "game" && obj && obj.role == "food") {
         obj.visible = false;
