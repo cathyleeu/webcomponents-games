@@ -42,6 +42,12 @@
             link.onload = function() {
               var comp = document.createElement(activity.element);
               comp.setAttribute('id', 'element');
+              if(qs.lang) {
+                comp.setAttribute('language', qs.lang);
+              }
+              if(activity.msg) {
+                comp.set('resources', activity.msg);
+              }
               for(var key in activity.attributes) {
                 comp.setAttribute(key, activity.attributes[key]);
               }

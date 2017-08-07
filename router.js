@@ -211,7 +211,7 @@ function getKinder(kinderId) {
 
 function getBook(classObj) {
   var school = classObj.code.slice(0,9),
-      book = [4, 5];
+      book = [5, "5-5"];
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
     book = ["5-5", 6];

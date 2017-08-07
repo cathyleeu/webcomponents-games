@@ -1,4 +1,5 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
 
 <dom-module id="range-card">
@@ -8,18 +9,33 @@
         overflow: hidden;
       }
     </style>
-    <status-bar title="{{title}}" total="{{total}}" matched="{{matched}}" cards="{{cards}}"></status-bar>
+    <status-bar title="{{localize('title')}}" total="{{total}}" matched="{{matched}}" cards="{{cards}}"></status-bar>
   </template>
   <script>
-    class RangeCard extends Polymer.Element {
+    class RangeCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
       static get is() { return 'range-card'; }
       connectedCallback() {
         super.connectedCallback();
       }
       static get properties() {
         return {
-          title: String,
-          success: String
+          language: {
+            value: "ko"
+          },
+          resources: {
+            value() {
+              return {
+                "ko": {
+                  "title": "그림 맞추기",
+                  "success": "참 잘했어요!"
+                },
+                "en": {
+                  "title": "Arrange the Pictures",
+                  "success": "Good job!"
+                }
+              }
+            }
+          }
         }
       }
       ready() {
@@ -158,7 +174,7 @@
               .attr("x", DnD.droppableX )
               .attr("y", DnD.droppableY )
             if(_this.matched === _this.cards) {
-               alert(_this.success)
+              alert(_this.localize('success'))
             }
           }
           _this.set('total', _this.total+1)
