@@ -1,0 +1,28 @@
+[
+  {"book": "a8", "title": "3주차 : 수돗물의 여행"},
+
+  {"id": "bg1", "src": "/img/a8/tile1.png"},
+  {"id": "bg2", "src": "/img/a8/tile2.png"},
+
+
+  {"id": "character", "src": "/img/a8/waterboy.png", "sprite": true, "size": 256},
+    {"id": "message", "src": "/img/a8/waterboy0.png", "size": 256},
+  {"id": "food", "src": "/img/invisiblex256.png"},
+  {"id": "obs", "src": "/img/invisiblex256.png","obstacle":true},
+  {"tile": "c", "src": "/img/a8/col.png","obstacle":true},
+  {"tile": "y", "src": "/img/a8/row.png","obstacle":true},
+  {"tile": "f", "src": "/img/a8/corner1.png","obstacle":true},
+  {"tile": "g", "src": "/img/a8/corner2.png","obstacle":true},
+  {"tile": "h", "src": "/img/a8/corner3.png","obstacle":true},
+  {"tile": "j", "src": "/img/a8/corner4.png","obstacle":true},
+  {"tile": "q", "src": "/img/a8/dam.png","obstacle":true},
+  {"tile": "w", "src": "/img/a8/filter.png","obstacle":true},
+  {"tile": "e", "src": "/img/a8/house.png","obstacle":true},
+  {"tile": "t", "src": "/img/a8/sewage.png","obstacle":true},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"}
+
+]
