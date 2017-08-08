@@ -21,6 +21,9 @@
     "d3": "^4.9.1",
     "webcomponentsjs": "^1.0.1",
     "polymer": "^2.0.1",
-    "app-localize-behavior": "PolymerElements/app-localize-behavior#^2.0.0"
+    "app-localize-behavior": "PolymerElements/app-localize-behavior#^2.0.0",
+    "paper-dialog": "^2.0.0",
+    "paper-button": "^2.0.0",
+    "neon-animation": "^2.0.1"
   }
 }

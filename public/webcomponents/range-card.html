@@ -1,5 +1,7 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="../components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../components/paper-button/paper-button.html">
 <link rel="import" href="./status-bar.html">
 
 <dom-module id="range-card">
@@ -7,6 +9,27 @@
     <style>
       :host {
         overflow: hidden;
+      }
+      paper-dialog.colored {
+        border: 3px solid;
+        border-radius: 3px;
+        width: 400px;
+        height: 200px;
+        border-color: #2ECC98;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      paper-dialog > h1{
+        color: #2ECC98;
+        text-align: center;
+      }
+      paper-dialog > p {
+        margin: 5px;
+        font-size: 15px;
+        font-weight: 200;
+        text-align: center;
       }
     </style>
     <status-bar
@@ -16,6 +39,12 @@
       total="{{total}}"
       matched="{{matched}}"
       cards="{{cards}}"></status-bar>
+    <paper-dialog id="successModal" class="colored">
+      <h1>미션 성공!</h1>
+      <p>{{localize('success')}}</p>
+      <p>다음 단계로 넘어가 볼까요?</p>
+    </paper-dialog>
+    <!-- <paper-button raised on-click="modalOpen" >모달 디자인</paper-button> -->
   </template>
   <script>
     class RangeCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -44,6 +73,9 @@
           }
         }
       }
+      // modalOpen(){
+      //   this.$.successModal.open()
+      // }
       ready() {
         // 미리 설정해 놓는 것....
         super.ready();
@@ -175,15 +207,15 @@
               .attr("y", startY );
           } else {
             console.log("result true", DnD.droppableX, DnD.droppableY, this)
+            _this.set('total', _this.total+1)
             _this.set('matched', _this.matched+1)
             d3.select(this)
               .attr("x", DnD.droppableX )
               .attr("y", DnD.droppableY )
             if(_this.matched === _this.cards) {
-              alert(_this.localize('success'))
+              _this.$.successModal.open()
             }
           }
-          _this.set('total', _this.total+1)
           DnD.dragged = null;
           DnD.droppable = null;
         }
