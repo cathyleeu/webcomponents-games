@@ -6,6 +6,11 @@
     "components/d3/d3.min.js",
     "components/webcomponentsjs/custom-elements-es5-adapter.js",
     "components/webcomponentsjs/webcomponents-lite.js",
+    "components/shadycss/apply-shim.html",
+    "components/shadycss/apply-shim.min.js",
+    "components/shadycss/custom-style-interface.html",
+    "components/shadycss/custom-style-interface.min.js",
+    "components/intl-messageformat/dist/intl-messageformat.min.js",
     "js/polyfill.min.js"
   ],
   "extraDependencies": [

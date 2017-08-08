@@ -1,5 +1,6 @@
 node_modules/
 public/components
+public/components-es5
 public/css/*.css
 public/cache
 public/webcomponents-es5

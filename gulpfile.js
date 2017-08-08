@@ -28,20 +28,26 @@ function task_webcomponents(cb) {
     })))
     .pipe(dependenciesStreamSplitter.rejoin())
     .pipe($.rename(function (path) {
-      if(path.dirname.indexOf("polymer") >= 0) {
-        path.dirname = path.dirname.replace("polymer", "polymer-es5");
-      }
       if(path.dirname == "public/webcomponents") {
         path.dirname = path.dirname + "-es5";
+      } else {
+        path.dirname = path.dirname.replace("public/components/", "public/components-es5/");
       }
     }))
     .pipe($.if(/webcomponents-es5\/[^.]*.html/, $.change(function(contents) {
-      return contents.replace("/polymer/", "/polymer-es5/").replace("/webcomponents/", "/webcomponents-es5/");
+      return contents.replace(/(=["']\.*\/)(components)(\/[^"']*)/g, "$1$2-es5$3").replace("/webcomponents/", "/webcomponents-es5/");
     })))
     .pipe(project.addBabelHelpersInEntrypoint(project.config.entrypoint.replace("/webcomponents/", "/webcomponents-es5/")))
-    .pipe(project.addCustomElementsEs5Adapter())
-    // .pipe(project.bundler())
+    .pipe(project.addCustomElementsEs5Adapter());
+
+  let sourcesStream = project.sources()
+    .pipe($.rename(function (path) {
+      path.dirname = path.dirname.replace("public/components/", "public/components-es5/");
+    }));
+
+  mergeStream(sourcesStream, dependenciesStream)
     .pipe(gulp.dest('./'))
+    // .pipe(project.bundler())
     .on('end', cb);
 }
 

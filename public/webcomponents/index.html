@@ -7,6 +7,7 @@
 <script type="text/javascript" src="/js/polyfill.min.js"></script>
 <script type="text/javascript" src="/components/webcomponentsjs/webcomponents-lite.js"></script>
 <link rel="import" href="/components/polymer/polymer-element.html">
+<link rel="import" href="/components/app-localize-behavior/app-localize-behavior.html">
 </head>
 
 <style>
@@ -24,42 +25,41 @@
 
 <body>
   <script>
-    window.addEventListener('WebComponentsReady', function(e) {
-      page('*', function(ctx, next) {
-        var qs = Object.assign(...ctx.querystring.split("&").map(o=>o.split("=")).map(o=>({[o[0]]:o[1]})));
-        var source = ctx.pathname;
-        if(!source) {
-          alert("잘못된 접근입니다.");
-          return;
-        }
-        d3.request("/activities/" + source + ".json")
-          .mimeType("application/json")
-          .response(function(xhr) { return JSON.parse(xhr.responseText); })
-          .get(function(activity) {
-            var link = document.createElement('link');
-            link.setAttribute('rel', 'import');
-            link.setAttribute('href', '/webcomponents/' + activity.element + '.html');
-            link.onload = function() {
-              var comp = document.createElement(activity.element);
-              comp.setAttribute('id', 'element');
-              if(qs.lang) {
-                comp.setAttribute('language', qs.lang);
-              }
-              if(activity.msg) {
-                comp.set('resources', activity.msg);
-              }
-              for(var key in activity.attributes) {
-                comp.setAttribute(key, activity.attributes[key]);
-              }
-              document.body.appendChild(comp);
-              comp.setData(activity.data, activity.manifest);
-            };
-            document.head.appendChild(link);
+    // TODO: WebComponentsReady 이벤트와의 관계 조사후 적용 필요
+    page('*', function(ctx, next) {
+      var qs = Object.assign(...ctx.querystring.split("&").map(o=>o.split("=")).map(o=>({[o[0]]:o[1]})));
+      var source = ctx.pathname;
+      if(!source) {
+        alert("잘못된 접근입니다.");
+        return;
+      }
+      d3.request("/activities/" + source + ".json")
+        .mimeType("application/json")
+        .response(function(xhr) { return JSON.parse(xhr.responseText); })
+        .get(function(activity) {
+          var link = document.createElement('link');
+          link.setAttribute('rel', 'import');
+          link.setAttribute('href', '/webcomponents/' + activity.element + '.html');
+          customElements.whenDefined(activity.element).then(() => {
+            var comp = document.createElement(activity.element);
+            comp.setAttribute('id', 'element');
+            if(qs.lang) {
+              comp.setAttribute('language', qs.lang);
+            }
+            for(var key in activity.attributes) {
+              comp.setAttribute(key, activity.attributes[key]);
+            }
+            if(activity.msg) {
+              comp.set('resources', activity.msg);
+            }
+            document.body.appendChild(comp);
+            comp.setData(activity.data, activity.manifest);
           });
-      });
-      page({
-        hashbang: true
-      });
+          document.head.appendChild(link);
+        });
+    });
+    page({
+      hashbang: true
     });
   </script>
   <!-- FIXME: puzzle.setVal(pzUrl, 3, 250) 부분 수정하기 -->
