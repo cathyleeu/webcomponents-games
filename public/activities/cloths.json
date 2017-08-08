@@ -1,9 +1,5 @@
 {
   "element": "range-card",
-  "attributes": {
-    "title": "그림에 맞춰, 옷을 정리해보세요.",
-    "success": "참 잘했어요!"
-  },
   "data": [
     "cloth01",
     "cloth02",
@@ -23,5 +19,19 @@
     {"id": "cloth06", "src": "/img/a5_5_w3/cloth06.png"},
     {"id": "cloth07", "src": "/img/a5_5_w3/cloth07.png"},
     {"id": "cloth08", "src": "/img/a5_5_w3/cloth08.png"}
-  ]
+  ],
+  "msg": {
+    "ko": {
+      "title": "그림에 맞춰, 옷을 정리해보세요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!"
+    },
+    "en": {
+      "title": "Along with the picture, arrange the bath tools.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!"
+    }
+  }
 }

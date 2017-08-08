@@ -9,7 +9,13 @@
         overflow: hidden;
       }
     </style>
-    <status-bar title="{{localize('title')}}" total="{{total}}" matched="{{matched}}" cards="{{cards}}"></status-bar>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      total="{{total}}"
+      matched="{{matched}}"
+      cards="{{cards}}"></status-bar>
   </template>
   <script>
     class RangeCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
