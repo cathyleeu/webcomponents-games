@@ -28,11 +28,13 @@
   "tutorial": [{
 
     "msg:ko": "토드는 어떤 꽃 위에 있을까요?",
+    "msg:jp": "トッドはどの花の上にいますか？",
     "msg:en": "Which flower is Tod sitting on?",
     "img": ["/img/c5/flowers/flower12.png", "/img/c5/flowers/flower23.png", "/img/c5/flowers/flower34.png", "/img/c5/flowers/flower45.png", "/img/c5/TutoToad4_256.png"]
   }],
   "goal": {
     "msg:ko": "토드는 어떤 꽃 위에 있을까요?",
+    "msg:jp": "トッドはどの花の上にいますか？",
     "msg:en": "Which flower is Tod sitting on?",
     "img": ["/img/c5/flowers/flower12.png", "/img/c5/flowers/flower23.png", "/img/c5/flowers/flower34.png", "/img/c5/flowers/flower45.png", "/img/c5/TutoToad4_256.png"]
   }

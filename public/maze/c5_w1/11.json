@@ -41,16 +41,19 @@
 
 "tutorial": [{
     "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어. 빈칸에 들어갈 별 모양을 찾아가보자.",
+    "msg:jp": "トッドはパターンを探す遊びがしたいよ。空欄に入る星のパターンを探しに行こう。",
     "msg:en": "Tod wants to complete the pattern.",
     "img": ["/img/c5/stars/star4.png", "/img/c5/stars/star0.png", "/img/c5/stars/star1.png", "/img/c5/stars/star2.png", "/img/c5/stars/star3.png"]
   }],
   "goal": {
     "msg:ko": "빈칸에 들어갈 별 모양을 찾아가보자.",
+    "msg:jp": "空欄に入る星のパターンを探しに行こう。",
     "msg:en": "Find the right shape of star in the blank.",
     "img": ["/img/c5/stars/star4.png", "/img/c5/stars/star0.png", "/img/c5/stars/star1.png", "/img/c5/stars/star2.png", "/img/c5/stars/star3.png"]
   },
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
+    "msg:jp": "成功！よくできました！",
     "msg:en": "Success! Good Job!",
     "img" : "/img/c5/stars/star5.png",
     "link": "c5_w1/12"

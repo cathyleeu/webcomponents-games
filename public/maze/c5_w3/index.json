@@ -17,6 +17,7 @@
     "y": 1,
     "tutorial": [{
       "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+    "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
       "msg:en": "The basic problems are over. Now you can solve the problem freely."
     }]
   },{
@@ -24,6 +25,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -32,6 +34,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -40,6 +43,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -48,6 +52,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -56,6 +61,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -64,6 +70,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -72,6 +79,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -80,6 +88,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -88,6 +97,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -96,6 +106,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -104,6 +115,7 @@
     "y": 1,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -112,6 +124,7 @@
     "y": 2,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -120,6 +133,7 @@
     "y": 3,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -128,6 +142,7 @@
     "y": 4,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -136,6 +151,7 @@
     "y": 5,
     "tutorial": [{
       "msg:ko": "선물을 2개 얻을 수 있어.",
+    "msg:jp": "プレゼントを2個ゲットできるよ。",
       "msg:en": "You can get two gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -144,6 +160,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -152,6 +169,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -160,6 +178,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -168,6 +187,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -176,6 +196,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -184,6 +205,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -192,6 +214,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -200,6 +223,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -208,6 +232,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -216,6 +241,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "선물을 3개 얻을 수 있어.",
+    "msg:jp": "プレゼントを3個ゲットできるよ。",
       "msg:en": "You can get three gifts at once.",
       "img": ["/img/c5/gift0.png","/img/c5/gift0.png","/img/c5/gift0.png"]
     }]
@@ -309,11 +335,13 @@
   }],
   "tutorial": [{
     "msg:ko": "규칙을 찾아보아요! 보통 문제는 선물을 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:jp": "パターンを探してみよう！普通の問題は、プレゼントを2個、難しい問題は、3輪をゲットできます。",
     "msg:en": "Let's find patterns! An normal problem gives you two lotus flowers and a hard one gives you three.",
     "img" : ["/img/c5/clovers/clover1.png","/img/c5/clovers/clover2.png","/img/c5/clovers/clover3.png","/img/c5/clovers/clover4.png"]
   }],
   "goal": {
     "msg:ko": "선물을 36개 모아 토드에게 가요.",
+    "msg:jp": "プレゼントを36個集めて、トッドに会いに行きます。",
     "msg:en": "Let's go to Tod with 36 gifts.",
     "img":  ["/img/c5/gift0.png","/img/c5/TutoToad4_256.png"]
   }

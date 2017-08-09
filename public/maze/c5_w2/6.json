@@ -28,11 +28,13 @@
   }],
   "tutorial": [{
     "msg:ko": "토드는 어느 숫자 위에 있을까요?",
+    "msg:jp": "トッドはどの数字の上にいますか？",
     "msg:en": "Which number is Tod sitting on?",
     "img": ["/img/c5/lotus/nlotus4.png", "/img/c5/lotus/nlotus9.png", "/img/c5/lotus/nlotus5.png", "/img/c5/lotus/nlotus9.png", "/img/c5/lotus/nlotus6.png", "/img/c5/TutoToad4_256.png"]
   }],
   "goal": {
     "msg:ko": "토드는 어느 숫자 위에 있을까요?",
+    "msg:jp": "トッドはどの数字の上にいますか？",
     "msg:en": "Which number is Tod sitting on?",
     "img": ["/img/c5/lotus/nlotus4.png", "/img/c5/lotus/nlotus9.png", "/img/c5/lotus/nlotus5.png", "/img/c5/lotus/nlotus9.png", "/img/c5/lotus/nlotus6.png", "/img/c5/TutoToad4_256.png"]
   }

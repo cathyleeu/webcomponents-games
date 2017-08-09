@@ -23,12 +23,14 @@
   }],
   "success": [{
     "msg:ko": "모두 모두 참 잘했어요. 다음 주에 또 만나요!",
+    "msg:jp": "皆、よくできました！また来週会いましょう！",
     "msg:en": "You did a great job! See you again!",
     "img": "/img/c5/lana.png",
     "link" : "c5_w3/1"
   }],
    "tutorial": [{
       "msg:ko": "모두 모두 참 잘했어요. 다음 주에 또 만나요!",
+    "msg:jp": "皆、よくできました！また来週会いましょう！",
       "msg:en": "You did a great job! See you again!",
       "img": "/img/c5/lana.png"
   }]
