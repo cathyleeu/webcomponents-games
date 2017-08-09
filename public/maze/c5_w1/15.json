@@ -40,16 +40,19 @@
   }],
   "tutorial": [{
       "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어. 빈칸에 들어갈 꽃 모양을 찾아가보자.",
+      "msg:jp": "トッドはパターンを探す遊びがしたいよ。空欄に入る花のパターンを探しに行こう。",
       "msg:en": "Tod wants to complete the pattern.",
     "img": ["/img/c5/flowers/flower2.png", "/img/c5/flowers/flower0.png", "/img/c5/flowers/flower4.png", "/img/c5/flowers/flower5.png", "/img/c5/flowers/flower1.png"]
   }],
   "goal": {
     "msg:ko": "빈칸에 들어갈 꽃 모양을 찾아가보자.",
+    "msg:jp": "空欄に入る花のパターンを探しに行こう。",
     "msg:en": "Find the right shape of flower in the blank.",
     "img": ["/img/c5/flowers/flower2.png", "/img/c5/flowers/flower0.png", "/img/c5/flowers/flower4.png", "/img/c5/flowers/flower5.png", "/img/c5/flowers/flower1.png"]
   },
   "success": [{
     "msg:ko": "열다섯 문제나 풀다니, 정말 대단해요!",
+    "msg:jp": "十五の問題や解くなんて、本当にすごいです!",
     "msg:en": "Fifteen problems you've solved, you are so great!",
     "img" : "/img/c5/flowers/flower3.png",
     "link": "c5_w1/16"

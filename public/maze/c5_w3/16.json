@@ -62,11 +62,13 @@
   }],
   "tutorial": [{
     "msg:ko": "라나는 토드가 원하는 것을 찾아 선물로 주고 싶어. 토드는 어떤 꽃을 원할까?",
+    "msg:jp": "ラナはトッドのほしいものを探して、プレゼントしたいよ。トッドがほしいのは、どんな花かな。",
     "msg:en": "Lana wants to give Tod a gift he wants! What is the flower Tod wants?",
     "img": "/img/c5/flowers/flower0.png"
   }],
   "goal": {
     "msg:ko": "빈 자리에 선물을 놓아보아요. (꽃은 장애물이 아니에요.)",
+    "msg:jp": "空欄にプレゼントを置いておこう。(花は障害物ではありません。)",
     "msg:en": "Put the gift on the empty spot. (Lana can walk on any flowers.)",
     "img": "/img/c5/flowers/flower0.png"
   }

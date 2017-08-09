@@ -30,11 +30,13 @@
   }],
   "tutorial": [{
     "msg:ko": "참 잘했어요. 선물을 토드에게 가져다 주어요.",
+    "msg:jp": "よくできました。プレゼントを持ってトッドに会いに行ましょう。",
     "msg:en": "You did a great job! Give Tode my present.",
     "img": ["/img/c5/lana.png","/img/c5/gift0.png", "/img/c5/TutoToad4_256.png"]
   }],
   "success": [{
     "msg:ko": "선물 고마워, 라나야",
+    "msg:jp": "ラナ、プレゼント、ありがとう。",
     "msg:en": "Thank you, Lana!",
     "img" : "/img/c5/TutoToad4_256.png",
     "link": "c5_w4/index"

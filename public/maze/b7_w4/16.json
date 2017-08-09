@@ -34,6 +34,7 @@
   }],
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
+    "msg:jp": "成功！よくできました！",
     "msg:en": "Success! Good Job!",
     "msg:cn": "成功了！做得很棒。",
     "link": "b7_w4/17"

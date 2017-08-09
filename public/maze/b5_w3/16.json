@@ -34,27 +34,33 @@
   }],
   "tutorial": [{
     "msg:ko": "낚시를 하기 위해서",
+    "msg:jp": "つりをしに、",
     "msg:en": "For fishiing,"
   },{
     "msg:ko": "아빠에게 낚시대를 가지고 가야해",
+    "msg:jp": "つりざおを持ってお父さんのところまで行くよ。",
     "msg:en": "I'm going to take fishing rod to my father",
     "img": ["/img/b5_w1/father_summer.png","/img/b5_w1/fishing_rod.png"]
   },{
     "msg:ko": "가져와야할 낚시대가 여러 개 있어.",
+    "msg:jp": "ゲットするつりざおがいくつかあるよ。",
     "msg:en": "There are several fishing rods.",
     "img": ["/img/b5_w1/fishing_rod.png","/img/b5_w1/fishing_rod.png"]
   },{
     "msg:ko": "'가져오기'와 사용하기 블록을 여러 번 사용해 봐!",
+    "msg:jp": "｢アイテムゲット｣と｢アイテム使用｣ブロックを何回も使ってみよう！",
     "msg:en": "Try to use 'get and use items' block more than once!",
     "img": ["/img/blocks/bring.png","/img/blocks/use.png"]
   }],
   "goal": {
     "msg:ko": "아빠에게 낚시대를 가져가자!",
+    "msg:jp": "つりざおを持ってお父さんのところに行こう！",
     "msg:en": "Take fishing rods to my father",
     "img": ["/img/b5_w1/fishing_rod.png","/img/b5_w1/father_summer.png"]
   },
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
+    "msg:jp": "成功！よくできました！",
     "msg:en": "Success! Good Job!",
     "msg:cn": "成功了！做得很棒。",
     "link": "b5_w3/17"

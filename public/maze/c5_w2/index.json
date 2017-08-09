@@ -17,6 +17,7 @@
     "y": 1,
     "tutorial": [{
       "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+    "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
       "msg:en": "The basic problems are over. Now you can solve the problem freely."
     }]
   },{
@@ -24,6 +25,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "연꽃을 1개 얻을 수 있어.",
+    "msg:jp": "ハスの花を1輪ゲットできるよ。",
       "msg:en": "You can get one lotus flower at once.",
       "img": "/img/c5/lotus_flower.png"
     }]
@@ -32,6 +34,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "연꽃을 1개 얻을 수 있어.",
+    "msg:jp": "ハスの花を1輪ゲットできるよ。",
       "msg:en": "You can get one lotus flower at once.",
       "img": "/img/c5/lotus_flower.png"
     }]
@@ -40,6 +43,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "연꽃을 1개 얻을 수 있어.",
+    "msg:jp": "ハスの花を1輪ゲットできるよ。",
       "msg:en": "You can get one lotus flower at once.",
       "img": "/img/c5/lotus_flower.png"
     }]
@@ -48,6 +52,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "연꽃을 1개 얻을 수 있어.",
+    "msg:jp": "ハスの花を1輪ゲットできるよ。",
       "msg:en": "You can get one lotus flower at once.",
       "img": "/img/c5/lotus_flower.png"
     }]
@@ -56,6 +61,7 @@
     "y": 0,
     "tutorial": [{
       "msg:ko": "연꽃을 1개 얻을 수 있어.",
+    "msg:jp": "ハスの花を1輪ゲットできるよ。",
       "msg:en": "You can get one lotus flower at once.",
       "img": "/img/c5/lotus_flower.png"
     }]
@@ -64,6 +70,7 @@
     "y": 1,
     "tutorial": [{
       "msg:ko": "연꽃을 2개 얻을 수 있어.",
+    "msg:jp": "ハスの花を2輪ゲットできるよ。",
       "msg:en": "You can get two lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -72,6 +79,7 @@
     "y": 2,
     "tutorial": [{
       "msg:ko": "연꽃을 2개 얻을 수 있어.",
+    "msg:jp": "ハスの花を2輪ゲットできるよ。",
       "msg:en": "You can get two lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -80,6 +88,7 @@
     "y": 3,
     "tutorial": [{
       "msg:ko": "연꽃을 2개 얻을 수 있어.",
+    "msg:jp": "ハスの花を2輪ゲットできるよ。",
       "msg:en": "You can get two lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -88,6 +97,7 @@
     "y": 4,
     "tutorial": [{
       "msg:ko": "연꽃을 2개 얻을 수 있어.",
+    "msg:jp": "ハスの花を2輪ゲットできるよ。",
       "msg:en": "You can get two lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -96,6 +106,7 @@
     "y": 5,
     "tutorial": [{
       "msg:ko": "연꽃을 2개 얻을 수 있어.",
+    "msg:jp": "ハスの花を2輪ゲットできるよ。",
       "msg:en": "You can get two lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -104,6 +115,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -112,6 +124,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -120,6 +133,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -128,6 +142,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -136,6 +151,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -144,6 +160,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -152,6 +169,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -160,6 +178,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -168,6 +187,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -176,6 +196,7 @@
     "y": 6,
     "tutorial": [{
       "msg:ko": "연꽃을 3개 얻을 수 있어.",
+    "msg:jp": "ハスの花を3輪ゲットできるよ。",
       "msg:en": "You can get three lotus flowers at once.",
       "img": ["/img/c5/lotus_flower.png","/img/c5/lotus_flower.png","/img/c5/lotus_flower.png"]
     }]
@@ -270,11 +291,13 @@
 
   "tutorial": [{
     "msg:ko": "규칙을 찾아보아요! 쉬운 문제는 연꽃 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:jp": "パターンを探してみよう！ やさしい問題は、ハスの花を1輪、普通の問題は、2輪、難しい問題は、3輪をゲットできます。",
     "msg:en": "Let's find patterns! An easy problem gives you one lotus flower, a normal one gives you two and a hard one gives you three.",
     "img" : ["/img/c5/lotus/nlotus1.png","/img/c5/lotus/nlotus2.png","/img/c5/lotus/nlotus3.png","/img/c5/lotus/nlotus4.png"]
   }],
   "goal": {
     "msg:ko": "연꽃을 30개 모아 토드에게 가요.",
+    "msg:jp": "ハスの花を30輪集めて、トッドに会いに行きます。",
     "msg:en": "Let's go to Tod with 30 lotus flowers.",
     "img":  ["/img/c5/lotus_flower.png","/img/c5/TutoToad4_256.png"]
   }

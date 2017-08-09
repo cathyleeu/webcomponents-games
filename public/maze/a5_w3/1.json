@@ -60,18 +60,22 @@
   }],
   "tutorial": [{
     "msg:ko": "매미의 성장 과정을 알아보자",
+    "msg:jp": "セミの成長について調べてみよう。",
     "msg:en": "Let’s learn about the life cycle of a cicada."
   },{
     "msg:ko": "매미로 성장시키기 위하여",
+    "msg:jp": "セミに成長させるため、",
     "msg:en": "For the cicada's emergence, ",
     "img": "/img/a5_w3/bg01_step5.png"
   },{
     "msg:ko": "시작버튼을 눌러보아요",
+    "msg:jp": "スタートボタンをクリックしてみよう。",
     "msg:en": "Press the start button ",
     "img": "/img/a5_w3/start_block.png"
   }],
   "success": [{
     "msg:ko": "성공! 매미가 되었어요~",
+    "msg:jp": "成功！セミになりました。",
     "msg:en": "Success! Became a cicada!",
     "img": "/img/a5_w3/bg01_step5.png",
     "link": "a5_w3/2"

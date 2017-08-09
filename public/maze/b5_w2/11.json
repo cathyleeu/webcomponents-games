@@ -34,21 +34,26 @@
   }],
   "tutorial": [{
     "msg:ko": "안전한 물놀이를 위해서",
+    "msg:jp": "安全に水遊びするために、",
     "msg:en": "For safety swimming,"
   },{
     "msg:ko": "엄마에게 튜브를 가지고 가야해",
+    "msg:jp": "うきわを持ってお母さんのところに行くよ。",
     "msg:en": "I'm going to take tube to my mother"
   },{
     "msg:ko": "튜브로 이동해 아이템 가져오기를 해보자",
+    "msg:jp": "うきわのところまで行って、「アイテムゲット」ブロックを使用してみよう。",
     "msg:en": "Move to tube And then Use 'get item' Block",
     "img": ["/img/b5_w1/tube.png","/img/blocks/bring.png"]
   },{
     "msg:ko": "그리고나서 엄마에게 이동하고, 아이템 사용하기를 해보자",
+    "msg:jp": "その後、お母さんのところまで行って、「アイテム使用」ブロックを使用してみよう。",
     "msg:en": "then move my mother, Use 'use items' Block",
     "img": ["/img/b5_w2/mother_summer.png","/img/blocks/use.png"]
   }],
   "goal": {
     "msg:ko": "엄마에게 튜브를 가져가자!",
+    "msg:jp": "うきわを持ってお母さんのところに行こう！",
     "msg:en": "Take tube to my mother",
     "img": ["/img/b5_w1/tube.png","/img/b5_w2/mother_summer.png"]
   }
