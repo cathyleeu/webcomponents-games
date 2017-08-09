@@ -257,7 +257,7 @@ KidsCoding.prototype = {
         if(item.slice(0, -1) == "message") {
           // 다국어 기능
           if(typeof options[item] == "object") {
-            options[item] = options[item][lang];
+            options[item] = options[item][lang] || options[item]["en"];
           }
           // 가로 블럭에서 텍스트 제거
           if(_this.isHorizontal) {

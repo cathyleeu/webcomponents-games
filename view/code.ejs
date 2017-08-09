@@ -352,7 +352,7 @@ if(location.pathname == "/code" && location.hash) {
           .append('<h3><span data-msg="kidsthinking">' + msg.kidsthinking + '</span> <span class="book">' + book_title + '</span></h3>');
       var lang_str = info.lang ? "lang=" + info.lang : "";
       books[book_title].forEach(function(item, idx) {
-        var isEnTitle = (info.lang == "en" || info.lang == "cn") && item.length == 3,
+        var isEnTitle = (info.lang == "en" || info.lang == "cn" || info.lang == "jp") && item.length == 3,
             title = isEnTitle ? item[1] : item[0],
             link = item[item.length - 1],
             conn = link.indexOf("#!") >= 0 ? "?" : "#",

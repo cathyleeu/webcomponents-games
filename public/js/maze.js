@@ -67,6 +67,8 @@ page('*', function(ctx, next) {
       lang = "ko";
     } else if(map_qs.split("&").indexOf("lang=cn") >= 0) {
       lang = "cn";
+    } else if(map_qs.split("&").indexOf("lang=jp") >= 0) {
+      lang = "jp";
     }
     store.set("last_path", ctx.path);
     store.set("lang", lang);
