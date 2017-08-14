@@ -1,7 +1,6 @@
 {
   "element": "line-card",
   "attributes": {
-    "title": "옛날에 쓰던 생활 용품을 요즘 물건과 짝지어보아요."
   },
   "data": [
     "handmill",
@@ -22,5 +21,19 @@
     {"no": 1 , "set": 1, "id": "money", "src": "/img/b55/money.png"},
     {"no": 2 , "set": 1, "id": "hat2", "src": "/img/b55/hat2.png"},
     {"no": 3 , "set": 1, "id": "socks2", "src": "/img/b55/socks2.png"}
-  ]
+  ],
+  "msg": {
+    "ko": {
+      "title": "카드를 뒤집어 짝을 맞추어보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!"
+    },
+    "en": {
+      "title": "Flip the cards and Match the pairs",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!"
+    }
+  }
 }

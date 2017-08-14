@@ -1,6 +1,7 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
 
 
 <dom-module id="line-card">
@@ -22,8 +23,14 @@
       score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
       total="{{total}}"
+      point="{{point}}"
       matched="{{matched}}"
       cards="{{cards}}"></status-bar>
+    <modal-success
+      id="successModal"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"></modal-success>
   </template>
   <script>
     class LineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -55,6 +62,7 @@
       ready() {
         super.ready();
         this.set('total', 0)
+        this.set('point', 0)
         this.set('matched', 0)
       }
       setData(data, manifest){
@@ -219,6 +227,7 @@
 
             console.log("its matched!!!", numX, numY)
             _this.set('matched', _this.matched+1)
+            _this.set('point', _this.point+2)
             line.attr("x2", numX)
                 .attr("y2", numY);
           } else {
@@ -229,6 +238,9 @@
            _this.set('total', _this.total+1)
            circlesR.on('mouseover', null); // 중복되는 것 금지
            svg.on("mousemove", null); // 점에 딱 맞추는 것
+           if(_this.matched === _this.cards){
+             _this.shadowRoot.getElementById("successModal").modalAlert()
+           }
         }
       }
     }

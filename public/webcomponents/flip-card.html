@@ -1,6 +1,7 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
 
 <dom-module id="flip-card">
   <template>
@@ -94,8 +95,14 @@
       score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
       total="{{total}}"
+      point="{{point}}"
       matched="{{matched}}"
       cards="{{cards}}"></status-bar>
+    <modal-success
+      id="successModal"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"></modal-success>
   </template>
 
   <script>
@@ -129,6 +136,7 @@
         // 미리 설정해 놓는 것....
         super.ready();
         this.set('total', 0)
+        this.set('point', 0)
         this.set('matched', 0)
       }
       setData(data, manifest){
@@ -168,7 +176,11 @@
                   const flipped_el = board.selectAll('.flipped');
                   if(flipped_el.data()[0] == flipped_el.data()[1]) {
                     _this.set('matched', _this.matched+1)
+                    _this.set('point', _this.point+2)
                     flipped_el.remove();
+                    if(_this.matched === _this.cards){
+                      _this.shadowRoot.getElementById("successModal").modalAlert()
+                    }
                   } else {
                     flipped_el.classed("flipped", false);
                     flipped_el.selectAll('.front').attr('style', null);
