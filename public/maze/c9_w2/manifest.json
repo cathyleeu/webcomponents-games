@@ -1,0 +1,48 @@
+[
+  {"book": "C9", "title": "1주차 : 몇 시일까요?"},
+  {"id": "bg1", "src": "/img/c9_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/c9_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/c9_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c9_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c9_w1/clock.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"tile": "t", "id": "christmas_tree", "src": "/img/c9_w1/christmas_tree.png"},
+
+  {"id": "wall", "src": "/img/c9_w1/wall.png","obstacle": true},
+
+  {"id": "a0130", "src": "/img/c9_w2/a0130.png"},
+  {"id": "a0230", "src": "/img/c9_w2/a0230.png"},
+  {"id": "a0330", "src": "/img/c9_w2/a0330.png"},
+  {"id": "a0430", "src": "/img/c9_w2/a0430.png"},
+  {"id": "a0530", "src": "/img/c9_w2/a0530.png"},
+  {"id": "a0630", "src": "/img/c9_w2/a0630.png"},
+  {"id": "a0730", "src": "/img/c9_w2/a0730.png"},
+  {"id": "a0830", "src": "/img/c9_w2/a0830.png"},
+  {"id": "a0930", "src": "/img/c9_w2/a0930.png"},
+  {"id": "a1030", "src": "/img/c9_w2/a1030.png"},
+  {"id": "a1130", "src": "/img/c9_w2/a1130.png"},
+  {"id": "a1230", "src": "/img/c9_w2/a1230.png"},
+  {"id": "d0130", "src": "/img/c9_w2/d0130.png"},
+  {"id": "d0230", "src": "/img/c9_w2/d0230.png"},
+  {"id": "d0330", "src": "/img/c9_w2/d0330.png"},
+  {"id": "d0430", "src": "/img/c9_w2/d0430.png"},
+  {"id": "d0530", "src": "/img/c9_w2/d0530.png"},
+  {"id": "d0630", "src": "/img/c9_w2/d0630.png"},
+  {"id": "d0730", "src": "/img/c9_w2/d0730.png"},
+  {"id": "d0830", "src": "/img/c9_w2/d0830.png"},
+  {"id": "d0930", "src": "/img/c9_w2/d0930.png"},
+  {"id": "d1030", "src": "/img/c9_w2/d1030.png"},
+  {"id": "d1130", "src": "/img/c9_w2/d1130.png"},
+  {"id": "d1230", "src": "/img/c9_w2/d1230.png"}
+]

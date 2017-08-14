@@ -39,5 +39,12 @@
     "msg:ko": "'?'에 들어갈 모양을 가져와요'",
     "msg:en": "Let's find shape to fill the ? space and put it there",
     "img": ["/img/b7_w2/question.png","/img/blocks/bring.png","/img/blocks/use.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공! 이번 시간의 모든 문제를 해결하였어요~",
+    "msg:jp": "成功！よくできました！",
+    "msg:en": "Success! All clear in this class!",
+    "msg:cn": "成功了！做得很棒。",
+    "link": "b7_w3/index"
   }]
 }

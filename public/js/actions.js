@@ -1104,6 +1104,10 @@ Actions.prototype.check = function(block, callback) {
       chest.role = "justmove";
       chest.order = chest.contents[ranNum].order;
       _this.setCoord(chest, chest.px, chest.py);
+    }else if(chest.contents[ranNum].role == "clock") {
+      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
+      character.clock = chest.contents[ranNum].order;
+        _this.setCoord(chest, chest.px, chest.py);
     }else{
       chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = chest.contents[ranNum].role;
@@ -1486,7 +1490,22 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
     }else{
       callback();
     }
+  }else if(options == character.clock){
+    for(var i = foods.length-1; i>=0;i--){
+      if(character.clock!=foods[i].clock){
+          foods.splice(i,1);
+      }
+    }
+    character.hasItem = true;
+    if_block = block.getInputTargetBlock("if_statements");
+    setTimeout(function() {
+      block.removeSelect();
+      _this.run(if_block, callback);
+    }, 500);
+  }else{
+    callback();
   }
+
 
 };
 
@@ -1937,7 +1956,7 @@ Actions.prototype.present = function(block, callback) {
       foods = this.canvas.foods,
       itemBitmap = character.itemBitmap;
   if(!character.hasItem) {
-    callback("선물이 없어요");
+    callback("조건블록을 사용하지 않았어요.");
     return;
   }
   // 목표 위에서 아이템 사용(패턴 매칭)
@@ -1946,6 +1965,7 @@ Actions.prototype.present = function(block, callback) {
       var pImage = "";
       if(food.img == "house_r") pImage = "house_r_present";
       else if(food.img == "house_g") pImage = "house_g_present";
+      else if(food.img == "house_b") pImage = "house_b_present";
       else if(food.img == "house_y") pImage = "house_y_present";
       else pImage = "house_present";
       food.bitmap.image = _this.loader.getResult(pImage)
