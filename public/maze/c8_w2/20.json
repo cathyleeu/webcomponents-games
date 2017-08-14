@@ -48,5 +48,12 @@
     "msg:ko": "초록색 블록 묶음 4개와 과 빨간색 블록 2개를 가져와서 총 42개의 블록을 만들어 보아요",
     "msg:en": "Let's bring 4 green block bundles & 2 red blocks for collecting 42 blocks ",
     "img": ["/img/c8_w1/block_green10.png","/img/c8_w2/number4.png","/img/c8_w2/number2.png","/img/c8_w1/block_red.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공! 이번 시간의 모든 문제를 해결하였어요~",
+    "msg:jp": "成功！よくできました！",
+    "msg:en": "Success! All clear in this class!",
+    "msg:cn": "成功了！做得很棒。",
+    "link": "c8_w3/index"
   }]
 }

@@ -1809,6 +1809,1254 @@ Blocks['condition_notrecycle'] = {
   argsh1: null,
   action: ["conditioncheck","notrecycle"]
 };
+Blocks['condition_ac0100'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a0100.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a0100.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0100"]
+};
+Blocks['condition_ac0200'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a0200.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a0200.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0200"]
+};
+Blocks['condition_ac0300'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a0300.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a0300.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0300"]
+};
+Blocks['condition_ac0400'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a0400.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a0400.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0400"]
+};
+Blocks['condition_ac0500'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a0500.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a0500.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0500"]
+};
+Blocks['condition_ac0600'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a0600.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a0600.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0600"]
+};
+Blocks['condition_ac0700'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a0700.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a0700.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0700"]
+};
+Blocks['condition_ac0800'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a0800.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a0800.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0800"]
+};
+Blocks['condition_ac0900'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a0900.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a0900.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0900"]
+};
+Blocks['condition_ac1000'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a1000.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a1000.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1000"]
+};
+Blocks['condition_ac1100'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a1100.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a1100.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1100"]
+};
+Blocks['condition_ac1200'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/a1200.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/a1200.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1200"]
+};
+Blocks['condition_dc0100'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d0100.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d0100.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0100"]
+};
+Blocks['condition_dc0200'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d0200.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d0200.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0200"]
+};
+Blocks['condition_dc0300'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d0300.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d0300.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0300"]
+};
+Blocks['condition_dc0400'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d0400.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d0400.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0400"]
+};
+Blocks['condition_dc0500'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d0500.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d0500.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0500"]
+};
+Blocks['condition_dc0600'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d0600.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d0600.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0600"]
+};
+Blocks['condition_dc0700'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d0700.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d0700.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0700"]
+};
+Blocks['condition_dc0800'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d0800.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d0800.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0800"]
+};
+Blocks['condition_dc0900'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d0900.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d0900.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0900"]
+};
+Blocks['condition_dc1000'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d1000.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d1000.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1000"]
+};
+Blocks['condition_dc1100'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d1100.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d1100.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1100"]
+};
+Blocks['condition_dc1200'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w1/d1200.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w1/d1200.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1200"]
+};
+Blocks['condition_ac0130'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a0130.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a0130.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0130"]
+};
+Blocks['condition_ac0230'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a0230.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a0230.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0230"]
+};
+Blocks['condition_ac0330'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a0330.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a0330.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0330"]
+};
+Blocks['condition_ac0430'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a0430.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a0430.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0430"]
+};
+Blocks['condition_ac0530'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a0530.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a0530.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0530"]
+};
+Blocks['condition_ac0630'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a0630.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a0630.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0630"]
+};
+Blocks['condition_ac0730'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a0730.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a0730.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0730"]
+};
+Blocks['condition_ac0830'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a0830.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a0830.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0830"]
+};
+Blocks['condition_ac0930'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a0930.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a0930.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0930"]
+};
+Blocks['condition_ac1030'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a1030.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a1030.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1030"]
+};
+Blocks['condition_ac1130'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a1130.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a1130.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1130"]
+};
+Blocks['condition_ac1230'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/a1230.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/a1230.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1230"]
+};
+Blocks['condition_dc0130'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d0130.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d0130.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0130"]
+};
+Blocks['condition_dc0230'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d0230.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d0230.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0230"]
+};
+Blocks['condition_dc0330'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d0330.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d0330.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0330"]
+};
+Blocks['condition_dc0430'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d0430.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d0430.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0430"]
+};
+Blocks['condition_dc0530'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d0530.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d0530.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0530"]
+};
+Blocks['condition_dc0630'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d0630.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d0630.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0630"]
+};
+Blocks['condition_dc0730'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d0730.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d0730.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0730"]
+};
+Blocks['condition_dc0830'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d0830.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d0830.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0830"]
+};
+Blocks['condition_dc0930'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d0930.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d0930.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c0930"]
+};
+Blocks['condition_dc1030'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d1030.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d1030.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1030"]
+};
+Blocks['condition_dc1130'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d1130.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d1130.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1130"]
+};
+Blocks['condition_dc1230'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 라면",
+    en: "If %1 "
+  },
+  args0: [
+    {type: "field_image", src: "/img/c9_w2/d1230.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/c9_w2/d1230.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","c1230"]
+};
 Blocks['condition2_food_apple'] = {
   rgbColor: "#E11376",
   message0: {
