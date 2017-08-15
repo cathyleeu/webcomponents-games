@@ -1,0 +1,282 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####EEEEEE#######.",
+    "..r..%%%%%%...I%N.#",
+    ".#############.%N.#",
+    "##...#########.%N.#",
+    "..#............%N.#",
+    "##...%%%%%%%%%.%N.#",
+    "#####HHHHHHHHH#####."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c9_w3/house_present.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c9_w3/house_present.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c9_w3/house_present.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c9_w3/house_present.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c9_w3/house_present.png"
+    }]
+  },{
+    "x": 10,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c9_w3/house_present.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c9_w3/house_present.png","/img/c9_w3/house_present.png","/img/c9_w3/house_present.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c9_w3/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c9_w3/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "c9_w3/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c9_w3/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c9_w3/5"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "c9_w3/6"
+  },{
+    "x": 14,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+    "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
+      "msg:en": "Easy problems is over, Let's solve the problem freely"
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "c9_w3/7"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "c9_w3/8"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "c9_w3/9"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "c9_w3/10"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "c9_w3/11"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "c9_w3/12"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c9_w3/13"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "c9_w3/14"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "c9_w3/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "c9_w3/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "c9_w3/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c9_w3/18"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "c9_w3/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "c9_w3/20"
+  },{
+    "img":"santa",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "c9_w4/index",
+    "min_score": 20
+  }],
+
+  "tutorial": [{
+    "msg:ko": "시계로 가보아요! 쉬운 문제는 1점, 보통은 2점, 어려운 문제는 3점을 주어요.",
+    "msg:en": "Let's go to the clock! An easy problem gives you one point, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/c9_w3/house_present.png"
+  }],
+  "goal": {
+    "msg:ko": "20점을 얻고 산타할아버지에게 이동해요.",
+    "msg:en": "Let's get 20 points and go to the santa.",
+    "img": ["/img/c9_w3/house_present.png","/img/c9_w3/santa.png"]
+  }
+}

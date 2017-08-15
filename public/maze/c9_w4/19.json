@@ -1,0 +1,98 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition_ac0900",
+    "condition_ac0100",
+    "condition_ac0300",
+    "present"
+  ],
+  "map": [
+    "########",
+    "##.#...#",
+    "#.b%..##",
+    "#d%...##",
+    "#&.%.%b#",
+    "##%...##",
+    "##b%...#",
+    "########"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 4,
+    "img": "clock_top",
+    "contents" : [{
+        "img": "a0900",
+        "role": "clock",
+        "order": "c0900"
+      },{
+        "img": "a0100",
+        "role": "clock",
+        "order": "c0100"
+      },{
+        "img": "a0300",
+        "role": "clock",
+        "order": "c0300"
+    }]
+    },{
+      "x": 2,
+      "y": 5,
+      "img": "house_r",
+      "order": "c0900",
+      "useItem": true
+    },{
+      "x": 3,
+      "y": 6,
+      "img": "house_r",
+      "order": "c0900",
+      "useItem": true
+    },{
+      "x": 3,
+      "y": 4,
+      "img": "house_y",
+      "order": "c0100",
+      "useItem": true
+    },{
+      "x": 5,
+      "y": 4,
+      "img": "house_y",
+      "order": "c0100",
+      "useItem": true
+    },{
+      "x": 2,
+      "y": 3,
+      "img": "house_b",
+      "order": "c0300",
+      "useItem": true
+    },{
+      "x": 3,
+      "y": 2,
+      "img": "house_b",
+      "order": "c0300",
+      "useItem": true
+    },{
+      "x": 2,
+      "y": 6,
+      "img": "board_0900"
+    },{
+      "x": 6,
+      "y": 4,
+      "img": "board_0100"
+    },{
+      "x": 2,
+      "y": 2,
+      "img": "board_0300"
+    }],
+  "tutorial": [{
+    "msg:ko": "시계탑에서 시각을 확인한 뒤에 일치하는 펫말 주변의 집에 선물을 배달해 보아요.",
+    "msg:en": "After checking the time on the clock tower, Go to the houses and Give gifts around the corrented board",
+    "img": ["/img/c9_w4/clock_top.png","/img/blocks/check.png","/img/gift.png"]
+  }]
+}

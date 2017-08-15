@@ -1,0 +1,116 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition_ac0800",
+    "condition_ac1100",
+    "condition_ac1130",
+    "present"
+  ],
+  "map": [
+    "########",
+    "#b.#...#",
+    "#%%%.b%#",
+    "#.##.#%#",
+    "#%%%.#%#",
+    "#b##&..#",
+    "#r.....#",
+    "########"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "img": "clock_top",
+    "contents" : [{
+        "img": "a0800",
+        "role": "clock",
+        "order": "c0800"
+      },{
+        "img": "a1100",
+        "role": "clock",
+        "order": "c1100"
+      },{
+        "img": "a1130",
+        "role": "clock",
+        "order": "c1130"
+    }]
+    },{
+      "x": 6,
+      "y": 2,
+      "img": "house_r",
+      "order": "c0800",
+      "useItem": true
+    },{
+      "x": 6,
+      "y": 3,
+      "img": "house_r",
+      "order": "c0800",
+      "useItem": true
+    },{
+      "x": 6,
+      "y": 4,
+      "img": "house_r",
+      "order": "c0800",
+      "useItem": true
+    },{
+      "x": 1,
+      "y": 4,
+      "img": "house_y",
+      "order": "c1100",
+      "useItem": true
+    },{
+      "x": 2,
+      "y": 4,
+      "img": "house_y",
+      "order": "c1100",
+      "useItem": true
+    },{
+      "x": 3,
+      "y": 4,
+      "img": "house_y",
+      "order": "c1100",
+      "useItem": true
+    },{
+      "x": 1,
+      "y": 2,
+      "img": "house_b",
+      "order": "c1130",
+      "useItem": true
+    },{
+      "x": 2,
+      "y": 2,
+      "img": "house_b",
+      "order": "c1130",
+      "useItem": true
+    },{
+      "x": 3,
+      "y": 2,
+      "img": "house_b",
+      "order": "c1130",
+      "useItem": true
+    },{
+      "x": 5,
+      "y": 2,
+      "img": "board_0800"
+    },{
+      "x": 1,
+      "y": 5,
+      "img": "board_1100"
+    },{
+      "x": 1,
+      "y": 1,
+      "img": "board_1130"
+    }],
+  "tutorial": [{
+    "msg:ko": "시계탑에서 시각을 확인한 뒤에 일치하는 펫말 주변의 집에 선물을 배달해 보아요.",
+    "msg:en": "After checking the time on the clock tower, Go to the houses and Give gifts around the corrented board",
+    "img": ["/img/c9_w4/clock_top.png","/img/blocks/check.png","/img/gift.png"]
+  }]
+}
