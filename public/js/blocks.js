@@ -863,13 +863,13 @@ Blocks["support"] = {
   action: ["support"]
 };
 Blocks["present"] = {
-  rgbColor: "#33B1B1",
+  rgbColor: "#8C68AD",
   message0: {
     ko: "%1 선물하기",
     en: "%1 Present"
   },
   args0: [
-    {type: "field_image", src: "/img/frog/gift.png"}
+    {type: "field_image", src: "/img/gift.png"}
   ],
   action: ["present"]
 };

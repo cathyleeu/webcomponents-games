@@ -1492,10 +1492,11 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
     }
   }else if(options == character.clock){
     for(var i = foods.length-1; i>=0;i--){
-      if(character.clock!=foods[i].clock){
+      if(character.clock!=foods[i].order){
           foods.splice(i,1);
       }
     }
+    debugger
     character.hasItem = true;
     if_block = block.getInputTargetBlock("if_statements");
     setTimeout(function() {
@@ -1962,20 +1963,23 @@ Actions.prototype.present = function(block, callback) {
   // 목표 위에서 아이템 사용(패턴 매칭)
   var food = this._getCanvasObject(character.px, character.py, "food");
   if(food && food.useItem) {
+    this._splitObjects(food, function() {
       var pImage = "";
       if(food.img == "house_r") pImage = "house_r_present";
       else if(food.img == "house_g") pImage = "house_g_present";
       else if(food.img == "house_b") pImage = "house_b_present";
       else if(food.img == "house_y") pImage = "house_y_present";
       else pImage = "house_present";
+      debugger
       food.bitmap.image = _this.loader.getResult(pImage)
       var idx = foods.indexOf(food);
       foods.splice(idx,1);
-      this.canvas.stage.update();
+      _this.canvas.stage.update();
       createjs.Sound.play("success");
       setTimeout(function() {
         callback();
       }, 500);
+    });
     return;
   }
   // 아이템을 사용할 수 없는 경우

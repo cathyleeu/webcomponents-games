@@ -1,0 +1,68 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "check",
+    "condition_dc1100",
+    "condition_dc1130",
+    "condition_dc1200",
+    "present"
+  ],
+  "map": [
+    "########",
+    "##.#%..#",
+    "#...&.##",
+    "#......#",
+    "#.%#.#%#",
+    "##....##",
+    "#..#u..#",
+    "########"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 2,
+    "img": "winter_cos",
+    "contents" : [{
+        "img": "d1100",
+        "role": "clock",
+        "order": "c1100"
+      },{
+        "img": "d1130",
+        "role": "clock",
+        "order": "c1130"
+      },{
+        "img": "d1200",
+        "role": "clock",
+        "order": "c1200"
+    }]
+  },{
+    "x": 4,
+    "y": 1,
+    "img": "house_1100",
+    "order": "c1100",
+    "useItem": true
+  },{
+    "x": 6,
+    "y": 4,
+    "img": "house_1130",
+    "order": "c1130",
+    "useItem": true
+  },{
+    "x": 2,
+    "y": 4,
+    "img": "house_1200",
+    "order": "c1200",
+    "useItem": true
+  }],
+  "tutorial": [{
+    "msg:ko": "코스에게 시각을 확인한 뒤에 일치하는 집에 선물을 배달해 보아요.",
+    "msg:en": "After asking Cos about time, Go to the correct house and Give a gift.",
+    "img": ["/img/c9_w3/winter_cos.png","/img/blocks/check.png","/img/c9_w3/house_present.png"]
+  }]
+}
