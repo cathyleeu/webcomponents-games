@@ -22,7 +22,9 @@
       id="successModal"
       total="{{total}}"
       point="{{point}}"
-      matched="{{matched}}"></modal-success>
+      matched="{{matched}}"
+      finished="{{done}}"
+      ></modal-success>
   </template>
   <script>
     class RangeCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -58,6 +60,13 @@
         this.set('point', 0)
         this.set('matched', 0)
       }
+      reset(){
+        this.set('total', 0)
+        this.set('matched', 0)
+        this.set('point', this.point+5)
+        d3.select(this.shadowRoot).select('svg').remove()
+        this.setData(this.data, this.manifest)
+      }
       setData(data, manifest){
         let _this = this,
             svg = d3.select(this.shadowRoot)
@@ -65,9 +74,12 @@
               .attr('width', this.offsetWidth )
               .attr('height', `${this.offsetHeight-60}`),
             boardName = ["dropB", "dragB"];
+        _this.set('cards', data.length );
+        _this.set('data', data )
+        _this.set('manifest', manifest )
         manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
         data = data.map(id=>manifest[id]);
-        _this.set('cards', data.length );
+
         let defs = svg.append('defs')
               			.selectAll('pattern')
 

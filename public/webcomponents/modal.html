@@ -10,6 +10,8 @@
         background-position:top center;
         font-family:helvetica neue, helvetica, arial, sans-serif;
         font-weight:200;
+        position: absolute;
+        z-index: 100;
       }
       :host(.modal-active) {
         overflow: hidden;
@@ -109,7 +111,7 @@
           <p>{{point}}점<p>
           <p>[[matchedRate(total,matched)]]%</p>
           <p>다음 단계로 넘어가볼까요?</p>
-          <div class="button" on-click="modalAlert">넘어가기</div>
+          <div class="button" on-click="gameDone">넘어가기</div>
         </div>
       </div>
     </div>
@@ -132,7 +134,12 @@
       }
       modalAlert(){
         let element = this.shadowRoot.getElementById("modal-container")
-        element.classList.toggle('three')
+        element.classList.add('three')
+      }
+      gameDone(){
+        let element = this.shadowRoot.getElementById("modal-container")
+        element.classList.remove('three')
+        document.getElementById("element").reset()
       }
     }
     window.customElements.define(Modal.is, Modal);
