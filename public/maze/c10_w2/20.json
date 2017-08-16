@@ -1,0 +1,36 @@
+{
+  "tile_size": 128,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_left",
+    "move_right", "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.jmcmc.#",
+    "#########",
+    "#.%.....#",
+    "#.###...#",
+    "#a..d..c#",
+    "#...###.#",
+    "#.....f.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 3,
+    "img":"n2"
+  }],
+  "tutorial": [{
+    "msg": "8 - 3 - 3 = ?"
+  }],
+  "success":[{
+    "msg:ko": "축하해요! 모든 문제를 다 풀었어요!",
+    "msg:en": "Congratulations! You solved all the problems!",
+    "link": "c6_w3_c1/index"
+  }]
+}

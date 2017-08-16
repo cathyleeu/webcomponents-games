@@ -104,7 +104,7 @@
     "x": 5,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
       "img": ["/img/c9_w1/clock.png","/img/c9_w1/clock.png","/img/c9_w1/clock.png"]
     }]
@@ -112,7 +112,7 @@
     "x": 6,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
       "img": ["/img/c9_w1/clock.png","/img/c9_w1/clock.png","/img/c9_w1/clock.png"]
     }]
@@ -120,7 +120,7 @@
     "x": 7,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
       "img": ["/img/c9_w1/clock.png","/img/c9_w1/clock.png","/img/c9_w1/clock.png"]
     }]
@@ -128,7 +128,7 @@
     "x": 8,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
       "img": ["/img/c9_w1/clock.png","/img/c9_w1/clock.png","/img/c9_w1/clock.png"]
     }]
@@ -144,7 +144,7 @@
     "x": 10,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
       "img": ["/img/c9_w1/clock.png","/img/c9_w1/clock.png","/img/c9_w1/clock.png"]
     }]
@@ -152,7 +152,7 @@
     "x": 11,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
       "img": ["/img/c9_w1/clock.png","/img/c9_w1/clock.png","/img/c9_w1/clock.png"]
     }]
@@ -160,7 +160,7 @@
     "x": 12,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
       "img": ["/img/c9_w1/clock.png","/img/c9_w1/clock.png","/img/c9_w1/clock.png"]
     }]
@@ -168,7 +168,7 @@
     "x": 13,
     "y": 6,
     "tutorial": [{
-      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
       "img": ["/img/c9_w1/clock.png","/img/c9_w1/clock.png","/img/c9_w1/clock.png"]
     }]
@@ -202,7 +202,7 @@
     "tutorial": [{
       "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
     "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
-      "msg:en": "Easy problems is over, Let's solve the problem freely"
+      "msg:en": "The basic problems are over. Now you can solve the problem freely."
     }]
   },{
     "x": 15,

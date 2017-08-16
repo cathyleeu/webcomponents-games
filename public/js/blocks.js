@@ -999,7 +999,74 @@ Blockly.Blocks['dropdown'] = {
   }
 };
 
+Blocks['repeat_until_cos'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "만약에 코스에게 가는 중이라면 반복",
+    en: "Repeat if going to Cos"
+  },
+  message1: "%1",
+  argsh1: [
+    {type: "input_statement",    name: "statements"  }
+  ],
+  args1: [
+      {type: "field_image", src: "/img/kidsblocks/untilcos.png"}
+    ],
+  messageh0: "%1 %2",
+  argsh0:[
+    {type: "input_statements", name: "statements"},
+    {type: "field_image", src: "/img/kidsblocks/untilcos.png"}
+  ],
+  messageh1: null,
+  argsh1: null,
+  action: ["repeat", "repeat_until"]
+};
 
+Blocks['repeat_until_sea'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "만약에 바다에 가는 중이라면 반복",
+    en: "Repeat if going to the sea"
+  },
+  message1: "%1",
+  args1: [
+    {type: "input_statement",    name: "statements"  }
+  ],
+  args1: [
+      {type: "field_image", src: "/img/kidsblocks/untilsea.png"}
+    ],
+  messageh0: "%1 %2",
+  argsh0:[
+    {type: "input_statements", name: "statements"},
+    {type: "field_image", src: "/img/kidsblocks/untilsea.png"}
+  ],
+  messageh1: null,
+  argsh1: null,
+  action: ["repeat", "repeat_until"]
+};
+
+Blocks['repeat_until_tootoo'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "만약에 투투에게 가는 중이라면 반복",
+    en: "Repeat if going to Tootoo"
+  },
+  message1: "%1",
+  argsh1: [
+    {type: "input_statement",    name: "statements"  }
+  ],
+  args1: [
+      {type: "field_image", src: "/img/kidsblocks/untiltootoo.png"}
+    ],
+  messageh0: "%1 %2",
+  argsh0:[
+    {type: "input_statements", name: "statements"},
+    {type: "field_image", src: "/img/kidsblocks/untiltootoo.png"}
+  ],
+  messageh1: null,
+  argsh1: null,
+  action: ["repeat", "repeat_until"]
+};
 
 Blocks['repeat_until'] = {
   rgbColor: "#242786",
@@ -1110,7 +1177,7 @@ Blocks['repeat_until_bok'] = {
   rgbColor: "#242786",
   message0: {
     ko: "%1 갈 때까지 반복",
-    en: "Repeat Until meeting luckky poket"
+    en: "Repeat Until meeting lucky pocket"
   },
   args0: [
     {type: "field_image", src: "/img/winterspecial/lucks.png"}
@@ -1122,6 +1189,116 @@ Blocks['repeat_until_bok'] = {
   }],
   action: ["repeat", "repeat_until"]
 };
+
+
+Blocks['condition_wall_up'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 위에 장애물이 있다면",
+    en: "%1 If an obstacle is upwards"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/up_n.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/up_n.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["condition_nodirentio","no_up"]
+};
+
+Blocks['condition_wall_down'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 아래에 장애물이 있다면",
+    en: "%1 If an obstacle is downwards"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/down_n.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/down_n.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["condition_nodirentio","no_down"]
+};
+
+Blocks['condition_wall_left'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 왼쪽에 장애물이 있다면",
+    en: "%1 If an obstacle is leftside"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/left_n.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/left_n.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["condition_nodirentio","no_left"]
+};
+
+Blocks['condition_wall_right'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 위에 장애물이 있다면",
+    en: "%1 If an obstacle is rightside"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/right_n.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/right_n.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["condition_nodirentio","no_right"]
+};
+
 Blocks['condition_ifsealion_up'] = {
   rgbColor: "#E11376",
   message0: {
