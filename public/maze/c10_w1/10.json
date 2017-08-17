@@ -1,0 +1,58 @@
+{
+  "tile_size": 128,
+
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_left",
+    "move_right", "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#..jmh..#",
+    "#########",
+    "#h.....f#",
+    "#.......#",
+    "#...d...#",
+    "#.......#",
+    "#j.....%#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 1,
+    "img":"8a"
+  },{
+    "x": 5,
+    "y": 1,
+    "img":"6a"
+  },{
+    "x": 1,
+    "y": 3,
+    "img":"6a"
+  },{
+    "x": 1,
+    "y": 7,
+    "img":"4a"
+  },{
+    "x": 7,
+    "y": 3,
+    "img":"1a"
+  },{
+    "x": 7,
+    "y": 7,
+    "img":"2a"
+  }],
+  "tutorial": [{
+    "msg": "8 - 6 = ?",
+    "img": "/img/c10/cos0.png"
+  }],
+  "success":[{
+    "msg:ko": "벌써 열 문제나 풀었어요! 정말 많이 풀었네요.",
+    "msg:jp": "もう10問も解きました！たくさん解きましたね。",
+    "msg:en": "You've solved ten problems already! You really solved a lot.",
+    "link": "c10_w1/11"
+  }]
+}

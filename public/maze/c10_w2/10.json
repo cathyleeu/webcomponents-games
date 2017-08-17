@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_left",
+    "move_right", "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.bpgpa.#",
+    "#########",
+    "#g#.#...#",
+    "#.#h#.#.#",
+    "#...d.#.#",
+    "#.###.#.#",
+    "#k....#%#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 7,
+    "img":"n8"
+  }],
+  "tutorial": [{
+    "msg": "2 + 5 + 1 = ?",
+    "img": "/img/c10/cos0.png"
+  }],
+  "success":[{
+    "msg:ko": "벌써 열 문제나 풀었어요! 정말 많이 풀었네요.",
+    "msg:jp": "もう10問も解きました！たくさん解きましたね。",
+    "msg:en": "You've solved ten problems already! You really solved a lot.",
+    "link": "c10_w2/11"
+  }]
+}

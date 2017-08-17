@@ -1,0 +1,58 @@
+{
+  "tile_size": 128,
+
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_left",
+    "move_right", "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#..hmg..#",
+    "#########",
+    "#b.....c#",
+    "#.......#",
+    "#...d...#",
+    "#.......#",
+    "#f.....%#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 1,
+    "img":"6a"
+  },{
+    "x": 5,
+    "y": 1,
+    "img":"5a"
+  },{
+    "x": 1,
+    "y": 3,
+    "img":"2a"
+  },{
+    "x": 1,
+    "y": 7,
+    "img":"4a"
+  },{
+    "x": 7,
+    "y": 3,
+    "img":"3a"
+  },{
+    "x": 7,
+    "y": 7,
+    "img":"1a"
+  }],
+  "tutorial": [{
+    "msg": "6 - 5 = ?",
+    "img": "/img/c10/cos0.png"
+  }],
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:jp": "成功！よくできました！",
+    "msg:en": "Success! Good Job!",
+    "link": "c10_w1/7"
+  }]
+}

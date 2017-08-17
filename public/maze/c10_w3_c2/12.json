@@ -1,0 +1,33 @@
+{
+  "tile_size": 128,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_left",
+    "move_right",
+    "repeat_until_sea"
+  ],
+  "map": [
+    "r..##sss",
+    ".#..#..s",
+    "##...#..",
+    "#.##.###",
+    "#..#...#",
+    "sss.#..#",
+    "s...##%s",
+    "ssssssss"
+  ],
+  "tutorial": [{
+    "msg:ko": "투투는 바다로 먹이를 구하러 가야 해요. 만약에 반복 블록을 이용해서 바다로 가요.",
+    "msg:en": "Tootoo has to go to the sea to get food. Use the 'repeat if block' to go to the sea.",
+    "img": ["/img/c10/tootoo0.png", "/img/blocks/untilsea.png"]
+  }],
+  "goal":{
+    "msg:ko": "만약에 반복 블록을 이용해서 바다로 가요.",
+    "msg:en": "Use the 'repeat if block' to go to the sea.",
+    "img": ["/img/c10/tootoo0.png", "/img/blocks/untilsea.png"]
+  }
+}

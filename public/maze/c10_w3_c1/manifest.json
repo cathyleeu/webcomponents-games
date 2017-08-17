@@ -1,0 +1,36 @@
+[
+  {"book": "C10", "title": "3주차 : 만약에 반복 블록을 이해해요"},
+  {"id": "bg1", "src": "/img/c10/snow1.png"},
+  {"id": "bg2", "src": "/img/c10/snow2.png"},
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+  {"id": "character", "src": "/img/c10/geny.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c10/geny0.png", "size": 256},
+  {"id": "food", "src": "/img/c10/1g.png"},
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "icewall", "src": "/img/c10/icewall2.png", "obstacle": true},
+  {"id": "icewall", "src": "/img/c10/icewall2.png", "obstacle": true},
+  {"id": "tootoo", "src": "/img/c10/tootoo0.png", "obstacle": false},
+
+  {"tile": "H", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "N", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "E", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "question", "src": "/img/guide/question.png", "obstacle": false}
+]

@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_left",
+    "move_right", "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#..jmh..#",
+    "#########",
+    "#r......#",
+    "#..###..#",
+    "#.#f..h.#",
+    "#.#...j.#",
+    "#...%.c.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 7,
+    "img":"n2"
+  }],
+  "tutorial": [{
+    "msg": "8 - 6 = ?",
+    "img": "/img/c10/cos0.png"
+  }],
+  "success":[{
+    "msg:ko": "열다섯 문제나 풀다니, 정말 대단해요!",
+    "msg:en": "Fifteen problems you've solved, you are so great!",
+    "link": "c10_w1/16"
+  }]
+}
