@@ -3,15 +3,21 @@
 <dom-module id="status-bar">
   <template>
     <style>
+      .has_name{
+        color: white;
+        cursor: pointer;
+        width: 10%;
+        text-align: center;
+      }
       .bar_cont {
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-direction: row;
-        height: 40px;
+        height: 45px;
         width: 100%;
         background-color: #263647;
-        padding: 0.3em;
+        padding: 0.5em 0;
       }
       h1, p {
         color: white;
@@ -20,22 +26,37 @@
         text-align: center;
       }
       .title {
-        width: 70%;
+        width: 60%;
         height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
       }
       .score_cont {
-        width: 30%;
+        width: 20%;
         height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .logo{
+        font-weight: 700;
+        margin-left: 1em;
+      }
+      .logout{
+        margin-right: 1em;
+        font-weight: 500;
       }
     </style>
     <div class="bar_cont">
-      <div class="title">
-        <h1>{{title}}</h1>
-      </div>
+      <div on-click="backChoose" class="logo has_name">KIDSTHINKING</div>
+      <h1 class="title">{{title}}</h1>
       <div class="score_cont">
         <p>{{score}} : {{point}}</p>
         <p>{{lefted}}: {{matched}}/{{cards}}</p>
       </div>
+      <div on-click="logOut" class="logout has_name">로그아웃</div>
     </div>
   </template>
   <script>
@@ -48,8 +69,31 @@
           title: String,
           total: Number,
           matched: Number,
-          cards: Number
+          cards: Number,
+          hasname: {
+            type: Boolean,
+            notify: true,
+            reflectToAttribute: true,
+            value: false
+          }
         }
+      }
+      ready(){
+        super.ready();
+        // this.checkHasName(this.hasname)
+      }
+      checkHasName(name){
+        if(!name){
+          d3.select(this.shadowRoot)
+            .selectAll(".has_name")
+            .attr('style', "display:none")
+        }
+      }
+      logOut(){
+        d3.select("#element").nodes()[0].$.logOutModal.modalAlert()
+      }
+      backChoose(){
+        d3.select("#element").nodes()[0].$.previousModal.modalAlert()
       }
     }
     window.customElements.define(StatusBar.is, StatusBar);

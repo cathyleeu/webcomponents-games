@@ -69,7 +69,8 @@
       }
 
       .button {
-        display:inline-block;
+        /*display:inline-block;*/
+        display: none;
         text-align:center;
         padding:10px 15px;
         margin:10px;
@@ -85,7 +86,9 @@
         color:white;
         background:#009bd5;
       }
-
+      .done {
+        display: none;
+      }
       @keyframes moveUp {
         0% {
           transform:translateY(150px);
@@ -104,17 +107,25 @@
         }
       }
     </style>
+
     <div id="modal-container">
       <div class="modal-background">
         <div class="modal">
-          <h2>참 잘했어요!</h2>
-          <p>{{point}}점<p>
-          <p>[[matchedRate(total,matched)]]%</p>
-          <p>다음 단계로 넘어가볼까요?</p>
-          <div class="button" on-click="gameDone">넘어가기</div>
+          <h2>{{headertext}}</h2>
+          <div class="done">
+            <p>{{point}}점<p>
+            <p>[[matchedRate(total,matched)]]%</p>
+          </div>
+          <div>
+            <p>{{btmtext}}</p>
+          </div>
+          <div class="button done" on-click="handleNextStep">넘어가기</div>
+          <div class="button stay" on-click="handleStayStage">아니오</div>
+          <div class="button move" on-click="handleMoveStage">네</div>
         </div>
       </div>
     </div>
+
   </template>
   <script>
     class Modal extends Polymer.Element {
@@ -123,23 +134,52 @@
       }
       static get properties() {
         return {
+          headertext:String,
+          btmtext:String,
           point: Number,
           total: Number,
-          matched: Number
+          matched: Number,
+          purpose: String
         }
       }
+      ready(){
+        super.ready();
+        this.set('element', this.shadowRoot.getElementById("modal-container"))
+      }
+
       matchedRate(total, matched){
         let rate = (matched/total)*100
         return Math.round(rate)
       }
       modalAlert(){
-        let element = this.shadowRoot.getElementById("modal-container")
-        element.classList.add('three')
+        if(this.purpose === 'nextStep') {
+          let doneBtn = d3.select(this.shadowRoot).select('.done')
+          doneBtn.attr('style', 'display:inline-block')
+        } else {
+          console.log(this.purpose)
+          let stayBtn = d3.select(this.shadowRoot).select('.stay')
+          let moveBtn = d3.select(this.shadowRoot).select('.move')
+          moveBtn.attr('style', 'display:inline-block')
+          stayBtn.attr('style', 'display:inline-block')
+        }
+        this.element.classList.add('three')
       }
-      gameDone(){
-        let element = this.shadowRoot.getElementById("modal-container")
-        element.classList.remove('three')
+      handleNextStep(){
+        this.element.classList.remove('three')
         document.getElementById("element").reset()
+      }
+      handleMoveStage(){
+        if(this.purpose === 'previous'){
+          let href = `${location.origin}/code/${window.name}`
+          window.open(href, window.name);
+        } else {
+          let codeName = window.name.split('#')[0];
+          let href = `${location.origin}/code/${codeName}`
+          window.open(href, window.name);
+        }
+      }
+      handleStayStage(){
+        this.element.classList.remove('three')
       }
     }
     window.customElements.define(Modal.is, Modal);
