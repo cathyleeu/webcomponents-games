@@ -915,6 +915,9 @@ public.get('/a5_5_w3', function *(next) {
 public.get('/a6_w4', function *(next) {
   yield this.render('a6_w4');
 });
+public.get('/a7_w1', function *(next) {
+  yield this.render('a7_w1');
+});
 public.get('/a8_w1', function *(next) {
   yield this.render('a8_w1');
 });
