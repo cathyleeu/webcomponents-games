@@ -92,15 +92,33 @@
       title="{{localize('title')}}"
       score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
       total="{{total}}"
       point="{{point}}"
       matched="{{matched}}"
-      cards="{{cards}}"></status-bar>
+      cards="{{cards}}"
+      on-modal="handleModal"
+      ></status-bar>
     <modal-success
       id="successModal"
+      purpose="nextStep"
+      headertext="참 잘했어요!"
+      btmtext="다음 단계로 넘어가볼까요?"
       total="{{total}}"
       point="{{point}}"
       matched="{{matched}}"
+      ></modal-success>
+    <modal-success
+      id="logOutModal"
+      headertext="로그아웃"
+      btmtext="로그아웃 하시겠습니까?"
+      purpose="logout"
+      ></modal-success>
+    <modal-success
+      id="previousModal"
+      headertext="돌아가기"
+      btmtext="다른 챕터를 선택하시겠습니까?"
+      purpose="previous"
       ></modal-success>
   </template>
 
@@ -144,6 +162,18 @@
         this.set('point', this.point+5)
         d3.select(this.shadowRoot).select('#cont').remove()
         this.setData(this.data, this.manifest)
+      }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
       }
       setData(data, manifest){
         let _this = this,

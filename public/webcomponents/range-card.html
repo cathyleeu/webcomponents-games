@@ -8,7 +8,6 @@
     <style>
       :host {
         overflow: hidden;
-        /*--status-bar-hasname-display: none;*/
       }
     </style>
     <status-bar
@@ -19,7 +18,9 @@
       total="{{total}}"
       point="{{point}}"
       matched="{{matched}}"
-      cards="{{cards}}"></status-bar>
+      cards="{{cards}}"
+      on-modal="handleModal"
+      ></status-bar>
     <modal-success
       id="successModal"
       purpose="nextStep"
@@ -33,7 +34,7 @@
       id="logOutModal"
       headertext="로그아웃"
       btmtext="로그아웃 하시겠습니까?"
-      purpose="logOut"
+      purpose="logout"
       ></modal-success>
     <modal-success
       id="previousModal"
@@ -87,6 +88,13 @@
         if(window.name){
           return true
         } else return false
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
       }
       setData(data, manifest){
         let _this = this,

@@ -152,16 +152,13 @@
         return Math.round(rate)
       }
       modalAlert(){
-        if(this.purpose === 'nextStep') {
-          let doneBtn = d3.select(this.shadowRoot).select('.done')
-          doneBtn.attr('style', 'display:inline-block')
-        } else {
-          console.log(this.purpose)
-          let stayBtn = d3.select(this.shadowRoot).select('.stay')
-          let moveBtn = d3.select(this.shadowRoot).select('.move')
-          moveBtn.attr('style', 'display:inline-block')
-          stayBtn.attr('style', 'display:inline-block')
-        }
+        let target = {
+          nextStep : '.done',
+          previous : '.stay, .move',
+          logout : '.stay, .move'
+        };
+        let els = this.shadowRoot.querySelectorAll(target[this.purpose]);
+        els.forEach(el=>{el.style.display="inline-block"});
         this.element.classList.add('three')
       }
       handleNextStep(){

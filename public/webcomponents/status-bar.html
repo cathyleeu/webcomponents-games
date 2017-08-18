@@ -50,13 +50,13 @@
       }
     </style>
     <div class="bar_cont">
-      <div on-click="backChoose" class="logo has_name">KIDSTHINKING</div>
+      <div on-click="handleModal" data-purpose="previous" class="logo has_name">KIDSTHINKING</div>
       <h1 class="title">{{title}}</h1>
       <div class="score_cont">
         <p>{{score}} : {{point}}</p>
         <p>{{lefted}}: {{matched}}/{{cards}}</p>
       </div>
-      <div on-click="logOut" class="logout has_name">로그아웃</div>
+      <div on-click="handleModal" data-purpose="logout" class="logout has_name">로그아웃</div>
     </div>
   </template>
   <script>
@@ -80,7 +80,7 @@
       }
       ready(){
         super.ready();
-        // this.checkHasName(this.hasname)
+        this.checkHasName(this.hasname)
       }
       checkHasName(name){
         if(!name){
@@ -89,11 +89,8 @@
             .attr('style', "display:none")
         }
       }
-      logOut(){
-        d3.select("#element").nodes()[0].$.logOutModal.modalAlert()
-      }
-      backChoose(){
-        d3.select("#element").nodes()[0].$.previousModal.modalAlert()
+      handleModal(e) {
+        this.dispatchEvent(new CustomEvent('modal', {bubbles: true, composed: true, detail: {purpose: e.target.getAttribute("data-purpose")}}));
       }
     }
     window.customElements.define(StatusBar.is, StatusBar);
