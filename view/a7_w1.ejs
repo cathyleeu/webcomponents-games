@@ -1,0 +1,334 @@
+<style>
+html {
+  -ms-content-zooming: none; /* Disables zooming */
+  -ms-touch-action: none;   /* Disable any special actions on tap/touch */
+  -ms-scroll-chaining: none; /* Disable scroll boucing */
+  content-zooming: none;
+  touch-action: none;
+  scroll-chaining: none;
+}
+
+#container {
+  position: relative;
+}
+
+.head {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+  background: #2C3E50;
+  color: white;
+}
+
+.workspace {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+#display {
+  width: 100%;
+}
+
+.modal-dialog {
+  width: 400px;
+}
+.modal-body {
+  min-height: 200px;
+  font-size: 30px;
+}
+.score-wrap {
+  padding-right: 30px;
+}
+
+</style>
+<div id="container">
+  <div class="head">
+    <span data-msg="title">사계절 퀴즈</span>
+    <span class="score-wrap pull-right">
+      <span data-msg="score">점수</span>: <span id="score">0</span>
+    </span>
+  </div>
+  <div class="workspace">
+    <canvas id="display"></canvas>
+  </div>
+</div>
+<div id="modal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><span data-msg="modal_title">키즈씽킹</span></h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button id="confirm" type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0"><i class="fa fa-times-circle-o"></i> <span data-msg="confirm">확인</span></button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+$(function() {
+  var hash = location.hash,
+      lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+      msg = {
+        ko: {
+          title: "사계절 퀴즈",
+          score: "점수",
+          modal_title: "키즈씽킹",
+          confirm: "확인"
+        },
+        en: {
+          title: "Four Seasons Quiz",
+          score: "Score",
+          modal_title: "KidsThinking",
+          confirm: "OK"
+        }
+      },
+      stage = new createjs.Stage("display"),
+      loader = new createjs.LoadQueue(),
+      sounds = new createjs.LoadQueue(),
+      sources = {
+        spring: 4,
+        summer: 4,
+        fall: 4,
+        winter: 4,
+      },
+      count = {
+        spring: sources.spring,
+        summer: sources.summer,
+        fall: sources.fall,
+        winter: sources.winter
+      },
+      countObj = {},
+      manifest = [],
+      draggers = [];
+
+  $("[data-msg]").each(function(idx, el) {
+    $(el).text(msg[lang][$(el).data("msg")]);
+  });
+  createjs.Touch.enable(stage);
+  createjs.Sound.alternateExtensions = ["mp3", "wav"];
+  sounds.installPlugin(createjs.Sound);
+  sounds.loadManifest([
+    {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+    {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  ]);
+  Object.keys(sources).forEach(function(item) {
+    if(item != "etc") {
+      manifest.push({
+        id: item,
+        src: "/img/c1_w3/" + item + ".png"
+      });
+    }
+    for(var i = 0; i < sources[item]; i++) {
+      manifest.push({
+        id: item + i,
+        src: "/img/c1_w3/" + item + i + ".png"
+      });
+    }
+  });
+  stage.canvas.width = 700;
+  stage.canvas.height = 400;
+  stage.mouseMoveOutside = true;
+  loader.loadManifest(manifest);
+  loader.on("complete", function() {
+    draw();
+  });
+
+  function draw() {
+    var items = [],
+        px,
+        py,
+        dragger,
+        bitmap;
+    px = 6;
+    py = 0;
+    ["spring", "summer", "fall","winter"].forEach(function(item) {
+      bitmap = new createjs.Bitmap();
+      bitmap.image = loader.getResult(item);
+      setBitmapCoord(bitmap, px, py);
+      stage.addChild(bitmap);
+			var circle = new createjs.Shape();
+      circle.graphics.beginStroke("#000").beginFill("#FFF").drawCircle(0, 0, 15);
+      circle.x = bitmap.x + 25;
+      circle.y = bitmap.y + 25;
+      stage.addChild(circle);
+      countObj[item] = new createjs.Text(count[item], "20px monospace", "#000");
+			countObj[item].x = bitmap.x + 20;
+      countObj[item].y = bitmap.y + 15;
+      stage.addChild(countObj[item]);
+      py++;
+    });
+    px = 0;
+    py = 0;
+    manifest.forEach(function(item) {
+      if(item.id == "spring" || item.id == "summer" || item.id == "fall" || item.id == "winter") {
+        return;
+      }
+      items.push(item);
+    });
+    for(var i = 0; i < items.length; i++) {
+      var idx = parseInt(Math.random() * items.length, 10),
+          temp = items[i];
+      items[i] = items[idx],
+      items[idx] = temp;
+    }
+    items.forEach(function(item) {
+      bitmap = new createjs.Bitmap();
+      bitmap.image = loader.getResult(item.id);
+      dragger = new createjs.Container();
+      dragger.name = item.id;
+      dragger.addChild(bitmap);
+      dragger.on("mousedown", function(e) {
+        stage.removeChild(e.currentTarget);
+        stage.addChild(e.currentTarget);
+        e.currentTarget.x = e.stageX;
+        e.currentTarget.y = e.stageY - 30;
+        stage.update();
+      });
+      dragger.on("pressmove", function(e) {
+        e.currentTarget.x = e.stageX;
+        e.currentTarget.y = e.stageY - 30;
+        stage.update();
+      });
+      dragger.on("pressup", function(e) {
+        if(matched(e.currentTarget)) {
+          e.currentTarget.visible = false;
+        }
+        setBitmapCoord(e.currentTarget, e.currentTarget.px, e.currentTarget.py);
+        stage.update();
+      });
+      draggers.push(dragger);
+
+      setBitmapCoord(dragger, px, py);
+      stage.addChild(dragger);
+      px++;
+      if(px == 5) {
+        px = 0;
+        py++;
+      }
+    });
+
+    stage.update();
+    showModal(lang == "ko" ?
+        "계절에 맞는 그림을 찾아서 오른쪽으로 이동해 보자!" :
+        "Drag a picture from left and drop it on the right side.");
+  }
+  function setBitmapCoord(bitmap, px, py) {
+    var bounds = bitmap.getBounds(),
+        size = 100,
+        scale = 0.5;
+    bitmap.px = px;
+    bitmap.py = py;
+    bitmap.x = size * px + size / 2;
+    bitmap.y = size * py + size / 2;
+    bitmap.scaleX = scale;
+    bitmap.scaleY = scale;
+    bitmap.regX = bounds.width / 2;
+    bitmap.regY = bounds.height / 2;
+  }
+  function matched(target) {
+    var py = Math.floor((target.y) / 100),
+        type = target.name.match(/[^\d]+/)[0],
+        correct = py >= 0 && (["spring", "summer", "fall","winter"].indexOf(type) == py);
+
+    if(600<= target.x && target.x <= 700) {
+      if(correct) {
+        countDown(type);
+        return true;
+      }
+      showModal(lang == "ko" ? "계절이 맞지 않아요!" : "Unmatched!");
+    }
+    return false;
+  }
+  function countDown(type) {
+    var sum = 0,
+        score = +$("#score").text() + 1;
+    $("#score").text(score);
+    count[type]--;
+    countObj[type].text = count[type];
+    stage.update();
+    createjs.Sound.play("success");
+    Object.keys(count).forEach(function(item) {
+      sum += count[item];
+    });
+    if(sum == 0) {
+      showModal(lang == "ko" ? "계절을 모두 맞혔어요!" : "Good Job!");
+      setTimeout(function() {
+        createjs.Sound.play("complete");
+      }, 1000);
+    }
+  }
+  function showModal(msg) {
+    var $modal = $('#modal');
+    $modal.find(".modal-body").text(msg);
+    $modal.modal({
+      backdrop: "static"
+    });
+    $modal.modal('show');
+  }
+  function reset() {
+    var px = 0,
+        py = 0;
+    for(var i = 0; i < draggers.length; i++) {
+      var idx = parseInt(Math.random() * draggers.length, 10),
+          temp = draggers[i];
+      draggers[i] = draggers[idx],
+      draggers[idx] = temp;
+    }
+    for(var i = 0; i < draggers.length; i++) {
+      draggers[i].visible = true;
+      setBitmapCoord(draggers[i], px, py);
+      px++;
+      if(px == 5) {
+        px = 0;
+        py++;
+      }
+    }
+    count = {
+      spring: sources.spring,
+      summer: sources.summer,
+      fall: sources.fall,
+      winter: sources.winter
+    };
+    Object.keys(count).forEach(function(type) {
+      countObj[type].text = count[type];
+    });
+    stage.update();
+    var score = +$("#score").text() + 5;
+    $("#score").text(score);
+  }
+  $("#confirm").click(function(e) {
+    var text = $(e.target).closest(".modal").find(".modal-body").text();
+    if(text.slice(0, 3) == "계절을" || text.slice(0, 4) == "Good") {
+      reset();
+    }
+  });
+
+  $(document).on("contextmenu mousewheel", function(e) {
+    e.preventDefault();
+  });
+  var handle_resize = function(e) {
+    var height = $(window).height() - $(".head").height();
+    $("#display").css("max-height", height + "px");
+  };
+  $(window).on("resize", handle_resize);
+  setTimeout(function() {
+    handle_resize();
+  }, 100);
+
+});
+
+</script>
+
+<script src="/components/EaselJS/lib/easeljs-0.8.2.min.js"></script>
+<script src="/components/PreloadJS/lib/preloadjs-0.6.2.min.js"></script>
+<script src="/components/SoundJS/lib/soundjs-0.6.2.min.js"></script>
+<script src="/components/TweenJS/lib/tweenjs-0.6.2.min.js"></script>

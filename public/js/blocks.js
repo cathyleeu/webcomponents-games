@@ -1002,21 +1002,25 @@ Blockly.Blocks['dropdown'] = {
 Blocks['repeat_until_cos'] = {
   rgbColor: "#242786",
   message0: {
-    ko: "만약에 코스에게 가는 중이라면 반복",
-    en: "Repeat if going to Cos"
+    ko: "%1만약에 코스에게 가는 중이라면 반복",
+    en: "%1Repeat if going to Cos"
   },
-  message1: "%1",
-  argsh1: [
-    {type: "input_statement",    name: "statements"  }
-  ],
-  args1: [
-      {type: "field_image", src: "/img/kidsblocks/untilcos.png"}
-    ],
-  messageh0: "%1 %2",
-  argsh0:[
-    {type: "input_statements", name: "statements"},
+  args0: [
     {type: "field_image", src: "/img/kidsblocks/untilcos.png"}
   ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/untilcos.png"
+  }],
   messageh1: null,
   argsh1: null,
   action: ["repeat", "repeat_until"]
@@ -1025,21 +1029,25 @@ Blocks['repeat_until_cos'] = {
 Blocks['repeat_until_sea'] = {
   rgbColor: "#242786",
   message0: {
-    ko: "만약에 바다에 가는 중이라면 반복",
-    en: "Repeat if going to the sea"
+    ko: "%1만약에 바다에 가는 중이라면 반복",
+    en: "%1Repeat if going to the sea"
   },
-  message1: "%1",
-  args1: [
-    {type: "input_statement",    name: "statements"  }
-  ],
-  args1: [
-      {type: "field_image", src: "/img/kidsblocks/untilsea.png"}
-    ],
-  messageh0: "%1 %2",
-  argsh0:[
-    {type: "input_statements", name: "statements"},
+  args0: [
     {type: "field_image", src: "/img/kidsblocks/untilsea.png"}
   ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/untilsea.png"
+  }],
   messageh1: null,
   argsh1: null,
   action: ["repeat", "repeat_until"]
@@ -1048,21 +1056,25 @@ Blocks['repeat_until_sea'] = {
 Blocks['repeat_until_tootoo'] = {
   rgbColor: "#242786",
   message0: {
-    ko: "만약에 투투에게 가는 중이라면 반복",
-    en: "Repeat if going to Tootoo"
+    ko: "%1만약에 투투에게 가는 중이라면 반복",
+    en: "%1Repeat if going to Tootoo"
   },
-  message1: "%1",
-  argsh1: [
-    {type: "input_statement",    name: "statements"  }
-  ],
-  args1: [
-      {type: "field_image", src: "/img/kidsblocks/untiltootoo.png"}
-    ],
-  messageh0: "%1 %2",
-  argsh0:[
-    {type: "input_statements", name: "statements"},
+  args0: [
     {type: "field_image", src: "/img/kidsblocks/untiltootoo.png"}
   ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/untiltootoo.png"
+  }],
   messageh1: null,
   argsh1: null,
   action: ["repeat", "repeat_until"]
@@ -1153,6 +1165,9 @@ Blocks['repeat_until_pongpong'] = {
     ko: "퐁퐁이를 만날 때까지 반복",
     en: "Repeat Until meeting Pongpong"
   },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/down_n.png"}
+  ],
   message1: "%1",
   args1: [{
     type: "input_statement",

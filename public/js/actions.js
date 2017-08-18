@@ -2065,8 +2065,14 @@ Actions.prototype.repeat = function(type, block, callback) {
       child = block.getInputTargetBlock("statements"),
       count = +block.getFieldValue("count"),
       _this = this;
+
   if(_this.kidscoding.isHorizontal) {
-    count = +block.getInputTargetBlock("count").getFieldValue("count");
+    debugger
+    if(type == "repeat_until"){
+      count = 0;
+    }else{
+      count = +block.getInputTargetBlock("count").getFieldValue("count");
+    }
   }
   if(!child) {
     callback("반복 블록이 비었어요");
@@ -2074,6 +2080,7 @@ Actions.prototype.repeat = function(type, block, callback) {
   }
   function proc() {
     var tile = _this.map[character.py][character.px];
+    debugger
     if(child && ((tile != "%" && type == "repeat_until") || count > 0)) {
       _this.setTimeoutKey = setTimeout(function() {
         block.removeSelect();
