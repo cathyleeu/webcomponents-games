@@ -1011,12 +1011,12 @@ Blocks['repeat_until_cos'] = {
   message1: "%1",
   args1: [{
     type: "input_statement",
-    name: "if_statements"
+    name: "statements"
   }],
   messageh0: "%1 %2",
   argsh0: [{
     type: "input_statement",
-    name: "if_statements"
+    name: "statements"
   }, {
     type: "field_image",
     src: "/img/kidsblocks/untilcos.png"
@@ -1038,12 +1038,12 @@ Blocks['repeat_until_sea'] = {
   message1: "%1",
   args1: [{
     type: "input_statement",
-    name: "if_statements"
+    name: "statements"
   }],
   messageh0: "%1 %2",
   argsh0: [{
     type: "input_statement",
-    name: "if_statements"
+    name: "statements"
   }, {
     type: "field_image",
     src: "/img/kidsblocks/untilsea.png"
@@ -1065,12 +1065,12 @@ Blocks['repeat_until_tootoo'] = {
   message1: "%1",
   args1: [{
     type: "input_statement",
-    name: "if_statements"
+    name: "statements"
   }],
   messageh0: "%1 %2",
   argsh0: [{
     type: "input_statement",
-    name: "if_statements"
+    name: "statements"
   }, {
     type: "field_image",
     src: "/img/kidsblocks/untiltootoo.png"
@@ -1230,7 +1230,33 @@ Blocks['condition_wall_up'] = {
   }],
   messageh1: null,
   argsh1: null,
-  action: ["condition_nodirentio","no_up"]
+  action: ["condition_movable","no_up"]
+};
+Blocks['condition_up'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 위에 장애물이 없다면",
+    en: "%1 If an obstacle is not upwards"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/up_y.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/up_y.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["condition_movable","up"]
 };
 
 Blocks['condition_wall_down'] = {
@@ -1257,7 +1283,34 @@ Blocks['condition_wall_down'] = {
   }],
   messageh1: null,
   argsh1: null,
-  action: ["condition_nodirentio","no_down"]
+  action: ["condition_movable","no_down"]
+};
+
+Blocks['condition_down'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 아래에 장애물이 없다면",
+    en: "%1 If an obstacle is not downwards"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/down_y.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/down_y.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["condition_movable","down"]
 };
 
 Blocks['condition_wall_left'] = {
@@ -1284,7 +1337,34 @@ Blocks['condition_wall_left'] = {
   }],
   messageh1: null,
   argsh1: null,
-  action: ["condition_nodirentio","no_left"]
+  action: ["condition_movable","no_left"]
+};
+
+Blocks['condition_left'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 왼쪽에 장애물이 없다면",
+    en: "%1 If an obstacle is not leftwards"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/left_y.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/left_y.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["condition_movable","left"]
 };
 
 Blocks['condition_wall_right'] = {
@@ -1311,7 +1391,34 @@ Blocks['condition_wall_right'] = {
   }],
   messageh1: null,
   argsh1: null,
-  action: ["condition_nodirentio","no_right"]
+  action: ["condition_movable","no_right"]
+};
+
+Blocks['condition_right'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 왼쪽에 장애물이 없다면",
+    en: "%1 If an obstacle is not rightwards"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/right_y.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/right_y.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["condition_movable","right"]
 };
 
 Blocks['condition_ifsealion_up'] = {
