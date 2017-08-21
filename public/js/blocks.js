@@ -1235,8 +1235,8 @@ Blocks['condition_wall_up'] = {
 Blocks['condition_up'] = {
   rgbColor: "#309E4A",
   message0: {
-    ko: "%1 위에 장애물이 없다면",
-    en: "%1 If an obstacle is not upwards"
+    ko: "%1 위로 갈 수 있다면",
+    en: "%1 If you can go upwards"
   },
   args0: [
     {type: "field_image", src: "/img/kidsblocks/up_y.png"}
@@ -1289,8 +1289,8 @@ Blocks['condition_wall_down'] = {
 Blocks['condition_down'] = {
   rgbColor: "#309E4A",
   message0: {
-    ko: "%1 아래에 장애물이 없다면",
-    en: "%1 If an obstacle is not downwards"
+    ko: "%1 아래로 갈 수 있다면",
+    en: "%1 If you can go downwards"
   },
   args0: [
     {type: "field_image", src: "/img/kidsblocks/down_y.png"}
@@ -1343,8 +1343,8 @@ Blocks['condition_wall_left'] = {
 Blocks['condition_left'] = {
   rgbColor: "#309E4A",
   message0: {
-    ko: "%1 왼쪽에 장애물이 없다면",
-    en: "%1 If an obstacle is not leftwards"
+    ko: "%1 왼쪽으로 갈 수 있다면",
+    en: "%1 If you can go left"
   },
   args0: [
     {type: "field_image", src: "/img/kidsblocks/left_y.png"}
@@ -1370,7 +1370,7 @@ Blocks['condition_left'] = {
 Blocks['condition_wall_right'] = {
   rgbColor: "#309E4A",
   message0: {
-    ko: "%1 위에 장애물이 있다면",
+    ko: "%1 오른쪽에 장애물이 있다면",
     en: "%1 If an obstacle is rightside"
   },
   args0: [
@@ -1397,8 +1397,8 @@ Blocks['condition_wall_right'] = {
 Blocks['condition_right'] = {
   rgbColor: "#309E4A",
   message0: {
-    ko: "%1 왼쪽에 장애물이 없다면",
-    en: "%1 If an obstacle is not rightwards"
+    ko: "%1 오른쪽으로 갈 수 있다면",
+    en: "%1 If you can go right"
   },
   args0: [
     {type: "field_image", src: "/img/kidsblocks/right_y.png"}

@@ -9,7 +9,7 @@
     "move_right",
     "move_left",
     "repeat_until_cos",
-    "condition_wall_right"
+    "condition_right", "condition_wall_right"
   ],
   "map": [
     "ssssssss",
