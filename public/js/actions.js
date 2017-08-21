@@ -1496,7 +1496,6 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
           foods.splice(i,1);
       }
     }
-    debugger
     character.hasItem = true;
     if_block = block.getInputTargetBlock("if_statements");
     setTimeout(function() {
@@ -1970,7 +1969,6 @@ Actions.prototype.present = function(block, callback) {
       else if(food.img == "house_b") pImage = "house_b_present";
       else if(food.img == "house_y") pImage = "house_y_present";
       else pImage = "house_present";
-      debugger
       food.bitmap.image = _this.loader.getResult(pImage)
       var idx = foods.indexOf(food);
       foods.splice(idx,1);
@@ -2060,27 +2058,80 @@ Actions.prototype.condition_nodirentio = function(type, block, callback) {
   }, 100);
 };
 
+/*
+갈 수 없으면(f) wall 잇고(f) 들어가
+갈 수 없으면(f) wall 없고(t) 그냥 나가
+갈 수 있으면(t) wall 잇고(f) 그냥 나가
+갈 수 있으면(t) wall 없고(t) 들어가
+*/
+Actions.prototype.condition_movable = function(type, block, callback) {
+  var character = this.canvas.character;
+  if(!character.ifstep||!character.ifcount){
+    character.ifcount = 0;
+    character.ifstep = 0;
+  } else if((character.ifstep + character.ifcount) > 1){
+    character.ifcount = 0;
+    character.ifstep = 0;
+    callback();
+    return;
+  }
+  var isMove = (type.substring(0,2) == "no") ? 0 : 1,
+      isUpIndex = (type == "no_up" || type == "up") ? -1 : 0,
+      isDownIndex = (type == "no_down" || type == "down") ? 1 : 0,
+      isLeftIndex = (type == "no_left" || type == "left") ? -1 : 0,
+      isRigthIndex =(type == "no_right" || type == "right") ? 1 : 0,
+      idx = isLeftIndex + isRigthIndex;
+      idy = isUpIndex + isDownIndex;
+      x_next = character.px + idx,
+      y_next = character.py + idy,
+      tile = this.map[y_next][x_next],
+      move_forward = tile == "." || tile == ")" || tile == "%",
+      if_block = block.getInputTargetBlock("if_statements"),
+      child = if_block,
+      _this = this;
+
+  character.ifstep ++;
+
+  if(move_forward) move_forward = 1;
+  else move_forward = 0;
+
+  if(isMove + move_forward == 1){
+    callback();
+    return;
+  }else{
+    character.ifcount++;
+  }
+  if((character.ifstep + character.ifcount) > 2){
+    character.ifcount = 0;
+    character.ifstep = 0;
+  }
+
+  setTimeout(function() {
+    block.removeSelect();
+    _this.run(child, callback);
+  }, 100);
+};
+
 Actions.prototype.repeat = function(type, block, callback) {
   var character = this.canvas.character,
       child = block.getInputTargetBlock("statements"),
       count = +block.getFieldValue("count"),
       _this = this;
-
+      debugger
   if(_this.kidscoding.isHorizontal) {
-    debugger
     if(type == "repeat_until"){
       count = 0;
     }else{
       count = +block.getInputTargetBlock("count").getFieldValue("count");
     }
   }
+  debugger
   if(!child) {
     callback("반복 블록이 비었어요");
     return;
   }
   function proc() {
     var tile = _this.map[character.py][character.px];
-    debugger
     if(child && ((tile != "%" && type == "repeat_until") || count > 0)) {
       _this.setTimeoutKey = setTimeout(function() {
         block.removeSelect();
