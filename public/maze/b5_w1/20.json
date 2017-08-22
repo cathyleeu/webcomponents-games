@@ -49,5 +49,12 @@
     "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
     "msg:en": "Let's use 'get items' block on the things",
     "img": ["/img/b5_w1/Rubber_boats.png","/img/b5_w1/tube.png","/img/blocks/bring.png"]
-  }
+  },
+  "success": [{
+    "msg:ko": "성공! 이번 시간의 모든 문제를 해결하였어요~",
+    "msg:jp": "成功！よくできました！",
+    "msg:en": "Success! All clear in this class!",
+    "msg:cn": "成功了！做得很棒。",
+    "link": "b5_w2/index"
+  }]
 }

@@ -1,0 +1,138 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####EEEE####.",
+    "..r..%%%%I...#",
+    ".########....#",
+    "##...####....#",
+    "..#..........#",
+    "##...%%%%....#",
+    "#####NNNN####."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c10/egg.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c10/egg.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c10/egg.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/c10/egg.png"
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c10/egg.png","/img/c10/egg.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c10/egg.png","/img/c10/egg.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c10/egg.png","/img/c10/egg.png"]
+    }]
+  },{
+    "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/c10/egg.png","/img/c10/egg.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c10_w3_c1/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c10_w3_c1/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "c10_w3_c1/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c10_w3_c1/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요.",
+      "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
+      "msg:en": "The basic problems are over. Now you can solve the problem freely."
+    }]
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "c10_w3_c1/5"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c10_w3_c1/6"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "c10_w3_c1/7"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "c10_w3_c1/8"
+  },{
+    "img":"tootoo",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "c10_w3_c2/index",
+    "min_score": 7
+  }],
+
+  "tutorial": [{
+    "msg:ko": "알로 가보아요! 쉬운 문제는 1점, 보통은 2점을 주어요.",
+    "msg:en": "Let's go to the egg! An easy problem gives you one point, a normal one gives you two.",
+    "img": "/img/c10/egg.png"
+  }],
+  "goal": {
+    "msg:ko": "7점을 얻고 투투에게 가요. 투투가 바다에서 먹이를 구해올 차례에요.",
+    "msg:en": "Let's get 5 points and go to Tootoo. It is time for Tootoo to get food from the sea.",
+    "img": ["/img/c10/egg.png","/img/c10/tootoo0.png"]
+  }
+}

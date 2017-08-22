@@ -55,5 +55,12 @@
     "msg:ko": "할아버지의 상태를 확인하고, 아프시면 병원으로 모시고 가고, 아프지 않으시면 코봇의 집으로 가요.",
     "msg:en": "Let's check status of grandfather and if he was sick, Cobot is go to hospital with grandfather or if not, go to Cobot's house",
     "img": ["/img/c8_w3/siren.png","/img/c8_w3/hospital.png","/img/c8_w3/siren_x.png","/img/c8_w3/cobot_home.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공! 이번 시간의 모든 문제를 해결하였어요~",
+    "msg:jp": "成功！よくできました！",
+    "msg:en": "Success! All clear in this class!",
+    "msg:cn": "成功了！做得很棒。",
+    "link": "c8_w4/index"
   }]
 }

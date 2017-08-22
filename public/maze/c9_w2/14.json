@@ -1,0 +1,48 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    "########",
+    "#.t....#",
+    "#..##t##",
+    "#dt...t#",
+    "#..###.#",
+    "##..#..#",
+    "#...%..#",
+    "########"
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 3,
+    "img": "d0730"
+  },{
+    "x": 2,
+    "y": 3,
+    "img": "d0630"
+  },{
+    "x": 2,
+    "y": 1,
+    "img": "d0130"
+  },{
+    "x": 5,
+    "y": 2,
+    "img": "d0230"
+  },{
+    "x": 4,
+    "y": 6,
+    "img": "d0530"
+  }],
+  "tutorial": [{
+    "msg:ko": "현재 시각은 다섯시 반이에요. 올바른 시계로 이동해 보아요.",
+    "msg:en": "The current time is five and a half. Go to the correct clock.",
+    "img": "/img/c9_w2/a0530.png"
+  }]
+}

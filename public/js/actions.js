@@ -1104,6 +1104,10 @@ Actions.prototype.check = function(block, callback) {
       chest.role = "justmove";
       chest.order = chest.contents[ranNum].order;
       _this.setCoord(chest, chest.px, chest.py);
+    }else if(chest.contents[ranNum].role == "clock") {
+      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
+      character.clock = chest.contents[ranNum].order;
+        _this.setCoord(chest, chest.px, chest.py);
     }else{
       chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = chest.contents[ranNum].role;
@@ -1486,7 +1490,22 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
     }else{
       callback();
     }
+  }else if(options == character.clock){
+    for(var i = foods.length-1; i>=0;i--){
+      if(character.clock!=foods[i].order){
+          foods.splice(i,1);
+      }
+    }
+    character.hasItem = true;
+    if_block = block.getInputTargetBlock("if_statements");
+    setTimeout(function() {
+      block.removeSelect();
+      _this.run(if_block, callback);
+    }, 500);
+  }else{
+    callback();
   }
+
 
 };
 
@@ -1937,25 +1956,28 @@ Actions.prototype.present = function(block, callback) {
       foods = this.canvas.foods,
       itemBitmap = character.itemBitmap;
   if(!character.hasItem) {
-    callback("선물이 없어요");
+    callback("조건블록을 사용하지 않았어요.");
     return;
   }
   // 목표 위에서 아이템 사용(패턴 매칭)
   var food = this._getCanvasObject(character.px, character.py, "food");
   if(food && food.useItem) {
+    this._splitObjects(food, function() {
       var pImage = "";
       if(food.img == "house_r") pImage = "house_r_present";
       else if(food.img == "house_g") pImage = "house_g_present";
+      else if(food.img == "house_b") pImage = "house_b_present";
       else if(food.img == "house_y") pImage = "house_y_present";
       else pImage = "house_present";
       food.bitmap.image = _this.loader.getResult(pImage)
       var idx = foods.indexOf(food);
       foods.splice(idx,1);
-      this.canvas.stage.update();
+      _this.canvas.stage.update();
       createjs.Sound.play("success");
       setTimeout(function() {
         callback();
       }, 500);
+    });
     return;
   }
   // 아이템을 사용할 수 없는 경우
@@ -2036,14 +2058,74 @@ Actions.prototype.condition_nodirentio = function(type, block, callback) {
   }, 100);
 };
 
+/*
+갈 수 없으면(f) wall 잇고(f) 들어가
+갈 수 없으면(f) wall 없고(t) 그냥 나가
+갈 수 있으면(t) wall 잇고(f) 그냥 나가
+갈 수 있으면(t) wall 없고(t) 들어가
+*/
+Actions.prototype.condition_movable = function(type, block, callback) {
+  var character = this.canvas.character;
+  if(!character.ifstep||!character.ifcount){
+    character.ifcount = 0;
+    character.ifstep = 0;
+  } else if((character.ifstep + character.ifcount) > 1){
+    character.ifcount = 0;
+    character.ifstep = 0;
+    callback();
+    return;
+  }
+  var isMove = (type.substring(0,2) == "no") ? 0 : 1,
+      isUpIndex = (type == "no_up" || type == "up") ? -1 : 0,
+      isDownIndex = (type == "no_down" || type == "down") ? 1 : 0,
+      isLeftIndex = (type == "no_left" || type == "left") ? -1 : 0,
+      isRigthIndex =(type == "no_right" || type == "right") ? 1 : 0,
+      idx = isLeftIndex + isRigthIndex;
+      idy = isUpIndex + isDownIndex;
+      x_next = character.px + idx,
+      y_next = character.py + idy,
+      tile = this.map[y_next][x_next],
+      move_forward = tile == "." || tile == ")" || tile == "%",
+      if_block = block.getInputTargetBlock("if_statements"),
+      child = if_block,
+      _this = this;
+
+  character.ifstep ++;
+
+  if(move_forward) move_forward = 1;
+  else move_forward = 0;
+
+  if(isMove + move_forward == 1){
+    callback();
+    return;
+  }else{
+    character.ifcount++;
+  }
+  if((character.ifstep + character.ifcount) > 2){
+    character.ifcount = 0;
+    character.ifstep = 0;
+  }
+
+  setTimeout(function() {
+    block.removeSelect();
+    _this.run(child, callback);
+  }, 100);
+};
+
 Actions.prototype.repeat = function(type, block, callback) {
   var character = this.canvas.character,
       child = block.getInputTargetBlock("statements"),
       count = +block.getFieldValue("count"),
       _this = this;
+      debugger
   if(_this.kidscoding.isHorizontal) {
-    count = +block.getInputTargetBlock("count").getFieldValue("count");
+    if(type == "repeat_until"){
+      count = 0;
+    }else{
+      count = +block.getInputTargetBlock("count").getFieldValue("count");
+    }
   }
+  debugger
   if(!child) {
     callback("반복 블록이 비었어요");
     return;

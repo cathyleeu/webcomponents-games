@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat_until_cos",
+    "condition_wall_right"
+  ],
+  "map": [
+    "ssssssss",
+    "r#.###..",
+    "...#..#.",
+    "s#....#.",
+    "s.##...%",
+    "ss#.###.",
+    "ss....#.",
+    "ss###..."
+  ],
+  "tutorial": [{
+    "msg:ko": "먹이를 구한 투투는 코스에게 가야 해요. 만약에 반복 블록을 이용해서 코스에게 가요.",
+    "msg:en": "Tootoo, who found the food, should go to Cos. Use the 'repeat if block' to go to Cos.",
+    "img": ["/img/c10/tootoo0.png", "/img/blocks/untilcos.png"]
+  }],
+  "goal":{
+    "msg:ko": "만약에 반복 블록을 이용해서 코스에게 가요. 장애물은 아래로 피해요.",
+    "msg:en": "Use the 'repeat if block' to go to Cos. Avoid obstacles downwards.",
+    "img": ["/img/c10/tootoo0.png", "/img/blocks/untilcos.png", "/img/blocks/down.png"]
+  }
+}

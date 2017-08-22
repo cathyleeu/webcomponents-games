@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_left",
+    "move_right",
+    "repeat_until_tootoo"
+  ],
+  "map": [
+    ".######.",
+    "#......#",
+    "#......#",
+    "#%...l.#",
+    "#......#",
+    "#......#",
+    "#......#",
+    ".######."
+  ],
+  "extra": [{
+    "x": 1,
+    "y": 3,
+    "img": "tootoo"
+  }],
+  "tutorial": [{
+    "msg:ko": "제니가 투투에게 갈 수 있도록 만약에 반복 블록을 써보아요.",
+    "msg:en": "Use a 'repeat if block' to let Geny can go to Tootoo.",
+    "img": ["/img/c10/geny0.png", "/img/blocks/untiltootoo.png", "/img/c10/tootoo0.png" ]
+  }],
+  "goal":{
+    "msg:ko": "제니가 투투에게 갈 수 있도록 만약에 반복 블록을 써보아요.",
+    "msg:en": "Use a 'repeat if block' to let Geny can go to Tootoo.",
+    "img": ["/img/c10/geny0.png", "/img/blocks/untiltootoo.png", "/img/c10/tootoo0.png" ]
+  }
+}

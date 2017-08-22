@@ -1,0 +1,25 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    ".######.####",
+    "#......#....",
+    "#......#....",
+    "#.r....%....",
+    "#......#....",
+    "#......#....",
+    ".######.####"
+  ],
+  "extra": [{
+    "x": 7,
+    "y": 3,
+    "link": "c10_w1/1"
+  }],
+  "tutorial": [{
+    "msg:ko": "오른쪽 빼기로 이동해서 키즈씽킹을 시작해요.",
+    "msg:en": "Go to the subtraction on the right and start KidsThinking!",
+    "img": "/img/c10/minus.png"
+  }]
+}
