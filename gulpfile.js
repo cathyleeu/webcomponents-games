@@ -27,22 +27,22 @@ function task_webcomponents(cb) {
       plugins: ['external-helpers', 'transform-custom-element-classes', 'transform-es2015-classes']
     })))
     .pipe(dependenciesStreamSplitter.rejoin())
-    .pipe($.rename(function (path) {
-      if(path.dirname == "public/webcomponents") {
-        path.dirname = path.dirname + "-es5";
+    .pipe($.rename(function (p) {
+      if(p.dirname == path.join("public", "webcomponents")) {
+        p.dirname = p.dirname + "-es5";
       } else {
-        path.dirname = path.dirname.replace("public/components/", "public/components-es5/");
+        p.dirname = p.dirname.replace(/(public[/\\])(components)([/\\])/g, "$1$2-es5$3");
       }
     }))
-    .pipe($.if(/webcomponents-es5\/[^.]*.html/, $.change(function(contents) {
-      return contents.replace(/(=["']\.*\/)(components)(\/[^"']*)/g, "$1$2-es5$3").replace("/webcomponents/", "/webcomponents-es5/");
+    .pipe($.if(/webcomponents-es5[/\\][^.]*.html/, $.change(function(contents) {
+      return contents.replace(/(=["']\.*[/\\])(components)([/\\][^"']*)/g, "$1$2-es5$3").replace(/([/\\])(webcomponents)([/\\])/g, "$1$2-es5$3");
     })))
-    .pipe(project.addBabelHelpersInEntrypoint(project.config.entrypoint.replace("/webcomponents/", "/webcomponents-es5/")))
+    .pipe(project.addBabelHelpersInEntrypoint(project.config.entrypoint.replace(/([/\\])(webcomponents)([/\\])/g, "$1$2-es5$3")))
     .pipe(project.addCustomElementsEs5Adapter());
 
   let sourcesStream = project.sources()
-    .pipe($.rename(function (path) {
-      path.dirname = path.dirname.replace("public/components/", "public/components-es5/");
+    .pipe($.rename(function (p) {
+      p.dirname = p.dirname.replace(/(public[/\\])(components)([/\\])/g, "$1$2-es5$3");
     }));
 
   mergeStream(sourcesStream, dependenciesStream)
