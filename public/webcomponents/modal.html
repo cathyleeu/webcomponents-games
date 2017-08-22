@@ -1,0 +1,184 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="modal-success">
+  <template>
+    <style>
+      :host {
+        min-height:100%;
+        height:100%;
+        background-size:cover;
+        background-position:top center;
+        font-family:helvetica neue, helvetica, arial, sans-serif;
+        font-weight:200;
+        position: absolute;
+        z-index: 100;
+      }
+      :host(.modal-active) {
+        overflow: hidden;
+      }
+      #modal-container {
+        position:fixed;
+        display:table;
+        height:100%;
+        width:100%;
+        top:0;
+        left:0;
+        transform:scale(0);
+        z-index:1;
+      }
+
+      #modal-container.three{
+        z-index:0;
+        transform:scale(1);
+      }
+
+      .three > .modal-background {
+        background:rgba(0,0,0,.6);
+      }
+      .three > .modal-background > .modal {
+        animation: moveUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      }
+
+      .three.out .modal-background .modal {
+        animation: moveDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      }
+
+      .modal-background {
+        display:table-cell;
+        background:rgba(0,0,0,.8);
+        text-align:center;
+        vertical-align:middle;
+      }
+
+      .modal-background .modal {
+        background:white;
+        padding:50px;
+        display:inline-block;
+        border-radius:3px;
+        font-weight:300;
+        position:relative;
+      }
+      .modal-background .modal h2 {
+        font-size:25px;
+        line-height:25px;
+        margin-bottom:15px;
+      }
+      .modal-background .modal p {
+        font-size:18px;
+        line-height:22px;
+      }
+
+      .button {
+        /*display:inline-block;*/
+        display: none;
+        text-align:center;
+        padding:10px 15px;
+        margin:10px;
+        background:red;
+        font-size:18px;
+        background-color:#efefef;
+        border-radius:3px;
+        box-shadow:0 1px 2px rgba(0,0,0,.3);
+        cursor:pointer;
+      }
+
+      .button:hover {
+        color:white;
+        background:#009bd5;
+      }
+      .done {
+        display: none;
+      }
+      @keyframes moveUp {
+        0% {
+          transform:translateY(150px);
+        }
+        100% {
+          transform:translateY(0);
+        }
+      }
+
+      @keyframes moveDown {
+        0% {
+          transform:translateY(0px);
+        }
+        100% {
+          transform:translateY(150px);
+        }
+      }
+    </style>
+
+    <div id="modal-container">
+      <div class="modal-background">
+        <div class="modal">
+          <h2>{{headertext}}</h2>
+          <div class="done">
+            <p>{{point}}점<p>
+            <p>[[matchedRate(total,matched)]]%</p>
+          </div>
+          <div>
+            <p>{{btmtext}}</p>
+          </div>
+          <div class="button done" on-click="handleNextStep">넘어가기</div>
+          <div class="button stay" on-click="handleStayStage">아니오</div>
+          <div class="button move" on-click="handleMoveStage">네</div>
+        </div>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    class Modal extends Polymer.Element {
+      static get is() {
+        return "modal-success";
+      }
+      static get properties() {
+        return {
+          headertext:String,
+          btmtext:String,
+          point: Number,
+          total: Number,
+          matched: Number,
+          purpose: String
+        }
+      }
+      ready(){
+        super.ready();
+        this.set('element', this.shadowRoot.getElementById("modal-container"))
+      }
+
+      matchedRate(total, matched){
+        let rate = (matched/total)*100
+        return Math.round(rate)
+      }
+      modalAlert(){
+        let target = {
+          nextStep : '.done',
+          previous : '.stay, .move',
+          logout : '.stay, .move'
+        };
+        let els = this.shadowRoot.querySelectorAll(target[this.purpose]);
+        els.forEach(el=>{el.style.display="inline-block"});
+        this.element.classList.add('three')
+      }
+      handleNextStep(){
+        this.element.classList.remove('three')
+        document.getElementById("element").reset()
+      }
+      handleMoveStage(){
+        if(this.purpose === 'previous'){
+          let href = `${location.origin}/code/${window.name}`
+          window.open(href, window.name);
+        } else {
+          let codeName = window.name.split('#')[0];
+          let href = `${location.origin}/code/${codeName}`
+          window.open(href, window.name);
+        }
+      }
+      handleStayStage(){
+        this.element.classList.remove('three')
+      }
+    }
+    window.customElements.define(Modal.is, Modal);
+  </script>
+</dom-module>

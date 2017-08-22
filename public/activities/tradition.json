@@ -1,0 +1,39 @@
+{
+  "element": "line-card",
+  "attributes": {
+  },
+  "data": [
+    "handmill",
+    "coin",
+    "hat",
+    "socks",
+    "blender",
+    "money",
+    "hat2",
+    "socks2"
+  ],
+  "manifest": [
+    {"no": 0 , "set": 0, "id": "handmill", "src": "/img/b55/handmill.png"},
+    {"no": 1 , "set": 0, "id": "coin", "src": "/img/b55/coin.png"},
+    {"no": 2 , "set": 0, "id": "hat", "src": "/img/b55/hat.png"},
+    {"no": 3 , "set": 0, "id": "socks", "src": "/img/b55/socks.png"},
+    {"no": 0 , "set": 1, "id": "blender", "src": "/img/b55/blender.png"},
+    {"no": 1 , "set": 1, "id": "money", "src": "/img/b55/money.png"},
+    {"no": 2 , "set": 1, "id": "hat2", "src": "/img/b55/hat2.png"},
+    {"no": 3 , "set": 1, "id": "socks2", "src": "/img/b55/socks2.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "카드를 뒤집어 짝을 맞추어보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!"
+    },
+    "en": {
+      "title": "Flip the cards and Match the pairs",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!"
+    }
+  }
+}

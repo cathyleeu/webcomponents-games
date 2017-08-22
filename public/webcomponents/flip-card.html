@@ -1,12 +1,15 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
 
 <dom-module id="flip-card">
   <template>
     <style>
-      :host {
+      #cont {
         width: 800px;
-        height: 800px;
-        position: absolute;
+        left: 50%;
+        margin-top: 20px;
       }
 
       .card-cont {
@@ -14,50 +17,57 @@
         height: 180px;
         display:inline-block;
         position: relative;
-        perspective: 180px;
         margin: 0.5em 0.5em 0;
+        perspective: 500px;
+        -ms-perspective: 500px;
       }
 
-      [id^="card"] {
+      [class^="flip"] {
         width: 100%;
         height: 100%;
         position: absolute;
         -webkit-transform-style: preserve-3d;
-          /* -moz-transform-style: preserve-3d;
-             -o-transform-style: preserve-3d; */
+        -ms-transform-style: preserve-3d;
+           -moz-transform-style: preserve-3d;
+             -o-transform-style: preserve-3d;
                 transform-style: preserve-3d;
 
         -webkit-transition: transform 1s;
-         /*  -moz-transition: transform 1s;
-             -o-transition: transform 1s; */
+        -ms-transition: transform 1s;
+           -moz-transition: transform 1s;
+             -o-transition: transform 1s;
                 transition: transform 1s;
       }
+      [class^="flip"]:hover {
+        cursor: pointer;
+      }
 
-      [id^="card"] figure{
+      [class^="flip"] figure{
         margin: 0;
         display: block;
         position: absolute;
         width: 100%;
         height: 100%;
+        border-radius: 5px;
+        border: 5px solid #2ECC98;
+        transition: transform 1s;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
+        perspective: 500px;
+        -ms-perspective: 500px;
       }
 
-      [id^="card"] .front{
-        border-radius: 5px;
-        border: 5px solid #2ECC98;
+
+      [class^="flip"] .front{
         background: white;
+        transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
       }
-      [id^="card"] .back {
-        border-radius: 5px;
-        border: 5px solid #2ECC98;
+      [class^="flip"] .back {
         background: #2ECC98;
-        left: -10px;
+        /*left: -10px;*/
         transform: rotateY(180deg);
-      }
-
-      [id^="card"].flipped {
-        transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
       }
 
       .card-img{
@@ -78,68 +88,158 @@
         background-repeat: no-repeat;
       }
     </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      ></status-bar>
+    <modal-success
+      id="successModal"
+      purpose="nextStep"
+      headertext="참 잘했어요!"
+      btmtext="다음 단계로 넘어가볼까요?"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      ></modal-success>
+    <modal-success
+      id="logOutModal"
+      headertext="로그아웃"
+      btmtext="로그아웃 하시겠습니까?"
+      purpose="logout"
+      ></modal-success>
+    <modal-success
+      id="previousModal"
+      headertext="돌아가기"
+      btmtext="다른 챕터를 선택하시겠습니까?"
+      purpose="previous"
+      ></modal-success>
   </template>
 
   <script>
-    class FlipCard extends Polymer.Element {
+    class FlipCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
       static get is() { return 'flip-card'; }
       connectedCallback() {
         super.connectedCallback();
-        this.shadowRoot.namespaceURI = d3.namespaces.xhtml;
       }
-      setData(val){
-        let i, j, temp;
-        this.data = val.concat(val);
-        for(i = 1; i < this.data.length; i++) {
-          j = Math.floor(Math.random() * (i+1));
-          temp = this.data[i];
-          this.data[i] = this.data[j];
-          this.data[j] = temp;
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          },
+          resources: {
+            value() {
+              return {
+                "ko": {
+                  "title": "카드 짝 맞추기",
+                  "success": "참 잘했어요!"
+                },
+                "en": {
+                  "title": "Match The Cards",
+                  "success": "Good job!"
+                }
+              }
+            }
+          }
         }
-        var board = d3.select(this.shadowRoot);
-        var tags = ["front", "back"],
-            flipped = 0;
-
-        board.selectAll('div').remove();
+      }
+      ready() {
+        // 미리 설정해 놓는 것....
+        super.ready();
+        this.set('total', 0)
+        this.set('point', 0)
+        this.set('matched', 0)
+      }
+      reset(){
+        this.set('total', 0)
+        this.set('matched', 0)
+        this.set('point', this.point+5)
+        d3.select(this.shadowRoot).select('#cont').remove()
+        this.setData(this.data, this.manifest)
+      }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+      setData(data, manifest){
+        let _this = this,
+            board = d3.select(this.shadowRoot)
+              .append('xhtml:div')
+              .attr('id', "cont")
+              .attr('style', `margin-left:${(this.offsetWidth-800)/2}px` ),
+            tags = ["front", "back"];
+        _this.set('cards', data.length )
+        _this.set('data', data )
+        _this.set('manifest', manifest )
+        manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
+        data = data.map(id=>manifest[id]);
+        console.log(this.offsetWidth)
+        let flipData = d3.shuffle(data.concat(data));
         let card = board.selectAll('div')
-            .data(this.data).enter()
-            .append('div')
+            .data(flipData).enter()
+            .append('xhtml:div')
             .classed('card-cont', true);
 
         const transition_end_events = 'webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd';
-        let flipper = card.append('div')
-            .attr('id', (d,i) => `card-${i}`)
+        let flipper = card.append('xhtml:div')
+            .attr('class', (d,i) => `flip-${i}`)
             .on('click', function(d, i) {
               const flipped_el = board.selectAll('.flipped');
               if(flipped_el.size() < 2) {
-                d3.select(this).classed("flipped", true);
+                let selectedFlip = d3.select(this)
+                selectedFlip.classed("flipped", true)
+                selectedFlip.select(`.flip-${i} > .front`).style("transform", "rotateY(-180deg)");
+                selectedFlip.select(`.flip-${i} > .back`).style("transform", "rotateY(0deg)");
+                //FIXME: 자잘한 에러가 있음...
               }
             })
             .on(transition_end_events, function(d, i) {
               if(d3.select(this).classed("flipped")) {
-                flipped++;
+                const flipped = board.selectAll('.flipped').size();
                 if(flipped == 2) {
                   const flipped_el = board.selectAll('.flipped');
-                  flipped = 0;
                   if(flipped_el.data()[0] == flipped_el.data()[1]) {
+                    _this.set('matched', _this.matched+1)
+                    _this.set('point', _this.point+2)
                     flipped_el.remove();
+
+                    if(_this.matched === _this.cards){
+                      _this.shadowRoot.getElementById("successModal").modalAlert()
+                    }
                   } else {
                     flipped_el.classed("flipped", false);
+                    flipped_el.selectAll('.front').attr('style', null);
+                    flipped_el.selectAll('.back').attr('style', null);
                   }
+                  _this.set('total', _this.total+1)
                 }
               }
             });
 
         let cardItem = flipper.selectAll('figure')
             .data(tags).enter()
-            .append('figure')
+            .append('xhtml:figure')
             .attr('class', (d,i) => d)
-        this.data.map( (item,i) => board.selectAll(`#card-${i}`)
+        flipData.map( (item,i) => board.selectAll(`.flip-${i}`)
                 .select('.back')
                 .html(`<img src=${item} class="card-img" />`)
             );
 
-        this.data.map( (_,i) => board.selectAll(`#card-${i}`)
+        flipData.map( (_,i) => board.selectAll(`.flip-${i}`)
                 .select('.front')
                 .html('<img src="https://toycode.org/img/kidsthinking_big.png" class="card-front-logo"/>'));
       }

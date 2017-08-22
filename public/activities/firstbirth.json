@@ -1,0 +1,39 @@
+{
+  "element": "line-card",
+  "attributes": {
+  },
+  "data": [
+    "brush",
+    "coin",
+    "arrow",
+    "coloredpaper",
+    "pencil",
+    "money",
+    "ball",
+    "mic"
+  ],
+  "manifest": [
+    {"no": 0 , "set": 0, "id": "brush", "src": "/img/b55/brush.png"},
+    {"no": 1 , "set": 0, "id": "coin", "src": "/img/b55/coin.png"},
+    {"no": 2 , "set": 0, "id": "arrow", "src": "/img/b55/arrow.png"},
+    {"no": 3 , "set": 0, "id": "coloredpaper", "src": "/img/b55/coloredpaper.png"},
+    {"no": 0 , "set": 1, "id": "pencil", "src": "/img/b55/pencil.png"},
+    {"no": 1 , "set": 1, "id": "money", "src": "/img/b55/money.png"},
+    {"no": 2 , "set": 1, "id": "ball", "src": "/img/b55/ball.png"},
+    {"no": 3 , "set": 1, "id": "mic", "src": "/img/b55/mic.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "전통 돌잡이와 같은 의미를 지닌 현대 돌잡이 용품을 연결해보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!"
+    },
+    "en": {
+      "title": "Matching the cards with Old and New",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!"
+    }
+  }
+}

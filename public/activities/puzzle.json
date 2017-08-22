@@ -1,0 +1,22 @@
+{
+  "element": "puzzle-game",
+  "attributes": {
+    "pznum": 3,
+    "pzsize": 250
+  },
+  "data": "https://s-media-cache-ak0.pinimg.com/originals/53/a8/e6/53a8e6c361aed07b560ef9ab8756824b.gif",
+  "msg": {
+    "ko": {
+      "title": "그림에 맞춰 퍼즐을 맞춰보세요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!"
+    },
+    "en": {
+      "title": "Along with the picture, Match the puzzle",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!"
+    }
+  }
+}

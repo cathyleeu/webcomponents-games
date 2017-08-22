@@ -1,0 +1,98 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="status-bar">
+  <template>
+    <style>
+      .has_name{
+        color: white;
+        cursor: pointer;
+        width: 10%;
+        text-align: center;
+      }
+      .bar_cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 45px;
+        width: 100%;
+        background-color: #263647;
+        padding: 0.5em 0;
+      }
+      h1, p {
+        color: white;
+        display: block;
+        margin: 0;
+        text-align: center;
+      }
+      .title {
+        width: 60%;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+      .score_cont {
+        width: 20%;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .logo{
+        font-weight: 700;
+        margin-left: 1em;
+      }
+      .logout{
+        margin-right: 1em;
+        font-weight: 500;
+      }
+    </style>
+    <div class="bar_cont">
+      <div on-click="handleModal" data-purpose="previous" class="logo has_name">KIDSTHINKING</div>
+      <h1 class="title">{{title}}</h1>
+      <div class="score_cont">
+        <p>{{score}} : {{point}}</p>
+        <p>{{lefted}}: {{matched}}/{{cards}}</p>
+      </div>
+      <div on-click="handleModal" data-purpose="logout" class="logout has_name">로그아웃</div>
+    </div>
+  </template>
+  <script>
+    class StatusBar extends Polymer.Element {
+      static get is() {
+        return "status-bar";
+      }
+      static get properties() {
+        return {
+          title: String,
+          total: Number,
+          matched: Number,
+          cards: Number,
+          hasname: {
+            type: Boolean,
+            notify: true,
+            reflectToAttribute: true,
+            value: false
+          }
+        }
+      }
+      ready(){
+        super.ready();
+        this.checkHasName(this.hasname)
+      }
+      checkHasName(name){
+        if(!name){
+          d3.select(this.shadowRoot)
+            .selectAll(".has_name")
+            .attr('style', "display:none")
+        }
+      }
+      handleModal(e) {
+        this.dispatchEvent(new CustomEvent('modal', {bubbles: true, composed: true, detail: {purpose: e.target.getAttribute("data-purpose")}}));
+      }
+    }
+    window.customElements.define(StatusBar.is, StatusBar);
+  </script>
+</dom-module>

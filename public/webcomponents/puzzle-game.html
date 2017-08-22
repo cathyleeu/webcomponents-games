@@ -1,0 +1,249 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+
+<dom-module id="puzzle-game">
+  <template>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      total="{{total}}"
+      matched="{{matched}}"
+      cards="{{cards}}"></status-bar>
+  </template>
+  <script>
+    class PuzzleGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element)  {
+      static get is() { return 'puzzle-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          pznum: Number,
+          pzsize: Number,
+          language: {
+            value: "ko"
+          },
+          resources: {
+            value() {
+              return {
+                "ko": {
+                  "title": "퍼즐 맞추기",
+                  "success": "참 잘했어요!"
+                },
+                "en": {
+                  "title": "Puzzle Game",
+                  "success": "Good job!"
+                }
+              }
+            }
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        this.set('total', 0)
+        this.set('matched', 0)
+        this.set('cards', Math.pow(this.pznum, 2))
+      }
+      setData( pzUrl ) {
+        let  _this = this,
+             pieces=[], piece=[], group={},
+             count = 0, // 퍼즐판 줄 생성
+             eachPiece = this.pzsize/this.pznum,
+             svg = d3.select(this.shadowRoot).append('svg')
+              .attr( "width", `${(this.offsetWidth/5)*4}` )
+              .attr( "height", `${this.offsetHeight-60}` )
+              .attr('style', `margin-left: ${this.offsetWidth/5}px;margin-top: 20px`),
+             defs = svg.append('defs');
+
+        function genPieceId(num) {
+          let f = 0; pieces=[]; piece=[]; group={};
+          for (let i=0; i < num; i++){
+            pieces.push(i);
+          }
+          for (let i=0; i < Math.pow(num, 2); i++) {
+            piece.push(i);
+          }
+          for ( let i of pieces ) {
+            let s = f+num;
+            group[i] = piece.slice(f, s);
+            f = s;
+          }
+        }
+        genPieceId(this.pznum)
+
+        let resultImg = defs.append('pattern')
+          .attr("id" , 'result')
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox")
+          .append('image')
+          .attr("width", 120).attr("height", 120)
+          .attr("xlink:href", pzUrl);
+
+        let resultRect = svg.append("g")
+          .attr('transform', 'translate(0,0)')
+          .append('rect')
+          .attr("x" , 0).attr("y" , 0)
+          .attr("width", 120).attr("height", 120)
+          .attr("fill", 'url(#result)')
+          .style("stroke-width", 1).style("stroke", 'gray');
+
+        let jigsawBoard = svg.append("g")
+          .attr("width", this.pzsize)
+          .attr("height", this.pzsize)
+          .attr('id', 'jigsaw')
+          .attr('transform', 'translate(400,100)');
+
+        let shuffleBoard = svg.append("g")
+          .attr("width", this.pzsize)
+          .attr("height", this.pzsize)
+          .attr('transform', 'translate(0,100)');
+
+
+        let pieceRect = jigsawBoard.selectAll("rect");
+        let shuffleRect = shuffleBoard.selectAll("rect");
+        let imageRect = defs.append('g').selectAll('pattern');
+
+        pieceRect.data(piece).enter()
+          .append("rect")
+          .style("fill", "none")
+          .style("stroke-width", 1)
+          .style("stroke", 'gray')
+          .attr("data-idx", (d) => d)
+          .attr("x", axisX)
+          .attr("y", axisY)
+          .attr("width", eachPiece-2 )
+          .attr("height", eachPiece-2 )
+          .on("mouseover", (d) => {
+          let target = d3.select(d3.event.target);
+          DnD.droppablePiece = d.toString();
+          DnD.puzzleX = target.attr('x');
+          DnD.puzzleY = target.attr('y');
+        });
+
+        let DnD = {
+          puzzleX: null,
+          puzzleY: null,
+          droppablePiece: null,
+          draggedPiece: null,
+          matchedPuzzle: function() {
+            if (!this.droppablePiece) return false;
+            return (this.draggedPiece == this.droppablePiece);
+          }
+        }
+
+        let imgIdsX = [], imgIdsY = [], imgId;
+        for (let i= 0 ; i < this.pznum; i++){
+          imgId = i;
+          for(let j= 0 ; j < this.pznum; j++){
+            imgIdsY.push(imgId);
+            imgIdsX.push(j);
+          }
+        }
+
+        imageRect.data(piece).enter()
+          .append('pattern')
+          .attr("id" , d => `piece_${d}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox")
+          .append('image')
+          .attr("x", d => axisXforImg(d))
+          .attr("y", d => axisYforImg(d))
+          .attr("width", this.pzsize).attr("height", this.pzsize)
+          .attr("xlink:href", pzUrl);
+
+        shuffleRect.data(piece).enter()
+          .append("rect")
+          .style("stroke-width", 1)
+          .style("stroke", 'gray')
+          .attr("x", d => Math.floor(getRandomArbitrary()))
+          .attr("y", d => Math.floor(getRandomArbitrary()))
+          .attr("width", eachPiece-2 )
+          .attr("height", eachPiece-2 )
+          .style("fill", (d, i) => `url(#piece_${i})`)
+          .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended)
+               );
+
+        function getRandomArbitrary() {
+          // d => 이렇게 해줘야지 개별적으로 들어감 !!
+          return Math.random() * (250 - 50) + 50;
+        }
+
+        function axisXforImg (i) {
+          return -eachPiece*imgIdsX[i];
+        }
+
+        function axisYforImg (i) {
+          return -eachPiece*imgIdsY[i];
+        }
+
+        function axisX(d) {
+          if(count > _this.pznum-1){
+            count = 0;
+          }
+          pieces.map(i => {
+            if(group[i].indexOf(d) !== -1) { count++ }
+          })
+          return (eachPiece*(count-1))+(2*(count));
+        }
+
+        function axisY(d){
+          let check;
+          pieces.map(i => {
+            if(group[i].indexOf(d) !== -1) { check = i }
+            return check;
+          })
+          switch(check) {
+            case check:
+              return (eachPiece*(check))+(2*(check));
+            default: return 0;
+          }
+        }
+
+        function dragstarted(d) {
+          console.log("dragstarted", d )
+          d3.select(this)
+            .attr("x", d3.event.x)
+            .attr("y", d3.event.y);
+          DnD.draggedPiece = d3.event.subject.toString();
+        }
+
+        function dragged(d) {
+          d3.select(this)
+            .attr("x", d3.event.x)
+            .attr("y", d3.event.y);
+          DnD.matchedPuzzle();
+        }
+
+        function dragended(d) {
+          let result = DnD.matchedPuzzle();
+          if(!result) {
+            console.log("fault", DnD.droppablePiece,
+                        DnD.draggedPiece)
+          } else {
+            console.log("yesss")
+            d3.select(this)
+              .attr("x", parseInt(DnD.puzzleX, 10)+400)
+              .attr("y", parseInt(DnD.puzzleY, 10))
+              .call(d3.drag()
+                    .on("start", null))
+            _this.set('matched', _this.matched+1)
+
+            DnD.droppablePiece = null;
+          }
+          _this.set('total', _this.total+1)
+          // DnD.droppablePiece = null;
+          DnD.draggedPiece = null;
+        }
+      }
+    }
+    window.customElements.define(PuzzleGame.is, PuzzleGame);
+  </script>
+</dom-module>

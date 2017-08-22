@@ -1,0 +1,31 @@
+{
+  "element": "flip-card",
+  "attributes": {
+  },
+  "data": [
+    "cigar",
+    "coin",
+    "hat",
+    "socks"
+  ],
+  "manifest": [
+    {"id": "cigar", "src": "/img/b55/cigar.png"},
+    {"id": "coin", "src": "/img/b55/coin.png"},
+    {"id": "hat", "src": "/img/b55/hat.png"},
+    {"id": "socks", "src": "/img/b55/socks.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "카드를 뒤집어 짝을 맞추어보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!"
+    },
+    "en": {
+      "title": "Flip the cards and Match the pairs",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!"
+    }
+  }
+}

@@ -1,23 +1,125 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
 
 <dom-module id="line-card">
-  <template></template>
+
+  <template>
+    <style>
+      :host {
+        overflow: hidden;
+      }
+      line {
+        stroke: #2ECC98;
+        stroke-width: 3px;
+        stroke-linecap: round;
+        marker-end: url(#marker);
+      }
+    </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      ></status-bar>
+    <modal-success
+      id="successModal"
+      purpose="nextStep"
+      headertext="참 잘했어요!"
+      btmtext="다음 단계로 넘어가볼까요?"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      ></modal-success>
+    <modal-success
+      id="logOutModal"
+      headertext="로그아웃"
+      btmtext="로그아웃 하시겠습니까?"
+      purpose="logout"
+      ></modal-success>
+    <modal-success
+      id="previousModal"
+      headertext="돌아가기"
+      btmtext="다른 챕터를 선택하시겠습니까?"
+      purpose="previous"
+      ></modal-success>
+  </template>
   <script>
-    class LineCard extends Polymer.Element {
+    class LineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
       static get is() { return 'line-card'; }
       connectedCallback() {
         super.connectedCallback();
-        this.shadowRoot.namespaceURI = d3.namespaces.xhtml;
       }
-      setData(val){
-        let w = 700, h = 700,
-            svg = d3.select('body').append('svg')
-              .attr('width', w)
-              .attr('height', h),
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          },
+          resources: {
+            value() {
+              return {
+                "ko": {
+                  "title": "짝 맞추기",
+                  "success": "참 잘했어요!"
+                },
+                "en": {
+                  "title": "Match the Pairs 2",
+                  "success": "Good job!"
+                }
+              }
+            }
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        this.set('total', 0)
+        this.set('point', 0)
+        this.set('matched', 0)
+      }
+      reset(){
+        this.set('total', 0)
+        this.set('matched', 0)
+        this.set('point', this.point+5)
+        d3.select(this.shadowRoot).select('svg').remove()
+        this.setData(this.data, this.manifest)
+      }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+      setData(data, manifest){
+        let _this = this,
+            svg = d3.select(this.shadowRoot).append('svg')
+              .attr('width', this.offsetWidth)
+              .attr('height', `${this.offsetHeight-60}`),
             boardName = ["boardL", "boardR"];
-        let defs = svg.append('defs').selectAll('pattern')
+        let leftData = manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src})),
+            rightData = manifest.filter(l => l.set).map(l => ({["no"]:l.no, ["src"]:l.src}));
 
-        let leftCard = defs.data(val).enter()
+
+        // data = data.map(id=>manifest[id]);
+        _this.set('cards', leftData.length )
+        _this.set('data', data )
+        _this.set('manifest', manifest )
+
+        let defs = svg.append('defs').selectAll('pattern')
+        let leftCard = defs.data(leftData).enter()
           .append('pattern')
           .attr("id", (d, i) => `left_${i}`)
           .attr("x", 0).attr("y", 0)
@@ -34,24 +136,24 @@
             .attr('orient', 'auto')
             .append('svg:path')
             .attr('d', 'M0,-5L10,0L0,5')
-            .attr('fill', 'steelblue');
+            .attr('fill', '#2ECC98');
 
 
         leftCard.append('filter')
           .attr('id','desaturate')
           .append('feColorMatrix')
-          .attr('type','matrix')
-          .attr('values',"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0")
+          // .attr('type','matrix')
+          // .attr('values',"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0")
 
         leftCard.append('image')
           .attr("x", 5).attr("y", 5)
           .attr("width", 100).attr("height", 100)
-          .attr("xlink:href", d => `${d}`)
+          .attr("xlink:href", d => `${d.src}`)
           .style('filter', "url(#desaturate)")
 
 
-        let shuffledCard = d3.shuffle(val.slice())
-        let rightCard = defs.data(shuffledCard).enter()
+        let shuffled = d3.shuffle(rightData)
+        let rightCard = defs.data(shuffled).enter()
           .append('pattern')
           .attr("id", (d, i) => `right_${i}`)
           .attr("x", 0).attr("y", 0)
@@ -60,18 +162,18 @@
           .append('image')
           .attr("x", 5).attr("y", 5)
           .attr("width", 100).attr("height", 100)
-          .attr("xlink:href", (d, i) => `${d}`)
+          .attr("xlink:href", (d, i) => `${d.src}`)
 
-
+        let center = (this.offsetWidth - 560)/2
         let rectGroup = svg.selectAll("g")
           .data(boardName).enter()
           .append("g")
           .attr("class", d => `${d}`)
-          .attr("transform", (d, i) => `translate(10, 0)`);
+          .attr("transform", (d, i) => `translate(${center}, 0)`);
 
         let LeftSide = svg.select('.boardL');
         LeftSide.selectAll("rect")
-            .data(val).enter()
+            .data(leftData).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
             .attr('x', 10 ).attr('y', (d, i) => (110*i+10) + (30*i))
@@ -84,7 +186,7 @@
 
 
         let circlesL = LeftSide.selectAll("g.node")
-          .data(val).enter()
+          .data(leftData).enter()
           .append('g')
           .attr("transform", (d, i) => `translate( 140 , ${55+ 145*i})`)
 
@@ -94,7 +196,7 @@
 
         let RightSide = svg.select('.boardR');
         RightSide.selectAll("rect")
-            .data(shuffledCard).enter()
+            .data(shuffled).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
                 .attr('x', 450 ).attr('y', (d, i) => (110*i+10) + (30*i))
@@ -106,10 +208,10 @@
 
 
         RightSide.selectAll("g")
-            .data(shuffledCard).enter()
+            .data(shuffled).enter()
 
         let circlesR = RightSide.selectAll("g.node")
-          .data(shuffledCard).enter()
+          .data(shuffled).enter()
           .append('g')
           .attr("transform", (d, i) => `translate( 430 , ${55+ 145*i})`)
 
@@ -129,17 +231,18 @@
 
         function pencilingStart (d, i) {
           let getXY = d3.select(this).attr("transform").match(/\d+/g),
-              numX = parseInt(getXY[0], 10),
+              numX = center+parseInt(getXY[0], 10),
               numY = parseInt(getXY[1], 10);
               startX = numX;
               startY = numY;
+          console.log(getXY, numX, numY,  startX, startY, center);
 
           line = svg.append("line")
-                .attr("x1", numX+10)
+                .attr("x1", numX)
                 .attr("y1", numY)
-                .attr("x2", numX+10)
+                .attr("x2", numX)
                 .attr("y2", numY);
-          matchLine = d;
+          matchLine = d.no;
           svg.on("mousemove", pencilingMove);
           circlesR.on('mouseover', checkInField)
         }
@@ -155,22 +258,29 @@
         }
 
 
-        function checkInField(d) {
+        function checkInField(d, i) {
             let getXY = d3.select(this).attr("transform").match(/\d+/g),
-                numX = parseInt(getXY[0], 10),
+                numX = center+parseInt(getXY[0], 10),
                 numY = parseInt(getXY[1], 10);
 
-          if(matchLine === d) {
-            console.log("its matched!!!", numX+10, numY)
-            line.attr("x2", numX+10)
+          if(matchLine === d.no) {
+
+            console.log("its matched!!!", numX, numY)
+            _this.set('matched', _this.matched+1)
+            _this.set('point', _this.point+2)
+            line.attr("x2", numX)
                 .attr("y2", numY);
           } else {
-            console.log("itsnt matched!!!", startX, startY)
+            console.log("itsnt matched!!!", startX, startY, matchLine, d.no)
             alert("다시 시도해 주세요.");
             line.remove();
           }
+           _this.set('total', _this.total+1)
            circlesR.on('mouseover', null); // 중복되는 것 금지
            svg.on("mousemove", null); // 점에 딱 맞추는 것
+           if(_this.matched === _this.cards){
+             _this.shadowRoot.getElementById("successModal").modalAlert()
+           }
         }
       }
     }

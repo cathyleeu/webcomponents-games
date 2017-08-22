@@ -1,25 +1,118 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
 
 <dom-module id="range-card">
-  <template></template>
+  <template>
+    <style>
+      :host {
+        overflow: hidden;
+      }
+    </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      ></status-bar>
+    <modal-success
+      id="successModal"
+      purpose="nextStep"
+      headertext="참 잘했어요!"
+      btmtext="다음 단계로 넘어가볼까요?"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      ></modal-success>
+    <modal-success
+      id="logOutModal"
+      headertext="로그아웃"
+      btmtext="로그아웃 하시겠습니까?"
+      purpose="logout"
+      ></modal-success>
+    <modal-success
+      id="previousModal"
+      headertext="돌아가기"
+      btmtext="다른 챕터를 선택하시겠습니까?"
+      purpose="previous"
+      ></modal-success>
+  </template>
   <script>
-    class RangeCard extends Polymer.Element {
+    class RangeCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
       static get is() { return 'range-card'; }
       connectedCallback() {
         super.connectedCallback();
-        this.shadowRoot.namespaceURI = d3.namespaces.xhtml;
       }
-      setData(val){
-        let w = 600, h = 700,
-        		svg = d3.select(this.shadowRoot).append("svg")
-                    .attr( "width", w )
-                    .attr( "height", h ),
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          },
+          resources: {
+            value() {
+              return {
+                "ko": {
+                  "title": "그림 맞추기",
+                  "success": "참 잘했어요!"
+                },
+                "en": {
+                  "title": "Arrange the Pictures",
+                  "success": "Good job!"
+                }
+              }
+            }
+          }
+        }
+      }
+      ready() {
+        // 미리 설정해 놓는 것....
+        super.ready();
+        this.set('total', 0)
+        this.set('point', 0)
+        this.set('matched', 0)
+      }
+      reset(){
+        this.set('total', 0)
+        this.set('matched', 0)
+        this.set('point', this.point+5)
+        d3.select(this.shadowRoot).select('svg').remove()
+        this.setData(this.data, this.manifest)
+      }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+      setData(data, manifest){
+        let _this = this,
+            svg = d3.select(this.shadowRoot)
+              .append("svg")
+              .attr('width', this.offsetWidth )
+              .attr('height', `${this.offsetHeight-60}`),
             boardName = ["dropB", "dragB"];
+        _this.set('cards', data.length );
+        _this.set('data', data )
+        _this.set('manifest', manifest )
+        manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
+        data = data.map(id=>manifest[id]);
 
         let defs = svg.append('defs')
               			.selectAll('pattern')
 
-        let dropCardB = defs.data(val).enter()
+        let dropCardB = defs.data(data).enter()
                     .append('pattern')
                     .attr("id", (d, i) => `drop_${i}`)
                     .attr("x", 0).attr("y", 0)
@@ -37,7 +130,7 @@
           .attr("xlink:href", d => `${d}`)
           .style('filter', "url(#desaturate)")
 
-        let shuffledCard = d3.shuffle(val.slice())
+        let shuffledCard = d3.shuffle(data.slice())
 
         let dragCardB = defs.data(shuffledCard).enter()
           .append('pattern')
@@ -50,15 +143,16 @@
           .attr("width", 100).attr("height", 100)
           .attr("xlink:href", (d, i) => `${d}`)
 
+        let center = (this.offsetWidth - (120*data.length))/2
         let rectGroup = svg.selectAll("g")
           .data(boardName).enter()
           .append("g")
           .attr("class", d => `${d}`)
-          .attr("transform", (d, i) => `translate(10, 0)`);
+          .attr("transform", (d, i) => `translate(${center}, 0)`);
 
         let dropItem = svg.select('.dropB')
           .selectAll("rect")
-          .data(val).enter()
+          .data(data).enter()
           .append('rect')
           .attr("rx", 5).attr("ry", 5)
           .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
@@ -87,7 +181,7 @@
             .call(d3.drag()
                 .on("start", dragstarted )
                 .on("drag", dragged)
-                .on("end", dragended));
+                .on("end", dragended ));
 
         // var drag_behavior = d3.behavior.drag()
 
@@ -120,21 +214,26 @@
           let matches = DragDropManager.draggedMatchesTarget();
 
         }
-
         function dragended(d) {
           let DnD = DragDropManager,
               result = DnD.draggedMatchesTarget();
           if (!result) {
-            console.log("result false")
+            console.log("result false" )
             d3.select(this)
               .attr("x", startX )
               .attr("y", startY );
           } else {
-            console.log("result true", DnD.droppableX, DnD.droppableY)
+            console.log("result true", DnD.droppableX, DnD.droppableY, this)
+            _this.set('point', _this.point+2)
+            _this.set('matched', _this.matched+1)
             d3.select(this)
               .attr("x", DnD.droppableX )
               .attr("y", DnD.droppableY )
+            if(_this.matched === _this.cards) {
+              _this.shadowRoot.getElementById("successModal").modalAlert()
+            }
           }
+          _this.set('total', _this.total+1)
           DnD.dragged = null;
           DnD.droppable = null;
         }
