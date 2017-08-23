@@ -35,8 +35,8 @@
   }, {
     "x": 6,
     "y": 6,
-    "img":"conch",
-    "itemImg":"conch",
+    "img":"nakji",
+    "itemImg":"nakji",
     "disappear":true,
     "itemCount": 1
   }],
