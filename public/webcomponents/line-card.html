@@ -17,6 +17,9 @@
         stroke-linecap: round;
         marker-end: url(#marker);
       }
+      circle {
+        cursor: pointer;
+      }
     </style>
     <status-bar
       title="{{localize('title')}}"
@@ -29,27 +32,32 @@
       cards="{{cards}}"
       on-modal="handleModal"
       ></status-bar>
-    <modal-success
+    <toycode-modal
       id="successModal"
       purpose="nextStep"
-      headertext="참 잘했어요!"
-      btmtext="다음 단계로 넘어가볼까요?"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
       total="{{total}}"
       point="{{point}}"
       matched="{{matched}}"
-      ></modal-success>
-    <modal-success
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
       id="logOutModal"
-      headertext="로그아웃"
-      btmtext="로그아웃 하시겠습니까?"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
       purpose="logout"
-      ></modal-success>
-    <modal-success
+      ></toycode-modal>
+    <toycode-modal
       id="previousModal"
-      headertext="돌아가기"
-      btmtext="다른 챕터를 선택하시겠습니까?"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
       purpose="previous"
-      ></modal-success>
+      ></toycode-modal>
   </template>
   <script>
     class LineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -112,14 +120,13 @@
         let leftData = manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src})),
             rightData = manifest.filter(l => l.set).map(l => ({["no"]:l.no, ["src"]:l.src}));
 
-
-        // data = data.map(id=>manifest[id]);
         _this.set('cards', leftData.length )
         _this.set('data', data )
         _this.set('manifest', manifest )
 
         let defs = svg.append('defs').selectAll('pattern')
-        let leftCard = defs.data(leftData).enter()
+        let shuffled = d3.shuffle(leftData)
+        let leftCard = defs.data(shuffled).enter()
           .append('pattern')
           .attr("id", (d, i) => `left_${i}`)
           .attr("x", 0).attr("y", 0)
@@ -142,8 +149,6 @@
         leftCard.append('filter')
           .attr('id','desaturate')
           .append('feColorMatrix')
-          // .attr('type','matrix')
-          // .attr('values',"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0")
 
         leftCard.append('image')
           .attr("x", 5).attr("y", 5)
@@ -152,8 +157,7 @@
           .style('filter', "url(#desaturate)")
 
 
-        let shuffled = d3.shuffle(rightData)
-        let rightCard = defs.data(shuffled).enter()
+        let rightCard = defs.data(rightData).enter()
           .append('pattern')
           .attr("id", (d, i) => `right_${i}`)
           .attr("x", 0).attr("y", 0)
@@ -173,7 +177,7 @@
 
         let LeftSide = svg.select('.boardL');
         LeftSide.selectAll("rect")
-            .data(leftData).enter()
+            .data(shuffled).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
             .attr('x', 10 ).attr('y', (d, i) => (110*i+10) + (30*i))
@@ -183,20 +187,18 @@
             .style("stroke","#2ECC98")
 
 
-
-
         let circlesL = LeftSide.selectAll("g.node")
-          .data(leftData).enter()
+          .data(shuffled).enter()
           .append('g')
           .attr("transform", (d, i) => `translate( 140 , ${55+ 145*i})`)
 
-        circlesL.on("mousedown", pencilingStart )
-        svg.on("mouseup", pencilingEnd)
+        circlesL.on("mousedown touchstart", pencilingStart )
+        svg.on("mouseup touchend", pencilingEnd)
         circlesL.append("circle").attr("r", 5)
 
         let RightSide = svg.select('.boardR');
         RightSide.selectAll("rect")
-            .data(shuffled).enter()
+            .data(rightData).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
                 .attr('x', 450 ).attr('y', (d, i) => (110*i+10) + (30*i))
@@ -208,26 +210,37 @@
 
 
         RightSide.selectAll("g")
-            .data(shuffled).enter()
+            .data(rightData).enter()
+
 
         let circlesR = RightSide.selectAll("g.node")
-          .data(shuffled).enter()
+          .data(rightData).enter()
           .append('g')
           .attr("transform", (d, i) => `translate( 430 , ${55+ 145*i})`)
+          .attr("id", (d, i) => `matchId${i}`)
 
         circlesR.append("circle")
                 .attr("r", 5)
                 .attr('pointer-events', 'none');
 
         circlesR.append("circle")
-                .attr("r", 20)
+                .attr("r", 25)
                 .attr("opacity", 0.0)
-
-        circlesR.attr('pointer-events', 'mouseover')
 
 
         var line;
-        let matchLine, startX, startY;
+        let dragId, dropId, startX, startY;
+
+
+        function genId(y2) {
+          let getId, Ids = Object.keys(leftData);
+          Ids.map( (_,i) => {
+      			if( (55+145*i)-20 < y2 && y2 < (55+145*i)+20){
+        				return getId = i
+        		} else return getId
+    		  })
+    		  return getId;
+        }
 
         function pencilingStart (d, i) {
           let getXY = d3.select(this).attr("transform").match(/\d+/g),
@@ -235,49 +248,50 @@
               numY = parseInt(getXY[1], 10);
               startX = numX;
               startY = numY;
+
           console.log(getXY, numX, numY,  startX, startY, center);
 
+          dragId = d.no;
           line = svg.append("line")
-                .attr("x1", numX)
-                .attr("y1", numY)
-                .attr("x2", numX)
-                .attr("y2", numY);
-          matchLine = d.no;
-          svg.on("mousemove", pencilingMove);
-          circlesR.on('mouseover', checkInField)
+                .attr("x1", numX).attr("y1", numY)
+                .attr("x2", numX).attr("y2", numY)
+                .attr("id", (d, i) => `line${dragId}`);
+          svg.on("mousemove touchmove", pencilingMove);
         }
 
-        function pencilingMove() {
-            let m = d3.mouse(this);
-            line.attr("x2", m[0])
-                .attr("y2", m[1]);
+        function pencilingMove(d) {
+          let m = d3.mouse(this);
+          line.attr("x2", m[0]).attr("y2", m[1]);
         }
 
         function pencilingEnd() {
-            svg.on("mousemove", null);
+          let lineY2 = +d3.select(this).select(`#line${dragId}`).attr('y2'),
+              dropId = genId(lineY2)
+              checkInField(dropId)
+          svg.on("mousemove touchmove", null);
         }
 
-
-        function checkInField(d, i) {
-            let getXY = d3.select(this).attr("transform").match(/\d+/g),
+        function checkInField(dropId) {
+          if (dragId === undefined) return false
+          if(dragId === dropId) {
+            let getXY = d3.select(_this.shadowRoot).select(`#matchId${dropId}`).attr("transform").match(/\d+/g),
                 numX = center+parseInt(getXY[0], 10),
                 numY = parseInt(getXY[1], 10);
-
-          if(matchLine === d.no) {
 
             console.log("its matched!!!", numX, numY)
             _this.set('matched', _this.matched+1)
             _this.set('point', _this.point+2)
-            line.attr("x2", numX)
-                .attr("y2", numY);
+            line.attr("x2", numX).attr("y2", numY);
+
           } else {
-            console.log("itsnt matched!!!", startX, startY, matchLine, d.no)
-            alert("다시 시도해 주세요.");
+            console.log("itsnt matched!!!", startX, startY, dragId, dropId)
+            alert(_this.resources[_this.language].notice);
             line.remove();
           }
            _this.set('total', _this.total+1)
            circlesR.on('mouseover', null); // 중복되는 것 금지
-           svg.on("mousemove", null); // 점에 딱 맞추는 것
+           svg.on("mousemove touchmove", null); // 점에 딱 맞추는 것
+           dragId = undefined;
            if(_this.matched === _this.cards){
              _this.shadowRoot.getElementById("successModal").modalAlert()
            }

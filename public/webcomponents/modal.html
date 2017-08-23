@@ -1,6 +1,6 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 
-<dom-module id="modal-success">
+<dom-module id="toycode-modal">
   <template>
     <style>
       :host {
@@ -113,15 +113,14 @@
         <div class="modal">
           <h2>{{headertext}}</h2>
           <div class="done">
-            <p>{{point}}점<p>
-            <p>[[matchedRate(total,matched)]]%</p>
+            <p>Score : {{point}} ([[matchedRate(total,matched)]]%)<p>
           </div>
           <div>
             <p>{{btmtext}}</p>
           </div>
-          <div class="button done" on-click="handleNextStep">넘어가기</div>
-          <div class="button stay" on-click="handleStayStage">아니오</div>
-          <div class="button move" on-click="handleMoveStage">네</div>
+          <div class="button done" on-click="handleNextStep">{{nextbtn}}</div>
+          <div class="button stay" on-click="handleStayStage">{{nobtn}}</div>
+          <div class="button move" on-click="handleMoveStage">{{yesbtn}}</div>
         </div>
       </div>
     </div>
@@ -130,7 +129,7 @@
   <script>
     class Modal extends Polymer.Element {
       static get is() {
-        return "modal-success";
+        return "toycode-modal";
       }
       static get properties() {
         return {
@@ -139,7 +138,10 @@
           point: Number,
           total: Number,
           matched: Number,
-          purpose: String
+          purpose: String,
+          nextbtn: String,
+          nobtn:String,
+          yesbtn:String
         }
       }
       ready(){

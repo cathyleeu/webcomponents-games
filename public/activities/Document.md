@@ -1,3 +1,41 @@
+# 키즈씽킹 웹 컴포넌트 <range-card>
+하단에 섞여진 카드를 상단에 정렬된 카드그림에 따라 맞추는 활동입니다.
+
+
+## public/activities에 json 파일 생성
+활동에 따라서 (활동명).json으로 아래의 형식에 맞춰 파일을 생성합니다.
+*****
+
+
+* element[String]:  component 태그명
+* data[Array]: /img 파일에 저장되는 사진명과 동일한 String 값으로 나열
+* manifest[Array]: id와 src 키를 가진 Object로 나열
+  * id[String] : 이미지 파일명,
+  * src[String] : 이미지 경로
+* msg[Object]: 다국어 적용에 사용되는 메세지,
+  * ko(한국어)[Object]
+      * title(status bar) //활동명
+      * score(successModal)
+      * lefted(status bar) // 맞춘 갯수(추후에 이름 변경할 예정)
+      * success(successModal)
+      * successHead(successModal)
+      * logoutHead(successModal)
+      * previousHead(previousModal)
+      * successBtm(successModal)
+      * logoutBtm(logoutModal)
+      * previousBtm(previousModal)
+      * nextbtn(successModal)
+      * nobtn(previousModal,logoutModal)
+      * yesbtn(previousModal,logoutModal)
+
+  * en(영어)[Object]: 한국어와 동일한 형식으로 영문으로 작성해주시면 됩니다.
+
+
+## Example Code
+bathroom.json의 Example code 입니다.
+*****
+
+```
 {
   "element": "range-card",
   "data": [
@@ -51,3 +89,5 @@
     }
   }
 }
+
+```

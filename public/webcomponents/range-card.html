@@ -9,6 +9,9 @@
       :host {
         overflow: hidden;
       }
+      rect{
+        cursor: pointer;
+      }
     </style>
     <status-bar
       title="{{localize('title')}}"
@@ -21,27 +24,33 @@
       cards="{{cards}}"
       on-modal="handleModal"
       ></status-bar>
-    <modal-success
+    <toycode-modal
       id="successModal"
       purpose="nextStep"
-      headertext="참 잘했어요!"
-      btmtext="다음 단계로 넘어가볼까요?"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
       total="{{total}}"
       point="{{point}}"
       matched="{{matched}}"
-      ></modal-success>
-    <modal-success
+      nextbtn="{{localize('nextbtn')}}"
+
+      ></toycode-modal>
+    <toycode-modal
       id="logOutModal"
-      headertext="로그아웃"
-      btmtext="로그아웃 하시겠습니까?"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
       purpose="logout"
-      ></modal-success>
-    <modal-success
+      ></toycode-modal>
+    <toycode-modal
       id="previousModal"
-      headertext="돌아가기"
-      btmtext="다른 챕터를 선택하시겠습니까?"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
       purpose="previous"
-      ></modal-success>
+      ></toycode-modal>
   </template>
   <script>
     class RangeCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -109,6 +118,7 @@
         manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
         data = data.map(id=>manifest[id]);
 
+
         let defs = svg.append('defs')
               			.selectAll('pattern')
 
@@ -129,6 +139,8 @@
           .attr("width", 100).attr("height", 100)
           .attr("xlink:href", d => `${d}`)
           .style('filter', "url(#desaturate)")
+
+
 
         let shuffledCard = d3.shuffle(data.slice())
 
@@ -157,16 +169,11 @@
           .attr("rx", 5).attr("ry", 5)
           .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
           .attr("width", 110).attr("height", 110)
+          .attr("id", (d, i) => `bath${i}`)
           .style("fill", (d,i) => `url(#drop_${i})`)
           .style("stroke-width",8)
           .style("stroke","#2ECC98")
-          .on('mouseover', (d) => {
-            let target = d3.select(d3.event.target),
-                DnD = DragDropManager;
-            DnD.droppable = d;
-            DnD.droppableX = target.attr('x')
-            DnD.droppableY = target.attr('y')
-          })
+
         let dragB = svg.select('.dragB')
             .selectAll("rect")
             .data(shuffledCard).enter()
@@ -183,59 +190,55 @@
                 .on("drag", dragged)
                 .on("end", dragended ));
 
-        // var drag_behavior = d3.behavior.drag()
-
-        let DragDropManager = {
-          dragged: null, //엘리먼트
-          droppable: null, //세트
-          droppableX: null,
-          droppableY: null,
-          draggedMatchesTarget: function() {
-            // drag 하지 않는 상황, 마우스 이벤트가 없을 때
-            if (!this.droppable) return false
-            return (this.dragged === this.droppable);
-          }
-        }
   			let startX, startY;
-
+        function genId(xid) {
+          let getId, Ids = Object.keys(manifest);
+          Ids.map( (_,i) => {
+      			if( (120*i)-40 < xid && xid < (120*i)+40){
+        				return getId = i
+        		} else return getId
+    		  })
+    		  return getId;
+        }
         function dragstarted(d) {
           startX = d3.select(this).attr('x');
           startY = d3.select(this).attr('y');
           d3.select(this)
             .attr("x", d3.event.x)
             .attr("y", d3.event.y);
-          DragDropManager.dragged = d3.event.subject
         }
 
         function dragged(d) {
+          console.log("dragged")
           d3.select(this)
-            .attr("x", d3.event.x)
-            .attr("y", d3.event.y);
-          let matches = DragDropManager.draggedMatchesTarget();
+            .attr("x", d3.event.x-50)
+            .attr("y", d3.event.y-50);
 
         }
         function dragended(d) {
-          let DnD = DragDropManager,
-              result = DnD.draggedMatchesTarget();
+          let getX = d3.select(this).attr('x'),
+              getId = genId(getX),
+              getEle = d3.select(_this.shadowRoot).select(`#bath${getId}`),
+              getData = getEle.data().toString(),
+              result = d === getData && true;
+
           if (!result) {
             console.log("result false" )
             d3.select(this)
               .attr("x", startX )
               .attr("y", startY );
           } else {
-            console.log("result true", DnD.droppableX, DnD.droppableY, this)
+            console.log("result true", getEle.attr('x'), getEle.attr('y'))
             _this.set('point', _this.point+2)
             _this.set('matched', _this.matched+1)
             d3.select(this)
-              .attr("x", DnD.droppableX )
-              .attr("y", DnD.droppableY )
+              .attr("x", getEle.attr('x') )
+              .attr("y", getEle.attr('y') )
             if(_this.matched === _this.cards) {
               _this.shadowRoot.getElementById("successModal").modalAlert()
             }
           }
           _this.set('total', _this.total+1)
-          DnD.dragged = null;
-          DnD.droppable = null;
         }
       }
     }
