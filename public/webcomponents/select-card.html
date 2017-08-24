@@ -1,0 +1,55 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+<dom-module id="select-card">
+  <template>
+    <style></style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      ></status-bar>
+  </template>
+  <script>
+    class SelectCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'select-card'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      setData(data, manifest){
+        let _this = this,
+        svg = d3.select(this.shadowRoot)
+          .append("svg")
+          .attr('width', this.offsetWidth )
+          .attr('height', `${this.offsetHeight-60}`);
+        manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
+        data = data.map(id=>manifest[id]);
+        _this.set('cards', data.length );
+        console.log(data, manifest)
+
+        let defs = svg.append('defs').selectAll('pattern')
+        let selectImgs = defs.data(data).enter()
+              .append('pattern')
+              .attr("id", (d, i) => `drop_${i}`)
+              .attr("x", 0).attr("y", 0)
+              .attr("width", 1).attr("height", 1)
+              .attr("patternUnits", "objectBoundingBox")
+              .append('image')
+              .attr("x", 5).attr("y", 5)
+              .attr("width", 100).attr("height", 100)
+              .attr("xlink:href", (d, i) => `${d}`)
+
+        let selectBox = svg.append('g')
+      }
+    }
+    window.customElements.define(SelectCard.is, SelectCard);
+  </script>
+</dom-module>

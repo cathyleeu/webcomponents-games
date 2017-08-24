@@ -1,0 +1,53 @@
+{
+  "element": "select-card",
+  "data": [
+    "airport",
+    "bus",
+    "ship",
+    "train",
+    "airplain1",
+    "ship1",
+    "ground"
+  ],
+  "manifest": [
+    {"id": "airport", "src": "/img/b6_w1/airport.png"},
+    {"id": "bus", "src": "/img/b6_w1/bus.png"},
+    {"id": "ship", "src": "/img/b6_w1/ship.png"},
+    {"id": "train", "src": "/img/b6_w1/train.png"},
+    {"id": "airplain1", "src": "/img/a6_w2/airplain1.png"},
+    {"id": "ship1", "src": "/img/a6_w2/ship1.png"},
+    {"id": "ground", "src": "/img/a6_w4/ground.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "대중교통을 찾아보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예"
+    },
+    "en": {
+      "title": "Along with the picture, arrange the bath tools.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}
