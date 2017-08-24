@@ -190,11 +190,13 @@
         let circlesL = LeftSide.selectAll("g.node")
           .data(shuffled).enter()
           .append('g')
-          .attr("transform", (d, i) => `translate( 140 , ${55+ 145*i})`)
+          .attr("transform", (d, i) => `translate( 140 , ${65+ 140*i})`)
 
         circlesL.on("mousedown touchstart", pencilingStart )
         svg.on("mouseup touchend", pencilingEnd)
+
         circlesL.append("circle").attr("r", 5)
+        circlesL.append("circle").attr("r", 60).attr("opacity", 0.0)
 
         let RightSide = svg.select('.boardR');
         RightSide.selectAll("rect")
@@ -216,16 +218,13 @@
         let circlesR = RightSide.selectAll("g.node")
           .data(rightData).enter()
           .append('g')
-          .attr("transform", (d, i) => `translate( 430 , ${55+ 145*i})`)
+          .attr("transform", (d, i) => `translate( 430 , ${65+ 140*i})`)
           .attr("id", (d, i) => `matchId${i}`)
 
-        circlesR.append("circle")
-                .attr("r", 5)
-                .attr('pointer-events', 'none');
-
-        circlesR.append("circle")
-                .attr("r", 25)
-                .attr("opacity", 0.0)
+        // 라인이 매칭되는 포인트
+        circlesR.append("circle").attr("r", 5).attr('pointer-events', 'none');
+        // 라인이 매칭되는 범위를 지정하는 포인트
+        circlesR.append("circle").attr("r", 25).attr("opacity", 0.0)
 
 
         var line;
@@ -235,7 +234,7 @@
         function genId(y2) {
           let getId, Ids = Object.keys(leftData);
           Ids.map( (_,i) => {
-      			if( (55+145*i)-20 < y2 && y2 < (55+145*i)+20){
+      			if( (65+ 140*i)-20 < y2 && y2 < (65+ 140*i)+20){
         				return getId = i
         		} else return getId
     		  })
@@ -285,7 +284,6 @@
 
           } else {
             console.log("itsnt matched!!!", startX, startY, dragId, dropId)
-            alert(_this.resources[_this.language].notice);
             line.remove();
           }
            _this.set('total', _this.total+1)
