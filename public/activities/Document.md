@@ -5,10 +5,9 @@
 * [line-card] 선을 그으면서 짝 맞추는 카드 활동
 
 ## 컴포넌트 사용법
-`public/activities`에 (활동명).json으로 프로그램 활동을 구분할 수 있는 명으로 형식에 맞춰 파일을 생성합니다.
 
-### 컴포넌트 사용법
-`data`와 `manifest`는 화면에 카드를 생성하는데 필요한 데이터입니다.
+### 1. JSON 파일 생성
+`public/activities`에 (활동명).json으로 프로그램 활동을 구분할 수 있는 명으로 형식에 맞춰 파일을 생성합니다. `data`와 `manifest`는 화면에 카드를 생성하는데 필요한 데이터입니다.
 
 * element`[String]` -  적용할 component의 태그명
 * data`[Array]` - /img 파일에 저장되는 사진명과 동일한 명으로 String 값으로 나열
@@ -38,9 +37,13 @@
     * nobtn(previousModal,logoutModal)
     * yesbtn(previousModal,logoutModal)
 
-## Example Code
-bathroom.json의 Example code 입니다.
+### 2. books.json에 추가
+`public/login/books.json`에 `/activity#!`뒤에 `public/activities`에 추가하였던 JSON파일 명을 적으시면 됩니다.
 
+## Example Code
+목용도구를 정리하는 활동으로 한 예제입니다.
+
+### 1. `public/activities`
 ```
 {
   "element": "range-card",
@@ -95,5 +98,11 @@ bathroom.json의 Example code 입니다.
     }
   }
 }
-
+```
+### 2. `public/login/books.json`
+```
+  "A-5-5":[
+    ["목욕용품 정리", "Tidy up after bathing", "/a5_5_w3"],
+    ["목욕용품 맞추기", "Tidy up bath supplies", "/activity#!bathroom"]
+  ],
 ```
