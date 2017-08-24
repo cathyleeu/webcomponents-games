@@ -944,14 +944,16 @@ public.get('/a8_w1', function *(next) {
   yield this.render('a8_w1');
 });
 
-public.get('/card_flip', function *(next) {
-  yield this.render('card_flip');
-});
-
 var activityIndex = fs.readFileSync("./public/webcomponents-es5/index.html");
 public.get('/activity', function *(next) {
   this.type = "text/html";
   this.body = activityIndex;
+});
+
+public.get('/maze', function *(next) {
+  yield this.render('maze', {
+    mazeType: "vertical"
+  });
 });
 
 public.get('/mazeh', function *(next) {
