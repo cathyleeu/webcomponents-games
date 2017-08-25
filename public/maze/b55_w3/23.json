@@ -30,7 +30,7 @@
     "x": 3,
     "y": 2,
     "img":"cigar",
-    "useItem": 1
+    "itemCount": 1
   }, {
     "x": 4,
     "y": 5,
