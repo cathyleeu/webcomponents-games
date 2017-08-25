@@ -48,6 +48,16 @@
               .attr("xlink:href", (d, i) => `${d}`)
 
         let selectBox = svg.append('g')
+          .selectAll("rect")
+          .data(data).enter()
+          .append('rect')
+          .attr("rx", 5).attr("ry", 5)
+          .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
+          .attr("width", 110).attr("height", 110)
+          // .attr("id", (d, i) => `bath${i}`)
+          .style("fill", (d,i) => `url(#drop_${i})`)
+          .style("stroke-width",8)
+          .style("stroke","#2ECC98")
       }
     }
     window.customElements.define(SelectCard.is, SelectCard);
