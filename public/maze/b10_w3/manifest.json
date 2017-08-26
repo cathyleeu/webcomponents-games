@@ -1,0 +1,29 @@
+[
+  {"book": "B10", "title": "3주차 : 조합블록을 연습해요"},
+  {"id": "bg1", "src": "/img/b10_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b10_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/b10_w3/tori.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b10_w3/tori0.png", "size": 256},
+  {"id": "food", "src": "/img/b10_w2/acorn.png"},
+  {"id": "item", "src": "/img/b10_w2/acorn.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "tori_house", "src": "/img/b10_w2/tori_house.png"},
+
+  {"id": "winter_stone1", "src": "/img/b10_w1/winter_stone1.png","obstacle": true},
+  {"id": "winter_stone2", "src": "/img/b10_w1/winter_stone2.png","obstacle": true},
+  {"id": "winter_tree1", "src": "/img/b10_w1/winter_tree1.png","obstacle": true},
+  {"id": "winter_tree2", "src": "/img/b10_w1/winter_tree2.png","obstacle": true},
+  {"id": "winter_tree3", "src": "/img/b10_w1/winter_tree3.png","obstacle": true}
+
+]

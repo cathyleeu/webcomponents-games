@@ -1,0 +1,28 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "complex1_rdd"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "###.###.#",
+    "#r.#..###",
+    "##.##...#",
+    "##..##..#",
+    "###.###.#",
+    "#.#%....#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "이번에는 복합 블록을 사용해요.",
+    "msg:en": "In this time, Let's use the following a complex block",
+    "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/left.png","/img/blocks/down.png","/img/blocks/down.png"]
+  }]
+}

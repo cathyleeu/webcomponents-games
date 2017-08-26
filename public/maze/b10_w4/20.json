@@ -1,0 +1,41 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "complex1_uurr",
+    "complex2_rd"
+  ],
+  "map": [
+    ".#######.",
+    "#..#.#.##",
+    "#.##.##.#",
+    "##.#....#",
+    "#....##.#",
+    "#.##).#%#",
+    "#.##.#..#",
+    "#u..###.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 5,
+    "useItem": 1
+  },{
+    "x": 4,
+    "y": 5,
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "복합 블록 2개를 사용하여 도토리를 토리의 집으로 가져와요.",
+    "msg:en": "Let's bring a Acorn Tori's house using two complex blocks!",
+    "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/up.png","/img/blocks/up.png","/img/blocks/right.png","/img/blocks/right.png",
+      "/img/blocks/complex2_block.png", "/img/b10_w2/equal.png","/img/blocks/right.png","/img/blocks/down.png"]
+  }]
+}

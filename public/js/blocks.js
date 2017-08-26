@@ -873,6 +873,523 @@ Blocks["present"] = {
   ],
   action: ["present"]
 };
+Blocks["complex1_uu"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","uu"]
+};
+Blocks["complex1_ul"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ul"]
+};
+Blocks["complex1_ur"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ur"]
+};
+Blocks["complex1_dd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","dd"]
+};
+Blocks["complex1_dl"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","dl"]
+};
+Blocks["complex1_dr"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","dr"]
+};
+Blocks["complex1_lu"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","lu"]
+};
+Blocks["complex1_ld"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ld"]
+};
+Blocks["complex1_ll"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ll"]
+};
+Blocks["complex1_ru"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ru"]
+};
+Blocks["complex1_rd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","rd"]
+};
+Blocks["complex1_ulu"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ulu"]
+};
+Blocks["complex1_ull"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ull"]
+};
+Blocks["complex1_uru"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","uru"]
+};
+Blocks["complex1_ddd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ddd"]
+};
+Blocks["complex1_ddl"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ddl"]
+};
+Blocks["complex1_dll"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","dll"]
+};
+Blocks["complex1_dld"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","dld"]
+};
+Blocks["complex1_drd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","drd"]
+};
+Blocks["complex1_drr"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","drr"]
+};
+Blocks["complex1_llu"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","llu"]
+};
+Blocks["complex1_ruu"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ruu"]
+};
+Blocks["complex1_rur"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","rur"]
+};
+Blocks["complex1_rdd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","rdd"]
+};
+Blocks["complex1_rdr"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","rdr"]
+};
+Blocks["complex1_rrd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","rrd"]
+};
+Blocks["complex1_uull"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","uull"]
+};
+Blocks["complex1_uurr"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","uurr"]
+};
+Blocks["complex1_ddll"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ddll"]
+};
+Blocks["complex1_ddrr"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","ddrr"]
+};
+Blocks["complex1_lddd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","lddd"]
+};
+Blocks["complex1_rddd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex1.png"}
+  ],
+  action: ["steploop","rddd"]
+};
+Blocks["complex2_uu"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","uu"]
+};
+Blocks["complex2_ul"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","ul"]
+};
+Blocks["complex2_dd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","dd"]
+};
+Blocks["complex2_dl"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","dl"]
+};
+Blocks["complex2_lu"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","lu"]
+};
+Blocks["complex2_ld"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","ld"]
+};
+Blocks["complex2_ru"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","ru"]
+};
+Blocks["complex2_rd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","rd"]
+};
+Blocks["complex2_rr"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","rr"]
+};
+Blocks["complex2_uur"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","uur"]
+};
+Blocks["complex2_dld"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","dld"]
+};
+Blocks["complex2_ddr"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","ddr"]
+};
+Blocks["complex2_luu"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","luu"]
+};
+Blocks["complex2_rur"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","rur"]
+};
+Blocks["complex2_rrdd"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 복합블록",
+    en: "%1 complex"
+  },
+  args0: [
+    {type: "field_image", src: "/img/b10_w2/complex2.png"}
+  ],
+  action: ["steploop","rrdd"]
+};
 Blocks["wait"] = {
   rgbColor: "#8D69AE",
   message0: {
