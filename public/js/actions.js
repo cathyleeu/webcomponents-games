@@ -410,6 +410,8 @@ Actions.prototype.steploop = function(type, block, callback) {
     stepList = ["d","d","d","r","r","r"];
   } else if(type == "go_dam_1") {
     stepList = ["d","d","d","r","r"];
+  } else{
+    stepList = type.split("");
   }
 
   setNextMove(stepList.shift(),x_next,y_next);
@@ -435,7 +437,7 @@ Actions.prototype.steploop = function(type, block, callback) {
       }else{
         callback(obj);
       }
-    }, 500);
+    }, 100);
   }
 };
 

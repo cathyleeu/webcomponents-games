@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3",
+    "complex1_ld"
+  ],
+  "map": [
+    ".%######.",
+    "#.###.l##",
+    "##..#.#.#",
+    "#.##..###",
+    "###..#..#",
+    "#.#)##.##",
+    "###.###.#",
+    "#..##.#.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 0,
+    "img":"winter_tree1"
+  },{
+    "x": 3,
+    "y": 5,
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "복합 블록을 사용하여 도토리를 얻어요.",
+    "msg:en": "Let's bring a Acorn using a complex block!",
+    "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/left.png","/img/blocks/down.png"]
+  }]
+}

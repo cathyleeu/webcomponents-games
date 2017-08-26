@@ -1,0 +1,28 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "complex1_ddll"
+  ],
+  "map": [
+    ".#######.",
+    "##.##d#.#",
+    "###.#..##",
+    "#.###.#.#",
+    "#.#...#.#",
+    "#%#.##.##",
+    "#...#.#.#",
+    "#.#.#.###",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "복합 블록을 사용하여 토리의 집으로 이동해요",
+    "msg:en": "Let's go to the Tori's house using a complex block!",
+    "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/down.png","/img/blocks/down.png","/img/blocks/left.png","/img/blocks/left.png"]
+  }]
+}
