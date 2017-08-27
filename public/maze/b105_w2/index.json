@@ -1,0 +1,282 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####EEEEEE#######.",
+    "..r..%%%%%%...I%N.#",
+    ".#############.%N.#",
+    "##...#########.%N.#",
+    "..#............%N.#",
+    "##...%%%%%%%%%.%N.#",
+    "#####HHHHHHHHH#####."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/b105_w1/star.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/b105_w1/star.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/b105_w1/star.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/b105_w1/star.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/b105_w1/star.png"
+    }]
+  },{
+    "x": 10,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 1점을 얻을 수 있어",
+      "msg:en": "You can get one point at once",
+      "img": "/img/b105_w1/star.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get two points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어",
+      "msg:en": "You can get three points at once",
+      "img": ["/img/b105_w1/star.png","/img/b105_w1/star.png","/img/b105_w1/star.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "b105_w2/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b105_w2/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b105_w2/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b105_w2/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b105_w2/5"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "b105_w2/6"
+  },{
+    "x": 14,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+    "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
+      "msg:en": "The basic problems are over. Now you can solve the problem freely."
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b105_w2/7"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b105_w2/8"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b105_w2/9"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b105_w2/10"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "b105_w2/11"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "b105_w2/12"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b105_w2/13"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "b105_w2/14"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b105_w2/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b105_w2/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "b105_w2/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b105_w2/18"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "b105_w2/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "b105_w2/20"
+  },{
+    "img":"sun",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "b105_w3/index",
+    "min_score": 20
+  }],
+
+  "tutorial": [{
+    "msg:ko": "별로 가보아요! 쉬운 문제는 1점, 보통은 2점, 어려운 문제는 3점을 주어요.",
+    "msg:en": "Let's go to star! An easy problem gives you one point, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/b105_w1/star.png"
+  }],
+  "goal": {
+    "msg:ko": "20점을 얻고 햇님에게 이동해요.",
+    "msg:en": "Let's get 20 points and go to the Sun.",
+    "img": ["/img/b105_w1/star.png","/img/b105_w1/sun.png"]
+  }
+}

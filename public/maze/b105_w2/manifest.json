@@ -1,0 +1,60 @@
+[
+  {"book": "B10.5", "title": "2주차 : 규칙을 이해해요"},
+  {"id": "bg1", "src": "/img/b10_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b10_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/b105_w1/winter_cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b105_w1/winter_cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b105_w1/star.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "sun", "src": "/img/b105_w1/sun.png"},
+
+  {"id": "winter_stone1", "src": "/img/b10_w1/winter_stone1.png","obstacle": true},
+  {"id": "winter_stone2", "src": "/img/b10_w1/winter_stone2.png","obstacle": true},
+  {"id": "winter_tree1", "src": "/img/b10_w1/winter_tree1.png","obstacle": true},
+  {"id": "winter_tree2", "src": "/img/b10_w1/winter_tree2.png","obstacle": true},
+  {"id": "winter_tree3", "src": "/img/b10_w1/winter_tree3.png","obstacle": true},
+
+  {"tile": "z", "id": "question", "src": "/img/b7_w2/question.png", "obstacle": false},
+
+  {"tile": "a", "id": "red1", "src": "/img/b7_w3/red1.png"},
+  {"tile": "b", "id": "red2", "src": "/img/b7_w3/red2.png"},
+  {"tile": "c", "id": "red3", "src": "/img/b7_w3/red3.png"},
+  {"tile": "f", "id": "red4", "src": "/img/b7_w3/red4.png"},
+
+  {"tile": "g", "id": "green1", "src": "/img/b7_w3/green1.png"},
+  {"tile": "i", "id": "green2", "src": "/img/b7_w3/green2.png"},
+  {"tile": "j", "id": "green3", "src": "/img/b7_w3/green3.png"},
+  {"tile": "k", "id": "green4", "src": "/img/b7_w3/green4.png"},
+
+  {"tile": "m", "id": "yellow1", "src": "/img/b7_w3/yellow1.png"},
+  {"tile": "o", "id": "yellow2", "src": "/img/b7_w3/yellow2.png"},
+  {"tile": "p", "id": "yellow3", "src": "/img/b7_w3/yellow3.png"},
+  {"tile": "q", "id": "yellow4", "src": "/img/b7_w3/yellow4.png"},
+
+  {"tile": "s", "id": "blue1", "src": "/img/b7_w3/blue1.png"},
+  {"tile": "t", "id": "blue2", "src": "/img/b7_w3/blue2.png"},
+  {"tile": "v", "id": "blue3", "src": "/img/b7_w3/blue3.png"},
+  {"tile": "w", "id": "blue4", "src": "/img/b7_w3/blue4.png"},
+
+  {"tile": "A", "id": "chrome1", "src": "/img/b7_w3/chrome1.png"},
+  {"tile": "B", "id": "chrome2", "src": "/img/b7_w3/chrome2.png"},
+  {"tile": "C", "id": "chrome3", "src": "/img/b7_w3/chrome3.png"},
+  {"tile": "F", "id": "chrome4", "src": "/img/b7_w3/chrome4.png"},
+
+  {"tile": "G", "id": "skyblue1", "src": "/img/b7_w3/skyblue1.png"},
+  {"tile": "I", "id": "skyblue2", "src": "/img/b7_w3/skyblue2.png"},
+  {"tile": "J", "id": "skyblue3", "src": "/img/b7_w3/skyblue3.png"},
+  {"tile": "K", "id": "skyblue4", "src": "/img/b7_w3/skyblue4.png"}
+
+]

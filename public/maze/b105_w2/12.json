@@ -1,0 +1,41 @@
+{
+
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    "fBfB%BfBf",
+    "####.####",
+    "#....####",
+    "#.......#",
+    "##.)..#.#",
+    "##..#B#.#",
+    "##......#",
+    "#..u....#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 0,
+    "img":"question",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 4,
+    "img":"red4"
+  }],
+  "tutorial": [{
+    "msg:ko": "'?'에 들어갈 물건을 가져와요'",
+    "msg:en": "Let's find something to fill the ? space and put it there",
+    "img": ["/img/b7_w2/question.png","/img/blocks/bring.png","/img/blocks/use.png"]
+  }]
+}

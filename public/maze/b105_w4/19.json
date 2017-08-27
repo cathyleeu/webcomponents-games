@@ -26,6 +26,7 @@
   "extra":[{
     "x": 7,
     "y": 1,
+    "img":"d_grandparents",
     "useItem": 1
   },{
     "x": 3,
@@ -33,8 +34,8 @@
     "itemCount": 1
   }],
   "tutorial": [{
-    "msg:ko": "복합 블록 2개를 사용하여 도토리를 토리의 집으로 가져와요.",
-    "msg:en": "Let's bring a Acorn Tori's house using two complex blocks!",
+    "msg:ko": "복합 블록 2개를 사용하여 떡국 선물을 할머니,할어버지에게 가져와요.",
+    "msg:en": "Let's bring a rice-cake soup present Cos's grand parents using two complex blocks!",
     "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/up.png","/img/blocks/up.png",
       "/img/blocks/complex2_block.png", "/img/b10_w2/equal.png","/img/blocks/right.png","/img/blocks/right.png"]
   }]

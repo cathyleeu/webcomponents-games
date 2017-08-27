@@ -1,0 +1,26 @@
+[
+  {"book": "B10.5", "title": "3주차 : 규칙을 연습해요"},
+  {"id": "bg1", "src": "/img/b7_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b7_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/b7_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b7_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b105_w3/gare.png"},
+  {"id": "item", "src": "/img/b105_w3/gare.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "gare", "src": "/img/b105_w3/gare.png"},
+  {"id": "mother", "src": "/img/b105_w3/mother.png"},
+
+  {"id": "wall", "src": "/img/b7_w1/wall.png","obstacle": true}
+
+]

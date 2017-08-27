@@ -26,6 +26,7 @@
   "extra":[{
     "x": 1,
     "y": 5,
+    "img":"d_grandparents",
     "useItem": 1
   },{
     "x": 3,
@@ -33,8 +34,8 @@
     "itemCount": 1
   }],
   "tutorial": [{
-    "msg:ko": "이번에는 복합 블록 두 개를 사용해요.",
-    "msg:en": "In this time, Let's use the following two complex blocks",
+    "msg:ko": "복합 블록 2개를 사용하여 떡국 선물을 할머니,할어버지에게 가져와요.",
+    "msg:en": "Let's bring a rice-cake soup present Cos's grand parents using two complex blocks!",
     "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/up.png","/img/blocks/up.png","/img/blocks/left.png","/img/blocks/left.png",
       "/img/blocks/complex2_block.png", "/img/b10_w2/equal.png","/img/blocks/down.png","/img/blocks/left.png","/img/blocks/down.png"]
   }]
