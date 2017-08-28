@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": ["start","move_left","repeat","repeat","repeat"],
+  "workspace": ["start","move_up","repeat","repeat"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -16,7 +16,7 @@
     "#.#.##.##",
     "###..#..#",
     "#......##",
-    "#u#..#.##",
+    "#u##.#.##",
     "#...#.###",
     ".#######."
   ],
