@@ -120,9 +120,9 @@
         let leftData = manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src})),
             rightData = manifest.filter(l => l.set).map(l => ({["no"]:l.no, ["src"]:l.src}));
 
-        _this.set('cards', leftData.length )
-        _this.set('data', data )
-        _this.set('manifest', manifest )
+        this.set('cards', leftData.length )
+        this.set('data', data )
+        this.set('manifest', manifest )
 
 
         let defs = svg.append('defs').selectAll('pattern')
@@ -254,7 +254,6 @@
 
         function pencilingMove(d) {
           let m = d3.mouse(this);
-          console.log(m)
           line.attr("x2", m[0]).attr("y2", m[1]);
         }
 
@@ -305,7 +304,7 @@
            dragId = undefined;
            svg.on("mousemove touchmove", null);
            if(_this.matched === _this.cards){
-             _this.shadowRoot.getElementById("successModal").modalAlert()
+             _this.$.successModal.modalAlert()
            }
         }
       }

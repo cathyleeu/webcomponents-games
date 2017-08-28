@@ -1,22 +1,30 @@
 {
   "element": "select-card",
   "data": [
-    "airport",
+    "airplane",
     "bus",
     "ship",
     "train",
-    "airplain1",
-    "ship1",
-    "ground"
+    "sky4",
+    "ship4",
+    "ground4"
   ],
+  "attributes": {
+    "correct" : [
+      "/img/b6_w1/airplane.png",
+      "/img/b6_w1/bus.png",
+      "/img/b6_w1/ship.png",
+      "/img/b6_w1/train.png"
+    ]
+  },
   "manifest": [
-    {"id": "airport", "src": "/img/b6_w1/airport.png"},
+    {"id": "airplane", "src": "/img/b6_w1/airplane.png"},
     {"id": "bus", "src": "/img/b6_w1/bus.png"},
     {"id": "ship", "src": "/img/b6_w1/ship.png"},
     {"id": "train", "src": "/img/b6_w1/train.png"},
-    {"id": "airplain1", "src": "/img/a6_w2/airplain1.png"},
-    {"id": "ship1", "src": "/img/a6_w2/ship1.png"},
-    {"id": "ground", "src": "/img/a6_w4/ground.png"}
+    {"id": "sky4", "src": "/img/a6_w4/sky4.png"},
+    {"id": "ship4", "src": "/img/a6_w2/ship4.png"},
+    {"id": "ground4", "src": "/img/a6_w4/ground4.png"}
   ],
   "msg": {
     "ko": {
