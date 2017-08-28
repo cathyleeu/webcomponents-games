@@ -1,0 +1,52 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start", "repeat","repeat","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#%...)###",
+    "##..#.#.#",
+    "#.##).###",
+    "##.#.#..#",
+    "#.#).##.#",
+    "###.###.#",
+    "#.r.##.##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img":"mother",
+    "useItem": 3
+  },{
+    "x": 5,
+    "y": 1,
+    "img":"gare",
+    "itemCount": 1
+  },{
+    "x": 4,
+    "y": 3,
+    "img":"gare",
+    "itemCount": 1
+  },{
+    "x": 3,
+    "y": 5,
+    "img":"gare",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "가래떡을 모아서 엄마에게 가져가요'",
+    "msg:en": "Let's collect the garae rice cakes and give Cos's mother!",
+    "img": ["/img/b105_w3/gare.png","/img/blocks/bring.png","/img/b105_w3/mother.png","/img/blocks/use.png"]
+  }]
+}
