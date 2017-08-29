@@ -210,14 +210,18 @@ function getKinder(kinderId) {
 
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
-      book = [5, "5-5"];
+      book = ["5-5", 6];
+  // 대구지사 무산/청솔유치원 5권 사용 유지
+  if(school == "C00071-K14" || school == "C00071-K15") {
+    book = [5, "5-5"];
+  }
   // PSA는 여름특별호 사용 안함(목동 러닝트리 제외)
   if(school.slice(0, 1) == "D" && school != "D00120-K1") {
-    book = [4, 5];
+    book = [5, 6];
   }
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
-    book = [7, 8];
+    book = [8, 9];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
@@ -225,21 +229,17 @@ function getBook(classObj) {
   }
   // 직영 설리번, 울산지사 교차로원, 인천지사 유원유치원, 부산지사 동성어학원
   if(school == "E00076-K1" || school == "A00072-K9" || school == "A00114-K3" || school == "A00066-K2") {
-    book = [3, 4];
+    book = [4, 5];
   }
   // 영업부 일산지사 홍익유치원, 부산PSA, 울산 설리번 영어어린이집
   if(school == "C00149-K1" || school == "D00086-K1" || school == "A00072-K2") {
-    book = [4, 5];
-  }
-  // 압구정 PSA
-  if(school == "D00121-K1") {
-    book = [4, 5, "5-5"];
+    book = [5, 6];
   }
   // 송도ECC 추가반
   if(school == "B00136-K1") {
     var classNum = classObj.code.slice(-3);
     if(classNum == "KC7" || classNum == "KC8" || classNum == "KC9") {
-      book = [3, 4];
+      book = [4, 5];
     }
   }
   // 용인지사 성음유치원 A레벨 추가반
