@@ -211,9 +211,9 @@ function getKinder(kinderId) {
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
       book = ["5-5", 6];
-  // 대구지사 무산/청솔유치원 5권 사용 유지
-  if(school == "C00071-K14" || school == "C00071-K15") {
-    book = [5, "5-5"];
+  // 대구지사는 요청으로 3달치 제공
+  if(school.slice(0,6) == "C00071") {
+    book = [5, "5-5", 6];
   }
   // PSA는 여름특별호 사용 안함(목동 러닝트리 제외)
   if(school.slice(0, 1) == "D" && school != "D00120-K1") {
