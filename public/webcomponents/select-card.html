@@ -63,6 +63,7 @@
       total="{{total}}"
       point="{{point}}"
       matched="{{matched}}"
+      purpose="select"
       cards="{{cards}}"
       on-modal="handleModal"
       ></status-bar>
@@ -128,6 +129,8 @@
         super.ready();
         this.set('clicked', 0)
         this.set('uncorrect', [])
+        this.set('point', 0)
+        this.set('total', 0)
       }
       setData(data, manifest){
         let _this = this,

@@ -21,9 +21,11 @@
       }
       h1, p {
         color: white;
-        display: block;
         margin: 0;
         text-align: center;
+      }
+      p {
+        display: none;
       }
       .title {
         width: 60%;
@@ -32,7 +34,7 @@
         display: flex;
         justify-content: center;
       }
-      .score_cont {
+      .right_side {
         width: 20%;
         height: 100%;
         align-items: center;
@@ -41,22 +43,24 @@
         flex-direction: column;
       }
       .logo{
+        width: 20%;
         font-weight: 700;
         margin-left: 1em;
       }
       .logout{
-        margin-right: 1em;
         font-weight: 500;
       }
     </style>
     <div class="bar_cont">
-      <div on-click="handleModal" data-purpose="previous" class="logo has_name">KIDSTHINKING</div>
+      <div class="logo has_name" on-click="handleModal" data-purpose="previous">KIDSTHINKING</div>
       <h1 class="title">{{title}}</h1>
-      <div class="score_cont">
-        <p>{{score}} : {{point}}</p>
-        <p>{{lefted}}: {{matched}}/{{cards}}</p>
+      <div class="right_side">
+        <div class="results">
+          <p class="score">{{score}} {{point}}</p>
+          <p class="match">( {{matched}}/{{cards}} )</p>
+        </div>
+        <div class="logout has_name" on-click="handleModal" data-purpose="logout">{{logoutHead}}</div>
       </div>
-      <div on-click="handleModal" data-purpose="logout" class="logout has_name">{{logoutHead}}</div>
     </div>
   </template>
   <script>
@@ -70,6 +74,7 @@
           total: Number,
           matched: Number,
           cards: Number,
+          purpose: String,
           hasname: {
             type: Boolean,
             notify: true,
@@ -80,13 +85,25 @@
       }
       ready(){
         super.ready();
-        this.checkHasName(this.hasname)
+        this.handleCheckName(this.hasname)
+        this.handleContext()
       }
-      checkHasName(name){
+      handleContext(){
+        let target = {
+          select : '.score',
+          range : '.score, .match',
+          line : '.score, .match',
+          flip : '.score, .match'
+        }
+        console.log('!!')
+        let els = this.shadowRoot.querySelectorAll(target[this.purpose]);
+        els.forEach(el=>{el.style.display="inline-block"});
+      }
+      handleCheckName(name){
         if(!name){
           d3.select(this.shadowRoot)
             .selectAll(".has_name")
-            .attr('style', "display:none")
+            .attr('style', "visibility: hidden")
         }
       }
       handleModal(e) {
