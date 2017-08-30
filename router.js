@@ -211,6 +211,10 @@ function getKinder(kinderId) {
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
       book = ["5-5", 6];
+  // 성동 ECC 1권부터 시작
+  if(school == "B00163-K1") {
+    book = [1, 2];
+  }
   // 대구지사는 요청으로 3달치 제공
   if(school.slice(0,6) == "C00071") {
     book = [5, "5-5", 6];

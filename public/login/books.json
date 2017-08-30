@@ -415,8 +415,8 @@
     ["목욕용품 맞추기", "Tidy up bath supplies", "/activity#!bathroom"]
   ],
   "A-6":[
-    ["땅에서 탈 수 있는 것을 알아보아요", "/mazeh#!a6_w1/1"],
-    ["물에서 탈 수 있는 것을 알아보아요", "/a6_w4"]
+    ["땅에서 탈 수 있는 것을 알아보아요:1주차", "Learn about land transport:Week 1", "/mazeh#!a6_w1/1"],
+    ["물에서 탈 수 있는 것을 알아보아요:4주차", "Learn about water transport:Week 4", "/a6_w4"]
   ],
   "A-7":[
     ["가을이 되었어요", "/c1_w3"],
@@ -468,10 +468,10 @@
     ["시장 음식을 사 먹어요:시장에서 먹거리를 사요", "Buy food in the market", "/mazeh#!b55_w4/index"]
   ],
   "B-6":[
-    ["버스정류장에 가요", "/mazeh#!b6_w1/index"],
-    ["반복블록을 이해해요", "/mazeh#!b6_w2/index"],
-    ["반복블록을 사용해요", "/mazeh#!b6_w3/index"],
-    ["대중교통을 타러 가요", "/mazeh#!b6_w4/index"]
+    ["버스정류장에 가요", "Learn about public transport", "/mazeh#!b6_w1/index"],
+    ["반복블록을 이해해요", "Learn to use the repeat blocks", "/mazeh#!b6_w2/index"],
+    ["반복블록을 사용해요", "Go to the port", "/mazeh#!b6_w3/index"],
+    ["대중교통을 타러 가요", "Go to the airport", "/mazeh#!b6_w4/index"]
   ],
   "B-7":[
     ["사계절을 알아보아요", "/mazeh#!b7_w1/index"],
@@ -534,27 +534,27 @@
     ["음식을 대접해요 : 음식을 대접해요", "Serve some food", "/mazeh#!c55_w4/index"]
   ],
   "C-6":[
-    ["1주차: 교통 안전 규칙", "/mazeh#!c6_w1/index"],
-    ["2주차: 확인 블록을 이해해요", "/mazeh#!c6_w2/index"],
-    ["3주차: 만약에 블록을 이해해요", "/mazeh#!c6_w3/index"],
-    ["4주차: 확인 블록과 만약에 블록을 써보아요", "/mazeh#!c6_w4/index"]
+    ["교통 안전 규칙", "Road safety and traffic rules", "/mazeh#!c6_w1/index"],
+    ["확인 블록을 이해해요", "Learn to use the check blocks", "/mazeh#!c6_w2/index"],
+    ["만약에 블록을 이해해요", "Learn to use the if blocks", "/mazeh#!c6_w3/index"],
+    ["확인 블록과 만약에 블록을 써보아요", "Use the check and if blocks", "/mazeh#!c6_w4/index"]
   ],
   "C-7":[
-    ["1주차: 가을 곡식과 열매", "/mazeh#!c7_w1/index"],
-    ["2주차: 만약에 블록을 이해해요", "/mazeh#!c7_w2/index"],
-    ["3주차: 여러 가지 모양의 열쇠를 찾아보아요", "/mazeh#!c7_w3/index"],
-    ["4주차: 만약에 블록을 써보아요", "/mazeh#!c7_w4/index"]
+    ["가을 곡식과 열매", "/mazeh#!c7_w1/index"],
+    ["만약에 블록을 이해해요", "/mazeh#!c7_w2/index"],
+    ["여러 가지 모양의 열쇠를 찾아보아요", "/mazeh#!c7_w3/index"],
+    ["만약에 블록을 써보아요", "/mazeh#!c7_w4/index"]
   ],
   "C-8":[
-    ["1주차: 10을 알아보아요", "/mazeh#!c9_w1/index"],
-    ["2주차: 99까지의 수를 알아보아요", "/mazeh#!c9_w2/index"],
-    ["3주차: 만약에 아니라면 블록을 이해해요", "/mazeh#!c9_w3/index"],
-    ["4주차: 만약에 아니라면 블록을 써보아요", "/mazeh#!c9_w4/index"]
+    ["10을 알아보아요", "/mazeh#!c9_w1/index"],
+    ["99까지의 수를 알아보아요", "/mazeh#!c9_w2/index"],
+    ["만약에 아니라면 블록을 이해해요", "/mazeh#!c9_w3/index"],
+    ["만약에 아니라면 블록을 써보아요", "/mazeh#!c9_w4/index"]
   ],
   "C-9":[
-    ["1주차: 몇 시일까요?", "/mazeh#!c9_w1/index"],
-    ["2주차: 몇 시 30분일까요?", "/mazeh#!c9_w2/index"],
-    ["3주차: 세 가지 조건 블록을 이해해요", "/mazeh#!c9_w3/index"],
-    ["4주차: 세 가지 조건 블록을 써보아요", "/mazeh#!c9_w4/index"]
+    ["몇 시일까요?", "/mazeh#!c9_w1/index"],
+    ["몇 시 30분일까요?", "/mazeh#!c9_w2/index"],
+    ["세 가지 조건 블록을 이해해요", "/mazeh#!c9_w3/index"],
+    ["세 가지 조건 블록을 써보아요", "/mazeh#!c9_w4/index"]
   ]
 }
