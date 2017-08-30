@@ -72,9 +72,6 @@
         purpose="retry"
         headertext="{{localize('retryHead')}}"
         btmtext="{{localize('retryBtm')}}"
-        total="{{total}}"
-        point="{{point}}"
-        matched="{{matched}}"
         retrybtn="{{localize('retrybtn')}}"
         ></toycode-modal>
       <toycode-modal
@@ -82,9 +79,6 @@
         purpose="nextStep"
         headertext="{{localize('successHead')}}"
         btmtext="{{localize('successBtm')}}"
-        total="{{total}}"
-        point="{{point}}"
-        matched="{{matched}}"
         nextbtn="{{localize('nextbtn')}}"
         ></toycode-modal>
       <toycode-modal
@@ -132,10 +126,18 @@
         this.set('point', 0)
         this.set('total', 0)
       }
+      reset(){
+        this.set('clicked', 0)
+        this.set('total', 0)
+        this.set('point', this.point+5)
+        d3.select(this.shadowRoot).select('svg').selectAll('*').remove()
+        this.setData(this.data, this.manifest)
+      }
       setData(data, manifest){
         let _this = this,
             svg = d3.select(this.shadowRoot).select('svg');
-
+        _this.set('data', data )
+        _this.set('manifest', manifest )
         manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
         data = data.map(id=>manifest[id]);
         this.set('cards', data.length );
@@ -161,43 +163,47 @@
             .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
             .attr("width", 110).attr("height", 110)
             .style("fill", (d,i) => `url(#drop_${i})`)
-            .on('click touchend', this.handleClickCard)
+            .on('click touchstart', this.handleClickCard)
 
         let getSize = d3.select(this.shadowRoot).select('g').node().getBBox().width
         let getCenter = (this.offsetWidth - getSize)/2;
         d3.select(this.shadowRoot).select('g').attr('transform', `translate(${getCenter},0)`)
       }
       handleClickCard(d, i){
-        console.log("!!!--1--!!!")
-        let that = d3.select('#element').node();
+        let that = d3.select('#element').node(),
+            correct = d3.select('#element').attr('correct').split(',').indexOf(d);
         this.classList.toggle('clicked')
-        console.log("!!!--2--!!!")
+        // console.log("!!!--2--!!!")
         if(this.classList.value){
-          that.set('clicked', that.clicked+1)
-          if(that.clicked > 4) {
-            alert("더이상 클릭 못함 ^^")
-            d3.select(this).style('stroke', "gray")
-            that.set('clicked', that.clicked-1)
-            this.classList.remove('clicked')
-            console.log("!!!--3--!!!")
-          } else {
-            d3.select(this).style('stroke', "#2ECC98")
-            console.log("!!!--4--!!!")
+          // console.log("!!!--4--!!!")
+          if(correct === -1) {
+            console.log("uncorrect")
+            that.push('uncorrect', this.__data__)
           }
+          that.set('clicked', that.clicked+1)
+          d3.select(this).style('stroke', "#2ECC98")
         } else {
-          console.log("!!!--5--!!!")
+          // console.log("!!!--5--!!!")
+          if(that.uncorrect.indexOf(d) !== -1){
+            console.log("uncorrect remove")
+            that.set('uncorrect', that.uncorrect.filter(ele => ele !== d))
+          }
           d3.select(this).style('stroke', "gray")
           that.set('clicked', that.clicked-1)
         }
 
 
-        console.log(that.clicked)
-        let correct = d3.select('#element').attr('correct').split(',').indexOf(d);
-        if(correct === -1) {
-          that.push('uncorrect', this.__data__)
-        }
+        console.log(that.clicked, that.uncorrect.length)
+
+
+
+
       }
       handleSubmit(){
+        if(this.clicked < 4) {
+          alert('아직 선택할 것이 남았어요!')
+          return false
+        }
         if(this.uncorrect.length > 0){
           this.$.retryModal.modalAlert()
           console.log(this.uncorrect.length);

@@ -30,7 +30,6 @@
     "ko": {
       "title": "대중교통을 알아보아요.",
       "score": "점수",
-
       "success": "참 잘했어요!",
       "successHead": "참 잘했어요!",
       "retryHead": "참 아쉽네요!",
@@ -48,7 +47,6 @@
     "en": {
       "title": "Along with the picture, arrange the bath tools.",
       "score": "score",
-      
       "success": "Good job!",
       "successHead": "Success",
       "retryHead": "Failed",
