@@ -162,7 +162,8 @@
             .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
             .attr("width", 110).attr("height", 110)
             .style("fill", (d,i) => `url(#drop_${i})`)
-            .on('click touchstart', this.handleClickCard)
+            .on('click', this.handleClickCard)
+
 
         let getSize = d3.select(this.shadowRoot).select('g').node().getBBox().width
         let getCenter = (this.offsetWidth - getSize)/2;
@@ -190,13 +191,7 @@
           d3.select(this).style('stroke', "gray")
           that.set('clicked', that.clicked-1)
         }
-
-
         console.log(that.clicked, that.uncorrect.length)
-
-
-
-
       }
       handleSubmit(){
         if(this.clicked < 4) {
