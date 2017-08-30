@@ -28,7 +28,9 @@
   ],
   "msg": {
     "ko": {
-      "title": "대중교통을 알아보아요.",
+      "title": "대중교통은 무엇인가요?",
+      "subtitle": "아래의 그림 중 대중교통을 클릭하세요.",
+      "guide": "힌트! 아래의 카드 중 대중교통은 4가지가 있어요!",
       "score": "점수",
       "success": "참 잘했어요!",
       "successHead": "참 잘했어요!",
@@ -41,11 +43,14 @@
       "previousBtm": "이전으로 돌아가시겠습니까?",
       "nextbtn": "넘어가기",
       "retrybtn": "다시하기",
+      "resultbtn": "결과보기",
       "nobtn" : "아니오",
       "yesbtn" : "예"
     },
     "en": {
-      "title": "Along with the picture, arrange the bath tools.",
+      "title": "What is transportation?",
+      "subtitle": "Click the transportation in the below pictures",
+      "guide": "Hint! transportation is 4 in the below Pictures.",
       "score": "score",
       "success": "Good job!",
       "successHead": "Success",
@@ -58,6 +63,7 @@
       "previousBtm": "Do you want to move on to the previous step?",
       "nextbtn": "Back",
       "retrybtn": "Retry",
+      "resultbtn": "Result",
       "nobtn" : "No",
       "yesbtn" : "Yes"
     }

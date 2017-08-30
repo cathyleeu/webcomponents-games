@@ -98,15 +98,14 @@
         purpose="previous"
         ></toycode-modal>
       <div class="header">
-        <h1>대중교통을 찾아라!</h1>
-        <h3>대중교통은 무엇인가요? 아래의 그림 중 대중교통을 클릭하세요.</h3>
-        <p>힌트! 아래의 카드 중 대중교통은 4가지가 있어요!</p>
+        <h3>{{localize('subtitle')}}</h3>
+        <p>{{localize('guide')}}</p>
       </div>
       <div class="container">
         <svg class="svg--responsive"></svg>
       </div>
       <div class="bottom">
-        <button on-click="handleSubmit">결과보기</button>
+        <button on-click="handleSubmit">{{localize('resultbtn')}}</button>
       </div>
 
   </template>
