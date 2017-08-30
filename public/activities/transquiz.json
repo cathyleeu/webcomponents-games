@@ -1,5 +1,10 @@
 {
   "element": "ox-quiz-card",
+  "attributes": {
+    "ground" : "땅",
+    "sky" : "하늘",
+    "water" : "물"
+  },
   "data": [
     "ground0",
     "ground1",

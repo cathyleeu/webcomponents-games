@@ -156,7 +156,6 @@
             svg = d3.select(this.shadowRoot).select('svg');
         _this.set('data', data )
         _this.set('manifest', manifest )
-        debugger
         manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
         data = data.map(id=>manifest[id]);
 
@@ -167,7 +166,6 @@
             .attr('class', 'quiz')
 
             quizCont.append('p').text(`Quiz${this.stage}`)
-
 
             quizCont.append('img')
                     .attr('src', "/img/a6_w4/sky0.png")
