@@ -36,14 +36,14 @@
     "disappear":true
   }],
   "tutorial": [{
-    "msg:ko": "코스는 안전용품을 들고 가서 안전하게 자전거를 탈 거에요.",
-    "msg:en": "Cos will ride her bike safely with her safety supplies.",
-    "img": ["/img/c6/bike.png", "/img/c6/safety2.png"]
+    "msg:ko": "코스는 안전용품을 들고 가서 안전하게 인라인 스케이트를 탈 거에요.",
+    "msg:en": "Cos will ride her inline skates safely with her safety supplies.",
+    "img": ["/img/c6/inline.png", "/img/c6/safety3.png"]
   }],
   "goal":{
-    "msg:ko": "안전용품을 가지고 자전거에서 사용해보아요.",
-    "msg:en": "Bring the safety supplies to her bike.",
-    "img": ["/img/c6/bike.png", "/img/c6/safety2.png"]
+    "msg:ko": "안전용품을 가지고 인라인 스케이트에서 사용해보아요.",
+    "msg:en": "Bring the safety supplies to her inline skates.",
+    "img": ["/img/c6/inline.png", "/img/c6/safety3.png"]
   },
   "success": [{
     "msg:ko": "성공! 참 잘했어요~",
