@@ -960,13 +960,19 @@ public.get('/activity', function *(next) {
 
 public.get('/maze', function *(next) {
   yield this.render('maze', {
-    mazeType: "vertical"
+    mazeType: "default"
   });
 });
 
 public.get('/mazeh', function *(next) {
   yield this.render('maze', {
     mazeType: "horizontal"
+  });
+});
+
+public.get('/mazev', function *(next) {
+  yield this.render('maze', {
+    mazeType: "vertical"
   });
 });
 
