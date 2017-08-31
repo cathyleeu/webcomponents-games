@@ -250,6 +250,10 @@ function getBook(classObj) {
   if(classObj.code == "A00088-K1-KC2") {
     book = [1, 2, 3];
   }
+  // 마포ECC 추가반
+  if(classObj.code == "B00130-K1-KC6") {
+    book = [1, 2];
+  }
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
