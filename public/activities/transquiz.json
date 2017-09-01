@@ -1,49 +1,31 @@
 {
   "element": "ox-quiz-card",
   "attributes": {
-    "ground" : "땅",
-    "sky" : "하늘",
-    "water" : "물"
   },
-  "data": [
-    "ground0",
-    "ground1",
-    "ground2",
-    "ground3",
-    "ground4",
-    "ground5",
-    "sky0",
-    "sky1",
-    "sky2",
-    "sky3",
-    "sky4",
-    "sky5",
-    "water0",
-    "water1",
-    "water2",
-    "water3",
-    "water4",
-    "water5"
-  ],
+  "data": {
+    "ground": ["ground0", "ground1", "ground2", "ground3", "ground4", "ground5"],
+    "sky": ["sky0", "sky1", "sky2", "sky3", "sky4", "sky5"],
+    "water": ["water0", "water1", "water2", "water3", "water4", "water5"]
+  },
   "manifest": [
-    {"set": "ground", "id": "ground0", "src": "/img/a6_w4/ground0.png"},
-    {"set": "ground", "id": "ground1", "src": "/img/a6_w4/ground1.png"},
-    {"set": "ground", "id": "ground2", "src": "/img/a6_w4/ground2.png"},
-    {"set": "ground", "id": "ground3", "src": "/img/a6_w4/ground3.png"},
-    {"set": "ground", "id": "ground4", "src": "/img/a6_w4/ground4.png"},
-    {"set": "ground", "id": "ground5", "src": "/img/a6_w4/ground5.png"},
-    {"set": "sky", "id": "sky0", "src": "/img/a6_w4/sky0.png"},
-    {"set": "sky", "id": "sky1", "src": "/img/a6_w4/sky1.png"},
-    {"set": "sky", "id": "sky2", "src": "/img/a6_w4/sky2.png"},
-    {"set": "sky", "id": "sky3", "src": "/img/a6_w4/sky3.png"},
-    {"set": "sky", "id": "sky4", "src": "/img/a6_w4/sky4.png"},
-    {"set": "sky", "id": "sky5", "src": "/img/a6_w4/sky5.png"},
-    {"set": "water", "id": "water0", "src": "/img/a6_w4/water0.png"},
-    {"set": "water", "id": "water1", "src": "/img/a6_w4/water1.png"},
-    {"set": "water", "id": "water2", "src": "/img/a6_w4/water2.png"},
-    {"set": "water", "id": "water3", "src": "/img/a6_w4/water3.png"},
-    {"set": "water", "id": "water4", "src": "/img/a6_w4/water4.png"},
-    {"set": "water", "id": "water5", "src": "/img/a6_w4/water5.png"}
+    {"id": "ground0", "src": "/img/a6_w4/ground0.png"},
+    {"id": "ground1", "src": "/img/a6_w4/ground1.png"},
+    {"id": "ground2", "src": "/img/a6_w4/ground2.png"},
+    {"id": "ground3", "src": "/img/a6_w4/ground3.png"},
+    {"id": "ground4", "src": "/img/a6_w4/ground4.png"},
+    {"id": "ground5", "src": "/img/a6_w4/ground5.png"},
+    {"id": "sky0", "src": "/img/a6_w4/sky0.png"},
+    {"id": "sky1", "src": "/img/a6_w4/sky1.png"},
+    {"id": "sky2", "src": "/img/a6_w4/sky2.png"},
+    {"id": "sky3", "src": "/img/a6_w4/sky3.png"},
+    {"id": "sky4", "src": "/img/a6_w4/sky4.png"},
+    {"id": "sky5", "src": "/img/a6_w4/sky5.png"},
+    {"id": "water0", "src": "/img/a6_w4/water0.png"},
+    {"id": "water1", "src": "/img/a6_w4/water1.png"},
+    {"id": "water2", "src": "/img/a6_w4/water2.png"},
+    {"id": "water3", "src": "/img/a6_w4/water3.png"},
+    {"id": "water4", "src": "/img/a6_w4/water4.png"},
+    {"id": "water5", "src": "/img/a6_w4/water5.png"}
   ],
   "msg": {
     "ko": {
@@ -63,7 +45,13 @@
       "retrybtn": "다시하기",
       "resultbtn": "결과보기",
       "nobtn" : "아니오",
-      "yesbtn" : "예"
+      "yesbtn" : "예",
+      "subject": {
+        "ground" : "땅",
+        "sky" : "하늘",
+        "water" : "물"
+      },
+      "question": "는 $ 에서 탈 수 있어요."
     },
     "en": {
       "title": "OX Quiz",
@@ -82,7 +70,13 @@
       "retrybtn": "Retry",
       "resultbtn": "Result",
       "nobtn" : "No",
-      "yesbtn" : "Yes"
+      "yesbtn" : "Yes",
+      "subject": {
+        "ground" : "ground",
+        "sky" : "sky",
+        "water" : "water"
+      },
+      "question": "can use on $ "
     }
   }
 }

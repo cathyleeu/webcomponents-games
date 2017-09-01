@@ -10,11 +10,24 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+        flex-direction: row;
+        margin-top: 10px;
       }
-      h1, h3 , p{
+      h3 , p{
         margin: 0.3em;
         font-weight: 400;
+      }
+      .header > h3 {
+        background: #2ECC98;
+        color: white;
+        font-weight: 600;
+        padding: 0.3em 1.3em;
+      }
+      .header > p {
+        font-size: 20px;
+      }
+      #val {
+        font-size: 25px;
       }
       .answers {
         display: flex;
@@ -23,7 +36,7 @@
         align-items: center;
       }
       .letter {
-        font-size: 120px;
+        font-size: 110px;
         font-family: Helvetica;
         font-weight: Bold;
         color: rgba(18,22,26,0.7);
@@ -112,8 +125,8 @@
         purpose="previous"
         ></toycode-modal>
       <div class="header">
-        <h3>{{localize('subtitle')}}</h3>
-        <p>{{localize('guide')}}</p>
+        <h3> Quiz [[stage]] </h3>
+        <p>{{localize('subtitle')}}</p>
       </div>
       <div class="container">
       </div>
@@ -138,90 +151,59 @@
         this.set('total', 0)
         this.set('stage', 1)
       }
-      // reset(){
-      //   this.set('clicked', 0)
-      //   this.set('total', 0)
-      //   this.set('point', this.point+5)
-      //   d3.select(this.shadowRoot).select('svg').selectAll('*').remove()
-      //   this.setData(this.data, this.manifest)
-      // }
-      * shuffle(array) {
-        let cardId = array.length;
-        while (cardId--) {
-            yield array.splice(Math.floor(Math.random() * (cardId+1)), 1)[0];
-        }
+      reset(){
+        this.set('point', this.point+5)
+        this.set('stage', this.stage+1)
+        d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
+        this.setData( this.data , this.manifest)
       }
-      setData(data, manifest){
-        let _this = this,
-            svg = d3.select(this.shadowRoot).select('svg');
-        _this.set('data', data )
-        _this.set('manifest', manifest )
-        manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
-        data = data.map(id=>manifest[id]);
-
-        console.log(manifest, data)
-
+      setData( data , manifest){
+        let textLang = this.resources[this.language],
+            subject = textLang.subject,
+            typeArr = Object.keys(textLang.subject),
+            randomValId = Math.floor(Math.random()*(typeArr.length -0)) + 0,
+            randomImgId = Math.floor(Math.random()*(manifest.length -0)) + 0,
+            type = typeArr[randomValId];
+        this.set('manifest', manifest)
+        this.set('data', data)
+        //STUDY_flatten
+        data = Object.assign( ...Object.keys(data).map(type=>(  Object.assign(...data[type].map(id=>({[id]:type})))  ))  )
         let container = d3.select(this.shadowRoot).select(".container");
-        let quizCont = container.append('xhtml:div')
-            .attr('class', 'quiz')
 
-            quizCont.append('p').text(`Quiz${this.stage}`)
+        let quest = textLang.question;
 
+        let quizCont = container.append('xhtml:div').attr('class', 'quiz')
             quizCont.append('img')
-                    .attr('src', "/img/a6_w4/sky0.png")
+                    .attr('src', manifest[randomImgId].src )
+                    .attr('data-subject', data[manifest[randomImgId].id] )
 
-            quizCont.append('p').text(`는 에서도 탈 수 있어요.`)
+            quizCont.append('p')
+              .attr('id', 'val')
+              .attr('data-subject', type )
+              .text( quest.replace(/\$/ , subject[type]) )
 
-            // quizCont.selectAll('img').data().enter()
 
-
-        let answers = ['o', 'x']
         let answersCont = container.append('xhtml:div')
           .attr('class', 'answers')
           .selectAll('div')
-          .data(answers).enter()
+          .data(['o', 'x']).enter()
           .append('xhtml:div')
           .attr('class', 'letter')
           .text(d => d.toUpperCase())
-          .on('click', (d) => console.log(d))
+          .on('click', (d, i) => this.handleClickCard(d) )
 
       }
-      handleClickCard(d, i){
-        let that = d3.select('#element').node(),
-            correct = d3.select('#element').attr('correct').split(',').indexOf(d);
-        this.classList.toggle('clicked')
-        // console.log("!!!--2--!!!")
-        if(this.classList.value){
-          // console.log("!!!--4--!!!")
-          if(correct === -1) {
-            console.log("uncorrect")
-            that.push('uncorrect', this.__data__)
-          }
-          that.set('clicked', that.clicked+1)
-          d3.select(this).style('stroke', "#2ECC98")
-        } else {
-          // console.log("!!!--5--!!!")
-          if(that.uncorrect.indexOf(d) !== -1){
-            console.log("uncorrect remove")
-            that.set('uncorrect', that.uncorrect.filter(ele => ele !== d))
-          }
-          d3.select(this).style('stroke', "gray")
-          that.set('clicked', that.clicked-1)
-        }
-        console.log(that.clicked, that.uncorrect.length)
+      handleClickCard(d){
+        let papa = d3.select(this.shadowRoot),
+            img = papa.select('img').attr('data-subject'),
+            val = papa.select('#val').attr('data-subject'),
+            result = img === val ? 'o' : 'x',
+            final = result === d ? this.$.successModal.modalAlert() : this.$.retryModal.modalAlert();
+        return final;
       }
-      handleSubmit(){
-        if(this.clicked < 4) {
-          alert('아직 선택할 것이 남았어요!')
-          return false
-        }
-        if(this.uncorrect.length > 0){
-          this.$.retryModal.modalAlert()
-          console.log(this.uncorrect.length);
-        } else {
-          this.$.successModal.modalAlert()
-        }
-      }
+      // handleSubmit(){
+      //   console.log("done")
+      // }
     }
     window.customElements.define(OXQuizCard.is, OXQuizCard);
   </script>
