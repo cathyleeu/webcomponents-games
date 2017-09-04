@@ -248,7 +248,7 @@ function getBook(classObj) {
   }
   // 용인지사 성음유치원 A레벨 추가반
   if(classObj.code == "A00088-K1-KC2") {
-    book = [1, 2, 3];
+    book = [3, 4];
   }
   // 마포ECC 추가반
   if(classObj.code == "B00130-K1-KC6") {
@@ -960,13 +960,19 @@ public.get('/activity', function *(next) {
 
 public.get('/maze', function *(next) {
   yield this.render('maze', {
-    mazeType: "vertical"
+    mazeType: "default"
   });
 });
 
 public.get('/mazeh', function *(next) {
   yield this.render('maze', {
     mazeType: "horizontal"
+  });
+});
+
+public.get('/mazev', function *(next) {
+  yield this.render('maze', {
+    mazeType: "vertical"
   });
 });
 
