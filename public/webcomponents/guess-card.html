@@ -1,0 +1,52 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+
+<dom-module id="guess-card">
+  <template>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: row;
+      }
+      .guess {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      .guess > p {
+        margin: 0;
+        text-align: center;
+        line-height: 30px;
+      }
+      .guess:hover {
+        background: gray;
+        color: white;
+        font-weight: 500;
+      }
+    </style>
+    <div class="container"></div>
+  </template>
+  <script>
+  class GuessCard extends Polymer.Element {
+    static get is() { return 'guess-card'; }
+    connectedCallback() {
+      super.connectedCallback();
+    }
+    handleClickCard(id){
+      console.log(id)
+    }
+    setData(data, manifest){
+      let container = d3.select(this.shadowRoot).select(".container");
+      for(let i = 1; i < manifest+1; i++){
+        container.append('xhtml:div')
+          .attr('class', 'guess').attr('data-num', i)
+          .append('p').text(i)
+          .on('click', () => this.handleClickCard(i))
+      }
+
+    }
+  }
+  window.customElements.define(GuessCard.is, GuessCard);
+
+  </script>
+</dom-module>
