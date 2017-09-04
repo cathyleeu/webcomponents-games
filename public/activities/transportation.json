@@ -1,30 +1,32 @@
 {
   "element": "select-card",
   "data": [
-    "airplane",
-    "bus",
-    "ship",
-    "train",
-    "sky4",
-    "ship4",
-    "ground4"
+    "water0", "water1", "water2", "water3", "water4", "water5",
+    "sky0", "sky1", "sky2", "sky3", "sky4", "sky5",
+    "ground1", "ground2", "ground3", "ground4", "ground5", "ground6"
   ],
   "attributes": {
-    "correct" : [
-      "/img/b6_w1/airplane.png",
-      "/img/b6_w1/bus.png",
-      "/img/b6_w1/ship.png",
-      "/img/b6_w1/train.png"
-    ]
+
   },
   "manifest": [
-    {"id": "airplane", "src": "/img/b6_w1/airplane.png"},
-    {"id": "bus", "src": "/img/b6_w1/bus.png"},
-    {"id": "ship", "src": "/img/b6_w1/ship.png"},
-    {"id": "train", "src": "/img/b6_w1/train.png"},
+    {"id": "water0", "src": "/img/a6_w4/water0.png"},
+    {"id": "water1", "src": "/img/a6_w4/water1.png"},
+    {"id": "water2", "src": "/img/a6_w4/water2.png"},
+    {"id": "water3", "src": "/img/a6_w4/water3.png"},
+    {"id": "water4", "src": "/img/a6_w4/water4.png"},
+    {"id": "water5", "src": "/img/a6_w4/water5.png", "result": true },
+    {"id": "sky0", "src": "/img/a6_w4/sky0.png", "result": true },
+    {"id": "sky1", "src": "/img/a6_w4/sky1.png"},
+    {"id": "sky2", "src": "/img/a6_w4/sky2.png"},
+    {"id": "sky3", "src": "/img/a6_w4/sky3.png"},
     {"id": "sky4", "src": "/img/a6_w4/sky4.png"},
-    {"id": "ship4", "src": "/img/a6_w2/ship4.png"},
-    {"id": "ground4", "src": "/img/a6_w4/ground4.png"}
+    {"id": "sky5", "src": "/img/a6_w4/sky5.png"},
+    {"id": "ground1", "src": "/img/a6_w4/ground1.png"},
+    {"id": "ground2", "src": "/img/a6_w4/ground2.png", "result": true },
+    {"id": "ground3", "src": "/img/a6_w4/ground3.png"},
+    {"id": "ground4", "src": "/img/a6_w4/ground4.png"},
+    {"id": "ground5", "src": "/img/a6_w4/ground5.png"},
+    {"id": "ground6", "src": "/img/a6_w4/ground6.png", "result": true }
   ],
   "msg": {
     "ko": {
@@ -45,7 +47,8 @@
       "retrybtn": "다시하기",
       "resultbtn": "결과보기",
       "nobtn" : "아니오",
-      "yesbtn" : "예"
+      "yesbtn" : "예",
+      "noticeAlert" : "아직 선택할 것이 남았어요!"
     },
     "en": {
       "title": "What is transportation?",
@@ -65,7 +68,8 @@
       "retrybtn": "Retry",
       "resultbtn": "Result",
       "nobtn" : "No",
-      "yesbtn" : "Yes"
+      "yesbtn" : "Yes",
+      "noticeAlert" : "You need to select more!"
     }
   }
 }

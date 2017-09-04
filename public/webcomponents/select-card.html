@@ -115,8 +115,7 @@
       connectedCallback() {
         super.connectedCallback();
         let svg = d3.select(this.shadowRoot).select('svg')
-          .attr('width', '100%' )
-          .attr('height', '100%');
+          .attr('width', '100%' ).attr('height', '100%');
       }
       ready(){
         super.ready();
@@ -132,20 +131,23 @@
         d3.select(this.shadowRoot).select('svg').selectAll('*').remove()
         this.setData(this.data, this.manifest)
       }
+      handleSortData(boolean) {
+        return Object.assign(this.manifest.filter( d => boolean ? d.result : !d.result ).map(o => o.src));
+      }
       setData(data, manifest){
+        this.set('manifest', manifest )
         let _this = this,
-            svg = d3.select(this.shadowRoot).select('svg');
-        _this.set('data', data )
-        _this.set('manifest', manifest )
-        manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
-        data = data.map(id=>manifest[id]);
-        this.set('cards', data.length );
+            svg = d3.select(this.shadowRoot).select('svg'),
+            trueData = this.handleSortData(true),
+            falseData = d3.shuffle(this.handleSortData(false)),
+            wholeData = d3.shuffle(trueData.concat(falseData.slice(0,3)));
+        this.set('correct', trueData )
+
 
         let defs = svg.append('defs').selectAll('pattern')
-        let shuffled = d3.shuffle(data)
-        let selectImgs = defs.data(shuffled).enter()
+        let selectImgs = defs.data(wholeData).enter()
             .append('pattern')
-            .attr("id", (d, i) => `drop_${i}`)
+            .attr("id", (d, i) => `fill_${i}`)
             .attr("x", 0).attr("y", 0)
             .attr("width", 1).attr("height", 1)
             .attr("patternUnits", "objectBoundingBox")
@@ -156,13 +158,13 @@
 
         let selectBox = svg.append('g')
             .selectAll('rect')
-            .data(shuffled).enter()
+            .data(wholeData).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
             .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
             .attr("width", 110).attr("height", 110)
-            .style("fill", (d,i) => `url(#drop_${i})`)
-            .on('click', this.handleClickCard)
+            .style("fill", (d, i) => `url(#fill_${i})`)
+            .on('click', this.handleClickCard )
 
 
         let getSize = d3.select(this.shadowRoot).select('g').node().getBBox().width
@@ -171,39 +173,26 @@
       }
       handleClickCard(d, i){
         let that = d3.select('#element').node(),
-            correct = d3.select('#element').attr('correct').split(',').indexOf(d);
+            selected = that.correct.some(s => s === d),
+            uncorrect = that.uncorrect.some(s => s === d);
+
         this.classList.toggle('clicked')
-        // console.log("!!!--2--!!!")
         if(this.classList.value){
-          // console.log("!!!--4--!!!")
-          if(correct === -1) {
-            console.log("uncorrect")
-            that.push('uncorrect', this.__data__)
-          }
-          that.set('clicked', that.clicked+1)
+          !selected && that.push('uncorrect', d)
           d3.select(this).style('stroke', "#2ECC98")
+          that.set('clicked', that.clicked+1)
         } else {
-          // console.log("!!!--5--!!!")
-          if(that.uncorrect.indexOf(d) !== -1){
-            console.log("uncorrect remove")
-            that.set('uncorrect', that.uncorrect.filter(ele => ele !== d))
-          }
+          uncorrect && that.pop('uncorrect', d )
           d3.select(this).style('stroke', "gray")
           that.set('clicked', that.clicked-1)
         }
-        console.log(that.clicked, that.uncorrect.length)
       }
       handleSubmit(){
         if(this.clicked < 4) {
-          alert('아직 선택할 것이 남았어요!')
+          alert(this.resources[this.language].noticeAlert)
           return false
         }
-        if(this.uncorrect.length > 0){
-          this.$.retryModal.modalAlert()
-          console.log(this.uncorrect.length);
-        } else {
-          this.$.successModal.modalAlert()
-        }
+        this.uncorrect[0] ? this.$.retryModal.modalAlert() : this.$.successModal.modalAlert()
       }
     }
     window.customElements.define(SelectCard.is, SelectCard);
