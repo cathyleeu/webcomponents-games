@@ -1,0 +1,57 @@
+{
+  "element": "line-card",
+  "attributes": {
+  },
+  "data": [
+    "role_brain",
+    "role_ears",
+    "role_eyes",
+    "role_mouse",
+    "role_brain2",
+    "role_ears2",
+    "role_eyes2",
+    "role_mouse2"
+  ],
+  "manifest": [
+    {"no": 0 , "set": 0, "id": "role_brain", "src": "/img/coding_b/role_brain.png"},
+    {"no": 1 , "set": 0, "id": "role_ears", "src": "/img/coding_b/role_ears.png"},
+    {"no": 2 , "set": 0, "id": "role_eyes", "src": "/img/coding_b/role_eyes.png"},
+    {"no": 3 , "set": 0, "id": "role_mouse", "src": "/img/coding_b/role_mouse.png"},
+    {"no": 0 , "set": 1, "id": "role_brain2", "src": "/img/coding_b/role_brain2.png"},
+    {"no": 1 , "set": 1, "id": "role_ears2", "src": "/img/coding_b/role_ears2.png"},
+    {"no": 2 , "set": 1, "id": "role_eyes2", "src": "/img/coding_b/role_eyes2.png"},
+    {"no": 3 , "set": 1, "id": "role_mouse2", "src": "/img/coding_b/role_mouse2.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "서로 비슷한 역할을 연결해 보아요",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예"
+    },
+    "en": {
+      "title": "Matching similar role each other",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}
