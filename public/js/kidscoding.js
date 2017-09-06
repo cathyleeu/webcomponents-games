@@ -198,7 +198,9 @@ KidsCoding.prototype = {
     if(blocks.length == 0) {
       return "";
     }
-    var block = blocks[0],
+    var match = blocks[0].match(/([^\[]+)(\[[^\]]*\])?/),
+        block = match[1],
+        statements = match[2],
         str;
     if(typeof block == "string") {
       block = {
@@ -216,8 +218,9 @@ KidsCoding.prototype = {
     str = Object.keys(block).map(function(attr) {
       return attr + '="' + block[attr] + '"';
     }).join(" ");
-    var value_str = "";
-    console.log(block.type);
+    var value_str = "",
+        statements_str = "",
+        child_str = "";
     Blocks[block.type].args0.forEach(function(arg) {
       if(this.blockType != "default" && arg.type == "field_dropdown") {
         arg.type = "input_value";
@@ -241,10 +244,19 @@ KidsCoding.prototype = {
           '</value>';
       }
     });
+    if(statements) {
+      statements_str = '<statement name="statements">' +
+          this.createXml(statements.slice(1, -1).split(","), isToolbox) +
+          '</statement>';
+    }
+    if(blocks.slice(1).length > 0) {
+      child_str = this.createXml(blocks.slice(1), isToolbox);
+    }
     if(isToolbox) {
-      return "<block " + str + ">" + value_str + "</block>" + this.createXml(blocks.slice(1), isToolbox);
+      return "<block " + str + ">" + value_str + statements_str + "</block>" + child_str;
     } else {
-      return "<block " + str + ">" + value_str + "<next>" + this.createXml(blocks.slice(1), isToolbox) + "</next></block>";
+      child_str = "<next>" + child_str + "</next>";
+      return "<block " + str + ">" + value_str + statements_str + child_str + "</block>";
     }
   },
   initBlockly: function(toolbox, workspace) {
