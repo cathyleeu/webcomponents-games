@@ -1,0 +1,65 @@
+{
+  "tile_size":128,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "check",
+    "condition_luck_square",
+    "condition_luck_round",
+    "condition_luck_triangle",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.#.###.#",
+    "##.#..#.#",
+    "###.##.##",
+    "##%.#.###",
+    "#.#..%#.#",
+    "###.#####",
+    "#%.&...l#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 7,
+    "img": "mos",
+    "contents" : [{
+        "img": "mos_luck_square",
+        "role": "justmove",
+        "order": "else"
+      },{
+        "img": "mos_luck_round",
+        "role": "justmove",
+        "order": "elseif"
+      },{
+        "img": "mos_luck_triangle",
+        "role": "justmove",
+        "order": "if"
+    }]
+  },{
+    "x": 2,
+    "y": 4,
+    "img": "luck_square",
+    "order": "else"
+  },{
+    "x": 5,
+    "y": 5,
+    "img": "luck_round",
+    "order": "elseif"
+  },{
+    "x": 1,
+    "y": 7,
+    "img": "luck_triangle",
+    "order": "if"
+  }],
+  "tutorial": [{
+    "msg:ko": "이번에는 모스가 갖고 싶은 복주머니를 확인하고, 알맞은 복주머니를 가지러 가요.",
+    "msg:en": "This time, check out the lucky bag that Mos wants, \n and let's go get a proper lucky bag.",
+    "img": ["/img/c105/mos0.png", "/img/c105/lucks.png"]
+  }]
+}
