@@ -31,6 +31,7 @@
       matched="{{matched}}"
       cards="{{cards}}"
       on-modal="handleModal"
+      purpose="line"
       ></status-bar>
     <toycode-modal
       id="successModal"
@@ -120,9 +121,10 @@
         let leftData = manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src})),
             rightData = manifest.filter(l => l.set).map(l => ({["no"]:l.no, ["src"]:l.src}));
 
-        _this.set('cards', leftData.length )
-        _this.set('data', data )
-        _this.set('manifest', manifest )
+        this.set('cards', leftData.length )
+        this.set('data', data )
+        this.set('manifest', manifest )
+
 
         let defs = svg.append('defs').selectAll('pattern')
         let shuffled = d3.shuffle(leftData)
@@ -192,11 +194,15 @@
           .append('g')
           .attr("transform", (d, i) => `translate( 140 , ${65+ 140*i})`)
 
-        circlesL.on("mousedown touchstart", pencilingStart )
-        svg.on("mouseup touchend", pencilingEnd)
 
         circlesL.append("circle").attr("r", 5)
-        circlesL.append("circle").attr("r", 60).attr("opacity", 0.0)
+        let click = circlesL.append("circle")
+          .attr("r", 60).attr("opacity", 0.0)
+          .attr('id', (d) => `touch${d.no}`)
+
+        click.on("mousedown touchstart", pencilingStart )
+
+        svg.on("mouseup touchend", pencilingEnd)
 
         let RightSide = svg.select('.boardR');
         RightSide.selectAll("rect")
@@ -224,25 +230,14 @@
         // 라인이 매칭되는 포인트
         circlesR.append("circle").attr("r", 5).attr('pointer-events', 'none');
         // 라인이 매칭되는 범위를 지정하는 포인트
-        circlesR.append("circle").attr("r", 25).attr("opacity", 0.0)
+        // circlesR.append("circle").attr("r", 25).attr("opacity", 0.0)
 
 
         var line;
         let dragId, dropId, startX, startY;
 
-
-        function genId(y2) {
-          let getId, Ids = Object.keys(leftData);
-          Ids.map( (_,i) => {
-      			if( (65+ 140*i)-20 < y2 && y2 < (65+ 140*i)+20){
-        				return getId = i
-        		} else return getId
-    		  })
-    		  return getId;
-        }
-
         function pencilingStart (d, i) {
-          let getXY = d3.select(this).attr("transform").match(/\d+/g),
+          let getXY = d3.select(this.parentElement).attr("transform").match(/\d+/g),
               numX = center+parseInt(getXY[0], 10),
               numY = parseInt(getXY[1], 10);
               startX = numX;
@@ -264,34 +259,53 @@
         }
 
         function pencilingEnd() {
-          let lineY2 = +d3.select(this).select(`#line${dragId}`).attr('y2'),
-              dropId = genId(lineY2)
-              checkInField(dropId)
-          svg.on("mousemove touchmove", null);
-        }
-
-        function checkInField(dropId) {
           if (dragId === undefined) return false
+          let filterItems = svg.select('.boardR').node().childNodes,
+              dropItems = [];
+
+          filterItems.forEach(el => {
+            if(el.tagName === "rect") dropItems.push(el)
+          })
+
+
+          let targetEl, targetX, targetY, targetX2, targetY2;
+          let getArrow = d3.select(this).select(`#line${dragId}`);
+          dropItems.forEach(el => {
+            const getEl = el.getBoundingClientRect();
+            let getX = +getArrow.attr('x2')+getEl.width/2,
+                getY = +getArrow.attr('y2')+getEl.height/2;
+            // 범위 확인
+            if(getEl.left < getX && getX < getEl.right && getEl.top < getY && getY < getEl.bottom) {
+              targetEl = el;
+              targetX = getEl.x;
+              targetY = getEl.y;
+              dropId = targetEl.__data__.no;
+            }
+            console.log(getX, getY, dropId, targetX, targetY);
+          });
+
           if(dragId === dropId) {
             let getXY = d3.select(_this.shadowRoot).select(`#matchId${dropId}`).attr("transform").match(/\d+/g),
                 numX = center+parseInt(getXY[0], 10),
                 numY = parseInt(getXY[1], 10);
 
+            line.attr("x2", numX).attr("y2", numY);
             console.log("its matched!!!", numX, numY)
+            d3.select(_this.shadowRoot).select(`#touch${dragId}`)
+              .on("mousedown touchstart", false )
             _this.set('matched', _this.matched+1)
             _this.set('point', _this.point+2)
-            line.attr("x2", numX).attr("y2", numY);
+
 
           } else {
             console.log("itsnt matched!!!", startX, startY, dragId, dropId)
             line.remove();
           }
            _this.set('total', _this.total+1)
-           circlesR.on('mouseover', null); // 중복되는 것 금지
-           svg.on("mousemove touchmove", null); // 점에 딱 맞추는 것
            dragId = undefined;
+           svg.on("mousemove touchmove", null);
            if(_this.matched === _this.cards){
-             _this.shadowRoot.getElementById("successModal").modalAlert()
+             _this.$.successModal.modalAlert()
            }
         }
       }

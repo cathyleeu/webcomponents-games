@@ -1,0 +1,107 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+
+<dom-module id="guess-card">
+  <template>
+    <style>
+      #guess_box {
+        display: flex;
+        flex-direction: row;
+      }
+      #guess_box > div {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      #guess_box > div > p {
+        text-align: center;
+        line-height: 30px;
+      }
+      .guess_num {
+        margin: 0;
+      }
+      .guess:hover {
+        background: gray;
+        color: white;
+        font-weight: 500;
+      }
+      .miss_text{
+        margin: -30px;
+        font-weight: 700;
+      }
+      .miss_select_text {
+        margin: -30px;
+        font-weight: 700;
+        color: red;
+      }
+    </style>
+    <div class="container">
+      <div id="guess_box"></div>
+      <div class="guess_notice"></div>
+    </div>
+
+  </template>
+  <script>
+  class GuessCard extends Polymer.Element {
+    static get is() { return 'guess-card'; }
+    connectedCallback() {
+      super.connectedCallback();
+    }
+    reset(){
+      d3.select(this.$.guess_box).selectAll('div').remove()
+      this.setData( false , 16 )
+    }
+    handleClickCard(s, r){
+
+      let guessList = d3.select(this.shadowRoot).selectAll(".guess").nodes(),
+          wholeDom = d3.select(this.$.guess_box).selectAll('div').nodes(),
+          selEle = wholeDom.find(ele => +ele.dataset["num"] === s); //list[];
+      if(s !== r) {
+        let del = [], bigger = s > r ? true : false ;
+        if(bigger) {
+          for(let i = s, max = +guessList[guessList.length-1].dataset["num"]; i < max ; i++) {
+            del.push(i)
+          }
+        } else {
+          for(let i = s-2, min = +guessList[0].dataset["num"]-2; i > min; i--) {
+            del.push(i)
+          }
+        }
+        del.map( d => {
+          let ele = wholeDom[d].classList;
+          ele.remove('guess')
+          ele.add('miss')
+
+          d3.select(wholeDom[d])
+            .on('click', null)
+            .append('p').attr('class', "miss_text").text('X')
+
+          return ele
+        })
+          selEle.classList.remove('guess')
+          selEle.classList.add('miss_select')
+          d3.select(selEle)
+          .on('click', null)
+          .append('p').attr('class', "miss_select_text").text('X')
+
+
+      } else {
+        confirm("정답입니다. 다시해볼까요?") && this.reset()
+      }
+    }
+    setData(data, manifest){
+      let guessBox = d3.select(this.$.guess_box),
+          randomNum = Math.floor(Math.random()*(manifest-0)) + 1;
+      for(let i = 1; i < manifest+1; i++){
+        guessBox.append('xhtml:div')
+          .attr('class', 'guess').attr('data-num', i)
+          .on('click', () => this.handleClickCard(i, randomNum))
+          .append('p').attr('class', 'guess_num').text(i)
+      }
+
+    }
+  }
+  window.customElements.define(GuessCard.is, GuessCard);
+
+  </script>
+</dom-module>

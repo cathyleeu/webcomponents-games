@@ -23,6 +23,7 @@
       matched="{{matched}}"
       cards="{{cards}}"
       on-modal="handleModal"
+      purpose="range"
       ></status-bar>
     <toycode-modal
       id="successModal"
@@ -162,7 +163,7 @@
           .attr("class", d => `${d}`)
           .attr("transform", (d, i) => `translate(${center}, 0)`);
 
-        let dropItem = svg.select('.dropB')
+        this.dropItem = svg.select('.dropB')
           .selectAll("rect")
           .data(data).enter()
           .append('rect')
@@ -191,49 +192,40 @@
                 .on("end", dragended ));
 
   			let startX, startY;
-        function genId(xid) {
-          let getId, Ids = Object.keys(manifest);
-          Ids.map( (_,i) => {
-      			if( (120*i)-40 < xid && xid < (120*i)+40){
-        				return getId = i
-        		} else return getId
-    		  })
-    		  return getId;
-        }
         function dragstarted(d) {
           startX = d3.select(this).attr('x');
           startY = d3.select(this).attr('y');
-          d3.select(this)
-            .attr("x", d3.event.x)
-            .attr("y", d3.event.y);
+          d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
         }
 
         function dragged(d) {
-          console.log("dragged")
-          d3.select(this)
-            .attr("x", d3.event.x-50)
-            .attr("y", d3.event.y-50);
-
+          d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
         }
-        function dragended(d) {
-          let getX = d3.select(this).attr('x'),
-              getId = genId(getX),
-              getEle = d3.select(_this.shadowRoot).select(`#bath${getId}`),
-              getData = getEle.data().toString(),
-              result = d === getData && true;
 
-          if (!result) {
-            console.log("result false" )
-            d3.select(this)
-              .attr("x", startX )
-              .attr("y", startY );
-          } else {
-            console.log("result true", getEle.attr('x'), getEle.attr('y'))
+        function dragended(d) {
+          let dropItems = _this.dropItem.nodes(),
+              getX = d3.event.x, getY = d3.event.y;
+
+          let targetEl, targetX, targetY, result;
+          dropItems.forEach(el => {
+            const getEl = el.getBBox();
+            // 범위 확인
+            if(getEl.x < getX && getX < getEl.x + getEl.width && getEl.y < getY && getY < getEl.y + getEl.height) {
+              targetEl = el;
+              targetX = getEl.x;
+              targetY = getEl.y;
+              result = targetEl.__data__ === d && true;
+            }
+          });
+          console.log(getX, getY, targetEl, result, targetX, targetY);
+
+          if (!result) d3.select(this).attr("x", startX ).attr("y", startY );
+          else {
+            console.log("result true", targetX, targetY)
             _this.set('point', _this.point+2)
             _this.set('matched', _this.matched+1)
-            d3.select(this)
-              .attr("x", getEle.attr('x') )
-              .attr("y", getEle.attr('y') )
+            d3.select(this).attr("x", targetX ).attr("y", targetY )
+              .call(d3.drag().on("start", null ))
             if(_this.matched === _this.cards) {
               _this.shadowRoot.getElementById("successModal").modalAlert()
             }

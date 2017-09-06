@@ -53,6 +53,7 @@
               }
               for(var key in activity.attributes) {
                 comp.setAttribute(key, activity.attributes[key]);
+                comp.set(key, activity.attributes[key]);
               }
               if(activity.msg) {
                 comp.set('resources', activity.msg);

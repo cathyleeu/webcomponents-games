@@ -1,0 +1,210 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+<dom-module id="ox-quiz-card">
+  <template>
+    <style>
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 10px;
+      }
+      h3 , p{
+        margin: 0.3em;
+        font-weight: 400;
+      }
+      .header > h3 {
+        background: #2ECC98;
+        color: white;
+        font-weight: 600;
+        padding: 0.3em 1.3em;
+      }
+      .header > p {
+        font-size: 20px;
+      }
+      #val {
+        font-size: 25px;
+      }
+      .answers {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .letter {
+        font-size: 110px;
+        font-family: Helvetica;
+        font-weight: Bold;
+        color: rgba(18,22,26,0.7);
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 120px;
+        border: 10px solid #2ECC98;
+        border-radius: 15px;
+        margin: 0.5em;
+        cursor: pointer;
+      }
+      .quiz {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      button {
+        display: block;
+        width: 120px;
+        height: 40px;
+        margin: 0 auto 10px auto;
+        background: none;
+        border: 3px solid #2ECC98;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 600;
+        box-sizing: border-box;
+        transition: all .3s ease-in-out;
+        color: #2ECC98;
+      }
+      button:hover {
+				background: #2ECC98;
+				color: #fff;
+			}
+
+    </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      purpose="select"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      ></status-bar>
+      <toycode-modal
+        id="retryModal"
+        purpose="retry"
+        headertext="{{localize('retryHead')}}"
+        btmtext="{{localize('retryBtm')}}"
+        retrybtn="{{localize('retrybtn')}}"
+        ></toycode-modal>
+      <toycode-modal
+        id="successModal"
+        purpose="nextStep"
+        headertext="{{localize('successHead')}}"
+        btmtext="{{localize('successBtm')}}"
+        nextbtn="{{localize('nextbtn')}}"
+        ></toycode-modal>
+      <toycode-modal
+        id="logOutModal"
+        headertext="{{localize('logoutHead')}}"
+        btmtext="{{localize('logoutBtm')}}"
+        yesbtn="{{localize('yesbtn')}}"
+        nobtn="{{localize('nobtn')}}"
+        purpose="logout"
+        ></toycode-modal>
+      <toycode-modal
+        id="previousModal"
+        headertext="{{localize('previousHead')}}"
+        btmtext="{{localize('previousBtm')}}"
+        yesbtn="{{localize('yesbtn')}}"
+        nobtn="{{localize('nobtn')}}"
+        purpose="previous"
+        ></toycode-modal>
+      <div class="header">
+        <h3> Quiz [[stage]] </h3>
+        <p>{{localize('subtitle')}}</p>
+      </div>
+      <div class="container">
+      </div>
+      <!-- <div class="bottom">
+        <button on-click="handleSubmit">{{localize('resultbtn')}}</button>
+      </div> -->
+  </template>
+  <script>
+    class OXQuizCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'ox-quiz-card'; }
+      connectedCallback() {
+        super.connectedCallback();
+        let svg = d3.select(this.shadowRoot).select('svg')
+          .attr('width', '100%' )
+          .attr('height', '100%');
+      }
+      ready(){
+        super.ready();
+        this.set('clicked', 0)
+        this.set('uncorrect', [])
+        this.set('point', 0)
+        this.set('total', 0)
+        this.set('stage', 1)
+      }
+      reset(){
+        this.set('point', this.point+5)
+        this.set('stage', this.stage+1)
+        d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
+        this.setData( this.data , this.manifest)
+      }
+      setData( data , manifest){
+        let textLang = this.resources[this.language],
+            subject = textLang.subject,
+            typeArr = Object.keys(textLang.subject),
+            randomValId = Math.floor(Math.random()*(typeArr.length -0)) + 0,
+            randomImgId = Math.floor(Math.random()*(manifest.length -0)) + 0,
+            type = typeArr[randomValId];
+        this.set('manifest', manifest)
+        this.set('data', data)
+        //STUDY_flatten
+        data = Object.assign( ...Object.keys(data).map(type=>(  Object.assign(...data[type].map(id=>({[id]:type})))  ))  )
+        let container = d3.select(this.shadowRoot).select(".container");
+
+        let quest = textLang.question;
+
+        let quizCont = container.append('xhtml:div').attr('class', 'quiz')
+            quizCont.append('img')
+                    .attr('src', manifest[randomImgId].src )
+                    .attr('data-subject', data[manifest[randomImgId].id] )
+
+            quizCont.append('p')
+              .attr('id', 'val')
+              .attr('data-subject', type )
+              .text( quest.replace(/\$/ , subject[type]) )
+
+
+        let answersCont = container.append('xhtml:div')
+          .attr('class', 'answers')
+          .selectAll('div')
+          .data(['o', 'x']).enter()
+          .append('xhtml:div')
+          .attr('class', 'letter')
+          .text(d => d.toUpperCase())
+          .on('click', (d, i) => this.handleClickCard(d) )
+
+      }
+      handleClickCard(d){
+        let papa = d3.select(this.shadowRoot),
+            img = papa.select('img').attr('data-subject'),
+            val = papa.select('#val').attr('data-subject'),
+            result = img === val ? 'o' : 'x',
+            final = result === d ? this.$.successModal.modalAlert() : this.$.retryModal.modalAlert();
+        return final;
+      }
+      // handleSubmit(){
+      //   console.log("done")
+      // }
+    }
+    window.customElements.define(OXQuizCard.is, OXQuizCard);
+  </script>
+</dom-module>

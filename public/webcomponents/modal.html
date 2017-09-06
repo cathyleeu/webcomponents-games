@@ -69,7 +69,6 @@
       }
 
       .button {
-        /*display:inline-block;*/
         display: none;
         text-align:center;
         padding:10px 15px;
@@ -85,9 +84,6 @@
       .button:hover {
         color:white;
         background:#009bd5;
-      }
-      .done {
-        display: none;
       }
       @keyframes moveUp {
         0% {
@@ -112,14 +108,10 @@
       <div class="modal-background">
         <div class="modal">
           <h2>{{headertext}}</h2>
-          <div class="done">
-            <p>Score : {{point}} ([[matchedRate(total,matched)]]%)<p>
-          </div>
-          <div>
-            <p>{{btmtext}}</p>
-          </div>
+          <p>{{btmtext}}</p>
           <div class="button done" on-click="handleNextStep">{{nextbtn}}</div>
           <div class="button stay" on-click="handleStayStage">{{nobtn}}</div>
+          <div class="button retry" on-click="handleStayStage">{{retrybtn}}</div>
           <div class="button move" on-click="handleMoveStage">{{yesbtn}}</div>
         </div>
       </div>
@@ -141,6 +133,7 @@
           purpose: String,
           nextbtn: String,
           nobtn:String,
+          retrybtn:String,
           yesbtn:String
         }
       }
@@ -157,7 +150,8 @@
         let target = {
           nextStep : '.done',
           previous : '.stay, .move',
-          logout : '.stay, .move'
+          logout : '.stay, .move',
+          retry: '.retry',
         };
         let els = this.shadowRoot.querySelectorAll(target[this.purpose]);
         els.forEach(el=>{el.style.display="inline-block"});
