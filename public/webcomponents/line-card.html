@@ -183,8 +183,8 @@
             .attr('x', 10 ).attr('y', (d, i) => (110*i+10) + (30*i))
             .attr("width", 110).attr("height", 110)
             .style("fill", (d,i) => `url(#left_${i})`)
-            .style("stroke-width",8)
-            .style("stroke","#2ECC98")
+            // .style("stroke-width",8)
+            // .style("stroke","#2ECC98")
 
 
         let circlesL = LeftSide.selectAll("g.node")
@@ -207,8 +207,8 @@
             .attr("width", 110).attr("height", 110)
             .style("fill", "#fff")
             .style("fill", (d,i) => `url(#right_${i})`)
-            .style("stroke-width",8)
-            .style("stroke","#2ECC98")
+            // .style("stroke-width",8)
+            // .style("stroke","#2ECC98")
 
 
         RightSide.selectAll("g")
