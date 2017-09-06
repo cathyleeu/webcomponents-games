@@ -198,9 +198,10 @@ KidsCoding.prototype = {
     if(blocks.length == 0) {
       return "";
     }
-    var match = blocks[0].match(/([^\[]+)(\[[^\]]*\])?/),
+    var match = blocks[0].match(/([^\[\]()]+)(\([^\[\]()]*\))?(\[[^\]]*\])?/),
         block = match[1],
-        statements = match[2],
+        args = (match[2] || "()").slice(1,-1).split(","),
+        statements = match[3],
         str;
     if(typeof block == "string") {
       block = {
@@ -239,7 +240,7 @@ KidsCoding.prototype = {
       if(arg.type == "input_value") {
         value_str = '<value name="' + arg.name + '">' +
           '<shadow type="' + block.type + "_" + arg.name + '">' +
-          '<field name="' + arg.name + '">' + arg.options[0][0] + '</field>' +
+          '<field name="' + arg.name + '">' + (args[0] || arg.options[0][0]) + '</field>' +
           '</shadow>' +
           '</value>';
       }
