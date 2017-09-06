@@ -217,14 +217,10 @@ KidsCoding.prototype = {
       return attr + '="' + block[attr] + '"';
     }).join(" ");
     var value_str = "";
+    console.log(block.type);
     Blocks[block.type].args0.forEach(function(arg) {
       if(this.blockType != "default" && arg.type == "field_dropdown") {
         arg.type = "input_value";
-        value_str = '<value name="' + arg.name + '">' +
-          '<shadow type="' + block.type + "_" + arg.name + '">' +
-          '<field name="' + arg.name + '">' + arg.options[0][0] + '</field>' +
-          '</shadow>' +
-          '</value>';
         Blockly.Blocks[block.type + "_" + arg.name + ''] = {
           init: function() {
             this.appendDummyInput()
@@ -236,6 +232,13 @@ KidsCoding.prototype = {
             );
           }
         };
+      }
+      if(arg.type == "input_value") {
+        value_str = '<value name="' + arg.name + '">' +
+          '<shadow type="' + block.type + "_" + arg.name + '">' +
+          '<field name="' + arg.name + '">' + arg.options[0][0] + '</field>' +
+          '</shadow>' +
+          '</value>';
       }
     });
     if(isToolbox) {
