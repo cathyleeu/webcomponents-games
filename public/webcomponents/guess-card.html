@@ -59,11 +59,11 @@
       if(s !== r) {
         let del = [], bigger = s > r ? true : false ;
         if(bigger) {
-          for(let i = s; i < +guessList[guessList.length-1].dataset["num"]; i++) {
+          for(let i = s, max = +guessList[guessList.length-1].dataset["num"]; i < max ; i++) {
             del.push(i)
           }
         } else {
-          for(let i = s-2; i > +guessList[0].dataset["num"]-2; i--) {
+          for(let i = s-2, min = +guessList[0].dataset["num"]-2; i > min; i--) {
             del.push(i)
           }
         }
