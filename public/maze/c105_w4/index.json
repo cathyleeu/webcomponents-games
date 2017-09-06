@@ -26,7 +26,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/c10/1a.png"
+      "img": "/img/c105/luckjori.png"
     }]
   },{
     "x": 6,
@@ -34,7 +34,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/c10/1a.png"
+      "img": "/img/c105/luckjori.png"
     }]
   },{
     "x": 7,
@@ -42,7 +42,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/c10/1a.png"
+      "img": "/img/c105/luckjori.png"
     }]
   },{
     "x": 8,
@@ -50,7 +50,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/c10/1a.png"
+      "img": "/img/c105/luckjori.png"
     }]
   },{
     "x": 9,
@@ -58,7 +58,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/c10/1a.png"
+      "img": "/img/c105/luckjori.png"
     }]
   },{
     "x": 16,
@@ -66,7 +66,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 16,
@@ -74,7 +74,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 16,
@@ -82,7 +82,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 16,
@@ -90,7 +90,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 16,
@@ -98,7 +98,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 3,
@@ -106,7 +106,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 4,
@@ -114,7 +114,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 5,
@@ -122,7 +122,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 6,
@@ -130,7 +130,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 7,
@@ -138,7 +138,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 9,
@@ -146,7 +146,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 10,
@@ -154,7 +154,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 11,
@@ -162,7 +162,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 12,
@@ -170,7 +170,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 13,
@@ -178,105 +178,105 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+      "img": ["/img/c105/luckjori.png","/img/c105/luckjori.png","/img/c105/luckjori.png"]
     }]
   },{
     "x": 5,
     "y": 1,
-    "link": "c10_w4/1"
+    "link": "c105_w4/1"
   },{
     "x": 6,
     "y": 1,
-    "link": "c10_w4/2"
+    "link": "c105_w4/2"
   },{
     "x": 7,
     "y": 1,
-    "link": "c10_w4/3"
+    "link": "c105_w4/3"
   },{
     "x": 8,
     "y": 1,
-    "link": "c10_w4/4"
+    "link": "c105_w4/4"
   },{
     "x": 9,
     "y": 1,
-    "link": "c10_w4/5"
+    "link": "c105_w4/5"
   },{
     "x": 15,
     "y": 1,
-    "link": "c10_w4/6"
+    "link": "c105_w4/6"
   },{
     "x": 15,
     "y": 2,
-    "link": "c10_w4/7"
+    "link": "c105_w4/7"
   },{
     "x": 15,
     "y": 3,
-    "link": "c10_w4/8"
+    "link": "c105_w4/8"
   },{
     "x": 15,
     "y": 4,
-    "link": "c10_w4/9"
+    "link": "c105_w4/9"
   },{
     "x": 15,
     "y": 5,
-    "link": "c10_w4/10"
+    "link": "c105_w4/10"
   },{
     "x": 13,
     "y": 5,
-    "link": "c10_w4/11"
+    "link": "c105_w4/11"
   },{
     "x": 12,
     "y": 5,
-    "link": "c10_w4/12"
+    "link": "c105_w4/12"
   },{
     "x": 11,
     "y": 5,
-    "link": "c10_w4/13"
+    "link": "c105_w4/13"
   },{
     "x": 10,
     "y": 5,
-    "link": "c10_w4/14"
+    "link": "c105_w4/14"
   },{
     "x": 9,
     "y": 5,
-    "link": "c10_w4/15"
+    "link": "c105_w4/15"
   },{
     "x": 7,
     "y": 5,
-    "link": "c10_w4/16"
+    "link": "c105_w4/16"
   },{
     "x": 6,
     "y": 5,
-    "link": "c10_w4/17"
+    "link": "c105_w4/17"
   },{
     "x": 5,
     "y": 5,
-    "link": "c10_w4/18"
+    "link": "c105_w4/18"
   },{
     "x": 4,
     "y": 5,
-    "link": "c10_w4/19"
+    "link": "c105_w4/19"
   },{
     "x": 3,
     "y": 5,
-    "link": "c10_w4/20"
+    "link": "c105_w4/20"
   },{
     "img":"cos0",
     "x": 2,
     "y": 4,
     "obstacle": false,
-    "link": "c10_w4/21",
+    "link": "c105_w4/21",
     "min_score": 20
   }],
 
   "tutorial": [{
     "msg:ko": "안전하게 장애물을 피해요! 쉬운 문제는 점수를 1점, 보통은 2점, 어려운 문제는 3점을 주어요. ",
     "msg:en": "Let's avoid obstacles safely! An easy problem gives you one point, a normal one gives you two and a hard one gives you three.",
-    "img": ["/img/c10/cos0.png","/img/c10/1a.png"]
+    "img": ["/img/c10/cos0.png","/img/c105/luckjori.png"]
   }],
   "goal": {
     "msg:ko": "점수 20점을 모아서 코스에게 가요.",
-    "msg:en": "Let's get 20 points and go to Cos.",
-    "img": ["/img/c10/1a.png","/img/c10/cos0.png"]
+    "msg:en": "Let's get 10 points and go to the Cos.",
+    "img": ["/img/c105/luckjori.png","/img/c10/cos0.png"]
   }
 }

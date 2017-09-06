@@ -1,0 +1,54 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    "########",
+    "#.....%#",
+    "#.##.#.#",
+    "#..t...#",
+    "#d..#..#",
+    "#.t.#.t#",
+    "##...t.#",
+    "########"
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 6,
+    "img": "a0430"
+  },{
+    "x": 3,
+    "y": 3,
+    "img": "a0530"
+  },{
+    "x": 6,
+    "y": 1,
+    "img": "a0630"
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "a0730"
+  },{
+    "x": 2,
+    "y": 5,
+    "img": "a0830"
+  }],
+  "tutorial": [{
+    "msg:ko": "현재 시각은 여섯시 반이에요. 올바른 시계로 이동해 보아요.",
+    "msg:en": "The current time is six and a half. Go to the correct clock.",
+    "img": "/img/c9_w2/d0630.png"
+  }],
+  "success":[{
+    "msg:ko": "벌써 열 문제나 풀었어요! 정말 많이 풀었네요.",
+    "msg:jp": "もう10問も解きました！たくさん解きましたね。",
+    "msg:en": "You've solved ten problems already! You really solved a lot.",
+    "link": "c105_w3/11"
+  }]
+}

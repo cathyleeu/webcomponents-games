@@ -1434,6 +1434,7 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
               foods.splice(0,foods.length-1);
             }
           }
+
           if_block = block.getInputTargetBlock("if_statements");
           setTimeout(function() {
             block.removeSelect();
@@ -1474,6 +1475,52 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
     if(tileInfo && tileInfo.role == "justmove") {
       this._splitObjects(tileInfo, function() {
         if(tileInfo.order == "else"){
+          for(var i = 0; i<foods.length;i++){
+            if(tileInfo.order==foods[i].order){
+              foods.push(foods[i]);
+              foods.splice(0,foods.length-1);
+            }
+          }
+          if_block = block.getInputTargetBlock("if_statements");
+          setTimeout(function() {
+            block.removeSelect();
+            _this.run(if_block, callback);
+          }, 500);
+        }else{
+          callback();
+        }
+      });
+    }else{
+      callback();
+    }
+  }else if(options == "move_wo_item_4"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo && tileInfo.role == "justmove") {
+      this._splitObjects(tileInfo, function() {
+        if(tileInfo.order=="4"){
+          for(var i = 0; i<foods.length;i++){
+            if(tileInfo.order==foods[i].order){
+              foods.push(foods[i]);
+              foods.splice(0,foods.length-1);
+            }
+          }
+          if_block = block.getInputTargetBlock("if_statements");
+          setTimeout(function() {
+            block.removeSelect();
+            _this.run(if_block, callback);
+          }, 500);
+        }else{
+          callback();
+        }
+      });
+    }else{
+      callback();
+    }
+  }else if(options == "move_wo_item_5"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    if(tileInfo && tileInfo.role == "justmove") {
+      this._splitObjects(tileInfo, function() {
+        if(tileInfo.order=="5"){
           for(var i = 0; i<foods.length;i++){
             if(tileInfo.order==foods[i].order){
               foods.push(foods[i]);

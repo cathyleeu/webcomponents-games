@@ -1,0 +1,48 @@
+[
+  {"book": "C특별(하)", "title": "4주차 : 조건과 반복을 응용해요"},
+  {"id": "bg1", "src": "/img/c10/snow1.png"},
+  {"id": "bg2", "src": "/img/c10/snow2.png"},
+  {"id": "land0", "src": "/img/map32/0.png"},
+  {"id": "land1", "src": "/img/map32/1.png"},
+  {"id": "land2", "src": "/img/map32/2.png"},
+  {"id": "land3", "src": "/img/map32/3.png"},
+  {"id": "land4", "src": "/img/map32/4.png"},
+  {"id": "land5", "src": "/img/map32/5.png"},
+  {"id": "land6", "src": "/img/map32/6.png"},
+  {"id": "land7", "src": "/img/map32/7.png"},
+  {"id": "land8", "src": "/img/map32/8.png"},
+  {"id": "land9", "src": "/img/map32/9.png"},
+  {"id": "land10", "src": "/img/map32/10.png"},
+  {"id": "land11", "src": "/img/map32/11.png"},
+
+  {"id": "character", "src": "/img/c105/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c105/cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/c105/luckjori.png"},
+
+  {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "ice_pond", "src": "/img/c9_w3/ice_pond.png","obstacle": true},
+  {"id": "winter_stone1", "src": "/img/c9_w3/winter_stone1.png","obstacle": true},
+  {"id": "winter_stone2", "src": "/img/c9_w3/winter_stone2.png","obstacle": true},
+  {"id": "winter_tree1", "src": "/img/c9_w3/winter_tree1.png","obstacle": true},
+  {"id": "winter_tree2", "src": "/img/c9_w3/winter_tree2.png","obstacle": true},
+  {"id": "winter_tree3", "src": "/img/c9_w3/winter_tree3.png","obstacle": true},
+
+  {"id": "bomi0", "src": "/img/c105/bomi0.png"},
+  {"id": "deer0", "src": "/img/c105/deer0.png"},
+  {"id": "jack0", "src": "/img/c105/jack0.png"},
+  {"id": "tori0", "src": "/img/c105/tori0.png"},
+  {"id": "mos0", "src": "/img/c105/mos0.png"},
+  {"id": "cos0", "src": "/img/c105/cos0.png"},
+
+  {"tile": "H", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "N", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "E", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "question", "src": "/img/guide/question.png", "obstacle": false}
+]

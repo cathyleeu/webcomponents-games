@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat_until_deer",
+    "condition_down", "condition_wall_down"
+  ],
+  "map": [
+    "#d..#..#",
+    ".#.#.#..",
+    "#.....#.",
+    "#..#..##",
+    "#...##.#",
+    "#.#..#..",
+    ".##.#.##",
+    "...%...."
+  ],
+  "extra":[{
+    "x":3, "y":7, "img":"deer0"
+  }],
+  "tutorial": [{
+    "msg:ko": "코봇이 디어를 찾아가요. 만약에 반복 블록을 이용해서 디어에게 가요.",
+    "msg:en": "Cobot visits Deer. Use the 'repeat if block' to go to Deer.",
+    "img": ["/img/c105/cobot0.png", "/img/blocks/untildeer.png"]
+  }],
+  "goal":{
+    "msg:ko": "만약에 반복 블록을 이용해서 디어에게 가요. 장애물은 오른 쪽으로 피해요.",
+    "msg:en": "Use the 'repeat if block' to go to Deer. Avoid obstacles to the right.",
+    "img": ["/img/c105/cobot0.png", "/img/blocks/untildeer.png", "/img/blocks/right.png"]
+  }
+}
