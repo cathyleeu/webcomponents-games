@@ -268,6 +268,17 @@ Actions.prototype._getCanvasObject = function(x, y, role) {
   };
 };
 
+Actions.prototype._getFieldValue = function(block, name) {
+  var val = block.getFieldValue(name);
+  if(val === null) {
+    val = block.getInputTargetBlock(name).getFieldValue(name);
+  }
+  if(Number(val) == val) {
+    val = Number(val);
+  }
+  return val;
+};
+
 Actions.prototype.move = function(type, block, callback) {
   var _this = this,
       character = this.canvas.character,
@@ -2117,17 +2128,8 @@ Actions.prototype.condition_movable = function(type, block, callback) {
 Actions.prototype.repeat = function(type, block, callback) {
   var character = this.canvas.character,
       child = block.getInputTargetBlock("statements"),
-      count = +block.getFieldValue("count"),
+      count = type == "repeat_until" ? 0 : this._getFieldValue(block, "count"),
       _this = this;
-      debugger
-  if(_this.kidscoding.isHorizontal) {
-    if(type == "repeat_until"){
-      count = 0;
-    }else{
-      count = +block.getInputTargetBlock("count").getFieldValue("count");
-    }
-  }
-  debugger
   if(!child) {
     callback("반복 블록이 비었어요");
     return;
@@ -2172,7 +2174,14 @@ Actions.prototype._makePseudoBlock = function(json) {
 };
 
 Actions.prototype.func = function(contents, block, callback) {
+  var _this = this;
   if(typeof contents == "object") {
+    contents = Object.assign({}, contents);
+    Object.keys(contents).forEach(function(key) {
+      if(typeof contents[key] == "string" && contents[key].slice(0, 1) == "@") {
+        contents[key] = _this._getFieldValue(block, contents[key].slice(1));
+      }
+    });
     var pseudoBlock = this._makePseudoBlock(contents);
     this.run(pseudoBlock, callback);
   }

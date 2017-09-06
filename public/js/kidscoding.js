@@ -6,6 +6,12 @@ KidsCoding = function() {
   this.queue = [];
   this.workspace = null;
   this.isHorizontal = location.pathname.indexOf("mazeh") >= 0;
+  this.blockType = "default";
+  if(location.pathname.indexOf("mazeh") >= 0) {
+    this.blockType = "horizontal";
+  } else if(location.pathname.indexOf("mazev") >= 0) {
+    this.blockType = "vertical";
+  }
   if(this.isHorizontal) {
     Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 200;
     Blockly.Flyout.prototype.MARGIN = 20;
@@ -161,23 +167,25 @@ KidsCoding = function() {
   }
 
   // 가로블럭에서 드랍다운 메뉴가 화면 밖으로 나가는 현상 수정
-  var showEditor_ = Blockly.FieldDropdown.prototype.showEditor_;
-  Blockly.FieldDropdown.prototype.showEditor_ = function() {
-    var getBoundingClientRect = this.fieldGroup_.getBoundingClientRect;
-    this.fieldGroup_.getBoundingClientRect = function() {
-      var position = getBoundingClientRect.call(this);
-      return {
-        top: position.top - 300,
-        bottom: position.bottom,
-        left: position.left,
-        right: position.right,
-        width: position.width,
-        height: position.height
+  if(this.blockType == "horizontal") {
+    var showEditor_ = Blockly.FieldDropdown.prototype.showEditor_;
+    Blockly.FieldDropdown.prototype.showEditor_ = function() {
+      var getBoundingClientRect = this.fieldGroup_.getBoundingClientRect;
+      this.fieldGroup_.getBoundingClientRect = function() {
+        var position = getBoundingClientRect.call(this);
+        return {
+          top: position.top - 300,
+          bottom: position.bottom,
+          left: position.left,
+          right: position.right,
+          width: position.width,
+          height: position.height
+        };
       };
+      showEditor_.call(this);
+      delete this.fieldGroup_.getBoundingClientRect;
     };
-    showEditor_.call(this);
-    delete this.fieldGroup_.getBoundingClientRect;
-  };
+  }
 };
 KidsCoding.prototype = {
   init: function(loader, mazeInfo, run, tileFactory) {
@@ -209,13 +217,27 @@ KidsCoding.prototype = {
       return attr + '="' + block[attr] + '"';
     }).join(" ");
     var value_str = "";
-    if(this.isHorizontal && block.type=="repeat") {
-      value_str = '<value name="count">' +
-        '<shadow type="dropdown">' +
-        '<field name="count">2</field>' +
-        '</shadow>' +
-        '</value>';
-    }
+    Blocks[block.type].args0.forEach(function(arg) {
+      if(this.blockType != "default" && arg.type == "field_dropdown") {
+        arg.type = "input_value";
+        value_str = '<value name="' + arg.name + '">' +
+          '<shadow type="' + block.type + "_" + arg.name + '">' +
+          '<field name="' + arg.name + '">' + arg.options[0][0] + '</field>' +
+          '</shadow>' +
+          '</value>';
+        Blockly.Blocks[block.type + "_" + arg.name + ''] = {
+          init: function() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldDropdown(arg.options), arg.name);
+            this.setOutput(true);
+            this.setColour(Blockly.Colours.event.primary,
+              Blockly.Colours.event.secondary,
+              Blockly.Colours.event.tertiary
+            );
+          }
+        };
+      }
+    });
     if(isToolbox) {
       return "<block " + str + ">" + value_str + "</block>" + this.createXml(blocks.slice(1), isToolbox);
     } else {
@@ -315,7 +337,7 @@ KidsCoding.prototype = {
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
       toolbox: '<xml>' + this.createXml(toolbox, true) + '</xml>',
-      media: this.isHorizontal ? '/scratch-blocks/media/' : '/GoogleBlockly/media/',
+      media: this.blockType == "default" ? '/GoogleBlockly/media/' : '/scratch-blocks/media/',
       trashcan: !this.isHorizontal,
       zoom: this.isHorizontal ? null : {
         controls: true,
