@@ -1,0 +1,73 @@
+{
+  "element": "line-card",
+  "attributes": {
+  },
+  "data": [
+    "morden1",
+    "morden2",
+    "morden3",
+    "morden4",
+    "morden5",
+    "morden6",
+    "morden7",
+    "morden8",
+    "past1",
+    "past2",
+    "past3",
+    "past4",
+    "past5",
+    "past6",
+    "past7",
+    "past8"
+  ],
+  "manifest": [
+    {"no": 0 , "set": 0, "id": "past1", "src": "/img/a10_w1/past1.png"},
+    {"no": 1 , "set": 0, "id": "past2", "src": "/img/a10_w1/past2.png"},
+    {"no": 2 , "set": 0, "id": "past3", "src": "/img/a10_w1/past3.png"},
+    {"no": 3 , "set": 0, "id": "past4", "src": "/img/a10_w1/past4.png"},
+    {"no": 4 , "set": 0, "id": "past5", "src": "/img/a10_w1/past5.png"},
+    {"no": 5 , "set": 0, "id": "past6", "src": "/img/a10_w1/past6.png"},
+    {"no": 6 , "set": 0, "id": "past7", "src": "/img/a10_w1/past7.png"},
+    {"no": 7 , "set": 0, "id": "past8", "src": "/img/a10_w1/past8.png"},
+    {"no": 0 , "set": 1, "id": "morden1", "src": "/img/a10_w1/morden1.png"},
+    {"no": 1 , "set": 1, "id": "morden2", "src": "/img/a10_w1/morden2.png"},
+    {"no": 2 , "set": 1, "id": "morden3", "src": "/img/a10_w1/morden3.png"},
+    {"no": 3 , "set": 1, "id": "morden4", "src": "/img/a10_w1/morden4.png"},
+    {"no": 4 , "set": 1, "id": "morden5", "src": "/img/a10_w1/morden5.png"},
+    {"no": 5 , "set": 1, "id": "morden6", "src": "/img/a10_w1/morden6.png"},
+    {"no": 6 , "set": 1, "id": "morden7", "src": "/img/a10_w1/morden7.png"},
+    {"no": 7 , "set": 1, "id": "morden8", "src": "/img/a10_w1/morden8.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "전통 물건과 같은 기능을 하는 현대 물건을 연결해보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예"
+    },
+    "en": {
+      "title": "Matching the cards with Old and New",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}

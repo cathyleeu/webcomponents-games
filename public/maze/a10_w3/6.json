@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "......",
+    ".%....",
+    "......",
+    "...u..",
+    "......",
+    "......"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img":"hospital"
+  }],
+  "tutorial": [{
+    "msg:ko": "병원으로 가요.",
+    "msg:en": "Move to the hospital.",
+    "img": ["/img/a10_w3/hospital.png"]
+  }]
+}
