@@ -1,0 +1,45 @@
+[
+  {"book": "c특별(하)", "title": "2주차 : 99까지 세어보아요"},
+  {"id": "bg1", "src": "/img/c105/bg1.png"},
+  {"id": "bg2", "src": "/img/c105/bg2.png"},
+
+  {"id": "character", "src": "/img/c105/mos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c105/mos0.png", "size": 256},
+  {"id": "food", "src": "/img/c105/candy.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "table0", "src": "/img/c105/table0.png"},
+
+  {"id": "wall", "src": "/img/c105/wall.png","obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "dduck", "src": "/img/c105/dduck.png"},
+  {"id": "candy", "src": "/img/c105/candy.png"},
+  {"id": "candy10", "src": "/img/c105/candy10.png"},
+
+  {"tile": "a", "id": "dduck9", "src": "/img/c105/dduck9.png"},
+  {"tile": "b", "id": "candy9", "src": "/img/c105/candy9.png"},
+  {"tile": "c", "id": "dduck8", "src": "/img/c105/dduck8.png"},
+  {"tile": "f", "id": "candy8", "src": "/img/c105/candy8.png"},
+  {"tile": "g", "id": "dduck8", "src": "/img/c105/dduck8.png"},
+
+  {"tile": "i", "id": "candy7", "src": "/img/c105/candy7.png"},
+  {"tile": "j", "id": "dduck7", "src": "/img/c105/dduck7.png"},
+  {"tile": "k", "id": "candy6", "src": "/img/c105/candy6.png"},
+  {"tile": "m", "id": "dduck6", "src": "/img/c105/dduck6.png"},
+  {"tile": "o", "id": "candy5", "src": "/img/c105/candy5.png"},
+
+  {"tile": "p", "id": "dduck5", "src": "/img/c105/dduck5.png"},
+  {"tile": "q", "id": "candy4", "src": "/img/c105/candy4.png"},
+  {"tile": "s", "id": "dduck4", "src": "/img/c105/dduck4.png"},
+  {"tile": "t", "id": "candy3", "src": "/img/c105/candy3.png"},
+  {"tile": "v", "id": "dduck3", "src": "/img/c105/dduck3.png"}
+
+]

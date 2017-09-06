@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat_until_jack",
+    "condition_left", "condition_wall_left"
+  ],
+  "map": [
+    "%..##.##",
+    ".#.###..",
+    ".#.#...#",
+    ".#....##",
+    "..##...#",
+    "..#.#...",
+    ".#...#.l",
+    "...#...#"
+  ],
+  "extra":[{
+    "x":7, "y":0, "img":"jack0"
+  }],
+  "tutorial": [{
+    "msg:ko": "코봇이 짹을 찾아가요. 만약에 반복 블록을 이용해서 짹에게 가요.",
+    "msg:en": "Cobot visits Jack. Use the 'repeat if block' to go to Jack.",
+    "img": ["/img/c105/cobot0.png", "/img/blocks/untiljack.png"]
+  }],
+  "goal":{
+    "msg:ko": "만약에 반복 블록을 이용해서 짹에게 가요.",
+    "msg:en": "Use the 'repeat if block' to go to Jack.",
+    "img": ["/img/c105/cobot0.png", "/img/blocks/untiljack.png"]
+  }
+}

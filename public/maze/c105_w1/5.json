@@ -1,0 +1,60 @@
+{
+  "tile_size":128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "check",
+    "condition_top",
+    "condition_jegi",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.#.###.#",
+    "##.%..#.#",
+    "#.##.#.##",
+    "#r..&##.#",
+    "#.##..%.#",
+    "##.#.####",
+    "#.#.#.#.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 4,
+    "img": "mos",
+    "contents" : [{
+        "img": "mos_top",
+        "role": "justmove",
+        "order": "5"
+      },{
+        "img": "mos_jegi",
+        "role": "justmove",
+        "order": "if"
+    }]
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "top",
+    "order": "5"
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "jegi",
+    "order": "if"
+  }],
+  "tutorial": [{
+    "msg:ko": "모스가 하고 싶은 놀이를 확인하고, 알맞은 전통 놀이를 가지러 가요.",
+    "msg:en": "Check out the traditional play that Mos wants to do, \n and let's go get a proper traditional play.",
+    "img": ["/img/c105/mosq.png"]
+  }],
+  "success":[{
+    "msg:ko": "벌써 다섯 문제나 풀었어요!",
+    "msg:en": "You've solved five problems already!",
+    "link": "c105_w1/6"
+  }]
+}

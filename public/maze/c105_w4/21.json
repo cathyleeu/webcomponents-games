@@ -1,0 +1,53 @@
+{
+  "tile_size": 128,
+
+  "score":100,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "#########",
+    "#.......#",
+    "#.##.##.#",
+    "#.##.##.#",
+    "#..d##..#",
+    "#.##.##.#",
+    "#.##.##.#",
+    "#.......#",
+    "#########"
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 3,
+    "img": "tori0"
+  },{
+    "x": 5,
+    "y": 3,
+    "img": "deer0"
+  },{
+    "x": 3,
+    "y": 5,
+    "img": "bomi0"
+  },{
+    "x": 5,
+    "y": 5,
+    "img": "jack0"
+  },{
+    "x": 4,
+    "y": 4,
+    "img": "cos0"
+  },{
+    "x": 5,
+    "y": 4,
+    "img": "mos0"
+  }],
+  "tutorial": [{
+    "msg:ko": "1년동안 코스와 함께 즐거웠어요! 안녕!",
+    "msg:en": "I hope you enjoyed KidsThinking with cos for a year! Good bye!",
+    "img": "/img/c10/cos0.png"
+  }]
+}

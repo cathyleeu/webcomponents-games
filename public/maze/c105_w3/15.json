@@ -1,0 +1,53 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    "########",
+    "#....t.#",
+    "#t....t#",
+    "###.#d.#",
+    "#..t...#",
+    "#.#..#.#",
+    "#.%.#..#",
+    "########"
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 6,
+    "img": "d1200"
+  },{
+    "x": 3,
+    "y": 4,
+    "img": "d0200"
+  },{
+    "x": 5,
+    "y": 1,
+    "img": "d0300"
+  },{
+    "x": 1,
+    "y": 2,
+    "img": "d0600"
+  },{
+    "x": 6,
+    "y": 2,
+    "img": "d0800"
+  }],
+  "tutorial": [{
+    "msg:ko": "현재 시각은 열두시에요. 올바른 시계로 이동해 보아요.",
+    "msg:en": "The current time is twelve o'clock. Go to the correct clock.",
+    "img": "/img/c9_w1/a1200.png"
+  }],
+  "success":[{
+    "msg:ko": "열다섯 문제나 풀다니, 정말 대단해요!",
+    "msg:en": "Fifteen problems you've solved, you are so great!",
+    "link": "c105_w3/16"
+  }]
+}

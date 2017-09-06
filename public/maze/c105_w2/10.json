@@ -1,0 +1,45 @@
+{
+
+  "tile_size":128,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+
+  "map": [
+    ".#######.",
+    "#.#.#..##",
+    "#...#..##",
+    "##.###.##",
+    "##......#",
+    "#...#..##",
+    "#.)l.#..#",
+    "##.####.#",
+    ".#%t####."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 8,
+    "img":"table0",
+    "useItem": 7
+  },{
+    "x": 2,
+    "y": 6,
+    "img":"dduck",
+    "itemImg":"dduck",
+    "disappear":true,
+    "itemCount": 7
+  }],
+  "tutorial": [{
+    "msg:ko": "10개를 모으기 위하여 떡 7개를 가져와요",
+    "msg:en": "Let's bring seven rice cakes to make ten",
+    "img": ["/img/c105/dduck7.png","/img/blocks/bring.png","/img/blocks/use.png"]
+  }]
+}

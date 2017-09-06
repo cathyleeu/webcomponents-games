@@ -1613,6 +1613,111 @@ Blocks['repeat_until_tootoo'] = {
   argsh1: null,
   action: ["repeat", "repeat_until"]
 };
+Blocks['repeat_until_bomi'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1만약에 봄이에게 가는 중이라면 반복",
+    en: "%1Repeat if going to Bomi"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/untilbomi.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/untilbomi.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["repeat", "repeat_until"]
+};
+Blocks['repeat_until_deer'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1만약에 디어에게 가는 중이라면 반복",
+    en: "%1Repeat if going to Deer"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/untildeer.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/untildeer.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["repeat", "repeat_until"]
+};
+Blocks['repeat_until_jack'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1만약에 짹에게 가는 중이라면 반복",
+    en: "%1Repeat if going to Jack"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/untiljack.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/untiljack.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["repeat", "repeat_until"]
+};
+Blocks['repeat_until_tori'] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1만약에 토리에게 가는 중이라면 반복",
+    en: "%1Repeat if going to Tori"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/untiltori.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/untiltori.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["repeat", "repeat_until"]
+};
+
 
 Blocks['repeat_until'] = {
   rgbColor: "#242786",
@@ -2423,7 +2528,122 @@ Blocks['condition_persimmon'] = {
   argsh1: null,
   action: ["conditioncheck","move_wo_item_else"]
 };
-Blocks['condition_key_triangle'] = {
+Blocks['condition_jegi'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 제기라면",
+    en: "If jegi"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/jegi.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_if"]
+};
+Blocks['condition_yut'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 윷이라면",
+    en: "If yut"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/yut.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_elseif"]
+};
+Blocks['condition_tuho'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 투호라면",
+    en: "If tuho"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/tuho.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_else"]
+};
+Blocks['condition_kite'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 연이라면",
+    en: "If kite"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/kite.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_4"]
+};
+Blocks['condition_top'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 팽이라면",
+    en: "If top"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/top.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_5"]
+};
+Blocks['condition_luck_triangle'] = {
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 세모 열쇠라면",
@@ -2440,13 +2660,13 @@ Blocks['condition_key_triangle'] = {
     name: "if_statements"
   }, {
     type: "field_image",
-    src: "/img/kidsblocks/key_triangle.png"
+    src: "/img/kidsblocks/luck_triangle.png"
   }],
   messageh1: null,
   argsh1: null,
   action: ["conditioncheck","move_wo_item_if"]
 };
-Blocks['condition_key_square'] = {
+Blocks['condition_luck_square'] = {
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 네모 열쇠라면",
@@ -2463,13 +2683,13 @@ Blocks['condition_key_square'] = {
     name: "if_statements"
   }, {
     type: "field_image",
-    src: "/img/kidsblocks/key_square.png"
+    src: "/img/kidsblocks/luck_square.png"
   }],
   messageh1: null,
   argsh1: null,
   action: ["conditioncheck","move_wo_item_else"]
 };
-Blocks['condition_key_circle'] = {
+Blocks['condition_luck_round'] = {
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 동그라미 열쇠라면",
@@ -2486,12 +2706,82 @@ Blocks['condition_key_circle'] = {
     name: "if_statements"
   }, {
     type: "field_image",
-    src: "/img/kidsblocks/key_circle.png"
+    src: "/img/kidsblocks/luck_round.png"
   }],
   messageh1: null,
   argsh1: null,
   action: ["conditioncheck","move_wo_item_elseif"]
 };
+Blocks['condition_luck_triangle'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 세모난 복주머니라면",
+    en: "If triangle lucky bag"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/luck_tri.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_if"]
+};
+Blocks['condition_luck_square'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 네모난 복주머니라면",
+    en: "If square lucky bag"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/luck_sqr.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_else"]
+};
+Blocks['condition_luck_round'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 동그란 복주머니라면",
+    en: "If round lucky bag"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/luck_round.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_elseif"]
+};
+
 Blocks['condition_acorn'] = {
   rgbColor: "#309E4A",
   message0: {
@@ -4422,7 +4712,7 @@ Blocks['condition2_itemfood_wandu'] = {
   }],
   action: ["conditioncheck2","itemfood"]
 };
-Blocks['condition2_itemkey_circle'] = {
+Blocks['condition2_itemluck_round'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
@@ -4449,7 +4739,7 @@ Blocks['condition2_itemkey_circle'] = {
   }],
   action: ["conditioncheck2","itemkey"]
 };
-Blocks['condition2_itemkey_rectangle'] = {
+Blocks['condition2_itemluck_rectangle'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",
@@ -4476,7 +4766,7 @@ Blocks['condition2_itemkey_rectangle'] = {
   }],
   action: ["conditioncheck2","itemkey"]
 };
-Blocks['condition2_itemkey_triangle'] = {
+Blocks['condition2_itemluck_triangle'] = {
   rgbColor: "#E11376",
   message0: {
     ko: "%1 이라면",

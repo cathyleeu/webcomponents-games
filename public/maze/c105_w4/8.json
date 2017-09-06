@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat_until_tori",
+    "condition_right", "condition_wall_right"
+  ],
+  "map": [
+    "..###.#.",
+    "##.##..%",
+    "...#..#.",
+    "##....#.",
+    "...#.#..",
+    "..#.###.",
+    ".#....#.",
+    "r#..##.."
+  ],
+  "extra":[{
+    "x":7, "y":1, "img":"tori0"
+  }],
+  "tutorial": [{
+    "msg:ko": "코봇이 토리를 찾아가요. 만약에 반복 블록을 이용해서 토리에게 가요.",
+    "msg:en": "Cobot visits Tori. Use the 'repeat if block' to go to Tori.",
+    "img": ["/img/c105/cobot0.png", "/img/blocks/untiltori.png"]
+  }],
+  "goal":{
+    "msg:ko": "만약에 반복 블록을 이용해서 토리에게 가요. 장애물은 위로 피해요.",
+    "msg:en": "Use the 'repeat if block' to go to Tori. Avoid obstacles upwards.",
+    "img": ["/img/c105/cobot0.png", "/img/blocks/untiltori.png", "/img/blocks/up.png"]
+  }
+}
