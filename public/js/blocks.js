@@ -602,7 +602,7 @@ Blocks["move_right"] = {
   ],
   action: ["move", "right"]
 };
-Blocks["move_forward"] = {
+Blocks["move_forward1"] = {
   colour: 260,
   message0: {
     ko: "%1 앞으로 가기",
@@ -613,7 +613,7 @@ Blocks["move_forward"] = {
   ],
   action: ["move", "forward"]
 };
-Blocks["move_forward_n"] = {
+Blocks["move_forward"] = {
   colour: 260,
   message0: {
     ko: "%1 만큼 움직이기",
@@ -638,7 +638,7 @@ Blocks["move_forward_n"] = {
     type: "repeat",
     count: "@count",
     statements: {
-      type: "move_forward"
+      type: "move_forward1"
     }
   }]
 };
@@ -667,7 +667,7 @@ Blocks["move_forward2"] = {
     type: "repeat",
     count: 2,
     statements: {
-      type: "move_forward"
+      type: "move_forward1"
     }
   }]
 };
@@ -684,7 +684,7 @@ Blocks["move_forward3"] = {
     type: "repeat",
     count: 3,
     statements: {
-      type: "move_forward"
+      type: "move_forward1"
     }
   }]
 };
@@ -701,7 +701,7 @@ Blocks["move_forward4"] = {
     type: "repeat",
     count: 4,
     statements: {
-      type: "move_forward"
+      type: "move_forward1"
     }
   }]
 };

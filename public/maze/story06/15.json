@@ -3,7 +3,7 @@
   "render": "pixel",
   "workspace": ["start","repeat","rotate_right","repeat"],
   "toolbox": [
-    "move_forward",
+    "move_forward1",
     "rotate_left",
     "rotate_right",
     "repeat"
