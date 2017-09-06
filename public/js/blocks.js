@@ -613,6 +613,36 @@ Blocks["move_forward"] = {
   ],
   action: ["move", "forward"]
 };
+Blocks["move_forward_n"] = {
+  colour: 260,
+  message0: {
+    ko: "%1 만큼 움직이기",
+    en: "%1 Move Forward"
+  },
+  args0: [{
+    type: "field_dropdown",
+    name: "count",
+    options: [
+      ["1", "1"],
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"]
+    ]
+  }],
+  action: ["func", {
+    type: "repeat",
+    count: "@count",
+    statements: {
+      type: "move_forward"
+    }
+  }]
+};
+
 Blocks["jump_forward"] = {
   colour: 120,
   message0: {
@@ -1469,8 +1499,7 @@ Blocks["repeat"] = {
       ["6", "6"],
       ["7", "7"],
       ["8", "8"],
-      ["9", "9"],
-      ["10", "10"]
+      ["9", "9"]
     ]
   }],
   message1: "%1",
@@ -1486,34 +1515,22 @@ Blocks["repeat"] = {
     type: "field_image",
     src: "/img/kidsblocks/Repeat.png"
   }, {
-    type: "input_value",
-    name: "count"
+    type: "field_dropdown",
+    name: "count",
+    options: [
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"]
+    ]
   }],
   messageh1: null,
   argsh1: null,
   action: ["repeat", "count"]
-};
-
-Blockly.Blocks['dropdown'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([
-          ["2", "2"],
-          ["3", "3"],
-          ["4", "4"],
-          ["5", "5"],
-          ["6", "6"],
-          ["7", "7"],
-          ["8", "8"],
-          ["9", "9"],
-          ["10", "10"]
-        ]), 'count');
-    this.setOutput(true);
-    this.setColour(Blockly.Colours.event.primary,
-      Blockly.Colours.event.secondary,
-      Blockly.Colours.event.tertiary
-    );
-  }
 };
 
 Blocks['repeat_until_cos'] = {
