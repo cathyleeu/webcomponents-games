@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "go_valley",
+    "go_lake",
+    "go_river",
+    "go_sea1"
+  ],
+  "map": [
+    "........",
+    "........",
+    "........",
+    "......d.",
+    "........",
+    ".%......",
+    "........",
+    "........"
+  ],
+  "tutorial": [{
+    "msg:ko": "물방울의 여행을 따라가보아요.",
+    "msg:en": "Let’s follow the journey of trickle."
+  },{
+    "msg:ko": "계곡,호수,강을 거쳐서 바다로 이동해요.",
+    "msg:en": "Trickle moves to the sea through valley,lake,river.",
+    "img": ["/img/a8/valley.png","/img/a8/lake.png","/img/a8/river.png","/img/a8/sea.png"]
+  }],
+  "goal": {
+    "msg:ko": "계곡,호수,강을 거쳐서 바다로 이동해요.\n블록을 순서대로 조립해보아요.",
+    "msg:en": "Trickle moves to the sea through valley,lake,river.\nLet's Assemble blocks in the order!",
+    "img": ["/img/a8/answer_block3.png","/img/a8/start_block.png"]
+  }
+}
