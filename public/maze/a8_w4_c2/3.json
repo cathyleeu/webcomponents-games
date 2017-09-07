@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start","go_filter","go_house"],
+  "toolbox": [
+
+  ],
+  "map": [
+    ".....#..",
+    "....#%#.",
+    "........",
+    "........",
+    "........",
+    "........",
+    "....r...",
+    "........"
+  ],
+
+  "tutorial": [{
+    "msg:ko": "물이 강의 댐에서 정수장을 거쳐 우리집까지 가요.",
+    "msg:en": "Water goes from river dam to water purification plant and goes to our house.",
+    "img": ["/img/a8/dam.png","/img/a8/filter.png","/img/a8/house.png"]
+  }],
+  "goal": {
+    "msg:ko": "물이 강의 댐에서 정수장을 거쳐 우리집까지 가요.\n시작버튼을 눌러보아요.",
+    "msg:en": "Water goes from river dam to water purification plant and goes to our house.\nPress Start button.",
+    "img": ["/img/a8/dam.png","/img/a8/filter.png","/img/a8/house.png","/img/a8/start_block.png"]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "go_filter"
+  ],
+  "map": [
+    "........",
+    "........",
+    ".....#..",
+    "....#%#.",
+    "........",
+    "........",
+    "....r...",
+    "........"
+  ],
+
+  "tutorial": [{
+    "msg:ko": "물이 강에서 우리집까지 오는 길을 알아보아요. 물이 강의 댐에서 정수장까지 가요.",
+    "msg:en": "Let's see how the water flows from the river to our house.Water goes from the river dam to the water purification plant.",
+    "img": ["/img/a8/dam.png","/img/a8/filter.png"]
+  }],
+  "goal": {
+    "msg:ko": "물이 강의 댐에서 정수장까지 가요.\n블록을 순서대로 조립해보아요.",
+    "msg:en": "Trickle moves from the sea to the cloud and then it rains.\nLet's Assemble blocks in the order!",
+    "img": ["/img/a8/w3_2.png","/img/a8/start_block.png"]
+  }
+}

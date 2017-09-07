@@ -7,6 +7,7 @@
   {"id": "message", "src": "/img/c105/mos0.png", "size": 256},
   {"id": "food", "src": "/img/c105/candy.png"},
 
+
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
@@ -23,6 +24,7 @@
   {"id": "dduck", "src": "/img/c105/dduck.png"},
   {"id": "candy", "src": "/img/c105/candy.png"},
   {"id": "candy10", "src": "/img/c105/candy10.png"},
+  {"id": "clock", "src": "/img/c9_w1/clock.png"},
 
   {"tile": "a", "id": "dduck9", "src": "/img/c105/dduck9.png"},
   {"tile": "b", "id": "candy9", "src": "/img/c105/candy9.png"},
