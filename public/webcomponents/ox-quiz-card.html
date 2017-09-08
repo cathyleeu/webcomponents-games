@@ -139,9 +139,6 @@
       static get is() { return 'ox-quiz-card'; }
       connectedCallback() {
         super.connectedCallback();
-        let svg = d3.select(this.shadowRoot).select('svg')
-          .attr('width', '100%' )
-          .attr('height', '100%');
       }
       ready(){
         super.ready();

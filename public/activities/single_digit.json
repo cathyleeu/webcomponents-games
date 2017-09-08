@@ -1,0 +1,47 @@
+{
+  "element": "digit-addition",
+  "attributes": {
+  },
+  "data": 4,
+  "manifest": 1,
+  "msg": {
+    "ko": {
+      "title": "한 자리 수를 더해 보아요.",
+      "subtitle": "아래의 숫자 중 알맞는 답을 골라보세요.",
+      "score": "점수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "retryHead": "참 아쉽네요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "retryBtm" : "다시 시도해 볼까요?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "retrybtn": "다시하기",
+      "resultbtn": "결과보기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예"
+    },
+    "en": {
+      "title": "Single Digit Addition",
+      "subtitle": "Choosing the right answer on the below of the number cards.",
+      "score": "score",
+      "success": "Good job!",
+      "successHead": "Success",
+      "retryHead": "Failed",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "retryBtm" : "Do you want to retry?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "retrybtn": "Retry",
+      "resultbtn": "Result",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}
