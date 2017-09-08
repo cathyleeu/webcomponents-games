@@ -236,8 +236,12 @@ function getBook(classObj) {
     book = [4, 5];
   }
   // 영업부 일산지사 홍익유치원, 부산PSA, 울산 설리번 영어어린이집
-  if(school == "C00149-K1" || school == "D00086-K1" || school == "A00072-K2") {
+  if(school == "C00149-K1" || school == "D00086-K1") {
     book = [5, 6];
+  }
+  // 울산지사 설리번(격월)
+  if(school == "A00072-K2") {
+    book = [4, 5];
   }
   // 송도ECC 추가반
   if(school == "B00136-K1") {
