@@ -1,0 +1,44 @@
+{
+
+  "tile_size":128,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+  "map": [
+    ".#######.",
+    "#.#.#...#",
+    "#.#.###.#",
+    "##..#...#",
+    "#..r....#",
+    "#..##.).#",
+    "#.......#",
+    "##.###..#",
+    ".####j%#."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 8,
+    "img":"table0",
+    "useItem": 3
+  },{
+    "x": 6,
+    "y": 5,
+    "img":"candy",
+    "itemImg":"candy",
+    "disappear":true,
+    "itemCount": 3
+  }],
+  "tutorial": [{
+    "msg:ko": "10개를 모으기 위하여 엿 3개를 가져와요",
+    "msg:en": "Let's bring three taffies to make ten",
+    "img": ["/img/c105/candy3.png","/img/blocks/bring.png","/img/blocks/use.png"]
+  }]
+}

@@ -1,0 +1,52 @@
+{
+
+  "tile_size":128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat",
+    "get_item2",
+    "use_item2"
+  ],
+
+  "map": [
+    ".#######.",
+    "#.#.#..##",
+    "#...#..##",
+    "##.###.##",
+    "##%.).).#",
+    "#.####.##",
+    "#r......#",
+    "##.####.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 4,
+    "img":"table0",
+    "useItem": 9
+  },{
+    "x": 6,
+    "y": 4,
+    "img":"candy10",
+    "itemImg":"candy10",
+    "disappear":true,
+    "itemCount": 7
+  },{
+    "x": 4,
+    "y": 4,
+    "img":"candy",
+    "itemImg":"candy",
+    "disappear":true,
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "엿 묶음 7개와 낱개 2개를 가져와서 총 72개를 만들어보아요.",
+    "msg:en": "Bring 7 bundles and 2 pieces to make a total of 72 taffies.",
+    "img": ["/img/c105/candy10.png","/img/c105/n7.png","/img/c105/n2.png","/img/c105/candy.png"]
+  }]
+}

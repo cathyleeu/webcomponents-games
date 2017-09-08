@@ -1,0 +1,154 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####NNNNN##.",
+    "..r..%%%%%.#",
+    ".###.......#",
+    "##...#####.#",
+    "..#........#",
+    "##.%%%%%...#",
+    "###HHHHH###."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": "/img/c10/1a.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": "/img/c10/1a.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": "/img/c10/1a.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": "/img/c10/1a.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "점수 2점을 얻을 수 있어.",
+      "msg:en": "You can get two points at once.",
+      "img": "/img/c10/1a.png"
+    }]
+  },{
+    "x": 3,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "점수 3점을 얻을 수 있어.",
+      "msg:en": "You can get three points at once.",
+      "img": ["/img/c10/1a.png","/img/c10/1a.png","/img/c10/1a.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c105_w1/11"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c105_w1/12"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "c105_w1/13"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c105_w1/14"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c105_w1/15"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c105_w1/16"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "c105_w1/17"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "c105_w1/18"
+  },{
+    "x": 4,
+    "y": 5,
+    "link": "c105_w1/19"
+  },{
+    "x": 3,
+    "y": 5,
+    "link": "c105_w1/20"
+  },{
+    "img":"mos",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "c105_w2/index",
+    "min_score": 10
+  }],
+
+  "tutorial": [{
+    "msg:ko": "이번에는 모스에게 복주머니를 주어요! 보통 문제는 점수를 2점, 어려운 문제는 3점을 주어요. ",
+    "msg:en": "This time, let's give Mos his lucky bags! A normal problem gives you two points and a hard one gives you three.",
+    "img": ["/img/c105/mos0.png","/img/c105/lucks.png"]
+  }],
+  "goal": {
+    "msg:ko": "점수 10점을 모아서 모스에게 가요.",
+    "msg:en": "Let's get 10 points and go to Mos.",
+    "img": ["/img/c105/lucks.png","/img/c105/mos0.png"]
+  }
+}

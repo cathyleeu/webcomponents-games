@@ -1,0 +1,49 @@
+
+[
+  {"book": "c특별(하)", "title": "1주차 : 설날 풍경을 알아보아요"},
+  {"id": "bg1", "src": "/img/c105/bg1.png"},
+  {"id": "bg2", "src": "/img/c105/bg2.png"},
+
+  {"id": "character", "src": "/img/c105/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c105/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c105/lucks.png"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "cos", "src": "/img/c105/cos0.png", "obstacle": false},
+  {"id": "mos", "src": "/img/c105/mos0.png", "obstacle": false},
+
+  {"id": "wall", "src": "/img/c105/wall.png","obstacle": true},
+
+
+  {"id": "mos_jegi", "src": "/img/c105/mos_jegi.png", "obstacle": false},
+  {"id": "mos_tuho", "src": "/img/c105/mos_tuho.png", "obstacle": false},
+  {"id": "mos_yut", "src": "/img/c105/mos_yut.png", "obstacle": false},
+  {"id": "mos_kite", "src": "/img/c105/mos_kite.png", "obstacle": false},
+  {"id": "mos_top", "src": "/img/c105/mos_top.png", "obstacle": false},
+
+  {"id": "jegi", "src": "/img/c105/jegi.png", "obstacle": false},
+  {"id": "tuho", "src": "/img/c105/tuho.png", "obstacle": false},
+  {"id": "yut", "src": "/img/c105/yut.png", "obstacle": false},
+  {"id": "kite", "src": "/img/c105/kite.png", "obstacle": false},
+  {"id": "top", "src": "/img/c105/top.png", "obstacle": false},
+
+
+  {"id": "mos_luck_circle", "src": "/img/c105/mos_luck_round.png", "obstacle": false},
+  {"id": "mos_luck_square", "src": "/img/c105/mos_luck_sqr.png", "obstacle": false},
+  {"id": "mos_luck_triangle", "src": "/img/c105/mos_luck_tri.png", "obstacle": false},
+
+  {"id": "luck_round", "src": "/img/c105/luck_round.png", "obstacle": false},
+  {"id": "luck_square", "src": "/img/c105/luck_sqr.png", "obstacle": false},
+  {"id": "luck_triangle", "src": "/img/c105/luck_tri.png", "obstacle": false}
+
+
+]

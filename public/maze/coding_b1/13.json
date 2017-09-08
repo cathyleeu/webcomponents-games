@@ -3,10 +3,9 @@
   "score":3,
   "workspace": ["start"],
   "toolbox": [
-    "move_up",
-    "move_down",
-    "move_right",
-    "move_left"
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
   ],
   "map": [
     "##..#.###",

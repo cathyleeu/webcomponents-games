@@ -582,6 +582,18 @@ TileFactory.prototype.create = function(tile, x, y) {
           walk_l: [6,7,6,8,6]
         };
       }
+      if(character.src.indexOf('mos') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: [9,10,9,11,9],
+          stand_r: 3,
+          walk_r: [3,4,3,5,3],
+          stand_d: 0,
+          walk_d: [0,1,0,2,0],
+          stand_l: 6,
+          walk_l: [6,7,6,8,6]
+        };
+      }
       if(character.src.indexOf('waterboy') >= 0) {
         animations = {
           stand_u: 9,
@@ -631,6 +643,18 @@ TileFactory.prototype.create = function(tile, x, y) {
         };
       }
       if(character.src.indexOf('santa_cos') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: [9,10,9,11,9],
+          stand_r: 3,
+          walk_r: [3,4,3,5,3],
+          stand_d: 0,
+          walk_d: [0,1,0,2,0],
+          stand_l: 6,
+          walk_l: [6,7,6,8,6]
+        };
+      }
+      if(character.src.indexOf('robot') >= 0) {
         animations = {
           stand_u: 9,
           walk_u: [9,10,9,11,9],

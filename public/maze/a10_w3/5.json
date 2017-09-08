@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "......",
+    "......",
+    "..r...",
+    "....%.",
+    "......",
+    "......"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 3,
+    "img":"servicecenter"
+  }],
+  "tutorial": [{
+    "msg:ko": "아래쪽으로 이동 블록과 오른쪽으로 이동 블록을 이용하여 주민센터로 가요.",
+    "msg:en": "Use down & right move block to go to the service center.",
+    "img": ["/img/blocks/down.png","/img/blocks/right.png","/img/a10_w3/servicecenter.png"]
+  }]
+}

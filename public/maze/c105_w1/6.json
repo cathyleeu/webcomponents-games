@@ -1,0 +1,61 @@
+{
+  "tile_size":128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "check",
+    "condition_jegi",
+    "condition_tuho",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.#.###.#",
+    "##.#..#.#",
+    "####%..##",
+    "##.#.##%#",
+    "#.##....#",
+    "#.#.#&###",
+    "#.r...#.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 6,
+    "img": "mos",
+    "contents" : [{
+        "img": "mos_jegi",
+        "role": "justmove",
+        "order": "if"
+      },{
+        "img": "mos_tuho",
+        "role": "justmove",
+        "order": "else"
+    }]
+  },{
+    "x": 4,
+    "y": 3,
+    "img": "jegi",
+    "order": "if"
+  },{
+    "x": 7,
+    "y": 4,
+    "img": "tuho",
+    "order": "else"
+  }],
+  "tutorial": [{
+    "msg:ko": "모스가 하고 싶은 놀이를 확인하고, 알맞은 전통 놀이를 가지러 가요.",
+    "msg:en": "Check out the traditional play that Mos wants to do, \n and let's go get a proper traditional play.",
+    "img": ["/img/c105/mosq.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:jp": "成功！よくできました！",
+    "msg:en": "Success! Good Job!",
+    "link": "c105_w1/7"
+  }]
+}

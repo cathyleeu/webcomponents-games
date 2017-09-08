@@ -4,7 +4,7 @@
   "workspace": ["start","rotate_right", "repeat", "rotate_left", "repeat", "rotate_right"],
   "render": "pixel",
   "toolbox": [
-    "move_forward",
+    "move_forward1",
     "rotate_left",
     "rotate_right",
     "repeat"

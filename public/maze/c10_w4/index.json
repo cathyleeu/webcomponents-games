@@ -276,7 +276,7 @@
   }],
   "goal": {
     "msg:ko": "점수 20점을 모아서 코스에게 가요.",
-    "msg:en": "Let's get 10 points and go to the Cos.",
+    "msg:en": "Let's get 20 points and go to Cos.",
     "img": ["/img/c10/1a.png","/img/c10/cos0.png"]
   }
 }
