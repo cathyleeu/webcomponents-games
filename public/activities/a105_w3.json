@@ -1,0 +1,59 @@
+{
+  "element": "line-card",
+  "attributes": {
+  },
+  "data": [
+    "setA1",
+    "setA2",
+    "setA3",
+    "setA4",
+
+    "setB1",
+    "setB2",
+    "setB3",
+    "setB4"
+  ],
+  "manifest": [
+    {"no": 0 , "set": 0, "id": "setB1", "src": "/img/a105/a105_w3/b1.png"},
+    {"no": 1 , "set": 0, "id": "setB2", "src": "/img/a105/a105_w3/b2.png"},
+    {"no": 2 , "set": 0, "id": "setB3", "src": "/img/a105/a105_w3/b3.png"},
+    {"no": 3 , "set": 0, "id": "setB4", "src": "/img/a105/a105_w3/b4.png"},
+
+    {"no": 0 , "set": 1, "id": "setA1", "src": "/img/a105/a105_w3/a1.png"},
+    {"no": 1 , "set": 1, "id": "setA2", "src": "/img/a105/a105_w3/a2.png"},
+    {"no": 2 , "set": 1, "id": "setA3", "src": "/img/a105/a105_w3/a3.png"},
+    {"no": 3 , "set": 1, "id": "setA4", "src": "/img/a105/a105_w3/a4.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "어울리는 놀이 도구끼리 연결해보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예"
+    },
+    "en": {
+      "title": "Matching the matching traditional play tools.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}

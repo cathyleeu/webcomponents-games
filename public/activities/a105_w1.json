@@ -1,0 +1,59 @@
+{
+  "element": "line-card",
+  "attributes": {
+  },
+  "data": [
+    "clothes1",
+    "clothes2",
+    "clothes3",
+    "clothes4",
+
+    "person1",
+    "person2",
+    "person3",
+    "person4"
+  ],
+  "manifest": [
+    {"no": 0 , "set": 0, "id": "person1", "src": "/img/a105/a105_w1/boy.png"},
+    {"no": 1 , "set": 0, "id": "person2", "src": "/img/a105/a105_w1/girl.png"},
+    {"no": 2 , "set": 0, "id": "person3", "src": "/img/a105/a105_w1/man.png"},
+    {"no": 3 , "set": 0, "id": "person4", "src": "/img/a105/a105_w1/woman.png"},
+
+    {"no": 0 , "set": 1, "id": "clothes1", "src": "/img/a105/a105_w1/boys.png"},
+    {"no": 1 , "set": 1, "id": "clothes2", "src": "/img/a105/a105_w1/girls.png"},
+    {"no": 2 , "set": 1, "id": "clothes3", "src": "/img/a105/a105_w1/men.png"},
+    {"no": 3 , "set": 1, "id": "clothes4", "src": "/img/a105/a105_w1/women.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "사람과 어울리는 한복을 연결해보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예"
+    },
+    "en": {
+      "title": "Matching the cards with people and traditional clothes",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}

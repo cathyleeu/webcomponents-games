@@ -1,0 +1,73 @@
+{
+  "element": "select-card",
+  "data": [
+    "yes0", "yes1", "yes2", "yes3", "yes4", "yes5", "yes6", "yes7",
+    "no0", "no1", "no2", "no3", "no4", "no5", "no6", "no7"
+  ],
+  "attributes": {
+
+  },
+  "manifest": [
+    {"id": "yes0", "src": "/img/a105/a105_w2/yes0.png", "result": true},
+    {"id": "yes1", "src": "/img/a105/a105_w2/yes1.png", "result": true},
+    {"id": "yes2", "src": "/img/a105/a105_w2/yes2.png", "result": true},
+    {"id": "yes3", "src": "/img/a105/a105_w2/yes3.png", "result": true},
+    {"id": "yes4", "src": "/img/a105/a105_w2/yes4.png", "result": true },
+    {"id": "yes5", "src": "/img/a105/a105_w2/yes5.png", "result": true },
+    {"id": "yes6", "src": "/img/a105/a105_w2/yes5.png", "result": true },
+    {"id": "yes7", "src": "/img/a105/a105_w2/yes5.png", "result": true },
+    {"id": "no0", "src": "/img/a105/a105_w2/no0.png"},
+    {"id": "no1", "src": "/img/a105/a105_w2/no1.png"},
+    {"id": "no2", "src": "/img/a105/a105_w2/no2.png"},
+    {"id": "no3", "src": "/img/a105/a105_w2/no3.png"},
+    {"id": "no4", "src": "/img/a105/a105_w2/no4.png"},
+    {"id": "no5", "src": "/img/a105/a105_w2/no5.png"},
+    {"id": "no6", "src": "/img/a105/a105_w2/no6.png"},
+    {"id": "no7", "src": "/img/a105/a105_w2/no7.png"},
+    {"id": "no8", "src": "/img/a105/a105_w2/no8.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "떡국의 재료는 무엇인가요?",
+      "subtitle": "아래의 그림 중 떡국의 재료를 클릭하세요.",
+      "guide": "힌트! 아래의 카드 중 재료는 8가지가 있어요!",
+      "score": "점수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "retryHead": "참 아쉽네요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "retryBtm" : "다시 시도해 볼까요?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "retrybtn": "다시하기",
+      "resultbtn": "결과보기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "noticeAlert" : "아직 선택할 것이 남았어요!"
+    },
+    "en": {
+      "title": "What are the ingredients of rice cake soup?",
+      "subtitle": "Click the ingredients in the below pictures",
+      "guide": "Hint! ingredients is 8 in the below Pictures.",
+      "score": "score",
+      "success": "Good job!",
+      "successHead": "Success",
+      "retryHead": "Failed",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "retryBtm" : "Do you want to retry?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "retrybtn": "Retry",
+      "resultbtn": "Result",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "noticeAlert" : "You need to select more!"
+    }
+  }
+}
