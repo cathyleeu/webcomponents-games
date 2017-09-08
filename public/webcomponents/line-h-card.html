@@ -1,0 +1,286 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+<dom-module id="line-h-card">
+
+  <template>
+    <style>
+      :host {
+        overflow: hidden;
+      }
+      line {
+        stroke: #2ECC98;
+        stroke-width: 3px;
+        stroke-linecap: round;
+        marker-end: url(#marker);
+      }
+      circle {
+        cursor: pointer;
+      }
+    </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      purpose="line"
+      ></status-bar>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+
+  </template>
+  <script>
+    class LineHCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'line-h-card'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          },
+          resources: {
+            value() {
+              return {
+                "ko": {
+                  "title": "짝 맞추기",
+                  "success": "참 잘했어요!"
+                },
+                "en": {
+                  "title": "Match the Pairs 2",
+                  "success": "Good job!"
+                }
+              }
+            }
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        this.set('total', 0)
+        this.set('point', 0)
+        this.set('matched', 0)
+      }
+      reset(){
+        this.set('total', 0)
+        this.set('matched', 0)
+        this.set('point', this.point+5)
+        d3.select(this.shadowRoot).select('svg').remove()
+        this.setData(this.data, this.manifest)
+      }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+      setData(data, manifest){
+        let _this = this,
+            svg = d3.select(this.shadowRoot).append('svg')
+              .attr('width', this.offsetWidth)
+              .attr('height', `${this.offsetHeight-60}`),
+            boardName = ["bef_board", "af_board"];
+        let before = manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src})),
+            after = manifest.filter(l => l.set).map(l => ({["no"]:l.no, ["src"]:l.src}));
+
+        this.set('cards', before.length )
+        this.set('data', data )
+        this.set('manifest', manifest )
+
+        let be_shu = d3.shuffle(before), af_shu = d3.shuffle(after);
+        let defs = svg.append('defs').selectAll('pattern');
+        let bef_card = defs.data(be_shu).enter()
+          .append('pattern')
+          .attr("id", (d, i) => `bef_${d.no}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox");
+
+        bef_card.append('filter')
+          .attr('id','desaturate')
+          .append('feColorMatrix')
+
+        bef_card.append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("width", 100).attr("height", 100)
+          .attr("xlink:href", d => `${d.src}`)
+          .style('filter', "url(#desaturate)")
+
+
+        defs.data(af_shu).enter() // after_ card
+          .append('pattern')
+          .attr("id", (d, i) => `af_${d.no}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox")
+          .append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("width", 100).attr("height", 100)
+          .attr("xlink:href", (d, i) => `${d.src}`)
+
+
+        let rectGroup = svg.selectAll("g")
+          .data(boardName).enter()
+          .append("g")
+          .attr("class", d => `${d}`);
+
+        let bef_side = svg.select('.bef_board');
+        bef_side.selectAll("rect")
+            .data(be_shu).enter()
+            .append('rect')
+            .attr("rx", 5).attr("ry", 5)
+            .attr('x', (d, i) => (110*i+10) + (30*i)).attr('y', 10)
+            .attr("width", 110).attr("height", 110)
+            .style("fill", (d,i) => `url(#bef_${d.no})`)
+
+
+        let bef_cir = bef_side.selectAll("g.node")
+          .data(be_shu).enter()
+          .append('g')
+          .attr("transform", (d, i) => `translate( ${65+ 140*i}, 140 )`)
+
+
+        bef_cir.append("circle").attr("r", 5)
+        let selectedCircle = bef_cir.append("circle")
+              .attr("r", 60).attr("opacity", 0.0)
+              .attr('id', (d) => `touch${d.no}`)
+
+        selectedCircle.on("mousedown touchstart", pencilingStart )
+
+        svg.on("mouseup touchend", pencilingEnd)
+
+        let af_side = svg.select('.af_board');
+        af_side.selectAll("rect")
+            .data(af_shu).enter()
+            .append('rect')
+            .attr("rx", 5).attr("ry", 5)
+            .attr('x', (d, i) => (110*i+10) + (30*i) ).attr('y', 450)
+            .attr("width", 110).attr("height", 110)
+            .style("fill", "#fff")
+            .style("fill", (d,i) => `url(#af_${d.no})`)
+
+        af_side.selectAll("g").data(af_shu).enter()
+
+
+        let af_cir = af_side.selectAll("g.node")
+          .data(af_shu).enter()
+          .append('g')
+          .attr("transform", (d, i) => `translate( ${65+ 140*i} , 430 )`)
+          .attr("id", (d, i) => `matchId${d.no}`)
+
+        // 라인이 매칭되는 포인트
+        af_cir.append("circle").attr("r", 5).attr('pointer-events', 'none');
+        // 라인이 매칭되는 범위를 지정하는 포인트
+
+        let getSize = d3.select(this.shadowRoot).select('g').node().getBBox().width
+        let getCenter = (this.offsetWidth - getSize)/2;
+        rectGroup.attr("transform", (d, i) => `translate(${getCenter}, 0)`);
+
+        var line;
+        let dragId, dropId, startX, startY;
+
+        function pencilingStart (d, i) {
+          let getXY = d3.select(this.parentElement).attr("transform").match(/\d+/g),
+              startX = +getXY[0], startY = +getXY[1];
+
+
+          dragId = d.no;
+          line = svg.append("line")
+                .attr("x1", startX).attr("y1", getCenter+startY)
+                .attr("x2", startX).attr("y2", startY)
+                .attr("id", (d, i) => `line${dragId}`);
+          svg.on("mousemove touchmove", pencilingMove);
+        }
+
+        function pencilingMove(d) {
+          let m = d3.mouse(this);
+          line.attr("x2", m[0]).attr("y2", m[1]);
+        }
+
+        function pencilingEnd() {
+          if (dragId === undefined) return false
+          let filterItems = svg.select('.af_board').node().childNodes,
+              dropItems = [];
+
+          filterItems.forEach(el => {
+            if(el.tagName === "rect") dropItems.push(el)
+          })
+
+
+          let targetEl, targetX, targetY, targetX2, targetY2;
+          let getArrow = d3.select(this).select(`#line${dragId}`);
+          dropItems.forEach(el => {
+            const getEl = el.getBoundingClientRect();
+            let getX = +getArrow.attr('x2'), getY = +getArrow.attr('y2');
+            // 범위 확인
+            if(getEl.left < getX && getX < getEl.right && getEl.top-(getEl.width) < getY && getY < getEl.top) {
+              targetEl = el;
+              dropId = targetEl.__data__.no;
+            }
+          });
+
+          if(dragId === dropId) {
+            let getXY = d3.select(_this.shadowRoot).select(`#matchId${dropId}`).attr("transform").match(/\d+/g),
+                numX = +getXY[0], numY = +getXY[1];
+
+            line.attr("x2", getCenter+numX ).attr("y2", numY );
+            console.log("its matched!!!", dragId, dropId)
+            d3.select(_this.shadowRoot).select(`#touch${dragId}`)
+              .on("mousedown touchstart", false )
+            _this.set('matched', _this.matched+1)
+            _this.set('point', _this.point+2)
+
+          } else {
+            console.log("itsnt matched!!!", dragId, dropId)
+            line.remove();
+          }
+           _this.set('total', _this.total+1)
+           dragId = undefined;
+           svg.on("mousemove touchmove", null);
+
+           _this.matched === _this.cards && _this.$.successModal.modalAlert()
+        }
+      }
+    }
+    window.customElements.define(LineHCard.is, LineHCard);
+  </script>
+</dom-module>
