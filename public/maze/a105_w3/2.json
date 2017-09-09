@@ -22,8 +22,8 @@
     "img":"set2"
   }],
   "tutorial": [{
-    "msg:ko": "학교로 가요.",
-    "msg:en": "Move to play tuho",
+    "msg:ko": "투호 놀이를 하러 가요.",
+    "msg:en": "Move to play tuho.",
     "img": ["/img/a105/a105_w3/tuho.png"]
   }]
 }
