@@ -1,18 +1,20 @@
 [
-  {"book": "A특별(하)", "title": "4주차 : 새 친구를 사귀어요"},
+  {"book": "A특별(하)", "title": "1주차 : 설날이 되었어요"},
 
-  {"id": "bg1", "src": "/img/a105/a105_w4/tile1.png"},
-  {"id": "bg2", "src": "/img/a105/a105_w4/tile2.png"},
+  {"id": "bg2", "src": "/img/a105/bg2.png"},
+  {"id": "bg1", "src": "/img/a105/bg1.png"},
 
   {"id": "character", "src": "/img/a105/cos.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/a105/cos0.png", "size": 256},
-  {"id": "food", "src": "/img/a105/a105_w4/house1.png"},
+  {"id": "food", "src": "/img/invisiblex256.png"},
   {"id": "cos0", "src": "/img/a105/cos0.png"},
 
   {"id": "invisible", "src": "/img/invisiblex256.png","obstacle": true},
-  {"id": "tree1", "src": "/img/invisiblex256.png","obstacle": true},
-  {"id": "tree2", "src": "/img/invisiblex256.png","obstacle": true},
-  {"id": "tree3", "src": "/img/invisiblex256.png","obstacle": true},
+
+  {"id": "men", "src": "/img/a105/a105_w1/men.png"},
+  {"id": "women", "src": "/img/a105/a105_w1/women.png"},
+  {"id": "boys", "src": "/img/a105/a105_w1/boys.png"},
+  {"id": "girls", "src": "/img/a105/a105_w1/girls.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
