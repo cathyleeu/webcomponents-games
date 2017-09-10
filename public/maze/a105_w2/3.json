@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "......",
+    "......",
+    ".r....",
+    "....%.",
+    "......",
+    "......"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 3,
+    "img":"sjg"
+  }],
+  "tutorial": [{
+    "msg:ko": "수정과로 가요.",
+    "msg:en": "Move to the sujeonggwa.",
+    "img": ["/img/a105/a105_w2/sjg.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "a105_w2/1"
+  }]
+}

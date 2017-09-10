@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    "......",
+    "......",
+    "..r...",
+    "......",
+    "......",
+    "....%."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "img":"set3"
+  }],
+  "tutorial": [{
+    "msg:ko": "팽이 치기를 하러 가요.",
+    "msg:en": "Move to a spinning top.",
+    "img": ["/img/a105/a105_w3/set3.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "a10_w3/1"
+  }]
+}
