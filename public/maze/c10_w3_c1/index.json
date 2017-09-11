@@ -18,7 +18,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c10/egg.png"
+      "img": "/img/c10/0g.png"
     }]
   },{
     "x": 6,
@@ -26,7 +26,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c10/egg.png"
+      "img": "/img/c10/0g.png"
     }]
   },{
     "x": 7,
@@ -34,7 +34,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c10/egg.png"
+      "img": "/img/c10/0g.png"
     }]
   },{
     "x": 8,
@@ -42,7 +42,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c10/egg.png"
+      "img": "/img/c10/0g.png"
     }]
   },{
     "x": 5,
@@ -50,7 +50,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c10/egg.png","/img/c10/egg.png"]
+      "img": ["/img/c10/0g.png","/img/c10/0g.png"]
     }]
   },{
     "x": 6,
@@ -58,7 +58,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c10/egg.png","/img/c10/egg.png"]
+      "img": ["/img/c10/0g.png","/img/c10/0g.png"]
     }]
   },{
     "x": 7,
@@ -66,7 +66,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c10/egg.png","/img/c10/egg.png"]
+      "img": ["/img/c10/0g.png","/img/c10/0g.png"]
     }]
   },{
     "x": 8,
@@ -74,7 +74,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c10/egg.png","/img/c10/egg.png"]
+      "img": ["/img/c10/0g.png","/img/c10/0g.png"]
     }]
   },{
     "x": 5,
@@ -128,11 +128,11 @@
   "tutorial": [{
     "msg:ko": "알로 가보아요! 쉬운 문제는 1점, 보통은 2점을 주어요.",
     "msg:en": "Let's go to the egg! An easy problem gives you one point, a normal one gives you two.",
-    "img": "/img/c10/egg.png"
+    "img": "/img/c10/0g.png"
   }],
   "goal": {
     "msg:ko": "7점을 얻고 투투에게 가요. 투투가 바다에서 먹이를 구해올 차례에요.",
     "msg:en": "Let's get 5 points and go to Tootoo. It is time for Tootoo to get food from the sea.",
-    "img": ["/img/c10/egg.png","/img/c10/tootoo0.png"]
+    "img": ["/img/c10/0g.png","/img/c10/tootoo0.png"]
   }
 }
