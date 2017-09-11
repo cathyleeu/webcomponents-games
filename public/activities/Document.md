@@ -2,7 +2,7 @@
 
 * [flip-card] 짝 맞추는 카드 활동
 * [range-card] 하단에 섞여진 카드를 상단에 정렬된 카드에 맞추는 활동
-* [line-card] 선을 그으면서 짝 맞추는 카드 활동
+* [line-v-card], [line-h-card] 선을 그으면서 짝 맞추는 카드 활동 (따로 가이드 참고)
 
 ## 컴포넌트 사용법
 
@@ -15,7 +15,7 @@
   * [flip-card], [range-card] 경우, `id`, `src` 키를 가진 Object를 나열
     * id`[String]` - 이미지 파일명
     * src`[String]` - 이미지 경로
-  * [line-card] 경우, `no`, `set`, `id`, `src` 키를 가진 Object를 나열
+  * [line-v-card] 경우, `no`, `set`, `id`, `src` 키를 가진 Object를 나열
     * set`[Number]` - 왼쪽일 경우 0, 오른쪽일 경우 1
     * no`[Number]` - 왼쪽과 오른쪽의 이미지가 서로 동일하다는 것을 구분하는 no
     * id`[String]` - 이미지 파일명
@@ -36,6 +36,9 @@
     * previousHead(previousModal)
     * nobtn(previousModal,logoutModal)
     * yesbtn(previousModal,logoutModal)
+    * finalStageHead(finalStageModal)
+    * finalStageBtm(finalStageModal)
+    * finalbtn(finalStageModal)
 
 ### 2. books.json에 추가
 `public/login/books.json`에 `/activity#!`뒤에 `public/activities`에 추가하였던 JSON파일 명을 적으시면 됩니다.

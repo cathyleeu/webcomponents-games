@@ -1,0 +1,25 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".####.",
+    "#....#",
+    "#%...#",
+    "#.##.#",
+    "#..#u#",
+    ".####."
+  ],
+
+  "tutorial": [{
+    "msg:ko": "새 친구의 집으로 찾아가보아요.",
+    "msg:en": "Let's go to the new friend's house.",
+    "img": ["/img/blocks/up.png","/img/blocks/left.png","/img/a105/a105_w4/house1.png"]
+  }]
+}

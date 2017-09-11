@@ -4,7 +4,7 @@
 <link rel="import" href="./modal.html">
 
 
-<dom-module id="line-card">
+<dom-module id="line-v-card">
 
   <template>
     <style>
@@ -59,10 +59,18 @@
       nobtn="{{localize('nobtn')}}"
       purpose="previous"
       ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
   </template>
   <script>
-    class LineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
-      static get is() { return 'line-card'; }
+    class LineVCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'line-v-card'; }
       connectedCallback() {
         super.connectedCallback();
       }
@@ -92,11 +100,13 @@
         this.set('total', 0)
         this.set('point', 0)
         this.set('matched', 0)
+        this.set('stage', 1)
       }
       reset(){
         this.set('total', 0)
         this.set('matched', 0)
         this.set('point', this.point+5)
+        this.set('stage', this.stage+1)
         d3.select(this.shadowRoot).select('svg').remove()
         this.setData(this.data, this.manifest)
       }
@@ -118,19 +128,23 @@
               .attr('width', this.offsetWidth)
               .attr('height', `${this.offsetHeight-60}`),
             boardName = ["boardL", "boardR"];
-        let leftData = manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src})),
-            rightData = manifest.filter(l => l.set).map(l => ({["no"]:l.no, ["src"]:l.src}));
+        let max = this.max ? this.max : manifest.length/2,
+            leftData = d3.shuffle(manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src}))).slice(0, max),
+            after = manifest.filter(l => l.set),
+            randomLang = leftData.map(o => o.no), rightData = [];
+            randomLang.map(i => (after.forEach(l => l.no === i && rightData.push({["no"]: l.no, ["src"]:l.src}))))
 
-        this.set('cards', leftData.length )
+
+        this.set('cards', max)
         this.set('data', data )
         this.set('manifest', manifest )
 
 
         let defs = svg.append('defs').selectAll('pattern')
-        let shuffled = d3.shuffle(leftData)
-        let leftCard = defs.data(shuffled).enter()
+        let shuf_left = d3.shuffle(leftData), shuf_right = d3.shuffle(rightData)
+        let leftCard = defs.data(shuf_left).enter()
           .append('pattern')
-          .attr("id", (d, i) => `left_${i}`)
+          .attr("id", (d, i) => `left_${d.no}`)
           .attr("x", 0).attr("y", 0)
           .attr("width", 1).attr("height", 1)
           .attr("patternUnits", "objectBoundingBox");
@@ -159,9 +173,9 @@
           .style('filter', "url(#desaturate)")
 
 
-        let rightCard = defs.data(rightData).enter()
+        let rightCard = defs.data(shuf_right).enter()
           .append('pattern')
-          .attr("id", (d, i) => `right_${i}`)
+          .attr("id", (d, i) => `right_${d.no}`)
           .attr("x", 0).attr("y", 0)
           .attr("width", 1).attr("height", 1)
           .attr("patternUnits", "objectBoundingBox")
@@ -179,18 +193,16 @@
 
         let LeftSide = svg.select('.boardL');
         LeftSide.selectAll("rect")
-            .data(shuffled).enter()
+            .data(shuf_left).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
             .attr('x', 10 ).attr('y', (d, i) => (110*i+10) + (30*i))
             .attr("width", 110).attr("height", 110)
-            .style("fill", (d,i) => `url(#left_${i})`)
-            // .style("stroke-width",8)
-            // .style("stroke","#2ECC98")
+            .style("fill", (d,i) => `url(#left_${d.no})`)
 
 
         let circlesL = LeftSide.selectAll("g.node")
-          .data(shuffled).enter()
+          .data(shuf_left).enter()
           .append('g')
           .attr("transform", (d, i) => `translate( 140 , ${65+ 140*i})`)
 
@@ -206,26 +218,26 @@
 
         let RightSide = svg.select('.boardR');
         RightSide.selectAll("rect")
-            .data(rightData).enter()
+            .data(shuf_right).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
                 .attr('x', 450 ).attr('y', (d, i) => (110*i+10) + (30*i))
             .attr("width", 110).attr("height", 110)
             .style("fill", "#fff")
-            .style("fill", (d,i) => `url(#right_${i})`)
+            .style("fill", (d,i) => `url(#right_${d.no})`)
             // .style("stroke-width",8)
             // .style("stroke","#2ECC98")
 
 
         RightSide.selectAll("g")
-            .data(rightData).enter()
+            .data(shuf_right).enter()
 
 
         let circlesR = RightSide.selectAll("g.node")
-          .data(rightData).enter()
+          .data(shuf_right).enter()
           .append('g')
           .attr("transform", (d, i) => `translate( 430 , ${65+ 140*i})`)
-          .attr("id", (d, i) => `matchId${i}`)
+          .attr("id", (d, i) => `matchId${d.no}`)
 
         // 라인이 매칭되는 포인트
         circlesR.append("circle").attr("r", 5).attr('pointer-events', 'none');
@@ -304,12 +316,12 @@
            _this.set('total', _this.total+1)
            dragId = undefined;
            svg.on("mousemove touchmove", null);
-           if(_this.matched === _this.cards){
-             _this.$.successModal.modalAlert()
+           if(_this.matched === _this.cards) {
+             _this.stage === _this.lastStage ? _this.$.finalStageModal.modalAlert() : _this.$.successModal.modalAlert()
            }
         }
       }
     }
-    window.customElements.define(LineCard.is, LineCard);
+    window.customElements.define(LineVCard.is, LineVCard);
   </script>
 </dom-module>

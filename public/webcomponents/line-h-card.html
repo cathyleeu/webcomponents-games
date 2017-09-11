@@ -40,6 +40,7 @@
       btmtext="{{localize('successBtm')}}"
       total="{{total}}"
       point="{{point}}"
+      stage={{stage}}
       matched="{{matched}}"
       nextbtn="{{localize('nextbtn')}}"
       ></toycode-modal>
@@ -58,6 +59,14 @@
       yesbtn="{{localize('yesbtn')}}"
       nobtn="{{localize('nobtn')}}"
       purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
       ></toycode-modal>
 
   </template>
@@ -93,11 +102,13 @@
         this.set('total', 0)
         this.set('point', 0)
         this.set('matched', 0)
+        this.set('stage', 1)
       }
       reset(){
         this.set('total', 0)
         this.set('matched', 0)
         this.set('point', this.point+5)
+        this.set('stage', this.stage+1)
         d3.select(this.shadowRoot).select('svg').remove()
         this.setData(this.data, this.manifest)
       }
@@ -118,15 +129,18 @@
             svg = d3.select(this.shadowRoot).append('svg')
               .attr('width', this.offsetWidth)
               .attr('height', `${this.offsetHeight-60}`),
-            boardName = ["bef_board", "af_board"];
-        let before = manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src})),
-            after = manifest.filter(l => l.set).map(l => ({["no"]:l.no, ["src"]:l.src}));
+            boardName = ["bef_board", "af_board"],
+            max = this.max ? this.max : manifest.length/2,
+            before = d3.shuffle(manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src}))).slice(0, max),
+            after = manifest.filter(l => l.set),
+            randomLang = before.map(o => o.no), randomAfter = [];
+            randomLang.map(i => (after.forEach(l => l.no === i && randomAfter.push({["no"]: l.no, ["src"]:l.src}))))
 
-        this.set('cards', before.length )
-        this.set('data', data )
-        this.set('manifest', manifest )
+            this.set('cards', max )
+            this.set('data', data )
+            this.set('manifest', manifest )
 
-        let be_shu = d3.shuffle(before), af_shu = d3.shuffle(after);
+        let be_shu = d3.shuffle(before), af_shu = d3.shuffle(randomAfter);
         let defs = svg.append('defs').selectAll('pattern');
         let bef_card = defs.data(be_shu).enter()
           .append('pattern')
@@ -220,12 +234,12 @@
 
         function pencilingStart (d, i) {
           let getXY = d3.select(this.parentElement).attr("transform").match(/\d+/g),
-              startX = +getXY[0], startY = +getXY[1];
+              startX = getCenter+(+getXY[0]), startY = +getXY[1];
 
 
           dragId = d.no;
           line = svg.append("line")
-                .attr("x1", startX).attr("y1", getCenter+startY)
+                .attr("x1", startX).attr("y1", startY)
                 .attr("x2", startX).attr("y2", startY)
                 .attr("id", (d, i) => `line${dragId}`);
           svg.on("mousemove touchmove", pencilingMove);
@@ -260,9 +274,9 @@
 
           if(dragId === dropId) {
             let getXY = d3.select(_this.shadowRoot).select(`#matchId${dropId}`).attr("transform").match(/\d+/g),
-                numX = +getXY[0], numY = +getXY[1];
+                numX = getCenter+(+getXY[0]), numY = +getXY[1];
 
-            line.attr("x2", getCenter+numX ).attr("y2", numY );
+            line.attr("x2", numX ).attr("y2", numY );
             console.log("its matched!!!", dragId, dropId)
             d3.select(_this.shadowRoot).select(`#touch${dragId}`)
               .on("mousedown touchstart", false )
@@ -277,7 +291,9 @@
            dragId = undefined;
            svg.on("mousemove touchmove", null);
 
-           _this.matched === _this.cards && _this.$.successModal.modalAlert()
+           if(_this.matched === _this.cards) {
+             _this.stage === _this.lastStage ? _this.$.finalStageModal.modalAlert() : _this.$.successModal.modalAlert()
+           }
         }
       }
     }

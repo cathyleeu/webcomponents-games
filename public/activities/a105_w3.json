@@ -1,0 +1,68 @@
+{
+  "element": "line-v-card",
+  "attributes": {
+    "max" : 3,
+    "nextlink" : "c8_w2/index",
+    "lastStage" : 2
+  },
+  "data": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+
+    "b1",
+    "b2",
+    "b3",
+    "b4"
+  ],
+  "manifest": [
+    {"no": 0 , "set": 0, "id": "b1", "src": "/img/a105/a105_w3/b1.jpg"},
+    {"no": 1 , "set": 0, "id": "b2", "src": "/img/a105/a105_w3/b2.jpg"},
+    {"no": 2 , "set": 0, "id": "b3", "src": "/img/a105/a105_w3/b3.jpg"},
+    {"no": 3 , "set": 0, "id": "b4", "src": "/img/a105/a105_w3/b4.jpg"},
+
+    {"no": 0 , "set": 1, "id": "a1", "src": "/img/a105/a105_w3/a1.jpg"},
+    {"no": 1 , "set": 1, "id": "a2", "src": "/img/a105/a105_w3/a2.jpg"},
+    {"no": 2 , "set": 1, "id": "a3", "src": "/img/a105/a105_w3/a3.jpg"},
+    {"no": 3 , "set": 1, "id": "a4", "src": "/img/a105/a105_w3/a4.jpg"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "어울리는 놀이 도구끼리 연결해보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "finalStageHead": "성공!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalbtn" : "다음 단계"
+    },
+    "en": {
+      "title": "Matching the matching traditional play tools.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "finalStageHead": "Success",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "finalStageBtm":"All clear in this class!",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "finalbtn" : "Next Stage"
+    }
+  }
+}
