@@ -36,6 +36,9 @@
     * previousHead(previousModal)
     * nobtn(previousModal,logoutModal)
     * yesbtn(previousModal,logoutModal)
+    * finalStageHead(finalStageModal)
+    * finalStageBtm(finalStageModal)
+    * finalbtn(finalStageModal)
 
 ### 2. books.json에 추가
 `public/login/books.json`에 `/activity#!`뒤에 `public/activities`에 추가하였던 JSON파일 명을 적으시면 됩니다.
