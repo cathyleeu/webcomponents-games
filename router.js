@@ -254,6 +254,9 @@ function getBook(classObj) {
   if(classObj.code == "A00088-K1-KC2") {
     book = [3, 4];
   }
+  // 용인지사 노블(-1) 10월에 6권
+  if(school.code == "A00088-K2") {
+  }
   // 마포ECC 추가반
   if(classObj.code == "B00130-K1-KC6") {
     book = [1, 2];
