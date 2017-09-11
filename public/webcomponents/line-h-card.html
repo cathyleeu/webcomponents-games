@@ -125,20 +125,20 @@
         }
       }
       setData(data, manifest){
-        this.set('cards', this.max ? this.max : manifest.length/2 )
-        this.set('data', data )
-        this.set('manifest', manifest )
-
         let _this = this,
             svg = d3.select(this.shadowRoot).append('svg')
               .attr('width', this.offsetWidth)
               .attr('height', `${this.offsetHeight-60}`),
-            boardName = ["bef_board", "af_board"];
-        let before = d3.shuffle(manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src}))).slice(0,this.max),
+            boardName = ["bef_board", "af_board"],
+            max = this.max ? this.max : manifest.length/2,
+            before = d3.shuffle(manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src}))).slice(0, max),
             after = manifest.filter(l => l.set),
             randomLang = before.map(o => o.no), randomAfter = [];
             randomLang.map(i => (after.forEach(l => l.no === i && randomAfter.push({["no"]: l.no, ["src"]:l.src}))))
 
+            this.set('cards', max )
+            this.set('data', data )
+            this.set('manifest', manifest )
 
         let be_shu = d3.shuffle(before), af_shu = d3.shuffle(randomAfter);
         let defs = svg.append('defs').selectAll('pattern');
@@ -291,9 +291,8 @@
            dragId = undefined;
            svg.on("mousemove touchmove", null);
 
-           if(_this.matched === _this.max) {
+           if(_this.matched === _this.cards) {
              _this.stage === _this.lastStage ? _this.$.finalStageModal.modalAlert() : _this.$.successModal.modalAlert()
-
            }
         }
       }
