@@ -1,6 +1,7 @@
 {
   "element": "line-h-card",
   "attributes": {
+    "max" : 6
   },
   "data": [
     "morden1",

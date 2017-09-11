@@ -114,19 +114,22 @@
         }
       }
       setData(data, manifest){
+        this.set('cards', this.max )
+        this.set('data', data )
+        this.set('manifest', manifest )
+
         let _this = this,
             svg = d3.select(this.shadowRoot).append('svg')
               .attr('width', this.offsetWidth)
               .attr('height', `${this.offsetHeight-60}`),
             boardName = ["bef_board", "af_board"];
-        let before = manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src})),
-            after = manifest.filter(l => l.set).map(l => ({["no"]:l.no, ["src"]:l.src}));
+        let before = d3.shuffle(manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src}))).slice(0,this.max),
+            after = manifest.filter(l => l.set),
+            randomLang = before.map(o => o.no), randomAfter = [];
+            randomLang.map(i => (after.forEach(l => l.no === i && randomAfter.push({["no"]: l.no, ["src"]:l.src}))))
 
-        this.set('cards', before.length )
-        this.set('data', data )
-        this.set('manifest', manifest )
 
-        let be_shu = d3.shuffle(before), af_shu = d3.shuffle(after);
+        let be_shu = d3.shuffle(before), af_shu = d3.shuffle(randomAfter);
         let defs = svg.append('defs').selectAll('pattern');
         let bef_card = defs.data(be_shu).enter()
           .append('pattern')
@@ -220,12 +223,12 @@
 
         function pencilingStart (d, i) {
           let getXY = d3.select(this.parentElement).attr("transform").match(/\d+/g),
-              startX = +getXY[0], startY = +getXY[1];
+              startX = getCenter+(+getXY[0]), startY = +getXY[1];
 
 
           dragId = d.no;
           line = svg.append("line")
-                .attr("x1", startX).attr("y1", getCenter+startY)
+                .attr("x1", startX).attr("y1", startY)
                 .attr("x2", startX).attr("y2", startY)
                 .attr("id", (d, i) => `line${dragId}`);
           svg.on("mousemove touchmove", pencilingMove);
@@ -260,9 +263,9 @@
 
           if(dragId === dropId) {
             let getXY = d3.select(_this.shadowRoot).select(`#matchId${dropId}`).attr("transform").match(/\d+/g),
-                numX = +getXY[0], numY = +getXY[1];
+                numX = getCenter+(+getXY[0]), numY = +getXY[1];
 
-            line.attr("x2", getCenter+numX ).attr("y2", numY );
+            line.attr("x2", numX ).attr("y2", numY );
             console.log("its matched!!!", dragId, dropId)
             d3.select(_this.shadowRoot).select(`#touch${dragId}`)
               .on("mousedown touchstart", false )
@@ -277,7 +280,7 @@
            dragId = undefined;
            svg.on("mousemove touchmove", null);
 
-           _this.matched === _this.cards && _this.$.successModal.modalAlert()
+           _this.matched === _this.max && _this.$.successModal.modalAlert()
         }
       }
     }
