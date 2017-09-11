@@ -20,6 +20,6 @@
   "tutorial": [{
     "msg:ko": "오른쪽 빼기로 이동해서 키즈씽킹을 시작해요.",
     "msg:en": "Go to the subtraction on the right and start KidsThinking!",
-    "img": "/img/c10/minus.png"
+    "img": ["/img/c10/cos0.png","/img/c10/minus.png"]
   }]
 }

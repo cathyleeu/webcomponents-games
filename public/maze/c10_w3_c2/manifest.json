@@ -2,22 +2,10 @@
   {"book": "C10", "title": "3주차 : 만약에 반복 블록을 이해해요"},
   {"id": "bg1", "src": "/img/c10/snow1.png"},
   {"id": "bg2", "src": "/img/c10/snow2.png"},
-  {"id": "land0", "src": "/img/map32/0.png"},
-  {"id": "land1", "src": "/img/map32/1.png"},
-  {"id": "land2", "src": "/img/map32/2.png"},
-  {"id": "land3", "src": "/img/map32/3.png"},
-  {"id": "land4", "src": "/img/map32/4.png"},
-  {"id": "land5", "src": "/img/map32/5.png"},
-  {"id": "land6", "src": "/img/map32/6.png"},
-  {"id": "land7", "src": "/img/map32/7.png"},
-  {"id": "land8", "src": "/img/map32/8.png"},
-  {"id": "land9", "src": "/img/map32/9.png"},
-  {"id": "land10", "src": "/img/map32/10.png"},
-  {"id": "land11", "src": "/img/map32/11.png"},
 
   {"id": "character", "src": "/img/c10/tootoo.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c10/tootoo0.png", "size": 256},
-  {"id": "food", "src": "/img/c10/1a.png"},
+  {"id": "food", "src": "/img/c10/0a.png"},
 
   {"id": "bgm", "src": "/sound/bgm_story08.mp3", "type": "sound"},
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
@@ -27,6 +15,7 @@
 
   {"id": "icewall1", "src": "/img/c10/icewall1.png", "obstacle": true},
   {"id": "icewall2", "src": "/img/c10/icewall2.png", "obstacle": true},
+  {"id": "icehole", "src": "/img/c10/icehole.png", "obstacle": true},
   {"tile": "s", "id": "sea", "src": "/img/c10/sea.png", "wall": true},
 
   {"id": "cos0", "src": "/img/c10/cos0.png", "obstacle": false},

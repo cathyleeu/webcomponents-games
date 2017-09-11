@@ -26,7 +26,8 @@
     "img":"n2"
   }],
   "tutorial": [{
-    "msg": "8 - 3 - 3 = ?"
+    "msg": "8 - 3 - 3 = ?",
+    "img": "/img/c10/cos0.png"
   }],
   "success":[{
     "msg:ko": "축하해요! 모든 문제를 다 풀었어요!",
