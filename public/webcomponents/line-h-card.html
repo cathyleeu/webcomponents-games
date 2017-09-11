@@ -40,6 +40,7 @@
       btmtext="{{localize('successBtm')}}"
       total="{{total}}"
       point="{{point}}"
+      stage={{stage}}
       matched="{{matched}}"
       nextbtn="{{localize('nextbtn')}}"
       ></toycode-modal>
@@ -58,6 +59,14 @@
       yesbtn="{{localize('yesbtn')}}"
       nobtn="{{localize('nobtn')}}"
       purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
       ></toycode-modal>
 
   </template>
@@ -93,11 +102,13 @@
         this.set('total', 0)
         this.set('point', 0)
         this.set('matched', 0)
+        this.set('stage', 1)
       }
       reset(){
         this.set('total', 0)
         this.set('matched', 0)
         this.set('point', this.point+5)
+        this.set('stage', this.stage+1)
         d3.select(this.shadowRoot).select('svg').remove()
         this.setData(this.data, this.manifest)
       }
@@ -114,7 +125,7 @@
         }
       }
       setData(data, manifest){
-        this.set('cards', this.max )
+        this.set('cards', this.max ? this.max : manifest.length/2 )
         this.set('data', data )
         this.set('manifest', manifest )
 
@@ -280,7 +291,10 @@
            dragId = undefined;
            svg.on("mousemove touchmove", null);
 
-           _this.matched === _this.max && _this.$.successModal.modalAlert()
+           if(_this.matched === _this.max) {
+             _this.stage === _this.lastStage ? _this.$.finalStageModal.modalAlert() : _this.$.successModal.modalAlert()
+
+           }
         }
       }
     }
