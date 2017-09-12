@@ -1,9 +1,10 @@
 {
-  "element": "line-h-card",
+  "element": "line-card",
   "attributes": {
     "max" : 3,
     "nextlink" : "c8_w2/index",
-    "lastStage" : 2
+    "lastStage" : 2,
+    "horizontal" : true
   },
   "data": [
     "morden1",

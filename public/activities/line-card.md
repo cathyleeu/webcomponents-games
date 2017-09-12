@@ -1,8 +1,6 @@
-# [line-h-card], [line-v-card]
+# [line-card] 컴포넌트 사용법
 
-## 컴포넌트 사용법
-
-### 1. JSON 파일 생성
+## 1. JSON 파일 생성
 `public/activities`에 (활동명).json으로 프로그램 활동을 구분할 수 있는 명으로 형식에 맞춰 파일을 생성합니다. `data`와 `manifest`는 화면에 카드를 생성하는데 필요한 데이터입니다.
 
 * element`[String]` -  적용할 component의 태그명
@@ -10,6 +8,7 @@
   * max`[Number]` - 최대로 보이고 싶은 카드의 수
   * nextlink`[String]` - 마지막 단계가 끝나고 넘어가고자 하는 링크
   * lastStage`[Number]` - 마지막 단계를 정하는 수
+  * horizontal`[Boolean]` - 가로, 세로판 설정 (default 는 세로)
 * data`[Array]` - /img 파일에 저장되는 사진명과 동일한 명으로 String 값으로 나열
 * manifest`[Array]` -
   * [flip-card], [range-card] 경우, `id`, `src` 키를 가진 Object를 나열
@@ -40,5 +39,5 @@
     * finalStageBtm(finalStageModal)
     * finalbtn(finalStageModal)
 
-### 2. books.json에 추가
+## 2. books.json에 추가
 `public/login/books.json`에 `/activity#!`뒤에 `public/activities`에 추가하였던 JSON파일 명을 적으시면 됩니다.
