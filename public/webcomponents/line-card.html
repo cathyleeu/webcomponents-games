@@ -4,7 +4,7 @@
 <link rel="import" href="./modal.html">
 
 
-<dom-module id="line-v-card">
+<dom-module id="line-card">
 
   <template>
     <style>
@@ -40,6 +40,7 @@
       btmtext="{{localize('successBtm')}}"
       total="{{total}}"
       point="{{point}}"
+      stage={{stage}}
       matched="{{matched}}"
       nextbtn="{{localize('nextbtn')}}"
       ></toycode-modal>
@@ -67,10 +68,11 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
+
   </template>
   <script>
-    class LineVCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
-      static get is() { return 'line-v-card'; }
+    class LineHCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'line-card'; }
       connectedCallback() {
         super.connectedCallback();
       }
@@ -127,55 +129,40 @@
             svg = d3.select(this.shadowRoot).append('svg')
               .attr('width', this.offsetWidth)
               .attr('height', `${this.offsetHeight-60}`),
-            boardName = ["boardL", "boardR"];
-        let max = this.max ? this.max : manifest.length/2,
-            leftData = d3.shuffle(manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src}))).slice(0, max),
+            boardName = ["bef_board", "af_board"],
+            max = this.max ? this.max : manifest.length/2,
+            before = d3.shuffle(manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src}))).slice(0, max),
             after = manifest.filter(l => l.set),
-            randomLang = leftData.map(o => o.no), rightData = [];
-            randomLang.map(i => (after.forEach(l => l.no === i && rightData.push({["no"]: l.no, ["src"]:l.src}))))
+            randomLang = before.map(o => o.no), randomAfter = [];
+            randomLang.map(i => (after.forEach(l => l.no === i && randomAfter.push({["no"]: l.no, ["src"]:l.src}))))
 
+            this.set('cards', max )
+            this.set('data', data )
+            this.set('manifest', manifest )
 
-        this.set('cards', max)
-        this.set('data', data )
-        this.set('manifest', manifest )
-
-
-        let defs = svg.append('defs').selectAll('pattern')
-        let shuf_left = d3.shuffle(leftData), shuf_right = d3.shuffle(rightData)
-        let leftCard = defs.data(shuf_left).enter()
+        let be_shu = d3.shuffle(before), af_shu = d3.shuffle(randomAfter);
+        let defs = svg.append('defs').selectAll('pattern');
+        let bef_card = defs.data(be_shu).enter()
           .append('pattern')
-          .attr("id", (d, i) => `left_${d.no}`)
+          .attr("id", (d, i) => `bef_${d.no}`)
           .attr("x", 0).attr("y", 0)
           .attr("width", 1).attr("height", 1)
           .attr("patternUnits", "objectBoundingBox");
 
-
-        svg.append('svg:defs').append('svg:marker')
-            .attr('id', 'marker')
-            .attr('viewBox', '0 -5 10 10')
-            .attr('refX', 6)
-            .attr('markerWidth', 3)
-            .attr('markerHeight', 3)
-            .attr('orient', 'auto')
-            .append('svg:path')
-            .attr('d', 'M0,-5L10,0L0,5')
-            .attr('fill', '#2ECC98');
-
-
-        leftCard.append('filter')
+        bef_card.append('filter')
           .attr('id','desaturate')
           .append('feColorMatrix')
 
-        leftCard.append('image')
+        bef_card.append('image')
           .attr("x", 5).attr("y", 5)
           .attr("width", 100).attr("height", 100)
           .attr("xlink:href", d => `${d.src}`)
           .style('filter', "url(#desaturate)")
 
 
-        let rightCard = defs.data(shuf_right).enter()
+        defs.data(af_shu).enter() // after_ card
           .append('pattern')
-          .attr("id", (d, i) => `right_${d.no}`)
+          .attr("id", (d, i) => `af_${d.no}`)
           .attr("x", 0).attr("y", 0)
           .attr("width", 1).attr("height", 1)
           .attr("patternUnits", "objectBoundingBox")
@@ -184,83 +171,88 @@
           .attr("width", 100).attr("height", 100)
           .attr("xlink:href", (d, i) => `${d.src}`)
 
-        let center = (this.offsetWidth - 560)/2
+
         let rectGroup = svg.selectAll("g")
           .data(boardName).enter()
           .append("g")
-          .attr("class", d => `${d}`)
-          .attr("transform", (d, i) => `translate(${center}, 0)`);
+          .attr("class", d => `${d}`);
 
-        let LeftSide = svg.select('.boardL');
-        LeftSide.selectAll("rect")
-            .data(shuf_left).enter()
+
+        let be_axisX = this.horizontal ? (d, i) => (110*i+10) + (30*i) : 10,
+            be_axisY = this.horizontal ? 10 : (d, i) => (110*i+10) + (30*i);
+        console.log(be_axisX, be_axisY)
+        let bef_side = svg.select('.bef_board');
+        bef_side.selectAll("rect")
+            .data(be_shu).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
-            .attr('x', 10 ).attr('y', (d, i) => (110*i+10) + (30*i))
+            .attr('x', be_axisX ).attr('y', be_axisY )
             .attr("width", 110).attr("height", 110)
-            .style("fill", (d,i) => `url(#left_${d.no})`)
+            .style("fill", (d,i) => `url(#bef_${d.no})`)
 
-
-        let circlesL = LeftSide.selectAll("g.node")
-          .data(shuf_left).enter()
+        let bef_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, 140)` : (d, i) => `translate(140, ${65+ 140*i})`
+        let bef_cir = bef_side.selectAll("g.node")
+          .data(be_shu).enter()
           .append('g')
-          .attr("transform", (d, i) => `translate( 140 , ${65+ 140*i})`)
+          .attr("transform", bef_trans )
 
 
-        circlesL.append("circle").attr("r", 5)
-        let click = circlesL.append("circle")
-          .attr("r", 60).attr("opacity", 0.0)
-          .attr('id', (d) => `touch${d.no}`)
+        bef_cir.append("circle").attr("r", 5)
+        let selectedCircle = bef_cir.append("circle")
+              .attr("r", 60).attr("opacity", 0.0)
+              .attr('id', (d) => `touch${d.no}`)
 
-        click.on("mousedown touchstart", pencilingStart )
+        selectedCircle.on("mousedown touchstart", pencilingStart )
 
         svg.on("mouseup touchend", pencilingEnd)
 
-        let RightSide = svg.select('.boardR');
-        RightSide.selectAll("rect")
-            .data(shuf_right).enter()
+
+        let af_axisX = this.horizontal ? (d, i) => (110*i+10) + (30*i) : 450,
+            af_axisY = this.horizontal ? 450 : (d, i) => (110*i+10) + (30*i);
+
+        let af_side = svg.select('.af_board');
+        af_side.selectAll("rect")
+            .data(af_shu).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
-                .attr('x', 450 ).attr('y', (d, i) => (110*i+10) + (30*i))
+            .attr('x', af_axisX ).attr('y', af_axisY )
             .attr("width", 110).attr("height", 110)
             .style("fill", "#fff")
-            .style("fill", (d,i) => `url(#right_${d.no})`)
-            // .style("stroke-width",8)
-            // .style("stroke","#2ECC98")
+            .style("fill", (d,i) => `url(#af_${d.no})`)
+
+        af_side.selectAll("g").data(af_shu).enter()
 
 
-        RightSide.selectAll("g")
-            .data(shuf_right).enter()
 
-
-        let circlesR = RightSide.selectAll("g.node")
-          .data(shuf_right).enter()
+        let af_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, 430)` : (d, i) => `translate(430, ${65+ 140*i})`
+        let af_cir = af_side.selectAll("g.node")
+          .data(af_shu).enter()
           .append('g')
-          .attr("transform", (d, i) => `translate( 430 , ${65+ 140*i})`)
+          .attr("transform", af_trans )
           .attr("id", (d, i) => `matchId${d.no}`)
 
         // 라인이 매칭되는 포인트
-        circlesR.append("circle").attr("r", 5).attr('pointer-events', 'none');
+        af_cir.append("circle").attr("r", 5).attr('pointer-events', 'none');
         // 라인이 매칭되는 범위를 지정하는 포인트
-        // circlesR.append("circle").attr("r", 25).attr("opacity", 0.0)
 
+        let getSize = this.horizontal ? d3.select(this.shadowRoot).select('g').node().getBBox().width : 560
+        let getCenter = (this.offsetWidth - getSize)/2;
+        rectGroup.attr("transform", (d, i) => `translate(${getCenter}, 0)`);
+
+        console.log(this.offsetWidth, getSize, getCenter)
 
         var line;
         let dragId, dropId, startX, startY;
 
         function pencilingStart (d, i) {
           let getXY = d3.select(this.parentElement).attr("transform").match(/\d+/g),
-              numX = center+parseInt(getXY[0], 10),
-              numY = parseInt(getXY[1], 10);
-              startX = numX;
-              startY = numY;
+              startX = getCenter+(+getXY[0]), startY = +getXY[1];
 
-          console.log(getXY, numX, numY,  startX, startY, center);
 
           dragId = d.no;
           line = svg.append("line")
-                .attr("x1", numX).attr("y1", numY)
-                .attr("x2", numX).attr("y2", numY)
+                .attr("x1", startX).attr("y1", startY)
+                .attr("x2", startX).attr("y2", startY)
                 .attr("id", (d, i) => `line${dragId}`);
           svg.on("mousemove touchmove", pencilingMove);
         }
@@ -272,7 +264,7 @@
 
         function pencilingEnd() {
           if (dragId === undefined) return false
-          let filterItems = svg.select('.boardR').node().childNodes,
+          let filterItems = svg.select('.af_board').node().childNodes,
               dropItems = [];
 
           filterItems.forEach(el => {
@@ -280,48 +272,50 @@
           })
 
 
-          let targetEl, targetX, targetY, targetX2, targetY2;
+
           let getArrow = d3.select(this).select(`#line${dragId}`);
           dropItems.forEach(el => {
             const getEl = el.getBoundingClientRect();
-            let getX = +getArrow.attr('x2')+getEl.width/2,
-                getY = +getArrow.attr('y2')+getEl.height/2;
+            let getX = +getArrow.attr('x2'),
+                getY = +getArrow.attr('y2'),
+                setX = _this.horizontal ? getX : getX+getEl.width/2,
+                setY = _this.horizontal ? getY : getY+getEl.height/2,
+                horizontalRange = getEl.left < setX && setX < getEl.right && getEl.top-(getEl.width) < setY && setY < getEl.top,
+                verticalRange = getEl.left < setX && setX < getEl.right && getEl.top < setY && setY < getEl.bottom,
+                setRange = _this.horizontal ? horizontalRange : verticalRange ;
+
+                console.log(_this.horizontal, getX, getY, setX, setY, horizontalRange, verticalRange, setRange)
             // 범위 확인
-            if(getEl.left < getX && getX < getEl.right && getEl.top < getY && getY < getEl.bottom) {
-              targetEl = el;
-              targetX = getEl.x;
-              targetY = getEl.y;
-              dropId = targetEl.__data__.no;
+            if(setRange) {
+              dropId = el.__data__.no;
             }
-            console.log(getX, getY, dropId, targetX, targetY);
           });
 
           if(dragId === dropId) {
             let getXY = d3.select(_this.shadowRoot).select(`#matchId${dropId}`).attr("transform").match(/\d+/g),
-                numX = center+parseInt(getXY[0], 10),
-                numY = parseInt(getXY[1], 10);
+                numX = getCenter+(+getXY[0]), numY = +getXY[1];
 
-            line.attr("x2", numX).attr("y2", numY);
-            console.log("its matched!!!", numX, numY)
+            line.attr("x2", numX ).attr("y2", numY );
+            console.log("its matched!!!", dragId, dropId)
             d3.select(_this.shadowRoot).select(`#touch${dragId}`)
               .on("mousedown touchstart", false )
             _this.set('matched', _this.matched+1)
             _this.set('point', _this.point+2)
 
-
           } else {
-            console.log("itsnt matched!!!", startX, startY, dragId, dropId)
+            console.log("itsnt matched!!!", dragId, dropId)
             line.remove();
           }
            _this.set('total', _this.total+1)
            dragId = undefined;
            svg.on("mousemove touchmove", null);
+
            if(_this.matched === _this.cards) {
              _this.stage === _this.lastStage ? _this.$.finalStageModal.modalAlert() : _this.$.successModal.modalAlert()
            }
         }
       }
     }
-    window.customElements.define(LineVCard.is, LineVCard);
+    window.customElements.define(LineHCard.is, LineHCard);
   </script>
 </dom-module>
