@@ -140,6 +140,13 @@
       connectedCallback() {
         super.connectedCallback();
       }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
       ready(){
         super.ready();
         this.set('clicked', 0)

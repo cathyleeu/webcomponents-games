@@ -1,9 +1,10 @@
 {
-  "element": "line-v-card",
+  "element": "line-card",
   "attributes": {
     "max" : 3,
-    "nextlink" : "a105_w3/1",
-    "lastStage" : 2
+    "nextlink" : "c8_w2/index",
+    "lastStage" : 2,
+    "horizontal" : true
   },
   "data": [
     "a1",

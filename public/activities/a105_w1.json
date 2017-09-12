@@ -1,9 +1,10 @@
 {
-  "element": "line-h-card",
+  "element": "line-card",
   "attributes": {
     "max" : 4,
-    "nextlink" : "a105_w1/1",
-    "lastStage" : 5
+    "nextlink" : "c8_w2/index",
+    "lastStage" : 5,
+    "horizontal" : true
   },
   "data": [
     "clothes1",
