@@ -35,12 +35,12 @@
   "tutorial": [{
     "msg:ko": "블록을 조립하여 사과와 배를 수확해 보아요",
     "msg:en": "Harvest apple & pear, by assemling the blocks",
-    "img": ["/img/a7_w2/apple_tree.png","/img/a7_w2/apple_block.png","/img/a7_w2/pear_tree.png","/img/a7_w2/pear_block.png"]
+    "img": ["/img/a7_w3/apple_tree.png","/img/a7_w3/apple_block.png","/img/a7_w3/pear_tree.png","/img/a7_w3/pear_block.png"]
   }],
   "success": [{
     "msg:ko": "성공! 사과와 배를 모두 수확했어요",
     "msg:en": "Success! Harvesting apple & pear!",
-    "img": ["/img/a7_w2/apple0.png","/img/a7_w2/pear0.png"],
-    "link": "a7_w2/7"
+    "img": ["/img/a7_w3/apple0.png","/img/a7_w3/pear0.png"],
+    "link": "a7_w3/7"
   }]
 }

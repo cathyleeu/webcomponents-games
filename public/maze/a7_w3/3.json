@@ -25,12 +25,12 @@
   "tutorial": [{
     "msg:ko": "블록을 조립하여 사과를 수확해 보아요",
     "msg:en": "Harvest apple, by assemling the blocks",
-    "img": ["/img/a7_w2/apple_tree.png","/img/a7_w2/apple_block.png","/img/a7_w2/apple0.png"]
+    "img": ["/img/a7_w3/apple_tree.png","/img/a7_w3/apple_block.png","/img/a7_w3/apple0.png"]
   }],
   "success": [{
     "msg:ko": "성공! 사과를 수확했어요",
     "msg:en": "Success! Harvesting a apple!",
-    "img": "/img/a7_w2/apple0.png",
-    "link": "a7_w2/4"
+    "img": "/img/a7_w3/apple0.png",
+    "link": "a7_w3/4"
   }]
 }

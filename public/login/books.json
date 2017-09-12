@@ -428,8 +428,10 @@
     ["물에서 탈 수 있는 것을 알아보아요:4주차", "Learn about water transport:Week 4", "/a6_w4"]
   ],
   "A-7":[
-    ["가을이 되었어요", "/c1_w3"],
-    ["가을 곡식과 열매을 알아보아요", "/mazeh#!a7_w2/1"]
+    ["가을이 되었어요", "Autumn has arrived", "/a7_w1"],
+    ["가을 곡식과 열매을 알아보아요", "Learn about autumn fruits and grains", "/activity#!a7_w2_c1"],
+    ["곡식이 자라요", "Grains are growing", "/mazeh#!a7_w3/1"],
+    ["열매가 자라요", "Fruits are growing", "/activity#!a7_w4"]
   ],
   "A-8":[
     ["우리 주변의 물", "/a8_w1"],

@@ -1,0 +1,74 @@
+{
+  "element": "select-card",
+  "data": [
+    "grain1", "grain2", "grain3", "grain4", "grain5", "grain6", "grain7", "grain8",
+    "fruit1", "fruit2", "fruit3", "fruit4", "fruit5", "fruit6", "fruit7", "fruit8"
+  ],
+  "attributes": {
+    "max" : 4,
+    "lastStage" : 2,
+    "nextlink" : "a7_w2_c1"
+  },
+  "manifest": [
+    {"id": "grain1", "src": "/img/a7_w2/grain1.png"},
+    {"id": "grain2", "src": "/img/a7_w2/grain2.png"},
+    {"id": "grain3", "src": "/img/a7_w2/grain3.png"},
+    {"id": "grain4", "src": "/img/a7_w2/grain4.png"},
+    {"id": "grain5", "src": "/img/a7_w2/grain5.png"},
+    {"id": "grain6", "src": "/img/a7_w2/grain6.png"},
+    {"id": "grain7", "src": "/img/a7_w2/grain7.png"},
+    {"id": "grain8", "src": "/img/a7_w2/grain8.png"},
+    {"id": "fruit1", "src": "/img/a7_w2/fruit1.png", "result": true},
+    {"id": "fruit2", "src": "/img/a7_w2/fruit2.png", "result": true},
+    {"id": "fruit3", "src": "/img/a7_w2/fruit3.png", "result": true},
+    {"id": "fruit4", "src": "/img/a7_w2/fruit4.png", "result": true},
+    {"id": "fruit5", "src": "/img/a7_w2/fruit5.png", "result": true},
+    {"id": "fruit6", "src": "/img/a7_w2/fruit6.png", "result": true},
+    {"id": "fruit7", "src": "/img/a7_w2/fruit7.png", "result": true},
+    {"id": "fruit8", "src": "/img/a7_w2/fruit8.png", "result": true}
+  ],
+  "msg": {
+    "ko": {
+      "title": "가을 곡식과 열매를 알아보아요",
+      "subtitle": "아래의 그림 중 열매를 클릭하세요.",
+      "guide": "힌트! 아래의 카드 중 열매는 4가지가 있어요!",
+      "score": "점수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "retryHead": "참 아쉽네요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "retryBtm" : "다시 시도해 볼까요?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "retrybtn": "다시하기",
+      "resultbtn": "결과보기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "noticeAlert" : "아직 선택할 것이 남았어요!"
+    },
+    "en": {
+      "title": "Learn about autumn fruits and grains",
+      "subtitle": "Click the fruits in the below pictures",
+      "guide": "Hint! There are 4 fruits in the below Pictures.",
+      "score": "score",
+      "success": "Good job!",
+      "successHead": "Success",
+      "retryHead": "Failed",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "retryBtm" : "Do you want to retry?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "retrybtn": "Retry",
+      "resultbtn": "Result",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "noticeAlert" : "You need to select more!"
+    }
+  }
+}

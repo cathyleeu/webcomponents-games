@@ -268,7 +268,7 @@ Blocks["a7w1_corn"] = {
     en: "%1 corn harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/corn0.png"}
+    {type: "field_image", src: "/img/a7_w3/corn0.png"}
   ],
   action: ["harvesting","type1"]
 };
@@ -279,7 +279,7 @@ Blocks["a7w1_corn2"] = {
     en: "%1 corn harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/corn0.png"}
+    {type: "field_image", src: "/img/a7_w3/corn0.png"}
   ],
   action: ["harvesting","type2"]
 };
@@ -290,7 +290,7 @@ Blocks["a7w1_rice"] = {
     en: "%1 rice harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/rice0.png"}
+    {type: "field_image", src: "/img/a7_w3/rice0.png"}
   ],
   action: ["harvesting","type1"]
 };
@@ -301,7 +301,7 @@ Blocks["a7w1_rice2"] = {
     en: "%1 rice harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/rice0.png"}
+    {type: "field_image", src: "/img/a7_w3/rice0.png"}
   ],
   action: ["harvesting","type2"]
 };
@@ -312,7 +312,7 @@ Blocks["a7w1_rice3"] = {
     en: "%1 rice harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/rice0.png"}
+    {type: "field_image", src: "/img/a7_w3/rice0.png"}
   ],
   action: ["harvesting","type3"]
 };
@@ -323,7 +323,7 @@ Blocks["a7w1_apple"] = {
     en: "%1 apple harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/apple0.png"}
+    {type: "field_image", src: "/img/a7_w3/apple0.png"}
   ],
   action: ["harvesting","type1"]
 };
@@ -334,7 +334,7 @@ Blocks["a7w1_apple2"] = {
     en: "%1 apple harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/apple0.png"}
+    {type: "field_image", src: "/img/a7_w3/apple0.png"}
   ],
   action: ["harvesting","type2"]
 };
@@ -345,7 +345,7 @@ Blocks["a7w1_apple3"] = {
     en: "%1 apple harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/apple0.png"}
+    {type: "field_image", src: "/img/a7_w3/apple0.png"}
   ],
   action: ["harvesting","type3"]
 };
@@ -356,7 +356,7 @@ Blocks["a7w1_pear"] = {
     en: "%1 pear harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/pear0.png"}
+    {type: "field_image", src: "/img/a7_w3/pear0.png"}
   ],
   action: ["harvesting","type1"]
 };
@@ -367,7 +367,7 @@ Blocks["a7w1_pear2"] = {
     en: "%1 pear harvest"
   },
   args0: [
-    {type: "field_image", src: "/img/a7_w2/pear0.png"}
+    {type: "field_image", src: "/img/a7_w3/pear0.png"}
   ],
   action: ["harvesting","type2"]
 };

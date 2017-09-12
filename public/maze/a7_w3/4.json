@@ -25,12 +25,12 @@
   "tutorial": [{
     "msg:ko": "블록을 조립하여 베를 수확해 보아요",
     "msg:en": "Harvest pear, by assemling the blocks",
-    "img": ["/img/a7_w2/pear_tree.png","/img/a7_w2/pear_block.png","/img/a7_w2/pear0.png"]
+    "img": ["/img/a7_w3/pear_tree.png","/img/a7_w3/pear_block.png","/img/a7_w3/pear0.png"]
   }],
   "success": [{
     "msg:ko": "성공! 베를 수확했어요",
     "msg:en": "Success! Harvesting a pear!",
-    "img": "/img/a7_w2/pear0.png",
-    "link": "a7_w2/5"
+    "img": "/img/a7_w3/pear0.png",
+    "link": "a7_w3/5"
   }]
 }
