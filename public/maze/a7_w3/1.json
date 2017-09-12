@@ -25,12 +25,12 @@
   "tutorial": [{
     "msg:ko": "블록을 조립하여 옥수수를 수확해 보아요",
     "msg:en": "Harvest corn, by assemling the blocks",
-    "img": ["/img/a7_w2/corn9.png","/img/a7_w2/corn_block.png","/img/a7_w2/corn0.png"]
+    "img": ["/img/a7_w3/corn9.png","/img/a7_w3/corn_block.png","/img/a7_w3/corn0.png"]
   }],
   "success": [{
     "msg:ko": "성공! 옥수수를 수확했어요",
     "msg:en": "Success! Harvesting a corn!",
-    "img": "/img/a7_w2/corn0.png",
-    "link": "a7_w2/2"
+    "img": "/img/a7_w3/corn0.png",
+    "link": "a7_w3/2"
   }]
 }

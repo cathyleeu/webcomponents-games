@@ -35,12 +35,12 @@
   "tutorial": [{
     "msg:ko": "블록을 조립하여 옥수수와 쌀을 수확해 보아요",
     "msg:en": "Harvest corn & rice, by assemling the blocks",
-    "img": ["/img/a7_w2/corn9.png","/img/a7_w2/corn_block.png","/img/a7_w2/rice9.png","/img/a7_w2/rice_block.png"]
+    "img": ["/img/a7_w3/corn9.png","/img/a7_w3/corn_block.png","/img/a7_w3/rice9.png","/img/a7_w3/rice_block.png"]
   }],
   "success": [{
     "msg:ko": "성공! 옥수수와 쌀을 수확했어요",
     "msg:en": "Success! Harvesting corn & rice!",
-    "img": ["/img/a7_w2/corn0.png","/img/a7_w2/rice0.png"],
-    "link": "a7_w2/6"
+    "img": ["/img/a7_w3/corn0.png","/img/a7_w3/rice0.png"],
+    "link": "a7_w3/6"
   }]
 }
