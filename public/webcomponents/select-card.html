@@ -117,6 +117,13 @@
         let svg = d3.select(this.shadowRoot).select('svg')
           .attr('width', '100%' ).attr('height', '100%');
       }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
       ready(){
         super.ready();
         this.set('clicked', 0)
