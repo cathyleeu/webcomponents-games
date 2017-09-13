@@ -1,9 +1,8 @@
 {
   "element": "line-card",
   "attributes": {
-    "max" : 3,
-    "nextlink" : "c8_w2/index",
-    "lastStage" : 2,
+    "max" : 5,
+    "lastStage" : 3,
     "horizontal" : true
   },
   "data": [
