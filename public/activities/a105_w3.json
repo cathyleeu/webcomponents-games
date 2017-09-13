@@ -1,7 +1,7 @@
 {
   "element": "line-card",
   "attributes": {
-    "max" : 3,
+    "max" : 4,
     "nextlink" : "a105_w3/1",
     "lastStage" : 2,
     "horizontal" : true
