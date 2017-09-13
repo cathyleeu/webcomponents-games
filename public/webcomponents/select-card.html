@@ -22,19 +22,31 @@
         font-weight: 400;
       }
       .container {
-        display: inline-block;
-      	position: relative;
-      	width: 100%;
-      	padding-bottom: 30%;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+      	margin: 30px 100px;
       	vertical-align: middle;
       	overflow: hidden;
       }
-
-      .svg--responsive {
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        left: 0;
+      .container > div {
+        display: inline-flex;
+        margin: 3px;
+        width: 110px;
+        height: 110px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 5px solid gray;
+      }
+      .clicked {
+        border: 5px solid #2ECC98 !important;
+      }
+      img {
+        width: 110px;
+        height: 110px;
+        border-radius: 10px;
+        background-position: center center;
+        background-repeat: no-repeat;
       }
       button {
         display: block;
@@ -67,42 +79,48 @@
       cards="{{cards}}"
       on-modal="handleModal"
       ></status-bar>
-      <toycode-modal
-        id="retryModal"
-        purpose="retry"
-        headertext="{{localize('retryHead')}}"
-        btmtext="{{localize('retryBtm')}}"
-        retrybtn="{{localize('retrybtn')}}"
-        ></toycode-modal>
-      <toycode-modal
-        id="successModal"
-        purpose="nextStep"
-        headertext="{{localize('successHead')}}"
-        btmtext="{{localize('successBtm')}}"
-        nextbtn="{{localize('nextbtn')}}"
-        ></toycode-modal>
-      <toycode-modal
-        id="logOutModal"
-        headertext="{{localize('logoutHead')}}"
-        btmtext="{{localize('logoutBtm')}}"
-        yesbtn="{{localize('yesbtn')}}"
-        nobtn="{{localize('nobtn')}}"
-        purpose="logout"
-        ></toycode-modal>
-      <toycode-modal
-        id="previousModal"
-        headertext="{{localize('previousHead')}}"
-        btmtext="{{localize('previousBtm')}}"
-        yesbtn="{{localize('yesbtn')}}"
-        nobtn="{{localize('nobtn')}}"
-        purpose="previous"
-        ></toycode-modal>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
       <div class="header">
         <h3>{{localize('subtitle')}}</h3>
-        <p>{{localize('guide')}}</p>
       </div>
       <div class="container">
-        <svg class="svg--responsive"></svg>
       </div>
       <div class="bottom">
         <button on-click="handleSubmit">{{localize('resultbtn')}}</button>
@@ -114,8 +132,6 @@
       static get is() { return 'select-card'; }
       connectedCallback() {
         super.connectedCallback();
-        let svg = d3.select(this.shadowRoot).select('svg')
-          .attr('width', '100%' ).attr('height', '100%');
       }
       static get properties() {
         return {
@@ -130,53 +146,40 @@
         this.set('uncorrect', [])
         this.set('point', 0)
         this.set('total', 0)
+        this.set('stage', 1)
       }
       reset(){
         this.set('clicked', 0)
         this.set('total', 0)
         this.set('point', this.point+5)
-        d3.select(this.shadowRoot).select('svg').selectAll('*').remove()
+        this.set('stage', this.stage+1)
+        d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
+        d3.select(this.shadowRoot).select(".header").select('p').remove()
         this.setData(this.data, this.manifest)
       }
       handleSortData(boolean) {
-        return Object.assign(this.manifest.filter( d => boolean ? d.result : !d.result ).map(o => o.src));
+        return d3.shuffle(Object.assign(this.manifest.filter( d => boolean ? d.result : !d.result ).map(o => o.src)));
       }
       setData(data, manifest){
         this.set('manifest', manifest )
-        let _this = this,
-            svg = d3.select(this.shadowRoot).select('svg'),
-            trueData = this.handleSortData(true),
-            falseData = d3.shuffle(this.handleSortData(false)),
-            wholeData = d3.shuffle(trueData.concat(falseData.slice(0,3)));
+
+        let _this = this, container = d3.select(this.shadowRoot).select(".container");
+
+        let trueData = this.handleSortData(true).slice(0, this.max && this.max ),
+            falseData = this.handleSortData(false).slice(0, this.trick ? this.trick : 3),
+            wholeData = d3.shuffle(trueData.concat(falseData));
         this.set('correct', trueData )
+        console.log(trueData.length)
+
+        d3.select(this.shadowRoot).select(".header").append('p').text( this.resources[this.language].guide.replace(/\$/ , trueData.length))
 
 
-        let defs = svg.append('defs').selectAll('pattern')
-        let selectImgs = defs.data(wholeData).enter()
-            .append('pattern')
-            .attr("id", (d, i) => `fill_${i}`)
-            .attr("x", 0).attr("y", 0)
-            .attr("width", 1).attr("height", 1)
-            .attr("patternUnits", "objectBoundingBox")
-            .append('image')
-            .attr("x", 5).attr("y", 5)
-            .attr("width", 100).attr("height", 100)
-            .attr("xlink:href", (d, i) => `${d}`)
+        container.selectAll('div')
+                 .data(wholeData).enter()
+                 .append('xhtml:div') //.attr('class', 'box')
+                 .on('click', this.handleClickCard)
+                 .append('img').attr('src', (d, i) => d)
 
-        let selectBox = svg.append('g')
-            .selectAll('rect')
-            .data(wholeData).enter()
-            .append('rect')
-            .attr("rx", 5).attr("ry", 5)
-            .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
-            .attr("width", 110).attr("height", 110)
-            .style("fill", (d, i) => `url(#fill_${i})`)
-            .on('click', this.handleClickCard )
-
-
-        let getSize = d3.select(this.shadowRoot).select('g').node().getBBox().width
-        let getCenter = (this.offsetWidth - getSize)/2;
-        d3.select(this.shadowRoot).select('g').attr('transform', `translate(${getCenter},0)`)
       }
       handleClickCard(d, i){
         let that = d3.select('#element').node(),
@@ -186,20 +189,20 @@
         this.classList.toggle('clicked')
         if(this.classList.value){
           !selected && that.push('uncorrect', d)
-          d3.select(this).style('stroke', "#2ECC98")
           that.set('clicked', that.clicked+1)
         } else {
           uncorrect && that.pop('uncorrect', d )
-          d3.select(this).style('stroke', "gray")
           that.set('clicked', that.clicked-1)
         }
       }
       handleSubmit(){
-        if(this.clicked < 4) {
+        if(this.clicked < this.correct.length) {
           alert(this.resources[this.language].noticeAlert)
           return false
         }
-        this.uncorrect[0] ? this.$.retryModal.modalAlert() : this.$.successModal.modalAlert()
+        this.uncorrect[0]
+          ? this.$.retryModal.modalAlert()
+          : (this.stage === this.lastStage ? this.$.finalStageModal.modalAlert() : this.$.successModal.modalAlert())
       }
     }
     window.customElements.define(SelectCard.is, SelectCard);
