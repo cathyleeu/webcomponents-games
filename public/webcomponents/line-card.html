@@ -71,7 +71,7 @@
 
   </template>
   <script>
-    class LineHCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+    class LineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
       static get is() { return 'line-card'; }
       connectedCallback() {
         super.connectedCallback();
@@ -80,20 +80,6 @@
         return {
           language: {
             value: "ko"
-          },
-          resources: {
-            value() {
-              return {
-                "ko": {
-                  "title": "짝 맞추기",
-                  "success": "참 잘했어요!"
-                },
-                "en": {
-                  "title": "Match the Pairs 2",
-                  "success": "Good job!"
-                }
-              }
-            }
           }
         }
       }
@@ -195,14 +181,17 @@
           .data(be_shu).enter()
           .append('g')
           .attr("transform", bef_trans )
+          .attr("id", (d, i) => `bef_cir${d.no}`)
 
 
         bef_cir.append("circle").attr("r", 5)
         let selectedCircle = bef_cir.append("circle")
               .attr("r", 60).attr("opacity", 0.0)
-              .attr('id', (d) => `touch${d.no}`)
+              .attr("data-line", "bef")
+              .attr('id', (d) => `bef_line${d.no}`)
 
-        selectedCircle.on("mousedown touchstart", pencilingStart )
+        selectedCircle.on("mousedown touchstart", (d, i) => pencilingStart(d, i, "bef_") )
+
 
         svg.on("mouseup touchend", pencilingEnd)
 
@@ -229,13 +218,21 @@
           .data(af_shu).enter()
           .append('g')
           .attr("transform", af_trans )
-          .attr("id", (d, i) => `matchId${d.no}`)
+          .attr("id", (d, i) => `af_cir${d.no}`)
 
         // 라인이 매칭되는 포인트
         af_cir.append("circle").attr("r", 5).attr('pointer-events', 'none');
+        af_cir.append("circle")
+              .attr("r", 60).attr("opacity", 0.0)
+              .attr('id', (d) => `af_line${d.no}`)
+              .on("mousedown touchstart", (d, i) => pencilingStart(d, i, "af_") )
         // 라인이 매칭되는 범위를 지정하는 포인트
 
-        let getSize = this.horizontal ? d3.select(this.shadowRoot).select('g').node().getBBox().width : 560
+
+
+
+
+        let getSize = this.horizontal ? svg.select('g').node().getBBox().width : 560
         let getCenter = (this.offsetWidth - getSize)/2;
         rectGroup.attr("transform", (d, i) => `translate(${getCenter}, 0)`);
 
@@ -244,8 +241,9 @@
         var line;
         let dragId, dropId, startX, startY;
 
-        function pencilingStart (d, i) {
-          let getXY = d3.select(this.parentElement).attr("transform").match(/\d+/g),
+        function pencilingStart (d, i, pos) {
+          console.log(d, i, pos, this)
+          let getXY = svg.select(`#${pos}cir${d.no}`).attr("transform").match(/\d+/g),
               startX = getCenter+(+getXY[0]), startY = +getXY[1];
 
 
@@ -253,6 +251,7 @@
           line = svg.append("line")
                 .attr("x1", startX).attr("y1", startY)
                 .attr("x2", startX).attr("y2", startY)
+                .attr("data-pos", pos)
                 .attr("id", (d, i) => `line${dragId}`);
           svg.on("mousemove touchmove", pencilingMove);
         }
@@ -263,8 +262,10 @@
         }
 
         function pencilingEnd() {
+          let pos = line.attr('data-pos')
+          let oppos = pos === "af_" ? "bef_" : "af_"
           if (dragId === undefined) return false
-          let filterItems = svg.select('.af_board').node().childNodes,
+          let filterItems = svg.select(`.${oppos}board`).node().childNodes,
               dropItems = [];
 
           filterItems.forEach(el => {
@@ -273,18 +274,20 @@
 
 
 
-          let getArrow = d3.select(this).select(`#line${dragId}`);
+          let getArrow = svg.select(`#line${dragId}`);
           dropItems.forEach(el => {
             const getEl = el.getBoundingClientRect();
             let getX = +getArrow.attr('x2'),
                 getY = +getArrow.attr('y2'),
                 setX = _this.horizontal ? getX : getX+getEl.width/2,
                 setY = _this.horizontal ? getY : getY+getEl.height/2,
-                horizontalRange = getEl.left < setX && setX < getEl.right && getEl.top-(getEl.width) < setY && setY < getEl.top,
-                verticalRange = getEl.left < setX && setX < getEl.right && getEl.top < setY && setY < getEl.bottom,
+                getTB = pos === "bef_" ? getEl.top : getEl.bottom,
+                getR = pos === "bef_" ? getEl.right : getEl.right+getEl.width,
+                getL = pos === "bef_" ? getEl.left : getEl.left+getEl.width,
+                horizontalRange = getEl.left < setX && setX < getEl.right && getTB-(getEl.width) < setY && setY < getTB,
+                verticalRange = getL < setX && setX < getR && getEl.top < setY && setY < getEl.bottom,
                 setRange = _this.horizontal ? horizontalRange : verticalRange ;
 
-                console.log(_this.horizontal, getX, getY, setX, setY, horizontalRange, verticalRange, setRange)
             // 범위 확인
             if(setRange) {
               dropId = el.__data__.no;
@@ -292,13 +295,13 @@
           });
 
           if(dragId === dropId) {
-            let getXY = d3.select(_this.shadowRoot).select(`#matchId${dropId}`).attr("transform").match(/\d+/g),
+            let getXY = svg.select(`#${oppos}cir${dropId}`).attr("transform").match(/\d+/g),
                 numX = getCenter+(+getXY[0]), numY = +getXY[1];
 
             line.attr("x2", numX ).attr("y2", numY );
             console.log("its matched!!!", dragId, dropId)
-            d3.select(_this.shadowRoot).select(`#touch${dragId}`)
-              .on("mousedown touchstart", false )
+            svg.select(`#${oppos}line${dragId}`).on("mousedown touchstart", false )
+            svg.select(`#${pos}line${dragId}`).on("mousedown touchstart", false )
             _this.set('matched', _this.matched+1)
             _this.set('point', _this.point+2)
 
@@ -316,6 +319,6 @@
         }
       }
     }
-    window.customElements.define(LineHCard.is, LineHCard);
+    window.customElements.define(LineCard.is, LineCard);
   </script>
 </dom-module>
