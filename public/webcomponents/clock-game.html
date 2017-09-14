@@ -1,0 +1,183 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+<dom-module id="clock-game">
+  <template>
+    <style>
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 10px;
+      }
+      .quiz_cont {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .answers {
+        width: 300px;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+      }
+      .answers > p {
+        font-size: 30px;
+        font-family: Helvetica;
+        font-weight: Bold;
+        color: rgba(18,22,26,0.7);
+        height: 50px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 50px;
+        border: 6px solid #2ECC98;
+        border-radius: 15px;
+        margin: 0.2em 0.3em;
+        padding: 0 0.2em;
+        cursor: pointer;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+    </style>
+  <status-bar
+    title="{{localize('title')}}"
+    score="{{localize('score')}}"
+    lefted="{{localize('lefted')}}"
+    hasname="{{handleCheckName()}}"
+    total="{{total}}"
+    point="{{point}}"
+    matched="{{matched}}"
+    purpose="select"
+    cards="{{cards}}"
+    on-modal="handleModal"
+    ></status-bar>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+    <div class="header">
+      <h3> Quiz [[stage]] </h3>
+      <p>{{localize('subtitle')}}</p>
+    </div>
+    <div class="container"> </div>
+  </template>
+  <script>
+    class ClockGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'clock-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        this.set('total', 0)
+        this.set('point', 0)
+        this.set('matched', 0)
+        this.set('stage', 1)
+      }
+      reset(){
+        this.set('point', this.point+5)
+        this.set('stage', this.stage+1)
+        d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
+        this.setData( this.data , this.manifest)
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+      setData(data,manifest){
+        this.set('data', data)
+        this.set('manifest', manifest)
+        let container = d3.select(this.shadowRoot).select(".container"),
+            random = Math.floor(Math.random()*(data.length - 0)) + 0,
+            answer = manifest[random],
+            whole = d3.shuffle(manifest.filter(d => d.id !== answer.id)).slice(0,3).concat(answer);
+
+            // whole = d3.shuffle(another);
+
+
+
+        let stage = container.append('html:div').attr('class', "quiz_cont");
+
+
+
+            stage.append('img')
+              .attr('src', answer.src )
+              .attr('data-subject', answer.id )
+
+
+
+            stage.append('div').attr('class', "answers")
+              .selectAll('div')
+              .data(d3.shuffle(whole)).enter()
+              .append('p').text((d, i) => d.ctx)
+              .on('click', (d, i) => this.handleAnswer(d, i, answer))
+              // .append('p').text((d, i) => `${i+1} ${d.ctx}`)
+
+
+
+
+        console.log(answer,  d3.shuffle(whole))
+
+      }
+      handleAnswer(d, i, answer){
+        let result = d.id === answer.id ? true : false;
+        result && (this.stage === this.lastStage ? this.$.finalStageModal.modalAlert() : this.$.successModal.modalAlert())
+      }
+    }
+    window.customElements.define(ClockGame.is, ClockGame);
+  </script>
+
+</dom-module>
