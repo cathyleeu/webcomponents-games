@@ -1,21 +1,41 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
-
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
 
 <dom-module id="guess-card">
   <template>
     <style>
+        .header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          margin-top: 10px;
+        }
+        h3 , p{
+          margin: 1em;
+          /*font-weight: 400;*/
+        }
       #guess_box {
+        margin: 10em 0;
         display: flex;
         flex-direction: row;
       }
       #guess_box > div {
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 50px;
         cursor: pointer;
       }
       #guess_box > div > p {
         text-align: center;
-        line-height: 30px;
+        font-size: 30px;
+        line-height: 50px;
+        font-weight: 800;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
       }
       .guess_num {
         margin: 0;
@@ -26,15 +46,29 @@
         font-weight: 500;
       }
       .miss_text{
-        margin: -30px;
+        margin: -50px;
         font-weight: 700;
       }
       .miss_select_text {
-        margin: -30px;
+        margin: -50px;
         font-weight: 700;
         color: red;
       }
     </style>
+    <status-bar
+      title="{{localize('title')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      purpose="select"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      ></status-bar>
+    <div class="header">
+      <h3>{{localize('subtitle')}}</h3>
+    </div>
     <div class="container">
       <div id="guess_box"></div>
       <div class="guess_notice"></div>
@@ -42,7 +76,7 @@
 
   </template>
   <script>
-  class GuessCard extends Polymer.Element {
+  class GuessCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
     static get is() { return 'guess-card'; }
     connectedCallback() {
       super.connectedCallback();

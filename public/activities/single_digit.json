@@ -1,9 +1,10 @@
 {
-  "element": "digit-addition",
+  "element": "digit-game",
   "attributes": {
+    "add": true
   },
   "data": 4,
-  "manifest": 1,
+  "manifest": 2,
   "msg": {
     "ko": {
       "title": "한 자리 수를 더해 보아요.",
