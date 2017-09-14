@@ -3,7 +3,7 @@
 <link rel="import" href="./status-bar.html">
 <link rel="import" href="./modal.html">
 
-<dom-module id="digit-addition">
+<dom-module id="digit-game">
   <template>
     <style>
       .header {
@@ -110,8 +110,8 @@
       </div>
   </template>
   <script>
-    class DigitAddition extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
-      static get is() { return 'digit-addition'; }
+    class DigitGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'digit-game'; }
       connectedCallback() {
         super.connectedCallback();
       }
@@ -134,28 +134,30 @@
         this.setData( this.data , this.manifest)
       }
       setData( data , manifest){
-        this.set('data', data)
+        this.set('data', data) // 객관식 수 
         this.set('manifest', manifest)
 
+        // range : 한자리 수, 두 자리수 정해 줌
         let range = "1", count, numData = [];
         for(let i = 0; i < manifest; i++) { range+="0" }
         count = +range.slice(0, range.length-1 )
-        for (let i = count; i < +range-1; i++){ numData.push(i) }
+        for (let i = count; i < +range; i++){ numData.push(i) }
 
         let container = d3.select(this.shadowRoot).select(".container"),
-            first = d3.shuffle(numData)[0],
-            filterData = numData.filter(n => n !== first),
-            second = this.handleSecondNum(first, filterData, range),
-            sum = first+second,
+            shuf_nums = d3.shuffle(numData),
+            result = this.handelNumber(shuf_nums, this.add),
+            first = result[0], second= result[1],
+            sum = this.add ? first+second : first-second ,
             answerData = [ sum ],
             quizObj = {
               'first': first,
-              'add': "+",
+              'add': this.add ? "+" : "-",
               'second' : second,
               'equal': "=",
               'result': false
             },
             boxKeys = Object.keys(quizObj);
+
 
         let quizbox = container.append('xhtml:div').attr('class', 'quiz')
                         .selectAll('div').data(boxKeys).enter()
@@ -166,7 +168,7 @@
               boxKeys[i] !== 'result' && d3.select(this.shadowRoot).select(`#${boxKeys[i]}`).append('p').text(quizObj[boxKeys[i]])
             }
 
-          let rest = filterData.filter( rest => rest !== sum )
+          let rest = shuf_nums.filter( rest => rest !== sum )
           for(let i = 0; i < data-1; i++) {
             answerData.push(rest[i])
           }
@@ -180,21 +182,30 @@
           .attr('data-num', shuffled[i]).append('p').text(shuffled[i])
         }
       }
-      handleSecondNum(first, filter, range) {
-        let id = filter.length, second;
-        for(let i = 0 ; i < id ; i++ ){
-          let sum = first+filter[i]
-          if(sum < +range){
-            second = filter[i];
+      handelNumber(nums, add){
+        let ran, first, able, second, result=[];
+        able = add ? nums.filter(n => n !== Math.max(...nums)) : nums.filter(n => n !== Math.min(...nums))
+        ran = able.length
+
+        for(let i = 0; i < ran; i++){
+          first = able[i]
+          if(!add) {
+            able.push(Math.min(...nums))
+            able = able.filter(n => first > n)
+          }
+          if(able.length > 0) {
+            result.push(first)
+            second = add ? able.filter(n => first+n < Math.max(...nums)+1)[0] : able[0]
+            result.push(second)
+            return result
             break;
           }
         }
-        return second;
       }
       handleResult(selected, sum) {
         selected !== sum ? this.$.retryModal.modalAlert() : this.$.successModal.modalAlert()
       }
     }
-    window.customElements.define(DigitAddition.is, DigitAddition);
+    window.customElements.define(DigitGame.is, DigitGame);
   </script>
 </dom-module>

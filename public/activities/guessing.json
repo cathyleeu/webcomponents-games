@@ -7,7 +7,8 @@
   "manifest": 16,
   "msg": {
     "ko": {
-      "title": "카드를 뒤집어 짝을 맞추어보아요.",
+      "title": "Up & Down 게임",
+      "subtitle": "추측하는 숫자를 클릭해보세요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
