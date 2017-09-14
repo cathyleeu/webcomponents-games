@@ -1,0 +1,67 @@
+{
+  "element": "clock-game",
+  "attributes": {
+    "nextlink" : "a105_w3/1",
+    "lastStage" : 2
+  },
+  "data": [
+    "a0100",
+    "a0200",
+    "a0300",
+    "a0400",
+    "a0500",
+    "a0600",
+    "a0700",
+    "a0800"
+  ],
+  "manifest": [
+    {"id": "a0100", "ctx":"01:00", "src": "/img/c9_w1/a0100.png"},
+    {"id": "a0200", "ctx":"02:00", "src": "/img/c9_w1/a0200.png"},
+    {"id": "a0300", "ctx":"03:00", "src": "/img/c9_w1/a0300.png"},
+    {"id": "a0400", "ctx":"04:00", "src": "/img/c9_w1/a0400.png"},
+    {"id": "a0500", "ctx":"05:00", "src": "/img/c9_w1/a0500.png"},
+    {"id": "a0600", "ctx":"06:00", "src": "/img/c9_w1/a0600.png"},
+    {"id": "a0700", "ctx":"07:00", "src": "/img/c9_w1/a0700.png"},
+    {"id": "a0800", "ctx":"08:00", "src": "/img/c9_w1/a0800.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "몇 시일까요?",
+      "subtitle" : "그림의 시계와 일치하는 맞은 답을 선택해 보세요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "finalStageHead": "성공!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalbtn" : "다음 단계"
+    },
+    "en": {
+      "title": "What time is it now?",
+      "subtitle" : "Choose the correct answer!",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "finalStageHead": "Success",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "finalStageBtm":"All clear in this class!",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "finalbtn" : "Next Stage"
+    }
+  }
+}
