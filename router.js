@@ -560,6 +560,21 @@ public.get('/cache/:manifest', function *(next) {
       });
     });
   });
+  // 각 index.json의 경우 link에서 다른 폴더가 필요한지 체크
+  manifests.forEach(function(maniPath) {
+    var index = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, "index.json")));
+    // extra안에 들어있는 link 확인
+    if(index.extra) {
+      index.extra.forEach(function(extra) {
+        if(extra.link) {
+          var dir = extra.link.split("/")[0];
+          if(dir != maniPath && manifests.indexOf(dir) < 0) {
+            manifests.push(dir);
+          }
+        }
+      });
+    }
+  });
   function addImg(arr) {
     if(!Array.isArray(arr)) {
       arr = [arr];
