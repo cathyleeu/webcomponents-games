@@ -632,7 +632,15 @@ public.get('/cache/:manifest', function *(next) {
   });
 
   // maze가 아닌 개별 페이지들의 manifest 로드
-  pages.filter(function(item) {
+  var page_dirs = pages.slice(0);
+  page_dirs.forEach(function(item) {
+    // a8_w1 페이지에서 a8_w1과 a8의 폴더 이미지를 가져오도록 함
+    var dir = item.split("_")[0];
+    if(page_dirs.indexOf(dir) < 0) {
+      page_dirs.push(dir);
+    }
+  });
+  page_dirs.filter(function(item) {
     var item_path = path.join("public", "img", item),
         exist = fs.existsSync(item_path),
         stat = exist && fs.statSync(item_path);
