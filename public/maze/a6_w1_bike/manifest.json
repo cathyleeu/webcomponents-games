@@ -16,7 +16,10 @@
   {"id": "bd5", "src": "/img/a6_w1/bd5.png","obstacle": true},
   {"id": "tree1", "src": "/img/a6_w1/tree1.png", "obstacle": true},
   {"id": "tree2", "src": "/img/a6_w1/tree2.png", "obstacle": true},
-  {"id": "tree1", "src": "/img/a6_w1/tree3.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/a6_w1/tree3.png", "obstacle": true},
+
+  {"id": "exit", "src": "/img/a6_w1/exit.png"},
+  {"id": "enter", "src": "/img/a6_w1/enter.png"},
 
   {"tile": "h", "id": "house", "src": "/img/a6_w1/house.png"},
 

@@ -16,6 +16,9 @@
   {"id": "airplane5", "src": "/img/a6_w2/airplane5.png","obstacle": true},
   {"id": "airplane6", "src": "/img/a6_w2/airplane6.png","obstacle": true},
 
+  {"id": "exit", "src": "/img/a6_w1/exit.png"},
+  {"id": "enter", "src": "/img/a6_w1/enter.png"},
+
   {"tile": "a", "id": "seawall1", "src": "/img/a6_w2/seawall1.png"},
   {"tile": "b", "id": "seawall2", "src": "/img/a6_w2/seawall2.png"},
   {"tile": "c", "id": "lighthouse", "src": "/img/a6_w2/lighthouse.png"},

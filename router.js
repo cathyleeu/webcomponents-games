@@ -562,7 +562,13 @@ public.get('/cache/:manifest', function *(next) {
   });
   // 각 index.json의 경우 link에서 다른 폴더가 필요한지 체크
   manifests.forEach(function(maniPath) {
-    var index = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, "index.json")));
+    var index_path = path.join("public/maze", maniPath, "index.json"),
+        exist = fs.existsSync(index_path),
+        index;
+    if(!exist) {
+      return;
+    }
+    index = JSON.parse(fs.readFileSync(index_path));
     // extra안에 들어있는 link 확인
     if(index.extra) {
       index.extra.forEach(function(extra) {
@@ -654,7 +660,6 @@ public.get('/cache/:manifest', function *(next) {
     }
     var activity = JSON.parse(fs.readFileSync(path.join("public", file_path)));
     activity.manifest.forEach(function(obj) {
-      console.log(obj.src)
       if(page_manifests.indexOf(obj.src) < 0) {
         page_manifests.push(obj.src);
       }
