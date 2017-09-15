@@ -195,6 +195,7 @@ KidsCoding.prototype = {
     // this.blockLimits = {};
   },
   createXml: function(blocks, isToolbox) {
+    var _this = this;
     if(blocks.length == 0) {
       return "";
     }
@@ -223,7 +224,7 @@ KidsCoding.prototype = {
         statements_str = "",
         child_str = "";
     Blocks[block.type].args0.forEach(function(arg) {
-      if(this.blockType != "default" && arg.type == "field_dropdown") {
+      if(_this.blockType != "default" && arg.type == "field_dropdown") {
         arg.type = "input_value";
         Blockly.Blocks[block.type + "_" + arg.name + ''] = {
           init: function() {
