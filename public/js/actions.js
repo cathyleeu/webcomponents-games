@@ -171,6 +171,7 @@ Actions.prototype._restoreObject = function(callback) {
   });
 };
 
+
 Actions.prototype._setFocus = function(center_x, center_y, wait, time, callback) {
   var _this = this,
       view_size = this.view_size || this.width;
