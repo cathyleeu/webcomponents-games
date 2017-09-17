@@ -275,7 +275,8 @@ KidsCoding.prototype = {
     if(Blockly.Blocks[name]) {
       return;
     }
-    var options = Blocks[name],
+    var _this = this,
+        options = Blocks[name],
         lang = store.get("lang") || "ko";
     // 가로 블럭 처리
     if(this.isHorizontal) {
@@ -313,8 +314,8 @@ KidsCoding.prototype = {
       if(item.slice(0, 4) == "args") {
         options[item].forEach(function(obj) {
           if(obj.type == "field_image" && !obj.width) {
-            obj.width = this.isHorizontal ? 40 : 25;
-            obj.height = this.isHorizontal ? 40 : 25;
+            obj.width = _this.isHorizontal ? 40 : 25;
+            obj.height = _this.isHorizontal ? 40 : 25;
           }
         });
       }
