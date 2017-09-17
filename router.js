@@ -995,22 +995,19 @@ public.get('/activity', function *(next) {
 
 public.get('/maze', function *(next) {
   yield this.render('maze', {
-    mazeType: "default",
-    origin: this.request.origin
+    mazeType: "default"
   });
 });
 
 public.get('/mazeh', function *(next) {
   yield this.render('maze', {
-    mazeType: "horizontal",
-    origin: this.request.origin
+    mazeType: "horizontal"
   });
 });
 
 public.get('/mazev', function *(next) {
   yield this.render('maze', {
-    mazeType: "vertical",
-    origin: this.request.origin
+    mazeType: "vertical"
   });
 });
 
