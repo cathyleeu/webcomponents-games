@@ -191,29 +191,39 @@ KidsCoding.prototype = {
   init: function(loader, mazeInfo, run, tileFactory) {
     this.tileFactory = tileFactory;
     this.Actions = new Actions(this, loader, mazeInfo, run);
+    this.mazeInfo = mazeInfo;
+    if(window.devtool) {
+      window.$$$ = new window.devtool(this);
+    }
     // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
     // this.blockLimits = {};
   },
-  createXml: function(blocks, isToolbox) {
+  createXml: function(blocks, options) {
     var _this = this;
+    blocks = String(blocks);
     if(blocks.length == 0) {
       return "";
     }
-    var match = blocks[0].match(/([^\[\]()]+)(\([^\[\]()]*\))?(\[[^\]]*\])?/),
-        block = match[1],
-        args = (match[2] || "()").slice(1,-1).split(","),
-        statements = match[3],
+    var match = blocks.match(/([^\[\](),\s]+)\s*(\([^\[\]()]*\))?\s*(\[[^\]]*\])?\s*,?\s*(.*)/),
+        block = {
+          type: (match[1] || "").trim()
+        },
+        args = (match[2] || "()").slice(1,-1).trim().split(","),
+        statements = (match[3] || "[]").slice(1,-1).trim(),
+        rest = (match[4] || "").trim(),
         str;
-    if(typeof block == "string") {
-      block = {
-        type: block
-      };
-      if(block.type == "start") {
-        block.x = 30;
-        block.y = 20;
-      }
+    if(!Blocks[block.type]) {
+      console.error("undefined block : " + block);
+      return "";
     }
-    if(!isToolbox) {
+    this.registerBlock(block.type);
+    if(block.type == "start") {
+      block.x = 30;
+      block.y = 20;
+      block.deletable = false;
+      block.movable = false;
+    }
+    if(options.uneditable) {
       block.deletable = false;
       block.movable = false;
     }
@@ -248,100 +258,98 @@ KidsCoding.prototype = {
     });
     if(statements) {
       statements_str = '<statement name="statements">' +
-          this.createXml(statements.slice(1, -1).split(","), isToolbox) +
+          this.createXml(statements, options) +
           '</statement>';
     }
-    if(blocks.slice(1).length > 0) {
-      child_str = this.createXml(blocks.slice(1), isToolbox);
+    if(rest.length > 0) {
+      child_str = this.createXml(rest, options);
     }
-    if(isToolbox) {
+    if(options.isToolbox) {
       return "<block " + str + ">" + value_str + statements_str + "</block>" + child_str;
     } else {
       child_str = "<next>" + child_str + "</next>";
       return "<block " + str + ">" + value_str + statements_str + child_str + "</block>";
     }
   },
-  initBlockly: function(toolbox, workspace) {
-    var _this = this,
-        lang = store.get("lang") || "ko";
-    if(!workspace) {
-      workspace = ["start"];
+  registerBlock: function(name) {
+    if(Blockly.Blocks[name]) {
+      return;
     }
-    $.each(Blocks, function(name, options) {
-      if(name != "start" && toolbox.indexOf(name) < 0 && workspace.indexOf(name) < 0) {
-        return;
-      }
-      // 가로 블럭 처리
-      if(_this.isHorizontal) {
-        // messageh와 argsh 처리
-        for(var item in options) {
-          if(item.slice(0, 8) == "messageh" || item.slice(0, 5) == "argsh") {
-            if(options[item] == null) {
-              delete options[item.slice(0, -2) + item.slice(-1)];
-            } else {
-              options[item.slice(0, -2) + item.slice(-1)] = options[item];
-            }
-            delete options[item];
-          }
-        }
-      } else {
-        // messageh와 argsh 삭제
-        for(var item in options) {
-          if(item.slice(0, 8) == "messageh" || item.slice(0, 5) == "argsh") {
-            delete options[item];
-          }
-        }
-      }
+    var options = Blocks[name],
+        lang = store.get("lang") || "ko";
+    // 가로 블럭 처리
+    if(this.isHorizontal) {
+      // messageh와 argsh 처리
       for(var item in options) {
-        if(item.slice(0, -1) == "message") {
-          // 다국어 기능
-          if(typeof options[item] == "object") {
-            options[item] = options[item][lang] || options[item]["en"];
+        if(item.slice(0, 8) == "messageh" || item.slice(0, 5) == "argsh") {
+          if(options[item] == null) {
+            delete options[item.slice(0, -2) + item.slice(-1)];
+          } else {
+            options[item.slice(0, -2) + item.slice(-1)] = options[item];
           }
-          // 가로 블럭에서 텍스트 제거
-          if(_this.isHorizontal) {
-            options[item] = (options[item].match(/%[\d+]/g) || ["%1"]).join(" ")
-          }
-        }
-        // 이미지 기본 크기 설정
-        if(item.slice(0, 4) == "args") {
-          options[item].forEach(function(obj) {
-            if(obj.type == "field_image" && !obj.width) {
-              obj.width = _this.isHorizontal ? 40 : 25;
-              obj.height = _this.isHorizontal ? 40 : 25;
-            }
-          });
+          delete options[item];
         }
       }
-      options = $.extend({
-        colour: 0,
-        message0: "",
-        deletable: true,
-        movable: true,
-        previousStatement: null,
-        nextStatement: null
-      }, options);
-      if(options.previousStatement === false) {
-        delete options.previousStatement;
-      }
-      if(options.nextStatement === false) {
-        delete options.nextStatement;
-      }
-      Blockly.Blocks[name] = {
-        init: function() {
-          this.jsonInit(options);
-          if(options.id) {
-            this.id = options.id;
-          }
-          this.setDeletable(!!options.deletable);
-          this.setMovable(!!options.movable);
-          this.contextMenu = false;
-          if(options.rgbColor) {
-            this.colour_ = options.rgbColor;
-          }
+    } else {
+      // messageh와 argsh 삭제
+      for(var item in options) {
+        if(item.slice(0, 8) == "messageh" || item.slice(0, 5) == "argsh") {
+          delete options[item];
         }
-      };
-    });
+      }
+    }
+    for(var item in options) {
+      if(item.slice(0, -1) == "message") {
+        // 다국어 기능
+        if(typeof options[item] == "object") {
+          options[item] = options[item][lang] || options[item]["en"];
+        }
+        // 가로 블럭에서 텍스트 제거
+        if(this.isHorizontal) {
+          options[item] = (options[item].match(/%[\d+]/g) || ["%1"]).join(" ")
+        }
+      }
+      // 이미지 기본 크기 설정
+      if(item.slice(0, 4) == "args") {
+        options[item].forEach(function(obj) {
+          if(obj.type == "field_image" && !obj.width) {
+            obj.width = this.isHorizontal ? 40 : 25;
+            obj.height = this.isHorizontal ? 40 : 25;
+          }
+        });
+      }
+    }
+    options = $.extend({
+      colour: 0,
+      message0: "",
+      deletable: true,
+      movable: true,
+      previousStatement: null,
+      nextStatement: null
+    }, options);
+    if(options.previousStatement === false) {
+      delete options.previousStatement;
+    }
+    if(options.nextStatement === false) {
+      delete options.nextStatement;
+    }
+    Blockly.Blocks[name] = {
+      init: function() {
+        this.jsonInit(options);
+        if(options.id) {
+          this.id = options.id;
+        }
+        this.setDeletable(!!options.deletable);
+        this.setMovable(!!options.movable);
+        this.contextMenu = false;
+        if(options.rgbColor) {
+          this.colour_ = options.rgbColor;
+        }
+      }
+    };
+  },
+  initBlockly: function(toolbox, workspace) {
+    var _this = this;
     // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
     // var toolbox = toolbox.map(function(item) {
     //   var tokens = item.split(":"),
@@ -353,7 +361,7 @@ KidsCoding.prototype = {
     // }).join("");
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
-      toolbox: '<xml>' + this.createXml(toolbox, true) + '</xml>',
+      toolbox: '<xml>' + this.createXml(toolbox || "", {isToolbox:true}) + '</xml>',
       media: this.blockType == "default" ? '/GoogleBlockly/media/' : '/scratch-blocks/media/',
       trashcan: !this.isHorizontal,
       zoom: this.isHorizontal ? null : {
@@ -366,7 +374,7 @@ KidsCoding.prototype = {
       },
       scrollbars: this.isHorizontal
     });
-    var startblock = '<xml>' + this.createXml(workspace) + '</xml>';
+    var startblock = '<xml>' + this.createXml(workspace || "start", {uneditable:true}) + '</xml>';
   	Blockly.Xml.domToWorkspace($(startblock).get(0),this.workspace);
     // flyout 내의 블럭들을 오른쪽으로 20px씩 이동
     // (블럭들이 너무 왼쪽으로 붙어있어서 윈도우 태블릿에서 화면전화이 일어나는 문제가 있음)
