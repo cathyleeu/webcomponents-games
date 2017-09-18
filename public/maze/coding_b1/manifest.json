@@ -1,7 +1,7 @@
 [
   {"book": "coding", "title": "초등교재"},
-  {"id": "bg1", "src": "/img/coding/bg1.png"},
-  {"id": "bg2", "src": "/img/coding/bg2.png"},
+  {"id": "bg1", "src": "/img/c4_w2/bg1.png"},
+  {"id": "bg2", "src": "/img/c4_w2/bg2.png"},
 
   {"id": "character", "src": "/img/coding/robot.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/b5_w1/cos_summer0.png", "size": 256},
@@ -12,23 +12,41 @@
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
-  {"id": "tree1", "src": "/img/b5_w1/tree1.png", "obstacle": true},
-  {"id": "tree2", "src": "/img/b5_w1/tree2.png", "obstacle": true},
-  {"id": "tree3", "src": "/img/b5_w1/tree3.png", "obstacle": true},
-  {"id": "tree2", "src": "/img/b5_w1/bush1.png", "obstacle": true},
-  {"id": "tree2", "src": "/img/b5_w1/bush2.png", "obstacle": true},
-  {"id": "ystone1", "src": "/img/b5_w1/ystone1.png", "obstacle": true},
-  {"id": "ystone2", "src": "/img/b5_w1/ystone2.png", "obstacle": true},
+  {"id": "wall", "src": "/img/c4_w2/walls.png", "obstacle": true},
+
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
 
-  {"id": "ice_box", "src": "/img/b5_w1/ice_box.png"},
-  {"id": "life_jacket", "src": "/img/b5_w1/life_jacket.png"},
-  {"id": "Rubber_boats", "src": "/img/b5_w1/Rubber_boats.png"},
-  {"id": "tube", "src": "/img/b5_w1/tube.png"},
-  {"id": "fishing_rod", "src": "/img/b5_w1/fishing_rod.png"},
 
-  {"id": "father_summer", "src": "/img/b5_w1/father_summer.png"}
+  {"id": "fruit_strawberry", "src": "/img/c4_w1_c3/fruit_strawberry.png", "obstacle": false},
+  {"id": "fruit_apple", "src": "/img/c4_w1_c3/fruit_apple.png", "obstacle": false},
+  {"id": "fruit_cherry", "src": "/img/c4_w1_c3/fruit_cherry.png", "obstacle": false},
+  {"id": "fruit_kiwi", "src": "/img/c4_w1_c3/fruit_kiwi.png", "obstacle": false},
+  {"id": "fruit_orange", "src": "/img/c4_w1_c3/fruit_orange.png", "obstacle": false},
+  {"id": "fruit_watermelon", "src": "/img/c4_w1_c3/fruit_watermelon.png", "obstacle": false},
+  {"id" :"refrigerator" , "src" : "/img/b9_w1/refrigerator.png"},
+
+  {"id": "grandma", "src": "/img/b4/f_granma.png"},
+  {"id": "mkt", "src":"/img/b55/mkt1.png"},
+  {"id": "dduck", "src":"/img/b55/dduck.png", "obstacle": false},
+
+  {"id": "house1", "src": "/img/c4_w4/house1.png", "obstacle": false},
+  {"id": "house2", "src": "/img/c4_w4/house2.png", "obstacle": false},
+  {"id": "house3", "src": "/img/c4_w4/house3.png", "obstacle": false},
+  {"id": "house4", "src": "/img/c4_w4/house4.png", "obstacle": false},
+  {"id": "house5", "src": "/img/c4_w4/house5.png", "obstacle": false},
+  {"id": "house6", "src": "/img/c4_w4/house6.png", "obstacle": false},
+  {"id": "house7", "src": "/img/c4_w4/house7.png", "obstacle": false},
+  {"id": "house8", "src": "/img/c4_w4/house8.png", "obstacle": false},
+  {"id": "house9", "src": "/img/c4_w4/house9.png", "obstacle": false},
+  {"id": "house10", "src": "/img/c4_w4/house_blank.png", "obstacle": false},
+
+  {"id": "hand_rock", "src": "/img/kidsblocks/Rock.png"},
+  {"id": "hand_paper", "src": "/img/kidsblocks/Paper.png"},
+  {"id": "hand_scissors", "src": "/img/kidsblocks/Scissors.png"},
+  {"id": "spider", "src": "/img/c6/bomi0.png"}
+
+
 ]
