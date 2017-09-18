@@ -9,10 +9,11 @@
   * moveTile
   * addTile
   * removeTile
-* [Maze](#maze)
- * setMaze
- * resetMaze
- * printMaze
+* [Map](#maze)
+ * setMap
+ * resetMap
+ * printMap
+ * downloadMap
 * [Blockly](#blockly)
  * updateToolbox
  * updateWorkspace
@@ -101,8 +102,15 @@ $$$.setMap() // map을 입력할 입력창을 띄움
  실행하면 맨 처음의 map으로 돌아갑니다.
 
 ```
-$$$.resetMaze() // map을 초기화
+$$$.resetMap() // map을 초기화
 ```
+
+### downloadMap
+ 현재의 맵을 이미지파일(PNG)로 다운 받습니다. 
+
+ ```
+ $$$.downloadMap()
+ ```
 
 
 ## Blockly
