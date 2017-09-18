@@ -61,7 +61,7 @@ devtool.prototype.removeTile = function(x, y) {
 
 devtool.prototype.resetMaze = function() {
   var map = this.tileFactory.maze.map.map(function(row) {
-        return [].slice.call(new String(row));
+        return row.split("");
       });
   this.kidscoding.mazeInfo.map = this.actions.map = map;
   $("#modal .reset-maze").click();
@@ -71,7 +71,7 @@ devtool.prototype.resetMaze = function() {
 devtool.prototype.setMaze = function() {
   var maze = window.prompt("please input maze string").trim(),
       map = maze.split("\n").map(function(row) {
-        return [].slice.call(new String(row));
+        return row.split("");
       });
   this.kidscoding.mazeInfo.map = this.actions.map = map;
   $("#modal .reset-maze").click();

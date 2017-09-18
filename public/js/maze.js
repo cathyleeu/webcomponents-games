@@ -316,10 +316,10 @@ function initMaze() {
 
   mazeInfo = {
     map: maze.map.map(function(row) {
-      return [].slice.call(new String(row));
+      return row.split("");
     }),
     land: maze.land ? maze.land.map(function(row) {
-      return [].slice.call(new String(row));
+      return row.split("");
     }) : null,
     width: map_width,
     height: map_height,

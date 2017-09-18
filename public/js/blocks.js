@@ -616,10 +616,13 @@ Blocks["move_forward1"] = {
 Blocks["move_forward"] = {
   colour: 260,
   message0: {
-    ko: "%1 만큼 움직이기",
-    en: "%1 Move Forward"
+    ko: "%1 %2 만큼 움직이기",
+    en: "%1 %2 Move Forward"
   },
   args0: [{
+    type: "field_image",
+    src: "/img/move_forward.png"
+  }, {
     type: "field_dropdown",
     name: "count",
     options: [
