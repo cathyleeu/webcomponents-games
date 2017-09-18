@@ -83,6 +83,19 @@ devtool.prototype.printMap = function() {
   }).join("\n"));
 }
 
+devtool.prototype.downloadMap = function () {
+  var defaultName = location.hash.slice(2).replace(/\//g, "_")
+      fileName = window.prompt("please input file name", defaultName ).trim(),
+      mimeType = "image/octet-stream",
+      canvas = this.actions.canvas,
+      image = canvas.stage.toDataURL().replace("image/png", "image/octet-stream"),
+      link = document.createElement("a");
+  link.href = image;
+  link.download = fileName+".png";
+  link.click();
+  link = null;
+}
+
 // ========================================
 
 
