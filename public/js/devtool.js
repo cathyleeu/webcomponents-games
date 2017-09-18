@@ -57,9 +57,9 @@ devtool.prototype.removeTile = function(x, y) {
 // ========================================
 
 
-// ================ Maze ================
+// ================ Map ================
 
-devtool.prototype.resetMaze = function() {
+devtool.prototype.resetMap = function() {
   var map = this.tileFactory.maze.map.map(function(row) {
         return row.split("");
       });
@@ -68,7 +68,7 @@ devtool.prototype.resetMaze = function() {
 }
 
 
-devtool.prototype.setMaze = function() {
+devtool.prototype.setMap = function() {
   var maze = window.prompt("please input maze string").trim(),
       map = maze.split("\n").map(function(row) {
         return row.split("");
@@ -77,7 +77,7 @@ devtool.prototype.setMaze = function() {
   $("#modal .reset-maze").click();
 }
 
-devtool.prototype.printMaze = function() {
+devtool.prototype.printMap = function() {
   console.log(this.actions.map.map(function(row) {
     return row.join("");
   }).join("\n"));
