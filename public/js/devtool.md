@@ -47,13 +47,15 @@ $$$.rotate("d")
 장애물, 목적지 등 타일에 명령하는 Api입니다.
 
 ### moveTile`Number`
-타일을 움직이는 api `$$$.moveTile(x1, y1, x2, y2)`
 
+타일을 움직이는 api `$$$.moveTile(x1, y1, x2, y2)`
  * x1, y1 : 움직이고자 하는 타일의 좌표
  * x2, y2 : 목적지의 좌표
+
 ```
 $$$.moveTile(3,3,5,3) //(3,3)에 있던 타일이 (5,3)으로 이동됩니다.
 ```
+
 ### addTile`Stringm, Number`
 타일 추가 하는 api `$$$.addTile(tile, x, y)`
   * tile 의 종류
@@ -62,6 +64,7 @@ $$$.moveTile(3,3,5,3) //(3,3)에 있던 타일이 (5,3)으로 이동됩니다.
     * )`String` : 아이템
     * 캐릭터 추가 할 경우, 방향을 `String` 값으로 입력하면 됩니다.
   * x, y : 추가하고자 하는 위치
+
 ```
 $$$.addTile("#", 3, 5)
 ```
@@ -69,6 +72,7 @@ $$$.addTile("#", 3, 5)
 ### removeTile`Number`
 타일을 제거하는 api `$$$.removeTile(x, y)`
   * x, y : 제거하고자 하는 위치
+
 ```
 $$$.removeTile( 3, 5 )
 ```
