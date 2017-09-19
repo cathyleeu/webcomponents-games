@@ -3,6 +3,14 @@ devtool = function(kidscoding) {
   this.actions = kidscoding.Actions;
   this.tileFactory = kidscoding.tileFactory;
 };
+
+devtool.prototype._downloadImage = function(image, fileName) {
+  var link = document.createElement("a");
+  link.href = image;
+  link.download = fileName;
+  link.click();
+  link = null
+}
 devtool.prototype.goNext = function() {
   $("#modal .go-next").click();
 };
@@ -84,16 +92,11 @@ devtool.prototype.printMap = function() {
 }
 
 devtool.prototype.downloadMap = function () {
-  var defaultName = location.hash.slice(2).replace(/\//g, "_")
+  var defaultName = location.hash.slice(2).replace(/\//g, "_") + "_map",
       fileName = window.prompt("please input file name", defaultName ).trim(),
-      mimeType = "image/octet-stream",
       canvas = this.actions.canvas,
-      image = canvas.stage.toDataURL().replace("image/png", "image/octet-stream"),
-      link = document.createElement("a");
-  link.href = image;
-  link.download = fileName+".png";
-  link.click();
-  link = null;
+      image = canvas.stage.toDataURL().replace("image/png", "image/octet-stream");
+  this._downloadImage(image, fileName + "_map.png");
 }
 
 // ========================================
@@ -112,6 +115,114 @@ devtool.prototype.updateWorkspace = function(workspace) {
   this.kidscoding.workspace.clear();
   var xml = $('<xml>' + this.kidscoding.createXml(workspace, {}) + '</xml>').get(0);
   Blockly.Xml.domToWorkspace(xml, this.kidscoding.workspace);
+}
+
+devtool.prototype.downloadToolbox = function() {
+  return this._downloadBlocks("toolbox");
+}
+
+devtool.prototype.downloadWorkspace = function() {
+  return this._downloadBlocks("workspace");
+}
+
+devtool.prototype._downloadBlocks = function(target) {
+  var _this = this,
+      defaultName = location.hash.slice(2).replace(/\//g, "_") + "_" + target,
+      fileName = window.prompt("please input file name", defaultName ).trim(),
+      image = new Image(),
+      serializer = new XMLSerializer(),
+      $svg = $($("svg.blocklySvg").get(0).cloneNode(true)),
+      bbox = ( target == "toolbox" ?
+          $("svg.blocklySvg .blocklyFlyout .blocklyWorkspace") :
+          $("svg.blocklySvg>.blocklyWorkspace>.blocklyBlockCanvas") ).get(0).getBBox(),
+      onloadCount = 0,
+      blocklyText = getStyle(".blocklyText");
+  function getBase64Image(img) {
+    var canvas = document.createElement("canvas"),
+        ctx = canvas.getContext("2d"),
+        devicePixelRatio = window.devicePixelRatio || 1,
+        backingStoreRatio = ctx.webkitBackingStorePixelRatio ||
+                            ctx.mozBackingStorePixelRatio ||
+                            ctx.msBackingStorePixelRatio ||
+                            ctx.oBackingStorePixelRatio ||
+                            ctx.backingStorePixelRatio || 1,
+        ratio = devicePixelRatio / backingStoreRatio,
+        width = img.naturalWidth,
+        height = img.naturalHeight,
+        result;
+    canvas.width = width * ratio;
+    canvas.height = height * ratio;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.scale(ratio, ratio);
+    ctx.drawImage(img,0,0,width,height);
+    result = canvas.toDataURL("image/png");
+    canvas = ctx = null;
+    return result;
+  }
+  function getStyle(className_) {
+    var styleSheets = window.document.styleSheets;
+    var styleSheetsLength = styleSheets.length;
+    for(var i = 0; i < styleSheetsLength; i++){
+      var classes = styleSheets[i].rules || styleSheets[i].cssRules;
+      if (!classes) {
+        continue;
+      }
+      var classesLength = classes.length;
+      for (var x = 0; x < classesLength; x++) {
+        if (classes[x].selectorText == className_) {
+          var ret,
+              match;
+          if(classes[x].cssText){
+            ret = classes[x].cssText;
+          } else {
+            ret = classes[x].style.cssText;
+          }
+          if(ret.indexOf(classes[x].selectorText) == -1){
+            ret = classes[x].selectorText + "{" + ret + "}";
+          }
+          match = ret.match(/[^{]*{([^}]*)}/);
+          return match[1];
+        }
+      }
+    }
+  }
+  $svg.find(".blocklyText").each(function(idx, el) {
+    el.style.cssText = blocklyText;
+  });
+  $svg.find(".blocklyTrash,.blocklyZoom").remove();
+  if(target == "toolbox") {
+    $svg.children("g").children().not(".blocklyFlyout").remove();
+    $svg.find(".blocklyFlyoutBackground").css("fill", "transparent");
+    $svg.find(".blocklyFlyout .blocklyWorkspace").attr("transform", "translate(-" + bbox.x + ",-" + bbox.y + ")");
+  } else if(target == "workspace") {
+    $svg.children("g").children().not(".blocklyBlockCanvas").remove();
+    $svg.find(".blocklyBlockCanvas").removeAttr("transform");
+    $svg.find(".blocklyBlockCanvas>g").attr("transform", "translate(0,20)");
+  }
+  $svg.attr("width", bbox.width + "px");
+  $svg.attr("height", bbox.height + "px");
+  $svg.find("image").each(function(idx, el) {
+    var href = el.getAttribute("xlink:href"),
+        img;
+    if(href) {
+      onloadCount++;
+      img = new Image();
+      img.src = href;
+      img.onload = function() {
+        onloadCount--;
+        el.setAttribute("xlink:href", getBase64Image(img))
+        img = img.onload = null;
+        if(onloadCount == 0) {
+          image.onload = function() {
+            _this._downloadImage(getBase64Image(image), fileName + ".png");
+            image = image.onload = $svg = serializer = link = null;
+          }
+          image.src = "data:image/svg+xml;utf8," + serializer.serializeToString($svg.get(0));
+        }
+      };
+    }
+  });
 }
 
 // ========================================
