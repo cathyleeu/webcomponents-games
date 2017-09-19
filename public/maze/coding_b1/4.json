@@ -3,37 +3,37 @@
   "score":1,
   "workspace": ["start"],
   "toolbox": [
-    "move_forward",
-    "rotate_left",
-    "rotate_right"
+    "move_forward"
   ],
   "map": [
-    "######",
-    "#.#...",
-    "#...#.",
-    "#.##..",
-    "#..#u#",
-    "##.%##"
+    ".d......",
+    "#.#.....",
+    "#.#.....",
+    "#.#.....",
+    "#.#.....",
+    "#.#.....",
+    "#.#.....",
+    ".%......"
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "튜브로 가보자",
+    "msg:ko": "안녕? 내 이름을 맞춰봐.",
     "msg:jp": "うきわのところまで行こう。",
     "msg:en": "Go to the tube.",
     "img": "/img/b5_w1/tube.png"
   },{
-    "msg:ko": "튜브가 여러 개 있네.",
+    "msg:ko": "목표지점으로 가면 내 이름을 알 수 있어.",
     "msg:jp": "うきわがいくつかあるよ。",
     "msg:en": "There are more than one tubes.",
     "img": "/img/b5_w1/tube.png"
   },{
-    "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
+    "msg:ko": "목표지점으로 가보자.",
     "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
     "msg:en": "Try to use 'get items' block more than once!",
     "img": "/img/blocks/bring.png"
   }],
   "goal": {
-    "msg:ko": "튜브에서 '가져오기' 블록을 사용하자.",
+    "msg:ko": "성공! “코봇, 내 이름은 코봇이야.” ",
     "msg:jp": "うきわのところで「アイテムゲット」ブロックを使用してみよう。",
     "msg:en": "Let's use 'get items' block on the tube",
     "img": ["/img/b5_w1/tube.png","/img/blocks/bring.png"]

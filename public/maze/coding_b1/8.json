@@ -8,28 +8,34 @@
     "rotate_right"
   ],
   "map": [
-    "########",
-    "#.#...r#",
-    "#...##.#",
-    "#..#.#.#",
-    "#.#....#",
-    "#%.#...#",
-    "#...##.#",
-    "#..#####"
+    "........",
+    "...###..",
+    "..#...%.",
+    "..#.##..",
+    ".d..#...",
+    "..##....",
+    "........",
+    "........"
   ],
-  "extra":[],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img": "fruit_strawberry"
+    }],
   "tutorial": [{
-    "msg:ko": "가져와야할 것들이 여러 개 있어.",
+    "msg:ko": "나는 코봇이야. 나는 과일을 좋아해.",
     "msg:jp": "ゲットするアイテムがいくつかあるよ。",
     "msg:en": "There are several things."
   },{
-    "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
+    "msg:ko": "나는 딸기를 먹고 싶어.",
     "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
     "msg:en": "Try to use 'get items' block more than once!",
     "img": "/img/blocks/bring.png"
-  }],
+  },{
+    "msg:ko" : "내가 먹고 싶은 딸기로 가보자."
+    }],
   "goal": {
-    "msg:ko": "가져올 물건 위에서 '가져오기' 블록을 사용하자.",
+    "msg:ko": "성공",
     "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
     "msg:en": "Let's use 'get items' block on the things",
     "img": ["/img/b5_w1/Rubber_boats.png","/img/b5_w1/tube.png","/img/blocks/bring.png"]
