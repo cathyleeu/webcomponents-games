@@ -1,11 +1,13 @@
 {
   "tile_size": 128,
   "score":3,
-  "workspace": ["start"],
+  "workspace": "start,move_forward(2),get_item,move_forward(4),rotate_right,move_forward(3),rotate_right,move_forward(3),use_item",
   "toolbox": [
     "move_forward",
     "rotate_left",
-    "rotate_right"
+    "rotate_right",
+    "use_item",
+    "get_item"
   ],
   "map": [
     "#r..R...",
