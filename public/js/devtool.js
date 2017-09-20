@@ -2,6 +2,9 @@ devtool = function(kidscoding) {
   this.kidscoding = kidscoding;
   this.actions = kidscoding.Actions;
   this.tileFactory = kidscoding.tileFactory;
+  this.setting = {
+    download: "download"
+  };
 };
 
 devtool.prototype._downloadImage = function(image, fileName) {
@@ -92,11 +95,14 @@ devtool.prototype.printMap = function() {
 }
 
 devtool.prototype.downloadMap = function () {
+  var canvas = this.actions.canvas,
+      image = canvas.stage.toDataURL();
+  if(this.setting.download == "base64") {
+    return image;
+  }
   var defaultName = location.hash.slice(2).replace(/\//g, "_") + "_map",
-      fileName = window.prompt("please input file name", defaultName ).trim(),
-      canvas = this.actions.canvas,
-      image = canvas.stage.toDataURL().replace("image/png", "image/octet-stream");
-  this._downloadImage(image, fileName + "_map.png");
+      fileName = window.prompt("please input file name", defaultName ).trim();
+  this._downloadImage(image.replace("image/png", "image/octet-stream"), fileName + "_map.png");
 }
 
 // ========================================
