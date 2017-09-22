@@ -43,17 +43,45 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+<div id="maze-rotateAlert" class="rotate-alert">
+  <div>
+    <i class="fa fa-tablet fa-rotate-90" style="font-size: 200px;"></i>
+    <p> 화면의 가로를 길게 해주세요! </p>
+  </div>
+</div>
+
+<!-- maze-notification for vertical version -->
+
+<div id="maze-notification" class="noti-container">
+  <div class="noti-header" data-msg="goal"> 목표 </div>
+  <div class="noti-body">
+    <div class="noti-char">
+      <div class="noti-direct">
+        <div class="noti-arrow noti-up" data-arrow="up"></div>
+        <div class="noti-arrow noti-down" data-arrow="down"></div>
+      </div>
+      <img src="/img/coding/robot1.png" class="robot"/>
+    </div>
+    <div class="noti-guide"></div>
+  </div>
+</div>
+
+<!-- ===================================== -->
 
 <div id="maze-container" class="<%= mazeType %>">
   <div class="sidebar text-center">
     <canvas id="display"></canvas>
-    <div class="goal">
-      <div class="goal-title" data-msg="goal">목표</div>
-      <div class="goal-imgs">
-        <img class="goal-img" src=""/>
+    <div class="side_guide">
+      <div class="goal">
+        <div class="goal-title" data-msg="goal">목표</div>
+        <div class="goal-imgs">
+          <img class="goal-img" src=""/>
+        </div>
+        <div class="goal-div">
+          <span class="goal-msg"></span>
+        </div>
       </div>
-      <div class="goal-div">
-        <span class="goal-msg"></span>
+      <div class="side_console">
       </div>
     </div>
     <div class="bottom-row">

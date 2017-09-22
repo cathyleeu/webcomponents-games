@@ -273,7 +273,7 @@ function init() {
       .css("width", (100 / goal.img.length).toFixed(2) + "%")
       .appendTo(".goal-imgs");
   });
-  $(".goal .goal-msg").html(goal_msg.replace(/\n/g, "<br/>"));
+  $(".side_guide .goal-msg").html(goal_msg.replace(/\n/g, "<br/>"));
   var queries = store.get("queries") || {};
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
@@ -466,13 +466,24 @@ function setBitmapCoord(bitmap, px, py) {
 function handle_resize(e) {
   var size,
       workspace_height = 200;
+
+  // ============ 가로폭이 더 좁을 경우, 회전을 부탁 한다는 알림창 ============
+  // if($(window).height() > $(window).width()) {
+  //   $("#maze-rotateAlert").removeClass("rotate-alert")
+  //   $("#navbarMaze, #maze-container, #maze-notification").addClass("rotate-alert")
+  // } else {
+  //   $("#maze-rotateAlert").addClass("rotate-alert")
+  //   $("#navbarMaze, #maze-container, #maze-notification").removeClass("rotate-alert")
+  // }
+  // ===============================================================
+
   if(kidscoding.isHorizontal) {
     size = $(window).height() - workspace_height;
     if($(window).width() < size) {
       size = $(window).width();
     }
   } else {
-    size = $(window).height() - $("#navbarMaze").height() - $("#maze-container .bottom-row").height();
+    size = $(window).height() - $("#navbarMaze").height() - $("#maze-notification").height() - $("#maze-container .bottom-row").height();
     if($(window).width() / 2 < size) {
       size = parseInt($(window).width() / 2, 10);
     }
@@ -492,13 +503,21 @@ function handle_resize(e) {
         coord = startblock.getRelativeToSurfaceXY(),
         dx = 0,
         dy = (display_height + 30) - coord.y;
+    $("#maze-notification").css({
+      display: "none"
+    })
     $(".sidebar").css({
       height: display_height,
       left: (maze.type == "world" ? 0 : flyout.getWidth()) + "px"
     });
-    $(".goal").css({
+    $(".side_guide").css({
       height: display_height,
       left: display_width + "px"
+    });
+    $(".goal, .side_console").css({
+      "height": "50%",
+      "min-height": display_height*0.5
+      // left: display_width + "px"
     });
     if(maze.type == "world") {
       $(".bottom-row").addClass("horizontal_world");
@@ -532,6 +551,14 @@ function addEvents() {
   if(window.name) {
     $("#logout").removeClass("hidden");
   }
+  $(".noti-arrow").click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var goScroll = $(e.target).data("arrow") === "up"
+        ? $(".noti-guide").scrollTop()-40
+        : $(".noti-guide").scrollTop()+40
+    $(".noti-guide").scrollTop(goScroll)
+  })
   $("#logout a").click(function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -636,16 +663,19 @@ function addEvents() {
           var lang = store.get("lang") || "ko",
               blockName = Blocks[failed].name[lang],
               msg = messages.fail_mandatory.split("%1").join(blockName);
-          showModal(msg);
+          kidscoding.isHorizontal ? showModal(msg) : renderAlert(msg, {ruleErr: "block"} )
+
         } else {
           // start run
           kidscoding.Actions.delay = 100;
           run(startblock, checkEnd);
         }
       } else {
-        showModal(messages.fail_noBlocks);
+        kidscoding.isHorizontal ? showModal(messages.fail_noBlocks) : renderAlert(messages.fail_noBlocks, {blockErr : "empty"})
       }
     } else {
+      $(".noti-guide div:last-child").remove();
+      $('.noti-guide').scrollTop(0)
       $("#runCode .start").show();
       $("#runCode .reset").hide();
       createjs.Tween.removeAllTweens();
@@ -721,7 +751,7 @@ function addEvents() {
           }
         } else {
           var msg = messages.fail_notEnough.split("%1").join(obj.min_score);
-          showModal(msg);
+          kidscoding.isHorizontal ? showModal(msg) : renderAlert(msg, {ruleErr: "item"});
         }
       }
       if(obj && obj.tutorial) {
@@ -815,13 +845,23 @@ function FullScreen(el) {
 };
 
 function runTutorial(input_tutorial) {
+  var lang = store.get("lang") || "ko",
+      getText = "msg:"+lang
   if(!input_tutorial) {
     return;
   }
   tutorial = input_tutorial;
   tutorialIdx = 0;
-  $('#modal').modal('hide');
-  $("#modal .tutorial").click();
+
+  if(kidscoding.isHorizontal) {
+    $('#modal').modal('hide');
+    $("#modal .tutorial").click();
+  } else {
+    $('.noti-guide').children().remove();
+    input_tutorial.map(function(txt){
+      $('.noti-guide').append("<div class='speech-bubble'>"+txt[getText]+"</div>")
+    })
+  }
 }
 
 
@@ -916,7 +956,7 @@ function run(block, callback) {
             className = $svg.attr("class");
         $svg.attr("class", className + " error");
         createjs.Sound.play("fail");
-        showModal(obj);
+        kidscoding.isHorizontal ? showModal(obj) : renderAlert(obj, {ruleErr: "actions"});
         return;
       }
       if( obj && typeof obj == "object" ) {
@@ -928,7 +968,7 @@ function run(block, callback) {
               className = $svg.attr("class");
           $svg.attr("class", className + " error");
           createjs.Sound.play("fail");
-          showModal(messages.fail_wall);
+          kidscoding.isHorizontal ? showModal(messages.fail_wall) : renderAlert(messages.fail_wall, {ruleErr: "wall"});
           return;
         }
         if( obj.role == "food" && !obj.useItem) {
@@ -959,6 +999,7 @@ function run(block, callback) {
 }
 
 function checkEnd() {
+  console.log("checkEnd worked!");
   var foods = mazeInfo.canvas.foods;
   if(foods.length == 1 && (foods[0].itemCountBitmap || foods[0].itemList)) {
     var itemCount = tileFactory.getItemCount(foods[0]);
@@ -974,13 +1015,13 @@ function checkEnd() {
       }
     } else {
       createjs.Sound.play("fail");
-      showModal(messages.fail_done);
+      kidscoding.isHorizontal ? showModal(messages.fail_done) : renderAlert(messages.fail_done, { blockErr : "default"});
     }
   } else {
     for(var i = 0; i < foods.length; i++) {
       if(foods[i].visible == true) {
         createjs.Sound.play("fail");
-        showModal(messages.fail_done);
+        kidscoding.isHorizontal ? showModal(messages.fail_done) : renderAlert(messages.fail_done, { blockErr : "shortage"});
         break;
       }
     }
@@ -989,7 +1030,7 @@ function checkEnd() {
           !(foods[0].px == mazeInfo.canvas.character.px &&
           foods[0].py == mazeInfo.canvas.character.py)) {
         createjs.Sound.play("fail");
-        showModal(messages.fail_done);
+        kidscoding.isHorizontal ? showModal(messages.fail_done) : renderAlert(messages.fail_done, { blockErr : "exceed"});
       } else {
         createjs.Sound.play("complete");
         if(maze.success) {
@@ -1037,6 +1078,12 @@ function resetMaze(mazeInfo, maze, loader, tileFactory) {
   mazeInfo.canvas.obstacles = [];
   mazeInfo.canvas.others = [];
   mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
+}
+function renderAlert(msg, type) {
+  var typeKey = Object.keys(type).toString();
+  $('.noti-guide').append("<div class='speech-bubble "+typeKey+"'>"+msg+"</div>")
+  var goToScroll = $('.noti-guide').prop("scrollHeight")
+  $('.noti-guide').scrollTop(goToScroll)
 }
 
 function showModal(options) {
