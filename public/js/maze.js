@@ -308,6 +308,7 @@ function init() {
       runTutorial(maze.tutorial);
     }
   }
+  devtool.drawFinished();
 }
 
 function initMaze() {

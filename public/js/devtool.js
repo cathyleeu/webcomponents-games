@@ -5,7 +5,26 @@ devtool = function(kidscoding) {
   this.setting = {
     download: "download"
   };
+  this.data = {};
 };
+devtool._drawFinished = false;
+devtool.actions = [];
+devtool.runAction = function(action) {
+  if(this._drawFinished) {
+    action();
+  } else {
+    devtool.actions.push(action);
+  }
+}
+devtool.drawFinished = function() {
+  this._drawFinished = true;
+  if(devtool.actions) {
+    devtool.actions.forEach(function(action) {
+      action();
+    });
+    devtool.actions = null;
+  }
+}
 
 devtool.prototype._downloadImage = function(image, fileName) {
   var link = document.createElement("a");
@@ -94,15 +113,19 @@ devtool.prototype.printMap = function() {
   }).join("\n"));
 }
 
-devtool.prototype.downloadMap = function () {
+devtool.prototype.downloadMap = function(fileName) {
   var canvas = this.actions.canvas,
-      image = canvas.stage.toDataURL();
-  if(this.setting.download == "base64") {
-    return image;
+      data = canvas.stage.toDataURL(),
+      defaultName = location.hash.slice(2).replace(/\//g, "_") + "_map";
+  if($$$.setting.download == "base64") {
+    $$$.data[fileName + ".png"] = data;
+    console.log("devtool_output:" + fileName + ".png");
+    return;
   }
-  var defaultName = location.hash.slice(2).replace(/\//g, "_") + "_map",
-      fileName = window.prompt("please input file name", defaultName ).trim();
-  this._downloadImage(image.replace("image/png", "image/octet-stream"), fileName + "_map.png");
+  if(!fileName) {
+    fileName = window.prompt("please input file name", defaultName ).trim();
+  }
+  this._downloadImage(data.replace("image/png", "image/octet-stream"), fileName + "_map.png");
 }
 
 // ========================================
@@ -123,18 +146,17 @@ devtool.prototype.updateWorkspace = function(workspace) {
   Blockly.Xml.domToWorkspace(xml, this.kidscoding.workspace);
 }
 
-devtool.prototype.downloadToolbox = function() {
-  return this._downloadBlocks("toolbox");
+devtool.prototype.downloadToolbox = function(fileName) {
+  return this._downloadBlocks(fileName, "toolbox");
 }
 
-devtool.prototype.downloadWorkspace = function() {
-  return this._downloadBlocks("workspace");
+devtool.prototype.downloadWorkspace = function(fileName) {
+  return this._downloadBlocks(fileName, "workspace");
 }
 
-devtool.prototype._downloadBlocks = function(target) {
+devtool.prototype._downloadBlocks = function(fileName, target) {
   var _this = this,
       defaultName = location.hash.slice(2).replace(/\//g, "_") + "_" + target,
-      fileName = window.prompt("please input file name", defaultName ).trim(),
       image = new Image(),
       serializer = new XMLSerializer(),
       $svg = $($("svg.blocklySvg").get(0).cloneNode(true)),
@@ -143,6 +165,9 @@ devtool.prototype._downloadBlocks = function(target) {
           $("svg.blocklySvg>.blocklyWorkspace>.blocklyBlockCanvas") ).get(0).getBBox(),
       onloadCount = 0,
       blocklyText = getStyle(".blocklyText");
+  if(!fileName) {
+    fileName = window.prompt("please input file name", defaultName ).trim();
+  }
   function getBase64Image(img) {
     var canvas = document.createElement("canvas"),
         ctx = canvas.getContext("2d"),
@@ -199,7 +224,7 @@ devtool.prototype._downloadBlocks = function(target) {
   $svg.find(".blocklyTrash,.blocklyZoom").remove();
   if(target == "toolbox") {
     $svg.children("g").children().not(".blocklyFlyout").remove();
-    $svg.find(".blocklyFlyoutBackground").css("fill", "transparent");
+    $svg.find(".blocklyFlyoutBackground").remove();
     $svg.find(".blocklyFlyout .blocklyWorkspace").attr("transform", "translate(-" + bbox.x + ",-" + bbox.y + ")");
   } else if(target == "workspace") {
     $svg.children("g").children().not(".blocklyBlockCanvas").remove();
@@ -208,6 +233,7 @@ devtool.prototype._downloadBlocks = function(target) {
   }
   $svg.attr("width", bbox.width + "px");
   $svg.attr("height", bbox.height + "px");
+  $svg.attr("style", "width:" + bbox.width + 'px;height:' + bbox.height + 'px;');
   $svg.find("image").each(function(idx, el) {
     var href = el.getAttribute("xlink:href"),
         img;
@@ -220,11 +246,16 @@ devtool.prototype._downloadBlocks = function(target) {
         el.setAttribute("xlink:href", getBase64Image(img))
         img = img.onload = null;
         if(onloadCount == 0) {
-          image.onload = function() {
-            _this._downloadImage(getBase64Image(image), fileName + ".png");
-            image = image.onload = $svg = serializer = link = null;
+          if($$$.setting.download == "base64") {
+            $$$.data[fileName + ".png"] = serializer.serializeToString($svg.get(0));
+            console.log("devtool_output:" + fileName + ".png");
+          } else {
+            image.onload = function() {
+              _this._downloadImage(getBase64Image(image), fileName + ".png");
+              image = image.onload = $svg = serializer = link = null;
+            }
+            image.src = "data:image/svg+xml;utf8," + serializer.serializeToString($svg.get(0));
           }
-          image.src = "data:image/svg+xml;utf8," + serializer.serializeToString($svg.get(0));
         }
       };
     }
