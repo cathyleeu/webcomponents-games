@@ -291,7 +291,7 @@ function init() {
             document.webkitFullscreenElement ||
             document.mozFullScreenElement ||
             document.msFullscreenElement;
-    if(fullscreen == undefined && fullscreenEnabled && !fullscreenElement) {
+    if(kidscoding.isHorizontal && fullscreen == undefined && fullscreenEnabled && !fullscreenElement) {
       showModal({
         msg: messages.ask_fullscreen,
         confirm: true,
@@ -864,8 +864,8 @@ function runTutorial(input_tutorial) {
   } else {
     $('.noti-guide').children().remove();
     input_tutorial.map(function(txt){
-      $('.noti-guide').append("<div class='speech-bubble'>"+txt[getText]+"</div>")
-    })
+      $('.noti-guide').append("<div class='speech-bubble'>"+txt[getText]+"</div>");
+    });
   }
 }
 
