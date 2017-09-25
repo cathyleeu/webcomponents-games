@@ -83,16 +83,6 @@ KidsCoding = function() {
 
       return metrics;
     }
-
-    var translateSurface = Blockly.DragSurfaceSvg.prototype.translateSurface;
-    Blockly.DragSurfaceSvg.prototype.translateSurface = function(x, y) {
-      translateSurface.call(this, x, y);
-      if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == 0 && this.SVG_.getBoundingClientRect().right == $(document).width())) {
-        // 안드로이드 구형 브라우저 및 IE에서 터치 위치와 블럭 위치가 맞지 않는 현상 수정
-        // SEE: https://gitlab.com/toycode/kidscoding/merge_requests/638
-        this.SVG_.setAttribute("style", this.SVG_.getAttribute("style") + ";left:" + x.toFixed(2) + "px;top:" + y.toFixed(2) + "px;");
-      }
-    }
   } else {
     var labelInit = Blockly.FieldLabel.prototype.init;
     // 텍스트 라벨의 위치 조정
@@ -101,6 +91,21 @@ KidsCoding = function() {
       var y = +this.textElement_.getAttribute("y");
       this.textElement_.setAttribute("y", y + 5);
     };
+  }
+  if(this.blockType != "default") {
+    var translateSurface = Blockly.DragSurfaceSvg.prototype.translateSurface;
+    Blockly.DragSurfaceSvg.prototype.translateSurface = function(x, y) {
+      translateSurface.call(this, x, y);
+      if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == parseInt($("#maze-container .workspace").css("left")) && this.SVG_.getBoundingClientRect().right == $(document).width())) {
+        // 안드로이드 구형 브라우저 및 IE에서 터치 위치와 블럭 위치가 맞지 않는 현상 수정
+        // SEE: https://gitlab.com/toycode/kidscoding/merge_requests/638
+        if(_this.blockType == "vertical") {
+          x = (x + _this.workspace.getFlyout().getWidth()) * this.scale_;
+        }
+        y *= this.scale_;
+        this.SVG_.setAttribute("style", this.SVG_.getAttribute("style") + ";left:" + x.toFixed(2) + "px;top:" + y.toFixed(2) + "px;");
+      }
+    }
   }
   // 일부 태블릿에서 블럭이 움직이지 않는 현상 수정
   Blockly.longStart_ = function() {};
