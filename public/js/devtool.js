@@ -33,6 +33,57 @@ devtool.prototype._downloadImage = function(image, fileName) {
   link.click();
   link = null
 }
+devtool.prototype._getBase64Image = function(img) {
+  var canvas = document.createElement("canvas"),
+      ctx = canvas.getContext("2d"),
+      devicePixelRatio = window.devicePixelRatio || 1,
+      backingStoreRatio = ctx.webkitBackingStorePixelRatio ||
+                          ctx.mozBackingStorePixelRatio ||
+                          ctx.msBackingStorePixelRatio ||
+                          ctx.oBackingStorePixelRatio ||
+                          ctx.backingStorePixelRatio || 1,
+      ratio = devicePixelRatio / backingStoreRatio,
+      width = img.naturalWidth,
+      height = img.naturalHeight,
+      result;
+  canvas.width = width * ratio;
+  canvas.height = height * ratio;
+  canvas.style.width = width + 'px';
+  canvas.style.height = height + 'px';
+  ctx.scale(ratio, ratio);
+  ctx.drawImage(img,0,0,width,height);
+  result = canvas.toDataURL("image/png");
+  canvas = ctx = null;
+  return result;
+}
+devtool.prototype._getStyle = function(className_) {
+  var styleSheets = window.document.styleSheets;
+  var styleSheetsLength = styleSheets.length;
+  for(var i = 0; i < styleSheetsLength; i++){
+    var classes = styleSheets[i].rules || styleSheets[i].cssRules;
+    if (!classes) {
+      continue;
+    }
+    var classesLength = classes.length;
+    for (var x = 0; x < classesLength; x++) {
+      if (classes[x].selectorText == className_) {
+        var ret,
+            match;
+        if(classes[x].cssText){
+          ret = classes[x].cssText;
+        } else {
+          ret = classes[x].style.cssText;
+        }
+        if(ret.indexOf(classes[x].selectorText) == -1){
+          ret = classes[x].selectorText + "{" + ret + "}";
+        }
+        match = ret.match(/[^{]*{([^}]*)}/);
+        return match[1];
+      }
+    }
+  }
+}
+
 devtool.prototype.goNext = function() {
   $("#modal .go-next").click();
 };
@@ -82,6 +133,27 @@ devtool.prototype.removeTile = function(x, y) {
   obj.visible = false;
   this.actions.map[obj.py][obj.px] = ".";
   this.actions.canvas.stage.update();
+}
+
+devtool.prototype.getInstructions = function(name) {
+  var lang = store.get("lang") || "ko",
+      tutorial = $$$.kidscoding.tileFactory.maze.tutorial,
+      img = $$$.kidscoding.Actions.loader.getResult("message"),
+      data;
+  tutorial = tutorial.map(function(item) {
+    return item["msg:" + lang];
+  });
+  data = {
+    image: this._getBase64Image(img),
+    instructions: tutorial
+  };
+  name = name || location.hash.slice(2).replace(/\//g, "_") + "_instruction";
+  if($$$.setting.download == "base64") {
+    $$$.data[name] = data;
+    console.log("devtool_output:" + name);
+    return;
+  }
+  console.log(JSON.stringify(data));
 }
 
 // ========================================
@@ -164,59 +236,9 @@ devtool.prototype._downloadBlocks = function(fileName, target) {
           $("svg.blocklySvg .blocklyFlyout .blocklyWorkspace") :
           $("svg.blocklySvg>.blocklyWorkspace>.blocklyBlockCanvas") ).get(0).getBBox(),
       onloadCount = 0,
-      blocklyText = getStyle(".blocklyText");
+      blocklyText = this._getStyle(".blocklyText");
   if(!fileName) {
     fileName = window.prompt("please input file name", defaultName ).trim();
-  }
-  function getBase64Image(img) {
-    var canvas = document.createElement("canvas"),
-        ctx = canvas.getContext("2d"),
-        devicePixelRatio = window.devicePixelRatio || 1,
-        backingStoreRatio = ctx.webkitBackingStorePixelRatio ||
-                            ctx.mozBackingStorePixelRatio ||
-                            ctx.msBackingStorePixelRatio ||
-                            ctx.oBackingStorePixelRatio ||
-                            ctx.backingStorePixelRatio || 1,
-        ratio = devicePixelRatio / backingStoreRatio,
-        width = img.naturalWidth,
-        height = img.naturalHeight,
-        result;
-    canvas.width = width * ratio;
-    canvas.height = height * ratio;
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
-    ctx.scale(ratio, ratio);
-    ctx.drawImage(img,0,0,width,height);
-    result = canvas.toDataURL("image/png");
-    canvas = ctx = null;
-    return result;
-  }
-  function getStyle(className_) {
-    var styleSheets = window.document.styleSheets;
-    var styleSheetsLength = styleSheets.length;
-    for(var i = 0; i < styleSheetsLength; i++){
-      var classes = styleSheets[i].rules || styleSheets[i].cssRules;
-      if (!classes) {
-        continue;
-      }
-      var classesLength = classes.length;
-      for (var x = 0; x < classesLength; x++) {
-        if (classes[x].selectorText == className_) {
-          var ret,
-              match;
-          if(classes[x].cssText){
-            ret = classes[x].cssText;
-          } else {
-            ret = classes[x].style.cssText;
-          }
-          if(ret.indexOf(classes[x].selectorText) == -1){
-            ret = classes[x].selectorText + "{" + ret + "}";
-          }
-          match = ret.match(/[^{]*{([^}]*)}/);
-          return match[1];
-        }
-      }
-    }
   }
   $svg.find(".blocklyText").each(function(idx, el) {
     el.style.cssText = blocklyText;
@@ -243,7 +265,7 @@ devtool.prototype._downloadBlocks = function(fileName, target) {
       img.src = href;
       img.onload = function() {
         onloadCount--;
-        el.setAttribute("xlink:href", getBase64Image(img))
+        el.setAttribute("xlink:href", _this._getBase64Image(img))
         img = img.onload = null;
         if(onloadCount == 0) {
           if($$$.setting.download == "base64") {
@@ -251,7 +273,7 @@ devtool.prototype._downloadBlocks = function(fileName, target) {
             console.log("devtool_output:" + fileName + ".png");
           } else {
             image.onload = function() {
-              _this._downloadImage(getBase64Image(image), fileName + ".png");
+              _this._downloadImage(_this._getBase64Image(image), fileName + ".png");
               image = image.onload = $svg = serializer = link = null;
             }
             image.src = "data:image/svg+xml;utf8," + serializer.serializeToString($svg.get(0));
