@@ -35,6 +35,10 @@ page('*', function(ctx, next) {
   // page 이동시 이전에 재생되던 bgm을 멈춤
   createjs.Sound.stop("bgm");
 
+  // devtool 초기화
+  devtool._drawFinished = false;
+  devtool.actions = [];
+
   d1 = $.Deferred();
   d2 = $.Deferred();
   $.when( d1, d2 ).done(preInit);
