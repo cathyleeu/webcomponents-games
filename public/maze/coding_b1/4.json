@@ -17,14 +17,9 @@
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "안녕? 내 이름을 맞춰봐.",
+    "msg:ko": "안녕? 내 이름을 맞춰봐.\n목표지점으로 가면 내 이름을 알 수 있어.",
     "msg:jp": "うきわのところまで行こう。",
     "msg:en": "Go to the tube.",
-    "img": "/img/b5_w1/tube.png"
-  },{
-    "msg:ko": "목표지점으로 가면 내 이름을 알 수 있어.",
-    "msg:jp": "うきわがいくつかあるよ。",
-    "msg:en": "There are more than one tubes.",
     "img": "/img/b5_w1/tube.png"
   },{
     "msg:ko": "목표지점으로 가보자.",
