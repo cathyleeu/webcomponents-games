@@ -90,8 +90,6 @@ KidsCoding = function() {
       if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == 0 && this.SVG_.getBoundingClientRect().right == $(document).width())) {
         // 안드로이드 구형 브라우저 및 IE에서 터치 위치와 블럭 위치가 맞지 않는 현상 수정
         // SEE: https://gitlab.com/toycode/kidscoding/merge_requests/638
-        x = (x + _this.workspace.getFlyout().getWidth()) * this.scale_;
-        y *= this.scale_;
         this.SVG_.setAttribute("style", this.SVG_.getAttribute("style") + ";left:" + x.toFixed(2) + "px;top:" + y.toFixed(2) + "px;");
       }
     }
