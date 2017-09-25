@@ -237,7 +237,7 @@ function init() {
   drawMaze();
   kidscoding.init(loader, mazeInfo, run, tileFactory);
   kidscoding.initBlockly(maze.toolbox, maze.workspace);
-
+  $(".noti-guide").scrollTop() < 10 && $('.noti-up').css('border-color', "transparent transparent gray")
   function blockLimitsHandler(event) {
     var xml = event.xml || event.oldXml,
         type = xml ? (xml.getAttribute("type") || "") : "";
@@ -559,10 +559,13 @@ function addEvents() {
   $(".noti-arrow").click(function(e){
     e.preventDefault();
     e.stopPropagation();
-    var goScroll = $(e.target).data("arrow") === "up"
-        ? $(".noti-guide").scrollTop()-40
-        : $(".noti-guide").scrollTop()+40
-    $(".noti-guide").scrollTop(goScroll)
+
+    var noti = $(".noti-guide"),
+        scrollHeight = $(".noti-guide").prop("scrollHeight")-100,
+        goScroll = $(e.target).data("arrow") === "up" ? noti.scrollTop()-100 : noti.scrollTop()+100;
+    noti.scrollTop(goScroll)
+    noti.scrollTop() > 10 ? $('.noti-up').css('border-color', "") : $('.noti-up').css('border-color', "transparent transparent gray");
+    ( scrollHeight-10 < noti.scrollTop() && noti.scrollTop() < scrollHeight+10) ? $('.noti-down').css('border-color', "gray transparent transparent") : $('.noti-down').css('border-color', "");
   })
   $("#logout a").click(function(e) {
     e.preventDefault();
@@ -679,8 +682,9 @@ function addEvents() {
         kidscoding.isHorizontal ? showModal(messages.fail_noBlocks) : renderAlert(messages.fail_noBlocks, {blockErr : "empty"})
       }
     } else {
-      $(".noti-guide div:last-child").remove();
-      $('.noti-guide').scrollTop(0)
+      $('.noti-guide .speech:last-child').remove();
+      $('.noti-guide').prop("scrollHeight") === $('.noti-guide').height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "")
+      $('.noti-guide').scrollTop(10)
       $("#runCode .start").show();
       $("#runCode .reset").hide();
       createjs.Tween.removeAllTweens();
@@ -862,10 +866,14 @@ function runTutorial(input_tutorial) {
     $('#modal').modal('hide');
     $("#modal .tutorial").click();
   } else {
-    $('.noti-guide').children().remove();
-    input_tutorial.map(function(txt){
-      $('.noti-guide').append("<div class='speech-bubble'>"+txt[getText]+"</div>");
+    var noti = $('.noti-guide');
+    noti.empty();
+    input_tutorial.map(function(txt) {
+      var tutorial = txt[getText].replace(/\n/g, "<br/>");
+      noti.append("<div class='speech'><div class='speech-bubble'>"+tutorial+"</div></div>");
     });
+    noti.prop("scrollHeight") === noti.height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "");
+    noti.scrollTop(10);
   }
 }
 
@@ -1004,7 +1012,6 @@ function run(block, callback) {
 }
 
 function checkEnd() {
-  console.log("checkEnd worked!");
   var foods = mazeInfo.canvas.foods;
   if(foods.length == 1 && (foods[0].itemCountBitmap || foods[0].itemList)) {
     var itemCount = tileFactory.getItemCount(foods[0]);
@@ -1085,10 +1092,12 @@ function resetMaze(mazeInfo, maze, loader, tileFactory) {
   mazeInfo = drawMaze(mazeInfo, maze, loader, tileFactory);
 }
 function renderAlert(msg, type) {
-  var typeKey = Object.keys(type).toString();
-  $('.noti-guide').append("<div class='speech-bubble "+typeKey+"'>"+msg+"</div>")
-  var goToScroll = $('.noti-guide').prop("scrollHeight")
-  $('.noti-guide').scrollTop(goToScroll)
+  var typeKey = Object.keys(type).toString(),
+      noti = $('.noti-guide');
+  noti.append("<div class='speech'><p class='speech-bubble "+typeKey+"'>"+msg+"</p></div>")
+  var goToScroll = noti.prop("scrollHeight")
+  noti.prop("scrollHeight") === noti.height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "")
+  noti.scrollTop(goToScroll)
 }
 
 function showModal(options) {

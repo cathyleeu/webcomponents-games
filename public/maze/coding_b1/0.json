@@ -20,14 +20,9 @@
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "낚시대로 가보자",
+    "msg:ko": "반가워",
     "msg:jp": "つりざおのところまで行こう。",
     "msg:en": "Go to the fishing rod.",
     "img": "/img/b5_w1/fishing_rod.png"
-  },{
-    "msg:ko": "'가져오기' 블록을 사용해 봐!",
-    "msg:jp": "「アイテムゲット」ブロックを使用してみよう！",
-    "msg:en": "Try to use the Kidsblock, 'get items' block!",
-    "img": "/img/blocks/bring.png"
   }]
 }
