@@ -243,11 +243,14 @@ devtool.prototype._downloadBlocks = function(fileName, target) {
   $svg.find(".blocklyText").each(function(idx, el) {
     el.style.cssText = blocklyText;
   });
-  $svg.find(".blocklyTrash,.blocklyZoom").remove();
+  $svg.find(".blocklyTrash,.blocklyZoom,.blocklyBubbleCanvas,.blocklyScrollbarVertical").remove();
   if(target == "toolbox") {
     $svg.children("g").children().not(".blocklyFlyout").remove();
     $svg.find(".blocklyFlyoutBackground").remove();
-    $svg.find(".blocklyFlyout .blocklyWorkspace").attr("transform", "translate(-" + bbox.x + ",-" + bbox.y + ")");
+    $svg.find(".blocklyFlyout .blocklyWorkspace").attr({
+      "transform": "translate(-" + bbox.x + ",-" + bbox.y + ")",
+      "clip-path": ""
+    });
   } else if(target == "workspace") {
     $svg.children("g").children().not(".blocklyBlockCanvas").remove();
     $svg.find(".blocklyBlockCanvas").removeAttr("transform");
