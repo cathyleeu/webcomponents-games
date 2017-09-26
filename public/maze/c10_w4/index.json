@@ -261,7 +261,7 @@
     "y": 5,
     "link": "c10_w4/20"
   },{
-    "img":"cos0",
+    "img":"cos",
     "x": 2,
     "y": 4,
     "obstacle": false,

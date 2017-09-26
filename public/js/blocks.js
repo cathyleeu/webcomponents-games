@@ -1537,7 +1537,7 @@ Blocks["repeat"] = {
 };
 
 Blocks['repeat_until_cos'] = {
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1만약에 코스에게 가는 중이라면 반복",
     en: "%1Repeat if going to Cos"
@@ -1564,7 +1564,7 @@ Blocks['repeat_until_cos'] = {
 };
 
 Blocks['repeat_until_sea'] = {
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1만약에 바다에 가는 중이라면 반복",
     en: "%1Repeat if going to the sea"
@@ -1591,7 +1591,7 @@ Blocks['repeat_until_sea'] = {
 };
 
 Blocks['repeat_until_tootoo'] = {
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1만약에 투투에게 가는 중이라면 반복",
     en: "%1Repeat if going to Tootoo"
@@ -1617,7 +1617,7 @@ Blocks['repeat_until_tootoo'] = {
   action: ["repeat", "repeat_until"]
 };
 Blocks['repeat_until_bomi'] = {
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1만약에 봄이에게 가는 중이라면 반복",
     en: "%1Repeat if going to Bomi"
@@ -1643,7 +1643,7 @@ Blocks['repeat_until_bomi'] = {
   action: ["repeat", "repeat_until"]
 };
 Blocks['repeat_until_deer'] = {
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1만약에 디어에게 가는 중이라면 반복",
     en: "%1Repeat if going to Deer"
@@ -1669,7 +1669,7 @@ Blocks['repeat_until_deer'] = {
   action: ["repeat", "repeat_until"]
 };
 Blocks['repeat_until_jack'] = {
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1만약에 짹에게 가는 중이라면 반복",
     en: "%1Repeat if going to Jack"
@@ -1695,7 +1695,7 @@ Blocks['repeat_until_jack'] = {
   action: ["repeat", "repeat_until"]
 };
 Blocks['repeat_until_tori'] = {
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1만약에 토리에게 가는 중이라면 반복",
     en: "%1Repeat if going to Tori"

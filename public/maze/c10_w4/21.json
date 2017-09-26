@@ -39,12 +39,16 @@
   },{
     "x": 4,
     "y": 4,
-    "img": "egg"
+    "img": "cos"
+  },{
+    "x": 5,
+    "y": 4,
+    "img": "geny"
   }],
   "tutorial": [{
     "msg:ko": "코스와 투투는 무사히 아기와 제니에게 돌아왔어요.",
     "msg:en": "Cos and Tutu safely returned to the baby and Geny.",
-    "img": ["/img/c10/cos0.png","/img/c10/krill.png","/img/c10/1p.png","/img/c10/geny0.png"]
+    "img": ["/img/c10/cos0.png","/img/c10/tootoo0.png","/img/c10/1p.png","/img/c10/geny0.png"]
   },{
     "msg:ko": "1년동안 코스와 함께 즐거웠어요! 안녕!",
     "msg:en": "I hope you enjoyed KidsThinking with cos for a year! Good bye!",
