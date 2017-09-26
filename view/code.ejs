@@ -165,6 +165,7 @@ if(location.pathname == "/code" && location.hash) {
   var code = "<%=code%>";
   var info = <%-typeof info == "undefined" ? "{}" : info%>;
   var sClassName = <%-typeof className == "undefined" ? "null" : '"'+className+'"'%>;
+  var isTrial = <%-typeof isTrial=="undefined"?false:true%>;
   var view = 0,
       imgs = [];
   var names, level, books;
@@ -280,13 +281,16 @@ if(location.pathname == "/code" && location.hash) {
           sClassName = qs.className;
           showBook();
         }
-      } else if(ctx.path == "/trial") {
+      } else if(isTrial) {
         if(hash == "") {
           view = 0;
           showClass();
         } else {
           view = 2;
-          sClassName = qs.className;
+          sClassName = {
+            "kidsthinking": "키즈씽킹",
+            "kidscoding": "키즈코딩"
+          }[hash];
           showBook();
         }
       } else {
@@ -320,6 +324,14 @@ if(location.pathname == "/code" && location.hash) {
     }, []);
     classes.forEach(function(item, i) {
       var book_true = (info.code == "e91d5" || info.code == "c7b46" || info.code == "823b7" || info.code == "8244f" || info.code == "822d8" || info.code == "691a0") ? "&book=true" : "";
+      if(isTrial) {
+        var link = {
+          "키즈씽킹": "kidsthinking",
+          "키즈코딩": "kidscoding"
+        }[item[0]];
+        $('<a href="#' + link + book_true + '" class="btn btn-lg btn-default">' + item[0] + '</a>').appendTo("#classes");
+        return;
+      }
       $('<a href="#className=' + item[0] + book_true + '" class="btn btn-lg btn-default">' + item[0] + '</a>').appendTo("#classes");
     });
   }

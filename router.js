@@ -453,7 +453,8 @@ public.get('/trial', function *() {
   })[0] || (yield getInfoByCode(code));
   yield this.render('code', {
     code: code,
-    info: JSON.stringify(info)
+    info: JSON.stringify(info),
+    isTrial: true
   });
 });
 
