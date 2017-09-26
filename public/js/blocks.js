@@ -2401,7 +2401,7 @@ Blocks['condition_foodget'] = {
   action: ["conditioncheck","tile"]
 };
 Blocks['condition_foodget_notuse'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "먹이가 나오면",
     en: "If There is Food"
@@ -2460,7 +2460,7 @@ Blocks['condition_fooduse'] = {
   action: ["conditioncheck","character"]
 };
 Blocks['condition_light'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "%1 만약에 빨간 불이라면",
     en: "If %1 is red light"
@@ -2646,7 +2646,7 @@ Blocks['condition_top'] = {
   argsh1: null,
   action: ["conditioncheck","move_wo_item_5"]
 };
-Blocks['condition_luck_triangle'] = {
+Blocks['condition_key_triangle'] = {
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 세모 열쇠라면",
@@ -2663,13 +2663,13 @@ Blocks['condition_luck_triangle'] = {
     name: "if_statements"
   }, {
     type: "field_image",
-    src: "/img/kidsblocks/luck_triangle.png"
+    src: "/img/kidsblocks/key_triangle.png"
   }],
   messageh1: null,
   argsh1: null,
   action: ["conditioncheck","move_wo_item_if"]
 };
-Blocks['condition_luck_square'] = {
+Blocks['condition_key_square'] = {
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 네모 열쇠라면",
@@ -2686,13 +2686,13 @@ Blocks['condition_luck_square'] = {
     name: "if_statements"
   }, {
     type: "field_image",
-    src: "/img/kidsblocks/luck_square.png"
+    src: "/img/kidsblocks/key_square.png"
   }],
   messageh1: null,
   argsh1: null,
   action: ["conditioncheck","move_wo_item_else"]
 };
-Blocks['condition_luck_round'] = {
+Blocks['condition_key_round'] = {
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 동그라미 열쇠라면",
@@ -2709,7 +2709,7 @@ Blocks['condition_luck_round'] = {
     name: "if_statements"
   }, {
     type: "field_image",
-    src: "/img/kidsblocks/luck_round.png"
+    src: "/img/kidsblocks/key_round.png"
   }],
   messageh1: null,
   argsh1: null,
