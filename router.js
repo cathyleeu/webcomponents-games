@@ -446,6 +446,17 @@ public.get('/code/:code', function *(next) {
   });
 });
 
+public.get('/trial', function *() {
+  var code = "36904";
+  var info = url_json.filter(function(obj) {
+    return obj.code == code;
+  })[0] || (yield getInfoByCode(code));
+  yield this.render('code', {
+    code: code,
+    info: JSON.stringify(info)
+  });
+});
+
 secured.get('/homeschool/:classId', function *(next) {
   var classId = this.params.classId,
       kinderId = classId.split("-").slice(0, 2).join("-"),
