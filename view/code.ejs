@@ -280,6 +280,15 @@ if(location.pathname == "/code" && location.hash) {
           sClassName = qs.className;
           showBook();
         }
+      } else if(ctx.path == "/trial") {
+        if(hash == "") {
+          view = 0;
+          showClass();
+        } else {
+          view = 2;
+          sClassName = qs.className;
+          showBook();
+        }
       } else {
         if(hash == "") {
           view = 1;
