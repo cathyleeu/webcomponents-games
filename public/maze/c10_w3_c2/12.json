@@ -3,6 +3,7 @@
 
   "score":3,
   "workspace": ["start"],
+  "mandatory": ["repeat_until_sea"],
   "toolbox": [
     "move_up",
     "move_down",
@@ -20,6 +21,11 @@
     "s...##%s",
     "ssssssss"
   ],
+  "extra": [{
+    "x": 6,
+    "y": 6,
+    "img": "sea"
+  }],
   "tutorial": [{
     "msg:ko": "투투는 바다로 먹이를 구하러 가야 해요. 만약에 반복 블록을 이용해서 바다로 가요.",
     "msg:en": "Tootoo has to go to the sea to get food. Use the 'repeat if block' to go to the sea.",
