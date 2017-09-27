@@ -281,6 +281,13 @@ KidsCoding.prototype = {
     var _this = this,
         options = Blocks[name],
         lang = store.get("lang") || "ko";
+    // name이 없을 경우 message0에서 %1 등 제거하고 사용
+    if(!options.name) {
+      options.name = {};
+      Object.keys(options.message0).forEach(function(key) {
+        return options.name[key] = options.message0[key].replace(/\%\d/g, "").replace(/\s+/g, " ").trim();
+      });
+    }
     // 가로 블럭 처리
     if(this.isHorizontal) {
       // messageh와 argsh 처리
@@ -303,13 +310,13 @@ KidsCoding.prototype = {
       }
     }
     for(var item in options) {
-      if(item.slice(0, -1) == "message") {
+      if(item.slice(0, -1) == "message" || item == "name") {
         // 다국어 기능
         if(typeof options[item] == "object") {
           options[item] = options[item][lang] || options[item]["en"];
         }
         // 가로 블럭에서 텍스트 제거
-        if(this.isHorizontal) {
+        if(this.isHorizontal && item != "name") {
           options[item] = (options[item].match(/%[\d+]/g) || ["%1"]).join(" ")
         }
       }

@@ -25,7 +25,7 @@
   "fail_done": "ブロックを全部使いましたが、終わっていません。",
   "fail_noBlocks": "ブロックがひとつもありません！",
   "fail_notEnough": "%1つ以上集めてください。",
-  "fail_mandatory": "%1 ブロックを必ず使用しなければなりません",
+  "fail_mandatory": "'%1' ブロックを必ず使用しなければなりません",
   "fullscreen": "フルスクリーン",
   "goal": "目標"
 }
