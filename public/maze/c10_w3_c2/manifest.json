@@ -16,7 +16,8 @@
   {"id": "icewall1", "src": "/img/c10/icewall1.png", "obstacle": true},
   {"id": "icewall2", "src": "/img/c10/icewall2.png", "obstacle": true},
   {"id": "icehole", "src": "/img/c10/icehole.png", "obstacle": true},
-  {"tile": "s", "id": "sea", "src": "/img/c10/sea.png", "wall": true},
+  {"tile": "s", "id": "sea0", "src": "/img/c10/sea.png", "wall": true},
+  {"id": "sea", "src": "/img/c10/targetsea.png", "obstacle": false},
 
   {"id": "cos0", "src": "/img/c10/cos0.png", "obstacle": false},
   {"tile": "H", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},

@@ -2,7 +2,8 @@
   "tile_size": 128,
 
   "score":2,
-  "workspace": ["start"],
+  "workspace": "start,repeat_until_tootoo[move_up,move_right]",
+  "mandatory": ["repeat_until_tootoo"],
   "toolbox": [
     "move_up",
     "move_down",

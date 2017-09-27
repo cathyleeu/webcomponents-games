@@ -3,6 +3,7 @@
 
   "score":1,
   "workspace": ["start"],
+  "mandatory": ["repeat_until_cos"],
   "toolbox": [
     "move_up",
     "move_down",
