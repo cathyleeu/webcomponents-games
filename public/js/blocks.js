@@ -708,6 +708,17 @@ Blocks["move_forward4"] = {
     }
   }]
 };
+Blocks["empty"] = {
+  rgbColor: "#FFFFFF",
+  message0: {
+    ko: "%1 빈칸의 블럭을 맞춰보세요.",
+    en: "%1 빈칸의 블럭을 맞춰보세요."
+  },
+  args0: [
+    {type: "field_image"}
+  ],
+  action: ["", ""]
+};
 Blocks["rotate_left"] = {
   colour: 90,
   message0: {
