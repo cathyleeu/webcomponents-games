@@ -23,20 +23,10 @@
     "img":"fruit_strawberry"
   }],
   "tutorial": [{
-    "msg:ko": "나는 코봇이야. 나는 과일을 좋아해.",
+    "msg:ko": "나는 코봇이야. 나는 과일을 좋아해.\n나는 딸기를 먹고 싶어.\n내가 먹고 싶은 딸기로 가보자.",
     "msg:jp": "アイスボックスのところまで行こう。",
     "msg:en": "Go to the ice box.",
     "img": "/img/b5_w1/ice_box.png"
-  },{
-    "msg:ko": "나는 딸기를 먹고 싶어.",
-    "msg:jp": "宝物箱に宝物がいくつかあるよ。",
-    "msg:en": "There are more than one ice boxs.",
-    "img": "/img/b5_w1/ice_box.png"
-  },{
-    "msg:ko": "내가 먹고 싶은 딸기로 가보자.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
   }],
   "goal": {
     "msg:ko": "성공",

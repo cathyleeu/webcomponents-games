@@ -26,11 +26,11 @@
     "img":"fruit_watermelon"
   }],
   "tutorial": [{
-    "msg:ko": "가져와야할 것들이 여러 개 있어.",
+    "msg:ko": "이번에는 수박이 먹고 싶어.\n내가 먹고 싶은 수박으로 가보자.",
     "msg:jp": "ゲットするアイテムがいくつかあるよ。",
     "msg:en": "There are several things."
   },{
-    "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
+    "msg:ko": "Tip: 고양이 봄이와 가위바위보를 해서 이겨야 지나갈 수 있어.",
     "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
     "msg:en": "Try to use 'get items' block more than once!",
     "img": "/img/blocks/bring.png"
