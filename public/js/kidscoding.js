@@ -385,8 +385,18 @@ KidsCoding.prototype = {
       },
       scrollbars: this.isHorizontal
     });
-    var startblock = '<xml>' + this.createXml(workspace || "start", {uneditable:true}) + '</xml>';
-  	Blockly.Xml.domToWorkspace($(startblock).get(0),this.workspace);
+    var initXml = '<xml>' + this.createXml(workspace || "start", {uneditable:true}) + '</xml>';
+  	Blockly.Xml.domToWorkspace($(initXml).get(0),this.workspace);
+    var blocks = this.workspace.getAllBlocks(),
+        block = blocks.filter(function(block) {
+          return block.type === "start";
+        })[0];
+    while(block) {
+      if(block.type == "empty") {
+        $(block.svgPath_).addClass("empty");
+      }
+      block = block.getNextBlock();
+    }
     // flyout 내의 블럭들을 오른쪽으로 20px씩 이동
     // (블럭들이 너무 왼쪽으로 붙어있어서 윈도우 태블릿에서 화면전화이 일어나는 문제가 있음)
     if(this.isHorizontal) {
