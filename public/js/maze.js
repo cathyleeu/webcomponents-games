@@ -668,8 +668,7 @@ function addEvents() {
         // check mandatory
         var failed = checkMandatory(startblock, mazeInfo.mandatory);
         if(failed) {
-          var lang = store.get("lang") || "ko",
-              blockName = Blocks[failed].name[lang],
+          var blockName = Blocks[failed].name,
               msg = messages.fail_mandatory.split("%1").join(blockName);
           kidscoding.isHorizontal ? showModal(msg) : renderAlert(msg, {ruleErr: "block"} )
 
@@ -1178,6 +1177,7 @@ function checkMandatory(startblock, mandatory) {
     }
     block = block.getNextBlock();
   } while(block);
+  kidscoding.registerBlock(mandatory[0]);
   return mandatory[0];
 }
 

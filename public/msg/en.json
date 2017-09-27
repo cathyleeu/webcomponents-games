@@ -25,7 +25,7 @@
   "fail_done": "Try it again.",
   "fail_noBlocks": "No blocks!",
   "fail_notEnough": "You need %1 points.",
-  "fail_mandatory": "You must use the %1 block.",
+  "fail_mandatory": "You must use the '%1' block.",
   "fullscreen": "FullScreen",
   "goal": "Goal"
 }
