@@ -13,6 +13,8 @@
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
+  {"id": "cos", "src": "/img/c10/cos0.png", "obstacle": false},
+  {"id": "geny", "src": "/img/c10/geny0.png", "obstacle": false},
 
   {"id": "sealion_l", "src": "/img/c10/sealion_l.png", "obstacle": true},
   {"id": "sealion_r", "src": "/img/c10/sealion_r.png", "obstacle": true},
@@ -24,7 +26,6 @@
 
   {"tile":"g", "id": "egg", "src": "/img/c10/1g.png", "obstacle": false},
   {"tile":"b", "id": "baby", "src": "/img/c10/1p.png", "obstacle": false},
-  {"id": "cos0", "src": "/img/c10/cos0.png", "obstacle": false},
   {"tile": "H", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"tile": "N", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"tile": "E", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
