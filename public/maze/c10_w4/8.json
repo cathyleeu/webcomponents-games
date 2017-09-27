@@ -21,6 +21,11 @@
     "r#....#.",
     "ssssssss"
   ],
+  "extra": [{
+    "x": 7,
+    "y": 1,
+    "img": "cos"
+  }],
   "tutorial": [{
     "msg:ko": "먹이를 구한 투투는 코스에게 가야 해요. 만약에 반복 블록을 이용해서 코스에게 가요.",
     "msg:en": "Tootoo, who found the food, should go to Cos. Use the 'repeat if block' to go to Cos.",
