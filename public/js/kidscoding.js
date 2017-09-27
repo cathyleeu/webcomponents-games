@@ -215,6 +215,10 @@ KidsCoding.prototype = {
         statements = (match[3] || "[]").slice(1,-1).trim(),
         rest = (match[4] || "").trim(),
         str;
+    if(args[0] === "*") {
+      Blocks[block.type].args0[1].type = "empty_value";
+      args[0]="\u0009"
+    }
     if(!Blocks[block.type]) {
       console.error("undefined block : " + block);
       return "";
@@ -248,6 +252,18 @@ KidsCoding.prototype = {
               Blockly.Colours.event.secondary,
               Blockly.Colours.event.tertiary
             );
+          }
+        };
+      }
+      if(_this.blockType != "default" && arg.type == "empty_value") {
+        arg.name = "empty";
+        arg.type = "input_value";
+        Blockly.Blocks[block.type + "_" + arg.name + ''] = {
+          init: function() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldTextInput(''), arg.name)
+                .appendField(new Blockly.FieldColour('#ffffff'), arg.name);
+            this.setOutput(true);
           }
         };
       }
