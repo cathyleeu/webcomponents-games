@@ -1177,7 +1177,9 @@ function checkMandatory(startblock, mandatory) {
     }
     block = block.getNextBlock();
   } while(block);
-  kidscoding.registerBlock(mandatory[0]);
+  if(mandatory[0]) {
+    kidscoding.registerBlock(mandatory[0]);    
+  }
   return mandatory[0];
 }
 
