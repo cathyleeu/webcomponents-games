@@ -12,7 +12,7 @@ KidsCoding = function() {
   } else if(location.pathname.indexOf("mazev") >= 0) {
     this.blockType = "vertical";
   }
-  if(this.isHorizontal) {
+  if(this.blockType == "horizontal") {
     Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 200;
     Blockly.Flyout.prototype.MARGIN = 20;
     Blockly.Colours.flyout = "#EEEEEE";
@@ -83,7 +83,7 @@ KidsCoding = function() {
 
       return metrics;
     }
-  } else {
+  } else if(this.blockType == "default") {
     var labelInit = Blockly.FieldLabel.prototype.init;
     // 텍스트 라벨의 위치 조정
     Blockly.FieldLabel.prototype.init = function() {
@@ -260,13 +260,26 @@ KidsCoding.prototype = {
       // TODO: default 타입에서의 처리 필요
       if(args[0] === "*" && arg_type == "input_value") {
         shadow_type = block.type + "_empty";
-        field_value = "\u0009";
+        field_value = new Array(7).join("\u00A0");
         Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
-                .appendField(new Blockly.FieldTextInput(''), field_name)
-                .appendField(new Blockly.FieldColour('#ffffff'), field_name);
+                .appendField(new Blockly.FieldTextInput(''), field_name);
             this.setOutput(true);
+            this.setColour("#FFFFFF");
+          }
+        };
+      }
+      if(block.type == "empty") {
+        arg_type == "input_value"
+        shadow_type = block.type + "_emptyblock";
+        field_value = new Array(28).join("\u00A0");
+        Blockly.Blocks[shadow_type] = {
+          init: function() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldTextInput(''), field_name);
+            this.setOutput(true);
+            this.setColour("#FFFFFF");
           }
         };
       }

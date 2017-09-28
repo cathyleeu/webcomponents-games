@@ -271,6 +271,12 @@ devtool.prototype._downloadBlocks = function(target, fileName, state) {
   $svg.find(".blocklyPath.empty").each(function(idx, el) {
     el.style.cssText = cssEmpty;
   });
+  $svg.find("[data-argument-type=text]>.blocklyEditableText>.blocklyText").each(function(idx, el) {
+    el.style.cssText = "text-decoration: underline;";
+  });
+  $svg.find(".blocklyPath.empty~.blocklyText").each(function(idx, el) {
+    el.style.cssText = "fill: black; text-decoration: underline;";
+  });
   $svg.find(".blocklyTrash,.blocklyZoom,.blocklyBubbleCanvas,.blocklyScrollbarVertical").remove();
   if(target == "toolbox") {
     $svg.children("g").children().not(".blocklyFlyout").remove();

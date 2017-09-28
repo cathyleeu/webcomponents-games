@@ -711,11 +711,17 @@ Blocks["move_forward4"] = {
 Blocks["empty"] = {
   rgbColor: "#FFFFFF",
   message0: {
-    ko: "%1 빈칸의 블럭을 맞춰보세요.",
-    en: "%1 빈칸의 블럭을 맞춰보세요."
+    ko: "%1",
+    en: "%1"
   },
   args0: [
-    {type: "field_image"}
+    {
+      type: "field_dropdown",
+      name: "count",
+      options: [
+        ["", ""],
+      ]
+    }
   ],
   action: ["", ""]
 };

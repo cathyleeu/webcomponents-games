@@ -1,7 +1,9 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start,move_forward(3),rotate_left,move_forward(2)",
+  "workspace": "start",
+  "solution": "start,move_forward(3),rotate_left,move_forward(2)",
+  "problem": "start,move_forward(*),empty,move_forward(*)",
   "toolbox": [
     "move_forward",
     "rotate_left",
