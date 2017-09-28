@@ -213,35 +213,63 @@ devtool.prototype.updateToolbox = function(toolbox) {
 }
 
 devtool.prototype.updateWorkspace = function(workspace) {
+  if(workspace == "solution") {
+    workspace = $$$.tileFactory.maze.solution;
+  } else if(workspace == "problem") {
+    workspace = $$$.tileFactory.maze.problem;
+  } else if(workspace == "default") {
+    workspace = $$$.tileFactory.maze.workspace || "start";
+  }
+  if(!workspace) {
+    return;
+  }
   this.kidscoding.workspace.clear();
   var xml = $('<xml>' + this.kidscoding.createXml(workspace, {}) + '</xml>').get(0);
   Blockly.Xml.domToWorkspace(xml, this.kidscoding.workspace);
+  var blocks = this.kidscoding.workspace.getAllBlocks(),
+      block = blocks.filter(function(block) {
+        return block.type === "start";
+      })[0];
+  while(block) {
+    if(block.type == "empty") {
+      $(block.svgPath_).addClass("empty");
+    }
+    block = block.getNextBlock();
+  }
 }
 
 devtool.prototype.downloadToolbox = function(fileName) {
-  return this._downloadBlocks(fileName, "toolbox");
+  return this._downloadBlocks("toolbox", fileName);
 }
 
-devtool.prototype.downloadWorkspace = function(fileName) {
-  return this._downloadBlocks(fileName, "workspace");
+devtool.prototype.downloadWorkspace = function(fileName, state) {
+  return this._downloadBlocks("workspace", fileName, state);
 }
 
-devtool.prototype._downloadBlocks = function(fileName, target) {
+devtool.prototype._downloadBlocks = function(target, fileName, state) {
   var _this = this,
-      defaultName = location.hash.slice(2).replace(/\//g, "_") + "_" + target,
+      defaultName = location.hash.slice(2).replace(/\//g, "_") + "_" + target + (state ? "_" + state : ""),
       image = new Image(),
       serializer = new XMLSerializer(),
-      $svg = $($("svg.blocklySvg").get(0).cloneNode(true)),
-      bbox = ( target == "toolbox" ?
-          $("svg.blocklySvg .blocklyFlyout .blocklyWorkspace") :
-          $("svg.blocklySvg>.blocklyWorkspace>.blocklyBlockCanvas") ).get(0).getBBox(),
       onloadCount = 0,
-      blocklyText = this._getStyle(".blocklyText");
+      cssBlocklyText = this._getStyle(".blocklyText"),
+      cssEmpty = this._getStyle("#maze-container .workspace .blocklyPath.empty"),
+      $svg, bbox;
   if(!fileName) {
     fileName = window.prompt("please input file name", defaultName ).trim();
   }
+  if(target == "workspace" && state) {
+    this.updateWorkspace(state);
+  }
+  $svg = $($("svg.blocklySvg").get(0).cloneNode(true)),
+  bbox = ( target == "toolbox" ?
+      $("svg.blocklySvg .blocklyFlyout .blocklyWorkspace") :
+      $("svg.blocklySvg>.blocklyWorkspace>.blocklyBlockCanvas") ).get(0).getBBox(),
   $svg.find(".blocklyText").each(function(idx, el) {
-    el.style.cssText = blocklyText;
+    el.style.cssText = cssBlocklyText;
+  });
+  $svg.find(".blocklyPath.empty").each(function(idx, el) {
+    el.style.cssText = cssEmpty;
   });
   $svg.find(".blocklyTrash,.blocklyZoom,.blocklyBubbleCanvas,.blocklyScrollbarVertical").remove();
   if(target == "toolbox") {
