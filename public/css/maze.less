@@ -61,6 +61,13 @@ html {
       stroke: gray;
       stroke-width: 3px;
     }
+    [data-argument-type=text]>.blocklyEditableText>.blocklyText {
+      text-decoration: underline;
+    }
+    .blocklyPath.empty~.blocklyText {
+      fill: black;
+      text-decoration: underline;
+    }
     g[data-argument-type="dropdown"] rect.blocklyBlockBackground {
       fill: #FFBF00;
     }

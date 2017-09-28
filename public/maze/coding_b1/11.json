@@ -1,7 +1,9 @@
 {
   "tile_size": 128,
   "score":3,
-  "workspace": "start, move_forward(7),rotate_right,move_forward(7),rotate_right,move_forward(7),rotate_right,move_forward,get_item,move_forward(3),use_item",
+  "workspace": "start",
+  "solution": "start, move_forward(7),rotate_right,move_forward(7),rotate_right,move_forward(7),rotate_right,move_forward,get_item,move_forward(3),use_item",
+  "problem": "start, move_forward(*),rotate_right,move_forward(*),rotate_right,move_forward(*),rotate_right,move_forward,get_item,move_forward(3),use_item",
   "toolbox": [
     "move_forward",
     "rotate_left",

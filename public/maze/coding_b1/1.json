@@ -1,7 +1,9 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start","hello1"],
+  "workspace": "start",
+  "solution": "start,hello1,hello2,hello3,hello4",
+  "problem": "start,hello1,hello2,hello3,empty",
   "toolbox": [
     "hello2",
     "hello3",
