@@ -215,10 +215,6 @@ KidsCoding.prototype = {
         statements = (match[3] || "[]").slice(1,-1).trim(),
         rest = (match[4] || "").trim(),
         str;
-    if(args[0] === "*") {
-      Blocks[block.type].args0[1].type = "empty_value";
-      args[0]="\u0009"
-    }
     if(!Blocks[block.type]) {
       console.error("undefined block : " + block);
       return "";
@@ -241,12 +237,17 @@ KidsCoding.prototype = {
         statements_str = "",
         child_str = "";
     Blocks[block.type].args0.forEach(function(arg) {
+      var arg_type = arg.type,
+          field_name = arg.name,
+          field_value = args[0] || (arg.options ? arg.options[0][0] : ""),
+          shadow_type = block.type + "_" + arg.name;
+      // scratch-blocks에서는 field_dropdown일 경우 shadow 블록 추가 필요
       if(_this.blockType != "default" && arg.type == "field_dropdown") {
-        arg.type = "input_value";
-        Blockly.Blocks[block.type + "_" + arg.name + ''] = {
+        arg_type = "input_value";
+        Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
-                .appendField(new Blockly.FieldDropdown(arg.options), arg.name);
+                .appendField(new Blockly.FieldDropdown(arg.options), field_name);
             this.setOutput(true);
             this.setColour(Blockly.Colours.event.primary,
               Blockly.Colours.event.secondary,
@@ -255,22 +256,26 @@ KidsCoding.prototype = {
           }
         };
       }
-      if(_this.blockType != "default" && arg.type == "empty_value") {
-        arg.name = "empty";
-        arg.type = "input_value";
-        Blockly.Blocks[block.type + "_" + arg.name + ''] = {
+      // 입력값이 *일 경우 빈칸 처리
+      // TODO: default 타입에서의 처리 필요
+      if(args[0] === "*" && arg_type == "input_value") {
+        shadow_type = block.type + "_empty";
+        field_value = "\u0009";
+        Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
-                .appendField(new Blockly.FieldTextInput(''), arg.name)
-                .appendField(new Blockly.FieldColour('#ffffff'), arg.name);
+                .appendField(new Blockly.FieldTextInput(''), field_name)
+                .appendField(new Blockly.FieldColour('#ffffff'), field_name);
             this.setOutput(true);
           }
         };
       }
-      if(arg.type == "input_value") {
-        value_str = '<value name="' + arg.name + '">' +
-          '<shadow type="' + block.type + "_" + arg.name + '">' +
-          '<field name="' + arg.name + '">' + (args[0] || arg.options[0][0]) + '</field>' +
+      // scratch-blocks에서는 arg_type을 input_value로 바꾸어 주어야 함
+      if(arg_type == "input_value") {
+        arg.type = "input_value";
+        value_str = '<value name="' + field_name + '">' +
+          '<shadow type="' + shadow_type + '">' +
+          '<field name="' + field_name + '">' + field_value + '</field>' +
           '</shadow>' +
           '</value>';
       }
