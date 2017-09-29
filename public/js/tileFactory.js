@@ -39,6 +39,16 @@ TileFactory.prototype.init = function(maze, loader) {
       _this.custom_tiles[obj.item.tile] = obj.item;
     }
   });
+  if(maze.tile && maze.tile.text) {
+    maze.tile.text.split("").forEach(function(tile) {
+      _this.custom_tiles[tile] = _this.custom_tiles[tile] || {};
+      $.extend(_this.custom_tiles[tile], {
+        tile: tile,
+        obstacle: false
+      });
+      _this.tile2role[tile] = "text";
+    });
+  }
   this.hashObj = {};
   var hash = location.hash,
       data = hash.slice(hash.indexOf("?")+1).split("&");
@@ -686,6 +696,9 @@ TileFactory.prototype.create = function(tile, x, y) {
       bitmap = new createjs.Bitmap(this.loader.getResult(info.img));
     }
   }
+  if(info.role == "text") {
+    bitmap = new createjs.Text(info.tile, "bold " + this.tile_size + "px DSEG7Classic", "#000");
+  }
   if(bitmap) {
     container = new createjs.Container();
     container.addChild(bitmap);
@@ -796,4 +809,8 @@ TileFactory.prototype.setCoord = function(obj, px, py) {
   obj.scaleY = this.tile_size / bounds.height;
   obj.regX = bounds.width / 2;
   obj.regY = bounds.height / 2;
+  if(obj.bitmap.text) {
+    obj.scaleX *= 0.8;
+    obj.scaleY *= 0.8;
+  }
 }
