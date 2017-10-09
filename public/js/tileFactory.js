@@ -37,16 +37,23 @@ TileFactory.prototype.init = function(maze, loader) {
   loader.getItems().map(function(obj) {
     if(obj.item.tile) {
       _this.custom_tiles[obj.item.tile] = obj.item;
+      obj.item.img = obj.item.id;
     }
   });
-  if(maze.tile && maze.tile.text) {
-    maze.tile.text.split("").forEach(function(tile) {
-      _this.custom_tiles[tile] = _this.custom_tiles[tile] || {};
-      $.extend(_this.custom_tiles[tile], {
-        tile: tile,
-        obstacle: false
-      });
-      _this.tile2role[tile] = "text";
+  if(maze.tile) {
+    maze.tile.forEach(function(item) {
+      if(item.letters) {
+        item.letters.split("").forEach(function(tile) {
+          _this.custom_tiles[tile] = _this.custom_tiles[tile] || {};
+          $.extend(_this.custom_tiles[tile], {
+            tile: tile,
+            obstacle: false
+          });
+          _this.tile2role[tile] = "letter";
+        });
+      } else {
+        _this.custom_tiles[item.tile] = item;
+      }
     });
   }
   this.hashObj = {};
@@ -62,26 +69,27 @@ TileFactory.prototype.init = function(maze, loader) {
 };
 
 TileFactory.prototype.create = function(tile, x, y) {
-  var info = {
+  var _this = this,
+      info = {
         tile: tile
       },
-      container,
-      bitmap;
+      container, bitmap, text, bgLayer;
 
   // 기본 role 세팅
   if(this.tile2role[tile]) {
     info.role = this.tile2role[tile];
   }
 
-  // manifest에서 img, obstacle 정보를 가져온다
+  // custom tile 설정
   if(this.custom_tiles[tile]) {
-    info.img = this.custom_tiles[tile].id;
-    if(this.custom_tiles[tile].hasOwnProperty("obstacle")) {
-      info.obstacle = this.custom_tiles[tile].obstacle;
+    if(_this.custom_tiles[tile].id) { // manifest에서의 id는 img로 쓰임
+      info.img = _this.custom_tiles[tile].id;
     }
-    if(this.custom_tiles[tile].hasOwnProperty("wall")) {
-      info.obstacle = this.custom_tiles[tile].wall;
-    }
+    ["img", "text", "fillColor", "obstacle", "wall"].forEach(function(key) {
+      if(_this.custom_tiles[tile].hasOwnProperty(key)) {
+        info[key] = _this.custom_tiles[tile][key];
+      }
+    });
   }
 
   // maze json에서 extra 정보를 가져온다
@@ -696,16 +704,35 @@ TileFactory.prototype.create = function(tile, x, y) {
       bitmap = new createjs.Bitmap(this.loader.getResult(info.img));
     }
   }
-  if(info.role == "text") {
-    bitmap = new createjs.Text(info.tile, "bold " + this.tile_size + "px DSEG7Classic", "#000");
+  if(info.role == "letter") {
+    text = new createjs.Text(info.tile, "bold " + this.tile_size + "px DSEG7Classic", "#000");
+    this.setTextAlign(text);
   }
-  if(bitmap) {
+  if(info.text) {
+    text = new createjs.Text(info.text, "10px", "#000");
+    this.setTextAlign(text);
+  }
+  if(info.fillColor) {
+    bgLayer = new createjs.Shape();
+    bgLayer.graphics.beginFill(info.fillColor).drawRect(0, 0, this.tile_size, this.tile_size);
+  }
+  if(bitmap || text || bgLayer) {
     container = new createjs.Container();
-    container.addChild(bitmap);
-    container.bitmap = bitmap;
+    if(bgLayer) {
+      container.addChild(bgLayer);
+      container.bgLayer = bgLayer;
+    }
+    if(bitmap) {
+      container.addChild(bitmap);
+      container.bitmap = bitmap;
+    }
+    if(text) {
+      container.addChild(text);
+      container.text = text;
+    }
+    this.setCoord(container, x, y);
     $.extend(container, info);
 
-    this.setCoord(container, x, y);
     if(info.role == "spider") {
       var hand_name = {
         "R": "rock",
@@ -799,18 +826,35 @@ TileFactory.prototype.addItemImage = function(container, img, type) {
   container.itemList.push(bitmap);
 };
 
+TileFactory.prototype.setScale = function(obj, px, py) {
+  var bounds = obj.getBounds();  
+}
+
 TileFactory.prototype.setCoord = function(obj, px, py) {
   var bounds = obj.getBounds();
   obj.px = px;
   obj.py = py;
-  obj.x = this.tile_size * px + this.tile_size / 2;
-  obj.y = this.tile_size * py + this.tile_size / 2;
+  obj.x = this.tile_size * px + this.tile_size / 2 - bounds.x * obj.scaleX;
+  obj.y = this.tile_size * py + this.tile_size / 2 - bounds.y * obj.scaleY;
   obj.scaleX = this.tile_size / bounds.width;
   obj.scaleY = this.tile_size / bounds.height;
   obj.regX = bounds.width / 2;
   obj.regY = bounds.height / 2;
-  if(obj.bitmap.text) {
-    obj.scaleX *= 0.8;
-    obj.scaleY *= 0.8;
+}
+
+TileFactory.prototype.setTextAlign = function(text) {
+  var bounds = text.getBounds(),
+      size = this.tile_size * 0.8;
+  text.textAlign = "center";
+  if(bounds.width > bounds.height) {
+    text.scaleX = bounds.width / size;
+    text.scaleY = text.scaleX;
+  } else {
+    text.scaleY = bounds.height / size;
+    text.scaleX = text.scaleY;
   }
+  text.regX = bounds.width / 2;
+  text.regY = bounds.height / 2;
+  text.x = this.tile_size - bounds.x * text.scaleX;
+  text.y = this.tile_size - bounds.y * text.scaleY;
 }

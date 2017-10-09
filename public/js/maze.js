@@ -7,6 +7,7 @@ var d1,
     maze,
     kidscoding = new KidsCoding(),
     tileFactory = new TileFactory(),
+    drawFactory = new DrawFactory(),
     tutorial = null,
     tutorialIdx = 0,
     message_url = "",
@@ -219,6 +220,7 @@ function init() {
   document.title = /^\w\d/.test(map_path[0]) ? messages.kidsthinking : messages.kidscoding;
 
   tileFactory.init(maze, loader);
+  drawFactory.init(maze);
   if(store.get('character')) {
     message_url = decodeURIComponent(store.get('character'));
   }
@@ -348,7 +350,8 @@ function initMaze() {
       items: [],
       foods: [],
       obstacles: [],
-      others: []
+      others: [],
+      drawings: []
     }
   };
   mazeInfo.canvas.stage.removeAllChildren();
@@ -460,6 +463,13 @@ function drawMaze() {
         canvas.stage.addChild(bitmap);
       }
     }
+  }
+  if(maze.draw) {
+    maze.draw.forEach(function(item) {
+      var drawing = drawFactory.create(item);
+      canvas.drawings.push(drawing);
+      canvas.stage.addChild(drawing);
+    });
   }
   // 캐릭터를 항상 위로
   canvas.stage.removeChild(canvas.character);

@@ -7,16 +7,25 @@
     "rotate_left",
     "rotate_right"
   ],
-  "tile": {
-    "text": "0123456789+"
-  },
+  "tile": [
+    {"letters": "0123456789+"},
+    {"tile": "A", "text": "1000\n의 자리", "fillColor": "skyblue", "obstacle": false},
+    {"tile": "B", "text": "100\n의 자리", "obstacle": false},
+    {"tile": "C", "text": "10\n의 자리", "obstacle": false},
+    {"tile": "D", "text": "1\n의 자리", "obstacle": false},
+    {"tile": "%", "text": "정답\n확인", "fillColor": "skyblue", "img": "house10"}
+  ],
+  "draw": [
+    {"type": "edgeline", "paths": [[1,4],[5,4]], "strokeWidth": 8, "strokeColor": "black"},
+    {"type": "centerline", "paths": [[5,5],[0,5],[0,0]], "strokeWidth": 5, "strokeColor": "red"}
+  ],
   "map": [
+    ".ABCD.",
     "......",
     "..123.",
     ".+456.",
     ".____.",
-    ".....l",
-    "......"
+    "%....l"
   ],
   "extra":[],
   "goal": {
