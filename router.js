@@ -210,18 +210,14 @@ function getKinder(kinderId) {
 
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
-      book = ["5-5", 6];
+      book = [6, 7];
   // 성동 ECC 1권부터 시작
   if(school == "B00163-K1") {
-    book = [1, 2];
+    book = [2, 3];
   }
   // 대구지사는 요청으로 3달치 제공
   if(school.slice(0,6) == "C00071") {
-    book = [5, "5-5", 6];
-  }
-  // PSA는 여름특별호 사용 안함(목동 러닝트리 제외)
-  if(school.slice(0, 1) == "D" && school != "D00120-K1") {
-    book = [5, 6];
+    book = ["5-5", 6, 7];
   }
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
@@ -229,15 +225,11 @@ function getBook(classObj) {
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
-    book = [1, 2, 3, 4, 5, "5-5"];
+    book = [1, 2, 3, 4, 5, "5-5", 6, 7];
   }
   // 직영 설리번, 울산지사 교차로원, 인천지사 유원유치원, 부산지사 동성어학원
   if(school == "E00076-K1" || school == "A00072-K9" || school == "A00114-K3" || school == "A00066-K2") {
-    book = [4, 5];
-  }
-  // 영업부 일산지사 홍익유치원, 부산PSA, 울산 설리번 영어어린이집
-  if(school == "C00149-K1" || school == "D00086-K1") {
-    book = [5, 6];
+    book = [5, "5-5"];
   }
   // 울산지사 설리번(격월)
   if(school == "A00072-K2") {
@@ -247,19 +239,19 @@ function getBook(classObj) {
   if(school == "B00136-K1") {
     var classNum = classObj.code.slice(-3);
     if(classNum == "KC1") {
-      book = [1, 2];
+      book = [2, 3];
     }
   }
   // 용인지사 성음유치원 A레벨 추가반
   if(classObj.code == "A00088-K1-KC2") {
-    book = [5, "5-5"];
+    book = ["5-5", 6];
   }
   // 용인지사 노블(-1) 10월에 6권
   if(school.code == "A00088-K2") {
   }
   // 마포ECC 추가반, 청라ECC 추가반
   if(classObj.code == "B00130-K1-KC6" || classObj.code == "B00016-K1-KC5") {
-    book = [1, 2];
+    book = [2, 3];
   }
   book = book.map(function(num) {
     return classObj.level + "-" + num;
