@@ -9,11 +9,11 @@
   ],
   "tile": [
     {"letters": "0123456789+"},
-    {"tile": "A", "text": "1000\n의 자리", "fillColor": "skyblue", "obstacle": false},
-    {"tile": "B", "text": "100\n의 자리", "obstacle": false},
-    {"tile": "C", "text": "10\n의 자리", "obstacle": false},
-    {"tile": "D", "text": "1\n의 자리", "obstacle": false},
-    {"tile": "%", "text": "정답\n확인", "fillColor": "skyblue", "img": "house10"}
+    {"tile": "A", "text": "1000\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "B", "text": "100\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "C", "text": "10\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "D", "text": "1\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "%", "text": "  정답  \n  확인  ", "img": "house10"}
   ],
   "draw": [
     {"type": "edgeline", "paths": [[1,4],[5,4]], "strokeWidth": 8, "strokeColor": "black"},

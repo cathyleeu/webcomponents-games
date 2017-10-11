@@ -85,7 +85,7 @@ TileFactory.prototype.create = function(tile, x, y) {
     if(_this.custom_tiles[tile].id) { // manifest에서의 id는 img로 쓰임
       info.img = _this.custom_tiles[tile].id;
     }
-    ["img", "text", "fillColor", "obstacle", "wall"].forEach(function(key) {
+    ["img", "text", "fillColor", "strokeWidth", "strokeColor", "obstacle", "wall"].forEach(function(key) {
       if(_this.custom_tiles[tile].hasOwnProperty(key)) {
         info[key] = _this.custom_tiles[tile][key];
       }
@@ -703,6 +703,7 @@ TileFactory.prototype.create = function(tile, x, y) {
     } else {
       bitmap = new createjs.Bitmap(this.loader.getResult(info.img));
     }
+    this.setScale(bitmap);
   }
   if(info.role == "letter") {
     text = new createjs.Text(info.tile, "bold " + this.tile_size + "px DSEG7Classic", "#000");
@@ -712,9 +713,14 @@ TileFactory.prototype.create = function(tile, x, y) {
     text = new createjs.Text(info.text, "10px", "#000");
     this.setTextAlign(text);
   }
-  if(info.fillColor) {
+  if(info.fillColor || info.strokeWidth || info.strokeColor) {
     bgLayer = new createjs.Shape();
-    bgLayer.graphics.beginFill(info.fillColor).drawRect(0, 0, this.tile_size, this.tile_size);
+    // drawRect(x, y, w, h)
+    bgLayer.graphics
+        .beginFill(info.fillColor || "transparent")
+        .setStrokeStyle(info.strokeWidth || 0)
+        .beginStroke(info.strokeColor || "transparent")
+        .drawRect(-this.tile_size/2, -this.tile_size/2, this.tile_size, this.tile_size);
   }
   if(bitmap || text || bgLayer) {
     container = new createjs.Container();
@@ -730,9 +736,6 @@ TileFactory.prototype.create = function(tile, x, y) {
       container.addChild(text);
       container.text = text;
     }
-    this.setCoord(container, x, y);
-    $.extend(container, info);
-
     if(info.role == "spider") {
       var hand_name = {
         "R": "rock",
@@ -742,15 +745,18 @@ TileFactory.prototype.create = function(tile, x, y) {
       var hand = new createjs.Bitmap(this.loader.getResult("hand_" + hand_name));
       var bounds = hand.getBounds();
       var size = this.tile_size / 2;
-      hand.scaleX = size / bounds.width / container.scaleX;
-      hand.scaleY = size / bounds.height / container.scaleY;
-      hand.x = (this.tile_size - size) / container.scaleX;
+      hand.scaleX = size / bounds.width;
+      hand.scaleY = size / bounds.height;
+      hand.x = 0;
+      hand.y = -size;
       container.hand = hand_name;
       container.addChild(hand);
     }
     if(info.itemCount) {
       this.setItemCount(container, info.itemCount);
     }
+    $.extend(container, info);
+    this.setCoord(container, x, y);
   }
   return container;
 };
@@ -774,13 +780,12 @@ TileFactory.prototype.getItemCount = function(container) {
 
 TileFactory.prototype.setItemCount = function(container, count) {
   if(!container.itemCountBitmap) {
-    var bounds = container.getBounds();
     var itemCountBitmap = new createjs.Container();
     var circle = new createjs.Shape();
-    var size = bounds.width / 5;
+    var size = this.tile_size / 5;
     circle.graphics.beginStroke("#000").beginFill("#FFF").drawCircle(0, 0, size);
-    circle.x = size;
-    circle.y = bounds.width - size;
+    circle.x = -this.tile_size/2 + size;
+    circle.y = this.tile_size/2 - size;
     itemCountBitmap.addChild(circle);
 
     var text = new createjs.Text(count, (2*size) + "px monospace", "#000");
@@ -826,20 +831,19 @@ TileFactory.prototype.addItemImage = function(container, img, type) {
   container.itemList.push(bitmap);
 };
 
-TileFactory.prototype.setScale = function(obj, px, py) {
-  var bounds = obj.getBounds();  
-}
-
-TileFactory.prototype.setCoord = function(obj, px, py) {
+TileFactory.prototype.setScale = function(obj) {
   var bounds = obj.getBounds();
-  obj.px = px;
-  obj.py = py;
-  obj.x = this.tile_size * px + this.tile_size / 2 - bounds.x * obj.scaleX;
-  obj.y = this.tile_size * py + this.tile_size / 2 - bounds.y * obj.scaleY;
   obj.scaleX = this.tile_size / bounds.width;
   obj.scaleY = this.tile_size / bounds.height;
   obj.regX = bounds.width / 2;
   obj.regY = bounds.height / 2;
+}
+
+TileFactory.prototype.setCoord = function(obj, px, py) {
+  obj.px = px;
+  obj.py = py;
+  obj.x = this.tile_size * px + this.tile_size / 2;
+  obj.y = this.tile_size * py + this.tile_size / 2;
 }
 
 TileFactory.prototype.setTextAlign = function(text) {
@@ -847,14 +851,12 @@ TileFactory.prototype.setTextAlign = function(text) {
       size = this.tile_size * 0.8;
   text.textAlign = "center";
   if(bounds.width > bounds.height) {
-    text.scaleX = bounds.width / size;
+    text.scaleX = size / bounds.width;
     text.scaleY = text.scaleX;
   } else {
-    text.scaleY = bounds.height / size;
+    text.scaleY = size / bounds.height;
     text.scaleX = text.scaleY;
   }
-  text.regX = bounds.width / 2;
+  text.regX = 0;
   text.regY = bounds.height / 2;
-  text.x = this.tile_size - bounds.x * text.scaleX;
-  text.y = this.tile_size - bounds.y * text.scaleY;
 }
