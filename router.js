@@ -228,8 +228,11 @@ function getBook(classObj) {
     book = [1, 2, 3, 4, 5, "5-5", 6, 7];
   }
   // 직영 설리번, 울산지사 교차로원, 인천지사 유원유치원, 부산지사 동성어학원
-  if(school == "E00076-K1" || school == "A00072-K9" || school == "A00114-K3" || school == "A00066-K2") {
+  if(school == "A00072-K9" || school == "A00114-K3" || school == "A00066-K2") {
     book = [5, "5-5"];
+  }
+  if(school == "E00076-K1" ) {
+    book = ["5-5", 6];
   }
   // 울산지사 설리번(격월)
   if(school == "A00072-K2") {
