@@ -232,7 +232,7 @@ function getBook(classObj) {
     book = [5, "5-5"];
   }
   if(school == "E00076-K1" ) {
-    book = ["5-5", 6];
+    book = [5, 6];
   }
   // 울산지사 설리번(격월)
   if(school == "A00072-K2") {
