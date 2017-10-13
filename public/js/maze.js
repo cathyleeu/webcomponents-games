@@ -214,6 +214,7 @@ function init() {
   if(store.get('message_id')) {
     message_url = loader.getItem(store.get('message_id')).src;
   }
+  $(".noti-char").attr("src", message_url);
 
   initMaze();
   $("#runCode .start").show();
@@ -1178,7 +1179,7 @@ function checkMandatory(startblock, mandatory) {
     block = block.getNextBlock();
   } while(block);
   if(mandatory[0]) {
-    kidscoding.registerBlock(mandatory[0]);    
+    kidscoding.registerBlock(mandatory[0]);
   }
   return mandatory[0];
 }
