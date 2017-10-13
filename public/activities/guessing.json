@@ -20,7 +20,10 @@
       "previousBtm": "이전으로 돌아가시겠습니까?",
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
-      "yesbtn" : "예"
+      "yesbtn" : "예",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "다시 시도해 볼까요?",
+      "retrybtn": "다시하기"
     },
     "en": {
       "title": "Flip the cards and Match the pairs",
@@ -35,7 +38,10 @@
       "previousBtm": "Do you want to move on to the previous step?",
       "nextbtn": "Back",
       "nobtn" : "No",
-      "yesbtn" : "Yes"
+      "yesbtn" : "Yes",
+      "retryHead": "Failed",
+      "retryBtm" : "Do you want to retry?",
+      "retrybtn": "retry"
     }
   }
 }
