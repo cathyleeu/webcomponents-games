@@ -245,10 +245,6 @@ function getBook(classObj) {
       book = [2, 3];
     }
   }
-  // 용인지사 성음유치원 A레벨 추가반
-  if(classObj.code == "A00088-K1-KC2") {
-    book = ["5-5", 6];
-  }
   // 용인지사 노블(-1) 10월에 6권
   if(school.code == "A00088-K2") {
   }
