@@ -1,0 +1,51 @@
+{
+  "element": "flip-card",
+  "attributes": {
+  },
+  "data": [
+    "winter1",
+    "winter2",
+    "winter3",
+    "winter4",
+    "winter5"
+  ],
+  "manifest": [
+    {"id": "winter1", "src": "/img/a9_w1/winter1.png"},
+    {"id": "winter2", "src": "/img/a9_w1/winter2.png"},
+    {"id": "winter3", "src": "/img/a9_w1/winter3.png"},
+    {"id": "winter4", "src": "/img/a9_w1/winter4.png"},
+    {"id": "winter5", "src": "/img/a9_w1/winter5.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "겨울이 필요한 물건 이미지 카드를 뒤집어 짝을 맞추어보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예"
+    },
+    "en": {
+      "title": "Flip the winter image cards and Match the pairs",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}
