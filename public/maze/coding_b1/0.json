@@ -22,9 +22,6 @@
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "반가워",
-    "msg:jp": "つりざおのところまで行こう。",
-    "msg:en": "Go to the fishing rod.",
-    "img": "/img/b5_w1/fishing_rod.png"
+    "msg:ko": "반가워"
   }]
 }

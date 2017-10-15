@@ -8,11 +8,11 @@
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "use_item",
-    "get_item"
+    "get_item",
+    "use_item"
   ],
   "map": [
-    "#r..R...",
+    "#r.)....",
     ".######.",
     "....###.",
     "...#%...",
@@ -22,29 +22,18 @@
     "........"
   ],
   "extra":[{
+    "x": 3,
+    "y": 0,
+    "img": "water",
+    "itemCount": 3
+  }, {
     "x": 4,
     "y": 3,
-    "img" : "mkt"
-    }],
-  "tutorial": [{
-    "msg:ko": "앗, 물이 필요한데 없어.",
-    "msg:jp": "ゲットするアイテムがいくつかあるよ。",
-    "msg:en": "There are several things."
-  },{
-    "msg:ko": "슈퍼에서 물 3개를 사가지고 포장마차로 와서 음식을 만들자.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  },{
-    "msg:ko": "Tip: 물로 가서 ‘가져오기 블록’을, 그 다음에 포장마차에게 가서 ‘사용하기 블록’을 사용하면 돼.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
+    "img": "mkt",
+    "useItem": 3
   }],
-  "goal": {
-    "msg:ko": "성공!",
-    "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the things",
-    "img": ["/img/b5_w1/Rubber_boats.png","/img/b5_w1/tube.png","/img/blocks/bring.png"]
-  }
+  "tutorial": [{
+    "msg:ko": "앗, 물이 필요한데 없어.\n물 3잔을 가지고 포장마차로 와서 음식을 만들자.\nTip: 물로 가서 ‘가져오기 블록’을, 그 다음에 포장마차에게 가서 ‘사용하기 블록’을 사용하면 돼.",
+    "img": ["/img/coding/robot1.png","/img/c55_w4/water.png","/img/b55/mkt1.png"]
+  }]
 }

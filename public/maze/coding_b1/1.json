@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start",
+  "workspace": "start,hello1",
   "solution": "start,hello1,hello2,hello3,hello4",
   "problem": "start,hello1,hello2,hello3,empty",
   "toolbox": [
@@ -20,9 +20,6 @@
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "인사를 해보자",
-    "msg:jp": "つりざおのところまで行こう。",
-    "msg:en": "Go to the fishing rod.",
-    "img": "/img/b5_w1/fishing_rod.png"
+    "msg:ko": "인사를 해보자"
   }]
 }

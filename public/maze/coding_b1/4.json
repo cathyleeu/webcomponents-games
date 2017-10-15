@@ -19,15 +19,7 @@
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "안녕? 내 이름을 맞춰봐.\n목표지점으로 가면 내 이름을 알 수 있어.\n목표지점으로 가보자.",
-    "msg:jp": "うきわのところまで行こう。",
-    "msg:en": "Go to the tube.",
-    "img": "/img/b5_w1/tube.png"
-  }],
-  "goal": {
-    "msg:ko": "성공! “코봇, 내 이름은 코봇이야.” ",
-    "msg:jp": "うきわのところで「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the tube",
-    "img": ["/img/b5_w1/tube.png","/img/blocks/bring.png"]
-  }
+    "msg:ko": "집으로 이동해보자",
+    "img": "/img/b5_w1/house.png"
+  }]
 }

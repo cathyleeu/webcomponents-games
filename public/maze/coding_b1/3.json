@@ -18,20 +18,7 @@
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "고무보트로 가보자",
-    "msg:jp": "ゴムボートのところまで行こう。",
-    "msg:en": "Go to the Rubber boats.",
-    "img": "/img/b5_w1/Rubber_boats.png"
-  },{
-    "msg:ko": "'가져오기' 블록을 사용해 봐!",
-    "msg:jp": "「アイテムゲット」ブロックを使用してみよう！",
-    "msg:en": "Try to use the Kidsblock, 'get items' block!",
-    "img": "/img/blocks/bring.png"
-  }],
-  "goal": {
-    "msg:ko": "고무보트에서 '가져오기' 블록을 사용하자.",
-    "msg:jp": "ゴムボートのところで「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the Rubber boats",
-    "img": ["/img/b5_w1/Rubber_boats.png","/img/blocks/bring.png"]
-  }
+    "msg:ko": "집으로 이동해보자",
+    "img": "/img/b5_w1/house.png"
+  }]
 }

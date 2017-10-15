@@ -269,7 +269,7 @@ function init() {
       goal = maze.goal || maze.tutorial[maze.tutorial.length - 1],
       goal_msg = goal["msg" + (lang ? ":" + lang : "")] || goal["msg"];
   if(!$.isArray(goal.img)) {
-    goal.img = [goal.img];
+    goal.img = goal.img ? [goal.img] : [message_url];
   }
   $(".goal-imgs .goal-img").remove();
   goal.img.forEach(function(src, i) {
@@ -286,6 +286,7 @@ function init() {
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
   } else {
+    $("#runTutorial").removeClass("hidden");
     var fullscreen = store.get("fullscreen"),
         fullscreenElement =
             document.fullscreenElement ||
@@ -296,20 +297,21 @@ function init() {
       showModal({
         msg: messages.ask_fullscreen,
         confirm: true,
-        confirmYes: function() {
+        confirmYes: function(e) {
+          e.preventDefault();
+          e.stopPropagation();
           FullScreen();
           store.set('fullscreen', true)
-          $("#runTutorial").removeClass("hidden");
           runTutorial(maze.tutorial);
         },
-        confirmNo: function() {
+        confirmNo: function(e) {
+          e.preventDefault();
+          e.stopPropagation();
           store.set('fullscreen', false)
-          $("#runTutorial").removeClass("hidden");
           runTutorial(maze.tutorial);
         }
       });
     } else {
-      $("#runTutorial").removeClass("hidden");
       runTutorial(maze.tutorial);
     }
   }
@@ -653,7 +655,6 @@ function addEvents() {
   $("#runCode").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
-    e.preventDefault();
     if($(this).find("i:visible").hasClass("fa-play")) {
       var blocks = kidscoding.workspace.getAllBlocks(),
           startblock = blocks.filter(function(block) {
@@ -863,7 +864,6 @@ function runTutorial(input_tutorial) {
   tutorialIdx = 0;
 
   if(kidscoding.isHorizontal) {
-    $('#modal').modal('hide');
     $("#modal .tutorial").click();
   } else {
     var noti = $('.noti-guide');
@@ -1141,10 +1141,11 @@ function showModal(options) {
     $("#modal .modal-msg-box").show();
     $("#modal .modal-select").hide();
   }
-  var imgs = options.img || message_url;
+  var imgs = options.img;
   if(!$.isArray(imgs)) {
-    imgs = [imgs];
+    imgs = imgs ? [imgs] : [message_url];
   }
+
   $(".modal-msg-box img").remove();
   imgs.forEach(function(src) {
     $('<img class="modal-character">')
