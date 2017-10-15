@@ -7,57 +7,27 @@
     "rotate_left",
     "rotate_right"
   ],
-  "map": [
-    "##%#%#%#",
-    "##.#.#.#",
-    "%......#",
-    "###d##.%",
-    "%...####",
-    "#.#....%",
-    "#.#.#.##",
-    "#%#%#%##"
+  "tile": [
+    {"letters": "0123456789+"},
+    {"tile": "A", "text": "1000\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "B", "text": "100\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "C", "text": "10\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "D", "text": "1\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "%", "text": "  정답  \n  확인  ", "img": "house10"}
   ],
-  "extra":[{
-    "x": 2,
-    "y": 0,
-    "img" : "house1"
-  },{
-    "x": 4,
-    "y": 0,
-    "img" : "house2"
-  },{
-    "x": 6,
-    "y": 0,
-    "img" : "house3"
-  },{
-    "x": 0,
-    "y": 2,
-    "img" : "house10"
-  },{
-    "x": 0,
-    "y": 4,
-    "img" : "house9"
-  },{
-    "x": 7,
-    "y": 3,
-    "img" : "house4"
-  },{
-    "x": 7,
-    "y": 5,
-    "img" : "house5"
-  },{
-    "x": 1,
-    "y": 7,
-    "img" : "house8"
-  },{
-    "x": 3,
-    "y": 7,
-    "img" : "house7"
-  },{
-    "x": 5,
-    "y": 7,
-    "img" : "house6"
-  }],
+  "draw": [
+    {"type": "edgeline", "paths": [[1,4],[5,4]], "strokeWidth": 8, "strokeColor": "black"},
+    {"type": "centerline", "paths": [[5,5],[0,5],[0,0]], "strokeWidth": 5, "strokeColor": "red"}
+  ],
+  "map": [
+    ".ABCD.",
+    "......",
+    "..123.",
+    ".+456.",
+    ".____.",
+    "%....l"
+  ],
+  "extra":[],
   "goal": {
     "msg:ko": "안녕? 나는 넘봇이야. 나는 아직 두 자리 수 까지 밖에 몰라.",
     "msg:jp": "ライフジャケットのところで「アイテムゲット」ブロックを使用してみよう。",

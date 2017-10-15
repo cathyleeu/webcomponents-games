@@ -7,6 +7,7 @@ var d1,
     maze,
     kidscoding = new KidsCoding(),
     tileFactory = new TileFactory(),
+    drawFactory = new DrawFactory(),
     tutorial = null,
     tutorialIdx = 0,
     message_url = "",
@@ -41,7 +42,8 @@ page('*', function(ctx, next) {
 
   d1 = $.Deferred();
   d2 = $.Deferred();
-  $.when( d1, d2 ).done(preInit);
+  d3 = $.Deferred();
+  $.when( d1, d2, d3 ).done(preInit);
 
   // load map json file
   $.getJSON(map_url, function(json) {
@@ -113,6 +115,11 @@ page('*', function(ctx, next) {
     });
     var image_loader = new createjs.LoadQueue();
     var sound_loader = new createjs.LoadQueue();
+    var font_loader = new createjs.FontLoader({
+      src: ["/fonts/DSEG7Classic-Bold.woff", "/fonts/DSEG7Classic-Bold.eot"],
+      type: "font"
+    }, true);
+
     var getResult = image_loader.constructor.prototype.getResult;
     var newGetResult = function() {
       var result = getResult.apply(image_loader, arguments);
@@ -159,6 +166,11 @@ page('*', function(ctx, next) {
       }
     });
     sound_loader.getResult = newGetResult;
+
+    font_loader.on("complete", function() {
+      d3.resolve(font_loader);
+    });
+    font_loader.load();
   }).fail(function(jqXHR, msg, err) {
     throw( "[" + msg + " - " + manifest_url + "]\n" + err.name + ": " + err.message);
   });
@@ -208,6 +220,7 @@ function init() {
   document.title = /^\w\d/.test(map_path[0]) ? messages.kidsthinking : messages.kidscoding;
 
   tileFactory.init(maze, loader);
+  drawFactory.init(maze);
   if(store.get('character')) {
     message_url = decodeURIComponent(store.get('character'));
   }
@@ -340,7 +353,8 @@ function initMaze() {
       items: [],
       foods: [],
       obstacles: [],
-      others: []
+      others: [],
+      drawings: []
     }
   };
   mazeInfo.canvas.stage.removeAllChildren();
@@ -452,6 +466,13 @@ function drawMaze() {
         canvas.stage.addChild(bitmap);
       }
     }
+  }
+  if(maze.draw) {
+    maze.draw.forEach(function(item) {
+      var drawing = drawFactory.create(item);
+      canvas.drawings.push(drawing);
+      canvas.stage.addChild(drawing);
+    });
   }
   // 캐릭터를 항상 위로
   canvas.stage.removeChild(canvas.character);
