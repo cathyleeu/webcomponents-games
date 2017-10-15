@@ -20,6 +20,15 @@
       circle {
         cursor: pointer;
       }
+      .header{
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+      }
+      .header > h1 {
+        line-height: 80px;
+        text-align: center;
+      }
     </style>
     <status-bar
       title="{{localize('title')}}"
@@ -68,7 +77,9 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
-
+      <div class="header">
+        <h1>{{localize('subtitle')}}</h1>
+      </div>
   </template>
   <script>
     class LineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -114,7 +125,7 @@
         let _this = this,
             svg = d3.select(this.shadowRoot).append('svg')
               .attr('width', this.offsetWidth)
-              .attr('height', `${this.offsetHeight-60}`),
+              .attr('height', `${this.offsetHeight-140}`),
             boardName = ["bef_board", "af_board"],
             max = this.max ? this.max : manifest.length/2,
             before = d3.shuffle(manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src}))).slice(0, max),
@@ -278,7 +289,7 @@
           dropItems.forEach(el => {
             const getEl = el.getBoundingClientRect();
             let getX = +getArrow.attr('x2'),
-                getY = +getArrow.attr('y2'),
+                getY = +getArrow.attr('y2')+80,
                 setX = _this.horizontal ? getX : getX+getEl.width/2,
                 setY = _this.horizontal ? getY : getY+getEl.height/2,
                 getTB = pos === "bef_" ? getEl.top : getEl.bottom,
@@ -306,6 +317,7 @@
             _this.set('point', _this.point+2)
 
           } else {
+
             console.log("itsnt matched!!!", dragId, dropId)
             line.remove();
           }
