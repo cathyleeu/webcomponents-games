@@ -603,7 +603,7 @@ Blocks["move_right"] = {
   action: ["move", "right"]
 };
 Blocks["one_digit"] = {
-  colour: 260,
+  colour: 230,
   eventType: "fillColor",
   message0: {
     ko: "일의자리 더하기",
@@ -615,7 +615,7 @@ Blocks["one_digit"] = {
   action: ["move", "forward"]
 };
 Blocks["ten_digit"] = {
-  colour: 270,
+  colour: 260,
   eventType: "fillColor",
   message0: {
     ko: "십의자리 더하기",
@@ -627,7 +627,7 @@ Blocks["ten_digit"] = {
   action: ["move", "forward"]
 };
 Blocks["hundred_digit"] = {
-  colour: 280,
+  colour: 290,
   eventType: "fillColor",
   message0: {
     ko: "백의자리 더하기",
