@@ -602,6 +602,79 @@ Blocks["move_right"] = {
   ],
   action: ["move", "right"]
 };
+Blocks["digit"] = {
+  colour: 260,
+  eventType: "fillColor",
+  message0: {
+    ko: "일의자리 더하기",
+    en: "%1 Move Forward"
+  },
+  args0: [
+    {type: "field_image", src: "/img/move_forward.png"}
+  ],
+  action: ["move", "forward"]
+};
+Blocks["ten_digits"] = {
+  colour: 270,
+  eventType: "fillColor",
+  message0: {
+    ko: "십의자리 더하기",
+    en: "%1 Move Forward"
+  },
+  args0: [
+    {type: "field_image", src: "/img/move_forward.png"}
+  ],
+  action: ["move", "forward"]
+};
+Blocks["hundred_digits"] = {
+  colour: 280,
+  eventType: "fillColor",
+  message0: {
+    ko: "백의자리 더하기",
+    en: "%1 Move Forward"
+  },
+  args0: [
+    {type: "field_image", src: "/img/move_forward.png"}
+  ],
+  action: ["move", "forward"]
+};
+Blocks["digit_count"] = {
+  colour: "#60B12F",
+  message0: {
+    ko: "받아올림 %1 , %2 쓰기",
+    en: ""
+  },
+  args0: [{
+    type: "field_dropdown",
+    name: "countMode",
+    options: [
+      ["하고", "true"],
+      ["안하고", "false"]
+    ]
+  },{
+    type: "field_dropdown",
+    name: "countOptions",
+    options: [
+      ["1", "1"],
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"]
+    ]
+  }],
+  action: ["count"]
+  // action: ["func", {
+  //   type: "repeat",
+  //   count: "@count",
+  //   statements: {
+  //     type: "move_forward1"
+  //   }
+  // }]
+};
 Blocks["move_forward1"] = {
   colour: 260,
   message0: {
