@@ -834,6 +834,38 @@ Blocks["get_item"] = {
   ],
   action: ["getItem"]
 };
+Blocks["get_items"] = {
+  rgbColor: "#E75051",
+  message0: {
+    ko: "%1 %2 개 아이템 가져오기",
+    en: "%1 Get %2 Item(s)"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/get_item.png"
+  }, {
+    type: "field_dropdown",
+    name: "count",
+    options: [
+      ["1", "1"],
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"]
+    ]
+  }],
+  action: ["func", {
+    type: "repeat",
+    count: "@count",
+    statements: {
+      type: "get_item"
+    }
+  }]
+};
 Blocks["get_item_notuse"] = {
   rgbColor: "#E75051",
   message0: {
@@ -847,6 +879,38 @@ Blocks["get_item_notuse"] = {
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
   ],
   action: ["getItemNotuse"]
+};
+Blocks["use_items"] = {
+  rgbColor: "#81CBD8",
+  message0: {
+    ko: "%1 %2 개 아이템 사용하기",
+    en: "%1 Use %2 Item(s)"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/get_item.png"
+  }, {
+    type: "field_dropdown",
+    name: "count",
+    options: [
+      ["1", "1"],
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"]
+    ]
+  }],
+  action: ["func", {
+    type: "repeat",
+    count: "@count",
+    statements: {
+      type: "use_item"
+    }
+  }]
 };
 Blocks["use_item"] = {
   rgbColor: "#81CBD8",

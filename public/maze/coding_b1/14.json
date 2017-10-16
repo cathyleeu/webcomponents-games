@@ -1,15 +1,15 @@
 {
   "tile_size": 128,
   "score":3,
-  "workspace": "start,move_forward(3),get_item,move_forward,rotate_right,move_forward(3),rotate_left,move_forward(3),use_item",
-  "solution": "start,move_forward(3),get_item,move_forward,rotate_right,move_forward(3),rotate_left,move_forward(3),use_item",
-  "problem": "start,move_forward(3),get_item,move_forward,empty,move_forward(3),rotate_left,move_forward(*),empty",
+  "workspace": "start",
+  "solution": "start,move_forward(3),get_items(5),move_forward,rotate_right,move_forward(3),rotate_left,move_forward(3),use_items(5)",
+  "problem": "start,move_forward(3),get_items(5),move_forward,rotate_right,move_forward(3),rotate_left,move_forward(1),use_items(5)",
   "toolbox": [
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "get_item",
-    "use_item"
+    "get_items",
+    "use_items"
   ],
   "map": [
     "........",
