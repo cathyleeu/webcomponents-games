@@ -602,7 +602,7 @@ Blocks["move_right"] = {
   ],
   action: ["move", "right"]
 };
-Blocks["digit"] = {
+Blocks["one_digit"] = {
   colour: 260,
   eventType: "fillColor",
   message0: {
@@ -614,7 +614,7 @@ Blocks["digit"] = {
   ],
   action: ["move", "forward"]
 };
-Blocks["ten_digits"] = {
+Blocks["ten_digit"] = {
   colour: 270,
   eventType: "fillColor",
   message0: {
@@ -626,7 +626,7 @@ Blocks["ten_digits"] = {
   ],
   action: ["move", "forward"]
 };
-Blocks["hundred_digits"] = {
+Blocks["hundred_digit"] = {
   colour: 280,
   eventType: "fillColor",
   message0: {
@@ -638,7 +638,7 @@ Blocks["hundred_digits"] = {
   ],
   action: ["move", "forward"]
 };
-Blocks["digit_count"] = {
+Blocks["calc_digit"] = {
   colour: "#60B12F",
   message0: {
     ko: "받아올림 %1 , %2 쓰기",
