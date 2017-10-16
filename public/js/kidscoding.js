@@ -235,12 +235,18 @@ KidsCoding.prototype = {
     }).join(" ");
     var value_str = "",
         statements_str = "",
-        child_str = "";
-    Blocks[block.type].args0.forEach(function(arg, idx) {
+        child_str = "",
+        idx = 0;
+    Blocks[block.type].args0.forEach(function(arg) {
+
       var arg_type = arg.type,
           field_name = arg.name,
           field_value = args[idx] || (arg.options ? arg.options[0][1] : ""),
           shadow_type = block.type + "_" + arg.name;
+      // args는 field_dropdown이나 input_value일 경우에만 적용되도록 함
+      if(arg_type == "field_dropdown" || arg_type == "input_value") {
+        idx++;
+      }
       // scratch-blocks에서는 field_dropdown일 경우 shadow 블록 추가 필요
       if(_this.blockType != "default" && arg.type == "field_dropdown") {
         arg_type = "input_value";
