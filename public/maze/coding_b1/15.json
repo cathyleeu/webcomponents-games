@@ -2,8 +2,8 @@
   "tile_size": 128,
   "score":3,
   "workspace": "start",
-  "solution": "start,move_forward(2),rotate_left,move_forward(2),rotate_right,move_forward(3),rotate_left,move_forward,item_rock,move_forward(2)",
-  "problem": "start,move_forward(2),rotate_right,move_forward(2),rotate_right,move_forward(1),rotate_left,move_forward,item_rock,move_forward(2)",
+  "solution": "start,move_forward(2),rotate_left,move_forward(2),rotate_right,move_forward(3),rotate_left,item_rock,move_forward(3)",
+  "problem": "start,move_forward(2),rotate_right,move_forward(2),rotate_right,move_forward(1),rotate_left,item_rock,move_forward(3)",
   "toolbox": [
     "move_forward",
     "rotate_left",
@@ -16,8 +16,8 @@
     "####.###",
     "##.##..l",
     "#.###.##",
-    "##....#.",
-    "##S###..",
+    "##S...#.",
+    "##.###..",
     ".#.#.#.#",
     "#.%##.##",
     "##.#####"
