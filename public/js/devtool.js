@@ -140,12 +140,9 @@ devtool.prototype.getInstructions = function(name) {
       tutorial = $$$.kidscoding.tileFactory.maze.tutorial,
       img = $$$.kidscoding.Actions.loader.getResult("message"),
       data;
-  tutorial = tutorial.map(function(item) {
-    return item["msg:" + lang];
-  });
   data = {
     image: this._getBase64Image(img),
-    instructions: tutorial
+    instructions: [tutorial[0]["msg:"+lang]]
   };
   name = name || location.hash.slice(2).replace(/\//g, "_") + "_instruction";
   if($$$.setting.download == "base64") {
