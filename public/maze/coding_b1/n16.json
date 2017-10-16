@@ -12,10 +12,10 @@
   ],
   "tile": [
     {"letters": "0123456789+-"},
-    {"tile": "A", "text": "1000\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white"},
-    {"tile": "B", "text": "100\n의 자리", "fillColor": "#995ba5", "strokeWidth": 1, "strokeColor": "white"},
-    {"tile": "C", "text": "10\n의 자리", "fillColor": "#745ba5", "strokeWidth": 1, "strokeColor": "white"},
-    {"tile": "D", "text": "1\n의 자리", "fillColor": "#5b67a5", "strokeWidth": 1, "strokeColor": "white"},
+    {"tile": "A", "text": "1000\n의 자리", "color": "white", "fillColor": "#1489a5", "strokeWidth": 1, "strokeColor": "white"},
+    {"tile": "B", "text": "100\n의 자리", "color": "white", "fillColor": "#995ba5", "strokeWidth": 1, "strokeColor": "white"},
+    {"tile": "C", "text": "10\n의 자리", "color": "white", "fillColor": "#745ba5", "strokeWidth": 1, "strokeColor": "white"},
+    {"tile": "D", "text": "1\n의 자리", "color": "white", "fillColor": "#5b67a5", "strokeWidth": 1, "strokeColor": "white"},
     {"tile": "%", "text": "★", "img": ""}
   ],
   "draw": [

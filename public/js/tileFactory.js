@@ -85,7 +85,7 @@ TileFactory.prototype.create = function(tile, x, y) {
     if(_this.custom_tiles[tile].id) { // manifest에서의 id는 img로 쓰임
       info.img = _this.custom_tiles[tile].id;
     }
-    ["img", "text", "fillColor", "strokeWidth", "strokeColor", "obstacle", "wall"].forEach(function(key) {
+    ["img", "text", "color", "fillColor", "strokeWidth", "strokeColor", "obstacle", "wall"].forEach(function(key) {
       if(_this.custom_tiles[tile].hasOwnProperty(key)) {
         info[key] = _this.custom_tiles[tile][key];
       }
@@ -706,11 +706,11 @@ TileFactory.prototype.create = function(tile, x, y) {
     this.setScale(bitmap);
   }
   if(info.role == "letter") {
-    text = new createjs.Text(info.tile, "bold " + this.tile_size + "px DSEG7Classic", "#000");
+    text = new createjs.Text(info.tile, "bold " + this.tile_size + "px DSEG7Classic", info.color || "#000");
     this.setTextAlign(text);
   }
   if(info.text) {
-    text = new createjs.Text(info.text, "10px", "#000");
+    text = new createjs.Text(info.text, "10px", info.color || "#000");
     this.setTextAlign(text);
   }
   if(info.fillColor || info.strokeWidth || info.strokeColor) {
