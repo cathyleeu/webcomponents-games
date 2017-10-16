@@ -2,7 +2,7 @@
   "tile_size": 128,
   "score":1,
   "workspace": "start",
-  "solution":"start",
+  "solution": "start,one_digit,calc_digit(false,7),ten_digit,calc_digit(false,9),hundred_digit,calc_digit(false,4)",
   "problem": "start,one_digit,calc_digit(*,*),ten_digit,calc_digit(*,*),hundred_digit,calc_digit(*,*)",
   "toolbox": [
     "one_digit",
@@ -23,14 +23,14 @@
   ],
   "map": [
     ".ABCD.",
-    "......",
-    "..967.",
-    ".-323.",
-    ".____.",
+    "..00..",
+    "..372.",
+    ".+125.",
+    "..497.",
     "%....l"
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "967 - 323"
+    "msg:ko": "372 + 125 = 497"
   }]
 }
