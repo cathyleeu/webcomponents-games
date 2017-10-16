@@ -265,7 +265,7 @@ KidsCoding.prototype = {
       // 입력값이 *일 경우 빈칸 처리
       // TODO: default 타입에서의 처리 필요
       if(args[0] === "*" && arg_type == "input_value") {
-        shadow_type = block.type + "_empty";
+        shadow_type = shadow_type + "_empty";
         field_value = new Array(7).join("\u00A0");
         Blockly.Blocks[shadow_type] = {
           init: function() {
