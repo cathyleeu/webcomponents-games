@@ -1,0 +1,47 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution":"start",
+  "problem":"start",
+  "toolbox": [
+    "digit",
+    "ten_digits",
+    "hundred_digits",
+    "digit_count"
+  ],
+  "tile": [
+    {"letters": "0123456789+"},
+    {"tile": "A", "text": "1000\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "B", "text": "100\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "C", "text": "10\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "D", "text": "1\n의 자리", "fillColor": "skyblue", "strokeWidth": 1, "strokeColor": "white", "obstacle": false},
+    {"tile": "%", "text": "  정답  \n  확인  ", "img": "house10"}
+  ],
+  "draw": [
+    {"type": "edgeline", "paths": [[1,4],[5,4]], "strokeWidth": 8, "strokeColor": "black"},
+    {"type": "centerline", "paths": [[5,5],[0,5],[0,0]], "strokeWidth": 5, "strokeColor": "red"}
+  ],
+  "map": [
+    ".ABCD.",
+    "......",
+    "..523.",
+    ".+235.",
+    ".____.",
+    "%....l"
+  ],
+  "extra":[],
+  "goal": {
+    "msg:ko": "컴퓨터가 더하기 하는 방식을 이해해요",
+    "msg:jp": "ライフジャケットのところで「アイテムゲット」ブロックを使用してみよう。",
+    "msg:en": "Let's use 'get items' block on the life jacket",
+    "img": ["/img/b5_w1/life_jacket.png","/img/blocks/bring.png"]
+  },
+  "success": [{
+    "msg:ko": "성공! 참 잘했어요~",
+    "msg:jp": "成功！よくできました！",
+    "msg:en": "Success! Good Job!",
+    "msg:cn": "成功了！做得很棒。",
+    "link": "b5_w1/17"
+  }]
+}
