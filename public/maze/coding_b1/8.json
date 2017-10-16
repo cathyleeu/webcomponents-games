@@ -25,7 +25,7 @@
     "img": "fruit_strawberry"
   }],
   "tutorial": [{
-    "msg:ko": "나는 코봇이야. 나는 과일을 좋아해.\n나는 딸기를 먹고 싶어.\n내가 먹고 싶은 딸기로 가보자.",
+    "msg:ko": "나는 코봇이야. 나는 과일을 좋아해.\n나는 딸기를 먹고 싶어. 내가 먹고 싶은 딸기로 가보자.",
     "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_strawberry.png"]
   }]
 }

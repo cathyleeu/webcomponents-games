@@ -28,7 +28,10 @@
     "img" : "mkt"
   }],
   "tutorial": [{
-    "msg:ko": "코봇은 할머니가 나을 때까지 할머니의 포장마차 일을 대신 해 드리기로 했어.\n할머니의 포장마차로 가보자.\nTip: 고양이 봄이와 가위바위보를 해서 이겨야 지나갈 수 있어.",
+    "msg:ko": "코봇은 할머니가 나을 때까지 할머니의 포장마차 일을 대신 해 드리기로 했어.\n할머니의 포장마차로 가보자.",
+    "img": ["/img/coding/robot1.png","/img/c6/bomi0.png","/img/b55/mkt1.png"]
+  }, {
+    "msg:ko": "Tip: 고양이 봄이와 가위바위보를 해서 이겨야 지나갈 수 있어.",
     "img": ["/img/coding/robot1.png","/img/c6/bomi0.png","/img/b55/mkt1.png"]
   }]
 }
