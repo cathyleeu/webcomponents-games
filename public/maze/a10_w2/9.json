@@ -17,7 +17,7 @@
     ".....#"
   ],
   "tutorial": [{
-    "msg:ko": "건너 방으로 가요.",
+    "msg:ko": "건넌방으로 가요.",
     "msg:en": "Move to the crossing room.",
     "img": ["/img/a10_w2/room2.png"]
   }]

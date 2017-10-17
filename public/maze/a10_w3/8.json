@@ -9,21 +9,26 @@
     "move_left"
   ],
   "map": [
-    "...d..",
-    "......",
-    ".%....",
     "......",
     "......",
-    "......"
+    "..r...",
+    "......",
+    "......",
+    "....%."
   ],
   "extra":[{
-    "x": 1,
-    "y": 2,
-    "img":"police"
+    "x": 4,
+    "y": 5,
+    "img":"servicecenter"
   }],
   "tutorial": [{
-    "msg:ko": "경찰서로 가요.",
-    "msg:en": "Move to the police office.",
-    "img": ["/img/a10_w3/police.png"]
+    "msg:ko": "주민센터로 가요.",
+    "msg:en": "Move to the service center.",
+    "img": ["/img/a10_w3/servicecenter.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "a10_w3/1"
   }]
 }
