@@ -2846,6 +2846,29 @@ Blocks['condition_key_square'] = {
   argsh1: null,
   action: ["conditioncheck","move_wo_item_else"]
 };
+Blocks['condition_key_circle'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 동그라미 열쇠라면",
+    en: "If circle key"
+  },
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "if_statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/key_circle.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["conditioncheck","move_wo_item_elseif"]
+};
 Blocks['condition_key_round'] = {
   rgbColor: "#309E4A",
   message0: {
