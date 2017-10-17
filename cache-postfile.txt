@@ -15,7 +15,7 @@
 /components/store/store.min.js
 /components/bootstrap/dist/js/bootstrap.min.js
 /components/EaselJS/lib/easeljs-0.8.2.min.js
-/components/PreloadJS/lib/preloadjs-0.6.2.min.js
+/components/PreloadJS/lib/preloadjs.min.js
 /components/SoundJS/lib/soundjs-0.6.2.min.js
 /components/TweenJS/lib/tweenjs-0.6.2.min.js
 /page/page.js
