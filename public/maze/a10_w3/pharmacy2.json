@@ -9,21 +9,21 @@
     "move_left"
   ],
   "map": [
-    "...d..",
     "......",
     "......",
-    ".%....",
+    ".r....",
+    "....%.",
     "......",
     "......"
   ],
   "extra":[{
-    "x": 1,
+    "x": 4,
     "y": 3,
-    "img":"school"
+    "img":"pharmacy"
   }],
   "tutorial": [{
-    "msg:ko": "학교로 가요.",
-    "msg:en": "Move to the school.",
-    "img": ["/img/a10_w3/school.png"]
+    "msg:ko": "약국으로 가요.",
+    "msg:en": "Move to the pharmacy.",
+    "img": ["/img/a10_w3/pharmacy.png"]
   }]
 }

@@ -9,21 +9,21 @@
     "move_left"
   ],
   "map": [
+    "...d..",
     "......",
     ".%....",
     "......",
-    "...u..",
     "......",
     "......"
   ],
   "extra":[{
     "x": 1,
-    "y": 1,
-    "img":"hospital"
+    "y": 2,
+    "img":"police"
   }],
   "tutorial": [{
-    "msg:ko": "병원으로 가요.",
-    "msg:en": "Move to the hospital.",
-    "img": ["/img/a10_w3/hospital.png"]
+    "msg:ko": "경찰서로 가요.",
+    "msg:en": "Move to the police office.",
+    "img": ["/img/a10_w3/police.png"]
   }]
 }
