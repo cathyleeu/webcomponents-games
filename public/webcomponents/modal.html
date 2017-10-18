@@ -179,7 +179,11 @@
         this.element.classList.remove('three')
       }
       handleFinalStep(){
-        let href = `${location.origin}/mazeh#!/${this.nextlink}`
+        if(!this.nextlink){
+          this.element.classList.remove('three')
+          return false
+        }
+        let href = `${location.origin}/mazeh#!${this.nextlink}`
         window.open(href, window.name)
       }
     }
