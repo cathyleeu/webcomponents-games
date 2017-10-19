@@ -61,6 +61,7 @@
 
     </style>
     <status-bar
+      id="statusBar"
       title="{{localize('title')}}"
       score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
@@ -134,7 +135,7 @@
         this.setData( this.data , this.manifest)
       }
       setData( data , manifest){
-        this.set('data', data) // 객관식 수 
+        this.set('data', data) // 객관식 수
         this.set('manifest', manifest)
 
         // range : 한자리 수, 두 자리수 정해 줌
