@@ -137,6 +137,9 @@
             this.set('data', data )
             this.set('manifest', manifest )
 
+        if(!this.resources[this.language].subtitle) {
+          d3.select(this.shadowRoot).select(".header").style("display", "none")
+        }
         let be_shu = d3.shuffle(before), af_shu = d3.shuffle(randomAfter);
         let defs = svg.append('defs').selectAll('pattern');
         let bef_card = defs.data(be_shu).enter()
