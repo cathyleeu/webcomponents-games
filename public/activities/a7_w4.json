@@ -2,7 +2,6 @@
   "element": "line-card",
   "attributes": {
     "max" : 3,
-    "nextlink" : "a8_w1",
     "lastStage" : 5,
     "horizontal" : true
   },
@@ -47,7 +46,7 @@
       "yesbtn" : "예",
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "다음 단계"
+      "finalbtn" : "확인"
     },
     "en": {
       "title": "Matching the food to the right ingredient",
@@ -65,7 +64,7 @@
       "yesbtn" : "Yes",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
-      "finalbtn" : "Next Stage"
+      "finalbtn" : "Clear"
     }
   }
 }
