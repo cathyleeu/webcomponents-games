@@ -1,0 +1,35 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="minor-heading">
+  <template>
+    <style>
+      .header{
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+      }
+      .header > h1 {
+        line-height: 80px;
+        text-align: center;
+        margin: 0;
+        font-size: 25px;
+      }
+    </style>
+    <div class="header">
+      <h1>{{content}}</h1>
+    </div>
+  </template>
+  <script>
+    class MinorHeading extends Polymer.Element {
+      static get is() {
+        return "minor-heading";
+      }
+      static get properties() {
+        return {
+          content: String
+        }
+      }
+    }
+    window.customElements.define(MinorHeading.is, MinorHeading);
+  </script>
+</dom-module>
