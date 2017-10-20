@@ -46,7 +46,8 @@
       "yesbtn" : "예",
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "확인"
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
     },
     "en": {
       "title": "Matching the food to the right ingredient",
@@ -64,7 +65,8 @@
       "yesbtn" : "Yes",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
-      "finalbtn" : "Clear"
+      "finalbtn" : "Clear",
+      "fullscreen" : "fullscreen"
     }
   }
 }
