@@ -9,6 +9,10 @@
         width: 10%;
         text-align: center;
       }
+      .fullscreen {
+        color: white;
+        cursor: pointer;
+      }
       .bar_cont {
         display: flex;
         align-items: center;
@@ -40,7 +44,7 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        flex-direction: column;
+        /*flex-direction: column;*/
       }
       .logo{
         width: 20%;
@@ -57,10 +61,12 @@
       <div class="right_side">
         <div class="results">
           <p class="score">{{score}} {{point}}</p>
-          <p class="match">( {{matched}}/{{cards}} )</p>
+          <p class="match">({{matched}}/{{cards}})</p>
         </div>
         <div class="logout has_name" on-click="handleModal" data-purpose="logout">{{logoutHead}}</div>
+        <div class="fullscreen" on-click="handleFullScreen">{{fullscreen}}</div>
       </div>
+
     </div>
   </template>
   <script>
@@ -75,6 +81,7 @@
           matched: Number,
           cards: Number,
           purpose: String,
+          fullscreen: String,
           hasname: {
             type: Boolean,
             notify: true,
@@ -85,8 +92,14 @@
       }
       ready(){
         super.ready();
+        let document = window.document
         this.handleCheckName(this.hasname)
         this.handleContext()
+        this.set( "fullscreenEnabled" ,
+            document.fullscreenEnabled ||
+            document.webkitFullscreenEnabled ||
+            document.mozFullScreenEnabled ||
+            document.msFullscreenEnabled )
       }
       handleContext(){
         let target = {
@@ -107,6 +120,24 @@
       }
       handleModal(e) {
         this.dispatchEvent(new CustomEvent('modal', {bubbles: true, composed: true, detail: {purpose: e.target.getAttribute("data-purpose")}}));
+      }
+      handleFullScreen(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        // console.log("FullScreen");
+
+        let doc = window.document;
+        let docEl = doc.documentElement;
+
+        let requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+        let cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+        if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+          requestFullScreen.call(docEl);
+        }
+        else {
+          cancelFullScreen.call(doc);
+        };
       }
     }
     window.customElements.define(StatusBar.is, StatusBar);

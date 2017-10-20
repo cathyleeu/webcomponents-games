@@ -3,24 +3,20 @@
   "attributes": {
   },
   "data": [
-    "lang_com",
-    "lang_en",
-    "lang_jp",
-    "lang_ko",
-    "lang_com2",
-    "lang_en2",
-    "lang_jp2",
-    "lang_ko2"
+    "B4_1",
+    "B4_2",
+    "B4_3",
+    "B4_4"
   ],
   "manifest": [
-    {"no": 0 , "set": 0, "id": "lang_com", "src": "/img/coding_b/lang_com.png"},
-    {"no": 1 , "set": 0, "id": "lang_en", "src": "/img/coding_b/lang_en.png"},
-    {"no": 2 , "set": 0, "id": "lang_jp", "src": "/img/coding_b/lang_jp.png"},
-    {"no": 3 , "set": 0, "id": "lang_ko", "src": "/img/coding_b/lang_ko.png"},
-    {"no": 0 , "set": 1, "id": "lang_com2", "src": "/img/coding_b/lang_com2.png"},
-    {"no": 1 , "set": 1, "id": "lang_en2", "src": "/img/coding_b/lang_en2.png"},
-    {"no": 2 , "set": 1, "id": "lang_jp2", "src": "/img/coding_b/lang_jp2.png"},
-    {"no": 3 , "set": 1, "id": "lang_ko2", "src": "/img/coding_b/lang_ko2.png"}
+    {"no": 0 , "set": 0, "id": "B4_1", "src": "/img/coding_b/B4_1.png"},
+    {"no": 1 , "set": 0, "id": "B4_2", "src": "/img/coding_b/B4_2.png"},
+    {"no": 2 , "set": 0, "id": "B4_3", "src": "/img/coding_b/B4_3.png"},
+    {"no": 3 , "set": 0, "id": "B4_4", "src": "/img/coding_b/B4_4.png"},
+    {"no": 0 , "set": 1, "id": "B4_5", "text": "길을 찾아줘"},
+    {"no": 1 , "set": 1, "id": "B4_6", "text": "버스가 언제오지?"},
+    {"no": 2 , "set": 1, "id": "B4_7", "text": "햄버거 주문을 해줘"},
+    {"no": 3 , "set": 1, "id": "B4_8", "text": "더워, 온도를 내려줘"}
   ],
   "msg": {
     "ko": {

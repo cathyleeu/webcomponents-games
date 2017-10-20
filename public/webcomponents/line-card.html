@@ -8,6 +8,7 @@
 
   <template>
     <style>
+      @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
       :host {
         overflow: hidden;
       }
@@ -32,6 +33,7 @@
       .header > h1 {
         line-height: 80px;
         text-align: center;
+        margin-bottom: 0px;
       }
     </style>
     <status-bar
@@ -46,6 +48,7 @@
       cards="{{cards}}"
       on-modal="handleModal"
       purpose="line"
+      fullscreen="{{localize('fullscreen')}}"
       ></status-bar>
     <toycode-modal
       id="successModal"
@@ -126,28 +129,40 @@
           this.$.logOutModal.modalAlert();
         }
       }
+      handleTrimData(data, maxIdx) {
+        // debugger
+        let list = [],
+            result = maxIdx.map( dataIdx => data.find(idx => idx.no === dataIdx.no))
+        result.map(d => {
+            let source = d.src ? d.src : d.text,
+                img = d.src ? true : false;
+            return list.push({ ["no"]: d.no, ["source"]: source, ['img']: img })
+        })
+        return d3.shuffle(list)
+      }
       setData(data, manifest){
         let _this = this,
+            subtitleHas = this.resources[this.language].subtitle,
             svg = d3.select(this.shadowRoot).append('svg')
               .attr('width', this.offsetWidth)
-              .attr('height', `${this.offsetHeight-140}`),
+              .attr('height', subtitleHas ? `${this.offsetHeight-140}` : `${this.offsetHeight-60}`),
             boardName = ["bef_board", "af_board"],
             max = this.max ? this.max : manifest.length/2,
-            before = d3.shuffle(manifest.filter(l => !l.set).map(l => ({["no"]:l.no, ["src"]:l.src}))).slice(0, max),
-            after = manifest.filter(l => l.set),
-            randomLang = before.map(o => o.no), randomAfter = [];
-            randomLang.map(i => (after.forEach(l => l.no === i && randomAfter.push({["no"]: l.no, ["src"]:l.src}))))
+            maxIdx = d3.shuffle(manifest.filter(l => !l.set)).slice(0, max),
+            before = this.handleTrimData(manifest.filter(l => !l.set) , maxIdx),
+            after = this.handleTrimData(manifest.filter(l => l.set), maxIdx);
 
             this.set('cards', max )
             this.set('data', data )
             this.set('manifest', manifest )
 
-        if(!this.resources[this.language].subtitle) {
+
+        if(!subtitleHas) {
           d3.select(this.shadowRoot).select(".header").style("display", "none")
         }
-        let be_shu = d3.shuffle(before), af_shu = d3.shuffle(randomAfter);
+
         let defs = svg.append('defs').selectAll('pattern');
-        let bef_card = defs.data(be_shu).enter()
+        let bef_card = defs.data(before).enter()
           .append('pattern')
           .attr("id", (d, i) => `bef_${d.no}`)
           .attr("x", 0).attr("y", 0)
@@ -160,35 +175,36 @@
 
         bef_card.append('image')
           .attr("x", 5).attr("y", 5)
-          // .attr("width", 100).attr("height", 100)
-          .attr("xlink:href", d => `${d.src}`)
+          .attr("width", 100).attr("height", 100)
+          .attr("xlink:href", d => `${d.source}`)
           .style('filter', "url(#desaturate)")
 
 
-        defs.data(af_shu).enter() // after_ card
-          .append('pattern')
-          .attr("id", (d, i) => `af_${d.no}`)
-          .attr("x", 0).attr("y", 0)
-          .attr("width", 1).attr("height", 1)
-          .attr("patternUnits", "objectBoundingBox")
-          .append('image')
-          .attr("x", 5).attr("y", 5)
-          // .attr("width", 100).attr("height", 100)
-          .attr("xlink:href", (d, i) => `${d.src}`)
-
+        let hasImg = after[0].img ? true : false
+        if(hasImg) {
+          defs.data(after).enter() // after_ card
+            .append('pattern')
+            .attr("id", (d, i) => `af_${d.no}`)
+            .attr("x", 0).attr("y", 0)
+            .attr("width", 1).attr("height", 1)
+            .attr("patternUnits", "objectBoundingBox")
+            .append('image')
+            .attr("x", 5).attr("y", 5)
+            .attr("width", 100).attr("height", 100)
+            .attr("xlink:href", (d, i) => `${d.source}`)
+        }
 
         let rectGroup = svg.selectAll("g")
           .data(boardName).enter()
           .append("g")
           .attr("class", d => `${d}`);
 
-
         let be_axisX = this.horizontal ? (d, i) => (110*i+10) + (30*i) : 10,
             be_axisY = this.horizontal ? 10 : (d, i) => (110*i+10) + (30*i);
-        console.log(be_axisX, be_axisY)
+
         let bef_side = svg.select('.bef_board');
         bef_side.selectAll("rect")
-            .data(be_shu).enter()
+            .data(before).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
             .attr('x', be_axisX ).attr('y', be_axisY )
@@ -197,7 +213,7 @@
 
         let bef_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, 140)` : (d, i) => `translate(140, ${65+ 140*i})`
         let bef_cir = bef_side.selectAll("g.node")
-          .data(be_shu).enter()
+          .data(before).enter()
           .append('g')
           .attr("transform", bef_trans )
           .attr("id", (d, i) => `bef_cir${d.no}`)
@@ -216,25 +232,39 @@
 
 
         let af_axisX = this.horizontal ? (d, i) => (110*i+10) + (30*i) : 450,
-            af_axisY = this.horizontal ? 450 : (d, i) => (110*i+10) + (30*i);
+            af_axisY = this.horizontal ? 350 : (d, i) => (110*i+10) + (30*i);
 
         let af_side = svg.select('.af_board');
-        af_side.selectAll("rect")
-            .data(af_shu).enter()
-            .append('rect')
-            .attr("rx", 5).attr("ry", 5)
-            .attr('x', af_axisX ).attr('y', af_axisY )
-            .attr("width", 110).attr("height", 110)
-            .style("fill", "#fff")
-            .style("fill", (d,i) => `url(#af_${d.no})`)
-
-        af_side.selectAll("g").data(af_shu).enter()
+        let af_group = af_side.selectAll("g")
+              .data(after).enter()
+              .append('g')
+              .attr('class', 'af_group')
 
 
+        let af_rect = af_group.append('rect')
+              .attr("rx", 5).attr("ry", 5)
+              .attr('x', af_axisX ).attr('y', af_axisY )
+              .attr("width", 110).attr("height", 110)
+              .style("fill", "#fff")
 
-        let af_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, 430)` : (d, i) => `translate(430, ${65+ 140*i})`
+        if(hasImg){
+          af_rect.style("fill", (d,i) => `url(#af_${d.no})`)
+        } else {
+          af_group.append('text')
+            .attr('x', af_axisX ).attr('y', (d, i) => (110*i+10) + (30*i) + 60 )
+            .attr('fill', 'black')
+            .attr('font-weight', '600')
+            .attr('font-size', '20px')
+            .attr('font-family', 'Noto Sans KR')
+            .text((d,i) => `${d.source}`)
+        }
+
+
+        af_side.selectAll("g").data(after).enter()
+
+        let af_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, 330)` : (d, i) => `translate(430, ${65+ 140*i})`
         let af_cir = af_side.selectAll("g.node")
-          .data(af_shu).enter()
+          .data(after).enter()
           .append('g')
           .attr("transform", af_trans )
           .attr("id", (d, i) => `af_cir${d.no}`)
@@ -251,19 +281,20 @@
 
 
 
-        let getSize = this.horizontal ? svg.select('g').node().getBBox().width : 560
-        let getCenter = (this.offsetWidth - getSize)/2;
-        rectGroup.attr("transform", (d, i) => `translate(${getCenter}, 0)`);
+        let getWidth = this.horizontal ? svg.select('g').node().getBBox().width : 560,
+            getHeight = svg.select('g.af_board').node().getBoundingClientRect().bottom,
+            resultWidth = (this.offsetWidth - getWidth)/2,
+            resultHeight = ((this.offsetHeight - getHeight)/2)-30;
 
-        console.log(this.offsetWidth, getSize, getCenter)
+        rectGroup.attr("transform", (d, i) => `translate(${resultWidth}, ${resultHeight})`);
 
         var line;
         let dragId, dropId, startX, startY;
 
         function pencilingStart (d, i, pos) {
-          console.log(d, i, pos, this)
+          console.log("pencilingStart", d, i, pos)
           let getXY = svg.select(`#${pos}cir${d.no}`).attr("transform").match(/\d+/g),
-              startX = getCenter+(+getXY[0]), startY = +getXY[1];
+              startX = resultWidth+(+getXY[0]), startY = resultHeight+(+getXY[1]);
 
 
           dragId = d.no;
@@ -288,7 +319,11 @@
               dropItems = [];
 
           filterItems.forEach(el => {
-            if(el.tagName === "rect") dropItems.push(el)
+            if(oppos === "af_"){
+              if(el.firstChild.tagName === "rect") dropItems.push(el)
+            } else {
+              if(el.tagName === "rect") dropItems.push(el)
+            }
           })
 
 
@@ -297,7 +332,7 @@
           dropItems.forEach(el => {
             const getEl = el.getBoundingClientRect();
             let getX = +getArrow.attr('x2'),
-                getY = +getArrow.attr('y2')+80,
+                getY = subtitleHas ? +getArrow.attr('y2')+80 : +getArrow.attr('y2'),
                 setX = _this.horizontal ? getX : getX+getEl.width/2,
                 setY = _this.horizontal ? getY : getY+getEl.height/2,
                 getTB = pos === "bef_" ? getEl.top : getEl.bottom,
@@ -315,7 +350,7 @@
 
           if(dragId === dropId) {
             let getXY = svg.select(`#${oppos}cir${dropId}`).attr("transform").match(/\d+/g),
-                numX = getCenter+(+getXY[0]), numY = +getXY[1];
+                numX = resultWidth+(+getXY[0]), numY = resultHeight+(+getXY[1]);
 
             line.attr("x2", numX ).attr("y2", numY );
             console.log("its matched!!!", dragId, dropId)

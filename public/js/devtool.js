@@ -309,7 +309,9 @@ devtool.prototype._downloadBlocks = function(target, fileName, state) {
   } else if(target == "workspace") {
     $svg.children("g").children().not(".blocklyBlockCanvas").remove();
     $svg.find(".blocklyBlockCanvas").removeAttr("transform");
-    $svg.find(".blocklyBlockCanvas>g").attr("transform", "translate(0,20)");
+    var block = $svg.find(".blocklyBlockCanvas>g"),
+        hasHat = block.attr("data-shapes") === "hat";
+    block.attr("transform", hasHat ? "translate(0,20)" : "translate(0,0)"); 
   }
   $svg.attr("width", bbox.width + "px");
   $svg.attr("height", bbox.height + "px");
