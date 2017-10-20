@@ -17,7 +17,8 @@ var d1,
     resize_debounce = 50,
     resize_timeoutkey,
     blink_debounce = 50,
-    blink_timeoutkey;
+    blink_timeoutkey,
+    isMoving;
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
@@ -104,8 +105,7 @@ page('*', function(ctx, next) {
     });
   }).fail(function(jqXHR, msg, err) {
     console.log( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
-    alert("잘못된 주소입니다. 이전 페이지로 이동합니다.");
-    page(map_path.join("/") + "?" + map_qs);
+    alert("잘못된 경로로 접속하셨습니다.");
   });
 
   // load manifest.json file
@@ -328,6 +328,7 @@ function init() {
       runTutorial(maze.tutorial);
     }
   }
+  isMoving = false;
   devtool.drawFinished();
 }
 
@@ -729,7 +730,7 @@ function addEvents() {
       e.preventDefault();
     }
     e.stopPropagation();
-    if(createjs.Tween.hasActiveTweens()) {
+    if(isMoving || createjs.Tween.hasActiveTweens()) {
       return;
     }
     if(maze.type != "world" && maze.type != "game") {
@@ -742,6 +743,7 @@ function addEvents() {
       return;
     }
     e.preventDefault();
+    isMoving = true;
     kidscoding.Actions.delay = 100;
     kidscoding.Actions.move(direct, {}, function(obj) {
       if(maze.type == "game" && obj && obj.role == "food") {
@@ -761,6 +763,7 @@ function addEvents() {
             var lang = store.get("lang");
             store.set("queries", {});
             page(obj.link + ((lang && obj.link.split("/")[0] != map_path[0])? "?lang=" + lang : ""));
+            return;
           } else {
             // 문제 풀이 화면으로 넘어갈때 : back link를 저장
             store.set("queries", {
@@ -769,6 +772,7 @@ function addEvents() {
               y: mazeInfo.canvas.character.py
             });
             page(obj.link + "?back");
+            return;
           }
         } else {
           var msg = messages.fail_notEnough.split("%1").join(obj.min_score);
@@ -778,6 +782,7 @@ function addEvents() {
       if(obj && obj.tutorial) {
         runTutorial(obj.tutorial);
       }
+      isMoving = false;
     });
   }
   $(document).keydown(handleMove);

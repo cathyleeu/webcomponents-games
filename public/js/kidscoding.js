@@ -13,7 +13,7 @@ KidsCoding = function() {
     this.blockType = "vertical";
   }
   if(this.blockType == "horizontal") {
-    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 200;
+    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 240;
     Blockly.Flyout.prototype.MARGIN = 20;
     Blockly.Colours.flyout = "#EEEEEE";
 
