@@ -52,7 +52,8 @@
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "다음 단계",
-      "noticeAlert" : "아직 선택할 것이 남았어요!"
+      "noticeAlert" : "아직 선택할 것이 남았어요!",
+      "fullscreen" : "풀스크린"
     },
     "en": {
       "title": "What are the ingredients of rice cake soup?",
@@ -76,7 +77,8 @@
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
       "finalbtn" : "Next Stage",
-      "noticeAlert" : "You need to select more!"
+      "noticeAlert" : "You need to select more!",
+      "fullscreen" : "fullscreen"
     }
   }
 }

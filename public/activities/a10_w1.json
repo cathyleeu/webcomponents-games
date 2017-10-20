@@ -43,7 +43,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "전통 물건과 같은 기능을 하는 현대 물건을 연결해보아요.",
+      "title": "전통 물건 선 긋기",
+      "subtitle" : "전통 물건과 같은 기능을 하는 현대 물건을 연결해보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -58,10 +59,12 @@
       "yesbtn" : "예",
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "다음 단계"
+      "finalbtn" : "다음 단계",
+      "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Matching the cards with Old and New",
+      "title": "Old and New",
+      "subtitle": "Matching the cards with Old and New",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
@@ -76,7 +79,8 @@
       "yesbtn" : "Yes",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
-      "finalbtn" : "Next Stage"
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
     }
   }
 }
