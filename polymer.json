@@ -15,7 +15,8 @@
     "js/polyfill.min.js"
   ],
   "extraDependencies": [
-    "webcomponents/*.html"
+    "webcomponents/*.html",
+    "webcomponents/*.js"
   ],
   "fragments": [],
   "builds": [{
