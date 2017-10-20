@@ -1,6 +1,7 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
+<link rel="import" href="./minor-heading.html">
 <link rel="import" href="./modal.html">
 
 <dom-module id="flip-card">
@@ -13,8 +14,6 @@
       }
 
       .card-cont {
-        width: 180px;
-        height: 180px;
         display:inline-block;
         position: relative;
         margin: 0.5em 0.5em 0;
@@ -78,11 +77,7 @@
       }
 
       .card-front-logo{
-        width: 80px;
-        height: 60px;
-        margin-left: 55px;
         left: 50%;
-        margin-top: 60px;
         top: 50%;
         background-position: center center;
         background-repeat: no-repeat;
@@ -127,6 +122,8 @@
       nobtn="{{localize('nobtn')}}"
       purpose="previous"
       ></toycode-modal>
+    <minor-heading
+      content="{{localize('minor')}}"></minor-heading>
   </template>
 
   <script>
@@ -195,11 +192,17 @@
         manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
         data = data.map(id=>manifest[id]);
         console.log(this.offsetWidth)
+        let getContSize = d3.select(this.shadowRoot).select("#cont").node().offsetWidth,
+            getCardSize = (getContSize/this.cards)-20
+
         let flipData = d3.shuffle(data.concat(data));
         let card = board.selectAll('div')
             .data(flipData).enter()
             .append('xhtml:div')
-            .classed('card-cont', true);
+            .classed('card-cont', true)
+            .style('width', `${getCardSize}px`)
+            .style('height', `${getCardSize}px`);
+
 
         const transition_end_events = 'webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd';
         let flipper = card.append('xhtml:div')
@@ -243,12 +246,22 @@
             .attr('class', (d,i) => d)
         flipData.map( (item,i) => board.selectAll(`.flip-${i}`)
                 .select('.back')
-                .html(`<img src=${item} class="card-img" />`)
+                .html(`<img src=${item} class="card-img" style="width:${getCardSize}px; height:${getCardSize}px" />`)
             );
 
+        let frontImg = "https://toycode.org/img/kidsthinking_big.png",
+            frontImgWidth = getCardSize*0.45,
+            frontImgHeight = getCardSize*0.33,
+            frontImgMarginLeft = (getCardSize-frontImgWidth)/2;
         flipData.map( (_,i) => board.selectAll(`.flip-${i}`)
                 .select('.front')
-                .html('<img src="https://toycode.org/img/kidsthinking_big.png" class="card-front-logo"/>'));
+                .html(`<img src=${frontImg} class="card-front-logo" />`)
+                .select('img')
+                .style('width', `${frontImgWidth}px`)
+                .style('height', `${frontImgHeight}px`)
+                .style('margin-top', `${frontImgHeight}px`)
+                .style('margin-left', `${frontImgMarginLeft}px`)
+              )
       }
 
     }

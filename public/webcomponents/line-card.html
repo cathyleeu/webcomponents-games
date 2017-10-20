@@ -1,6 +1,7 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
+<link rel="import" href="./minor-heading.html">
 <link rel="import" href="./modal.html">
 
 
@@ -24,17 +25,6 @@
       image {
         width: 100px;
         height: 100px;
-      }
-      .header{
-        justify-content: center;
-        align-items: center;
-        height: 80px;
-      }
-      .header > h1 {
-        line-height: 80px;
-        text-align: center;
-        margin: 0;
-        font-size: 25px;
       }
     </style>
     <status-bar
@@ -86,9 +76,9 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
-      <div class="header">
-        <h1>{{localize('subtitle')}}</h1>
-      </div>
+    <minor-heading
+      id="minorHeading"
+      content={{localize('subtitle')}}></minor-heading>
   </template>
   <script>
     class LineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -159,7 +149,7 @@
 
 
         if(!subtitleHas) {
-          d3.select(this.shadowRoot).select(".header").style("display", "none")
+          d3.select(this.shadowRoot).select("#minorHeading").style("display", "none")
         }
 
         let defs = svg.append('defs').selectAll('pattern');
@@ -287,6 +277,10 @@
             getSubTitle = subtitleHas ? 70 : 30,
             resultWidth = (this.offsetWidth - getWidth)/2,
             resultHeight = ((this.offsetHeight - getHeight)/2)-getSubTitle;
+
+        if(resultHeight < 0) {
+          resultHeight = 0;
+        }
 
         rectGroup.attr("transform", (d, i) => `translate(${resultWidth}, ${resultHeight})`);
 

@@ -18,7 +18,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "겨울이 필요한 물건 이미지 카드를 뒤집어 짝을 맞추어보아요.",
+      "title": "겨울 물건 카드 뒤집기",
+      "minor": "겨울이 필요한 물건 이미지 카드를 뒤집어 짝을 맞추어보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -34,7 +35,8 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Flip the winter image cards and Match the pairs",
+      "title": "Flip the cards",
+      "minor": "Flip the winter image cards and Match the pairs",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
