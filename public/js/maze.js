@@ -295,7 +295,7 @@ function init() {
   var queries = store.get("queries") || {};
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
-    setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
+    tileFactory.setCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
   } else {
@@ -388,7 +388,8 @@ function initMaze() {
       for(var j = 0; j < map_width; j++) {
         var idx = (i + j) % 2 + 1;
         var bg_tile = new createjs.Bitmap(loader.getResult("bg" + idx));
-        setBitmapCoord(bg_tile, j, i);
+        tileFactory.setScale(bg_tile);
+        tileFactory.setCoord(bg_tile, j, i);
         mazeInfo.canvas.stage.addChild(bg_tile);
       }
     }
@@ -425,7 +426,8 @@ function initMaze() {
           }
           bg_tile.image = loader.getResult("land"+arr[idx]);
         }
-        setBitmapCoord(bg_tile, j, i);
+        tileFactory.setScale(bg_tile);
+        tileFactory.setCoord(bg_tile, j, i);
         mazeInfo.canvas.stage.addChild(bg_tile);
       }
     }
@@ -478,18 +480,6 @@ function drawMaze() {
   canvas.stage.removeChild(canvas.character);
   canvas.stage.addChild(canvas.character);
   canvas.stage.update();
-}
-
-function setBitmapCoord(bitmap, px, py) {
-  var bounds = bitmap.getBounds();
-  bitmap.px = px;
-  bitmap.py = py;
-  bitmap.x = mazeInfo.tile_size * px + mazeInfo.tile_size / 2;
-  bitmap.y = mazeInfo.tile_size * py + mazeInfo.tile_size / 2;
-  bitmap.scaleX = mazeInfo.tile_size / bounds.width;
-  bitmap.scaleY = mazeInfo.tile_size / bounds.height;
-  bitmap.regX = bounds.width / 2;
-  bitmap.regY = bounds.height / 2;
 }
 
 function handle_resize(e) {
@@ -917,7 +907,7 @@ function gameMode(loader, type, tileFactory) {
         for(i = 0; i < foods.length; i++) {
           if(foods[i].visible == false) {
             foods[i].visible = true;
-            tileFactory.setBitmapCoord(foods[i], x, y);
+            tileFactory.setCoord(foods[i], x, y);
             break;
           }
         }
