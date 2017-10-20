@@ -11,6 +11,7 @@
     "components/shadycss/custom-style-interface.html",
     "components/shadycss/custom-style-interface.min.js",
     "components/intl-messageformat/dist/intl-messageformat.min.js",
+    "webcomponents/activity-devtool.js",
     "js/polyfill.min.js"
   ],
   "extraDependencies": [
