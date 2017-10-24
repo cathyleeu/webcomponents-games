@@ -1,6 +1,7 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
+<link rel="import" href="./minor-heading.html">
 <link rel="import" href="./modal.html">
 
 <dom-module id="select-card">
@@ -11,12 +12,6 @@
         stroke: gray;
         cursor: pointer;
       }
-      .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
       h1, h3 , p{
         margin: 0.3em;
         font-weight: 400;
@@ -25,6 +20,7 @@
         display: flex;
         flex-flow: wrap;
         justify-content: center;
+        /*align-items: center;*/
       	margin: 30px 100px;
       	vertical-align: middle;
       	overflow: hidden;
@@ -118,9 +114,12 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
-      <div class="header">
-        <h3>{{localize('subtitle')}}</h3>
-      </div>
+      <minor-heading
+        content="{{localize('subtitle')}}"
+        guide="{{localize('guide')}}"
+        correct="{{correct}}"
+      ></minor-heading>
+
       <div class="container">
       </div>
       <div class="bottom">
@@ -155,7 +154,6 @@
         this.set('point', this.point+5)
         this.set('stage', this.stage+1)
         d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
-        d3.select(this.shadowRoot).select(".header").select('p').remove()
         this.setData(this.data, this.manifest)
       }
       handleSortData(boolean) {
@@ -170,10 +168,6 @@
             falseData = this.handleSortData(false).slice(0, this.trick ? this.trick : 3),
             wholeData = d3.shuffle(trueData.concat(falseData));
         this.set('correct', trueData )
-        console.log(trueData.length)
-
-        d3.select(this.shadowRoot).select(".header").append('p').text( this.resources[this.language].guide.replace(/\$/ , trueData.length))
-
 
         container.selectAll('div')
                  .data(wholeData).enter()

@@ -7,7 +7,7 @@
   "attributes": {
     "max" : 4,
     "lastStage" : 2,
-    "nextlink" : "a7_w2_c1"
+    "nextlink" : "activity#!a7_w2_c1"
   },
   "manifest": [
     {"id": "grain1", "src": "/img/a7_w2/grain1.png"},
