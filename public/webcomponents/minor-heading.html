@@ -4,7 +4,7 @@
   <template>
     <style>
       .header{
-        display: flex;
+        display: var(--minor-heading-cont-display, flex);
         flex-direction: column;
         height: 80px;
       }
@@ -14,9 +14,12 @@
       }
       .main {
         font-size: 25px;
+        font-weight: var(--minor-heading-font-weight);
+        display: var(--minor-heading-main-display, block);
       }
       .guide {
         font-size: 20px;
+        display: var(--minor-heading-guide-display, block);
       }
     </style>
     <div class="header">
@@ -35,6 +38,31 @@
           guide: String,
           correct: Object,
         }
+      }
+      ready() {
+        super.ready();
+        this.set('boldStyle', 0)
+        this.handleHeaderStyle()
+      }
+      handleHeaderStyle(){
+        let { guide, content } = this;
+        if(!guide){
+          this.updateStyles({
+            '--minor-heading-guide-display': 'none'
+          })
+        }
+        if(!content){
+          this.updateStyles({
+            '--minor-heading-main-display': 'none'
+          })
+        }
+        if(!content && !guide) {
+          this.updateStyles({
+            '--minor-heading-cont-display': 'none'
+          })
+        }
+        // this.set('minorHeight' , this.$.content.getBoundingClientRect().height)
+        // this.set('statusHeight' , this.$.statusBar.getBoundingClientRect().height)
       }
       renderGuideStatus(correct) {
         if(!this.guide) {

@@ -32,7 +32,7 @@
   "msg": {
     "ko": {
       "title": "떡국의 재료는 무엇인가요?",
-      "subtitle": "아래의 그림 중 떡국의 재료를 클릭하세요.",
+      "minor": "아래의 그림 중 떡국의 재료를 클릭하세요.",
       "guide": "힌트! 아래의 카드 중 재료는 $ 가지가 있어요!",
       "score": "점수",
       "success": "참 잘했어요!",
@@ -57,7 +57,7 @@
     },
     "en": {
       "title": "What are the ingredients of rice cake soup?",
-      "subtitle": "Click the ingredients in the below pictures",
+      "minor": "Click the ingredients in the below pictures",
       "guide": "Hint! ingredients is $ in the below Pictures.",
       "score": "score",
       "success": "Good job!",

@@ -12,6 +12,7 @@
       @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
       :host {
         overflow: hidden;
+        --minor-heading-font-weight: 600;
       }
       line {
         stroke: #2ECC98;
@@ -78,7 +79,8 @@
       ></toycode-modal>
     <minor-heading
       id="minorHeading"
-      content={{localize('subtitle')}}></minor-heading>
+      onclick="[[handleBoldStyle]]"
+      content={{localize('minor')}}></minor-heading>
   </template>
   <script>
     class LineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -99,6 +101,8 @@
         this.set('point', 0)
         this.set('matched', 0)
         this.set('stage', 1)
+        this.set('minorHeight' , this.$.minorHeading.getBoundingClientRect().height)
+        this.set('statusHeight' , this.$.statusBar.getBoundingClientRect().height)
       }
       reset(){
         this.set('total', 0)
@@ -120,8 +124,16 @@
           this.$.logOutModal.modalAlert();
         }
       }
+      // this 의 위치를 통해서 children Element Style 수정
+      // handleBoldStyle(){
+      //   console.log("before",this.boldStyle);
+      //   this.set('boldStyle', this.boldStyle + 100)
+      //   this.updateStyles({
+      //     '--minor-heading-font-weight': this.boldStyle
+      //   })
+      //   console.log("after",this.boldStyle);
+      // }
       handleTrimData(data, maxIdx) {
-        // debugger
         let list = [],
             result = maxIdx.map( dataIdx => data.find(idx => idx.no === dataIdx.no))
         result.map(d => {
@@ -133,10 +145,10 @@
       }
       setData(data, manifest){
         let _this = this,
-            subtitleHas = this.resources[this.language].subtitle,
+            containerHeight = this.offsetHeight - (this.minorHeight+this.statusHeight),
             svg = d3.select(this.shadowRoot).append('svg')
               .attr('width', this.offsetWidth)
-              .attr('height', subtitleHas ? `${this.offsetHeight-140}` : `${this.offsetHeight-60}`),
+              .attr('height', containerHeight ),
             boardName = ["bef_board", "af_board"],
             max = this.max ? this.max : manifest.length/2,
             maxIdx = d3.shuffle(manifest.filter(l => !l.set)).slice(0, max),
@@ -147,10 +159,6 @@
             this.set('data', data )
             this.set('manifest', manifest )
 
-
-        if(!subtitleHas) {
-          d3.select(this.shadowRoot).select("#minorHeading").style("display", "none")
-        }
 
         let defs = svg.append('defs').selectAll('pattern');
         let bef_card = defs.data(before).enter()
@@ -274,7 +282,7 @@
 
         let getWidth = this.horizontal ? svg.select('g').node().getBBox().width : 560,
             getHeight = svg.select('g.af_board').node().getBoundingClientRect().bottom,
-            getSubTitle = subtitleHas ? 70 : 30,
+            getSubTitle = this.minorHeight ? 70 : 30,
             resultWidth = (this.offsetWidth - getWidth)/2,
             resultHeight = ((this.offsetHeight - getHeight)/2)-getSubTitle;
 
@@ -328,7 +336,7 @@
           dropItems.forEach(el => {
             const getEl = el.getBoundingClientRect();
             let getX = +getArrow.attr('x2'),
-                getY = subtitleHas ? +getArrow.attr('y2')+80 : +getArrow.attr('y2'),
+                getY = +getArrow.attr('y2')+_this.minorHeight,
                 setX = _this.horizontal ? getX : getX+getEl.width/2,
                 setY = _this.horizontal ? getY : getY+getEl.height/2,
                 getTB = pos === "bef_" ? getEl.top : getEl.bottom,
