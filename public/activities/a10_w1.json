@@ -44,7 +44,7 @@
   "msg": {
     "ko": {
       "title": "전통 물건 선 긋기",
-      "subtitle" : "전통 물건과 같은 기능을 하는 현대 물건을 연결해보아요.",
+      "minor" : "전통 물건과 같은 기능을 하는 현대 물건을 연결해보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -64,7 +64,7 @@
     },
     "en": {
       "title": "Old and New",
-      "subtitle": "Matching the cards with Old and New",
+      "minor": "Matching the cards with Old and New",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

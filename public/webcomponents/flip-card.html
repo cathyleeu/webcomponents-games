@@ -8,17 +8,18 @@
   <template>
     <style>
       #cont {
-        width: 800px;
-        left: 50%;
-        margin-top: 20px;
+        width: 80%;
+        /*height: 70%;*/
+        margin: auto;
+        /*padding: 10% 0;*/
       }
 
       .card-cont {
         display:inline-block;
         position: relative;
         margin: 0.5em 0.5em 0;
-        perspective: 500px;
-        -ms-perspective: 500px;
+        /*perspective: 500px;
+        -ms-perspective: 500px;*/
       }
 
       [class^="flip"] {
@@ -52,8 +53,8 @@
         transition: transform 1s;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
-        perspective: 500px;
-        -ms-perspective: 500px;
+        /*perspective: 500px;
+        -ms-perspective: 500px;*/
       }
 
 
@@ -64,14 +65,11 @@
       }
       [class^="flip"] .back {
         background: #2ECC98;
-        /*left: -10px;*/
         transform: rotateY(180deg);
         -ms-transform: rotateY(180deg);
       }
 
       .card-img{
-        width: 180px;
-        height: 180px;
         background-position: center center;
         background-repeat: no-repeat;
       }
@@ -84,6 +82,7 @@
       }
     </style>
     <status-bar
+      id="statusBar"
       title="{{localize('title')}}"
       score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
@@ -123,7 +122,10 @@
       purpose="previous"
       ></toycode-modal>
     <minor-heading
+      id="minorHeading"
       content="{{localize('minor')}}"></minor-heading>
+    <div id="cont">
+    </div>
   </template>
 
   <script>
@@ -159,6 +161,8 @@
         this.set('total', 0)
         this.set('point', 0)
         this.set('matched', 0)
+        this.set('minorHeight' , this.$.minorHeading.getBoundingClientRect().height)
+        this.set('statusHeight' , this.$.statusBar.getBoundingClientRect().height)
       }
       reset(){
         this.set('total', 0)
@@ -166,6 +170,9 @@
         this.set('point', this.point+5)
         d3.select(this.shadowRoot).select('#cont').remove()
         this.setData(this.data, this.manifest)
+      }
+      handleContainStyle(){
+        this.set('contWidth',this.$.cont.getBoundingClientRect().width)
       }
       handleCheckName(){
         if(window.name){
@@ -181,19 +188,18 @@
       }
       setData(data, manifest){
         let _this = this,
-            board = d3.select(this.shadowRoot)
-              .append('xhtml:div')
-              .attr('id', "cont")
-              .attr('style', `margin-left:${(this.offsetWidth-800)/2}px` ),
+            board = d3.select(this.$.cont),
             tags = ["front", "back"];
-        _this.set('cards', data.length )
-        _this.set('data', data )
-        _this.set('manifest', manifest )
+
+        this.handleContainStyle()
+        this.set('cards', data.length )
+        this.set('data', data )
+        this.set('manifest', manifest )
+
         manifest = Object.assign(...manifest.map(o => ({[o.id]: o.src})));
         data = data.map(id=>manifest[id]);
-        console.log(this.offsetWidth)
-        let getContSize = d3.select(this.shadowRoot).select("#cont").node().offsetWidth,
-            getCardSize = (getContSize/this.cards)-20
+
+        let getCardSize = (this.contWidth/this.cards)-20
 
         let flipData = d3.shuffle(data.concat(data));
         let card = board.selectAll('div')
@@ -244,26 +250,37 @@
             .data(tags).enter()
             .append('xhtml:figure')
             .attr('class', (d,i) => d)
-        flipData.map( (item,i) => board.selectAll(`.flip-${i}`)
-                .select('.back')
-                .html(`<img src=${item} class="card-img" style="width:${getCardSize}px; height:${getCardSize}px" />`)
-            );
+
+        flipData.map((item,i) => {
+          board.selectAll(`.flip-${i}`)
+            .select('.back')
+            .html(`<img src=${item} class="card-img" style="width:${getCardSize}px; height:${getCardSize}px" />`)
+        });
 
         let frontImg = "https://toycode.org/img/kidsthinking_big.png",
             frontImgWidth = getCardSize*0.45,
             frontImgHeight = getCardSize*0.33,
             frontImgMarginLeft = (getCardSize-frontImgWidth)/2;
-        flipData.map( (_,i) => board.selectAll(`.flip-${i}`)
-                .select('.front')
-                .html(`<img src=${frontImg} class="card-front-logo" />`)
-                .select('img')
-                .style('width', `${frontImgWidth}px`)
-                .style('height', `${frontImgHeight}px`)
-                .style('margin-top', `${frontImgHeight}px`)
-                .style('margin-left', `${frontImgMarginLeft}px`)
-              )
-      }
 
+        flipData.map((_,i) => {
+          board.selectAll(`.flip-${i}`)
+            .select('.front')
+            .html(`<img src=${frontImg} class="card-front-logo" />`)
+            .select('img')
+            .style('width', `${frontImgWidth}px`)
+            .style('height', `${frontImgHeight}px`)
+            .style('margin-top', `${frontImgHeight}px`)
+            .style('margin-left', `${frontImgMarginLeft}px`)
+        })
+
+
+        let cardContHeight = this.$.cont.getBoundingClientRect().height,
+            contFloorHeight = (this.minorHeight*2)+this.statusHeight,
+            pureContHeight = this.offsetHeight-contFloorHeight,
+            contPaddingTop = (pureContHeight-cardContHeight)/2;
+
+            board.style('padding-top',`${contPaddingTop}px`)
+      }
     }
     window.customElements.define(FlipCard.is, FlipCard);
   </script>
