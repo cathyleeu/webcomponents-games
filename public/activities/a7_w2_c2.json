@@ -7,7 +7,7 @@
   "attributes": {
     "max" : 4,
     "lastStage" : 2,
-    "nextlink" : "a7_w2_c1"
+    "nextlink" : "activity#!a7_w2_c1"
   },
   "manifest": [
     {"id": "grain1", "src": "/img/a7_w2/grain1.png"},
@@ -30,7 +30,7 @@
   "msg": {
     "ko": {
       "title": "가을 곡식과 열매를 알아보아요",
-      "subtitle": "아래의 그림 중 열매를 클릭하세요.",
+      "minor": "아래의 그림 중 열매를 클릭하세요.",
       "guide": "힌트! 아래의 카드 중 열매는 $가지가 있어요!",
       "score": "점수",
       "success": "참 잘했어요!",
@@ -55,7 +55,7 @@
     },
     "en": {
       "title": "Learn about autumn fruits and grains",
-      "subtitle": "Click the fruits in the below pictures",
+      "minor": "Click the fruits in the below pictures",
       "guide": "Hint! There are $ fruits in the below Pictures.",
       "score": "score",
       "success": "Good job!",
