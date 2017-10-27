@@ -2,13 +2,13 @@
   "tile_size": 128,
   "score":1,
   "workspace": "start",
-  "solution":"start",
-  "problem": "start,one_digit,calc_digit(*,*),ten_digit,calc_digit(*,*),hundred_digit,calc_digit(*,*)",
+  "solution": "start,one_digit,sum_digit(true,4),ten_digit,sum_digit(true,3),hundred_digit,sum_digit(false,6)",
+  "problem": "start,one_digit,sum_digit(*,*),ten_digit,sum_digit(*,*),hundred_digit,sum_digit(*,*)",
   "toolbox": [
     "one_digit",
     "ten_digit",
     "hundred_digit",
-    "calc_digit"
+    "sum_digit"
   ],
   "tile": [
     {"letters": "0123456789+-"},

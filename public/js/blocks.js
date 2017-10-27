@@ -638,10 +638,47 @@ Blocks["hundred_digit"] = {
   ],
   action: ["move", "forward"]
 };
-Blocks["calc_digit"] = {
+Blocks["sum_digit"] = {
   colour: "#60B12F",
   message0: {
     ko: "받아올림 %1 , %2 쓰기",
+    en: ""
+  },
+  args0: [{
+    type: "field_dropdown",
+    name: "countMode",
+    options: [
+      ["하고", "true"],
+      ["안하고", "false"]
+    ]
+  },{
+    type: "field_dropdown",
+    name: "countOptions",
+    options: [
+      ["1", "1"],
+      ["2", "2"],
+      ["3", "3"],
+      ["4", "4"],
+      ["5", "5"],
+      ["6", "6"],
+      ["7", "7"],
+      ["8", "8"],
+      ["9", "9"]
+    ]
+  }],
+  action: ["count"]
+  // action: ["func", {
+  //   type: "repeat",
+  //   count: "@count",
+  //   statements: {
+  //     type: "move_forward1"
+  //   }
+  // }]
+};
+Blocks["sub_digit"] = {
+  colour: "#60B12F",
+  message0: {
+    ko: "받아내림 %1 , %2 쓰기",
     en: ""
   },
   args0: [{
