@@ -249,6 +249,10 @@ function getBook(classObj) {
   if(classObj.code == "B00130-K1-KC6" || classObj.code == "B00016-K1-KC5") {
     book = [3, 4];
   }
+  // 숙명킨더 아카데미 7세반 11월에 특별호부터 시작
+  if(classObj.code == "A00042-K4-KC2") {
+    book = ["5-5"];
+  }
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
