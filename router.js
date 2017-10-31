@@ -216,7 +216,11 @@ function getBook(classObj) {
     book = [3, 4];
   }
   // 대구지사, 압구정PSA는 요청으로 3달치 제공
-  if(school.slice(0,6) == "C00071", school.slice(0,6) == "D00121") {
+  if(school.slice(0,6) == "C00071" || school.slice(0,6) == "D00121") {
+    book = [6, 7, 8];
+  }
+  // 광주지사 리아시찌다 요청으로 3달치 제공(11월만)
+  if(school == "A00058-K1") {
     book = [6, 7, 8];
   }
   // 청아유치원(시범원)
