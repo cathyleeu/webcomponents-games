@@ -1,0 +1,41 @@
+[
+  {"book": "coding", "title": "초등교재"},
+  {"id": "bg1", "src": "/img/c4_w2/bg1.png"},
+  {"id": "bg2", "src": "/img/c4_w2/bg2.png"},
+
+  {"id": "character", "src": "/img/c8_w3/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c8_w3/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/b4/flag.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "wall", "src": "/img/c4_w2/walls.png", "obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png"},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png"},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png"},
+
+  {"id": "fruit_strawberry", "src": "/img/c4_w1_c3/fruit_strawberry.png"},
+  {"id": "fruit_apple", "src": "/img/c4_w1_c3/fruit_apple.png"},
+  {"id": "fruit_cherry", "src": "/img/c4_w1_c3/fruit_cherry.png"},
+  {"id": "fruit_kiwi", "src": "/img/c4_w1_c3/fruit_kiwi.png"},
+  {"id": "fruit_orange", "src": "/img/c4_w1_c3/fruit_orange.png"},
+  {"id": "fruit_watermelon", "src": "/img/c4_w1_c3/fruit_watermelon.png"},
+  {"id" :"refrigerator" , "src" : "/img/b9_w1/refrigerator.png"},
+
+  {"id": "house", "src": "/img/b5_w1/house.png"},
+  {"id": "school", "src": "/img/a10_w3/school.png"},
+  {"id": "hospital", "src": "/img/a10_w3/hospital.png"},
+  {"id": "playground", "src": "/img/c4_w1_c1/playground.png"},
+  {"id": "earth", "src": "/img/a3_w3/earth.png"},
+  {"id": "cloud", "src": "/img/a8/cloud.png"},
+  {"id": "flower1", "src": "/img/c3_w1/flower1.png"},
+
+  {"id": "hand_rock", "src": "/img/kidsblocks/Rock.png"},
+  {"id": "hand_paper", "src": "/img/kidsblocks/Paper.png"},
+  {"id": "hand_scissors", "src": "/img/kidsblocks/Scissors.png"},
+  {"id": "spider", "src": "/img/c6/bomi0.png"}
+]

@@ -1,0 +1,33 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,move_forward(2),rotate_left,move_forward(2),rotate_right,move_forward(3),rotate_left,item_rock,move_forward(3)",
+  "problem": "start,move_forward(2),rotate_right,move_forward(2),rotate_right,move_forward(1),rotate_left,item_rock,move_forward(3)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "item_scissors",
+    "item_rock",
+    "item_paper"
+  ],
+  "map": [
+    "####.###",
+    "##.##..l",
+    "#.###.##",
+    "##S...#.",
+    "##.###..",
+    ".#.#.#.#",
+    "#.%##.##",
+    "##.#####"
+  ],
+  "extra":[],
+  "tutorial": [{
+    "msg:ko": "코봇은 오늘도 할머니를 열심히 도와드렸어.\n퇴근할 시간이야. 집으로 가보자.",
+    "img": ["/img/coding/robot1.png","/img/c6/bomi0.png","/img/b5_w1/house.png"]
+  }, {
+    "msg:ko": "Tip: 고양이 봄이와 가위바위보를 해서 이겨야 지나갈 수 있어.",
+    "img": ["/img/coding/robot1.png","/img/c6/bomi0.png","/img/b5_w1/house.png"]
+  }]
+}

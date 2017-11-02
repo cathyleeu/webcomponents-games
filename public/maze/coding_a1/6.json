@@ -1,0 +1,30 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": "start",
+  "solution": "start, move_forward(2), rotate_right, move_forward(5)",
+  "problem": "start, move_forward(*), empty, move_forward(*), empty",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "#.#..##",
+    "##.##.#",
+    ".####d#",
+    "##.#..#",
+    "%.....#",
+    "#.##.##",
+    "##.##.#"
+  ],
+  "extra":[{
+    "x": 0,
+    "y": 4,
+    "img":"fruit_watermelon"
+  }],
+  "tutorial": [{
+    "msg:ko": "목표 지점으로 가보자!",
+    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_watermelon.png"]
+  }]
+}

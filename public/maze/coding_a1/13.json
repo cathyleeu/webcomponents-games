@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,rotate_right,move_forward(3)",
+  "problem": "start,empty,move_forward(*)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "##.#.##",
+    "##.##.#",
+    ".######",
+    "#.%..d.",
+    "##.##.#",
+    "######.",
+    "##.##.#"
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 3,
+    "img": "playground"
+  }],
+  "tutorial": [{
+    "msg:ko": "놀이터로 가보자!"
+  }]
+}
