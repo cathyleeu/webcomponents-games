@@ -235,6 +235,9 @@ function getBook(classObj) {
   if(school == "A00072-K9" || school == "A00114-K3" || school == "A00066-K2") {
     book = ["5-5", 6];
   }
+  if(school == "A00066-K1" ) {
+    book = [6, 7, 8];
+  }
   if(school == "E00076-K1" ) {
     book = [6, 7];
   }
