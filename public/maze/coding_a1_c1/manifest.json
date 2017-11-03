@@ -33,6 +33,12 @@
   {"id": "earth", "src": "/img/a3_w3/earth.png"},
   {"id": "cloud", "src": "/img/a8/cloud.png"},
   {"id": "flower1", "src": "/img/c3_w1/flower1.png"},
+  {"id": "bright1", "src": "/img/b9_w3/bright1.png"},
+  {"id": "bright2", "src": "/img/b9_w3/bright2.png"},
+  {"id": "bright3", "src": "/img/b9_w3/bright3.png"},
+  {"id": "ufo", "src": "/img/b3_w1/ufo.png"},
+  {"id": "book", "src": "/img/b7_w2/book.png"},
+  {"id": "bottle", "src": "/img/cobot/bottle.png"},
 
   {"id": "hand_rock", "src": "/img/kidsblocks/Rock.png"},
   {"id": "hand_paper", "src": "/img/kidsblocks/Paper.png"},

@@ -2,7 +2,7 @@
   "tile_size": 128,
   "score":3,
   "workspace": "start",
-  "solution": "start,rotate_right,move_forward(2),rotate_left,move_forward(6)",
+  "solution": "start,rotate_right,move_forward(5),rotate_left,move_forward(3)",
   "problem": "start,empty,move_forward(*),empty,move_forward(*)",
   "toolbox": [
     "move_forward",
@@ -13,14 +13,14 @@
     ".##.###",
     "#.###%.",
     "####..#",
-    "u.....#",
     "##.##.#",
+    "u.....#",
     "####.##",
     "##.####"
   ],
   "extra":[{
-    "x" : 6,
-    "y" : 3,
+    "x" : 5,
+    "y" : 1,
     "img" : "cloud"
   }],
   "tutorial": [{

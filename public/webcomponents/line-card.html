@@ -124,15 +124,7 @@
           this.$.logOutModal.modalAlert();
         }
       }
-      // this 의 위치를 통해서 children Element Style 수정
-      // handleBoldStyle(){
-      //   console.log("before",this.boldStyle);
-      //   this.set('boldStyle', this.boldStyle + 100)
-      //   this.updateStyles({
-      //     '--minor-heading-font-weight': this.boldStyle
-      //   })
-      //   console.log("after",this.boldStyle);
-      // }
+
       handleTrimData(data, maxIdx) {
         let list = [],
             result = maxIdx.map( dataIdx => data.find(idx => idx.no === dataIdx.no))
@@ -161,23 +153,20 @@
 
 
         let defs = svg.append('defs').selectAll('pattern');
-        let bef_card = defs.data(before).enter()
-          .append('pattern')
-          .attr("id", (d, i) => `bef_${d.no}`)
-          .attr("x", 0).attr("y", 0)
-          .attr("width", 1).attr("height", 1)
-          .attr("patternUnits", "objectBoundingBox");
 
-        bef_card.append('filter')
-          .attr('id','desaturate')
-          .append('feColorMatrix')
-
-        bef_card.append('image')
-          .attr("x", 5).attr("y", 5)
-          .attr("width", 100).attr("height", 100)
-          .attr("xlink:href", d => `${d.source}`)
-          .style('filter', "url(#desaturate)")
-
+        let hasBefImg = before[0].img ? true : false;
+        if(hasBefImg) {
+          defs.data(before).enter()
+            .append('pattern')
+            .attr("id", (d, i) => `bef_${d.no}`)
+            .attr("x", 0).attr("y", 0)
+            .attr("width", 1).attr("height", 1)
+            .attr("patternUnits", "objectBoundingBox")
+            .append('image')
+            .attr("x", 5).attr("y", 5)
+            .attr("width", 100).attr("height", 100)
+            .attr("xlink:href", d => `${d.source}`)
+        }
 
         let hasImg = after[0].img ? true : false
         if(hasImg) {
@@ -202,13 +191,30 @@
             be_axisY = this.horizontal ? 10 : (d, i) => (110*i+10) + (30*i);
 
         let bef_side = svg.select('.bef_board');
-        bef_side.selectAll("rect")
-            .data(before).enter()
-            .append('rect')
-            .attr("rx", 5).attr("ry", 5)
-            .attr('x', be_axisX ).attr('y', be_axisY )
-            .attr("width", 110).attr("height", 110)
-            .style("fill", (d,i) => `url(#bef_${d.no})`)
+
+        let bef_group = bef_side.selectAll("g")
+              .data(before).enter()
+              .append('g')
+              .attr('class', 'bef_group')
+
+        let bef_rect = bef_group.append('rect')
+              .attr("rx", 5).attr("ry", 5)
+              .attr('x', be_axisX ).attr('y', be_axisY )
+              .attr("width", 110).attr("height", 110)
+              .style("fill", "#fff")
+
+        if(hasBefImg){
+          bef_rect.style("fill", (d,i) => `url(#bef_${d.no})`)
+        } else {
+          bef_group.append('text')
+            .attr('x', be_axisX ).attr('y', (d, i) => (110*i+10) + (30*i) + 60 )
+            .attr('fill', 'black')
+            .attr('font-weight', '600')
+            .attr('font-size', '20px')
+            .attr('font-family', 'Noto Sans KR')
+            .text((d,i) => `${d.source}`)
+        }
+
 
         let bef_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, 140)` : (d, i) => `translate(140, ${65+ 140*i})`
         let bef_cir = bef_side.selectAll("g.node")
@@ -275,9 +281,6 @@
               .attr('id', (d) => `af_line${d.no}`)
               .on("mousedown touchstart", (d, i) => pencilingStart(d, i, "af_") )
         // 라인이 매칭되는 범위를 지정하는 포인트
-
-
-
 
 
         let getWidth = this.horizontal ? svg.select('g').node().getBBox().width : 560,
