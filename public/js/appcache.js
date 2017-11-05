@@ -117,7 +117,7 @@
       }
     });
     if(progress == -1) {
-      alert("다운로드 받은 파일을 확인 할 수 없습니다.\n인터넷 연결 확인후 재접속 해주세요.");
+      alert("저장된 컨텐츠에 접근 할 수 없습니다.\n인터넷 연결 확인후 재접속 해주세요.");
       $('#appcache').modal('hide');
       return;
     }
@@ -142,10 +142,10 @@
       return;
     } else if(update_status == "업데이트 확인") { // 오프라인 상태
       if(!old_contents) {
-        alert("다운로드 받은 파일을 확인 할 수 없습니다.\n인터넷 연결 확인후 재접속 해주세요.");
+        alert("저장된 컨텐츠를 확인 할 수 없습니다.\n인터넷 연결 확인후 재접속 해주세요.");
         return;
       }
-      $('#appcache .msg').html("다운로드 받은 파일을 확인 중입니다.<br/>" + old_contents);
+      $('#appcache .msg').html("저장된 컨텐츠의 상태를 확인 중입니다.<br/>" + old_contents);
       $('#appcache').modal('show');
       $('#appcache button.btn-default').hide();
       clearTimeout(timeoutkey);
