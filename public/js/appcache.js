@@ -4,7 +4,8 @@
     return;
   }
   var new_manifest,
-      new_contents;
+      new_contents,
+      timeoutkey;
 
   function handleCacheEvent(e) {
     if(e.type === 'downloading') {
@@ -125,7 +126,7 @@
       $('#appcache .msg').html('확인 완료<br/>' + old_contents);
       $('#appcache button.btn-default').show();
     } else {
-      setTimeout(function() {
+      timeoutkey = setTimeout(function() {
         checkManifest(manifest, i+1);
       }, 1);
     }
@@ -147,6 +148,7 @@
       $('#appcache .msg').html("다운로드 받은 파일을 확인 중입니다.<br/>" + old_contents);
       $('#appcache').modal('show');
       $('#appcache button.btn-default').hide();
+      clearTimeout(timeoutkey);
       checkManifest(store.get("manifest"), 0);
     } else { // 최신 업데이트 상태
       alert("현재 컨텐츠는 다음과 같습니다.\n" + old_contents);
