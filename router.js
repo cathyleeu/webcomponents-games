@@ -532,7 +532,7 @@ public.get('/cache/:manifest', function *(next) {
       jsons = [],
       imgs = [],
       cache = [],
-      output = "CACHE MANIFEST\n";
+      output = "CACHE MANIFEST\n#contents:" + bookArr.join(",") + "\n";
   bookArr.forEach(function(bookNames) {
     bookNames.split(",").forEach(function(bookName) {
       books_json[bookName].forEach(function(contentInfo) {
