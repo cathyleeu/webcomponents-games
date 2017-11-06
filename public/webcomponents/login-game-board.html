@@ -1,0 +1,100 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="login-game-board">
+  <template>
+    <style>
+      :host {
+        width: var(--login-game-board-width, 50%);
+        height: var(--login-game-board-height, 100%);
+        border: 1px solid black;
+      }
+      :host[loginNames] {
+        padding: 1em;
+      }
+      .login_name {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #E53;
+        border-radius: 3px;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .login_name:hover{
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      img {
+        width: 80px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      .row_title td {
+        font-size: 13px;
+        text-align: center;
+        font-weight: 700;
+      }
+      .render_items {
+        padding: 1em;
+      }
+    </style>
+    <div class="render_items">
+      <h1>1. 이름을 선택하세요.</h1>
+      <template is="dom-repeat" items="{{names}}" as="name">
+        <p class="login_name" on-click="handleClick" data-name="[[name]]">[[name]]</p>
+      </template>
+    </div>
+    <div class="render_items">
+      <h1>2. 자신의 비밀 캐릭터를 선택하세요.</h1>
+      <template id="renderImages" is="dom-repeat" items="{{images}}" as="image">
+        <img src="{{renderRandomId(image)}}" on-click="handleClick" data-name="{{image}}"/>
+      </template>
+    </div>
+    <div>
+      <button on-click="handleSubmitAnswer">로그인</button>
+    </div>
+  </template>
+  <script>
+    class LoginGameBoard extends Polymer.Element {
+      static get is() { return 'login-game-board'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          },
+          names: Array,
+          images: Array,
+          level: String,
+          handleClick: Function
+        }
+      }
+      handleClick(e) {
+        console.log(e.target.dataName, )
+        let parent = document.getElementById("element")
+        switch (e.target.tagName) {
+          case "P":
+            return parent.set('selectName', e.target.dataName)
+          default:
+            return parent.set('selectImage', e.target.dataName)
+            break;
+        }
+        // debugger
+      }
+      ready(){
+        // super.ready()가 없으면 그려지지 않음
+        super.ready();
+      }
+      renderRandomId(image){
+        // debugger
+        return `/img/login/${this.level}/${image}.png`
+      }
+    }
+    window.customElements.define(LoginGameBoard.is, LoginGameBoard);
+  </script>
+</dom-module>

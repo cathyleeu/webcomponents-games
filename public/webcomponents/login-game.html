@@ -1,14 +1,20 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
+<!-- <link rel="import" href="polymer/lib/elements/dom-repeat.html"> -->
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
 <link rel="import" href="./minor-heading.html">
 <link rel="import" href="./modal.html">
 <link rel="import" href="./login-card.html">
+<link rel="import" href="./login-game-board.html">
 
 <dom-module id="login-game">
   <template>
     <style>
-
+      .container {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+      }
     </style>
     <status-bar
       title="{{localize('title')}}"
@@ -62,9 +68,10 @@
       nextlink="{{nextlink}}"
       ></toycode-modal>
     <div class="container">
-      <login-card name="윌리엄" level="{{level}}" image="03"/>
-
+      <login-card name="{{name}}" level="{{level}}" image="{{selected}}"></login-card>
+      <login-game-board names="{{names}}" images="{{images}}" level="{{level}}" handleClick="{{handleClick}}"></login-game-board>
     </div>
+
   </template>
   <script>
     class LoginGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -82,23 +89,20 @@
       ready(){
         // super.ready()가 없으면 그려지지 않음
         super.ready();
-        // this.set('clicked', 0)
-        // this.set('total', 0)
-        // this.set('stage', 1)
       }
       reset(){
-        // this.set('clicked', 0)
-        // this.set('total', 0)
-        // this.set('point', this.point+5)
-        // this.set('stage', this.stage+1)
-        // d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
-        // this.setData(this.data, this.manifest)
-      }
-      setData(data, manifest){
 
-        let { level, images } = manifest, imageList = [];
-        this.set('level', level)
-        debugger
+      }
+      handleSubmitAnswer(){
+        let { selectImage, selectName, selected, name} = this;
+        if(selectImage === selected && selectName === name) {
+          console.log("correct");
+        }
+        return false
+      }
+      renderRandomId(level , images){
+        // this.updateStyles
+        let imageList = [];
         for(let i = 1; i < images+1; i++) {
           i = i.toString()
           let length = i.length;
@@ -107,15 +111,21 @@
           }
           imageList.push(i)
         }
-        console.log(imageList);
-
-
+        this.set('level', level)
+        this.set('images', imageList)
+        let selected = d3.shuffle(imageList)[0]
+        this.set('selected', selected)
       }
-      handleClickCard(d, i){
-
-      }
-      handleSubmit(){
-
+      setData(data, manifest){
+        this.set('names', data)
+        let { level, images } = manifest;
+        this.renderRandomId(level, images)
+        this.set('name', d3.shuffle(data)[0])
+        this.updateStyles({
+          'width': window.innerWidth,
+          '--login-card-width': '35%',
+          '--login-game-board-width': '65%',
+        })
       }
     }
     window.customElements.define(LoginGame.is, LoginGame);
