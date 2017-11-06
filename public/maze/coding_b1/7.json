@@ -8,8 +8,8 @@
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "use_item",
-    "get_item"
+    "get_items",
+    "use_items"
   ],
   "map": [
     "########",
@@ -29,7 +29,8 @@
   },{
     "x": 1,
     "y": 5,
-    "img": "refrigerator"
+    "img": "refrigerator",
+    "useItem": true
   }],
   "tutorial": [{
     "msg:ko": "내 친구 넘봇은 키위를 좋아해.\n넘봇이 집에 놀러 오면 주기 위해 키위를 냉장고에 넣어 놓으려고 해.",
