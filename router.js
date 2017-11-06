@@ -217,7 +217,7 @@ function getBook(classObj) {
   }
   // 영업부 평택지사 리베창의력사고학원 1권부터 시작
   if(school == "C00166-K1") {
-    book = [1];
+    book = [1, 2];
   }
   // 대구지사, 압구정PSA는 요청으로 3달치 제공
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "D00121") {
