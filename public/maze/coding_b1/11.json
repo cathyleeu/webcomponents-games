@@ -8,8 +8,8 @@
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "use_item",
-    "get_item"
+    "get_items",
+    "use_items"
   ],
   "map": [
     ".)...%#d",
@@ -24,7 +24,8 @@
   "extra":[{
     "x" : 5,
     "y" : 0,
-    "img": "grandma"
+    "img": "grandma",
+    "useItem": true
   }, {
     "x" : 1,
     "y" : 0,

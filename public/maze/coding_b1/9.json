@@ -8,8 +8,8 @@
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "use_item",
-    "get_item"
+    "get_items",
+    "use_items"
   ],
   "map": [
     "######.#",
@@ -34,11 +34,13 @@
   },{
     "x":4,
     "y":4,
-    "img": "refrigerator"
+    "img": "refrigerator",
+    "useItem": true
   },{
     "x":6,
     "y":4,
-    "img": "refrigerator"
+    "img": "refrigerator",
+    "useItem": true
   }],
   "tutorial": [{
     "msg:ko": "코봇은 과일을 먹어서 에너지가 충분해.\n분해, 패턴인식, 추상화, 알고리즘 단계의 사고를 거쳐 임무를 수행할 준비가 됐어.",
