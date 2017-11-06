@@ -151,7 +151,11 @@
       clearTimeout(timeoutkey);
       checkManifest(store.get("manifest"), 0);
     } else { // 최신 업데이트 상태
-      alert("현재 컨텐츠는 다음과 같습니다.\n" + old_contents);
+      if(new_contents || old_contents) {
+        alert("현재 컨텐츠는 다음과 같습니다.\n" + (new_contents || old_contents));
+      } else {
+        alert("최신 업데이트 상태입니다.");
+      }
     }
   });
 
