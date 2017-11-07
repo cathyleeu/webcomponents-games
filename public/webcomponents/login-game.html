@@ -18,7 +18,6 @@
     </style>
     <status-bar
       title="{{localize('title')}}"
-      score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
       hasname="{{handleCheckName()}}"
       total="{{total}}"
@@ -68,8 +67,8 @@
       nextlink="{{nextlink}}"
       ></toycode-modal>
     <div class="container">
-      <login-card name="{{name}}" level="{{level}}" image="{{selected}}"></login-card>
-      <login-game-board names="{{names}}" images="{{images}}" level="{{level}}" handleClick="{{handleClick}}"></login-game-board>
+      <login-card name="{{randomName}}" level="{{level}}" image="{{randomImage}}"></login-card>
+      <login-game-board names="{{names}}" images="{{images}}" level="{{level}}"></login-game-board>
     </div>
 
   </template>
@@ -91,14 +90,7 @@
         super.ready();
       }
       reset(){
-
-      }
-      handleSubmitAnswer(){
-        let { selectImage, selectName, selected, name} = this;
-        if(selectImage === selected && selectName === name) {
-          console.log("correct");
-        }
-        return false
+        this.setData(this.names, this.manifest)
       }
       renderRandomId(level , images){
         // this.updateStyles
@@ -113,16 +105,20 @@
         }
         this.set('level', level)
         this.set('images', imageList)
-        let selected = d3.shuffle(imageList)[0]
-        this.set('selected', selected)
+        let randomNum = Math.floor(Math.random()*(images-1)) + 1,
+            randomImage = d3.shuffle(imageList)[randomNum];
+        this.set('randomImage', randomImage)
       }
       setData(data, manifest){
         this.set('names', data)
-        let { level, images } = manifest;
+        this.set('manifest', manifest)
+        let { level, images } = manifest,
+            randomNum = Math.floor(Math.random()*(data.length-1)) + 1;
         this.renderRandomId(level, images)
-        this.set('name', d3.shuffle(data)[0])
+        this.set('randomName', d3.shuffle(data)[randomNum])
         this.updateStyles({
-          'width': window.innerWidth,
+          'width': `${window.innerWidth}px`,
+          // 'height': `${window.innerHeight-60}px`,
           '--login-card-width': '35%',
           '--login-game-board-width': '65%',
         })

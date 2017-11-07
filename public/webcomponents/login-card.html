@@ -8,6 +8,15 @@
       :host {
         width: var(--login-card-width, 50%);
         height: var(--login-card-height, 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      :host > h1 {
+        text-align: center;
+        font-size: 21px;
+        padding: 0.5em;
+        font-weight: 500;
       }
       .container {
         border: 6px solid #2ECC98;
@@ -29,7 +38,7 @@
         height: 100%;
         max-width: 60px;
       }
-      .header h1 {
+      .header > h1 {
         padding: 0.5em;
         margin: 0.5em;
         font-size: 16px;

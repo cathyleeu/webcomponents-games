@@ -6,31 +6,38 @@
     <style>
       :host {
         width: var(--login-game-board-width, 50%);
-        height: var(--login-game-board-height, 100%);
-        border: 1px solid black;
-      }
-      :host[loginNames] {
-        padding: 1em;
+        background-color: #2ECC98;
+        color: white;
+        text-align: center;
+        overflow: scroll;
+        padding-bottom: 1em;
+        box-sizing: border-box;
       }
       .login_name {
         display: inline-block;
-        padding: 12px 30px;
-        background-color: #E53;
+        padding: 15px 20px;
+        background-color: #f0ad4e;
+        border-color: #eea236;
         border-radius: 3px;
         text-align: center;
         color: white;
-        font-size: 16px;
-        font-weight: 400;
+        margin: 5px;
       }
       .login_name:hover{
         opacity: 0.8;
         cursor: pointer;
       }
-      img {
+      .render_items > img {
         width: 80px;
+        border-radius: 3px;
+        padding: 10px;
+      }
+      img {
+        width: 100px;
       }
       h1 {
         font-size: 20px;
+        margin-bottom: 20px;
       }
       .row_title td {
         font-size: 13px;
@@ -49,13 +56,11 @@
     </div>
     <div class="render_items">
       <h1>2. 자신의 비밀 캐릭터를 선택하세요.</h1>
-      <template id="renderImages" is="dom-repeat" items="{{images}}" as="image">
+      <template is="dom-repeat" items="{{images}}" as="image">
         <img src="{{renderRandomId(image)}}" on-click="handleClick" data-name="{{image}}"/>
       </template>
     </div>
-    <div>
-      <button on-click="handleSubmitAnswer">로그인</button>
-    </div>
+    <img src="/img/login/button.png" on-click="handleSubmit"/>
   </template>
   <script>
     class LoginGameBoard extends Polymer.Element {
@@ -71,27 +76,49 @@
           names: Array,
           images: Array,
           level: String,
-          handleClick: Function
         }
       }
-      handleClick(e) {
-        console.log(e.target.dataName, )
-        let parent = document.getElementById("element")
-        switch (e.target.tagName) {
-          case "P":
-            return parent.set('selectName', e.target.dataName)
-          default:
-            return parent.set('selectImage', e.target.dataName)
-            break;
-        }
-        // debugger
+      reset(){
+        this.selectedName.style.backgroundColor = ""
+        this.selectedImage.style.backgroundColor = ""
       }
       ready(){
         // super.ready()가 없으면 그려지지 않음
         super.ready();
+        // debugger
+        this.set('parent', document.getElementById("element"))
+        this.updateStyles({
+          'height': `${window.innerHeight-60}px`,
+        })
+      }
+      handleSelected(e, selected){
+        if(this[selected]) {
+          this[selected].style.backgroundColor = ""
+        }
+        e.target.style.backgroundColor = "#e53"
+        this.set(selected, e.target)
+      }
+      handleSubmit(){
+        let { selectImage, selectName, randomImage, randomName} = this.parent;
+        if(selectImage === randomImage && selectName === randomName) {
+          this.parent.$.successModal.modalAlert()
+          this.reset()
+        } else {
+          this.parent.$.retryModal.modalAlert()
+        }
+      }
+      handleClick(e) {
+        switch (e.target.tagName) {
+          case "P" :
+            this.handleSelected(e , 'selectedName')
+            return this.parent.set('selectName', e.target.dataName)
+          default:
+            this.handleSelected(e ,'selectedImage')
+            return this.parent.set('selectImage', e.target.dataName)
+            break;
+        }
       }
       renderRandomId(image){
-        // debugger
         return `/img/login/${this.level}/${image}.png`
       }
     }
