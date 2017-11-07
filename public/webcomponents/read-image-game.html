@@ -1,0 +1,52 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+
+<dom-module id="read-image-game">
+  <template>
+    <style>
+    </style>
+
+
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      purpose="select"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      fullscreen="{{localize('fullscreen')}}"
+    ></status-bar>
+    <svg></svg>
+  </template>
+  <script>
+    class ReadImageGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'read-image-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      handleClick(e){
+        console.log("dddd");
+        // debugger
+
+      }
+      setData(data, manifest){
+      }
+    }
+    window.customElements.define(ReadImageGame.is, ReadImageGame);
+  </script>
+</dom-module>
