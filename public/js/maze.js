@@ -288,7 +288,7 @@ function init() {
   goal.img.forEach(function(src, i) {
     $('<img class="goal-img">')
       .attr("src", src)
-      .css("width", (100 / goal.img.length).toFixed(2) + "%")
+      .css("max-width", (100 / goal.img.length).toFixed(2) + "%")
       .appendTo(".goal-imgs");
   });
   $(".side_guide .goal-msg").html(goal_msg.replace(/\n/g, "<br/>"));
@@ -534,11 +534,11 @@ function handle_resize(e) {
       height: display_height,
       left: display_width + "px"
     });
-    $(".goal, .side_console").css({
-      "height": "50%",
-      "min-height": display_height*0.5
-      // left: display_width + "px"
-    });
+    // $(".goal, .side_console").css({
+    //   "height": "50%",
+    //   "min-height": display_height*0.5
+    //   // left: display_width + "px"
+    // });
     if(maze.type == "world") {
       $(".bottom-row").addClass("horizontal_world");
     } else {
@@ -612,7 +612,10 @@ function addEvents() {
     });
   });
   $(document).on("contextmenu mousewheel", function(e) {
-    e.preventDefault();
+    e.stopPropagation();
+    if($(e.target).closest(".goal").length == 0) {
+      e.preventDefault();
+    }
   });
   $(window).on("resize", function(e) {
     clearTimeout(resize_timeoutkey);
