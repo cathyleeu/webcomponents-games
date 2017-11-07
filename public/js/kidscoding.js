@@ -12,8 +12,8 @@ KidsCoding = function() {
   } else if(location.pathname.indexOf("mazev") >= 0) {
     this.blockType = "vertical";
   }
-  if(this.isHorizontal) {
-    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 200;
+  if(this.blockType == "horizontal") {
+    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 240;
     Blockly.Flyout.prototype.MARGIN = 20;
     Blockly.Colours.flyout = "#EEEEEE";
 
@@ -83,7 +83,7 @@ KidsCoding = function() {
 
       return metrics;
     }
-  } else {
+  } else if(this.blockType == "default") {
     var labelInit = Blockly.FieldLabel.prototype.init;
     // 텍스트 라벨의 위치 조정
     Blockly.FieldLabel.prototype.init = function() {
@@ -94,9 +94,12 @@ KidsCoding = function() {
   }
   if(this.blockType != "default") {
     var translateSurface = Blockly.DragSurfaceSvg.prototype.translateSurface;
+    var isIE = !!(navigator.userAgent.match(/MSIE |Trident\/|Edge\//));
     Blockly.DragSurfaceSvg.prototype.translateSurface = function(x, y) {
       translateSurface.call(this, x, y);
-      if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == parseInt($("#maze-container .workspace").css("left")) && this.SVG_.getBoundingClientRect().right == $(document).width())) {
+      if(isIE && _this.blockType == "vertical") {
+        this.SVG_.setAttribute("style", this.SVG_.getAttribute("style") + ";left:" + _this.workspace.getFlyout().getWidth() + "px");
+      } else if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == parseInt($("#maze-container .workspace").css("left")) && this.SVG_.getBoundingClientRect().right == $(document).width())) {
         // 안드로이드 구형 브라우저 및 IE에서 터치 위치와 블럭 위치가 맞지 않는 현상 수정
         // SEE: https://gitlab.com/toycode/kidscoding/merge_requests/638
         if(_this.blockType == "vertical") {
@@ -235,14 +238,25 @@ KidsCoding.prototype = {
     }).join(" ");
     var value_str = "",
         statements_str = "",
-        child_str = "";
+        child_str = "",
+        idx = 0;
     Blocks[block.type].args0.forEach(function(arg) {
+
+      var arg_type = arg.type,
+          field_name = arg.name,
+          field_value = args[idx] || (arg.options ? arg.options[0][1] : ""),
+          shadow_type = block.type + "_" + arg.name;
+      // args는 field_dropdown이나 input_value일 경우에만 적용되도록 함
+      if(arg_type == "field_dropdown" || arg_type == "input_value") {
+        idx++;
+      }
+      // scratch-blocks에서는 field_dropdown일 경우 shadow 블록 추가 필요
       if(_this.blockType != "default" && arg.type == "field_dropdown") {
-        arg.type = "input_value";
-        Blockly.Blocks[block.type + "_" + arg.name + ''] = {
+        arg_type = "input_value";
+        Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
-                .appendField(new Blockly.FieldDropdown(arg.options), arg.name);
+                .appendField(new Blockly.FieldDropdown(arg.options), field_name);
             this.setOutput(true);
             this.setColour(Blockly.Colours.event.primary,
               Blockly.Colours.event.secondary,
@@ -251,10 +265,39 @@ KidsCoding.prototype = {
           }
         };
       }
-      if(arg.type == "input_value") {
-        value_str = '<value name="' + arg.name + '">' +
-          '<shadow type="' + block.type + "_" + arg.name + '">' +
-          '<field name="' + arg.name + '">' + (args[0] || arg.options[0][0]) + '</field>' +
+      // 입력값이 *일 경우 빈칸 처리
+      // TODO: default 타입에서의 처리 필요
+      if(field_value === "*" && arg_type == "input_value") {
+        shadow_type = shadow_type + "_empty";
+        field_value = new Array(7).join("\u00A0");
+        Blockly.Blocks[shadow_type] = {
+          init: function() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldTextInput(''), field_name);
+            this.setOutput(true);
+            this.setColour("#FFFFFF");
+          }
+        };
+      }
+      if(block.type == "empty") {
+        arg_type == "input_value"
+        shadow_type = block.type + "_emptyblock";
+        field_value = new Array(28).join("\u00A0");
+        Blockly.Blocks[shadow_type] = {
+          init: function() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldTextInput(''), field_name);
+            this.setOutput(true);
+            this.setColour("#FFFFFF");
+          }
+        };
+      }
+      // scratch-blocks에서는 arg_type을 input_value로 바꾸어 주어야 함
+      if(arg_type == "input_value") {
+        arg.type = "input_value";
+        value_str += '<value name="' + field_name + '">' +
+          '<shadow type="' + shadow_type + '">' +
+          '<field name="' + field_name + '">' + field_value + '</field>' +
           '</shadow>' +
           '</value>';
       }
@@ -281,6 +324,13 @@ KidsCoding.prototype = {
     var _this = this,
         options = Blocks[name],
         lang = store.get("lang") || "ko";
+    // name이 없을 경우 message0에서 %1 등 제거하고 사용
+    if(!options.name) {
+      options.name = {};
+      Object.keys(options.message0).forEach(function(key) {
+        return options.name[key] = options.message0[key].replace(/\%\d/g, "").replace(/\s+/g, " ").trim();
+      });
+    }
     // 가로 블럭 처리
     if(this.isHorizontal) {
       // messageh와 argsh 처리
@@ -303,13 +353,13 @@ KidsCoding.prototype = {
       }
     }
     for(var item in options) {
-      if(item.slice(0, -1) == "message") {
+      if(item.slice(0, -1) == "message" || item == "name") {
         // 다국어 기능
         if(typeof options[item] == "object") {
           options[item] = options[item][lang] || options[item]["en"];
         }
         // 가로 블럭에서 텍스트 제거
-        if(this.isHorizontal) {
+        if(this.isHorizontal && item != "name") {
           options[item] = (options[item].match(/%[\d+]/g) || ["%1"]).join(" ")
         }
       }
@@ -378,8 +428,18 @@ KidsCoding.prototype = {
       },
       scrollbars: this.isHorizontal
     });
-    var startblock = '<xml>' + this.createXml(workspace || "start", {uneditable:true}) + '</xml>';
-  	Blockly.Xml.domToWorkspace($(startblock).get(0),this.workspace);
+    var initXml = '<xml>' + this.createXml(workspace || "start", {uneditable:true}) + '</xml>';
+  	Blockly.Xml.domToWorkspace($(initXml).get(0),this.workspace);
+    var blocks = this.workspace.getAllBlocks(),
+        block = blocks.filter(function(block) {
+          return block.type === "start";
+        })[0];
+    while(block) {
+      if(block.type == "empty") {
+        $(block.svgPath_).addClass("empty");
+      }
+      block = block.getNextBlock();
+    }
     // flyout 내의 블럭들을 오른쪽으로 20px씩 이동
     // (블럭들이 너무 왼쪽으로 붙어있어서 윈도우 태블릿에서 화면전화이 일어나는 문제가 있음)
     if(this.isHorizontal) {

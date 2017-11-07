@@ -2,7 +2,7 @@
   "element": "line-card",
   "attributes": {
     "max" : 4,
-    "nextlink" : "a105_w1/1",
+    "nextlink" : "mazev#!a105_w1/1",
     "lastStage" : 2,
     "horizontal" : true
   },
@@ -45,7 +45,8 @@
       "yesbtn" : "예",
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "다음 단계"
+      "finalbtn" : "다음 단계",
+      "fullscreen" : "풀스크린"
     },
     "en": {
       "title": "Matching the cards with people and traditional clothes",
@@ -63,7 +64,8 @@
       "yesbtn" : "Yes",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
-      "finalbtn" : "Next Stage"
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
     }
   }
 }

@@ -1,50 +1,39 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": "start,move_forward(2),rotate_right,move_forward(2),get_item,move_forward(2),use_item",
+  "workspace": "start",
+  "solution": "start,move_forward(2),rotate_right,move_forward(2),get_item,move_forward(2),use_item",
+  "problem": "start,move_forward(2),rotate_right,move_forward(2),get_item,move_forward(*),use_item",
   "toolbox": [
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "use_item",
-    "get_item"
+    "get_items",
+    "use_items"
   ],
   "map": [
-    "........",
-    ".....#..",
-    "....#d#.",
-    ".####.#.",
-    "#%.)..#.",
-    ".#####..",
-    "........",
-    "........"
+    "########",
+    "########",
+    "####.#.#",
+    "###.#d##",
+    ".####.##",
+    "#%.)..##",
+    ".#####.#",
+    "########"
   ],
   "extra":[{
-     "x": 3,
-     "y": 4,
-     "img": "fruit_kiwi",
-     "itemImg": "fruit_kiwi"
-    },{
-      "x": 1,
-      "y": 4,
-      "img": "refrigerator"
-    }],
+    "x": 3,
+    "y": 5,
+    "img": "fruit_kiwi",
+    "itemImg": "fruit_kiwi"
+  },{
+    "x": 1,
+    "y": 5,
+    "img": "refrigerator",
+    "useItem": true
+  }],
   "tutorial": [{
-    "msg:ko": "내 친구 넘봇은 키위를 좋아해. 넘봇이 집에 놀러 오면 주기 위해 키위를 냉장고에 넣어 놓으려고 해.",
-    "msg:jp": "ゲットするアイテムがいくつかあるよ。",
-    "msg:en": "There are several things."
-  },{
-    "msg:ko": "넘봇이 좋아하는 키위를 가지고 냉장고에 넣어 놓자.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  },{
-    "msg:ko": "Tip: 키위로 가서 ‘가져오기 블록’을, 그 다음에 냉장고에 가서 ‘사용하기 블록’을 사용하면 돼."
-    }],
-  "goal": {
-    "msg:ko": "성공",
-    "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the things",
-    "img": ["/img/b5_w1/life_jacket.png","/img/b5_w1/Rubber_boats.png","/img/blocks/bring.png"]
-  }
+    "msg:ko": "내 친구 넘봇은 키위를 좋아해.\n넘봇이 집에 놀러 오면 주기 위해 키위를 냉장고에 넣어 놓으려고 해.",
+    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_kiwi.png"]
+  }]
 }

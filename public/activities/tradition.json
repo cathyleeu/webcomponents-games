@@ -24,7 +24,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "전통물건과 현재물건을 짝지어보아요.",
+      "title": "선긋기 게임",
+      "minor" : "전통물건과 현재물건을 짝지어보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -40,7 +41,8 @@
       "notice": "다시 시도해주세요."
     },
     "en": {
-      "title": "Flip the cards and Match the pairs",
+      "title": "Flip the cards",
+      "minor": "Flip the cards and Match the pairs",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

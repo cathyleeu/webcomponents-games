@@ -1,43 +1,31 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": "start,rotate_left,move_forward(2),rotate_left,move_forward(2),rotate_right,move_forward(3)",
+  "workspace": "start",
+  "solution": "start,rotate_left,move_forward(2),rotate_left,move_forward(2),rotate_right,move_forward(3)",
+  "problem": "start,rotate_left,move_forward(2),rotate_left,move_forward(*),empty,move_forward(3)",
   "toolbox": [
     "move_forward",
     "rotate_left",
     "rotate_right"
   ],
   "map": [
-    "........",
-    "...###..",
-    "..#...%.",
-    "..#.##..",
-    ".d..#...",
-    "..##....",
-    "........",
-    "........"
+    "##..####",
+    "#####.##",
+    "#..###.#",
+    "#.#...%#",
+    "###.##.#",
+    "#d..#..#",
+    "#.##.###",
+    "######.#"
   ],
   "extra":[{
     "x": 6,
-    "y": 2,
+    "y": 3,
     "img": "fruit_strawberry"
-    }],
+  }],
   "tutorial": [{
-    "msg:ko": "나는 코봇이야. 나는 과일을 좋아해.",
-    "msg:jp": "ゲットするアイテムがいくつかあるよ。",
-    "msg:en": "There are several things."
-  },{
-    "msg:ko": "나는 딸기를 먹고 싶어.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  },{
-    "msg:ko" : "내가 먹고 싶은 딸기로 가보자."
-    }],
-  "goal": {
-    "msg:ko": "성공",
-    "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the things",
-    "img": ["/img/b5_w1/Rubber_boats.png","/img/b5_w1/tube.png","/img/blocks/bring.png"]
-  }
+    "msg:ko": "나는 코봇이야. 나는 과일을 좋아해.\n나는 딸기를 먹고 싶어. 내가 먹고 싶은 딸기로 가보자.",
+    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_strawberry.png"]
+  }]
 }

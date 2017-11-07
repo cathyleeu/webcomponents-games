@@ -1,7 +1,9 @@
 {
   "tile_size": 128,
   "score":2,
-  "workspace": "start, move_forward(3), rotate_left, move_forward(1), item_paper ,move_forward(2)",
+  "workspace": "start",
+  "solution": "start, move_forward(3), rotate_left, move_forward(1), item_paper ,move_forward(2)",
+  "problem": "start, move_forward(*), empty, move_forward(1), item_paper ,move_forward(2)",
   "toolbox": [
     "move_forward",
     "rotate_left",
@@ -11,14 +13,14 @@
     "item_scissors"
   ],
   "map": [
-    "........",
-    "..#.....",
-    ".#d#....",
-    ".#.#....",
-    ".#.##...",
-    ".#.R.%..",
-    "..###...",
-    "........"
+    "########",
+    "#.#.####",
+    "##d#..##",
+    "##.#####",
+    "##.##.##",
+    "##.R.%.#",
+    "#.###.##",
+    "########"
   ],
   "extra":[{
     "x": 5,
@@ -26,19 +28,7 @@
     "img":"fruit_watermelon"
   }],
   "tutorial": [{
-    "msg:ko": "가져와야할 것들이 여러 개 있어.",
-    "msg:jp": "ゲットするアイテムがいくつかあるよ。",
-    "msg:en": "There are several things."
-  },{
-    "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  }],
-  "goal": {
-    "msg:ko": "가져올 물건 위에서 '가져오기' 블록을 사용하자.",
-    "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the things",
-    "img": ["/img/b5_w1/fishing_rod.png","/img/b5_w1/life_jacket.png","/img/blocks/bring.png"]
-  }
+    "msg:ko": "이번에는 수박이 먹고 싶어.\n내가 먹고 싶은 수박으로 가보자.",
+    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_watermelon.png"]
+  }]
 }

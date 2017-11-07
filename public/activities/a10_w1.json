@@ -6,14 +6,14 @@
     "horizontal" : true
   },
   "data": [
-    "morden1",
-    "morden2",
-    "morden3",
-    "morden4",
-    "morden5",
-    "morden6",
-    "morden7",
-    "morden8",
+    "modern1",
+    "modern2",
+    "modern3",
+    "modern4",
+    "modern5",
+    "modern6",
+    "modern7",
+    "modern8",
     "past1",
     "past2",
     "past3",
@@ -32,18 +32,19 @@
     {"no": 5 , "set": 0, "id": "past6", "src": "/img/a10_w1/past6.png"},
     {"no": 6 , "set": 0, "id": "past7", "src": "/img/a10_w1/past7.png"},
     {"no": 7 , "set": 0, "id": "past8", "src": "/img/a10_w1/past8.png"},
-    {"no": 0 , "set": 1, "id": "morden1", "src": "/img/a10_w1/morden1.png"},
-    {"no": 1 , "set": 1, "id": "morden2", "src": "/img/a10_w1/morden2.png"},
-    {"no": 2 , "set": 1, "id": "morden3", "src": "/img/a10_w1/morden3.png"},
-    {"no": 3 , "set": 1, "id": "morden4", "src": "/img/a10_w1/morden4.png"},
-    {"no": 4 , "set": 1, "id": "morden5", "src": "/img/a10_w1/morden5.png"},
-    {"no": 5 , "set": 1, "id": "morden6", "src": "/img/a10_w1/morden6.png"},
-    {"no": 6 , "set": 1, "id": "morden7", "src": "/img/a10_w1/morden7.png"},
-    {"no": 7 , "set": 1, "id": "morden8", "src": "/img/a10_w1/morden8.png"}
+    {"no": 0 , "set": 1, "id": "modern1", "src": "/img/a10_w1/modern1.png"},
+    {"no": 1 , "set": 1, "id": "modern2", "src": "/img/a10_w1/modern2.png"},
+    {"no": 2 , "set": 1, "id": "modern3", "src": "/img/a10_w1/modern3.png"},
+    {"no": 3 , "set": 1, "id": "modern4", "src": "/img/a10_w1/modern4.png"},
+    {"no": 4 , "set": 1, "id": "modern5", "src": "/img/a10_w1/modern5.png"},
+    {"no": 5 , "set": 1, "id": "modern6", "src": "/img/a10_w1/modern6.png"},
+    {"no": 6 , "set": 1, "id": "modern7", "src": "/img/a10_w1/modern7.png"},
+    {"no": 7 , "set": 1, "id": "modern8", "src": "/img/a10_w1/modern8.png"}
   ],
   "msg": {
     "ko": {
-      "title": "전통 물건과 같은 기능을 하는 현대 물건을 연결해보아요.",
+      "title": "전통 물건 선 긋기",
+      "minor" : "전통 물건과 같은 기능을 하는 현대 물건을 연결해보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -58,10 +59,12 @@
       "yesbtn" : "예",
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "다음 단계"
+      "finalbtn" : "다음 단계",
+      "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Matching the cards with Old and New",
+      "title": "Old and New",
+      "minor": "Matching the cards with Old and New",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
@@ -76,7 +79,8 @@
       "yesbtn" : "Yes",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
-      "finalbtn" : "Next Stage"
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
     }
   }
 }

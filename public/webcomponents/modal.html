@@ -113,6 +113,7 @@
           <div class="button final" on-click="handleFinalStep">{{finalbtn}}</div>
           <div class="button stay" on-click="handleStayStage">{{nobtn}}</div>
           <div class="button retry" on-click="handleStayStage">{{retrybtn}}</div>
+          <div class="button retryReset" on-click="handleNextStep">{{retrybtn}}</div>
           <div class="button move" on-click="handleMoveStage">{{yesbtn}}</div>
         </div>
       </div>
@@ -154,6 +155,7 @@
           previous : '.stay, .move',
           logout : '.stay, .move',
           retry: '.retry',
+          retryReset: '.retryReset'
         };
         let els = this.shadowRoot.querySelectorAll(target[this.purpose]);
         els.forEach(el=>{el.style.display="inline-block"});
@@ -177,7 +179,11 @@
         this.element.classList.remove('three')
       }
       handleFinalStep(){
-        let href = `${location.origin}/mazeh#!/${this.nextlink}`
+        if(!this.nextlink){
+          this.element.classList.remove('three')
+          return false
+        }
+        let href = `${location.origin}/${this.nextlink}`
         window.open(href, window.name)
       }
     }

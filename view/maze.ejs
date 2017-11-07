@@ -55,10 +55,12 @@
 <div id="maze-notification" class="noti-container">
   <div class="noti-header" data-msg="goal"> 목표 </div>
   <div class="noti-body">
-    <div class="noti-char">
-      <img src="/img/coding/robot1.png" class="robot"/>
+    <!-- <div class="noti-char"> -->
+      <img class="noti-char"/>
+    <!-- </div> -->
+    <div class="noti-guide-scrollHidden">
+      <div class="noti-guide"></div>
     </div>
-    <div class="noti-guide"></div>
     <div class="noti-direct">
       <div class="noti-arrow noti-up" data-arrow="up"></div>
       <div class="noti-arrow noti-down" data-arrow="down"></div>
@@ -177,11 +179,12 @@
 <script src="/GoogleBlockly/ko.js"></script>
 <% } %>
 <script src="/components/EaselJS/lib/easeljs-0.8.2.min.js"></script>
-<script src="/components/PreloadJS/lib/preloadjs-0.6.2.min.js"></script>
+<script src="/components/PreloadJS/lib/preloadjs.min.js"></script>
 <script src="/components/SoundJS/lib/soundjs-0.6.2.min.js"></script>
 <script src="/components/TweenJS/lib/tweenjs-0.6.2.min.js"></script>
 <script src="/js/kidscoding.js"></script>
 <script src="/js/actions.js"></script>
 <script src="/js/blocks.js"></script>
 <script src="/js/tileFactory.js"></script>
+<script src="/js/drawFactory.js"></script>
 <script src="/js/maze.js"></script>

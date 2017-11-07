@@ -1,0 +1,76 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="minor-heading">
+  <template>
+    <style>
+      .header{
+        display: var(--minor-heading-cont-display, flex);
+        flex-direction: column;
+        height: 80px;
+      }
+      .main, .guide {
+        text-align: center;
+        margin: auto;
+      }
+      .main {
+        font-size: 25px;
+        font-weight: var(--minor-heading-font-weight);
+        display: var(--minor-heading-main-display, block);
+      }
+      .guide {
+        font-size: 20px;
+        display: var(--minor-heading-guide-display, block);
+      }
+    </style>
+    <div class="header">
+      <p id="content" class="main">{{content}}</p>
+      <p id="guide" class="guide">[[renderGuideStatus(correct)]]</p>
+    </div>
+  </template>
+  <script>
+    class MinorHeading extends Polymer.Element {
+      static get is() {
+        return "minor-heading";
+      }
+      static get properties() {
+        return {
+          content: String,
+          guide: String,
+          correct: Object,
+        }
+      }
+      ready() {
+        super.ready();
+        this.set('boldStyle', 0)
+        this.handleHeaderStyle()
+      }
+      handleHeaderStyle(){
+        let { guide, content } = this;
+        if(!guide){
+          this.updateStyles({
+            '--minor-heading-guide-display': 'none'
+          })
+        }
+        if(!content){
+          this.updateStyles({
+            '--minor-heading-main-display': 'none'
+          })
+        }
+        if(!content && !guide) {
+          this.updateStyles({
+            '--minor-heading-cont-display': 'none'
+          })
+        }
+        // this.set('minorHeight' , this.$.content.getBoundingClientRect().height)
+        // this.set('statusHeight' , this.$.statusBar.getBoundingClientRect().height)
+      }
+      renderGuideStatus(correct) {
+        if(!this.guide) {
+          d3.select(this.$.guide).style('display', 'none')
+        }
+        return this.guide.replace(/\$/ , correct.length)
+      }
+    }
+    window.customElements.define(MinorHeading.is, MinorHeading);
+  </script>
+</dom-module>

@@ -37,8 +37,25 @@ TileFactory.prototype.init = function(maze, loader) {
   loader.getItems().map(function(obj) {
     if(obj.item.tile) {
       _this.custom_tiles[obj.item.tile] = obj.item;
+      obj.item.img = obj.item.id;
     }
   });
+  if(maze.tile) {
+    maze.tile.forEach(function(item) {
+      if(item.letters) {
+        item.letters.split("").forEach(function(tile) {
+          _this.custom_tiles[tile] = _this.custom_tiles[tile] || {};
+          $.extend(_this.custom_tiles[tile], {
+            tile: tile,
+            obstacle: false
+          });
+          _this.tile2role[tile] = "letter";
+        });
+      } else {
+        _this.custom_tiles[item.tile] = item;
+      }
+    });
+  }
   this.hashObj = {};
   var hash = location.hash,
       data = hash.slice(hash.indexOf("?")+1).split("&");
@@ -52,26 +69,27 @@ TileFactory.prototype.init = function(maze, loader) {
 };
 
 TileFactory.prototype.create = function(tile, x, y) {
-  var info = {
+  var _this = this,
+      info = {
         tile: tile
       },
-      container,
-      bitmap;
+      container, bitmap, text, bgLayer;
 
   // 기본 role 세팅
   if(this.tile2role[tile]) {
     info.role = this.tile2role[tile];
   }
 
-  // manifest에서 img, obstacle 정보를 가져온다
+  // custom tile 설정
   if(this.custom_tiles[tile]) {
-    info.img = this.custom_tiles[tile].id;
-    if(this.custom_tiles[tile].hasOwnProperty("obstacle")) {
-      info.obstacle = this.custom_tiles[tile].obstacle;
+    if(_this.custom_tiles[tile].id) { // manifest에서의 id는 img로 쓰임
+      info.img = _this.custom_tiles[tile].id;
     }
-    if(this.custom_tiles[tile].hasOwnProperty("wall")) {
-      info.obstacle = this.custom_tiles[tile].wall;
-    }
+    ["img", "text", "color", "fillColor", "strokeWidth", "strokeColor", "obstacle", "wall"].forEach(function(key) {
+      if(_this.custom_tiles[tile].hasOwnProperty(key)) {
+        info[key] = _this.custom_tiles[tile][key];
+      }
+    });
   }
 
   // maze json에서 extra 정보를 가져온다
@@ -685,14 +703,39 @@ TileFactory.prototype.create = function(tile, x, y) {
     } else {
       bitmap = new createjs.Bitmap(this.loader.getResult(info.img));
     }
+    this.setScale(bitmap);
   }
-  if(bitmap) {
+  if(info.role == "letter") {
+    text = new createjs.Text(info.tile, "bold " + this.tile_size + "px DSEG7Classic", info.color || "#000");
+    this.setTextAlign(text);
+  }
+  if(info.text) {
+    text = new createjs.Text(info.text, "10px", info.color || "#000");
+    this.setTextAlign(text);
+  }
+  if(info.fillColor || info.strokeWidth || info.strokeColor) {
+    bgLayer = new createjs.Shape();
+    // drawRect(x, y, w, h)
+    bgLayer.graphics
+        .beginFill(info.fillColor || "transparent")
+        .setStrokeStyle(info.strokeWidth || 0)
+        .beginStroke(info.strokeColor || "transparent")
+        .drawRect(-this.tile_size/2, -this.tile_size/2, this.tile_size, this.tile_size);
+  }
+  if(bitmap || text || bgLayer) {
     container = new createjs.Container();
-    container.addChild(bitmap);
-    container.bitmap = bitmap;
-    $.extend(container, info);
-
-    this.setCoord(container, x, y);
+    if(bgLayer) {
+      container.addChild(bgLayer);
+      container.bgLayer = bgLayer;
+    }
+    if(bitmap) {
+      container.addChild(bitmap);
+      container.bitmap = bitmap;
+    }
+    if(text) {
+      container.addChild(text);
+      container.text = text;
+    }
     if(info.role == "spider") {
       var hand_name = {
         "R": "rock",
@@ -702,15 +745,18 @@ TileFactory.prototype.create = function(tile, x, y) {
       var hand = new createjs.Bitmap(this.loader.getResult("hand_" + hand_name));
       var bounds = hand.getBounds();
       var size = this.tile_size / 2;
-      hand.scaleX = size / bounds.width / container.scaleX;
-      hand.scaleY = size / bounds.height / container.scaleY;
-      hand.x = (this.tile_size - size) / container.scaleX;
+      hand.scaleX = size / bounds.width;
+      hand.scaleY = size / bounds.height;
+      hand.x = 0;
+      hand.y = -size;
       container.hand = hand_name;
       container.addChild(hand);
     }
     if(info.itemCount) {
       this.setItemCount(container, info.itemCount);
     }
+    $.extend(container, info);
+    this.setCoord(container, x, y);
   }
   return container;
 };
@@ -734,13 +780,12 @@ TileFactory.prototype.getItemCount = function(container) {
 
 TileFactory.prototype.setItemCount = function(container, count) {
   if(!container.itemCountBitmap) {
-    var bounds = container.getBounds();
     var itemCountBitmap = new createjs.Container();
     var circle = new createjs.Shape();
-    var size = bounds.width / 5;
+    var size = this.tile_size / 5;
     circle.graphics.beginStroke("#000").beginFill("#FFF").drawCircle(0, 0, size);
-    circle.x = size;
-    circle.y = bounds.width - size;
+    circle.x = -this.tile_size/2 + size;
+    circle.y = this.tile_size/2 - size;
     itemCountBitmap.addChild(circle);
 
     var text = new createjs.Text(count, (2*size) + "px monospace", "#000");
@@ -786,14 +831,32 @@ TileFactory.prototype.addItemImage = function(container, img, type) {
   container.itemList.push(bitmap);
 };
 
-TileFactory.prototype.setCoord = function(obj, px, py) {
+TileFactory.prototype.setScale = function(obj) {
   var bounds = obj.getBounds();
-  obj.px = px;
-  obj.py = py;
-  obj.x = this.tile_size * px + this.tile_size / 2;
-  obj.y = this.tile_size * py + this.tile_size / 2;
   obj.scaleX = this.tile_size / bounds.width;
   obj.scaleY = this.tile_size / bounds.height;
   obj.regX = bounds.width / 2;
   obj.regY = bounds.height / 2;
+}
+
+TileFactory.prototype.setCoord = function(obj, px, py) {
+  obj.px = px;
+  obj.py = py;
+  obj.x = this.tile_size * px + this.tile_size / 2;
+  obj.y = this.tile_size * py + this.tile_size / 2;
+}
+
+TileFactory.prototype.setTextAlign = function(text) {
+  var bounds = text.getBounds(),
+      size = this.tile_size * 0.8;
+  text.textAlign = "center";
+  if(bounds.width > bounds.height) {
+    text.scaleX = size / bounds.width;
+    text.scaleY = text.scaleX;
+  } else {
+    text.scaleY = size / bounds.height;
+    text.scaleX = text.scaleY;
+  }
+  text.regX = 0;
+  text.regY = bounds.height / 2;
 }

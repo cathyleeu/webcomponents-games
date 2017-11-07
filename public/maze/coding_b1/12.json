@@ -1,45 +1,37 @@
 {
   "tile_size": 128,
   "score":3,
-  "workspace": "start,move_forward(2),get_item,move_forward(4),use_item",
+  "workspace": "start",
+  "solution": "start,move_forward(2),item_rock,move_forward(4)",
+  "problem": "start,move_forward(2),item_scissors,move_forward(2)",
   "toolbox": [
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "use_item",
-    "get_item"
+    "item_scissors",
+    "item_rock",
+    "item_paper"
   ],
   "map": [
-    "...d....",
-    "..#.#...",
-    "..#S#...",
-    "..#.#...",
-    "..#.#...",
-    "..#.#...",
-    "..#%#...",
-    "...#...."
+    "##..d.#.",
+    "####.###",
+    "#.##S#.#",
+    "#..#.###",
+    "##.#.#.#",
+    "#.##.##.",
+    "#.##%###",
+    "##.##..#"
   ],
   "extra":[{
-    "x" : 3,
+    "x" : 4,
     "y" : 6,
     "img" : "mkt"
   }],
   "tutorial": [{
-    "msg:ko": "코봇은 할머니가 나을 때까지 할머니의 포장마차 일을 대신 해 드리기로 했어.",
-    "msg:jp": "ゲットするアイテムがいくつかあるよ。",
-    "msg:en": "There are several things."
-  },{
-    "msg:ko": "할머니의 포장마차로 가보자.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  },{
-    "msg:ko" : "Tip: 고양이 봄이와 가위바위보를 해서 이겨야 지나갈 수 있어."
-    }],
-  "goal": {
-    "msg:ko": "성공!",
-    "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the things",
-    "img": ["/img/b5_w1/life_jacket.png","/img/b5_w1/Rubber_boats.png","/img/blocks/bring.png"]
-  }
+    "msg:ko": "코봇은 할머니가 나을 때까지 할머니의 포장마차 일을 대신 해 드리기로 했어.\n할머니의 포장마차로 가보자.",
+    "img": ["/img/coding/robot1.png","/img/c6/bomi0.png","/img/b55/mkt1.png"]
+  }, {
+    "msg:ko": "Tip: 고양이 봄이와 가위바위보를 해서 이겨야 지나갈 수 있어.",
+    "img": ["/img/coding/robot1.png","/img/c6/bomi0.png","/img/b55/mkt1.png"]
+  }]
 }

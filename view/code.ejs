@@ -78,7 +78,21 @@ if(location.pathname == "/code" && location.hash) {
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
-            <a class="navbar-brand">KIDSTHINKING</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">KIDSTHINKING</span>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="check-update" href="#"><i class="fa fa-refresh" aria-hidden="true"></i> <span class="check-update-msg">업데이트 확인</span></a>
+                </li>
+            </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
@@ -160,11 +174,34 @@ if(location.pathname == "/code" && location.hash) {
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<div id="appcache" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">업데이트</h4>
+      </div>
+      <div class="modal-body">
+        <p class="msg">업데이트중...</p>
+        <div class="progress">
+          <div class="progress-bar notransition" role="progressbar">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close-modal btn btn-default" data-dismiss="modal" style="display:none">확인</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <script src="/page/page.js"></script>
+<script src="/js/appcache.js"></script>
 <script>
   var code = "<%=code%>";
   var info = <%-typeof info == "undefined" ? "{}" : info%>;
   var sClassName = <%-typeof className == "undefined" ? "null" : '"'+className+'"'%>;
+  var isTrial = <%-typeof isTrial=="undefined"?false:true%>;
   var view = 0,
       imgs = [];
   var names, level, books;
@@ -280,6 +317,18 @@ if(location.pathname == "/code" && location.hash) {
           sClassName = qs.className;
           showBook();
         }
+      } else if(isTrial) {
+        if(hash == "") {
+          view = 0;
+          showClass();
+        } else {
+          view = 2;
+          sClassName = {
+            "kidsthinking": "키즈씽킹",
+            "kidscoding": "키즈코딩"
+          }[hash];
+          showBook();
+        }
       } else {
         if(hash == "") {
           view = 1;
@@ -310,7 +359,15 @@ if(location.pathname == "/code" && location.hash) {
       return init.concat(arr);
     }, []);
     classes.forEach(function(item, i) {
-      var book_true = (info.code == "e91d5" || info.code == "c7b46" || info.code == "823b7" || info.code == "8244f" || info.code == "822d8" || info.code == "691a0") ? "&book=true" : "";
+      var book_true = (info.code == "e91d5" || info.code == "c7b46" || info.code == "823b7" || info.code == "8244f" || info.code == "822d8" || info.code == "691a0" || info.code == "36904") ? "&book=true" : "";
+      if(isTrial) {
+        var link = {
+          "키즈씽킹": "kidsthinking",
+          "키즈코딩": "kidscoding"
+        }[item[0]];
+        $('<a href="#' + link + book_true + '" class="btn btn-lg btn-default">' + item[0] + '</a>').appendTo("#classes");
+        return;
+      }
       $('<a href="#className=' + item[0] + book_true + '" class="btn btn-lg btn-default">' + item[0] + '</a>').appendTo("#classes");
     });
   }

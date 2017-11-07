@@ -3,8 +3,8 @@
   {"id": "bg1", "src": "/img/c4_w2/bg1.png"},
   {"id": "bg2", "src": "/img/c4_w2/bg2.png"},
 
-  {"id": "character", "src": "/img/coding/robot.png", "sprite": true, "size": 256},
-  {"id": "message", "src": "/img/coding/robot1.png", "size": 256},
+  {"id": "character", "src": "/img/c8_w3/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c8_w3/new_cobot0.png", "size": 256},
   {"id": "food", "src": "/img/b5_w1/house.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
@@ -14,39 +14,25 @@
 
   {"id": "wall", "src": "/img/c4_w2/walls.png", "obstacle": true},
 
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png"},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png"},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png"},
 
-  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
-
-
-  {"id": "fruit_strawberry", "src": "/img/c4_w1_c3/fruit_strawberry.png", "obstacle": false},
-  {"id": "fruit_apple", "src": "/img/c4_w1_c3/fruit_apple.png", "obstacle": false},
-  {"id": "fruit_cherry", "src": "/img/c4_w1_c3/fruit_cherry.png", "obstacle": false},
-  {"id": "fruit_kiwi", "src": "/img/c4_w1_c3/fruit_kiwi.png", "obstacle": false},
-  {"id": "fruit_orange", "src": "/img/c4_w1_c3/fruit_orange.png", "obstacle": false},
-  {"id": "fruit_watermelon", "src": "/img/c4_w1_c3/fruit_watermelon.png", "obstacle": false},
+  {"id": "fruit_strawberry", "src": "/img/c4_w1_c3/fruit_strawberry.png"},
+  {"id": "fruit_apple", "src": "/img/c4_w1_c3/fruit_apple.png"},
+  {"id": "fruit_cherry", "src": "/img/c4_w1_c3/fruit_cherry.png"},
+  {"id": "fruit_kiwi", "src": "/img/c4_w1_c3/fruit_kiwi.png"},
+  {"id": "fruit_orange", "src": "/img/c4_w1_c3/fruit_orange.png"},
+  {"id": "fruit_watermelon", "src": "/img/c4_w1_c3/fruit_watermelon.png"},
   {"id" :"refrigerator" , "src" : "/img/b9_w1/refrigerator.png"},
 
   {"id": "grandma", "src": "/img/b4/f_granma.png"},
   {"id": "mkt", "src":"/img/b55/mkt1.png"},
-  {"id": "dduck", "src":"/img/b55/dduck.png", "obstacle": false},
-
-  {"id": "house1", "src": "/img/c4_w4/house1.png", "obstacle": false},
-  {"id": "house2", "src": "/img/c4_w4/house2.png", "obstacle": false},
-  {"id": "house3", "src": "/img/c4_w4/house3.png", "obstacle": false},
-  {"id": "house4", "src": "/img/c4_w4/house4.png", "obstacle": false},
-  {"id": "house5", "src": "/img/c4_w4/house5.png", "obstacle": false},
-  {"id": "house6", "src": "/img/c4_w4/house6.png", "obstacle": false},
-  {"id": "house7", "src": "/img/c4_w4/house7.png", "obstacle": false},
-  {"id": "house8", "src": "/img/c4_w4/house8.png", "obstacle": false},
-  {"id": "house9", "src": "/img/c4_w4/house9.png", "obstacle": false},
-  {"id": "house10", "src": "/img/c4_w4/house_blank.png", "obstacle": false},
+  {"id": "dduck", "src":"/img/b55/dduck.png"},
+  {"id": "water", "src": "/img/c55_w4/water.png"},
 
   {"id": "hand_rock", "src": "/img/kidsblocks/Rock.png"},
   {"id": "hand_paper", "src": "/img/kidsblocks/Paper.png"},
   {"id": "hand_scissors", "src": "/img/kidsblocks/Scissors.png"},
   {"id": "spider", "src": "/img/c6/bomi0.png"}
-
-
 ]
