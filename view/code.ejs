@@ -90,7 +90,7 @@ if(location.pathname == "/code" && location.hash) {
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="check-update" href="#"><i class="fa fa-refresh" aria-hidden="true"></i> <span class="check-update-msg">업데이트 확인</span></a>
+                    <a class="check-update" href="#"><i class="fa fa-refresh" aria-hidden="true"></i> <span data-msg="check_update" data-update-status="default" class="check-update-msg"></span></a>
                 </li>
             </ul>
         </div>
@@ -216,7 +216,17 @@ if(location.pathname == "/code" && location.hash) {
           select_name: "1. 이름을 선택하세요",
           select_password: "2. 비밀캐릭터나 비밀번호를 선택하세요",
           kidsthinking: "키즈씽킹",
-          error: "원별 접속주소를 확인해주세요."
+          error: "원별 접속주소를 확인해주세요.",
+          check_update: "업데이트 확인",
+          downloading: "새로운 컨텐츠를 다운로드 중입니다.",
+          updating: "업데이트 중...",
+          update_complete: "업데이트 완료",
+          updated: "최신 업데이트 상태",
+          failed_to_check: "저장된 컨텐츠에 접근 할 수 없습니다.\n인터넷 연결 확인후 재접속 해주세요.",
+          success_to_check: "확인 완료",
+          check_cache: "저장된 컨텐츠의 상태를 확인 중입니다.",
+          latest_update: "최신 업데이트 상태입니다.",
+          current_contents: "현재 컨텐츠는 다음과 같습니다."
         },
         en: {
           welcome: "Welcome to KidsThinking",
@@ -227,7 +237,17 @@ if(location.pathname == "/code" && location.hash) {
           select_name: "1. Select your name.",
           select_password: "2. Select your password.",
           kidsthinking: "KidsThinking",
-          error: "Check your url, Please."
+          error: "Check your url, Please.",
+          check_update: "Check Update",
+          downloading: "Downloading new contents...",
+          updating: "Updating...",
+          update_complete: "Update Complete",
+          updated: "Updated",
+          failed_to_check: "Unable to access  cached data.\nPlease reconnect after checking internet connection.",
+          success_to_check: "Done checking cached data.",
+          check_cache: "Checking the status of cached data.",
+          latest_update: "The latest update status.",
+          current_contents: "The current contents are as follows."
         }
       },
       msg = _msg[lang] || _msg.en;
