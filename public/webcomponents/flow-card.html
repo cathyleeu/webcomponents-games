@@ -1,0 +1,246 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+<dom-module id="flow-card">
+  <template>
+    <style>
+      :host {
+        overflow: hidden;
+      }
+      rect{
+        cursor: pointer;
+      }
+    </style>
+    <status-bar
+      id="statusBar"
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      purpose="range"
+      fullscreen="{{localize('fullscreen')}}"
+      ></status-bar>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+  </template>
+  <script>
+    class FlowCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'flow-card'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          },
+        }
+      }
+      ready() {
+        // 미리 설정해 놓는 것....
+        super.ready();
+        this.set('total', 0)
+        this.set('point', 0)
+        this.set('matched', 0)
+      }
+      reset(){
+        this.set('total', 0)
+        this.set('matched', 0)
+        this.set('point', this.point+5)
+        d3.select(this.shadowRoot).select('svg').remove()
+        this.setData(this.data, this.manifest)
+      }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+      dragstarted(d) {
+        let self = d3.select('#element').node()
+        self.set('startX', d3.select(this).attr('x'))
+        self.set('startY', d3.select(this).attr('y'))
+        // startX = d3.select(this).attr('x');
+        // startY = d3.select(this).attr('y');
+        d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
+      }
+      dragged(d){
+        d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
+      }
+      dragended(d){
+        let self = d3.select('#element').node(),
+            getX = d3.event.x, getY = d3.event.y;
+
+        let targetEl, targetX, targetY, result;
+        self.flowItems.forEach(el => {
+          const getEl = el.getBBox();
+          debugger
+          // 범위 확인
+          if(getEl.x < getX && getX < getEl.x + getEl.width && getEl.y < getY && getY < getEl.y + getEl.height) {
+            targetEl = el;
+            targetX = getEl.x;
+            targetY = getEl.y;
+            debugger
+            result = targetEl.__data__ === d && true;
+          }
+        });
+            //   console.log(getX, getY, targetEl, result, targetX, targetY);
+            //
+        if (!result) {
+          d3.select(this).attr("x", startX ).attr("y", startY );
+        } else {
+          console.log("result true", targetX, targetY)
+          // _this.set('point', _this.point+2)
+          // _this.set('matched', _this.matched+1)
+          d3.select(this).attr("x", targetX ).attr("y", targetY )
+            .call(d3.drag().on("start", null ))
+          // if(_this.matched === _this.cards) {
+          //   _this.shadowRoot.getElementById("successModal").modalAlert()
+          // }
+        }
+        // _this.set('total', _this.total+1)
+        // debugger
+      }
+      setData(data, manifest){
+        this.set('data', data )
+        this.set('manifest', manifest )
+        let _this = this,
+            svg = d3.select(this.shadowRoot).append("svg")
+              .attr('width', this.offsetWidth )
+              .attr('height', `${this.offsetHeight-60}`);
+
+        let boardName = ["flow", "mixed"].map(n => ({"name": n, "header": this.resources[this.language][n]})),
+            flowData = manifest.filter( d => d.step),
+            mixedData = manifest.filter( d => !(data.first === d.step || data.last === d.step));
+
+
+        let defs = svg.append('defs')
+              			.selectAll('pattern')
+
+        let flowImages = defs.data(flowData).enter()
+                    .append('pattern')
+                    .attr("id", (d, i) => `flow_${i}`)
+                    .attr("x", 0).attr("y", 0)
+                    .attr("width", 1).attr("height", 1)
+                    .attr("patternUnits", "objectBoundingBox");
+
+        // 흑백처리
+        flowImages.append('filter')
+          .attr('id','desaturate')
+          .append('feColorMatrix')
+          .attr('type','matrix')
+          .attr('values',
+                data.background
+                  ? "0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"
+                  : "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 1 0"
+               )
+        flowImages.append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("width", 100).attr("height", 100)
+          .attr("xlink:href", d => `${d.src}`)
+          .style('filter', (d , i) => {
+            if(data.first === i+1 || data.last === i+1){
+              return false
+            } else {
+              return "url(#desaturate)"
+            }
+          })
+
+
+        let shuffledMix = d3.shuffle(mixedData)
+        //
+        let mixedImages = defs.data(shuffledMix).enter()
+          .append('pattern')
+          .attr("id", (d, i) => `mixed_${i}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox")
+          .append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("width", 100).attr("height", 100)
+          .attr("xlink:href", (d, i) => `${d.src}`)
+
+        // let center = (this.offsetWidth - (120*manifest.length))/2
+        let rectGroup = svg.selectAll("g")
+          .data(boardName).enter()
+          .append("g")
+          .attr("class", (d, i) => `${d.name}`)
+          .attr("transform", (d, i) => `translate(0, 0)`)
+          .append('text')
+          .text( (d, i) => `${d.header}`)
+          .attr('x', 50).attr('y', (d, i) => 100*(i*2+1))
+          .attr('font-size', "20");
+        //
+
+        let flowItems = svg.select('.flow')
+          .selectAll("rect")
+          .data(flowData).enter()
+          .append('rect')
+          .attr("rx", 5).attr("ry", 5)
+          .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
+          .attr("width", 110).attr("height", 110)
+          .style("fill", (d, i) => `url(#flow_${i})`)
+          .style("stroke-width",8)
+          .style("stroke","#2ECC98")
+
+        this.set('flowItems', flowItems.nodes())
+
+          //   .attr("id", (d, i) => `bath${i}`)
+        //
+        let mixedItems = svg.select('.mixed')
+            .selectAll("rect")
+            .data(shuffledMix).enter()
+            .append('rect')
+            .attr("rx", 5).attr("ry", 5)
+            .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 300)
+            .attr("width", 110).attr("height", 110)
+            .style("fill", "#fff")
+            .style("fill", (d,i) => `url(#mixed_${i})`)
+            .style("stroke-width",8)
+            .style("stroke","#2ECC98")
+            .call(d3.drag()
+                .on("start", this.dragstarted )
+                .on("drag", this.dragged )
+                .on("end", this.dragended ));
+      }
+    }
+    window.customElements.define(FlowCard.is, FlowCard);
+  </script>
+</dom-module>
