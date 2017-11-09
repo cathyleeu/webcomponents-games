@@ -258,11 +258,11 @@
     "y": 4,
     "obstacle": false,
     "link": "c105_w3/index",
-    "min_score": 20
+    "min_score": 30
   }],
 
   "tutorial": [{
-    "msg:ko": "숫자를 세어보아요! 보통 문제는 점수를 2점, 어려운 문제는 3점을 주어요. \n 보통 문제는 숫자 10을 만드는 문제, 어려운 문제는 99까지의 수를 세는 문제에요.",
+    "msg:ko": "숫자를 세어보아요! 보통 문제는 점수를 2점, 어려운 문제는 3점을 주어요. \n 보통 문제는 숫자 10을 만드는 문제, \n어려운 문제는 99까지의 수를 세는 문제에요.",
     "msg:en": "Let's count the numbers! A normal problem gives you two points and a hard one gives you three.\n The normal problem is the problem of making the number 10, the difficult problem counting the number of up to 99.",
     "img": ["/img/c105/mos0.png","/img/c105/candy.png"]
   }],

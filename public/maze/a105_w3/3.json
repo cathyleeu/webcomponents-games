@@ -25,10 +25,5 @@
     "msg:ko": "팽이 치기를 하러 가요.",
     "msg:en": "Move to a spinning top.",
     "img": ["/img/a105/a105_w3/set3.png"]
-  }],
-  "success": [{
-    "msg:ko": "성공!",
-    "msg:en": "Success!",
-    "link": "a10_w3/1"
   }]
 }
