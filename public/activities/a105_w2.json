@@ -1,13 +1,13 @@
 {
   "element": "select-card",
   "data": [
-    "yes0", "yes1", "yes2", "yes3", "yes4", "yes5", "yes6", "yes7",
-    "no0", "no1", "no2", "no3", "no4", "no5", "no6", "no7", "no8"
+    "yes0", "yes1", "yes2", "yes3", "yes4", "yes5", "yes6",
+    "no0", "no1", "no2", "no3", "no4", "no5", "no6", "no7"
   ],
   "attributes": {
     "max" : 4,
     "trick": 4,
-    "nextlink" : "mazev#!a105_w2/1",
+    "nextlink" : "mazeh#!a105_w2/1",
     "lastStage" : 2
   },
   "manifest": [
@@ -17,8 +17,7 @@
     {"id": "yes3", "src": "/img/a105/a105_w2/yes3.png", "result": true},
     {"id": "yes4", "src": "/img/a105/a105_w2/yes4.png", "result": true },
     {"id": "yes5", "src": "/img/a105/a105_w2/yes5.png", "result": true },
-    {"id": "yes6", "src": "/img/a105/a105_w2/yes5.png", "result": true },
-    {"id": "yes7", "src": "/img/a105/a105_w2/yes5.png", "result": true },
+    {"id": "yes6", "src": "/img/a105/a105_w2/yes6.png", "result": true },
     {"id": "no0", "src": "/img/a105/a105_w2/no0.png"},
     {"id": "no1", "src": "/img/a105/a105_w2/no1.png"},
     {"id": "no2", "src": "/img/a105/a105_w2/no2.png"},
@@ -26,8 +25,7 @@
     {"id": "no4", "src": "/img/a105/a105_w2/no4.png"},
     {"id": "no5", "src": "/img/a105/a105_w2/no5.png"},
     {"id": "no6", "src": "/img/a105/a105_w2/no6.png"},
-    {"id": "no7", "src": "/img/a105/a105_w2/no7.png"},
-    {"id": "no8", "src": "/img/a105/a105_w2/no8.png"}
+    {"id": "no7", "src": "/img/a105/a105_w2/no7.png"}
   ],
   "msg": {
     "ko": {

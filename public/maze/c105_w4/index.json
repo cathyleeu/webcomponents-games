@@ -270,7 +270,7 @@
   }],
 
   "tutorial": [{
-    "msg:ko": "안전하게 장애물을 피해요! 쉬운 문제는 점수를 1점, 보통은 2점, 어려운 문제는 3점을 주어요. ",
+    "msg:ko": "친구들을 찾아가요! 쉬운 문제는 점수를 1점, 보통은 2점, 어려운 문제는 3점을 주어요. ",
     "msg:en": "Let's avoid obstacles safely! An easy problem gives you one point, a normal one gives you two and a hard one gives you three.",
     "img": ["/img/c10/cos0.png","/img/c105/luckjori.png"]
   }],
