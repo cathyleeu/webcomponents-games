@@ -12,6 +12,17 @@
       rect{
         cursor: pointer;
       }
+      .container {
+        position: absolute;
+      }
+      .container p {
+        font-size: 30px;
+        position: absolute;
+        font-weight: 600;
+        /*width: 500px;*/
+        text-align: center;
+        margin: 0;
+      }
     </style>
     <status-bar
       id="statusBar"
@@ -53,6 +64,7 @@
       nobtn="{{localize('nobtn')}}"
       purpose="previous"
       ></toycode-modal>
+    <div class="container"></div>
   </template>
   <script>
     class FlowCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -73,6 +85,7 @@
         this.set('total', 0)
         this.set('point', 0)
         this.set('matched', 0)
+        this.set('step', 1)
       }
       reset(){
         this.set('total', 0)
@@ -97,8 +110,6 @@
         let self = d3.select('#element').node()
         self.set('startX', d3.select(this).attr('x'))
         self.set('startY', d3.select(this).attr('y'))
-        // startX = d3.select(this).attr('x');
-        // startY = d3.select(this).attr('y');
         d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
       }
       dragged(d){
@@ -106,33 +117,44 @@
       }
       dragended(d){
         let self = d3.select('#element').node(),
+            gap = self.flowWidth-self.mixedWidth,
             getX = d3.event.x, getY = d3.event.y;
+        // debugger
+        let targetEl, targetX, targetY, result,
+            flowItems = self.flowItems.slice(1, self.flowItems.length-1);
 
-        let targetEl, targetX, targetY, result;
-        self.flowItems.forEach(el => {
+        flowItems.forEach(el => {
           const getEl = el.getBBox();
-          debugger
           // 범위 확인
-          if(getEl.x < getX && getX < getEl.x + getEl.width && getEl.y < getY && getY < getEl.y + getEl.height) {
+          // console.log("dragended range false", el.__data__.step);
+          if(getEl.x+gap < getX && getX < getEl.x + getEl.width + +gap && getEl.y < getY && getY < getEl.y + getEl.height) {
+            // console.log("dragended range true", el.__data__.step);
             targetEl = el;
             targetX = getEl.x;
             targetY = getEl.y;
-            debugger
-            result = targetEl.__data__ === d && true;
+            // debugger
+            // 순서가 맞는지 먼저 보아야 함
+            if(self.step+1 === d.step) {
+              // console.log("dragended step true", d.step);
+              result = targetEl.__data__.step === d.step && true;
+            } else {
+              // console.log("순서가 맞지 않습니다.");
+              result = false;
+            }
+
           }
         });
-            //   console.log(getX, getY, targetEl, result, targetX, targetY);
-            //
         if (!result) {
-          d3.select(this).attr("x", startX ).attr("y", startY );
+          // console.log("dragended result false");
+          d3.select(this).attr("x", self.startX ).attr("y", self.startY );
         } else {
-          console.log("result true", targetX, targetY)
-          // _this.set('point', _this.point+2)
+          // console.log("result true", targetX, targetY)
+          self.set('step', d.step)
           // _this.set('matched', _this.matched+1)
-          d3.select(this).attr("x", targetX ).attr("y", targetY )
+          d3.select(this).attr("x", targetX+gap ).attr("y", targetY )
             .call(d3.drag().on("start", null ))
-          // if(_this.matched === _this.cards) {
-          //   _this.shadowRoot.getElementById("successModal").modalAlert()
+          // if(self.matched === self.cards) {
+          // self.$.successModal.modalAlert()
           // }
         }
         // _this.set('total', _this.total+1)
@@ -202,12 +224,8 @@
           .data(boardName).enter()
           .append("g")
           .attr("class", (d, i) => `${d.name}`)
-          .attr("transform", (d, i) => `translate(0, 0)`)
-          .append('text')
-          .text( (d, i) => `${d.header}`)
-          .attr('x', 50).attr('y', (d, i) => 100*(i*2+1))
-          .attr('font-size', "20");
-        //
+          .attr("transform", (d, i) => `translate(0, 0)`);
+
 
         let flowItems = svg.select('.flow')
           .selectAll("rect")
@@ -221,15 +239,15 @@
           .style("stroke","#2ECC98")
 
         this.set('flowItems', flowItems.nodes())
+        let space = (svg.node().clientHeight-220)/4;
+        this.set('space', space*2.5+110)
 
-          //   .attr("id", (d, i) => `bath${i}`)
-        //
         let mixedItems = svg.select('.mixed')
             .selectAll("rect")
             .data(shuffledMix).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
-            .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 300)
+            .attr('x', (d, i) => (100*i) + (20*i)).attr('y', this.space)
             .attr("width", 110).attr("height", 110)
             .style("fill", "#fff")
             .style("fill", (d,i) => `url(#mixed_${i})`)
@@ -239,6 +257,31 @@
                 .on("start", this.dragstarted )
                 .on("drag", this.dragged )
                 .on("end", this.dragended ));
+          this.handleSetCenter('.flow')
+          this.handleSetCenter('.mixed')
+
+          // console.log(space);
+
+          d3.select(this.shadowRoot).select('.container')
+            .selectAll('p')
+            .data(boardName).enter()
+            .append("p")
+            .text( (d, i) => `${d.header}`)
+            .attr('style', (d, i) => `top:${
+              d.name === "flow"
+                ? space-this.mixedHeight
+                : this.space-this.mixedHeight
+            }px;width:${this.offsetWidth}px;`)
+      }
+      handleSetCenter(ele){
+        let client = d3.select(this.shadowRoot).select("svg"),
+            eleDom = client.select(ele).node().getBBox(),
+            { clientWidth, clientHeight } = client.node(),
+            eleWidth = (clientWidth - eleDom.width)/2,
+            eleHeight = (clientHeight - (eleDom.height*2+this.space))/2;
+        this.set(`${ele.slice(1)}Width`, eleWidth)
+        this.set(`${ele.slice(1)}Height`, eleHeight)
+        client.select(ele).attr('transform', `translate(${eleWidth}, ${eleHeight})`)
       }
     }
     window.customElements.define(FlowCard.is, FlowCard);
