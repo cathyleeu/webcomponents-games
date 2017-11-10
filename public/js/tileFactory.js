@@ -805,28 +805,16 @@ TileFactory.prototype.addItemImage = function(container, img, type) {
   if(!container.itemList) {
     container.itemList = [];
   }
-  var bounds = container.getBounds();
-  var bitmap = new createjs.Bitmap();
-  if(type == "one"){
-    var px = 2;
-    var py = 0;
-    var size = bounds.width / 3;
-    bitmap.image = this.loader.getResult(img);
-    bitmap.x = px * size;
-    bitmap.y = py * size;
-    bitmap.scaleX = 1.0/3.0;
-    bitmap.scaleY = 1.0/3.0;
-  }  else{
-    var px = container.itemList.length % 3;
-    var py = parseInt(container.itemList.length / 3, 10);
-    var size = bounds.width / 3;
-    bitmap.image = this.loader.getResult(img);
-    bitmap.x = px * size;
-    bitmap.y = py * size;
-    bitmap.scaleX = 1.0/3.0;
-    bitmap.scaleY = 1.0/3.0;
-  }
-
+  var bitmap = new createjs.Bitmap(),
+      px = type == "one" ? 2 : container.itemList.length % 3,
+      py = type == "one" ? 0 : parseInt(container.itemList.length / 3, 10);
+  bitmap.image = this.loader.getResult(img);
+  bitmap.x = px * this.tile_size / 3 - this.tile_size / 2;
+  bitmap.y = py * this.tile_size / 3 - this.tile_size / 2;
+  bitmap.scaleX = 1 / 3;
+  bitmap.scaleY = 1 / 3;
+  bitmap.regX = this.tile_size / 2;
+  bitmap.regY = this.tile_size / 2;
   container.addChild(bitmap);
   container.itemList.push(bitmap);
 };
