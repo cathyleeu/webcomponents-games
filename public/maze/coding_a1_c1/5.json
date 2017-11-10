@@ -1,0 +1,30 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward(3),rotate_left,move_forward(2)",
+  "problem": "start,move_forward(*),empty,move_forward(*)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "#.#..##",
+    "##.##.#",
+    ".#d####",
+    "##.#.##",
+    "##..%##",
+    "#.##.##",
+    "#####.#"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 4,
+    "img":"fruit_strawberry"
+  }],
+  "tutorial": [{
+    "msg:ko": "목표 지점으로 가보자!",
+    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_strawberry.png"]
+  }]
+}

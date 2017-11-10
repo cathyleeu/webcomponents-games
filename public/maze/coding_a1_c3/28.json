@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,move_forward(2),get_items(2),rotate_right,move_forward(2),rotate_left,move_forward(2),rotate_right,move_forward(2),rotate_left,move_forward(1),use_items(2)",
+  "problem": "start,move_forward(*),empty,empty,move_forward(*),empty,move_forward(*),empty,move_forward(*),empty",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "get_items",
+    "use_items"
+  ],
+  "map": [
+    ".######",
+    "###.###",
+    "#r.).#.",
+    "###.###",
+    "#.#...#",
+    "#####.#",
+    ".#.##.%"
+  ],
+  "extra":[{
+    "x": 3,
+    "y": 2,
+    "img" : "bright3",
+    "itemCount": 2
+  },{
+    "x": 6,
+    "y": 6,
+    "img" : "ufo",
+    "useItem": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "양말 2개를 가져와서 우주선에 두자!"
+  }]
+}

@@ -1,0 +1,30 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start, move_forward(6)",
+  "problem": "start, move_forward(*)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "##d####",
+    "##.##.#",
+    ".#..###",
+    "##.#.##",
+    "##.##.#",
+    "#...##.",
+    "##%##.#"
+  ],
+  "extra":[{
+    "x" : 2,
+    "y" : 6,
+    "img": "school"
+  }],
+  "tutorial": [{
+    "msg:ko": "학교로 가보자!",
+    "img": ["/img/b4/f_granma.png", "/img/c4_w1_c3/fruit_orange.png"]
+  }]
+}

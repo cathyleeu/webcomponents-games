@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,rotate_right,move_forward(2),rotate_left,move_forward(3),get_items,move_forward(1),use_items",
+  "problem": "start,empty,move_forward(*),empty,move_forward(*),empty,move_forward(*),empty",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right",
+    "get_items",
+    "use_items"
+  ],
+  "map": [
+    ".#....#",
+    "##.##.#",
+    "%)...##",
+    "#..#..#",
+    "##.#l.#",
+    "####.##",
+    ".#.##.#"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 2,
+    "img" : "bottle",
+    "itemCount": 1
+  },{
+    "x": 0,
+    "y": 2,
+    "img" : "ufo",
+    "useItem": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "물병을 가져와서 우주선에 두자!"
+  }]
+}

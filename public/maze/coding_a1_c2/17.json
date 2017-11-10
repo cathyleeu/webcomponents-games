@@ -1,0 +1,25 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,move_forward(4),rotate_right,move_forward(4)",
+  "problem": "start,move_forward(*),empty,move_forward(*)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "#%.#.##",
+    "#..####",
+    "..#####",
+    "#.####.",
+    "#....l#",
+    "####.#.",
+    "##.##.#"
+  ],
+  "extra":[],
+  "tutorial": [{
+    "msg:ko": "목표 지점으로 가보자!"
+  }]
+}

@@ -1,0 +1,30 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,move_forward(2),item_rock,move_forward(4)",
+  "problem": "start,move_forward(2),item_scissors,move_forward(2)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "##.#.##",
+    "##.##.#",
+    ".######",
+    "#d....%",
+    "##.##.#",
+    "###.##.",
+    "##.##.#"
+  ],
+  "extra":[{
+    "x" : 6,
+    "y" : 3,
+    "img" : "hospital"
+  }],
+  "tutorial": [{
+    "msg:ko": "병원으로 가보자!",
+    "img": ["/img/coding/robot1.png","/img/c6/bomi0.png","/img/b55/mkt1.png"]
+  }]
+}

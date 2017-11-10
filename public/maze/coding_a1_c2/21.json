@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,rotate_right,move_forward(2),rotate_left,move_forward(6)",
+  "problem": "start,empty,move_forward(*),empty,move_forward(*)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    ".##.###",
+    "#r.##..",
+    "..#.###",
+    "#.....%",
+    "##.##.#",
+    "####.##",
+    "##.####"
+  ],
+  "extra":[{
+    "x" : 6,
+    "y" : 3,
+    "img" : "flower1"
+  }],
+  "tutorial": [{
+    "msg:ko": "꽃으로 가보자!"
+  }]
+}
