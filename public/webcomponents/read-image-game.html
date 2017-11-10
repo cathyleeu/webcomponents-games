@@ -1,0 +1,77 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+
+<dom-module id="read-image-game">
+  <template>
+    <style>
+    </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      purpose="select"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      fullscreen="{{localize('fullscreen')}}"
+    ></status-bar>
+    <svg></svg>
+  </template>
+  <script>
+    class ReadImageGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'read-image-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      handleClick(d){
+        let svg = this.parentElement,
+            space = (this.getBBox().width)*0.5;
+        d3.select(this).remove()
+        d3.select(svg).append('text').text(`${d.text}`)
+          .attr('x', d.x+space ).attr('y', d.y+space )
+          .style('font-size', '40px')
+          .style('font-weight', '700')
+      }
+      setData(data, manifest){
+        this.set('data',data)
+        this.set('manifest',manifest)
+        let { offsetWidth, offsetHeight } = this,
+            svg = d3.select(this.shadowRoot).select('svg')
+                    .attr('width', this.offsetWidth).attr('height', this.offsetHeight);
+            manifest = d3.shuffle(manifest).slice(0, this.max)
+            data = d3.shuffle(data)
+
+        let refineData = manifest.map((re, i) => ({
+          ["src"]:re.src,
+          ["sound"]:re.sound,
+          ["text"]:re.text,
+          ["id"]:re.id,
+          ["x"]: Math.floor(offsetWidth*(data[i][0]/100)),
+          ["y"]: Math.floor(offsetHeight*(data[i][1]/100))
+        }))
+
+        svg.selectAll('image').data(refineData).enter()
+            .append("image")
+            .attr('x', (d, i) => d.x ).attr('y', (d, i) => d.y )
+            .attr('id', (d, i) => `image_${d.id}`)
+            .attr("xlink:href", (d, i) => d.src)
+            .on("click", this.handleClick)
+      }
+    }
+    window.customElements.define(ReadImageGame.is, ReadImageGame);
+  </script>
+</dom-module>

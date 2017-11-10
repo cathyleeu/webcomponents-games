@@ -1,15 +1,23 @@
 {
-  "element": "guess-card",
-  "attributes": {
-    "limit" : 4
+  "element": "flow-card",
+  "data": {
+    "background" : false,
+    "first" : 1,
+    "last" : 5
   },
-  "data": [
+  "manifest": [
+    {"src": "/img/a5_w3/bg31_step1.png", "step": 1},
+    {"src": "/img/a5_w3/bg24_step2.png", "step": 2},
+    {"src": "/img/a5_w3/bg22_step3.png", "step": 3},
+    {"src": "/img/a5_w3/bg21_step4.png", "step": 4},
+    {"src": "/img/a5_w3/bg01_step5.png", "step": 5},
+    {"src": "/img/a5_w4/TutoToad1_256.png"},
+    {"src": "/img/a5_w4/TutoToad3_256.png"},
+    {"src": "/img/a5_w4/TutoToad4_256.png"}
   ],
-  "manifest": 16,
   "msg": {
     "ko": {
-      "title": "Up & Down 게임",
-      "subtitle": "추측하는 숫자를 클릭해보세요.",
+      "title": "순서에 맞게 이미지를 맞춰보세요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -22,12 +30,11 @@
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
-      "retryHead": "참 아쉽네요!",
-      "retryBtm" : "다시 시도해 볼까요?",
-      "retrybtn": "다시하기"
+      "flow": "순서 조립 화면",
+      "mixed": "사용 가능 한 이미지"
     },
     "en": {
-      "title": "Flip the cards and Match the pairs",
+      "title": "Along with the picture, arrange the bath tools.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
@@ -39,10 +46,7 @@
       "previousBtm": "Do you want to move on to the previous step?",
       "nextbtn": "Back",
       "nobtn" : "No",
-      "yesbtn" : "Yes",
-      "retryHead": "Failed",
-      "retryBtm" : "Do you want to retry?",
-      "retrybtn": "retry"
+      "yesbtn" : "Yes"
     }
   }
 }

@@ -125,13 +125,13 @@
     }
     reset(){
       d3.select(this.$.guess_box).selectAll('div').remove()
-      this.setData( false , 16 )
+      this.setData( false , this.manifest )
       this.set('click', 0)
     }
     handleClickCard(s, r){
       this.set('click', this.click+1)
-      if(this.click > 4) {
-        this.$.retryModal.modalAlert()
+      if(this.click > this.limit) {
+        return this.$.retryModal.modalAlert()
       }
       let guessList = d3.select(this.shadowRoot).selectAll(".guess").nodes(),
           wholeDom = d3.select(this.$.guess_box).selectAll('div').nodes(),
@@ -170,6 +170,7 @@
       }
     }
     setData(data, manifest){
+      this.set('manifest', manifest)
       let guessBox = d3.select(this.$.guess_box),
           randomNum = Math.floor(Math.random()*(manifest-0)) + 1;
       for(let i = 1; i < manifest+1; i++){
