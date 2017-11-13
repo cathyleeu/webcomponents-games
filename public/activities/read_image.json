@@ -1,7 +1,8 @@
 {
   "element": "read-image-game",
   "attributes": {
-    "max" : 4
+    "max" : 4,
+    "basePath" : "/sound/"
   },
   "data": [
     [10, 40],
@@ -12,12 +13,12 @@
     [80, 19]
   ],
   "manifest": [
-    {"src": "/img/b8_w4/kimchi.png", "text":"김치", "sound": "1", "id": "1"},
-    {"src": "/img/b8_w4/kimchi1.png", "text":"고추", "sound": "2", "id": "2"},
-    {"src": "/img/b8_w4/kimchi2.png", "text":"마늘", "sound": "3", "id": "3"},
-    {"src": "/img/b8_w4/kimchi3.png", "text":"무", "sound": "4", "id": "4"},
-    {"src": "/img/b8_w4/kimchi4.png", "text":"배추", "sound": "5", "id": "5"},
-    {"src": "/img/b8_w4/kimchi5.png", "text":"양파", "sound": "6", "id": "6"}
+    {"src": "/img/b8_w4/kimchi.png", "text":"김치", "sound": "complete.mp3", "id": "1"},
+    {"src": "/img/b8_w4/kimchi1.png", "text":"고추", "sound": "fail.mp3", "id": "2"},
+    {"src": "/img/b8_w4/kimchi2.png", "text":"마늘", "sound": "hammer.mp3", "id": "3"},
+    {"src": "/img/b8_w4/kimchi3.png", "text":"무", "sound": "success.mp3", "id": "4"},
+    {"src": "/img/b8_w4/kimchi4.png", "text":"배추", "sound": "bgm_story08.mp3", "id": "5"},
+    {"src": "/img/b8_w4/kimchi5.png", "text":"양파", "sound": "bgm_story7.mp3", "id": "6"}
   ],
   "msg": {
     "ko": {
