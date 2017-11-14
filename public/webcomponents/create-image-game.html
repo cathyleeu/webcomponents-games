@@ -1,0 +1,128 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+<dom-module id="create-image-game">
+  <template>
+    <style>
+    </style>
+    <status-bar
+      id="statusBar"
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      purpose="select"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      fullscreen="{{localize('fullscreen')}}"
+    ></status-bar>
+    <svg id="createSvg"></svg>
+  </template>
+  <script>
+    class CreateImageGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'create-image-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      dragstarted(d) {
+        let self = d3.select('#element').node(),
+            newX = this.x.animVal.value,
+            newY = this.y.animVal.value;
+
+        d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
+
+        d3.select(this.parentElement).append('image').attr("xlink:href", this.href.animVal)
+          .attr('width', `${128*0.6}`).attr('height', `${128*0.6}`)
+          .attr('x', newX ).attr('y', newY )
+          .call(d3.drag()
+            .on("start", self.dragstarted)
+            .on("drag", self.dragged)
+            .on("end", self.dragended)
+          );
+      }
+      dragged(d){
+        d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
+      }
+      dragended(){
+        let self = d3.select('#element').node();
+        console.log("dragended");
+        d3.select(this).call(d3.drag()
+          .on("start", self.reDragstarted )
+          .on("drag", self.dragged)
+          .on("end", self.dragended)
+        )
+      }
+      reDragstarted(d) {
+        d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
+        console.log("reDragstarted");
+      }
+      setData(data, manifest){
+        let { innerHeight, innerWidth } = window,
+            svgHeight = innerHeight-this.$.statusBar.getBoundingClientRect().height,
+            svg = d3.select(this.$.createSvg)
+                    .attr('width', innerWidth)
+                    .attr('height', svgHeight),
+            boardWidth = innerWidth*0.6,
+            resWidth = innerWidth*0.4;
+
+        svg.selectAll('g').data(["board", "resImages"]).enter()
+            .append('g').attr('id', (d, i) => d)
+            .attr('width', (d, i) => d === "board" ? boardWidth : resWidth)
+            .attr('height', svgHeight)
+
+
+        let board = svg.select("#board"),
+            resImages = svg.select("#resImages"),
+            backgroundImg = manifest.find(d => d.background).src,
+            resImagesData = manifest.filter(d => !d.background)
+
+
+        board.attr('transform', "translate(0 , 0)")
+        board.append('image').attr("xlink:href", backgroundImg)
+             .attr('x', 0).attr('y', `${(svgHeight-boardWidth)/2}`)
+             .attr('width', boardWidth)
+
+        let rangeXmit = Math.floor(resWidth/(128*0.6)), //3
+            resNums = resImagesData.length;
+
+        //FIXME : resImages.getBBox()에서 width 로 중앙정렬
+        resImages.attr('transform', (d, i) => `translate(${boardWidth+(resWidth-(128*0.6*rangeXmit))}, ${(svgHeight-boardWidth)/2})`)
+
+        let axis = []
+        for(var i = 0; i < 13; i++ ){
+          for(var j = 0; j < 3; j++ ) {
+            if(axis.length >= resNums) {
+              break;
+            }
+            axis.push([i,j])
+          }
+        }
+
+        resImages.selectAll('image').data(resImagesData).enter()
+             .append('image').attr("xlink:href", (d, i) => d.src)
+             .attr('width', `${128*0.6}`).attr('height', `${128*0.6}`)
+             .attr('x', ( d, i ) => axis[i][1]*(128*0.6))
+             .attr('y', ( d, i ) => axis[i][0]*(128*0.6))
+             .call(d3.drag()
+               .on("start", this.dragstarted)
+               .on("drag", this.dragged)
+               .on("end", this.dragended)
+             );
+      }
+    }
+    window.customElements.define(CreateImageGame.is, CreateImageGame);
+  </script>
+</dom-module>
