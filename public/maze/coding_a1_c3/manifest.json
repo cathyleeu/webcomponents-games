@@ -5,7 +5,8 @@
 
   {"id": "character", "src": "/img/c8_w3/new_cobot.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c8_w3/new_cobot0.png", "size": 256},
-  {"id": "food", "src": "/img/b4/flag.png"},
+  {"id": "food", "src": "/img/b3_w1/ufo.png"},
+  {"id": "item", "src": "/img/c7/chest.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
@@ -39,7 +40,6 @@
   {"id": "bright1", "src": "/img/b9_w3/bright1.png"},
   {"id": "bright2", "src": "/img/b9_w3/bright2.png"},
   {"id": "bright3", "src": "/img/b9_w3/bright3.png"},
-  {"id": "ufo", "src": "/img/b3_w1/ufo.png"},
   {"id": "book", "src": "/img/b7_w2/book.png"},
   {"id": "bottle", "src": "/img/cobot/bottle.png"},
 

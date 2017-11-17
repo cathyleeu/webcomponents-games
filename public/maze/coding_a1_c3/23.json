@@ -2,7 +2,7 @@
   "tile_size": 128,
   "score":3,
   "workspace": "start",
-  "solution": "start,move_forward(7),get_items",
+  "solution": "start,move_forward(7),use_items",
   "problem": "start,move_forward(*),empty",
   "toolbox": [
     "move_forward",
@@ -19,11 +19,11 @@
     "####.###",
     "####.###",
     "####.###",
-    "....)..."
+    "....%..."
   ],
   "extra":[{
     "x": 4,
-    "y": 7,
+    "y": 0,
     "itemCount": 1
   }],
   "tutorial": [{
