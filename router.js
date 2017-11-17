@@ -273,9 +273,10 @@ function getBook(classObj) {
   }
   // 울산지사 소속원 5세반에 6세 컨텐츠 추가
   if(school.slice(0,6) == "A00072" && classObj.level == "A") {
-    book += "," + book.split(",").map(function(bname) {
-      return "B-" + (Number(bname.split("-")[1])-1);
-    });
+    book += ",B-3";
+    // book += "," + book.split(",").map(function(bname) {
+    //   return "B-" + (Number(bname.split("-")[1])-1);
+    // });
   }
   // 영업부 일산지사 홍익유치원 컨텐츠 추가
   if(school == "C00149-K1") {
