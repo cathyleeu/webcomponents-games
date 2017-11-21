@@ -1,8 +1,7 @@
 {
   "element": "puzzle-game",
   "attributes": {
-    "pznum": 3,
-    "pzsize": 250
+    "pznum": 3
   },
   "data": "https://s-media-cache-ak0.pinimg.com/originals/53/a8/e6/53a8e6c361aed07b560ef9ab8756824b.gif",
   "msg": {

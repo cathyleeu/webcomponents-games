@@ -21,7 +21,6 @@
       static get properties() {
         return {
           pznum: Number,
-          pzsize: Number,
           language: {
             value: "ko"
           },
@@ -46,62 +45,122 @@
         this.set('total', 0)
         this.set('matched', 0)
         this.set('cards', Math.pow(this.pznum, 2))
+
+        let { offsetWidth, offsetHeight } = this
+        let size = {
+          board : offsetWidth*0.5,
+          card : 0,
+          inst : 0
+        }
+        size["puzzlePosition"] = size.board+size.board*0.1;
+        size["puzzleSize"] = size.board-(size.board*0.2);
+        size["eachPiece"] = size.puzzleSize/this.pznum;
+        size["randonPosition"] = offsetHeight-size.puzzleSize;
+        size["goalPosition"] = (size.board-size.randonPosition)/2;
+
+        this.set('size', size)
+      }
+
+      axisforImg (i, axis) {
+        return -this.size.eachPiece*this.imageAxis[axis][i];
+      }
+      genPieceId(num) {
+        let f = 0,
+            pieces=[],
+            piece=[],
+            group={};
+
+        for (let i=0; i < num; i++){
+          pieces.push(i);
+        }
+        for (let i=0; i < Math.pow(num, 2); i++) {
+          piece.push(i);
+        }
+        for ( let i of pieces ) {
+          let s = f+num;
+          group[i] = piece.slice(f, s);
+          f = s;
+        }
+        return {
+          pieces, piece, group
+        }
+      }
+      dragstarted(d) {
+        let self = this.ownerDocument.getElementById('element'),
+            middle = this.width.animVal.value*0.5;
+
+        self.set('startX', d3.select(this).attr('x'))
+        self.set('startY', d3.select(this).attr('y'))
+
+        d3.select(this)
+          .attr("x", d3.event.x-middle)
+          .attr("y", d3.event.y-middle);
+      }
+
+      dragged(d) {
+        let middle = this.width.animVal.value*0.5
+        d3.select(this)
+          .attr("x", d3.event.x-middle)
+          .attr("y", d3.event.y-middle);
+      }
+
+      dragended(d) {
+        let self = this.ownerDocument.getElementById('element'),
+            { puzzlePosition, eachPiece, randonPosition, puzzleMargin } = self.size,
+            getX = d3.event.x-puzzlePosition,
+            getY = d3.event.y+(randonPosition-puzzleMargin);
+
+        console.log("dragended", getX, getY);
+
+        let targetEl, targetX, targetY, result;
+        self.nodes.forEach((el) => {
+          const getEl = el.getBBox();
+          if(getEl.x < getX && getX < getEl.x+ getEl.width && getEl.y < getY && getY < getEl.y + getEl.height) {
+            targetEl = el;
+            targetX = getEl.x;
+            targetY = getEl.y;
+            result = targetEl.__data__ === d && true;
+          }
+        })
+        if(result){
+          console.log("true");
+
+          d3.select(this).attr("x", targetX+puzzlePosition ).attr("y", targetY-(randonPosition-puzzleMargin) )
+            .call(d3.drag().on("start", null ))
+        } else {
+          console.log("false");
+          d3.select(this).attr("x", self.startX ).attr("y", self.startY )
+        }
+
       }
       setData( pzUrl ) {
         let  _this = this,
-             pieces=[], piece=[], group={},
+             { eachPiece, puzzleSize, puzzlePosition, randonPosition, goalPosition } = this.size,
              count = 0, // 퍼즐판 줄 생성
-             eachPiece = this.pzsize/this.pznum,
              svg = d3.select(this.shadowRoot).append('svg')
-              .attr( "width", `${(this.offsetWidth/5)*4}` )
-              .attr( "height", `${this.offsetHeight-60}` )
-              .attr('style', `margin-left: ${this.offsetWidth/5}px;margin-top: 20px`),
+              .attr( "width", this.offsetWidth)
+              .attr( "height", `${this.offsetHeight-60}` ),
+             { pieces, piece, group }= this.genPieceId(this.pznum),
              defs = svg.append('defs');
-
-        function genPieceId(num) {
-          let f = 0; pieces=[]; piece=[]; group={};
-          for (let i=0; i < num; i++){
-            pieces.push(i);
-          }
-          for (let i=0; i < Math.pow(num, 2); i++) {
-            piece.push(i);
-          }
-          for ( let i of pieces ) {
-            let s = f+num;
-            group[i] = piece.slice(f, s);
-            f = s;
-          }
-        }
-        genPieceId(this.pznum)
-
-        let resultImg = defs.append('pattern')
-          .attr("id" , 'result')
-          .attr("x", 0).attr("y", 0)
-          .attr("width", 1).attr("height", 1)
-          .attr("patternUnits", "objectBoundingBox")
-          .append('image')
-          .attr("width", 120).attr("height", 120)
-          .attr("xlink:href", pzUrl);
 
         let resultRect = svg.append("g")
           .attr('transform', 'translate(0,0)')
-          .append('rect')
-          .attr("x" , 0).attr("y" , 0)
-          .attr("width", 120).attr("height", 120)
-          .attr("fill", 'url(#result)')
-          .style("stroke-width", 1).style("stroke", 'gray');
+          .append('image')
+          .attr("xlink:href", pzUrl)
+          .attr("x" , goalPosition).attr("y" , 0)
+          .attr("width", randonPosition).attr("height", randonPosition);
 
+        this.set("size.puzzleMargin", (+svg.attr("height")-puzzleSize)/2)
         let jigsawBoard = svg.append("g")
-          .attr("width", this.pzsize)
-          .attr("height", this.pzsize)
+          .attr("width", puzzleSize)
+          .attr("height", puzzleSize)
           .attr('id', 'jigsaw')
-          .attr('transform', 'translate(400,100)');
+          .attr('transform', `translate(${puzzlePosition},${this.size.puzzleMargin})`);
 
         let shuffleBoard = svg.append("g")
-          .attr("width", this.pzsize)
-          .attr("height", this.pzsize)
-          .attr('transform', 'translate(0,100)');
-
+          .attr("width", randonPosition)
+          .attr("height", randonPosition)
+          .attr('transform', `translate(0,${randonPosition})`);
 
         let pieceRect = jigsawBoard.selectAll("rect");
         let shuffleRect = shuffleBoard.selectAll("rect");
@@ -116,24 +175,7 @@
           .attr("x", axisX)
           .attr("y", axisY)
           .attr("width", eachPiece-2 )
-          .attr("height", eachPiece-2 )
-          .on("mouseover", (d) => {
-          let target = d3.select(d3.event.target);
-          DnD.droppablePiece = d.toString();
-          DnD.puzzleX = target.attr('x');
-          DnD.puzzleY = target.attr('y');
-        });
-
-        let DnD = {
-          puzzleX: null,
-          puzzleY: null,
-          droppablePiece: null,
-          draggedPiece: null,
-          matchedPuzzle: function() {
-            if (!this.droppablePiece) return false;
-            return (this.draggedPiece == this.droppablePiece);
-          }
-        }
+          .attr("height", eachPiece-2 );
 
         let imgIdsX = [], imgIdsY = [], imgId;
         for (let i= 0 ; i < this.pznum; i++){
@@ -143,6 +185,7 @@
             imgIdsX.push(j);
           }
         }
+        this.set('imageAxis', { "x" : imgIdsX, "y" : imgIdsY })
 
         imageRect.data(piece).enter()
           .append('pattern')
@@ -151,38 +194,26 @@
           .attr("width", 1).attr("height", 1)
           .attr("patternUnits", "objectBoundingBox")
           .append('image')
-          .attr("x", d => axisXforImg(d))
-          .attr("y", d => axisYforImg(d))
-          .attr("width", this.pzsize).attr("height", this.pzsize)
+          .attr("x", d => this.axisforImg(d, "x"))
+          .attr("y", d => this.axisforImg(d, "y"))
+          .attr("width", puzzleSize).attr("height", puzzleSize)
           .attr("xlink:href", pzUrl);
 
+        // Math.floor(Math.random() * (n2:상한값 - n1:하한값 + 1) + n1))
         shuffleRect.data(piece).enter()
           .append("rect")
           .style("stroke-width", 1)
           .style("stroke", 'gray')
-          .attr("x", d => Math.floor(getRandomArbitrary()))
-          .attr("y", d => Math.floor(getRandomArbitrary()))
+          .attr("x", d => Math.floor(Math.random() * (puzzleSize + 1) + 0))
+          .attr("y", d => Math.floor(Math.random() * (randonPosition + 1) + 0))
           .attr("width", eachPiece-2 )
           .attr("height", eachPiece-2 )
           .style("fill", (d, i) => `url(#piece_${i})`)
           .call(d3.drag()
-                .on("start", dragstarted)
-                .on("drag", dragged)
-                .on("end", dragended)
+                .on("start", this.dragstarted)
+                .on("drag", this.dragged)
+                .on("end", this.dragended)
                );
-
-        function getRandomArbitrary() {
-          // d => 이렇게 해줘야지 개별적으로 들어감 !!
-          return Math.random() * (250 - 50) + 50;
-        }
-
-        function axisXforImg (i) {
-          return -eachPiece*imgIdsX[i];
-        }
-
-        function axisYforImg (i) {
-          return -eachPiece*imgIdsY[i];
-        }
 
         function axisX(d) {
           if(count > _this.pznum-1){
@@ -206,42 +237,7 @@
             default: return 0;
           }
         }
-
-        function dragstarted(d) {
-          console.log("dragstarted", d )
-          d3.select(this)
-            .attr("x", d3.event.x)
-            .attr("y", d3.event.y);
-          DnD.draggedPiece = d3.event.subject.toString();
-        }
-
-        function dragged(d) {
-          d3.select(this)
-            .attr("x", d3.event.x)
-            .attr("y", d3.event.y);
-          DnD.matchedPuzzle();
-        }
-
-        function dragended(d) {
-          let result = DnD.matchedPuzzle();
-          if(!result) {
-            console.log("fault", DnD.droppablePiece,
-                        DnD.draggedPiece)
-          } else {
-            console.log("yesss")
-            d3.select(this)
-              .attr("x", parseInt(DnD.puzzleX, 10)+400)
-              .attr("y", parseInt(DnD.puzzleY, 10))
-              .call(d3.drag()
-                    .on("start", null))
-            _this.set('matched', _this.matched+1)
-
-            DnD.droppablePiece = null;
-          }
-          _this.set('total', _this.total+1)
-          // DnD.droppablePiece = null;
-          DnD.draggedPiece = null;
-        }
+        this.set('nodes', jigsawBoard.node().childNodes)
       }
     }
     window.customElements.define(PuzzleGame.is, PuzzleGame);
