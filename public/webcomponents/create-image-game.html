@@ -42,6 +42,8 @@
             newX = this.x.animVal.value,
             newY = this.y.animVal.value;
 
+        self.set('startX', newX)
+        self.set('startY', newY)
         d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
 
         d3.select(this.parentElement).append('image').attr("xlink:href", this.href.animVal)
@@ -56,14 +58,56 @@
       dragged(d){
         d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
       }
-      dragended(){
-        let self = d3.select('#element').node();
+      dragended(d){
         console.log("dragended");
-        d3.select(this).call(d3.drag()
-          .on("start", self.reDragstarted )
-          .on("drag", self.dragged)
-          .on("end", self.dragended)
-        )
+        let resetImage = this.dataset.board,
+            self = d3.select('#element').node(),
+            getX = resetImage ? d3.event.x : d3.event.x+self.boardWidth+self.startX,
+            getY = resetImage ? d3.event.y : d3.event.y+self.circles[0].y.animVal.value;
+        // debugger
+        console.log(self.boardWidth, self.resImagesGabfromBorad);
+        let targetEl, targetX, targetY, result,
+            cir = [].slice.call(self.circles, 1, self.circles.length);
+        cir.forEach(el => {
+          const getEl = el.getBBox();
+          // debugger
+          // self.
+          if(getEl.x < getX && getX < getEl.x + getEl.width && getEl.y < getY && getY < getEl.y + getEl.height) {
+            // debugger
+            console.log("dragended range true");
+            targetEl = el;
+            targetX = getEl.x;
+            targetY = getEl.y;
+            // debugger
+          }
+        })
+        if(targetEl){
+          console.log("targeted!!!");
+          d3.select(this).remove()
+          d3.select(self.shadowRoot).select("#board").append('image')
+            .attr('data-board', true)
+            .attr("xlink:href", this.href.animVal)
+            .attr('width', `${128*0.6}`).attr('height', `${128*0.6}`)
+            .attr("x", targetX-5 ).attr("y", targetY-5 )
+            .call(d3.drag()
+              .on("start", self.reDragstarted )
+              .on("drag", self.dragged)
+              .on("end", self.dragended)
+            )
+
+          // debugger
+          // d3.select(this)
+          //   .attr("x", targetX ).attr("y", targetY )
+          //   .call(d3.drag()
+          //     .on("start", self.reDragstarted )
+          //     .on("drag", self.dragged)
+          //     .on("end", self.dragended)
+          //   )
+        } else {
+          d3.select(this).attr("x", self.startX ).attr("y", self.startY )
+        }
+        // console.log("dragended range true");
+
       }
       reDragstarted(d) {
         d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
@@ -75,31 +119,48 @@
             svg = d3.select(this.$.createSvg)
                     .attr('width', innerWidth)
                     .attr('height', svgHeight),
-            boardWidth = innerWidth*0.6,
+            boardWidth = innerWidth*0.6 > svgHeight ? svgHeight : innerWidth*0.6,
             resWidth = innerWidth*0.4;
 
         svg.selectAll('g').data(["board", "resImages"]).enter()
             .append('g').attr('id', (d, i) => d)
             .attr('width', (d, i) => d === "board" ? boardWidth : resWidth)
             .attr('height', svgHeight)
-
+            .exit()
 
         let board = svg.select("#board"),
             resImages = svg.select("#resImages"),
             backgroundImg = manifest.find(d => d.background).src,
             resImagesData = manifest.filter(d => !d.background)
 
-
         board.attr('transform', "translate(0 , 0)")
-        board.append('image').attr("xlink:href", backgroundImg)
-             .attr('x', 0).attr('y', `${(svgHeight-boardWidth)/2}`)
+        let boardImageCenter = (svgHeight-boardWidth)/2,
+            boardImage = board.append('image').attr("xlink:href", backgroundImg)
+             .attr('x', 0).attr('y', boardImageCenter)
              .attr('width', boardWidth)
+             .attr('height', boardWidth)
+
+        let reAxis = boardImage.node().getBBox().width/14;
+
+        let cirGroup = board.selectAll('g')
+             .data(data).enter()
+             .append('g')
+
+        cirGroup.append('circle')
+           .attr('fill', 'gray')
+           .attr("r", 5)
+           .attr("cx", (d, i) => d[0]*reAxis )
+           .attr("cy", (d, i) => boardImageCenter+d[1]*reAxis)
+
+        cirGroup.append("circle")
+            .attr("r", 30).attr("opacity", 0.0)
+            .attr("cx", (d, i) => d[0]*reAxis )
+            .attr("cy", (d, i) => boardImageCenter+d[1]*reAxis)
+
+        this.set('circles', board.node().childNodes)
 
         let rangeXmit = Math.floor(resWidth/(128*0.6)), //3
             resNums = resImagesData.length;
-
-        //FIXME : resImages.getBBox()에서 width 로 중앙정렬
-        resImages.attr('transform', (d, i) => `translate(${boardWidth+(resWidth-(128*0.6*rangeXmit))}, ${(svgHeight-boardWidth)/2})`)
 
         let axis = []
         for(var i = 0; i < 13; i++ ){
@@ -121,6 +182,14 @@
                .on("drag", this.dragged)
                .on("end", this.dragended)
              );
+
+         //FIXME : resImages.getBBox()에서 width 로 중앙정렬
+         // debugger
+         let resImagesGabfromBorad = (resWidth-resImages.node().getBBox().width)/2
+         resImages.attr('transform', (d, i) => `translate(${boardWidth+resImagesGabfromBorad}, ${(svgHeight-boardWidth)/2})`)
+
+         this.set('boardWidth', boardWidth)
+         this.set('resImagesGabfromBorad', resImagesGabfromBorad)
       }
     }
     window.customElements.define(CreateImageGame.is, CreateImageGame);
