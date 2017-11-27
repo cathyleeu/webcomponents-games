@@ -1,0 +1,58 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+<dom-module id="create-image-axis">
+  <template>
+    <style>
+    </style>
+    <svg id="createSvg"></svg>
+  </template>
+  <script>
+    class CreateImageAxis extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'create-image-axis'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        let { innerHeight, innerWidth } = window;
+        this.set("boardSize", innerWidth*0.6 > innerHeight ? innerHeight : innerWidth*0.6)
+        this.set("dots",[])
+      }
+      returnAxis(){
+        console.log(this.dots.join());
+      }
+      getMouseEvent(){
+        let self = d3.select('#element').node()
+        self.push('dots', `[${+((d3.event.x/self.boardSize)*100).toFixed(2)},${+((d3.event.y/self.boardSize)*100).toFixed(2)}]`)
+        d3.select(this.parentElement).append('circle')
+           .attr('fill', 'gray')
+           .attr("r", 10)
+           .attr("cx", d3.event.x )
+           .attr("cy", d3.event.y )
+
+      }
+      setData(data, manifest){
+        let { innerHeight, innerWidth } = window,
+            svg = d3.select(this.$.createSvg).attr('width', innerWidth).attr('height', innerHeight);
+
+        let boardImage = svg.append('image').attr("xlink:href", manifest)
+             .attr('x', 0).attr('y', 0)
+             .attr('width', this.boardSize)
+             .attr('height', this.boardSize)
+             .on('click', this.getMouseEvent)
+      }
+    }
+    window.customElements.define(CreateImageAxis.is, CreateImageAxis);
+  </script>
+</dom-module>
