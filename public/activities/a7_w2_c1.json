@@ -7,7 +7,7 @@
   "attributes": {
     "max" : 4,
     "lastStage" : 2,
-    "nextlink" : "a7_w2_c2"
+    "nextlink" : "activity#!a7_w2_c2"
   },
   "manifest": [
     {"id": "grain1", "src": "/img/a7_w2/grain1.png", "result": true},
@@ -30,7 +30,7 @@
   "msg": {
     "ko": {
       "title": "가을 곡식과 열매를 알아보아요",
-      "subtitle": "아래의 그림 중 곡식을 클릭하세요.",
+      "minor": "아래의 그림 중 곡식을 클릭하세요.",
       "guide": "힌트! 아래의 카드 중 곡식은 $ 가지가 있어요!",
       "score": "점수",
       "success": "참 잘했어요!",
@@ -50,11 +50,12 @@
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "다음 단계",
-      "noticeAlert" : "아직 선택할 것이 남았어요!"
+      "noticeAlert" : "아직 선택할 것이 남았어요!",
+      "fullscreen" : "풀스크린"
     },
     "en": {
       "title": "Learn about autumn fruits and grains",
-      "subtitle": "Click the grains in the below pictures",
+      "minor": "Click the grains in the below pictures",
       "guide": "Hint! There are $ grains in the below Pictures.",
       "score": "score",
       "success": "Good job!",
@@ -74,7 +75,8 @@
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
       "finalbtn" : "Next Stage",
-      "noticeAlert" : "You need to select more!"
+      "noticeAlert" : "You need to select more!",
+      "fullscreen" : "fullscreen"
     }
   }
 }

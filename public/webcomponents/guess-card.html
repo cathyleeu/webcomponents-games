@@ -1,36 +1,50 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
-<link rel="import" href="./status-bar.html">
+<!-- <link rel="import" href="./status-bar.html"> -->
 <link rel="import" href="./modal.html">
 
 <dom-module id="guess-card">
   <template>
     <style>
         .header {
+          background-color: #263647;
+          padding: 10px 0 5px;
+          color: white;
+        }
+        .subHeader, .header {
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: row;
-          margin-top: 10px;
+          height: 90px;
+          width: 100%;
         }
-        h3 , p{
-          margin: 1em;
-          /*font-weight: 400;*/
+        .subHeader {
+          margin-top: 30px;
+        }
+        .subHeader > h1 {
+          font-size: 50px;
+          line-height: 90px;
+        }
+        .header> h1 {
+          font-size: 60px;
+          line-height: 90px;
+          margin: 0;
         }
       #guess_box {
-        margin: 10em 0;
+        margin: 12em 0;
         display: flex;
         flex-direction: row;
       }
       #guess_box > div {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         cursor: pointer;
       }
       #guess_box > div > p {
         text-align: center;
-        font-size: 30px;
-        line-height: 50px;
+        font-size: 50px;
+        line-height: 60px;
         font-weight: 800;
       }
       .container {
@@ -46,16 +60,16 @@
         font-weight: 500;
       }
       .miss_text{
-        margin: -50px;
+        margin: -60px;
         font-weight: 700;
       }
       .miss_select_text {
-        margin: -50px;
+        margin: -60px;
         font-weight: 700;
         color: red;
       }
     </style>
-    <status-bar
+    <!-- <status-bar
       title="{{localize('title')}}"
       lefted="{{localize('lefted')}}"
       hasname="{{handleCheckName()}}"
@@ -65,9 +79,26 @@
       purpose="select"
       cards="{{cards}}"
       on-modal="handleModal"
-      ></status-bar>
+      ></status-bar> -->
+    <toycode-modal
+      id="retryModal"
+      purpose="retryReset"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
     <div class="header">
-      <h3>{{localize('subtitle')}}</h3>
+      <h1>{{localize('title')}}</h1>
+    </div>
+    <div class="subHeader" id="subTitle">
+      <h1>{{localize('subtitle')}}</h1>
     </div>
     <div class="container">
       <div id="guess_box"></div>
@@ -88,12 +119,20 @@
         }
       }
     }
+    ready() {
+      super.ready();
+      this.set('click', 0)
+    }
     reset(){
       d3.select(this.$.guess_box).selectAll('div').remove()
-      this.setData( false , 16 )
+      this.setData( false , this.manifest )
+      this.set('click', 0)
     }
     handleClickCard(s, r){
-
+      this.set('click', this.click+1)
+      if(this.click > this.limit) {
+        return this.$.retryModal.modalAlert()
+      }
       let guessList = d3.select(this.shadowRoot).selectAll(".guess").nodes(),
           wholeDom = d3.select(this.$.guess_box).selectAll('div').nodes(),
           selEle = wholeDom.find(ele => +ele.dataset["num"] === s); //list[];
@@ -131,6 +170,7 @@
       }
     }
     setData(data, manifest){
+      this.set('manifest', manifest)
       let guessBox = d3.select(this.$.guess_box),
           randomNum = Math.floor(Math.random()*(manifest-0)) + 1;
       for(let i = 1; i < manifest+1; i++){

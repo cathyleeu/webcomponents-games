@@ -8,18 +8,18 @@
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "use_item",
-    "get_item"
+    "get_items",
+    "use_items"
   ],
   "map": [
-    "........",
-    "........",
-    "........",
-    ".######.",
+    "######.#",
+    ".##..###",
+    "#.####.#",
+    "#######.",
     "r)).%.%#",
     ".######.",
-    "........",
-    "........"
+    "##.##.##",
+    ".##..#.#"
   ],
   "extra":[{
     "x":1,
@@ -34,36 +34,16 @@
   },{
     "x":4,
     "y":4,
-    "img": "refrigerator"
+    "img": "refrigerator",
+    "useItem": true
   },{
     "x":6,
     "y":4,
-    "img": "refrigerator"
+    "img": "refrigerator",
+    "useItem": true
   }],
   "tutorial": [{
-    "msg:ko": "코봇은 과일을 먹어서 에너지가 충분해. \n분해, 패턴인식, 추상화, 알고리즘 단계의 사고를 거쳐 임무를 수행할 준비가 됐어.",
-    "msg:jp": "ゲットするアイテムがいくつかあるよ。",
-    "msg:en": "There are several things."
-  },{
-    "msg:ko": "나는 임무를 확인하고 싶어.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  },{
-    "msg:ko": "두 개의 열쇠를 가지고 두 개의 보물상자로 가서 그것들을 열어보자.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  },{
-    "msg:ko": "Tip: 열쇠로 가서 ‘가져오기 블록’을, 그 다음에 보물상자에 가서 ‘사용하기 블록’을 사용하면 돼.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  }],
-  "goal": {
-    "msg:ko": " 성공! “코봇의 임무: 어려움에 빠진 사람을 도와 세상을 지켜라.”",
-    "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the things",
-    "img": ["/img/b5_w1/tube.png","/img/b5_w1/ice_box.png","/img/blocks/bring.png"]
-  }
+    "msg:ko": "코봇은 과일을 먹어서 에너지가 충분해.\n분해, 패턴인식, 추상화, 알고리즘 단계의 사고를 거쳐 임무를 수행할 준비가 됐어.",
+    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_kiwi.png"]
+  }]
 }

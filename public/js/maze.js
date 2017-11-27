@@ -7,6 +7,7 @@ var d1,
     maze,
     kidscoding = new KidsCoding(),
     tileFactory = new TileFactory(),
+    drawFactory = new DrawFactory(),
     tutorial = null,
     tutorialIdx = 0,
     message_url = "",
@@ -16,7 +17,8 @@ var d1,
     resize_debounce = 50,
     resize_timeoutkey,
     blink_debounce = 50,
-    blink_timeoutkey;
+    blink_timeoutkey,
+    isMoving;
 
 page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
@@ -41,7 +43,8 @@ page('*', function(ctx, next) {
 
   d1 = $.Deferred();
   d2 = $.Deferred();
-  $.when( d1, d2 ).done(preInit);
+  d3 = $.Deferred();
+  $.when( d1, d2, d3 ).done(preInit);
 
   // load map json file
   $.getJSON(map_url, function(json) {
@@ -102,8 +105,7 @@ page('*', function(ctx, next) {
     });
   }).fail(function(jqXHR, msg, err) {
     console.log( "[" + msg + " - " + map_url + "]\n" + err.name + ": " + err.message);
-    alert("잘못된 주소입니다. 이전 페이지로 이동합니다.");
-    page(map_path.join("/") + "?" + map_qs);
+    alert("잘못된 경로로 접속하셨습니다.");
   });
 
   // load manifest.json file
@@ -113,6 +115,11 @@ page('*', function(ctx, next) {
     });
     var image_loader = new createjs.LoadQueue();
     var sound_loader = new createjs.LoadQueue();
+    var font_loader = new createjs.FontLoader({
+      src: ["/fonts/DSEG7Classic-Bold.woff", "/fonts/DSEG7Classic-Bold.eot"],
+      type: "font"
+    }, true);
+
     var getResult = image_loader.constructor.prototype.getResult;
     var newGetResult = function() {
       var result = getResult.apply(image_loader, arguments);
@@ -159,6 +166,11 @@ page('*', function(ctx, next) {
       }
     });
     sound_loader.getResult = newGetResult;
+
+    font_loader.on("complete", function() {
+      d3.resolve(font_loader);
+    });
+    font_loader.load();
   }).fail(function(jqXHR, msg, err) {
     throw( "[" + msg + " - " + manifest_url + "]\n" + err.name + ": " + err.message);
   });
@@ -208,12 +220,14 @@ function init() {
   document.title = /^\w\d/.test(map_path[0]) ? messages.kidsthinking : messages.kidscoding;
 
   tileFactory.init(maze, loader);
+  drawFactory.init(maze);
   if(store.get('character')) {
     message_url = decodeURIComponent(store.get('character'));
   }
   if(store.get('message_id')) {
     message_url = loader.getItem(store.get('message_id')).src;
   }
+  $(".noti-char").attr("src", message_url);
 
   initMaze();
   $("#runCode .start").show();
@@ -268,23 +282,24 @@ function init() {
       goal = maze.goal || maze.tutorial[maze.tutorial.length - 1],
       goal_msg = goal["msg" + (lang ? ":" + lang : "")] || goal["msg"];
   if(!$.isArray(goal.img)) {
-    goal.img = [goal.img];
+    goal.img = goal.img ? [goal.img] : [message_url];
   }
   $(".goal-imgs .goal-img").remove();
   goal.img.forEach(function(src, i) {
     $('<img class="goal-img">')
       .attr("src", src)
-      .css("width", (100 / goal.img.length).toFixed(2) + "%")
+      .css("max-width", (100 / goal.img.length).toFixed(2) + "%")
       .appendTo(".goal-imgs");
   });
   $(".side_guide .goal-msg").html(goal_msg.replace(/\n/g, "<br/>"));
   var queries = store.get("queries") || {};
   if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
-    setBitmapCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
+    tileFactory.setCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
   } else {
+    $("#runTutorial").removeClass("hidden");
     var fullscreen = store.get("fullscreen"),
         fullscreenElement =
             document.fullscreenElement ||
@@ -295,23 +310,25 @@ function init() {
       showModal({
         msg: messages.ask_fullscreen,
         confirm: true,
-        confirmYes: function() {
+        confirmYes: function(e) {
+          e.preventDefault();
+          e.stopPropagation();
           FullScreen();
           store.set('fullscreen', true)
-          $("#runTutorial").removeClass("hidden");
           runTutorial(maze.tutorial);
         },
-        confirmNo: function() {
+        confirmNo: function(e) {
+          e.preventDefault();
+          e.stopPropagation();
           store.set('fullscreen', false)
-          $("#runTutorial").removeClass("hidden");
           runTutorial(maze.tutorial);
         }
       });
     } else {
-      $("#runTutorial").removeClass("hidden");
       runTutorial(maze.tutorial);
     }
   }
+  isMoving = false;
   devtool.drawFinished();
 }
 
@@ -337,7 +354,8 @@ function initMaze() {
       items: [],
       foods: [],
       obstacles: [],
-      others: []
+      others: [],
+      drawings: []
     }
   };
   mazeInfo.canvas.stage.removeAllChildren();
@@ -371,7 +389,8 @@ function initMaze() {
       for(var j = 0; j < map_width; j++) {
         var idx = (i + j) % 2 + 1;
         var bg_tile = new createjs.Bitmap(loader.getResult("bg" + idx));
-        setBitmapCoord(bg_tile, j, i);
+        tileFactory.setScale(bg_tile);
+        tileFactory.setCoord(bg_tile, j, i);
         mazeInfo.canvas.stage.addChild(bg_tile);
       }
     }
@@ -408,7 +427,8 @@ function initMaze() {
           }
           bg_tile.image = loader.getResult("land"+arr[idx]);
         }
-        setBitmapCoord(bg_tile, j, i);
+        tileFactory.setScale(bg_tile);
+        tileFactory.setCoord(bg_tile, j, i);
         mazeInfo.canvas.stage.addChild(bg_tile);
       }
     }
@@ -450,22 +470,17 @@ function drawMaze() {
       }
     }
   }
+  if(maze.draw) {
+    maze.draw.forEach(function(item) {
+      var drawing = drawFactory.create(item);
+      canvas.drawings.push(drawing);
+      canvas.stage.addChild(drawing);
+    });
+  }
   // 캐릭터를 항상 위로
   canvas.stage.removeChild(canvas.character);
   canvas.stage.addChild(canvas.character);
   canvas.stage.update();
-}
-
-function setBitmapCoord(bitmap, px, py) {
-  var bounds = bitmap.getBounds();
-  bitmap.px = px;
-  bitmap.py = py;
-  bitmap.x = mazeInfo.tile_size * px + mazeInfo.tile_size / 2;
-  bitmap.y = mazeInfo.tile_size * py + mazeInfo.tile_size / 2;
-  bitmap.scaleX = mazeInfo.tile_size / bounds.width;
-  bitmap.scaleY = mazeInfo.tile_size / bounds.height;
-  bitmap.regX = bounds.width / 2;
-  bitmap.regY = bounds.height / 2;
 }
 
 function handle_resize(e) {
@@ -519,11 +534,11 @@ function handle_resize(e) {
       height: display_height,
       left: display_width + "px"
     });
-    $(".goal, .side_console").css({
-      "height": "50%",
-      "min-height": display_height*0.5
-      // left: display_width + "px"
-    });
+    // $(".goal, .side_console").css({
+    //   "height": "50%",
+    //   "min-height": display_height*0.5
+    //   // left: display_width + "px"
+    // });
     if(maze.type == "world") {
       $(".bottom-row").addClass("horizontal_world");
     } else {
@@ -597,7 +612,10 @@ function addEvents() {
     });
   });
   $(document).on("contextmenu mousewheel", function(e) {
-    e.preventDefault();
+    e.stopPropagation();
+    if($(e.target).closest(".goal").length == 0) {
+      e.preventDefault();
+    }
   });
   $(window).on("resize", function(e) {
     clearTimeout(resize_timeoutkey);
@@ -652,7 +670,6 @@ function addEvents() {
   $("#runCode").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
-    e.preventDefault();
     if($(this).find("i:visible").hasClass("fa-play")) {
       var blocks = kidscoding.workspace.getAllBlocks(),
           startblock = blocks.filter(function(block) {
@@ -716,7 +733,7 @@ function addEvents() {
       e.preventDefault();
     }
     e.stopPropagation();
-    if(createjs.Tween.hasActiveTweens()) {
+    if(isMoving || createjs.Tween.hasActiveTweens()) {
       return;
     }
     if(maze.type != "world" && maze.type != "game") {
@@ -729,6 +746,7 @@ function addEvents() {
       return;
     }
     e.preventDefault();
+    isMoving = true;
     kidscoding.Actions.delay = 100;
     kidscoding.Actions.move(direct, {}, function(obj) {
       if(maze.type == "game" && obj && obj.role == "food") {
@@ -748,6 +766,7 @@ function addEvents() {
             var lang = store.get("lang");
             store.set("queries", {});
             page(obj.link + ((lang && obj.link.split("/")[0] != map_path[0])? "?lang=" + lang : ""));
+            return;
           } else {
             // 문제 풀이 화면으로 넘어갈때 : back link를 저장
             store.set("queries", {
@@ -756,6 +775,7 @@ function addEvents() {
               y: mazeInfo.canvas.character.py
             });
             page(obj.link + "?back");
+            return;
           }
         } else {
           var msg = messages.fail_notEnough.split("%1").join(obj.min_score);
@@ -765,6 +785,7 @@ function addEvents() {
       if(obj && obj.tutorial) {
         runTutorial(obj.tutorial);
       }
+      isMoving = false;
     });
   }
   $(document).keydown(handleMove);
@@ -862,7 +883,6 @@ function runTutorial(input_tutorial) {
   tutorialIdx = 0;
 
   if(kidscoding.isHorizontal) {
-    $('#modal').modal('hide');
     $("#modal .tutorial").click();
   } else {
     var noti = $('.noti-guide');
@@ -895,7 +915,7 @@ function gameMode(loader, type, tileFactory) {
         for(i = 0; i < foods.length; i++) {
           if(foods[i].visible == false) {
             foods[i].visible = true;
-            tileFactory.setBitmapCoord(foods[i], x, y);
+            tileFactory.setCoord(foods[i], x, y);
             break;
           }
         }
@@ -1140,10 +1160,11 @@ function showModal(options) {
     $("#modal .modal-msg-box").show();
     $("#modal .modal-select").hide();
   }
-  var imgs = options.img || message_url;
+  var imgs = options.img;
   if(!$.isArray(imgs)) {
-    imgs = [imgs];
+    imgs = imgs ? [imgs] : [message_url];
   }
+
   $(".modal-msg-box img").remove();
   imgs.forEach(function(src) {
     $('<img class="modal-character">')
@@ -1178,7 +1199,7 @@ function checkMandatory(startblock, mandatory) {
     block = block.getNextBlock();
   } while(block);
   if(mandatory[0]) {
-    kidscoding.registerBlock(mandatory[0]);    
+    kidscoding.registerBlock(mandatory[0]);
   }
   return mandatory[0];
 }

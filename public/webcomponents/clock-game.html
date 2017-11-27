@@ -49,6 +49,7 @@
       }
     </style>
   <status-bar
+    id="statusBar"
     title="{{localize('title')}}"
     score="{{localize('score')}}"
     lefted="{{localize('lefted')}}"
@@ -59,6 +60,7 @@
     purpose="select"
     cards="{{cards}}"
     on-modal="handleModal"
+    fullscreen="{{localize('fullscreen')}}"
     ></status-bar>
     <toycode-modal
       id="retryModal"
@@ -98,7 +100,7 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
-    <div class="header">
+    <div class="header" id="subTitle">
       <h3> Quiz [[stage]] </h3>
       <p>{{localize('subtitle')}}</p>
     </div>

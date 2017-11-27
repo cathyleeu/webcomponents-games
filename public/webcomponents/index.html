@@ -5,7 +5,9 @@
 <script type="text/javascript" src="/page/page.js"></script>
 <script type="text/javascript" src="/components/d3/d3.min.js"></script>
 <script type="text/javascript" src="/js/polyfill.min.js"></script>
+<script type="text/javascript" src="/webcomponents/activity-devtool.js"></script>
 <script type="text/javascript" src="/components/webcomponentsjs/webcomponents-lite.js"></script>
+<script type="text/javascript" src="/components/SoundJS/lib/soundjs-0.6.2.min.js"></script>
 <link rel="import" href="/components/polymer/polymer-element.html">
 <link rel="import" href="/components/app-localize-behavior/app-localize-behavior.html">
 </head>
@@ -29,7 +31,7 @@
 
 <body>
   <script>
-    // TODO: WebComponentsReady 이벤트와의 관계 조사후 적용 필요
+    window.$$$$ = new actTool(document);
     page('*', function(ctx, next) {
       var qs = Object.assign(...ctx.querystring.split("&").map(o=>o.split("=")).map(o=>({[o[0]]:o[1]})));
       var source = ctx.pathname;

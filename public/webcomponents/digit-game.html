@@ -61,6 +61,7 @@
 
     </style>
     <status-bar
+      id="statusBar"
       title="{{localize('title')}}"
       score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
@@ -71,6 +72,7 @@
       purpose="select"
       cards="{{cards}}"
       on-modal="handleModal"
+      fullscreen="{{localize('fullscreen')}}"
       ></status-bar>
       <toycode-modal
         id="retryModal"
@@ -102,7 +104,7 @@
         nobtn="{{localize('nobtn')}}"
         purpose="previous"
         ></toycode-modal>
-      <div class="header">
+      <div class="header" id="subTitle">
         <h3> Quiz [[stage]] </h3>
         <p>{{localize('subtitle')}}</p>
       </div>
@@ -134,7 +136,7 @@
         this.setData( this.data , this.manifest)
       }
       setData( data , manifest){
-        this.set('data', data) // 객관식 수 
+        this.set('data', data) // 객관식 수
         this.set('manifest', manifest)
 
         // range : 한자리 수, 두 자리수 정해 줌

@@ -10,30 +10,21 @@
     "rotate_right"
   ],
   "map": [
-    "........",
-    "..#.....",
-    ".#d#....",
-    ".#.#....",
-    ".#.#....",
-    ".#..%....",
-    "..##....",
-    "........"
+    "#.#..##",
+    "##d####",
+    ".#.####",
+    "##.#.##",
+    "##..%##",
+    "#.##.##",
+    "#####.#"
   ],
   "extra":[{
     "x": 4,
-    "y": 5,
+    "y": 4,
     "img":"fruit_strawberry"
   }],
   "tutorial": [{
     "msg:ko": "나는 코봇이야. 나는 과일을 좋아해.\n나는 딸기를 먹고 싶어.\n내가 먹고 싶은 딸기로 가보자.",
-    "msg:jp": "アイスボックスのところまで行こう。",
-    "msg:en": "Go to the ice box.",
-    "img": "/img/b5_w1/ice_box.png"
-  }],
-  "goal": {
-    "msg:ko": "성공",
-    "msg:jp": "アイスボックスのところで「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the ice box",
-    "img": ["/img/b5_w1/ice_box.png","/img/blocks/bring.png"]
-  }
+    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_strawberry.png"]
+  }]
 }

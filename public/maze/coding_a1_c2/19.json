@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,move_forward(3),rotate_right,move_forward(2),rotate_left,move_forward(3)",
+  "problem": "start,move_forward(*),empty,move_forward(*),empty,move_forward(*)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "##.#d##",
+    "###...#",
+    ".##.###",
+    "##...##",
+    "#..##.#",
+    "##...#",
+    "##%##.#"
+  ],
+  "extra":[{
+    "x" : 2,
+    "y" : 6,
+    "img" : "fruit_apple"
+  }],
+  "tutorial": [{
+    "msg:ko": "사과나무로 가보자!"
+  }]
+}

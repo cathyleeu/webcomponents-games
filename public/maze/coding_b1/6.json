@@ -13,14 +13,14 @@
     "item_scissors"
   ],
   "map": [
-    "........",
-    "..#.....",
-    ".#d#....",
-    ".#.#....",
-    ".#.##...",
-    ".#.R.%..",
-    "..###...",
-    "........"
+    "########",
+    "#.#.####",
+    "##d#..##",
+    "##.#####",
+    "##.##.##",
+    "##.R.%.#",
+    "#.###.##",
+    "########"
   ],
   "extra":[{
     "x": 5,
@@ -29,18 +29,6 @@
   }],
   "tutorial": [{
     "msg:ko": "이번에는 수박이 먹고 싶어.\n내가 먹고 싶은 수박으로 가보자.",
-    "msg:jp": "ゲットするアイテムがいくつかあるよ。",
-    "msg:en": "There are several things."
-  },{
-    "msg:ko": "Tip: 고양이 봄이와 가위바위보를 해서 이겨야 지나갈 수 있어.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  }],
-  "goal": {
-    "msg:ko": "가져올 물건 위에서 '가져오기' 블록을 사용하자.",
-    "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the things",
-    "img": ["/img/b5_w1/fishing_rod.png","/img/b5_w1/life_jacket.png","/img/blocks/bring.png"]
-  }
+    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_watermelon.png"]
+  }]
 }

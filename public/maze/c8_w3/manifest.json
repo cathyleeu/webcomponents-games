@@ -38,5 +38,6 @@
   {"id": "granfa_bad", "src": "/img/c8_w3/granfa_bad.png"},
   {"id": "granma_bad", "src": "/img/c8_w3/granma_bad.png"},
   {"id": "granfa_house", "src": "/img/c8_w3/granfa_house.png"},
-  {"id": "granma_house", "src": "/img/c8_w3/granma_house.png"}
+  {"id": "granma_house", "src": "/img/c8_w3/granma_house.png"},
+  {"id": "support", "src": "/img/c8_w3/support.png"}
 ]

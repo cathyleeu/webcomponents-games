@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,rotate_right,move_forward(5),rotate_left,move_forward(3)",
+  "problem": "start,empty,move_forward(*),empty,move_forward(*)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    ".##.###",
+    "#.###%.",
+    "####..#",
+    "##.##.#",
+    "u.....#",
+    "####.##",
+    "##.####"
+  ],
+  "extra":[{
+    "x" : 5,
+    "y" : 1,
+    "img" : "cloud"
+  }],
+  "tutorial": [{
+    "msg:ko": "구름으로 가보자!"
+  }]
+}

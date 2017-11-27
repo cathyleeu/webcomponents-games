@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": "start",
+  "solution": "start,move_forward(5),rotate_left,move_forward(4),rotate_left,move_forward(2)",
+  "problem": "start,move_forward(*),empty,move_forward(*),empty,move_forward(*)",
+  "toolbox": [
+    "move_forward",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "##.#.##",
+    "##.%..#",
+    ".##.#.#",
+    "###.#..",
+    "#.###.#",
+    "r.....#",
+    "##.##.#"
+  ],
+  "extra":[{
+    "x" : 3,
+    "y" : 1,
+    "img" : "earth"
+  }],
+  "tutorial": [{
+    "msg:ko": "지구로 가보자!"
+  }]
+}

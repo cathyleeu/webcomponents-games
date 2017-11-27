@@ -140,12 +140,9 @@ devtool.prototype.getInstructions = function(name) {
       tutorial = $$$.kidscoding.tileFactory.maze.tutorial,
       img = $$$.kidscoding.Actions.loader.getResult("message"),
       data;
-  tutorial = tutorial.map(function(item) {
-    return item["msg:" + lang];
-  });
   data = {
     image: this._getBase64Image(img),
-    instructions: tutorial
+    instructions: [tutorial[0]["msg:"+lang]]
   };
   name = name || location.hash.slice(2).replace(/\//g, "_") + "_instruction";
   if($$$.setting.download == "base64") {
@@ -261,7 +258,10 @@ devtool.prototype._downloadBlocks = function(target, fileName, state) {
   if(target == "workspace" && state) {
     this.updateWorkspace(state);
   }
-  $svg = $($("svg.blocklySvg").get(0).cloneNode(true)),
+
+  $svg = $($("svg.blocklySvg").get(0).cloneNode(true));
+  $svg.find(".blocklyTrash,.blocklyZoom,.blocklyBubbleCanvas,.blocklyScrollbarVertical").remove();
+
   bbox = ( target == "toolbox" ?
       $("svg.blocklySvg .blocklyFlyout .blocklyWorkspace") :
       $("svg.blocklySvg>.blocklyWorkspace>.blocklyBlockCanvas") ).get(0).getBBox(),
@@ -272,12 +272,11 @@ devtool.prototype._downloadBlocks = function(target, fileName, state) {
     el.style.cssText = cssEmpty;
   });
   $svg.find("[data-argument-type=text]>.blocklyEditableText>.blocklyText").each(function(idx, el) {
-    el.style.cssText = "text-decoration: underline;";
+    el.style.cssText = "font-family: monospace;";
   });
   $svg.find(".blocklyPath.empty~.blocklyText").each(function(idx, el) {
-    el.style.cssText = "fill: black; text-decoration: underline;";
+    el.style.cssText = "fill: black; text-decoration: font-family: monospace;";
   });
-  $svg.find(".blocklyTrash,.blocklyZoom,.blocklyBubbleCanvas,.blocklyScrollbarVertical").remove();
   if(target == "toolbox") {
     $svg.children("g").children().not(".blocklyFlyout").remove();
     $svg.find(".blocklyFlyoutBackground").remove();
@@ -285,10 +284,34 @@ devtool.prototype._downloadBlocks = function(target, fileName, state) {
       "transform": "translate(-" + bbox.x + ",-" + bbox.y + ")",
       "clip-path": ""
     });
+    var top = 0,
+        left = 0,
+        maxWidth = 0,
+        maxHeight = 0;
+    $svg.find(".blocklyDraggable").map(function(idx, el) {
+      var coord = el.getAttribute("transform").match(/(\d*),(\d*)/);
+      if(idx % 3 == 0) {
+        top = Number(coord[2]);
+        left = 12 + idx / 3 * 220;
+      }
+      el.setAttribute("transform", "translate(" + left + "," + (Number(coord[2]) - top + 12) + ")");
+      if(maxWidth < left + 220) {
+        maxWidth = left + 220;
+      }
+      if(maxHeight < Number(coord[2]) - top + 12 + 60) {
+        maxHeight = Number(coord[2]) - top + 12 + 60;
+      }
+    });
+    bbox = {
+      width: maxWidth,
+      height: maxHeight
+    };
   } else if(target == "workspace") {
     $svg.children("g").children().not(".blocklyBlockCanvas").remove();
     $svg.find(".blocklyBlockCanvas").removeAttr("transform");
-    $svg.find(".blocklyBlockCanvas>g").attr("transform", "translate(0,20)");
+    var block = $svg.find(".blocklyBlockCanvas>g"),
+        hasHat = block.attr("data-shapes") === "hat";
+    block.attr("transform", hasHat ? "translate(0,20)" : "translate(0,0)");
   }
   $svg.attr("width", bbox.width + "px");
   $svg.attr("height", bbox.height + "px");

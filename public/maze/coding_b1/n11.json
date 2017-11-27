@@ -1,0 +1,36 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution":"start",
+  "problem": "start,one_digit,sub_digit(*,*),ten_digit,sub_digit(*,*),hundred_digit,sub_digit(*,*)",
+  "toolbox": [
+    "one_digit",
+    "ten_digit",
+    "hundred_digit",
+    "sub_digit"
+  ],
+  "tile": [
+    {"letters": "0123456789+-"},
+    {"tile": "A", "text": "1000\n의 자리", "color": "white", "fillColor": "#1489a5", "strokeWidth": 1, "strokeColor": "white"},
+    {"tile": "B", "text": "100\n의 자리", "color": "white", "fillColor": "#995ba5", "strokeWidth": 1, "strokeColor": "white"},
+    {"tile": "C", "text": "10\n의 자리", "color": "white", "fillColor": "#745ba5", "strokeWidth": 1, "strokeColor": "white"},
+    {"tile": "D", "text": "1\n의 자리", "color": "white", "fillColor": "#5b67a5", "strokeWidth": 1, "strokeColor": "white"},
+    {"tile": "%", "text": "★", "img": ""}
+  ],
+  "draw": [
+    {"type": "edgeline", "paths": [[1,4],[5,4]], "strokeWidth": 8, "strokeColor": "black"}
+  ],
+  "map": [
+    ".ABCD.",
+    "......",
+    "..868.",
+    ".-225.",
+    ".____.",
+    "%....l"
+  ],
+  "extra":[],
+  "tutorial": [{
+    "msg:ko": "868 - 225"
+  }]
+}

@@ -8,47 +8,31 @@
     "move_forward",
     "rotate_left",
     "rotate_right",
-    "use_item",
-    "get_item"
+    "get_items",
+    "use_items"
   ],
   "map": [
     ".)...%#d",
     ".####.#.",
-    ".#....#.",
-    ".#....#.",
-    ".#....#.",
-    ".#....#.",
+    ".##..##.",
+    ".#.##.#.",
+    ".#.##.#.",
+    ".##..##.",
     ".######.",
     "........"
   ],
   "extra":[{
     "x" : 5,
     "y" : 0,
-    "img": "grandma"
+    "img": "grandma",
+    "useItem": true
   }, {
     "x" : 1,
     "y" : 0,
     "img": "fruit_orange"
   }],
   "tutorial": [{
-    "msg:ko": "코봇은 안테나를 통해 어려움에 빠진 사람을 찾고 있어. 코봇은 부상을 당해 움직이지 못하는 할머니를 발견했어.",
-    "msg:jp": "ゲットするアイテムがいくつかあるよ。",
-    "msg:en": "There are several things."
-  },{
-    "msg:ko": "휠체어를 가지고 할머니에게 가서 할머니를 휠체어에 태워드리자.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  },{
-    "msg:ko": "Tip: 휠체어로 가서 ‘가져오기 블록’을, 그 다음에 할머니에게 가서 ‘사용하기 블록’을 사용하면 돼.",
-    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
-    "img": "/img/blocks/bring.png"
-  }],
-  "goal": {
-    "msg:ko": "성공!",
-    "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the things",
-    "img": ["/img/b5_w1/fishing_rod.png","/img/b5_w1/life_jacket.png","/img/blocks/bring.png"]
-  }
+    "msg:ko": "할머니에게 오렌지를 전달해드리자.",
+    "img": ["/img/b4/f_granma.png", "/img/c4_w1_c3/fruit_orange.png"]
+  }]
 }

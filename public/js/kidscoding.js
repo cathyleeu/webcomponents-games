@@ -13,7 +13,7 @@ KidsCoding = function() {
     this.blockType = "vertical";
   }
   if(this.blockType == "horizontal") {
-    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 200;
+    Blockly.VerticalFlyout.prototype.DEFAULT_WIDTH = 240;
     Blockly.Flyout.prototype.MARGIN = 20;
     Blockly.Colours.flyout = "#EEEEEE";
 
@@ -94,9 +94,12 @@ KidsCoding = function() {
   }
   if(this.blockType != "default") {
     var translateSurface = Blockly.DragSurfaceSvg.prototype.translateSurface;
+    var isIE = !!(navigator.userAgent.match(/MSIE |Trident\/|Edge\//));
     Blockly.DragSurfaceSvg.prototype.translateSurface = function(x, y) {
       translateSurface.call(this, x, y);
-      if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == parseInt($("#maze-container .workspace").css("left")) && this.SVG_.getBoundingClientRect().right == $(document).width())) {
+      if(isIE && _this.blockType == "vertical") {
+        this.SVG_.setAttribute("style", this.SVG_.getAttribute("style") + ";left:" + _this.workspace.getFlyout().getWidth() + "px");
+      } else if(this.SVG_.style.left || (this.SVG_.getBoundingClientRect().left == parseInt($("#maze-container .workspace").css("left")) && this.SVG_.getBoundingClientRect().right == $(document).width())) {
         // 안드로이드 구형 브라우저 및 IE에서 터치 위치와 블럭 위치가 맞지 않는 현상 수정
         // SEE: https://gitlab.com/toycode/kidscoding/merge_requests/638
         if(_this.blockType == "vertical") {
@@ -235,12 +238,18 @@ KidsCoding.prototype = {
     }).join(" ");
     var value_str = "",
         statements_str = "",
-        child_str = "";
+        child_str = "",
+        idx = 0;
     Blocks[block.type].args0.forEach(function(arg) {
+
       var arg_type = arg.type,
           field_name = arg.name,
-          field_value = args[0] || (arg.options ? arg.options[0][0] : ""),
+          field_value = args[idx] || (arg.options ? arg.options[0][1] : ""),
           shadow_type = block.type + "_" + arg.name;
+      // args는 field_dropdown이나 input_value일 경우에만 적용되도록 함
+      if(arg_type == "field_dropdown" || arg_type == "input_value") {
+        idx++;
+      }
       // scratch-blocks에서는 field_dropdown일 경우 shadow 블록 추가 필요
       if(_this.blockType != "default" && arg.type == "field_dropdown") {
         arg_type = "input_value";
@@ -258,9 +267,9 @@ KidsCoding.prototype = {
       }
       // 입력값이 *일 경우 빈칸 처리
       // TODO: default 타입에서의 처리 필요
-      if(args[0] === "*" && arg_type == "input_value") {
-        shadow_type = block.type + "_empty";
-        field_value = new Array(7).join("\u00A0");
+      if(field_value === "*" && arg_type == "input_value") {
+        shadow_type = shadow_type + "_empty";
+        field_value = new Array(4).join("_");
         Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
@@ -273,7 +282,7 @@ KidsCoding.prototype = {
       if(block.type == "empty") {
         arg_type == "input_value"
         shadow_type = block.type + "_emptyblock";
-        field_value = new Array(28).join("\u00A0");
+        field_value = new Array(16).join("_");
         Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
@@ -286,7 +295,7 @@ KidsCoding.prototype = {
       // scratch-blocks에서는 arg_type을 input_value로 바꾸어 주어야 함
       if(arg_type == "input_value") {
         arg.type = "input_value";
-        value_str = '<value name="' + field_name + '">' +
+        value_str += '<value name="' + field_name + '">' +
           '<shadow type="' + shadow_type + '">' +
           '<field name="' + field_name + '">' + field_value + '</field>' +
           '</shadow>' +

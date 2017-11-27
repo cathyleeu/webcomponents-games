@@ -1,3 +1,6 @@
+@font-face{font-family:'DSEG7 Classic-Bold'; src:url('/fonts/DSEG7Classic-Bold.woff')}
+@font-face{font-family:'DSEG7 Classic-Bold'; src:url('/fonts/DSEG7Classic-Bold.eot')}
+
 html {
   -ms-content-zooming: none; /* Disables zooming */
   -ms-touch-action: none;   /* Disable any special actions on tap/touch */
@@ -200,21 +203,31 @@ html {
       font-size: 15px;
       font-weight: bold;
       color: black;
+      z-index: 110;
       background: url(/img/goal.png) no-repeat center top;
       -webkit-background-size: contain;
       -moz-background-size: contain;
       -o-background-size: contain;
       background-size: contain;
     }
+    .goal {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
     .goal-imgs {
-      margin: 20px 0;
+      position: relative;
+      max-width: 512px;
+      margin: 0 auto;
       .goal-img {
-        width: 100%;
-        max-width: 120px;
+        width: 50%;
+        max-height: 100%;
       }
     }
     .goal-div {
-      padding: 0 10px;
+      position: relative;
       .goal-msg {
         color: black;
         font-size: 30px;
