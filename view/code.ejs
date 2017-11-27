@@ -346,7 +346,7 @@ if(location.pathname == "/code" && location.hash) {
           sClassName = {
             "kidsthinking": "키즈씽킹",
             "kidscoding": "키즈코딩"
-          }[hash];
+          }[hash.split("&")[0]];
           showBook();
         }
       } else {
