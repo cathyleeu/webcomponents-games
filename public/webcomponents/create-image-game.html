@@ -7,6 +7,16 @@
 <dom-module id="create-image-game">
   <template>
     <style>
+      button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        background: #5c2131;
+        bottom: 10px;
+        right: 10px;
+        outline: none;
+        color: white;
+      }
     </style>
     <status-bar
       id="statusBar"
@@ -22,7 +32,9 @@
       on-modal="handleModal"
       fullscreen="{{localize('fullscreen')}}"
     ></status-bar>
+    <button onclick="[[exportImage]]">출력하기</button>
     <svg id="createSvg"></svg>
+    <canvas id="canvas"></canvas>
   </template>
   <script>
     class CreateImageGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -37,159 +49,172 @@
           }
         }
       }
+      ready() {
+        super.ready();
+        let { innerHeight, innerWidth } = window,
+            size = {
+              svgHeight : innerHeight-this.$.statusBar.getBoundingClientRect().height,
+              resWidth : innerWidth*0.4
+            }
+            size["boardSize"] = innerWidth*0.6 > size.svgHeight ? size.svgHeight : innerWidth*0.6;
+            size["imageItemSize"] = size.boardSize/7;
+            size["boardImageCenter"] = (size.svgHeight-size.boardSize)/2;
+            size["reAxis"] = size.boardSize/100;
+
+        this.set("size", size)
+      }
+      exportImage(){
+        // FIXME: 이미지 크기 조정
+        let element = d3.select('#element').node(),
+            svg = d3.select(element.shadowRoot).select("#createSvg").node();
+        console.log("exportImage");
+        let targetNodes = []
+        svg.childNodes.forEach(el => {
+          if(el.id === "background" || el.dataset.item){
+            targetNodes.push(el)
+          }
+        })
+        let { boardSize, imageItemSize } = element.size;
+        var canvas = d3.select(element.shadowRoot).select("#canvas").node();
+        canvas.width = element.size.boardSize;
+        canvas.height = element.size.boardSize;
+        var ctx = canvas.getContext("2d");
+        targetNodes.forEach((el) => {
+          let { x, y, width, height } = el.getBBox()
+          let img = new Image();
+              img.src = el.href.animVal;
+          let imgRatio = el.id === "background" ? img.width/boardSize : img.width/imageItemSize
+          ctx.drawImage( img, 0, 0, width*imgRatio, height*imgRatio, x, y, width, height )
+        })
+        var png = canvas.toDataURL("image/png");
+        var link = document.createElement("a");
+        link.href = png;
+        link.download = "";
+        link.click();
+        link = null
+      }
       dragstarted(d) {
         let self = d3.select('#element').node(),
-            newX = this.x.animVal.value,
-            newY = this.y.animVal.value;
+            { imageItemSize } = self.size,
+            startX = this.x.animVal.value,
+            startY = this.y.animVal.value;
 
-        self.set('startX', newX)
-        self.set('startY', newY)
-        d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
-
-        d3.select(this.parentElement).append('image').attr("xlink:href", this.href.animVal)
-          .attr('width', `${128*0.6}`).attr('height', `${128*0.6}`)
-          .attr('x', newX ).attr('y', newY )
-          .call(d3.drag()
-            .on("start", self.dragstarted)
-            .on("drag", self.dragged)
-            .on("end", self.dragended)
-          );
+        self.set('startX', startX)
+        self.set('startY', startY)
+        d3.select(this).attr("x", d3.event.x-(imageItemSize/2)).attr("y", d3.event.y-(imageItemSize/2));
       }
       dragged(d){
-        d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
+        let self = d3.select('#element').node(),
+            { imageItemSize } = self.size;
+        d3.select(this).attr("x", d3.event.x-(imageItemSize/2)).attr("y", d3.event.y-(imageItemSize/2));
       }
       dragended(d){
-        console.log("dragended");
-        let resetImage = this.dataset.board,
-            self = d3.select('#element').node(),
-            getX = resetImage ? d3.event.x : d3.event.x+self.boardWidth+self.startX,
-            getY = resetImage ? d3.event.y : d3.event.y+self.circles[0].y.animVal.value;
-        // debugger
-        console.log(self.boardWidth, self.resImagesGabfromBorad);
-        let targetEl, targetX, targetY, result,
-            cir = [].slice.call(self.circles, 1, self.circles.length);
-        cir.forEach(el => {
+        let self = d3.select('#element').node(),
+            { imageItemSize } = self.size,
+            getX = d3.event.x, getY = d3.event.y;
+
+        let targetEl, targetX, targetY, result;
+        self.circleDom.forEach(el => {
           const getEl = el.getBBox();
-          // debugger
-          // self.
-          if(getEl.x < getX && getX < getEl.x + getEl.width && getEl.y < getY && getY < getEl.y + getEl.height) {
-            // debugger
-            console.log("dragended range true");
+          if(getEl.x < getX && getX < getEl.x + getEl.height && getEl.y < getY && getY < getEl.y + getEl.height ) {
+            if(el.dataset.circle){
+              return false
+            }
             targetEl = el;
             targetX = getEl.x;
             targetY = getEl.y;
-            // debugger
+            d3.select(el).attr('data-circle', "used")
+            console.log("%cAAAA"+"%c dragended range true", "background:#ff8772; color:white;", "color:black;");
           }
         })
         if(targetEl){
-          console.log("targeted!!!");
-          d3.select(this).remove()
-          d3.select(self.shadowRoot).select("#board").append('image')
-            .attr('data-board', true)
-            .attr("xlink:href", this.href.animVal)
-            .attr('width', `${128*0.6}`).attr('height', `${128*0.6}`)
-            .attr("x", targetX-5 ).attr("y", targetY-5 )
-            .call(d3.drag()
-              .on("start", self.reDragstarted )
-              .on("drag", self.dragged)
-              .on("end", self.dragended)
-            )
+          if(!this.dataset.item) {
+            let rename = this.id.split("_")
+            d3.select(this.parentElement).append('image').attr("xlink:href", this.href.animVal)
+              .attr('width', imageItemSize).attr('height', imageItemSize)
+              .attr('id', `${rename[0]}_${+rename[1]+1}`)
+              .attr('x', self.startX ).attr('y', self.startY )
+              .call(d3.drag()
+                .on("start", self.dragstarted)
+                .on("drag", self.dragged)
+                .on("end", self.dragended)
+              );
+            d3.select(this).attr("data-item", "used")
+          } else {
+              let targetCircle = self.circleDom.find(dom => dom.getBBox().x === self.startX && dom.getBBox().y === self.startY)
+              d3.select(targetCircle).attr('data-circle', null)
+          }
 
-          // debugger
-          // d3.select(this)
-          //   .attr("x", targetX ).attr("y", targetY )
-          //   .call(d3.drag()
-          //     .on("start", self.reDragstarted )
-          //     .on("drag", self.dragged)
-          //     .on("end", self.dragended)
-          //   )
+          d3.select(this).attr("x", targetX).attr("y", targetY)
         } else {
-          d3.select(this).attr("x", self.startX ).attr("y", self.startY )
+          console.log("%cBBBB"+"%c drag false", "background:blue; color:white;", "color:black;");
+          d3.select(this).attr('x', self.startX ).attr('y', self.startY )
         }
-        // console.log("dragended range true");
-
-      }
-      reDragstarted(d) {
-        d3.select(this).attr("x", d3.event.x-50).attr("y", d3.event.y-50);
-        console.log("reDragstarted");
+        console.log("%cCCCC"+"%c dragended", "background:purple; color:white;", "color:black;");
       }
       setData(data, manifest){
-        let { innerHeight, innerWidth } = window,
-            svgHeight = innerHeight-this.$.statusBar.getBoundingClientRect().height,
-            svg = d3.select(this.$.createSvg)
-                    .attr('width', innerWidth)
-                    .attr('height', svgHeight),
-            boardWidth = innerWidth*0.6 > svgHeight ? svgHeight : innerWidth*0.6,
-            resWidth = innerWidth*0.4;
+        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis } = this.size,
+            svg = d3.select(this.$.createSvg).attr('width', innerWidth).attr('height', svgHeight);
 
-        svg.selectAll('g').data(["board", "resImages"]).enter()
-            .append('g').attr('id', (d, i) => d)
-            .attr('width', (d, i) => d === "board" ? boardWidth : resWidth)
-            .attr('height', svgHeight)
-            .exit()
-
-        let board = svg.select("#board"),
-            resImages = svg.select("#resImages"),
-            backgroundImg = manifest.find(d => d.background).src,
+        let backgroundImg = manifest.find(d => d.background).src,
             resImagesData = manifest.filter(d => !d.background)
 
-        board.attr('transform', "translate(0 , 0)")
-        let boardImageCenter = (svgHeight-boardWidth)/2,
-            boardImage = board.append('image').attr("xlink:href", backgroundImg)
-             .attr('x', 0).attr('y', boardImageCenter)
-             .attr('width', boardWidth)
-             .attr('height', boardWidth)
+        this.set('backgroundImg', backgroundImg)
+        let boardImage = svg.append('image')
+             .attr("id", "background")
+             .attr("xlink:href", backgroundImg)
+             .attr('x', 0).attr('y', 0)
+             .attr('width', boardSize)
+             .attr('height', boardSize)
 
-        let reAxis = boardImage.node().getBBox().width/14;
-
-        let cirGroup = board.selectAll('g')
+        let cirGroup = svg.selectAll('g')
              .data(data).enter()
              .append('g')
+             .attr('data-axis', (d, i) => `dot${i}`)
 
         cirGroup.append('circle')
            .attr('fill', 'gray')
-           .attr("r", 5)
+           .attr("r", 10)
            .attr("cx", (d, i) => d[0]*reAxis )
            .attr("cy", (d, i) => boardImageCenter+d[1]*reAxis)
 
         cirGroup.append("circle")
-            .attr("r", 30).attr("opacity", 0.0)
+            .attr("r", imageItemSize/2).attr("opacity", 0.0)
             .attr("cx", (d, i) => d[0]*reAxis )
             .attr("cy", (d, i) => boardImageCenter+d[1]*reAxis)
 
-        this.set('circles', board.node().childNodes)
+        this.set('circleDom', cirGroup.nodes())
 
-        let rangeXmit = Math.floor(resWidth/(128*0.6)), //3
-            resNums = resImagesData.length;
+
+        let dragItems = resImagesData.length,
+            dragItemsRange = Math.floor(resWidth/imageItemSize),
+            dragItemVerticalMargin = boardSize+(resWidth-(dragItemsRange*imageItemSize))/2,
+            dragItemHorizontalMargin = (svgHeight-(Math.ceil(dragItems/dragItemsRange)*imageItemSize))/2;
 
         let axis = []
-        for(var i = 0; i < 13; i++ ){
-          for(var j = 0; j < 3; j++ ) {
-            if(axis.length >= resNums) {
+        for(var i = 0; i < dragItems; i++ ){
+          for(var j = 0; j < dragItemsRange; j++ ) {
+            if(axis.length >= dragItems) {
               break;
             }
             axis.push([i,j])
           }
         }
-
-        resImages.selectAll('image').data(resImagesData).enter()
-             .append('image').attr("xlink:href", (d, i) => d.src)
-             .attr('width', `${128*0.6}`).attr('height', `${128*0.6}`)
-             .attr('x', ( d, i ) => axis[i][1]*(128*0.6))
-             .attr('y', ( d, i ) => axis[i][0]*(128*0.6))
+        // 위에서 똑같이 data를 부르고 있을때, 새로운 data를 입력할때 전 data 에서 빠져나온후 (exit()) 후 새로운 data().enter()
+        let appendImages = svg.selectAll('image').exit()
+             .data(resImagesData).enter().append('image')
+             .attr("xlink:href", (d, i) => d.src)
+             .attr("id", (d,i) => `${d.name}_${i}`)
+             .attr('width', `${imageItemSize}`).attr('height', `${imageItemSize}`)
+             .attr('x', ( d, i ) => dragItemVerticalMargin+axis[i][1]*(imageItemSize))
+             .attr('y', ( d, i ) => dragItemHorizontalMargin+axis[i][0]*(imageItemSize))
              .call(d3.drag()
                .on("start", this.dragstarted)
                .on("drag", this.dragged)
                .on("end", this.dragended)
              );
 
-         //FIXME : resImages.getBBox()에서 width 로 중앙정렬
-         // debugger
-         let resImagesGabfromBorad = (resWidth-resImages.node().getBBox().width)/2
-         resImages.attr('transform', (d, i) => `translate(${boardWidth+resImagesGabfromBorad}, ${(svgHeight-boardWidth)/2})`)
 
-         this.set('boardWidth', boardWidth)
-         this.set('resImagesGabfromBorad', resImagesGabfromBorad)
       }
     }
     window.customElements.define(CreateImageGame.is, CreateImageGame);

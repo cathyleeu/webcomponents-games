@@ -1,29 +1,10 @@
 {
-  "element": "create-image-game",
+  "element": "create-image-axis",
   "attributes": {
   },
   "data": [
-    [53.52,20.18],[45.96,35.55],[63.54,49.09],
-    [93.36,49.48],[92.19,65.89],[93.75,80.73],
-    [92.58,6.64],[21.09,34.64],[34.64,50],[20.44,64.19],
-    [7.81,19.66],[8.33,77.73]
   ],
-  "manifest": [
-    {"src": "/img/a6_w1/road_bg.png", "background": true},
-    {"src": "/img/a6_w1/tree1.png", "name": "tree1" },
-    {"src": "/img/a6_w1/tree2.png", "name": "tree2" },
-    {"src": "/img/a6_w1/tree3.png", "name": "tree3" },
-    {"src": "/img/a6_w1/bd1.png", "name": "bd1" },
-    {"src": "/img/a6_w1/bd2.png", "name": "bd2" },
-    {"src": "/img/a6_w1/bd3.png", "name": "bd3" },
-    {"src": "/img/a6_w1/bd4.png", "name": "bd4" },
-    {"src": "/img/a6_w1/bd5.png", "name": "bd5" },
-    {"src": "/img/a6_w1/bus.png", "name": "bus" },
-    {"src": "/img/a6_w1/busstation.png", "name": "busstation" },
-    {"src": "/img/a6_w1/car.png", "name": "car" },
-    {"src": "/img/a6_w1/trainstation.png", "name": "trainstation" },
-    {"src": "/img/a6_w1/t_road.png", "name": "t_road" }
-  ],
+  "manifest": "/img/a6_w1/road_bg.png",
   "msg": {
     "ko": {
       "title": "마을을 만들어 보아요.",
