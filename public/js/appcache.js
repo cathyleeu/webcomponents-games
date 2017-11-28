@@ -3,12 +3,12 @@
   if(!appCache) {
     return;
   }
-  var new_manifest,
+  var new_manifest = null,
       new_contents,
       timeoutkey;
 
   function handleCacheEvent(e) {
-    if(e.type === 'downloading') {
+    if(e.type === 'downloading') { // 업데이트 시작
       var old_contents = store.get("contents"),
           hasAppCache = true;
       try {
@@ -35,20 +35,19 @@
           new_contents = result.match(/#contents:(.*)/)[1];
         },
         error: function(e) {
-          // $(".check-update").show();
-          alert("manifest 가져오기 실패");
+          // downloading manifest를 가져올 수 없다면, major update가 됨
         }
       });
       if(old_contents == new_contents && hasAppCache) {
         // 기존 manifest와 차이가 없고, appcache가 있는 상태라면 minor update
       } else {
-        $('#appcache .msg').html("새로운 컨텐츠를 다운로드 중입니다.<br/>" + new_contents);
+        $('#appcache .msg').html(msg.downloading + "<br/>" + new_contents);
         $('#appcache').modal('show');
         $('#appcache button.btn-default').hide();
       }
-      $('.check-update-msg').text("업데이트 중...");
+      $('.check-update-msg').text(msg.updating).data("update-status", "updating");
     }
-    if(e.type === 'progress') {
+    if(e.type === 'progress') { // 업데이트 중
       var val = e.loaded / e.total,
           val1 = parseInt(val * 1000) / 10 + "%",
           val2 = parseInt(val * 100) + "%";
@@ -57,17 +56,17 @@
     if(e.type === 'cached') { // 처음 캐시된 경우
       store.set("contents", new_contents);
       store.set("manifest", new_manifest);
-      $('#appcache .msg').html('업데이트 완료<br/>' + new_contents);
+      $('#appcache .msg').html(msg.update_complete + '<br/>' + new_contents);
       $('#appcache button.btn-default').show();
-      $('.check-update-msg').text("최신 업데이트 상태");
+      $('.check-update-msg').text(msg.updated).data("update-status", "updated");
     }
-    if(e.type === 'updateready') { // 업데이트 된 경우
+    if(e.type === 'updateready') { // 업데이트 된 경우 리프레시
       store.set("contents", new_contents);
       store.set("manifest", new_manifest);
       global.location.reload();
     }
-    if(e.type === 'noupdate') { // 업데이트 된 경우
-      $('.check-update-msg').text("최신 업데이트 상태");
+    if(e.type === 'noupdate') { // 업데이트 할 것 없음
+      $('.check-update-msg').text(msg.updated).data("update-status", "updated");
     }
   }
 
@@ -117,13 +116,13 @@
       }
     });
     if(progress == -1) {
-      alert("저장된 컨텐츠에 접근 할 수 없습니다.\n인터넷 연결 확인후 재접속 해주세요.");
+      alert(msg.failed_to_check);
       $('#appcache').modal('hide');
       return;
     }
     $('#appcache .progress-bar').css("width", progress + "%").text(parseInt(progress) + "%");
     if(i == manifest.length) {
-      $('#appcache .msg').html('확인 완료<br/>' + old_contents);
+      $('#appcache .msg').html(msg.success_to_check + '<br/>' + old_contents);
       $('#appcache button.btn-default').show();
     } else {
       timeoutkey = setTimeout(function() {
@@ -134,27 +133,27 @@
 
   $(".check-update").click(function(e) {
     var old_contents = store.get("contents"),
-        update_status = $(".check-update-msg").text();
-    if(update_status == "업데이트 중...") {
-      $('#appcache .msg').html("업데이트 중입니다.<br/>" + new_contents);
+        update_status = $(".check-update-msg").data("update-status");
+    if(update_status == "updating") {
+      $('#appcache .msg').html(msg.updating + "<br/>" + new_contents);
       $('#appcache').modal('show');
       $('#appcache button.btn-default').hide();
       return;
-    } else if(update_status == "업데이트 확인") { // 오프라인 상태
+    } else if(update_status == "default") { // 오프라인 상태
       if(!old_contents) {
-        alert("저장된 컨텐츠를 확인 할 수 없습니다.\n인터넷 연결 확인후 재접속 해주세요.");
+        alert(msg.failed_to_check);
         return;
       }
-      $('#appcache .msg').html("저장된 컨텐츠의 상태를 확인 중입니다.<br/>" + old_contents);
+      $('#appcache .msg').html(msg.check_cache + "<br/>" + old_contents);
       $('#appcache').modal('show');
       $('#appcache button.btn-default').hide();
       clearTimeout(timeoutkey);
       checkManifest(store.get("manifest"), 0);
-    } else { // 최신 업데이트 상태
+    } else { // == "updated" 최신 업데이트 상태
       if(new_contents || old_contents) {
-        alert("현재 컨텐츠는 다음과 같습니다.\n" + (new_contents || old_contents));
+        alert(msg.current_contents + "\n" + (new_contents || old_contents));
       } else {
-        alert("최신 업데이트 상태입니다.");
+        alert(msg.latest_update);
       }
     }
   });

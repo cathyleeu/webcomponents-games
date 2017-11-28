@@ -26,7 +26,7 @@
   "extra":[{
     "x": 4,
     "y": 3,
-    "img": "cos",
+    "img": "mos",
     "contents" : [{
         "img": "mos_tuho",
         "role": "justmove",

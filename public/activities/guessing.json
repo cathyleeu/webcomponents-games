@@ -1,6 +1,7 @@
 {
   "element": "guess-card",
   "attributes": {
+    "limit" : 4
   },
   "data": [
   ],

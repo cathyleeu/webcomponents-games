@@ -2,7 +2,7 @@
   "element": "line-card",
   "attributes": {
     "max" : 4,
-    "nextlink" : "mazev#!a105_w3/1",
+    "nextlink" : "mazeh#!a105_w3/1",
     "lastStage" : 2,
     "horizontal" : true
   },
@@ -18,15 +18,15 @@
     "b4"
   ],
   "manifest": [
-    {"no": 0 , "set": 0, "id": "b1", "src": "/img/a105/a105_w3/b1.jpg"},
-    {"no": 1 , "set": 0, "id": "b2", "src": "/img/a105/a105_w3/b2.jpg"},
-    {"no": 2 , "set": 0, "id": "b3", "src": "/img/a105/a105_w3/b3.jpg"},
-    {"no": 3 , "set": 0, "id": "b4", "src": "/img/a105/a105_w3/b4.jpg"},
+    {"no": 0 , "set": 0, "id": "b1", "src": "/img/a105/a105_w3/b1.png"},
+    {"no": 1 , "set": 0, "id": "b2", "src": "/img/a105/a105_w3/b2.png"},
+    {"no": 2 , "set": 0, "id": "b3", "src": "/img/a105/a105_w3/b3.png"},
+    {"no": 3 , "set": 0, "id": "b4", "src": "/img/a105/a105_w3/b4.png"},
 
-    {"no": 0 , "set": 1, "id": "a1", "src": "/img/a105/a105_w3/a1.jpg"},
-    {"no": 1 , "set": 1, "id": "a2", "src": "/img/a105/a105_w3/a2.jpg"},
-    {"no": 2 , "set": 1, "id": "a3", "src": "/img/a105/a105_w3/a3.jpg"},
-    {"no": 3 , "set": 1, "id": "a4", "src": "/img/a105/a105_w3/a4.jpg"}
+    {"no": 0 , "set": 1, "id": "a1", "src": "/img/a105/a105_w3/a1.png"},
+    {"no": 1 , "set": 1, "id": "a2", "src": "/img/a105/a105_w3/a2.png"},
+    {"no": 2 , "set": 1, "id": "a3", "src": "/img/a105/a105_w3/a3.png"},
+    {"no": 3 , "set": 1, "id": "a4", "src": "/img/a105/a105_w3/a4.png"}
   ],
   "msg": {
     "ko": {

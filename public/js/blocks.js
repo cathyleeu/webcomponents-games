@@ -59,6 +59,53 @@ Blocks["hello4"] = {
   ],
   action: ["hello", "step4"]
 };
+// Blocks["press"] = {
+//   rgbColor: "#FFDE00",
+//   message0: {
+//     ko: "%1 누르면"
+//   },
+//   args0: [
+//     {type: "field_image", src: "/img/start.png"}
+//   ],
+//   previousStatement: false
+// };
+Blocks["channel"] = {
+  rgbColor: "#EE4E34",
+  message0: {
+    ko: "채널 돌리기"
+  },
+  args0: [
+
+  ],
+  action: ["hello", "step1"]
+};
+Blocks["move_to_floor"] = {
+  rgbColor: "#FCAF30",
+  message0: {
+    ko: "7층으로 이동하기"
+  },
+  args0: [
+  ],
+  action: ["hello", "step2"]
+};
+Blocks["beverage"] = {
+  rgbColor: "#11AF59",
+  message0: {
+    ko: "음료 꺼내기"
+  },
+  args0: [
+  ],
+  action: ["hello", "step3"]
+};
+Blocks["washing"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "세탁물 3번 헹구기"
+  },
+  args0: [
+  ],
+  action: ["hello", "step4"]
+};
 Blocks["immigrant"] = {
   rgbColor: "#00A1E1",
   message0: {

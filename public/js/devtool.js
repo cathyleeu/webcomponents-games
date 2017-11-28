@@ -272,10 +272,10 @@ devtool.prototype._downloadBlocks = function(target, fileName, state) {
     el.style.cssText = cssEmpty;
   });
   $svg.find("[data-argument-type=text]>.blocklyEditableText>.blocklyText").each(function(idx, el) {
-    el.style.cssText = "text-decoration: underline;";
+    el.style.cssText = "font-family: monospace;";
   });
   $svg.find(".blocklyPath.empty~.blocklyText").each(function(idx, el) {
-    el.style.cssText = "fill: black; text-decoration: underline;";
+    el.style.cssText = "fill: black; text-decoration: font-family: monospace;";
   });
   if(target == "toolbox") {
     $svg.children("g").children().not(".blocklyFlyout").remove();
@@ -311,7 +311,7 @@ devtool.prototype._downloadBlocks = function(target, fileName, state) {
     $svg.find(".blocklyBlockCanvas").removeAttr("transform");
     var block = $svg.find(".blocklyBlockCanvas>g"),
         hasHat = block.attr("data-shapes") === "hat";
-    block.attr("transform", hasHat ? "translate(0,20)" : "translate(0,0)"); 
+    block.attr("transform", hasHat ? "translate(0,20)" : "translate(0,0)");
   }
   $svg.attr("width", bbox.width + "px");
   $svg.attr("height", bbox.height + "px");

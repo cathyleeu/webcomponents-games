@@ -434,10 +434,10 @@
     ["열매가 자라요", "Fruits are growing", "/activity#!a7_w4"]
   ],
   "A-8":[
-    ["우리 주변의 물", "/a8_w1"],
-    ["물이 돌고 돌아요", "/mazeh#!a8_w2/1"],
-    ["수돗물의 여행", "/mazeh#!a8_w3/1"],
-    ["소중한 물", "/mazeh#!a8_w4_c1/1"]
+    ["우리 주변의 물", "Water sources around us", "/a8_w1"],
+    ["물이 돌고 돌아요", "The water cycle", "/mazeh#!a8_w2/1"],
+    ["수돗물의 여행", "The journey of tap water", "/mazeh#!a8_w3/1"],
+    ["소중한 물", "Use water thoughtfully", "/mazeh#!a8_w4_c1/1"]
   ],
   "A-9":[
     ["겨울이 왔어요", "/activity#!a9_w1"],
@@ -500,16 +500,16 @@
     ["대중교통을 타러 가요", "Go to the airport", "/mazeh#!b6_w4/index"]
   ],
   "B-7":[
-    ["사계절을 알아보아요", "/mazeh#!b7_w1/index"],
-    ["같은 모양을 찾아보아요", "/mazeh#!b7_w2/index"],
-    ["같은 색깔을 찾아보아요", "/mazeh#!b7_w3/index"],
-    ["순서대로 찾아보아요", "/mazeh#!b7_w4/index"]
+    ["사계절을 알아보아요", "Learn about the four seasons", "/mazeh#!b7_w1/index"],
+    ["같은 모양을 찾아보아요", "Find the matching shapes", "/mazeh#!b7_w2/index"],
+    ["같은 색깔을 찾아보아요", "Find the matching colors", "/mazeh#!b7_w3/index"],
+    ["순서대로 찾아보아요", "Put things in order", "/mazeh#!b7_w4/index"]
   ],
   "B-8":[
-    ["낙엽이 떨어져요", "/mazeh#!b8_w1/index"],
-    ["규칙을 찾아보아요", "/mazeh#!b8_w2/index"],
-    ["반복 블록을 이해해요", "/mazeh#!b8_w3/index"],
-    ["김장을 해요", "/mazeh#!b8_w4/index"]
+    ["낙엽이 떨어져요", "Leaves are falling", "/mazeh#!b8_w1/index"],
+    ["규칙을 찾아보아요", "Find the pattern", "/mazeh#!b8_w2/index"],
+    ["반복 블록을 이해해요", "Learn about the‘repeat’block", "/mazeh#!b8_w3/index"],
+    ["김장을 해요", "Make fresh kimchi", "/mazeh#!b8_w4/index"]
   ],
   "B-9":[
     ["다양한 생활도구", "/mazeh#!b9_w1/index"],
@@ -519,9 +519,9 @@
   ],
   "B-10":[
     ["겨울이 왔어요", "/mazeh#!b10_w1/index"],
-    ["조합블록을 이해해요", "/mazeh#!b10_w2/index"],
-    ["조합블록을 연습해", "/mazeh#!b10_w3/index"],
-    ["조합블록을 써보아요", "/mazeh#!b10_w4/index"]
+    ["복합블록을 이해해요", "/mazeh#!b10_w2/index"],
+    ["복합블록을 연습해", "/mazeh#!b10_w3/index"],
+    ["복합블록을 써보아요", "/mazeh#!b10_w4/index"]
   ],
   "B-10-5":[
     ["새해가 왔어요", "/mazeh#!b105_w1/index"],
@@ -572,16 +572,16 @@
     ["확인 블록과 만약에 블록을 써보아요", "Use the check and if blocks", "/mazeh#!c6_w4/index"]
   ],
   "C-7":[
-    ["가을 곡식과 열매", "/mazeh#!c7_w1/index"],
-    ["만약에 블록을 이해해요", "/mazeh#!c7_w2/index"],
-    ["여러 가지 모양의 열쇠를 찾아보아요", "/mazeh#!c7_w3/index"],
-    ["만약에 블록을 써보아요", "/mazeh#!c7_w4/index"]
+    ["가을 곡식과 열매", "Autumn fruits and grains", "/mazeh#!c7_w1/index"],
+    ["만약에 블록을 이해해요", "Learn how to use the if block", "/mazeh#!c7_w2/index"],
+    ["여러 가지 모양의 열쇠를 찾아보아요", "Find keys with different shapes", "/mazeh#!c7_w3/index"],
+    ["만약에 블록을 써보아요", "Use the if and the repeat block", "/mazeh#!c7_w4/index"]
   ],
   "C-8":[
-    ["10을 알아보아요", "/mazeh#!c8_w1/index"],
-    ["99까지의 수를 알아보아요", "/mazeh#!c8_w2/index"],
-    ["만약에 아니라면 블록을 이해해요", "/mazeh#!c8_w3/index"],
-    ["만약에 아니라면 블록을 써보아요", "/mazeh#!c8_w4/index"]
+    ["10을 알아보아요", "Learn to count in 10s", "/mazeh#!c8_w1/index"],
+    ["99까지의 수를 알아보아요", "Learn to count from 1~99", "/mazeh#!c8_w2/index"],
+    ["만약에 아니라면 블록을 이해해요", "Learn how to use the‘if not’ blocks", "/mazeh#!c8_w3/index"],
+    ["만약에 아니라면 블록을 써보아요", "Use the‘if not’blocks", "/mazeh#!c8_w4/index"]
   ],
   "C-9":[
     ["몇 시일까요?", "/mazeh#!c9_w1/index"],

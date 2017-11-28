@@ -269,7 +269,7 @@ KidsCoding.prototype = {
       // TODO: default 타입에서의 처리 필요
       if(field_value === "*" && arg_type == "input_value") {
         shadow_type = shadow_type + "_empty";
-        field_value = new Array(7).join("\u00A0");
+        field_value = new Array(4).join("_");
         Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
@@ -282,7 +282,7 @@ KidsCoding.prototype = {
       if(block.type == "empty") {
         arg_type == "input_value"
         shadow_type = block.type + "_emptyblock";
-        field_value = new Array(28).join("\u00A0");
+        field_value = new Array(16).join("_");
         Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
