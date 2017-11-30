@@ -3,24 +3,27 @@
   "attributes": {
   },
   "data": [
-    [49.61,32.29],[64.06,31.9],[39.58,42.58],
-    [56.51,44.92],[73.83,42.32],[57.42,56.38],
-    [48.18,65.36],[67.32,64.19]
+    [14,35],[28,35],[14,50],[28,50],
+    [14,65],[28,65],[55,42.5],[55,57.5],
+    [85,35],[85,50],[85,65]
   ],
   "manifest": [
-    {"src": "/img/renewed_c1/washer.png", "background": true},
-    {"src": "/img/renewed_c1/bright1.png", "name": "shirt" },
-    {"src": "/img/renewed_c1/bright2.png", "name": "shorts" },
-    {"src": "/img/renewed_c1/bright3.png", "name": "socks" },
-    {"src": "/img/renewed_c1/bright4.png", "name": "vest" },
-    {"src": "/img/renewed_c1/dark1.png", "name": "short_T" },
-    {"src": "/img/renewed_c1/dark2.png", "name": "socks" },
-    {"src": "/img/renewed_c1/dark3.png", "name": "dress" },
-    {"src": "/img/renewed_c1/dark4.png", "name": "skirt" }
+    {"src": "/img/renewed_c1/space.png", "background": true},
+    {"src": "/img/renewed_c1/camera.png", "name": "camera" },
+    {"src": "/img/renewed_c1/cpu.png", "name": "cpu" },
+    {"src": "/img/renewed_c1/keyboard.png", "name": "keyboard" },
+    {"src": "/img/renewed_c1/mic.png", "name": "mic" },
+    {"src": "/img/renewed_c1/monitor.png", "name": "monitor" },
+    {"src": "/img/renewed_c1/mouse.png", "name": "mouse" },
+    {"src": "/img/renewed_c1/speaker.png", "name": "speaker" },
+    {"src": "/img/renewed_c1/ear.png", "name": "ear" },
+    {"src": "/img/renewed_c1/eye.png", "name": "eye" },
+    {"src": "/img/renewed_c1/mouth.png", "name": "mouth" },
+    {"src": "/img/renewed_c1/brain.png", "name": "brain" }
   ],
   "msg": {
     "ko": {
-      "title": "빨래를 세탁기에 넣어보아요.",
+      "title": "코스의 기관을 분류해보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
