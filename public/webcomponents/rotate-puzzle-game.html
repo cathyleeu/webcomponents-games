@@ -1,0 +1,296 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+<dom-module id="rotate-puzzle-game">
+  <template>
+    <style>
+      #container {
+        display: inline-block;
+        position: absolute;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      button {
+        background-color: #f18039;
+        border-radius: 13px;
+        color: white;
+        font-weight: 700;
+        outline: none;
+      }
+      button:active{
+        background-color: #f1dc39;
+      }
+    </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      total="{{total}}"
+      matched="{{matched}}"
+      cards="{{cards}}"></status-bar>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+    <svg id="createSvg"></svg>
+    <div id="container">
+      <p>{{localize('minor')}}</p>
+      <img></img>
+      <button on-click="handleCheckAnswer">{{localize('answerButton')}}</button>
+    </div>
+  </template>
+  <script>
+    class RotatePuzzleGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element)  {
+      static get is() { return 'rotate-puzzle-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          pznum: Number,
+          language: {
+            value: "ko"
+          },
+          resources: {
+            value() {
+              return {
+                "ko": {
+                  "title": "퍼즐 맞추기",
+                  "success": "참 잘했어요!"
+                },
+                "en": {
+                  "title": "Puzzle Game",
+                  "success": "Good job!"
+                }
+              }
+            }
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        this.set('total', 0)
+        this.set('matched', 0)
+        this.set('cards', Math.pow(this.pznum, 2))
+
+        let { offsetWidth, offsetHeight } = this
+        let size = {
+          board : offsetWidth*0.5,
+          card : 0,
+          inst : 0
+        }
+        size["puzzlePosition"] = size.board*0.1;
+        size["puzzleSize"] = size.board-(size.board*0.2);
+        size["eachPiece"] = size.puzzleSize/this.pznum;
+        size["randonPosition"] = offsetHeight-size.puzzleSize;
+        size["goalPosition"] = (size.board-size.randonPosition)/2;
+
+        this.set('size', size)
+        this.set('eachPieceRotate', [])
+      }
+      axisforImg (i, axis) {
+        return -this.size.eachPiece*this.imageAxis[axis][i];
+      }
+      genPieceId(num) {
+        let f = 0,
+            pieces=[],
+            piece=[],
+            group={};
+
+        for (let i=0; i < num; i++){
+          pieces.push(i);
+        }
+        for (let i=0; i < Math.pow(num, 2); i++) {
+          piece.push(i);
+        }
+        for ( let i of pieces ) {
+          let s = f+num;
+          group[i] = piece.slice(f, s);
+          f = s;
+        }
+        return {
+          pieces, piece, group
+        }
+      }
+      rotatePiece(d) {
+        console.log(d);
+        let { x, y, width, height } = d3.event.target.getBBox()
+        let that = d3.select("#element").node();
+        let randomRotate = {
+          0 : `translate(0 0) rotate(0 ${x} ${y})`,
+          1 : `translate(${width} ${width}) rotate(180 ${x} ${y})`,
+          2 : `translate(0 ${width}) rotate(270 ${x} ${y})`
+        }
+        let newRotate = that.eachPieceRotate[d] === 2 ? 0 : that.eachPieceRotate[d]+ 1
+        that.eachPieceRotate[d] = newRotate
+        d3.select(this).attr('transform', randomRotate[newRotate])
+      }
+      handleRandomRotate(d, i) {
+        let { x, y, width, height } = this.getBBox();
+        let that = d3.select("#element").node();
+        let randomRotate = {
+          0 : `translate(0 0) rotate(0 ${x} ${y})`,
+          1 : `translate(${width} ${width}) rotate(180 ${x} ${y})`,
+          2 : `translate(0 ${width}) rotate(270 ${x} ${y})`,
+          3 : `translate(0 ${width}) rotate(270 ${x} ${y})`
+        }
+        let randomNum = Math.floor(Math.random() * 3)
+        that.push('eachPieceRotate',randomNum)
+        return randomRotate[randomNum]
+      }
+      handleCheckAnswer() {
+
+        let fault = this.eachPieceRotate.filter(d => d !== 0)
+        // console.log(new Boolean(fault) )
+        if(fault.length !== 0) {
+          this.$.retryModal.modalAlert()
+          return false
+        }
+        this.$.finalStageModal.modalAlert()
+        // debugger
+      }
+      setData( pzUrl ) {
+        let  _this = this,
+             { eachPiece, puzzleSize, puzzlePosition, randonPosition, goalPosition, board } = this.size,
+             count = 0, // 퍼즐판 줄 생성
+             svg = d3.select(this.$.createSvg).attr("width", board).attr("height", `${this.offsetHeight-60}` ),
+             { pieces, piece, group }= this.genPieceId(this.pznum),
+             defs = svg.append('defs');
+
+        this.set("size.puzzleMargin", (+svg.attr("height")-puzzleSize)/2)
+
+
+        d3.select(this.$.container)
+          .style('width', `${board}px`)
+          .style('height', `${this.offsetHeight-60}px`)
+          .style('padding', `${this.size.puzzleMargin}px 0`)
+          .select('img').attr('src', pzUrl)
+          .style('width', `${puzzleSize*0.7}px`)
+
+        d3.select(this.$.container)
+          .select('p')
+          .style('font-size', `${((this.offsetHeight-60)*0.1)*0.33}px`)
+          .style('margin', `0 0 ${puzzleSize*0.03}px`)
+
+        d3.select(this.$.container)
+          .select('button')
+          .style('width', `${puzzleSize*0.7}px`)
+          .style('height', `${(this.offsetHeight-60)*0.1}px`)
+          .style('font-size', `${((this.offsetHeight-60)*0.1)*0.33}px`)
+          .style('margin', `${puzzleSize*0.03}px 0 0`)
+
+        let jigsawBoard = svg.append("g")
+          .attr("width", puzzleSize)
+          .attr("height", puzzleSize)
+          .attr('id', 'jigsaw')
+          .attr('transform', `translate(${puzzlePosition},${this.size.puzzleMargin})`);
+
+        // let shuffleBoard = svg.append("g")
+        //   .attr("width", randonPosition)
+        //   .attr("height", randonPosition)
+        //   .attr('transform', `translate(0,${randonPosition})`);
+
+        let pieceRect = jigsawBoard.selectAll("rect");
+        // let shuffleRect = shuffleBoard.selectAll("rect");
+        let imageRect = defs.append('g').selectAll('pattern');
+
+
+
+        let imgIdsX = [], imgIdsY = [], imgId;
+        for (let i= 0 ; i < this.pznum; i++){
+          imgId = i;
+          for(let j= 0 ; j < this.pznum; j++){
+            imgIdsY.push(imgId);
+            imgIdsX.push(j);
+          }
+        }
+        this.set('imageAxis', { "x" : imgIdsX, "y" : imgIdsY })
+
+        imageRect.data(piece).enter()
+          .append('pattern')
+          .attr("id" , d => `piece_${d}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox")
+          .append('image')
+          .attr("x", d => this.axisforImg(d, "x"))
+          .attr("y", d => this.axisforImg(d, "y"))
+          .attr("width", puzzleSize).attr("height", puzzleSize)
+          .attr("xlink:href", pzUrl);
+
+
+          pieceRect.data(piece).enter()
+            .append("rect")
+            .style("fill", "none")
+            .style("stroke-width", 1)
+            .style("stroke", 'gray')
+            .attr("data-idx", (d) => d)
+            .attr("x", axisX)
+            .attr("y", axisY)
+            .attr("width", eachPiece-2 )
+            .attr("height", eachPiece-2 )
+            .style("fill", (d, i) => `url(#piece_${i})`)
+            .attr('transform', this.handleRandomRotate)
+            .on('click', this.rotatePiece);
+
+
+
+
+        // Math.floor(Math.random() * (n2:상한값 - n1:하한값 + 1) + n1))
+
+        // shuffleRect.data(piece).enter()
+        //   .append("rect")
+        //   .style("stroke-width", 1)
+        //   .style("stroke", 'gray')
+        //   .attr("x", axisX)
+        //   .attr("y", axisY)
+        //   .attr("width", eachPiece-2 )
+        //   .attr("height", eachPiece-2 )
+        //   .style("fill", (d, i) => `url(#piece_${i})`)
+        //   .call(d3.drag()
+        //         .on("start", this.dragstarted)
+        //         .on("drag", this.dragged)
+        //         .on("end", this.dragended)
+        //        );
+
+        function axisX(d) {
+          if(count > _this.pznum-1){
+            count = 0;
+          }
+          pieces.map(i => {
+            if(group[i].indexOf(d) !== -1) { count++ }
+          })
+          return (eachPiece*(count-1))+(2*(count));
+        }
+
+        function axisY(d){
+          let check;
+          pieces.map(i => {
+            if(group[i].indexOf(d) !== -1) { check = i }
+            return check;
+          })
+          switch(check) {
+            case check:
+              return (eachPiece*(check))+(2*(check));
+            default: return 0;
+          }
+        }
+        this.set('nodes', jigsawBoard.node().childNodes)
+      }
+    }
+    window.customElements.define(RotatePuzzleGame.is, RotatePuzzleGame);
+  </script>
+</dom-module>
