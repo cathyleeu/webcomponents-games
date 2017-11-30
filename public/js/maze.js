@@ -13,7 +13,7 @@ var d1,
     message_url = "",
     messages = null,
     map_path = null,
-    map_qs,
+    map_qs = {},
     resize_debounce = 50,
     resize_timeoutkey,
     blink_debounce = 50,
@@ -24,7 +24,6 @@ page('*', function(ctx, next) {
   var hashbang = ctx.pathname.indexOf("#!"),
       pathname = hashbang >= 0 ? ctx.pathname.slice(hashbang + 2) : ctx.pathname,
       path,
-      qs,
       map_url,
       manifest_url,
       idx;
@@ -48,37 +47,18 @@ page('*', function(ctx, next) {
 
   // load map json file
   $.getJSON(map_url, function(json) {
-    var lang = store.get("lang") || "ko",
-        fullscreen = null,
-        last_path = null;
     maze = json;
     map_path = path;
-    map_qs = ctx.querystring;
-    // back link로 온것이 아님 -> 주소로 접속함 -> localData 삭제
-    if(map_qs.split("&").indexOf("back") < 0) {
-      fullscreen = store.get("fullscreen");
-      last_path = store.get("last_path");
-      store.clear();
-      // index나 1번 map 이라면 lang 설정을 초기화, 이외에는 유지
-      if(map_path[map_path.length-1] == "index" || map_path[map_path.length-1] == "1") {
-        lang = "ko";
-      } else {
-        store.set("fullscreen", fullscreen);
-        last_path = null;
-      }
+    map_qs = {};
+    ctx.querystring.split("&").forEach(function(str) {
+      var token = str.split("=");
+      map_qs[token[0]] = token[1];
+    });
+    var lang = store.session.get("lang", "ko");
+    if(map_qs.lang) {
+      lang = map_qs.lang;
+      store.session.set("lang", lang);
     }
-    // 다국어 설정
-    if(map_qs.split("&").indexOf("lang=en") >= 0) {
-      lang = "en";
-    } else if(map_qs.split("&").indexOf("lang=ko") >= 0) {
-      lang = "ko";
-    } else if(map_qs.split("&").indexOf("lang=cn") >= 0) {
-      lang = "cn";
-    } else if(map_qs.split("&").indexOf("lang=jp") >= 0) {
-      lang = "jp";
-    }
-    store.set("last_path", ctx.path);
-    store.set("lang", lang);
     $.getJSON("/msg/" + lang + ".json", function(msg_obj) {
       messages = msg_obj;
       Object.keys(msg_obj).forEach(function(key) {
@@ -183,18 +163,27 @@ page({
 
 addEvents();
 
+function loadData() {
+  var id = store.session.get("user", {id:null}).id,
+      local = id ? store.namespace(id) : store.session.namespace("anonymous");
+  return local.get(map_path[0], {score:0,complete:[],worldmap:null});
+}
+
+function saveData(localData) {
+  var id = store.session.get("user", {id:null}).id,
+      local = id ? store.namespace(id) : store.session.namespace("anonymous");
+  local.set(map_path[0], localData);
+}
+
 function preInit() {
   //캐릭터 선택 팝업
-  var queries = store.get("queries") || {};
-
-  if(maze.select_character && !queries.hasOwnProperty("x") && !queries.hasOwnProperty("y")) {
+  if(maze.select_character && !store.session.has("character_id")) {
     showModal({
       select_character: true,
       character1: loader.getItem("message").src,
       character2: loader.getItem("message2").src
     });
   } else {
-
     init();
   }
 }
@@ -221,11 +210,11 @@ function init() {
 
   tileFactory.init(maze, loader);
   drawFactory.init(maze);
-  if(store.get('character')) {
-    message_url = decodeURIComponent(store.get('character'));
+  if(store.session.get("character")) {
+    message_url = decodeURIComponent(store.session.get("character"));
   }
-  if(store.get('message_id')) {
-    message_url = loader.getItem(store.get('message_id')).src;
+  if(store.session.get("message_id")) {
+    message_url = loader.getItem(store.session.get("message_id")).src;
   }
   $(".noti-char").attr("src", message_url);
 
@@ -278,9 +267,9 @@ function init() {
   resize_timeoutkey = setTimeout(function() {
     handle_resize();
   }, resize_debounce);
-  var lang = store.get("lang") || "ko",
+  var lang = store.session.get("lang", "ko"),
       goal = maze.goal || maze.tutorial[maze.tutorial.length - 1],
-      goal_msg = goal["msg" + (lang ? ":" + lang : "")] || goal["msg"];
+      goal_msg = goal["msg:" + lang] || goal["msg"];
   if(!$.isArray(goal.img)) {
     goal.img = goal.img ? [goal.img] : [message_url];
   }
@@ -292,21 +281,21 @@ function init() {
       .appendTo(".goal-imgs");
   });
   $(".side_guide .goal-msg").html(goal_msg.replace(/\n/g, "<br/>"));
-  var queries = store.get("queries") || {};
-  if(queries.hasOwnProperty("x") && queries.hasOwnProperty("y") && !queries.hasOwnProperty("back")) {
+  var localData = loadData();
+  if(maze.type == "world" && localData.worldmap) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
-    tileFactory.setCoord(mazeInfo.canvas.character, +queries.x, +queries.y);
+    tileFactory.setCoord(mazeInfo.canvas.character, localData.worldmap.x, localData.worldmap.y);
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
   } else {
     $("#runTutorial").removeClass("hidden");
-    var fullscreen = store.get("fullscreen"),
+    var fullscreen = store.session.get("fullscreen", null),
         fullscreenElement =
             document.fullscreenElement ||
             document.webkitFullscreenElement ||
             document.mozFullScreenElement ||
             document.msFullscreenElement;
-    if(kidscoding.isHorizontal && fullscreen == undefined && fullscreenEnabled && !fullscreenElement) {
+    if(kidscoding.isHorizontal && fullscreen === null && fullscreenEnabled && !fullscreenElement) {
       showModal({
         msg: messages.ask_fullscreen,
         confirm: true,
@@ -314,13 +303,13 @@ function init() {
           e.preventDefault();
           e.stopPropagation();
           FullScreen();
-          store.set('fullscreen', true)
+          store.session.set('fullscreen', true);
           runTutorial(maze.tutorial);
         },
         confirmNo: function(e) {
           e.preventDefault();
           e.stopPropagation();
-          store.set('fullscreen', false)
+          store.session.set('fullscreen', false);
           runTutorial(maze.tutorial);
         }
       });
@@ -437,7 +426,7 @@ function initMaze() {
 }
 
 function drawMaze() {
-  var localData = store.get('data') || {},
+  var localData = loadData(),
       canvas = mazeInfo.canvas;
   for(var i = 0; i < mazeInfo.height; i++) {
     for(var j = 0; j < mazeInfo.width; j++) {
@@ -447,8 +436,8 @@ function drawMaze() {
         })[0] : null;
         if(extra && extra.link) {
           // 이미 성공한 경우에는 별을 놓지 않아야 함
-          var path = extra.link.split("/").slice(0, -1).join("/");
-          if(localData[path] && localData[path].complete.indexOf(extra.link.split("/").slice(-1)[0]) >= 0) {
+          var path = extra.link.split("/");
+          if(path[0] == map_path[0] && localData.complete.indexOf(path[1]) >= 0) {
             continue;
           }
         }
@@ -568,7 +557,7 @@ function handle_resize(e) {
   }
 };
 function addEvents() {
-  if(window.name) {
+  if(store.session.has("showbook")) {
     $("#logout").removeClass("hidden");
   }
   $(".noti-arrow").click(function(e){
@@ -589,9 +578,10 @@ function addEvents() {
       msg: messages.ask_logout,
       confirm: true,
       confirmYes: function() {
-        if(window.name) {
-          store.clear();
-          location.href = "/code/" + window.name.split("#")[0];
+        var showBook = store.session.get("showbook");
+        if(showBook) {
+          store.session.clear();
+          location.href = showBook.split("#")[0];
         }
       },
       confirmNo: function() {}
@@ -600,16 +590,17 @@ function addEvents() {
   $("a.navbar-brand").click(function(e) {
     e.preventDefault();
     e.stopPropagation();
-    showModal({
-      msg: messages.ask_select,
-      confirm: true,
-      confirmYes: function() {
-        if(window.name) {
-          location.href = "/code/" + window.name;
-        }
-      },
-      confirmNo: function() {}
-    });
+    var showBook = store.session.get("showbook");
+    if(showBook) {
+      showModal({
+        msg: messages.ask_select,
+        confirm: true,
+        confirmYes: function() {
+          location.href = showBook;
+        },
+        confirmNo: function() {}
+      });
+    }
   });
   $(document).on("contextmenu mousewheel", function(e) {
     e.stopPropagation();
@@ -627,36 +618,39 @@ function addEvents() {
     e.preventDefault();
     e.stopPropagation();
     $('#modal').modal('hide');
-    var queries = store.get("queries") || {};
-    if(queries.back) {
-      var localData = store.get('data') || {},
-          path = queries.back.split("/").slice(0, -1).join("/"),
-          step = map_path[map_path.length-1];
-      if(!localData[path]) {
-        localData[path] = {
-          score: 0,
-          complete: []
-        };
-      }
-      if(localData[path].complete.indexOf(step) < 0) {
-        localData[path].complete.push(step);
-        localData[path].score += maze.score || 1;
-        store.set('data', localData);
-      }
-      store.set("queries", {
-        x: queries.x,
-        y: queries.y
-      });
-      page(queries.back + "?back");
-      return;
+
+    var localData = loadData(),
+        step = map_path[map_path.length-1],
+        dest = maze.success ? maze.success[maze.success.length-1].link : null;
+    if(dest && maze.type != "world" && localData.worldmap) {
+      // 문제에서 문제로 넘어갈 경우는 worldmap으로 돌아갈 필요가 없으므로 wolrdmap 정보 삭제
+      // 예) index -> 1 -> 2 와 같은 식으로 넘어갈 경우,
+      // 1에서 success.link 써주면 2부터는 자동으로 3으로 넘어감
+      localData.worldmap = null;
     }
-    var path = map_path.slice();
-    path[path.length-1]++;
-    if(isNaN(path[path.length-1])) {
-      alert("주소가 잘못 설정되었습니다.");
+    if(!dest && maze.type != "world" && localData.worldmap) {
+      // success가 없고 wolrdmap data가 있을때
+      dest = localData.worldmap.path;
+    } else if(!dest) {
+      // 1,2,3,...의 단순 증가 형태
+      var path = map_path.slice();
+      path[path.length-1]++;
+      if(isNaN(path[path.length-1])) {
+        alert("주소가 잘못 설정되었습니다.");
+        return;
+      }
+      dest = path.join("/");
     }
-    store.set("queries", {});
-    page( path.join("/") );
+    if(localData.complete.indexOf(step) < 0) {
+      localData.complete.push(step);
+      localData.score += maze.score || 1;
+      saveData(localData);
+    }
+    if(dest.slice(0, 7) == "http://" || dest.slice(0, 1) == "/") {
+      location.href = dest;
+    } else {
+      page(dest);
+    }
   });
   $("#modal .reset-maze").on("touchstart click", function(e) {
     e.preventDefault();
@@ -757,24 +751,21 @@ function addEvents() {
         addFood();
       }
       if(obj && obj.link) {
-        var localData = store.get('data') || {},
-            path = map_path.slice(0, -1).join("/"),
-            score = localData[path] ? localData[path].score || 0 : 0;
-        if(!obj.min_score || score >= obj.min_score) {
+        var localData = loadData();
+        if(!obj.min_score || localData.score >= obj.min_score) {
           if(obj.link.slice(-5) == "index") {
-            // 새로운 index로 넘어갈때 : 돌아올 필요 없음
-            var lang = store.get("lang");
-            store.set("queries", {});
-            page(obj.link + ((lang && obj.link.split("/")[0] != map_path[0])? "?lang=" + lang : ""));
+            // 새로운 index로 넘어갈때
+            page(obj.link);
             return;
           } else {
             // 문제 풀이 화면으로 넘어갈때 : back link를 저장
-            store.set("queries", {
-              back: map_path.join("/"),
+            localData.worldmap = {
               x: mazeInfo.canvas.character.px,
-              y: mazeInfo.canvas.character.py
-            });
-            page(obj.link + "?back");
+              y: mazeInfo.canvas.character.py,
+              path: map_path.join("/")
+            };
+            saveData(localData);
+            page(obj.link);
             return;
           }
         } else {
@@ -799,22 +790,17 @@ function addEvents() {
     e.preventDefault();
     e.stopPropagation();
     var tItem = tutorial[tutorialIdx],
-        link = tutorial[tutorialIdx-1] ? tutorial[tutorialIdx-1].link : null;
+        link = tutorial[tutorialIdx-1] ? tutorial[tutorialIdx-1].link : null,
+        lang = store.session.get("lang", "ko");
     if(link) {
-      if(link.slice(0, 7) == "http://" || link.slice(0, 1) == "/") {
-        location.href = link;
-      } else {
-        var lang = store.get("lang");
-        store.set("queries", {});
-        page(link + ((lang && link.split("/")[0] != map_path[0])? "?lang=" + lang : ""));
-      }
+      // 튜토리얼의 맨 끝에서 다른 페이지로 넘어갈때
+      $("#modal .go-next").click();
       return;
     }
     if(tutorialIdx < tutorial.length) {
       if(tItem.hasOwnProperty("x") && tItem.hasOwnProperty("y")) {
         kidscoding.Actions._setFocus(tItem.x, tItem.y, 0, 500);
       }
-      var lang = store.get("lang") || "ko";
       showModal({
         video: tItem.video,
         msg: tItem["msg" + (lang ? ":" + lang : "")] || tItem["msg"],
@@ -835,8 +821,8 @@ function addEvents() {
     var isFirst = $(e.currentTarget).hasClass("character1-modal"),
         character = isFirst ? "character" : "character2",
         message = isFirst ? "message" : "message2";
-    store.set("character_id", character);
-    store.set("message_id", message);
+    store.session.set("character_id", character);
+    store.session.set("message_id", message);
     init();
   });
 
@@ -874,8 +860,7 @@ function FullScreen(el) {
 };
 
 function runTutorial(input_tutorial) {
-  var lang = store.get("lang") || "ko",
-      getText = "msg:"+lang
+  var lang = store.session.get("lang", "ko");
   if(!input_tutorial) {
     return;
   }
@@ -888,7 +873,7 @@ function runTutorial(input_tutorial) {
     var noti = $('.noti-guide');
     noti.empty();
     input_tutorial.map(function(txt) {
-      var tutorial = txt[getText].replace(/\n/g, "<br/>");
+      var tutorial = txt["msg:"+lang].replace(/\n/g, "<br/>");
       noti.append("<div class='speech'><div class='speech-bubble'>"+tutorial+"</div></div>");
     });
     noti.prop("scrollHeight") === noti.height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "");
@@ -936,10 +921,8 @@ function gameMode(loader, type, tileFactory) {
   }
   $("#scoreBox .food").replaceWith(loader.getResult("food"));
 
-  var localData = store.get('data') || {},
-      path = map_path.slice(0, -1).join("/"),
-      score = localData[path] ? localData[path].score || 0 : 0;
-  $("#scoreBox .score").text(score);
+  var localData = loadData();
+  $("#scoreBox .score").text(localData.score);
 }
 
 function run(block, callback) {

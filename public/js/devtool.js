@@ -136,7 +136,7 @@ devtool.prototype.removeTile = function(x, y) {
 }
 
 devtool.prototype.getInstructions = function(name) {
-  var lang = store.get("lang") || "ko",
+  var lang = store.session.get("lang", "ko"),
       tutorial = $$$.kidscoding.tileFactory.maze.tutorial,
       img = $$$.kidscoding.Actions.loader.getResult("message"),
       data;

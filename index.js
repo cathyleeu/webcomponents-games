@@ -68,7 +68,7 @@ app
   .use(compress())
   .use(less(path.join(__dirname, 'public')))
   .use(serve(path.join(__dirname, 'public'), {
-    maxage: 60*60*1000
+    maxage: 0
   }))
   .use(session())
   .use(body())

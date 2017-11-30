@@ -174,6 +174,7 @@ function getInfoByCode(code) {
             // 대구지사 03월로 고정 예외처리
             resolve({
               school: kinder.name,
+              kinder: kinder.code,
               school_name: user.branch.sub_name || "",
               code: code,
               date: "2017" + month + "01",
@@ -225,7 +226,7 @@ function getBook(classObj) {
   }
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
-    book = ["10-5", 11];
+    book = [10, "10-5"];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
@@ -426,6 +427,7 @@ public.get('/code/:code', function *(next) {
             });
             info = {
               school: kinder.name,
+              kinder: kinder.code,
               code: code,
               date: "20170401",
               classes: classes,

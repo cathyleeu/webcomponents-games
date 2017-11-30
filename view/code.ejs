@@ -301,6 +301,12 @@ if(location.pathname == "/code" && location.hash) {
         $("#modal-fail").modal('show');
         return;
       }
+      store.session.set("user", {
+        kinder: info.kinder,
+        className: sClassName,
+        user: "" + index,
+        id: info.kinder ? (info.kinder + "," + sClassName + "," + index) : "anonymous"
+      });
       if(location.hash) {
         page(location.hash + "&book=true");
       } else {
@@ -308,11 +314,7 @@ if(location.pathname == "/code" && location.hash) {
       }
     });
     $(".contents").click("a[rel=\"external\"]", function(e) {
-      e.preventDefault();
-      var href = $(e.target).closest("a").attr("href"),
-          data = location.pathname.split("/")[2] + location.hash;
-      window.name = data;
-      window.open(href, data, "fullscreen=yes", true);
+      store.session.set("showbook", location.href);
     });
   }
 
@@ -370,6 +372,7 @@ if(location.pathname == "/code" && location.hash) {
   }
 
   function showClass() {
+    store.session.remove("user");
     $("#classes").empty();
     var classes = Object.keys(info.classes).map(function(item) {
       return info.classes[item].map(function(className) {
@@ -393,6 +396,7 @@ if(location.pathname == "/code" && location.hash) {
   }
 
   function showLogin() {
+    store.session.remove("user");
     var yearmonth = info.date,
         levelLogin = Object.keys(info.classes).filter(function(item) {
           return info.classes[item].indexOf(sClassName) >= 0;

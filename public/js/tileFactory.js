@@ -64,7 +64,7 @@ TileFactory.prototype.init = function(maze, loader) {
     _this.hashObj[tokens[0]] = tokens[1];
   });
   if(this.hashObj.character) {
-    store.set('character', this.hashObj.character);
+    store.session.set('character', this.hashObj.character);
   }
 };
 
@@ -103,7 +103,7 @@ TileFactory.prototype.create = function(tile, x, y) {
 
   switch(info.role) {
     case "character":
-      var character_id = store.get('character_id') || this.maze.character || "character",
+      var character_id = store.session.get("character_id") || this.maze.character || "character",
           character = this.loader.getItem(character_id);
       if(character && character.sprite) { // sprite character
         this.defaults(info, {
@@ -173,9 +173,9 @@ TileFactory.prototype.create = function(tile, x, y) {
   }
 
   if(info.img) {
-    if(info.role == "character" && store.get('character')) {
+    if(info.role == "character" && store.session.get('character')) {
       // camera 처리
-      bitmap = new createjs.Bitmap(decodeURIComponent(store.get('character')));
+      bitmap = new createjs.Bitmap(decodeURIComponent(store.session.get('character')));
       delete info.sprite;
     } else if(info.sprite) {
       var animations = {
