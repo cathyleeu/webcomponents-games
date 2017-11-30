@@ -1,6 +1,8 @@
 {
   "element": "create-image-game",
   "attributes": {
+    "max" : 1,
+    "nextlink" : "activity#!2018_c1_w3_2"
   },
   "data": [
     [49.61,32.29],[64.06,31.9],[39.58,42.58],
@@ -39,7 +41,7 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Along with the picture, arrange the bath tools.",
+      "title": "Put the laundry in the washing machine.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

@@ -1,6 +1,8 @@
 {
   "element": "create-image-game",
   "attributes": {
+      "max" : 1,
+    "nextlink" : "activity#!2018_c1_w4_2"
   },
   "data": [
     [14,35],[28,35],[14,50],[28,50],
@@ -42,7 +44,7 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Along with the picture, arrange the bath tools.",
+      "title": "Classify computer parts.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
