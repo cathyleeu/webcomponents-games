@@ -248,6 +248,9 @@ function getBook(classObj) {
     if(classNum == "KC1") {
       book = [3, 4];
     }
+    if(classNum == "KC2") {
+      book = [7, 8];
+    }
   }
   // 마포ECC 추가반, 청라ECC 추가반
   if(classObj.code == "B00130-K1-KC6" || classObj.code == "B00016-K1-KC5") {
