@@ -1,0 +1,70 @@
+{
+  "element": "login-game",
+  "data": [
+    "윌리엄",
+    "에이미",
+    "마크",
+    "백아영",
+    "김가온",
+    "이승윤",
+    "이지안",
+    "이준용",
+    "한지율",
+    "이서준"
+  ],
+  "attributes": {
+
+  },
+  "manifest": {
+    "level" : "A",
+    "images" : 12
+  },
+  "msg": {
+    "ko": {
+      "title": "로그인 연습을 해주세요",
+      "score": "점수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다시 연습해보아요?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "다시 시도해 볼까요?",
+      "nextbtn": "다시하기",
+      "retrybtn": "다시하기",
+      "resultbtn": "결과보기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "다음 단계",
+      "noticeAlert" : "아직 선택할 것이 남았어요!",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Learn about autumn fruits and grains",
+      "score": "score",
+      "success": "Good job!",
+      "successHead": "Success",
+      "successBtm" : "Retry Login Practice",
+      "logoutHead": "Log Out",
+      "logoutBtm": "Do you want to logout",
+      "previousHead" : "Next",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "retryHead": "Failed",
+      "retryBtm" : "Do you want to retry?",
+      "nextbtn": "Retry",
+      "retrybtn": "Retry",
+      "resultbtn": "Result",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "noticeAlert" : "You need to select more!",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
