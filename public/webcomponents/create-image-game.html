@@ -58,6 +58,7 @@
             }
             size["boardSize"] = innerWidth*0.6 > size.svgHeight ? size.svgHeight : innerWidth*0.6;
             size["imageItemSize"] = size.boardSize/7;
+            size["svgHeight"] = size.boardSize;
             size["boardImageCenter"] = (size.svgHeight-size.boardSize)/2;
             size["reAxis"] = size.boardSize/100;
 
@@ -114,6 +115,7 @@
             getX = d3.event.x, getY = d3.event.y;
 
         let targetEl, targetX, targetY, result;
+
         self.circleDom.forEach(el => {
           const getEl = el.getBBox();
           if(getEl.x < getX && getX < getEl.x + getEl.height && getEl.y < getY && getY < getEl.y + getEl.height ) {
@@ -127,21 +129,27 @@
             console.log("%cAAAA"+"%c dragended range true", "background:#ff8772; color:white;", "color:black;");
           }
         })
+        // debugger
         if(targetEl){
+
           if(!this.dataset.item) {
+            //
             let rename = this.id.split("_")
-            d3.select(this.parentElement).append('image').attr("xlink:href", this.href.animVal)
-              .attr('width', imageItemSize).attr('height', imageItemSize)
-              .attr('id', `${rename[0]}_${+rename[1]+1}`)
-              .attr('x', self.startX ).attr('y', self.startY )
-              .call(d3.drag()
-                .on("start", self.dragstarted)
-                .on("drag", self.dragged)
-                .on("end", self.dragended)
-              );
+            if(self.limited) {
+              d3.select(this.parentElement).append('image').attr("xlink:href", this.href.animVal)
+                .attr('width', imageItemSize).attr('height', imageItemSize)
+                .attr('id', `${rename[0]}_${+rename[1]+1}`)
+                .attr('x', self.startX ).attr('y', self.startY )
+                .call(d3.drag()
+                  .on("start", self.dragstarted)
+                  .on("drag", self.dragged)
+                  .on("end", self.dragended)
+                );
+            }
             d3.select(this).attr("data-item", "used")
           } else {
-              let targetCircle = self.circleDom.find(dom => dom.getBBox().x === self.startX && dom.getBBox().y === self.startY)
+              let targetCircle = self.circleDom.find(dom => Math.floor(dom.getBBox().x) === Math.floor(self.startX) && Math.floor(dom.getBBox().y) === Math.floor(self.startY))
+              // debugger
               d3.select(targetCircle).attr('data-circle', null)
           }
 
@@ -151,6 +159,15 @@
           d3.select(this).attr('x', self.startX ).attr('y', self.startY )
         }
         console.log("%cCCCC"+"%c dragended", "background:purple; color:white;", "color:black;");
+      }
+      handleSettleItem(d, i){
+        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis } = this.size;
+         if(d.axis) {
+           let targetEl = this.circleDom.find(x => x.__data__[0] === d.axis[0] && x.__data__[1] === d.axis[1])
+           d3.select(targetEl).attr("data-circle", "used")
+           return d.axis[0]*reAxis-(imageItemSize/2)
+         }
+         return this.dragItemVerticalMargin+this.axis[i][1]*(imageItemSize)
       }
       setData(data, manifest){
         let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis } = this.size,
@@ -166,6 +183,11 @@
              .attr('x', 0).attr('y', 0)
              .attr('width', boardSize)
              .attr('height', boardSize)
+        boardImage.append('polygon')
+                  .attr('style', "fill:lime;stroke:purple;stroke-width:1")
+                  .attr('points', "2,157,174,296")
+                  .attr('name', 'earth')
+                  // style="fill:lime;stroke:purple;stroke-width:1"
 
         let cirGroup = svg.selectAll('g')
              .data(data).enter()
@@ -176,28 +198,30 @@
            .attr('fill', 'gray')
            .attr("r", 10)
            .attr("cx", (d, i) => d[0]*reAxis )
-           .attr("cy", (d, i) => boardImageCenter+d[1]*reAxis)
+           .attr("cy", (d, i) => d[1]*reAxis )
 
         cirGroup.append("circle")
             .attr("r", imageItemSize/2).attr("opacity", 0.0)
             .attr("cx", (d, i) => d[0]*reAxis )
-            .attr("cy", (d, i) => boardImageCenter+d[1]*reAxis)
+            .attr("cy", (d, i) => d[1]*reAxis )
 
         this.set('circleDom', cirGroup.nodes())
 
 
         let dragItems = resImagesData.length,
-            dragItemsRange = Math.floor(resWidth/imageItemSize),
-            dragItemVerticalMargin = boardSize+(resWidth-(dragItemsRange*imageItemSize))/2,
-            dragItemHorizontalMargin = (svgHeight-(Math.ceil(dragItems/dragItemsRange)*imageItemSize))/2;
+            dragItemsRange = Math.floor(resWidth/imageItemSize);
 
-        let axis = []
+        this.set('dragItemVerticalMargin', boardSize+(resWidth-(dragItemsRange*imageItemSize))/2)
+        this.set('dragItemHorizontalMargin', (svgHeight-(Math.ceil(dragItems/dragItemsRange)*imageItemSize))/2)
+
+        // debugger
+        this.set('axis', [])
         for(var i = 0; i < dragItems; i++ ){
           for(var j = 0; j < dragItemsRange; j++ ) {
-            if(axis.length >= dragItems) {
+            if(this.axis.length >= dragItems) {
               break;
             }
-            axis.push([i,j])
+            this.push('axis', [i,j])
           }
         }
         // 위에서 똑같이 data를 부르고 있을때, 새로운 data를 입력할때 전 data 에서 빠져나온후 (exit()) 후 새로운 data().enter()
@@ -206,14 +230,17 @@
              .attr("xlink:href", (d, i) => d.src)
              .attr("id", (d,i) => `${d.name}_${i}`)
              .attr('width', `${imageItemSize}`).attr('height', `${imageItemSize}`)
-             .attr('x', ( d, i ) => dragItemVerticalMargin+axis[i][1]*(imageItemSize))
-             .attr('y', ( d, i ) => dragItemHorizontalMargin+axis[i][0]*(imageItemSize))
+             .attr("data-item", (d, i) => d.axis ? "used" : null)
              .call(d3.drag()
                .on("start", this.dragstarted)
                .on("drag", this.dragged)
-               .on("end", this.dragended)
+               .on("end", this.dragended))
+             .attr('x', ( d, i ) => this.handleSettleItem(d, i) )
+             .attr('y', ( d, i ) =>
+               d.axis
+               ? d.axis[1]*reAxis-(imageItemSize/2)
+               : this.dragItemHorizontalMargin+this.axis[i][0]*(imageItemSize)
              );
-
 
       }
     }
