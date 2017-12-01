@@ -953,6 +953,16 @@ public.get('/confirmTempUser/:url', function *(next) {
   }
 });
 
+public.get('/a1_w1', function *(next) {
+  yield this.render('a1_w1');
+});
+public.get('/a1_w2', function *(next) {
+  yield this.render('a1_w2');
+});
+public.get('/a1_w3', function *(next) {
+  yield this.render('a1_w3');
+});
+
 public.get('/click', function *(next) {
   yield this.render('click');
 });
