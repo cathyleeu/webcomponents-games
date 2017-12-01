@@ -405,6 +405,11 @@
     ["자판기 놀이", "Vending Machine", "/b1_w3"],
     ["엘리베이터 놀이", "Elevator", "/b1_w2"]
   ],
+  "A-1-re":[
+    ["숨어있는 컴퓨터를 찾아요", "Find the Computers", "/a1_w1"],
+    ["컴퓨터와 이야기해요", "Talk to the Computer", "/a1_w3"],
+    ["로그인을 연습해요", "Practice Login", "/activity#!a1_w4"]
+  ],
   "A-2":[
     ["클릭연습", "Click", "/click"]
   ],
