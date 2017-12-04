@@ -64,6 +64,14 @@
       nobtn="{{localize('nobtn')}}"
       purpose="previous"
       ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
     <div class="container"></div>
   </template>
   <script>
@@ -82,15 +90,18 @@
       ready() {
         // 미리 설정해 놓는 것....
         super.ready();
-        this.set('total', 0)
-        this.set('point', 0)
-        this.set('matched', 0)
+        // this.set('total', 0)
+        // this.set('point', 0)
+        // this.set('matched', 0)
         this.set('step', 1)
+        this.set('currentStage', 1)
       }
       reset(){
-        this.set('total', 0)
-        this.set('matched', 0)
-        this.set('point', this.point+5)
+        // this.set('total', 0)
+        // this.set('matched', 0)
+        // this.set('point', this.point+5)
+        this.set('step', 1)
+        this.set('currentStage', this.currentStage+1)
         d3.select(this.shadowRoot).select('svg').remove()
         this.setData(this.data, this.manifest)
       }
@@ -150,6 +161,13 @@
         } else {
           // console.log("result true", targetX, targetY)
           self.set('step', d.step)
+          if(self.step === self.data.last-1) {
+            if(self.currentStage === self.lastStage){
+              self.$.finalStageModal.modalAlert()
+              return false
+            }
+            self.$.successModal.modalAlert()
+          }
           // _this.set('matched', _this.matched+1)
           d3.select(this).attr("x", targetX+gap ).attr("y", targetY )
             .call(d3.drag().on("start", null ))

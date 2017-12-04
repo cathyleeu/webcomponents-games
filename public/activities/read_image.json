@@ -2,7 +2,9 @@
   "element": "read-image-game",
   "attributes": {
     "max" : 4,
-    "basePath" : "/sound/"
+    "basePath" : "/sound/",
+    "lastStage" : 3,
+    "nextlink" : "mazev#!coding_b1/0"
   },
   "data": [
     [10, 40],

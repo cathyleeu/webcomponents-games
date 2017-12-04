@@ -32,9 +32,24 @@
       on-modal="handleModal"
       fullscreen="{{localize('fullscreen')}}"
     ></status-bar>
-    <button onclick="[[exportImage]]">출력하기</button>
-    <svg id="createSvg"></svg>
-    <canvas id="canvas"></canvas>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+      <button onclick="[[exportImage]]">출력하기</button>
+      <svg id="createSvg"></svg>
+      <canvas id="canvas" style="display:none;"></canvas>
   </template>
   <script>
     class CreateImageGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -64,11 +79,22 @@
 
         this.set("size", size)
       }
+      // handleRetryText(){
+      //
+      // }
       exportImage(){
         // FIXME: 이미지 크기 조정
+        // debugger
         let element = d3.select('#element').node(),
             svg = d3.select(element.shadowRoot).select("#createSvg").node();
         console.log("exportImage");
+
+        let misMatched = element.circleDom.filter(dom => dom.dataset.match === "false")
+        if(misMatched.length > 0) {
+          element.$.retryModal.modalAlert()
+          return false;
+        }
+
         let targetNodes = []
         svg.childNodes.forEach(el => {
           if(el.id === "background" || el.dataset.item){
@@ -93,6 +119,7 @@
         link.download = "";
         link.click();
         link = null
+        element.$.finalStageModal.modalAlert()
       }
       dragstarted(d) {
         let self = d3.select('#element').node(),
@@ -125,17 +152,14 @@
             targetEl = el;
             targetX = getEl.x;
             targetY = getEl.y;
-            d3.select(el).attr('data-circle', "used")
             console.log("%cAAAA"+"%c dragended range true", "background:#ff8772; color:white;", "color:black;");
           }
         })
         // debugger
         if(targetEl){
-
           if(!this.dataset.item) {
-            //
             let rename = this.id.split("_")
-            if(self.limited) {
+            if(!self.limited) {
               d3.select(this.parentElement).append('image').attr("xlink:href", this.href.animVal)
                 .attr('width', imageItemSize).attr('height', imageItemSize)
                 .attr('id', `${rename[0]}_${+rename[1]+1}`)
@@ -149,14 +173,23 @@
             d3.select(this).attr("data-item", "used")
           } else {
               let targetCircle = self.circleDom.find(dom => Math.floor(dom.getBBox().x) === Math.floor(self.startX) && Math.floor(dom.getBBox().y) === Math.floor(self.startY))
-              // debugger
-              d3.select(targetCircle).attr('data-circle', null)
+              d3.select(targetCircle).attr('data-circle', null).attr('data-match', null).attr('data-imageName', null)
           }
 
           d3.select(this).attr("x", targetX).attr("y", targetY)
         } else {
           console.log("%cBBBB"+"%c drag false", "background:blue; color:white;", "color:black;");
           d3.select(this).attr('x', self.startX ).attr('y', self.startY )
+        }
+
+        if(d3.event.subject.group !== targetEl.__data__.group) {
+          d3.select(targetEl).attr('data-circle', "used")
+                       .attr('data-match', "false")
+                       .attr('data-imageName', d3.event.subject.name)
+        } else {
+          d3.select(targetEl).attr('data-circle', "used")
+                       .attr('data-match', null)
+                       .attr('data-imageName', null)
         }
         console.log("%cCCCC"+"%c dragended", "background:purple; color:white;", "color:black;");
       }
@@ -189,24 +222,33 @@
                   .attr('name', 'earth')
                   // style="fill:lime;stroke:purple;stroke-width:1"
 
+        if(this.group){
+          let axisObj = []
+          this.group.forEach(name => {
+            data[name].forEach(arr => axisObj.push({"axis": arr, group: name}))
+          })
+          data = axisObj
+        }
+
         let cirGroup = svg.selectAll('g')
              .data(data).enter()
              .append('g')
              .attr('data-axis', (d, i) => `dot${i}`)
+             .attr("data-group", (d, i) => d.group ? d.group : null )
 
         cirGroup.append('circle')
            .attr('fill', 'gray')
-           .attr("r", 10)
-           .attr("cx", (d, i) => d[0]*reAxis )
-           .attr("cy", (d, i) => d[1]*reAxis )
+           .attr("r", 8)
+           .attr("cx", (d, i) => d.group ? d.axis[0]*reAxis : d[0]*reAxis )
+           .attr("cy", (d, i) => d.group ? d.axis[1]*reAxis : d[1]*reAxis )
+
 
         cirGroup.append("circle")
             .attr("r", imageItemSize/2).attr("opacity", 0.0)
-            .attr("cx", (d, i) => d[0]*reAxis )
-            .attr("cy", (d, i) => d[1]*reAxis )
+            .attr("cx", (d, i) => d.group ? d.axis[0]*reAxis : d[0]*reAxis )
+            .attr("cy", (d, i) => d.group ? d.axis[1]*reAxis : d[1]*reAxis )
 
         this.set('circleDom', cirGroup.nodes())
-
 
         let dragItems = resImagesData.length,
             dragItemsRange = Math.floor(resWidth/imageItemSize);
