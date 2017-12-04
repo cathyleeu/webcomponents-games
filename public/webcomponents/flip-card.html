@@ -121,6 +121,14 @@
       nobtn="{{localize('nobtn')}}"
       purpose="previous"
       ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
     <minor-heading
       id="minorHeading"
       content="{{localize('minor')}}"></minor-heading>
@@ -161,12 +169,14 @@
         this.set('total', 0)
         this.set('point', 0)
         this.set('matched', 0)
+        this.set('currentStage', 1)
         this.set('minorHeight' , this.$.minorHeading.getBoundingClientRect().height)
         this.set('statusHeight' , this.$.statusBar.getBoundingClientRect().height)
       }
       reset(){
         this.set('total', 0)
         this.set('matched', 0)
+        this.set('currentStage', this.currentStage+1)
         this.set('point', this.point+5)
         d3.select(this.$.cont).selectAll('div').remove()
         this.setData(this.data, this.manifest)
@@ -234,7 +244,11 @@
                     flipped_el.remove();
 
                     if(_this.matched === _this.cards){
-                      _this.shadowRoot.getElementById("successModal").modalAlert()
+                      if(_this.max === _this.currentStage) {
+                        _this.$.finalStageModal.modalAlert()
+                        return false
+                      }
+                      _this.$.successModal.modalAlert()
                     }
                   } else {
                     flipped_el.classed("flipped", false);
