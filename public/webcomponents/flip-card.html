@@ -168,7 +168,7 @@
         this.set('total', 0)
         this.set('matched', 0)
         this.set('point', this.point+5)
-        d3.select(this.shadowRoot).select('#cont').remove()
+        d3.select(this.$.cont).selectAll('div').remove()
         this.setData(this.data, this.manifest)
       }
       handleContainStyle(){
