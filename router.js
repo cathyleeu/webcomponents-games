@@ -975,8 +975,8 @@ public.get('/c1_w2', function *(next) {
 public.get('/c1_w2_2', function *(next) {
   yield this.render('c1_w2_2');
 });
-public.get('/b1_w2', function *(next) {
-  yield this.render('b1_w2');
+public.get('/b1_w1', function *(next) {
+  yield this.render('b1_w1');
 });
 public.get('/b1_w3', function *(next) {
   yield this.render('b1_w3');
