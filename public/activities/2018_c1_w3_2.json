@@ -1,0 +1,61 @@
+{
+  "element": "create-image-game",
+  "attributes": {
+  },
+  "data": [
+    [7.42,75.26],[10.68,68.88],[20.44,79.56],[46.74,84.77],
+    [36.07,80.34],[38.54,64.06],[23.05,24.09],[45.31,17.45],
+    [44.01,37.76],[73.83,25.26],[60.94,52.86],[73.44,70.18]
+  ],
+  "manifest": [
+    {"src": "/img/renewed_c1/space.png", "background": true},
+    {"src": "/img/renewed_c1/airplane.png", "name": "airplane" },
+    {"src": "/img/renewed_c1/astronaut.png", "name": "astronaut" },
+    {"src": "/img/renewed_c1/bus.png", "name": "bus" },
+    {"src": "/img/renewed_c1/fall0.png", "name": "dragonfly" },
+    {"src": "/img/renewed_c1/fish.png", "name": "fish" },
+    {"src": "/img/renewed_c1/flower.png", "name": "flower" },
+    {"src": "/img/renewed_c1/rocket.png", "name": "rocket" },
+    {"src": "/img/renewed_c1/satellite.png", "name": "satellite" },
+    {"src": "/img/renewed_c1/star.png", "name": "star" },
+    {"src": "/img/renewed_c1/sun.png", "name": "sun" },
+    {"src": "/img/renewed_c1/ufo.png", "name": "ufo" },
+    {"src": "/img/renewed_c1/ship.png", "name": "ship" }
+  ],
+  "msg": {
+    "ko": {
+      "title": "사물들을 알맞은 위치로 옮겨보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Move things to the right place.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}
