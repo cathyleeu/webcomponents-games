@@ -1,0 +1,60 @@
+{
+  "element": "create-image-game",
+  "attributes": {
+    "limited" : true
+  },
+  "data": [
+    [9.35,43.2],[29.76,33.67],[61.22,41.5],[88.27,36.73],
+    [84.18,59.69],[55.1,67.18],[26.87,63.44],[10.03,86.39],
+    [39.46,91.5],[75.51,89.8]
+  ],
+  "manifest": [
+    {"src": "/img/renewed_a2/grass.png", "background": true},
+    {"src": "/img/renewed_a2/daizies.png", "name": "데이지" },
+    {"src": "/img/renewed_a2/gaenaris.png", "name": "개나리" },
+    {"src": "/img/renewed_a2/geumjanhwas.png", "name": "금잔화" },
+    {"src": "/img/renewed_a2/halmis.png", "name": "할미꽃" },
+    {"src": "/img/renewed_a2/jebis.png", "name": "제비꽃" },
+    {"src": "/img/renewed_a2/jindalaes.png", "name": "진달래" },
+    {"src": "/img/renewed_a2/mindles.png", "name": "민들레" },
+    {"src": "/img/renewed_a2/morans.png", "name": "모란" },
+    {"src": "/img/renewed_a2/pansies.png", "name": "팬지" },
+    {"src": "/img/renewed_a2/tulips.png", "name": "튤립" }
+  ],
+  "msg": {
+    "ko": {
+      "title": "꽃밭을 꾸며보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Let's make flower field.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}

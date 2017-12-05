@@ -1,0 +1,37 @@
+{
+  "element": "rotate-puzzle-game",
+  "attributes": {
+    "pznum": 5,
+    "nextlink" : "activity#!a7_w2_c1"
+  },
+  "data": "/img/woong/family_old.png",
+  "msg": {
+    "ko": {
+      "title": "그림에 맞춰 퍼즐을 맞춰보세요.",
+      "minor" : "아래의 그림에 따라 퍼즐을 완성해 보세요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "finalStageHead" : "성공!",
+      "finalStageBtm" : "퍼즐을 다 맞췄어요",
+      "finalbtn" : "확인",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "아직 맞추지 못한 퍼즐이 있어요. 다시 시도해 볼까요?",
+      "retrybtn": "다시하기",
+      "answerButton" : "정답 확인하기"
+    },
+    "en": {
+      "title": "Along with the picture, Match the puzzle",
+      "minor" : "Follow the below picture and Complete the puzzle.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear",
+      "finalbtn" : "Clear",
+      "retryHead": "Failed",
+      "retryBtm" : "Do you want to retry?",
+      "retrybtn": "Retry",
+      "answerButton" : "Confirm"
+    }
+  }
+}

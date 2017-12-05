@@ -231,11 +231,12 @@ function getBook(classObj) {
   if(school == "A00083-K3") {
     book = [1, 2, 3, 4, 5, "5-5", 6, 7, 8, 9];
   }
-  // 직영 설리번, 울산지사 교차로원, 인천지사 유원유치원, 부산지사 동성어학원
+  // 울산지사 교차로원, 인천지사 유원유치원, 부산지사 동성어학원
   if(school == "A00072-K9" || school == "A00114-K3" || school == "A00066-K2") {
     book = [6, 7];
   }
-  if(school == "E00076-K1" ) {
+  // 직영 설리번, 광주지사 리아시찌다원
+  if(school == "E00076-K1" || school == "A00058-K1") {
     book = [7, 8];
   }
   // 울산지사 설리번(격월, 11,12월에 5,6)
@@ -247,6 +248,9 @@ function getBook(classObj) {
     var classNum = classObj.code.slice(-3);
     if(classNum == "KC1") {
       book = [3, 4];
+    }
+    if(classNum == "KC2") {
+      book = [7, 8];
     }
   }
   // 마포ECC 추가반, 청라ECC 추가반
@@ -949,6 +953,16 @@ public.get('/confirmTempUser/:url', function *(next) {
   }
 });
 
+public.get('/a1_w1', function *(next) {
+  yield this.render('a1_w1');
+});
+public.get('/a1_w2', function *(next) {
+  yield this.render('a1_w2');
+});
+public.get('/a1_w3', function *(next) {
+  yield this.render('a1_w3');
+});
+
 public.get('/click', function *(next) {
   yield this.render('click');
 });
@@ -961,8 +975,8 @@ public.get('/c1_w2', function *(next) {
 public.get('/c1_w2_2', function *(next) {
   yield this.render('c1_w2_2');
 });
-public.get('/b1_w2', function *(next) {
-  yield this.render('b1_w2');
+public.get('/b1_w1', function *(next) {
+  yield this.render('b1_w1');
 });
 public.get('/b1_w3', function *(next) {
   yield this.render('b1_w3');

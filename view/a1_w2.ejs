@@ -76,7 +76,7 @@
   <div class="workspace">
     <div class="text-box">1</div>
     <div class="sel-box"></div>
-    <img class="background" src="img/b1_w3/el_img1.png"/>
+    <img class="background" src="img/a1_w2/el_img1.png"/>
   </div>
 
 </div>
@@ -103,10 +103,10 @@
         }
       };
   var step = 1;
-  var audio0 = new Audio('img/b1_w3/el_sound0.mp3');
-  var audio1 = new Audio('img/b1_w3/el_sound1.mp3');
-  var audio2 = new Audio('img/b1_w3/el_sound2.mp3');
-  var audio4 = new Audio('img/b1_w3/walk.mp3');
+  var audio0 = new Audio('img/a1_w2/el_sound0.mp3');
+  var audio1 = new Audio('img/a1_w2/el_sound1.mp3');
+  var audio2 = new Audio('img/a1_w2/el_sound2.mp3');
+  var audio4 = new Audio('img/a1_w2/walk.mp3');
   var audio5 = new Audio('sound/complete.mp3');
   $("[data-msg]").each(function(idx, el) {
     $(el).text(msg[lang][$(el).data("msg")]);
@@ -122,7 +122,7 @@
       this.style.left = "115px";
       setTimeout( function () {
         $(".hint").text(msg[lang].hint1);
-        $(".background").attr("src","img/b1_w3/el_img2.png");
+        $(".background").attr("src","img/a1_w2/el_img2.png");
       }, 4500);
       step = 2;
     }else if(step==2){
@@ -133,13 +133,13 @@
       this.style.left = "530px";
       setTimeout( function () {
         $(".hint").text(msg[lang].hint2);
-        $(".background").attr("src","img/b1_w3/el_img3.png");
+        $(".background").attr("src","img/a1_w2/el_img3.png");
       }, 1000);
       step = 3;
     }else if(step==3){
       audio0.play();
       sleep(1000);
-      $(".background").attr("src","img/b1_w3/el_img4.png");
+      $(".background").attr("src","img/a1_w2/el_img4.png");
       audio2.play();
       var i=1;
       var uploop = setInterval(function(){
@@ -148,9 +148,11 @@
           var num = i.toString();
           $(".text-box").text(num);
         }else{
+          audio2.pause();
+          audio2.currentTime = 0;
           audio1.play();
           setTimeout( function () {
-            $(".background").attr("src","img/b1_w3/el_img5.png");
+            $(".background").attr("src","img/a1_w2/el_img5.png");
             $(".hint").text(msg[lang].hint3);
           }, 4500);
           step = 4;
@@ -166,6 +168,10 @@
       setTimeout( function () {
         audio5.play();
         $(".hint").text(msg[lang].success);
+        setTimeout( function () {
+          alert(msg[lang].success);
+          document.location.href = '/a1_w1';
+        }, 2000);
         step = 5;
       }, 1000);
     }
