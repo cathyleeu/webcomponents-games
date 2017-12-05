@@ -1,0 +1,55 @@
+{
+  "element": "create-image-game",
+  "attributes": {
+    "limited" : true
+  },
+  "data": [
+    [17.18,50.68],[30.61,84.86],[69.9,73.3],
+    [72.62,55.61],[94.22,67.69],[50.21,12.24]
+  ],
+  "manifest": [
+    {"src": "/img/renewed_a2/wintersleep.png", "background": true},
+    {"src": "/img/renewed_a2/bear.png", "name": "곰" },
+    {"src": "/img/renewed_a2/fish.png", "name": "물고기" },
+    {"src": "/img/renewed_a2/frog.png", "name": "개구리" },
+    {"src": "/img/renewed_a2/hatch.png", "name": "고슴도치" },
+    {"src": "/img/renewed_a2/snake.png", "name": "뱀" },
+    {"src": "/img/renewed_a2/sqr.png", "name": "다람쥐" }
+  ],
+  "msg": {
+    "ko": {
+      "title": "동물들이 어디에서 겨울잠을 자나요?",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Along with the picture, arrange the bath tools.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}
