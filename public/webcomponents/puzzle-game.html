@@ -1,6 +1,7 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
 
 <dom-module id="puzzle-game">
   <template>
@@ -11,6 +12,14 @@
       total="{{total}}"
       matched="{{matched}}"
       cards="{{cards}}"></status-bar>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
   </template>
   <script>
     class PuzzleGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element)  {
@@ -127,6 +136,12 @@
 
           d3.select(this).attr("x", targetX+puzzlePosition ).attr("y", targetY-(randonPosition-puzzleMargin) )
             .call(d3.drag().on("start", null ))
+            
+          self.set('matched', self.matched+1)
+
+          if(self.matched === self.cards) {
+            self.$.finalStageModal.modalAlert()
+          }
         } else {
           console.log("false");
           d3.select(this).attr("x", self.startX ).attr("y", self.startY )

@@ -1,6 +1,7 @@
 {
   "element": "create-image-game",
   "attributes": {
+    "limited" : true
   },
   "data": [
     [53.52,20.18],[45.96,35.55],[63.54,49.09],
@@ -10,7 +11,7 @@
   ],
   "manifest": [
     {"src": "/img/a6_w1/road_bg.png", "background": true},
-    {"src": "/img/a6_w1/tree1.png", "name": "tree1" },
+    {"src": "/img/a6_w1/tree1.png", "name": "tree1" , "axis" : [53.52,20.18]},
     {"src": "/img/a6_w1/tree2.png", "name": "tree2" },
     {"src": "/img/a6_w1/tree3.png", "name": "tree3" },
     {"src": "/img/a6_w1/bd1.png", "name": "bd1" },

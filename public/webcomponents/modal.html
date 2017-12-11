@@ -180,10 +180,13 @@
       }
       handleFinalStep(){
         if(!this.nextlink){
+          let href = `${location.origin}/code/${window.name}`
           this.element.classList.remove('three')
+          window.open(href, window.name);
           return false
         }
         let href = `${location.origin}/${this.nextlink}`
+        this.element.classList.remove('three')
         window.open(href, window.name)
       }
     }

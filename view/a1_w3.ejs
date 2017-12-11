@@ -1,0 +1,232 @@
+<style>
+#container {
+  position: relative;
+}
+
+.head {
+  position: relative;
+}
+
+.instruction {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+  background: #2C3E50;
+  color: white;
+}
+
+.hint {
+  position: relative;
+  height: 50px;
+  text-align: center;
+  background: #18BC9C;
+  color: white;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.workspace {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 600px; width: 1200px;
+}
+.workspace .background {
+  height: 500px;
+  width: auto;
+  margin-left: 30px;
+  margin-top: 3px;
+  display: block;
+  float:left;
+}
+.remote {
+  width: 300px;
+  height: auto;
+  margin-top: 150px;
+  margin-left: 50px;
+  display: block;
+  float:left;
+}
+.tv-channel {
+  width: 500px;
+  height: auto;
+  margin-top: 0px;
+  margin-left: 30px;
+  visibility: hidden;
+  position: absolute;
+}
+.power {
+  position: absolute;
+  border:2px dashed transparent;
+  padding:10px;
+  height: 70px;
+  width: 80px;
+  top: 190px;
+  left: 690px;
+  cursor:pointer;
+}
+.channel-up {
+  position: absolute;
+  border:2px dashed transparent;
+  padding:10px;
+  height: 70px;
+  width: 80px;
+  top: 260px;
+  left: 690px;
+  cursor:pointer;
+}
+.channel-down {
+  position: absolute;
+  border:2px dashed transparent;
+  padding:10px;
+  height: 70px;
+  width: 80px;
+  top: 330px;
+  left: 690px;
+  cursor:pointer;
+}
+
+
+</style>
+<div id="container">
+  <div class="head">
+    <div class="instruction" data-msg="instruction">텔레비전 놀이를 해봐요</div>
+    <div class="hint" data-msg="hint">텔레비전을 켜봐요!</div>
+  </div>
+  <div class="workspace">
+    <img class="tv-channel" src="img/a1_w3/animal.png"/>
+    <img class="background" src="img/a1_w3/television.png"/>
+    <img class="remote" src="img/a1_w3/remote_controler.png"/>
+    <div class="power"></div>
+    <div class="channel-up"></div>
+    <div class="channel-down"></div>
+  </div>
+
+</div>
+
+<script>
+/* TODO : border:5px;
+border-style: dotted;
+border-color: coral;
+-> border:2px dashed transparent;
+*/
+var hash = location.hash,
+    lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+    msg = {
+      ko: {
+        instruction: "텔레비전 놀이를 해봐요",
+        hint: "텔레비전을 켜봐요!",
+        hint1: "채널을 돌려봐요!",
+        hint2: "텔레비전을 꺼봐요!",
+        success: "성공!"
+      },
+      en: {
+        instruction: "Television Practice",
+        hint: "Turn on the television!",
+        hint1: "Turn a channel!",
+        hint2: "Turn off the television!",
+        success: "Success!"
+      }
+    };
+  var action_count = 0;
+  var step = 1;
+  var onoff = new Audio('img/a1_w3/onoff.mp3');
+  var kidsani = new Audio('img/a1_w3/kidsani.mp3');
+  var animal = new Audio('img/a1_w3/animal.mp3');
+  var baseball = new Audio('img/a1_w3/baseball.mp3');
+  var action_movie = new Audio('img/a1_w3/action_movie.mp3');
+  var complete = new Audio('sound/complete.mp3');
+  $("[data-msg]").each(function(idx, el) {
+    $(el).text(msg[lang][$(el).data("msg")]);
+  });
+  $(".power").click(function() {
+    if(action_count==0){
+      action_count++;
+      onoff.play();
+      setTimeout( function () {
+        playtv(step);
+        $(".hint").text(msg[lang].hint1);
+        $(".tv-channel").css("visibility","visible")
+      }, 1000);
+    } else{
+      action_count = 0;
+      onoff.play();
+      setTimeout( function () {
+        playtv(99);
+        $(".hint").text(msg[lang].success);
+        $(".tv-channel").css("visibility","hidden")
+      }, 1000);
+    }
+  });
+
+  $(".channel-up").click(function() {
+    if(action_count>0){
+      action_count++;
+      if(step==4){
+        step=1;
+      }else {
+        step++;
+      }
+      onoff.play();
+      setTimeout( function () {
+        playtv(step);
+      }, 1000);
+    }
+  });
+  $(".channel-down").click(function() {
+    if(action_count>0){
+      action_count++;
+      if(step==1){
+        step=4;
+      }else {
+        step--;
+      }
+      onoff.play();
+      setTimeout( function () {
+        playtv(step);
+      }, 1000);
+    }
+  });
+
+  function playtv(chennel_num){
+    animal.pause();
+    animal.currentTime = 0;
+    kidsani.pause();
+    kidsani.currentTime = 0;
+    baseball.pause();
+    baseball.currentTime = 0;
+    action_movie.pause();
+    action_movie.currentTime = 0;
+    if(chennel_num==1){
+      animal.play()
+      $(".tv-channel").attr("src","img/a1_w3/animal.png");
+    }else if(chennel_num==2){
+      kidsani.play()
+      $(".tv-channel").attr("src","img/a1_w3/kidsani.png");
+    }else if(chennel_num==3){
+      baseball.play()
+      $(".tv-channel").attr("src","img/a1_w3/baseball.png");
+    }else if(chennel_num==4){
+      action_movie.play()
+      $(".tv-channel").attr("src","img/a1_w3/action_movie.png");
+    }else{
+      complete.play()
+    }
+    if(action_count>4){
+      $(".hint").text(msg[lang].hint2);
+    }
+  }
+
+  function sleep(num){	//[1/1000초]
+	 var now = new Date();
+	   var stop = now.getTime() + num;
+	   while(true){
+		 now = new Date();
+		 if(now.getTime() > stop)return;
+	   }
+	}
+
+</script>

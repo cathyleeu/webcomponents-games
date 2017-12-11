@@ -183,8 +183,8 @@
             selected = that.correct.some(s => s === d),
             uncorrect = that.uncorrect.some(s => s === d);
 
-        this.classList.toggle('clicked')
-        if(this.classList.value){
+        d3.select(this).classed("clicked", !d3.select(this).classed("clicked"))
+        if(d3.select(this).classed("clicked")){
           !selected && that.push('uncorrect', d)
           that.set('clicked', that.clicked+1)
         } else {
