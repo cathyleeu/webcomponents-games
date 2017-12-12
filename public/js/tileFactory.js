@@ -85,8 +85,8 @@ TileFactory.prototype.create = function(tile, x, y) {
     if(_this.custom_tiles[tile].id) { // manifest에서의 id는 img로 쓰임
       info.img = _this.custom_tiles[tile].id;
     }
-    ["img", "text", "color", "fillColor", "strokeWidth", "strokeColor", "obstacle", "wall"].forEach(function(key) {
-      if(_this.custom_tiles[tile].hasOwnProperty(key)) {
+    Object.keys(_this.custom_tiles[tile]).forEach(function(key) {
+      if(key != "tile") {
         info[key] = _this.custom_tiles[tile][key];
       }
     });

@@ -2,10 +2,10 @@
   "tile_size": 128,
   "score":1,
   "workspace": "start",
-  "solution": "start,rotate_left,move_forward(7)",
-  "problem": "start,empty,move_forward(*)",
+  "solution": "start,rotate_left,move_forward1",
+  "problem": "start,empty,move_forward1",
   "toolbox": [
-    "move_forward",
+    "move_forward1",
     "rotate_left",
     "rotate_right",
     "repeat"
