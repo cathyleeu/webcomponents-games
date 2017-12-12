@@ -1,0 +1,53 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="toycode-button">
+  <template>
+    <style>
+      /*:host {
+
+      }*/
+      button {
+        outline: none;
+        color: white;
+        margin: 0.5em;
+      }
+      #container {
+        position: var(--toycode-button-container-position, absolute);
+        width: var(--toycode-button-container-width, 100%);
+        bottom: 0px;
+        text-align: center;
+        right: 0px;
+        box-sizing: border-box;
+        padding: var(--toycode-button-container-padding, 10%);
+      }
+      .custom {
+        width: var(--toycode-button-custom-width, 100%);
+        height: var(--toycode-button-custom-height, 40px);
+        background: var(--toycode-button-custom-background, #5c2131)
+      }
+    </style>
+    <div id="container"></div>
+  </template>
+  <script>
+    class Button extends Polymer.Element {
+      static get is() {
+        return "toycode-button";
+      }
+      static get properties() {
+        return {
+          buttonData : Array
+        }
+      }
+      ready(){
+        super.ready();
+        // debugger
+        d3.select(this.$.container).selectAll('button')
+          .data(this.buttonData).enter()
+          .append('button').attr('class','custom')
+          .text((d,i) => `${d.text}`)
+          .on("click", (d, i) => d.method())
+      }
+    }
+    window.customElements.define(Button.is, Button);
+  </script>
+</dom-module>

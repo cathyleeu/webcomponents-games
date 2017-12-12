@@ -1,22 +1,13 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="./status-bar.html">
+<link rel="import" href="./button.html">
 <link rel="import" href="./modal.html">
 
 
 <dom-module id="create-image-game">
   <template>
     <style>
-      button {
-        position: absolute;
-        width: 150px;
-        height: 50px;
-        background: #5c2131;
-        bottom: 10px;
-        right: 10px;
-        outline: none;
-        color: white;
-      }
     </style>
     <status-bar
       id="statusBar"
@@ -47,7 +38,8 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
-      <button onclick="[[exportImage]]">출력하기</button>
+    <toycode-button button-Data="[[dispatchToChild()]]"></toycode-button>
+
       <svg id="createSvg"></svg>
       <canvas id="canvas" style="display:none;"></canvas>
   </template>
@@ -68,32 +60,41 @@
         super.ready();
         let { innerHeight, innerWidth } = window,
             size = {
-              svgHeight : innerHeight-this.$.statusBar.getBoundingClientRect().height,
-              resWidth : innerWidth*0.4
+              svgHeight : innerHeight-this.$.statusBar.getBoundingClientRect().height
             }
             size["boardSize"] = innerWidth*0.6 > size.svgHeight ? size.svgHeight : innerWidth*0.6;
+            size["resWidth"] = innerWidth-size.boardSize;
             size["imageItemSize"] = size.boardSize/7;
             size["svgHeight"] = size.boardSize;
             size["boardImageCenter"] = (size.svgHeight-size.boardSize)/2;
             size["reAxis"] = size.boardSize/100;
 
         this.set("size", size)
+        this.updateStyles({
+          '--toycode-button-container-padding' : `${size.resWidth*0.1}px`,
+          '--toycode-button-container-width': `${size.resWidth}px`,
+        })
+        this.set('matchList', [])
       }
-      // handleRetryText(){
-      //
-      // }
+      reset(){
+        let ele = d3.select('#element').node();
+        d3.select(ele.$.createSvg).selectAll('image, g').remove()
+        ele.setData(ele.data, ele.manifest)
+      }
+      dispatchToChild(){
+        let button = [
+          { text: "출력하기", method: this.exportImage },
+          { text: "다시하기", method: this.reset },
+          { text: "완성하기", method: this.handleStageClear },
+        ]
+        return button
+      }
       exportImage(){
         // FIXME: 이미지 크기 조정
         // debugger
         let element = d3.select('#element').node(),
             svg = d3.select(element.shadowRoot).select("#createSvg").node();
-        console.log("exportImage");
-
-        let misMatched = element.circleDom.filter(dom => dom.dataset.match === "false")
-        if(misMatched.length > 0) {
-          element.$.retryModal.modalAlert()
-          return false;
-        }
+        // console.log("exportImage");
 
         let targetNodes = []
         svg.childNodes.forEach(el => {
@@ -119,6 +120,17 @@
         link.download = "";
         link.click();
         link = null
+      }
+      handleStageClear(){
+        let element = d3.select('#element').node(),
+            svg = d3.select(element.shadowRoot).select("#createSvg").node();
+
+        let misMatched = element.circleDom.filter(dom => dom.dataset.match === "false")
+        // debugger
+        if(misMatched.length > 0) {
+          element.$.retryModal.modalAlert()
+          return false;
+        }
         element.$.finalStageModal.modalAlert()
       }
       dragstarted(d) {
@@ -183,18 +195,24 @@
         }
 
         if(d3.event.subject.group !== targetEl.__data__.group) {
+          // match list
           d3.select(targetEl).attr('data-circle', "used")
                        .attr('data-match', "false")
                        .attr('data-imageName', d3.event.subject.name)
+          //FIXME: 특정이름 뽑아내기!
+          // self.matchList.pop(d3.event.subject.name)
         } else {
           d3.select(targetEl).attr('data-circle', "used")
                        .attr('data-match', null)
                        .attr('data-imageName', null)
+
+          self.matchList.push(d3.event.subject.name)
+
         }
         console.log("%cCCCC"+"%c dragended", "background:purple; color:white;", "color:black;");
       }
       handleSettleItem(d, i){
-        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis } = this.size;
+        let { boardSize, imageItemSize, svgHeight, boardImageCenter, reAxis } = this.size;
          if(d.axis) {
            let targetEl = this.circleDom.find(x => x.__data__[0] === d.axis[0] && x.__data__[1] === d.axis[1])
            d3.select(targetEl).attr("data-circle", "used")
@@ -203,11 +221,17 @@
          return this.dragItemVerticalMargin+this.axis[i][1]*(imageItemSize)
       }
       setData(data, manifest){
+
+        this.set('data', data)
+        this.set('manifest', manifest)
+
         let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis } = this.size,
             svg = d3.select(this.$.createSvg).attr('width', innerWidth).attr('height', svgHeight);
 
         let backgroundImg = manifest.find(d => d.background).src,
             resImagesData = manifest.filter(d => !d.background)
+
+        this.set('imageNum', resImagesData.length)
 
         this.set('backgroundImg', backgroundImg)
         let boardImage = svg.append('image')
@@ -251,10 +275,10 @@
         this.set('circleDom', cirGroup.nodes())
 
         let dragItems = resImagesData.length,
-            dragItemsRange = Math.floor(resWidth/imageItemSize);
+            dragItemsRange = Math.floor((resWidth*0.8)/imageItemSize);
 
         this.set('dragItemVerticalMargin', boardSize+(resWidth-(dragItemsRange*imageItemSize))/2)
-        this.set('dragItemHorizontalMargin', (svgHeight-(Math.ceil(dragItems/dragItemsRange)*imageItemSize))/2)
+        this.set('dragItemHorizontalMargin', (svgHeight-(Math.ceil(dragItems/dragItemsRange)*imageItemSize))/10)
 
         // debugger
         this.set('axis', [])

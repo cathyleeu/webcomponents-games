@@ -1,20 +1,25 @@
 {
   "element": "create-image-game",
   "attributes": {
-    "limited" : true
+    "limited" : true,
+    "group" : ["gr1", "gr2", "gr3", "gr4", "gr5", "gr6"]
   },
-  "data": [
-    [17.18,50.68],[30.61,84.86],[69.9,73.3],
-    [72.62,55.61],[94.22,67.69],[50.21,12.24]
-  ],
+  "data": {
+    "gr1": [[17.18,50.68]],
+    "gr2": [[30.61,84.86]],
+    "gr3": [[69.9,73.3]],
+    "gr4": [[72.62,55.61]],
+    "gr5": [[94.22,67.69]],
+    "gr6": [[50.21,12.24]]
+  },
   "manifest": [
     {"src": "/img/renewed_a2/wintersleep.png", "background": true},
-    {"src": "/img/renewed_a2/bear.png", "name": "곰" },
-    {"src": "/img/renewed_a2/fish.png", "name": "물고기" },
-    {"src": "/img/renewed_a2/frog.png", "name": "개구리" },
-    {"src": "/img/renewed_a2/hatch.png", "name": "고슴도치" },
-    {"src": "/img/renewed_a2/snake.png", "name": "뱀" },
-    {"src": "/img/renewed_a2/sqr.png", "name": "다람쥐" }
+    {"src": "/img/renewed_a2/bear.png", "name": "곰", "group": "gr1" },
+    {"src": "/img/renewed_a2/fish.png", "name": "물고기", "group": "gr2"},
+    {"src": "/img/renewed_a2/frog.png", "name": "개구리", "group": "gr3"},
+    {"src": "/img/renewed_a2/hatch.png", "name": "고슴도치", "group": "gr4"},
+    {"src": "/img/renewed_a2/snake.png", "name": "뱀", "group": "gr5"},
+    {"src": "/img/renewed_a2/sqr.png", "name": "다람쥐", "group": "gr6"}
   ],
   "msg": {
     "ko": {
