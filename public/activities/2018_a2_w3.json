@@ -15,10 +15,10 @@
   "manifest": [
     {"src": "/img/renewed_a2/wintersleep.png", "background": true},
     {"src": "/img/renewed_a2/bear.png", "name": "곰", "group": "gr1" },
-    {"src": "/img/renewed_a2/fish.png", "name": "물고기", "group": "gr2"},
+    {"src": "/img/renewed_a2/fish.png", "name": "물고기", "group": "gr5"},
     {"src": "/img/renewed_a2/frog.png", "name": "개구리", "group": "gr3"},
     {"src": "/img/renewed_a2/hatch.png", "name": "고슴도치", "group": "gr4"},
-    {"src": "/img/renewed_a2/snake.png", "name": "뱀", "group": "gr5"},
+    {"src": "/img/renewed_a2/snake.png", "name": "뱀", "group": "gr2"},
     {"src": "/img/renewed_a2/sqr.png", "name": "다람쥐", "group": "gr6"}
   ],
   "msg": {
@@ -39,6 +39,10 @@
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "확인",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "아이템 모두 사용해주세요.",
+      "retrybtn": "다시하기",
+      "unCorrect" : "다시 시도해 볼까요?",
       "fullscreen" : "풀스크린"
     },
     "en": {

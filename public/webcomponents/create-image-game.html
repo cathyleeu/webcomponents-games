@@ -24,6 +24,14 @@
       fullscreen="{{localize('fullscreen')}}"
     ></status-bar>
     <toycode-modal
+      id="unCorrectModal"
+      purpose="unCorrect"
+      filter-Images="{{filterUncorrectImages}}"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('unCorrect')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
       id="retryModal"
       purpose="retry"
       headertext="{{localize('retryHead')}}"
@@ -74,12 +82,15 @@
           '--toycode-button-container-padding' : `${size.resWidth*0.1}px`,
           '--toycode-button-container-width': `${size.resWidth}px`,
         })
-        this.set('matchList', [])
+        this.set('correct', [])
+        this.set('unCorrect', [])
       }
       reset(){
         let ele = d3.select('#element').node();
         d3.select(ele.$.createSvg).selectAll('image, g').remove()
         ele.setData(ele.data, ele.manifest)
+        ele.set('correct', [])
+        ele.set('unCorrect', [])
       }
       dispatchToChild(){
         let button = [
@@ -121,17 +132,37 @@
         link.click();
         link = null
       }
+      filterUncorrectImages(){
+        let element = d3.select('#element').node(),
+            {unCorrect, items} = element;
+        // console.log(unCorrect, items)
+        return unCorrect.map(un => items.find(ele => ele.name === un))
+      }
       handleStageClear(){
         let element = d3.select('#element').node(),
-            svg = d3.select(element.shadowRoot).select("#createSvg").node();
+            svg = d3.select(element.shadowRoot).select("#createSvg").node(),
+            { unCorrect, correct, items} = element;
 
-        let misMatched = element.circleDom.filter(dom => dom.dataset.match === "false")
-        // debugger
-        if(misMatched.length > 0) {
-          element.$.retryModal.modalAlert()
-          return false;
+        let used = element.circleDom.filter(dom => dom.dataset.circle === "used").length
+        if(this.limited) {
+          if(used !== items.length) {
+            element.$.retryModal.modalAlert()
+            return false;
+          }
+          if(unCorrect.length > 0) {
+            element.$.unCorrectModal.modalAlert()
+            return false;
+          }
         }
         element.$.finalStageModal.modalAlert()
+      }
+      filterMatch(name, status) {
+        let opposite = status === 'correct' ? 'unCorrect' : 'correct',
+            target = this[opposite].indexOf(name);
+        if( target !== -1) {
+          this.set( opposite , this[opposite].filter(mat => mat !== name))
+        }
+        this[status].push(name)
       }
       dragstarted(d) {
         let self = d3.select('#element').node(),
@@ -194,19 +225,21 @@
           d3.select(this).attr('x', self.startX ).attr('y', self.startY )
         }
 
-        if(d3.event.subject.group !== targetEl.__data__.group) {
+        let { group, name } = d3.event.subject;
+        if(group !== targetEl.__data__.group) {
           // match list
           d3.select(targetEl).attr('data-circle', "used")
                        .attr('data-match', "false")
-                       .attr('data-imageName', d3.event.subject.name)
-          //FIXME: 특정이름 뽑아내기!
-          // self.matchList.pop(d3.event.subject.name)
+                       .attr('data-imageName', name)
+
+          self.filterMatch(name, 'unCorrect')
+
         } else {
           d3.select(targetEl).attr('data-circle', "used")
                        .attr('data-match', null)
                        .attr('data-imageName', null)
 
-          self.matchList.push(d3.event.subject.name)
+          self.filterMatch(name, 'correct')
 
         }
         console.log("%cCCCC"+"%c dragended", "background:purple; color:white;", "color:black;");
@@ -231,7 +264,7 @@
         let backgroundImg = manifest.find(d => d.background).src,
             resImagesData = manifest.filter(d => !d.background)
 
-        this.set('imageNum', resImagesData.length)
+        this.set('items', resImagesData)
 
         this.set('backgroundImg', backgroundImg)
         let boardImage = svg.append('image')
