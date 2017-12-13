@@ -9,26 +9,28 @@
     "move_left"
   ],
   "map": [
-    ".#####.",
-    "#.....#",
-    "#.....#",
-    "#.r..%#",
-    "#.....#",
-    "#.....#",
-    ".#####."
+    ".#######.",
+    "#.......#",
+    "#.###...#",
+    "#.r.....#",
+    "#..#....#",
+    "###.%...#",
+    "#....##.#",
+    "#....#..#",
+    ".#######."
   ],
   "tutorial": [{
-    "msg:ko": "더 많은 장구벌레를 먹어야해!",
+    "msg:ko": "개구리가 되려면 더 많은 장구벌레를 먹어야해!",
     "msg:en": "I want to eat more Longworm",
     "img": "/img/b2_w1/Larva_256.png"
   },{
-    "msg:ko": "→오른쪽으로 이동 블록을 이용해서 장구벌레에게로 가보자!",
-    "msg:en": "Let's move right using [Move Right] block",
-    "img": "/img/blocks/right.png"
+    "msg:ko": "→↓ 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move up using [Move Right][Move Down] block",
+    "img": ["/img/blocks/right.png","/img/blocks/down.png"]
   }],
   "goal": {
-    "msg:ko": "←왼쪽으로 이동 블록을 이용해서 장구벌레에게로 가보자!",
-    "msg:en": "Let's move left using [Move Left] block",
-    "img": "/img/b2_w1/Larva_256.png"
+    "msg:ko": "→↓ 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move up using [Move Right][Move Down] block",
+    "img": ["/img/b2_w1/Larva_256.png","/img/blocks/right.png","/img/blocks/down.png"]
   }
 }

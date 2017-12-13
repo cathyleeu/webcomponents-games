@@ -474,6 +474,12 @@
     ["방향을 바꿔서 움직여요:토드의 앞다리도 자랐어요", "Tod's Forelegs", "/mazeh#!b2_w3/1"],
     ["이리 저리 움직여요:토드가 개구리가 되었어요", "Tod the Baby Frog", "/mazeh#!b2_w4/1"]
   ],
+  "B-2-re":[
+    ["봄이 왔어요", "Spring is coming", "/mazeh#!b2_w1/1"],
+    ["방향을 바꿔요", "Change direction", "/mazeh#!b2_w2/1"],
+    ["이리저리 움직여요", "Move around", "/mazeh#!b2_w3/1"],
+    ["더 멀리 움직여요", "Move further", "/mazeh#!b2_w4/1"]
+  ],
   "B-3":[
     ["나와 가족:코스네 가족", "Cos' Family", "/mazeh#!b3_w1/index"],
     ["방향을 바꾸며 움직여요:우주선을 찾아요", "Go Find the UFO", "/mazeh#!b3_w2/index"],
