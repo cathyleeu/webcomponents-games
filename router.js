@@ -265,9 +265,9 @@ function getBook(classObj) {
     return classObj.level + "-" + num;
   }).join(",");
   // 대구지사 에나어린이집, 청솔유치원 5세반에 6세 컨텐츠 추가
-  if((school == "C00071-K6" || school == "C00071-K14") && classObj.level == "A") {
-    book += ",B-1,B-2";
-  }
+  // if((school == "C00071-K6" || school == "C00071-K14") && classObj.level == "A") {
+  //   book += ",B-1,B-2";
+  // }
   // 울산지사 소속원 5세반에 6세 컨텐츠 추가
   if(school.slice(0,6) == "A00072" && classObj.level == "A") {
     book += ",B-3";
