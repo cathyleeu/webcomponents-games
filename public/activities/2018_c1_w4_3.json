@@ -1,7 +1,8 @@
 {
   "element": "line-card",
   "attributes": {
-    "max" : 2,
+    "limited" : true,
+    "max" : 4,
     "horizontal" : true
   },
   "data": [
@@ -28,7 +29,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "서로 비슷한 역할을 하는 코스의 신체와 컴퓨터의 부속을 이어보아요.",
+      "title": "연결해보아요.",
+      "minor": "서로 비슷한 역할을 하는 코스의 신체와 컴퓨터의 부속을 이어보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -48,6 +50,7 @@
     },
     "en": {
       "title": "Match the parts of Cos and the computer parts that play a similar role",
+      "minor": "Match the parts of Cos and the computer parts that play a similar role",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

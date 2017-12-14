@@ -1,6 +1,7 @@
 {
   "element": "create-image-game",
   "attributes": {
+    "limited" : true
   },
   "data": [
     [7.42,75.26],[10.68,68.88],[20.44,79.56],[46.74,84.77],

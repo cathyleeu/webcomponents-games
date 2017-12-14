@@ -1,7 +1,7 @@
 {
   "element": "create-image-game",
   "attributes": {
-    "max" : 1,
+    "limited" : true,
     "nextlink" : "activity#!2018_c1_w3_2"
   },
   "data": [
