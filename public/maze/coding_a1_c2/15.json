@@ -2,21 +2,19 @@
   "tile_size": 128,
   "score":3,
   "workspace": "start",
-  "solution": "start,move_forward(5),rotate_left,move_forward",
-  "problem": "start,move_forward(*),empty,empty",
+  "solution": "start,move_forward1,rotate_left,move_forward1",
+  "problem": "start,move_forward1,empty,empty",
   "toolbox": [
-    "move_forward",
+    "move_forward1",
     "rotate_left",
     "rotate_right"
   ],
   "map": [
-    "##.#.##",
-    "##.##.#",
-    ".######",
-    ".#####.",
-    "##.##.%",
-    "#r.....",
-    "##.##.#"
+    "##%##",
+    "##.##",
+    "##.##",
+    "##u##",
+    "##.##"
   ],
   "extra":[],
   "tutorial": [{

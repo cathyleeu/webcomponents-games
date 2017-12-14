@@ -2,28 +2,23 @@
   "tile_size": 128,
   "score":2,
   "workspace": "start",
-  "solution": "start,move_forward(3),rotate_right,move_forward(5)",
-  "problem": "start,move_forward(*),rotate_right,move_forward(*)",
+  "solution": "start,move_forward1,rotate_right,move_forward1",
+  "problem": "start,move_forward1,rotate_right,move_forward1",
   "toolbox": [
-    "move_forward",
+    "move_forward1",
     "rotate_left",
     "rotate_right"
   ],
-  "map": [
-    "#.#%.##",
-    "##..#.#",
-    ".##.###",
-    "#.#..##",
-    "##...##",
-    "#.#...l",
-    "#####.#"
+  "tile": [
+    {"tile": "%", "img": "fruit_kiwi"}
   ],
-  "extra":[{
-    "x": 3,
-    "y": 0,
-    "img": "fruit_kiwi",
-    "itemImg": "fruit_kiwi"
-  }],
+  "map": [
+    "##%.#",
+    "##..#",
+    "#...#",
+    "##..l",
+    "#####"
+  ],
   "tutorial": [{
     "msg:ko": "목표 지점으로 가보자!",
     "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_kiwi.png"]

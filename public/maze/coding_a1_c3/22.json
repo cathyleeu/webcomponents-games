@@ -2,14 +2,14 @@
   "tile_size": 128,
   "score":3,
   "workspace": "start",
-  "solution": "start,move_forward(7),get_items",
-  "problem": "start,move_forward(*),empty",
+  "solution": "start,move_forward1,get_item",
+  "problem": "start,move_forward1,empty",
   "toolbox": [
-    "move_forward",
+    "move_forward1",
     "rotate_left",
     "rotate_right",
-    "get_items",
-    "use_items"
+    "get_item",
+    "use_item"
   ],
   "map": [
     "....d...",

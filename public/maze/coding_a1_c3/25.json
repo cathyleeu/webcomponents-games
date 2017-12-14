@@ -2,34 +2,26 @@
   "tile_size": 128,
   "score":3,
   "workspace": "start",
-  "solution": "start,move_forward(5),rotate_right,move_forward,get_items,move_forward(2),use_items",
-  "problem": "start,move_forward(*),empty,move_forward(*),empty,move_forward(*),empty",
+  "solution": "start,move_forward1,rotate_right,move_forward1,get_item,move_forward1,use_item",
+  "problem": "start,move_forward1,empty,move_forward1,empty,move_forward1,empty",
   "toolbox": [
-    "move_forward",
+    "move_forward1",
     "rotate_left",
     "rotate_right",
-    "get_items",
-    "use_items"
+    "get_item",
+    "use_item"
+  ],
+  "tile": [
+    {"tile": ")", "img": "book", "itemCount": 1},
+    {"tile": "%", "useItem": 1}
   ],
   "map": [
-    ".#.).%#",
-    "##.##.#",
-    ".#..###",
-    "#..#..#",
-    "##.##.#",
-    "##u#.##",
-    ".#.##.#"
+    ".####",
+    "#.###",
+    "#).%#",
+    "#u#.#",
+    ".####"
   ],
-  "extra":[{
-    "x": 3,
-    "y":0,
-    "img" : "book",
-    "itemCount": 1
-  },{
-    "x": 5,
-    "y": 0,
-    "useItem": 1
-  }],
   "tutorial": [{
     "msg:ko": "책을 가져와서 우주선에 두자!"
   }]
