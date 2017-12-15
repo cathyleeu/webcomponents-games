@@ -219,6 +219,10 @@ function getBook(classObj) {
   if(school == "C00166-K1") {
     book = [2, 3];
   }
+  // 양주ECC 12월 1권부터 시작
+  if(school == "B00171-K1") {
+    book = [1, 2];
+  }
   // 대구지사, 압구정PSA는 요청으로 3달치 제공
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "D00121") {
     book = [7, 8, 9];
