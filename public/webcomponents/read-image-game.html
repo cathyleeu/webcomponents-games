@@ -8,6 +8,10 @@
 <dom-module id="read-image-game">
   <template>
     <style>
+      image {
+        width: 100px;
+        height: 100px;
+      }
     </style>
     <status-bar
       title="{{localize('title')}}"
@@ -122,8 +126,8 @@
           ["sound"]:re.sound,
           ["text"]:re.text,
           ["id"]:re.id,
-          ["x"]: Math.floor(offsetWidth*(data[i][0]/100)),
-          ["y"]: Math.floor(offsetHeight*(data[i][1]/100))
+          ["x"]: Math.floor(offsetWidth*(data[i][0]/120)),
+          ["y"]: Math.floor(offsetHeight*(data[i][1]/120))
         }))
 
         svg.selectAll('image').data(refineData).enter()

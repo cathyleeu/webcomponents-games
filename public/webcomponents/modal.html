@@ -27,19 +27,19 @@
         z-index:1;
       }
 
-      #modal-container.three{
+      #modal-container.popup{
         z-index:0;
         transform:scale(1);
       }
 
-      .three > .modal-background {
+      .popup > .modal-background {
         background:rgba(0,0,0,.6);
       }
-      .three > .modal-background > .modal {
+      .popup > .modal-background > .modal {
         animation: moveUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
       }
 
-      .three.out .modal-background .modal {
+      .popup.out .modal-background .modal {
         animation: moveDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
       }
 
@@ -67,7 +67,14 @@
         font-size:18px;
         line-height:22px;
       }
-
+      .image {
+        display: none;
+        width: 300px;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+      }
       .button {
         display: none;
         text-align:center;
@@ -109,6 +116,9 @@
         <div class="modal">
           <h2>{{headertext}}</h2>
           <p>{{btmtext}}</p>
+          <div class="image uncorrect">
+            <p>Hint!</p>
+          </div>
           <div class="button done" on-click="handleNextStep">{{nextbtn}}</div>
           <div class="button final" on-click="handleFinalStep">{{finalbtn}}</div>
           <div class="button stay" on-click="handleStayStage">{{nobtn}}</div>
@@ -136,7 +146,8 @@
           nextbtn: String,
           nobtn:String,
           retrybtn:String,
-          yesbtn:String
+          yesbtn:String,
+          filterImages: Function
         }
       }
       ready(){
@@ -155,14 +166,33 @@
           previous : '.stay, .move',
           logout : '.stay, .move',
           retry: '.retry',
-          retryReset: '.retryReset'
+          retryReset: '.retryReset',
+          unCorrect : '.retryReset, .uncorrect'
         };
+
         let els = this.shadowRoot.querySelectorAll(target[this.purpose]);
-        els.forEach(el=>{el.style.display="inline-block"});
-        this.element.classList.add('three')
+        els.forEach(el=>{
+          if(el.className.includes("uncorrect")){
+            el.style.display="block"
+            return false
+          }
+          el.style.display="inline-block"
+        });
+
+
+        if(this.filterImages){
+          let filterImages = this.filterImages();
+          d3.select(this.element).select('.uncorrect').selectAll('img')
+            .data(filterImages).enter()
+            .append('img')
+            .attr('src', (d, i) => d.src)
+        }
+      
+        d3.select(this.element).classed("popup", "popup")
+        // this.element.classList.add('popup')
       }
       handleNextStep(){
-        this.element.classList.remove('three')
+        d3.select(this.element).classed("popup", null)
         document.getElementById("element").reset()
       }
       handleMoveStage(){
@@ -176,17 +206,21 @@
         }
       }
       handleStayStage(){
-        this.element.classList.remove('three')
+        d3.select(this.element).classed("popup", null)
       }
       handleFinalStep(){
         if(!this.nextlink){
           let href = `${location.origin}/code/${window.name}`
-          this.element.classList.remove('three')
-          window.open(href, window.name);
+          console.log("window.name", window.name, "location.origin", location.origin);
+          if(window.name){
+            window.open(href, window.name);
+          }
+          d3.select(this.element).classed("popup", null)
           return false
         }
         let href = `${location.origin}/${this.nextlink}`
-        this.element.classList.remove('three')
+        d3.select(this.element).classed("popup", null)
+        // this.element.classList.remove('popup')
         window.open(href, window.name)
       }
     }
