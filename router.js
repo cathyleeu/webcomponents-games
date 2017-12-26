@@ -10,6 +10,7 @@ var public = require('koa-router')(),
     path = require('path'),
     pmongo = require('promised-mongo'),
     argv = require('minimist')(process.argv.slice(2)),
+    co = require('co'),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
     auth_db = pmongo(config.auth_db, ["user", "logins"]),
@@ -149,46 +150,53 @@ function getCode( bId , kId ) {
 
 function getInfoByCode(code) {
   return new Promise(function(resolve, reject) {
-    auth_db.user.find({}).then(function(users) {
-      var found = false;
-      users.forEach(function(user) {
-        if(user.userType != "branch") {
-          return;
-        }
-        user.kinders.forEach(function(kinder) {
-          if(code != kinder.url) {
-            return;
-          }
-          found = true;
-          var classes = {};
-          kinder.kinderClasses.forEach(function(classObj) {
-            var book = getBook(classObj);
-            if(!classes[book]) {
-              classes[book] = [];
-            }
-            classes[book].push(classObj.className);
-          });
-          auth_db.logins.find({kinderId:kinder.code}).then(function(logins) {
-            var time = user.updateOn || user.createdOn,
-                month = user.code == "C00071" ? "03" : "04";
-            // 대구지사 03월로 고정 예외처리
-            resolve({
-              school: kinder.name,
-              kinder: kinder.code,
-              school_name: user.branch.sub_name || "",
-              code: code,
-              date: "2017" + month + "01",
-              classes: classes,
-              lang: kinder.lang || "",
-              updateOn: time ? time["$date"] : null,
-              logins: logins
-            });
-          });
-        });
-      });
-      if(!found) {
-        resolve(null);
+    co(function* () {
+      // url_json -> db(url이 세팅되어있는 경우) -> db(url이 세팅되지 않은 겨우)
+      var info = url_json.filter(function(obj) {
+            return obj.code == code;
+          })[0];
+      if(info) {
+        resolve(info);
+        return;
       }
+      var user = yield auth_db.user.findOne({kinders:{$elemMatch:{url:code}}});
+      if(!user) {
+        var users = yield auth_db.user.find({});
+        users.forEach(function(_user) {
+          if(_user.userType == "branch") {
+            _user.kinders.forEach(function(kinder) {
+              var kcode = getCode(user.branch.name, kinder.name);
+              if(code == kcode) {
+                user = _user;
+              }
+            });
+          }
+        });
+        if(!user) {
+          reject(null);
+        }
+      }
+      var kinder = user.kinders.filter(function(kinder) {
+        return kinder.url == code;
+      })[0];
+      var logins = yield auth_db.logins.find({kinderId:kinder.code}),
+          time = user.updateOn || user.createdOn,
+          month = user.code == "C00071" ? "03" : "04", // 대구지사 03월로 고정 예외처리
+          classes = kinder.kinderClasses.slice().map(function(classObj) {
+            classObj.book = getBook(classObj);
+            return classObj;
+          });
+      resolve({
+        school: kinder.name,
+        kinder: kinder.code,
+        school_name: user.branch.sub_name || "",
+        code: code,
+        date: "2017" + month + "01",
+        classes: kinder.kinderClasses,
+        lang: kinder.lang || "",
+        updateOn: time ? time["$date"] : null,
+        logins: logins
+      });
     });
   });
 }
@@ -407,37 +415,7 @@ public.get('/code', function *(next) {
 
 public.get('/code/:code', function *(next) {
   var code = this.params.code;
-  var info = url_json.filter(function(obj) {
-    return obj.code == code;
-  })[0] || (yield getInfoByCode(code));
-  if(!info) {
-    var users = yield auth_db.user.find({});
-    users = users.forEach(function(user) {
-      if(user.userType == "branch") {
-        user.kinders.forEach(function(kinder) {
-          var kcode = getCode(user.branch.name, kinder.name);
-          if(code == kcode) {
-            var classes = {};
-            kinder.kinderClasses.forEach(function(classObj) {
-              var book = getBook(classObj);
-              if(!classes[book]) {
-                classes[book] = [];
-              }
-              classes[book].push(classObj.className);
-            });
-            info = {
-              school: kinder.name,
-              kinder: kinder.code,
-              code: code,
-              date: "20170401",
-              classes: classes,
-              lang: kinder.lang || ""
-            };
-          }
-        });
-      }
-    });
-  }
+  var info = yield getInfoByCode(code);
   yield this.render('code', {
     manifest: code,
     code: code,
@@ -447,9 +425,7 @@ public.get('/code/:code', function *(next) {
 
 public.get('/trial', function *() {
   var code = "36904";
-  var info = url_json.filter(function(obj) {
-    return obj.code == code;
-  })[0] || (yield getInfoByCode(code));
+  var info = yield getInfoByCode(code);
   yield this.render('code', {
     code: code,
     info: JSON.stringify(info),
@@ -483,9 +459,7 @@ public.get('/cache/:manifest', function *(next) {
   this.type = "text/cache-manifest";
   var manifest = this.params.manifest;
   var code = manifest.split(".")[0];
-  var school = url_json.filter(function(obj) {
-    return obj.code == code;
-  })[0] || (yield getInfoByCode(code));
+  var school = yield getInfoByCode(code);
   if(school == null) {
     this.body = "# cannot generate manifest";
     return;
@@ -504,26 +478,25 @@ public.get('/cache/:manifest', function *(next) {
         user.kinders.forEach(function(kinder) {
           var kcode = getCode(user.branch.name, kinder.name);
           if(code == kcode) {
-            var classes = {};
-            kinder.kinderClasses.forEach(function(classObj) {
-              var book = getBook(classObj);
-              if(!classes[book]) {
-                classes[book] = [];
-              }
-              classes[book].push(classObj.className);
-            });
             school = {
               school: kinder.name,
               code: code,
               date: "20170301",
-              classes: classes
+              classes: kinder.kinderClasses
             };
           }
         });
       }
     });
   }
-  var bookArr = Object.keys(school.classes),
+  var bookArr = school.classes.reduce(function(acc, cur) {
+        cur.book.split(",").forEach(function(book) {
+          if(acc.indexOf(book) < 0) {
+            acc.push(book);
+          }
+        });
+        return acc;
+      }, []),
       timestamp = school.updateOn || defaultTimeStamp,
       manifests = [],
       pages = [],
