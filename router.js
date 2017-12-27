@@ -544,7 +544,7 @@ public.get('/cache/:manifest', function *(next) {
       books_json[bookName].forEach(function(contentInfo) {
         var maniPath = contentInfo[contentInfo.length - 1],
             pagePath = contentInfo[contentInfo.length - 1],
-            isMaze = maniPath.match(/mazeh?#!(.*)/),
+            isMaze = maniPath.match(/maze[hv]?#!(.*)/),
             isActivity = maniPath.match(/activity#!(.*)/);
         if(isMaze) {
           maniPath = isMaze[1];
@@ -620,6 +620,9 @@ public.get('/cache/:manifest', function *(next) {
       }
     });
     jsons = jsons.concat(fs.readdirSync(path.join("public/maze", maniPath))
+    .filter(function(item) {
+      return item != ".DS_Store" && item != "Thumbs.db";
+    })
     .map(function(item) {
       if(item != "manifest.json") {
         var maze = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, item)));
