@@ -1,0 +1,35 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+<dom-module id="objective-game">
+  <template>
+    <style>
+    </style>
+
+  </template>
+  <script>
+    class ObjectiveGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'objective-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      ready(){
+        super.ready();
+      }
+      setData(data , manifest){
+        console.log(data, manifest);
+      }
+    }
+    window.customElements.define(ObjectiveGame.is, ObjectiveGame);
+  </script>
+</dom-module>
