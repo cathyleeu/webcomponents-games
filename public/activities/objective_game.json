@@ -2,6 +2,7 @@
   "element": "objective-game",
   "attributes": {
     "max" : 5 ,
+    "gameType" : "obj",
     "questions" : [{
       "question": "아래의 보기 중 $ 는 어디에서 잠을 자나요?", "questionImg": "/img/renewed_a2/bear.png",
       "options" : [

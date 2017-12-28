@@ -54,7 +54,7 @@
     <div id="container"></div>
   </template>
   <script>
-    //TODO: CSS 
+    //TODO: CSS
     class ObjectiveGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
       static get is() { return 'objective-game'; }
       connectedCallback() {
@@ -88,34 +88,58 @@
                         : `<img src="${op[keyName]}"/>`
       }
       handleClick(d){
-        let {answer} = d, that = this.offsetParent;
-        if(answer) {
-          console.log("성공");
-          if(that.LastStage === that.stage){
-            that.$.finalStageModal.modalAlert()
-          }else {
-            that.$.successModal.modalAlert()
+        let that = this.offsetParent;
+
+        if(that.gameType === "obj") {
+          let {answer} = d;
+          if(answer) {
+            console.log("성공");
+            if(that.LastStage === that.stage){
+              that.$.finalStageModal.modalAlert()
+            }else {
+              that.$.successModal.modalAlert()
+            }
+          } else {
+            console.log("실패");
+            that.$.retryModal.modalAlert()
           }
         } else {
-          console.log("실패");
-          that.$.retryModal.modalAlert()
+            let { answer } = this.dataset;
+            if(answer === d) {
+              console.log("성공");
+              if(that.LastStage === that.stage){
+                that.$.finalStageModal.modalAlert()
+              }else {
+                that.$.successModal.modalAlert()
+              }
+            } else {
+              console.log("실패");
+              that.$.retryModal.modalAlert()
+            }
         }
       }
       setData(data , manifest){
-        let { question, options } = this.questions[this.stage]
-        console.log(this.questions[this.stage]);
+        let { question, options, answer } = this.questions[this.stage]
+        // console.log(this.questions[this.stage]);
         this.set('LastStage', this.questions.length-1)
         d3.select(this.$.container)
           .append('div')
           .attr('class', 'question')
           .html(this.replaceQuestion(`<p>${question}</p>`))
 
-        d3.select(this.$.container)
-          .append('div').attr('class', 'options')
-          .selectAll('div').data(d3.shuffle(options)).enter()
-          .append('div').html((d, i) => this.renderOptions(d))
-          .on("click", this.handleClick)
-
+        if(this.gameType === "obj") {
+          d3.select(this.$.container)
+            .append('div').attr('class', 'options')
+            .selectAll('div').data(d3.shuffle(options)).enter()
+            .append('div').html((d, i) => this.renderOptions(d))
+            .on("click", this.handleClick)
+        } else {
+          d3.select(this.$.container)
+            .append('div').attr('class', 'options')
+            .selectAll('p').data(["O","X"]).enter()
+            .append('p').attr('data-answer', answer).text((d,i) => d)
+            .on("click", this.handleClick)
+        }
       }
     }
     window.customElements.define(ObjectiveGame.is, ObjectiveGame);
