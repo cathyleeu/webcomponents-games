@@ -4,10 +4,10 @@
     "max" : 5 ,
     "gameType" : "ox",
     "questions" : [
-      { "question": "아래의 보기 중 $ 는 땅에서 잠을 잡니다.", "questionImg": "/img/renewed_a2/bear.png", "answer": "O" },
-      { "question": "아래의 보기 중 $ 는 땅에서 잠을 잡니다.", "questionImg": "/img/renewed_a2/fish.png", "answer": "X" },
-      { "question": "아래의 보기 중 $ 는 나무에서 잠을 잡니다.", "questionImg": "/img/renewed_a2/frog.png", "answer": "X" },
-      { "question": "아래의 보기 중 $ 는 나무에서 잠을 잡니다.", "questionImg": "/img/renewed_a2/sqr.png", "answer": "O" }
+      { "question": " $ 는 땅에서 잠을 잡니다.", "questionImg": "/img/renewed_a2/bear.png", "answer": "O" },
+      { "question": " $ 는 땅에서 잠을 잡니다.", "questionImg": "/img/renewed_a2/fish.png", "answer": "X" },
+      { "question": " $ 는 나무에서 잠을 잡니다.", "questionImg": "/img/renewed_a2/frog.png", "answer": "X" },
+      { "question": " $ 는 나무에서 잠을 잡니다.", "questionImg": "/img/renewed_a2/sqr.png", "answer": "O" }
     ]
   },
   "data": [

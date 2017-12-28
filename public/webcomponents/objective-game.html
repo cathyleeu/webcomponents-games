@@ -11,8 +11,72 @@
       .question{
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
       }
+      img {
+        width: 12%;
+        height: 12%;
+      }
+      .question > p {
+        margin: 0;
+        font-size: 200%;
+        font-weight: 200;
+      }
+      .options > div {
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        margin: 1em;
+        width: 150px;
+        border: 5px solid gray;
+        border-radius: 15px;
+        padding: 5px;
+      }
+      .options > div:hover {
+        background: #dbdbdb;
+        color: white;
+      }
+      .options > div > img {
+        width: 50%;
+        height: 50%;
+      }
+      .options > div > p {
+        font-size: 150%;
+        font-weight: 200;
+        /* width: 50%;
+        height: 50%; */
+      }
+      .letter {
+        font-size: 110px;
+        font-family: Helvetica;
+        font-weight: Bold;
+        color: rgba(18,22,26,0.7);
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 120px;
+        border: 10px solid #2ECC98;
+        border-radius: 15px;
+        margin: 0.5em;
+        cursor: pointer;
+      }
+      /* questionText */
     </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      purpose="select"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      fullscreen="{{localize('fullscreen')}}"
+      ></status-bar>
     <toycode-modal
       id="successModal"
       purpose="nextStep"
@@ -120,7 +184,6 @@
       }
       setData(data , manifest){
         let { question, options, answer } = this.questions[this.stage]
-        // console.log(this.questions[this.stage]);
         this.set('LastStage', this.questions.length-1)
         d3.select(this.$.container)
           .append('div')
@@ -137,7 +200,8 @@
           d3.select(this.$.container)
             .append('div').attr('class', 'options')
             .selectAll('p').data(["O","X"]).enter()
-            .append('p').attr('data-answer', answer).text((d,i) => d)
+            .append('p').attr('class', 'letter')
+            .attr('data-answer', answer).text((d,i) => d)
             .on("click", this.handleClick)
         }
       }
