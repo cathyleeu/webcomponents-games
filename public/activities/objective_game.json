@@ -1,17 +1,8 @@
 {
   "element": "objective-game",
   "attributes": {
-    "max" : 5
-  },
-  "data": [
-    "winter1",
-    "winter2",
-    "winter3",
-    "winter4",
-    "winter5"
-  ],
-  "manifest": [
-    {
+    "max" : 5 ,
+    "questions" : [{
       "question": "아래의 보기 중 $ 는 어디에서 잠을 자나요?", "questionImg": "/img/renewed_a2/bear.png",
       "options" : [
         { "text" : "바다"},
@@ -46,7 +37,17 @@
         { "img" : "/img/renewed_a2/frog.png" },
         { "text" : "육지", "answer": true }
       ]
-    }
+    }]
+  },
+  "data": [
+    "winter1",
+    "winter2",
+    "winter3",
+    "winter4",
+    "winter5"
+  ],
+  "manifest": [
+
   ],
   "msg": {
     "ko": {
