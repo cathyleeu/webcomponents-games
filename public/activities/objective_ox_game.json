@@ -1,7 +1,6 @@
 {
   "element": "objective-game",
   "attributes": {
-    "max" : 5 ,
     "gameType" : "ox",
     "questions" : [
       { "question": " $ 는 땅에서 잠을 잡니다.", "questionImg": "/img/renewed_a2/bear.png", "answer": "O" },
