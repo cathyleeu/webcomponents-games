@@ -57,8 +57,11 @@
       store.set("contents", new_contents);
       store.set("manifest", new_manifest);
       $('#appcache .msg').html(msg.update_complete + '<br/>' + new_contents);
-      $('#appcache button.btn-default').show();
       $('.check-update-msg').text(msg.updated).data("update-status", "updated");
+      setTimeout(function() {
+        alert(msg.update_complete);
+        global.location.reload();        
+      }, 1);
     }
     if(e.type === 'updateready') { // 업데이트 된 경우 리프레시
       store.set("contents", new_contents);

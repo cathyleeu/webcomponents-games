@@ -323,7 +323,7 @@ KidsCoding.prototype = {
     }
     var _this = this,
         options = Blocks[name],
-        lang = store.get("lang") || "ko";
+        lang = store.session.get("lang", "ko");
     // name이 없을 경우 message0에서 %1 등 제거하고 사용
     if(!options.name) {
       options.name = {};

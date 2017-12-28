@@ -313,15 +313,13 @@ Actions.prototype.move = function(type, block, callback) {
 
   obj = this._getCanvasObject(x_next, y_next);
 
-  var localData = store.get('data') || {};
-  var hash = location.hash.slice(2),
+  var id = store.session.get("user", {id:null}).id,
+      local = id ? store.namespace(id) : store.session.namespace("anonymous"),
+      hash = location.hash.slice(2),
       idx = hash.indexOf("?"),
-      path = idx >= 0 ? hash.slice(0, idx) : hash;
-  path = path.split("/").slice(0, -1).join("/");
-  var score = localData[path] ? localData[path].score || 0 : 0;
-
-
-  if( obj && obj.obstacle || (obj && obj.link && obj.min_score && score < obj.min_score)) {
+      path = (idx >= 0 ? hash.slice(0, idx) : hash).split("/").slice(0, -1).join("/"),
+      localData = local.get(path, {score:0,complete:[],worldmap:null});
+  if( obj && obj.obstacle || (obj && obj.link && obj.min_score && localData.score < obj.min_score)) {
     this._bounceCharacter(x_next, y_next, function() {
       callback(obj);
     });

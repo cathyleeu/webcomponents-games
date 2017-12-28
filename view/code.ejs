@@ -296,11 +296,20 @@ if(location.pathname == "/code" && location.hash) {
         return;
       }
       var index = $("#names .selected").data("index"),
-          img = $("#characters .selected").data("img");
+          img = $("#characters .selected").data("img"),
+          classId = info.classes.filter(function(item) {
+            return item.className == sClassName;
+          })[0].code;
       if(img != imgs[index]) {
         $("#modal-fail").modal('show');
         return;
       }
+      store.session.set("user", {
+        kinder: info.kinder,
+        classId: classId,
+        user: "" + index,
+        id: info.kinder ? (classId + "," + index) : "anonymous"
+      });
       if(location.hash) {
         page(location.hash + "&book=true");
       } else {
@@ -308,11 +317,7 @@ if(location.pathname == "/code" && location.hash) {
       }
     });
     $(".contents").click("a[rel=\"external\"]", function(e) {
-      e.preventDefault();
-      var href = $(e.target).closest("a").attr("href"),
-          data = location.pathname.split("/")[2] + location.hash;
-      window.name = data;
-      window.open(href, data, "fullscreen=yes", true);
+      store.session.set("showbook", location.href);
     });
   }
 
@@ -370,38 +375,33 @@ if(location.pathname == "/code" && location.hash) {
   }
 
   function showClass() {
+    store.session.remove("user");
     $("#classes").empty();
-    var classes = Object.keys(info.classes).map(function(item) {
-      return info.classes[item].map(function(className) {
-        return [className, item];
-      });
-    }).reduce(function(init, arr) {
-      return init.concat(arr);
-    }, []);
-    classes.forEach(function(item, i) {
+    info.classes.forEach(function(item, i) {
       var book_true = (info.code == "e91d5" || info.code == "c7b46" || info.code == "823b7" || info.code == "8244f" || info.code == "822d8" || info.code == "691a0" || info.code == "36904" || info.code == "533b5") ? "&book=true" : "";
       if(isTrial) {
         var link = {
           "키즈씽킹": "kidsthinking",
           "키즈코딩": "kidscoding"
-        }[item[0]];
-        $('<a href="#' + link + book_true + '" class="btn btn-lg btn-default">' + item[0] + '</a>').appendTo("#classes");
+        }[item.className];
+        $('<a href="#' + link + book_true + '" class="btn btn-lg btn-default">' + item.className + '</a>').appendTo("#classes");
         return;
       }
-      $('<a href="#className=' + item[0] + book_true + '" class="btn btn-lg btn-default">' + item[0] + '</a>').appendTo("#classes");
+      $('<a href="#className=' + item.className + book_true + '" class="btn btn-lg btn-default">' + item.className + '</a>').appendTo("#classes");
     });
   }
 
   function showLogin() {
+    store.session.remove("user");
     var yearmonth = info.date,
-        levelLogin = Object.keys(info.classes).filter(function(item) {
-          return info.classes[item].indexOf(sClassName) >= 0;
-        })[0].split("-")[0],
-        sel_names = null,
-        sel_levels = null,
+        levelLogin = info.classes.filter(function(obj) {
+          return obj.className == sClassName;
+        })[0].level,
         classObj = info.logins && info.logins.filter(function(obj) {
-          return obj.className == sClassName
-        })[0];
+          return obj.className == sClassName;
+        })[0],
+        sel_names = null,
+        sel_levels = null;
 
     $("#names,#characters").empty();
 
@@ -428,9 +428,12 @@ if(location.pathname == "/code" && location.hash) {
 
   function showBook() {
     $(".contents").empty();
-    var book_titles = Object.keys(info.classes).filter(function(item) {
-      return info.classes[item].indexOf(sClassName) >= 0;
-    })[0].split(",");
+    var book_titles = info.classes.reduce(function(acc, cur) {
+          if(cur.className==sClassName) {
+            [].push.apply(acc, cur.book.split(","));
+          }
+          return acc;
+        }, []);
     book_titles.forEach(function(book_title) {
       $(".contents")
           .append('<hr class="star-light">')
