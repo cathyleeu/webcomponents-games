@@ -270,6 +270,10 @@ function getBook(classObj) {
   if(classObj.code == "B00130-K1-KC6" || classObj.code == "B00016-K1-KC5") {
     book = [4, 5];
   }
+  // 마포ECC 겨울캠프 클래스 C-10권
+  if(classObj.code == "B00130-K1-KC7" || classObj.code == "B00130-K1-KC8" || classObj.code == "B00130-K1-KC9") {
+    book = [10, "10-5"];
+  }
   // 숙명킨더 아카데미 7세반 11월에 특별호부터 시작
   if(classObj.code == "A00042-K4-KC2") {
     book = ["5-5", 6];
