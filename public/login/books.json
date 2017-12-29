@@ -401,11 +401,11 @@
     ["2권:보물 찾기", "/mazeh#!c2_w3/1"],
     ["2권:선물 찾기", "/mazeh#!c2_w4/1"]
   ],
-  "A-1":[
+  "A-1-old":[
     ["자판기 놀이", "Vending Machine", "/a1_w1"],
     ["엘리베이터 놀이", "Elevator", "/a1_w2"]
   ],
-  "A-1-re":[
+  "A-1":[
     ["숨어있는 컴퓨터를 찾아요", "Find the Computers", "/a1_w1"],
     ["컴퓨터와 이야기해요", "Talk to the Computer", "/a1_w3"],
     ["로그인을 연습해요", "Practice Login", "/activity#!a1_w4"]
@@ -557,6 +557,12 @@
     ["여러 가지 길을 찾아보아요:꿀단지를 찾아요", "Go Find the Honey Jar", "/mazeh#!c3_w2/index"],
     ["가져오기와 사용하기를 이해해요:꿀단지를 가져와요", "Bring the Honey Jar", "/mazeh#!c3_w3/index"],
     ["가져오기와 사용하기를 써보아요:꿀과자를 선물해요", "Present the Honey Cookies", "/mazeh#!c3_w4/index"]
+  ],
+  "C-3-re":[
+    ["가족이 늘어요", "Number of Family", "/mazeh#!c3_w1/index"],
+    ["가져오기를 이해해요", "Understand Bring Block", "/mazeh#!c3_w2/index"],
+    ["사용하기를 이해해요", "Understand Using Block", "/mazeh#!c3_w3/index"],
+    ["반복 블록을 이해해요", "Understand Repeat Block", "/mazeh#!c3_w4/index"]
   ],
   "C-4":[
     ["우리동네를 알아보아요:우리 동네 산책", "Walk around my town", "/mazeh#!c4_w1_c1/index"],
