@@ -6,33 +6,33 @@
     "move_up",
     "move_down",
     "move_right",
-    "move_left"
+    "move_left",
+    "get_item3"
   ],
   "map": [
-    ".#######.",
-    "#..#....#",
-    "#..r...##",
-    "#..#..#.#",
-    "#.#...###",
-    "#...##..#",
-    "#.#..%..#",
-    "#...#..##",
+    ".%######.",
+    "#.......#",
+    "#....#d.#",
+    "###..##)#",
+    "#....#..#",
+    "#....#.##",
+    "#.##.#.##",
+    "#......##",
     ".#######."
   ],
-  "tutorial": [{
-    "msg:ko": "저기 꿀단지가 있어",
-    "msg:en": "There is honey jar!",
-    "msg:cn": "那儿有一个蜜罐，",
-    "img": "/img/c3_w2/honey_pot.png"
-  },{
-    "msg:ko": "꿀단지로 이동해 보자!",
-    "msg:en": "Let's move to honey jar",
-    "msg:cn": "移到蜜罐那里看看。"
+  "extra":[{
+    "x": 1,
+    "y": 0,
+    "img": "tree1"
+  }, {
+    "x": 7,
+    "y": 3,
+    "img":"honey_pot",
+    "itemCount": 2
   }],
-  "goal": {
-    "msg:ko": "꿀단지로 이동해 보자!",
-    "msg:en": "Let's move to honey jar",
-    "msg:cn": "移到蜜罐那里看看。",
-    "img": "/img/c3_w2/honey_pot.png"
-  }
+  "tutorial": [{
+    "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자",
+    "msg:en": "Move to honey jar And then Use 'get item' Block",
+    "img": ["/img/c3_w2/honey_pot.png","/img/blocks/bring.png"]
+  }]
 }

@@ -1,43 +1,36 @@
 {
   "tile_size": 128,
-  "score":3,
-  "workspace": ["start"],
+  "score":2,
+  "character": "character2",
+  "message": "message2",
+  "workspace": ["start","repeat","repeat"],
+  "mandatory": ["repeat"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
     "move_left",
-    "get_item",
-    "use_item"
+    "repeat"
   ],
   "map": [
     ".#######.",
     "#...#...#",
-    "#%..##..#",
+    "#%......#",
     "###.....#",
-    "#.#..#.q#",
-    "#r..)...#",
+    "#.#..#..#",
+    "#......u#",
     "#.#..####",
-    "#....j..#",
+    "#.......#",
     ".#######."
   ],
   "extra":[{
     "x": 1,
     "y": 2,
-    "img":"m_granma",
-    "useItem": 2
-  }, {
-    "x": 4,
-    "y": 5,
-    "img":"cookie",
-    "itemCount": 2
+    "img":"brother"
   }],
   "tutorial": [{
-    "msg:ko": "엄마에게 쿠키를 받았어",
-    "msg:en": "Mom gives me cookies."
-  },{
-    "msg:ko": "외할머니에게 쿠키를 전달하자!",
-    "msg:en": "Deliver Cookies to grandma",
-    "img": "/img/c3_w1/m_granma.png"
+    "msg:ko": "반복 블록을 이용하여 모스에게 이동하자!",
+    "msg:en": "Move to Mos with Repeat Blocks",
+    "img": ["/img/blocks/repeat.png","/img/c3_w1/brother.png"]
   }]
 }
