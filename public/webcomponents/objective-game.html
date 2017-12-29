@@ -7,6 +7,12 @@
 <dom-module id="objective-game">
   <template>
     <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        padding: 10% 15% 15%;
+      }
       .options,
       .question{
         display: flex;
@@ -17,11 +23,15 @@
       img {
         width: 12%;
         height: 12%;
+        margin: 0 2%;
       }
       .question > p {
         margin: 0;
-        font-size: 200%;
+        font-size: 250%;
         font-weight: 200;
+      }
+      .options {
+        margin-top: 30px;
       }
       .options > div {
         height: 20%;
@@ -49,18 +59,18 @@
         height: 50%; */
       }
       .letter {
-        font-size: 110px;
+        font-size: 140px;
         font-family: Helvetica;
         font-weight: Bold;
         color: rgba(18,22,26,0.7);
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
         text-align: center;
         vertical-align: middle;
-        line-height: 120px;
+        line-height: 140px;
         border: 10px solid #2ECC98;
         border-radius: 15px;
-        margin: 0.5em;
+        margin: 0.2em;
         cursor: pointer;
       }
       /* questionText */
