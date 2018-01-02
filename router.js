@@ -156,6 +156,19 @@ function getInfoByCode(code) {
             return obj.code == code;
           })[0];
       if(info) {
+        var classes = info.classes;
+        info = Object.assign({}, info);
+        info.classes = [];
+        Object.keys(classes).forEach(function(book) {
+          classes[book].forEach(function(className) {
+            console.log(className)
+            info.classes.push({
+              code: className,
+              className: className,
+              book: book
+            });
+          });
+        });
         resolve(info);
         return;
       }
