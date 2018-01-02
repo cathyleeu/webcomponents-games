@@ -11,9 +11,9 @@
   "map": [
     ".#######.",
     "#..#....#",
-    "#..r...##",
+    "#.#...l##",
     "#..#..#.#",
-    "#.#...###",
+    "#.#....##",
     "#...##..#",
     "#.#..%..#",
     "#...#..##",
@@ -22,19 +22,16 @@
   "extra":[{
     "x": 5,
     "y": 6,
-    "img": "shirt"
+    "img": "pants"
   }],
   "tutorial": [{
-    "msg:ko": "라나가 코스를 위하여 옷을 준비했어요",
-    "msg:en": "Lana set the cloth to present to Cos",
-    "img": "/img/c2_w1/lana0.png"
-  },{
-    "msg:ko": "이동 블록을 이용하여 라나가 준 옷을 찾아보자",
-    "msg:en": "Let's find the cloths using move block"
+    "msg:ko": "라나가 준 옷을 찾아보자!",
+    "msg:en": "Let's find the cloth for Cos",
+    "img": "/img/c2_w4/pants.png"
   }],
   "goal": {
-    "msg:ko": "이동 블록을 이용하여 라나가 준 옷을 찾아보자",
-    "msg:en": "Let's find the cloths using move block",
-    "img": "/img/c2_w4/shirt.png"
+    "msg:ko": "라나가 준 옷을 찾아보자!",
+    "msg:en": "Let's find the cloth for Cos",
+    "img": "/img/c2_w4/pants.png"
   }
 }

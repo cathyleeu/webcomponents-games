@@ -1,5 +1,5 @@
 [
-  {"book": "c2", "title": "3주차 : 선물 찾기"},
+  {"book": "c2", "title": "4주차: 여러 가지 길을 찾아보아요"},
   {"id": "bg1", "src": "/img/c2_w3/tile1.png"},
   {"id": "bg2", "src": "/img/c2_w3/tile2.png"},
   {"id": "character", "src": "/img/c2_w4/cos.png", "sprite": true, "size": 256},
