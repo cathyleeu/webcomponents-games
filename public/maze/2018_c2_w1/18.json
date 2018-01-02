@@ -9,26 +9,24 @@
     "move_left"
   ],
   "map": [
-    ".#####.",
-    "#.....#",
-    "#.....#",
-    "#r%...#",
-    "#.....#",
-    "#.....#",
-    ".#####."
+    ".#######.",
+    "#.....l.#",
+    "####.##.#",
+    "#.#...###",
+    "#..#.#..#",
+    "##.#.#..#",
+    "#.%..##.#",
+    "#....#..#",
+    ".#######."
   ],
   "tutorial": [{
-    "msg:ko": "개굴개굴~ 연잎 위로 가고 싶어!",
-    "msg:en": "Ribbit~ Ribbit! I want to go lotus",
-    "img": "/img/c2_w1/lotus.png"
-  },{
-    "msg:ko": "→오른쪽으로 이동 블록을 이용해서 오른쪽으로 가보자!",
-    "msg:en": "Let's move right using [Move Right] block",
-    "img" : "/img/blocks/right.png"
+    "msg:ko": "개굴개굴~ ←↓ 이동 블록을 이용해서 연잎으로 가보자!",
+    "msg:en": "Ribbit~ Ribbit! Let's go to lotus using [Move Left][Move Down] block",
+    "img" : ["/img/blocks/left.png", "/img/blocks/down.png", "/img/c2_w1/lotus.png"]
   }],
   "goal": {
-    "msg:ko": "→오른쪽으로 이동 블록을 이용해서 연잎 위로 가보자!",
-    "msg:en": "Let's move up using [Move Right] block",
-    "img": "/img/c2_w1/lotus.png"
+    "msg:ko": "연잎으로 가자!",
+    "msg:en": "Let's go to lotus",
+    "img" : "/img/c2_w1/lotus.png"
   }
 }

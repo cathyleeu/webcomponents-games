@@ -12,23 +12,19 @@
     ".#####.",
     "#.....#",
     "#.....#",
-    "#..%..#",
+    "#...%l#",
     "#.....#",
-    "#..d..#",
+    "#.....#",
     ".#####."
   ],
   "tutorial": [{
-    "msg:ko": "개굴개굴~ 연잎 위로 가고 싶어!",
-    "msg:en": "Ribbit~ Ribbit! I want to go lotus",
-    "img": "/img/c2_w1/lotus.png"
-  },{
-    "msg:ko": "↑위로 이동 블록을 이용해서 위로 가보자!",
-    "msg:en": "Let's move up using [Move Up] block",
-    "img" : "/img/blocks/up.png"
+    "msg:ko": "개굴개굴~ ←왼쪽으로 이동 블록을 이용해서 연잎으로 가보자!",
+    "msg:en": "Ribbit~ Ribbit! Let's go to lotus using [Move Left] block",
+    "img" : ["/img/blocks/left.png", "/img/c2_w1/lotus.png"]
   }],
   "goal": {
-    "msg:ko": "↑위로 이동 블록을 이용해서 연잎 위로 가보자!",
-    "msg:en": "Let's move up using [Move Up] block",
-    "img": "/img/c2_w1/lotus.png"
+    "msg:ko": "연잎으로 가자!",
+    "msg:en": "Let's go to lotus",
+    "img" : "/img/c2_w1/lotus.png"
   }
 }
