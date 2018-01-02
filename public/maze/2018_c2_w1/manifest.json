@@ -1,5 +1,5 @@
 [
-  {"book": "c2", "title": "1주차 : 라나를 움직여요"},
+  {"book": "c2", "title": "1주차 : 키즈블록으로 움직여요"},
   {"id": "bg1", "src": "/img/c2_w1/water0.png"},
   {"id": "bg2", "src": "/img/c2_w1/water1.png"},
   {"id": "character", "src": "/img/c2_w1/SpriteLana_256.png", "sprite": true, "size": 256},

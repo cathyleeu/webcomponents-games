@@ -10,31 +10,29 @@
   ],
   "map": [
     ".#######.",
-    "#.......#",
-    "#.###...#",
-    "#%....#.#",
-    "####....#",
-    "#...#...#",
-    "#....u#.#",
-    "#....#..#",
+    "#....##.#",
+    "#.###..##",
+    "###....l#",
+    "#.##.##.#",
+    "#.#...#.#",
+    "##.#.#%##",
+    "#.#.....#",
     ".#######."
   ],
   "tutorial": [{
-    "msg:ko": "개굴개굴~ 연잎 위로 가고 싶어!",
-    "msg:en": "Ribbit~ Ribbit! I want to go lotus",
-    "img" : "/img/c2_w1/lotus2.png"
   },{
-    "msg:ko": "↑← 블록을 이용해서 연잎 위로 가보자!",
-    "msg:en": "Let's move up using [Move Up][Move Left] block"
+    "msg:ko": "코스의 보물창고로 가보자!",
+    "msg:en": "Let's go to Cos' treasure house",
+    "img" : "/img/c2_w3/warehouse.png"
   }],
   "goal": {
-    "msg:ko": "↑← 블록을 이용해서 연잎 위로 가보자!",
-    "msg:en": "Let's move up using [Move Up][Move Left] block",
-    "img": "/img/c2_w1/lotus2.png"
+    "msg:ko": "코스의 보물창고로 가보자!",
+    "msg:en": "Let's go to Cos' treasure house",
+    "img" : "/img/c2_w3/warehouse.png"
   },
   "success": [{
     "msg:ko": "성공! 참 잘했어요~ 다음 단계로 가봐요!",
     "msg:en": "Success! Good Job!",
-    "link": "c2_w3/1"
+    "link": "2018_c2_w3/1"
   }]
 }

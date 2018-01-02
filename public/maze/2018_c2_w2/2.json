@@ -9,25 +9,25 @@
     "move_left"
   ],
   "map": [
-    ".#####.",
-    "#.....#",
-    "#.....#",
-    "#%...l#",
-    "#.....#",
-    "#.....#",
-    ".#####."
+    ".#######.",
+    "#.......#",
+    "#.###...#",
+    "##.....##",
+    "#.##.##.#",
+    "#.#.#%..#",
+    "##.#.##.#",
+    "#..##r..#",
+    ".#######."
   ],
   "tutorial": [{
-    "msg:ko": "개굴개굴~ 연잎 위로 가고 싶어!",
-    "msg:en": "Ribbit~ Ribbit! I want to go lotus",
-    "img" : "/img/c2_w1/lotus2.png"
   },{
-    "msg:ko": "←왼쪽으로 이동 블록을 이용해서 왼쪽으로 가보자!",
-    "msg:en": "Let's move left using [Move Left] block"
+    "msg:ko": "코스의 보물창고로 가보자!",
+    "msg:en": "Let's go to Cos' treasure house",
+    "img" : "/img/c2_w3/warehouse.png"
   }],
   "goal": {
-    "msg:ko": "←왼쪽으로 이동 블록을 이용해서 연잎 위로 가보자!",
-    "msg:en": "Let's move up using [Move Left] block",
-    "img": "/img/c2_w1/lotus2.png"
+    "msg:ko": "코스의 보물창고로 가보자!",
+    "msg:en": "Let's go to Cos' treasure house",
+    "img" : "/img/c2_w3/warehouse.png"
   }
 }
