@@ -1,0 +1,177 @@
+<style>
+#container {
+  position: relative;
+}
+
+.head {
+  position: relative;
+}
+
+.instruction {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+  background: #2C3E50;
+  color: white;
+}
+
+.hint {
+  position: relative;
+  height: 50px;
+  text-align: center;
+  background: #18BC9C;
+  color: white;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.workspace {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 600px; width: 400px;
+}
+.workspace .background {
+  height: 600px;
+  width: auto;
+  margin-left: 30px;
+  display: block;
+  float:left;
+}
+.sel-box {
+  position: absolute;
+  border:2px dashed transparent;
+  padding:10px;
+  height: 70px;
+  width: 80px;
+  top: 320px;
+  left: 350px;
+  cursor:pointer;
+}
+.drink-box {
+  position: absolute;
+  border:2px dashed transparent;
+  padding:10px;
+  height: 50px;
+  width: 320px;
+  cursor:default;
+}
+.drink {
+  position: absolute;
+  top: 200px;
+  width: 200px;
+  height: auto;
+  margin-left: 500px;
+  display: block;
+  float:left;
+  visibility: hidden;
+}
+
+</style>
+<div id="container">
+  <div class="head">
+    <div class="instruction" data-msg="instruction">컴퓨터와 생활:자판기</div>
+    <div class="hint" data-msg="hint">음료수를 뽑기 위해서 돈을 넣어봐요!</div>
+  </div>
+  <div class="workspace">
+    <div class="drink-box" idx="1" style="top: 100px; left: 80px;"></div>
+    <div class="drink-box" idx="2" style="top: 180px; left: 80px;"></div>
+    <div class="drink-box" idx="3" style="top: 260px; left: 80px;"></div>
+    <div class="sel-box"></div>
+    <img class="background" src="img/b1_w3/vm0.png"/>
+  </div>
+  <img class="drink" src="img/b1_w3/drink1.png"/>
+</div>
+
+<script>
+var hash = location.hash,
+    lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+    msg = {
+      ko: {
+        instruction: "컴퓨터와 생활:자판기",
+        hint: "음료수를 뽑기 위해서 동전을 넣어봐요!",
+        hint1: "동전이 들어 갔어요! 불이 들어온 버튼을 눌러봐요!",
+        hint2: "캔이 떨어졌어요! 음료수를 꺼내봐요!",
+        hint3: "음료수를 얻었어요! 맛있게 마셔요!",
+        success: "성공!"
+      },
+      en: {
+        instruction: "Vending Machine Practice",
+        hint: "Try to put a coin to pull out a drink!",
+        hint1: "A coin went in! Press the button that lights up!",
+        hint2: "The can is down! Take out the soda!",
+        hint3: "I got a drink! Have a delicious drink!",
+        success: "Success!"
+      }
+    };
+  var step = 1;
+  var drink_num = 1;
+  var audio1 = new Audio('img/b1_w3/vm1.mp3');
+  var audio2 = new Audio('img/b1_w3/vm2.mp3');
+  var audio3 = new Audio('img/b1_w3/vm3.mp3');
+  var audio4 = new Audio('img/b1_w3/vm4.mp3');
+  var audio5 = new Audio('sound/complete.mp3');
+  $("[data-msg]").each(function(idx, el) {
+    $(el).text(msg[lang][$(el).data("msg")]);
+  });
+  $(".sel-box").click(function() {
+  	if(step==1){
+      audio1.play();
+      this.style.height = "80px";
+      this.style.width = "260px";
+      this.style.top = "450px";
+      this.style.left = "75px";
+      $(".sel-box").css("cursor","default")
+      $(".drink-box").css("cursor","pointer")
+      setTimeout( function () {
+        $(".hint").text(msg[lang].hint1);
+        $(".background").attr("src","img/b1_w3/vm1.png");
+        step = 2;
+      }, 1500);
+    }else if(step==3){
+      audio3.play();
+      sleep(1000);
+      audio4.play();
+      $(".hint").text(msg[lang].hint3);
+      $(".background").attr("src","img/b1_w3/vm3.png");
+      $(".drink").css("visibility","visible")
+      $(".drink").attr("src","img/b1_w3/drink"+drink_num+".png");
+      setTimeout( function () {
+        audio5.play();
+        $(".hint").text(msg[lang].success);
+        setTimeout( function () {
+          alert(msg[lang].success);
+          document.location.href = '/b1_w1';
+        }, 2000);
+      }, 8000);
+    }
+  });
+
+  $(".drink-box").click(function(){
+    if(step==2){
+      audio2.play();
+      drink_num = $(this).attr("idx");
+      $(".sel-box").css("cursor","pointer")
+      $(".drink-box").css("cursor","default")
+      setTimeout( function () {
+        $(".hint").text(msg[lang].hint2);
+        $(".background").attr("src","img/b1_w3/vm2_"+drink_num+".png");
+        step = 3;
+      }, 1500);
+    }
+  });
+
+  function sleep(num){	//[1/1000초]
+	 var now = new Date();
+	   var stop = now.getTime() + num;
+	   while(true){
+		 now = new Date();
+		 if(now.getTime() > stop)return;
+	   }
+	}
+
+</script>

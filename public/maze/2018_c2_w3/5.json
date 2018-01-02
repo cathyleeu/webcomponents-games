@@ -1,0 +1,44 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#.###.g.#",
+    "#.%###..#",
+    "#.......#",
+    "#i###..x#",
+    "#.#..u#.#",
+    "#....#..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 3,
+    "img": "cylinder1"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스 마당에는 여러가지 물건들이 있어요",
+    "msg:en": "There are various things in the Cos's yard.",
+    "img": "/img/c2_w3/cos0.png"
+  },{
+    "msg:ko": "라나는 원기둥 모양의 물건을 가지고 싶어요",
+    "msg:en": "Lana want to get a cylindrical shape thing.",
+    "img": "/img/c2_w3/cylinder.png"
+  },{
+    "msg:ko": "이동 블록을 이용하여 물건을 찾아보자",
+    "msg:en": "Let's find the things using move block"
+  }],
+  "goal": {
+    "msg:ko": "원기둥 모양의 물건으로 가보자!",
+    "msg:en": "Let's go to a cylindrical shape thing.",
+    "img": "/img/c2_w3/cylinder.png"
+  }
+}

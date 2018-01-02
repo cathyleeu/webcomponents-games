@@ -1012,6 +1012,18 @@ public.get('/a7_w1', function *(next) {
 public.get('/a8_w1', function *(next) {
   yield this.render('a8_w1');
 });
+public.get('/2018_b1_w2', function *(next) {
+  yield this.render('2018_b1_w2');
+});
+public.get('/2018_b1_w3_c1', function *(next) {
+  yield this.render('2018_b1_w3_c1');
+});
+public.get('/2018_b1_w3_c2', function *(next) {
+  yield this.render('2018_b1_w3_c2');
+});
+public.get('/2018_b1_w4', function *(next) {
+  yield this.render('2018_b1_w4');
+});
 
 var activityIndex = fs.readFileSync("./public/webcomponents-es5/index.html");
 public.get('/activity', function *(next) {
