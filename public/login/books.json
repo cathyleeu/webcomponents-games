@@ -413,6 +413,12 @@
   "A-2":[
     ["클릭연습", "Click", "/click"]
   ],
+  "A-3-re":[
+    ["즐거운 우리 가족", "Happy family", "/activity#!2018_a3_w2"],
+    ["집을 지어요", "Building a house", "/activity#!2018_a3_w2"],
+    ["집을 꾸며요", "Decorating the house", "/activity#!2018_a3_w3"],
+    ["마당을 꾸며요", "Decorating the yard", "/activity#!2018_a3_w4"]
+  ],
   "A-3":[
     ["코스네 가족 이사하기", "Moving Cos' family", "/mazeh#!a3_w3/1"],
     ["끌어다 놓기 연습", "Drag and Drop", "/b1_w4"]
@@ -467,6 +473,12 @@
     ["컴퓨터의 생활:자판기 놀이", "Vending Machine", "/a1_w1"],
     ["눌러서 로그인하기:클릭연습", "Click", "/click"],
     ["컴퓨터에서 끌어다 놓기:끌어다 놓기 연습", "Drag and Drop", "/b1_w4"]
+  ],
+  "B-1-re":[
+    ["컴퓨터의 언어와 사용예절", "???", "체조???"],
+    ["눌러서 로그인해요", "???", "/2018_b1_w2"],
+    ["컴퓨터와 생활", "???", "/2018_b1_w3_c1"],
+    ["컴퓨터에서 끌어다 놓아요", "???", "/b1_w4"]
   ],
   "B-2":[
     ["토드를 움직여요:토드가 태어났어요", "Tod the Tadpole", "/mazeh#!b2_w1/1"],
@@ -551,6 +563,12 @@
     ["라나를 움직여보아요:라나를 움직여보아요", "Lana moves", "/mazeh#!c2_w2/1"],
     ["마당의 보물을 찾아서:보물 찾기", "Find the Treasure", "/mazeh#!c2_w3/1"],
     ["라나의 선물을 찾아서:선물 찾기", "Lana’s Hidden Gifts", "/mazeh#!c2_w4/1"]
+  ],
+  "C-2-re":[
+    ["키즈블록으로 움직여요", "Lana awakens", "/mazeh#!c2_w1/1"],
+    ["더 멀리 움직여요", "Lana moves", "/mazeh#!c2_w2/1"],
+    ["여러 가지 모양을 알아보아요", "Find the Treasure", "/mazeh#!c2_w3/1"],
+    ["여러 가지 길을 찾아보아요", "Lana’s Hidden Gifts", "/mazeh#!c2_w4/1"]
   ],
   "C-3":[
     ["즐거운 우리집&가족이 늘었어요:코스네 가족&덧셈 연습", "Cos' Family", "/mazeh#!c3_w1_c1/index"],

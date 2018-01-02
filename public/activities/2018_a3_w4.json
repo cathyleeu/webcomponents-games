@@ -1,0 +1,57 @@
+{
+  "element": "create-image-game",
+  "attributes": {
+    "limited" : true
+  },
+  "data": [
+    [9.35,43.2],[29.76,33.67],
+    [84.18,59.69],[55.1,67.18],[26.87,63.44],[10.03,86.39],
+    [39.46,91.5],[75.51,89.8]
+  ],
+  "manifest": [
+    {"src": "/img/2018_a3/yard.png", "background": true},
+    {"src": "/img/2018_a3/playground.png", "name": "모래밭" },
+    {"src": "/img/2018_a3/swing512.png", "name": "그네" },
+    {"src": "/img/2018_a3/pool.png", "name": "수영장" },
+    {"src": "/img/2018_a3/mailbox.png", "name": "우체통" },
+    {"src": "/img/2018_a3/bicycle.png", "name": "자전거" },
+    {"src": "/img/2018_a3/bench.png", "name": "벤치" },
+    {"src": "/img/2018_a3/fence.png", "name": "울타리" }
+  ],
+  "msg": {
+    "ko": {
+      "title": "마당을 꾸며보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Let's decorate the yard.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}
