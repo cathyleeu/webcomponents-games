@@ -33,5 +33,10 @@
     "msg:ko": "라나가 준 옷을 찾아보자!",
     "msg:en": "Let's find the cloth for Cos",
     "img": "/img/c2_w4/shoes.png"
-  }
+  },
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "2018_c2_w4/99"
+  }]
 }

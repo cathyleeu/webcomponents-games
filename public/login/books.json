@@ -565,10 +565,10 @@
     ["라나의 선물을 찾아서:선물 찾기", "Lana’s Hidden Gifts", "/mazeh#!c2_w4/1"]
   ],
   "C-2-re":[
-    ["키즈블록으로 움직여요", "Lana awakens", "/mazeh#!c2_w1/1"],
-    ["더 멀리 움직여요", "Lana moves", "/mazeh#!c2_w2/1"],
-    ["여러 가지 모양을 알아보아요", "Find the Treasure", "/mazeh#!c2_w3/1"],
-    ["여러 가지 길을 찾아보아요", "Lana’s Hidden Gifts", "/mazeh#!c2_w4/1"]
+    ["키즈블록으로 움직여요", "Lana awakens", "/mazeh#!2018_c2_w1/1"],
+    ["더 멀리 움직여요", "Lana moves", "/mazeh#!2018_c2_w2/1"],
+    ["여러 가지 모양을 알아보아요", "Find the Treasure", "/mazeh#!2018_c2_w3/1"],
+    ["여러 가지 길을 찾아보아요", "Lana’s Hidden Gifts", "/mazeh#!2018_c2_w4/1"]
   ],
   "C-3":[
     ["즐거운 우리집&가족이 늘었어요:코스네 가족&덧셈 연습", "Cos' Family", "/mazeh#!c3_w1_c1/index"],
