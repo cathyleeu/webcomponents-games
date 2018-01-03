@@ -246,7 +246,7 @@ function getBook(classObj) {
     book = [2, 3];
   }
   // 석계ECC 추가반 1월 1권부터 시작
-  if(school == "B00024-K9") {
+  if(school == "B00024-K1" && classNum = classObj.code.slice(-3) == "KC9") {
     book = [1, 2];
   }
   // 대구지사, 압구정PSA는 요청으로 3달치 제공
