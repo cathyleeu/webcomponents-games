@@ -21,9 +21,9 @@
   "extra":[{
     "x": 2,
     "y": 3,
-    "img": "playground"
+    "img" : "planet_green"
   }],
   "tutorial": [{
-    "msg:ko": "놀이터로 가보자!"
+    "msg:ko": "코봇을 태운 우주선은\n 장애물을 피해서 초록 행성으로 가야해요."
   }]
 }

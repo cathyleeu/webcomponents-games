@@ -1,32 +1,35 @@
 [
   {"book": "coding", "title": "초등교재"},
-  {"id": "bg1", "src": "/img/b4/parktile1.png"},
-  {"id": "bg2", "src": "/img/b4/parktile2.png"},
+  {"id": "bg1", "src": "/img/a3_w3/tile1.png"},
+  {"id": "bg2", "src": "/img/a3_w3/tile2.png"},
 
   {"id": "character", "src": "/img/c8_w3/new_cobot.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c8_w3/new_cobot0.png", "size": 256},
-  {"id": "food", "src": "/img/b4/flag.png"},
+  {"id": "food", "src": "/img/a3_w3/earth.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
-  {"id": "tree1", "src": "/img/b4/tree1.png", "obstacle": true},
-  {"id": "tree2", "src": "/img/b4/tree2.png", "obstacle": true},
-  {"id": "tree1", "src": "/img/b4/tree3.png", "obstacle": true},
+  {"id": "space1", "src": "/img/a3_w3/space1.png", "obstacle": true},
+  {"id": "space2", "src": "/img/a3_w3/space2.png", "obstacle": true},
+  {"id": "space3", "src": "/img/a3_w3/space3.png", "obstacle": true},
+  
+
+  {"id": "setle", "src": "/img/a3_w3/setle.png", "obstacle": true},
+  {"id": "sun", "src": "/img/a3_w3/sun.png", "obstacle": true},
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png"},
   {"tile": "n", "id": "normal", "src": "/img/guide/normal.png"},
   {"tile": "e", "id": "easy", "src": "/img/guide/easy.png"},
 
-  {"id": "fruit_strawberry", "src": "/img/c4_w1_c3/fruit_strawberry.png"},
-  {"id": "fruit_apple", "src": "/img/c4_w1_c3/fruit_apple.png"},
-  {"id": "fruit_cherry", "src": "/img/c4_w1_c3/fruit_cherry.png"},
-  {"id": "fruit_kiwi", "src": "/img/c4_w1_c3/fruit_kiwi.png"},
-  {"id": "fruit_orange", "src": "/img/c4_w1_c3/fruit_orange.png"},
-  {"id": "fruit_watermelon", "src": "/img/c4_w1_c3/fruit_watermelon.png"},
-  {"id" :"refrigerator" , "src" : "/img/b9_w1/refrigerator.png"},
+
+
+  {"id": "planet_blue", "src": "/img/coding_a/22/planet_blue.png"},
+  {"id": "planet_red", "src": "/img/coding_a/22/planet_red.png"},
+  {"id": "planet_green", "src": "/img/coding_a/23/planet_green.png"},
+  {"id": "planet_yellow", "src": "/img/coding_a/23/planet_yellow.png"},
 
   {"id": "house", "src": "/img/b5_w1/house.png"},
   {"id": "school", "src": "/img/a10_w3/school.png"},
