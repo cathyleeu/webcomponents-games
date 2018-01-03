@@ -245,10 +245,6 @@ function getBook(classObj) {
   if(school == "B00171-K1") {
     book = [2, 3];
   }
-  // 석계ECC 추가반 1월 1권부터 시작
-  if(school == "B00024-K1" && classNum = classObj.code.slice(-3) == "KC9") {
-    book = [1, 2];
-  }
   // 대구지사, 압구정PSA는 요청으로 3달치 제공
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "D00121") {
     book = [8, 9, 10];
@@ -297,6 +293,10 @@ function getBook(classObj) {
   // 숙명킨더 아카데미 7세반 11월에 특별호부터 시작
   if(classObj.code == "A00042-K4-KC2") {
     book = [6, 7];
+  }
+  // 석계ECC 추가반 1월 1권부터 시작
+  if(classObj.code == "B00024-K1-KC9") {
+    book = [1, 2];
   }
   book = book.map(function(num) {
     return classObj.level + "-" + num;
