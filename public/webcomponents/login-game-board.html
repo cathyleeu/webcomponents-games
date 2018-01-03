@@ -101,6 +101,10 @@
       handleSubmit(){
         let { selectImage, selectName, randomImage, randomName} = this.parent;
         if(selectImage === randomImage && selectName === randomName) {
+          if(this.parent.lastStage === this.parent.currentStage) {
+            this.parent.$.finalStageModal.modalAlert()
+            return false
+          }
           this.parent.$.successModal.modalAlert()
           this.reset()
         } else {

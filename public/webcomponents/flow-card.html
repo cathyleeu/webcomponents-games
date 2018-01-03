@@ -156,10 +156,8 @@
           }
         });
         if (!result) {
-          // console.log("dragended result false");
           d3.select(this).attr("x", self.startX ).attr("y", self.startY );
         } else {
-          // console.log("result true", targetX, targetY)
           self.set('step', d.step)
           if(self.step === self.data.last-1) {
             if(self.currentStage === self.lastStage){
@@ -171,12 +169,7 @@
           // _this.set('matched', _this.matched+1)
           d3.select(this).attr("x", targetX+gap ).attr("y", targetY )
             .call(d3.drag().on("start", null ))
-          // if(self.matched === self.cards) {
-          // self.$.successModal.modalAlert()
-          // }
         }
-        // _this.set('total', _this.total+1)
-        // debugger
       }
       setData(data, manifest){
         this.set('data', data )

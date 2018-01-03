@@ -1,30 +1,30 @@
 {
-  "element": "line-card",
+  "element": "multi-line-card",
   "attributes": {
   },
   "data": [
-    "A5_1",
-    "A5_2",
-    "A5_3",
-    "A5_4",
-    "A5_5",
-    "A5_6",
-    "A5_7",
-    "A5_8"
+    "A23_MB01",
+    "A23_MB02",
+    "A23_I01",
+    "A23_I02",
+    "A23_MB01",
+    "A23_MB02",
+    "A23_W01",
+    "A23_W02"
   ],
   "manifest": [
-    {"no": 0 , "set": 0, "id": "A5_1", "src": "/img/coding_a/5/A5_1.png"},
-    {"no": 1 , "set": 0, "id": "A5_2", "src": "/img/coding_a/5/A5_2.png"},
-    {"no": 2 , "set": 0, "id": "A5_3", "src": "/img/coding_a/5/A5_3.png"},
-    {"no": 3 , "set": 0, "id": "A5_4", "src": "/img/coding_a/5/A5_4.png"},
-    {"no": 0 , "set": 1, "id": "A5_5", "src": "/img/coding_a/5/A5_5.png"},
-    {"no": 1 , "set": 1, "id": "A5_6", "src": "/img/coding_a/5/A5_6.png"},
-    {"no": 2 , "set": 1, "id": "A5_7", "src": "/img/coding_a/5/A5_7.png"},
-    {"no": 3 , "set": 1, "id": "A5_8", "src": "/img/coding_a/5/A5_8.png"}
+    {"no": 0 , "set": 0, "id": "A23_MB01", "src": "/img/coding_a/23/A23_MB01.png"},
+    {"no": 1 , "set": 0, "id": "A23_MB02", "src": "/img/coding_a/23/A23_MB02.png"},
+    {"no": 0 , "set": 1, "id": "A23_I01", "src": "/img/coding_a/23/A23_I01.png"},
+    {"no": 1 , "set": 1, "id": "A23_I02", "src": "/img/coding_a/23/A23_I02.png"},
+    {"no": 0 , "set": 1, "id": "A23_MB01", "src": "/img/coding_a/23/A23_MB01.png"},
+    {"no": 1 , "set": 1, "id": "A23_MB02", "src": "/img/coding_a/23/A23_MB02.png"},
+    {"no": 0 , "set": 1, "id": "A23_W01", "src": "/img/coding_a/23/A23_W01.png"},
+    {"no": 1 , "set": 1, "id": "A23_W02", "src": "/img/coding_a/23/A23_W02.png"}
   ],
   "msg": {
     "ko": {
-      "title": "관련있는 것들끼리 연결해보세요.",
+      "title": "서로 비슷한 역할을 연결해 보아요",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -39,7 +39,7 @@
       "yesbtn" : "예"
     },
     "en": {
-      "title": "Matching What they say",
+      "title": "Matching similar role each other",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

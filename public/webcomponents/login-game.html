@@ -88,8 +88,10 @@
       ready(){
         // super.ready()가 없으면 그려지지 않음
         super.ready();
+        this.set('currentStage', 1)
       }
       reset(){
+        this.set('currentStage', this.currentStage+1)
         this.setData(this.names, this.manifest)
       }
       renderRandomId(level , images){

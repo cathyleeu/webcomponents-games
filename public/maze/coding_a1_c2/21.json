@@ -21,9 +21,9 @@
   "extra":[{
     "x" : 6,
     "y" : 3,
-    "img" : "flower1"
+    "img" : "earth"
   }],
   "tutorial": [{
-    "msg:ko": "꽃으로 가보자!"
+    "msg:ko": "초록 별로 가보자!"
   }]
 }
