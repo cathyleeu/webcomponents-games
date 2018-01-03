@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".######.",
+    "#....%.#",
+    "###....#",
+    "#...##.#",
+    "###....#",
+    "#.#.####",
+    "#.....l#",
+    ".######."
+  ],
+  "tile": [
+    {"tile": "%", "img": "mgrandma"}
+  ],
+  "tutorial": [{
+    "msg:ko": "외할머니에게로 가보자!",
+    "msg:en": "Go to grandma!",
+    "msg:cn": "去奶奶那里吧！",
+    "img": "/img/renewed_b3/m_grandma.png"
+  }],
+  "success": [{
+    "msg:ko": "축하해요! 모든 문제를 다 풀었어요!",
+    "msg:en": "Congratulations! You solved all the problems!",
+  }]
+}

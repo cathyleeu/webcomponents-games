@@ -1,0 +1,32 @@
+[
+  {"book": "b3", "title": "4주차 : 연못에 들렀다 가요"},
+  {"id": "bg1", "src": "/img/renewed_b3/tile1.png"},
+  {"id": "bg2", "src": "/img/renewed_b3/tile2.png"},
+  {"id": "character", "src": "/img/renewed_b3/cos_deer.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/renewed_b3/cos_deer0.png", "size": 256},
+  {"id": "food", "src": "/img/renewed_b3/house.png"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+  {"id": "tree1", "src": "/img/renewed_b3/ftree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/renewed_b3/ftree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/renewed_b3/ftree3.png", "obstacle": true},
+  {"id": "flower1", "src": "/img/renewed_b3/flower1.png", "obstacle": true},
+  {"id": "flower2", "src": "/img/renewed_b3/flower2.png", "obstacle": true},
+  {"id": "yardstone1", "src": "/img/renewed_b3/fyardstone1.png", "obstacle": true},
+  {"id": "yardstone2", "src": "/img/renewed_b3/fyardstone2.png", "obstacle": true},
+  {"tile": "i", "id": "invisible", "src": "/img/invisible.png", "wall": true},
+
+  {"tile": "H","id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "N","id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "E","id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"tile": "p", "id": "pond", "src": "/img/renewed_b3/pond.png", "obstacle": false},
+  {"tile": "a", "id": "gp1", "src": "/img/renewed_b3/glasses.png", "obstacle": false},
+  {"tile": "b", "id": "gp2", "src": "/img/renewed_b3/stick.png", "obstacle": false},
+  {"tile": "c", "id": "gp3", "src": "/img/renewed_b3/hat.png", "obstacle": false},
+  {"tile": "e", "id": "gm1", "src": "/img/renewed_b3/marble.png", "obstacle": false},
+  {"tile": "f", "id": "gm2", "src": "/img/renewed_b3/silk.png", "obstacle": false},
+  {"tile": "g", "id": "gm3", "src": "/img/renewed_b3/picture.png", "obstacle": false}
+]
