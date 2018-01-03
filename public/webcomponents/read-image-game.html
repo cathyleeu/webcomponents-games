@@ -79,13 +79,15 @@
           }
         }
       }
-      ready(){
-        super.ready()
+      ready() {
+        super.ready();
         this.set('clicked', 0)
         this.set('currentStage', 1)
+        this.set('isPlaying', false)
+        createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.FlashAudioPlugin]);
+        createjs.Sound.alternateExtensions = ["mp3"];
       }
       reset(){
-        // debugger
         this.set('currentStage', this.currentStage+1)
         this.set('clicked', 0)
         d3.select(this.shadowRoot).select("svg").selectAll("text").remove()
@@ -95,22 +97,31 @@
         let selfEle = this.ownerDocument.getElementById('element'),
             svg = this.parentElement,
             space = (this.getBBox().width)*0.5;
-        d3.select(this).remove()
-        d3.select(svg).append('text').text(`${d.text}`)
-          .attr('x', d.x+space ).attr('y', d.y+space )
-          .style('font-size', '40px')
-          .style('font-weight', '700')
 
-        // debugger
-        selfEle.set('clicked', selfEle.clicked+1)
-        console.log(selfEle.clicked);
-        if(selfEle.clicked === selfEle.max) {
-          if(selfEle.currentStage === selfEle.lastStage) {
-            selfEle.$.finalStageModal.modalAlert()
-            return false
+        if(!selfEle.isPlaying){
+          selfEle.set('isPlaying', true)
+          d3.select(this).remove()
+          d3.select(svg).append('text').text(`${d.text}`)
+            .attr('x', d.x+space ).attr('y', d.y+space )
+            .style('font-size', '40px')
+            .style('font-weight', '700')
+
+          selfEle.set('clicked', selfEle.clicked+1)
+
+          if(selfEle.clicked === selfEle.max) {
+            if(selfEle.currentStage === selfEle.lastStage) {
+              selfEle.$.finalStageModal.modalAlert()
+              return false
+            }
+            selfEle.$.successModal.modalAlert()
           }
-          selfEle.$.successModal.modalAlert()
+          let instance = createjs.Sound.play(d.id)
+          instance.on("complete", selfEle.handleComplete, selfEle);
         }
+      }
+      handleComplete(e) {
+        console.log("handleComplete");
+        this.set('isPlaying', false)
       }
       setData(data, manifest){
         this.set('data',data)
@@ -120,6 +131,15 @@
                     .attr('width', this.offsetWidth).attr('height', this.offsetHeight);
             manifest = d3.shuffle(manifest).slice(0, this.max)
             data = d3.shuffle(data)
+
+
+        // sound js에 registerSounds를 위해 data 가공
+        let soundData = manifest.map( s => ({
+          ["src"]: s.sound,
+          ["id"] : s.id
+        }))
+
+        createjs.Sound.registerSounds(soundData, this.basePath);
 
         let refineData = manifest.map((re, i) => ({
           ["src"]:re.src,
