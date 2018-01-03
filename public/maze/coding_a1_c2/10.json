@@ -21,10 +21,9 @@
   "extra":[{
     "x": 6,
     "y": 5,
-    "img" : "house"
+    "img" : "planet_red"
     }],
   "tutorial": [{
-    "msg:ko": "집으로 가보자!",
-    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_strawberry.png"]
+    "msg:ko": "코봇을 태운 우주선은\n장애물을 피해서 빨강 행성으로 가야해요."
   }]
 }

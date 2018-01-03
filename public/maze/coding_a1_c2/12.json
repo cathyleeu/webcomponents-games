@@ -21,10 +21,9 @@
   "extra":[{
     "x" : 6,
     "y" : 3,
-    "img" : "hospital"
+    "img" : "planet_yellow"
   }],
   "tutorial": [{
-    "msg:ko": "병원으로 가보자!",
-    "img": ["/img/coding/robot1.png","/img/c6/bomi0.png","/img/b55/mkt1.png"]
+    "msg:ko": "코봇을 태운 우주선은\n 장애물을 피해서 노랑 행성으로 가야해요."
   }]
 }
