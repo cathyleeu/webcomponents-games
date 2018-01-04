@@ -251,7 +251,7 @@ function getBook(classObj) {
   }
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
-    book = [10, "10-5"];
+    book = [1];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
@@ -1015,17 +1015,17 @@ public.get('/a7_w1', function *(next) {
 public.get('/a8_w1', function *(next) {
   yield this.render('a8_w1');
 });
-public.get('/2018_b1_w2', function *(next) {
-  yield this.render('2018_b1_w2');
+public.get('/b1re_w2', function *(next) {
+  yield this.render('b1re_w2');
 });
-public.get('/2018_b1_w3_c1', function *(next) {
-  yield this.render('2018_b1_w3_c1');
+public.get('/b1re_w3_c1', function *(next) {
+  yield this.render('b1re_w3_c1');
 });
-public.get('/2018_b1_w3_c2', function *(next) {
-  yield this.render('2018_b1_w3_c2');
+public.get('/b1re_w3_c2', function *(next) {
+  yield this.render('b1re_w3_c2');
 });
-public.get('/2018_b1_w4', function *(next) {
-  yield this.render('2018_b1_w4');
+public.get('/b1re_w4', function *(next) {
+  yield this.render('b1re_w4');
 });
 
 var activityIndex = fs.readFileSync("./public/webcomponents-es5/index.html");
