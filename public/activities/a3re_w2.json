@@ -5,38 +5,38 @@
     "max" : 4,
     "lastStage" : 5,
     "horizontal" : true,
-    "nextlink" : "activity#!2018_a3_w4"
+    "nextlink" : "activity#!a3re_w3"
   },
   "data": [
-    "place1",
-    "place2",
-    "place3",
-    "place4",
-    "place5",
+    "tool1",
+    "tool2",
+    "tool3",
+    "tool4",
+    "tool5",
 
-    "thing1",
-    "thing2",
-    "thing3",
-    "thing4",
-    "thing5"
+    "material1",
+    "material2",
+    "material3",
+    "material4",
+    "material5"
   ],
   "manifest": [
-    {"no": 0 , "set": 0, "id": "thing1", "src": "/img/2018_a3/books.png"},
-    {"no": 1 , "set": 0, "id": "thing2", "src": "/img/2018_a3/shoes.png"},
-    {"no": 2 , "set": 0, "id": "thing3", "src": "/img/2018_a3/blocks.png"},
-    {"no": 3 , "set": 0, "id": "thing4", "src": "/img/2018_a3/blanket.png"},
-    {"no": 4 , "set": 0, "id": "thing5", "src": "/img/2018_a3/clothes.png"},
+    {"no": 0 , "set": 0, "id": "material1", "src": "/img/2018_a3/paint.png"},
+    {"no": 1 , "set": 0, "id": "material2", "src": "/img/2018_a3/nail.png"},
+    {"no": 2 , "set": 0, "id": "material3", "src": "/img/2018_a3/screw.png"},
+    {"no": 3 , "set": 0, "id": "material4", "src": "/img/2018_a3/boltnut.png"},
+    {"no": 4 , "set": 0, "id": "material5", "src": "/img/2018_a3/treepiece.png"},
 
-    {"no": 0 , "set": 1, "id": "place1", "src": "/img/2018_a3/bookshelves.png"},
-    {"no": 1 , "set": 1, "id": "place2", "src": "/img/2018_a3/shoecloset.png"},
-    {"no": 2 , "set": 1, "id": "place3", "src": "/img/2018_a3/blockbox.png"},
-    {"no": 3 , "set": 1, "id": "place4", "src": "/img/2018_a3/bed.png"},
-    {"no": 4 , "set": 1, "id": "place5", "src": "/img/2018_a3/closet.png"}
+    {"no": 0 , "set": 1, "id": "tool1", "src": "/img/2018_a3/paintbrush.png"},
+    {"no": 1 , "set": 1, "id": "tool2", "src": "/img/2018_a3/hammer.png"},
+    {"no": 2 , "set": 1, "id": "tool3", "src": "/img/2018_a3/screwdriver.png"},
+    {"no": 3 , "set": 1, "id": "tool4", "src": "/img/2018_a3/spanner.png"},
+    {"no": 4 , "set": 1, "id": "tool5", "src": "/img/2018_a3/saw.png"}
   ],
   "msg": {
     "ko": {
-      "title": "집을 꾸며요",
-      "minor": "물건을 정리할 위치와 알맞게 연결해보아요.",
+      "title": "집을 지어요",
+      "minor": "집짓기에 필요한 공구와 재료를 알맞게 연결해보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -55,8 +55,8 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Decorating the house",
-      "minor": "Organize things in the right place",
+      "title": "Building a house",
+      "minor": "Match the tools and materials for building a house",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
