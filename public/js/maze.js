@@ -8,8 +8,8 @@ var d1,
     kidscoding = new KidsCoding(),
     tileFactory = new TileFactory(),
     drawFactory = new DrawFactory(),
-    tutorial = null,
-    tutorialIdx = 0,
+    dialogue = null,
+    dialogueIdx = 0,
     message_url = "",
     messages = null,
     map_path = null,
@@ -288,7 +288,7 @@ function init() {
     mazeInfo.canvas.stage.update();
     kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 0);
   } else {
-    $("#runTutorial").removeClass("hidden");
+    $("#startTutorial").removeClass("hidden");
     var fullscreen = store.session.get("fullscreen", null),
         fullscreenElement =
             document.fullscreenElement ||
@@ -304,17 +304,17 @@ function init() {
           e.stopPropagation();
           FullScreen();
           store.session.set('fullscreen', true);
-          runTutorial(maze.tutorial);
+          startDialogue(maze.tutorial);
         },
         confirmNo: function(e) {
           e.preventDefault();
           e.stopPropagation();
           store.session.set('fullscreen', false);
-          runTutorial(maze.tutorial);
+          startDialogue(maze.tutorial);
         }
       });
     } else {
-      runTutorial(maze.tutorial);
+      startDialogue(maze.tutorial);
     }
   }
   isMoving = false;
@@ -715,11 +715,6 @@ function addEvents() {
       createjs.Sound.stop("bgm");
     }
   });
-  $("#runTutorial a").on("touchstart click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    runTutorial(maze.tutorial);
-  });
   function handleMove(e) {
     if(e.type != "keydown") {
       // touchstart, click은 화면 확대가 되기 때문에 prevent 처리
@@ -774,7 +769,7 @@ function addEvents() {
         }
       }
       if(obj && obj.tutorial) {
-        runTutorial(obj.tutorial);
+        startDialogue(obj.tutorial);
       }
       isMoving = false;
     });
@@ -786,33 +781,17 @@ function addEvents() {
   });
   $("#virtualKeypad .key").on("touchstart click", handleMove);
 
-  $("#modal .tutorial").on("touchstart click", function handleClick(e) {
+  // 튜토리얼 대화창 모달 시작
+  $("#startTutorial a").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
-    var tItem = tutorial[tutorialIdx],
-        link = tutorial[tutorialIdx-1] ? tutorial[tutorialIdx-1].link : null,
-        lang = store.session.get("lang", "ko");
-    if(link) {
-      // 튜토리얼의 맨 끝에서 다른 페이지로 넘어갈때
-      $("#modal .go-next").click();
-      return;
-    }
-    if(tutorialIdx < tutorial.length) {
-      if(tItem.hasOwnProperty("x") && tItem.hasOwnProperty("y")) {
-        kidscoding.Actions._setFocus(tItem.x, tItem.y, 0, 500);
-      }
-      showModal({
-        video: tItem.video,
-        msg: tItem["msg" + (lang ? ":" + lang : "")] || tItem["msg"],
-        img: tItem.img,
-        link: tItem.link,
-        tutorial: true
-      });
-    } else {
-      $('#modal').modal('hide');
-      kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 1000);
-    }
-    tutorialIdx++;
+    startDialogue(maze.tutorial);
+  });
+  // 대화창 모달에서 다음 클릭
+  $("#modal .dialogue-next").on("touchstart click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    runDialogue();
   });
 
   $("#modal .character1-modal, #modal .character2-modal").on("touchstart click", function(e) {
@@ -859,28 +838,54 @@ function FullScreen(el) {
   };
 };
 
-function runTutorial(input_tutorial) {
+function startDialogue(input_dialogue) {
   var lang = store.session.get("lang", "ko");
-  if(!input_tutorial) {
+  if(!input_dialogue) {
     return;
   }
-  tutorial = input_tutorial;
-  tutorialIdx = 0;
+  dialogue = input_dialogue;
+  dialogueIdx = 0;
 
   if(kidscoding.isHorizontal) {
-    $("#modal .tutorial").click();
+    runDialogue();
   } else {
     var noti = $('.noti-guide');
     noti.empty();
-    input_tutorial.map(function(txt) {
-      var tutorial = txt["msg:"+lang].replace(/\n/g, "<br/>");
-      noti.append("<div class='speech'><div class='speech-bubble'>"+tutorial+"</div></div>");
+    input_dialogue.map(function(txt) {
+      var msg = txt["msg:"+lang].replace(/\n/g, "<br/>");
+      noti.append("<div class='speech'><div class='speech-bubble'>"+msg+"</div></div>");
     });
     noti.prop("scrollHeight") === noti.height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "");
     noti.scrollTop(10);
   }
 }
 
+function runDialogue() {
+  var tItem = dialogue[dialogueIdx],
+      link = dialogue[dialogueIdx-1] ? dialogue[dialogueIdx-1].link : null,
+      lang = store.session.get("lang", "ko");
+  if(link) {
+    // 튜토리얼의 맨 끝에서 다른 페이지로 넘어갈때
+    $("#modal .go-next").click();
+    return;
+  }
+  if(dialogueIdx < dialogue.length) {
+    if(tItem.hasOwnProperty("x") && tItem.hasOwnProperty("y")) {
+      kidscoding.Actions._setFocus(tItem.x, tItem.y, 0, 500);
+    }
+    showModal({
+      video: tItem.video,
+      msg: tItem["msg" + (lang ? ":" + lang : "")] || tItem["msg"],
+      img: tItem.img,
+      link: tItem.link,
+      dialogue: true
+    });
+  } else {
+    $('#modal').modal('hide');
+    kidscoding.Actions._setFocus(mazeInfo.canvas.character.px, mazeInfo.canvas.character.py, 0, 1000);
+  }
+  dialogueIdx++;
+}
 
 function gameMode(loader, type, tileFactory) {
   var character = mazeInfo.canvas.character,
@@ -949,7 +954,7 @@ function run(block, callback) {
           var imgsrc = obj.split("#!");
           createjs.Sound.play("complete");
           if(maze.success) {
-            runTutorial(maze.success);
+            startDialogue(maze.success);
           } else {
             if(imgsrc.length == 1){
               showModal({
@@ -996,7 +1001,7 @@ function run(block, callback) {
         //   location.href = location.protocol + "//" + location.host + obj.link + "?back=" + location.pathname;
         // }
         if(obj.tutorial) {
-          runTutorial(obj.tutorial);
+          startDialogue(obj.tutorial);
         }
       }
       setTimeout(function() {
@@ -1020,7 +1025,7 @@ function checkEnd() {
     if(foods[0].useItem <= itemCount) {
       createjs.Sound.play("complete");
       if(maze.success) {
-        runTutorial(maze.success);
+        startDialogue(maze.success);
       } else {
         showModal({
           msg: messages.success,
@@ -1048,7 +1053,7 @@ function checkEnd() {
       } else {
         createjs.Sound.play("complete");
         if(maze.success) {
-          runTutorial(maze.success);
+          startDialogue(maze.success);
         } else {
           showModal({
             msg: messages.success,
@@ -1107,15 +1112,15 @@ function showModal(options) {
     options = {
       msg: options,
       goNext: false,
-      tutorial: false,
+      dialogue: false,
       confirm: false
     };
   }
   $("#modal .btn").hide();
   if(options.goNext) {
     $("#modal .go-next, #modal .reset-maze").show();
-  } else if(options.tutorial) {
-    $("#modal .tutorial").show();
+  } else if(options.dialogue) {
+    $("#modal .dialogue-next").show();
   } else if (options.confirm) {
     $("#modal .confirm-yes").data("callback", options.confirmYes).show();
     $("#modal .confirm-no").data("callback", options.confirmNo).show();
@@ -1138,7 +1143,7 @@ function showModal(options) {
     $("#modal .character2-modal").show();
     $("#modal .modal-character1").attr("src", options.character1);
     $("#modal .modal-character2").attr("src", options.character2);
-    $("#modal .modal-footer .tutorial").hide();
+    $("#modal .dialogue-next").hide();
   } else {
     $("#modal .modal-msg-box").show();
     $("#modal .modal-select").hide();

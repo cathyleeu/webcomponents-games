@@ -161,7 +161,6 @@ function getInfoByCode(code) {
         info.classes = [];
         Object.keys(classes).forEach(function(book) {
           classes[book].forEach(function(className) {
-            console.log(className)
             info.classes.push({
               code: className,
               className: className,
