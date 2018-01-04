@@ -1,0 +1,41 @@
+[
+  {"book": "c2", "title": "3주차 : 여러 가지 모양을 알아보아요"},
+  {"id": "bg1", "src": "/img/b9_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b9_w1/bg2.png"},
+  {"id": "character", "src": "/img/c2_w1/SpriteLana_256.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c2_w1/lana0.png", "size": 256},
+  {"id": "food", "src": "/img/c2_w3/ball0.png"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "desk", "src": "/img/b9_w1/desk.png", "wall": true},
+  {"id": "bookshelf", "src": "/img/b9_w1/bookshelf.png","obstacle": true},
+  {"id": "drawer", "src": "/img/b9_w1/drawer.png","obstacle": true},
+
+  {"tile": "a", "id": "ball1", "src": "/img/c55_w1/ball1.png", "obstacle": false},
+  {"tile": "b", "id": "ball2", "src": "/img/c55_w1/ball2.png", "obstacle": false},
+  {"tile": "c", "id": "ball3", "src": "/img/c55_w1/ball3.png", "obstacle": false},
+  {"tile": "f", "id": "ball4", "src": "/img/c55_w1/ball4.png", "obstacle": false},
+  {"tile": "g", "id": "ball5", "src": "/img/c55_w1/ball5.png", "obstacle": false},
+  {"tile": "o", "id": "cylinder1", "src": "/img/c55_w1/cylinder1.png", "obstacle": false},
+  {"tile": "q", "id": "cylinder2", "src": "/img/c55_w1/cylinder2.png", "obstacle": false},
+  {"tile": "s", "id": "cylinder3", "src": "/img/c55_w1/cylinder3.png", "obstacle": false},
+  {"tile": "t", "id": "cylinder4", "src": "/img/c55_w1/cylinder4.png", "obstacle": false},
+  {"tile": "v", "id": "cylinder5", "src": "/img/c55_w1/cylinder5.png", "obstacle": false},
+  {"tile": "i", "id": "box1", "src": "/img/c55_w1/rec1.png", "obstacle": false},
+  {"tile": "j", "id": "box2", "src": "/img/c55_w1/rec2.png", "obstacle": false},
+  {"tile": "k", "id": "box3", "src": "/img/c55_w1/rec3.png", "obstacle": false},
+  {"tile": "m", "id": "box4", "src": "/img/c55_w1/rec4.png", "obstacle": false},
+  {"tile": "h", "id": "box5", "src": "/img/c55_w1/rec5.png", "obstacle": false},
+  {"tile": "w", "id": "etc1", "src": "/img/c55_w1/etc1.png", "obstacle": false},
+  {"tile": "x", "id": "etc2", "src": "/img/c55_w1/etc2.png", "obstacle": false},
+  {"tile": "y", "id": "etc3", "src": "/img/c55_w1/etc3.png", "obstacle": false},
+  {"tile": "z", "id": "etc4", "src": "/img/c55_w1/etc4.png", "obstacle": false},
+
+
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false}
+]
