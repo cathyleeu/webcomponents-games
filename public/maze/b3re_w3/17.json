@@ -1,0 +1,30 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".######.",
+    "#......#",
+    "#......#",
+    "#......#",
+    "#......#",
+    "#......#",
+    "#......#",
+    ".######."
+  ],
+  "tile": [
+    {"tile": "%", "img": "gm1"}
+  ],
+  "tutorial": [{
+    "msg:ko": "할머니의 물건을 찾아보자.",
+    "msg:en": "Let's look for Grandma's things.",
+    "img":["/img/renewed_b3/f_grandma.png", "/img/renewed_b3/marble.png",
+       "/img/renewed_b3/silk.png", "/img/renewed_b3/picture.png"]
+  }]
+}
