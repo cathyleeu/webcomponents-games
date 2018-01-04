@@ -13,7 +13,8 @@
     "이서준"
   ],
   "attributes": {
-
+    "lastStage" : 2,
+    "nextlink" : "mazev#!coding_b1/0"
   },
   "manifest": {
     "level" : "A",

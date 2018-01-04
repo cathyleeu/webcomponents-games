@@ -1,0 +1,299 @@
+<style>
+#container {
+  position: relative;
+}
+
+.head {
+  position: relative;
+}
+
+.instruction {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+  background: #2C3E50;
+  color: white;
+}
+
+.hint {
+  position: relative;
+  height: 90px;
+  text-align: center;
+  background: #18BC9C;
+  color: white;
+  padding-top: 10px;
+}
+
+.timer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 50px;
+  display: none;
+  line-height: 50px;
+  font-size: 30px;
+  padding: 0 20px;
+  color: white;
+}
+
+.workspace {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.hint .next-arrow:last-child {
+  display: none;
+}
+.hint .bubble {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: 0px none;
+  text-align: center;
+  line-height: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+}
+.hint .bubble.target {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  font-size: 50px;
+  line-height: 70px;
+}
+
+.workspace .bubble {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 0px none;
+  text-align: center;
+  line-height: 100px;
+  font-size: 70px;
+  font-weight: bold;
+  color: white;
+}
+</style>
+<div id="container">
+  <div class="head">
+    <div class="instruction"></div>
+    <div class="hint"></div>
+  </div>
+  <div class="timer"></div>
+  <div class="workspace"></div>
+</div>
+
+<script>
+
+var CIRCLE_NUM = 5;
+
+var hash = location.hash,
+    lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+    level = (+(hash||"#1").slice(1) - 1) || 0,
+    iter,
+    count,
+    startTime;
+
+var levels = [{
+  ko: "12띠 동물을 순서대로 클릭해봐요",
+  en: "Click the animals in order.",
+  values: [
+    "/img/login/B/01.png",
+    "/img/login/B/02.png",
+    "/img/login/B/03.png",
+    "/img/login/B/04.png",
+    "/img/login/B/05.png",
+    "/img/login/B/06.png",
+    "/img/login/B/07.png",
+    "/img/login/B/08.png",
+    "/img/login/B/09.png",
+    "/img/login/B/10.png",
+    "/img/login/B/11.png",
+    "/img/login/B/12.png"
+  ]
+}, {
+  ko: "12띠 동물을 역순으로 클릭해봐요",
+  en: "Click the animals in reverse order.",
+  values: [
+    "/img/login/B/12.png",
+    "/img/login/B/11.png",
+    "/img/login/B/10.png",
+    "/img/login/B/09.png",
+    "/img/login/B/08.png",
+    "/img/login/B/07.png",
+    "/img/login/B/06.png",
+    "/img/login/B/05.png",
+    "/img/login/B/04.png",
+    "/img/login/B/03.png",
+    "/img/login/B/02.png",
+    "/img/login/B/01.png"
+  ]
+}, {
+  ko: "작은 숫자부터 클릭해봐요",
+  en: "Click from small numbers.",
+  values: [0,1,2,3,4,5,6,7,8,9]
+}, {
+  ko: "큰 숫자부터 클릭해봐요",
+  en: "Click from big numbers.",
+  values: [9,8,7,6,5,4,3,2,1,0]
+}, {
+  ko: "ㄱ부터 차례대로 클릭해봐요",
+  en: "Click from ㄱ to ㅎ",
+  values: ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
+}, {
+  ko: "ㅏ부터 차례대로 클릭해봐요",
+  en: "Click from ㅏ to ㅣ",
+  values: ["ㅏ","ㅑ","ㅓ","ㅕ","ㅗ","ㅛ","ㅜ","ㅠ","ㅡ","ㅣ"]
+}, {
+  ko: "A부터 차례대로 클릭해봐요",
+  en: "Click from A to Z",
+  values: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+}, {
+  ko: "a부터 차례대로 클릭해봐요",
+  en: "Click from a to z",
+  values: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+}];
+
+var pastel = [
+  "A03333", "CA494A", "E29EBE", "488A5A", "855C99",
+  "EAB364", "684225", "E0764D", "5BB9D3", "4A5B5C"
+];
+
+function getIterator(values) {
+  index = -1;
+  return {
+    next: function() {
+      index++;
+      return values ? index < values.length : true;
+    },
+    getIndex: function() {
+      return index;
+    },
+    getValue: function() {
+      var code = index % 52,
+          char;
+      if(code < 26) {
+        char = String.fromCharCode(65 + code);
+      } else {
+        char = String.fromCharCode(97 + code - 26);
+      }
+      return values ? values[index] : char;
+    }
+  }
+}
+
+function timer() {
+  var t = parseInt((new Date() - startTime) / 100, 10) / 10;
+  $(".timer").text(t.toFixed(1));
+  if(t >= 30) {
+    alert(lang == "ko" ? count + "개 성공!" : "Score: " + count);
+    $(".hint").html("");
+    init();
+  } else {
+    setTimeout(timer, 100);
+  }
+}
+
+function init() {
+  $(".bubble").remove();
+  if(level < levels.length) {
+    var levelStr = (lang == "ko") ? "단계" : "Level";
+    $(".instruction").text("[ " + (level+1) + " " + levelStr + " ] " + levels[level][lang]);
+    iter = getIterator(levels[level++].values);
+  } else {
+    $(".instruction").text(lang == "ko" ? "30초동안 차례대로 클릭해봐요" : "Click in order for 30 seconds");
+    $(".timer").show();
+    iter = getIterator();
+    startTime = new Date();
+    setTimeout(timer, 100);
+  }
+
+  for(var i = 0; i < CIRCLE_NUM; i++) {
+    if(iter.next()) {
+      addBubble(iter.getIndex(), iter.getValue());
+    }
+  }
+  count = 0;
+  $(".hint .bubble[data-index="+count+"]").addClass("target");
+}
+
+function addBubble(index, value) {
+  var zIndex = 1000 - index,
+      top = (Math.random() * ($(".workspace").height() - 100)) + "px",
+      left = (Math.random() * ($(".workspace").width() - 100)) + "px",
+      idx = parseInt(Math.random() * pastel.length, 10),
+      background = "#" + pastel[idx],
+      htmlStr,
+      $bubble;
+  if(("" + value).indexOf(".png") < 0) {
+    htmlStr = '<div class="bubble" data-index="' + index + '">' + value + '</div>';
+  } else {
+    htmlStr = '<img class="bubble" data-index="' + index + '" src="' + value + '" />';
+  }
+  $bubble = $(htmlStr).css({
+    top: top,
+    left: left,
+    background: background,
+    "z-index": zIndex
+  });
+  $(".workspace").append($bubble);
+  $bubble = $(htmlStr).css({
+    background: background,
+    "z-index": zIndex
+  });
+  $(".hint").append($bubble);
+  $(".hint").append('<span class="next-arrow">▶︎</span>');
+}
+
+$(function() {
+  $("#container").height($(window).height());
+  $(".workspace").click('.bubble', function (e) {
+    var indexes = $.map($(".workspace .bubble"), function(el) {
+      return +$(el).attr("data-index");
+    })
+    var min = Math.min.apply(null, indexes);
+
+    if($(e.target).attr("data-index") != min + "") {
+      if(level < levels.length) {
+        // time-attack 모드에서는 alert을 띄우지 않는다
+        var minStr = $(".workspace .bubble[data-index=" + min + "]").text();
+        if(minStr) {
+          alert(lang == "ko" ? minStr + " 부터 클릭해주세요" : "Click " + minStr + " first");
+        }
+      }
+      return;
+    }
+
+    count++;
+    $(".hint .bubble.target").removeClass("target");
+    $(".hint .bubble[data-index="+count+"]").addClass("target");
+    $(e.target).remove();
+    $(".hint .bubble:first-child").remove();
+    $(".hint .next-arrow:first-child").remove();
+    if(iter.next()) {
+      addBubble(iter.getIndex(), iter.getValue());
+    }
+    if(indexes.length <= 1) {
+      alert(lang == "ko" ? "잘 했어요!" : "Good Job!");
+      if(history.pushState) {
+        history.pushState(null, null, '#' + (level+1));
+      } else {
+        location.hash = '#' + (level+1);
+      }
+      init();
+    }
+  });
+  init();
+});
+
+</script>

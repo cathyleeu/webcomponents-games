@@ -21,10 +21,9 @@
   "extra":[{
     "x" : 2,
     "y" : 6,
-    "img": "school"
+    "img" : "planet_blue"
   }],
   "tutorial": [{
-    "msg:ko": "학교로 가보자!",
-    "img": ["/img/b4/f_granma.png", "/img/c4_w1_c3/fruit_orange.png"]
+    "msg:ko": "코봇을 태운 우주선은\n 장애물을 피해서 파란 행성으로 가야해요."
   }]
 }

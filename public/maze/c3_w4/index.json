@@ -4,91 +4,287 @@
   "tile_size": 128,
   "toolbox": [],
   "map": [
-    "##.###################.",
-    "..#..%.#.%....%...%...#",
-    "..#..#.%.#.%....%..%..#",
-    ".#.r..#...............#",
-    "..#.#%...%....%...%...#",
-    "..#.#..%....%...%.....#",
-    "##.###################."
+    "#####EEEEEE#######.",
+    "..r..%%%%%%.I..%n.#",
+    ".#############.%n.#",
+    "##...#########.%n.#",
+    "..#............%n.#",
+    "##...%%%%%%%%%.%n.#",
+    "#####HHHHHHHHH#####."
   ],
   "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/c3_w1/star.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/c3_w1/star.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/c3_w1/star.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/c3_w1/star.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/c3_w1/star.png"
+    }]
+  },{
+    "x": 10,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/c3_w1/star.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 3,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "카트를 3개 얻을 수 있어.",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/c3_w1/star.png","/img/c3_w1/star.png","/img/c3_w1/star.png"]
+    }]
+  },{
     "x": 5,
     "y": 1,
     "link": "c3_w4/1"
   },{
-    "x": 5,
-    "y": 4,
+    "x": 6,
+    "y": 1,
     "link": "c3_w4/2"
   },{
     "x": 7,
-    "y": 2,
+    "y": 1,
     "link": "c3_w4/3"
   },{
-    "x": 7,
-    "y": 5,
+    "x": 8,
+    "y": 1,
     "link": "c3_w4/4"
   },{
     "x": 9,
     "y": 1,
     "link": "c3_w4/5"
   },{
-    "x": 9,
-    "y": 4,
+    "x": 10,
+    "y": 1,
     "link": "c3_w4/6"
   },{
-    "x": 11,
-    "y": 2,
+    "x": 12,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+    "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
+      "msg:en": "The basic problems are over. Now you can solve the problem freely."
+    }]
+  },{
+    "x": 15,
+    "y": 1,
     "link": "c3_w4/7"
   },{
-    "x": 12,
-    "y": 5,
+    "x": 15,
+    "y": 2,
     "link": "c3_w4/8"
   },{
-    "x": 14,
-    "y": 1,
+    "x": 15,
+    "y": 3,
     "link": "c3_w4/9"
   },{
-    "x": 14,
+    "x": 15,
     "y": 4,
     "link": "c3_w4/10"
   },{
-    "x": 16,
-    "y": 2,
+    "x": 15,
+    "y": 5,
     "link": "c3_w4/11"
   },{
-    "x": 16,
+    "x": 13,
     "y": 5,
     "link": "c3_w4/12"
   },{
-    "x": 18,
-    "y": 1,
+    "x": 12,
+    "y": 5,
     "link": "c3_w4/13"
   },{
-    "x": 18,
-    "y": 4,
+    "x": 11,
+    "y": 5,
     "link": "c3_w4/14"
   },{
-    "x": 19,
-    "y": 2,
+    "x": 10,
+    "y": 5,
     "link": "c3_w4/15"
   },{
-    "img":"house",
+    "x": 9,
+    "y": 5,
+    "link": "c3_w4/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "c3_w4/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c3_w4/18"
+  },{
     "x": 6,
-    "y": 3,
+    "y": 5,
+    "link": "c3_w4/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "c3_w4/20"
+  },{
+    "img":"house",
+    "x": 2,
+    "y": 4,
     "obstacle": false,
-    "link": "c3_w4/16",
-    "min_score": 15
+    "link": "c3_w4/21",
+    "min_score": 20
   }],
 
   "tutorial": [{
-    "msg:ko": "꿀과자로 가면 가족에게 과자를 주는 문제를 풀 수 있어요. 문제 한 개를 풀면 꿀과자 하나를 얻을 수 있어요. 15개의 꿀과자를 모아서 집으로 가요.",
-    "msg:en": "You can solve a cookie-sharing-problem at any cookie. A problem gives you a cookie. Get fifteen cookies and go home.",
-    "img": ["/img/c3_w4/cookie.png","/img/c3_w1/house.png"]
+    "msg:ko": "별로 가면 반복 블록을 사용하는 문제를 풀 수 있어요. 문제 한 개를 풀면 별 하나를 얻을 수 있어요. 20개의 별을 모아서 집으로 가요.",
+    "msg:en": "You can solve a cookie-sharing-problem at any cookie. A problem gives you a star. Get twenty stars and go home.",
+    "img": ["/img/c3_w1/star.png","/img/c3_w1/house.png"]
   }],
   "goal": {
-    "msg:ko": "15개의 꿀과자를 모아서 집으로 가요.",
-    "msg:en": "Get fifteen cookies and go home.",
-    "img": ["/img/c3_w4/cookie.png","/img/c3_w1/house.png"]
+    "msg:ko": "20개의 별을 모아서 집으로 가요.",
+    "msg:en": "Get twenty cookies and go home.",
+    "img": ["/img/c3_w1/star.png","/img/c3_w1/house.png"]
   }
 }

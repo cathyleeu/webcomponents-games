@@ -1,0 +1,40 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "##.##",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 2,
+    "img": "cos_frog"
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "lana"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스가 라나가 준 옷을 모두 찾았어요",
+    "msg:en": "Lana found the cloth to present from Lana",
+    "img": "/img/c2_w1/lana0.png"
+  },{
+    "msg:ko": "이제 코스는 개구리로 변신할 수 있어요",
+    "msg:en": "Cos can change to frog with the cloth.",
+    "img": "/img/c2_w4/cos_frog.png"
+  },{
+    "msg:ko": "2권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Success! Good Job!",
+    "img": "/img/c2_w4/cos_frog.png"
+  }]
+}

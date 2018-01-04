@@ -21,9 +21,9 @@
   "extra":[{
     "x" : 5,
     "y" : 1,
-    "img" : "cloud"
+    "img" : "earth"
   }],
   "tutorial": [{
-    "msg:ko": "구름으로 가보자!"
+    "msg:ko": "노랑 별로 가보자!"
   }]
 }

@@ -21,9 +21,9 @@
   "extra":[{
     "x" : 2,
     "y" : 6,
-    "img" : "fruit_apple"
+    "img" : "earth"
   }],
   "tutorial": [{
-    "msg:ko": "사과나무로 가보자!"
+    "msg:ko": "파랑 별로 가보자!"
   }]
 }

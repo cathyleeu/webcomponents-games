@@ -13,14 +13,14 @@
     "A5_8"
   ],
   "manifest": [
-    {"no": 0 , "set": 0, "id": "A5_1", "src": "/img/coding_a/A5_1.png"},
-    {"no": 1 , "set": 0, "id": "A5_2", "src": "/img/coding_a/A5_2.png"},
-    {"no": 2 , "set": 0, "id": "A5_3", "src": "/img/coding_a/A5_3.png"},
-    {"no": 3 , "set": 0, "id": "A5_4", "src": "/img/coding_a/A5_4.png"},
-    {"no": 0 , "set": 1, "id": "A5_5", "src": "/img/coding_a/A5_5.png"},
-    {"no": 1 , "set": 1, "id": "A5_6", "src": "/img/coding_a/A5_6.png"},
-    {"no": 2 , "set": 1, "id": "A5_7", "src": "/img/coding_a/A5_7.png"},
-    {"no": 3 , "set": 1, "id": "A5_8", "src": "/img/coding_a/A5_8.png"}
+    {"no": 0 , "set": 0, "id": "A5_1", "src": "/img/coding_a/5/A5_1.png"},
+    {"no": 1 , "set": 0, "id": "A5_2", "src": "/img/coding_a/5/A5_2.png"},
+    {"no": 2 , "set": 0, "id": "A5_3", "src": "/img/coding_a/5/A5_3.png"},
+    {"no": 3 , "set": 0, "id": "A5_4", "src": "/img/coding_a/5/A5_4.png"},
+    {"no": 0 , "set": 1, "id": "A5_5", "src": "/img/coding_a/5/A5_5.png"},
+    {"no": 1 , "set": 1, "id": "A5_6", "src": "/img/coding_a/5/A5_6.png"},
+    {"no": 2 , "set": 1, "id": "A5_7", "src": "/img/coding_a/5/A5_7.png"},
+    {"no": 3 , "set": 1, "id": "A5_8", "src": "/img/coding_a/5/A5_8.png"}
   ],
   "msg": {
     "ko": {

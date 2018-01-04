@@ -1,0 +1,222 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+<dom-module id="objective-game">
+  <template>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        padding: 10% 15% 15%;
+      }
+      .options,
+      .question{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      img {
+        width: 12%;
+        height: 12%;
+        margin: 0 2%;
+      }
+      .question > p {
+        margin: 0;
+        font-size: 250%;
+        font-weight: 200;
+      }
+      .options {
+        margin-top: 30px;
+      }
+      .options > div {
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        margin: 1em;
+        width: 150px;
+        border: 5px solid gray;
+        border-radius: 15px;
+        padding: 5px;
+      }
+      .options > div:hover {
+        background: #dbdbdb;
+        color: white;
+        cursor: pointer;
+      }
+      .options > div > img {
+        width: 50%;
+        height: 50%;
+      }
+      .options > div > p {
+        font-size: 150%;
+        font-weight: 200;
+        /* width: 50%;
+        height: 50%; */
+      }
+      .letter {
+        font-size: 140px;
+        font-family: Helvetica;
+        font-weight: Bold;
+        color: rgba(18,22,26,0.7);
+        width: 140px;
+        height: 140px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 140px;
+        border: 10px solid #2ECC98;
+        border-radius: 15px;
+        margin: 0.2em;
+        cursor: pointer;
+      }
+      /* questionText */
+    </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      purpose="select"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      fullscreen="{{localize('fullscreen')}}"
+      ></status-bar>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <div id="container"></div>
+  </template>
+  <script>
+    //TODO: CSS
+    class ObjectiveGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'objective-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      ready(){
+        super.ready();
+        this.set('stage', 0)
+      }
+      reset(){
+        this.set('stage', this.stage+1)
+        d3.select(this.$.container).selectAll('div').remove()
+        this.setData()
+      }
+      replaceQuestion(text){
+        return text.replace("$", `</p><img src="${this.questions[this.stage].questionImg}"/><p>`)
+      }
+      renderOptions(op){
+        let keyName = Object.keys(op)[0],
+            answer = Object.keys(op)[1]
+
+        return keyName === "text"
+                        ? `<p ${answer ? `data-answer=true` : "" }>${op[keyName]}</p>`
+                        : `<img src="${op[keyName]}"/>`
+      }
+      handleClick(d){
+        let that = this.offsetParent;
+
+        if(that.gameType === "obj") {
+          let {answer} = d;
+          if(answer) {
+            console.log("성공");
+            if(that.LastStage === that.stage){
+              that.$.finalStageModal.modalAlert()
+            }else {
+              that.$.successModal.modalAlert()
+            }
+          } else {
+            console.log("실패");
+            that.$.retryModal.modalAlert()
+          }
+        } else {
+            let { answer } = this.dataset;
+            if(answer === d) {
+              console.log("성공");
+              if(that.LastStage === that.stage){
+                that.$.finalStageModal.modalAlert()
+              }else {
+                that.$.successModal.modalAlert()
+              }
+            } else {
+              console.log("실패");
+              that.$.retryModal.modalAlert()
+            }
+        }
+      }
+      setData(data , manifest){
+        let { question, options, answer } = this.questions[this.stage]
+        this.set('LastStage', this.questions.length-1)
+        d3.select(this.$.container)
+          .append('div')
+          .attr('class', 'question')
+          .html(this.replaceQuestion(`<p>${question}</p>`))
+
+        if(this.gameType === "obj") {
+          d3.select(this.$.container)
+            .append('div').attr('class', 'options')
+            .selectAll('div').data(d3.shuffle(options)).enter()
+            .append('div').html((d, i) => this.renderOptions(d))
+            .on("click", this.handleClick)
+        } else {
+          d3.select(this.$.container)
+            .append('div').attr('class', 'options')
+            .selectAll('p').data(["O","X"]).enter()
+            .append('p').attr('class', 'letter')
+            .attr('data-answer', answer).text((d,i) => d)
+            .on("click", this.handleClick)
+        }
+      }
+    }
+    window.customElements.define(ObjectiveGame.is, ObjectiveGame);
+  </script>
+</dom-module>
