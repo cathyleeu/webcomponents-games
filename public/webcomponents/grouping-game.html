@@ -1,0 +1,122 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+<dom-module id="grouping-game">
+<template>
+  <style></style>
+  <status-bar
+    id="statusBar"
+    title="{{localize('title')}}"
+    score="{{localize('score')}}"
+    lefted="{{localize('lefted')}}"
+    hasname="{{handleCheckName()}}"
+    total="{{total}}"
+    point="{{point}}"
+    matched="{{matched}}"
+    cards="{{cards}}"
+    on-modal="handleModal"
+    purpose="line"
+    fullscreen="{{localize('fullscreen')}}"
+    ></status-bar>
+  <toycode-modal
+    id="successModal"
+    purpose="nextStep"
+    headertext="{{localize('successHead')}}"
+    btmtext="{{localize('successBtm')}}"
+    total="{{total}}"
+    point="{{point}}"
+    stage={{stage}}
+    matched="{{matched}}"
+    nextbtn="{{localize('nextbtn')}}"
+    ></toycode-modal>
+  <toycode-modal
+    id="logOutModal"
+    headertext="{{localize('logoutHead')}}"
+    btmtext="{{localize('logoutBtm')}}"
+    yesbtn="{{localize('yesbtn')}}"
+    nobtn="{{localize('nobtn')}}"
+    purpose="logout"
+    ></toycode-modal>
+  <toycode-modal
+    id="previousModal"
+    headertext="{{localize('previousHead')}}"
+    btmtext="{{localize('previousBtm')}}"
+    yesbtn="{{localize('yesbtn')}}"
+    nobtn="{{localize('nobtn')}}"
+    purpose="previous"
+    ></toycode-modal>
+  <toycode-modal
+    id="finalStageModal"
+    headertext="{{localize('finalStageHead')}}"
+    btmtext="{{localize('finalStageBtm')}}"
+    finalbtn="{{localize('finalbtn')}}"
+    purpose="finalStage"
+    nextlink="{{nextlink}}"
+    ></toycode-modal>
+
+</template>
+<script>
+  class GroupingGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+    static get is() { return 'grouping-game'; }
+    connectedCallback() {
+      super.connectedCallback();
+    }
+    static get properties() {
+      return {
+        language: {
+          value: "ko"
+        }
+      }
+    }
+    ready(){
+      super.ready()
+      this.set('statusHeight' , this.$.statusBar.getBoundingClientRect().height)
+
+    }
+    setData(data, manifest){
+
+      let containerHeight = this.offsetHeight - (this.statusHeight),
+          svg = d3.select(this.shadowRoot).append('svg')
+                  .attr('width', this.offsetWidth)
+                  .attr('height', containerHeight )
+
+                  console.log(manifest);
+
+      // TODO-1: data shuffle 해주기
+      // TODO-2: 적정 공간에서 나열해주기
+      // TODO-3: 드래그 설정
+
+
+
+      svg.selectAll('image').data(manifest).enter()
+          .append('image')
+          .attr("xlink:href", (d, i) => d.src)
+          .attr('width', `100`).attr('height', `100`)
+          .attr('x', ( d, i ) => 0)
+          .attr('y', ( d, i ) => 0)
+          .call(d3.drag()
+            .on("start", this.dragstarted)
+            .on("drag", this.dragged)
+            .on("end", this.dragended))
+
+      svg.selectAll('image').exit().data(data).enter()
+          .append('image')
+          .attr("xlink:href", (d, i) => d.src)
+          .attr('width', `200`).attr('height', `200`)
+          .attr('x', ( d, i ) => 0)
+          .attr('y', ( d, i ) => `${(100*i)}` )
+          .call(d3.drag()
+            .on("start", this.dragstarted)
+            .on("drag", this.dragged)
+            .on("end", this.dragended))
+
+
+
+    }
+  }
+  window.customElements.define(GroupingGame.is, GroupingGame);
+</script>
+</dom-module>
