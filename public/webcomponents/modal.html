@@ -75,6 +75,13 @@
         width: 50px;
         height: 50px;
       }
+      .finalImg {
+        display: block;
+      }
+      .finalImg > img{
+        width: 150px;
+        height: 150px;
+      }
       .button {
         display: none;
         text-align:center;
@@ -119,6 +126,8 @@
           <div class="image uncorrect">
             <p>Hint!</p>
           </div>
+          <div class="image final finalImg">
+          </div>
           <div class="button done" on-click="handleNextStep">{{nextbtn}}</div>
           <div class="button final" on-click="handleFinalStep">{{finalbtn}}</div>
           <div class="button stay" on-click="handleStayStage">{{nobtn}}</div>
@@ -138,6 +147,7 @@
       static get properties() {
         return {
           headertext:String,
+          contentImg:String,
           btmtext:String,
           point: Number,
           total: Number,
@@ -172,7 +182,7 @@
 
         let els = this.shadowRoot.querySelectorAll(target[this.purpose]);
         els.forEach(el=>{
-          if(el.className.includes("uncorrect")){
+          if(el.className.includes("uncorrect finalImg") || el.className.includes("finalImg")){
             el.style.display="block"
             return false
           }
@@ -187,7 +197,13 @@
             .append('img')
             .attr('src', (d, i) => d.src)
         }
-      
+
+        if(this.contentImg){
+          let imgContent = d3.select(this.element).select('.finalImg')
+          imgContent.select('img').remove()
+          imgContent.append('img').attr('src', this.contentImg)
+        }
+
         d3.select(this.element).classed("popup", "popup")
         // this.element.classList.add('popup')
       }

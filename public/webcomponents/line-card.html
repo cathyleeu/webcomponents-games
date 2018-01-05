@@ -325,15 +325,10 @@
           let filterItems = svg.select(`.${oppos}board`).node().childNodes,
               dropItems = [];
 
+          //drag 완료 후, 비교할 dropItems리스트를 생성하는 부분
           filterItems.forEach(el => {
-            if(oppos === "af_"){
-              if(el.firstChild.tagName === "rect") dropItems.push(el)
-            } else {
-              if(el.tagName === "rect") dropItems.push(el)
-            }
+            if(el.firstChild.tagName === "rect") dropItems.push(el)
           })
-
-
 
           let getArrow = svg.select(`#line${dragId}`);
           dropItems.forEach(el => {
