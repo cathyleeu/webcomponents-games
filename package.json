@@ -37,6 +37,7 @@
     "koa-passport": "^1.2.0",
     "koa-router": "^5.1.2",
     "koa-static": "^1.4.9",
+    "merge-stream": "^1.0.1",
     "minimist": "^1.2.0",
     "mongoose": "~4.0.0",
     "passport-local": "^1.0.0",
