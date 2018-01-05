@@ -1,7 +1,8 @@
 {
   "element": "create-image-game",
   "attributes": {
-    "limited" : true
+    "limited" : true,
+    "group" : ["space", "earth"]
   },
   "data": [
     [7.42,75.26],[10.68,68.88],[20.44,79.56],[46.74,84.77],
@@ -10,18 +11,18 @@
   ],
   "manifest": [
     {"src": "/img/renewed_c1/space.png", "background": true},
-    {"src": "/img/renewed_c1/airplane.png", "name": "airplane" },
-    {"src": "/img/renewed_c1/astronaut.png", "name": "astronaut" },
-    {"src": "/img/renewed_c1/bus.png", "name": "bus" },
-    {"src": "/img/renewed_c1/fall0.png", "name": "dragonfly" },
-    {"src": "/img/renewed_c1/fish.png", "name": "fish" },
-    {"src": "/img/renewed_c1/flower.png", "name": "flower" },
-    {"src": "/img/renewed_c1/rocket.png", "name": "rocket" },
-    {"src": "/img/renewed_c1/satellite.png", "name": "satellite" },
-    {"src": "/img/renewed_c1/star.png", "name": "star" },
-    {"src": "/img/renewed_c1/sun.png", "name": "sun" },
-    {"src": "/img/renewed_c1/ufo.png", "name": "ufo" },
-    {"src": "/img/renewed_c1/ship.png", "name": "ship" }
+    {"src": "/img/renewed_c1/airplane.png", "name": "airplane", "group":"earth" },
+    {"src": "/img/renewed_c1/astronaut.png", "name": "astronaut", "group":"space" },
+    {"src": "/img/renewed_c1/bus.png", "name": "bus", "group":"earth" },
+    {"src": "/img/renewed_c1/fall0.png", "name": "dragonfly", "group":"earth" },
+    {"src": "/img/renewed_c1/fish.png", "name": "fish", "group":"earth" },
+    {"src": "/img/renewed_c1/flower.png", "name": "flower", "group":"earth" },
+    {"src": "/img/renewed_c1/rocket.png", "name": "rocket", "group":"space"  },
+    {"src": "/img/renewed_c1/satellite.png", "name": "satellite", "group":"space"  },
+    {"src": "/img/renewed_c1/star.png", "name": "star", "group":"space"  },
+    {"src": "/img/renewed_c1/sun.png", "name": "sun", "group":"space"  },
+    {"src": "/img/renewed_c1/ufo.png", "name": "ufo", "group":"space"  },
+    {"src": "/img/renewed_c1/ship.png", "name": "ship", "group":"earth" }
   ],
   "msg": {
     "ko": {

@@ -2,7 +2,7 @@
   "element": "create-image-game",
   "attributes": {
     "limited" : true,
-    "nextlink" : "activity#!2018_c1_w3_2"
+    "nextlink" : "activity#!c1re_w3_2"
   },
   "data": [
     [49.61,32.29],[64.06,31.9],[39.58,42.58],

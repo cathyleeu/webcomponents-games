@@ -2,26 +2,29 @@
   "element": "create-image-game",
   "attributes": {
     "limited" : true,
-    "nextlink" : "activity#!2018_c1_w4_2"
+    "nextlink" : "activity#!c1re_w4_2",
+    "group" : ["in", "out", "cpu"]
   },
-  "data": [
-    [14,35],[28,35],[14,50],[28,50],
-    [14,65],[28,65],[55,42.5],[55,57.5],
-    [85,35],[85,50],[85,65]
-  ],
+
+"data": {
+  "in": [[10,35],[23,35],[10,50],[10,50],[10,65],[23,50],[23,65]],
+  "out": [[82.5,35],[82.5,50],[82.5,65]],
+  "cpu": [[50,42.5],[50,57.5]]
+},
+
   "manifest": [
-    {"src": "/img/renewed_c1/categorize.png", "background": true},
-    {"src": "/img/renewed_c1/camera.png", "name": "camera" },
-    {"src": "/img/renewed_c1/cpu.png", "name": "cpu" },
-    {"src": "/img/renewed_c1/keyboard.png", "name": "keyboard" },
-    {"src": "/img/renewed_c1/mic.png", "name": "mic" },
-    {"src": "/img/renewed_c1/monitor.png", "name": "monitor" },
-    {"src": "/img/renewed_c1/mouse.png", "name": "mouse" },
-    {"src": "/img/renewed_c1/speaker.png", "name": "speaker" },
-    {"src": "/img/renewed_c1/ear.png", "name": "ear" },
-    {"src": "/img/renewed_c1/eye.png", "name": "eye" },
-    {"src": "/img/renewed_c1/mouth.png", "name": "mouth" },
-    {"src": "/img/renewed_c1/brain.png", "name": "brain" }
+    {"src": "/img/renewed_c1/categorize_new.png", "background": true},
+    {"src": "/img/renewed_c1/camera.png", "name": "camera","group":"in"},
+    {"src": "/img/renewed_c1/cpu.png", "name": "cpu", "group":"cpu" },
+    {"src": "/img/renewed_c1/keyboard.png", "name": "keyboard","group":"in" },
+    {"src": "/img/renewed_c1/mic.png", "name": "mic","group":"in" },
+    {"src": "/img/renewed_c1/monitor.png", "name": "monitor","group":"out" },
+    {"src": "/img/renewed_c1/mouse.png", "name": "mouse","group":"in" },
+    {"src": "/img/renewed_c1/speaker.png", "name": "speaker","group":"out" },
+    {"src": "/img/renewed_c1/ear.png", "name": "ear","group":"in","axis":[10,35]},
+    {"src": "/img/renewed_c1/eye.png", "name": "eye","group":"in","axis":[23,35] },
+    {"src": "/img/renewed_c1/mouth.png", "name": "mouth", "group":"out","axis":[82.5,35]},
+    {"src": "/img/renewed_c1/brain.png", "name": "brain","group":"cpu","axis":[50,42.5]}
   ],
   "msg": {
     "ko": {
