@@ -401,11 +401,11 @@
     ["2권:보물 찾기", "/mazeh#!c2_w3/1"],
     ["2권:선물 찾기", "/mazeh#!c2_w4/1"]
   ],
-  "A-1-old":[
+  "A-1":[
     ["자판기 놀이", "Vending Machine", "/a1_w1"],
     ["엘리베이터 놀이", "Elevator", "/a1_w2"]
   ],
-  "A-1":[
+  "A-1-re":[
     ["숨어있는 컴퓨터를 찾아요", "Find the Computers", "/a1_w1"],
     ["컴퓨터와 이야기해요", "Talk to the Computer", "/a1_w3"],
     ["로그인을 연습해요", "Practice Login", "/activity#!a1_w4"]
@@ -420,18 +420,12 @@
     ["딸기가 좋아요", "Cos likes strawberry", "activity#!a2re_w4"]
   ],
   "A-3-re":[
-    ["즐거운 우리 가족", "Happy family", "/activity#!2018_a3_w2"],
-    ["집을 지어요", "Building a house", "/activity#!2018_a3_w2"],
-    ["집을 꾸며요", "Decorating the house", "/activity#!2018_a3_w3"],
-    ["마당을 꾸며요", "Decorating the yard", "/activity#!2018_a3_w4"]
-  ],
-  "A-3":[
     ["즐거운 우리 가족", "Happy family", "/activity#!a3re_w1"],
     ["집을 지어요", "Building a house", "/activity#!a3re_w2"],
     ["집을 꾸며요", "Decorating the house", "/activity#!a3re_w3"],
     ["마당을 꾸며요", "Decorating the yard", "/activity#!a3re_w4"]
   ],
-  "A-3-old":[
+  "A-3":[
     ["코스네 가족 이사하기", "Moving Cos' family", "/mazeh#!a3_w3/1"],
     ["끌어다 놓기 연습", "Drag and Drop", "/b1_w4"]
   ],
@@ -480,13 +474,13 @@
     ["전통 놀이를 해요", "/activity#!a105_w3"],
     ["새 친구를 사귀어요", "/mazeh#!a105_w4/1"]
   ],
-  "B-1-old":[
+  "B-1":[
     ["컴퓨터와 언어:엘리베이터 놀이", "Elevator", "/a1_w2"],
     ["컴퓨터의 생활:자판기 놀이", "Vending Machine", "/a1_w1"],
     ["눌러서 로그인하기:클릭연습", "Click", "/click"],
     ["컴퓨터에서 끌어다 놓기:끌어다 놓기 연습", "Drag and Drop", "/b1_w4"]
   ],
-  "B-1":[
+  "B-1-re":[
     ["눌러서 로그인해요", "Click & Sign-in", "/b1re_w2"],
     ["컴퓨터와 생활", "Computer & My Lift", "/b1re_w3_c1"],
     ["컴퓨터에서 끌어다 놓아요", "Drag & Drop with Computer", "/b1re_w4"]
@@ -563,7 +557,7 @@
     ["규칙을 연습해", "/mazeh#!b105_w3/index"],
     ["규칙을 써보아요", "/mazeh#!b105_w4/index"]
   ],
-  "C-1-old":[
+  "C-1":[
     ["컴퓨터의 언어:자판기 놀이&엘리베이터 놀이", "Vending Machine", "/c1_w2"],
     ["9까지의 수:클릭연습", "Click", "/click"],
     ["눌러서 로그인하기:사계절 퀴즈", "4 Seasons", "/c1_w3"],
