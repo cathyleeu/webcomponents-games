@@ -419,6 +419,12 @@
     ["겨울잠에서 깨어나요", "Wake up from wintersleep", "activity#!a2re_w3"],
     ["딸기가 좋아요", "Cos likes strawberry", "activity#!a2re_w4"]
   ],
+  "A-3-re":[
+    ["즐거운 우리 가족", "Happy family", "/activity#!2018_a3_w2"],
+    ["집을 지어요", "Building a house", "/activity#!2018_a3_w2"],
+    ["집을 꾸며요", "Decorating the house", "/activity#!2018_a3_w3"],
+    ["마당을 꾸며요", "Decorating the yard", "/activity#!2018_a3_w4"]
+  ],
   "A-3":[
     ["즐거운 우리 가족", "Happy family", "/activity#!a3re_w1"],
     ["집을 지어요", "Building a house", "/activity#!a3re_w2"],
@@ -563,12 +569,12 @@
     ["눌러서 로그인하기:사계절 퀴즈", "4 Seasons", "/c1_w3"],
     ["컴퓨터에서 끌어다 놓기:인사하기 연습", "Say Hello", "/maze#!c1_w4/1"]
   ],
-  "C-1":[
+  "C-1-re":[
     ["9까지의 수와 로그인", "Learn numbers up to 9 and sign in", "/click"],
     ["분류하고 끌어다 놓아요", "Classify and drag and drop", "/activity#!c1re_w3_1"],
     ["우리의 몸과 컴퓨터", "My body and computer", "/activity#!c1re_w4_1"]
   ],
-  "C-2-old":[
+  "C-2":[
     ["겨울잠에서 깨어나요:겨울잠에서 깨어난 라나", "Lana awakens", "/mazeh#!c2_w1/1"],
     ["라나를 움직여보아요:라나를 움직여보아요", "Lana moves", "/mazeh#!c2_w2/1"],
     ["마당의 보물을 찾아서:보물 찾기", "Find the Treasure", "/mazeh#!c2_w3/1"],
