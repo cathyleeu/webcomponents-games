@@ -25,14 +25,13 @@
     "img": "cylinder2"
   }],
   "tutorial": [{
-    "tutorial": [{
-      "msg:ko": "기둥 모양의 물건으로 가보자!",
-      "msg:en": "Let's go to a cylindrical shape thing.",
-      "img": "/img/c2_w3/cylinder.png"
-    }],
-    "goal": {
-      "msg:ko": "기둥 모양의 물건으로 가보자!",
-      "msg:en": "Let's go to a cylindrical shape thing.",
-      "img": "/img/c2_w3/cylinder.png"
-    }
+    "msg:ko": "기둥 모양의 물건으로 가보자!",
+    "msg:en": "Let's go to a cylindrical shape thing.",
+    "img": "/img/c2_w3/cylinder.png"
+  }],
+  "goal": {
+    "msg:ko": "기둥 모양의 물건으로 가보자!",
+    "msg:en": "Let's go to a cylindrical shape thing.",
+    "img": "/img/c2_w3/cylinder.png"
+  }
 }
