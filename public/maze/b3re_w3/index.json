@@ -26,7 +26,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/renewed_b3/ufo.png"
+      "img": "/img/renewed_b3/picture.png"
     }]
   },{
     "x": 6,
@@ -34,7 +34,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/renewed_b3/ufo.png"
+      "img": "/img/renewed_b3/picture.png"
     }]
   },{
     "x": 7,
@@ -42,7 +42,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/renewed_b3/ufo.png"
+      "img": "/img/renewed_b3/picture.png"
     }]
   },{
     "x": 8,
@@ -50,7 +50,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/renewed_b3/ufo.png"
+      "img": "/img/renewed_b3/picture.png"
     }]
   },{
     "x": 9,
@@ -58,7 +58,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어.",
       "msg:en": "You can get one point at once.",
-      "img": "/img/renewed_b3/ufo.png"
+      "img": "/img/renewed_b3/picture.png"
     }]
   },{
     "x": 16,
@@ -66,7 +66,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 16,
@@ -74,7 +74,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 16,
@@ -82,7 +82,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 16,
@@ -90,7 +90,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 16,
@@ -98,7 +98,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어.",
       "msg:en": "You can get two points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 3,
@@ -106,7 +106,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 4,
@@ -114,7 +114,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 5,
@@ -122,7 +122,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 6,
@@ -130,7 +130,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 7,
@@ -138,7 +138,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 9,
@@ -146,7 +146,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 10,
@@ -154,7 +154,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 11,
@@ -162,7 +162,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 12,
@@ -170,7 +170,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 13,
@@ -178,7 +178,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어.",
       "msg:en": "You can get three points at once.",
-      "img": ["/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png","/img/renewed_b3/ufo.png"]
+      "img": ["/img/renewed_b3/picture.png","/img/renewed_b3/picture.png","/img/renewed_b3/picture.png"]
     }]
   },{
     "x": 5,
@@ -272,7 +272,7 @@
   "tutorial": [{
     "msg:ko": "할머니와 할아버지의 물건을 찾아가요! 쉬운 문제는 점수를 1점, 보통은 2점, 어려운 문제는 3점을 주어요. ",
     "msg:en": "Let's find grandparents' stuffs! An easy problem gives you one point, a normal one gives you two and a hard one gives you three.",
-    "img": ["/img/renewed_b3/cos0.png","/img/renewed_b3/ufo.png"]
+    "img": ["/img/renewed_b3/cos0.png","/img/renewed_b3/picture.png"]
   }],
   "goal": {
     "msg:ko": "점수 20점을 모아서 연못으로 가요.",
