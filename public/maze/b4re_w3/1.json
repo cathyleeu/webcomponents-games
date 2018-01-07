@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start","move_right","move_right","item_paper","move_right","move_right","move_right"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
+  ],
+  "map": [
+    ".######.",
+    "#.###.##",
+    "##.###.#",
+    "###.##.#",
+    "#r.R..%#",
+    "##.###.#",
+    "###.#.##",
+    ".######."
+  ],
+  "tile": [
+    {"tile": "R", "img": "mother"}
+  ],
+  "tutorial": [{
+    "msg:ko": "주먹은 보자기로 이길 수 있어!",
+    "msg:en": "Rock wins paper!",
+    "img": ["/img/renewed_b4/rock.png","/img/renewed_b4/().png","/img/renewed_b4/paper.png"]
+  }],
+  "goal" : {
+    "msg:ko": "엄마를 이기고 보물상자에 가보자.",
+    "msg:en": "Win mommy to go to the chest!",
+    "img": "/img/renewed_b4/chest2.png"
+  }
+}
