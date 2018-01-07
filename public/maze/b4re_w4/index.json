@@ -183,89 +183,89 @@
   },{
     "x": 5,
     "y": 1,
-    "link": "b4_w4/1"
+    "link": "b4re_w4/1"
   },{
     "x": 6,
     "y": 1,
-    "link": "b4_w4/2"
+    "link": "b4re_w4/2"
   },{
     "x": 7,
     "y": 1,
-    "link": "b4_w4/3"
+    "link": "b4re_w4/3"
   },{
     "x": 8,
     "y": 1,
-    "link": "b4_w4/4"
+    "link": "b4re_w4/4"
   },{
     "x": 9,
     "y": 1,
-    "link": "b4_w4/5"
+    "link": "b4re_w4/5"
   },{
     "x": 15,
     "y": 1,
-    "link": "b4_w4/6"
+    "link": "b4re_w4/6"
   },{
     "x": 15,
     "y": 2,
-    "link": "b4_w4/7"
+    "link": "b4re_w4/7"
   },{
     "x": 15,
     "y": 3,
-    "link": "b4_w4/8"
+    "link": "b4re_w4/8"
   },{
     "x": 15,
     "y": 4,
-    "link": "b4_w4/9"
+    "link": "b4re_w4/9"
   },{
     "x": 15,
     "y": 5,
-    "link": "b4_w4/10"
+    "link": "b4re_w4/10"
   },{
     "x": 13,
     "y": 5,
-    "link": "b4_w4/11"
+    "link": "b4re_w4/11"
   },{
     "x": 12,
     "y": 5,
-    "link": "b4_w4/12"
+    "link": "b4re_w4/12"
   },{
     "x": 11,
     "y": 5,
-    "link": "b4_w4/13"
+    "link": "b4re_w4/13"
   },{
     "x": 10,
     "y": 5,
-    "link": "b4_w4/14"
+    "link": "b4re_w4/14"
   },{
     "x": 9,
     "y": 5,
-    "link": "b4_w4/15"
+    "link": "b4re_w4/15"
   },{
     "x": 7,
     "y": 5,
-    "link": "b4_w4/16"
+    "link": "b4re_w4/16"
   },{
     "x": 6,
     "y": 5,
-    "link": "b4_w4/17"
+    "link": "b4re_w4/17"
   },{
     "x": 5,
     "y": 5,
-    "link": "b4_w4/18"
+    "link": "b4re_w4/18"
   },{
     "x": 4,
     "y": 5,
-    "link": "b4_w4/19"
+    "link": "b4re_w4/19"
   },{
     "x": 3,
     "y": 5,
-    "link": "b4_w4/20"
+    "link": "b4re_w4/20"
   },{
     "img":"grandma",
     "x": 2,
     "y": 4,
     "obstacle": false,
-    "link": "b4_w4/21",
+    "link": "b4re_w4/21",
     "min_score": 21
   }],
 
@@ -277,6 +277,6 @@
   "goal": {
     "msg:ko": "보물 상자 25개를 모으면 할머니에게로 가요.",
     "msg:en": "Go to grandma with more than 25 chests.",
-    "img": ["/img/renewed_b4/chest3.png","/img/renewed_b4/f_granma.png"]
+    "img": ["/img/renewed_b4/chest3.png","/img/renewed_b4/f_grandma.png"]
   }
 }

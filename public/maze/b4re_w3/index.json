@@ -270,7 +270,7 @@
     "x": 2,
     "y": 4,
     "obstacle": false,
-    "link": "b4_w4/index",
+    "link": "b4re_w4/index",
     "min_score": 15
   }],
 
@@ -282,6 +282,6 @@
   "goal": {
     "msg:ko": "보물 상자를 15개 모아서 할아버지에게 가자!",
     "msg:en": "Let's get eighteen chests and go to grandpa!",
-    "img": ["/img/renewed_b4/chest2.png","/img/renewed_b4/f_granfa.png"]
+    "img": ["/img/renewed_b4/chest2.png","/img/renewed_b4/f_grandpa.png"]
   }
 }
