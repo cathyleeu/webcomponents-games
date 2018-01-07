@@ -1,0 +1,35 @@
+{
+  "tile_size": 128,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "#...#...#",
+    "#r#.#.###",
+    "#.#.....#",
+    "#.#.....#",
+    "##..#..##",
+    "#..%#...#",
+    ".#######."
+  ],
+  "tile": [
+    {"tile": "%", "img": "playground"}
+  ],
+  "tutorial": [{
+    "msg:ko": "놀이터로 가보자.",
+    "msg:en": "Go to the playground.",
+    "img": "/img/renewed_b4/playground.png"
+  }],
+  "success": [{
+    "msg:ko": "열다섯 문제나 풀다니, 정말 대단해요!",
+    "msg:en": "Fifteen problems you've solved, you are so great!",
+    "link": "b4re_w1/16"
+  }]
+}

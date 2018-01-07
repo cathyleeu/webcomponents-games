@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
+  ],
+  "map": [
+    ".######.",
+    "#...#..#",
+    "###.##.#",
+    "###.##.#",
+    "#..P..%#",
+    "#.#.####",
+    "#.r..###",
+    ".######."
+  ],
+  "tile": [
+    {"tile": "P", "img": "father"}
+  ],
+  "tutorial": [{
+    "msg:ko": "보자기는 가위로 이길 수 있어!",
+    "msg:en": "Scissors win paper!",
+    "img": ["/img/renewed_b4/scissors.png","/img/renewed_b4/).png","/img/renewed_b4/paper.png"]
+    }],
+    "goal" : {
+        "msg:ko": "아빠를 이기고 보물상자에 가보자.",
+        "msg:en": "Win daddy to go to the chest!",
+        "img": "/img/renewed_b4/chest2.png"
+      }
+}

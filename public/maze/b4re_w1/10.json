@@ -1,0 +1,36 @@
+{
+  "tile_size": 128,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "#...#...#",
+    "#%#.#.###",
+    "#.#.l...#",
+    "#.#.....#",
+    "##..#..##",
+    "#...#...#",
+    ".#######."
+  ],
+  "tile": [
+    {"tile": "%", "img": "hospital"}
+  ],
+  "tutorial": [{
+    "msg:ko": "병원으로 가보자.",
+    "msg:en": "Go to the hospital.",
+    "img": "/img/renewed_b4/hospital.png"
+  }],
+  "success": [{
+    "msg:ko": "벌써 열 문제나 풀었어요! 정말 많이 풀었네요.",
+    "msg:jp": "もう10問も解きました！たくさん解きましたね。",
+    "msg:en": "You've solved ten problems already! You really solved a lot.",
+    "link": "b4re_w1/11"
+  }]
+}
