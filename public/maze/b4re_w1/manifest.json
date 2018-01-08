@@ -23,7 +23,7 @@
   {"tile": "h", "id": "hospital", "src": "/img/renewed_b4/hospital.png"},
   {"tile": "i", "id": "servicecenter", "src": "/img/renewed_b4/servicecenter.png"},
   {"tile": "j", "id": "school", "src": "/img/renewed_b4/school.png"},
-  {"tile": "k", "id": "kindergarten", "src": "/img/renewed_b4/kindergarten.png"}
+  {"tile": "k", "id": "kindergarten", "src": "/img/renewed_b4/kindergarten.png"},
 
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
