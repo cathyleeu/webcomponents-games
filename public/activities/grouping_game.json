@@ -3,36 +3,26 @@
   "attributes": {
   },
   "data": [
-    {"src": "/img/b1_w4/crcl.png"},
-    {"src": "/img/b1_w4/sqr.png"},
-    {"src": "/img/b1_w4/tri.png"}
+    {"id": 0, "src": "/img/b1_w4/crcl.png"},
+    {"id": 1, "src": "/img/b1_w4/sqr.png"},
+    {"id": 2, "src": "/img/b1_w4/tri.png"}
   ],
   "manifest": [
-      {"src": "/img/b1_w4/crcl0.png"},
-      {"src": "/img/b1_w4/crcl1.png"},
-      {"src": "/img/b1_w4/crcl2.png"},
-      {"src": "/img/b1_w4/crcl3.png"},
-      {"src": "/img/b1_w4/crcl4.png"},
-      {"src": "/img/b1_w4/crcl5.png"},
+      {"src": "/img/b1_w4/crcl0.png", "match": 0},
+      {"src": "/img/b1_w4/crcl1.png", "match": 0},
 
-      {"src": "/img/b1_w4/sqr0.png"},
-      {"src": "/img/b1_w4/sqr1.png"},
-      {"src": "/img/b1_w4/sqr2.png"},
-      {"src": "/img/b1_w4/sqr3.png"},
-      {"src": "/img/b1_w4/sqr4.png"},
-      {"src": "/img/b1_w4/sqr5.png"},
-      {"src": "/img/b1_w4/sqr6.png"},
-      {"src": "/img/b1_w4/sqr7.png"},
 
-      {"src": "/img/b1_w4/tri0.png"},
-      {"src": "/img/b1_w4/tri1.png"},
-      {"src": "/img/b1_w4/tri2.png"},
-      {"src": "/img/b1_w4/tri3.png"},
-      {"src": "/img/b1_w4/tri4.png"}
+      {"src": "/img/b1_w4/sqr0.png", "match": 1},
+
+
+      
+      {"src": "/img/b1_w4/tri4.png", "match": 2}
   ],
   "msg": {
     "ko": {
       "title": "끌어다 놓기 연습",
+      "introHead": "키즈씽킹",
+      "introBtm": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",

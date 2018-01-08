@@ -3,10 +3,34 @@
 <link rel="import" href="./status-bar.html">
 <link rel="import" href="./modal.html">
 
+<!--
+{"src": "/img/b1_w4/crcl2.png", "match": 0},
+{"src": "/img/b1_w4/crcl3.png", "match": 0},
+{"src": "/img/b1_w4/crcl4.png", "match": 0},
+{"src": "/img/b1_w4/crcl5.png", "match": 0}, -->
+
+<!-- {"src": "/img/b1_w4/sqr1.png", "match": 1},
+{"src": "/img/b1_w4/sqr2.png", "match": 1},
+{"src": "/img/b1_w4/sqr3.png", "match": 1},
+{"src": "/img/b1_w4/sqr4.png", "match": 1},
+{"src": "/img/b1_w4/sqr5.png", "match": 1},
+{"src": "/img/b1_w4/sqr6.png", "match": 1},
+{"src": "/img/b1_w4/sqr7.png", "match": 1}, -->
+
+
+<!-- {"src": "/img/b1_w4/tri0.png", "match": 2},
+{"src": "/img/b1_w4/tri1.png", "match": 2},
+{"src": "/img/b1_w4/tri2.png", "match": 2},
+{"src": "/img/b1_w4/tri3.png", "match": 2}, -->
 
 <dom-module id="grouping-game">
 <template>
-  <style></style>
+  <style>
+    #container {
+      box-sizing: border-box;
+
+    }
+  </style>
   <status-bar
     id="statusBar"
     title="{{localize('title')}}"
@@ -49,6 +73,13 @@
     purpose="previous"
     ></toycode-modal>
   <toycode-modal
+    id="introModal"
+    purpose="intro"
+    headertext="{{localize('introHead')}}"
+    btmtext="{{localize('introBtm')}}"
+    nextbtn="{{localize('yesbtn')}}"
+    ></toycode-modal>
+  <toycode-modal
     id="finalStageModal"
     headertext="{{localize('finalStageHead')}}"
     btmtext="{{localize('finalStageBtm')}}"
@@ -56,7 +87,9 @@
     purpose="finalStage"
     nextlink="{{nextlink}}"
     ></toycode-modal>
-
+  <div id="container">
+    <svg id="createSvg"></svg>
+  </div>
 </template>
 <script>
   class GroupingGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -74,46 +107,170 @@
     ready(){
       super.ready()
       this.set('statusHeight' , this.$.statusBar.getBoundingClientRect().height)
+      // this.$.introModal.modalAlert()
+      let size = {
+        containerHeight : this.offsetHeight - (this.statusHeight),
+        containerWidth : this.offsetWidth,
+      }
+      size["containerPadding"] = size.containerWidth*0.05
+      size["svgHeight"] = size.containerHeight-(size.containerPadding*2)
+      size["svgWidth"] = size.containerWidth-(size.containerPadding*2)
 
+      this.set('size', size)
+      let containerSize = `
+        width:${size.containerWidth}px;
+        height:${size.containerHeight}px;
+        padding: ${size.containerPadding}px;
+      `
+      d3.select(this.$.container).attr('style', containerSize)
+      d3.select(this.$.createSvg).attr('width', size.svgWidth).attr('height', size.svgHeight)
+      this.set('axis', [])
     }
     setData(data, manifest){
 
-      let containerHeight = this.offsetHeight - (this.statusHeight),
-          svg = d3.select(this.shadowRoot).append('svg')
-                  .attr('width', this.offsetWidth)
-                  .attr('height', containerHeight )
+      let { svgHeight, svgWidth } = this.size,
+          svg = d3.select(this.$.createSvg),
+          targetSize = svgHeight*(1/data.length),
+          imageSize = svgHeight*0.25,
+          imageBoard = svgWidth-(targetSize*1.5);
 
-                  console.log(manifest);
-
-      // TODO-1: data shuffle 해주기
-      // TODO-2: 적정 공간에서 나열해주기
-      // TODO-3: 드래그 설정
-
+      this.set('size.targetSize', targetSize)
+      this.set('size.imageSize', imageSize)
+      this.set('size.imageBoard', imageBoard)
+      this.set('leftTargets', data.length)
 
 
-      svg.selectAll('image').data(manifest).enter()
+      for(var j = 0; j < data.length; j++) {
+        this.set( `target_${j}` , 0 )
+        manifest.forEach((img, i) => {
+          if(img.match === j) {
+            this.set( `target_${j}` , this[`target_${j}`]+1 )
+          }
+        })
+      }
+
+      let dragItems = manifest.length,
+          dragItemsRange = Math.floor(imageBoard/imageSize);
+
+      for(var i = 0; i < dragItems; i++ ){
+        for(var j = 0; j < dragItemsRange; j++ ) {
+          if(this.axis.length >= dragItems) {
+            break;
+          }
+          this.push('axis', [i,j])
+        }
+      }
+
+
+      let shuffleData = d3.shuffle(data)
+      let targets = svg.selectAll('image').data(shuffleData).enter()
           .append('image')
           .attr("xlink:href", (d, i) => d.src)
-          .attr('width', `100`).attr('height', `100`)
-          .attr('x', ( d, i ) => 0)
-          .attr('y', ( d, i ) => 0)
+          .attr('width', `${targetSize}`).attr('height', `${targetSize}`)
+          .attr('x', ( d, i ) => `${svgWidth-(targetSize)}` )
+          .attr('y', ( d, i ) => `${(targetSize*i)}` )
+
+      let circleText = svg.selectAll('g').exit().data(shuffleData).enter()
+                          .append('g')
+                          .attr('id', (d, i) => d.id)
+                          .attr('transform', (d,i) => `translate(${svgWidth-(targetSize*0.2)-3},${((targetSize*(i+1))-(targetSize*0.2))-3})`)
+                          //transform="translate(20,2.5)
+
+
+
+
+          circleText.append('circle')
+              .attr('fill', 'white')
+              .attr('stroke-width', 3)
+              .attr('stroke', 'black')
+              .attr("r", `${targetSize*0.2}`)
+              // .attr("cx", ( d, i ) => `${svgWidth-(targetSize*0.2)-3}`)
+              // .attr("cy", ( d, i ) => `${((targetSize*(i+1))-(targetSize*0.2))-3}` )
+
+
+
+          circleText.append('text').text((d,i) => this[`target_${d.id}`])
+                    .attr('y', `${targetSize*0.1}`)
+                    // .attr('y', "50%")
+                    .attr('font-size', `${targetSize*0.2}`)
+                    .attr('text-anchor', "middle")
+                    .attr('stroke-width', 3)
+                    .attr('stroke', 'black')
+
+
+
+      this.set('targets', targets.nodes())
+      this.set('circleTexts', circleText.nodes())
+
+      svg.selectAll('image').exit().data(d3.shuffle(manifest)).enter()
+          .append('image')
+          .attr("xlink:href", (d, i) => d.src)
+          .attr('width', `${imageSize}`).attr('height', `${imageSize}`)
+          .attr('x', ( d, i ) => `${this.axis[i][1]*imageSize}`)
+          .attr('y', ( d, i ) => `${this.axis[i][0]*imageSize}`)
           .call(d3.drag()
             .on("start", this.dragstarted)
             .on("drag", this.dragged)
             .on("end", this.dragended))
 
-      svg.selectAll('image').exit().data(data).enter()
-          .append('image')
-          .attr("xlink:href", (d, i) => d.src)
-          .attr('width', `200`).attr('height', `200`)
-          .attr('x', ( d, i ) => 0)
-          .attr('y', ( d, i ) => `${(100*i)}` )
-          .call(d3.drag()
-            .on("start", this.dragstarted)
-            .on("drag", this.dragged)
-            .on("end", this.dragended))
 
 
+
+    }
+    dragstarted(d) {
+
+      let self = d3.select('#element').node(),
+          center = this.width.animVal.value/2,
+          startX = this.x.animVal.value,
+          startY = this.y.animVal.value;
+
+      self.set('startX', startX)
+      self.set('startY', startY)
+      d3.select(this).attr("x", d3.event.x-center).attr("y", d3.event.y-center);
+    }
+    dragged(d){
+      let center = this.width.animVal.value/2;
+
+      d3.select(this).attr("x", d3.event.x-center).attr("y", d3.event.y-center);
+    }
+    dragended(d){
+      let self = d3.select('#element').node(),
+          getX = d3.event.x, getY = d3.event.y;
+
+      let targetEl, targetX, targetY, result;
+
+      self.targets.forEach(el => {
+
+        const getEl = el.getBBox();
+        if(getEl.x < getX && getX < getEl.x + getEl.height && getEl.y < getY && getY < getEl.y + getEl.height ) {
+          targetEl = el;
+          targetX = getEl.x;
+          targetY = getEl.y;
+        }
+      })
+
+      let dragId = this.__data__.match,
+          targetId = targetEl.__data__.id;
+
+      if(dragId === targetId){
+
+        d3.select(this).remove()
+
+        self.set(`target_${targetId}`, self[`target_${targetId}`]-1 )
+
+        let targetCircle = self.circleTexts.find(f=> f.id === targetId.toString())
+        d3.select(targetCircle).select('text').text( self[`target_${targetId}`])
+
+        if(self[`target_${targetId}`] === 0){
+          self.set('leftTargets', self.leftTargets-1)
+        }
+
+      } else {
+        d3.select(this).attr('x', self.startX ).attr('y', self.startY )
+      }
+      if(self.leftTargets === 0 ) {
+        self.$.finalStageModal.modalAlert()
+      }
 
     }
   }
