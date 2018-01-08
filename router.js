@@ -250,7 +250,7 @@ function getBook(classObj) {
   }
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
-    book = [1];
+    book = ["1-re", "2-re"];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
@@ -685,11 +685,13 @@ public.get('/cache/:manifest', function *(next) {
       page_manifests.push(file_path);
     }
     var activity = JSON.parse(fs.readFileSync(path.join("public", file_path)));
-    activity.manifest.forEach(function(obj) {
-      if(page_manifests.indexOf(obj.src) < 0) {
-        page_manifests.push(obj.src);
-      }
-    });
+    if(activity.manifest) {
+      activity.manifest.forEach(function(obj) {
+        if(page_manifests.indexOf(obj.src) < 0) {
+          page_manifests.push(obj.src);
+        }
+      });
+    }
   })
 
   // imgs에 속한 이미지중 cache에 속한 이미지는 제거
