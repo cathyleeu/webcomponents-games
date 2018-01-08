@@ -23,10 +23,8 @@
   {"tile": "E","id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
 
   {"tile": "p", "id": "pond", "src": "/img/renewed_b3/pond.png", "obstacle": false},
-  {"tile": "a", "id": "gp1", "src": "/img/renewed_b3/glasses.png", "obstacle": false},
-  {"tile": "b", "id": "gp2", "src": "/img/renewed_b3/stick.png", "obstacle": false},
-  {"tile": "c", "id": "gp3", "src": "/img/renewed_b3/hat.png", "obstacle": false},
-  {"tile": "e", "id": "gm1", "src": "/img/renewed_b3/marble.png", "obstacle": false},
-  {"tile": "f", "id": "gm2", "src": "/img/renewed_b3/silk.png", "obstacle": false},
-  {"tile": "g", "id": "gm3", "src": "/img/renewed_b3/picture.png", "obstacle": false}
+  {"tile": "c", "id": "cos0", "src": "/img/renewed_b3/cos0.png", "obstacle": false},
+  {"tile": "e", "id": "deer", "src": "/img/renewed_b3/deer.png", "obstacle": false},
+  {"id": "grandma", "src": "/img/renewed_b3/f_grandma.png", "obstacle": false},
+  {"id": "grandpa", "src": "/img/renewed_b3/f_grandpa.png", "obstacle": false}
 ]
