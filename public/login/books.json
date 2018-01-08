@@ -414,10 +414,10 @@
     ["클릭연습", "Click", "/click"]
   ],
   "A-2-re":[
-    ["봄 꽃을 알아보아요", "Find the spring flowers", "activity#!a2re_w1"],
-    ["컴퓨터로 끌어다 놓아요", "Drag and drop from your computer", "activity#!a2re_w2"],
-    ["겨울잠에서 깨어나요", "Wake up from wintersleep", "activity#!a2re_w3"],
-    ["딸기가 좋아요", "Cos likes strawberry", "activity#!a2re_w4"]
+    ["봄 꽃을 알아보아요", "Find the spring flowers", "/webcomponents/index.html#!a2re_w1"],
+    ["컴퓨터로 끌어다 놓아요", "Drag and drop from your computer", "/activity#!a2re_w2"],
+    ["겨울잠에서 깨어나요", "Wake up from wintersleep", "/activity#!a2re_w3"],
+    ["딸기가 좋아요", "Cos likes strawberry", "/activity#!a2re_w4"]
   ],
   "A-3-re":[
     ["즐거운 우리 가족", "Happy family", "/activity#!a3re_w1"],
@@ -497,11 +497,23 @@
     ["이리저리 움직여요", "Move around", "/mazeh#!b2_w3/1"],
     ["더 멀리 움직여요", "Move further", "/mazeh#!b2_w4/1"]
   ],
+  "B-3-re":[
+    ["나와 가족", "I and my family", "/mazeh#!b3re_w1/index"],
+    ["여러 가지 길을 찾아보아요", "Find various routs", "/mazeh#!b3re_w2/index"],
+    ["알맞은 곳을 찾아가요", "Find the right stuff", "/mazeh#!b3re_w3/index"],
+    ["연못에 들렀다 가요", "Stop by the ponds", "/mazeh#!b3re_w4/index"]
+  ],
   "B-3":[
     ["나와 가족:코스네 가족", "Cos' Family", "/mazeh#!b3_w1/index"],
     ["방향을 바꾸며 움직여요:우주선을 찾아요", "Go Find the UFO", "/mazeh#!b3_w2/index"],
     ["더 멀리 움직여요:할머니 할아버지를 만나요", "Meet Grandparents", "/mazeh#!b3_w3/index"],
     ["이리 저리 움직여요:다 같이 집으로 가요", "Go Home Together", "/mazeh#!b3_w4/index"]
+  ],
+  "B-4-re":[
+    ["우리 동네를 알아보아요", "My village", "/mazeh#!b4re_w1/index"],
+    ["보물을 가져와요", "Find the treasure", "/mazeh#!b4re_w2/index"],
+    ["가위바위보를 해요", "Rock, paper, scissors", "/mazeh#!b4re_w3/index"],
+    ["가위바위보를 이기고 보물을 가져와요", "Win to find the treasure", "/mazeh#!b4re_w4/index"]
   ],
   "B-4":[
     ["공원으로 소풍을 가요:엄마가 보물을 숨겨요", "Mom hides the treasure", "/mazeh#!b4_w1/index"],
@@ -574,7 +586,7 @@
     ["마당의 보물을 찾아서:보물 찾기", "Find the Treasure", "/mazeh#!c2_w3/1"],
     ["라나의 선물을 찾아서:선물 찾기", "Lana’s Hidden Gifts", "/mazeh#!c2_w4/1"]
   ],
-  "C-2":[
+  "C-2-re":[
     ["키즈블록으로 움직여요", "Lana awakens", "/mazeh#!c2re_w1/1"],
     ["더 멀리 움직여요", "Lana moves", "/mazeh#!c2re_w2/1"],
     ["여러 가지 모양을 알아보아요", "Find the Treasure", "/mazeh#!c2re_w3/1"],
