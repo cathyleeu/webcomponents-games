@@ -492,10 +492,10 @@
     ["이리 저리 움직여요:토드가 개구리가 되었어요", "Tod the Baby Frog", "/mazeh#!b2_w4/1"]
   ],
   "B-2-re":[
-    ["봄이 왔어요", "Spring is coming", "/mazeh#!b2_w1/1"],
-    ["방향을 바꿔요", "Change direction", "/mazeh#!b2_w2/1"],
-    ["이리저리 움직여요", "Move around", "/mazeh#!b2_w3/1"],
-    ["더 멀리 움직여요", "Move further", "/mazeh#!b2_w4/1"]
+    ["봄이 왔어요", "Spring is coming", "/mazeh#!b2re_w1/1"],
+    ["방향을 바꿔요", "Change direction", "/mazeh#!b2re_w2/1"],
+    ["이리저리 움직여요", "Move around", "/mazeh#!b2re_w3/1"],
+    ["더 멀리 움직여요", "Move further", "/mazeh#!b2re_w4/1"]
   ],
   "B-3-re":[
     ["나와 가족", "I and my family", "/mazeh#!b3re_w1/index"],
@@ -599,10 +599,10 @@
     ["가져오기와 사용하기를 써보아요:꿀과자를 선물해요", "Present the Honey Cookies", "/mazeh#!c3_w4/index"]
   ],
   "C-3-re":[
-    ["가족이 늘어요", "Number of Family", "/mazeh#!c3_w1/index"],
-    ["가져오기를 이해해요", "Understand Bring Block", "/mazeh#!c3_w2/index"],
-    ["사용하기를 이해해요", "Understand Using Block", "/mazeh#!c3_w3/index"],
-    ["반복 블록을 이해해요", "Understand Repeat Block", "/mazeh#!c3_w4/index"]
+    ["가족이 늘어요", "Number of Family", "/mazeh#!c3re_w1/index"],
+    ["가져오기를 이해해요", "Understand Bring Block", "/mazeh#!c3re_w2/index"],
+    ["사용하기를 이해해요", "Understand Using Block", "/mazeh#!c3re_w3/index"],
+    ["반복 블록을 이해해요", "Understand Repeat Block", "/mazeh#!c3re_w4/index"]
   ],
   "C-4":[
     ["우리동네를 알아보아요:우리 동네 산책", "Walk around my town", "/mazeh#!c4_w1_c1/index"],
