@@ -394,14 +394,23 @@ if(location.pathname == "/code" && location.hash) {
   function showLogin() {
     store.session.remove("user");
     var yearmonth = info.date,
-        levelLogin = info.classes.filter(function(obj) {
+        classInfo = info.classes.filter(function(obj) {
           return obj.className == sClassName;
-        })[0].level,
+        })[0],
+        books = classInfo.book.split(","),
+        levelLogin = classInfo.level,
         classObj = info.logins && info.logins.filter(function(obj) {
           return obj.className == sClassName;
         })[0],
         sel_names = null,
         sel_levels = null;
+
+    // 각 반별로 세팅된 level에 해당하는 book 중에서 리뉴얼 버전이 있으면 login도 리뉴얼 버전으로 함
+    books.forEach(function(bookName) {
+      if(bookName.slice(0, 1) == levelLogin && bookName.slice(-3) == "-re" && Object.keys(level).indexOf(levelLogin + "-re") >= 0) {
+        levelLogin += "-re";
+      }
+    });
 
     $("#names,#characters").empty();
 
