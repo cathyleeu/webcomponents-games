@@ -1,0 +1,114 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "##.###################.",
+    "..#..%.#.%...#%..#%...#",
+    "..#..#.%.#.%..#.%..%#.#",
+    ".#.r..#..%..%.%..%..%.#",
+    "..#.#%...%.#..%...%.#.#",
+    "..#.#..%..#.%...%..#..#",
+    "##.###################."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 1,
+    "link": "c3re_w2/1"
+  },{
+    "x": 5,
+    "y": 4,
+    "link": "c3re_w2/2"
+  },{
+    "x": 7,
+    "y": 2,
+    "link": "c3re_w2/3"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c3re_w2/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c3re_w2/5"
+  },{
+    "x": 9,
+    "y": 4,
+    "link": "c3re_w2/6"
+  },{
+    "x": 11,
+    "y": 2,
+    "link": "c3re_w2/7"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c3re_w2/8"
+  },{
+    "x": 14,
+    "y": 1,
+    "link": "c3re_w2/9"
+  },{
+    "x": 14,
+    "y": 4,
+    "link": "c3re_w2/10"
+  },{
+    "x": 16,
+    "y": 2,
+    "link": "c3re_w2/11"
+  },{
+    "x": 16,
+    "y": 5,
+    "link": "c3re_w2/12"
+  },{
+    "x": 18,
+    "y": 1,
+    "link": "c3re_w2/13"
+  },{
+    "x": 18,
+    "y": 4,
+    "link": "c3re_w2/14"
+  },{
+    "x": 19,
+    "y": 2,
+    "link": "c3re_w2/15"
+  },{
+    "x": 9,
+    "y": 3,
+    "link": "c3re_w2/16"
+  },{
+    "x": 12,
+    "y": 3,
+    "link": "c3re_w2/17"
+  },{
+    "x": 14,
+    "y": 3,
+    "link": "c3re_w2/18"
+  },{
+    "x": 17,
+    "y": 3,
+    "link": "c3re_w2/19"
+  },{
+    "x": 20,
+    "y": 3,
+    "link": "c3re_w2/20"
+  },{
+    "img":"mother",
+    "x": 6,
+    "y": 3,
+    "obstacle": false,
+    "link": "c3re_w3/index",
+    "min_score": 15
+  }],
+
+  "tutorial": [{
+    "msg:ko": "꿀단지로 가면 문제를 풀 수 있어요. 문제 15개를 풀고 엄마께 가요.",
+    "msg:en": "You can solve a problem at any honney pot. Solve fifteen problems and go to mom.",
+    "img": ["/img/c3_w2/honey_pot.png","/img/c3_w1/mother.png"]
+  }],
+  "goal": {
+    "msg:ko": "문제 15개를 풀고 엄마께 가요.",
+    "msg:en": "Solve fifteen problems and go to mom.",
+    "img": ["/img/c3_w2/honey_pot.png","/img/c3_w1/mother.png"]
+  }
+}

@@ -1,0 +1,35 @@
+[
+  {"book": "b2", "title": "4주차 : 토드가 개구리가 되었어요"},
+
+  {"id": "bg1", "src": "/img/b2_w4/Grass1_256.png"},
+  {"id": "bg2", "src": "/img/b2_w4/Grass2_256.png"},
+
+  {"id": "character", "src": "/img/b2_w4/SpriteToad4_256.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b2_w4/TutoToad4_256.png", "size": 256},
+  {"id": "food", "src": "/img/c1_w4/cos0.png"},
+
+  {"tile" : "w", "id": "fence1", "src": "/img/b2_w4/Fence1_256.png", "wall": true},
+  {"tile" : "a", "id": "fence2", "src": "/img/b2_w4/Fence2_256.png", "wall": true},
+  {"tile" : "q", "id": "fence3", "src": "/img/b2_w4/Fence3_256.png", "wall": true},
+  {"tile" : "e", "id": "fence4", "src": "/img/b2_w4/Fence4_256.png", "wall": true},
+  {"tile" : "z", "id": "fence5", "src": "/img/b2_w4/Fence5_256.png", "wall": true},
+  {"tile" : "x", "id": "fence6", "src": "/img/b2_w4/Fence6_256.png", "wall": true},
+
+  {"tile" : "t", "id": "tree1", "src": "/img/b2_w4/Tree1_256.png", "obstacle": true},
+  {"tile" : "T", "id": "tree2", "src": "/img/b2_w4/Tree2_256.png", "obstacle": true},
+  {"tile" : "f", "id": "flower1", "src": "/img/b2_w4/Flower1_256.png", "obstacle": true},
+  {"tile" : "F", "id": "flower2", "src": "/img/b2_w4/Flower2_256.png", "obstacle": true},
+
+  {"id": "stone1", "src": "/img/b2_w4/YardStone1_256.png", "obstacle": true},
+  {"id": "stone2", "src": "/img/b2_w4/YardStone2_256.png", "obstacle": true},
+
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"}
+
+]
