@@ -8,25 +8,30 @@
     "move_right",
     "move_left"
   ],
-  "character": "character",
-  "message": "message",
   "map": [
     ".#####.",
-    "#..d..#",
     "#.....#",
     "#.....#",
-    "#..%..#",
+    "#.r%..#",
+    "#.....#",
     "#.....#",
     ".#####."
   ],
   "tutorial": [{
-    "msg:ko": "↓아래로 이동 블록을 이용해서 장구벌레에게로 가보자!",
-    "msg:en": "Let's move down using [Move Down] block",
-    "img": "/img/blocks/down.png"
+    "msg:ko": "막태어난 올챙이 토드는 배가 고파요 ",
+    "msg:en": "Tod is hungry!"
+  },{
+    "msg:ko": "장구벌레를 먹어야 해요 ",
+    "msg:en": "Tod have to eat Longworm",
+    "img": "/img/b2_w1/Larva_256.png"
+  },{
+    "msg:ko": "→오른쪽으로 이동 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move right using [Move Right] block",
+    "img": "/img/blocks/right.png"
   }],
   "goal": {
-    "msg:ko": "↓아래로 이동 블록을 이용해서 장구벌레에게로 가보자!",
-    "msg:en": "Let's move down using [Move Down] block",
-    "img": ["/img/b2_w1/Larva_256.png","/img/blocks/down.png"]
+    "msg:ko": "→오른쪽으로 이동 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move right using [Move Right] block",
+    "img": "/img/b2_w1/Larva_256.png"
   }
 }

@@ -15,89 +15,89 @@
   "extra": [{
     "x": 5,
     "y": 1,
-    "link": "c3_w1/1"
+    "link": "c3re_w1/1"
   },{
     "x": 5,
     "y": 4,
-    "link": "c3_w1/2"
+    "link": "c3re_w1/2"
   },{
     "x": 7,
     "y": 2,
-    "link": "c3_w1/3"
+    "link": "c3re_w1/3"
   },{
     "x": 7,
     "y": 5,
-    "link": "c3_w1/4"
+    "link": "c3re_w1/4"
   },{
     "x": 9,
     "y": 1,
-    "link": "c3_w1/5"
+    "link": "c3re_w1/5"
   },{
     "x": 9,
     "y": 4,
-    "link": "c3_w1/6"
+    "link": "c3re_w1/6"
   },{
     "x": 11,
     "y": 2,
-    "link": "c3_w1/7"
+    "link": "c3re_w1/7"
   },{
     "x": 12,
     "y": 5,
-    "link": "c3_w1/8"
+    "link": "c3re_w1/8"
   },{
     "x": 14,
     "y": 1,
-    "link": "c3_w1/9"
+    "link": "c3re_w1/9"
   },{
     "x": 14,
     "y": 4,
-    "link": "c3_w1/10"
+    "link": "c3re_w1/10"
   },{
     "x": 6,
     "y": 3,
-    "link": "c3_w1/11"
+    "link": "c3re_w1/11"
   },{
     "x": 4,
     "y": 5,
-    "link": "c3_w1/12"
+    "link": "c3re_w1/12"
   },{
     "x": 4,
     "y": 2,
-    "link": "c3_w1/13"
+    "link": "c3re_w1/13"
   },{
     "x": 11,
     "y": 4,
-    "link": "c3_w1/14"
+    "link": "c3re_w1/14"
   },{
     "x": 8,
     "y": 3,
-    "link": "c3_w1/15"
+    "link": "c3re_w1/15"
   },{
     "x": 12,
     "y": 3,
-    "link": "c3_w1/16"
+    "link": "c3re_w1/16"
   },{
     "x": 12,
     "y": 1,
-    "link": "c3_w1/17"
+    "link": "c3re_w1/17"
   },{
     "x": 13,
     "y": 2,
-    "link": "c3_w1/18"
+    "link": "c3re_w1/18"
   },{
     "x": 10,
     "y": 5,
-    "link": "c3_w1/19"
+    "link": "c3re_w1/19"
   },{
     "x": 15,
     "y": 2,
-    "link": "c3_w1/20"
+    "link": "c3re_w1/20"
   },{
     "img":"honey_pot",
     "x": 15,
     "y": 3,
     "obstacle": false,
-    "link": "c3_w2/index",
+    "link": "c3re_w2/index",
     "min_score": 15
   }],
   "tutorial": [{
