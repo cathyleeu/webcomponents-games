@@ -14,11 +14,9 @@
   ],
   "attributes": {
     "lastStage" : 2,
-    "nextlink" : "mazev#!coding_b1/0"
-  },
-  "manifest": {
+    "nextlink" : "mazev#!coding_b1/0",
     "level" : "A",
-    "images" : 12
+    "images" : 9
   },
   "msg": {
     "ko": {

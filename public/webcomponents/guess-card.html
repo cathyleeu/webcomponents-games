@@ -125,7 +125,7 @@
     }
     reset(){
       d3.select(this.$.guess_box).selectAll('div').remove()
-      this.setData( false , this.manifest )
+      this.setData( this.data )
       this.set('click', 0)
     }
     handleClickCard(s, r){
@@ -170,10 +170,10 @@
       }
     }
     setData(data, manifest){
-      this.set('manifest', manifest)
+      this.set('data', data)
       let guessBox = d3.select(this.$.guess_box),
-          randomNum = Math.floor(Math.random()*(manifest-0)) + 1;
-      for(let i = 1; i < manifest+1; i++){
+          randomNum = Math.floor(Math.random()*(data-0)) + 1;
+      for(let i = 1; i < data+1; i++){
         guessBox.append('xhtml:div')
           .attr('class', 'guess').attr('data-num', i)
           .on('click', () => this.handleClickCard(i, randomNum))

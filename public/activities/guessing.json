@@ -3,9 +3,7 @@
   "attributes": {
     "limit" : 4
   },
-  "data": [
-  ],
-  "manifest": 16,
+  "data": 16, 
   "msg": {
     "ko": {
       "title": "Up & Down 게임",
