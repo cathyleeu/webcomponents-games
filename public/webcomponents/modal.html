@@ -122,7 +122,6 @@
           <div class="button done" on-click="handleNextStep">{{nextbtn}}</div>
           <div class="button final" on-click="handleFinalStep">{{finalbtn}}</div>
           <div class="button stay" on-click="handleStayStage">{{nobtn}}</div>
-          <div class="button intro" on-click="handleStayStage">{{yesbtn}}</div>
           <div class="button retry" on-click="handleStayStage">{{retrybtn}}</div>
           <div class="button retryReset" on-click="handleNextStep">{{retrybtn}}</div>
           <div class="button move" on-click="handleMoveStage">{{yesbtn}}</div>
@@ -167,7 +166,6 @@
           previous : '.stay, .move',
           logout : '.stay, .move',
           retry: '.retry',
-          intro: '.intro',
           retryReset: '.retryReset',
           unCorrect : '.retryReset, .uncorrect'
         };
@@ -189,7 +187,6 @@
             .append('img')
             .attr('src', (d, i) => d.src)
         }
-
         d3.select(this.element).classed("popup", "popup")
         // this.element.classList.add('popup')
       }

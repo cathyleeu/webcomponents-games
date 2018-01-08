@@ -231,7 +231,7 @@
       })
 
       let dragId = this.__data__.match,
-          targetId = targetEl.__data__.id;
+          targetId = targetEl ? targetEl.__data__.id : "";
 
       if(dragId === targetId){
 
