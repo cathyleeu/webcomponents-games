@@ -46,7 +46,7 @@
         let { innerHeight, innerWidth } = window,
             svg = d3.select(this.$.createSvg).attr('width', innerWidth).attr('height', innerHeight);
 
-        let boardImage = svg.append('image').attr("xlink:href", manifest)
+        let boardImage = svg.append('image').attr("xlink:href", data)
              .attr('x', 0).attr('y', 0)
              .attr('width', this.boardSize)
              .attr('height', this.boardSize)
