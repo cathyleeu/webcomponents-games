@@ -1,8 +1,4 @@
 {
   "element": "create-image-axis",
-  "attributes": {
-  },
-  "data": [
-  ],
-  "manifest": "/img/renewed_a2/cake.png"
+  "data": "/img/renewed_a2/cake.png"
 }

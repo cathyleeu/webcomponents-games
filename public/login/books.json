@@ -401,11 +401,11 @@
     ["2권:보물 찾기", "/mazeh#!c2_w3/1"],
     ["2권:선물 찾기", "/mazeh#!c2_w4/1"]
   ],
-  "A-1-old":[
+  "A-1":[
     ["자판기 놀이", "Vending Machine", "/a1_w1"],
     ["엘리베이터 놀이", "Elevator", "/a1_w2"]
   ],
-  "A-1":[
+  "A-1-re":[
     ["숨어있는 컴퓨터를 찾아요", "Find the Computers", "/a1_w1"],
     ["컴퓨터와 이야기해요", "Talk to the Computer", "/a1_w3"],
     ["로그인을 연습해요", "Practice Login", "/activity#!a1_w4"]
@@ -414,18 +414,18 @@
     ["클릭연습", "Click", "/click"]
   ],
   "A-2-re":[
-    ["봄 꽃을 알아보아요", "Find the spring flowers", "activity#!a2re_w1"],
-    ["컴퓨터로 끌어다 놓아요", "Drag and drop from your computer", "activity#!a2re_w2"],
-    ["겨울잠에서 깨어나요", "Wake up from wintersleep", "activity#!a2re_w3"],
-    ["딸기가 좋아요", "Cos likes strawberry", "activity#!a2re_w4"]
+    ["봄 꽃을 알아보아요", "Find the spring flowers", "/activity#!a2re_w1"],
+    ["컴퓨터로 끌어다 놓아요", "Drag and drop from your computer", "/activity#!a2re_w2"],
+    ["겨울잠에서 깨어나요", "Wake up from wintersleep", "/activity#!a2re_w3"],
+    ["딸기가 좋아요", "Cos likes strawberry", "/activity#!a2re_w4"]
   ],
-  "A-3":[
+  "A-3-re":[
     ["즐거운 우리 가족", "Happy family", "/activity#!a3re_w1"],
     ["집을 지어요", "Building a house", "/activity#!a3re_w2"],
     ["집을 꾸며요", "Decorating the house", "/activity#!a3re_w3"],
     ["마당을 꾸며요", "Decorating the yard", "/activity#!a3re_w4"]
   ],
-  "A-3-old":[
+  "A-3":[
     ["코스네 가족 이사하기", "Moving Cos' family", "/mazeh#!a3_w3/1"],
     ["끌어다 놓기 연습", "Drag and Drop", "/b1_w4"]
   ],
@@ -474,13 +474,13 @@
     ["전통 놀이를 해요", "/activity#!a105_w3"],
     ["새 친구를 사귀어요", "/mazeh#!a105_w4/1"]
   ],
-  "B-1-old":[
+  "B-1":[
     ["컴퓨터와 언어:엘리베이터 놀이", "Elevator", "/a1_w2"],
     ["컴퓨터의 생활:자판기 놀이", "Vending Machine", "/a1_w1"],
     ["눌러서 로그인하기:클릭연습", "Click", "/click"],
     ["컴퓨터에서 끌어다 놓기:끌어다 놓기 연습", "Drag and Drop", "/b1_w4"]
   ],
-  "B-1":[
+  "B-1-re":[
     ["눌러서 로그인해요", "Click & Sign-in", "/b1re_w2"],
     ["컴퓨터와 생활", "Computer & My Lift", "/b1re_w3_c1"],
     ["컴퓨터에서 끌어다 놓아요", "Drag & Drop with Computer", "/b1re_w4"]
@@ -492,16 +492,28 @@
     ["이리 저리 움직여요:토드가 개구리가 되었어요", "Tod the Baby Frog", "/mazeh#!b2_w4/1"]
   ],
   "B-2-re":[
-    ["봄이 왔어요", "Spring is coming", "/mazeh#!b2_w1/1"],
-    ["방향을 바꿔요", "Change direction", "/mazeh#!b2_w2/1"],
-    ["이리저리 움직여요", "Move around", "/mazeh#!b2_w3/1"],
-    ["더 멀리 움직여요", "Move further", "/mazeh#!b2_w4/1"]
+    ["봄이 왔어요", "Spring is coming", "/mazeh#!b2re_w1/1"],
+    ["방향을 바꿔요", "Change direction", "/mazeh#!b2re_w2/1"],
+    ["이리저리 움직여요", "Move around", "/mazeh#!b2re_w3/1"],
+    ["더 멀리 움직여요", "Move further", "/mazeh#!b2re_w4/1"]
+  ],
+  "B-3-re":[
+    ["나와 가족", "I and my family", "/mazeh#!b3re_w1/index"],
+    ["여러 가지 길을 찾아보아요", "Find various routs", "/mazeh#!b3re_w2/index"],
+    ["알맞은 곳을 찾아가요", "Find the right stuff", "/mazeh#!b3re_w3/index"],
+    ["연못에 들렀다 가요", "Stop by the ponds", "/mazeh#!b3re_w4/index"]
   ],
   "B-3":[
     ["나와 가족:코스네 가족", "Cos' Family", "/mazeh#!b3_w1/index"],
     ["방향을 바꾸며 움직여요:우주선을 찾아요", "Go Find the UFO", "/mazeh#!b3_w2/index"],
     ["더 멀리 움직여요:할머니 할아버지를 만나요", "Meet Grandparents", "/mazeh#!b3_w3/index"],
     ["이리 저리 움직여요:다 같이 집으로 가요", "Go Home Together", "/mazeh#!b3_w4/index"]
+  ],
+  "B-4-re":[
+    ["우리 동네를 알아보아요", "My village", "/mazeh#!b4re_w1/index"],
+    ["보물을 가져와요", "Find the treasure", "/mazeh#!b4re_w2/index"],
+    ["가위바위보를 해요", "Rock, paper, scissors", "/mazeh#!b4re_w3/index"],
+    ["가위바위보를 이기고 보물을 가져와요", "Win to find the treasure", "/mazeh#!b4re_w4/index"]
   ],
   "B-4":[
     ["공원으로 소풍을 가요:엄마가 보물을 숨겨요", "Mom hides the treasure", "/mazeh#!b4_w1/index"],
@@ -557,24 +569,24 @@
     ["규칙을 연습해", "/mazeh#!b105_w3/index"],
     ["규칙을 써보아요", "/mazeh#!b105_w4/index"]
   ],
-  "C-1-old":[
+  "C-1":[
     ["컴퓨터의 언어:자판기 놀이&엘리베이터 놀이", "Vending Machine", "/c1_w2"],
     ["9까지의 수:클릭연습", "Click", "/click"],
     ["눌러서 로그인하기:사계절 퀴즈", "4 Seasons", "/c1_w3"],
     ["컴퓨터에서 끌어다 놓기:인사하기 연습", "Say Hello", "/maze#!c1_w4/1"]
   ],
-  "C-1":[
+  "C-1-re":[
     ["9까지의 수와 로그인", "Learn numbers up to 9 and sign in", "/click"],
     ["분류하고 끌어다 놓아요", "Classify and drag and drop", "/activity#!c1re_w3_1"],
     ["우리의 몸과 컴퓨터", "My body and computer", "/activity#!c1re_w4_1"]
   ],
-  "C-2-old":[
+  "C-2":[
     ["겨울잠에서 깨어나요:겨울잠에서 깨어난 라나", "Lana awakens", "/mazeh#!c2_w1/1"],
     ["라나를 움직여보아요:라나를 움직여보아요", "Lana moves", "/mazeh#!c2_w2/1"],
     ["마당의 보물을 찾아서:보물 찾기", "Find the Treasure", "/mazeh#!c2_w3/1"],
     ["라나의 선물을 찾아서:선물 찾기", "Lana’s Hidden Gifts", "/mazeh#!c2_w4/1"]
   ],
-  "C-2":[
+  "C-2-re":[
     ["키즈블록으로 움직여요", "Lana awakens", "/mazeh#!c2re_w1/1"],
     ["더 멀리 움직여요", "Lana moves", "/mazeh#!c2re_w2/1"],
     ["여러 가지 모양을 알아보아요", "Find the Treasure", "/mazeh#!c2re_w3/1"],
@@ -587,10 +599,10 @@
     ["가져오기와 사용하기를 써보아요:꿀과자를 선물해요", "Present the Honey Cookies", "/mazeh#!c3_w4/index"]
   ],
   "C-3-re":[
-    ["가족이 늘어요", "Number of Family", "/mazeh#!c3_w1/index"],
-    ["가져오기를 이해해요", "Understand Bring Block", "/mazeh#!c3_w2/index"],
-    ["사용하기를 이해해요", "Understand Using Block", "/mazeh#!c3_w3/index"],
-    ["반복 블록을 이해해요", "Understand Repeat Block", "/mazeh#!c3_w4/index"]
+    ["가족이 늘어요", "Number of Family", "/mazeh#!c3re_w1/index"],
+    ["가져오기를 이해해요", "Understand Bring Block", "/mazeh#!c3re_w2/index"],
+    ["사용하기를 이해해요", "Understand Using Block", "/mazeh#!c3re_w3/index"],
+    ["반복 블록을 이해해요", "Understand Repeat Block", "/mazeh#!c3re_w4/index"]
   ],
   "C-4":[
     ["우리동네를 알아보아요:우리 동네 산책", "Walk around my town", "/mazeh#!c4_w1_c1/index"],

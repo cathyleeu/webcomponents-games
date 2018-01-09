@@ -1,0 +1,47 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3"
+  ],
+  "map": [
+    "%#######",
+    "#.#....#",
+    "#.#..).#",
+    "#..##.##",
+    "#r.)...#",
+    "#.##...#",
+    "#...##.#",
+    "########"
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
+    "x": 5,
+    "y": 2,
+    "img": "chest",
+    "itemCount": 1
+  },{
+    "x": 3,
+    "y": 4,
+    "img": "chest",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "보물 상자가 여러 개 있어. 보물 상자에서 '가져오기' 블록을 사용하자.",
+    "msg:en": "There are several chests. Let's use 'get items' block on the chests!",
+    "img": ["/img/renewed_b4/chest1.png","/img/blocks/bring.png"]
+  }],
+  "goal": {
+    "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
+    "msg:en": "Let's use 'get items' block on the chest",
+    "img": ["/img/renewed_b4/chest1.png","/img/blocks/bring.png"]
+  }
+}

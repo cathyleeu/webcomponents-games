@@ -1,0 +1,33 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#..###..#",
+    "#.ss.ss.#",
+    "#.si.qs.#",
+    "#.sd.fs.#",
+    "#.sg.hs.#",
+    "#.sj.os.#",
+    "#..#%#..#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "엄마가 만들어준 꿀과자를 가족들에게 나누어 주었어요",
+    "msg:en": "I gave cookies to my family.",
+    "img": "/img/c3_w4/cookie.png"
+  },{
+    "msg:ko": "다같이 맛있게 먹었어요",
+    "msg:en": "I eat the cookies all together."
+  },{
+    "msg:ko": "3권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Success! Good Job!"
+  }]
+}

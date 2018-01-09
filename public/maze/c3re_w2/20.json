@@ -1,0 +1,49 @@
+{
+  "tile_size": 80,
+  "render": "pixel",
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3"
+  ],
+  "map": [
+    ".%######.",
+    "#.####.##",
+    "#....#.##",
+    "###.d..##",
+    "#.#.##).#",
+    "#......##",
+    "#.#.).)##",
+    "#....####",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 0,
+    "img": "tree1"
+  }, {
+    "x": 6,
+    "y": 4,
+    "img":"honey_pot",
+    "itemCount": 1
+  }, {
+    "x": 6,
+    "y": 6,
+    "img":"honey_pot",
+    "itemCount": 1
+  }, {
+    "x": 4,
+    "y": 6,
+    "img":"honey_pot",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자",
+    "msg:en": "Move to honey jar And then Use 'get item' Block",
+    "img": ["/img/c3_w2/honey_pot.png","/img/blocks/bring.png"]
+  }]
+}

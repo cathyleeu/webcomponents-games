@@ -2,7 +2,8 @@
   "element": "create-image-game",
   "attributes": {
     "limited" : true,
-    "group" : ["gr1", "gr2", "gr3", "gr4", "gr5", "gr6"]
+    "group" : ["gr1", "gr2", "gr3", "gr4", "gr5", "gr6"],
+    "useAll": true
   },
   "data": {
     "gr1": [[17.18,50.68]],
@@ -24,6 +25,7 @@
   "msg": {
     "ko": {
       "title": "동물들이 어디에서 겨울잠을 자나요?",
+      "minor": "아래의 그림을 이용하여 동물들이 자는 곳을 맞춰보세요",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -37,6 +39,7 @@
       "nobtn" : "아니오",
       "yesbtn" : "예",
       "finalStageHead": "성공!",
+      "finalStageImg": "/img/renewed_a2/fish.png",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "확인",
       "retryHead": "참 아쉽네요!",

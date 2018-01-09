@@ -1,0 +1,57 @@
+{
+  "tile_size": 128,
+
+  "score":3,
+  "workspace": ["start","move_right","move_up","move_up"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors",
+    "get_item3"
+  ],
+  "map": [
+    "%#######",
+    "#....#.#",
+    "#.#.#.##",
+    "#.)R#.#",
+    "#R#P#..#",
+    "#S#.#.##",
+    "#.u....#",
+    "########"
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
+    "x": 3,
+    "y": 3,
+    "img":"grandpa"
+  },{
+    "x": 1,
+    "y": 5,
+    "img":"mother"
+  },{
+    "x": 1,
+    "y": 4,
+    "img":"father"
+  },{
+    "x": 2,
+    "y": 3,
+    "img": "chest",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "가위바위보!",
+    "msg:en": "Rock scissors paper!",
+"img": ["/img/renewed_b4/rock.png","/img/renewed_b4/scissors.png","/img/renewed_b4/paper.png"]
+}],"goal":{
+  "msg:ko": "모두 이기고 보물 상자에 갈 거야!",
+  "msg:en": "Win all to go to the chest!",
+  "img": "/img/renewed_b4/chest3.png"
+}
+}

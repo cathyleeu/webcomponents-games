@@ -20,17 +20,17 @@
   ],
   "manifest": [
     {"src": "/img/renewed_a2/but.png", "text":"벚꽃", "sound": "complete.mp3", "id": "1"},
-    {"src": "/img/renewed_a2/daizy.png", "text":"데이지", "sound": "fail.mp3", "id": "2"},
-    {"src": "/img/renewed_a2/gaenari.png", "text":"개나리", "sound": "hammer.mp3", "id": "3"},
-    {"src": "/img/renewed_a2/geumjanhwa.png", "text":"금잔화", "sound": "success.mp3", "id": "4"},
-    {"src": "/img/renewed_a2/halmi.png", "text":"할미꽃", "sound": "bgm_story08.mp3", "id": "5"},
-    {"src": "/img/renewed_a2/jebi.png", "text":"제비꽃", "sound": "bgm_story7.mp3", "id": "6"},
-    {"src": "/img/renewed_a2/jindalae.png", "text":"진달래", "sound": "bgm_story7.mp3", "id": "7"},
-    {"src": "/img/renewed_a2/mindle.png", "text":"민들레", "sound": "bgm_story7.mp3", "id": "8"},
-    {"src": "/img/renewed_a2/mokryun.png", "text":"목련", "sound": "bgm_story7.mp3", "id": "9"},
-    {"src": "/img/renewed_a2/moran.png", "text":"목련", "sound": "bgm_story7.mp3", "id": "10"},
-    {"src": "/img/renewed_a2/pansy.png", "text":"팬지", "sound": "bgm_story7.mp3", "id": "11"},
-    {"src": "/img/renewed_a2/tulip.png", "text":"튤립", "sound": "bgm_story7.mp3", "id": "12"}
+    {"src": "/img/renewed_a2/daizy.png", "text":"데이지", "sound": "complete.mp3", "id": "2"},
+    {"src": "/img/renewed_a2/gaenari.png", "text":"개나리", "sound": "complete.mp3", "id": "3"},
+    {"src": "/img/renewed_a2/geumjanhwa.png", "text":"금잔화", "sound": "complete.mp3", "id": "4"},
+    {"src": "/img/renewed_a2/halmi.png", "text":"할미꽃", "sound": "complete.mp3", "id": "5"},
+    {"src": "/img/renewed_a2/jebi.png", "text":"제비꽃", "sound": "complete.mp3", "id": "6"},
+    {"src": "/img/renewed_a2/jindalae.png", "text":"진달래", "sound": "complete.mp3", "id": "7"},
+    {"src": "/img/renewed_a2/mindle.png", "text":"민들레", "sound": "complete.mp3", "id": "8"},
+    {"src": "/img/renewed_a2/mokryun.png", "text":"목련", "sound": "complete.mp3", "id": "9"},
+    {"src": "/img/renewed_a2/moran.png", "text":"목련", "sound": "complete.mp3", "id": "10"},
+    {"src": "/img/renewed_a2/pansy.png", "text":"팬지", "sound": "complete.mp3", "id": "11"},
+    {"src": "/img/renewed_a2/tulip.png", "text":"튤립", "sound": "complete.mp3", "id": "12"}
   ],
   "msg": {
     "ko": {

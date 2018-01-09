@@ -1,0 +1,32 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#.###...#",
+    "#.....l.#",
+    "#..#.#..#",
+    "#...%#..#",
+    "#....##.#",
+    "#....#..#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "←↓ 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move up using [Move Leftn][Move Dow] block",
+    "img": ["/img/blocks/left.png","/img/blocks/down.png"]
+  }],
+  "goal": {
+    "msg:ko": "←↓ 블록을 이용해서 장구벌레에게로 가보자!",
+    "msg:en": "Let's move up using [Move Leftn][Move Dow] block",
+    "img": ["/img/b2_w1/Larva_256.png","/img/blocks/left.png","/img/blocks/down.png"]
+  }
+}

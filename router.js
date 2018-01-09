@@ -161,7 +161,6 @@ function getInfoByCode(code) {
         info.classes = [];
         Object.keys(classes).forEach(function(book) {
           classes[book].forEach(function(className) {
-            console.log(className)
             info.classes.push({
               code: className,
               className: className,
@@ -251,7 +250,7 @@ function getBook(classObj) {
   }
   // 청아유치원(시범원)
   if(school == "A00083-K1") {
-    book = [1];
+    book = ["1-re", "2-re"];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
@@ -273,7 +272,7 @@ function getBook(classObj) {
   if(school == "B00136-K1") {
     var classNum = classObj.code.slice(-3);
     if(classNum == "KC1") {
-      book = [5, "5-5"];
+      book = [4, 5];
     }
     if(classNum == "KC2") {
       book = [8, 9];
@@ -686,11 +685,13 @@ public.get('/cache/:manifest', function *(next) {
       page_manifests.push(file_path);
     }
     var activity = JSON.parse(fs.readFileSync(path.join("public", file_path)));
-    activity.manifest.forEach(function(obj) {
-      if(page_manifests.indexOf(obj.src) < 0) {
-        page_manifests.push(obj.src);
-      }
-    });
+    if(activity.manifest) {
+      activity.manifest.forEach(function(obj) {
+        if(page_manifests.indexOf(obj.src) < 0) {
+          page_manifests.push(obj.src);
+        }
+      });
+    }
   })
 
   // imgs에 속한 이미지중 cache에 속한 이미지는 제거

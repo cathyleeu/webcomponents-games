@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".########.",
+    "#.#......#",
+    "#..p....%#",
+    "#...#.##.#",
+    "#....#i..#",
+    "#...#..#.#",
+    "#..r....p#",
+    "#........#",
+    "#........#",
+    ".########."
+  ],
+
+  "tutorial": [{
+    "msg:ko": "디어가 목이 많이 말라.\n연못에 들렀다가 집으로 가자.",
+    "msg:en": "Let's stop by the ponds for thirsty Deer and go home.",
+    "img":["/img/renewed_b3/pond.png", "/img/renewed_b3/deer.png"]
+  }]
+}

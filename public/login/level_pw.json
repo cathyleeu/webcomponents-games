@@ -23,7 +23,10 @@
     "/img/login/A/06.png",
     "/img/login/A/07.png",
     "/img/login/A/08.png",
-    "/img/login/A/09.png"
+    "/img/login/A/09.png",
+    "/img/login/A/10.png",
+    "/img/login/A/11.png",
+    "/img/login/A/12.png"
   ],
   "B": [
     "/img/login/B/01.png",
@@ -51,16 +54,16 @@
     "/img/login/C/09.png",
     "/img/login/C/10.png"
   ],
-  "reA": [
-    "/img/login/A/01.png",
-    "/img/login/A/02.png",
-    "/img/login/A/03.png",
-    "/img/login/A/04.png",
-    "/img/login/A/05.png",
-    "/img/login/A/06.png",
-    "/img/login/A/07.png",
-    "/img/login/A/08.png",
-    "/img/login/A/09.png"
+  "A-re": [
+    "/img/login/A-re/01.png",
+    "/img/login/A-re/02.png",
+    "/img/login/A-re/03.png",
+    "/img/login/A-re/04.png",
+    "/img/login/A-re/05.png",
+    "/img/login/A-re/06.png",
+    "/img/login/A-re/07.png",
+    "/img/login/A-re/08.png",
+    "/img/login/A-re/09.png"
   ],
   "buttons": [
     "/img/login/button.png"
