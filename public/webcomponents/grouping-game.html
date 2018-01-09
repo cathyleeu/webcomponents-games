@@ -9,7 +9,11 @@
   <style>
     #container {
       box-sizing: border-box;
-
+    }
+    p {
+      text-align: center;
+      font-size: 25px;
+      margin: 0 0 0.5% 0;
     }
   </style>
   <status-bar
@@ -69,6 +73,7 @@
     nextlink="{{nextlink}}"
     ></toycode-modal>
   <div id="container">
+    <p>{{localize('minor')}}</p>
     <svg id="createSvg"></svg>
   </div>
 </template>
@@ -101,7 +106,7 @@
       let containerSize = `
         width:${size.containerWidth}px;
         height:${size.containerHeight}px;
-        padding: ${size.containerPadding}px;
+        padding: ${size.containerPadding/2}px ${size.containerPadding}px;
       `
       d3.select(this.$.container).attr('style', containerSize)
       d3.select(this.$.createSvg).attr('width', size.svgWidth).attr('height', size.svgHeight)
