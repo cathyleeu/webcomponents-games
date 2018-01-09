@@ -1,0 +1,26 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": "start",
+  "solution": "start,move_forward1,rotate_right,move_forward1",
+  "problem": "start,move_forward1,rotate_right,move_forward1",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "tile": [
+    {"tile": "%", "img": "fruit_kiwi"}
+  ],
+  "map": [
+    "##%.#",
+    "##..#",
+    "#...#",
+    "##..l",
+    "#####"
+  ],
+  "tutorial": [{
+    "msg:ko": "목표 지점으로 가보자!",
+    "img": ["/img/coding/robot1.png", "/img/c4_w1_c3/fruit_kiwi.png"]
+  }]
+}
