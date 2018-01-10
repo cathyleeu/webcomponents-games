@@ -117,8 +117,8 @@
       let { svgHeight, svgWidth } = this.size,
           svg = d3.select(this.$.createSvg),
           targetSize = svgHeight*(1/data.length),
-          imageSize = svgHeight*0.25,
-          imageBoard = svgWidth-(targetSize*1.5);
+          imageBoard = svgWidth-(targetSize*1.5),
+          imageSize = imageBoard*0.19;
 
       this.set('size.targetSize', targetSize)
       this.set('size.imageSize', imageSize)
