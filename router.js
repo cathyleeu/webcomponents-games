@@ -248,8 +248,8 @@ function getBook(classObj) {
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "D00121") {
     book = [8, 9, 10];
   }
-  // 청아유치원(시범원)
-  if(school == "A00083-K1") {
+  // 시범원 청아유치원, 숙명키즈
+  if(school == "A00083-K1" || school == "A00083-K4") {
     book = ["1-re", "2-re"];
   }
   // YBM영업부(내부용)
