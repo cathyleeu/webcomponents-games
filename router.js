@@ -256,6 +256,10 @@ function getBook(classObj) {
   if(school == "A00083-K3") {
     book = [1, 2, 3, 4, 5, "5-5", 6, 7, 8, 9, 10];
   }
+  // 영업용(시범교육 1,3,5권)
+  if(school == "A00083-K5") {
+    book = [1, 3, 5];
+  }
   // 울산지사 교차로원, 인천지사 유원유치원, 부산지사 동성어학원
   if(school == "A00072-K9" || school == "A00114-K3" || school == "A00066-K2") {
     book = [7, 8];
