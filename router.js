@@ -896,7 +896,20 @@ public.get('/info', function *(next) {
 });
 
 public.post('/issue', function *(next) {
-  yield this.render('issue', this.request.body);
+  var body = this.request.body,
+      info = yield getInfoByCode(body.code),
+      infoClass = info.classes.filter(function(item) {
+        return item.className == body.className;
+      })[0],
+      books = infoClass.book.split(","),
+      level = infoClass.level;
+  books.forEach(function(bookName) {
+    if(bookName.slice(0, 1) == level && bookName.slice(-3) == "-re" && Object.keys(level_json).indexOf(level + "-re") >= 0) {
+      level = infoClass.level + "-re";
+    }
+  });
+  body.level = level;
+  yield this.render('issue', body);
 });
 
 public.get('/kids', function *(next) {
