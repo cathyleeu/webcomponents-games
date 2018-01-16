@@ -275,8 +275,8 @@
     "img": ["/img/renewed_b4/cos0.png","/img/renewed_b4/chest3.png"]
   }],
   "goal": {
-    "msg:ko": "보물 상자 25개를 모으면 할머니에게로 가요.",
-    "msg:en": "Go to grandma with more than 25 chests.",
+    "msg:ko": "보물 상자 21개를 모으면 할머니에게로 가요.",
+    "msg:en": "Go to grandma with more than 21 chests.",
     "img": ["/img/renewed_b4/chest3.png","/img/renewed_b4/f_grandma.png"]
   }
 }
