@@ -5,13 +5,15 @@
   "solution": "start,move_forward1",
   "problem": "start,move_forward1",
   "toolbox": [
-    "move_forward1"
+    "move_forward1",
+    "rotate_left",
+    "rotate_right"
   ],
   "map": [
-    "#####",
-    "#####",
-    "r...%",
-    "#####",
+    "#%..#",
+    "###.#",
+    "###.#",
+    "###u#",
     "#####"
   ],
   "extra":[],
