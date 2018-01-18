@@ -18,7 +18,6 @@
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "목표 지점으로 가보자!",
-    "img": "/img/b5_w1/house.png"
+    "msg:ko": "목표 지점으로 가보자!"
   }]
 }
