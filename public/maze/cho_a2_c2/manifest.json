@@ -1,0 +1,31 @@
+[
+  {"book": "coding", "title": "초등교재"},
+  {"id": "bg1", "src": "/img/cho_a2/bg1.png"},
+  {"id": "bg2", "src": "/img/cho_a2/bg2.png"},
+
+  {"id": "character", "src": "/img/cho_a2/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a2/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a2/chest1.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"tile" : "t", "id": "tree1", "src": "/img/cho_a2/Tree1_256.png", "obstacle": true},
+  {"tile" : "T", "id": "tree2", "src": "/img/cho_a2/Tree2_256.png", "obstacle": true},
+  {"tile" : "f", "id": "flower1", "src": "/img/cho_a2/Flower1_256.png", "obstacle": true},
+  {"tile" : "F", "id": "flower2", "src": "/img/cho_a2/Flower2_256.png", "obstacle": true},
+  {"id": "stone1", "src": "/img/cho_a2/YardStone1_256.png", "obstacle": true},
+  {"id": "stone2", "src": "/img/cho_a2/YardStone2_256.png", "obstacle": true},
+  {"id": "spider", "src": "/img/cho_a2/numbot.png"},
+
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "hand_rock", "src": "/img/kidsblocks/Rock.png"},
+  {"id": "hand_paper", "src": "/img/kidsblocks/Paper.png"},
+  {"id": "hand_scissors", "src": "/img/kidsblocks/Scissors.png"}
+
+]
