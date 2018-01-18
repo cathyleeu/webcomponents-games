@@ -244,6 +244,10 @@ function getBook(classObj) {
   if(school == "B00171-K1") {
     book = [2, 3];
   }
+  // 신아유치원 방학동안 특별상
+  if(school == "A00042-K5") {
+    book = [1, "5-5"];
+  }
   // 대구지사, 압구정PSA는 요청으로 3달치 제공
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "D00121") {
     book = [8, 9, 10];
