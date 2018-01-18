@@ -82,10 +82,10 @@ TileFactory.prototype.create = function(tile, x, y) {
 
   // custom tile 설정
   if(this.custom_tiles[tile]) {
-    if(_this.custom_tiles[tile].id) { // manifest에서의 id는 img로 쓰임
-      info.img = _this.custom_tiles[tile].id;
+    if(this.custom_tiles[tile].id) { // manifest에서의 id는 img로 쓰임
+      info.img = this.custom_tiles[tile].id;
     }
-    Object.keys(_this.custom_tiles[tile]).forEach(function(key) {
+    Object.keys(this.custom_tiles[tile]).forEach(function(key) {
       if(key != "tile") {
         info[key] = _this.custom_tiles[tile][key];
       }
@@ -99,6 +99,10 @@ TileFactory.prototype.create = function(tile, x, y) {
         $.extend(info, obj);
       }
     });
+  }
+
+  if(info.wall) { // wall은 장애물로 쓰이지만 고유 이미지 사용
+    info.obstacle = true;
   }
 
   switch(info.role) {
