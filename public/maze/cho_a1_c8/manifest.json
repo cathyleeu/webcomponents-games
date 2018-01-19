@@ -1,0 +1,34 @@
+[
+  {"book": "초등 A1권", "title": "C6 : 복잡한 길찾기"},
+  {"id": "bg1", "src": "/img/cho_a1/space_tile1.png"},
+  {"id": "bg2", "src": "/img/cho_a1/space_tile2.png"},
+
+  {"id": "character", "src": "/img/c8_w3/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c8_w3/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a1/planet_red.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "planet_yellow", "src": "/img/cho_a1/planet_yellow.png"},
+  {"id": "planet_green", "src": "/img/cho_a1/planet_green.png"},
+  {"id": "planet_blue", "src": "/img/cho_a1/planet_blue.png"},
+  {"id": "boltnnut", "src": "/img/cho_a1/boltnnut.png"},
+  {"id": "drill", "src": "/img/cho_a1/drill.png"},
+  {"id": "hammer", "src": "/img/cho_a1/hammer.png"},
+  {"id": "wrench", "src": "/img/cho_a1/wrench.png"},
+  {"id": "chest", "src": "/img/c7/chest.png"},
+  {"id": "ufo", "src": "/img/b3_w1/ufo.png"},
+
+  {"id": "space_rock1", "src": "/img/cho_a1/space_rock1.png", "obstacle": true},
+  {"id": "space_rock2", "src": "/img/cho_a1/space_rock2.png", "obstacle": true},
+  {"id": "space_rock3", "src": "/img/cho_a1/space_rock3.png", "obstacle": true},
+  {"id": "planet1", "src": "/img/cho_a1/planet1.png", "obstacle": true},
+  {"id": "planet2", "src": "/img/cho_a1/planet2.png", "obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png"},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png"},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png"}
+]
