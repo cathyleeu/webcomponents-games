@@ -1,0 +1,31 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "#####",
+    ".....",
+    "r#%#%",
+    ".....",
+    "#####"
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 2,
+    "img": "planet_yellow"
+    },{
+    "x": 4,
+    "y": 2,
+    "img": "planet_blue"    }
+  ],
+  "tutorial": [{
+    "msg:ko": "노란색 행성을 거쳐 파란색 행성으로 가보자!"
+  }]
+}

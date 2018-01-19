@@ -5,17 +5,19 @@
   "solution": "start,move_forward1",
   "problem": "start,move_forward1",
   "toolbox": [
-    "move_forward1"
+    "move_forward1",
+    "rotate_left",
+    "rotate_right"
   ],
   "map": [
     "#####",
-    "%..l#",
-    "#####",
-    "#####",
+    "##%.#",
+    "#d#.#",
+    "#...#",
     "#####"
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "목표 지점으로 가보자!"
+    "msg:ko": "빨간색 행성으로 가보자!"
   }]
 }

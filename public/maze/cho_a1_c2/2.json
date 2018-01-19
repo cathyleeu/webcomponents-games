@@ -5,9 +5,7 @@
   "solution": "start,move_forward1",
   "problem": "start,move_forward1",
   "toolbox": [
-    "move_forward1",
-    "rotate_left",
-    "rotate_right"
+    "move_forward1"
   ],
   "map": [
     "#####",
@@ -18,7 +16,6 @@
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "목표 지점으로 가보자!",
-    "img": "/img/b5_w1/house.png"
+    "msg:ko": "목표 지점으로 가보자!"
   }]
 }
