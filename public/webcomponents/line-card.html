@@ -18,7 +18,7 @@
         stroke: #2ECC98;
         stroke-width: 3px;
         stroke-linecap: round;
-        marker-end: url(#marker);
+        /* marker-end: url(#marker); */
       }
       circle {
         cursor: pointer;
@@ -231,10 +231,8 @@
               .attr('id', (d) => `bef_line${d.no}`)
 
         selectedCircle.on("mousedown touchstart", (d, i) => pencilingStart(d, i, "bef_") )
-
-
+        svg.on("mousemove touchmove", pencilingMove)
         svg.on("mouseup touchend", pencilingEnd)
-
 
         let af_axisX = this.horizontal ? (d, i) => (110*i+10) + (30*i) : 450,
             af_axisY = this.horizontal ? 350 : (d, i) => (110*i+10) + (30*i);
@@ -295,11 +293,9 @@
 
         rectGroup.attr("transform", (d, i) => `translate(${resultWidth}, ${resultHeight})`);
 
-        var line;
-        let dragId, dropId, startX, startY;
+        let dragId = null, line, dropId, startX, startY;
 
         function pencilingStart (d, i, pos) {
-          console.log("pencilingStart", d, i, pos)
           let getXY = svg.select(`#${pos}cir${d.no}`).attr("transform").match(/\d+/g),
               startX = resultWidth+(+getXY[0]), startY = resultHeight+(+getXY[1]);
 
@@ -310,18 +306,19 @@
                 .attr("x2", startX).attr("y2", startY)
                 .attr("data-pos", pos)
                 .attr("id", (d, i) => `line${dragId}`);
-          svg.on("mousemove touchmove", pencilingMove);
         }
 
-        function pencilingMove(d) {
-          let m = d3.mouse(this);
-          line.attr("x2", m[0]).attr("y2", m[1]);
+        function pencilingMove() {
+          if(dragId !== null) {
+            const m = d3.mouse(this);
+            line.attr("x2", m[0]).attr("y2", m[1]);
+          }
         }
 
         function pencilingEnd() {
+          if (dragId === null) return false
           let pos = line.attr('data-pos')
           let oppos = pos === "af_" ? "bef_" : "af_"
-          if (dragId === undefined) return false
           let filterItems = svg.select(`.${oppos}board`).node().childNodes,
               dropItems = [];
 
@@ -367,8 +364,7 @@
             line.remove();
           }
            _this.set('total', _this.total+1)
-           dragId = undefined;
-           svg.on("mousemove touchmove", null);
+           dragId = null;
 
            if(_this.matched === _this.cards) {
              _this.stage === _this.lastStage ? _this.$.finalStageModal.modalAlert() : _this.$.successModal.modalAlert()
