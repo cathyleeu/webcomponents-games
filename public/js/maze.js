@@ -803,7 +803,7 @@ function addEvents() {
       }
       showModal({
         video: tItem.video,
-        msg: tItem["msg" + (lang ? ":" + lang : "")] || tItem["msg"],
+        msg: tItem["msg:" + lang] || tItem["msg"],
         img: tItem.img,
         link: tItem.link,
         tutorial: true
@@ -873,7 +873,7 @@ function runTutorial(input_tutorial) {
     var noti = $('.noti-guide');
     noti.empty();
     input_tutorial.map(function(txt) {
-      var tutorial = txt["msg:"+lang].replace(/\n/g, "<br/>");
+      var tutorial = (txt["msg:"+lang] || txt["msg"]).replace(/\n/g, "<br/>");
       noti.append("<div class='speech'><div class='speech-bubble'>"+tutorial+"</div></div>");
     });
     noti.prop("scrollHeight") === noti.height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "");
