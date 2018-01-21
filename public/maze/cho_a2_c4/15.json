@@ -1,0 +1,26 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "##3##",
+    "%...l",
+    "##.##",
+    "2...4",
+    "##t##"
+  ],
+  "tile": [
+    {"tile": "%", "img": "f1"}
+  ],
+  "extra":[],
+  "tutorial": [{
+    "msg:ko": "가장 큰 과일이 있는 곳으로 가자.",
+    "msg:en": "Let's go to the biggest fruit."
+  }]
+}

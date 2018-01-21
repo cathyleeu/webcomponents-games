@@ -1,0 +1,52 @@
+[
+  {"book": "coding", "title": "초등교재"},
+  {"id": "bg1", "src": "/img/cho_a2/bg1.png"},
+  {"id": "bg2", "src": "/img/cho_a2/bg2.png"},
+
+  {"id": "character", "src": "/img/cho_a2/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a2/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a2/chest1.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "tree1", "src": "/img/cho_a2/Tree1_256.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/cho_a2/Tree2_256.png", "obstacle": true},
+  {"id": "flower1", "src": "/img/cho_a2/Flower1_256.png", "obstacle": true},
+  {"id": "flower2", "src": "/img/cho_a2/Flower2_256.png", "obstacle": true},
+  {"id": "stone1", "src": "/img/cho_a2/YardStone1_256.png", "obstacle": true},
+  {"id": "stone2", "src": "/img/cho_a2/YardStone2_256.png", "obstacle": true},
+
+  {"tile": "1", "id": "f1","src": "/img/cho_a2/fruit1.png"},
+  {"tile": "2", "id": "f2","src": "/img/cho_a2/fruit2.png"},
+  {"tile": "t", "id": "ft","src": "/img/cho_a2/fruit22.png"},
+  {"tile": "3", "id": "f3","src": "/img/cho_a2/fruit3.png"},
+  {"tile": "4", "id": "f4","src": "/img/cho_a2/fruit4.png"},
+  {"tile": "5", "id": "f5","src": "/img/cho_a2/fruit5.png"},
+
+  {"id": "1g", "src": "/img/cho_a2/1g.png"},
+  {"id": "2g", "src": "/img/cho_a2/2g.png"},
+  {"id": "3g", "src": "/img/cho_a2/3g.png"},
+  {"id": "4g", "src": "/img/cho_a2/4g.png"},
+  {"id": "5g", "src": "/img/cho_a2/5g.png"},
+  {"id": "6g", "src": "/img/cho_a2/6g.png"},
+  {"id": "7g", "src": "/img/cho_a2/7g.png"},
+  {"id": "8g", "src": "/img/cho_a2/8g.png"},
+  {"id": "9g", "src": "/img/cho_a2/9g.png"},
+
+  {"id": "n1", "src": "/img/cho_a2/n1.png"},
+  {"id": "n2", "src": "/img/cho_a2/n2.png"},
+  {"id": "n3", "src": "/img/cho_a2/n3.png"},
+  {"id": "n4", "src": "/img/cho_a2/n4.png"},
+  {"id": "n5", "src": "/img/cho_a2/n5.png"},
+  {"id": "n6", "src": "/img/cho_a2/n6.png"},
+  {"id": "n7", "src": "/img/cho_a2/n7.png"},
+  {"id": "n8", "src": "/img/cho_a2/n8.png"},
+  {"id": "n9", "src": "/img/cho_a2/n9.png"},
+
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false}
+]
