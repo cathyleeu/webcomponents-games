@@ -7,16 +7,28 @@
   "toolbox": [
     "move_forward1",
     "rotate_left",
-    "rotate_right"
+    "rotate_right",
+    "get_item"
   ],
   "map": [
     "#####",
-    ".%###",
-    ".#.l#",
-    "...##",
+    "#####",
+    "r..)#",
+    "###.)",
     "#####"
   ],
+  "extra":[{
+    "x": 3,
+    "y": 2,
+    "img": "chest",
+    "itemCount": 1
+    }, {
+    "x": 4,
+    "y": 3,
+    "img": "chest",
+    "itemCount": 1
+      }],
   "tutorial": [{
-    "msg:ko": "노란색 행성으로 가보자!"
+    "msg:ko": "보물을 모두 찾아 가져오자!"
   }]
 }
