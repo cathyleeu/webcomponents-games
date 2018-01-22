@@ -2,6 +2,9 @@
 <html>
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=no">
 <script type="text/javascript" src="/page/page.js"></script>
 <script type="text/javascript" src="/components/d3/d3.min.js"></script>
 <script type="text/javascript" src="/js/polyfill.min.js"></script>
@@ -63,7 +66,12 @@
                 comp.set('resources', activity.msg);
               }
               document.body.appendChild(comp);
-              comp.setData(activity.data, activity.manifest);
+              // setTimeout(function(){
+                // debugger
+                // console.log("CCCC");
+                comp.setData(activity.data, activity.manifest)
+              // }, 3000)
+
             });
           };
           document.head.appendChild(link);
