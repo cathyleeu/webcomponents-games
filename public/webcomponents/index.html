@@ -66,12 +66,7 @@
                 comp.set('resources', activity.msg);
               }
               document.body.appendChild(comp);
-              // setTimeout(function(){
-                // debugger
-                // console.log("CCCC");
-                comp.setData(activity.data, activity.manifest)
-              // }, 3000)
-
+              comp.setData(activity.data, activity.manifest);
             });
           };
           document.head.appendChild(link);
