@@ -1,0 +1,49 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [],
+  "map": [
+    "###",
+    "#d#",
+    "###"
+  ],
+  "extra":[{
+    "x": 0,
+    "y": 0,
+    "img": "ufo"
+    },{
+    "x": 0,
+    "y": 1,
+    "img": "boltnnut"
+    },{
+    "x": 0,
+    "y": 2,
+    "img": "wrench"
+    },{
+    "x": 1,
+    "y": 0,
+    "img": "drill"
+    },{
+    "x": 1,
+    "y": 2,
+    "img": "hammer"
+    },{
+    "x": 2,
+    "y": 0,
+    "img": "wrench"
+    },{
+    "x": 2,
+    "y": 1,
+    "img": "boltnnut"
+    },{
+    "x": 2,
+    "y": 2,
+    "img": "ufo"
+    }],
+  "tutorial": [{
+    "msg:ko": "8단원 활동이 끝났어요! 다음 활동에서 만나요."
+  }]
+}
