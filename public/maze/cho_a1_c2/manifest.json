@@ -12,6 +12,11 @@
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
+  {"id": "fruit_strawberry", "src": "/img/c4_w1_c3/fruit_strawberry.png"},
+  {"id": "apple", "src": "/img/b8_w3/apple.png"},
+  {"id": "fruit_watermelon", "src": "/img/c4_w1_c3/fruit_watermelon.png"},
+  {"id": "grape", "src": "/img/b8_w3/grape.png"},
+
   {"id": "wall", "src": "/img/c4_w2/walls.png", "obstacle": true},
 
   {"tile": "h", "id": "hard", "src": "/img/guide/hard.png"},
