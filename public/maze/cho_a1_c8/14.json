@@ -7,21 +7,29 @@
   "toolbox": [
     "move_forward1",
     "rotate_left",
-    "rotate_right"
+    "rotate_right",
+    "get_item",
+    "use_item"
   ],
   "map": [
     "#####",
-    "#....",
-    "#.##%",
-    "#.##.",
-    "#u..."
+    "###%#",
+    "###.#",
+    "#.).#",
+    "#u###"
   ],
   "extra":[{
-    "x": 4,
-    "y": 2,
-    "img": "planet_blue"
-    }],
+    "x": 2,
+    "y": 3,
+    "img": "hammer",
+    "itemCount": 2
+    }, {
+    "x": 3,
+    "y": 1,
+    "img": "ufo",
+    "useItem": true
+      }],
   "tutorial": [{
-    "msg:ko": "노란색 행성으로 가보자!"
+    "msg:ko": "우주선을 고치기 위해 공구 2개를 우주선으로 가져가서 사용하자!"
   }]
 }
