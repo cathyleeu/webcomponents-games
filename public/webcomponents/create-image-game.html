@@ -157,14 +157,14 @@
             this.push('axis', [i,j])
           }
         }
-
         for(let i = 0; i < dragItems; i++){
 
-          //TODO: useditem 경우...
+          //FIXME: 리팩토링 필요
           let targetItem = d3.select(this.shadowRoot).select(`#${this.items[i].name}_${i}`),
               draggedItem = targetItem.attr('data-item')
 
           if(draggedItem) {
+            //이미 드래그 된 아이템
             let targetX = +targetItem.attr('axisX'),
                 targetY = +targetItem.attr('axisY')
             targetItem.attr('width', `${originImgSize}`).attr('height', `${originImgSize}`)
@@ -172,23 +172,33 @@
                       .attr('y', targetY*reAxis-(originImgSize/2))
 
             if(this.multiple){
+              //이미 드래그 된 아이템 && multiple가 있는 아이템
               targetItem.attr('width', `${imageItemSize}`).attr('height', `${imageItemSize}`)
                         .attr('x', targetX*reAxis-(imageItemSize/2))
                         .attr('y', targetY*reAxis-(imageItemSize/2))
             }
           } else {
+            //드래그가 안된 아이템
             targetItem.attr('width', `${originImgSize}`).attr('height', `${originImgSize}`)
               .attr('x', this.handleSettleItem(this.items[i], i) )
               .attr('y', this.items[i].axis
-                ? this.items[i].axis[1]*reAxis-(originImgSize/2)
-                : this.dragItemHorizontalMargin+(this.axis[i][0]*(originImgSize))+150)
-
+                  ? this.items[i].axis[1]*reAxis-(originImgSize/2)
+                  : this.dragItemHorizontalMargin+(this.axis[i][0]*(originImgSize))+150
+              )
           }
-          targetItem.call(d3.drag()
-            .on("start", this.dragstarted)
-            .on("drag", this.dragged)
-            .on("end", this.dragended))
 
+          //초기에 설정되는 이미지
+          if(this.items[i].axis){
+            targetItem.attr('x', this.items[i].axis[0]*reAxis-(originImgSize/2))
+                      .attr('y', this.items[i].axis[1]*reAxis-(originImgSize/2))
+                      .call(d3.drag()
+                        .on("start", null))
+          }else {
+            targetItem.call(d3.drag()
+              .on("start", this.dragstarted)
+              .on("drag", this.dragged)
+              .on("end", this.dragended))
+          }
         }
       }
       dispatchToChild(){
@@ -204,7 +214,7 @@
         // debugger
         let element = d3.select('#element').node(),
             svg = d3.select(element.shadowRoot).select("#createSvg").node();
-        // console.log("exportImage");
+
 
         let targetNodes = []
         svg.childNodes.forEach(el => {
@@ -339,7 +349,6 @@
           }
 
           if(self.multiple) {
-            console.log("dragged EEEE");
             let imageItemSize = self.size.imageItemSize
             d3.select(this)
               .attr("width", `${imageItemSize}`)
@@ -460,16 +469,21 @@
              .attr("id", (d,i) => `${d.name}_${i}`)
              .attr('width', `${originImgSize}`).attr('height', `${originImgSize}`)
              .attr("data-item", (d, i) => d.axis ? "used" : null)
-             .call(d3.drag()
-               .on("start", this.dragstarted)
-               .on("drag", this.dragged)
-               .on("end", this.dragended))
              .attr('x', ( d, i ) => this.handleSettleItem(d, i) )
              .attr('y', ( d, i ) =>
                d.axis
                ? d.axis[1]*reAxis-(originImgSize/2)
                : this.dragItemHorizontalMargin+(this.axis[i][0]*(originImgSize))+150
              );
+
+          appendImages.nodes().forEach(el => {
+            if(!el.__data__.axis){
+              d3.select(el).call(d3.drag()
+                .on("start", this.dragstarted)
+                .on("drag", this.dragged)
+                .on("end", this.dragended))
+            }
+          })
 
       }
     }
