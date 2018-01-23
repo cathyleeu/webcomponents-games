@@ -32,7 +32,7 @@
     "x": 4,
     "y": 1,
     "img": "ufo",
-    "useItem": true
+    "useItem": 2
       }],
   "tutorial": [{
     "msg:ko": "우주선을 고치기 위해 공구 2개를 우주선으로 가져가서 사용하자!"
