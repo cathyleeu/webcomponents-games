@@ -20,6 +20,7 @@
     "img": "grape"
     }],
   "tutorial": [{
-    "msg:ko": "포도로 가보자!"
+    "msg:ko": "포도로 가보자!",
+    "msg:en": "Go to the grape!"
   }]
 }

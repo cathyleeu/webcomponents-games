@@ -20,6 +20,7 @@
     "img": "apple"
     }],
   "tutorial": [{
-    "msg:ko": "사과로 가보자!"
+    "msg:ko": "사과로 가보자!",
+    "msg:en": "Go to the apple!"
   }]
 }

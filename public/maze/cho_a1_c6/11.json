@@ -22,6 +22,7 @@
     "img": "planet_green"
     }],
   "tutorial": [{
-    "msg:ko": "노란색 행성으로 가보자!"
+    "msg:ko": "초록색 행성으로 가보자!",
+    "msg:en": "Let's go to the green planet!"
   }]
 }

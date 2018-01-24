@@ -20,6 +20,7 @@
     "img": "fruit_watermelon"
     }],
   "tutorial": [{
-    "msg:ko": "수박으로 가보자!"
+    "msg:ko": "수박으로 가보자!",
+    "msg:en": "Go to the watermelon!"
   }]
 }
