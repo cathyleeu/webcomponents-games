@@ -17,6 +17,7 @@
     "##%##"
   ],
   "tutorial": [{
-    "msg:ko": "빨간색 행성으로 가보자!"
+    "msg:ko": "빨간색 행성으로 가보자!",
+    "msg:en": "Let's go to the red planet!"
   }]
 }

@@ -16,6 +16,7 @@
   ],
   "extra":[],
   "tutorial": [{
-    "msg:ko": "목표 지점으로 가보자!"
+    "msg:ko": "목표 지점으로 가보자!",
+    "msg:en": "Go to the flag!"
   }]
 }

@@ -30,6 +30,7 @@
     "useItem": true
       }],
   "tutorial": [{
-    "msg:ko": "우주선을 고치기 위해 공구를 우주선으로 가져가서 사용하자!"
+    "msg:ko": "우주선을 고치기 위해 공구를 우주선으로 가져가서 사용하자!",
+    "msg:en": "Take the tools to the spaceship and use them to fix it!"
   }]
 }

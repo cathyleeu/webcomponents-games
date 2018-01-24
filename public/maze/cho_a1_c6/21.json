@@ -44,6 +44,7 @@
     "img": "planet_green"
     }],
   "tutorial": [{
-    "msg:ko": "6단원 활동이 끝났어요! 다음 활동에서 만나요."
+    "msg:ko": "6단원 활동이 끝났어요! 다음 활동에서 만나요.",
+    "msg:en": "Activities of chapter 6 are finished! See you next time."
   }]
 }

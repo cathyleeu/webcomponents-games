@@ -24,6 +24,7 @@
     "itemCount": 1
     }],
   "tutorial": [{
-    "msg:ko": "공구를 가져오자!"
+    "msg:ko": "공구를 가져오자!",
+    "msg:en": "Let's get the tool!"
   }]
 }

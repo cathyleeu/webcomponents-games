@@ -20,6 +20,7 @@
     "img": "fruit_strawberry"
     }],
   "tutorial": [{
-    "msg:ko": "딸기로 가보자!"
+    "msg:ko": "딸기로 가보자!",
+    "msg:en": "Go to the strawberry!"
   }]
 }

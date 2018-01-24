@@ -22,6 +22,7 @@
     "img": "planet_yellow"
     }],
   "tutorial": [{
-    "msg:ko": " 빨간색 행성을 거쳐 노란색 행성으로 가보자!"
+    "msg:ko": " 빨간색 행성을 거쳐 노란색 행성으로 가보자!",
+    "msg:en": "Let's go through the red planet and go to the yellow planet!"
   }]
 }
