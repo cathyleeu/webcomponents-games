@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+  "view_size": 8,
+  "workspace": ["start"],
+  "toolbox": [
+    "go_bakery",
+    "go_hospital",
+    "go_kindergarten",
+    "go_mart",
+    "go_movie",
+    "go_playground",
+    "go_school",
+    "go_servicecenter"
+  ],
+  "map": [
+    "1.3562.4",
+    "2.4651.3",
+    "1.3562.4",
+    "2.4651.3",
+    "1......4",
+    "2.4651.3",
+    "2.3562.4",
+    "2.4651.3"
+  ],
+  "tile": [
+    {"tile": "1", "img": "yard1"},
+    {"tile": "2", "img": "yard2"},
+    {"tile": "3", "img": "con1"},
+    {"tile": "4", "img": "con2"},
+    {"tile": "5", "img": "water1"},
+    {"tile": "6", "img": "water2"}
+  ],
+  "tutorial": [{
+    "msg:ko": "시작버튼을 눌러서 유치원에 가요.",
+    "msg:en": "Press the start button to move kindergarden.",
+    "img": ["/img/a4re_w1/kindergarten.png","/img/a4re_w1/start_block.png"]
+  }]
+}
