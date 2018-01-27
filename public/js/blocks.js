@@ -117,6 +117,94 @@ Blocks["immigrant"] = {
   ],
   action: ["steploop", "immigrant"]
 };
+Blocks["go_bakery"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 빵집으로 가기",
+    en: "%1 move to bakery."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/bakery.png"}
+  ],
+  action: ["steploop", "ddddddl"]
+};
+Blocks["go_hospital"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 병원으로 가기",
+    en: "%1 move to hospital."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/hospital.png"}
+  ],
+  action: ["steploop", "ddddrrrru"]
+};
+Blocks["go_kindergarten"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 유치원으로 가기",
+    en: "%1 move to kindergarden."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/kindergarten.png"}
+  ],
+  action: ["steploop", "ddddrrrrruuuul"]
+};
+Blocks["go_mart"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 마트로 가기",
+    en: "%1 move to mart."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/mart.png"}
+  ],
+  action: ["steploop", "dddddr"]
+};
+Blocks["go_movie"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 극장으로 가기",
+    en: "%1 move to theater."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/movie.png"}
+  ],
+  action: ["steploop", "ddddrrrrrr"]
+};
+Blocks["go_playground"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 놀이터로 가기",
+    en: "%1 move to playground."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/playground.png"}
+  ],
+  action: ["steploop", "dddl"]
+};
+Blocks["go_school"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 학교로 가기",
+    en: "%1 move to school."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/school.png"}
+  ],
+  action: ["steploop", "ddddrrrrrddr"]
+};
+Blocks["go_servicecenter"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 주민센터로 가기",
+    en: "%1 move to servicecenter."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/servicecenter.png"}
+  ],
+  action: ["steploop", "ddddrrrrruuur"]
+};
 Blocks["frog_left"] = {
   rgbColor: "#DC6195",
   message0: {

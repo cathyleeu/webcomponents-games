@@ -419,18 +419,24 @@
     ["겨울잠에서 깨어나요", "Wake up from wintersleep", "/activity#!a2re_w3"],
     ["딸기가 좋아요", "Cos likes strawberry", "/activity#!a2re_w4"]
   ],
+  "A-3":[
+    ["코스네 가족 이사하기", "Moving Cos' family", "/mazeh#!a3_w3/1"],
+    ["끌어다 놓기 연습", "Drag and Drop", "/b1_w4"]
+  ],
   "A-3-re":[
     ["즐거운 우리 가족", "Happy family", "/activity#!a3re_w1"],
     ["집을 지어요", "Building a house", "/activity#!a3re_w2"],
     ["집을 꾸며요", "Decorating the house", "/activity#!a3re_w3"],
     ["마당을 꾸며요", "Decorating the yard", "/activity#!a3re_w4"]
   ],
-  "A-3":[
-    ["코스네 가족 이사하기", "Moving Cos' family", "/mazeh#!a3_w3/1"],
-    ["끌어다 놓기 연습", "Drag and Drop", "/b1_w4"]
-  ],
   "A-4":[
     ["방을 정리해요", "Tidy up", "/a4_w3"]
+  ],
+  "A-4-re":[
+    ["우리 동네에는 무엇이 있나요", "What is in my hometown", "/mazeh#!a4re_w1"],
+    ["친구와 놀아요", "Play with friends", "/activity#!a4re_w2"],
+    ["이사를 왔어요", "I'm moving", "/activity#!a4re_w3"],
+    ["화분을 키워요", "I raise pots.", "/activity#!a4re_w4"]
   ],
   "A-5":[
     ["매미의 성장", "Life cycle of a cicada", "/mazeh#!a5_w3/1"],

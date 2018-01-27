@@ -1,0 +1,35 @@
+{
+  "tile_size": 128,
+  "view_size": 8,
+  "workspace": ["start"],
+  "toolbox": [
+    "go_school"
+  ],
+  "map": [
+    "3d#..4.#",
+    "#.#..w.9",
+    "f.#..f.#",
+    "7.#..2.#",
+    "#......6",
+    "w.5..#.#",
+    "1.#..w.%",
+    "#.#..#.#"
+  ],
+  "tile": [
+    {"tile": "1", "img": "bakery"},
+    {"tile": "2", "img": "hospital"},
+    {"tile": "3", "img": "house"},
+    {"tile": "4", "img": "kindergarten"},
+    {"tile": "5", "img": "mart"},
+    {"tile": "6", "img": "movie"},
+    {"tile": "7", "img": "playground"},
+    {"tile": "8", "img": "school"},
+    {"tile": "9", "img": "servicecenter"},
+    {"tile": "%", "img": "school"}
+  ],
+  "tutorial": [{
+    "msg:ko": "블록을 조립해서 학교에 가요.",
+    "msg:en": "Assemble a block to move school.",
+    "img": ["/img/a4re_w1/block_school.png","/img/a4re_w1/school.png"]
+  }]
+}
