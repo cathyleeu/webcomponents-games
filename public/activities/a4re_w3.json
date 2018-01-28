@@ -9,10 +9,10 @@
     "last" : 4
   },
   "manifest": [
-    {"src": "/img/a4re_w3/w3_step1.png", "step": 1},
-    {"src": "/img/a4re_w3/w3_step2.png", "step": 2},
-    {"src": "/img/a4re_w3/w3_step3.png", "step": 3},
-    {"src": "/img/a4re_w3/w3_step4.png", "step": 4},
+    {"src": "/img/a4re_w3/step1.png", "step": 1},
+    {"src": "/img/a4re_w3/step2.png", "step": 2},
+    {"src": "/img/a4re_w3/step3.png", "step": 3},
+    {"src": "/img/a4re_w3/step4.png", "step": 4},
     {"src": "/img/a4re_w3/error1.png"},
     {"src": "/img/a4re_w3/error2.png"}
   ],
