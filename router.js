@@ -232,8 +232,8 @@ function getKinder(kinderId) {
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
       book = [9, 10];
-  // 용인지사 요청으로 노블 원 먼저 업데이트
-  if(school == "A00088-K2") {
+  // 용인 노블, 킨더메르헨 먼저 업데이트
+  if(school == "A00088-K2" || school == "C00089-K1") {
     book = [10, "10-5"];
   }
   // 성동 ECC 1권부터 시작
