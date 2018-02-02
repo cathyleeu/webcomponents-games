@@ -999,7 +999,7 @@ Blocks["get_item"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
@@ -1045,7 +1045,7 @@ Blocks["get_item_notuse"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
@@ -1091,7 +1091,7 @@ Blocks["use_item"] = {
     en: "%1 Use Item"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/Using.png"}
+    {type: "field_image", src: "/img/kidsblocks/use.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Using.png"}
@@ -1105,7 +1105,7 @@ Blocks["get_item2"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
@@ -1119,7 +1119,7 @@ Blocks["get_item2_split"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
@@ -1133,7 +1133,7 @@ Blocks["use_item2"] = {
     en: "%1 Use Item"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/Using.png"}
+    {type: "field_image", src: "/img/kidsblocks/use.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Using.png"}
@@ -1147,7 +1147,7 @@ Blocks["get_item3"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/Bring.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}

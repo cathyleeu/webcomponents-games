@@ -90,7 +90,7 @@ KidsCoding = function() {
       if(arg.imageField) {
         var imageField = arg.imageField,
             svgRoot = imageField.getSvgRoot(),
-            xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*),([+-]?\d*\.?\d*)\)/),
+            xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]([+-]?\d*\.?\d*)\)/),
             x = +xy[1] - (40-imageField.size_.width)/2,
             y = +xy[2] - (40-imageField.size_.height)/2;
         svgRoot.setAttribute("transform", "translate(" + x + "," + y + ")");
@@ -104,7 +104,7 @@ KidsCoding = function() {
       var ret = renderFields_.call(this, a, b, c);
       if(a[0].imageElement_) {
         var svgRoot = a[0].getSvgRoot(),
-            xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*),([+-]?\d*\.?\d*)\)/);
+            xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]([+-]?\d*\.?\d*)\)/);
         svgRoot.setAttribute("transform", "translate(" + +xy[1] + "," + (+xy[2]+3) + ")");
       }
       return ret;
