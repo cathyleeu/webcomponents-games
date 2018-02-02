@@ -234,7 +234,7 @@ function getBook(classObj) {
       book = [10, "10-5"];
   // 성동 ECC 1권부터 시작
   if(school == "B00163-K1") {
-    book = [6, 7];
+    book = [1, 6, 7];
   }
   // 영업부 평택지사 리베창의력사고학원 1권부터 시작
   if(school == "C00166-K1") {
