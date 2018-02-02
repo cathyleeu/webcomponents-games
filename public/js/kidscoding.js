@@ -83,7 +83,41 @@ KidsCoding = function() {
 
       return metrics;
     }
-  } else if(this.blockType == "default") {
+    var renderDraw_ = Blockly.BlockSvg.prototype.renderDraw_;
+    // 필드 이미지 크기에 따른 가운데 정렬
+    Blockly.BlockSvg.prototype.renderDraw_ = function(arg) {
+      renderDraw_.call(this, arg);
+      if(arg.imageField) {
+        var imageField = arg.imageField,
+            svgRoot = imageField.getSvgRoot(),
+            xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*),([+-]?\d*\.?\d*)\)/),
+            x = +xy[1] - (40-imageField.size_.width)/2,
+            y = +xy[2] - (40-imageField.size_.height)/2;
+        svgRoot.setAttribute("transform", "translate(" + x + "," + y + ")");
+      }
+    }
+  } else if(this.blockType == "vertical") {
+    var renderFields_ = Blockly.BlockSvg.prototype.renderFields_,
+        renderCompute_ = Blockly.BlockSvg.prototype.renderCompute_;
+    // 필드 이미지 세로 위치 조정
+    Blockly.BlockSvg.prototype.renderFields_ = function(a, b, c) {
+      var ret = renderFields_.call(this, a, b, c);
+      if(a[0].imageElement_) {
+        var svgRoot = a[0].getSvgRoot(),
+            xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*),([+-]?\d*\.?\d*)\)/);
+        svgRoot.setAttribute("transform", "translate(" + +xy[1] + "," + (+xy[2]+3) + ")");
+      }
+      return ret;
+    };
+    // 필드 이미지 가로 위치 조정
+    Blockly.BlockSvg.prototype.renderCompute_ = function(arg) {
+      var ret = renderCompute_.call(this, arg);
+      if(ret[0][0].fieldRow[0].imageElement_) {
+        ret[0].paddingStart = 30 - ret[0][0].fieldRow[0].size_.width/2;
+      }
+      return ret;
+    };
+  } else {
     var labelInit = Blockly.FieldLabel.prototype.init;
     // 텍스트 라벨의 위치 조정
     Blockly.FieldLabel.prototype.init = function() {
