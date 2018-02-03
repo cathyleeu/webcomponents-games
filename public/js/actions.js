@@ -1242,6 +1242,63 @@ Actions.prototype.conditioncheck = function(options, block, callback) {
         callback();
       }, 500);
     }
+  }else if (options == "card"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      if(tileInfo.role == "if"){
+        for(var i = 0; i<foods.length;i++){
+          if(tileInfo.role==foods[i].order){
+            foods.push(foods[i]);
+            foods.splice(0,foods.length-1);
+          }
+        }
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        for(var i = 0; i<foods.length;i++){
+          if(tileInfo.role==foods[i].order){
+            foods.push(foods[i]);
+            foods.splice(0,foods.length-1);
+          }
+        }
+        setTimeout(function() {
+          callback();
+        }, 500);
+      }
+    });
+    /*
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    this._splitObjects(tileInfo, function() {
+      if(tileInfo.role == "if"){
+        for(var i = 0; i<foods.length;i++){
+          if(tileInfo.role==foods[i].order){
+            foods.push(foods[i]);
+            foods.splice(0,foods.length-1);
+          }
+        }
+        if_block = block.getInputTargetBlock("if_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(if_block, callback);
+        }, 500);
+      }else{
+        for(var i = 0; i<foods.length;i++){
+          if(tileInfo.role==foods[i].order){
+            foods.push(foods[i]);
+            foods.splice(0,foods.length-1);
+          }
+        }
+        else_block = block.getInputTargetBlock("else_statements");
+        setTimeout(function() {
+          block.removeSelect();
+          _this.run(else_block, callback);
+        }, 500);
+      }
+    });
+    */
   }else if(options == "item_notuse"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
     var errorMsg = "확인하기 블록을 사용한 다음에 조건 블록을 사용해 주세요.";

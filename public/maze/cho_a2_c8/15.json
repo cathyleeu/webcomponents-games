@@ -1,0 +1,65 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "check",
+    "condition2_5_bigger"
+  ],
+  "map": [
+    "########",
+    "#..#.#.#",
+    "#d#.#..#",
+    "#.##.#.#",
+    "#&.....#",
+    "#%#%##.#",
+    "#.#...##",
+    "########"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 4,
+    "contents" : [{
+      "img": "h2",
+      "role": "else"
+    },{
+      "img": "h3",
+      "role": "else"
+    },{
+      "img": "h4",
+      "role": "else"
+    },{
+      "img": "h5",
+      "role": "else"
+    },{
+      "img": "h6",
+      "role": "if"
+    },{
+      "img": "h7",
+      "role": "if"
+    },{
+      "img": "h8",
+      "role": "if"
+    },{
+      "img": "h9",
+      "role": "if"
+    }]
+  },{
+    "x": 3,
+    "y": 5,
+    "img": "little",
+    "order": "else"
+  },{
+    "x": 1,
+    "y": 5,
+    "img": "many",
+    "order": "if"
+  }],
+  "tutorial": [{
+    "msg:ko": "카드를 확인하여 나온 숫자가 5보다 크면 많은 수의 별로 이동해요.",
+    "msg:en": "If more than 5, let's go the large number of stars."
+  }]
+}
