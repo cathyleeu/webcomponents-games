@@ -1,0 +1,21 @@
+[
+  {"book": "c2", "title": "1주차 : 키즈블록으로 움직여요"},
+  {"id": "bg1", "src": "/img/c2_w1/water0.png"},
+  {"id": "bg2", "src": "/img/c2_w1/water1.png"},
+  {"id": "character", "src": "/img/c2_w1/SpriteLana_256.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c2_w1/lana0.png", "size": 256},
+  {"id": "food", "src": "/img/c2_w1/lotus.png"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+  {"id": "tree1", "src": "/img/c2_w1/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/c2_w1/tree2.png", "obstacle": true},
+  {"id": "plant3", "src": "/img/c2_w1/plant3.png", "obstacle": true},
+  {"id": "plant4", "src": "/img/c2_w1/plant4.png", "obstacle": true},
+  {"id": "pondstone1", "src": "/img/c2_w1/pondstone1.png", "obstacle": true},
+  {"id": "pondstone2", "src": "/img/c2_w1/pondstone2.png", "obstacle": true},
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false}
+]

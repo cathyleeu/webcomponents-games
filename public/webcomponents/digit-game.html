@@ -133,15 +133,15 @@
         this.set('point', this.point+5)
         this.set('stage', this.stage+1)
         d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
-        this.setData( this.data , this.manifest)
+        this.setData( this.data , this.digit)
       }
       setData( data , manifest){
         this.set('data', data) // 객관식 수
-        this.set('manifest', manifest)
+        // this.set('manifest', manifest)
 
         // range : 한자리 수, 두 자리수 정해 줌
         let range = "1", count, numData = [];
-        for(let i = 0; i < manifest; i++) { range+="0" }
+        for(let i = 0; i < this.digit; i++) { range+="0" }
         count = +range.slice(0, range.length-1 )
         for (let i = count; i < +range; i++){ numData.push(i) }
 

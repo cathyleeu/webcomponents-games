@@ -1,0 +1,42 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3"
+  ],
+  "map": [
+    "%#######",
+    "#.#....#",
+    "#.#..#.#",
+    "#.#..#.#",
+    "#.r..#.#",
+    "#.##.#.#",
+    "#...)#.#",
+    "########"
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
+    "x": 4,
+    "y": 6,
+    "img": "chest",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "보물 상자로 가서 새로운 키즈블록인 '가져오기'를 사용해 봐!",
+    "msg:en": "Go to the chest and try to use the new Kidsblock, 'get items' block!",
+    "img": ["/img/renewed_b4/chest1.png","/img/blocks/bring.png"]
+  }],
+  "goal": {
+    "msg:ko": "보물 상자에서 '가져오기' 블록을 사용하자.",
+    "msg:en": "Let's use 'get items' block on the chest",
+    "img": ["/img/renewed_b4/chest1.png","/img/blocks/bring.png"]
+  }
+}

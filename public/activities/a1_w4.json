@@ -13,19 +13,16 @@
     "안젤리나"
   ],
   "attributes": {
-
-  },
-  "manifest": {
-    "level" : "reA",
+    "level" : "A",
     "images" : 9
   },
   "msg": {
     "ko": {
-      "title": "로그인 연습을 해주세요",
+      "title": "로그인을 연습해요",
       "score": "점수",
       "success": "참 잘했어요!",
       "successHead": "참 잘했어요!",
-      "successBtm" : "다시 연습해보아요?",
+      "successBtm" : "다시 연습해보아요!",
       "logoutHead": "로그아웃",
       "logoutBtm": "로그아웃 하시겠습니까?",
       "previousHead" : "돌아가기",

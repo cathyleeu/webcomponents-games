@@ -8,11 +8,6 @@ TileFactory = function(maze, loader, tile_size) {
     "%": "food",
     ")": "item",
     "&": "chest",
-    "5": "rock",
-    "4": "rock",
-    "3": "rock",
-    "2": "rock",
-    "1": "rock",
     "^": "trap",
     "#": "obstacle",
     "R": "spider",
@@ -82,10 +77,10 @@ TileFactory.prototype.create = function(tile, x, y) {
 
   // custom tile 설정
   if(this.custom_tiles[tile]) {
-    if(_this.custom_tiles[tile].id) { // manifest에서의 id는 img로 쓰임
-      info.img = _this.custom_tiles[tile].id;
+    if(this.custom_tiles[tile].id) { // manifest에서의 id는 img로 쓰임
+      info.img = this.custom_tiles[tile].id;
     }
-    Object.keys(_this.custom_tiles[tile]).forEach(function(key) {
+    Object.keys(this.custom_tiles[tile]).forEach(function(key) {
       if(key != "tile") {
         info[key] = _this.custom_tiles[tile][key];
       }
@@ -99,6 +94,10 @@ TileFactory.prototype.create = function(tile, x, y) {
         $.extend(info, obj);
       }
     });
+  }
+
+  if(info.wall) { // wall은 장애물로 쓰이지만 고유 이미지 사용
+    info.obstacle = true;
   }
 
   switch(info.role) {
@@ -661,6 +660,18 @@ TileFactory.prototype.create = function(tile, x, y) {
         };
       }
       if(character.src.indexOf('rudolph_deer') >= 0) {
+        animations = {
+          stand_u: 9,
+          walk_u: [9,10,9,11,9],
+          stand_r: 3,
+          walk_r: [3,4,3,5,3],
+          stand_d: 0,
+          walk_d: [0,1,0,2,0],
+          stand_l: 6,
+          walk_l: [6,7,6,8,6]
+        };
+      }
+      if(character.src.indexOf('deer_cos') >= 0) {
         animations = {
           stand_u: 9,
           walk_u: [9,10,9,11,9],

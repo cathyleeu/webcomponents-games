@@ -1,0 +1,26 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [
+    "move_forward1"
+  ],
+  "map": [
+    "#####",
+    "####%",
+    "####.",
+    "####.",
+    "####u"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 1,
+    "img": "fruit_watermelon"
+    }],
+  "tutorial": [{
+    "msg:ko": "수박으로 가보자!",
+    "msg:en": "Go to the watermelon!"
+  }]
+}

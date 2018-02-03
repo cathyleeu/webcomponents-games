@@ -1,0 +1,33 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#.###...#",
+    "##..#...#",
+    "#.##.##.#",
+    "#.d.#%.##",
+    "##.##.#.#",
+    "#.....#.#",
+    ".#######."
+  ],
+  "tutorial": [{
+  },{
+    "msg:ko": "코스의 보물창고로 가보자!",
+    "msg:en": "Let's go to Cos' treasure house",
+    "img" : "/img/c2_w3/warehouse.png"
+  }],
+  "goal": {
+    "msg:ko": "코스의 보물창고로 가보자!",
+    "msg:en": "Let's go to Cos' treasure house",
+    "img" : "/img/c2_w3/warehouse.png"
+  }
+}

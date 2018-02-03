@@ -1,0 +1,252 @@
+<style>
+#container {
+  position: relative;
+}
+
+.head {
+  position: relative;
+}
+
+.instruction {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+  background: #2C3E50;
+  color: white;
+}
+
+.hint {
+  position: relative;
+  height: 50px;
+  text-align: center;
+  background: #18BC9C;
+  color: white;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.workspace {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 800px; width: 1280px;
+}
+.workspace .elmain {
+  height: 600px;
+  width: auto;
+  margin-left: 30px;
+  display: block;
+  float:left;
+}
+.workspace .elupdown {
+  width: 100px;
+  height: auto;
+  margin-top: 250px;
+  margin-left: 50px;
+  display: block;
+  float:left;
+}
+.workspace .elnum {
+  width: 150px;
+  height: auto;
+  margin-top: 200px;
+  margin-left: 50px;
+  display: none;
+  float:left;
+}
+.sel-box {
+  position: absolute;
+  border:2px dashed transparent;
+  padding:10px;
+  height: 60px;
+  width: 60px;
+  top: 270px;
+  left: 600px;
+  cursor:pointer;
+}
+.num-box {
+  position: absolute;
+  border:2px dashed transparent;
+  padding:10px;
+  height: 40px;
+  width: 40px;
+  cursor:default;
+}
+.text-box {
+  position: absolute;
+  border:2px dashed transparent;
+  background-color: #000000;
+  text-align: center;
+  color: yellow;
+  font-size: 22px;
+  padding:10px;
+  height: 45px;
+  width: 160px;
+  top: 20px;
+  left: 195px;
+}
+.room-box {
+  position: absolute;
+  border:2px dashed transparent;
+  background-color: #FAFAD2;
+  text-align: center;
+  color: black;
+  font-size: 12px;
+  padding:2px;
+  height: 16px;
+  width: 50px;
+  top: 272px;
+  left: 250px;
+  display: none;
+}
+
+
+</style>
+<div id="container">
+  <div class="head">
+    <div class="instruction" data-msg="instruction">컴퓨터와 생활:엘리베이터</div>
+    <div class="hint" data-msg="hint">화살표 버튼을 눌러 엘레베이터를 불러봐요!</div>
+  </div>
+  <div class="workspace">
+    <div class="text-box">1</div>
+    <div class="room-box">501</div>
+    <div class="num-box" idx="2" style="top: 375px; left: 653px;"></div>
+    <div class="num-box" idx="3" style="top: 335px; left: 605px;"></div>
+    <div class="num-box" idx="4" style="top: 335px; left: 653px;"></div>
+    <div class="num-box" idx="5" style="top: 295px; left: 605px;"></div>
+    <div class="num-box" idx="6" style="top: 295px; left: 653px;"></div>
+    <div class="num-box" idx="7" style="top: 255px; left: 605px;"></div>
+    <div class="num-box" idx="8" style="top: 255px; left: 653px;"></div>
+    <div class="num-box" idx="9" style="top: 215px; left: 605px;"></div>
+    <div class="num-box" idx="10" style="top: 215px; left: 653px;"></div>
+    <div class="sel-box"></div>
+    <img class="elmain" src="img/b1_w1/el_mian0.png"/>
+    <img class="elupdown" src="img/b1_w1/el_updown1.png"/>
+    <img class="elnum" src="img/b1_w1/el_num0.png"/>
+  </div>
+
+</div>
+
+<script>
+  var hash = location.hash,
+      lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+      msg = {
+        ko: {
+          instruction: "컴퓨터와 생활:엘리베이터",
+          hint: "화살표 버튼을 눌러 엘레베이터를 불러봐요!",
+          hint1: "엘리베이터가 왔어요! 안으로 들어가봐요!",
+          hint2: "엘리베이터 안으로 들어왔어요! 가고싶은 층을 눌러봐요!",
+          hint3: "엘리베이터가 도착했어요! 밖으로 나가봐요!",
+          success: "성공!"
+        },
+        en: {
+          instruction: "Elevator Practice",
+          hint: "Press the button to call the elevator!",
+          hint1: "The elevator is here. Go inside.",
+          hint2: "Press the floor where you want to go.",
+          hint3: "The elevator arrived on the fifth floor. Go out.",
+          success: "Success!"
+        }
+      };
+  var step = 1;
+  var audio0 = new Audio('img/b1_w1/el_sound0.mp3');
+  var audio1 = new Audio('img/b1_w1/el_sound1.mp3');
+  var audio2 = new Audio('img/b1_w1/el_sound2.mp3');
+  var audio4 = new Audio('img/b1_w1/walk.mp3');
+  var audio5 = new Audio('sound/complete.mp3');
+  $("[data-msg]").each(function(idx, el) {
+    $(el).text(msg[lang][$(el).data("msg")]);
+  });
+  $(".sel-box").click(function() {
+  	if(step==1){
+      audio0.play();
+      sleep(1000);
+      audio1.play();
+      this.style.height = "445px";
+      this.style.width = "320px";
+      this.style.top = "133px";
+      this.style.left = "115px";
+      setTimeout( function () {
+        $(".hint").text(msg[lang].hint1);
+        $(".elmain").attr("src","img/b1_w1/el_mian1.png");
+        $(".elupdown").attr("src","img/b1_w1/el_updown0.png");
+      }, 4500);
+      step = 2;
+    }else if(step==2){
+      audio4.play();
+      setTimeout( function () {
+        $(".hint").text(msg[lang].hint2);
+        $(".elmain").attr("src","img/b1_w1/el_mian2.png");
+        $(".elupdown").css("display","none")
+        $(".elnum").css("display","block")
+
+        $(".sel-box").css("cursor","default")
+        $(".num-box").css("cursor","pointer")
+      }, 1000);
+      step = 3;
+      this.style.height = "445px";
+      this.style.width = "320px";
+      this.style.top = "133px";
+      this.style.left = "115px";
+    }else if(step==4){
+      audio4.play();
+      setTimeout( function () {
+        audio5.play();
+        $(".hint").text(msg[lang].success);
+        setTimeout( function () {
+          alert(msg[lang].success);
+          document.location.href = '/b1re_w3_c2';
+        }, 2000);
+        step = 5;
+      }, 1000);
+    }
+  });
+
+  $(".num-box").click(function(){
+    if(step==3){
+      audio0.play();
+      sleep(1000);
+      $(".elmain").attr("src","img/b1_w1/el_mian0.png");
+      audio2.play();
+      var i=1;
+      var loopnum = $(this).attr("idx");
+      $(".elnum").attr("src","img/b1_w1/el_num"+loopnum+".png");
+      var uploop = setInterval(function(){
+        if(i<loopnum){
+          i++;
+          var num = i.toString();
+          $(".text-box").text(num);
+        }else{
+          audio2.pause();
+          audio2.currentTime = 0;
+          audio1.play();
+          setTimeout( function () {
+            $(".elmain").attr("src","img/b1_w1/el_mian3.png");
+            $(".room-box").css("display","block")
+            $(".room-box").text(loopnum+"01");
+            $(".hint").text(msg[lang].hint3);
+            $(".elnum").attr("src","img/b1_w1/el_num0.png");
+          }, 4500);
+          step = 4;
+          $(".sel-box").css("cursor","pointer")
+          $(".num-box").css("cursor","default")
+          clearInterval(uploop);
+        }
+      }, 1500);
+    }
+  });
+
+  function sleep(num){	//[1/1000초]
+	 var now = new Date();
+	   var stop = now.getTime() + num;
+	   while(true){
+		 now = new Date();
+		 if(now.getTime() > stop)return;
+	   }
+	}
+
+</script>

@@ -1,0 +1,24 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "#####",
+    "##%.#",
+    "#d#.#",
+    "#...#",
+    "#####"
+  ],
+  "extra":[],
+  "tutorial": [{
+    "msg:ko": "빨간색 행성으로 가보자!",
+    "msg:en": "Let's go to the red planet!"
+  }]
+}

@@ -1,0 +1,28 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "#####",
+    "##...",
+    "r..#%",
+    "##...",
+    "#####"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 2,
+    "img": "planet_green"
+    }],
+  "tutorial": [{
+    "msg:ko": "초록색 행성으로 가보자!",
+    "msg:en": "Let's go to the green planet!"
+  }]
+}

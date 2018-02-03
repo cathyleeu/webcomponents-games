@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "view_size": 8,
+  "workspace": ["start","go_school"],
+  "toolbox": [
+  ],
+  "map": [
+    "3d#..4.#",
+    "#.#..w.9",
+    "f.#..f.#",
+    "7.#..2.#",
+    "#......6",
+    "w.5..#.#",
+    "1.#..w.%",
+    "#.#..#.#"
+  ],
+  "tile": [
+    {"tile": "1", "img": "bakery"},
+    {"tile": "2", "img": "hospital"},
+    {"tile": "3", "img": "house"},
+    {"tile": "4", "img": "kindergarten"},
+    {"tile": "5", "img": "mart"},
+    {"tile": "6", "img": "movie"},
+    {"tile": "7", "img": "playground"},
+    {"tile": "8", "img": "school"},
+    {"tile": "9", "img": "servicecenter"},
+    {"tile": "%", "img": "school"}
+  ],
+  "tutorial": [{
+    "msg:ko": "시작버튼을 눌러서 학교에 가요.",
+    "msg:en": "Press the start button to move school.",
+    "img": ["/img/a4re_w1/start_block.png","/img/a4re_w1/school.png"]
+  }]
+}

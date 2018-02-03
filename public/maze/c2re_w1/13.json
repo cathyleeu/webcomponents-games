@@ -1,0 +1,32 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#d###...#",
+    "#.......#",
+    "#....%..#",
+    "#..##...#",
+    "#....##.#",
+    "#....#..#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "개굴개굴~ ↓→ 이동 블록을 이용해서 연잎으로 가보자!",
+    "msg:en": "Ribbit~ Ribbit! Let's go to lotus using [Move Down][Move Right] block",
+    "img" : ["/img/blocks/down.png", "/img/blocks/right.png", "/img/c2_w1/lotus.png"]
+  }],
+  "goal": {
+    "msg:ko": "연잎으로 가자!",
+    "msg:en": "Let's go to lotus",
+    "img" : "/img/c2_w1/lotus.png"
+  }
+}

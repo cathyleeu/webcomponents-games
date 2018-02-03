@@ -8,10 +8,10 @@ Blocks["start"] = {
     cn: "%1 入门"
   },
   args0: [
-    {type: "field_image", src: "/img/start.png"}
+    {type: "field_image", src: "/img/kidsblocks/Start.png"}
   ],
   argsh0: [
-    {type: "field_image", src: "/img/kidsblocks/Start.png"}
+    {type: "field_image", src: "/img/kidsblocks/Start.png", width: 32, height: 32}
   ],
   previousStatement: false
 };
@@ -116,6 +116,94 @@ Blocks["immigrant"] = {
     {type: "field_image", src: "/img/a3_w3/ufo.png"}
   ],
   action: ["steploop", "immigrant"]
+};
+Blocks["go_bakery"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 빵집으로 가기",
+    en: "%1 move to bakery."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/bakery.png"}
+  ],
+  action: ["steploop", "ddddddl"]
+};
+Blocks["go_hospital"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 병원으로 가기",
+    en: "%1 move to hospital."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/hospital.png"}
+  ],
+  action: ["steploop", "ddddrrrru"]
+};
+Blocks["go_kindergarten"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 유치원으로 가기",
+    en: "%1 move to kindergarden."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/kindergarten.png"}
+  ],
+  action: ["steploop", "ddddrrrrruuuul"]
+};
+Blocks["go_mart"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 마트로 가기",
+    en: "%1 move to mart."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/mart.png"}
+  ],
+  action: ["steploop", "dddddr"]
+};
+Blocks["go_movie"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 극장으로 가기",
+    en: "%1 move to theater."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/movie.png"}
+  ],
+  action: ["steploop", "ddddrrrrrr"]
+};
+Blocks["go_playground"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 놀이터로 가기",
+    en: "%1 move to playground."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/playground.png"}
+  ],
+  action: ["steploop", "dddl"]
+};
+Blocks["go_school"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 학교로 가기",
+    en: "%1 move to school."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/school.png"}
+  ],
+  action: ["steploop", "ddddrrrrrddr"]
+};
+Blocks["go_servicecenter"] = {
+  rgbColor: "#00A1E1",
+  message0: {
+    ko: "%1 주민센터로 가기",
+    en: "%1 move to servicecenter."
+  },
+  args0: [
+    {type: "field_image", src: "/img/a4re_w1/servicecenter.png"}
+  ],
+  action: ["steploop", "ddddrrrrruuur"]
 };
 Blocks["frog_left"] = {
   rgbColor: "#DC6195",
@@ -597,10 +685,10 @@ Blocks["move_up"] = {
     cn: "%1 向上移"
   },
   args0: [
-    {type: "field_image", src: "/img/up.png"}
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
   ],
   argsh0: [
-    {type: "field_image", src: "/img/kidsblocks/mUp.png"}
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg", width: 36, height: 36}
   ],
   action: ["move", "up"]
 };
@@ -612,10 +700,10 @@ Blocks["move_down"] = {
     cn: "%1 向下移"
   },
   args0: [
-    {type: "field_image", src: "/img/down.png"}
+    {type: "field_image", src: "/img/kidsblocks/down_icon.svg"}
   ],
   argsh0: [
-    {type: "field_image", src: "/img/kidsblocks/mDown.png"}
+    {type: "field_image", src: "/img/kidsblocks/down_icon.svg", width: 36, height: 36}
   ],
   action: ["move", "down"]
 };
@@ -627,10 +715,10 @@ Blocks["move_left"] = {
     cn: "%1 向左移"
   },
   args0: [
-    {type: "field_image", src: "/img/left.png"}
+    {type: "field_image", src: "/img/kidsblocks/left_icon.svg"}
   ],
   argsh0: [
-    {type: "field_image", src: "/img/kidsblocks/mLeft.png"}
+    {type: "field_image", src: "/img/kidsblocks/left_icon.svg", width: 36, height: 36}
   ],
   action: ["move", "left"]
 };
@@ -642,10 +730,10 @@ Blocks["move_right"] = {
     cn: "%1 向右移"
   },
   args0: [
-    {type: "field_image", src: "/img/right.png"}
+    {type: "field_image", src: "/img/kidsblocks/right_icon.svg"}
   ],
   argsh0: [
-    {type: "field_image", src: "/img/kidsblocks/mRight.png"}
+    {type: "field_image", src: "/img/kidsblocks/right_icon.svg", width: 36, height: 36}
   ],
   action: ["move", "right"]
 };
@@ -760,13 +848,13 @@ Blocks["sub_digit"] = {
   // }]
 };
 Blocks["move_forward1"] = {
-  colour: 260,
+  colour: "#F28C00",
   message0: {
     ko: "%1 앞으로 가기",
     en: "%1 Move Forward"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png"}
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
   ],
   action: ["move", "forward"]
 };
@@ -810,7 +898,7 @@ Blocks["jump_forward"] = {
     en: "%1 Jump Forward"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png"}
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
   ],
   action: ["move", "jump_forward"]
 };
@@ -821,7 +909,7 @@ Blocks["move_forward2"] = {
     en: "%1 Move Forward Twice"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png"}
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
   ],
   action: ["func", {
     type: "repeat",
@@ -838,7 +926,7 @@ Blocks["move_forward3"] = {
     en: "%1 Move Forward Three Times"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png"}
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
   ],
   action: ["func", {
     type: "repeat",
@@ -855,7 +943,7 @@ Blocks["move_forward4"] = {
     en: "%1 Move Forward Four Times"
   },
   args0: [
-    {type: "field_image", src: "/img/move_forward.png"}
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
   ],
   action: ["func", {
     type: "repeat",
@@ -883,24 +971,24 @@ Blocks["empty"] = {
   action: ["", ""]
 };
 Blocks["rotate_left"] = {
-  colour: 90,
+  colour: "#60B12F",
   message0: {
     ko: "%1 왼쪽으로 돌기",
     en: "%1 Turn Left"
   },
   args0: [
-    {type: "field_image", src: "/img/rotate_left.png"}
+    {type: "field_image", src: "/img/kidsblocks/left_turn_icon.svg"}
   ],
   action: ["rotate", "couter_clock_wise"]
 };
 Blocks["rotate_right"] = {
-  colour: 120,
+  colour: "#34BEEF",
   message0: {
     ko: "%1 오른쪽으로 돌기",
     en: "%1 Turn Right"
   },
   args0: [
-    {type: "field_image", src: "/img/rotate_right.png"}
+    {type: "field_image", src: "/img/kidsblocks/right_turn_icon.svg"}
   ],
   action: ["rotate", "clock_wise"]
 };
@@ -911,7 +999,7 @@ Blocks["get_item"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/get_item.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
@@ -957,7 +1045,7 @@ Blocks["get_item_notuse"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/get_item.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
@@ -1003,7 +1091,7 @@ Blocks["use_item"] = {
     en: "%1 Use Item"
   },
   args0: [
-    {type: "field_image", src: "/img/get_item.png"}
+    {type: "field_image", src: "/img/kidsblocks/use.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Using.png"}
@@ -1017,7 +1105,7 @@ Blocks["get_item2"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/get_item.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
@@ -1031,7 +1119,7 @@ Blocks["get_item2_split"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/get_item.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
@@ -1045,7 +1133,7 @@ Blocks["use_item2"] = {
     en: "%1 Use Item"
   },
   args0: [
-    {type: "field_image", src: "/img/get_item.png"}
+    {type: "field_image", src: "/img/kidsblocks/use.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Using.png"}
@@ -1059,7 +1147,7 @@ Blocks["get_item3"] = {
     en: "%1 Get Item"
   },
   args0: [
-    {type: "field_image", src: "/img/get_item.png"}
+    {type: "field_image", src: "/img/kidsblocks/take.svg"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Bring.png"}
@@ -1074,7 +1162,7 @@ Blocks["check"] = {
     cn: "%1 检查"
   },
   args0: [
-    {type: "field_image", src: "/img/check.png"}
+    {type: "field_image", src: "/img/kidsblocks/check.png"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/check.png"}
@@ -1089,7 +1177,7 @@ Blocks["check2"] = {
     cn: "%1 检查"
   },
   args0: [
-    {type: "field_image", src: "/img/check.png"}
+    {type: "field_image", src: "/img/kidsblocks/check.png"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/check.png"}
@@ -1104,7 +1192,7 @@ Blocks["checkfinish"] = {
     cn: "%1 检查"
   },
   args0: [
-    {type: "field_image", src: "/img/check.png"}
+    {type: "field_image", src: "/img/kidsblocks/check.png"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/check.png"}
@@ -1682,7 +1770,7 @@ Blocks["item_scissors"] = {
     en: "%1 Scissors"
   },
   args0: [
-    {type: "field_image", src: "/img/hand_scissors.png"}
+    {type: "field_image", src: "/img/kidsblocks/Scissors.png"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Scissors.png"}
@@ -1696,7 +1784,7 @@ Blocks["item_rock"] = {
     en: "%1 Rock"
   },
   args0: [
-    {type: "field_image", src: "/img/hand_rock.png"}
+    {type: "field_image", src: "/img/kidsblocks/Rock.png"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Rock.png"}
@@ -1710,7 +1798,7 @@ Blocks["item_paper"] = {
     en: "%1 Paper"
   },
   args0: [
-    {type: "field_image", src: "/img/hand_paper.png"}
+    {type: "field_image", src: "/img/kidsblocks/Paper.png"}
   ],
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Paper.png"}

@@ -1,0 +1,35 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "get_item"
+  ],
+  "map": [
+    "#####",
+    "##)##",
+    "#.).#",
+    "##.u#",
+    "#####"
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 1,
+    "img": "boltnnut",
+    "itemCount": 1
+    }, {
+    "x": 2,
+    "y": 2,
+    "img": "drill",
+    "itemCount": 1
+      }],
+  "tutorial": [{
+    "msg:ko": "공구를 모두 가져오자!",
+    "msg:en": "Let's get all the tools!"
+  }]
+}

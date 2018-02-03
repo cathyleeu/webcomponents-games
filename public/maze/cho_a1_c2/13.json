@@ -1,0 +1,26 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [
+    "move_forward1"
+  ],
+  "map": [
+    "#####",
+    "#####",
+    "%...l",
+    "#####",
+    "#####"
+  ],
+  "extra":[{
+    "x": 0,
+    "y": 2,
+    "img": "fruit_strawberry"
+    }],
+  "tutorial": [{
+    "msg:ko": "딸기로 가보자!",
+    "msg:en": "Go to the strawberry!"
+  }]
+}

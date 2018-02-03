@@ -1,0 +1,32 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".########.",
+    "#.....#..#",
+    "#..#d.#.%#",
+    "#...#.#..#",
+    "#.#......#",
+    "#.g#.##.f#",
+    "#.#......#",
+    "#...#e.#.#",
+    "#........#",
+    ".########."
+  ],
+  "tile": [
+    {"tile": "%", "img": "gp3"}
+  ],
+  "tutorial": [{
+    "msg:ko": "할아버지의 물건을 찾아보자.",
+    "msg:en": "Let's look for Grandpa's things.",
+    "img":["/img/renewed_b3/f_grandpa.png", "/img/renewed_b3/hat.png",
+       "/img/renewed_b3/stick.png", "/img/renewed_b3/glasses.png"]
+  }]
+}

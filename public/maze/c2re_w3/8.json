@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#..#g...#",
+    "#.#d#...#",
+    "##......#",
+    "#..##..j#",
+    "#...#...#",
+    "#.#..%#.#",
+    "#.y..#..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 6,
+    "img": "cylinder3"
+  }],
+  "tutorial": [{
+    "msg:ko": "기둥 모양의 물건으로 가보자!",
+    "msg:en": "Let's go to a cylindrical shape thing.",
+    "img": "/img/c2_w3/cylinder.png"
+  }],
+  "goal": {
+    "msg:ko": "기둥 모양의 물건으로 가보자!",
+    "msg:en": "Let's go to a cylindrical shape thing.",
+    "img": "/img/c2_w3/cylinder.png"
+  }
+}

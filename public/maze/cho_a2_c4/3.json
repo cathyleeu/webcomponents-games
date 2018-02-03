@@ -1,0 +1,35 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "###6#",
+    "#4#.#",
+    "r...#",
+    "##.%#",
+    "#9.##"
+  ],
+  "tile": [
+    {"tile": "1", "img": "n1"},
+    {"tile": "2", "img": "n2"},
+    {"tile": "3", "img": "n3"},
+    {"tile": "4", "img": "n4"},
+    {"tile": "5", "img": "n5"},
+    {"tile": "6", "img": "n6"},
+    {"tile": "7", "img": "n7"},
+    {"tile": "8", "img": "n8"},
+    {"tile": "9", "img": "n9"},
+    {"tile": "%", "img": "n3"}
+  ],
+  "extra":[],
+  "tutorial": [{
+    "msg:ko": "가장 작은 숫자로 가자.",
+    "msg:en": "Let's go to the smallest number."
+  }]
+}

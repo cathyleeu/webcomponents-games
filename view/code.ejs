@@ -378,7 +378,7 @@ if(location.pathname == "/code" && location.hash) {
     store.session.remove("user");
     $("#classes").empty();
     info.classes.forEach(function(item, i) {
-      var book_true = (info.code == "e91d5" || info.code == "c7b46" || info.code == "823b7" || info.code == "8244f" || info.code == "822d8" || info.code == "691a0" || info.code == "36904" || info.code == "533b5") ? "&book=true" : "";
+      var book_true = (info.code == "e91d5" || info.code == "c7b46" || info.code == "823b7" || info.code == "8244f" || info.code == "822d8" || info.code == "691a0" || info.code == "36904") ? "&book=true" : "";
       if(isTrial) {
         var link = {
           "키즈씽킹": "kidsthinking",
@@ -394,14 +394,23 @@ if(location.pathname == "/code" && location.hash) {
   function showLogin() {
     store.session.remove("user");
     var yearmonth = info.date,
-        levelLogin = info.classes.filter(function(obj) {
+        classInfo = info.classes.filter(function(obj) {
           return obj.className == sClassName;
-        })[0].level,
+        })[0],
+        books = classInfo.book.split(","),
+        levelLogin = classInfo.level,
         classObj = info.logins && info.logins.filter(function(obj) {
           return obj.className == sClassName;
         })[0],
         sel_names = null,
         sel_levels = null;
+
+    // 각 반별로 세팅된 level에 해당하는 book 중에서 리뉴얼 버전이 있으면 login도 리뉴얼 버전으로 함
+    books.forEach(function(bookName) {
+      if(bookName.slice(0, 1) == levelLogin && bookName.slice(-3) == "-re" && Object.keys(level).indexOf(levelLogin + "-re") >= 0) {
+        levelLogin += "-re";
+      }
+    });
 
     $("#names,#characters").empty();
 

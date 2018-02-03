@@ -1,0 +1,30 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "get_item"
+  ],
+  "map": [
+    "#####",
+    "##d##",
+    "##.##",
+    "##)##",
+    "#####"
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 3,
+    "img": "wrench",
+    "itemCount": 1
+    }],
+  "tutorial": [{
+    "msg:ko": "공구를 가져오자!",
+    "msg:en": "Let's get the tool!"
+  }]
+}

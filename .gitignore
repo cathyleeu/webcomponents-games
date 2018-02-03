@@ -5,5 +5,6 @@ public/css/*.css
 public/cache
 public/webcomponents-es5
 npm-debug.log
+package-lock.json
 .DS_Store
 Thumbs.db

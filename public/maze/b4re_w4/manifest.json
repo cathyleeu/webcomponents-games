@@ -1,0 +1,45 @@
+[
+  {"book": "b4", "title": "4주차 : 가위바위보를 이기고 보물을 가져와요"},
+  {"id": "bg2", "src": "/img/renewed_b4/parktile2.png"},
+  {"id": "bg1", "src": "/img/renewed_b4/parktile1.png"},
+
+  {"id": "character", "src": "/img/renewed_b4/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/renewed_b4/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/renewed_b4/chest3.png"},
+  {"id": "chest", "src": "/img/renewed_b4/chest3.png"},
+
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "tree1", "src": "/img/renewed_b4/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/renewed_b4/tree2.png", "obstacle": true},
+  {"id": "tree1", "src": "/img/renewed_b4/tree3.png", "obstacle": true},
+  {"id": "bush1", "src": "/img/renewed_b4/bush1.png", "obstacle": true},
+  {"id": "bush2", "src": "/img/renewed_b4/bush2.png", "obstacle": true},
+  {"id": "flower1", "src": "/img/renewed_b4/flower1.png", "obstacle": true},
+  {"id": "flower2", "src": "/img/renewed_b4/flower2.png", "obstacle": true},
+  {"id": "bench", "src": "/img/renewed_b4/bench.png", "obstacle": true},
+  {"id": "lamp", "src": "/img/renewed_b4/lamp.png", "obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"tile": "p", "id": "grandpa", "src": "/img/renewed_b4/f_grandpa.png"},
+  {"tile": "s", "id": "grandma", "src": "/img/renewed_b4/f_grandma.png"},
+  {"tile": "q", "id": "father", "src": "/img/renewed_b4/father.png"},
+  {"tile": "i", "id": "mother", "src": "/img/renewed_b4/mother.png"},
+
+  {"id": "hr", "src": "/img/blocks/rock.png"},
+  {"id": "hp", "src": "/img/blocks/paper.png"},
+  {"id": "hs", "src": "/img/blocks/scissors.png"},
+
+  {"id": "hand_rock", "src": "/img/kidsblocks/Rock.png"},
+  {"id": "hand_paper", "src": "/img/kidsblocks/Paper.png"},
+  {"id": "hand_scissors", "src": "/img/kidsblocks/Scissors.png"},
+  {"id": "spider", "src": "/img/renewed_b4/f_grandma.png"}
+]

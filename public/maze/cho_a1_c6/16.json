@@ -1,0 +1,28 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right"
+  ],
+  "map": [
+    "##...",
+    "##.#.",
+    ".....",
+    ".#.##",
+    "r..##"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 0,
+    "img": "planet_blue"
+    }],
+  "tutorial": [{
+    "msg:ko": "파란색 행성으로 가보자!",
+    "msg:en": "Let's go to the blue planet!"
+  }]
+}

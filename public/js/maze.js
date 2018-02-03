@@ -97,7 +97,7 @@ page('*', function(ctx, next) {
     var image_loader = new createjs.LoadQueue();
     var sound_loader = new createjs.LoadQueue();
     var font_loader = new createjs.FontLoader({
-      src: ["/fonts/DSEG7Classic-Bold.woff", "/fonts/DSEG7Classic-Bold.eot"],
+      src: ["/fonts/DSEG7Classic-Bold.woff", "/fonts/DSEG7Classic-Bold.ttf"],
       type: "font"
     }, true);
 
@@ -257,6 +257,13 @@ function init() {
   if(store.session.get("message_id")) {
     message_url = loader.getItem(store.session.get("message_id")).src;
   }
+  if(!maze.tutorial) {
+    message_url = loader.getItem("food").src;
+    maze.tutorial = [{
+      msg: messages.goal,
+      img: message_url
+    }];
+  }
   $(".noti-char").attr("src", message_url);
 
   initMaze();
@@ -309,7 +316,10 @@ function init() {
     handle_resize();
   }, resize_debounce);
   var lang = store.session.get("lang", "ko"),
-      goal = maze.goal || maze.tutorial[maze.tutorial.length - 1],
+      goal = maze.goal || Object.assign(
+        {img: loader.getItem("food").src},
+        maze.tutorial[maze.tutorial.length - 1]
+      ),
       goal_msg = goal["msg:" + lang] || goal["msg"];
   if(!$.isArray(goal.img)) {
     goal.img = goal.img ? [goal.img] : [message_url];

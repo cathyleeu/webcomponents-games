@@ -1,0 +1,50 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "solution": "start,move_forward1",
+  "problem": "start,move_forward1",
+  "toolbox": [],
+  "map": [
+    "###",
+    "#d#",
+    "###"
+  ],
+  "extra":[{
+    "x": 0,
+    "y": 0,
+    "img": "food"
+    },{
+    "x": 0,
+    "y": 1,
+    "img": "food"
+    },{
+    "x": 0,
+    "y": 2,
+    "img": "food"
+    },{
+    "x": 1,
+    "y": 0,
+    "img": "food"
+    },{
+    "x": 1,
+    "y": 2,
+    "img": "food"
+    },{
+    "x": 2,
+    "y": 0,
+    "img": "food"
+    },{
+    "x": 2,
+    "y": 1,
+    "img": "food"
+    },{
+    "x": 2,
+    "y": 2,
+    "img": "food"
+    }],
+  "tutorial": [{
+    "msg:ko": "4단원 활동이 끝났어요! 다음 활동에서 만나요.",
+    "msg:en": "Activities of chapter 4 are finished! See you next time."
+  }]
+}

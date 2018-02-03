@@ -8,6 +8,16 @@
 <dom-module id="create-image-game">
   <template>
     <style>
+      #container {
+        position: absolute;
+        right: 0;
+        text-align: center;
+        padding: 0.5em;
+        box-sizing: border-box;
+      }
+      #container > p {
+        font-size: 150%;
+      }
     </style>
     <status-bar
       id="statusBar"
@@ -41,14 +51,18 @@
     <toycode-modal
       id="finalStageModal"
       headertext="{{localize('finalStageHead')}}"
+      content-img="{{localize('finalStageImg')}}"
       btmtext="{{localize('finalStageBtm')}}"
       finalbtn="{{localize('finalbtn')}}"
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
     <toycode-button button-Data="[[dispatchToChild()]]"></toycode-button>
-
+      <div id="container">
+        <p>{{localize('minor')}}</p>
+      </div>
       <svg id="createSvg"></svg>
+
       <canvas id="canvas" style="display:none;"></canvas>
   </template>
   <script>
@@ -66,24 +80,12 @@
       }
       ready() {
         super.ready();
-        let { innerHeight, innerWidth } = window,
-            size = {
-              svgHeight : innerHeight-this.$.statusBar.getBoundingClientRect().height
-            }
-            size["boardSize"] = innerWidth*0.6 > size.svgHeight ? size.svgHeight : innerWidth*0.6;
-            size["resWidth"] = innerWidth-size.boardSize;
-            size["imageItemSize"] = size.boardSize/7;
-            size["svgHeight"] = size.boardSize;
-            size["boardImageCenter"] = (size.svgHeight-size.boardSize)/2;
-            size["reAxis"] = size.boardSize/100;
-
-        this.set("size", size)
-        this.updateStyles({
-          '--toycode-button-container-padding' : `${size.resWidth*0.1}px`,
-          '--toycode-button-container-width': `${size.resWidth}px`,
-        })
+        this.setSize()
         this.set('correct', [])
         this.set('unCorrect', [])
+        // debugger
+        d3.select(window).on('resize', this.elementResize.bind(this) );
+
       }
       reset(){
         let ele = d3.select('#element').node();
@@ -91,6 +93,113 @@
         ele.setData(ele.data, ele.manifest)
         ele.set('correct', [])
         ele.set('unCorrect', [])
+      }
+      setSize(){
+        let { innerHeight, innerWidth } = window,
+            size = {
+              svgHeight : innerHeight-61, //-this.$.statusBar.getBoundingClientRect().height,
+              multiple : this.multiple ? this.multiple : 1
+            }
+            size["boardSize"] = innerWidth*0.6 > size.svgHeight ? size.svgHeight : innerWidth*0.6;
+            size["resWidth"] = innerWidth-size.boardSize;
+            size["originImgSize"] = (size.boardSize/7);
+            size["imageItemSize"] = size.originImgSize*size.multiple;
+            size["svgHeight"] = size.boardSize;
+            size["boardImageCenter"] = (size.svgHeight-size.boardSize)/2;
+            size["reAxis"] = size.boardSize/100;
+            size["dragItemsRange"] = Math.floor((size.resWidth*0.8)/size.originImgSize);
+
+        d3.select(this.$.container).attr('style', `width: ${size.resWidth}px`)
+
+        this.set("size", size)
+        this.updateStyles({
+          '--toycode-button-container-padding' : `${size.resWidth*0.05}px ${size.resWidth*0.01}px`,
+          '--toycode-button-container-width': `${size.resWidth}px`,
+          '--toycode-button-custom-width': `${size.resWidth*0.3}px`,
+        })
+      }
+      elementResize(){
+        this.setSize()
+        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis, originImgSize, dragItemsRange } = this.size,
+            svg = d3.select(this.$.createSvg).attr('width', innerWidth).attr('height', svgHeight),
+            dragItems = this.items.length;
+
+
+        d3.select(this.shadowRoot).select('#background').attr('width', boardSize).attr('height', boardSize)
+
+
+        this.circleDom.forEach(g => {
+          let pointCircle = d3.select(g).selectAll('circle').nodes()[0],
+              rangeCircle = d3.select(g).selectAll('circle').nodes()[1],
+              circleX = pointCircle.__data__.group ? pointCircle.__data__.axis[0] : pointCircle.__data__[0],
+              circleY = pointCircle.__data__.group ? pointCircle.__data__.axis[1] : pointCircle.__data__[1]
+
+
+          d3.select(pointCircle)
+            .attr("cx", circleX*reAxis ) //d.group ? d.axis[0]*reAxis : d[0]*reAxis
+            .attr("cy", circleY*reAxis )
+
+          d3.select(rangeCircle)
+            .attr("r", imageItemSize/2).attr("opacity", 0.0)
+            .attr("cx", circleX*reAxis )
+            .attr("cy", circleY*reAxis )
+        })
+
+        this.set('dragItemVerticalMargin', boardSize+(resWidth-(dragItemsRange*originImgSize))/2)
+        this.set('dragItemHorizontalMargin', (svgHeight-(Math.ceil(dragItems/dragItemsRange)*originImgSize))/10)
+
+        this.set('axis', [])
+        for(var i = 0; i < dragItems; i++ ){
+          for(var j = 0; j < dragItemsRange; j++ ) {
+            if(this.axis.length >= dragItems) {
+              break;
+            }
+            this.push('axis', [i,j])
+          }
+        }
+        for(let i = 0; i < dragItems; i++){
+
+          //FIXME: 리팩토링 필요
+          let targetItem = d3.select(this.shadowRoot).select(`#${this.items[i].name}_${i}`),
+              draggedItem = targetItem.attr('data-item')
+
+          if(draggedItem) {
+            //이미 드래그 된 아이템
+            let targetX = +targetItem.attr('axisX'),
+                targetY = +targetItem.attr('axisY')
+            targetItem.attr('width', `${originImgSize}`).attr('height', `${originImgSize}`)
+                      .attr('x', targetX*reAxis-(originImgSize/2))
+                      .attr('y', targetY*reAxis-(originImgSize/2))
+
+            if(this.multiple){
+              //이미 드래그 된 아이템 && multiple가 있는 아이템
+              targetItem.attr('width', `${imageItemSize}`).attr('height', `${imageItemSize}`)
+                        .attr('x', targetX*reAxis-(imageItemSize/2))
+                        .attr('y', targetY*reAxis-(imageItemSize/2))
+            }
+          } else {
+            //드래그가 안된 아이템
+            targetItem.attr('width', `${originImgSize}`).attr('height', `${originImgSize}`)
+              .attr('x', this.handleSettleItem(this.items[i], i) )
+              .attr('y', this.items[i].axis
+                  ? this.items[i].axis[1]*reAxis-(originImgSize/2)
+                  : this.dragItemHorizontalMargin+(this.axis[i][0]*(originImgSize))+150
+              )
+          }
+
+          //초기에 설정되는 이미지
+          if(this.items[i].axis){
+            targetItem.attr('x', this.items[i].axis[0]*reAxis-(originImgSize/2))
+                      .attr('y', this.items[i].axis[1]*reAxis-(originImgSize/2))
+                      .call(d3.drag()
+                        .on("start", null))
+          }else {
+            targetItem.call(d3.drag()
+              .on("start", this.dragstarted)
+              .on("drag", this.dragged)
+              .on("end", this.dragended))
+          }
+        }
       }
       dispatchToChild(){
         let button = [
@@ -105,11 +214,12 @@
         // debugger
         let element = d3.select('#element').node(),
             svg = d3.select(element.shadowRoot).select("#createSvg").node();
-        // console.log("exportImage");
+
 
         let targetNodes = []
         svg.childNodes.forEach(el => {
-          if(el.id === "background" || el.dataset.item){
+          let dataItem = d3.select(el).attr('data-item')
+          if(el.id === "background" || dataItem){
             targetNodes.push(el)
           }
         })
@@ -123,6 +233,7 @@
           let img = new Image();
               img.src = el.href.animVal;
           let imgRatio = el.id === "background" ? img.width/boardSize : img.width/imageItemSize
+
           ctx.drawImage( img, 0, 0, width*imgRatio, height*imgRatio, x, y, width, height )
         })
         var png = canvas.toDataURL("image/png");
@@ -135,7 +246,7 @@
       filterUncorrectImages(){
         let element = d3.select('#element').node(),
             {unCorrect, items} = element;
-        // console.log(unCorrect, items)
+
         return unCorrect.map(un => items.find(ele => ele.name === un))
       }
       handleStageClear(){
@@ -143,15 +254,24 @@
             svg = d3.select(element.shadowRoot).select("#createSvg").node(),
             { unCorrect, correct, items} = element;
 
-        let used = element.circleDom.filter(dom => dom.dataset.circle === "used").length
-        if(this.limited) {
+        let used = element.circleDom.filter(dom => {
+          let dataCircle = d3.select(dom).attr('data-circle')
+          return dataCircle === "used"
+        }).length
+        // FIXME: 경우에 따라서 modalAlert 뜨는 코드 수정하기
+
+        if(element.useAll) {
           if(used !== items.length) {
+            console.log("AAAA item");
             element.$.retryModal.modalAlert()
-            return false;
+            return false
           }
+        }
+        if(element.group) {
           if(unCorrect.length > 0) {
+            console.log("BBBB uncorrent");
             element.$.unCorrectModal.modalAlert()
-            return false;
+            return false
           }
         }
         element.$.finalStageModal.modalAlert()
@@ -166,45 +286,53 @@
       }
       dragstarted(d) {
         let self = d3.select('#element').node(),
-            { imageItemSize } = self.size,
+            { originImgSize } = self.size,
             startX = this.x.animVal.value,
             startY = this.y.animVal.value;
 
         self.set('startX', startX)
         self.set('startY', startY)
-        d3.select(this).attr("x", d3.event.x-(imageItemSize/2)).attr("y", d3.event.y-(imageItemSize/2));
+        d3.select(this).attr("x", d3.event.x-(originImgSize/2)).attr("y", d3.event.y-(originImgSize/2));
       }
       dragged(d){
         let self = d3.select('#element').node(),
-            { imageItemSize } = self.size;
-        d3.select(this).attr("x", d3.event.x-(imageItemSize/2)).attr("y", d3.event.y-(imageItemSize/2));
+            { originImgSize } = self.size;
+        d3.select(this).attr("x", d3.event.x-(originImgSize/2)).attr("y", d3.event.y-(originImgSize/2));
       }
       dragended(d){
         let self = d3.select('#element').node(),
-            { imageItemSize } = self.size,
+            { imageItemSize, originImgSize } = self.size,
             getX = d3.event.x, getY = d3.event.y;
+
+
 
         let targetEl, targetX, targetY, result;
 
         self.circleDom.forEach(el => {
           const getEl = el.getBBox();
+          // const multiple = self.multiple || 1
           if(getEl.x < getX && getX < getEl.x + getEl.height && getEl.y < getY && getY < getEl.y + getEl.height ) {
-            if(el.dataset.circle){
+
+            let dataCircle = d3.select(el).attr('data-circle')
+            //el.dataset.circle => ie 에서 dataset 을 잡지 못함
+            if(dataCircle){
               return false
             }
             targetEl = el;
-            targetX = getEl.x;
-            targetY = getEl.y;
+            targetX = getEl.x //*multiple;
+            targetY = getEl.y //*multiple;
             console.log("%cAAAA"+"%c dragended range true", "background:#ff8772; color:white;", "color:black;");
           }
         })
         // debugger
         if(targetEl){
-          if(!this.dataset.item) {
+          let dataItem = d3.select(this).attr('data-item')
+          if(!dataItem) {
             let rename = this.id.split("_")
             if(!self.limited) {
+              console.log("dragged CCCC limited false");
               d3.select(this.parentElement).append('image').attr("xlink:href", this.href.animVal)
-                .attr('width', imageItemSize).attr('height', imageItemSize)
+                .attr('width', originImgSize).attr('height', originImgSize)
                 .attr('id', `${rename[0]}_${+rename[1]+1}`)
                 .attr('x', self.startX ).attr('y', self.startY )
                 .call(d3.drag()
@@ -214,12 +342,26 @@
                 );
             }
             d3.select(this).attr("data-item", "used")
+
           } else {
               let targetCircle = self.circleDom.find(dom => Math.floor(dom.getBBox().x) === Math.floor(self.startX) && Math.floor(dom.getBBox().y) === Math.floor(self.startY))
               d3.select(targetCircle).attr('data-circle', null).attr('data-match', null).attr('data-imageName', null)
           }
 
+          if(self.multiple) {
+            let imageItemSize = self.size.imageItemSize
+            d3.select(this)
+              .attr("width", `${imageItemSize}`)
+              .attr("height", `${imageItemSize}`)
+          }
+          // debugger
+          let dataAxisX = targetEl.__data__.group ? targetEl.__data__.axis[0] : targetEl.__data__[0],
+              dataAxisY = targetEl.__data__.group ? targetEl.__data__.axis[1] : targetEl.__data__[1];
+
           d3.select(this).attr("x", targetX).attr("y", targetY)
+            .attr("axisX", dataAxisX )
+            .attr("axisY", dataAxisY )
+
         } else {
           console.log("%cBBBB"+"%c drag false", "background:blue; color:white;", "color:black;");
           d3.select(this).attr('x', self.startX ).attr('y', self.startY )
@@ -245,39 +387,37 @@
         console.log("%cCCCC"+"%c dragended", "background:purple; color:white;", "color:black;");
       }
       handleSettleItem(d, i){
-        let { boardSize, imageItemSize, svgHeight, boardImageCenter, reAxis } = this.size;
+        let { boardSize, originImgSize, svgHeight, boardImageCenter, reAxis, multiple } = this.size;
          if(d.axis) {
            let targetEl = this.circleDom.find(x => x.__data__[0] === d.axis[0] && x.__data__[1] === d.axis[1])
            d3.select(targetEl).attr("data-circle", "used")
-           return d.axis[0]*reAxis-(imageItemSize/2)
+           return d.axis[0]*reAxis-(originImgSize/2)
          }
-         return this.dragItemVerticalMargin+this.axis[i][1]*(imageItemSize)
+         return this.dragItemVerticalMargin+this.axis[i][1]*(originImgSize)
       }
       setData(data, manifest){
 
         this.set('data', data)
         this.set('manifest', manifest)
 
-        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis } = this.size,
-            svg = d3.select(this.$.createSvg).attr('width', innerWidth).attr('height', svgHeight);
+        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis, originImgSize } = this.size,
+            svg = d3.select(this.$.createSvg)
+                    .attr('width', innerWidth).attr('height', svgHeight);
+
 
         let backgroundImg = manifest.find(d => d.background).src,
             resImagesData = manifest.filter(d => !d.background)
 
         this.set('items', resImagesData)
-
         this.set('backgroundImg', backgroundImg)
+
+        let that = this;
         let boardImage = svg.append('image')
-             .attr("id", "background")
-             .attr("xlink:href", backgroundImg)
-             .attr('x', 0).attr('y', 0)
-             .attr('width', boardSize)
-             .attr('height', boardSize)
-        boardImage.append('polygon')
-                  .attr('style', "fill:lime;stroke:purple;stroke-width:1")
-                  .attr('points', "2,157,174,296")
-                  .attr('name', 'earth')
-                  // style="fill:lime;stroke:purple;stroke-width:1"
+                .attr("id", "background")
+                .attr("xlink:href", backgroundImg)
+                .attr('x', 0).attr('y', 0)
+                .attr('width', boardSize)
+                .attr('height', boardSize)
 
         if(this.group){
           let axisObj = []
@@ -299,7 +439,6 @@
            .attr("cx", (d, i) => d.group ? d.axis[0]*reAxis : d[0]*reAxis )
            .attr("cy", (d, i) => d.group ? d.axis[1]*reAxis : d[1]*reAxis )
 
-
         cirGroup.append("circle")
             .attr("r", imageItemSize/2).attr("opacity", 0.0)
             .attr("cx", (d, i) => d.group ? d.axis[0]*reAxis : d[0]*reAxis )
@@ -308,10 +447,10 @@
         this.set('circleDom', cirGroup.nodes())
 
         let dragItems = resImagesData.length,
-            dragItemsRange = Math.floor((resWidth*0.8)/imageItemSize);
+            dragItemsRange = Math.floor((resWidth*0.8)/originImgSize);
 
-        this.set('dragItemVerticalMargin', boardSize+(resWidth-(dragItemsRange*imageItemSize))/2)
-        this.set('dragItemHorizontalMargin', (svgHeight-(Math.ceil(dragItems/dragItemsRange)*imageItemSize))/10)
+        this.set('dragItemVerticalMargin', boardSize+(resWidth-(dragItemsRange*originImgSize))/2)
+        this.set('dragItemHorizontalMargin', (svgHeight-(Math.ceil(dragItems/dragItemsRange)*originImgSize))/10)
 
         // debugger
         this.set('axis', [])
@@ -328,18 +467,23 @@
              .data(resImagesData).enter().append('image')
              .attr("xlink:href", (d, i) => d.src)
              .attr("id", (d,i) => `${d.name}_${i}`)
-             .attr('width', `${imageItemSize}`).attr('height', `${imageItemSize}`)
+             .attr('width', `${originImgSize}`).attr('height', `${originImgSize}`)
              .attr("data-item", (d, i) => d.axis ? "used" : null)
-             .call(d3.drag()
-               .on("start", this.dragstarted)
-               .on("drag", this.dragged)
-               .on("end", this.dragended))
              .attr('x', ( d, i ) => this.handleSettleItem(d, i) )
              .attr('y', ( d, i ) =>
                d.axis
-               ? d.axis[1]*reAxis-(imageItemSize/2)
-               : this.dragItemHorizontalMargin+this.axis[i][0]*(imageItemSize)
+               ? d.axis[1]*reAxis-(originImgSize/2)
+               : this.dragItemHorizontalMargin+(this.axis[i][0]*(originImgSize))+150
              );
+
+          appendImages.nodes().forEach(el => {
+            if(!el.__data__.axis){
+              d3.select(el).call(d3.drag()
+                .on("start", this.dragstarted)
+                .on("drag", this.dragged)
+                .on("end", this.dragended))
+            }
+          })
 
       }
     }

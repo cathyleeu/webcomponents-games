@@ -12,29 +12,40 @@
   ],
   "map": [
     ".#######.",
-    "#...#...#",
-    "#..#.%.##",
-    "###..##.#",
-    "#.##)...#",
-    "#r.....##",
-    "#.##...##",
-    "#......##",
+    "#.......#",
+    "#.#...#.#",
+    "#.#.%.#.#",
+    "#.#.).#.#",
+    "#.#.d.#.#",
+    "#.#...#.#",
+    "#.......#",
     ".#######."
   ],
   "extra":[{
-    "x": 5,
-    "y": 2,
-    "img":"brother",
+    "x": 4,
+    "y": 3,
     "useItem": 1
   }, {
     "x": 4,
     "y": 4,
-    "img":"cookie",
+    "img":"honey_pot",
     "itemCount": 1
   }],
   "tutorial": [{
-    "msg:ko": "가져오기, 사용하기 블록을 이용하여 동생 모스에게 쿠키를 전달하자!",
-    "msg:en": "Deliver Cookies to Mos with Bring & Use Blocks",
-    "img": ["/img/c3_w4/cookie.png","/img/blocks/bring.png","/img/c3_w1/brother.png","/img/blocks/use.png"]
-  }]
+    "msg:ko": "집으로 꿀단지를 가져갈꺼야",
+    "msg:en": "I'm going to take honey jars to my house"
+  },{
+    "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자",
+    "msg:en": "Move to honey jar And then Use 'get item' Block",
+    "img": "/img/c3_w2/honey_pot.png"
+  },{
+    "msg:ko": "그리고나서 집으로 이동하고, 아이템 사용하기를 해보자",
+    "msg:en": "then move my house, Use 'use items' Block",
+    "img": "/img/c3_w1/house.png"
+  }],
+  "goal": {
+    "msg:ko": "집으로 꿀단지를 가져가자!",
+    "msg:en": "Take honey jars",
+    "img": "/img/c3_w2/honey_pot.png"
+  }
 }

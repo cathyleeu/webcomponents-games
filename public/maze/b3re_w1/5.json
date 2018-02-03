@@ -1,0 +1,35 @@
+{
+  "tile_size": 128,
+  "score":0,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".######.",
+    "#.l....#",
+    "#.###..#",
+    "#.#.%..#",
+    "#.#.#.##",
+    "#.###.##",
+    "#...##.#",
+    ".######."
+  ],
+  "tile": [
+    {"tile": "%", "img": "mgrandpa"}
+  ],
+  "tutorial": [{
+    "msg:ko": "외할아버지에게로 가보자!",
+    "msg:en": "Go to grandpa!",
+    "msg:cn": "去爷爷那里吧！",
+    "img": "/img/renewed_b3/m_grandpa.png"
+  }],
+  "success": [{
+    "msg:ko": "벌써 다섯 문제나 풀었어요!",
+    "msg:en": "You've solved five problems already!",
+    "link": "b3re_w1/6"
+  }]
+}

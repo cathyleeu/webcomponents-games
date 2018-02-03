@@ -123,9 +123,7 @@
       var str = $("#template").html(),
           template = ejs.compile(str);
       names = students || names["default"];
-      if(levelLogin != 'A' && levelLogin != 'B' && levelLogin != 'C'){
-        levelLogin = "default";
-      }
+      levelLogin = levelLogin || "default";
       var row = [];
       level = level[levelLogin] || level["default"];
       var imgs = getImgs(yearmonth, code, className, level);

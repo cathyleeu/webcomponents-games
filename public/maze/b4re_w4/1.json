@@ -1,0 +1,49 @@
+{
+  "tile_size": 128,
+
+  "score":1,
+  "workspace": ["start", "move_left", "move_up","move_up"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "item_rock",
+    "item_paper",
+    "item_scissors",
+    "get_item3"
+  ],
+  "map": [
+    "%#######",
+    "#.)...##",
+    "#P#.##.#",
+    "#.#R##.#",
+    "#.d.#..#",
+    "###.##.#",
+    "#......#",
+    "########"
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+},{
+    "x": 1,
+    "y": 2,
+    "img":"grandpa"
+  },{
+    "x": 2,
+    "y": 1,
+    "img": "chest",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "가위바위보!",
+    "msg:en": "Rock scissors paper!",
+    "img": ["/img/renewed_b4/rock.png","/img/renewed_b4/scissors.png","/img/renewed_b4/paper.png"]
+  }],"goal" : {
+    "msg:ko": "보물 상자를 열자!",
+    "msg:en": "Let's open the chest!",
+    "img": "/img/renewed_b4/chest3.png"
+  }
+}

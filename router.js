@@ -231,38 +231,50 @@ function getKinder(kinderId) {
 
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
-      book = [9, 10];
+      book = [10, "10-5"];
   // 성동 ECC 1권부터 시작
   if(school == "B00163-K1") {
-    book = [5, 6];
+    book = [1, 6, 7];
   }
   // 영업부 평택지사 리베창의력사고학원 1권부터 시작
   if(school == "C00166-K1") {
-    book = [3, 4];
+    book = [4, 5];
   }
-  // 양주ECC 12월 1권부터 시작
-  if(school == "B00171-K1") {
+  // 양주ECC 12월 1권부터 시작, 인천지사 유원유치원은 방학중 2,3권 사용 희망
+  if(school == "B00171-K1" || school == "A00114-K3") {
     book = [2, 3];
+  }
+  // 신아유치원 방학동안 특별상
+  if(school == "A00042-K5") {
+    book = [1, "5-5"];
   }
   // 대구지사, 압구정PSA는 요청으로 3달치 제공
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "D00121") {
-    book = [8, 9, 10];
+    book = [9, 10, "10-5"];
   }
-  // 청아유치원(시범원)
-  if(school == "A00083-K1") {
-    book = [10, "10-5"];
+  // 시범원 청아유치원, 숙명키즈
+  if(school == "A00083-K1" || school == "A00083-K4") {
+    book = ["2-re", "3-re"];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
-    book = [1, 2, 3, 4, 5, "5-5", 6, 7, 8, 9, 10];
+    book = [1, 2, 3, 4, 5, "5-5", 6, 7, 8, 9, 10, "10-5"];
   }
-  // 울산지사 교차로원, 인천지사 유원유치원, 부산지사 동성어학원
-  if(school == "A00072-K9" || school == "A00114-K3" || school == "A00066-K2") {
-    book = [7, 8];
+  // 영업용(시범교육 1,3,5권)
+  if(school == "A00083-K5") {
+    book = [1, 3, 5];
+  }
+  // 개발용(2017전권+2018리뉴얼)
+  if(school == "A00083-K6") {
+    book = [1, 2, 3, 4, 5, "5-5", 6, 7, 8, 9, 10, "10-5","1-re", "2-re", "3-re"];
+  }
+  // 울산지사 교차로원, 부산지사 동성어학원
+  if(school == "A00072-K9" || school == "A00066-K2") {
+    book = [8, 9];
   }
   // 직영 설리번, 광주지사 리아시찌다원
   if(school == "E00076-K1" || school == "A00058-K1") {
-    book = [8, 9];
+    book = [9, 10];
   }
   // 울산지사 설리번(격월, 11,12월에 5,6)
   if(school == "A00072-K2") {
@@ -275,15 +287,15 @@ function getBook(classObj) {
       book = [5, "5-5"];
     }
     if(classNum == "KC2") {
-      book = [8, 9];
+      book = [9, 10];
     }
     if(classNum == "KC7") {
-      book = ["5-5", 10];
+      book = [10, "10-5"];
     }
   }
   // 마포ECC 추가반, 청라ECC 추가반
   if(classObj.code == "B00130-K1-KC6" || classObj.code == "B00016-K1-KC5") {
-    book = [5, 6];
+    book = [6, 7];
   }
   // 마포ECC 겨울캠프 클래스 C-10권
   if(classObj.code == "B00130-K1-KC7" || classObj.code == "B00130-K1-KC8" || classObj.code == "B00130-K1-KC9") {
@@ -291,7 +303,7 @@ function getBook(classObj) {
   }
   // 숙명킨더 아카데미 7세반 11월에 특별호부터 시작
   if(classObj.code == "A00042-K4-KC2") {
-    book = [6, 7];
+    book = [7, 8];
   }
   // 석계ECC 추가반 1월 1권부터 시작
   if(classObj.code == "B00024-K1-KC9") {
@@ -685,11 +697,13 @@ public.get('/cache/:manifest', function *(next) {
       page_manifests.push(file_path);
     }
     var activity = JSON.parse(fs.readFileSync(path.join("public", file_path)));
-    activity.manifest.forEach(function(obj) {
-      if(page_manifests.indexOf(obj.src) < 0) {
-        page_manifests.push(obj.src);
-      }
-    });
+    if(activity.manifest) {
+      activity.manifest.forEach(function(obj) {
+        if(page_manifests.indexOf(obj.src) < 0) {
+          page_manifests.push(obj.src);
+        }
+      });
+    }
   })
 
   // imgs에 속한 이미지중 cache에 속한 이미지는 제거
@@ -894,7 +908,20 @@ public.get('/info', function *(next) {
 });
 
 public.post('/issue', function *(next) {
-  yield this.render('issue', this.request.body);
+  var body = this.request.body,
+      info = yield getInfoByCode(body.code),
+      infoClass = info.classes.filter(function(item) {
+        return item.className == body.className;
+      })[0],
+      books = infoClass.book.split(","),
+      level = infoClass.level;
+  books.forEach(function(bookName) {
+    if(bookName.slice(0, 1) == level && bookName.slice(-3) == "-re" && Object.keys(level_json).indexOf(level + "-re") >= 0) {
+      level = infoClass.level + "-re";
+    }
+  });
+  body.level = level;
+  yield this.render('issue', body);
 });
 
 public.get('/kids', function *(next) {
@@ -1014,17 +1041,17 @@ public.get('/a7_w1', function *(next) {
 public.get('/a8_w1', function *(next) {
   yield this.render('a8_w1');
 });
-public.get('/2018_b1_w2', function *(next) {
-  yield this.render('2018_b1_w2');
+public.get('/b1re_w2', function *(next) {
+  yield this.render('b1re_w2');
 });
-public.get('/2018_b1_w3_c1', function *(next) {
-  yield this.render('2018_b1_w3_c1');
+public.get('/b1re_w3_c1', function *(next) {
+  yield this.render('b1re_w3_c1');
 });
-public.get('/2018_b1_w3_c2', function *(next) {
-  yield this.render('2018_b1_w3_c2');
+public.get('/b1re_w3_c2', function *(next) {
+  yield this.render('b1re_w3_c2');
 });
-public.get('/2018_b1_w4', function *(next) {
-  yield this.render('2018_b1_w4');
+public.get('/b1re_w4', function *(next) {
+  yield this.render('b1re_w4');
 });
 
 var activityIndex = fs.readFileSync("./public/webcomponents-es5/index.html");

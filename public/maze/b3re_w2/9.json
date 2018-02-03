@@ -1,0 +1,33 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#....#..#",
+    "#..#%##.#",
+    "#......##",
+    "#..#.#.##",
+    "#.d...#.#",
+    "#.......#",
+    "#.#.....#",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "저기 우주선이 있어.\n우주선으로 이동해 보자!",
+    "msg:en": "There is my grandparents' UFO. Let's go to the UFO!",
+    "msg:cn": "那里有一艘宇宙飞船. 移到宇宙飞船吧！",
+    "img": "/img/renewed_b3/ufo.png"
+  }],
+  "goal": {
+    "msg:ko": "우주선으로 이동해 보자!",
+    "msg:en": "Let's go to the UFO.",
+    "img": "/img/renewed_b3/ufo.png"
+  }
+}

@@ -68,7 +68,7 @@
       ></toycode-modal>
     <div class="container">
       <login-card name="{{randomName}}" level="{{level}}" image="{{randomImage}}"></login-card>
-      <login-game-board names="{{names}}" images="{{images}}" level="{{level}}"></login-game-board>
+      <login-game-board names="{{names}}" images="{{imageList}}" level="{{level}}"></login-game-board>
     </div>
 
   </template>
@@ -92,7 +92,7 @@
       }
       reset(){
         this.set('currentStage', this.currentStage+1)
-        this.setData(this.names, this.manifest)
+        this.setData(this.names)
       }
       renderRandomId(level , images){
         // this.updateStyles
@@ -105,18 +105,15 @@
           }
           imageList.push(i)
         }
-        this.set('level', level)
-        this.set('images', imageList)
+        this.set('imageList', imageList)
         let randomNum = Math.floor(Math.random()*(images-1)) + 1,
             randomImage = d3.shuffle(imageList)[randomNum];
         this.set('randomImage', randomImage)
       }
       setData(data, manifest){
         this.set('names', data)
-        this.set('manifest', manifest)
-        let { level, images } = manifest,
-            randomNum = Math.floor(Math.random()*(data.length-1)) + 1;
-        this.renderRandomId(level, images)
+        let randomNum = Math.floor(Math.random()*(data.length-1)) + 1;
+        this.renderRandomId(this.level, this.images)
         this.set('randomName', d3.shuffle(data)[randomNum])
         this.updateStyles({
           'width': `${window.innerWidth}px`,

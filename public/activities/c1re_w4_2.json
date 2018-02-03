@@ -1,0 +1,66 @@
+{
+  "element": "create-image-game",
+  "attributes": {
+    "limited" : true,
+    "nextlink" : "activity#!c1re_w4_3",
+    "group" : ["in", "out", "cpu"]
+  },
+
+  "data": {
+    "in": [[10,35],[23,35],[10,50],[10,50],[10,65],[23,50],[23,65]],
+    "out": [[82.5,35],[82.5,50],[82.5,65]],
+    "cpu": [[50,42.5],[50,57.5]]
+  },
+
+  "manifest": [
+    {"src": "/img/renewed_c1/categorize_new.png", "background": true},
+    {"src": "/img/renewed_c1/camera.png", "name": "camera","group":"in","axis":[10,35]},
+    {"src": "/img/renewed_c1/cpu.png", "name": "cpu", "group":"cpu","axis":[50,42.5] },
+    {"src": "/img/renewed_c1/keyboard.png", "name": "keyboard","group":"in","axis":[23,35]},
+    {"src": "/img/renewed_c1/mic.png", "name": "mic","group":"in","axis":[10,50] },
+    {"src": "/img/renewed_c1/monitor.png", "name": "monitor","group":"out","axis":[82.5,35] },
+    {"src": "/img/renewed_c1/mouse.png", "name": "mouse","group":"in","axis":[23,50] },
+    {"src": "/img/renewed_c1/speaker.png", "name": "speaker","group":"out","axis":[82.5,50]  },
+    {"src": "/img/renewed_c1/ear.png", "name": "ear","group":"in"},
+    {"src": "/img/renewed_c1/eye.png", "name": "eye","group":"in"},
+    {"src": "/img/renewed_c1/mouth.png", "name": "mouth", "group":"out"},
+    {"src": "/img/renewed_c1/brain.png", "name": "brain","group":"cpu"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "우리의 몸과 컴퓨터",
+      "minor": "코스의 기관을 분류해보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Classify the body organs of cos.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes"
+    }
+  }
+}
