@@ -6008,7 +6008,7 @@ Blocks['condition3_rsp'] = {
     cn: "如果 %1"
   },
   args0: [
-    {type: "field_image", src: "/img/hand_rock.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/kidsblocks/Rock.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -6021,7 +6021,7 @@ Blocks['condition3_rsp'] = {
     cn: "如果 %1"
   },
   args2: [
-    {type: "field_image", src: "/img/hand_scissors.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/kidsblocks/Scissors.png", width: 30, height: 30}
   ],
   message3: "%1",
   args3: [{
@@ -6034,7 +6034,7 @@ Blocks['condition3_rsp'] = {
     cn: "如果 %1"
   },
   args4: [
-    {type: "field_image", src: "/img/hand_paper.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/kidsblocks/Paper.png", width: 30, height: 30}
   ],
   message5: "%1",
   args5: [{
