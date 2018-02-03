@@ -1,0 +1,65 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "check",
+    "condition2_5_smaller"
+  ],
+  "map": [
+    "########",
+    "##.#...#",
+    "#.#.#.##",
+    "#..#d.##",
+    "#..#.#.#",
+    "#.%.&#%#",
+    "##.#...#",
+    "########"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "contents" : [{
+      "img": "h2",
+      "role": "if"
+    },{
+      "img": "h3",
+      "role": "if"
+    },{
+      "img": "h4",
+      "role": "if"
+    },{
+      "img": "h5",
+      "role": "else"
+    },{
+      "img": "h6",
+      "role": "else"
+    },{
+      "img": "h7",
+      "role": "else"
+    },{
+      "img": "h8",
+      "role": "else"
+    },{
+      "img": "h9",
+      "role": "else"
+    }]
+  },{
+    "x": 2,
+    "y": 5,
+    "img": "many",
+    "order": "else"
+  },{
+    "x": 6,
+    "y": 5,
+    "img": "little",
+    "order": "if"
+  }],
+  "tutorial": [{
+    "msg:ko": "카드를 확인하여 나온 숫자가 5보다 작으면 적은 수의 별로 이동해요.",
+    "msg:en": "If less than 5, let's go the small number of stars."
+  }]
+}
