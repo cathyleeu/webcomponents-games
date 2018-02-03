@@ -1,0 +1,48 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "mandatory": ["check","condition3_rsp"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "item_rock",
+    "item_scissors",
+    "item_paper",
+    "check",
+    "condition3_rsp"
+  ],
+  "map": [
+    "%####",
+    "#...#",
+    "#&#%#",
+    "#..##",
+    "#u###"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 2,
+    "contents" : [{
+        "img": "numbot_r",
+        "role": "spider",
+        "order": "if"
+      },{
+        "img": "numbot_s",
+        "role": "spider",
+        "order": "else_if"
+      },{
+        "img": "numbot_p",
+        "role": "spider",
+        "order": "else"
+    }]
+  },{
+    "x": 0,
+    "y": 0,
+    "img": "tree1"
+  }],
+  "tutorial": [{
+    "msg:ko": "무조건 이기는 가위바위를 하고, 보물상자로 가요!",
+    "msg:en": "Go a chest to make a unconditional winning game!"
+  }]
+}

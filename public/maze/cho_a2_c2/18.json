@@ -7,9 +7,9 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "hand_scissors",
-    "hand_rock",
-    "hand_paper"
+    "item_rock",
+    "item_scissors",
+    "item_paper"
   ],
   "map": [
     "##.Sl",

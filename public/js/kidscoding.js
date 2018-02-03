@@ -83,6 +83,7 @@ KidsCoding = function() {
 
       return metrics;
     }
+
     var renderDraw_ = Blockly.BlockSvg.prototype.renderDraw_;
     // 필드 이미지 크기에 따른 가운데 정렬
     Blockly.BlockSvg.prototype.renderDraw_ = function(arg) {
@@ -97,15 +98,20 @@ KidsCoding = function() {
       }
     }
   } else if(this.blockType == "vertical") {
+
     var renderFields_ = Blockly.BlockSvg.prototype.renderFields_,
         renderCompute_ = Blockly.BlockSvg.prototype.renderCompute_;
+
     // 필드 이미지 세로 위치 조정
     Blockly.BlockSvg.prototype.renderFields_ = function(a, b, c) {
       var ret = renderFields_.call(this, a, b, c);
-      if(a[0].imageElement_) {
-        var svgRoot = a[0].getSvgRoot(),
-            xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]([+-]?\d*\.?\d*)\)/);
-        svgRoot.setAttribute("transform", "translate(" + +xy[1] + "," + (+xy[2]+3) + ")");
+      if(a.length !=0){
+        if(a[0].imageElement_) {
+          var svgRoot = a[0].getSvgRoot(),
+              xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]([+-]?\d*\.?\d*)\)/);
+          svgRoot.setAttribute("transform", "translate(" + +xy[1] + "," + (+xy[2]+3) + ")");
+        }
+        return ret;
       }
       return ret;
     };
@@ -118,6 +124,7 @@ KidsCoding = function() {
       return ret;
     };
   } else {
+  //} else if(this.blockType == "default") {
     var labelInit = Blockly.FieldLabel.prototype.init;
     // 텍스트 라벨의 위치 조정
     Blockly.FieldLabel.prototype.init = function() {
