@@ -29,6 +29,6 @@
   }],
   "success": [{
     "msg:ko": "축하해요! 모든 문제를 다 풀었어요!",
-    "msg:en": "Congratulations! You solved all the problems!",
+    "msg:en": "Congratulations! You solved all the problems!"
   }]
 }

@@ -13,7 +13,7 @@ var public = require('koa-router')(),
     co = require('co'),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
-    auth_db = pmongo(config.auth_db, ["user", "logins"]),
+    auth_db = pmongo(config.auth_db, ["user", "logins", "reports"]),
     schools_json = require('./login/schools.json'),
     names_json = require('./public/login/names.json'),
     level_json = require('./public/login/level_pw.json'),
@@ -1101,6 +1101,11 @@ public.get('/contents', function *(next) {
 
 public.get('/office', function *(next) {
   this.redirect('http://office.toycode.org');
+});
+
+public.post('/reports', function*(next) {
+  var result = yield auth_db.reports.insert(this.request.body);
+  this.body = "success";
 });
 
 module.exports = {

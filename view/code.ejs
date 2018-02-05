@@ -470,4 +470,71 @@ if(location.pathname == "/code" && location.hash) {
     });
   }
 
+  function sendData() {
+    var keys = store.keys().filter(function(item) {
+          return item != "contents" && item != "manifest";
+        }),
+        docs = [];
+    keys.forEach(function(key) {
+      var contents = store.get(key).data,
+          tokens = key.split(/[,.]/),
+          ids = tokens[0].split("-"),
+          preset = {
+            parentId: ids[0],
+            kinder: ids[0] + "-" + ids[1],
+            classId: tokens[0],
+            userId: tokens[1],
+            chapter: tokens[2]
+          };
+      if(!contents) {
+        return;
+      }
+      Object.keys(contents).forEach(function(problem) {
+        var content = contents[problem],
+            doc = Object.assign({
+              problem: problem,
+              failed: content.failed,
+              score: content.score,
+              duration: content.duration,
+              block: content.block,
+              success: content.success,
+              date: content.date
+            }, preset);
+        docs.push(doc);
+      });
+    });
+    if(docs.length == 0) {
+      return;
+    }
+    $.ajax({
+      url: "/reports",
+      method: "POST",
+      cache: false,
+      timeout: 1000,
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify(docs),
+      success: function(result) {
+        var contents = store.get("contents") || "";
+        contents = contents.split(",").map(function(item) {
+          return item.split("-").join("").toLowerCase();
+        });
+        keys.forEach(function(key) {
+          var content = key.split(/[,.]/)[2].split("_")[0];
+          if(contents.indexOf(content) >= 0) {
+            var item = store.get(key);
+            item.data = {};
+            store.set(key, item);
+          } else {
+            store.remove(key);
+          }
+        });
+        console.log("데이터 전송 완료")
+      },
+      error: function(e) {
+        console.log("데이터 전송 실패")
+      }
+    });
+  }
+  sendData();
+
 </script>

@@ -88,7 +88,7 @@ KidsCoding = function() {
     // 필드 이미지 크기에 따른 가운데 정렬
     Blockly.BlockSvg.prototype.renderDraw_ = function(arg) {
       renderDraw_.call(this, arg);
-      if(arg.imageField) {
+      if(arg.imageField && arg.imageField.getSvgRoot()) {
         var imageField = arg.imageField,
             svgRoot = imageField.getSvgRoot(),
             xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]([+-]?\d*\.?\d*)\)/),
