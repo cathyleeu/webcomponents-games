@@ -3,7 +3,7 @@
   "score":3,
   "character": "character2",
   "message": "message2",
-  "workspace": ["start","move_left","repeat","repeat","repeat""move_left","move_left","move_down"],
+  "workspace": ["start","move_left","repeat","repeat","repeat","move_left","move_left","move_down"],
   "mandatory": ["repeat"],
   "toolbox": [
     "move_up",

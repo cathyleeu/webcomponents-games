@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":3,
-  "workspace": ["start","repeat","repeat","move_right","move_right","move_down""repeat"],
+  "workspace": ["start","repeat","repeat","move_right","move_right","move_down","repeat"],
   "mandatory": ["repeat"],
   "toolbox": [
     "move_up",

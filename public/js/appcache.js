@@ -60,7 +60,7 @@
       $('.check-update-msg').text(msg.updated).data("update-status", "updated");
       setTimeout(function() {
         alert(msg.update_complete);
-        global.location.reload();        
+        global.location.reload();
       }, 1);
     }
     if(e.type === 'updateready') { // 업데이트 된 경우 리프레시

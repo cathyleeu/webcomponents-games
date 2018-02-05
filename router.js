@@ -1103,6 +1103,11 @@ public.get('/office', function *(next) {
   this.redirect('http://office.toycode.org');
 });
 
+public.post('/reports', function*(next) {
+  var result = yield auth_db.reports.insert(this.request.body);
+  this.body = "success";
+});
+
 module.exports = {
   public: public,
   secured: secured
