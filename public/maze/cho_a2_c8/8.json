@@ -7,16 +7,16 @@
     "rotate_left",
     "rotate_right",
     "check",
-    "condition2_5_smaller"
+    "condition2_5_bigger"
   ],
   "map": [
     "########",
     "##.#...#",
-    "#.#...##",
-    "#..#.%.#",
+    "#.#..d##",
+    "#..##..#",
     "#..%.&.#",
-    "#.###..#",
-    "##...u##",
+    "#.#.#.##",
+    "##...%##",
     "########"
   ],
   "extra":[{
@@ -24,42 +24,42 @@
     "y": 4,
     "contents" : [{
       "img": "h2",
-      "role": "if"
+      "role": "else"
     },{
       "img": "h3",
-      "role": "if"
+      "role": "else"
     },{
       "img": "h4",
-      "role": "if"
+      "role": "else"
     },{
       "img": "h5",
       "role": "else"
     },{
       "img": "h6",
-      "role": "else"
+      "role": "if"
     },{
       "img": "h7",
-      "role": "else"
+      "role": "if"
     },{
       "img": "h8",
-      "role": "else"
+      "role": "if"
     },{
       "img": "h9",
-      "role": "else"
+      "role": "if"
     }]
-  },{
-    "x": 5,
-    "y": 3,
-    "img": "many",
-    "order": "else"
   },{
     "x": 3,
     "y": 4,
-    "img": "little",
+    "img": "many",
     "order": "if"
+  },{
+    "x": 5,
+    "y": 6,
+    "img": "little",
+    "order": "else"
   }],
   "tutorial": [{
-    "msg:ko": "카드를 확인하여 나온 숫자가 5보다 작으면 적은 수의 별로 이동해요.",
-    "msg:en": "If less than 5, let's go the small number of stars."
+    "msg:ko": "카드를 확인하여 나온 숫자가 5보다 크면 많은 수의 별로 이동해요.",
+    "msg:en": "If more than 5, let's go the large number of stars."
   }]
 }

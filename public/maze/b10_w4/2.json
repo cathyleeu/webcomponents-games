@@ -35,7 +35,7 @@
   "tutorial": [{
     "msg:ko": "이번에는 복합 블록 두 개를 사용해요.",
     "msg:en": "In this time, Let's use the following two complex blocks",
-    "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/up.png","/img/blocks/left.png","/img/blocks/left.png",
+    "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/up.png","/img/blocks/left.png","/img/blocks/left.png","\n",
       "/img/blocks/complex2_block.png", "/img/b10_w2/equal.png","/img/blocks/left.png","/img/blocks/down.png"]
   }]
 }

@@ -1,65 +1,65 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start","move_forward1","check","condition2_5_bigger"],
+  "workspace": ["start","move_forward1","move_forward1","check","condition2_5_smaller"],
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
     "check",
-    "condition2_5_bigger"
+    "condition2_5_smaller"
   ],
   "map": [
     "########",
     "##.#.#.#",
-    "#.#.#.##",
+    "#.#.#.%#",
     "#..#.#.#",
-    "#...r&%#",
-    "#.#.#%##",
-    "##..#.##",
+    "#...r.&#",
+    "#.#.##.#",
+    "##.#..%#",
     "########"
   ],
   "extra":[{
-    "x": 5,
+    "x": 6,
     "y": 4,
     "contents" : [{
       "img": "h2",
-      "role": "else"
+      "role": "if"
     },{
       "img": "h3",
-      "role": "else"
+      "role": "if"
     },{
       "img": "h4",
-      "role": "else"
+      "role": "if"
     },{
       "img": "h5",
       "role": "else"
     },{
       "img": "h6",
-      "role": "if"
+      "role": "else"
     },{
       "img": "h7",
-      "role": "if"
+      "role": "else"
     },{
       "img": "h8",
-      "role": "if"
+      "role": "else"
     },{
       "img": "h9",
-      "role": "if"
+      "role": "else"
     }]
   },{
     "x": 6,
-    "y": 4,
+    "y": 2,
     "img": "little",
-    "order": "else"
-  },{
-    "x": 5,
-    "y": 5,
-    "img": "many",
     "order": "if"
+  },{
+    "x": 6,
+    "y": 6,
+    "img": "many",
+    "order": "else"
   }],
   "tutorial": [{
-    "msg:ko": "카드를 확인하여 나온 숫자가 5보다 크면 많은 수의 별로 이동해요.",
-    "msg:en": "If more than 5, let's go the large number of stars."
+    "msg:ko": "카드를 확인하여 나온 숫자가 5보다 작으면 적은 수의 별로 이동해요.",
+    "msg:en": "If less than 5, let's go the small number of stars."
   }]
 }
