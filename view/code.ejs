@@ -486,7 +486,7 @@ if(location.pathname == "/code" && location.hash) {
             userId: tokens[1],
             chapter: tokens[2]
           };
-      if(!contents) {
+      if(!contents || tokens[0] == "anonymous") {
         return;
       }
       Object.keys(contents).forEach(function(problem) {
