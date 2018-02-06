@@ -1,8 +1,8 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start","move_forward1","rotate_left","move_forward1","check","condition3_rsp"],
-  "mandatory": ["check","condition3_rsp"],
+  "workspace": ["start","move_forward1","rotate_left","move_forward1","check","condition3_rps_numbot"],
+  "mandatory": ["check","condition3_rps_numbot"],
 
   "toolbox": [
     "move_forward1",
@@ -12,7 +12,7 @@
     "item_scissors",
     "item_paper",
     "check",
-    "condition3_rsp"
+    "condition3_rps_numbot"
   ],
   "map": [
     "%####",
@@ -29,11 +29,11 @@
         "role": "spider",
         "order": "if"
       },{
-        "img": "numbot_s",
+        "img": "numbot_p",
         "role": "spider",
         "order": "else_if"
       },{
-        "img": "numbot_p",
+        "img": "numbot_s",
         "role": "spider",
         "order": "else"
     }]

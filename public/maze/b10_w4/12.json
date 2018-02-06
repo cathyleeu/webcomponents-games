@@ -35,7 +35,7 @@
   "tutorial": [{
     "msg:ko": "복합 블록 2개를 사용하여 도토리를 토리의 집으로 가져와요.",
     "msg:en": "Let's bring a Acorn Tori's house using two complex blocks!",
-    "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/down.png","/img/blocks/down.png",
+    "img": ["/img/blocks/complex1_block.png", "/img/b10_w2/equal.png","/img/blocks/down.png","/img/blocks/down.png","\n",
       "/img/blocks/complex2_block.png", "/img/b10_w2/equal.png","/img/blocks/right.png","/img/blocks/up.png"]
   }]
 }

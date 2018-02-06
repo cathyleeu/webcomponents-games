@@ -1,26 +1,26 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start","move_forward1","check","condition_5_bigger"],
+  "workspace": ["start","move_forward1","check","condition2_5_bigger"],
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
     "check",
-    "condition_5_bigger"
+    "condition2_5_bigger"
   ],
   "map": [
     "########",
     "##.#.#.#",
     "#.#.#.##",
-    "#..#.#.#",
-    "#...r&%#",
-    "#.#.#%##",
-    "##..#.##",
+    "#..#.#%#",
+    "#....r&#",
+    "#.#.##%#",
+    "##....##",
     "########"
   ],
   "extra":[{
-    "x": 5,
+    "x": 6,
     "y": 4,
     "contents" : [{
       "img": "h2",
@@ -49,11 +49,11 @@
     }]
   },{
     "x": 6,
-    "y": 4,
+    "y": 3,
     "img": "little",
     "order": "else"
   },{
-    "x": 5,
+    "x": 6,
     "y": 5,
     "img": "many",
     "order": "if"

@@ -2812,7 +2812,7 @@ Blocks['condition_light'] = {
   action: ["conditioncheck","sign"]
 };
 Blocks['condition_5_bigger'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "만약에 %1 보다 크다면",
     en: "If more than %1"
@@ -2828,7 +2828,7 @@ Blocks['condition_5_bigger'] = {
   action: ["conditioncheck","card"]
 };
 Blocks['condition_5_smaller'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "만약에 %1 보다 작다면",
     en: "If less than %1"
@@ -2844,7 +2844,7 @@ Blocks['condition_5_smaller'] = {
   action: ["conditioncheck","card"]
 };
 Blocks['condition2_5_bigger'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "만약에 %1 보다 크다면",
     en: "If more than %1"
@@ -2869,7 +2869,7 @@ Blocks['condition2_5_bigger'] = {
   action: ["conditioncheck2","food"]
 };
 Blocks['condition2_5_smaller'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "만약에 %1 보다 작다면",
     en: "If less than %1"
@@ -6083,7 +6083,7 @@ Blocks['condition3_dClock'] = {
   action: ["conditioncheck3","dClock"]
 };
 Blocks['condition3_rsp'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
     ko: "%1 이라면",
     en: "If %1",
@@ -6124,6 +6124,178 @@ Blocks['condition3_rsp'] = {
     name: "else_statements"
   }],
   action: ["conditioncheck3","rsp"]
+};
+Blocks['condition3_rsp_numbot'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_a2/numbot_r.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/cho_a2/numbot_s.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args4: [
+    {type: "field_image", src: "/img/cho_a2/numbot_p.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","rsp"]
+};
+Blocks['condition3_srp_numbot'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_a2/numbot_s.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/cho_a2/numbot_r.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args4: [
+    {type: "field_image", src: "/img/cho_a2/numbot_p.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","srp"]
+};
+Blocks['condition3_prs_numbot'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_a2/numbot_p.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/cho_a2/numbot_r.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args4: [
+    {type: "field_image", src: "/img/cho_a2/numbot_s.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","prs"]
+};
+Blocks['condition3_rps_numbot'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_a2/numbot_r.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/cho_a2/numbot_p.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "%1 이라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args4: [
+    {type: "field_image", src: "/img/cho_a2/numbot_s.png", width: 30, height: 30}
+  ],
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","rps"]
 };
 Blocks['condition3_bok'] = {
   rgbColor: "#E11376",

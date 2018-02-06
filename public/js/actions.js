@@ -1983,6 +1983,81 @@ Actions.prototype.conditioncheck3 = function(options, block, callback) {
         _this.run(else_block, callback);
       }, 500);
     }
+  } else if(options == "rps"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    foods.shift();
+    if(tileInfo.order == "if"){
+      tileInfo.hand = "rock";
+      if_block = block.getInputTargetBlock("if_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(if_block, callback);
+      }, 500);
+    }else if(tileInfo.order == "else_if"){
+      tileInfo.hand = "paper";
+      if_block = block.getInputTargetBlock("else_if_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(if_block, callback);
+      }, 500);
+    }else{
+      tileInfo.hand = "scissors";
+      else_block = block.getInputTargetBlock("else_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(else_block, callback);
+      }, 500);
+    }
+  } else if(options == "srp"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    foods.shift();
+    if(tileInfo.order == "if"){
+      tileInfo.hand = "scissors";
+      if_block = block.getInputTargetBlock("if_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(if_block, callback);
+      }, 500);
+    }else if(tileInfo.order == "else_if"){
+      tileInfo.hand = "rock";
+      if_block = block.getInputTargetBlock("else_if_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(if_block, callback);
+      }, 500);
+    }else{
+      tileInfo.hand = "paper";
+      else_block = block.getInputTargetBlock("else_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(else_block, callback);
+      }, 500);
+    }
+  } else if(options == "prs"){
+    var tileInfo = this._getCanvasObject(character.px, character.py);
+    foods.shift();
+    if(tileInfo.order == "if"){
+      tileInfo.hand = "paper";
+      if_block = block.getInputTargetBlock("if_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(if_block, callback);
+      }, 500);
+    }else if(tileInfo.order == "else_if"){
+      tileInfo.hand = "rock";
+      if_block = block.getInputTargetBlock("else_if_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(if_block, callback);
+      }, 500);
+    }else{
+      tileInfo.hand = "scissors";
+      else_block = block.getInputTargetBlock("else_statements");
+      setTimeout(function() {
+        block.removeSelect();
+        _this.run(else_block, callback);
+      }, 500);
+    }
   } else if(options == "bok"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
     this._splitObjects(tileInfo, function() {
