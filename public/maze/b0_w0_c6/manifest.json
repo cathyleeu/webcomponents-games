@@ -1,0 +1,49 @@
+[
+  {"book": "B6", "title": "4주차 : 공항에 가요"},
+  {"id": "bg1", "src": "/img/b6_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b6_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/b6_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b6_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b6_w4/airport.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "airplane", "src": "/img/b6_w4/airplane.png"},
+  {"id": "bd1", "src": "/img/b6_w1/bd1.png","obstacle": true},
+  {"id": "bd2", "src": "/img/b6_w1/bd2.png","obstacle": true},
+  {"id": "bd3", "src": "/img/b6_w1/bd3.png","obstacle": true},
+  {"id": "bd4", "src": "/img/b6_w1/bd4.png","obstacle": true},
+  {"id": "bd5", "src": "/img/b6_w1/bd5.png","obstacle": true},
+  {"id": "bd6", "src": "/img/b6_w1/bd6.png","obstacle": true},
+  {"id": "bd7", "src": "/img/b6_w1/bd7.png","obstacle": true},
+  {"id": "tree1", "src": "/img/b4/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/b4/tree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/b4/tree3.png", "obstacle": true},
+
+  {"tile": "a", "id": "road11", "src": "/img/b6_w1/road11.png", "wall": true},
+  {"tile": "b", "id": "road12", "src": "/img/b6_w1/road12.png", "wall": true},
+  {"tile": "c", "id": "street", "src": "/img/b6_w1/street.png", "wall": true},
+
+  {"tile": "q", "id": "road21", "src": "/img/b6_w1/road21.png", "wall": true},
+  {"tile": "w", "id": "road22", "src": "/img/b6_w1/road22.png", "wall": true},
+  {"tile": "e", "id": "road23", "src": "/img/b6_w1/road23.png", "wall": true},
+  {"tile": "g", "id": "road24", "src": "/img/b6_w1/road24.png", "wall": true},
+
+  {"tile": "z", "id": "crosswalk_col", "src": "/img/b6_w1/crosswalk_col.png"},
+  {"tile": "x", "id": "crosswalk_row", "src": "/img/b6_w1/crosswalk_row.png"},
+
+  {"tile": "i", "id": "airway1", "src": "/img/b6_w4/airway1.png", "wall": true},
+  {"tile": "j", "id": "airway11", "src": "/img/b6_w4/airway11.png", "wall": true},
+  {"tile": "m", "id": "airway2", "src": "/img/b6_w4/airway2.png", "wall": true},
+  {"tile": "n", "id": "airway21", "src": "/img/b6_w4/airway21.png", "wall": true}
+
+]

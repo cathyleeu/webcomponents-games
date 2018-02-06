@@ -1,0 +1,53 @@
+{
+  "tile_size": 128,
+
+  "score":2,
+  "workspace": ["start", "repeat", "check", "condition_light"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "check",
+    "condition_light",
+    "wait"
+  ],
+  "map": [
+    ".####a##.",
+    "#.###a.##",
+    "#..#.a.##",
+    "###..a%##",
+    "#.#.#qzbb",
+    "##.d..&##",
+    "#.#.#..##",
+    "#....####",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 3,
+    "img": "kitties"
+    },{
+    "x": 6,
+    "y": 5,
+    "img": "trf_lights",
+    "position":"up",
+    "contents" :[{
+      "img": "trf_green",
+      "role": "go"
+    },{
+      "img": "trf_red",
+      "role":"stop"
+    }]
+  }],
+  "tutorial": [{
+    "msg:ko": "신호등을 확인하고 안전하게 횡단보도를 건너서 아기 고양이에게 가요.",
+    "msg:en": "Check the traffic light to cross the street safely, and go to the kitties.",
+    "img": ["/img/c6/trf_lights.png","/img/c6/crosswalk_row.png","/img/c6/kitties.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "c0_w0_c7/1"
+  }]
+}

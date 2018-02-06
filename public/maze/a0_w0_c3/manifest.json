@@ -1,0 +1,19 @@
+[
+  {"book": "a3", "title": "3주차 : 코스네 가족 이사하기"},
+  {"id": "bg1", "src": "/img/a3_w3/tile1.png"},
+  {"id": "bg2", "src": "/img/a3_w3/tile2.png"},
+  {"id": "character", "src": "/img/a3_w3/ufo.png", "size": 256},
+  {"id": "message", "src": "/img/a3_w3/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/a3_w3/earth.png"},
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+  {"id": "setle", "src": "/img/a3_w3/setle.png", "obstacle": true},
+  {"id": "sun", "src": "/img/a3_w3/sun.png", "obstacle": true},
+  {"id": "space1", "src": "/img/a3_w3/space1.png", "obstacle": true},
+  {"id": "space2", "src": "/img/a3_w3/space2.png", "obstacle": true},
+  {"id": "space3", "src": "/img/a3_w3/space3.png", "obstacle": true},
+  {"id": "space4", "src": "/img/a3_w3/space4.png", "obstacle": true},
+  {"id": "space4", "src": "/img/a3_w3/space5.png", "obstacle": true}
+]

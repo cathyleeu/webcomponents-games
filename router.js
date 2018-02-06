@@ -316,10 +316,10 @@ function getBook(classObj) {
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
-  // 대구지사 에나어린이집, 청솔유치원 5세반에 6세 컨텐츠 추가
-  // if((school == "C00071-K6" || school == "C00071-K14") && classObj.level == "A") {
-  //   book += ",B-1,B-2";
-  // }
+  // 대구지사 소속원에 테스트 컨텐츠 추가
+  if(school.slice(0,6) == "C00071") {
+    book += "," + classObj.level + "-Test";
+  }
   // 울산지사 소속원 5세반에 6세 컨텐츠 추가
   if(school.slice(0,6) == "A00072" && classObj.level == "A") {
     book += ",B-3";

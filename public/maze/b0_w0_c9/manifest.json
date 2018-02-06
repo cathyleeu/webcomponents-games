@@ -1,0 +1,41 @@
+[
+  {"book": "B9", "title": "4주차 : 음식을 만들어요"},
+  {"id": "bg1", "src": "/img/b9_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b9_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/b9_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b9_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b9_w4/tteok.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "father", "src": "/img/b9_w1/father.png"},
+  {"id": "mother", "src": "/img/b9_w1/mother.png"},
+
+  {"tile": "w", "id": "desk", "src": "/img/b9_w1/desk.png", "wall": true,"obstacle": true},
+  {"id": "plant", "src": "/img/b9_w1/plant.png","obstacle": true},
+
+  {"id": "refrigerator", "src": "/img/b9_w4/refrigerator.png"},
+  {"id": "microwave", "src": "/img/b9_w4/microwave.png"},
+
+  {"tile": "a", "id": "tteok", "src": "/img/b9_w4/tteok.png"},
+  {"tile": "b", "id": "tteok1", "src": "/img/b9_w4/tteok1.png"},
+  {"tile": "c", "id": "tteok2", "src": "/img/b9_w4/tteok2.png"},
+  {"tile": "e", "id": "tteok3", "src": "/img/b9_w4/tteok3.png"},
+  {"tile": "g", "id": "tteok4", "src": "/img/b9_w4/tteok4.png"},
+
+  {"tile": "h", "id": "table0", "src": "/img/b9_w4/table0.png"},
+  {"tile": "i", "id": "tableware", "src": "/img/b9_w4/tableware.png"},
+  {"tile": "j", "id": "juice", "src": "/img/b9_w4/juice.png"},
+  {"tile": "m", "id": "milk", "src": "/img/b9_w4/milk.png"},
+  {"tile": "n", "id": "water", "src": "/img/b9_w4/water.png"}
+
+]

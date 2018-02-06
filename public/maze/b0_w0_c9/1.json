@@ -1,0 +1,52 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start", "repeat","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w..#...#w",
+    "w#....#.w",
+    "w..#...#w",
+    "w#.r...%w",
+    "w..#..#.w",
+    "w.#...#)w",
+    "w#..#..#w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 4,
+    "img":"table0",
+    "useItem": 4
+  },{
+    "x": 7,
+    "y": 6,
+    "img":"tableware",
+    "itemCount": 4
+  }],
+  "tutorial": [{
+    "msg:ko": "포크를 탁자에 가져다 두어요. \n 한 번에 한 개씩 가져와요.",
+    "msg:en": "Let's get the tableware \n and bring them to the table! \n Bring one at a time.",
+    "img": ["/img/b9_w1/cos0.png", "/img/b9_w4/tableware.png", "/img/b9_w4/table0.png"]
+  }],
+  "goal": {
+    "msg:ko": "포크를 탁자에 가져다 두어요. \n 한 번에 한 개씩 가져와요.",
+    "msg:en": "Let's get the tableware \n and bring them to the table! \n Bring one at a time.",
+    "img": ["/img/b9_w1/cos0.png", "/img/b9_w4/tableware.png", "/img/b9_w4/table0.png"]
+  },
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "b0_w0_c10/1"
+  }]
+}

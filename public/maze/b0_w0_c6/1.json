@@ -1,0 +1,39 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start", "repeat", "repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.####.##",
+    "#....#.##",
+    "###...l##",
+    "#.#.##..#",
+    "bbbzbbbbb",
+    "#.#....##",
+    "#.%..####",
+    "mnmnmnmnm"
+  ],
+  "tutorial": [{
+    "msg:ko": "코스는 횡단보도를 건너 공항에 가야해요",
+    "msg:en": "Let's go to the airport!",
+    "img": "/img/b6_w4/airport.png"
+  }],
+  "goal": {
+    "msg:ko": "횡단보도를 건너 공항에 가자",
+    "msg:en": "Let's go to the airport!",
+    "img": "/img/b6_w4/airport.png"
+  },
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "b0_w0_c7/1"
+  }]
+}
