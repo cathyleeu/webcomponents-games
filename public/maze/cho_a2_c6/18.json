@@ -2,7 +2,7 @@
   "tile_size": 128,
   "score":1,
   "workspace": "start",
-  "mandatory": ["check","condition3_rps_numbot"],
+  "mandatory": ["check","condition3_srp_numbot"],
   "toolbox": [
     "move_forward1",
     "rotate_left",
@@ -11,7 +11,7 @@
     "item_scissors",
     "item_paper",
     "check",
-    "condition3_rps_numbot"
+    "condition3_srp_numbot"
   ],
   "map": [
     "%#.&l",
@@ -24,17 +24,17 @@
     "x": 3,
     "y": 0,
     "contents" : [{
-        "img": "numbot_r",
-        "role": "spider",
-        "order": "if"
-      },{
-        "img": "numbot_p",
-        "role": "spider",
-        "order": "else_if"
-      },{
-        "img": "numbot_s",
-        "role": "spider",
-        "order": "else"
+      "img": "numbot_s",
+      "role": "spider",
+      "order": "if"
+    },{
+      "img": "numbot_r",
+      "role": "spider",
+      "order": "else_if"
+    },{
+      "img": "numbot_p",
+      "role": "spider",
+      "order": "else"
     }]
   },{
     "x": 0,
