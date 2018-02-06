@@ -325,10 +325,23 @@ function init() {
     goal.img = goal.img ? [goal.img] : [message_url];
   }
   $(".goal-imgs .goal-img").remove();
+  var count = 0, max = 0;
+  for(i = 0; i <= goal.img.length; i++) {
+    if(i == goal.img.length || goal.img[i] == "\n") {
+      max = Math.max(count, max);
+      count = 0;
+    } else {
+      count++;
+    }
+  }
   goal.img.forEach(function(src, i) {
+    if(src == "\n") {
+      $("<br/>").appendTo(".goal-imgs");
+      return;
+    }
     $('<img class="goal-img">')
       .attr("src", src)
-      .css("max-width", (100 / goal.img.length).toFixed(2) + "%")
+      .css("max-width", (100 / max).toFixed(2) + "%")
       .appendTo(".goal-imgs");
   });
   $(".side_guide .goal-msg").html(goal_msg.replace(/\n/g, "<br/>"));
@@ -1222,10 +1235,23 @@ function showModal(options) {
   }
 
   $(".modal-msg-box img").remove();
+  var count = 0, max = 0;
+  for(i = 0; i <= imgs.length; i++) {
+    if(i == imgs.length || imgs[i] == "\n") {
+      max = Math.max(count, max);
+      count = 0;
+    } else {
+      count++;
+    }
+  }
   imgs.forEach(function(src) {
+    if(src == "\n") {
+      $("<br/>").appendTo(".modal-imgs");
+      return;
+    }
     $('<img class="modal-character">')
       .attr("src", src)
-      .css("width", (100 / imgs.length).toFixed(2) + "%")
+      .css("width", (100 / max).toFixed(2) + "%")
       .appendTo(".modal-imgs");
   });
   //캐릭터 선택 오류 options.msg가 null이 되는 문제 수정
