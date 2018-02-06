@@ -164,7 +164,8 @@ function getInfoByCode(code) {
             info.classes.push({
               code: className,
               className: className,
-              book: book
+              book: book,
+              level: book.match(/^(\w)-/) ? book[0] : null
             });
           });
         });
@@ -316,8 +317,8 @@ function getBook(classObj) {
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
-  // 대구지사 소속원에 테스트 컨텐츠 추가
-  if(school.slice(0,6) == "C00071") {
+  // 대구지사 소속원, 이유경 테스트 계정에 테스트 컨텐츠 추가
+  if(school.slice(0,6) == "C00071" || school.slice(0,6) == "C00176") {
     book += "," + classObj.level + "-Test";
   }
   // 울산지사 소속원 5세반에 6세 컨텐츠 추가
