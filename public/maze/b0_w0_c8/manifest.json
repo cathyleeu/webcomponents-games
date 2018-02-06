@@ -1,0 +1,35 @@
+[
+  {"book": "B8", "title": "4주차 : 김장을 해요"},
+  {"id": "bg1", "src": "/img/b8_w4/bg1.png"},
+  {"id": "bg2", "src": "/img/b8_w4/bg2.png"},
+
+  {"id": "character", "src": "/img/b8_w2/cos_fall_sprite.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b8_w2/cos_fall0.png", "size": 256},
+  {"id": "food", "src": "/img/b8_w4/kimchi.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "father", "src": "/img/b8_w1/father.png"},
+  {"id": "mother", "src": "/img/b8_w1/mother.png"},
+  {"id": "f_granma", "src": "/img/b8_w1/f_granma.png"},
+
+  {"id": "broom", "src": "/img/b8_w4/broom.png","obstacle": true},
+  {"id": "furnace", "src": "/img/b8_w4/furnace.png","obstacle": true},
+  {"id": "jars1", "src": "/img/b8_w4/jars1.png","obstacle": true},
+  {"id": "jars2", "src": "/img/b8_w4/jars2.png","obstacle": true},
+
+  {"id": "kimchi", "src": "/img/b8_w4/kimchi.png"},
+  {"id": "kimchi1", "src": "/img/b8_w4/kimchi1.png"},
+  {"id": "kimchi2", "src": "/img/b8_w4/kimchi2.png"},
+  {"id": "kimchi3", "src": "/img/b8_w4/kimchi3.png"},
+  {"id": "kimchi4", "src": "/img/b8_w4/kimchi4.png"},
+  {"id": "kimchi5", "src": "/img/b8_w4/kimchi5.png"}
+]

@@ -1,0 +1,49 @@
+
+[
+  {"book": "c7", "title": "4주차 : 만약에 블록을 써보아요"},
+  {"id": "bg1", "src": "/img/c7/bg1.png"},
+  {"id": "bg2", "src": "/img/c7/bg2.png"},
+
+  {"id": "character", "src": "/img/c7/SpriteJack_256.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c7/jack0.png", "size": 256},
+  {"id": "food", "src": "/img/c7/c7_w4_food.png"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "jack", "src": "/img/c7/jack0.png", "obstacle": false},
+  {"id": "cos", "src": "/img/c7/cos0.png", "obstacle": false},
+  {"id": "babybird", "src": "/img/c7/babybird.png", "obstacle": false},
+
+  {"id": "tree", "src": "/img/c7/tree.png","obstacle": true},
+  {"id": "reed", "src": "/img/c7/reed.png","obstacle": true},
+  {"id": "scarecrow", "src": "/img/c7/scarecrow.png","obstacle": true},
+
+  {"id": "babybird_acorn", "src": "/img/c7/babybird_acorn.png", "obstacle": false},
+  {"id": "babybird_rice", "src": "/img/c7/babybird_rice.png", "obstacle": false},
+  {"id": "acorn", "src": "/img/c7/acorn.png", "obstacle": false},
+  {"id": "blackbeans", "src": "/img/c7/blackbeans.png", "obstacle": false},
+  {"id": "rice", "src": "/img/c7/rice.png", "obstacle": false},
+
+  {"id": "chest", "src": "/img/c7/chest.png", "obstacle": false},
+  {"id": "key_circle", "src": "/img/c7/key_circle.png", "obstacle": false},
+  {"id": "key_square", "src": "/img/c7/key_square.png", "obstacle": false},
+  {"id": "key_triangle", "src": "/img/c7/key_triangle.png", "obstacle": false},
+
+  {"id": "apple", "src": "/img/c7/apple.png", "obstacle": false},
+  {"id": "persimmon", "src": "/img/c7/persimmon.png", "obstacle": false},
+  {"id": "pear", "src": "/img/c7/pear.png", "obstacle": false},
+
+  {"id": "pumkinseed", "src": "/img/c7/pumkinseed.png", "obstacle": false},
+  {"id": "chestnut", "src": "/img/c7/chestnut.png", "obstacle": false},
+  {"id": "walnut", "src": "/img/c7/walnut.png", "obstacle": false},
+  {"id": "blank", "src": "/img/c7/box_open.png", "obstacle": false}
+
+]

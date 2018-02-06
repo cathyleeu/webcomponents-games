@@ -1,0 +1,44 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "#.g..#..#",
+    "#%#..#.c#",
+    "#.##....#",
+    "#....#.##",
+    "#.#.##.##",
+    "##...l..#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 3,
+    "img":"house7"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스네 집은 가장 큰 숫자의 주소를 가지고 있어요!",
+    "msg:en": "The Address of Cos's house is the largest number",
+    "img": "/img/c4_w4/biggest_num_goal.png"
+  }],
+  "goal": {
+    "msg:ko": "가장 큰 숫자의 주소를 찾아가자!",
+    "msg:en": "Go to the largest number of address",
+    "img": "/img/c4_w4/biggest_num_goal.png"
+  },
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "c0_w0_c5/1"
+  }]
+}

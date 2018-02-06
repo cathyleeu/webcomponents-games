@@ -1,0 +1,57 @@
+[
+  {"book": "b7", "title": "4주차 : 순서대로 찾아보기"},
+  {"id": "bg1", "src": "/img/b7_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/b7_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/b7_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b7_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/b7_w4/cookie.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "mother", "src": "/img/b7_w4/mother.png"},
+  {"id": "cookie", "src": "/img/b7_w4/cookie.png"},
+
+  {"id": "wall", "src": "/img/b7_w1/wall.png","obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"tile": "z", "id": "question", "src": "/img/b7_w2/question.png", "obstacle": false},
+
+  {"tile": "a", "id": "bowl1", "src": "/img/b7_w4/bowl1.png"},
+  {"tile": "b", "id": "bowl2", "src": "/img/b7_w4/bowl2.png"},
+  {"tile": "c", "id": "bowl3", "src": "/img/b7_w4/bowl3.png"},
+  {"tile": "f", "id": "bowl4", "src": "/img/b7_w4/bowl4.png"},
+
+  {"tile": "g", "id": "cup1", "src": "/img/b7_w4/cup1.png"},
+  {"tile": "i", "id": "cup2", "src": "/img/b7_w4/cup2.png"},
+  {"tile": "j", "id": "cup3", "src": "/img/b7_w4/cup3.png"},
+  {"tile": "k", "id": "cup4", "src": "/img/b7_w4/cup4.png"},
+
+  {"tile": "m", "id": "milk1", "src": "/img/b7_w4/milk1.png"},
+  {"tile": "o", "id": "milk2", "src": "/img/b7_w4/milk2.png"},
+  {"tile": "p", "id": "milk3", "src": "/img/b7_w4/milk3.png"},
+  {"tile": "q", "id": "milk4", "src": "/img/b7_w4/milk4.png"},
+
+  {"tile": "s", "id": "eraser1", "src": "/img/b7_w4/eraser1.png"},
+  {"tile": "t", "id": "eraser2", "src": "/img/b7_w4/eraser2.png"},
+  {"tile": "v", "id": "eraser3", "src": "/img/b7_w4/eraser3.png"},
+  {"tile": "w", "id": "eraser4", "src": "/img/b7_w4/eraser4.png"},
+
+  {"tile": "A", "id": "pencle1", "src": "/img/b7_w4/pencle1.png"},
+  {"tile": "B", "id": "pencle2", "src": "/img/b7_w4/pencle2.png"},
+  {"tile": "C", "id": "pencle3", "src": "/img/b7_w4/pencle3.png"},
+  {"tile": "F", "id": "pencle4", "src": "/img/b7_w4/pencle4.png"},
+
+  {"tile": "G", "id": "soap1", "src": "/img/b7_w4/soap1.png"},
+  {"tile": "I", "id": "soap2", "src": "/img/b7_w4/soap2.png"},
+  {"tile": "J", "id": "soap3", "src": "/img/b7_w4/soap3.png"},
+  {"tile": "K", "id": "soap4", "src": "/img/b7_w4/soap4.png"}
+
+
+]

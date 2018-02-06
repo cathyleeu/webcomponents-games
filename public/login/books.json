@@ -664,6 +664,15 @@
     ["덧셈 뺄셈을 하고 시계를 읽어요", "/mazeh#!c105_w3/index"],
     ["조건과 반복을 응용해요", "/mazeh#!c105_w4/index"]
   ],
+  "A-Test": [
+    ["A-Test", "/mazeh#!a0_w0_c3/1"]
+  ],
+  "B-Test": [
+    ["B-Test", "/mazeh#!b0_w0_c2/1"]
+  ],
+  "C-Test": [
+    ["C-Test", "/mazeh#!c0_w0_c2/1"]
+  ],
   "키즈코딩체험": [
     ["키즈코딩 체험해보기", "/mazev#!cho_a1_c8/1"]
   ],

@@ -1,0 +1,55 @@
+[
+  {"book": "c6", "title": "4주차 : 횡단보도를 안전하게 건너요"},
+  {"id": "bg2", "src": "/img/c6/bg2.png"},
+  {"id": "bg1", "src": "/img/c6/bg1.png"},
+
+  {"id": "character", "src": "/img/c6/SpriteBomi_256.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c6/bomi0.png", "size": 256},
+  {"id": "food", "src": "/img/c6/trf_lights_map.png"},
+  {"id": "chest", "src": "/img/c6/box.png"},
+  {"id": "chestopen", "src": "/img/c6/box_open.png"},
+
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "E", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "bd1", "src": "/img/c6/bd1.png","obstacle": true},
+  {"id": "bd2", "src": "/img/c6/bd2.png","obstacle": true},
+  {"id": "bd3", "src": "/img/c6/bd3.png","obstacle": true},
+  {"id": "bd4", "src": "/img/c6/bd4.png","obstacle": true},
+  {"id": "bd5", "src": "/img/c6/bd5.png","obstacle": true},
+  {"id": "tree1", "src": "/img/b4/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/b4/tree2.png", "obstacle": true},
+  {"id": "tree1", "src": "/img/b4/tree3.png", "obstacle": true},
+
+  {"id": "food1", "src": "/img/c6/food1.png"},
+  {"id": "food2", "src": "/img/c6/food2.png"},
+  {"id": "food3", "src": "/img/c6/food3.png"},
+  {"id": "trash1", "src": "/img/c6/trash1.png"},
+  {"id": "trash2", "src": "/img/c6/trash2.png"},
+  {"tile": "k", "id": "kitties", "src": "/img/c6/kitties.png"},
+  {"id": "kittieseating", "src": "/img/c6/kittieseating.png"},
+
+
+  {"id": "trf_green", "src": "/img/c6/trf_green.png"},
+  {"id": "trf_red", "src": "/img/c6/trf_red.png"},
+  {"tile": "t", "id": "trf_lights", "src": "/img/c6/trf_lights_map.png", "wall": true},
+  {"tile": "t", "id": "trf_lights", "src": "/img/c6/trf_lights.png", "wall": true},
+  {"tile": "z", "id": "crosswalk_col", "src": "/img/c6/crosswalk_col.png", "wall": true},
+  {"tile": "x", "id": "crosswalk_row", "src": "/img/c6/crosswalk_row.png", "wall": true},
+  {"tile": "q", "id": "corner1", "src": "/img/c6/corner1.png", "wall": true},
+  {"tile": "w", "id": "corner2", "src": "/img/c6/corner2.png", "wall": true},
+  {"tile": "e", "id": "corner3", "src": "/img/c6/corner3.png", "wall": true},
+  {"tile": "g", "id": "corner4", "src": "/img/c6/corner4.png", "wall": true},
+  {"tile": "a", "id": "col", "src": "/img/c6/col.png", "wall": true},
+  {"tile": "b", "id": "row", "src": "/img/c6/row.png", "wall": true},
+  {"tile": "c", "id": "street", "src": "/img/c6/street.png", "wall": true}
+
+]

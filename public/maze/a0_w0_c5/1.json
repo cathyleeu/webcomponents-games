@@ -1,0 +1,51 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "frog_left",
+    "frog_up",
+    "frog_right",
+    "frog_down"
+  ],
+  "map": [
+    ".#####.",
+    "#.#.#.#",
+    "#%...%#",
+    "#.#a#.#",
+    "#%.la.#",
+    "#.#a#%#",
+    ".#####."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 5,
+    "img": "lotus"
+  }],
+  "tutorial": [{
+    "msg:ko": "올챙이를 개구리로 성장 시켜 보아요",
+    "msg:jp": "おたまじゃくしをかえるに成長させよう。",
+    "msg:en": "Let’s learn the life cycle of a frog."
+  },{
+    "msg:ko": "개구리의 성장 순서에 따라 블록을 조립하고,",
+    "msg:jp": "かえるの成長の順にブロックを組み立てて、",
+    "msg:en": "Assemble blocks to complete the life cycle of a frog step by step,",
+    "img": "/img/a5_w4/frog_block.png"
+  },{
+    "msg:ko": "연잎으로 이동해 보아요!",
+    "msg:jp": "はすの葉まで移動してみよう！",
+    "msg:en": "Move to Lotus leaves",
+    "img": "/img/a5_w4/lotus.png"
+  }],
+  "goal": {
+    "msg:ko": "개구리의 성장 순서에 따라 블록을 조립해보자!",
+    "msg:jp": "かえるの成長の順にブロックを組み立ててみよう。",
+    "msg:en": "Let's Assemble blocks to complete the life cycle of a frog step by step!",
+    "img": "/img/a5_w4/frog_block.png"
+  },
+  "success": [{
+    "msg:ko": "성공! 개구리가 되었어요~",
+    "msg:en": "Success! The tadpole became a frog!",
+    "link": "a0_w0_c6/1"
+  }]
+}

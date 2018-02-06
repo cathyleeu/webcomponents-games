@@ -1,0 +1,40 @@
+{
+  "tile_size": 128,
+  "view_size": 8,
+  "workspace": ["start"],
+  "toolbox": [
+    "go_mart"
+  ],
+  "map": [
+    "3d#..4.#",
+    "#.#..w.9",
+    "f.#..f.#",
+    "7.#..2.#",
+    "#......6",
+    "w.%..#.#",
+    "1.#..w.8",
+    "#.#..#.#"
+  ],
+  "tile": [
+    {"tile": "1", "img": "bakery"},
+    {"tile": "2", "img": "hospital"},
+    {"tile": "3", "img": "house"},
+    {"tile": "4", "img": "kindergarten"},
+    {"tile": "5", "img": "mart"},
+    {"tile": "6", "img": "movie"},
+    {"tile": "7", "img": "playground"},
+    {"tile": "8", "img": "school"},
+    {"tile": "9", "img": "servicecenter"},
+    {"tile": "%", "img": "mart"}
+  ],
+  "tutorial": [{
+    "msg:ko": "블록을 조립해서 마트에 가요.",
+    "msg:en": "Assemble a block to move mart.",
+    "img": ["/img/a4re_w1/block_mart.png","/img/a4re_w1/mart.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "a0_w0_c5/1"
+  }]
+}

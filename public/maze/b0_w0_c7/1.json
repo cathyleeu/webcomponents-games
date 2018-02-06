@@ -1,0 +1,41 @@
+{
+
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start", "repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+
+  "map": [
+    ".#######.",
+    "#.#.#...#",
+    "#..F#...#",
+    "##..#...#",
+    "##...%..#",
+    "#...##.##",
+    "#.r.....#",
+    "#...###.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 4,
+    "img":"pencle1"
+  }],
+  "tutorial": [{
+    "msg:ko": "반복 블록을 사용해서 '?'에 들어갈 순서에 맞는 크기의 이미지로 이동해요",
+    "msg:en": "Let's find order of size to fill the ? space and move there using Repeat Block.",
+    "img": ["/img/b7_w2/question.png","/img/b7_w4/pencle2.png","/img/b7_w4/pencle3.png","/img/b7_w4/pencle4.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공!",
+    "msg:en": "Success!",
+    "link": "b0_w0_c8/1"
+  }]
+}
