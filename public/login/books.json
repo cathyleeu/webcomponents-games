@@ -543,10 +543,10 @@
     ["김장을 해요", "Make fresh kimchi", "/mazeh#!b8_w4/index"]
   ],
   "B-9":[
-    ["다양한 생활도구", "/mazeh#!b9_w1/index"],
-    ["청소를 해요", "/mazeh#!b9_w2/index"],
-    ["빨래를 해요", "/mazeh#!b9_w3/index"],
-    ["음식을 만들어요", "/mazeh#!b9_w4/index"]
+    ["다양한 생활도구", "Home appliances", "/mazeh#!b9_w1/index"],
+    ["청소를 해요", "Let’s clean", "/mazeh#!b9_w2/index"],
+    ["빨래를 해요", "Let’s do laundry", "/mazeh#!b9_w3/index"],
+    ["음식을 만들어요", "Let’s cook", "/mazeh#!b9_w4/index"]
   ],
   "B-10":[
     ["겨울이 왔어요", "/mazeh#!b10_w1/index"],
@@ -632,10 +632,10 @@
     ["만약에 아니라면 블록을 써보아요", "Use the‘if not’blocks", "/mazeh#!c8_w4/index"]
   ],
   "C-9":[
-    ["몇 시일까요?", "/mazeh#!c9_w1/index"],
-    ["몇 시 30분일까요?", "/mazeh#!c9_w2/index"],
-    ["세 가지 조건 블록을 이해해요", "/mazeh#!c9_w3/index"],
-    ["세 가지 조건 블록을 써보아요", "/mazeh#!c9_w4/index"]
+    ["몇 시일까요?", "What’s the time?", "/mazeh#!c9_w1/index"],
+    ["몇 시 30분일까요?", "Learn to tell the time to the half hour", "/mazeh#!c9_w2/index"],
+    ["세 가지 조건 블록을 이해해요", "Learn to use the three condition blocks", "/mazeh#!c9_w3/index"],
+    ["세 가지 조건 블록을 써보아요", "Use the three condition blocks", "/mazeh#!c9_w4/index"]
   ],
   "C-10":[
     ["남극에 대해 알아보아요.", "/mazeh#!c10_w1/index"],
