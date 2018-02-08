@@ -257,10 +257,6 @@ function getBook(classObj) {
   if(school == "A00083-K1" || school == "A00083-K4") {
     book = ["2-re", "3-re"];
   }
-  // 숙명키즈 파랑반(8세) 시범용 컨텐츠
-  if(classObj.code == "A00083-K4-KC10") {
-    book = ["Test"];
-  }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
     book = [1, 2, 3, 4, 5, "5-5", 6, 7, 8, 9, 10, "10-5"];
@@ -321,6 +317,10 @@ function getBook(classObj) {
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
+  // 숙명키즈 파랑반(8세) 시범용 컨텐츠
+  if(classObj.code == "A00083-K4-KC10") {
+    book = ["A-Test", "B-Test", "C-Test"];
+  }
   // 대구지사 소속원, 이유경 테스트 계정에 테스트 컨텐츠 추가
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "C00176") {
     book += "," + classObj.level + "-Test";
