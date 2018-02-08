@@ -319,7 +319,7 @@ function getBook(classObj) {
   }).join(",");
   // 숙명키즈 파랑반(8세) 시범용 컨텐츠
   if(classObj.code == "A00083-K4-KC10") {
-    book = ["A-Test", "B-Test", "C-Test"];
+    book = "A-Test,B-Test,C-Test";
   }
   // 대구지사 소속원, 이유경 테스트 계정에 테스트 컨텐츠 추가
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "C00176") {
