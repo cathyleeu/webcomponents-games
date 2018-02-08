@@ -259,7 +259,7 @@ function getBook(classObj) {
   }
   // 숙명키즈 파랑반(8세) 시범용 컨텐츠
   if(classObj.code == "A00083-K4-KC10") {
-    book = ["-Test"];
+    book = ["Test"];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
