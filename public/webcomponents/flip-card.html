@@ -244,7 +244,7 @@
                     flipped_el.remove();
 
                     if(_this.matched === _this.cards){
-                      if(_this.max === _this.currentStage) {
+                      if(_this.lastStage === _this.currentStage) {
                         _this.$.finalStageModal.modalAlert()
                         return false
                       }

@@ -19,22 +19,23 @@
     [70, 10]
   ],
   "manifest": [
-    {"src": "/img/renewed_a2/but.png", "text":"벚꽃", "sound": "complete.mp3", "id": "1"},
-    {"src": "/img/renewed_a2/daizy.png", "text":"데이지", "sound": "complete.mp3", "id": "2"},
-    {"src": "/img/renewed_a2/gaenari.png", "text":"개나리", "sound": "complete.mp3", "id": "3"},
-    {"src": "/img/renewed_a2/geumjanhwa.png", "text":"금잔화", "sound": "complete.mp3", "id": "4"},
-    {"src": "/img/renewed_a2/halmi.png", "text":"할미꽃", "sound": "complete.mp3", "id": "5"},
-    {"src": "/img/renewed_a2/jebi.png", "text":"제비꽃", "sound": "complete.mp3", "id": "6"},
-    {"src": "/img/renewed_a2/jindalae.png", "text":"진달래", "sound": "complete.mp3", "id": "7"},
-    {"src": "/img/renewed_a2/mindle.png", "text":"민들레", "sound": "complete.mp3", "id": "8"},
-    {"src": "/img/renewed_a2/mokryun.png", "text":"목련", "sound": "complete.mp3", "id": "9"},
-    {"src": "/img/renewed_a2/moran.png", "text":"목련", "sound": "complete.mp3", "id": "10"},
-    {"src": "/img/renewed_a2/pansy.png", "text":"팬지", "sound": "complete.mp3", "id": "11"},
-    {"src": "/img/renewed_a2/tulip.png", "text":"튤립", "sound": "complete.mp3", "id": "12"}
+    {"src": "/img/renewed_a2/but.png", "text": { "ko" : "벚꽃", "en" : "cherry blossoms" }, "sound": "complete.mp3", "id": "1"},
+    {"src": "/img/renewed_a2/daizy.png", "text": { "ko" : "데이지", "en" : "blossoms" }, "sound": "complete.mp3", "id": "2"},
+    {"src": "/img/renewed_a2/gaenari.png", "text": { "ko" : "개나리", "en" : "blossoms" }, "sound": "complete.mp3", "id": "3"},
+    {"src": "/img/renewed_a2/geumjanhwa.png", "text": { "ko" : "금잔화", "en" : "blossoms" }, "sound": "complete.mp3", "id": "4"},
+    {"src": "/img/renewed_a2/halmi.png", "text": { "ko" : "할미꽃", "en" : "blossoms" }, "sound": "complete.mp3", "id": "5"},
+    {"src": "/img/renewed_a2/jebi.png", "text": { "ko" : "제비꽃", "en" : "blossoms" }, "sound": "complete.mp3", "id": "6"},
+    {"src": "/img/renewed_a2/jindalae.png", "text": { "ko" : "진달래", "en" : "blossoms" }, "sound": "complete.mp3", "id": "7"},
+    {"src": "/img/renewed_a2/mindle.png", "text": { "ko" : "민들레", "en" : "blossoms" }, "sound": "complete.mp3", "id": "8"},
+    {"src": "/img/renewed_a2/mokryun.png", "text": { "ko" : "목련", "en" : "blossoms" }, "sound": "complete.mp3", "id": "9"},
+    {"src": "/img/renewed_a2/moran.png", "text": { "ko" : "모란", "en" : "blossoms" }, "sound": "complete.mp3", "id": "10"},
+    {"src": "/img/renewed_a2/pansy.png", "text": { "ko" : "팬지", "en" : "blossoms" }, "sound": "complete.mp3", "id": "11"},
+    {"src": "/img/renewed_a2/tulip.png", "text": { "ko" : "튤립", "en" : "blossoms" }, "sound": "complete.mp3", "id": "12"}
   ],
   "msg": {
     "ko": {
-      "title": "이미지를 클릭해보아요",
+      "title": "클릭 게임",
+      "minor": "이미지를 클릭해보아요",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -53,7 +54,8 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Along with the picture, arrange the bath tools.",
+      "title": "Click Game",
+      "minor": "Click the given images",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
@@ -65,7 +67,11 @@
       "previousBtm": "Do you want to move on to the previous step?",
       "nextbtn": "Back",
       "nobtn" : "No",
-      "yesbtn" : "Yes"
+      "yesbtn" : "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
     }
   }
 }

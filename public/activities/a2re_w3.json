@@ -61,7 +61,16 @@
       "previousBtm": "Do you want to move on to the previous step?",
       "nextbtn": "Back",
       "nobtn" : "No",
-      "yesbtn" : "Yes"
+      "yesbtn" : "Yes",
+      "retryHead": "Miss",
+      "retryBtm" : "Use all given images",
+      "retrybtn": "Retry",
+      "unCorrect" : "Try Again",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
+
     }
   }
 }

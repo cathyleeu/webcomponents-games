@@ -202,12 +202,19 @@
         }
       }
       dispatchToChild(){
-        let button = [
-          { text: "출력하기", method: this.exportImage },
-          { text: "다시하기", method: this.reset },
-          { text: "완성하기", method: this.handleStageClear },
-        ]
-        return button
+        let button = {
+          "ko" : [
+            { text: "출력하기", method: this.exportImage },
+            { text: "다시하기", method: this.reset },
+            { text: "완성하기", method: this.handleStageClear }
+          ],
+          "en" : [
+            { text: "Print", method: this.exportImage },
+            { text: "Retry", method: this.reset },
+            { text: "Submit", method: this.handleStageClear }
+          ]
+        }
+        return button[this.language]
       }
       exportImage(){
         // FIXME: 이미지 크기 조정
@@ -405,7 +412,8 @@
                     .attr('width', innerWidth).attr('height', svgHeight);
 
 
-        let backgroundImg = manifest.find(d => d.background).src,
+        let mainImg = manifest.find(d => d.background),
+            backgroundImg = mainImg.src[this.language] || mainImg.src,
             resImagesData = manifest.filter(d => !d.background)
 
         this.set('items', resImagesData)

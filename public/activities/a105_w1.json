@@ -30,7 +30,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "사람과 어울리는 한복을 연결해보아요.",
+      "title": "선긋기 게임",
+      "minor" : "사람과 어울리는 한복을 연결해보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -49,7 +50,8 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Matching the cards with people and traditional clothes",
+      "title": "Matching Game",
+      "minor" : "Matching the cards with people and traditional clothes",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
