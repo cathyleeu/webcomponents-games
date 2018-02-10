@@ -58,6 +58,13 @@
     purpose="previous"
     ></toycode-modal>
   <toycode-modal
+    id="retryModal"
+    purpose="retry"
+    headertext="{{localize('retryHead')}}"
+    btmtext="{{localize('retryBtm')}}"
+    retrybtn="{{localize('retrybtn')}}"
+    ></toycode-modal>
+  <toycode-modal
     id="introModal"
     purpose="intro"
     headertext="{{localize('introHead')}}"
@@ -87,6 +94,9 @@
       return {
         language: {
           value: "ko"
+        },
+        currentStage: {
+          value: 1
         }
       }
     }
@@ -112,7 +122,15 @@
       d3.select(this.$.createSvg).attr('width', size.svgWidth).attr('height', size.svgHeight)
       this.set('axis', [])
     }
+    reset() {
+      this.set('currentStage', this.currentStage + 1)
+      d3.select(this.$.createSvg).selectAll('image').remove()
+      this.setData(this.data, this.manifest)
+    }
     setData(data, manifest){
+
+      this.set('data', data)
+      this.set('manifest', manifest)
 
       let { svgHeight, svgWidth } = this.size,
           svg = d3.select(this.$.createSvg),
@@ -163,8 +181,6 @@
                           //transform="translate(20,2.5)
 
 
-
-
           circleText.append('circle')
               .attr('fill', 'white')
               .attr('stroke-width', 3)
@@ -200,8 +216,6 @@
             .on("end", this.dragended))
 
 
-
-
     }
     dragstarted(d) {
 
@@ -226,7 +240,6 @@
       let targetEl, targetX, targetY, result;
 
       self.targets.forEach(el => {
-
         const getEl = el.getBBox();
         if(getEl.x < getX && getX < getEl.x + getEl.height && getEl.y < getY && getY < getEl.y + getEl.height ) {
           targetEl = el;
@@ -252,10 +265,15 @@
         }
 
       } else {
+        self.$.retryModal.modalAlert()
         d3.select(this).attr('x', self.startX ).attr('y', self.startY )
       }
       if(self.leftTargets === 0 ) {
-        self.$.finalStageModal.modalAlert()
+        if(self.lastStage === self.currentStage) {
+          self.$.finalStageModal.modalAlert()
+          return false
+        }
+        self.$.successModal.modalAlert()
       }
 
     }

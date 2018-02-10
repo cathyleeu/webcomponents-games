@@ -1,6 +1,7 @@
 {
   "element": "grouping-game",
   "attributes": {
+    "lastStage" : 2
   },
   "data": [
     {"id": 0, "src": "/img/b1_w4/crcl.png"},
@@ -48,13 +49,17 @@
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 그림에 다시 맞춰 보아요.",
+      "retrybtn": "확인",
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "확인",
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Along with the picture, arrange the bath tools.",
+      "title": "Drag Game",
+      "minor": "Drag a stuff from left and drop it on the right side.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
@@ -66,7 +71,14 @@
       "previousBtm": "Do you want to move on to the previous step?",
       "nextbtn": "Back",
       "nobtn" : "No",
-      "yesbtn" : "Yes"
+      "yesbtn" : "Yes",
+      "retryHead": "Miss",
+      "retryBtm" : "Try Again.",
+      "retrybtn": "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
     }
   }
 }

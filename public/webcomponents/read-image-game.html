@@ -12,6 +12,10 @@
         width: 100px;
         height: 100px;
       }
+      p {
+        text-align: center;
+        font-size: 20px;
+      }
     </style>
     <status-bar
       title="{{localize('title')}}"
@@ -64,6 +68,7 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
+    <p>{{localize('minor')}}</p>
     <svg></svg>
   </template>
   <script>
@@ -101,7 +106,7 @@
         if(!selfEle.isPlaying){
           selfEle.set('isPlaying', true)
           d3.select(this).remove()
-          d3.select(svg).append('text').text(`${d.text}`)
+          d3.select(svg).append('text').text(`${d.text[selfEle.language]}`)
             .attr('x', d.x+space ).attr('y', d.y+space )
             .style('font-size', '40px')
             .style('font-weight', '700')
@@ -127,8 +132,10 @@
         this.set('data',data)
         this.set('manifest',manifest)
         let { offsetWidth, offsetHeight } = this,
+            svgHeight = this.offsetHeight-60,
             svg = d3.select(this.shadowRoot).select('svg')
-                    .attr('width', this.offsetWidth).attr('height', this.offsetHeight);
+                    .attr('width', this.offsetWidth)
+                    .attr('height', svgHeight);
             manifest = d3.shuffle(manifest).slice(0, this.max)
             data = d3.shuffle(data)
 
@@ -147,7 +154,7 @@
           ["text"]:re.text,
           ["id"]:re.id,
           ["x"]: Math.floor(offsetWidth*(data[i][0]/120)),
-          ["y"]: Math.floor(offsetHeight*(data[i][1]/120))
+          ["y"]: Math.floor(svgHeight*(data[i][1]/120))
         }))
 
         svg.selectAll('image').data(refineData).enter()

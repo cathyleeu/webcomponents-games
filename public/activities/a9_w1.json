@@ -1,7 +1,7 @@
 {
   "element": "flip-card",
   "attributes": {
-    "max" : 5
+    "lastStage" : 5
   },
   "data": [
     "winter1",

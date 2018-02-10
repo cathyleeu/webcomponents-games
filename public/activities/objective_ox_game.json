@@ -47,7 +47,10 @@
       "nextbtn": "Back",
       "nobtn" : "No",
       "yesbtn" : "Yes",
-      "fullscreen" : "fullscreen"
+      "fullscreen" : "fullscreen",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage"
     }
   }
 }

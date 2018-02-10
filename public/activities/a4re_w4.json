@@ -36,7 +36,7 @@
       "mixed": "사용 가능 한 이미지"
     },
     "en": {
-      "title": "Along with the picture, arrange the bath tools.",
+      "title": "Arrange the images with given images",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
@@ -48,7 +48,13 @@
       "previousBtm": "Do you want to move on to the previous step?",
       "nextbtn": "Back",
       "nobtn" : "No",
-      "yesbtn" : "Yes"
+      "yesbtn" : "Yes",
+      "flow": "Work Space",
+      "mixed": "Given images",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
     }
   }
 }
