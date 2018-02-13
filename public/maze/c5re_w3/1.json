@@ -1,0 +1,50 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start", "repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3",
+    "repeat"
+  ],
+  "map": [
+    ".%######.",
+    "#.##..###",
+    "##..###.#",
+    "##.##.#.#",
+    "#.#)))l##",
+    "#..#.##.#",
+    "###.###.#",
+    "#..#..###",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 0,
+    "img":"log1"
+  },{
+    "x": 3,
+    "y": 4,
+    "img":"lotus_flower",
+    "itemCount": 1
+  },{
+    "x": 4,
+    "y": 4,
+    "img":"lotus_flower",
+    "itemCount": 1
+  },{
+    "x": 5,
+    "y": 4,
+    "img":"lotus_flower",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "연꽃을 모아요",
+    "msg:en": "Let's collect the lotus_flower!",
+    "img": [ "/img/c5/lotus_flower.png","/img/blocks/bring.png"]
+  }]
+}

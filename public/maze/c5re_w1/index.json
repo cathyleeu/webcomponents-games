@@ -1,0 +1,288 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####EEEEEE#######.",
+    "..r..%%%%%%.I..%n.#",
+    ".#############.%n.#",
+    "##...#########.%n.#",
+    "..#............%n.#",
+    "##...%%%%%%%%%.%n.#",
+    "#####HHHHHHHHH#####."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "클로버를 1개 얻을 수 있어.",
+      "msg:en": "You can get one clover at once.",
+      "img": "/img/c5/clovers/clover.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "클로버를 1개 얻을 수 있어.",
+      "msg:en": "You can get one clover at once.",
+      "img": "/img/c5/clovers/clover.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "클로버를 1개 얻을 수 있어.",
+      "msg:en": "You can get one clover at once.",
+      "img": "/img/c5/clovers/clover.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "클로버를 1개 얻을 수 있어.",
+      "msg:en": "You can get one clover at once.",
+      "img": "/img/c5/clovers/clover.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "클로버를 1개 얻을 수 있어.",
+      "msg:en": "You can get one clover at once.",
+      "img": "/img/c5/clovers/clover.png"
+    }]
+  },{
+    "x": 10,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "클로버를 1개 얻을 수 있어.",
+      "msg:en": "You can get one clover at once.",
+      "img": "/img/c5/clovers/clover.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "클로버를 2개 얻을 수 있어.",
+      "msg:en": "You can get two clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "클로버를 2개 얻을 수 있어.",
+      "msg:en": "You can get two clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "클로버를 2개 얻을 수 있어.",
+      "msg:en": "You can get two clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "클로버를 2개 얻을 수 있어.",
+      "msg:en": "You can get two clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "클로버를 2개 얻을 수 있어.",
+      "msg:en": "You can get two clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 3,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "클로버를 3개 얻을 수 있어.",
+      "msg:en": "You can get three clovers at once.",
+      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c5re_w1/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c5re_w1/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "c5re_w1/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c5re_w1/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c5re_w1/5"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "c5re_w1/6"
+  },{
+    "x": 12,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+    "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
+      "msg:en": "The basic problems are over. Now you can solve the problem freely."
+    }]
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "c5re_w1/7"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "c5re_w1/8"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "c5re_w1/9"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "c5re_w1/10"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "c5re_w1/11"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "c5re_w1/12"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c5re_w1/13"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "c5re_w1/14"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "c5re_w1/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "c5re_w1/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "c5re_w1/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c5re_w1/18"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "c5re_w1/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "c5re_w1/20"
+  },{
+    "img":"lotus0",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "c5re_w2/index",
+    "min_score": 20
+  }],
+  "tutorial": [{
+    "msg:ko": "규칙을 찾아보아요! 쉬운 문제는 클로버 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's find patterns! An easy problem gives you one clover, a normal one gives you two and a hard one gives you three."
+  }],
+  "goal": {
+    "msg:ko": "클로버을 20개 모아 연잎으로 가요.",
+    "msg:en": "Let's go to lotus with 20 clover.",
+    "img":  ["/img/c5/clovers/clover.png","/img/c5/lotus/nlotus0.png"]
+  }
+}

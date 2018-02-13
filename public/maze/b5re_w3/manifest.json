@@ -1,0 +1,33 @@
+[
+  {"book": "b5", "title": "3주차 : 낚시를 준비해요"},
+  {"id": "bg1", "src": "/img/b5_w3/tile1.png"},
+  {"id": "bg2", "src": "/img/b5_w3/tile2.png"},
+
+  {"id": "character", "src": "/img/b5_w1/cos_summer.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b5_w1/cos_summer0.png", "size": 256},
+  {"id": "food", "src": "/img/b5_w3/fish.png"},
+
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "seawall1", "src": "/img/b5_w3/seawall1.png", "obstacle": true},
+  {"id": "seawall2", "src": "/img/b5_w3/seawall2.png", "obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"tile": "s","id": "seatile1", "src": "/img/b5_w2/seatile1.png", "wall": true},
+  {"tile": "w","id": "seatile2", "src": "/img/b5_w2/seatile2.png", "wall": true},
+  {"tile": "t","id": "lighthouse", "src": "/img/b5_w3/lighthouse.png"},
+
+  {"id": "fishing_rod", "src": "/img/b5_w1/fishing_rod.png"},
+  {"id": "lure", "src": "/img/b5_w3/lure.png"},
+  {"id": "fish", "src": "/img/b5_w3/fish.png"},
+
+  {"id": "father_summer", "src": "/img/b5_w1/father_summer.png"}
+]

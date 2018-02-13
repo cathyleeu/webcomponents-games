@@ -1,0 +1,40 @@
+{
+
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    "CCFCCF%CF",
+    "######.##",
+    "##.##..##",
+    "##..##..#",
+    "#...)..##",
+    "#...F...#",
+    "#.###.###",
+    "#u..#...#",
+    ".#######."
+  ],
+  "tile": [
+    {"tile": ")", "img": "n3"}
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 0,
+    "img":"n0",
+    "useItem": true
+  }],
+  "tutorial": [{
+    "msg:ko": "빈 곳에 들어갈 숫자을 가져와요",
+    "msg:en": "Let's find number to fill the space and put it there",
+    "img": ["/img/c5/lotus/nlotus0.png","/img/blocks/bring.png","/img/blocks/use.png"]
+  }]
+}

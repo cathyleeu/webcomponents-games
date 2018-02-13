@@ -1,0 +1,30 @@
+[
+  {"book": "c5", "title": "3주차 : 토드가 연꽃을 가져와요"},
+  {"id": "bg1", "src": "/img/b2_w1/Pond1_256.png"},
+  {"id": "bg2", "src": "/img/b2_w1/Pond2_256.png"},
+
+  {"id": "character", "src": "/img/c5/SpriteToad4_256.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c5/TutoToad4_256.png", "size": 256},
+  {"id": "food", "src": "/img/c5/lotus_flower.png"},
+  {"id": "cos", "src": "/img/c5/cos0.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"N","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "log1", "src": "/img/b2_w1/Log1_256.png", "obstacle": true},
+  {"id": "log2", "src": "/img/b2_w1/Log2_256.png", "obstacle": true},
+  {"id": "stone1", "src": "/img/b2_w1/PondStone1_256.png", "obstacle": true},
+  {"id": "stone2", "src": "/img/b2_w1/PondStone2_256.png", "obstacle": true},
+  {"id": "weed3", "src": "/img/b2_w1/Weed3_256.png", "obstacle": true},
+  {"id": "weed4", "src": "/img/b2_w1/Weed4_256.png", "obstacle": true},
+
+  {"id": "lotus_flower", "src": "/img/c5/lotus_flower.png"}
+
+]

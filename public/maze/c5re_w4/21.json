@@ -1,0 +1,41 @@
+{
+  "tile_size": 128,
+  "score":100,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#.#.#",
+    "#d#%#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":3,
+    "y":2,
+    "img":"lana"
+  },{
+    "x":2,
+    "y":2,
+    "img":"gift"
+  },{
+    "x":2,
+    "y":1,
+    "img":"cos"
+  }],
+  "success": [{
+    "msg:ko": "5권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Success! Good Job!",
+    "img": ["/img/c5/lanantode.png"]
+  }],
+   "tutorial": [{
+     "msg:ko": "5권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+     "msg:en": "Success! Good Job!",
+     "img": ["/img/c5/lanantode.png"]
+  }]
+}

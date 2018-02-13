@@ -1,0 +1,40 @@
+[
+  {"book": "c5", "title": "2주차 : 라나와 규칙을 찾아보아요"},
+  {"id": "bg1", "src": "/img/b2_w1/Pond1_256.png"},
+  {"id": "bg2", "src": "/img/b2_w1/Pond2_256.png"},
+
+  {"id": "character", "src": "/img/c5/SpriteLana_256.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c5/lana.png", "size": 256},
+  {"id": "food", "src": "/img/c5/clovers/clover.png"},
+  {"id": "tode", "src": "/img/c5/TutoToad4_256.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"h", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"n","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"e","src": "/img/guide/easy.png", "obstacle": false},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "log1", "src": "/img/b2_w1/Log1_256.png", "obstacle": true},
+  {"id": "log2", "src": "/img/b2_w1/Log2_256.png", "obstacle": true},
+  {"id": "stone1", "src": "/img/b2_w1/PondStone1_256.png", "obstacle": true},
+  {"id": "stone2", "src": "/img/b2_w1/PondStone2_256.png", "obstacle": true},
+  {"id": "weed3", "src": "/img/b2_w1/Weed3_256.png", "obstacle": true},
+  {"id": "weed4", "src": "/img/b2_w1/Weed4_256.png", "obstacle": true},
+
+  {"tile": "z", "id": "n0", "src": "/img/c5/lotus/nlotus0.png", "obstacle": false},
+
+  {"tile": "A", "id": "n1", "src": "/img/c5/lotus/nlotus1.png", "obstacle": false},
+  {"tile": "B", "id": "n2", "src": "/img/c5/lotus/nlotus2.png", "obstacle": false},
+  {"tile": "C", "id": "n3", "src": "/img/c5/lotus/nlotus3.png", "obstacle": false},
+  {"tile": "E", "id": "n4", "src": "/img/c5/lotus/nlotus4.png", "obstacle": false},
+  {"tile": "F", "id": "n5", "src": "/img/c5/lotus/nlotus5.png", "obstacle": false},
+  {"tile": "G", "id": "n6", "src": "/img/c5/lotus/nlotus6.png", "obstacle": false},
+  {"tile": "H", "id": "n7", "src": "/img/c5/lotus/nlotus7.png", "obstacle": false},
+  {"tile": "J", "id": "n8", "src": "/img/c5/lotus/nlotus8.png", "obstacle": false},
+  {"tile": "K", "id": "n9", "src": "/img/c5/lotus/nlotus9.png", "obstacle": false}
+
+]
