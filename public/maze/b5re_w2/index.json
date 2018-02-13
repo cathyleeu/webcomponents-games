@@ -1,0 +1,317 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####eeeee#######sw",
+    "..r..%%%%%....I%nws",
+    ".#############.%nsw",
+    "##...#########.%nws",
+    "..#............%nsw",
+    "##.%%%%%.%%%%%.%nws",
+    "###hhhhh#hhhhh###sw."
+  ],
+  "extra": [{
+    "x": 14,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+    "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
+      "msg:en": "The basic problems are over. Now you can solve the problem freely."
+    }]
+  },{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:jp": "星を１個ゲットできるよ。",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/b5_w2/star.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:jp": "星を１個ゲットできるよ。",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/b5_w2/star.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:jp": "星を１個ゲットできるよ。",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/b5_w2/star.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:jp": "星を１個ゲットできるよ。",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/b5_w2/star.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "별을 1개 얻을 수 있어.",
+      "msg:jp": "星を１個ゲットできるよ。",
+      "msg:en": "You can get one star at once.",
+      "img": "/img/b5_w2/star.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:jp": "星を2個ゲットできるよ。",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:jp": "星を2個ゲットできるよ。",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:jp": "星を2個ゲットできるよ。",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:jp": "星を2個ゲットできるよ。",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "별을 2개 얻을 수 있어.",
+      "msg:jp": "星を2個ゲットできるよ。",
+      "msg:en": "You can get two stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 3,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "별을 3개 얻을 수 있어.",
+      "msg:jp": "星を3個ゲットできるよ。",
+      "msg:en": "You can get three stars at once.",
+      "img": ["/img/b5_w2/star.png","/img/b5_w2/star.png","/img/b5_w2/star.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "b5re_w2/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b5re_w2/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b5re_w2/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b5re_w2/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b5re_w2/5"
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b5re_w2/6"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b5re_w2/7"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b5re_w2/8"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b5re_w2/9"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "b5re_w2/10"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "b5re_w2/11"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b5re_w2/12"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "b5re_w2/13"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b5re_w2/14"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b5re_w2/15"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b5re_w2/16"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "b5re_w2/17"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "b5re_w2/18"
+  },{
+    "x": 4,
+    "y": 5,
+    "link": "b5re_w2/19"
+  },{
+    "x": 3,
+    "y": 5,
+    "link": "b5re_w2/20"
+  },{
+    "img":"mother_summer",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "b5re_w3/index",
+    "min_score": 15
+  }],
+
+  "tutorial": [{
+    "msg:ko": "물놀이를 하려면 안전용품이 필요해요",
+    "msg:jp": "水遊びをするために、安全用品が必要だよ。",
+    "msg:en": "Let's collect the safety things for swimming!",
+    "img": "/img/b5_w1/cos_summer0.png"
+  }, {
+    "msg:ko": "별 15개를 모으면 엄마에게 가요.",
+    "msg:jp": "星を15個集めたら、お母さんのところに行くよ。",
+    "msg:en": "Go to mom with more than 15 stars.",
+    "img": "/img/b5_w2/mother_summer.png",
+    "x" : 20,
+    "y" : 5
+  }, {
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:jp": "｢次へ」ボタンか、ほかのところをクリックして開始します。",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "별을 15개 모아서 엄마에게 가자!",
+    "msg:jp": "星を15個集めて、お母さんのところに行こう！",
+    "msg:en": "Let's get 15 stars and go to mother!",
+    "img": ["/img/b5_w2/star.png","/img/b5_w2/mother_summer.png"]
+  }
+}

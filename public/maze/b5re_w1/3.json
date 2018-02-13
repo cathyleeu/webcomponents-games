@@ -1,0 +1,49 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3"
+  ],
+  "map": [
+    "%#######",
+    "#.#....#",
+    "#.#.)#.#",
+    "#..#.#.#",
+    "#......#",
+    "#.s##u.#",
+    "#...##.#",
+    "########"
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+  },{
+    "x": 4,
+    "y": 2,
+    "img": "Rubber_boats",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "고무보트로 가보자",
+    "msg:jp": "ゴムボートのところまで行こう。",
+    "msg:en": "Go to the Rubber boats.",
+    "img": "/img/b5_w1/Rubber_boats.png"
+  },{
+    "msg:ko": "'가져오기' 블록을 사용해 봐!",
+    "msg:jp": "「アイテムゲット」ブロックを使用してみよう！",
+    "msg:en": "Try to use the Kidsblock, 'get items' block!",
+    "img": "/img/blocks/bring.png"
+  }],
+  "goal": {
+    "msg:ko": "고무보트에서 '가져오기' 블록을 사용하자.",
+    "msg:jp": "ゴムボートのところで「アイテムゲット」ブロックを使用してみよう。",
+    "msg:en": "Let's use 'get items' block on the Rubber boats",
+    "img": ["/img/b5_w1/Rubber_boats.png","/img/blocks/bring.png"]
+  }
+}

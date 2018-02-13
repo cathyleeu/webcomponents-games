@@ -1,0 +1,54 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item3"
+  ],
+  "map": [
+    "%#######",
+    "#.#....#",
+    "#.#..#.#",
+    "#..#.sd#",
+    "#......#",
+    "#.#..#.#",
+    "#.#.)#.#",
+    "########"
+  ],
+  "extra":[{
+  "x": 0,
+  "y": 0,
+  "img": "tree1"
+  },{
+    "x": 4,
+    "y": 6,
+    "img": "ice_box",
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "아이스박스로 가보자",
+    "msg:jp": "アイスボックスのところまで行こう。",
+    "msg:en": "Go to the ice box.",
+    "img": "/img/b5_w1/ice_box.png"
+  },{
+    "msg:ko": "보물 상자 하나에 보물이 여러 개 있네.",
+    "msg:jp": "宝物箱に宝物がいくつかあるよ。",
+    "msg:en": "There are more than one ice boxs.",
+    "img": "/img/b5_w1/ice_box.png"
+  },{
+    "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
+    "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
+    "msg:en": "Try to use 'get items' block more than once!",
+    "img": "/img/blocks/bring.png"
+  }],
+  "goal": {
+    "msg:ko": "아이스박스에서 '가져오기' 블록을 사용하자.",
+    "msg:jp": "アイスボックスのところで「アイテムゲット」ブロックを使用してみよう。",
+    "msg:en": "Let's use 'get items' block on the ice box",
+    "img": ["/img/b5_w1/ice_box.png","/img/blocks/bring.png"]
+  }
+}

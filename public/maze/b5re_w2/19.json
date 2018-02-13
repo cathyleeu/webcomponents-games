@@ -1,0 +1,60 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#.#....l#",
+    "#...).#.#",
+    "###..####",
+    "#.##....#",
+    "#..#%..##",
+    "#.##ss#.#",
+    "#swswsws#",
+    "swswswsws"
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "img": "mother_summer",
+    "useItem": 1
+  }, {
+    "x": 4,
+    "y": 2,
+    "img":"life_jacket",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "안전한 물놀이를 위해서",
+    "msg:jp": "安全に水遊びするために、",
+    "msg:en": "For safety swimming,"
+  },{
+    "msg:ko": "엄마에게 구명조끼를 가지고 가야해",
+    "msg:jp": "ライフジャケットを持ってお母さんのところに行くよ。",
+    "msg:en": "I'm going to take life jacket to my mother"
+  },{
+    "msg:ko": "구명조끼로 이동해 아이템 가져오기를 해보자",
+    "msg:jp": "ライフジャケットのところまで行って、「アイテムゲット」ブロックを使用してみよう。",
+    "msg:en": "Move to life jacket And then Use 'get item' Block",
+    "img": ["/img/b5_w1/life_jacket.png","/img/blocks/bring.png"]
+  },{
+    "msg:ko": "그리고나서 엄마에게 이동하고, 아이템 사용하기를 해보자",
+    "msg:jp": "その後、お母さんのところまで行って、「アイテム使用」ブロックを使用してみよう。",
+    "msg:en": "then move my mother, Use 'use items' Block",
+    "img": ["/img/b5_w2/mother_summer.png","/img/blocks/use.png"]
+  }],
+  "goal": {
+    "msg:ko": "엄마에게 구명조끼를 가져가자!",
+    "msg:jp": "ライフジャケットを持ってお母さんのところに行こう！",
+    "msg:en": "Take life jacket to my mother",
+    "img": ["/img/b5_w1/life_jacket.png","/img/b5_w2/mother_summer.png"]
+  }
+}

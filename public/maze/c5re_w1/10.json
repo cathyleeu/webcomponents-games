@@ -1,0 +1,52 @@
+{
+  "tile_size": 128,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#...#...",
+    ".....a#..",
+    "..#....#.",
+    ".........",
+    "..#a..#..",
+    "..r..#%.a",
+    ".#..#....",
+    ".......#.",
+    "...#....."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 5,
+    "img":"flower1"
+  }, {
+    "x": 3,
+    "y": 4,
+    "img":"flower5"
+  }, {
+    "x": 5,
+    "y": 1,
+    "img":"flower4"
+  }, {
+    "x": 8,
+    "y": 5,
+    "img":"flower3"
+  }],
+  "tutorial": [{
+      "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어. 빈칸에 들어갈 꽃 모양을 찾아가보자.",
+      "msg:jp": "トッドはパターンを探す遊びがしたいよ。空欄に入る花のパターンを探しに行こう。",
+      "msg:en": "Tod wants to complete the pattern.",
+    "img": ["/img/c5/flowers/flower4.png", "/img/c5/flowers/flower3.png", "/img/c5/flowers/flower2.png", "/img/c5/flowers/flower0.png", "/img/c5/flowers/flower5.png"]
+  }],
+  "goal": {
+    "msg:ko": "빈칸에 들어갈 꽃 모양을 찾아가보자.",
+    "msg:jp": "空欄に入る花のパターンを探しに行こう。",
+    "msg:en": "Find the right shape of flower in the blank.",
+    "img": ["/img/c5/flowers/flower4.png", "/img/c5/flowers/flower3.png", "/img/c5/flowers/flower2.png", "/img/c5/flowers/flower0.png", "/img/c5/flowers/flower5.png"]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item"
+  ],
+  "map": [
+    ".#######.",
+    "#.......#",
+    "#.....d.#",
+    "##t..##.#",
+    "#..).#..#",
+    "#.....%##",
+    "twsws..##",
+    "wswswswt#",
+    "swswswsws"
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 5,
+    "img": "father_summer",
+    "useItem": 2
+  }, {
+    "x": 3,
+    "y": 4,
+    "img":"lure",
+    "itemCount": 2
+  }],
+  "tutorial": [{
+    "msg:ko": "낚시를 하기 위해서",
+    "msg:jp": "つりをしに、",
+    "msg:en": "For fishiing,"
+  },{
+    "msg:ko": "아빠에게 미끼를 가지고 가야해",
+    "msg:jp": "えさを持ってお父さんのところへ行くよ。",
+    "msg:en": "I'm going to take lure to my father",
+    "img": ["/img/b5_w1/father_summer.png","/img/b5_w3/lure.png"]
+  },{
+    "msg:ko": "가져와야할 미끼가 여러 개 있어.",
+    "msg:jp": "ゲットするえさがいくつかあるよ。",
+    "msg:en": "There are several lures.",
+    "img": ["/img/b5_w3/lure.png","/img/b5_w3/lure.png"]
+  },{
+    "msg:ko": "'가져오기'와 사용하기 블록을 여러 번 사용해 봐!",
+    "msg:jp": "｢アイテムゲット｣と｢アイテム使用｣ブロックを何回も使ってみよう！",
+    "msg:en": "Try to use 'get and use items' block more than once!",
+    "img": ["/img/blocks/bring.png","/img/blocks/use.png"]
+  }],
+  "goal": {
+    "msg:ko": "아빠에게 미끼를 가져가자!",
+    "msg:jp": "えさを持ってお父さんのところに行こう！",
+    "msg:en": "Take lures to my father",
+    "img": ["/img/b5_w3/lure.png","/img/b5_w1/father_summer.png"]
+  }
+}

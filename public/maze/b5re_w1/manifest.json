@@ -1,0 +1,39 @@
+[
+  {"book": "b5", "title": "1주차 : 해변으로 놀러가요"},
+  {"id": "bg1", "src": "/img/b5_w1/tile1.png"},
+  {"id": "bg2", "src": "/img/b5_w1/tile2.png"},
+
+  {"id": "character", "src": "/img/b5_w1/cos_summer.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/b5_w1/cos_summer0.png", "size": 256},
+  {"id": "food", "src": "/img/b5_w1/ice_box.png"},
+
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "tree1", "src": "/img/b5_w1/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/b5_w1/tree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/b5_w1/tree3.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/b5_w1/bush1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/b5_w1/bush2.png", "obstacle": true},
+  {"id": "flower1", "src": "/img/b5_w1/flower1.png", "obstacle": true},
+  {"id": "flower2", "src": "/img/b5_w1/flower2.png", "obstacle": true},
+  {"id": "ystone1", "src": "/img/b5_w1/ystone1.png", "obstacle": true},
+  {"id": "ystone2", "src": "/img/b5_w1/ystone2.png", "obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "ice_box", "src": "/img/b5_w1/ice_box.png"},
+  {"id": "life_jacket", "src": "/img/b5_w1/life_jacket.png"},
+  {"id": "Rubber_boats", "src": "/img/b5_w1/Rubber_boats.png"},
+  {"id": "tube", "src": "/img/b5_w1/tube.png"},
+  {"id": "fishing_rod", "src": "/img/b5_w1/fishing_rod.png"},
+
+  {"tile": "s", "id": "house", "src": "/img/b5_w1/house.png"},
+  {"id": "father_summer", "src": "/img/b5_w1/father_summer.png"}
+]

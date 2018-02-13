@@ -1,0 +1,54 @@
+{
+  "tile_size": 128,
+
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#a......",
+    "....#.#..",
+    "...#...#.",
+    ".#.a...%.",
+    ".....a#..",
+    ".#.#...#.",
+    ".#....#..",
+    "..#.u..#.",
+    "...#....."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 3,
+    "img":"star5"
+  }, {
+    "x": 2,
+    "y": 0,
+    "img":"star3"
+  }, {
+    "x": 3,
+    "y": 3,
+    "img":"star4"
+  }, {
+    "x": 5,
+    "y": 4,
+    "img":"star1"
+  }],
+
+"tutorial": [{
+    "msg:ko": "토드는 규칙찾기 놀이를 하고 싶어. 빈칸에 들어갈 별 모양을 찾아가보자.",
+    "msg:jp": "トッドはパターンを探す遊びがしたいよ。空欄に入る星のパターンを探しに行こう。",
+    "msg:en": "Tod wants to complete the pattern.",
+    "img": ["/img/c5/stars/star4.png", "/img/c5/stars/star0.png", "/img/c5/stars/star1.png", "/img/c5/stars/star2.png", "/img/c5/stars/star3.png"]
+  }],
+  "goal": {
+    "msg:ko": "빈칸에 들어갈 별 모양을 찾아가보자.",
+    "msg:jp": "空欄に入る星のパターンを探しに行こう。",
+    "msg:en": "Find the right shape of star in the blank.",
+    "img": ["/img/c5/stars/star4.png", "/img/c5/stars/star0.png", "/img/c5/stars/star1.png", "/img/c5/stars/star2.png", "/img/c5/stars/star3.png"]
+  }
+}

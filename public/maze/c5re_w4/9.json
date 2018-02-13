@@ -1,0 +1,52 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start", "repeat","repeat","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#%...)###",
+    "##..#.#.#",
+    "#.##).###",
+    "##.#.#..#",
+    "#.#).##.#",
+    "###.###.#",
+    "#.r.##.##",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img":"cos",
+    "useItem": 3
+  },{
+    "x": 5,
+    "y": 1,
+    "img":"lotus_flower",
+    "itemCount": 1
+  },{
+    "x": 4,
+    "y": 3,
+    "img":"lotus_flower",
+    "itemCount": 1
+  },{
+    "x": 3,
+    "y": 5,
+    "img":"lotus_flower",
+    "itemCount": 1
+  }],
+  "tutorial": [{
+    "msg:ko": "연꽃을 모아서 코스에게 가져가요'",
+    "msg:en": "Let's collect the lotus flower and give Cos!",
+    "img": ["/img/c5/lotus_flower.png","/img/blocks/bring.png","/img/c5/cos0.png","/img/blocks/use.png"]
+  }]
+}

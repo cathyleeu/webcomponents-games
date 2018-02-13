@@ -1,0 +1,317 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####eeeee#######sw",
+    "..r..%%%%%....I%nws",
+    ".#############.%nsw",
+    "##...#########.%nws",
+    "..#............%nsw",
+    "##.%%%%%.%%%%%.%nws",
+    "###hhhhh#hhhhh###sw."
+  ],
+  "extra": [{
+    "x": 14,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "기본 문제가 모두 끝났어요. 이제 자유롭게 문제를 해결해봐요",
+    "msg:jp": "基本問題は全部解きました。このあと、自由に問題を解きましょう。",
+      "msg:en": "The basic problems are over. Now you can solve the problem freely."
+    }]
+  },{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "물고기를 1개 얻을 수 있어.",
+    "msg:jp": "魚を１尾ゲットできるよ。",
+      "msg:en": "You can get one fish at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "물고기를 1개 얻을 수 있어.",
+    "msg:jp": "魚を１尾ゲットできるよ。",
+      "msg:en": "You can get one fish at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "물고기를 1개 얻을 수 있어.",
+    "msg:jp": "魚を１尾ゲットできるよ。",
+      "msg:en": "You can get one fish at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "물고기를 1개 얻을 수 있어.",
+    "msg:jp": "魚を１尾ゲットできるよ。",
+      "msg:en": "You can get one fish at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "물고기를 1개 얻을 수 있어.",
+    "msg:jp": "魚を１尾ゲットできるよ。",
+      "msg:en": "You can get one fish at once.",
+      "img": "/img/b5_w3/fish.png"
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "물고기를 2개 얻을 수 있어.",
+    "msg:jp": "魚を2尾ゲットできるよ。",
+      "msg:en": "You can get two fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "물고기를 2개 얻을 수 있어.",
+    "msg:jp": "魚を2尾ゲットできるよ。",
+      "msg:en": "You can get two fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "물고기를 2개 얻을 수 있어.",
+    "msg:jp": "魚を2尾ゲットできるよ。",
+      "msg:en": "You can get two fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "물고기를 2개 얻을 수 있어.",
+    "msg:jp": "魚を2尾ゲットできるよ。",
+      "msg:en": "You can get two fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 5,
+    "tutorial": [{
+      "msg:ko": "물고기를 2개 얻을 수 있어.",
+    "msg:jp": "魚を2尾ゲットできるよ。",
+      "msg:en": "You can get two fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 3,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 4,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "물고기를 3개 얻을 수 있어.",
+    "msg:jp": "魚を3尾ゲットできるよ。",
+      "msg:en": "You can get three fishs at once.",
+      "img": ["/img/b5_w3/fish.png","/img/b5_w3/fish.png","/img/b5_w3/fish.png"]
+    }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "b5re_w3/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "b5re_w3/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "b5re_w3/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "b5re_w3/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "b5re_w3/5"
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "b5re_w3/6"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "b5re_w3/7"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "b5re_w3/8"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "b5re_w3/9"
+  },{
+    "x": 15,
+    "y": 5,
+    "link": "b5re_w3/10"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "b5re_w3/11"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "b5re_w3/12"
+  },{
+    "x": 11,
+    "y": 5,
+    "link": "b5re_w3/13"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "b5re_w3/14"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "b5re_w3/15"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "b5re_w3/16"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "b5re_w3/17"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "b5re_w3/18"
+  },{
+    "x": 4,
+    "y": 5,
+    "link": "b5re_w3/19"
+  },{
+    "x": 3,
+    "y": 5,
+    "link": "b5re_w3/20"
+  },{
+    "img":"father_summer",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "b5re_w4/index",
+    "min_score": 15
+  }],
+
+  "tutorial": [{
+    "msg:ko": "물고기를 잡으려면 낚시용품이 필요해요",
+    "msg:jp": "魚をつるためには、つりぐが必要だよ。",
+    "msg:en": "Let's collect the things for fishing!",
+    "img": "/img/b5_w1/cos_summer0.png"
+  }, {
+    "msg:ko": "물고기 15개를 모으면 아빠에게 가요.",
+    "msg:jp": "魚を15尾集めたら、お父さんのところに行くよ。",
+    "msg:en": "Go to dad with more than 15 fishs.",
+    "img": "/img/b5_w1/father_summer.png",
+    "x" : 20,
+    "y" : 5
+  }, {
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:jp": "｢次へ」ボタンか、ほかのところをクリックして開始します。",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "물고기를 15개 모아서 아빠에게 가자!",
+    "msg:jp": "魚を15尾集めて、お父さんのところに行こう！",
+    "msg:en": "Let's get 15 fishs and go to father!",
+    "img": ["/img/b5_w3/fish.png","/img/b5_w1/father_summer.png"]
+  }
+}
