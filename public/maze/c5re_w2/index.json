@@ -18,7 +18,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c5/clovers/clover.png"
+      "img": "/img/c5/lotus/nlotus0.png"
     }]
   },{
     "x": 6,
@@ -26,7 +26,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c5/clovers/clover.png"
+      "img": "/img/c5/lotus/nlotus0.png"
     }]
   },{
     "x": 7,
@@ -34,7 +34,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c5/clovers/clover.png"
+      "img": "/img/c5/lotus/nlotus0.png"
     }]
   },{
     "x": 8,
@@ -42,7 +42,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c5/clovers/clover.png"
+      "img": "/img/c5/lotus/nlotus0.png"
     }]
   },{
     "x": 9,
@@ -50,7 +50,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c5/clovers/clover.png"
+      "img": "/img/c5/lotus/nlotus0.png"
     }]
   },{
     "x": 10,
@@ -58,7 +58,7 @@
     "tutorial": [{
       "msg:ko": "점수 1점을 얻을 수 있어",
       "msg:en": "You can get one point at once",
-      "img": "/img/c5/clovers/clover.png"
+      "img": "/img/c5/lotus/nlotus0.png"
     }]
   },{
     "x": 16,
@@ -66,7 +66,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get two points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 16,
@@ -74,7 +74,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get two points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 16,
@@ -82,7 +82,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get two points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 16,
@@ -90,7 +90,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get two points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 16,
@@ -98,7 +98,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get two points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 5,
@@ -106,7 +106,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 6,
@@ -114,7 +114,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 7,
@@ -122,7 +122,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 8,
@@ -130,7 +130,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 9,
@@ -138,7 +138,7 @@
     "tutorial": [{
       "msg:ko": "점수 2점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 10,
@@ -146,7 +146,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 11,
@@ -154,7 +154,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 12,
@@ -162,7 +162,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 13,
@@ -170,7 +170,7 @@
     "tutorial": [{
       "msg:ko": "점수 3점을 얻을 수 있어",
       "msg:en": "You can get three points at once",
-      "img": ["/img/c5/clovers/clover.png","/img/c5/clovers/clover.png","/img/c5/clovers/clover.png"]
+      "img": ["/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png","/img/c5/lotus/nlotus0.png"]
     }]
   },{
     "x": 5,
@@ -270,13 +270,13 @@
   }],
 
   "tutorial": [{
-    "msg:ko": "클로버로 가보아요! 쉬운 문제는 1점, 보통은 2점, 어려운 문제는 3점을 주어요.",
-    "msg:en": "Let's go to clover! An easy problem gives you one point, a normal one gives you two and a hard one gives you three.",
-    "img": "/img/c5/clovers/clover.png"
+    "msg:ko": "연잎으로 가보아요! 쉬운 문제는 1점, 보통은 2점, 어려운 문제는 3점을 주어요.",
+    "msg:en": "Let's go to lotus! An easy problem gives you one point, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/c5/lotus/nlotus0.png"
   }],
   "goal": {
     "msg:ko": "20점을 얻고 토드에게 이동해요.",
     "msg:en": "Let's get 20 points and go to the Tode.",
-    "img": ["/img/c5/clovers/clover.png","/img/c5/TutoToad4_256.png"]
+    "img": ["/img/c5/lotus/nlotus0.png","/img/c5/TutoToad4_256.png"]
   }
 }
