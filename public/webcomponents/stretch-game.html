@@ -1,0 +1,170 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="./status-bar.html">
+<link rel="import" href="./modal.html">
+
+
+
+<dom-module id="stretch-game">
+  <template>
+    <style>
+      image {
+        width: 400px;
+        height: 400px;
+      }
+      p {
+        text-align: center;
+        font-size: 20px;
+      }
+    </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      hasname="{{handleCheckName()}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      purpose="select"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      fullscreen="{{localize('fullscreen')}}"
+    ></status-bar>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+    <p>{{localize('minor')}}</p>
+    <svg></svg>
+  </template>
+  <script>
+    class ReadImageGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'stretch-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        this.set('clicked', 0)
+        this.set('currentStage', 1)
+        this.set('isPlaying', false)
+        createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.FlashAudioPlugin]);
+        createjs.Sound.alternateExtensions = ["mp3"];
+      }
+      reset(){
+        this.set('currentStage', this.currentStage+1)
+        this.set('clicked', 0)
+        d3.select(this.shadowRoot).select("svg").selectAll("text").remove()
+        this.setData(this.data, this.manifest)
+      }
+      handleClick(d){
+        let selfEle = this.ownerDocument.getElementById('element'),
+            svg = this.parentElement,
+            space = (this.getBBox().width)*0.5;
+
+        if(!selfEle.isPlaying){
+          selfEle.set('isPlaying', true)
+          d3.select(this).remove()
+          d3.select(svg).append('text').text(`${d.text[selfEle.language]}`)
+            .attr('x', d.x+space ).attr('y', d.y+space )
+            .style('font-size', '40px')
+            .style('font-weight', '700')
+
+          selfEle.set('clicked', selfEle.clicked+1)
+
+          if(selfEle.clicked === selfEle.max) {
+            if(selfEle.currentStage === selfEle.lastStage) {
+              selfEle.$.finalStageModal.modalAlert()
+              return false
+            }
+            selfEle.$.successModal.modalAlert()
+          }
+          let instance = createjs.Sound.play(d.id)
+          instance.on("complete", selfEle.handleComplete, selfEle);
+        }
+      }
+      handleComplete(e) {
+        console.log("handleComplete");
+        this.set('isPlaying', false)
+      }
+      setData(data, manifest){
+        this.set('data',data)
+        this.set('manifest',manifest)
+        let { offsetWidth, offsetHeight } = this,
+            svgHeight = this.offsetHeight-60,
+            svg = d3.select(this.shadowRoot).select('svg')
+                    .attr('width', this.offsetWidth)
+                    .attr('height', svgHeight);
+            manifest = d3.shuffle(manifest).slice(0, this.max)
+            data = d3.shuffle(data)
+
+
+        // sound js에 registerSounds를 위해 data 가공
+        let soundData = manifest.map( s => ({
+          ["src"]: s.sound,
+          ["id"] : s.id
+        }))
+
+        createjs.Sound.registerSounds(soundData, this.basePath);
+
+        let refineData = manifest.map((re, i) => ({
+          ["src"]:re.src,
+          ["sound"]:re.sound,
+          ["text"]:re.text,
+          ["id"]:re.id,
+          ["x"]: Math.floor(offsetWidth/2 - 200),
+          ["y"]: Math.floor(svgHeight/2 - 200)
+        }))
+
+        svg.selectAll('image').data(refineData).enter()
+            .append("image")
+            .attr('x', (d, i) => d.x ).attr('y', (d, i) => d.y )
+            .attr('id', (d, i) => `image_${d.id}`)
+            .attr("xlink:href", (d, i) => d.src)
+            .on("click", this.handleClick)
+      }
+    }
+    window.customElements.define(ReadImageGame.is, ReadImageGame);
+  </script>
+</dom-module>
