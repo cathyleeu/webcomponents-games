@@ -392,6 +392,7 @@
   ],
   "A-1-re":[
     ["숨어있는 컴퓨터를 찾아요", "Find the Computers", "/a1_w1"],
+    ["컴퓨터를 바르게 사용해요", "Computer rules and computer stretches", "/activity#!stretch"],
     ["컴퓨터와 이야기해요", "Talk to the Computer", "/a1_w3"],
     ["로그인을 연습해요", "Practice Login", "/activity#!a1_w4"]
   ],
@@ -472,6 +473,7 @@
     ["컴퓨터에서 끌어다 놓기:끌어다 놓기 연습", "Drag and Drop", "/b1_w4"]
   ],
   "B-1-re":[
+    ["컴퓨터의 언어와 사용예절", "Computer language and uses", "/activity#!stretch"],
     ["눌러서 로그인해요", "Click & Sign-in", "/b1re_w2"],
     ["컴퓨터와 생활", "Computer & My Lift", "/b1re_w3_c1"],
     ["컴퓨터에서 끌어다 놓아요", "Drag & Drop with Computer", "/b1re_w4"]
@@ -567,6 +569,7 @@
     ["컴퓨터에서 끌어다 놓기:인사하기 연습", "Say Hello", "/maze#!c1_w4/1"]
   ],
   "C-1-re":[
+    ["주변의 컴퓨터와 컴퓨터 사용 예절", "Computers around us", "/activity#!stretch"],
     ["9까지의 수와 로그인", "Learn numbers up to 9 and sign in", "/click"],
     ["분류하고 끌어다 놓아요", "Classify and drag and drop", "/activity#!c1re_w3_1"],
     ["우리의 몸과 컴퓨터", "My body and computer", "/activity#!c1re_w4_1"]
