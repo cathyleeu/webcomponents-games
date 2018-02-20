@@ -858,6 +858,39 @@ Blocks["move_forward1"] = {
   ],
   action: ["move", "forward"]
 };
+Blocks["move_forward2_binary"] = {
+  colour: "#F28C00",
+  message0: {
+    ko: "%1 앞으로 2칸 가기",
+    en: "%1 Move Forward"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
+  ],
+  action: ["move", "forward"]
+};
+Blocks["move_forward4_binary"] = {
+  colour: "#F28C00",
+  message0: {
+    ko: "%1 앞으로 4칸 가기",
+    en: "%1 Move Forward"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
+  ],
+  action: ["move", "forward"]
+};
+Blocks["move_forward8_binary"] = {
+  colour: "#F28C00",
+  message0: {
+    ko: "%1 앞으로 8칸 가기",
+    en: "%1 Move Forward"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
+  ],
+  action: ["move", "forward"]
+};
 Blocks["move_forward"] = {
   colour: 260,
   message0: {
@@ -1813,11 +1846,14 @@ Blocks["repeat"] = {
   },
   rgbColor: "#242786",
   message0: {
-    ko: "반복 %1",
-    en: "Repeat %1",
-    cn: "重复 %1"
+    ko: "%1 반복 %2",
+    en: "%1 Repeat %2",
+    cn: "%1 重复 %2"
   },
   args0: [{
+    type: "field_image",
+    src: "/img/kidsblocks/Repeat.png"
+  },{
     type: "field_dropdown",
     name: "count",
     options: [
@@ -1883,6 +1919,32 @@ Blocks['repeat_until_cos'] = {
   }, {
     type: "field_image",
     src: "/img/kidsblocks/untilcos.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["repeat", "repeat_until"]
+};
+Blocks['repeat_until_numbot'] = {
+  rgbColor: "#2682C4",
+  message0: {
+    ko: "%1만약에 넘봇에게 가는 중이라면 반복",
+    en: "%1Repeat if going to Numbot"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/untilnumbot.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "statements"
+  }, {
+    type: "field_image",
+    src: "/img/kidsblocks/untilnumbot.png"
   }],
   messageh1: null,
   argsh1: null,
@@ -4929,6 +4991,106 @@ Blocks['condition2_direction_right'] = {
     name: "else_statements"
   }],
   action: ["conditioncheck2","direction_right"]
+};
+Blocks['condition2_td_up'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "목적지가 %1에 있다면",
+    en: "If the target spot is at %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/jsparrow/b_up.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","food"]
+};
+Blocks['condition2_td_down'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "목적지가 %1에 있다면",
+    en: "If the target spot is at %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/jsparrow/b_down.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","food"]
+};
+Blocks['condition2_td_left'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "목적지가 %1에 있다면",
+    en: "If the target spot is at %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/jsparrow/b_left.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    cn: "其他"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","food"]
+};
+Blocks['condition2_td_right'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "목적지가 %1에 있다면",
+    en: "If the target spot is at %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/jsparrow/b_right.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","food"]
 };
 Blocks['condition2_itemfood_apple'] = {
   rgbColor: "#E11376",
