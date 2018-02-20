@@ -4999,7 +4999,7 @@ Blocks['condition2_td_up'] = {
     en: "If the target spot is at %1"
   },
   args0: [
-    {type: "field_image", src: "/img/jsparrow/b_up.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/kidsblocks/d_up.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -5024,7 +5024,7 @@ Blocks['condition2_td_down'] = {
     en: "If the target spot is at %1"
   },
   args0: [
-    {type: "field_image", src: "/img/jsparrow/b_down.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/kidsblocks/d_down.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -5049,7 +5049,7 @@ Blocks['condition2_td_left'] = {
     en: "If the target spot is at %1"
   },
   args0: [
-    {type: "field_image", src: "/img/jsparrow/b_left.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/kidsblocks/d_left.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -5074,7 +5074,7 @@ Blocks['condition2_td_right'] = {
     en: "If the target spot is at %1"
   },
   args0: [
-    {type: "field_image", src: "/img/jsparrow/b_right.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/kidsblocks/d_right.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
