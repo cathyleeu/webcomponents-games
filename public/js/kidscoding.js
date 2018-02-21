@@ -99,9 +99,21 @@ KidsCoding = function() {
     }
   } else if(this.blockType == "vertical") {
 
-    var renderFields_ = Blockly.BlockSvg.prototype.renderFields_,
+    var renderDraw_ = Blockly.BlockSvg.prototype.renderDraw_,
+        renderFields_ = Blockly.BlockSvg.prototype.renderFields_,
         renderCompute_ = Blockly.BlockSvg.prototype.renderCompute_;
-
+    // input이 아닌 fieldrow의 높이 조정
+    Blockly.BlockSvg.prototype.renderDraw_ = function(a, b) {
+      var height = 0;
+      for(var i = 0; i < b.length; i++) {
+        if(i > 0 && b[i].type == -1) {
+          b[i].height = b[0].height;
+        }
+        height += b[i].height;
+      }
+      b.bottomEdge = height;
+      renderDraw_.call(this, a, b);
+    }
     // 필드 이미지 세로 위치 조정
     Blockly.BlockSvg.prototype.renderFields_ = function(a, b, c) {
       var ret = renderFields_.call(this, a, b, c);
@@ -118,13 +130,25 @@ KidsCoding = function() {
     // 필드 이미지 가로 위치 조정
     Blockly.BlockSvg.prototype.renderCompute_ = function(arg) {
       var ret = renderCompute_.call(this, arg);
-      if(ret[0][0].fieldRow[0].imageElement_) {
-        ret[0].paddingStart = 30 - ret[0][0].fieldRow[0].size_.width/2;
+      for(var i = 0; i < ret.length; i++) {
+        if(ret[i][0].fieldRow[0] && ret[i][0].fieldRow[0].imageElement_) {
+          ret[i].paddingStart = 30 - ret[i][0].fieldRow[0].size_.width/2;
+        }
       }
       return ret;
     };
-  } else {
-  //} else if(this.blockType == "default") {
+    // 텍스트 라벨에서 공백 허용
+    var updateTextNode_ = Blockly.Field.prototype.updateTextNode_;
+    Blockly.Field.prototype.updateTextNode_ = function() {
+      updateTextNode_.call(this);
+      if(this.textElement_) {
+        var text = $("<span>" + this.text_ + "<span>").text();
+        if(text != this.text_) {
+          this.text_ = this.textElement_.firstChild.textContent = text;
+        }
+      }
+    };
+  } else { // else if(this.blockType == "default") {
     var labelInit = Blockly.FieldLabel.prototype.init;
     // 텍스트 라벨의 위치 조정
     Blockly.FieldLabel.prototype.init = function() {

@@ -1827,7 +1827,7 @@ Blocks["item_rock"] = {
 Blocks["item_paper"] = {
   rgbColor: "#8C68AD",
   message0: {
-    ko: "%1 보",
+    ko: "%1 보&#x3000;",
     en: "%1 Paper"
   },
   args0: [
