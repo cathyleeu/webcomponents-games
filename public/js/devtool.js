@@ -311,7 +311,7 @@ devtool.prototype._downloadBlocks = function(target, fileName, state) {
     $svg.find(".blocklyBlockCanvas").removeAttr("transform");
     var block = $svg.find(".blocklyBlockCanvas>g"),
         hasHat = block.attr("data-shapes") === "hat";
-    block.attr("transform", hasHat ? "translate(0,20)" : "translate(0,0)");
+    block.attr("transform", hasHat ? "translate(0,16)" : "translate(0,0)");
   }
   $svg.attr("width", bbox.width + "px");
   $svg.attr("height", bbox.height + "px");
