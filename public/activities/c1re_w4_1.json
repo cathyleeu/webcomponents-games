@@ -13,7 +13,7 @@
 },
 
   "manifest": [
-    {"src": "/img/renewed_c1/categorize_new.svg", "background": true},
+    {"src": "/img/renewed_c1/categorize_new.svg", "en_src": "/img/renewed_c1/space.png", "background": true},
     {"src": "/img/renewed_c1/camera.png", "name": "camera","group":"in"},
     {"src": "/img/renewed_c1/cpu.png", "name": "cpu", "group":"cpu" },
     {"src": "/img/renewed_c1/keyboard.png", "name": "keyboard","group":"in" },

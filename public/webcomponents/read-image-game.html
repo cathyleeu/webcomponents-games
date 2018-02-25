@@ -106,7 +106,7 @@
         if(!selfEle.isPlaying){
           selfEle.set('isPlaying', true)
           d3.select(this).remove()
-          d3.select(svg).append('text').text(`${d.text[selfEle.language]}`)
+          d3.select(svg).append('text').text(`${d.text}`)
             .attr('x', d.x+space ).attr('y', d.y+space )
             .style('font-size', '40px')
             .style('font-weight', '700')
@@ -147,11 +147,11 @@
         }))
 
         createjs.Sound.registerSounds(soundData, this.basePath);
-
+        let lang = this.language
         let refineData = manifest.map((re, i) => ({
           ["src"]:re.src,
           ["sound"]:re.sound,
-          ["text"]:re.text,
+          ["text"]:re[`${lang}_text`],
           ["id"]:re.id,
           ["x"]: Math.floor(offsetWidth*(data[i][0]/120)),
           ["y"]: Math.floor(svgHeight*(data[i][1]/120))
