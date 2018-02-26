@@ -19,18 +19,18 @@
     [70, 10]
   ],
   "manifest": [
-    {"src": "/img/renewed_a2/but.png", "text": { "ko" : "벚꽃", "en" : "cherry blossoms" }, "sound": "complete.mp3", "id": "1"},
-    {"src": "/img/renewed_a2/daizy.png", "text": { "ko" : "데이지", "en" : "blossoms" }, "sound": "complete.mp3", "id": "2"},
-    {"src": "/img/renewed_a2/gaenari.png", "text": { "ko" : "개나리", "en" : "blossoms" }, "sound": "complete.mp3", "id": "3"},
-    {"src": "/img/renewed_a2/geumjanhwa.png", "text": { "ko" : "금잔화", "en" : "blossoms" }, "sound": "complete.mp3", "id": "4"},
-    {"src": "/img/renewed_a2/halmi.png", "text": { "ko" : "할미꽃", "en" : "blossoms" }, "sound": "complete.mp3", "id": "5"},
-    {"src": "/img/renewed_a2/jebi.png", "text": { "ko" : "제비꽃", "en" : "blossoms" }, "sound": "complete.mp3", "id": "6"},
-    {"src": "/img/renewed_a2/jindalae.png", "text": { "ko" : "진달래", "en" : "blossoms" }, "sound": "complete.mp3", "id": "7"},
-    {"src": "/img/renewed_a2/mindle.png", "text": { "ko" : "민들레", "en" : "blossoms" }, "sound": "complete.mp3", "id": "8"},
-    {"src": "/img/renewed_a2/mokryun.png", "text": { "ko" : "목련", "en" : "blossoms" }, "sound": "complete.mp3", "id": "9"},
-    {"src": "/img/renewed_a2/moran.png", "text": { "ko" : "모란", "en" : "blossoms" }, "sound": "complete.mp3", "id": "10"},
-    {"src": "/img/renewed_a2/pansy.png", "text": { "ko" : "팬지", "en" : "blossoms" }, "sound": "complete.mp3", "id": "11"},
-    {"src": "/img/renewed_a2/tulip.png", "text": { "ko" : "튤립", "en" : "blossoms" }, "sound": "complete.mp3", "id": "12"}
+    {"src": "/img/renewed_a2/but.png", "ko_text": "벚꽃", "en_text": "cherry blossoms", "sound": "complete.mp3", "id": "1"},
+    {"src": "/img/renewed_a2/daizy.png", "ko_text" : "데이지", "en_text" : "blossoms", "sound": "complete.mp3", "id": "2"},
+    {"src": "/img/renewed_a2/gaenari.png", "ko_text" : "개나리", "en_text" : "blossoms", "sound": "complete.mp3", "id": "3"},
+    {"src": "/img/renewed_a2/geumjanhwa.png", "ko_text" : "금잔화", "en_text" : "blossoms", "sound": "complete.mp3", "id": "4"},
+    {"src": "/img/renewed_a2/halmi.png", "ko_text" : "할미꽃", "en_text" : "blossoms", "sound": "complete.mp3", "id": "5"},
+    {"src": "/img/renewed_a2/jebi.png", "ko_text" : "제비꽃", "en_text" : "blossoms", "sound": "complete.mp3", "id": "6"},
+    {"src": "/img/renewed_a2/jindalae.png", "ko_text" : "진달래", "en_text" : "blossoms", "sound": "complete.mp3", "id": "7"},
+    {"src": "/img/renewed_a2/mindle.png", "ko_text" : "민들레", "en_text" : "blossoms", "sound": "complete.mp3", "id": "8"},
+    {"src": "/img/renewed_a2/mokryun.png", "ko_text" : "목련", "en_text" : "blossoms", "sound": "complete.mp3", "id": "9"},
+    {"src": "/img/renewed_a2/moran.png", "ko_text" : "모란", "en_text" : "blossoms", "sound": "complete.mp3", "id": "10"},
+    {"src": "/img/renewed_a2/pansy.png", "ko_text" : "팬지", "en_text" : "blossoms", "sound": "complete.mp3", "id": "11"},
+    {"src": "/img/renewed_a2/tulip.png", "ko_text" : "튤립", "en_text" : "blossoms", "sound": "complete.mp3", "id": "12"}
   ],
   "msg": {
     "ko": {

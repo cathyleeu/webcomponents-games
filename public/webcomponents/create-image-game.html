@@ -413,7 +413,7 @@
 
 
         let mainImg = manifest.find(d => d.background),
-            backgroundImg = mainImg.src[this.language] || mainImg.src,
+            backgroundImg = mainImg[`${this.language}_src`] || mainImg.src,
             resImagesData = manifest.filter(d => !d.background)
 
         this.set('items', resImagesData)
