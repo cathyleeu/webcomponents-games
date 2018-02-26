@@ -987,7 +987,7 @@ Blocks["move_forward4"] = {
   }]
 };
 Blocks["empty"] = {
-  rgbColor: "#FFFFFF",
+  rgbColor: "#CCCCCC",
   message0: {
     ko: "%1",
     en: "%1"
@@ -1852,7 +1852,7 @@ Blocks["repeat"] = {
   },
   args0: [{
     type: "field_image",
-    src: "/img/kidsblocks/Repeat.png"
+    src: "/img/kidsblocks/repeat.svg"
   },{
     type: "field_dropdown",
     name: "count",
@@ -1878,7 +1878,7 @@ Blocks["repeat"] = {
     name: "statements"
   }, {
     type: "field_image",
-    src: "/img/kidsblocks/Repeat.png"
+    src: "/img/kidsblocks/repeat.svg"
   }, {
     type: "field_dropdown",
     name: "count",

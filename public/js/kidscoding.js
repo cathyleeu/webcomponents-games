@@ -334,26 +334,26 @@ KidsCoding.prototype = {
       // TODO: default 타입에서의 처리 필요
       if(field_value === "*" && arg_type == "input_value") {
         shadow_type = shadow_type + "_empty";
-        field_value = new Array(4).join("_");
+        field_value = new Array(4).join(" ");
         Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
                 .appendField(new Blockly.FieldTextInput(''), field_name);
             this.setOutput(true);
-            this.setColour("#FFFFFF");
+            this.setColour("#CCCCCC");
           }
         };
       }
       if(block.type == "empty") {
         arg_type == "input_value"
         shadow_type = block.type + "_emptyblock";
-        field_value = new Array(16).join("_");
+        field_value = new Array(16).join(" ");
         Blockly.Blocks[shadow_type] = {
           init: function() {
             this.appendDummyInput()
                 .appendField(new Blockly.FieldTextInput(''), field_name);
             this.setOutput(true);
-            this.setColour("#FFFFFF");
+            this.setColour("#CCCCCC");
           }
         };
       }
