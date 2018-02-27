@@ -232,7 +232,7 @@ function getKinder(kinderId) {
 
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
-      book = [10, "10-5"];
+      book = ["1-re"];
   // 성동 ECC 1권부터 시작
   if(school == "B00163-K1") {
     book = [1, 6, 7];
@@ -259,11 +259,11 @@ function getBook(classObj) {
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
-    book = [1, 2, 3, 4, 5, "5-5", 6, 7, 8, 9, 10, "10-5"];
+    book = ["1-re", "2-re", "3-re", 4, 5, "5-5", 6, 7, 8, 9, 10, "10-5"];
   }
   // 영업용(시범교육 1,3,5권)
   if(school == "A00083-K5") {
-    book = [1, 3, 5];
+    book = ["1-re", "3-re", 5];
   }
   // 개발용(2017전권+2018리뉴얼)
   if(school == "A00083-K6") {
@@ -324,17 +324,6 @@ function getBook(classObj) {
   // 대구지사 소속원, 이유경 테스트 계정에 테스트 컨텐츠 추가
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "C00176") {
     book += "," + classObj.level + "-Test";
-  }
-  // 울산지사 소속원 5세반에 6세 컨텐츠 추가
-  if(school.slice(0,6) == "A00072" && classObj.level == "A") {
-    book += ",B-3";
-    // book += "," + book.split(",").map(function(bname) {
-    //   return "B-" + (Number(bname.split("-")[1])-1);
-    // });
-  }
-  // 영업부 일산지사 홍익유치원 컨텐츠 추가
-  if(school == "C00149-K1") {
-    book += ",추가컨텐츠";
   }
   return book;
 }
