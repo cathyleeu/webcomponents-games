@@ -20,7 +20,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "케익을 꾸며보아요.",
+      "title": "딸기가 좋아요",
+      "minor": "케익을 꾸며보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -39,7 +40,8 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Let's decorate the cake.",
+      "title": "Cos likes strawberry",
+      "minor": "Let's decorate the cake.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

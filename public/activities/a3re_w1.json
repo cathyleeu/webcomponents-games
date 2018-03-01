@@ -2,7 +2,8 @@
   "element": "create-image-game",
   "attributes": {
     "limited" : true,
-    "nextlink" : "mazeh#!a3_w3/1"
+    "nextlink" : "mazeh#!a3_w3/1",
+    "useAll": true
   },
   "data": [
     [7.42,79.56],[13.68,68.88],[20.44,79.56]
@@ -15,7 +16,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "코스와 코스의 부모님을 지구로 옮겨보아요.",
+      "title": "즐거운 우리 가족",
+      "minor": "코스와 코스의 부모님을 지구로 옮겨보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -31,10 +33,15 @@
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "확인",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "아이템 모두 사용해주세요.",
+      "retrybtn": "다시하기",
+      "unCorrect" : "다시 시도해 볼까요?",
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Move Cos and her parents to the earth.",
+      "title": "Happy family",
+      "minor": "Move Cos and her parents to the earth.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

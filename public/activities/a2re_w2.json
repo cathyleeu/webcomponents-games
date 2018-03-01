@@ -23,7 +23,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "꽃밭을 꾸며보아요.",
+      "title": "컴퓨터로 끌어다 놓아요",
+      "minor": "꽃밭을 꾸며보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -42,7 +43,8 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Let's make flower field.",
+      "title": "Drag and drop from your computer",
+      "minor": "Let's make flower field.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

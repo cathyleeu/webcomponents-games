@@ -1,0 +1,39 @@
+{
+  "tile_size": 128,
+  "score":0,
+  "workspace": ["start","repeat","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "##i#...l#",
+    "#...#.###",
+    "#......f#",
+    "#..##.#.#",
+    "#....%.##",
+    "#..g#...#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 6,
+    "img":"kindergarten"
+  }],
+  "tutorial": [{
+    "msg:ko": "유치원으로 가보자!",
+    "msg:en": "Go to the kindergarten!",
+    "img": "/img/c4_w1_c1/kindergarten.png"
+  }],
+  "goal": {
+    "msg:ko": "유치원으로 가보자!",
+    "msg:en": "Go to the kindergarten!",
+    "img": "/img/c4_w1_c1/kindergarten.png"
+  }
+}

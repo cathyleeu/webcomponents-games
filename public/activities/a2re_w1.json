@@ -34,8 +34,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "클릭 게임",
-      "minor": "이미지를 클릭해보아요",
+      "title": "봄 꽃을 알아보아요",
+      "minor": "봄 꽃을 클릭해보아요",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -54,8 +54,8 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Click Game",
-      "minor": "Click the given images",
+      "title": "Find the spring flowers",
+      "minor": "Click the spring flowers",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

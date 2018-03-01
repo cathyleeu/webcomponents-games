@@ -1,0 +1,39 @@
+{
+  "tile_size": 128,
+  "score":0,
+  "workspace": ["start","move_down","repeat","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#d##j.###",
+    "#.......#",
+    "#.#####.#",
+    "#f.....%#",
+    "#.#....##",
+    "#.##...##",
+    "#...k##.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 4,
+    "img":"playground"
+  }],
+  "tutorial": [{
+    "msg:ko": "놀이터로 가보자!",
+    "msg:en": "Go to the playground!",
+    "img": "/img/c4_w1_c1/playground.png"
+  }],
+  "goal": {
+    "msg:ko": "놀이터로 가보자!",
+    "msg:en": "Go to the playground!",
+    "img": "/img/c4_w1_c1/playground.png"
+  }
+}

@@ -2,7 +2,8 @@
   "element": "create-image-game",
   "attributes": {
     "limited" : true,
-    "nextlink" : "activity#!c1re_w3_2"
+    "nextlink" : "activity#!c1re_w3_2",
+    "useAll": true
   },
   "data": [
     [49.61,32.29],[64.06,31.9],[39.58,42.58],
@@ -39,10 +40,15 @@
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "확인",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "아이템 모두 사용해주세요.",
+      "retrybtn": "다시하기",
+      "unCorrect" : "다시 시도해 볼까요?",
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Put the laundry in the washing machine.",
+      "title": "Classify and drag and drop",
+      "minor": "Put the laundry in the washing machine.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

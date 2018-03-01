@@ -1,0 +1,39 @@
+{
+  "tile_size": 128,
+  "score":0,
+  "workspace": ["start","repeat","repeat","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "##....k.#",
+    "#.#.#.###",
+    "##.....g#",
+    "#..#.#..#",
+    "#i.#.#.##",
+    "#.u.#.%.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 7,
+    "img":"school"
+  }],
+  "tutorial": [{
+    "msg:ko": "학교로 가보자!",
+    "msg:en": "Go to the school!",
+    "img": "/img/c4_w1_c1/school.png"
+  }],
+  "goal": {
+    "msg:ko": "학교로 가보자!",
+    "msg:en": "Go to the school!",
+    "img": "/img/c4_w1_c1/school.png"
+  }
+}
