@@ -1,0 +1,63 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "##.#########.",
+    "..#...%.....#",
+    "..#.%.......#",
+    ".#.r..#..%..#",
+    "..#..%......#",
+    "..#....%....#",
+    "##.#########."
+  ],
+  "extra": [{
+    "x": 4,
+    "y": 2,
+    "link": "c4_w1_c2/1"
+  },{
+    "x": 5,
+    "y": 4,
+    "link": "c4_w1_c2/2"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c4_w1_c2/3"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c4_w1_c2/4"
+  },{
+    "x": 9,
+    "y": 3,
+    "link": "c4_w1_c2/5"
+  },{
+    "img":"mother",
+    "x": 6,
+    "y": 3,
+    "obstacle": false,
+    "link": "c4_w1_c3/index",
+    "min_score": 5
+  }],
+  "tutorial": [{
+    "msg:ko": "숫자의 크기를 비교하고 집을 얻자!",
+    "msg:en": "Let's compare the number and get a house!",
+    "img": "/img/c4_w4/house_blank.png"
+  }, {
+    "msg:ko": "5개의 집을 모은뒤, 엄마에게 이동하자!",
+    "msg:en": "Collect 5 house and, Move to mother!",
+    "img": "/img/c4_w4/mother.png"
+  },{
+    "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
+    "msg:jp": "｢次へ」ボタンか、ほかのところをクリックして開始します。",
+    "msg:en": "Press 'Next' Button & Let's play",
+    "x" : 3,
+    "y" : 3
+  }],
+  "goal": {
+    "msg:ko": "5개의 집을 모으자!",
+    "msg:en": "Collect 5 house",
+    "img": "/img/c4_w4/house_blank.png"
+  }
+}

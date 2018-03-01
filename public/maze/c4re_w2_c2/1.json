@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "#...##a.#",
+    "##...#..#",
+    "#%....l.#",
+    "#.#.##.##",
+    "#.###..##",
+    "#....##.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 4,
+    "img":"house8"
+  }],
+  "tutorial": [{
+    "msg:ko": "코스네 집은 큰 숫자의 주소를 가지고 있어요!",
+    "msg:en": "The Address of Cos's house has the larger number",
+    "img": "/img/c4_w4/bigger_num.png"
+  }],
+  "goal": {
+    "msg:ko": "큰 숫자의 주소를 찾아가자!",
+    "msg:en": "Go to the larger number of address",
+    "img": "/img/c4_w4/bigger_num.png"
+  }
+}

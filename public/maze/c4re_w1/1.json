@@ -1,0 +1,39 @@
+{
+  "tile_size": 128,
+  "score":0,
+  "workspace": ["start","repeat","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "#.##..###",
+    "#.....%.#",
+    "#h.###.##",
+    "#.r.....#",
+    "#i#.#..##",
+    "#.##.j.##",
+    "#....##.#",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img":"mart"
+  }],
+  "tutorial": [{
+    "msg:ko": "마트로 가보자!",
+    "msg:en": "Go to the mart!",
+    "img": "/img/c4_w1_c1/mart.png"
+  }],
+  "goal": {
+    "msg:ko": "마트로 가보자!",
+    "msg:en": "Go to the mart!",
+    "img": "/img/c4_w1_c1/mart.png"
+  }
+}
