@@ -285,19 +285,6 @@ function getBook(classObj) {
   if(school == "A00072-K2") {
     book = [6, 7];
   }
-  // 송도ECC 추가반 9월에 1권
-  if(school == "B00136-K1") {
-    var classNum = classObj.code.slice(-3);
-    if(classNum == "KC1") {
-      book = [5, "5-5"];
-    }
-    if(classNum == "KC2") {
-      book = [9, 10];
-    }
-    if(classNum == "KC7") {
-      book = [10, "10-5"];
-    }
-  }
   // 마포ECC 추가반, 청라ECC 추가반
   if(classObj.code == "B00130-K1-KC6" || classObj.code == "B00016-K1-KC5") {
     book = [6, 7];
