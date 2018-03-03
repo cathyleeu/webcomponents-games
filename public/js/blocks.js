@@ -867,7 +867,13 @@ Blocks["move_forward2_binary"] = {
   args0: [
     {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
   ],
-  action: ["move", "forward"]
+  action: ["func", {
+   type: "repeat",
+   count: 2,
+   statements: {
+     type: "move_forward1"
+   }
+ }]
 };
 Blocks["move_forward4_binary"] = {
   colour: "#F28C00",
@@ -878,7 +884,13 @@ Blocks["move_forward4_binary"] = {
   args0: [
     {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
   ],
-  action: ["move", "forward"]
+  action: ["func", {
+   type: "repeat",
+   count: 4,
+   statements: {
+     type: "move_forward1"
+   }
+  }]
 };
 Blocks["move_forward8_binary"] = {
   colour: "#F28C00",
@@ -889,7 +901,13 @@ Blocks["move_forward8_binary"] = {
   args0: [
     {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
   ],
-  action: ["move", "forward"]
+  action: ["func", {
+   type: "repeat",
+   count: 8,
+   statements: {
+     type: "move_forward1"
+   }
+ }]
 };
 Blocks["move_forward"] = {
   colour: 260,
@@ -4995,11 +5013,11 @@ Blocks['condition2_direction_right'] = {
 Blocks['condition2_td_up'] = {
   rgbColor: "#309E4A",
   message0: {
-    ko: "목적지가 %1에 있다면",
+    ko: "목적지가 %1에 있다면" ,
     en: "If the target spot is at %1"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/d_up.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a3/d_up.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -5015,7 +5033,7 @@ Blocks['condition2_td_up'] = {
     type: "input_statement",
     name: "else_statements"
   }],
-  action: ["conditioncheck2","food"]
+  action: ["conditioncheck2","direction_up"]
 };
 Blocks['condition2_td_down'] = {
   rgbColor: "#309E4A",

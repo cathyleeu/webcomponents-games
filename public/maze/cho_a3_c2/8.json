@@ -1,0 +1,24 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start", "repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "repeat"
+  ],
+
+  "map": [
+    "#####",
+    "r.###",
+    "#..##",
+    "##..#",
+    "###%#"
+  ],
+  "extra":[],
+  "tutorial": [{
+    "msg:ko": "벤치로 가자!"
+  }]
+}

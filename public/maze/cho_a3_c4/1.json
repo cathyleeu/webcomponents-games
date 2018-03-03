@@ -1,0 +1,48 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start","move_forward1","move_forward1","check","condition2_td_up"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "check",
+    "condition2_td_up",
+    "repeat"
+  ],
+  "map": [
+    "########",
+    "##.#.#%#",
+    "#.#.#..#",
+    "#..#.#.#",
+    "#...r.&#",
+    "#.#.##.#",
+    "##..%..#",
+    "########"
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 4,
+    "img": "empty",
+    "contents" : [{
+      "img": "up",
+      "role": "up"
+    },{
+      "img": "down",
+      "role": "down"
+    }]
+  },{
+    "x": 6,
+    "y": 1,
+    "img": "policestation",
+    "order": "if"
+  },{
+    "x": 4,
+    "y": 6,
+    "img": "hospital",
+    "order": "else"
+  }],
+  "tutorial": [{
+    "msg:ko": "표지판을 확인하여 표지판이 가리키는 목적지로 가자!"
+  }]
+}
