@@ -1,0 +1,30 @@
+[
+  {"book": "초등 A4권", "title": "C2 : 모양 정하기"},
+  {"id": "bg1", "src": "/img/cho_a4/bg1.png"},
+  {"id": "bg2", "src": "/img/cho_a4/bg2.png"},
+
+  {"id": "character", "src": "/img/cho_a4/draw_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a4/draw_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_draw/circle_white_target.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "wall", "src": "/img/cho_a4/wall.png","obstacle": true},
+
+  {"id": "circle_white", "src": "/img/cho_draw/circle_white.png"},
+  {"id": "moon_white", "src": "/img/cho_draw/moon_white.png"},
+  {"id": "ractangle_white", "src": "/img/cho_draw/ractangle_white.png"},
+  {"id": "star_white", "src": "/img/cho_draw/star_white.png"},
+  {"id": "sun_white", "src": "/img/cho_draw/sun_white.png"},
+  {"id": "triangle_white", "src": "/img/cho_draw/triangle_white.png"},
+
+  {"id": "circle_white_target", "src": "/img/cho_draw/circle_white_target.png"},
+  {"id": "moon_white_target", "src": "/img/cho_draw/moon_white_target.png"},
+  {"id": "ractangle_white_target", "src": "/img/cho_draw/ractangle_white_target.png"},
+  {"id": "star_white_target", "src": "/img/cho_draw/star_white_target.png"},
+  {"id": "sun_white_target", "src": "/img/cho_draw/sun_white_target.png"},
+  {"id": "triangle_white_target", "src": "/img/cho_draw/triangle_white_target.png"}
+]
