@@ -2021,6 +2021,7 @@ Blocks["determine_x"] = {
 };
 
 Blocks["repeat_x_num"] = {
+  rgbColor: "#242786",
   message0: {
     ko: "%1 %2 만큼 반복",
     en: "Repeat %1"
@@ -2041,6 +2042,7 @@ Blocks["repeat_x_num"] = {
 };
 
 Blocks["forloop_type1"] = {
+  rgbColor: "#242786",
   message0: {
     ko: "%1가 1 부터 %2 까지, 1씩 증가",
     en: "%1 from 1 to %2, incrementing by 1"
@@ -2063,7 +2065,9 @@ Blocks["forloop_type1"] = {
   action: ["forloop","type1"]
 };
 Blocks["forloop_type2"] = {
+  rgbColor: "#242786",
   message0: {
+    ko: "%1가 %2 부터 %3 까지, 1씩 증가",
     en: "%1 from %2 to %3, incrementing by 1"
   },
   args0: [{
@@ -2090,6 +2094,7 @@ Blocks["forloop_type2"] = {
   action: ["forloop","type2"]
 };
 Blocks["forloop_type3"] = {
+  rgbColor: "#242786",
   message0: {
     ko: "%1가 %2 부터 %3 까지, %4씩 증가",
     en: "%1 from %2 to %3, incrementing by %4"
