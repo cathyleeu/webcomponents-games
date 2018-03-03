@@ -8,10 +8,10 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "get_item"
+    "get_item3"
   ],
   "map": [
-    "#####",
+    "%####",
     "#####",
     "#r..#",
     "###.#",

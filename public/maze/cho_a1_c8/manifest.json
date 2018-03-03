@@ -5,7 +5,7 @@
 
   {"id": "character", "src": "/img/c8_w3/new_cobot.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c8_w3/new_cobot0.png", "size": 256},
-  {"id": "food", "src": "/img/cho_a1/planet_red.png"},
+  {"id": "food", "src": "/img/cho_a1/space_rock1.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
