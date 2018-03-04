@@ -5,7 +5,7 @@
 
   {"id": "character", "src": "/img/cho_a3/new_cobot.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/cho_a3/new_cobot0.png", "size": 256},
-  {"id": "food", "src": "/img/cho_a3/bench.png"},
+  {"id": "food", "src": "/img/cho_a3/numbot.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
@@ -17,17 +17,10 @@
   {"id": "tree3", "src": "/img/cho_a3/tree3.png", "obstacle": true},
   {"id": "bush1", "src": "/img/cho_a3/bush1.png", "obstacle": true},
   {"id": "bush2", "src": "/img/cho_a3/bush2.png", "obstacle": true},
-  {"id": "flower1", "src": "/img/cho_a3/flower1.png"},
-  {"id": "flower2", "src": "/img/cho_a3/flower2.png"},
+  {"id": "flower1", "src": "/img/cho_a3/flower1.png", "obstacle": true},
+  {"id": "flower2", "src": "/img/cho_a3/flower2.png", "obstacle": true},
   {"id": "lamp", "src": "/img/cho_a3/lamp.png", "obstacle": true},
-
-  {"id": "bench", "src": "/img/cho_a3/bench.png"},
-
-  {"id": "garbage1", "src": "/img/cho_a3/garbage1.png"},
-  {"id": "garbage2", "src": "/img/cho_a3/garbage2.png"},
-  {"id": "garbage3", "src": "/img/cho_a3/garbage3.png"},
-  {"id": "garbage4", "src": "/img/cho_a3/garbage4.png"},
-  {"id": "garbage5", "src": "/img/cho_a3/garbage5.png"},
+  {"id": "bench", "src": "/img/cho_a3/bench.png", "obstacle": true},
 
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},

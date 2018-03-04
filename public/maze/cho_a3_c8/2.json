@@ -1,0 +1,24 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start", "repeat_until_numbot"],
+  "mandatory": ["repeat_until_numbot"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "repeat_until_numbot"
+  ],
+
+  "map": [
+    "#####",
+    "#####",
+    "%...l",
+    "#####",
+    "#####"
+  ],
+  "extra":[],
+  "tutorial": [{
+    "msg:ko": "넘봇에게 가자!"
+  }]
+}
