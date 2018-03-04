@@ -8,6 +8,7 @@
     "rotate_right",
     "determine_x",
     "repeat_x_num",
+    "repeat",
     "get_item3"
   ],
   "map": [

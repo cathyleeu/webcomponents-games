@@ -669,5 +669,29 @@
     ["초등A1_C4", "/mazev#!cho_a1_c4/1"],
     ["초등A1_C6", "/mazev#!cho_a1_c6/1"],
     ["초등A1_C8", "/mazev#!cho_a1_c8/1"]
+  ],
+  "CHO-A-2":[
+    ["초등A2_C2", "/mazev#!cho_a2_c2/1"],
+    ["초등A2_C4", "/mazev#!cho_a2_c4/1"],
+    ["초등A2_C6", "/mazev#!cho_a2_c6/1"],
+    ["초등A2_C8", "/mazev#!cho_a2_c8/1"]
+  ],
+  "CHO-A-3":[
+    ["초등A3_C2", "/mazev#!cho_a3_c2/1"],
+    ["초등A3_C4", "/mazev#!cho_a3_c4/1"],
+    ["초등A3_C6", "/mazev#!cho_a3_c6/1"],
+    ["초등A3_C8", "/mazev#!cho_a3_c8/1"]
+  ],
+  "CHO-A-4":[
+    ["초등A4_C2", "/mazev#!cho_a4_c2/1"],
+    ["초등A4_C4", "/mazev#!cho_a4_c4/1"],
+    ["초등A4_C6", "/mazev#!cho_a4_c6/1"],
+    ["초등A4_C8", "/mazev#!cho_a4_c8/1"]
+  ],
+  "CHO-A-5":[
+    ["초등A5_C2", "/mazev#!cho_a5_c2/1"],
+    ["초등A5_C4", "/mazev#!cho_a5_c4/1"],
+    ["초등A5_C6", "/mazev#!cho_a5_c6/1"],
+    ["초등A5_C8", "/mazev#!cho_a5_c8/1"]
   ]
 }
