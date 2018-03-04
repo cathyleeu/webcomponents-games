@@ -12,28 +12,28 @@
     "get_item3"
   ],
   "map": [
-    "%####",
-    "#...#",
-    "#r)))",
-    "#swsw",
-    "swsws"
+    "%###w",
+    "#).)s",
+    "#u..w",
+    "#.#.s",
+    "sw.)w"
   ],
   "extra":[{
-      "x": 2,
-      "y": 2,
-      "img": "chest_box",
-      "itemCount": 2
-    },{
-      "x": 3,
-      "y": 2,
-      "img": "chest_box",
-      "itemCount": 4
-    },{
-      "x": 4,
-      "y": 2,
-      "img": "chest_box",
-      "itemCount": 6
-    }],
+    "x": 1,
+    "y": 1,
+    "img": "chest_box",
+    "itemCount": 1
+  },{
+    "x": 3,
+    "y": 1,
+    "img": "chest_box",
+    "itemCount": 2
+  },{
+    "x": 3,
+    "y": 4,
+    "img": "chest_box",
+    "itemCount": 3
+  }],
   "tutorial": [{
     "msg:ko": "보물 상자를 모두 가져오자!",
     "msg:en": "Let's get the chest boxs!"

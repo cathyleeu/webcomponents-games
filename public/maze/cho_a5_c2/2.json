@@ -2,28 +2,25 @@
   "tile_size": 128,
   "score":1,
   "workspace": "start",
+  "mandatory": ["repeat_x_num"],
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
     "determine_x",
     "repeat_x_num",
+    "repeat",
     "get_item3"
   ],
   "map": [
     "%####",
     "#...#",
-    "#r))#",
+    "#r).#",
     "#swsw",
     "swsws"
   ],
   "extra":[{
       "x": 2,
-      "y": 2,
-      "img": "chest_box",
-      "itemCount": 3
-    },{
-      "x": 3,
       "y": 2,
       "img": "chest_box",
       "itemCount": 3

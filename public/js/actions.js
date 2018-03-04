@@ -2494,6 +2494,7 @@ Actions.prototype.forloop = function(type, block, callback) {
       }, 0);
     } else {
       block.addSelect();
+      character.x_num = 0;
       _this.delay = 100;
       _this.setTimeoutKey = setTimeout(callback, 0);
     }
@@ -2510,10 +2511,16 @@ Actions.prototype.repeat_x_num = function(block, callback) {
     callback("반복 블록이 비었어요");
     return;
   }
-  if(!character.x_num || character.x_num == 0) {
+  debugger
+  if(character.x_num == 0) {
+    callback("일정하게 증가하면서 반복 블록 안에 조립되어야 합니다.");
+    return;
+  }
+  if(!character.x_num ) {
     callback("X를 정하지 않았습니다.");
     return;
   }
+
   var count = character.x_num;
   function proc() {
     var tile = _this.map[character.py][character.px];
