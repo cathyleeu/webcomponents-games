@@ -12,13 +12,20 @@
   "map": [
     "#####",
     "#...#",
-    "#r%.#",
-    "#...#",
+    "#.d.#",
+    "#.%%#",
     "#####"
   ],
   "extra":[{
     "x": 2,
-    "y": 2,
+    "y": 3,
+    "img": "ractangle_white_target",
+    "shape": "ractangle",
+    "color": "white",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 3,
     "img": "ractangle_white_target",
     "shape": "ractangle",
     "color": "white",
