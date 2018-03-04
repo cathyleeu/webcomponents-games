@@ -20,14 +20,20 @@
   {"id": "flower1", "src": "/img/cho_a3/flower1.png"},
   {"id": "flower2", "src": "/img/cho_a3/flower2.png"},
   {"id": "lamp", "src": "/img/cho_a3/lamp.png", "obstacle": true},
-
   {"id": "bench", "src": "/img/cho_a3/bench.png"},
 
-  {"id": "garbage1", "src": "/img/cho_a3/garbage1.png"},
-  {"id": "garbage2", "src": "/img/cho_a3/garbage2.png"},
-  {"id": "garbage3", "src": "/img/cho_a3/garbage3.png"},
-  {"id": "garbage4", "src": "/img/cho_a3/garbage4.png"},
-  {"id": "garbage5", "src": "/img/cho_a3/garbage5.png"},
+  {"id": "empty", "src": "/img/cho_a3/empty.png"},
+  {"id": "up", "src": "/img/cho_a3/d_up.png"},
+  {"id": "down", "src": "/img/cho_a3/d_down.png"},
+  {"id": "left", "src": "/img/cho_a3/d_left.png"},
+  {"id": "right", "src": "/img/cho_a3/d_right.png"},
+
+  {"id": "hospital", "src": "/img/cho_a3/hospital.png"},
+  {"id": "mart", "src": "/img/cho_a3/mart.png"},
+  {"id": "school", "src": "/img/cho_a3/school.png"},
+  {"id": "policestation", "src": "/img/cho_a3/policestation.png"},
+  {"id": "playground", "src": "/img/cho_a3/playground.png"},
+  {"id": "servicecenter", "src": "/img/cho_a3/servicecenter.png"},
 
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
