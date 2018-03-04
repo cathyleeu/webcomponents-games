@@ -7,21 +7,37 @@
     "rotate_left",
     "rotate_right",
     "determine_shape",
+    "determine_color",
+    "change_shape",
     "draw"
   ],
   "map": [
     "#####",
+    "#%.%#",
     "#...#",
-    "#r%.#",
-    "#...#",
+    "#%.r#",
     "#####"
   ],
   "extra":[{
-    "x": 2,
-    "y": 2,
-    "img": "ractangle_white_target",
+    "x": 3,
+    "y": 1,
+    "img": "circle_yellow_target",
+    "shape": "circle",
+    "color": "yellow",
+    "useItem": true
+  },{
+    "x": 1,
+    "y": 1,
+    "img": "moon_yellow_target",
+    "shape": "moon",
+    "color": "yellow",
+    "useItem": true
+  },{
+    "x": 1,
+    "y": 3,
+    "img": "ractangle_yellow_target",
     "shape": "ractangle",
-    "color": "white",
+    "color": "yellow",
     "useItem": true
   }],
   "tutorial": [{

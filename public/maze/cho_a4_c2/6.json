@@ -11,16 +11,16 @@
   ],
   "map": [
     "#####",
-    "#...#",
-    "#r%.#",
+    "#%..#",
+    "#.d.#",
     "#...#",
     "#####"
   ],
   "extra":[{
-    "x": 2,
-    "y": 2,
-    "img": "ractangle_white_target",
-    "shape": "ractangle",
+    "x": 1,
+    "y": 1,
+    "img": "moon_white_target",
+    "shape": "moon",
     "color": "white",
     "useItem": true
   }],

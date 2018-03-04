@@ -9,29 +9,43 @@
     "determine_shape",
     "determine_color",
     "change_shape",
-    "change_color",
     "draw"
   ],
   "map": [
-    "#####",
-    "#...#",
-    "#r%%#",
-    "#...#",
-    "#####"
+    "###..#",
+    "#%...#",
+    "##%.##",
+    "#..%.#",
+    "#.##%#",
+    "#.##.l"
   ],
   "extra":[{
+    "x": 1,
+    "y": 1,
+    "img": "circle_orange_target",
+    "shape": "circle",
+    "color": "orange",
+    "useItem": true
+  },{
     "x": 2,
     "y": 2,
-    "img": "ractangle_green_target",
-    "shape": "ractangle",
-    "color": "green",
+    "img": "circle_orange_target",
+    "shape": "circle",
+    "color": "orange",
     "useItem": true
   },{
     "x": 3,
-    "y": 2,
-    "img": "circle_red_target",
-    "shape": "circle",
-    "color": "red",
+    "y": 3,
+    "img": "ractangle_orange_target",
+    "shape": "ractangle",
+    "color": "orange",
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 4,
+    "img": "ractangle_orange_target",
+    "shape": "ractangle",
+    "color": "orange",
     "useItem": true
   }],
   "tutorial": [{

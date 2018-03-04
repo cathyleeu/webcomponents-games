@@ -7,21 +7,37 @@
     "rotate_left",
     "rotate_right",
     "determine_shape",
+    "determine_color",
+    "change_shape",
     "draw"
   ],
   "map": [
-    "#####",
-    "#...#",
-    "#r%.#",
-    "#...#",
+    "##d##",
+    "#.%.#",
+    "#.%.#",
+    "#.%.#",
     "#####"
   ],
   "extra":[{
     "x": 2,
+    "y": 1,
+    "img": "triangle_green_target",
+    "shape": "triangle",
+    "color": "green",
+    "useItem": true
+  },{
+    "x": 2,
     "y": 2,
-    "img": "ractangle_white_target",
+    "img": "sun_green_target",
+    "shape": "sun",
+    "color": "green",
+    "useItem": true
+  },{
+    "x": 2,
+    "y": 3,
+    "img": "ractangle_green_target",
     "shape": "ractangle",
-    "color": "white",
+    "color": "green",
     "useItem": true
   }],
   "tutorial": [{

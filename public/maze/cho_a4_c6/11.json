@@ -9,29 +9,43 @@
     "determine_shape",
     "determine_color",
     "change_shape",
-    "change_color",
     "draw"
   ],
   "map": [
-    "#####",
-    "#...#",
-    "#r%%#",
-    "#...#",
-    "#####"
+    "###..#",
+    "###.%#",
+    "#.#%##",
+    "#.%.##",
+    "#%####",
+    "r.####"
   ],
   "extra":[{
+    "x": 1,
+    "y": 4,
+    "img": "star_green_target",
+    "shape": "star",
+    "color": "green",
+    "useItem": true
+  },{
     "x": 2,
-    "y": 2,
-    "img": "ractangle_green_target",
-    "shape": "ractangle",
+    "y": 3,
+    "img": "star_green_target",
+    "shape": "star",
     "color": "green",
     "useItem": true
   },{
     "x": 3,
     "y": 2,
-    "img": "circle_red_target",
-    "shape": "circle",
-    "color": "red",
+    "img": "sun_green_target",
+    "shape": "sun",
+    "color": "green",
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 1,
+    "img": "sun_green_target",
+    "shape": "sun",
+    "color": "green",
     "useItem": true
   }],
   "tutorial": [{

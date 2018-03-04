@@ -7,21 +7,29 @@
     "rotate_left",
     "rotate_right",
     "determine_shape",
+    "determine_color",
     "draw"
   ],
   "map": [
     "#####",
     "#...#",
-    "#r%.#",
+    "#r%%#",
     "#...#",
     "#####"
   ],
   "extra":[{
     "x": 2,
     "y": 2,
-    "img": "ractangle_white_target",
-    "shape": "ractangle",
-    "color": "white",
+    "img": "circle_green_target",
+    "shape": "circle",
+    "color": "green",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "circle_green_target",
+    "shape": "circle",
+    "color": "green",
     "useItem": true
   }],
   "tutorial": [{

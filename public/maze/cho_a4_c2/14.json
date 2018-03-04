@@ -6,21 +6,36 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
+    "repeat",
     "determine_shape",
     "draw"
   ],
   "map": [
-    "#####",
-    "#...#",
-    "#r%.#",
-    "#...#",
+    "##d##",
+    "#.%.#",
+    "#.%.#",
+    "#.%.#",
     "#####"
   ],
   "extra":[{
     "x": 2,
+    "y": 1,
+    "img": "sun_white_target",
+    "shape": "sun",
+    "color": "white",
+    "useItem": true
+  },{
+    "x": 2,
     "y": 2,
-    "img": "ractangle_white_target",
-    "shape": "ractangle",
+    "img": "sun_white_target",
+    "shape": "sun",
+    "color": "white",
+    "useItem": true
+  },{
+    "x": 2,
+    "y": 3,
+    "img": "sun_white_target",
+    "shape": "sun",
     "color": "white",
     "useItem": true
   }],

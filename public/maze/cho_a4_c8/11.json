@@ -13,25 +13,40 @@
     "draw"
   ],
   "map": [
-    "#####",
-    "#...#",
-    "#r%%#",
-    "#...#",
-    "#####"
+    "###..#",
+    "###.%#",
+    "#.#%##",
+    "#.%.##",
+    "#%####",
+    "r.####"
   ],
   "extra":[{
+    "x": 1,
+    "y": 4,
+    "img": "sun_orange_target",
+    "shape": "sun",
+    "color": "orange",
+    "useItem": true
+  },{
     "x": 2,
-    "y": 2,
-    "img": "ractangle_green_target",
-    "shape": "ractangle",
-    "color": "green",
+    "y": 3,
+    "img": "sun_orange_target",
+    "shape": "sun",
+    "color": "orange",
     "useItem": true
   },{
     "x": 3,
     "y": 2,
-    "img": "circle_red_target",
-    "shape": "circle",
-    "color": "red",
+    "img": "star_yellow_target",
+    "shape": "star",
+    "color": "yellow",
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 1,
+    "img": "star_yellow_target",
+    "shape": "star",
+    "color": "yellow",
     "useItem": true
   }],
   "tutorial": [{

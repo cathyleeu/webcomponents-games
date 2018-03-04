@@ -1,13 +1,11 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start"],
+  "workspace": ["start","make_picture"],
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "repeat",
-    "make_picture",
     "determine_shape",
     "determine_color",
     "change_shape",
