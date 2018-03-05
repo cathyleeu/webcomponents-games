@@ -139,7 +139,7 @@ KidsCoding = function() {
       }
       return ret;
     };
-    // 텍스트 라벨에서 공백 허용
+    // 텍스트 라벨에서 공백 허용, field의 class가 적용되지 않는 버그 수정
     var updateTextNode_ = Blockly.Field.prototype.updateTextNode_;
     Blockly.Field.prototype.updateTextNode_ = function() {
       updateTextNode_.call(this);
@@ -148,6 +148,9 @@ KidsCoding = function() {
         if(text != this.text_) {
           this.text_ = this.textElement_.firstChild.textContent = text;
         }
+        var a = this.text_;
+        a.length > this.maxDisplayLength ? (a = a.substring(0, this.maxDisplayLength - 2) + "\u2026",
+        this.textElement_.setAttribute("class", this.class_ + " blocklyText blocklyTextTruncated")) : this.textElement_.setAttribute("class", this.class_ + " blocklyText");
       }
     };
     // vertical의 경우 FieldIconMenu에 image를 보여주는 기능이 없어 추가

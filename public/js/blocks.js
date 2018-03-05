@@ -1310,11 +1310,13 @@ Blocks["make_picture"] = {
 Blocks["make_picture_func"] = {
   rgbColor: "#8C68AD",
   message0: {
-    ko: "정의 : 그림 정하기",
+    ko: "%1 : 그림 정하기",
     en: "Make a picture"
   },
   args0: [
-    {type: "field_image", src: "/img/gift.png"}
+    {"type": "field_label",
+      "text": "정의",
+      "class": "style-define"}
   ],
   previousStatement: false
 };
