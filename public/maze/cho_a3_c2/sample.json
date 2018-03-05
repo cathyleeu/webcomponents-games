@@ -3,6 +3,7 @@
   "score":1,
   "workspace": ["start","move_forward1","check"],
   "toolbox": [
+    "select_shape",
     "move_forward1",
     "rotate_left",
     "rotate_right",
