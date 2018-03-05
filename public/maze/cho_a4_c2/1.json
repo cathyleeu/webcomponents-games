@@ -6,7 +6,7 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "determine_shape",
+    "define_shape",
     "draw"
   ],
   "map": [
@@ -19,8 +19,8 @@
   "extra":[{
     "x": 2,
     "y": 2,
-    "img": "ractangle_white_target",
-    "shape": "ractangle",
+    "img": "square_white_target",
+    "shape": "square",
     "color": "white",
     "useItem": true
   }],

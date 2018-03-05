@@ -6,7 +6,7 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "determine_shape",
+    "define_shape",
     "draw"
   ],
   "map": [

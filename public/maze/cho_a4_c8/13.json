@@ -7,10 +7,10 @@
     "rotate_left",
     "rotate_right",
     "repeat",
-    "determine_shape",
-    "determine_color",
-    "change_shape",
-    "change_color",
+    "define_shape",
+    "define_color",
+    "define_shape",
+    "define_color",
     "draw"
   ],
   "map": [
@@ -22,11 +22,11 @@
     "######"
   ],
   "extra":[{
-    "x": 1,"y": 2,"img": "ractangle_blue_target","shape": "ractangle","color": "blue","useItem": true
+    "x": 1,"y": 2,"img": "square_blue_target","shape": "square","color": "blue","useItem": true
   },{
-    "x": 1,"y": 3,"img": "ractangle_blue_target","shape": "ractangle","color": "blue","useItem": true
+    "x": 1,"y": 3,"img": "square_blue_target","shape": "square","color": "blue","useItem": true
   },{
-    "x": 1,"y": 4,"img": "ractangle_blue_target","shape": "ractangle","color": "blue","useItem": true
+    "x": 1,"y": 4,"img": "square_blue_target","shape": "square","color": "blue","useItem": true
 
   },{
     "x": 2,"y": 4,"img": "moon_green_target","shape": "moon","color": "green","useItem": true

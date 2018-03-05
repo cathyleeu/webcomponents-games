@@ -7,7 +7,7 @@
     "rotate_left",
     "rotate_right",
     "repeat",
-    "determine_shape",
+    "define_shape",
     "draw"
   ],
   "map": [
@@ -21,29 +21,29 @@
   "extra":[{
     "x": 1,
     "y": 4,
-    "img": "ractangle_white_target",
-    "shape": "ractangle",
+    "img": "square_white_target",
+    "shape": "square",
     "color": "white",
     "useItem": true
   },{
     "x": 2,
     "y": 3,
-    "img": "ractangle_white_target",
-    "shape": "ractangle",
+    "img": "square_white_target",
+    "shape": "square",
     "color": "white",
     "useItem": true
   },{
     "x": 3,
     "y": 2,
-    "img": "ractangle_white_target",
-    "shape": "ractangle",
+    "img": "square_white_target",
+    "shape": "square",
     "color": "white",
     "useItem": true
   },{
     "x": 4,
     "y": 1,
-    "img": "ractangle_white_target",
-    "shape": "ractangle",
+    "img": "square_white_target",
+    "shape": "square",
     "color": "white",
     "useItem": true
   }],

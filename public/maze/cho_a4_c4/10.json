@@ -6,8 +6,8 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "determine_shape",
-    "determine_color",
+    "define_shape",
+    "define_color",
     "draw"
   ],
   "map": [
@@ -20,15 +20,15 @@
   "extra":[{
     "x": 3,
     "y": 2,
-    "img": "ractangle_orange_target",
-    "shape": "ractangle",
+    "img": "square_orange_target",
+    "shape": "square",
     "color": "orange",
     "useItem": true
   },{
     "x": 3,
     "y": 2,
-    "img": "ractangle_orange_target",
-    "shape": "ractangle",
+    "img": "square_orange_target",
+    "shape": "square",
     "color": "orange",
     "useItem": true
   }],

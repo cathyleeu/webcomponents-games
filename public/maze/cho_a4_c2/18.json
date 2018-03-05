@@ -7,7 +7,7 @@
     "rotate_left",
     "rotate_right",
     "repeat",
-    "determine_shape",
+    "define_shape",
     "draw"
   ],
   "map": [

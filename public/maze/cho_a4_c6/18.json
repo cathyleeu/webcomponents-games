@@ -7,9 +7,9 @@
     "rotate_left",
     "rotate_right",
     "repeat",
-    "determine_shape",
-    "determine_color",
-    "change_shape",
+    "define_shape",
+    "define_color",
+    "define_shape",
     "draw"
   ],
   "map": [
@@ -39,13 +39,13 @@
     "x": 2,"y": 5,"img": "sun_red_target","shape": "sun","color": "red","useItem": true
 
   },{
-    "x": 3,"y": 1,"img": "ractangle_red_target","shape": "ractangle","color": "red","useItem": true
+    "x": 3,"y": 1,"img": "square_red_target","shape": "square","color": "red","useItem": true
   },{
-    "x": 3,"y": 2,"img": "ractangle_red_target","shape": "ractangle","color": "red","useItem": true
+    "x": 3,"y": 2,"img": "square_red_target","shape": "square","color": "red","useItem": true
   },{
-    "x": 3,"y": 3,"img": "ractangle_red_target","shape": "ractangle","color": "red","useItem": true
+    "x": 3,"y": 3,"img": "square_red_target","shape": "square","color": "red","useItem": true
   },{
-    "x": 3,"y": 4,"img": "ractangle_red_target","shape": "ractangle","color": "red","useItem": true
+    "x": 3,"y": 4,"img": "square_red_target","shape": "square","color": "red","useItem": true
 
   },{
     "x": 4,"y": 2,"img": "triangle_red_target","shape": "triangle","color": "red","useItem": true

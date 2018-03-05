@@ -13,6 +13,8 @@ Blocks["start"] = {
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Start.png", width: 32, height: 32}
   ],
+  deletable: false,
+  movable: false,
   previousStatement: false
 };
 Blocks["hello1"] = {
@@ -1303,88 +1305,99 @@ Blocks["make_picture"] = {
   args0: [
     {type: "field_image", src: "/img/gift.png"}
   ],
-  action: ["make_picture"]
+  action: ["func", "make_picture_func"]
 };
-Blocks["determine_shape"] = {
+Blocks["make_picture_func"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "정의 : 그림 정하기",
+    en: "Make a picture"
+  },
+  args0: [
+    {type: "field_image", src: "/img/gift.png"}
+  ],
+  previousStatement: false
+};
+Blocks["define_shape"] = {
   rgbColor: "#D9629E",
   message0: {
     ko: "모양을 %1 정하기",
-    en: "Determine the shape %1"
+    en: "Define the shape %1"
   },
   args0: [{
-    type: "field_dropdown",
-    name: "count",
+    type: "field_iconmenu",
+    name: "shape",
     options: [
-      ["원", "1"],
-      ["달", "2"],
-      ["사각형", "3"],
-      ["별", "4"],
-      ["해", "5"],
-      ["삼각형", "6"]
+      {src: '/img/cho_draw/circle_white.png', value: 'cicle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
     ]
   }],
-  action: ["determine_shape","count"]
+  action: ["define_shape","shape"]
 };
-Blocks["determine_color"] = {
+Blocks["define_color"] = {
   rgbColor: "#D9629E",
   message0: {
     ko: "색깔을 %1 정하기",
-    en: "Determine the color %1"
+    en: "Define the color %1"
   },
   args0: [{
-    type: "field_dropdown",
-    name: "count",
+    type: "field_iconmenu",
+    name: "color",
     options: [
-      ["파랑", "1"],
-      ["초록", "2"],
-      ["주황", "3"],
-      ["빨강", "4"],
-      ["하늘", "5"],
-      ["노랑", "6"]
+      {src: '/img/cho_draw/circle_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_yellow.png', value: 'yellow', width: 48, height: 48}
     ]
   }],
-  action: ["determine_color","count"]
+  action: ["define_color","color"]
 };
 
-Blocks["change_shape"] = {
+Blocks["set_shape"] = {
   rgbColor: "#CC6600",
   message0: {
     ko: "모양을 %1 바꾸기",
     en: "Change the shape %1"
   },
   args0: [{
-    type: "field_dropdown",
-    name: "count",
+    type: "field_iconmenu",
+    name: "shape",
     options: [
-      ["원", "1"],
-      ["달", "2"],
-      ["사각형", "3"],
-      ["별", "4"],
-      ["해", "5"],
-      ["삼각형", "6"]
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
     ]
   }],
-  action: ["change_shape","count"]
+  action: ["set_shape","shape"]
 };
-Blocks["change_color"] = {
+Blocks["set_color"] = {
   rgbColor: "#CC6600",
   message0: {
     ko: "색깔을 %1 바꾸기",
     en: "Change the color %1"
   },
   args0: [{
-    type: "field_dropdown",
-    name: "count",
+    type: "field_iconmenu",
+    name: "color",
     options: [
-      ["파랑", "1"],
-      ["초록", "2"],
-      ["주황", "3"],
-      ["빨강", "4"],
-      ["하늘", "5"],
-      ["노랑", "6"]
+      {src: '/img/cho_draw/circle_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_yellow.png', value: 'yellow', width: 48, height: 48}
     ]
   }],
-  action: ["change_color","count"]
+  action: ["set_color","color"]
 };
 Blocks["complex1_uu"] = {
   rgbColor: "#6969ae",
@@ -2019,11 +2032,11 @@ Blocks["repeat"] = {
   action: ["repeat", "count"]
 };
 
-Blocks["determine_x"] = {
+Blocks["define_x"] = {
   rgbColor: "#D9629E",
   message0: {
     ko: "%1을 %2 정하기",
-    en: "Determine the %1"
+    en: "Define the %1"
   },
   args0: [{
     type: "field_image",
@@ -2035,7 +2048,7 @@ Blocks["determine_x"] = {
       ["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"]
     ]
   }],
-  action: ["determine_x","count"]
+  action: ["define_x","count"]
 };
 
 Blocks["repeat_x_num"] = {
@@ -6796,33 +6809,6 @@ Blocks["move_right8"] = {
   args0: [
     {type: "field_image", src: "/img/right.png"}
   ],
-  action: ["func", {
-    type: "repeat",
-    count: 8,
-    statements: {
-      type: "move_right"
-    }
-  }]
-};
-Blocks["select_shape"] = {
-  colour: 260,
-  message0: "모양을 %1 로 정하기",
-  args0: [{
-    type: "field_iconmenu",
-    name: "value",
-    options: [
-      {src: '/img/kidsblocks/acorn.png',
-        value: 'Acorn', width: 48, height: 48, alt: 'Acorn'},
-      {src: '/img/kidsblocks/apple.png',
-        value: 'Apple', width: 48, height: 48, alt: 'Apple'},
-      {src: '/img/kidsblocks/persimmon.png',
-        value: 'Persimmon', width: 48, height: 48, alt: 'Persimmon'},
-      {src: '/img/kidsblocks/pumkinseed.png',
-        value: 'Pumkinseed', width: 48, height: 48, alt: 'Pumkinseed'},
-      {src: '/img/kidsblocks/rice.png',
-        value: 'Rice', width: 48, height: 48, alt: 'Rice'}
-    ]
-  }],
   action: ["func", {
     type: "repeat",
     count: 8,

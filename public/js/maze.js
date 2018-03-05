@@ -287,7 +287,7 @@ function init() {
   }
   drawMaze();
   kidscoding.init(loader, mazeInfo, run, tileFactory);
-  kidscoding.initBlockly(maze.toolbox, maze.workspace);
+  kidscoding.initBlockly(maze.toolbox, maze.workspace, maze.workspace2);
   $(".noti-guide").scrollTop() < 10 && $('.noti-up').css('border-color', "transparent transparent gray")
   function blockLimitsHandler(event) {
     var xml = event.xml || event.oldXml,

@@ -224,6 +224,27 @@ KidsCoding = function() {
         this.SVG_.setAttribute("style", this.SVG_.getAttribute("style") + ";left:" + x.toFixed(2) + "px;top:" + y.toFixed(2) + "px;");
       }
     }
+    // 현재 사용하고 있는 scratch-blocks의 setColour 함수에 버그가 있어서 교체
+    Blockly.Block.prototype.setColour = function(colour, colourSecondary, colourTertiary) {
+      this.colour_ = this.makeColour_(colour);
+      if (colourSecondary !== undefined) {
+        this.colourSecondary_ = this.makeColour_(colourSecondary);
+      } else {
+        this.colourSecondary_ = goog.color.rgbArrayToHex(
+            goog.color.darken(goog.color.hexToRgb(this.colour_),
+            0.1));
+      }
+      if (colourTertiary !== undefined) {
+        this.colourTertiary_ = this.makeColour_(colourTertiary);
+      } else {
+        this.colourTertiary_ = goog.color.rgbArrayToHex(
+            goog.color.darken(goog.color.hexToRgb(this.colour_),
+            0.2));
+      }
+      if (this.rendered) {
+        this.updateColour();
+      }
+    };
   }
   // 일부 태블릿에서 블럭이 움직이지 않는 현상 수정
   Blockly.longStart_ = function() {};
@@ -338,11 +359,11 @@ KidsCoding.prototype = {
       return "";
     }
     this.registerBlock(block.type);
-    if(block.type == "start") {
-      block.x = 30;
-      block.y = 20;
-      block.deletable = false;
-      block.movable = false;
+    if(options.x || options.y) {
+      block.x = options.x || 0;
+      block.y = options.y || 0;
+      delete options.x;
+      delete options.y;
     }
     if(options.uneditable) {
       block.deletable = false;
@@ -505,6 +526,9 @@ KidsCoding.prototype = {
     }
     Blockly.Blocks[name] = {
       init: function() {
+        if(options.rgbColor) {
+          options.colour = options.rgbColor;
+        }
         this.jsonInit(options);
         if(options.id) {
           this.id = options.id;
@@ -512,13 +536,10 @@ KidsCoding.prototype = {
         this.setDeletable(!!options.deletable);
         this.setMovable(!!options.movable);
         this.contextMenu = false;
-        if(options.rgbColor) {
-          this.colour_ = options.rgbColor;
-        }
       }
     };
   },
-  initBlockly: function(toolbox, workspace) {
+  initBlockly: function(toolbox, workspace, workspace2) {
     var _this = this;
     // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
     // var toolbox = toolbox.map(function(item) {
@@ -544,7 +565,7 @@ KidsCoding.prototype = {
       },
       scrollbars: this.isHorizontal
     });
-    var initXml = '<xml>' + this.createXml(workspace || "start", {uneditable:true}) + '</xml>';
+    var initXml = '<xml>' + this.createXml(workspace || "start", {uneditable:true, x:30, y:20}) + '</xml>';
   	Blockly.Xml.domToWorkspace($(initXml).get(0),this.workspace);
     var blocks = this.workspace.getAllBlocks(),
         block = blocks.filter(function(block) {
@@ -555,6 +576,10 @@ KidsCoding.prototype = {
         $(block.svgPath_).addClass("empty");
       }
       block = block.getNextBlock();
+    }
+    if(workspace2) {
+      initXml = '<xml>' + this.createXml(workspace2, {uneditable:true, x:200, y:20}) + '</xml>';
+      Blockly.Xml.domToWorkspace($(initXml).get(0),this.workspace);
     }
     // flyout 내의 블럭들을 오른쪽으로 20px씩 이동
     // (블럭들이 너무 왼쪽으로 붙어있어서 윈도우 태블릿에서 화면전화이 일어나는 문제가 있음)

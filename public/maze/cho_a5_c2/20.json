@@ -7,7 +7,7 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "determine_x",
+    "define_x",
     "repeat_x_num",
     "repeat",
     "get_item3"
