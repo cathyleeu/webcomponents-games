@@ -6804,3 +6804,30 @@ Blocks["move_right8"] = {
     }
   }]
 };
+Blocks["select_shape"] = {
+  colour: 260,
+  message0: "모양을 %1 로 정하기",
+  args0: [{
+    type: "field_iconmenu",
+    name: "value",
+    options: [
+      {src: '/img/kidsblocks/acorn.png',
+        value: 'Acorn', width: 48, height: 48, alt: 'Acorn'},
+      {src: '/img/kidsblocks/apple.png',
+        value: 'Apple', width: 48, height: 48, alt: 'Apple'},
+      {src: '/img/kidsblocks/persimmon.png',
+        value: 'Persimmon', width: 48, height: 48, alt: 'Persimmon'},
+      {src: '/img/kidsblocks/pumkinseed.png',
+        value: 'Pumkinseed', width: 48, height: 48, alt: 'Pumkinseed'},
+      {src: '/img/kidsblocks/rice.png',
+        value: 'Rice', width: 48, height: 48, alt: 'Rice'}
+    ]
+  }],
+  action: ["func", {
+    type: "repeat",
+    count: 8,
+    statements: {
+      type: "move_right"
+    }
+  }]
+};

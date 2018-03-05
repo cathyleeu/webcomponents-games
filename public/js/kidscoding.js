@@ -120,8 +120,10 @@ KidsCoding = function() {
       if(a.length !=0){
         if(a[0].imageElement_) {
           var svgRoot = a[0].getSvgRoot(),
-              xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]([+-]?\d*\.?\d*)\)/);
-          svgRoot.setAttribute("transform", "translate(" + +xy[1] + "," + (+xy[2]+3) + ")");
+              xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/),
+              x = xy[1] || 0,
+              y = xy[2] || 0;
+          svgRoot.setAttribute("transform", "translate(" + x + "," + (y+3) + ")");
         }
         return ret;
       }
@@ -147,6 +149,54 @@ KidsCoding = function() {
           this.text_ = this.textElement_.firstChild.textContent = text;
         }
       }
+    };
+    // vertical의 경우 FieldIconMenu에 image를 보여주는 기능이 없어 추가
+    var iconMenuInit = Blockly.FieldIconMenu.prototype.init,
+        iconMenuSetValue = Blockly.FieldIconMenu.prototype.setValue;
+    Blockly.FieldIconMenu.prototype.init = function(a) {
+      iconMenuInit.call(this, a);
+      var icon = null;
+      // 화살표 위치 조정
+      this.arrowX_ += 15;
+      this.arrowIcon_.setAttribute('transform',
+        'translate(' + this.arrowX_ + ',' + this.arrowY_ + ')');
+      for(var i = 0; i < this.icons_.length; i++) {
+        if(this.icons_[i].value == this.value_) {
+          icon = this.icons_[i];
+        }
+      }
+      this.imageElement_ = Blockly.createSvgElement(
+        'image',
+        {
+          'height': '25px',
+          'width': '25px',
+          'transform': 'translate(5,3)'
+        },
+        this.sourceBlock_.getSvgRoot());
+      this.imageElement_.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', icon.src || '');
+      this.sourceBlock_.getSvgRoot().appendChild(this.fieldGroup_);
+    };
+    Blockly.FieldIconMenu.prototype.setValue = function(newValue) {
+      if (newValue === null || newValue === this.value_) {
+        return;  // No change
+      }
+      if (this.sourceBlock_ && Blockly.Events.isEnabled()) {
+        Blockly.Events.fire(new Blockly.Events.Change(
+            this.sourceBlock_, 'field', this.name, this.value_, newValue));
+      }
+      this.value_ = newValue;
+      // Find the relevant icon in this.icons_ to get the image src.
+      if (this.imageElement_) {
+        this.imageElement_.setAttributeNS('http://www.w3.org/1999/xlink',
+            'xlink:href', this.getSrcForValue(this.value_) || '');
+      }
+    };
+    Blockly.FieldIconMenu.prototype.getSize = function() {
+      this.size_.width || this.render_();
+      return {
+        width: 20,
+        height: this.size_.height
+      };
     };
   } else { // else if(this.blockType == "default") {
     var labelInit = Blockly.FieldLabel.prototype.init;
@@ -306,29 +356,30 @@ KidsCoding.prototype = {
         child_str = "",
         idx = 0;
     Blocks[block.type].args0.forEach(function(arg) {
-
       var arg_type = arg.type,
           field_name = arg.name,
-          field_value = args[idx] || (arg.options ? arg.options[0][1] : ""),
+          field_value = args[idx] || (arg.options ? arg.options[0][1] || arg.options[0].value : ""),
           shadow_type = block.type + "_" + arg.name;
       // args는 field_dropdown이나 input_value일 경우에만 적용되도록 함
-      if(arg_type == "field_dropdown" || arg_type == "input_value") {
+      if(arg_type == "field_dropdown" || arg_type == "field_iconmenu" || arg_type == "input_value") {
         idx++;
       }
       // scratch-blocks에서는 field_dropdown일 경우 shadow 블록 추가 필요
-      if(_this.blockType != "default" && arg.type == "field_dropdown") {
+      if(_this.blockType != "default" && (arg.type == "field_dropdown" || arg.type == "field_iconmenu")) {
         arg_type = "input_value";
-        Blockly.Blocks[shadow_type] = {
-          init: function() {
-            this.appendDummyInput()
-                .appendField(new Blockly.FieldDropdown(arg.options), field_name);
-            this.setOutput(true);
-            this.setColour(Blockly.Colours.event.primary,
-              Blockly.Colours.event.secondary,
-              Blockly.Colours.event.tertiary
-            );
-          }
-        };
+        Blockly.Blocks[shadow_type] = (function(type, options, name) {
+          return {
+            init: function() {
+              this.appendDummyInput()
+                  .appendField(type == "field_dropdown" ? new Blockly.FieldDropdown(options) : new Blockly.FieldIconMenu(options), name);
+              this.setOutput(true);
+              this.setColour(Blockly.Colours.event.primary,
+                Blockly.Colours.event.secondary,
+                Blockly.Colours.event.tertiary
+              );
+            }
+          };
+        })(arg.type, arg.options, field_name);
       }
       // 입력값이 *일 경우 빈칸 처리
       // TODO: default 타입에서의 처리 필요
