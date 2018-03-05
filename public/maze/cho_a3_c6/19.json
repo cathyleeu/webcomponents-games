@@ -1,0 +1,23 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_forward1",
+    "move_forward2_binary",
+    "move_forward4_binary",
+    "move_forward8_binary"
+  ],
+
+  "map": [
+    "############",
+    "############",
+    "r..........%",
+    "############",
+    "############"
+  ],
+  "extra":[],
+  "tutorial": [{
+    "msg:ko": "11칸 이동하여 넘봇에게 가자!"
+  }]
+}

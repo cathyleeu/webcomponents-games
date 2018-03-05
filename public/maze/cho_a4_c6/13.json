@@ -1,0 +1,48 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["sunt","make_picture"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "determine_shape",
+    "determine_color",
+    "change_shape",
+    "draw"
+  ],
+  "map": [
+    "###..#",
+    "#l..%#",
+    "#%..%#",
+    "#%..%#",
+    "#%%%%#",
+    "######"
+  ],
+  "extra":[{
+    "x": 1,"y": 2,"img": "ractangle_red_target","shape": "ractangle","color": "red","useItem": true
+  },{
+    "x": 1,"y": 3,"img": "ractangle_red_target","shape": "ractangle","color": "red","useItem": true
+  },{
+    "x": 1,"y": 4,"img": "ractangle_red_target","shape": "ractangle","color": "red","useItem": true
+
+  },{
+    "x": 2,"y": 4,"img": "circle_red_target","shape": "circle","color": "red","useItem": true
+  },{
+    "x": 3,"y": 4,"img": "circle_red_target","shape": "circle","color": "red","useItem": true
+  },{
+    "x": 4,"y": 3,"img": "circle_red_target","shape": "circle","color": "red","useItem": true
+
+  },{
+    "x": 4,"y": 3,"img": "moon_red_target","shape": "moon","color": "red","useItem": true
+  },{
+    "x": 4,"y": 2,"img": "moon_red_target","shape": "moon","color": "red","useItem": true
+  },{
+    "x": 4,"y": 1,"img": "moon_red_target","shape": "moon","color": "red","useItem": true
+  }],
+  "tutorial": [{
+    "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
+    "msg:en": "Try to draw a picture of the right shape in the given position."
+  }]
+}
