@@ -918,7 +918,7 @@ function startDialogue(input_dialogue, input_callback) {
     var noti = $('.noti-guide');
     noti.empty();
     input_dialogue.map(function(txt) {
-      var msg = txt["msg:"+lang].replace(/\n/g, "<br/>");
+      var msg = txt["msg" + (lang ? ":" + lang : "")].replace(/\n/g, "<br/>");
       noti.append("<div class='speech'><div class='speech-bubble'>"+msg+"</div></div>");
     });
     noti.prop("scrollHeight") === noti.height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "");
