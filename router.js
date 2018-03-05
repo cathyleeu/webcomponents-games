@@ -233,6 +233,10 @@ function getKinder(kinderId) {
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
       book = ["1-re"];
+  // 청라ECC 초등반 2개는 C-6부터 시작
+  if(classObj.code == "B00016-K1-KC5" || classObj.code == "B00016-K1-KC6") {
+    book = [6];
+  }
   // 성동 ECC 1권부터 시작
   if(school == "B00163-K1") {
     book = [1, 6, 7];
@@ -285,8 +289,8 @@ function getBook(classObj) {
   if(school == "A00072-K2") {
     book = [6, 7];
   }
-  // 마포ECC 추가반, 청라ECC 추가반
-  if(classObj.code == "B00130-K1-KC6" || classObj.code == "B00016-K1-KC5") {
+  // 마포ECC 추가반
+  if(classObj.code == "B00130-K1-KC6") {
     book = [6, 7];
   }
   // 마포ECC 겨울캠프 클래스 C-10권
