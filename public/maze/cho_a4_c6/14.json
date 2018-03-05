@@ -7,9 +7,9 @@
     "rotate_left",
     "rotate_right",
     "repeat",
-    "determine_shape",
-    "determine_color",
-    "change_shape",
+    "define_shape",
+    "define_color",
+    "define_shape",
     "draw"
   ],
   "map": [
@@ -28,11 +28,11 @@
     "x": 1,"y": 3,"img": "moon_orange_target","shape": "moon","color": "orange","useItem": true
 
   },{
-    "x": 1,"y": 4,"img": "ractangle_orange_target","shape": "ractangle","color": "orange","useItem": true
+    "x": 1,"y": 4,"img": "square_orange_target","shape": "square","color": "orange","useItem": true
   },{
-    "x": 2,"y": 4,"img": "ractangle_orange_target","shape": "ractangle","color": "orange","useItem": true
+    "x": 2,"y": 4,"img": "square_orange_target","shape": "square","color": "orange","useItem": true
   },{
-    "x": 3,"y": 4,"img": "ractangle_orange_target","shape": "ractangle","color": "orange","useItem": true
+    "x": 3,"y": 4,"img": "square_orange_target","shape": "square","color": "orange","useItem": true
 
   },{
     "x": 4,"y": 4,"img": "triangle_orange_target","shape": "triangle","color": "orange","useItem": true

@@ -2191,62 +2191,40 @@ Actions.prototype.make_picture = function(block, callback) {
 
 }
 
-Actions.prototype.determine_shape = function(type, block, callback) {
-  var character = this.canvas.character,
-      count = this._getFieldValue(block, "count"),
-      _this = this;
-
+Actions.prototype.define_shape = function(type, block, callback) {
+  this.canvas.character.draw_shape = this._getFieldValue(block, "shape");
   setTimeout(function() {
-    var c_draw_shape = count==1 ? "circle" : count==2 ? "moon" : count==3 ? "ractangle" : count==4 ? "star" : count==5 ? "sun" : "triangle"
-    character.draw_shape = c_draw_shape;
     callback();
-  }, 10);
+  }, 100);
 };
 
-Actions.prototype.determine_color = function(type, block, callback) {
-  var character = this.canvas.character,
-      count = this._getFieldValue(block, "count"),
-      _this = this;
-
+Actions.prototype.define_color = function(type, block, callback) {
+  this.canvas.character.draw_color = this._getFieldValue(block, "color");
   setTimeout(function() {
-    var c_draw_color = count==1 ? "blue" : count==2 ? "green" : count==3 ? "orange" : count==4 ? "red" : count==5 ? "sky" : "yellow"
-    character.draw_color = c_draw_color;
     callback();
-  }, 10);
+  }, 100);
 };
 
-Actions.prototype.change_shape = function(type, block, callback) {
-  var character = this.canvas.character,
-      count = this._getFieldValue(block, "count"),
-      _this = this;
-
-  if(character.draw_shape=="none"){
+Actions.prototype.set_shape = function(type, block, callback) {
+  if(this.canvas.character.draw_shape == "none"){
     callback("그림의 모양을 정하지 않았어요.");
     return;
   }
-
+  this.canvas.character.draw_shape = this._getFieldValue(block, "shape");
   setTimeout(function() {
-    var c_draw_shape = count==1 ? "circle" : count==2 ? "moon" : count==3 ? "ractangle" : count==4 ? "star" : count==5 ? "sun" : "triangle"
-    character.draw_shape = c_draw_shape;
     callback();
-  }, 10);
+  }, 100);
 };
 
-Actions.prototype.change_color = function(type, block, callback) {
-  var character = this.canvas.character,
-      count = this._getFieldValue(block, "count"),
-      _this = this;
-
-  if(character.draw_color=="default"){
+Actions.prototype.set_color = function(type, block, callback) {
+  if(this.canvas.character.draw_color == "default"){
     callback("그림의 색깔을 정하지 않았어요.");
     return;
   }
-
+  this.canvas.character.draw_color = this._getFieldValue(block, "color");
   setTimeout(function() {
-    var c_draw_color = count==1 ? "blue" : count==2 ? "green" : count==3 ? "orange" : count==4 ? "red" : count==5 ? "sky" : "yellow"
-    character.draw_color = c_draw_color;
     callback();
-  }, 10);
+  }, 100);
 };
 
 Actions.prototype.draw = function(block, callback) {
@@ -2414,7 +2392,7 @@ Actions.prototype.condition_movable = function(type, block, callback) {
   }, 100);
 };
 
-Actions.prototype.determine_x = function(type, block, callback) {
+Actions.prototype.define_x = function(type, block, callback) {
   var character = this.canvas.character,
       count = this._getFieldValue(block, "count"),
       _this = this;
@@ -2573,5 +2551,11 @@ Actions.prototype.func = function(contents, block, callback) {
     });
     var pseudoBlock = this._makePseudoBlock(contents);
     this.run(pseudoBlock, callback);
+  } else if(typeof contents == "string") {
+    var blocks = this.kidscoding.workspace.getAllBlocks(),
+        target = blocks.filter(function(block) {
+          return block.type === contents;
+        })[0];
+    this.run(target, callback);
   }
 };

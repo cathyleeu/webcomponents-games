@@ -6,8 +6,8 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "determine_shape",
-    "determine_color",
+    "define_shape",
+    "define_color",
     "draw"
   ],
   "map": [
@@ -20,8 +20,8 @@
   "extra":[{
     "x": 1,
     "y": 1,
-    "img": "ractangle_green_target",
-    "shape": "ractangle",
+    "img": "square_green_target",
+    "shape": "square",
     "color": "green",
     "useItem": true
   }],

@@ -7,8 +7,8 @@
     "rotate_left",
     "rotate_right",
     "repeat",
-    "determine_shape",
-    "determine_color",
+    "define_shape",
+    "define_color",
     "draw"
   ],
   "map": [
