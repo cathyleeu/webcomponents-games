@@ -1299,22 +1299,26 @@ Blocks["draw"] = {
 Blocks["make_picture"] = {
   rgbColor: "#8C68AD",
   message0: {
-    ko: "그림 정하기",
-    en: "Make a picture"
+    ko: "%1 그림 정하기",
+    en: "%1 Make a picture"
   },
   args0: [
-    {type: "field_image", src: "/img/gift.png"}
+    {type: "field_image", src: "/img/kidsblocks/palette.png"}
   ],
   action: ["func", "make_picture_func"]
 };
 Blocks["make_picture_func"] = {
   rgbColor: "#8C68AD",
   message0: {
-    ko: "정의 : 그림 정하기",
-    en: "Make a picture"
+    ko: "%2 %1 그림 정하기",
+    en: "%1 Make a picture"
   },
   args0: [
-    {type: "field_image", src: "/img/gift.png"}
+    {type: "field_image", src: "/img/kidsblocks/palette.png"},
+    {"type": "field_label",
+      "text": "정의",
+      "class": "style-define"}
+
   ],
   previousStatement: false
 };
@@ -1348,12 +1352,12 @@ Blocks["define_color"] = {
     type: "field_iconmenu",
     name: "color",
     options: [
-      {src: '/img/cho_draw/circle_blue.png', value: 'blue', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_green.png', value: 'green', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_orange.png', value: 'orange', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_red.png', value: 'red', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_sky.png', value: 'sky', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_yellow.png', value: 'yellow', width: 48, height: 48}
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
     ]
   }],
   action: ["define_color","color"]
@@ -1389,12 +1393,12 @@ Blocks["set_color"] = {
     type: "field_iconmenu",
     name: "color",
     options: [
-      {src: '/img/cho_draw/circle_blue.png', value: 'blue', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_green.png', value: 'green', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_orange.png', value: 'orange', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_red.png', value: 'red', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_sky.png', value: 'sky', width: 48, height: 48},
-      {src: '/img/cho_draw/circle_yellow.png', value: 'yellow', width: 48, height: 48}
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
     ]
   }],
   action: ["set_color","color"]
