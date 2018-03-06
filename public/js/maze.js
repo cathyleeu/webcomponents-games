@@ -290,23 +290,41 @@ function init() {
   kidscoding.initBlockly(maze.toolbox, maze.workspace, maze.workspace2);
   $(".noti-guide").scrollTop() < 10 && $('.noti-up').css('border-color', "transparent transparent gray")
   function blockLimitsHandler(event) {
-    var xml = event.xml || event.oldXml,
-        type = xml ? (xml.getAttribute("type") || "") : "";
-    if(type == "start") {
+    if(!kidscoding.blockLimits) {
       return;
     }
-    if (event.type == Blockly.Events.CREATE || event.type == Blockly.Events.DELETE) {
-      kidscoding.blockLimits[type] += event.type == Blockly.Events.CREATE ? -1 : 1;
-      var toolbox = maze.toolbox.map(function(item) {
-        var tokens = item.split(":"),
-            disabled = kidscoding.blockLimits[tokens[0]] === 0 ? ' disabled="true"' : "";
-        return '<block type="' + tokens[0] + '"' + disabled + '></block>';
-      }).join("");
-      kidscoding.workspace.updateToolbox('<xml>' + toolbox + '</xml>');
+    var xml = event.xml || event.oldXml,
+        type = xml ? (xml.getAttribute("type") || "") : "",
+        blocks = kidscoding.workspace.getFlyout().getWorkspace().getAllBlocks();
+    if(type == "start" || type == "") {
+      return;
+    }
+    if (event.type != Blockly.Events.CREATE && event.type != Blockly.Events.DELETE) {
+      return;
+    }
+    updateBlockLimit(xml, event.type == Blockly.Events.CREATE ? -1 : 1);
+    for(var i = 0; i < blocks.length; i++) {
+      var disabled = kidscoding.blockLimits[blocks[i].type] === 0;
+      if(blocks[i].disabled != disabled) {
+        blocks[i].setDisabled(disabled);
+        blocks[i].setMovable(!disabled);
+        blocks[i].updateDisabled(disabled);
+        blocks[i].updateMovable(!disabled);
+      }
     }
   }
-  // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
-  // kidscoding.workspace.addChangeListener(blockLimitsHandler);
+  function updateBlockLimit(block, delta) {
+    var type = block.getAttribute("type");
+    if(block.tagName == "BLOCK" && kidscoding.blockLimits.hasOwnProperty(type)) {
+      kidscoding.blockLimits[type] += delta;
+    }
+    for(var i = 0; i < block.childNodes.length; i++) {
+      if(block.childNodes[i].nodeType == 1) {
+        updateBlockLimit(block.childNodes[i], delta);
+      }
+    }
+  }
+  kidscoding.workspace.addChangeListener(blockLimitsHandler);
 
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);
@@ -918,7 +936,7 @@ function startDialogue(input_dialogue, input_callback) {
     var noti = $('.noti-guide');
     noti.empty();
     input_dialogue.map(function(txt) {
-      var msg = txt["msg" + (lang ? ":" + lang : "")].replace(/\n/g, "<br/>");
+      var msg = (txt["msg" + (lang ? ":" + lang : "")] || txt["msg"]).replace(/\n/g, "<br/>");
       noti.append("<div class='speech'><div class='speech-bubble'>"+msg+"</div></div>");
     });
     noti.prop("scrollHeight") === noti.height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "");
