@@ -148,9 +148,10 @@ KidsCoding = function() {
         if(text != this.text_) {
           this.text_ = this.textElement_.firstChild.textContent = text;
         }
-        var a = this.text_;
+        var a = this.text_,
+            class_ = this.class_ || "";
         a.length > this.maxDisplayLength ? (a = a.substring(0, this.maxDisplayLength - 2) + "\u2026",
-        this.textElement_.setAttribute("class", this.class_ + " blocklyText blocklyTextTruncated")) : this.textElement_.setAttribute("class", this.class_ + " blocklyText");
+        this.textElement_.setAttribute("class", class_ + " blocklyText blocklyTextTruncated")) : this.textElement_.setAttribute("class", class_ + " blocklyText");
       }
     };
     // vertical의 경우 FieldIconMenu에 image를 보여주는 기능이 없어 추가
@@ -248,6 +249,14 @@ KidsCoding = function() {
         this.updateColour();
       }
     };
+    // scratch-blocks에 disabled class 적용이 미구현되어 있어 추가
+    Blockly.BlockSvg.prototype.updateDisabled = function() {
+      if (this.disabled) {
+        Blockly.addClass_(this.svgGroup_, 'blocklyDisabled');
+      } else {
+        Blockly.removeClass_(this.svgGroup_, 'blocklyDisabled');
+      }
+    };
   }
   // 일부 태블릿에서 블럭이 움직이지 않는 현상 수정
   Blockly.longStart_ = function() {};
@@ -283,7 +292,7 @@ KidsCoding = function() {
   var onMouseUp_ = Blockly.Flyout.prototype.onMouseUp_;
   Blockly.Flyout.prototype.onMouseUp_ = function(e) {
     onMouseUp_.call(this, e);
-    if(!downBlock) {
+    if(!downBlock || downBlock.disabled) {
       return;
     }
     var blockId = Blockly.genUid(),
@@ -340,8 +349,7 @@ KidsCoding.prototype = {
     if(window.devtool) {
       window.$$$ = new window.devtool(this);
     }
-    // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
-    // this.blockLimits = {};
+    this.blockLimits = null;
   },
   createXml: function(blocks, options) {
     var _this = this;
@@ -358,7 +366,7 @@ KidsCoding.prototype = {
         rest = (match[4] || "").trim(),
         str;
     if(!Blocks[block.type]) {
-      console.error("undefined block : " + block);
+      console.error("undefined block : " + block.type);
       return "";
     }
     this.registerBlock(block.type);
@@ -544,15 +552,14 @@ KidsCoding.prototype = {
   },
   initBlockly: function(toolbox, workspace, workspace2) {
     var _this = this;
-    // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
-    // var toolbox = toolbox.map(function(item) {
-    //   var tokens = item.split(":"),
-    //       value_str = "";
-    //   if(tokens.length >= 2) {
-    //     _this.blockLimits[tokens[0]] = +tokens[1];
-    //   }
-    //   return '<block type="' + tokens[0] + '"></block>';
-    // }).join("");
+    toolbox = toolbox.map(function(item) {
+      var tokens = item.split(":");
+      if(tokens.length >= 2) {
+        _this.blockLimits = _this.blockLimits || {};
+        _this.blockLimits[tokens[0]] = +tokens[1];
+      }
+      return tokens[0];
+    });
     document.getElementById('blocklyDiv').innerHTML = "";
   	this.workspace = Blockly.inject(document.getElementById('blocklyDiv'), {
       toolbox: '<xml>' + this.createXml(toolbox || "", {isToolbox:true}) + '</xml>',
