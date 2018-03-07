@@ -1062,6 +1062,9 @@ public.get('/b1re_w3_c2', function *(next) {
 public.get('/b1re_w4', function *(next) {
   yield this.render('b1re_w4');
 });
+public.get('/a55re_w1', function *(next) {
+  yield this.render('a55re_w1');
+});
 
 var activityIndex = fs.readFileSync("./public/webcomponents-es5/index.html");
 public.get('/activity', function *(next) {
