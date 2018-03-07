@@ -421,7 +421,7 @@ function initMaze() {
     height: map_height,
     view_size: maze.view_size || null,
     tile_size: maze.tile_size || 50,
-    mandatory: maze.mandatory || null,
+    mandatory: typeof maze.mandatory == "string" ? maze.mandatory.split(",") : (maze.mandatory || null),
     canvas: {
       stage: new createjs.Stage("display"),
       character: null,
@@ -760,8 +760,9 @@ function addEvents() {
           block.removeSelect()
         });
         // check mandatory
-        var failed = checkMandatory(startblock, mazeInfo.mandatory);
+        var failed = checkMandatory(startblock, mazeInfo.mandatory.slice());
         if(failed) {
+          kidscoding.registerBlock(failed);
           var blockName = Blocks[failed].name,
               msg = messages.fail_mandatory.split("%1").join(blockName);
           kidscoding.isHorizontal ? showModal(msg) : renderAlert(msg, {ruleErr: "block"} )
@@ -1283,25 +1284,18 @@ function showModal(options) {
 }
 
 function checkMandatory(startblock, mandatory) {
-  var block = startblock,
-      type,
-      idx;
+  var blocks = startblock.getDescendants(),
+      idx, i;
   if(!mandatory) {
     return null;
   }
-  mandatory = mandatory.slice();
-  do {
-    type = block.type;
-    idx = mandatory.indexOf(type);
+  for(i = 0; i < blocks.length; i++) {
+    idx = mandatory.indexOf(blocks[i].type);
     if(idx >= 0) {
       mandatory.splice(idx, 1);
     }
-    block = block.getNextBlock();
-  } while(block);
-  if(mandatory[0]) {
-    kidscoding.registerBlock(mandatory[0]);
   }
-  return mandatory[0];
+  return mandatory[0] || null;
 }
 
 function countBlocks(block) {

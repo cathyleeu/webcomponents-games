@@ -1,7 +1,8 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start","move_forward1","move_forward1","check","condition2_td_up"],
+  "workspace": ["start","move_forward1","move_forward1","check","condition2_td_up[rotate_left,repeat][repeat]"],
+  "mandatory": ["condition2_td_up","repeat","repeat"],
   "toolbox": [
     "move_forward1",
     "rotate_left",
