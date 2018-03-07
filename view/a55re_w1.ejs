@@ -218,6 +218,7 @@ $(function() {
 
     stage.update();
     showModal(lang == "ko" ?
+      "왼쪽의 옷들을 끌어서 오른쪽으로 이동해보자!" :
       "Drag a stuff from left and drop it on the right side.");
   }
   function setBitmapCoord(bitmap, px, py) {
@@ -259,6 +260,7 @@ $(function() {
       sum += count[item];
     });
     if(sum == 0) {
+      showModal(lang == "ko" ? "모든 옷을 분류했어요!" : "Good Job!");
       setTimeout(function() {
         createjs.Sound.play("complete");
       }, 1000);
