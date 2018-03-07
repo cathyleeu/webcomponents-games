@@ -121,8 +121,8 @@ KidsCoding = function() {
         if(a[0].imageElement_) {
           var svgRoot = a[0].getSvgRoot(),
               xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/),
-              x = xy[1] || 0,
-              y = xy[2] || 0;
+              x = +xy[1] || 0,
+              y = +xy[2] || 0;
           svgRoot.setAttribute("transform", "translate(" + x + "," + (y+3) + ")");
         }
         return ret;

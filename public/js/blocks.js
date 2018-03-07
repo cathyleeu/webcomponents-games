@@ -1320,6 +1320,7 @@ Blocks["make_picture_func"] = {
       "class": "style-define"}
 
   ],
+  action: ["make_picture_func"],
   previousStatement: false
 };
 Blocks["define_shape"] = {

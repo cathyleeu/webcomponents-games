@@ -624,7 +624,12 @@ public.get('/cache/:manifest', function *(next) {
     })
     .map(function(item) {
       if(item != "manifest.json") {
-        var maze = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, item)));
+        try {
+          var maze = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, item)));
+        } catch(e) {
+          console.error("JSON parse error on " + path.join("public/maze", maniPath, item));
+          throw e;
+        }
         // tutorial에 들어있는 이미지 추가
         if(maze.tutorial) {
           maze.tutorial.forEach(function(item) {
