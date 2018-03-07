@@ -253,10 +253,6 @@ function getBook(classObj) {
   if(school == "A00042-K5") {
     book = [1, "5-5"];
   }
-  // 대구지사, 압구정PSA는 요청으로 3달치 제공
-  if(school.slice(0,6) == "C00071" || school.slice(0,6) == "D00121") {
-    book = [9, 10, "10-5"];
-  }
   // 시범원 청아유치원, 숙명키즈
   if(school == "A00083-K1" || school == "A00083-K4") {
     book = ["2-re", "3-re"];
