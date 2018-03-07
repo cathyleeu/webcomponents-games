@@ -357,13 +357,13 @@ KidsCoding.prototype = {
     if(blocks.length == 0) {
       return "";
     }
-    var match = blocks.match(/([^\[\](),\s]+)\s*(\([^\[\]()]*\))?\s*(\[[^\]]*\])?\s*,?\s*(.*)/),
+    var match = blocks.match(/([^\[\](),\s]+)\s*(\([^\[\]()]*\))?\s*((\[[^\]]*\])*)?\s*,?\s*(.*)/),
         block = {
           type: (match[1] || "").trim()
         },
         args = (match[2] || "()").slice(1,-1).trim().split(","),
-        statements = (match[3] || "[]").slice(1,-1).trim(),
-        rest = (match[4] || "").trim(),
+        statements = (match[3] || "[]").slice(1,-1).split("][").filter(function(i){return i}),
+        rest = (match[5] || "").trim(),
         str;
     if(!Blocks[block.type]) {
       console.error("undefined block : " + block.type);
@@ -450,10 +450,13 @@ KidsCoding.prototype = {
           '</value>';
       }
     });
-    if(statements) {
-      statements_str = '<statement name="statements">' +
-          this.createXml(statements, options) +
-          '</statement>';
+    if(statements.length > 0) {
+      var statementsNames = this.getStatementsNames(block.type);
+      statements.forEach(function(statement, i) {
+        statements_str += '<statement name="' + statementsNames[i] + '">' +
+            _this.createXml(statement, options) +
+            '</statement>';
+      });
     }
     if(rest.length > 0) {
       child_str = this.createXml(rest, options);
@@ -464,6 +467,20 @@ KidsCoding.prototype = {
       child_str = "<next>" + child_str + "</next>";
       return "<block " + str + ">" + value_str + statements_str + child_str + "</block>";
     }
+  },
+  getStatementsNames: function(type) {
+    return Object.keys(Blocks[type]).filter(function(key) {
+          return key.slice(0, -1) == "args";
+        }).map(function(key) {
+          return Blocks[type][key];
+        }).reduce(function(acc, cur) {
+          [].push.apply(acc, cur);
+          return acc;
+        }, []).filter(function(item) {
+          return item.type == "input_statement";
+        }).map(function(item) {
+          return item.name;
+        });
   },
   registerBlock: function(name) {
     if(Blockly.Blocks[name]) {
@@ -568,7 +585,7 @@ KidsCoding.prototype = {
       zoom: this.isHorizontal ? null : {
         controls: true,
         wheel: true,
-        startScale: 1.0,
+        startScale: 0.8,
         maxScale: 1.2,
         minScale: 0.6,
         scaleSpeed: 1.2
