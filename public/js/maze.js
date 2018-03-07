@@ -421,7 +421,7 @@ function initMaze() {
     height: map_height,
     view_size: maze.view_size || null,
     tile_size: maze.tile_size || 50,
-    mandatory: typeof maze.mandatory == "string" ? maze.mandatory.split(",") : (maze.mandatory || null),
+    mandatory: typeof maze.mandatory == "string" ? maze.mandatory.split(",") : (maze.mandatory || []),
     canvas: {
       stage: new createjs.Stage("display"),
       character: null,
@@ -1286,9 +1286,6 @@ function showModal(options) {
 function checkMandatory(startblock, mandatory) {
   var blocks = startblock.getDescendants(),
       idx, i;
-  if(!mandatory) {
-    return null;
-  }
   for(i = 0; i < blocks.length; i++) {
     idx = mandatory.indexOf(blocks[i].type);
     if(idx >= 0) {
