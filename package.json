@@ -42,7 +42,8 @@
     "mongoose": "~4.0.0",
     "passport-local": "^1.0.0",
     "polymer-build": "^1.6.0",
-    "promised-mongo": "^1.2.0"
+    "promised-mongo": "^1.2.0",
+    "recursive-readdir-sync": "^1.0.6"
   },
   "devDependencies": {
     "gulp-watch": "^4.3.11"

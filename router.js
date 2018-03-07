@@ -11,6 +11,7 @@ var public = require('koa-router')(),
     pmongo = require('promised-mongo'),
     argv = require('minimist')(process.argv.slice(2)),
     co = require('co'),
+    recursiveReadSync = require('recursive-readdir-sync'),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
     auth_db = pmongo(config.auth_db, ["user", "logins", "reports"]),
@@ -100,6 +101,20 @@ var msgJsons = fs.readdirSync("public/msg")
     })
     .map(function(item) {
       return "/msg/" + item;
+    });
+var webcomponentsES5 = fs.readdirSync("public/webcomponents-es5")
+    .filter(function(item) {
+      return item != ".DS_Store" && item != "Thumbs.db" && item.slice(-5) == ".html" || item.slice(-3) == ".js";
+    })
+    .map(function(item) {
+      return "/webcomponents-es5/" + item;
+    });
+var componentsES5 = recursiveReadSync("public/components-es5")
+    .filter(function(item) {
+      return item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return item.slice(6);
     });
 
 var mazeDirs = fs.readdirSync('public/maze')
@@ -731,6 +746,8 @@ public.get('/cache/:manifest', function *(next) {
   output += scratchBlocksIcons.join("\n") + "\n";
   output += kidsblocks.join("\n") + "\n";
   output += msgJsons.join("\n") + "\n";
+  output += webcomponentsES5.join("\n") + "\n";
+  output += componentsES5.join("\n") + "\n";
 
   output += "# js and css\n";
   output += jsList.join("\n") + "\n";
