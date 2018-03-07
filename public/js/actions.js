@@ -2175,7 +2175,7 @@ Actions.prototype.present = function(block, callback) {
   callback("선물을 할 수 없어요");
 }
 
-Actions.prototype.make_picture = function(block, callback) {
+Actions.prototype.make_picture_func = function(block, callback) {
   var _this = this,
       character = this.canvas.character,
       foods = this.canvas.foods,
@@ -2236,8 +2236,8 @@ Actions.prototype.draw = function(block, callback) {
     callback("그림을 그릴 모양을 정하지 않았어요.");
     return;
   }
-  if(character.draw_color=="default") {
-    character.draw_color="white"
+  if(character.draw_color == "default") {
+    character.draw_color = "white";
   }
   // 목표 위에서 아이템 사용(패턴 매칭)
   var food = this._getCanvasObject(character.px, character.py, "food");
@@ -2248,6 +2248,7 @@ Actions.prototype.draw = function(block, callback) {
         pImage = food.shape+"_"+food.color;
       }else{
         callback("그림이 일치하지 않아요");
+        return;
       }
       food.bitmap.image = _this.loader.getResult(pImage)
       var idx = foods.indexOf(food);

@@ -8,7 +8,7 @@
     "rotate_left",
     "rotate_right",
     "set_shape",
-    "set_color",,
+    "set_color",
     "draw"
   ],
   "map": [
