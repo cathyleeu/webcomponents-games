@@ -1,0 +1,65 @@
+{
+  "element": "flow-card",
+  "attributes": {
+    "lastStage" : 1,
+    "nextlink" : "activity#!a55re_w3_c2"
+  },
+  "data": {
+    "background" : false,
+    "first" : 1,
+    "last" : 7
+  },
+  "manifest": [
+    {"src": "/img/a55re_w3/ddak1.png", "step": 1},
+    {"src": "/img/a55re_w3/ddak2.png", "step": 2},
+    {"src": "/img/a55re_w3/ddak3.png", "step": 3},
+    {"src": "/img/a55re_w3/ddak4.png", "step": 4},
+    {"src": "/img/a55re_w3/ddak5.png", "step": 5},
+    {"src": "/img/a55re_w3/ddak6.png", "step": 6},
+    {"src": "/img/a55re_w3/ddak7.png", "step": 7}
+  ],
+  "msg": {
+    "ko": {
+      "title": "순서에 맞게 이미지를 맞춰보세요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "flow": "순서 조립 화면",
+      "mixed": "사용 가능 한 이미지",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"참 잘했어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Arrange the images with given images",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "flow": "Work Space",
+      "mixed": "Given images",
+      "finalStageHead": "Success",
+      "finalStageBtm":"Success!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

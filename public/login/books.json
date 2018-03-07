@@ -428,6 +428,12 @@
     ["매미의 성장", "Life cycle of a cicada", "/mazeh#!a5_w3/1"],
     ["개구리의 성장", "Life cycle of a frog", "/mazeh#!a5_w4/1"]
   ],
+  "A-5-5-re":[
+    ["옷을 알아보아요", "Let's see the clothes.", "/a55re_w1"],
+    ["옷을 입어요", "Wearing clothes.", "/activity#!a55re_w2"],
+    ["딱지치기를 해요", "Play hittinh scab game", "/activity#!a55re_w3_c1"],
+    ["몸을 씻어요", "Washing my body", "/activity#!a55re_w4"]
+  ],
   "A-5-5":[
     ["목욕용품 정리", "Tidy up after bathing", "/a5_5_w3"],
     ["목욕용품 맞추기", "Tidy up bath supplies", "/activity#!bathroom"]
@@ -514,11 +520,23 @@
     ["가위바위보를 해요:엄마 아빠와 가위바위보", "Rock, paper, scissors with mom and dad", "/mazeh#!b4_w3/index"],
     ["가위바위보 블록을 써보아요:할머니 할아버지도 가위바위보", "Rock, paper, scissors with grandparents", "/mazeh#!b4_w4/index"]
   ],
+  "B-5-re":[
+    ["바다에 가요", "Let’s go to the beach", "/mazeh#!b5re_w1/index"],
+    ["가져오기와 사용하기를 이해해요", "Understand get & use", "/mazeh#!b5re_w2/index"],
+    ["가져오기와 사용하기를 연습해요", "Practice get & use", "/mazeh#!b5re_w3/index"],
+    ["갯벌에서 놀아요", "play on the tidal flat", "/mazeh#!b5re_w4/index"]
+  ],
   "B-5":[
     ["무더운 여름, 바다에 가요:해변으로 놀러가요", "Let’s go to the beach", "/mazeh#!b5_w1/index"],
     ["가져오기와 사용하기를 이해해요:바닷가 물놀이 준비를 해요", "Swimming at the beach", "/mazeh#!b5_w2/index"],
     ["가져오기와 사용하기를 연습해요:낚시를 준비해요", "Prepare for fishing", "/mazeh#!b5_w3/index"],
     ["가져오기와 사용하기를 써보아요:갯벌 생물을 잡아요", "Catch the sea creatures", "/mazeh#!b5_w4/index"]
+  ],
+  "B-5-5-re":[
+    ["경복궁에 놀러 왔어요", "Look around Gyeongbok Palace", "/mazeh#!b55_w1/index"],
+    ["사대문을 알아보아요", "Understand four main door", "/mazeh#!b55_w2/index"],
+    ["옛날 물건을 알아보아요", "Find the household", "/mazeh#!b55_w3/index"],
+    ["시장을 구경해요", "Let's go to the market", "/mazeh#!b55_w4/index"]
   ],
   "B-5-5":[
     ["경복궁 근처에 무엇이 있나요:경복궁 주변을 구경해요", "Look around Gyeongbok Palace", "/mazeh#!b55_w1/index"],
@@ -603,6 +621,12 @@
     ["반복 블록을 이해해요:심부름을 가요", "Go on an errand", "/mazeh#!c4_w2/index"],
     ["반복 블록을 연습해요:과일을 사요", "Buy fruits", "/mazeh#!c4_w3/index"],
     ["반복 블록을 써보아요:집으로 돌아가요", "Go back home", "/mazeh#!c4_w4/index"]
+  ],
+  "C-5-re":[
+    ["여러 가지 규칙을 알아보아요", "Find the pattern", "/mazeh#!c5re_w1/index"],
+    ["숫자 규칙을 알아보아요", "Find the number pattern", "/mazeh#!c5re_w2/index"],
+    ["규칙을 이용해요", "Use pattern", "/mazeh#!c5re_w3/index"],
+    ["연꽃을 가져다주어요", "Bring the flowers", "/mazeh#!c5re_w4/index"]
   ],
   "C-5":[
     ["우리 주변의 규칙을 알아보아요:토드가 규칙 찾기 놀이를 해요", "Tod completes the pattern", "/mazeh#!c5_w1/index"],

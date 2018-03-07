@@ -1,0 +1,78 @@
+{
+  "element": "create-image-game",
+  "attributes": {
+    "limited" : true,
+    "group" : ["gr1", "gr2", "gr3", "gr4", "gr5", "gr6", "gr7"],
+    "useAll": true
+  },
+  "data": {
+    "gr1": [[60.00,47.10]],
+    "gr2": [[34.80,32.80]],
+    "gr3": [[57.80,50.60]],
+    "gr4": [[34.90,54.00]],
+    "gr5": [[57.50,64.30]],
+    "gr6": [[34.90,46.70]],
+    "gr7": [[34.90,63.80]]
+  },
+  "manifest": [
+    {"src": "/img/a55re_w2/bg.png", "background": true},
+    {"src": "/img/a55re_w2/cap.png", "name": "모자", "group": "gr2" },
+    {"src": "/img/a55re_w2/dress.png", "name": "드레스", "group": "gr3"},
+    {"src": "/img/a55re_w2/bag.png", "name": "가방", "group": "gr1" },
+    {"src": "/img/a55re_w2/pants.png", "name": "바지", "group": "gr4"},
+    {"src": "/img/a55re_w2/punctuation.png", "name": "구두", "group": "gr5"},
+    {"src": "/img/a55re_w2/shirt.png", "name": "셔츠", "group": "gr6"},
+    {"src": "/img/a55re_w2/shose.png", "name": "신발", "group": "gr7"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "옷을 입어요",
+      "minor": "어울리는 옷을 입혀보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "옷을 모두 사용해주세요.",
+      "retrybtn": "다시하기",
+      "unCorrect" : "다시 시도해 볼까요?",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "wear clothes.",
+      "minor": "Choose the right clothes.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "retryHead": "Miss",
+      "retryBtm" : "Use all given images",
+      "retrybtn": "Retry",
+      "unCorrect" : "Try Again",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
+
+    }
+  }
+}

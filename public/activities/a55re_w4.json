@@ -1,0 +1,70 @@
+{
+  "element": "line-card",
+  "attributes": {
+    "max" : 6,
+    "lastStage" : 5,
+    "horizontal" : true
+  },
+  "data": [
+    "wash1",
+    "wash2",
+    "wash3",
+    "wash4",
+    "wash_tool1",
+    "wash_tool2",
+    "wash_tool3",
+    "wash_tool4",
+    "wash_tool5",
+    "wash_tool6"
+  ],
+  "manifest": [
+    {"no": 1 , "set": 0, "id": "wash1", "src": "/img/a55re_w4/wash1.png"},
+    {"no": 2 , "set": 0, "id": "wash2", "src": "/img/a55re_w4/wash2.png"},
+    {"no": 3 , "set": 0, "id": "wash3", "src": "/img/a55re_w4/wash3.png"},
+    {"no": 4 , "set": 0, "id": "wash4", "src": "/img/a55re_w4/wash4.png"},
+    {"no": 4 , "set": 1, "id": "wash_tool2", "src": "/img/a55re_w4/wash_tool2.png"},
+    {"no": 2 , "set": 1, "id": "wash_tool3", "src": "/img/a55re_w4/wash_tool3.png"},
+    {"no": 1 , "set": 1, "id": "wash_tool5", "src": "/img/a55re_w4/wash_tool5.png"},
+    {"no": 3 , "set": 1, "id": "wash_tool6", "src": "/img/a55re_w4/wash_tool6.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "음식과 재료를 알맞게 연결해보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Matching the food to the right ingredient",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutHead": "Log Out",
+      "logoutBtm": "Do you want to logout",
+      "previousHead" : "Back",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Clear",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
