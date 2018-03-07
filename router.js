@@ -44,6 +44,8 @@ var loginImgs = level_json["default"]
     .concat(level_json["A"])
     .concat(level_json["B"])
     .concat(level_json["C"])
+    .concat(level_json["A-re"])
+    .concat(level_json["B-re"])
     .concat(level_json["buttons"]);
 var commonImgs = fs.readdirSync("public/img")
     .filter(function(item) {
