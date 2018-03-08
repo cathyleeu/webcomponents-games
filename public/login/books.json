@@ -429,7 +429,7 @@
     ["개구리의 성장", "Life cycle of a frog", "/mazeh#!a5_w4/1"]
   ],
   "A-5-5-re":[
-    ["옷을 알아보아요", "Let's see the clothes.", "/a55re_w1"],
+    ["옷을 알아보아요", "Let's see the clothes.", "/activity#!a55re_w1"],
     ["옷을 입어요", "Wearing clothes.", "/activity#!a55re_w2"],
     ["딱지치기를 해요", "Play hittinh scab game", "/activity#!a55re_w3_c1"],
     ["몸을 씻어요", "Washing my body", "/activity#!a55re_w4"]
@@ -482,7 +482,7 @@
     ["컴퓨터의 언어와 사용예절", "Computer language and uses", "/activity#!stretch"],
     ["눌러서 로그인해요", "Click & Sign-in", "/b1re_w2"],
     ["컴퓨터와 생활", "Computer & My Lift", "/b1re_w3_c1"],
-    ["컴퓨터에서 끌어다 놓아요", "Drag & Drop with Computer", "/b1_w4"]
+    ["컴퓨터에서 끌어다 놓아요", "Drag & Drop with Computer", "/activity#!b1re_w4"]
   ],
   "B-2":[
     ["토드를 움직여요:토드가 태어났어요", "Tod the Tadpole", "/mazeh#!b2_w1/1"],
