@@ -860,6 +860,23 @@ Blocks["move_forward1"] = {
   ],
   action: ["move", "forward"]
 };
+Blocks["move_forward1_binary"] = {
+  colour: "#F28C00",
+  message0: {
+    ko: "%1 앞으로 1칸 가기",
+    en: "%1 Move Forward"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/up_icon.svg"}
+  ],
+  action: ["func", {
+   type: "repeat",
+   count: 1,
+   statements: {
+     type: "move_forward1"
+   }
+ }]
+};
 Blocks["move_forward2_binary"] = {
   colour: "#F28C00",
   message0: {
@@ -5285,7 +5302,7 @@ Blocks['condition2_td_up'] = {
     type: "input_statement",
     name: "else_statements"
   }],
-  action: ["conditioncheck2","direction_up"]
+  action: ["conditioncheck2","food"]
 };
 Blocks['condition2_td_down'] = {
   rgbColor: "#309E4A",
