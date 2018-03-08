@@ -1,0 +1,43 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "mandatory": ["forloop_type3"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "forloop_type3",
+    "repeat_x_num",
+    "get_item3"
+  ],
+  "map": [
+    "%######",
+    "#)..)##",
+    "#u...##",
+    "#.#..##",
+    "ws#...#",
+    "ws#...#",
+    "swsw).."
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img": "chest_box",
+    "itemCount": 1
+  },{
+    "x": 4,
+    "y": 1,
+    "img": "chest_box",
+    "itemCount": 5
+  },{
+    "x": 4,
+    "y": 6,
+    "img": "chest_box",
+    "itemCount": 9
+  }],
+  "tutorial": [{
+    "msg:ko": "보물 상자를 모두 가져오자!",
+    "msg:en": "Let's get the chest boxs!"
+  }]
+}

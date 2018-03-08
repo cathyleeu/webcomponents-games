@@ -1,0 +1,56 @@
+{
+  "tile_size": 128,
+  "score":1,
+"workspace": "start,make_picture",
+"workspace2": "make_picture_func",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "define_shape",
+    "define_color",
+    "draw"
+  ],
+  "map": [
+    "###..#",
+    "#%...#",
+    "##%.##",
+    "#..%.#",
+    "#.##%#",
+    "#.##.l"
+  ],
+  "extra":[{
+    "x": 1,
+    "y": 1,
+    "img": "sun_orange_target",
+    "shape": "sun",
+    "color": "orange",
+    "useItem": true
+  },{
+    "x": 2,
+    "y": 2,
+    "img": "sun_orange_target",
+    "shape": "sun",
+    "color": "orange",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 3,
+    "img": "sun_orange_target",
+    "shape": "sun",
+    "color": "orange",
+    "useItem": true
+  },{
+    "x": 4,
+    "y": 4,
+    "img": "sun_orange_target",
+    "shape": "sun",
+    "color": "orange",
+    "useItem": true
+  }],
+  "tutorial": [{
+    "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
+    "msg:en": "Try to draw a picture of the right shape in the given position."
+  }]
+}

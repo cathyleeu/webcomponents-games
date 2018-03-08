@@ -9,6 +9,10 @@
     {"id": 2, "src": "/img/b1_w4/tri.png"}
   ],
   "manifest": [
+      {"src": "/img/b1_w4/crcl.png"},
+      {"src": "/img/b1_w4/sqr.png"},
+      {"src": "/img/b1_w4/tri.png"},
+
       {"src": "/img/b1_w4/crcl0.png", "match": 0},
       {"src": "/img/b1_w4/crcl1.png", "match": 0},
       {"src": "/img/b1_w4/crcl2.png", "match": 0},

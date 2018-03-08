@@ -11,6 +11,7 @@ var public = require('koa-router')(),
     pmongo = require('promised-mongo'),
     argv = require('minimist')(process.argv.slice(2)),
     co = require('co'),
+    recursiveReadSync = require('recursive-readdir-sync'),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
     auth_db = pmongo(config.auth_db, ["user", "logins", "reports"]),
@@ -44,6 +45,8 @@ var loginImgs = level_json["default"]
     .concat(level_json["A"])
     .concat(level_json["B"])
     .concat(level_json["C"])
+    .concat(level_json["A-re"])
+    .concat(level_json["B-re"])
     .concat(level_json["buttons"]);
 var commonImgs = fs.readdirSync("public/img")
     .filter(function(item) {
@@ -98,6 +101,20 @@ var msgJsons = fs.readdirSync("public/msg")
     })
     .map(function(item) {
       return "/msg/" + item;
+    });
+var webcomponentsES5 = fs.readdirSync("public/webcomponents-es5")
+    .filter(function(item) {
+      return item != ".DS_Store" && item != "Thumbs.db" && item.slice(-5) == ".html" || item.slice(-3) == ".js";
+    })
+    .map(function(item) {
+      return "/webcomponents-es5/" + item;
+    });
+var componentsES5 = recursiveReadSync("public/components-es5")
+    .filter(function(item) {
+      return item != ".DS_Store" && item != "Thumbs.db";
+    })
+    .map(function(item) {
+      return item.slice(6);
     });
 
 var mazeDirs = fs.readdirSync('public/maze')
@@ -233,9 +250,13 @@ function getKinder(kinderId) {
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
       book = ["1-re"];
-  // 성동 ECC 1권부터 시작
-  if(school == "B00163-K1") {
-    book = [1, 6, 7];
+  // 청라ECC 초등반 2개는 C-6부터 시작
+  if(classObj.code == "B00016-K1-KC6" || classObj.code == "B00016-K1-KC7") {
+    book = [6];
+  }
+  // 성동 ECC 2,4번째반(MB-3, MB-4)은 7권
+  if(classObj.code == "B00163-K1-KC2" || classObj.code == "B00163-K1-KC4") {
+    book = [7];
   }
   // 영업부 평택지사 리베창의력사고학원 1권부터 시작
   if(school == "C00166-K1") {
@@ -249,13 +270,9 @@ function getBook(classObj) {
   if(school == "A00042-K5") {
     book = [1, "5-5"];
   }
-  // 대구지사, 압구정PSA는 요청으로 3달치 제공
-  if(school.slice(0,6) == "C00071" || school.slice(0,6) == "D00121") {
-    book = [9, 10, "10-5"];
-  }
   // 시범원 청아유치원, 숙명키즈
   if(school == "A00083-K1" || school == "A00083-K4") {
-    book = ["2-re", "3-re"];
+    book = ["1-re", "2-re", "3-re"];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
@@ -285,21 +302,8 @@ function getBook(classObj) {
   if(school == "A00072-K2") {
     book = [6, 7];
   }
-  // 송도ECC 추가반 9월에 1권
-  if(school == "B00136-K1") {
-    var classNum = classObj.code.slice(-3);
-    if(classNum == "KC1") {
-      book = [5, "5-5"];
-    }
-    if(classNum == "KC2") {
-      book = [9, 10];
-    }
-    if(classNum == "KC7") {
-      book = [10, "10-5"];
-    }
-  }
-  // 마포ECC 추가반, 청라ECC 추가반
-  if(classObj.code == "B00130-K1-KC6" || classObj.code == "B00016-K1-KC5") {
+  // 마포ECC 추가반
+  if(classObj.code == "B00130-K1-KC6") {
     book = [6, 7];
   }
   // 마포ECC 겨울캠프 클래스 C-10권
@@ -633,7 +637,12 @@ public.get('/cache/:manifest', function *(next) {
     })
     .map(function(item) {
       if(item != "manifest.json") {
-        var maze = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, item)));
+        try {
+          var maze = JSON.parse(fs.readFileSync(path.join("public/maze", maniPath, item)));
+        } catch(e) {
+          console.error("JSON parse error on " + path.join("public/maze", maniPath, item));
+          throw e;
+        }
         // tutorial에 들어있는 이미지 추가
         if(maze.tutorial) {
           maze.tutorial.forEach(function(item) {
@@ -662,6 +671,15 @@ public.get('/cache/:manifest', function *(next) {
   // maze가 아닌 개별 페이지들의 manifest 로드
   var page_dirs = pages.slice(0);
   page_dirs.forEach(function(item) {
+    // ejs 최상단에서 imageDir를 가져온다
+    var exist = fs.existsSync('./view' + item + '.ejs');
+    if(exist) {
+      var item_text = fs.readFileSync('./view' + item + '.ejs').toString(),
+          matched = item_text.match(/<!--\s*imageDir:([\S]+)\s*-->/);
+      if(matched) {
+        page_dirs.push(matched[1]);
+      }
+    }
     // a8_w1 페이지에서 a8_w1과 a8의 폴더 이미지를 가져오도록 함
     var dir = item.split("_")[0];
     if(page_dirs.indexOf(dir) < 0) {
@@ -737,6 +755,8 @@ public.get('/cache/:manifest', function *(next) {
   output += scratchBlocksIcons.join("\n") + "\n";
   output += kidsblocks.join("\n") + "\n";
   output += msgJsons.join("\n") + "\n";
+  output += webcomponentsES5.join("\n") + "\n";
+  output += componentsES5.join("\n") + "\n";
 
   output += "# js and css\n";
   output += jsList.join("\n") + "\n";
@@ -1050,6 +1070,9 @@ public.get('/b1re_w3_c2', function *(next) {
 });
 public.get('/b1re_w4', function *(next) {
   yield this.render('b1re_w4');
+});
+public.get('/a55re_w1', function *(next) {
+  yield this.render('a55re_w1');
 });
 
 var activityIndex = fs.readFileSync("./public/webcomponents-es5/index.html");

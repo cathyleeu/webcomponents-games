@@ -1,0 +1,62 @@
+{
+  "tile_size": 128,
+  "score":1,
+"workspace": "start,make_picture",
+"workspace2": "make_picture_func,define_shape,define_color",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "set_shape",
+    "draw"
+  ],
+  "map": [
+    "######",
+    "#d%.%#",
+    "#%%%%#",
+    "#%%%%#",
+    "#%%%%#",
+    "#%.%.#"
+  ],
+  "extra":[{
+    "x": 1,"y": 2,"img": "moon_yellow_target","shape": "moon","color": "yellow","useItem": true
+  },{
+    "x": 1,"y": 3,"img": "moon_yellow_target","shape": "moon","color": "yellow","useItem": true
+  },{
+    "x": 1,"y": 4,"img": "moon_yellow_target","shape": "moon","color": "yellow","useItem": true
+  },{
+    "x": 1,"y": 5,"img": "moon_yellow_target","shape": "moon","color": "yellow","useItem": true
+
+  },{
+    "x": 2,"y": 1,"img": "square_yellow_target","shape": "square","color": "yellow","useItem": true
+  },{
+    "x": 2,"y": 2,"img": "square_yellow_target","shape": "square","color": "yellow","useItem": true
+  },{
+    "x": 2,"y": 3,"img": "square_yellow_target","shape": "square","color": "yellow","useItem": true
+  },{
+    "x": 2,"y": 4,"img": "square_yellow_target","shape": "square","color": "yellow","useItem": true
+
+  },{
+    "x": 3,"y": 2,"img": "star_yellow_target","shape": "star","color": "yellow","useItem": true
+  },{
+    "x": 3,"y": 3,"img": "star_yellow_target","shape": "star","color": "yellow","useItem": true
+  },{
+    "x": 3,"y": 4,"img": "star_yellow_target","shape": "star","color": "yellow","useItem": true
+  },{
+    "x": 3,"y": 5,"img": "star_yellow_target","shape": "star","color": "yellow","useItem": true
+
+  },{
+    "x": 4,"y": 1,"img": "circle_yellow_target","shape": "circle","color": "yellow","useItem": true
+  },{
+    "x": 4,"y": 2,"img": "circle_yellow_target","shape": "circle","color": "yellow","useItem": true
+  },{
+    "x": 4,"y": 3,"img": "circle_yellow_target","shape": "circle","color": "yellow","useItem": true
+  },{
+    "x": 4,"y": 4,"img": "circle_yellow_target","shape": "circle","color": "yellow","useItem": true
+  }],
+  "tutorial": [{
+    "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
+    "msg:en": "Try to draw a picture of the right shape in the given position."
+  }]
+}

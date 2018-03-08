@@ -287,26 +287,44 @@ function init() {
   }
   drawMaze();
   kidscoding.init(loader, mazeInfo, run, tileFactory);
-  kidscoding.initBlockly(maze.toolbox, maze.workspace);
+  kidscoding.initBlockly(maze.toolbox, maze.workspace, maze.workspace2);
   $(".noti-guide").scrollTop() < 10 && $('.noti-up').css('border-color', "transparent transparent gray")
   function blockLimitsHandler(event) {
-    var xml = event.xml || event.oldXml,
-        type = xml ? (xml.getAttribute("type") || "") : "";
-    if(type == "start") {
+    if(!kidscoding.blockLimits) {
       return;
     }
-    if (event.type == Blockly.Events.CREATE || event.type == Blockly.Events.DELETE) {
-      kidscoding.blockLimits[type] += event.type == Blockly.Events.CREATE ? -1 : 1;
-      var toolbox = maze.toolbox.map(function(item) {
-        var tokens = item.split(":"),
-            disabled = kidscoding.blockLimits[tokens[0]] === 0 ? ' disabled="true"' : "";
-        return '<block type="' + tokens[0] + '"' + disabled + '></block>';
-      }).join("");
-      kidscoding.workspace.updateToolbox('<xml>' + toolbox + '</xml>');
+    var xml = event.xml || event.oldXml,
+        type = xml ? (xml.getAttribute("type") || "") : "",
+        blocks = kidscoding.workspace.getFlyout().getWorkspace().getAllBlocks();
+    if(type == "start" || type == "") {
+      return;
+    }
+    if (event.type != Blockly.Events.CREATE && event.type != Blockly.Events.DELETE) {
+      return;
+    }
+    updateBlockLimit(xml, event.type == Blockly.Events.CREATE ? -1 : 1);
+    for(var i = 0; i < blocks.length; i++) {
+      var disabled = kidscoding.blockLimits[blocks[i].type] === 0;
+      if(blocks[i].disabled != disabled) {
+        blocks[i].setDisabled(disabled);
+        blocks[i].setMovable(!disabled);
+        blocks[i].updateDisabled(disabled);
+        blocks[i].updateMovable(!disabled);
+      }
     }
   }
-  // TODO: 블럭 개수 제한 기능이 일부 태블릿에서 블럭 동작을 막아 주석처리
-  // kidscoding.workspace.addChangeListener(blockLimitsHandler);
+  function updateBlockLimit(block, delta) {
+    var type = block.getAttribute("type");
+    if(block.tagName == "BLOCK" && kidscoding.blockLimits.hasOwnProperty(type)) {
+      kidscoding.blockLimits[type] += delta;
+    }
+    for(var i = 0; i < block.childNodes.length; i++) {
+      if(block.childNodes[i].nodeType == 1) {
+        updateBlockLimit(block.childNodes[i], delta);
+      }
+    }
+  }
+  kidscoding.workspace.addChangeListener(blockLimitsHandler);
 
   if(maze.type == "game" || maze.type == "world") {
     gameMode(loader, maze.type, tileFactory);
@@ -403,7 +421,7 @@ function initMaze() {
     height: map_height,
     view_size: maze.view_size || null,
     tile_size: maze.tile_size || 50,
-    mandatory: maze.mandatory || null,
+    mandatory: typeof maze.mandatory == "string" ? maze.mandatory.split(",") : (maze.mandatory || []),
     canvas: {
       stage: new createjs.Stage("display"),
       character: null,
@@ -742,8 +760,9 @@ function addEvents() {
           block.removeSelect()
         });
         // check mandatory
-        var failed = checkMandatory(startblock, mazeInfo.mandatory);
+        var failed = checkMandatory(startblock, mazeInfo.mandatory.slice());
         if(failed) {
+          kidscoding.registerBlock(failed);
           var blockName = Blocks[failed].name,
               msg = messages.fail_mandatory.split("%1").join(blockName);
           kidscoding.isHorizontal ? showModal(msg) : renderAlert(msg, {ruleErr: "block"} )
@@ -918,7 +937,7 @@ function startDialogue(input_dialogue, input_callback) {
     var noti = $('.noti-guide');
     noti.empty();
     input_dialogue.map(function(txt) {
-      var msg = txt["msg:"+lang].replace(/\n/g, "<br/>");
+      var msg = (txt["msg" + (lang ? ":" + lang : "")] || txt["msg"]).replace(/\n/g, "<br/>");
       noti.append("<div class='speech'><div class='speech-bubble'>"+msg+"</div></div>");
     });
     noti.prop("scrollHeight") === noti.height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "");
@@ -1265,25 +1284,15 @@ function showModal(options) {
 }
 
 function checkMandatory(startblock, mandatory) {
-  var block = startblock,
-      type,
-      idx;
-  if(!mandatory) {
-    return null;
-  }
-  mandatory = mandatory.slice();
-  do {
-    type = block.type;
-    idx = mandatory.indexOf(type);
+  var blocks = startblock.getDescendants(),
+      idx, i;
+  for(i = 0; i < blocks.length; i++) {
+    idx = mandatory.indexOf(blocks[i].type);
     if(idx >= 0) {
       mandatory.splice(idx, 1);
     }
-    block = block.getNextBlock();
-  } while(block);
-  if(mandatory[0]) {
-    kidscoding.registerBlock(mandatory[0]);
   }
-  return mandatory[0];
+  return mandatory[0] || null;
 }
 
 function countBlocks(block) {

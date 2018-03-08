@@ -13,6 +13,8 @@ Blocks["start"] = {
   argsh0: [
     {type: "field_image", src: "/img/kidsblocks/Start.png", width: 32, height: 32}
   ],
+  deletable: false,
+  movable: false,
   previousStatement: false
 };
 Blocks["hello1"] = {
@@ -1300,6 +1302,125 @@ Blocks["present"] = {
   ],
   action: ["present"]
 };
+Blocks["draw"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 그림 그리기",
+    en: "%1 Draw"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_draw/pen.png"}
+  ],
+  action: ["draw"]
+};
+Blocks["make_picture"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%1 그림 정하기",
+    en: "%1 Make a picture"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/palette.png"}
+  ],
+  action: ["func", "make_picture_func"]
+};
+Blocks["make_picture_func"] = {
+  rgbColor: "#8C68AD",
+  message0: {
+    ko: "%2 %1 그림 정하기",
+    en: "%1 Make a picture"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/palette.png"},
+    {"type": "field_label",
+      "text": "정의",
+      "class": "style-define"}
+
+  ],
+  action: ["make_picture_func"],
+  previousStatement: false
+};
+Blocks["define_shape"] = {
+  rgbColor: "#D9629E",
+  message0: {
+    ko: "모양을 %1 정하기",
+    en: "Define the shape %1"
+  },
+  args0: [{
+    type: "field_iconmenu",
+    name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'cicle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]
+  }],
+  action: ["define_shape","shape"]
+};
+Blocks["define_color"] = {
+  rgbColor: "#D9629E",
+  message0: {
+    ko: "색깔을 %1 정하기",
+    en: "Define the color %1"
+  },
+  args0: [{
+    type: "field_iconmenu",
+    name: "color",
+    options: [
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
+    ]
+  }],
+  action: ["define_color","color"]
+};
+
+Blocks["set_shape"] = {
+  rgbColor: "#CC6600",
+  message0: {
+    ko: "모양을 %1 바꾸기",
+    en: "Change the shape %1"
+  },
+  args0: [{
+    type: "field_iconmenu",
+    name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]
+  }],
+  action: ["set_shape","shape"]
+};
+Blocks["set_color"] = {
+  rgbColor: "#CC6600",
+  message0: {
+    ko: "색깔을 %1 바꾸기",
+    en: "Change the color %1"
+  },
+  args0: [{
+    type: "field_iconmenu",
+    name: "color",
+    options: [
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
+    ]
+  }],
+  action: ["set_color","color"]
+};
 Blocks["complex1_uu"] = {
   rgbColor: "#6969ae",
   message0: {
@@ -1931,6 +2052,137 @@ Blocks["repeat"] = {
   messageh1: null,
   argsh1: null,
   action: ["repeat", "count"]
+};
+
+Blocks["define_x"] = {
+  rgbColor: "#D9629E",
+  message0: {
+    ko: "%1을 %2 정하기",
+    en: "Define the %1"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/kidsblocks/x_img.png"
+  },{
+    type: "field_dropdown",
+    name: "count",
+    options: [
+      ["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"]
+    ]
+  }],
+  action: ["define_x","count"]
+};
+
+Blocks["repeat_x_num"] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1 %2 만큼 반복",
+    en: "Repeat %1"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/kidsblocks/repeat.svg"
+  },{
+    type: "field_image",
+    src: "/img/kidsblocks/x_img.png"
+  }],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  action: ["repeat_x_num"]
+};
+
+Blocks["forloop_type1"] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1가 1 부터 %2 까지, 1씩 증가",
+    en: "%1 from 1 to %2, incrementing by 1"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/kidsblocks/x_img.png"
+  },{
+    type: "field_dropdown",
+    name: "end_num",
+    options: [
+      ["2", "2"],["3", "3"],["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"],["10", "10"],["11", "11"]
+      ,["12", "12"],["13", "13"],["14", "14"],["15", "15"],["16", "16"],["17", "17"],["18", "18"],["19", "19"],["20", "20"]
+    ]
+  }],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  action: ["forloop","type1"]
+};
+Blocks["forloop_type2"] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1가 %2 부터 %3 까지, 1씩 증가",
+    en: "%1 from %2 to %3, incrementing by 1"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/kidsblocks/x_img.png"
+  },{
+    type: "field_dropdown",
+    name: "start_num",
+    options: [
+      ["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"]
+    ]
+  },{
+    type: "field_dropdown",
+    name: "end_num",
+    options: [
+      ["2", "2"],["3", "3"],["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"],["10", "10"],["11", "11"]
+      ,["12", "12"],["13", "13"],["14", "14"],["15", "15"],["16", "16"],["17", "17"],["18", "18"],["19", "19"],["20", "20"]
+    ]
+  }],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  action: ["forloop","type2"]
+};
+Blocks["forloop_type3"] = {
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1가 %2 부터 %3 까지, %4씩 증가",
+    en: "%1 from %2 to %3, incrementing by %4"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/kidsblocks/x_img.png"
+  },{
+    type: "field_dropdown",
+    name: "start_num",
+    options: [
+      ["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"]
+    ]
+  },{
+    type: "field_dropdown",
+    name: "end_num",
+    options: [
+      ["2", "2"],["3", "3"],["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"],["10", "10"],["11", "11"]
+      ,["12", "12"],["13", "13"],["14", "14"],["15", "15"],["16", "16"],["17", "17"],["18", "18"],["19", "19"],["20", "20"]
+    ]
+  },{
+    type: "field_dropdown",
+    name: "increase_num",
+    options: [
+      ["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"]
+    ]
+  }],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  action: ["forloop","type3"]
 };
 
 Blocks['repeat_until_cos'] = {

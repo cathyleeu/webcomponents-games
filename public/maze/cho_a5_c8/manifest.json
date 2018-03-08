@@ -1,0 +1,26 @@
+[
+  {"book": "초등 A5권", "title": "C8 : 일정하게 증가하며 반복3"},
+  {"id": "bg1", "src": "/img/cho_a5/tile1.png"},
+  {"id": "bg2", "src": "/img/cho_a5/tile2.png"},
+
+  {"id": "character", "src": "/img/cho_a5/summer_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a5/summer_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a5/parasol.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "chest_box", "src": "/img/cho_a5/chest_box.png"},
+
+  {"id": "parasol", "src": "/img/cho_a5/parasol.png", "obstacle": true},
+  {"id": "seastone1", "src": "/img/cho_a5/seastone1.png", "obstacle": true},
+  {"id": "seastone2", "src": "/img/cho_a5/seastone2.png", "obstacle": true},
+  {"id": "seastone3", "src": "/img/cho_a5/seastone3.png", "obstacle": true},
+  {"id": "seawood", "src": "/img/cho_a5/seawood.png", "obstacle": true},
+
+  {"tile": "s", "id": "seatile1", "src": "/img/cho_a5/seatile1.png", "wall": true},
+  {"tile": "w", "id": "seatile2", "src": "/img/cho_a5/seatile2.png", "wall": true}
+
+]

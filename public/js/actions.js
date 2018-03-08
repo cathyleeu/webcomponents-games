@@ -2175,6 +2175,96 @@ Actions.prototype.present = function(block, callback) {
   callback("선물을 할 수 없어요");
 }
 
+Actions.prototype.make_picture_func = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      itemBitmap = character.itemBitmap;
+
+  setTimeout(function() {
+    character.draw_shape = "none";
+    character.draw_color = "default";
+    callback();
+  }, 10);
+
+  return;
+
+}
+
+Actions.prototype.define_shape = function(type, block, callback) {
+  this.canvas.character.draw_shape = this._getFieldValue(block, "shape");
+  setTimeout(function() {
+    callback();
+  }, 100);
+};
+
+Actions.prototype.define_color = function(type, block, callback) {
+  this.canvas.character.draw_color = this._getFieldValue(block, "color");
+  setTimeout(function() {
+    callback();
+  }, 100);
+};
+
+Actions.prototype.set_shape = function(type, block, callback) {
+  if(this.canvas.character.draw_shape == "none"){
+    callback("그림의 모양을 정하지 않았어요.");
+    return;
+  }
+  this.canvas.character.draw_shape = this._getFieldValue(block, "shape");
+  setTimeout(function() {
+    callback();
+  }, 100);
+};
+
+Actions.prototype.set_color = function(type, block, callback) {
+  if(this.canvas.character.draw_color == "default"){
+    callback("그림의 색깔을 정하지 않았어요.");
+    return;
+  }
+  this.canvas.character.draw_color = this._getFieldValue(block, "color");
+  setTimeout(function() {
+    callback();
+  }, 100);
+};
+
+Actions.prototype.draw = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      itemBitmap = character.itemBitmap;
+  if(character.draw_shape=="none") {
+    callback("그림을 그릴 모양을 정하지 않았어요.");
+    return;
+  }
+  if(character.draw_color == "default") {
+    character.draw_color = "white";
+  }
+  // 목표 위에서 아이템 사용(패턴 매칭)
+  var food = this._getCanvasObject(character.px, character.py, "food");
+  if(food && food.useItem) {
+    this._splitObjects(food, function() {
+      var pImage = "";
+      if(food.shape == character.draw_shape && food.color == character.draw_color){
+        pImage = food.shape+"_"+food.color;
+      }else{
+        callback("그림이 일치하지 않아요");
+        return;
+      }
+      food.bitmap.image = _this.loader.getResult(pImage)
+      var idx = foods.indexOf(food);
+      foods.splice(idx,1);
+      _this.canvas.stage.update();
+      createjs.Sound.play("success");
+      setTimeout(function() {
+        callback();
+      }, 500);
+    });
+    return;
+  }
+  // 아이템을 사용할 수 없는 경우
+  callback("그림을 그리는 곳이 아니에요");
+}
+
 Actions.prototype.wait = function(block, callback) {
   var character = this.canvas.character,
       _this = this,
@@ -2303,6 +2393,17 @@ Actions.prototype.condition_movable = function(type, block, callback) {
   }, 100);
 };
 
+Actions.prototype.define_x = function(type, block, callback) {
+  var character = this.canvas.character,
+      count = this._getFieldValue(block, "count"),
+      _this = this;
+
+  setTimeout(function() {
+    character.x_num = count;
+    callback();
+  }, 10);
+};
+
 Actions.prototype.repeat = function(type, block, callback) {
   var character = this.canvas.character,
       child = block.getInputTargetBlock("statements"),
@@ -2332,6 +2433,95 @@ Actions.prototype.repeat = function(type, block, callback) {
   };
   proc();
 };
+Actions.prototype.forloop = function(type, block, callback) {
+  var character = this.canvas.character,
+      child = block.getInputTargetBlock("statements"),
+      start_num = 0,
+      end_num = 0,
+      increase_num = 0,
+      _this = this;
+  if(type == "type1"){
+    start_num = 1;
+    end_num = this._getFieldValue(block, "end_num");
+    increase_num = 1;
+  }else if(type == "type2"){
+    start_num = this._getFieldValue(block, "start_num");
+    end_num = this._getFieldValue(block, "end_num");
+    increase_num = 1;
+  }else{
+    start_num = this._getFieldValue(block, "start_num");
+    end_num = this._getFieldValue(block, "end_num");
+    increase_num = this._getFieldValue(block, "increase_num");
+  }
+  if(!child) {
+    callback("반복 블록이 비었어요");
+    return;
+  }
+  var x_num = start_num;
+  function proc() {
+    var tile = _this.map[character.py][character.px];
+    if(child && x_num <= end_num) {
+      _this.setTimeoutKey = setTimeout(function() {
+        block.removeSelect();
+        character.x_num = x_num;
+        x_num = x_num + increase_num;
+        _this.delay = 50;
+        _this.run(child, function() {
+          block.addSelect();
+          proc();
+        });
+      }, 0);
+    } else {
+      block.addSelect();
+      character.x_num = 0;
+      _this.delay = 100;
+      _this.setTimeoutKey = setTimeout(callback, 0);
+    }
+  };
+  proc();
+};
+
+Actions.prototype.repeat_x_num = function(block, callback) {
+  var character = this.canvas.character,
+      child = block.getInputTargetBlock("statements"),
+      _this = this;
+
+  if(!child) {
+    callback("반복 블록이 비었어요");
+    return;
+  }
+  debugger
+  if(character.x_num == 0) {
+    callback("일정하게 증가하면서 반복 블록 안에 조립되어야 합니다.");
+    return;
+  }
+  if(!character.x_num ) {
+    callback("X를 정하지 않았습니다.");
+    return;
+  }
+
+  var count = character.x_num;
+  function proc() {
+    var tile = _this.map[character.py][character.px];
+    if(child && count > 0) {
+      _this.setTimeoutKey = setTimeout(function() {
+        block.removeSelect();
+        count--;
+        _this.delay = 50;
+        _this.run(child, function() {
+          block.addSelect();
+          proc();
+        });
+      }, 0);
+    } else {
+      block.addSelect();
+      _this.delay = 100;
+      _this.setTimeoutKey = setTimeout(callback, 0);
+    }
+  };
+  proc();
+};
+
 
 Actions.prototype._makePseudoBlock = function(json) {
   var _this = this;
@@ -2362,5 +2552,11 @@ Actions.prototype.func = function(contents, block, callback) {
     });
     var pseudoBlock = this._makePseudoBlock(contents);
     this.run(pseudoBlock, callback);
+  } else if(typeof contents == "string") {
+    var blocks = this.kidscoding.workspace.getAllBlocks(),
+        target = blocks.filter(function(block) {
+          return block.type === contents;
+        })[0];
+    this.run(target, callback);
   }
 };
