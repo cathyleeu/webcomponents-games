@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start","move_forward1","move_forward1","check","condition2_td_up"],
+  "workspace": ["start","move_forward1","check","condition2_td_up"],
   "mandatory": ["condition2_td_up"],
   "toolbox": [
     "move_forward1",
@@ -13,16 +13,16 @@
   ],
   "map": [
     "########",
-    "##.#.#%#",
-    "#.#.#..#",
-    "#..#.#.#",
-    "#...r.&#",
-    "#.#.##.#",
-    "##..%..#",
+    "#....%##",
+    "#..##..#",
+    "##.##.##",
+    "##&l#.#",
+    "##.##.#",
+    "#...%###",
     "########"
   ],
   "extra":[{
-    "x": 6,
+    "x": 2,
     "y": 4,
     "img": "empty",
     "contents" : [{
@@ -33,9 +33,9 @@
       "role": "else"
     }]
   },{
-    "x": 6,
+    "x": 5,
     "y": 1,
-    "img": "policestation",
+    "img": "servicecenter",
     "order": "if"
   },{
     "x": 4,

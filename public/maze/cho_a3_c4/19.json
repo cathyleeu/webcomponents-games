@@ -1,46 +1,46 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start","move_forward1","move_forward1","check","condition2_td_up"],
-  "mandatory": ["condition2_td_up"],
+  "workspace": ["start"],
+  "mandatory": ["condition2_td_left","repeat"],
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
     "repeat",
     "check",
-    "condition2_td_up"
+    "condition2_td_left"
   ],
   "map": [
     "########",
-    "##.#.#%#",
-    "#.#.#..#",
-    "#..#.#.#",
-    "#...r.&#",
-    "#.#.##.#",
-    "##..%..#",
+    "#.#d#%##",
+    "###.#.##",
+    "#..&..##",
+    "#.####.#",
+    "#%..##.#",
+    "####...#",
     "########"
   ],
   "extra":[{
-    "x": 6,
-    "y": 4,
+    "x": 3,
+    "y": 3,
     "img": "empty",
     "contents" : [{
-      "img": "up",
+      "img": "left",
       "role": "if"
     },{
-      "img": "down",
+      "img": "right",
       "role": "else"
     }]
   },{
-    "x": 6,
-    "y": 1,
-    "img": "policestation",
+    "x": 1,
+    "y": 5,
+    "img": "hospital",
     "order": "if"
   },{
-    "x": 4,
-    "y": 6,
-    "img": "hospital",
+    "x": 5,
+    "y": 1,
+    "img": "servicecenter",
     "order": "else"
   }],
   "tutorial": [{
