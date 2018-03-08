@@ -1,9 +1,5 @@
 <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
-<link rel="import" href="./status-bar.html">
-<link rel="import" href="./modal.html">
-
-
 
 <dom-module id="stretch-game">
   <template>
@@ -65,8 +61,9 @@
       headertext="{{localize('finalStageHead')}}"
       btmtext="{{localize('finalStageBtm')}}"
       finalbtn="{{localize('finalbtn')}}"
-      purpose="finalStage"
+      retrybtn="{{localize('retrybtn')}}"
       nextlink="{{nextlink}}"
+      purpose="retryReset"
       ></toycode-modal>
     <p>{{localize('minor')}}</p>
     <svg></svg>
@@ -105,40 +102,39 @@
 
         if(!selfEle.isPlaying){
           selfEle.set('isPlaying', true)
-          d3.select(this).remove()
+          d3.select(this).attr("clicked", "true")
           d3.select(svg).append('text').text(`${d.text[selfEle.language]}`)
-            .attr('x', d.x+space ).attr('y', d.y+space )
+            .attr('text-anchor', 'middle')
+            .attr('x', d.x+space ).attr('y', d.y + 450 )
             .style('font-size', '40px')
             .style('font-weight', '700')
 
-          selfEle.set('clicked', selfEle.clicked+1)
-
-          if(selfEle.clicked === selfEle.max) {
-            if(selfEle.currentStage === selfEle.lastStage) {
-              selfEle.$.finalStageModal.modalAlert()
-              return false
-            }
-            selfEle.$.successModal.modalAlert()
-          }
           let instance = createjs.Sound.play(d.id)
           instance.on("complete", selfEle.handleComplete, selfEle);
         }
       }
       handleComplete(e) {
         console.log("handleComplete");
+        const svg = this.parentElement;
+        d3.select(this.shadowRoot).selectAll('text').remove();
+        d3.select(this.shadowRoot).selectAll('[clicked="true"]').remove();
+        this.set('clicked', this.clicked+1)
+
+        if(this.clicked === this.max) {
+          this.$.finalStageModal.modalAlert()
+        }
+
         this.set('isPlaying', false)
       }
       setData(data, manifest){
         this.set('data',data)
         this.set('manifest',manifest)
+        manifest = manifest.reverse();
         let { offsetWidth, offsetHeight } = this,
             svgHeight = this.offsetHeight-60,
             svg = d3.select(this.shadowRoot).select('svg')
                     .attr('width', this.offsetWidth)
                     .attr('height', svgHeight);
-            manifest = d3.shuffle(manifest).slice(0, this.max)
-            data = d3.shuffle(data)
-
 
         // sound js에 registerSounds를 위해 data 가공
         let soundData = manifest.map( s => ({
