@@ -671,6 +671,15 @@ public.get('/cache/:manifest', function *(next) {
   // maze가 아닌 개별 페이지들의 manifest 로드
   var page_dirs = pages.slice(0);
   page_dirs.forEach(function(item) {
+    // ejs 최상단에서 imageDir를 가져온다
+    var exist = fs.existsSync('./view' + item + '.ejs');
+    if(exist) {
+      var item_text = fs.readFileSync('./view' + item + '.ejs').toString(),
+          matched = item_text.match(/<!--\s*imageDir:([\S]+)\s*-->/);
+      if(matched) {
+        page_dirs.push(matched[1]);
+      }
+    }
     // a8_w1 페이지에서 a8_w1과 a8의 폴더 이미지를 가져오도록 함
     var dir = item.split("_")[0];
     if(page_dirs.indexOf(dir) < 0) {
