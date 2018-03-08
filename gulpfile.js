@@ -22,7 +22,7 @@ function task_webcomponents(cb) {
   let dependenciesStreamSplitter = new HtmlSplitter();
   let dependenciesStream = project.dependencies()
     .pipe(dependenciesStreamSplitter.split())
-    .pipe($.if(/\.js$/, $.babel({
+    .pipe($.if(/(webcomponents\/|components\/).*\.js$/, $.babel({
       presets: ['es2015'],
       plugins: ['external-helpers', 'transform-custom-element-classes', 'transform-es2015-classes']
     })))
