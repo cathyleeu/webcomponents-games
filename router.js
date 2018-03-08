@@ -254,9 +254,9 @@ function getBook(classObj) {
   if(classObj.code == "B00016-K1-KC6" || classObj.code == "B00016-K1-KC7") {
     book = [6];
   }
-  // 성동 ECC 1권부터 시작
-  if(school == "B00163-K1") {
-    book = [1, 6, 7];
+  // 성동 ECC 2,4번째반(MB-3, MB-4)은 7권
+  if(classObj.code == "B00163-K1-KC2" || classObj.code == "B00163-K1-KC4") {
+    book = [7];
   }
   // 영업부 평택지사 리베창의력사고학원 1권부터 시작
   if(school == "C00166-K1") {

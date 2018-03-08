@@ -1,14 +1,19 @@
 {
   "element": "stretch-game",
   "attributes": {
-    "max" : 4,
+    "max" : 6,
     "basePath" : "/sound/"
   },
   "data": [
-    [50, 40]
+    [50, 10]
   ],
   "manifest": [
-    {"src": "/img/stretch/stretch01.png", "text": { "ko" : "", "en" : "" }, "sound": "complete.mp3", "id": "1"}
+    {"src": "/img/stretch/stretch01.png", "text": { "ko" : "눈 운동", "en" : "Step 1" }, "sound": "complete.mp3", "id": "1"},
+    {"src": "/img/stretch/stretch02.png", "text": { "ko" : "목 운동", "en" : "Step 2" }, "sound": "complete.mp3", "id": "2"},
+    {"src": "/img/stretch/stretch03.png", "text": { "ko" : "손 털기", "en" : "Step 3" }, "sound": "complete.mp3", "id": "3"},
+    {"src": "/img/stretch/stretch04.png", "text": { "ko" : "어깨 돌리기", "en" : "Step 4" }, "sound": "complete.mp3", "id": "4"},
+    {"src": "/img/stretch/stretch05.png", "text": { "ko" : "허리 돌리기", "en" : "Step 5" }, "sound": "complete.mp3", "id": "5"},
+    {"src": "/img/stretch/stretch06.png", "text": { "ko" : "기지개 펴기", "en" : "Step 6" }, "sound": "complete.mp3", "id": "6"}
   ],
   "msg": {
     "ko": {
@@ -29,7 +34,8 @@
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "확인",
-      "fullscreen" : "풀스크린"
+      "fullscreen" : "풀스크린",
+      "retrybtn": "다시해보기"
     },
     "en": {
       "title": "Computer Stretch",
@@ -49,7 +55,8 @@
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
       "finalbtn" : "Next Stage",
-      "fullscreen" : "fullscreen"
+      "fullscreen" : "fullscreen",
+      "retrybtn": "Retry"
     }
   }
 }
