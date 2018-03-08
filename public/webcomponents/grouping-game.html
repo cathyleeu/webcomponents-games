@@ -125,15 +125,23 @@
       this.setData(this.data, this.manifest)
     }
     setData(data, manifest){
-
+      manifest = manifest.filter(function(item) {
+        return item.hasOwnProperty("match");
+      });
       this.set('data', data)
       this.set('manifest', manifest)
 
       let { svgHeight, svgWidth } = this.size,
           svg = d3.select(this.$.createSvg),
+          dragItems = manifest.length,
+          dragItemsRange = Math.ceil(dragItems/data.length),
           targetSize = svgHeight*(1/data.length),
+          targetSize2 = svgWidth*(1/(dragItemsRange+1.5)),
           imageBoard = svgWidth-(targetSize*1.5),
-          imageSize = imageBoard*0.19;
+          imageSize = targetSize;
+      if(targetSize > targetSize2) {
+        targetSize = imageSize = targetSize2;
+      }
 
       this.set('size.targetSize', targetSize)
       this.set('size.imageSize', imageSize)
@@ -149,9 +157,6 @@
           }
         })
       }
-
-      let dragItems = manifest.length,
-          dragItemsRange = Math.floor(imageBoard/imageSize);
 
       for(var i = 0; i < dragItems; i++ ){
         for(var j = 0; j < dragItemsRange; j++ ) {
