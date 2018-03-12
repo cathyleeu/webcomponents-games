@@ -12,7 +12,7 @@
     "condition2_td_down",
     "condition2_td_left",
     "condition2_td_right",
-    "move_forward1",
+    "move_forward1_binary",
     "move_forward2_binary",
     "move_forward4_binary",
     "move_forward8_binary",

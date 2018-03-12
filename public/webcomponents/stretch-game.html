@@ -1,4 +1,4 @@
-<link rel="import" href="../components/polymer/polymer-element.html">
+ <link rel="import" href="../components/polymer/polymer-element.html">
 <link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
 
 <dom-module id="stretch-game">
@@ -86,8 +86,12 @@
         this.set('clicked', 0)
         this.set('currentStage', 1)
         this.set('isPlaying', false)
-        createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.FlashAudioPlugin]);
-        createjs.Sound.alternateExtensions = ["mp3"];
+        // try {
+        //   createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.FlashAudioPlugin]);
+        //   createjs.Sound.alternateExtensions = ["mp3"];
+        // } catch(e) {
+        //   // win8.1에서 에러나서 try-catch로 감쌈. 이부분 에러나도 사운드 재생은 잘 됨
+        // }
       }
       reset(){
         this.set('currentStage', this.currentStage+1)
@@ -97,15 +101,16 @@
       }
       handleClick(d){
         let selfEle = this.ownerDocument.getElementById('element'),
-            svg = this.parentElement,
+            svg = this.parentNode,
             space = (this.getBBox().width)*0.5;
 
         if(!selfEle.isPlaying){
           selfEle.set('isPlaying', true)
           d3.select(this).attr("clicked", "true")
-          d3.select(svg).append('text').text(`${d.text[selfEle.language]}`)
+          d3.select(svg).append('text').text(d.text[selfEle.language])
             .attr('text-anchor', 'middle')
-            .attr('x', d.x+space ).attr('y', d.y + 450 )
+            .attr('x', (d.x+space)+"px")
+            .attr('y', (d.y+450)+"px")
             .style('font-size', '40px')
             .style('font-weight', '700')
 
@@ -158,6 +163,8 @@
             .attr('x', (d, i) => d.x ).attr('y', (d, i) => d.y )
             .attr('id', (d, i) => `image_${d.id}`)
             .attr("xlink:href", (d, i) => d.src)
+            .attr("width", "400px")
+            .attr("height", "400px")
             .on("click", this.handleClick)
       }
     }
