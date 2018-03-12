@@ -1,35 +1,35 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start","move_forward1","move_forward1","check","condition2_td_up"],
-  "mandatory": ["condition2_td_up"],
+  "workspace": ["start"],
+  "mandatory": ["condition2_td_right"],
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
     "repeat",
     "check",
-    "condition2_td_up"
+    "condition2_td_right"
   ],
   "map": [
     "########",
-    "##.#.#%#",
-    "#.#.#..#",
-    "#..#.#.#",
-    "#...r.&#",
-    "#.#.##.#",
-    "##..%..#",
+    "##..#.%#",
+    "####..##",
+    "#..&.###",
+    "#.#u####",
+    "#%######",
+    "#......#",
     "########"
   ],
   "extra":[{
-    "x": 6,
-    "y": 4,
+    "x": 3,
+    "y": 3,
     "img": "empty",
     "contents" : [{
-      "img": "up",
+      "img": "right",
       "role": "if"
     },{
-      "img": "down",
+      "img": "left",
       "role": "else"
     }]
   },{
@@ -38,8 +38,8 @@
     "img": "policestation",
     "order": "if"
   },{
-    "x": 4,
-    "y": 6,
+    "x": 1,
+    "y": 5,
     "img": "hospital",
     "order": "else"
   }],

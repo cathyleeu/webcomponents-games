@@ -1,8 +1,9 @@
 {
   "element": "line-card",
   "attributes": {
-    "max" : 6,
-    "lastStage" : 5,
+    "max" : 4,
+    "lastStage" : 1,
+    "nextlink" : "activity#!a55re_w4",
     "horizontal" : true
   },
   "data": [
@@ -29,7 +30,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "음식과 재료를 알맞게 연결해보아요.",
+      "title": "몸을 씻어요.",
+      "minor": "몸을 씻는 모습과 그때 필요한 물건을 연결해보하요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -48,7 +50,8 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Matching the food to the right ingredient",
+      "title": "Washing my body.",
+      "minor": "Matching the Washing images to the right bath Goods.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
