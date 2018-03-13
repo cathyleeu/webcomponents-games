@@ -26,8 +26,8 @@
     "color": "red",
     "useItem": true
   },{
-    "x": 3,
-    "y": 2,
+    "x": 2,
+    "y": 3,
     "img": "circle_red_target",
     "shape": "circle",
     "color": "red",

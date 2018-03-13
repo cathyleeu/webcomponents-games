@@ -31,7 +31,7 @@
   },{
     "x": 3,"y": 4,"img": "star_green_target","shape": "star","color": "green","useItem": true
   },{
-    "x": 4,"y": 3,"img": "star_green_target","shape": "star","color": "green","useItem": true
+    "x": 4,"y": 4,"img": "star_green_target","shape": "star","color": "green","useItem": true
 
   },{
     "x": 4,"y": 3,"img": "circle_green_target","shape": "circle","color": "green","useItem": true

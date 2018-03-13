@@ -14,8 +14,8 @@
   "map": [
     "######",
     "#r%%%%",
-    "#%%%%.",
-    "#.%%%%",
+    "#.....",
+    "#.....",
     "#%%%%.",
     "######"
   ],
@@ -27,24 +27,6 @@
     "x": 4,"y": 1,"img": "star_blue_target","shape": "star","color": "blue","useItem": true
   },{
     "x": 5,"y": 1,"img": "star_blue_target","shape": "star","color": "blue","useItem": true
-
-  },{
-    "x": 1,"y": 2,"img": "moon_blue_target","shape": "moon","color": "blue","useItem": true
-  },{
-    "x": 2,"y": 2,"img": "moon_blue_target","shape": "moon","color": "blue","useItem": true
-  },{
-    "x": 3,"y": 2,"img": "moon_blue_target","shape": "moon","color": "blue","useItem": true
-  },{
-    "x": 4,"y": 2,"img": "moon_blue_target","shape": "moon","color": "blue","useItem": true
-
-  },{
-    "x": 2,"y": 3,"img": "circle_blue_target","shape": "circle","color": "blue","useItem": true
-  },{
-    "x": 3,"y": 3,"img": "circle_blue_target","shape": "circle","color": "blue","useItem": true
-  },{
-    "x": 4,"y": 3,"img": "circle_blue_target","shape": "circle","color": "blue","useItem": true
-  },{
-    "x": 5,"y": 3,"img": "circle_blue_target","shape": "circle","color": "blue","useItem": true
 
   },{
     "x": 1,"y": 4,"img": "sun_blue_target","shape": "sun","color": "blue","useItem": true

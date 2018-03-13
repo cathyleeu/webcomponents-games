@@ -16,11 +16,11 @@
   ],
   "map": [
     "######",
-    "#d%.%#",
-    "#%%%%#",
-    "#%%%%#",
-    "#%%%%#",
-    "#%.%.#"
+    "#d..%#",
+    "#%..%#",
+    "#%..%#",
+    "#%..%#",
+    "#%...#"
   ],
   "extra":[{
     "x": 1,"y": 2,"img": "moon_green_target","shape": "moon","color": "green","useItem": true
@@ -30,24 +30,6 @@
     "x": 1,"y": 4,"img": "moon_green_target","shape": "moon","color": "green","useItem": true
   },{
     "x": 1,"y": 5,"img": "moon_green_target","shape": "moon","color": "green","useItem": true
-
-  },{
-    "x": 2,"y": 1,"img": "sun_blue_target","shape": "sun","color": "blue","useItem": true
-  },{
-    "x": 2,"y": 2,"img": "sun_blue_target","shape": "sun","color": "blue","useItem": true
-  },{
-    "x": 2,"y": 3,"img": "sun_blue_target","shape": "sun","color": "blue","useItem": true
-  },{
-    "x": 2,"y": 4,"img": "sun_blue_target","shape": "sun","color": "blue","useItem": true
-
-  },{
-    "x": 3,"y": 2,"img": "triangle_sky_target","shape": "triangle","color": "sky","useItem": true
-  },{
-    "x": 3,"y": 3,"img": "triangle_sky_target","shape": "triangle","color": "sky","useItem": true
-  },{
-    "x": 3,"y": 4,"img": "triangle_sky_target","shape": "triangle","color": "sky","useItem": true
-  },{
-    "x": 3,"y": 5,"img": "triangle_sky_target","shape": "triangle","color": "sky","useItem": true
 
   },{
     "x": 4,"y": 1,"img": "circle_green_target","shape": "circle","color": "green","useItem": true
