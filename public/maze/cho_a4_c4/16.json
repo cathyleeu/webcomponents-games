@@ -35,7 +35,7 @@
     "useItem": true
   },{
     "x": 1,
-    "y": 3,
+    "y": 1,
     "img": "circle_orange_target",
     "shape": "circle",
     "color": "orange",

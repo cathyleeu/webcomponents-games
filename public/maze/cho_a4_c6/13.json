@@ -31,7 +31,7 @@
   },{
     "x": 3,"y": 4,"img": "circle_red_target","shape": "circle","color": "red","useItem": true
   },{
-    "x": 4,"y": 3,"img": "circle_red_target","shape": "circle","color": "red","useItem": true
+    "x": 4,"y": 4,"img": "circle_red_target","shape": "circle","color": "red","useItem": true
 
   },{
     "x": 4,"y": 3,"img": "moon_red_target","shape": "moon","color": "red","useItem": true

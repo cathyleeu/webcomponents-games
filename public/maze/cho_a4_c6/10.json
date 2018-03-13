@@ -33,7 +33,7 @@
     "useItem": true
   },{
     "x": 1,
-    "y": 3,
+    "y": 1,
     "img": "square_orange_target",
     "shape": "square",
     "color": "orange",

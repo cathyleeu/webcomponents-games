@@ -1350,7 +1350,7 @@ Blocks["define_shape"] = {
     type: "field_iconmenu",
     name: "shape",
     options: [
-      {src: '/img/cho_draw/circle_white.png', value: 'cicle', width: 48, height: 48},
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
       {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
       {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
       {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
@@ -1370,8 +1370,8 @@ Blocks["define_color"] = {
     type: "field_iconmenu",
     name: "color",
     options: [
-      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
       {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
       {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
       {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
       {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
@@ -1411,6 +1411,7 @@ Blocks["set_color"] = {
     type: "field_iconmenu",
     name: "color",
     options: [
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
       {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
       {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
       {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
