@@ -290,8 +290,8 @@ function getBook(classObj) {
   if(school == "A00083-K7") {
     book = [3, 5, 7, 8];
   }
-  // 울산지사 굿모닝, 울산지사 교차로원, 부산지사 동성어학원, 직영 설리번
-  if(school == "A00072-K7" || school == "A00072-K9" || school == "A00066-K2" || school == "E00076-K1") {
+  // 울산지사 굿모닝, 울산지사 교차로원, 부산지사 동성어학원
+  if(school == "A00072-K7" || school == "A00072-K9" || school == "A00066-K2") {
     book = [8, 9];
   }
   // 광주지사 리아시찌다원
