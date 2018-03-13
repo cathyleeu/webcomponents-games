@@ -25,8 +25,8 @@
     "color": "orange",
     "useItem": true
   },{
-    "x": 3,
-    "y": 2,
+    "x": 2,
+    "y": 3,
     "img": "triangle_orange_target",
     "shape": "triangle",
     "color": "orange",

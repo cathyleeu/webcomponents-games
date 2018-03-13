@@ -15,8 +15,8 @@
   "map": [
     "######",
     "#%%%%.",
-    "#.%%%%",
-    "#%%%%.",
+    "#.....",
+    "#.....",
     "#r%%%%",
     "######"
   ],
@@ -28,24 +28,6 @@
     "x": 3,"y": 1,"img": "sun_sky_target","shape": "sun","color": "sky","useItem": true
   },{
     "x": 4,"y": 1,"img": "sun_sky_target","shape": "sun","color": "sky","useItem": true
-
-  },{
-    "x": 2,"y": 2,"img": "triangle_orange_target","shape": "triangle","color": "orange","useItem": true
-  },{
-    "x": 3,"y": 2,"img": "triangle_orange_target","shape": "triangle","color": "orange","useItem": true
-  },{
-    "x": 4,"y": 2,"img": "triangle_orange_target","shape": "triangle","color": "orange","useItem": true
-  },{
-    "x": 5,"y": 2,"img": "triangle_orange_target","shape": "triangle","color": "orange","useItem": true
-
-  },{
-    "x": 1,"y": 3,"img": "square_red_target","shape": "square","color": "red","useItem": true
-  },{
-    "x": 2,"y": 3,"img": "square_red_target","shape": "square","color": "red","useItem": true
-  },{
-    "x": 3,"y": 3,"img": "square_red_target","shape": "square","color": "red","useItem": true
-  },{
-    "x": 4,"y": 3,"img": "square_red_target","shape": "square","color": "red","useItem": true
 
   },{
     "x": 2,"y": 4,"img": "circle_sky_target","shape": "circle","color": "sky","useItem": true

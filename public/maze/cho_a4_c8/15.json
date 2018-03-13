@@ -32,7 +32,7 @@
   },{
     "x": 3,"y": 4,"img": "moon_yellow_target","shape": "moon","color": "yellow","useItem": true
   },{
-    "x": 4,"y": 3,"img": "moon_yellow_target","shape": "moon","color": "yellow","useItem": true
+    "x": 4,"y": 4,"img": "moon_yellow_target","shape": "moon","color": "yellow","useItem": true
 
   },{
     "x": 4,"y": 3,"img": "sun_sky_target","shape": "sun","color": "sky","useItem": true

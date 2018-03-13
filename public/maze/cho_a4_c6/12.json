@@ -7,15 +7,16 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
+    "repeat",
     "set_shape",
     "draw"
   ],
   "map": [
     "###..#",
     "#%...#",
-    "##%.##",
+    "#.%.##",
     "#..%.#",
-    "#.##%#",
+    "#.#.%#",
     "#.##.l"
   ],
   "extra":[{
