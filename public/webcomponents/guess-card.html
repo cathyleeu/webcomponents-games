@@ -126,6 +126,11 @@
       this.setData( this.data )
       this.set('click', 0)
     }
+    handleCheckName(){
+      if(window.name){
+        return true
+      } else return false
+    }
     handleClickCard(s, r){
       this.set('click', this.click+1)
       if(this.click > this.limit) {

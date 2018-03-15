@@ -94,6 +94,11 @@
         d3.select(this.shadowRoot).select("svg").selectAll("text").remove()
         this.setData(this.data, this.manifest)
       }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
       handleClick(d){
         let selfEle = this.ownerDocument.getElementById('element'),
             svg = this.parentElement,

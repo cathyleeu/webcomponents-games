@@ -148,6 +148,11 @@
         d3.select(this.$.container).selectAll('div').remove()
         this.setData()
       }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
       replaceQuestion(text){
         return text.replace("$", `</p><img src="${this.questions[this.stage].questionImg}"/><p>`)
       }

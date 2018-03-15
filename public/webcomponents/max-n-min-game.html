@@ -149,6 +149,11 @@
         d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
         this.setData( this.data , this.manifest)
       }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
       setData( data , manifest){
         this.set('data', data)
         this.set('manifest', manifest)

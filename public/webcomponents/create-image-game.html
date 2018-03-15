@@ -90,6 +90,11 @@
         ele.set('correct', [])
         ele.set('unCorrect', [])
       }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
       setSize(){
         let { innerHeight, innerWidth } = window,
             size = {
