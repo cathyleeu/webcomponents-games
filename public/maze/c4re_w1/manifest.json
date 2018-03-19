@@ -5,7 +5,7 @@
 
   {"id": "character", "src": "/img/c4re_w1/cos.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/c4re_w1/cos0.png", "size": 256},
-  {"id": "food", "src": "/img/c4re_w1/house.png"},
+  {"id": "food", "src": "/img/c4re_w1/star.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},

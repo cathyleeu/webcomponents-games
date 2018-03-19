@@ -63,11 +63,11 @@
   "tutorial": [{
     "msg:ko": "카트로 가면 크기를 비교하는 문제를 풀 수 있어요. \n 문제 한 개를 풀면 카트 하나를 얻을 수 있어요. \n 5개의 카트를 모아서 집으로 가요.",
     "msg:en": "You can solve a size-comparing-problem at any cart. A problem gives you a cart. Get five carts and go home.",
-    "img": ["/img/c4re_w2_c1/cart.png","/img/c4re_w2_c1/house.png"]
+    "img": ["/img/c4re_w2_c1/cart.png","/img/c4re_w1/house.png"]
   }],
   "goal": {
-    "msg:ko": "5개의 집을 모아서 엄마께 가요.",
-    "msg:en": "Get five houses and go to mother.",
-    "img": ["/img/c4re_w2_c1/cart.png","/img/c4re_w2_c1/house.png"]
+    "msg:ko": "5개의 카트를 모아서 집으로 가요.",
+    "msg:en": "Get five houses and go home.",
+    "img": ["/img/c4re_w2_c1/cart.png","/img/c4re_w1/house.png"]
   }
 }

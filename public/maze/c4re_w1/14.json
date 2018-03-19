@@ -1,6 +1,6 @@
 {
   "tile_size": 128,
-  "score":0,
+  "score":3,
   "workspace": ["start","move_up","repeat","repeat"],
   "mandatory": ["repeat"],
   "toolbox": [
@@ -22,8 +22,8 @@
     ".#######."
   ],
   "extra":[{
-    "x": 7,
-    "y": 4,
+    "x": 6,
+    "y": 6,
     "img":"playground"
   }],
   "tutorial": [{
