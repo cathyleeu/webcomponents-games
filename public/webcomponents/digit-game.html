@@ -133,6 +133,11 @@
         d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
         this.setData( this.data , this.digit)
       }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
       setData( data , manifest){
         this.set('data', data) // 객관식 수
         // this.set('manifest', manifest)

@@ -158,6 +158,11 @@
       handleSortData(boolean) {
         return d3.shuffle(Object.assign(this.manifest.filter( d => boolean ? d.result : !d.result ).map(o => o.src)));
       }
+      handleCheckName(){
+        if(window.name){
+          return true
+        } else return false
+      }
       setData(data, manifest){
         this.set('manifest', manifest )
 

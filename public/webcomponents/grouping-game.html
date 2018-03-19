@@ -124,6 +124,11 @@
       d3.select(this.$.createSvg).selectAll('image').remove()
       this.setData(this.data, this.manifest)
     }
+    handleCheckName(){
+      if(window.name){
+        return true
+      } else return false
+    }
     setData(data, manifest){
       manifest = manifest.filter(function(item) {
         return item.hasOwnProperty("match");
