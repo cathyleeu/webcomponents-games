@@ -1,0 +1,29 @@
+[
+  {"book": "c4", "title": "4주차 : 반복 블록을 연습해요"},
+  {"id": "bg1", "src": "/img/c4re_w2_c2/bg1.png"},
+  {"id": "bg2", "src": "/img/c4re_w2_c2/bg2.png"},
+
+  {"id": "character", "src": "/img/c4re_w2_c2/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c4re_w2_c2/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c4re_w2_c2/house.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"n","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "house", "src": "/img/c4re_w2_c2/house_blank.png", "obstacle": false},
+  {"id": "mother", "src": "/img/c4re_w1/mother.png", "obstacle": false},
+
+  {"id": "tree1", "src": "/img/c4re_w2_c2/tree1.png", "obstacle": true},
+  {"tile":"w", "id": "tree2", "src": "/img/c4re_w2_c2/tree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/c4re_w2_c2/tree3.png", "obstacle": true},
+  {"id": "flower1", "src": "/img/c4re_w2_c2/flower1.png", "obstacle": true},
+  {"id": "flower2", "src": "/img/c4re_w2_c2/flower2.png", "obstacle": true},
+  {"id": "yardstone1", "src": "/img/c4re_w2_c2/yardstone1.png", "obstacle": true},
+  {"id": "yardstone2", "src": "/img/c4re_w2_c2/yardstone2.png", "obstacle": true}
+]

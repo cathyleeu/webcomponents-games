@@ -43,11 +43,11 @@
   "tutorial": [{
     "msg:ko": "숫자의 크기를 비교하고 집을 얻자!",
     "msg:en": "Let's compare the number and get a house!",
-    "img": "/img/c4_w4/house_blank.png"
+    "img": "/img/c4re_w2_c2/house_blank.png"
   }, {
     "msg:ko": "5개의 집을 모은뒤, 엄마에게 이동하자!",
     "msg:en": "Collect 5 house and, Move to mother!",
-    "img": "/img/c4_w4/mother.png"
+    "img": "/img/c4re_w2_c2/mother.png"
   },{
     "msg:ko": "다음버튼 혹은 아무곳이나 눌러 시작하세요",
     "msg:jp": "｢次へ」ボタンか、ほかのところをクリックして開始します。",
@@ -58,6 +58,6 @@
   "goal": {
     "msg:ko": "5개의 집을 모으자!",
     "msg:en": "Collect 5 house",
-    "img": "/img/c4_w4/house_blank.png"
+    "img": "/img/c4re_w2_c2/house_blank.png"
   }
 }

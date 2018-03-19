@@ -1,37 +1,39 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start"],
+  "workspace": ["start","repeat","repeat","repeat"],
+  "mandatory": ["repeat","repeat","repeat"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left"
+    "move_left",
+    "repeat"
   ],
   "map": [
     ".wwwwwww.",
-    "wh##..##w",
-    "w...c#..w",
-    "w....##.w",
-    "w......%w",
-    "w.#....#w",
-    "w.#..#.#w",
-    "wu#..##.w",
+    "w.##..##w",
+    "w#....i.w",
+    "wa..####w",
+    "w##....lw",
+    "w#......w",
+    "w##.#.##w",
+    "w%...###w",
     ".wwwwwww."
   ],
   "extra":[{
-    "x": 7,
-    "y": 4,
-    "img":"fruit_wa"
+    "x": 1,
+    "y": 7,
+    "img":"fruit_st"
   }],
   "tutorial": [{
-    "msg:ko": "둘 중에 큰 과일을 사야해요!",
-    "msg:en": "'Cos' have to buy the bigger fruit",
-    "img": "/img/c4_w3/bigger.png"
+    "msg:ko": "셋 중에 작은 과일을 사야해요!",
+    "msg:en": "'Cos' have to buy the smallest fruit",
+    "img": "/img/c4_w3/smallest.png"
   }],
   "goal": {
-    "msg:ko": "둘 중에 큰 과일을 사보자!",
-    "msg:en": "Take the bigger fruit",
-    "img": "/img/c4_w3/bigger.png"
+    "msg:ko": "셋 중에 작은 과일을 사보자!",
+    "msg:en": "Take the smallest fruit",
+    "img": "/img/c4_w3/smallest_goal.png"
   }
 }

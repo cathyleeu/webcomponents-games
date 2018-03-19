@@ -1,37 +1,35 @@
 [
   {"book": "c4", "title": "1주차 : 과일 크기 비교"},
-  {"id": "bg1", "src": "/img/c4_w2/bg1.png"},
-  {"id": "bg2", "src": "/img/c4_w2/bg2.png"},
+  {"id": "bg1", "src": "/img/c4re_w2_c1/bg1.png"},
+  {"id": "bg2", "src": "/img/c4re_w2_c1/bg2.png"},
 
-  {"id": "character", "src": "/img/c4_w2/cos.png", "sprite": true, "size": 256},
-  {"id": "message", "src": "/img/c4_w2/cos0.png", "size": 256},
-  {"id": "food", "src": "/img/c4_w2/cart.png"},
+  {"id": "character", "src": "/img/c4re_w2_c1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c4re_w2_c1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c4re_w2_c1/cart.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
-  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+  {"id": "hard", "tile":"H", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "tile":"n","src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "tile":"E","src": "/img/guide/easy.png", "obstacle": false},
 
-  {"id": "house", "src": "/img/c4_w2/house.png", "obstacle": false},
-  {"id": "mother", "src": "/img/c4_w3/mother.png", "obstacle": false},
-  {"id": "display", "src": "/img/c4_w2/display.png", "obstacle": true},
-  {"id": "refrigerator", "src": "/img/c4_w2/refrigerator.png", "obstacle": true},
-  {"id": "sale", "src": "/img/c4_w2/sale.png", "obstacle": true},
-  {"id": "walls", "src": "/img/c4_w2/walls.png", "obstacle": true},
+  {"id": "house", "src": "/img/c4re_w1/house.png", "obstacle": false},
+  {"id": "mother", "src": "/img/c4re_w1/mother.png", "obstacle": false},
+  {"id": "display", "src": "/img/c4re_w2_c1/display.png", "obstacle": true},
+  {"id": "refrigerator", "src": "/img/c4re_w2_c1/refrigerator.png", "obstacle": true},
+  {"id": "sale", "src": "/img/c4re_w2_c1/sale.png", "obstacle": true},
+  {"tile": "w", "id": "walls", "src": "/img/c4re_w2_c1/walls.png", "obstacle": true},
 
-  {"tile": "a", "id": "fruit_ap", "src": "/img/c4_w2/fruit_ap.png", "obstacle": false},
-  {"tile": "b", "id": "fruit_ch", "src": "/img/c4_w2/fruit_ch.png", "obstacle": false},
-  {"tile": "c", "id": "fruit_ki", "src": "/img/c4_w2/fruit_ki.png", "obstacle": false},
-  {"tile": "e", "id": "fruit_or", "src": "/img/c4_w2/fruit_or.png", "obstacle": false},
-  {"tile": "f", "id": "fruit_st", "src": "/img/c4_w2/fruit_st.png", "obstacle": false},
-  {"tile": "g", "id": "fruit_wa", "src": "/img/c4_w2/fruit_wa.png", "obstacle": false},
-  {"tile": "h", "id": "milk", "src": "/img/c4_w2/milk.png", "obstacle": false},
-  {"tile": "i", "id": "fruit_pi", "src": "/img/c4_w2/fruit_pi.png", "obstacle": false},
-
-  {"tile": "w", "id": "walls2", "src": "/img/c4_w2/walls2.png", "obstacle": true}
+  {"tile": "a", "id": "fruit_ap", "src": "/img/c4re_w2_c1/fruit_apple.png", "obstacle": false},
+  {"tile": "b", "id": "fruit_ch", "src": "/img/c4re_w2_c1/fruit_cherry.png", "obstacle": false},
+  {"tile": "c", "id": "fruit_ki", "src": "/img/c4re_w2_c1/fruit_kiwi.png", "obstacle": false},
+  {"tile": "e", "id": "fruit_or", "src": "/img/c4re_w2_c1/fruit_orange.png", "obstacle": false},
+  {"tile": "f", "id": "fruit_st", "src": "/img/c4re_w2_c1/fruit_strawberry.png", "obstacle": false},
+  {"tile": "g", "id": "fruit_wa", "src": "/img/c4re_w2_c1/fruit_watermelon.png", "obstacle": false},
+  {"tile": "h", "id": "milk", "src": "/img/c4re_w2_c1/milk.png", "obstacle": false},
+  {"tile": "i", "id": "fruit_pi", "src": "/img/c4re_w2_c1/fruit_pineapple.png", "obstacle": false}
 
 ]

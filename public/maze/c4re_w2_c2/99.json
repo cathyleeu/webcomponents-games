@@ -1,0 +1,43 @@
+{
+  "tile_size": 128,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#.d.#",
+    "#...#",
+    "#.%.#",
+    ".###."
+  ],
+  "extra":[{
+    "x":2,
+    "y":3,
+    "img":"mother"
+  }],
+  "tutorial": [{
+    "msg:ko": "엄마에게 가자",
+    "msg:en": "Go to mom",
+    "img": ["/img/c4re_w2_c2/cos0.png","/img/c4re_w2_c2/mother.png"]
+  }],
+  "success": [{
+    "msg:ko": "엄마! 마트에 다녀왔어요~",
+    "msg:en": "Mom! I went to mart.",
+    "img" : "/img/c4re_w2_c2/cos0.png"
+  },{
+    "msg:ko": "수고했어, 코스야.",
+    "msg:en": "Thank you, Cos.",
+    "img": "/img/c4re_w2_c2/mother.png"
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/c4re_w2_c2/cos0.png",
+    "link" : "c4re_w3/index"
+  }]
+}
