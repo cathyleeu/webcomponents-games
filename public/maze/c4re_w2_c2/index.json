@@ -5,57 +5,69 @@
   "toolbox": [],
   "map": [
     "##.#########.",
-    "..#...%.....#",
+    "..#...%...%.#",
     "..#.%...%...#",
     ".#.r..%..#..#",
     "..#..%..%...#",
-    "..#....%....#",
+    "..#.%..%..%.#",
     "##.#########."
   ],
   "extra": [{
     "x": 4,
     "y": 2,
-    "link": "c4_w1_c2/1"
+    "link": "c4re_w2_c2/1"
   },{
     "x": 5,
     "y": 4,
-    "link": "c4_w1_c2/2"
+    "link": "c4re_w2_c2/2"
   },{
     "x": 6,
     "y": 1,
-    "link": "c4_w1_c2/3"
+    "link": "c4re_w2_c2/3"
   },{
     "x": 7,
     "y": 5,
-    "link": "c4_w1_c2/4"
+    "link": "c4re_w2_c2/4"
   },{
     "x": 6,
     "y": 3,
-    "link": "c4_w1_c2/5"
+    "link": "c4re_w2_c2/5"
   },{
     "x": 8,
     "y": 2,
-    "link": "c4_w1_c2/6"
+    "link": "c4re_w2_c2/6"
   },{
     "x": 8,
     "y": 4,
-    "link": "c4_w1_c2/7"
+    "link": "c4re_w2_c2/7"
+  },{
+    "x": 4,
+    "y": 5,
+    "link": "c4re_w2_c2/8"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "c4re_w2_c2/9"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "c4re_w2_c2/10"
   },{
     "img":"mother",
     "x": 9,
     "y": 3,
     "obstacle": false,
-    "link": "c4_w1_c3/index",
+    "link": "c4re_w2_c2/99",
     "min_score": 5
   }],
   "tutorial": [{
-    "msg:ko": "집으로 가면 숫자를 비교하는 문제를 풀 수 있어요. 문제 한 개를 풀면 집 하나를 얻을 수 있어요. 5개의 집을 모아서 엄마께 가요.",
+    "msg:ko": "집으로 가면 숫자를 비교하는 문제를 풀 수 있어요. \n 문제 한 개를 풀면 집 하나를 얻을 수 있어요. \n 5개의 집을 모아서 엄마께 가요.",
     "msg:en": "You can solve a number-comparing-problem at any house. A problem gives you a house. Get five houses and go to mother.",
-    "img": ["/img/c4_w4/house_blank.png","/img/c4_w4/mother.png"]
+    "img": ["/img/c4re_w2_c2/house_blank.png","/img/c4re_w2_c2/mother.png"]
   }],
   "goal": {
     "msg:ko": "5개의 집을 모아서 엄마께 가요.",
     "msg:en": "Get five houses and go to mother.",
-    "img": ["/img/c4_w4/house_blank.png","/img/c4_w4/mother.png"]
+    "img": ["/img/c4re_w2_c2/house_blank.png","/img/c4re_w2_c2/mother.png"]
   }
 }

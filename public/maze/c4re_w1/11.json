@@ -29,11 +29,11 @@
   "tutorial": [{
     "msg:ko": "학교로 가보자!",
     "msg:en": "Go to the school!",
-    "img": "/img/c4_w1_c1/school.png"
+    "img": "/img/c4re_w1/school.png"
   }],
   "goal": {
     "msg:ko": "학교로 가보자!",
     "msg:en": "Go to the school!",
-    "img": "/img/c4_w1_c1/school.png"
+    "img": "/img/c4re_w1/school.png"
   }
 }

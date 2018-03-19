@@ -29,11 +29,11 @@
   "tutorial": [{
     "msg:ko": "병원으로 가보자!",
     "msg:en": "Go to the hospital!",
-    "img": "/img/c4_w1_c1/hospital.png"
+    "img": "/img/c4re_w1/hospital.png"
   }],
   "goal": {
     "msg:ko": "병원으로 가보자!",
     "msg:en": "Go to the hospital!",
-    "img": "/img/c4_w1_c1/hospital.png"
+    "img": "/img/c4re_w1/hospital.png"
   }
 }

@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w#.##.#.w",
+    "wr..#..#w",
+    "w.#...#.w",
+    "w#.##...w",
+    "w..#.##%w",
+    "w.#.#..#w",
+    "w..#.#..w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 7,
+    "y": 5,
+    "img":"hotdog"
+  }],
+  "tutorial": [{
+    "msg:ko": "핫도그를 사요!",
+    "msg:en": "Buy the hotdog",
+    "img": "/img/c4re_w3/hotdog.png"
+  }]
+}

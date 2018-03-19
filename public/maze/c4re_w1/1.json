@@ -29,11 +29,11 @@
   "tutorial": [{
     "msg:ko": "마트로 가보자!",
     "msg:en": "Go to the mart!",
-    "img": "/img/c4_w1_c1/mart.png"
+    "img": "/img/c4re_w1/mart.png"
   }],
   "goal": {
     "msg:ko": "마트로 가보자!",
     "msg:en": "Go to the mart!",
-    "img": "/img/c4_w1_c1/mart.png"
+    "img": "/img/c4re_w1/mart.png"
   }
 }

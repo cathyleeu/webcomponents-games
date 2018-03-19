@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start","repeat","repeat"],
+  "mandatory": ["repeat","repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "##..##..#",
+    "#.####.##",
+    "wr....###",
+    "##.##.#.#",
+    "#.#...#.#",
+    "###.##..#",
+    "w%..##.##",
+    ".#######."
+  ],
+  "tutorial": [{
+    "msg:ko": "집으로 가요!",
+    "msg:en": "Go to Cos's house",
+    "img": "/img/c4re_w1/house.png"
+  }]
+}

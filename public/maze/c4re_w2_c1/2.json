@@ -1,12 +1,14 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": ["start"],
+  "workspace": ["start","repeat","repeat","repeat"],
+  "mandatory": ["repeat","repeat","repeat"],
   "toolbox": [
     "move_up",
     "move_down",
     "move_right",
-    "move_left"
+    "move_left",
+    "repeat"
   ],
   "map": [
     ".wwwwwww.",
@@ -16,7 +18,7 @@
     "w%...#..w",
     "w..#....w",
     "w.#..##.w",
-    "w#..u...w",
+    "w#.....lw",
     ".wwwwwww."
   ],
   "extra":[{
