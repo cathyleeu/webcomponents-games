@@ -1,6 +1,6 @@
 {
   "tile_size": 128,
-  "score":0,
+  "score":3,
   "workspace": ["start","repeat","move_down","repeat","repeat"],
   "mandatory": ["repeat"],
   "toolbox": [
@@ -22,8 +22,8 @@
     ".#######."
   ],
   "extra":[{
-    "x": 6,
-    "y": 4,
+    "x": 1,
+    "y": 6,
     "img":"hospital"
   }],
   "tutorial": [{
