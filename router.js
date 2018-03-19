@@ -272,7 +272,7 @@ function getBook(classObj) {
   }
   // 시범원 청아유치원, 숙명키즈
   if(school == "A00083-K1" || school == "A00083-K4") {
-    book = ["1-re", "2-re", "3-re"];
+    book = ["1-re", "2-re", "3-re", "4-re"];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
