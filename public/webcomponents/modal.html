@@ -212,13 +212,13 @@
         document.getElementById("element").reset()
       }
       handleMoveStage(){
-        if(this.purpose === 'previous'){
-          let href = `${location.origin}/code/${window.name}`
-          window.open(href, window.name);
-        } else {
-          let codeName = window.name.split('#')[0];
-          let href = `${location.origin}/code/${codeName}`
-          window.open(href, window.name);
+        var showBook = store.session.get("showbook");
+        if(showBook) {
+          store.session.clear();
+          if(this.purpose === 'logout') {
+            showBook = showBook.split("#")[0]);
+          }
+          location.href = showBook;
         }
       }
       handleStayStage(){
