@@ -42,7 +42,10 @@
         // 기존 manifest와 차이가 없고, appcache가 있는 상태라면 minor update
       } else {
         $('#appcache .msg').html(msg.downloading + "<br/>" + new_contents);
-        $('#appcache').modal('show');
+        // Android Browser 안내문을 띄우는 경우는 앱캐시 진행상황 표시 하지 않음
+        if($.ua.browser.name != "Android Browser" || store.get("hideAndroidHelp")) {
+          $('#appcache').modal('show');
+        }
         $('#appcache button.btn-default').hide();
       }
       $('.check-update-msg').text(msg.updating).data("update-status", "updating");

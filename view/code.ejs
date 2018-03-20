@@ -186,6 +186,34 @@ if(location.pathname == "/code" && location.hash) {
       </div>
       <div class="modal-body">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default hidden" id="androidHelp">
+            <div class="panel-heading" role="tab" id="headingAndroid">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAndroid" aria-expanded="false" aria-controls="collapseAndroid">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> 키즈씽킹을 정상적으로 사용하기 위하여 최신 브라우저의 설치가 필요합니다.
+                </a>
+              </h4>
+            </div>
+            <div id="collapseAndroid" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAndroid">
+              <div class="panel-body">
+                <ul>
+                  <li>현재 안드로이드 기본 브라우저를 사용하고 계십니다.</li>
+                  <li>안드로이드 기본 브라우저는 프로그램 버전이 낮아 키즈씽킹이 정상적으로 실행되지 않을수 있습니다.</li>
+                  <li>키즈씽킹을 안정적으로 사용하기 위하여 <strong>크롬 브라우저</strong>의 설치를 추천합니다.</li>
+                  <li>
+                    아래의 버튼을 클릭하시면 크롬 브라우저에서 키즈씽킹이 실행됩니다.<br/>
+                    <em>* 크롬 브라우저가 설치되어 있지 않다면 자동으로 설치가 진행됩니다</em><br/>
+                    <button type="button" class="btn btn-primary" id="launchChrome">크롬 브라우저 실행</button><br/>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> 그만보기 (자동으로 안내문을 보이게 하지 않기)
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
               <h4 class="panel-title">
@@ -648,5 +676,34 @@ if(location.pathname == "/code" && location.hash) {
     });
   }
   sendData();
+
+  if($.ua.browser.name == "Android Browser") {
+    if(!store.get("hideAndroidHelp")) {
+      $("#faq").modal('show');
+    }
+    $("#androidHelp").removeClass('hidden');
+  }
+
+  $("#launchChrome").click(function() {
+    var appLoader = new tui.AppLoader(),
+        scheme = location.protocol.slice(0, -1),
+        action = location.href.slice(scheme.length + 3),
+        fallback_url = "https:\/\/play.google.com/store/apps/details?id=com.android.chrome";
+    appLoader.exec({
+      android: {
+        intentURI: 'intent://' + action + '#Intent;scheme=' + scheme + ';package=com.android.chrome;S.browser_fallback_url=' + fallback_url + ';end'
+      }
+      ,notFoundCallback: function(storeUrl) {
+        window.open(fallback_url);
+      },
+      etcCallback: function() {
+        window.open(fallback_url);
+      }
+    });
+  });
+  $("#androidHelp input[type=checkbox]").change(function(e) {
+    store.set("hideAndroidHelp", this.checked);
+  });
+  $("#androidHelp input[type=checkbox]").prop("checked", store.get("hideAndroidHelp"));
 
 </script>
