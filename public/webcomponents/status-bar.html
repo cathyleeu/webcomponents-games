@@ -6,7 +6,6 @@
       .has_name{
         color: white;
         cursor: pointer;
-        width: 10%;
         text-align: center;
       }
       .fullscreen {
@@ -14,14 +13,11 @@
         cursor: pointer;
       }
       .bar_cont {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: row;
         height: 45px;
         width: 100%;
         background-color: #263647;
-        padding: 0.5em 0;
+        position: relative;
+        line-height: 45px;
       }
       h1, p {
         color: white;
@@ -32,41 +28,30 @@
         display: none;
       }
       .title {
-        width: 60%;
         height: 100%;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-      .right_side {
-        width: 20%;
-        height: 100%;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        /*flex-direction: column;*/
       }
       .logo{
-        width: 20%;
+        height: 100%;
         font-weight: 700;
         margin-left: 1em;
+        float: left;
       }
-      .logout{
+      .results, .logout, .fullscreen {
+        height: 100%;
         font-weight: 500;
+        float: right;
+        margin-right: 1em;
       }
     </style>
     <div class="bar_cont">
       <div class="logo has_name" on-click="handleModal" data-purpose="previous">KIDSTHINKING</div>
-      <h1 class="title">{{title}}</h1>
-      <div class="right_side">
-        <div class="results">
-          <p class="score">{{score}} {{point}}</p>
-          <p class="match">({{matched}}/{{cards}})</p>
-        </div>
-        <div class="logout has_name" on-click="handleModal" data-purpose="logout">{{logoutHead}}</div>
-        <div class="fullscreen" on-click="handleFullScreen">{{fullscreen}}</div>
+      <div class="logout has_name" on-click="handleModal" data-purpose="logout">{{logouthead}}</div>
+      <div class="fullscreen" on-click="handleFullScreen">{{fullscreen}}</div>
+      <div class="results">
+        <p class="score">{{score}} {{point}}</p>
+        <p class="match">({{matched}}/{{cards}})</p>
       </div>
-
+      <h1 class="title">{{title}}</h1>
     </div>
   </template>
   <script>
@@ -82,18 +67,13 @@
           cards: Number,
           purpose: String,
           fullscreen: String,
-          hasname: {
-            type: Boolean,
-            notify: true,
-            reflectToAttribute: true,
-            value: false
-          }
+          logouthead: String
         }
       }
       ready(){
         super.ready();
         let document = window.document
-        this.handleCheckName(this.hasname)
+        this.handleCheckName()
         this.handleContext()
         this.set( "fullscreenEnabled" ,
             document.fullscreenEnabled ||
@@ -111,8 +91,8 @@
         let els = this.shadowRoot.querySelectorAll(target[this.purpose]);
         els.forEach(el=>{el.style.display="inline-block"});
       }
-      handleCheckName(name){
-        if(!name){
+      handleCheckName(){
+        if(!store.session.get("showbook")){
           d3.select(this.shadowRoot)
             .selectAll(".has_name")
             .attr('style', "visibility: hidden")
