@@ -216,7 +216,7 @@
         if(showBook) {
           store.session.clear();
           if(this.purpose === 'logout') {
-            showBook = showBook.split("#")[0]);
+            showBook = showBook.split("#")[0];
           }
           location.href = showBook;
         }
@@ -225,19 +225,18 @@
         d3.select(this.element).classed("popup", null)
       }
       handleFinalStep(){
+        var showBook = store.session.get("showbook");
         if(!this.nextlink){
-          let href = `${location.origin}/code/${window.name}`
-          console.log("window.name", window.name, "location.origin", location.origin);
-          if(window.name){
-            window.open(href, window.name);
+          let href =  showBook;
+          if(showBook){
+            window.open(href, "_self");
           }
           d3.select(this.element).classed("popup", null)
           return false
         }
         let href = `${location.origin}/${this.nextlink}`
         d3.select(this.element).classed("popup", null)
-        // this.element.classList.remove('popup')
-        window.open(href, window.name)
+        window.open(href, "_self")
       }
     }
     window.customElements.define(Modal.is, Modal);

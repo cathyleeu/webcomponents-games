@@ -84,7 +84,6 @@
       title="{{localize('title')}}"
       score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
-      hasname="{{handleCheckName()}}"
       total="{{total}}"
       point="{{point}}"
       matched="{{matched}}"
@@ -92,6 +91,7 @@
       cards="{{cards}}"
       on-modal="handleModal"
       fullscreen="{{localize('fullscreen')}}"
+      logoutHead="{{localize('logoutHead')}}"
       ></status-bar>
       <toycode-modal
         id="retryModal"
@@ -123,15 +123,19 @@
         nobtn="{{localize('nobtn')}}"
         purpose="previous"
         ></toycode-modal>
+      <toycode-modal
+        id="finalStageModal"
+        headertext="{{localize('finalStageHead')}}"
+        btmtext="{{localize('finalStageBtm')}}"
+        finalbtn="{{localize('finalbtn')}}"
+        purpose="finalStage"
+        nextlink="{{nextlink}}"
+        ></toycode-modal>
       <div class="header">
         <h3> Quiz [[stage]] </h3>
         <p>{{localize('subtitle')}}</p>
       </div>
-      <div class="container">
-      </div>
-      <!-- <div class="bottom">
-        <button on-click="handleSubmit">{{localize('resultbtn')}}</button>
-      </div> -->
+      <div class="container"></div>
   </template>
   <script>
     class OXQuizCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -160,10 +164,12 @@
         d3.select(this.shadowRoot).select(".container").selectAll('div').remove()
         this.setData( this.data , this.manifest)
       }
-      handleCheckName(){
-        if(window.name){
-          return true
-        } else return false
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
       }
       setData( data , manifest){
         let textLang = this.resources[this.language],
@@ -205,13 +211,15 @@
         let papa = d3.select(this.shadowRoot),
             img = papa.select('img').attr('data-subject'),
             val = papa.select('#val').attr('data-subject'),
-            result = img === val ? 'o' : 'x',
-            final = result === d ? this.$.successModal.modalAlert() : this.$.retryModal.modalAlert();
-        return final;
+            result = img === val ? 'o' : 'x';
+
+        if(this.lastStage === this.stage) {
+          return this.$.finalStageModal.modalAlert()
+        } else {
+          let final = result === d ? this.$.successModal.modalAlert() : this.$.retryModal.modalAlert();
+          return final;
+        }
       }
-      // handleSubmit(){
-      //   console.log("done")
-      // }
     }
     window.customElements.define(OXQuizCard.is, OXQuizCard);
   </script>

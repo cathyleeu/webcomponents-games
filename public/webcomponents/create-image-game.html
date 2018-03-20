@@ -20,7 +20,6 @@
       title="{{localize('title')}}"
       score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
-      hasname="{{handleCheckName()}}"
       total="{{total}}"
       point="{{point}}"
       matched="{{matched}}"
@@ -28,6 +27,7 @@
       cards="{{cards}}"
       on-modal="handleModal"
       fullscreen="{{localize('fullscreen')}}"
+      logoutHead="{{localize('logoutHead')}}"
     ></status-bar>
     <toycode-modal
       id="unCorrectModal"
@@ -90,10 +90,12 @@
         ele.set('correct', [])
         ele.set('unCorrect', [])
       }
-      handleCheckName(){
-        if(window.name){
-          return true
-        } else return false
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
       }
       setSize(){
         let { innerHeight, innerWidth } = window,
