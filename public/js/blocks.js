@@ -1303,7 +1303,7 @@ Blocks["present"] = {
   action: ["present"]
 };
 Blocks["draw"] = {
-  rgbColor: "#8C68AD",
+  rgbColor: "#C1184A",
   message0: {
     ko: "%1 그림 그리기",
     en: "%1 Draw"
@@ -1314,7 +1314,7 @@ Blocks["draw"] = {
   action: ["draw"]
 };
 Blocks["make_picture"] = {
-  rgbColor: "#8C68AD",
+  rgbColor: "#8B1C79",
   message0: {
     ko: "%1 그림 정하기",
     en: "%1 Make a picture"
@@ -1325,7 +1325,7 @@ Blocks["make_picture"] = {
   action: ["func", "make_picture_func"]
 };
 Blocks["make_picture_func"] = {
-  rgbColor: "#8C68AD",
+  rgbColor: "#9E4A8D",
   message0: {
     ko: "%2 %1 그림 정하기",
     en: "%1 Make a picture"
@@ -1341,7 +1341,7 @@ Blocks["make_picture_func"] = {
   previousStatement: false
 };
 Blocks["define_shape"] = {
-  rgbColor: "#D9629E",
+  rgbColor: "#A08879",
   message0: {
     ko: "모양을 %1 정하기",
     en: "Define the shape %1"
@@ -1361,7 +1361,7 @@ Blocks["define_shape"] = {
   action: ["define_shape","shape"]
 };
 Blocks["define_color"] = {
-  rgbColor: "#D9629E",
+  rgbColor: "#65B492",
   message0: {
     ko: "색깔을 %1 정하기",
     en: "Define the color %1"
@@ -1382,7 +1382,7 @@ Blocks["define_color"] = {
 };
 
 Blocks["set_shape"] = {
-  rgbColor: "#CC6600",
+  rgbColor: "#81644D",
   message0: {
     ko: "모양을 %1 바꾸기",
     en: "Change the shape %1"
@@ -1402,7 +1402,7 @@ Blocks["set_shape"] = {
   action: ["set_shape","shape"]
 };
 Blocks["set_color"] = {
-  rgbColor: "#CC6600",
+  rgbColor: "#20A37B",
   message0: {
     ko: "색깔을 %1 바꾸기",
     en: "Change the color %1"
@@ -2056,6 +2056,10 @@ Blocks["repeat"] = {
 };
 
 Blocks["define_x"] = {
+  name: {
+    ko: "X를 정하기",
+    en: "Define the X"
+  },
   rgbColor: "#D9629E",
   message0: {
     ko: "%1을 %2 정하기",
@@ -2075,6 +2079,10 @@ Blocks["define_x"] = {
 };
 
 Blocks["repeat_x_num"] = {
+  name: {
+    ko: "X 만큼 반복",
+    en: "Repeat X"
+  },
   rgbColor: "#242786",
   message0: {
     ko: "%1 %2 만큼 반복",
@@ -2096,6 +2104,10 @@ Blocks["repeat_x_num"] = {
 };
 
 Blocks["forloop_type1"] = {
+  name: {
+    ko: "일정하게 증가하며 반복",
+    en: "Increase repeatedly"
+  },
   rgbColor: "#242786",
   message0: {
     ko: "%1가 1 부터 %2 까지, 1씩 증가",
@@ -2120,6 +2132,10 @@ Blocks["forloop_type1"] = {
   action: ["forloop","type1"]
 };
 Blocks["forloop_type2"] = {
+  name: {
+    ko: "일정하게 증가하며 반복",
+    en: "Increase repeatedly"
+  },
   rgbColor: "#242786",
   message0: {
     ko: "%1가 %2 부터 %3 까지, 1씩 증가",
@@ -2150,6 +2166,10 @@ Blocks["forloop_type2"] = {
   action: ["forloop","type2"]
 };
 Blocks["forloop_type3"] = {
+  name: {
+    ko: "일정하게 증가하며 반복",
+    en: "Increase repeatedly"
+  },
   rgbColor: "#242786",
   message0: {
     ko: "%1가 %2 부터 %3 까지, %4씩 증가",
@@ -3162,6 +3182,10 @@ Blocks['condition_light'] = {
   action: ["conditioncheck","sign"]
 };
 Blocks['condition_5_bigger'] = {
+  name: {
+    ko: "만약에 5 보다 크다면",
+    en: "If more than 5"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 %1 보다 크다면",
@@ -3178,6 +3202,10 @@ Blocks['condition_5_bigger'] = {
   action: ["conditioncheck","card"]
 };
 Blocks['condition_5_smaller'] = {
+  name: {
+    ko: "만약에 5 보다 작다면",
+    en: "If less than 5"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 %1 보다 작다면",
@@ -3194,6 +3222,10 @@ Blocks['condition_5_smaller'] = {
   action: ["conditioncheck","card"]
 };
 Blocks['condition2_5_bigger'] = {
+  name: {
+    ko: "만약에 5 보다 크다면",
+    en: "If more than 5"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 %1 보다 크다면",
@@ -3219,6 +3251,10 @@ Blocks['condition2_5_bigger'] = {
   action: ["conditioncheck2","food"]
 };
 Blocks['condition2_5_smaller'] = {
+  name: {
+    ko: "만약에 5 보다 작다면",
+    en: "If less than 5"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "만약에 %1 보다 작다면",
@@ -5281,6 +5317,10 @@ Blocks['condition2_direction_right'] = {
   action: ["conditioncheck2","direction_right"]
 };
 Blocks['condition2_td_up'] = {
+  name: {
+    ko: "목적지가 위쪽에 있다면",
+    en: "If the target spot is at up side"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "목적지가 %1에 있다면" ,
@@ -5306,6 +5346,10 @@ Blocks['condition2_td_up'] = {
   action: ["conditioncheck2","food"]
 };
 Blocks['condition2_td_down'] = {
+  name: {
+    ko: "목적지가 아래쪽에 있다면",
+    en: "If the target spot is at down side"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "목적지가 %1에 있다면",
@@ -5331,6 +5375,10 @@ Blocks['condition2_td_down'] = {
   action: ["conditioncheck2","food"]
 };
 Blocks['condition2_td_left'] = {
+  name: {
+    ko: "목적지가 왼쪽에 있다면",
+    en: "If the target spot is at left side"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "목적지가 %1에 있다면",
@@ -5356,6 +5404,10 @@ Blocks['condition2_td_left'] = {
   action: ["conditioncheck2","food"]
 };
 Blocks['condition2_td_right'] = {
+  name: {
+    ko: "목적지가 오른쪽에 있다면",
+    en: "If the target spot is at right side"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "목적지가 %1에 있다면",
@@ -6533,6 +6585,10 @@ Blocks['condition3_dClock'] = {
   action: ["conditioncheck3","dClock"]
 };
 Blocks['condition3_rsp'] = {
+  name: {
+    ko: "가위바위보 조건",
+    en: "Condition Rock, Scissors, Paper"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "%1 이라면",
@@ -6576,6 +6632,10 @@ Blocks['condition3_rsp'] = {
   action: ["conditioncheck3","rsp"]
 };
 Blocks['condition3_rsp_numbot'] = {
+  name: {
+    ko: "가위바위보 조건",
+    en: "Condition Rock, Scissors, Paper"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "%1 이라면",
@@ -6619,6 +6679,10 @@ Blocks['condition3_rsp_numbot'] = {
   action: ["conditioncheck3","rsp"]
 };
 Blocks['condition3_srp_numbot'] = {
+  name: {
+    ko: "가위바위보 조건",
+    en: "Condition Rock, Scissors, Paper"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "%1 이라면",
@@ -6662,6 +6726,10 @@ Blocks['condition3_srp_numbot'] = {
   action: ["conditioncheck3","srp"]
 };
 Blocks['condition3_prs_numbot'] = {
+  name: {
+    ko: "가위바위보 조건",
+    en: "Condition Rock, Scissors, Paper"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "%1 이라면",
@@ -6705,6 +6773,10 @@ Blocks['condition3_prs_numbot'] = {
   action: ["conditioncheck3","prs"]
 };
 Blocks['condition3_rps_numbot'] = {
+  name: {
+    ko: "가위바위보 조건",
+    en: "Condition Rock, Scissors, Paper"
+  },
   rgbColor: "#309E4A",
   message0: {
     ko: "%1 이라면",

@@ -29,12 +29,12 @@
     "x": 4,
     "y": 1,
     "img": "chest_box",
-    "itemCount": 5
+    "itemCount": 3
   },{
     "x": 4,
     "y": 6,
     "img": "chest_box",
-    "itemCount": 9
+    "itemCount": 5
   }],
   "tutorial": [{
     "msg:ko": "보물 상자를 모두 가져오자!",
