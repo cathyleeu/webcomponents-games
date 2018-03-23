@@ -2490,7 +2490,6 @@ Actions.prototype.repeat_x_num = function(block, callback) {
     callback("반복 블록이 비었어요");
     return;
   }
-  debugger
   if(character.x_num == 0) {
     callback("일정하게 증가하면서 반복 블록 안에 조립되어야 합니다.");
     return;

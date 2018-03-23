@@ -501,8 +501,8 @@
   "B-3-re":[
     ["나와 가족", "I and my family", "/mazeh#!b3re_w1/index"],
     ["여러 가지 길을 찾아보아요", "Find various routs", "/mazeh#!b3re_w2/index"],
-    ["알맞은 곳을 찾아가요", "Find the right stuff", "/mazeh#!b3re_w3/index"],
-    ["연못에 들렀다 가요", "Stop by the ponds", "/mazeh#!b3re_w4/index"]
+    ["알맞은 목적지를 찾아요", "Find the right target", "/mazeh#!b3re_w3/index"],
+    ["연못을 들러서 집에 가요", "Stop by the ponds and go home", "/mazeh#!b3re_w4/index"]
   ],
   "B-3":[
     ["나와 가족:코스네 가족", "Cos' Family", "/mazeh#!b3_w1/index"],
