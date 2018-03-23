@@ -435,12 +435,14 @@
     ["몸을 씻어요", "Washing my body", "/activity#!a55re_w4"]
   ],
   "A-5-5":[
-    ["목욕용품 정리", "Tidy up after bathing", "/a5_5_w3"],
+    ["목욕용품 정리", "Tidy up after bathing", "/activity#!a5re_5_w3"],
     ["목욕용품 맞추기", "Tidy up bath supplies", "/activity#!bathroom"]
   ],
   "A-6":[
-    ["땅에서 탈 수 있는 것을 알아보아요:1주차", "Learn about land transport:Week 1", "/mazeh#!a6_w1/1"],
-    ["물에서 탈 수 있는 것을 알아보아요:4주차", "Learn about water transport:Week 4", "/a6_w4"]
+    ["땅에서 탈 수 있는 것을 알아보아요", "Learn about land transport", "/mazeh#!a6_w1/1"],
+    ["땅에서 탈 수 있는 것을 이용해보아요", "Use land transport", "/activity#!a6_w2"],
+    ["하늘에서 탈 수 있는 것을 알아보아요", "Learn about air transport", "/activity#!a6_w3"],
+    ["물에서 탈 수 있는 것을 알아보아요", "Learn about water transport", "/a6_w4"]
   ],
   "A-7":[
     ["가을이 되었어요", "Autumn has arrived", "/a7_w1"],
