@@ -48,7 +48,7 @@
         }
         $('#appcache button.btn-default').hide();
       }
-      $('.check-update-msg').text(msg.updating).data("update-status", "updating");
+      $('.check-update-msg').text(msg.updating).data("update-status", "updating").addClass("blink");
     }
     if(e.type === 'progress') { // 업데이트 중
       var val = e.loaded / e.total,
