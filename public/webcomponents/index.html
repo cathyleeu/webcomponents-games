@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-<script type="text/javascript" src="/page/page.js"></script>
 <script type="text/javascript" src="/components/d3/d3.min.js"></script>
 <script type="text/javascript" src="/components/store2/dist/store2.min.js"></script>
 <script type="text/javascript" src="/js/polyfill.min.js"></script>
@@ -93,44 +92,44 @@
 <body>
   <script>
     window.$$$$ = new actTool(document);
-    page('*', function(ctx, next) {
-      var qs = Object.assign(...ctx.querystring.split("&").map(o=>o.split("=")).map(o=>({[o[0]]:o[1]})));
-      var source = ctx.pathname;
-      if(!source) {
-        alert("잘못된 접근입니다.");
-        return;
-      }
-      d3.request("/activities/" + source + ".json")
-        .mimeType("application/json")
-        .response(function(xhr) { return JSON.parse(xhr.responseText); })
-        .get(function(activity) {
-          var link = document.createElement('link');
-          link.setAttribute('rel', 'import');
-          link.setAttribute('href', '/webcomponents/' + activity.element + '.html');
-          link.onload = function() {
-            customElements.whenDefined(activity.element).then(() => {
-              var comp = document.createElement(activity.element);
-              comp.setAttribute('id', 'element');
-              if(qs.lang) {
-                comp.setAttribute('language', qs.lang);
-              }
-              for(var key in activity.attributes) {
-                comp.setAttribute(key, activity.attributes[key]);
-                comp.set(key, activity.attributes[key]);
-              }
-              if(activity.msg) {
-                comp.set('resources', activity.msg);
-              }
-              document.body.appendChild(comp);
-              comp.setData(activity.data, activity.manifest);
-            });
-          };
-          document.head.appendChild(link);
-        });
-    });
-    page({
-      hashbang: true
-    });
+    var hash_str = location.hash.slice(2),
+        qs_marker = hash_str.indexOf("?"),
+        source = hash_str,
+        qs = {};
+    if(qs_marker >= 0) {
+      source = hash_str.slice(0, qs_marker);
+      qs = Object.assign(...hash_str.slice(qs_marker+1).split("&").map(o=>o.split("=")).map(o=>({[o[0]]:o[1]})));
+    }
+    if(!source) {
+      alert("잘못된 접근입니다. URL을 확인해주세요");
+    }
+    d3.request("/activities/" + source + ".json")
+      .mimeType("application/json")
+      .response(function(xhr) { return JSON.parse(xhr.responseText); })
+      .get(function(activity) {
+        var link = document.createElement('link');
+        link.setAttribute('rel', 'import');
+        link.setAttribute('href', '/webcomponents/' + activity.element + '.html');
+        link.onload = function() {
+          customElements.whenDefined(activity.element).then(() => {
+            var comp = document.createElement(activity.element);
+            comp.setAttribute('id', 'element');
+            if(qs.lang) {
+              comp.setAttribute('language', qs.lang);
+            }
+            for(var key in activity.attributes) {
+              comp.setAttribute(key, activity.attributes[key]);
+              comp.set(key, activity.attributes[key]);
+            }
+            if(activity.msg) {
+              comp.set('resources', activity.msg);
+            }
+            document.body.appendChild(comp);
+            comp.setData(activity.data, activity.manifest);
+          });
+        };
+        document.head.appendChild(link);
+      });
   </script>
 </body>
 
