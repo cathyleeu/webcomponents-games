@@ -236,6 +236,7 @@
         }
         d3.select(this.element).classed("popup", null)
         location.href = `${location.origin}/${this.nextlink}`;
+        location.reload();
       }
     }
     window.customElements.define(Modal.is, Modal);
