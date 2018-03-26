@@ -2209,14 +2209,18 @@ Blocks["forloop_type3"] = {
 Blocks['repeat_until_cos'] = {
   rgbColor: "#2682C4",
   message0: {
-    ko: "%1만약에 코스에게 가는 중이라면 반복",
-    en: "%1Repeat if going to Cos"
+    ko: "%1 만약에 반복",
+    en: "%1 Repeat if"
   },
   args0: [
     {type: "field_image", src: "/img/kidsblocks/untilcos.png"}
   ],
-  message1: "%1",
-  args1: [{
+  message1: {
+    ko: "코스에게 가는 중이라면",
+    en: "going to Cos"
+  },
+  message2: "%1",
+  args2: [{
     type: "input_statement",
     name: "statements"
   }],
@@ -2235,14 +2239,19 @@ Blocks['repeat_until_cos'] = {
 Blocks['repeat_until_numbot'] = {
   rgbColor: "#2682C4",
   message0: {
-    ko: "%1만약에 넘봇에게 가는 중이라면 반복",
-    en: "%1Repeat if going to Numbot"
+    ko: "%1 만약에 반복",
+    en: "%1 Repeat if"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/untilnumbot.png"}
+    {type: "field_image", src: "/img/kidsblocks/untilnumbot.png"},
+    {type: "input_dummy"}
   ],
-  message1: "%1",
-  args1: [{
+  message1: {
+    ko: "넘봇에게 가는 중이라면",
+    en: "going to Numbot"
+  },
+  message2: "%1",
+  args2: [{
     type: "input_statement",
     name: "statements"
   }],

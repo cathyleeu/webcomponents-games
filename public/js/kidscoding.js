@@ -104,7 +104,13 @@ KidsCoding = function() {
         renderCompute_ = Blockly.BlockSvg.prototype.renderCompute_;
     // input이 아닌 fieldrow의 높이 조정
     Blockly.BlockSvg.prototype.renderDraw_ = function(a, b) {
-      var height = 0;
+      var height = 0,
+          isDoubleFieldRow = this.inputList.length >= 2 && !this.inputList[0].connection &&
+              !!this.inputList[0].fieldRow[1] && !!this.inputList[0].fieldRow[1].textElement_ &&
+              !!this.inputList[1].fieldRow[0] && !!this.inputList[1].fieldRow[0].textElement_;
+      if(isDoubleFieldRow) {
+        b[0].height = 70;
+      }
       for(var i = 0; i < b.length; i++) {
         if(i > 0 && b[i].type == -1) {
           b[i].height = b[0].height;
@@ -116,16 +122,30 @@ KidsCoding = function() {
     }
     // 필드 이미지 세로 위치 조정
     Blockly.BlockSvg.prototype.renderFields_ = function(a, b, c) {
-      var ret = renderFields_.call(this, a, b, c);
-      if(a.length !=0){
-        if(a[0].imageElement_) {
-          var svgRoot = a[0].getSvgRoot(),
-              xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/),
-              x = +xy[1] || 0,
-              y = +xy[2] || 0;
-          svgRoot.setAttribute("transform", "translate(" + x + "," + (y+3) + ")");
+      var ret = renderFields_.call(this, a, b, c),
+          isDouble = this.inputList.length >= 2 && !this.inputList[0].connection &&
+              !!this.inputList[0].fieldRow[1] && !!this.inputList[0].fieldRow[1].textElement_ &&
+              !!this.inputList[1].fieldRow[0] && !!this.inputList[1].fieldRow[0].textElement_,
+          isFirstRow = isDouble && this.inputList[0].fieldRow == a,
+          isSecondRow = isDouble && this.inputList[1].fieldRow == a;
+      if(a.length > 0 && a[0].imageElement_) {
+        var svgRoot = a[0].getSvgRoot(),
+            xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/),
+            x = +xy[1] || 0,
+            y = +xy[2] || 0;
+        svgRoot.setAttribute("transform", "translate(" + x + "," + (y+3) + ")");
+        if(isFirstRow) {
+          xy = a[1].textElement_.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/),
+          x = +xy[1] || 0,
+          y = +xy[2] || 0;
+          a[1].textElement_.setAttribute("transform", "translate(" + x + "," + (y-10) + ")");
         }
-        return ret;
+      } else if(a.length > 0 && isSecondRow) {
+        var xy = this.inputList[0].fieldRow[1].textElement_.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/),
+            x = +xy[1] || 0,
+            y = +xy[2] || 0;
+        ret = Math.max(b, ret-b) + x;
+        a[0].textElement_.setAttribute("transform", "translate(" + x + "," + (y+20) + ")");
       }
       return ret;
     };
