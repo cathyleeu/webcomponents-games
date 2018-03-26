@@ -122,6 +122,8 @@ var mazeDirs = fs.readdirSync('public/maze')
       return fs.lstatSync(path.join('public/maze', file)).isDirectory();
     });
 
+var activityJsons = fs.readdirSync('public/activities');
+
 // 각 원별 cache 생성
 function getCode( bId , kId ) {
   let sum = 0;
@@ -567,6 +569,17 @@ public.get('/cache/:manifest', function *(next) {
         }
         if(isActivity) {
           activities.push(isActivity[1]);
+          var activityTokens = isActivity[1].split("_");
+          // c3_w1_c1이 있다면 c3_w1_c2도 추가
+          if(activityTokens.length == 2 || activityTokens.length == 3) {
+            activityJsons.forEach(function(filename) {
+              if( isActivity[1].split("_").slice(0,2).join("_") == filename.split("_").slice(0,2).join("_") &&
+                  filename.slice(-5).toLowerCase() == ".json" &&
+                  activities.indexOf(filename.slice(0,-5)) < 0) {
+                activities.push(filename.slice(0,-5));
+              }
+            });
+          }
         }
         maniPath = maniPath.slice(0, maniPath.lastIndexOf("/"));
         if(maniPath && manifests.indexOf(maniPath) < 0) {
@@ -721,6 +734,9 @@ public.get('/cache/:manifest', function *(next) {
       activity.manifest.forEach(function(obj) {
         if(page_manifests.indexOf(obj.src) < 0) {
           page_manifests.push(obj.src);
+        }
+        if(page_manifests.indexOf(obj.en_src) < 0) {
+          page_manifests.push(obj.en_src);
         }
       });
     }
