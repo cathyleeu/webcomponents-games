@@ -2,7 +2,6 @@
   "root": "public",
   "entrypoint": "webcomponents/index.html",
   "sources": [
-    "page/page.js",
     "components/d3/d3.min.js",
     "components/store2/dist/store2.min.js",
     "components/SoundJS/lib/soundjs-0.6.2.min.js",

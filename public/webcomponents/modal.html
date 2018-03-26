@@ -234,9 +234,8 @@
           d3.select(this.element).classed("popup", null)
           return false
         }
-        let href = `${location.origin}/${this.nextlink}`
         d3.select(this.element).classed("popup", null)
-        window.open(href, "_self")
+        location.href = `${location.origin}/${this.nextlink}`;
       }
     }
     window.customElements.define(Modal.is, Modal);
