@@ -732,10 +732,10 @@ public.get('/cache/:manifest', function *(next) {
     var activity = JSON.parse(fs.readFileSync(path.join("public", file_path)));
     if(activity.manifest) {
       activity.manifest.forEach(function(obj) {
-        if(page_manifests.indexOf(obj.src) < 0) {
+        if(!!obj.src && page_manifests.indexOf(obj.src) < 0) {
           page_manifests.push(obj.src);
         }
-        if(page_manifests.indexOf(obj.en_src) < 0) {
+        if(!!obj.en_src && page_manifests.indexOf(obj.en_src) < 0) {
           page_manifests.push(obj.en_src);
         }
       });

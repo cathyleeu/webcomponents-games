@@ -2243,8 +2243,7 @@ Blocks['repeat_until_numbot'] = {
     en: "%1 Repeat if"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/untilnumbot.png"},
-    {type: "input_dummy"}
+    {type: "field_image", src: "/img/kidsblocks/untilnumbot.png"}
   ],
   message1: {
     ko: "넘봇에게 가는 중이라면",
