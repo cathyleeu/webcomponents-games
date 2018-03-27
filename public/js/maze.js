@@ -1131,7 +1131,7 @@ function checkEnd() {
     }
   } else {
     for(var i = 0; i < foods.length; i++) {
-      if(foods[i].visible == true) {
+      if(foods[i].visible == true && !foods[i].complete) {
         history.end(false);
         createjs.Sound.play("fail");
         kidscoding.isHorizontal ? showModal(messages.fail_done) : renderAlert(messages.fail_done, { blockErr : "shortage"});
