@@ -2250,13 +2250,14 @@ Actions.prototype.draw = function(block, callback) {
         callback("그림이 일치하지 않아요");
         return;
       }
-      food.bitmap.image = _this.loader.getResult(pImage)
-      var idx = foods.indexOf(food);
-      foods.splice(idx,1);
-      _this.canvas.stage.update();
-      createjs.Sound.play("success");
       setTimeout(function() {
-        callback();
+        _this._restoreObject(function() {
+          createjs.Sound.play("success");
+          food.bitmap.image = _this.loader.getResult(pImage)
+          food.complete = true;
+          _this.canvas.stage.update();
+          callback();
+        });
       }, 500);
     });
     return;
