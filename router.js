@@ -802,7 +802,7 @@ function getContents(book, week) {
             targets = [],
             problems = [];
         if(href.slice(0, 5) == "/maze") {
-          if(pathTokens.length == 3) {
+          if(pathTokens.length == 3 && pathTokens[0] != "cho") {
             dirs.forEach(function(dir) {
               if(dir.startsWith(pattern)) {
                 targets.push(heading + "#!" + dir);
