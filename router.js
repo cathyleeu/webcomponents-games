@@ -304,10 +304,6 @@ function getBook(classObj) {
   if(school == "A00058-K1") {
     book = [9, 10];
   }
-  // 울산지사 설리번(격월, 11,12월에 5,6)
-  if(school == "A00072-K2") {
-    book = [6, 7];
-  }
   // 마포ECC 추가반
   if(classObj.code == "B00130-K1-KC6") {
     book = [6, 7];
