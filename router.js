@@ -251,7 +251,7 @@ function getKinder(kinderId) {
 
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
-      book = ["1-re"];
+      book = ["1-re", "2-re"];
   // 청라ECC 초등반 2개는 C-6부터 시작
   if(classObj.code == "B00016-K1-KC6" || classObj.code == "B00016-K1-KC7") {
     book = [6];
