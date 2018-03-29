@@ -179,7 +179,7 @@
           .attr("class", d => `${d}`);
 
         let be_axisX = this.horizontal ? (d, i) => (110*i+10) + (30*i) : 10,
-            be_axisY = this.horizontal ? 10 : (d, i) => (110*i+10) + (30*i);
+            be_axisY = this.horizontal ? 0 : (d, i) => (110*i+10) + (30*i);
 
         let bef_side = svg.select('.bef_board');
 
@@ -207,7 +207,7 @@
         }
 
 
-        let bef_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, 140)` : (d, i) => `translate(140, ${65+ 140*i})`
+        let bef_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, 120)` : (d, i) => `translate(140, ${65+ 140*i})`
         let bef_cir = bef_side.selectAll("g.node")
           .data(before).enter()
           .append('g')
@@ -226,7 +226,7 @@
         svg.on("mouseup touchend", pencilingEnd)
 
         let af_axisX = this.horizontal ? (d, i) => (110*i+10) + (30*i) : 450,
-            af_axisY = this.horizontal ? 350 : (d, i) => (110*i+10) + (30*i);
+            af_axisY = this.horizontal ? Math.min(350, containerHeight-110) : (d, i) => (110*i+10) + (30*i);
 
         let af_side = svg.select('.af_board');
         let af_group = af_side.selectAll("g")
@@ -256,7 +256,7 @@
 
         af_side.selectAll("g").data(after).enter()
 
-        let af_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, 330)` : (d, i) => `translate(430, ${65+ 140*i})`
+        let af_trans = this.horizontal ? (d, i) => `translate(${65+ 140*i}, ${Math.min(350, containerHeight-110)-10})` : (d, i) => `translate(430, ${65+ 140*i})`
         let af_cir = af_side.selectAll("g.node")
           .data(after).enter()
           .append('g')
