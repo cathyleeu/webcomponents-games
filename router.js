@@ -264,7 +264,7 @@ function getBook(classObj) {
   if(school == "C00166-K1") {
     book = [4, 5];
   }
-  // 양주ECC 12월 1권부터 시작, 3월말에 4권
+  // 양주ECC 12월 1권부터 시작, 3월말에 4권, 6월에 5권
   if(school == "B00171-K1") {
     book = [4];
   }
@@ -1059,9 +1059,6 @@ public.get('/c1_w3', function *(next) {
 });
 public.get('/b1_w4', function *(next) {
   yield this.render('b1_w4');
-});
-public.get('/a4_w3', function *(next) {
-  yield this.render('a4_w3');
 });
 public.get('/a5_5_w3', function *(next) {
   yield this.render('a5_5_w3');

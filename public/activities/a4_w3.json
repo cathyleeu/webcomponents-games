@@ -1,0 +1,91 @@
+{
+  "element": "grouping-game",
+  "attributes": {
+    "lastStage" : 1,
+    "nextlink" : "activity#!a4re_w3"
+  },
+  "data": [
+    {"id": 0, "src": "/img/a4_w3/books.png"},
+    {"id": 1, "src": "/img/a4_w3/clothes.png"},
+    {"id": 2, "src": "/img/a4_w3/toys.png"}
+  ],
+  "manifest": [
+      {"src": "/img/a4_w3/books.png"},
+      {"src": "/img/a4_w3/clothes.png"},
+      {"src": "/img/a4_w3/toys.png"},
+
+      {"src": "/img/a4_w3/books0.png", "match": 0},
+      {"src": "/img/a4_w3/books1.png", "match": 0},
+      {"src": "/img/a4_w3/books2.png", "match": 0},
+      {"src": "/img/a4_w3/books3.png", "match": 0},
+      {"src": "/img/a4_w3/books4.png", "match": 0},
+      {"src": "/img/a4_w3/books5.png", "match": 0},
+      {"src": "/img/a4_w3/books6.png", "match": 0},
+
+      {"src": "/img/a4_w3/clothes0.png", "match": 1},
+      {"src": "/img/a4_w3/clothes1.png", "match": 1},
+      {"src": "/img/a4_w3/clothes2.png", "match": 1},
+      {"src": "/img/a4_w3/clothes3.png", "match": 1},
+      {"src": "/img/a4_w3/clothes4.png", "match": 1},
+      {"src": "/img/a4_w3/clothes5.png", "match": 1},
+      {"src": "/img/a4_w3/clothes6.png", "match": 1},
+
+      {"src": "/img/a4_w3/toys0.png", "match": 2},
+      {"src": "/img/a4_w3/toys1.png", "match": 2},
+      {"src": "/img/a4_w3/toys2.png", "match": 2},
+      {"src": "/img/a4_w3/toys3.png", "match": 2},
+      {"src": "/img/a4_w3/toys4.png", "match": 2},
+      {"src": "/img/a4_w3/toys5.png", "match": 2},
+      {"src": "/img/a4_w3/toys6.png", "match": 2}
+  ],
+  "msg": {
+    "ko": {
+      "title": "이삿짐 정리",
+      "minor": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
+      "introHead": "키즈씽킹",
+      "introBtm": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 그림에 다시 맞춰 보아요.",
+      "retrybtn": "확인",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Stuff Organizing",
+      "minor": "Drag a stuff from left and drop it on the right side.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "retryHead": "Miss",
+      "retryBtm" : "Try Again.",
+      "retrybtn": "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

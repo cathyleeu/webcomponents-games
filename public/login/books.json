@@ -416,7 +416,7 @@
     ["마당을 꾸며요", "Decorating the yard", "/activity#!a3re_w4"]
   ],
   "A-4":[
-    ["방을 정리해요", "Tidy up", "/a4_w3"]
+    ["방을 정리해요", "Tidy up", "/activity#!a4_w3"]
   ],
   "A-4-re":[
     ["우리 동네에는 무엇이 있나요", "What is in my hometown", "/mazeh#!a4re_w1"],
