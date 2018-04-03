@@ -256,25 +256,9 @@ function getBook(classObj) {
   if(classObj.code == "B00016-K1-KC6" || classObj.code == "B00016-K1-KC7") {
     book = [6, 7];
   }
-  // 성동 ECC 2,4번째반(MB-3, MB-4)은 7권
-  if(classObj.code == "B00163-K1-KC2" || classObj.code == "B00163-K1-KC4") {
-    book = [7];
-  }
-  // 영업부 평택지사 리베창의력사고학원 1권부터 시작
-  if(school == "C00166-K1") {
-    book = [4, 5];
-  }
   // 양주ECC 12월 1권부터 시작, 3월말에 4권, 6월에 5권
   if(school == "B00171-K1") {
     book = [4];
-  }
-  // 인천지사 유원유치원 방학중 2,3권 사용 희망
-  if(school == "A00114-K3") {
-    book = [2, 3];
-  }
-  // 신아유치원 방학동안 특별상
-  if(school == "A00042-K5") {
-    book = [1, "5-5"];
   }
   // 시범원 청아유치원, 숙명키즈
   if(school == "A00083-K1" || school == "A00083-K4") {
@@ -295,30 +279,6 @@ function getBook(classObj) {
   // 영업용(시범교육 영문 3,5,7,8권)
   if(school == "A00083-K7") {
     book = [3, 5, 7, 8];
-  }
-  // 울산지사 굿모닝, 울산지사 교차로원, 부산지사 동성어학원
-  if(school == "A00072-K7" || school == "A00072-K9" || school == "A00066-K2") {
-    book = [8, 9];
-  }
-  // 광주지사 리아시찌다원
-  if(school == "A00058-K1") {
-    book = [9, 10];
-  }
-  // 마포ECC 추가반
-  if(classObj.code == "B00130-K1-KC6") {
-    book = [6, 7];
-  }
-  // 마포ECC 겨울캠프 클래스 C-10권
-  if(classObj.code == "B00130-K1-KC7" || classObj.code == "B00130-K1-KC8" || classObj.code == "B00130-K1-KC9") {
-    book = [10, "10-5"];
-  }
-  // 숙명킨더 아카데미 7세반 11월에 특별호부터 시작
-  if(classObj.code == "A00042-K4-KC2") {
-    book = [7, 8];
-  }
-  // 석계ECC 추가반 1월 1권부터 시작
-  if(classObj.code == "B00024-K1-KC9") {
-    book = [1, 2];
   }
   book = book.map(function(num) {
     return classObj.level + "-" + num;
