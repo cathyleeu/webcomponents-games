@@ -165,6 +165,8 @@
             .attr('x', (d, i) => d.x ).attr('y', (d, i) => d.y )
             .attr('id', (d, i) => `image_${d.id}`)
             .attr("xlink:href", (d, i) => d.src)
+            .attr("width", "100px")
+            .attr("height", "100px")
             .on("click", this.handleClick)
       }
     }
