@@ -122,7 +122,8 @@ var mazeDirs = fs.readdirSync('public/maze')
       return fs.lstatSync(path.join('public/maze', file)).isDirectory();
     });
 
-var activityJsons = fs.readdirSync('public/activities');
+var activityJsons = fs.readdirSync('public/activities'),
+    pageFiles = fs.readdirSync('view');
 
 // 각 원별 cache 생성
 function getCode( bId , kId ) {
@@ -558,6 +559,18 @@ public.get('/cache/:manifest', function *(next) {
         }
         if(pages.indexOf(pagePath) < 0) {
           pages.push(pagePath);
+          var pageTokens = pagePath.split("_");
+          // c3_w1_c1이 있다면 c3_w1_c2도 추가
+          if(pageTokens.length == 2 || pageTokens.length == 3) {
+            pageFiles.forEach(function(filename) {
+              filename = "/" + filename;
+              if( pagePath.split("_").slice(0,2).join("_") == filename.split("_").slice(0,2).join("_") &&
+                  filename.slice(-4).toLowerCase() == ".ejs" &&
+                  pages.indexOf(filename.slice(0,-4)) < 0) {
+                pages.push(filename.slice(0,-4));
+              }
+            });
+          }
         }
       });
     });
