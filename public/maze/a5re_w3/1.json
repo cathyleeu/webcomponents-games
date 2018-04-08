@@ -1,0 +1,74 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start", "memi_step1", "memi_step2", "memi_step3", "memi_step4", "memi_step5"],
+  "toolbox": [
+
+  ],
+  "map": [
+    "%....",
+    "&.&&@",
+    "..&..",
+    ".....",
+    "..&.."
+  ],
+  "extra":[{
+    "x": 0,
+    "y": 1,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg01_step5"
+      },{
+        "img": "invisibl"
+    }]
+  },{
+    "x": 2,
+    "y": 1,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg21_step4"
+      },{
+        "img": "invisibl"
+    }]
+  },{
+    "x": 3,
+    "y": 1,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg31_step1"
+      },{
+        "img": "invisibl"
+    }]
+  },{
+    "x": 2,
+    "y": 2,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg22_step3"
+      },{
+        "img": "invisibl"
+    }]
+  },{
+    "x": 2,
+    "y": 4,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg24_step2"
+      },{
+        "img": "invisibl"
+    }]
+  }],
+  "tutorial": [{
+    "msg:ko": "시작버튼을 눌러 매미를 성장시켜보아요",
+    "msg:jp": "セミに成長させるため、スタートボタンをクリックしてみよう。",
+    "msg:en": "Press the start button for the cicada's emergence",
+    "img": ["/img/a5_w3/start_block.png","/img/a5_w3/bg01_step5.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공! 매미가 되었어요~",
+    "msg:jp": "成功！セミになりました。",
+    "msg:en": "Success! Became a cicada!",
+    "img": "/img/a5_w3/bg01_step5.png",
+    "link": "a5re_w3/2"
+  }]
+}

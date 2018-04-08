@@ -1,0 +1,40 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start", "frog_left",  "frog_up",  "frog_right",  "frog_down"],
+  "toolbox": [
+
+  ],
+  "map": [
+    ".#####.",
+    "#.#.#.#",
+    "#%...%#",
+    "#.#a#.#",
+    "#%.la.#",
+    "#.#a#%#",
+    ".#####."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 5,
+    "img": "lotus"
+  }],
+  "tutorial": [{
+    "msg:ko": "시작버튼을 눌러 개구리를 성장시켜보아요",
+    "msg:jp": "おたまじゃくしをかえるに成長させよう。スタートボタンをクリックしてみよう。",
+    "msg:en": "Press the start button to complete the life cycle of a frog",
+    "img": ["/img/a5_w3/start_block.png","/img/a5_w3/bg01_step5.png"]
+  }],
+  "goal": {
+    "msg:ko": "시작버튼을 눌러보아요",
+    "msg:jp": "スタートボタンをクリックしてみよう。",
+    "msg:en": "Press the start button",
+    "img": "/img/a5_w4/start_block.png"
+  },
+  "success": [{
+    "msg:ko": "성공! 개구리가 되었어요~",
+    "msg:jp": "成功！かえるになりました。",
+    "msg:en": "Success! The tadpole became a frog!",
+    "link": "a5re_w4/2"
+  }]
+}

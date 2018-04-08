@@ -1,0 +1,30 @@
+[
+  {"book": "a5", "title": "4주차 : 개구리의 설장"},
+
+  {"id": "bg1", "src": "/img/a5_w4/Pond1_256.png"},
+  {"id": "bg2", "src": "/img/a5_w4/Pond2_256.png"},
+
+  {"id": "character", "src": "/img/a5_w4/todepolefrog.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/a5_w4/frog.png", "size": 256},
+  {"id": "food", "src": "/img/a5_w4/Larva_256.png"},
+
+  {"id": "lotus", "src": "/img/a5_w4/lotus.png"},
+  {"tile": "a", "id": "eggs", "src": "/img/a5_w4/eggs_256.png"},
+
+  {"id": "log1", "src": "/img/a5_w4/Log1_256.png", "obstacle": true},
+  {"id": "log2", "src": "/img/a5_w4/Log2_256.png", "obstacle": true},
+  {"id": "stone1", "src": "/img/a5_w4/PondStone1_256.png", "obstacle": true},
+  {"id": "stone2", "src": "/img/a5_w4/PondStone2_256.png", "obstacle": true},
+  {"id": "weed2", "src": "/img/a5_w4/Weed2_256.png", "obstacle": true},
+  {"id": "weed3", "src": "/img/a5_w4/Weed3_256.png", "obstacle": true},
+  {"id": "weed4", "src": "/img/a5_w4/Weed4_256.png", "obstacle": true},
+
+  {"id": "toad2", "src": "/img/a5_w4/TutoToad2_256.png"},
+  {"id": "toad3", "src": "/img/a5_w4/TutoToad3_256.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"}
+
+]

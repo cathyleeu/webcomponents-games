@@ -1,0 +1,103 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "obj",
+    "nextlink" : "activity#!a5re_w1",
+    "questions" : [{
+      "question": "여름 $ 과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "options" : [
+        { "img" : "/img/a5re_w1/summer1.png", "answer": true},
+        { "img" : "/img/a5re_w1/winter1.png"}
+      ]
+    },{
+      "question": "여름 $ 과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "options" : [
+        { "img" : "/img/a5re_w1/summer2.png", "answer": true},
+        { "img" : "/img/a5re_w1/winter2.png"}
+      ]
+    },{
+      "question": "여름 $ 과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "options" : [
+        { "img" : "/img/a5re_w1/summer3.png", "answer": true},
+        { "img" : "/img/a5re_w1/winter3.png"}
+      ]
+    },{
+      "question": "여름 $ 과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "options" : [
+        { "img" : "/img/a5re_w1/summer4.png", "answer": true},
+        { "img" : "/img/a5re_w1/winter4.png"}
+      ]
+    },{
+      "question": "여름 $ 과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "options" : [
+        { "img" : "/img/a5re_w1/summer5.png", "answer": true},
+        { "img" : "/img/a5re_w1/winter5.png"}
+      ]
+    },{
+      "question": "여름 $ 과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "options" : [
+        { "img" : "/img/a5re_w1/summer6.png", "answer": true},
+        { "img" : "/img/a5re_w1/winter6.png"}
+      ]
+    },{
+      "question": "여름 $ 과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "options" : [
+        { "img" : "/img/a5re_w1/summer7.png", "answer": true},
+        { "img" : "/img/a5re_w1/winter7.png"}
+      ]
+    },{
+      "question": "여름 $ 과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "options" : [
+        { "img" : "/img/a5re_w1/summer8.png", "answer": true},
+        { "img" : "/img/a5re_w1/winter8.png"}
+      ]
+    }]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "여름이 되었어요",
+      "minor": "여름과 겨울 이미지 중 여름 이미지를 골라보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "여름 이미지를 골라주세요.",
+      "retryImg": "/img/a5re_w1/bg_summer.png",
+      "retrybtn": "다시하기",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Summer",
+      "minor": "Choose Summer image",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
