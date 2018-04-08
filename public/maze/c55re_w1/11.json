@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.##.#..w",
+    "w......jw",
+    "ws##....w",
+    "w..#dvx.w",
+    "w....t..w",
+    "w.#..%..w",
+    "w.#...#.w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 6,
+    "img":"rec4"
+  }],
+  "tutorial": [{
+    "msg:ko": "상자 모양의 물건으로 가보자!",
+    "msg:en": "Let's go to a box-shaped thing.",
+    "img": "/img/c55re_w1/rec.png"
+  }],
+  "goal": {
+    "msg:ko": "상자 모양의 물건으로 가보자!",
+    "msg:en": "Let's go to a box-shaped thing.",
+    "img": "/img/c55re_w1/rec.png"
+  }
+}

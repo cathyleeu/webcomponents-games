@@ -10,9 +10,11 @@
   {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
   {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
 
+  {"id": "wall", "src": "/img/c55re_w1/wall.png", "obstacle": true},
+
   {"id": "desk", "src": "/img/b9_w1/desk.png", "wall": true},
-  {"id": "bookshelf", "src": "/img/b9_w1/bookshelf.png","obstacle": true},
-  {"id": "drawer", "src": "/img/b9_w1/drawer.png","obstacle": true},
+  {"id": "bookshelf", "src": "/img/b9_w1/bookshelf.png","wall": true},
+  {"id": "drawer", "src": "/img/b9_w1/drawer.png","wall": true},
 
   {"tile": "a", "id": "ball1", "src": "/img/c55_w1/ball1.png", "obstacle": false},
   {"tile": "b", "id": "ball2", "src": "/img/c55_w1/ball2.png", "obstacle": false},

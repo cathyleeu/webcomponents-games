@@ -1,0 +1,41 @@
+[
+  {"book": "c5.5", "title": "4주차 : 음식을 대접해요"},
+  {"id": "bg1", "src": "/img/c55re_w4/bg1.png"},
+  {"id": "bg2", "src": "/img/c55re_w4/bg2.png"},
+
+  {"id": "character", "src": "/img/c55re_w4/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c55re_w4/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c55re_w4/table0.png"},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"tile": "H", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "N", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "E", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "mother", "src": "/img/c55re_w4/mother.png", "obstacle": false},
+  {"id": "table0", "src": "/img/c55re_w4/table0.png", "obstacle": false},
+  {"id": "juice", "src": "/img/c55re_w4/juice.png", "wall": true},
+  {"id": "water", "src": "/img/c55re_w4/water.png", "wall": true},
+
+  {"tile": "a", "id": "fruit_ap", "src": "/img/c55re_w4/fruit_ap.png", "wall": true},
+  {"tile": "b", "id": "fruit_ch", "src": "/img/c55re_w4/fruit_ch.png", "wall": true},
+  {"tile": "c", "id": "fruit_ki", "src": "/img/c55re_w4/fruit_ki.png", "wall": true},
+  {"tile": "e", "id": "fruit_or", "src": "/img/c55re_w4/fruit_or.png", "wall": true},
+  {"tile": "f", "id": "fruit_st", "src": "/img/c55re_w4/fruit_st.png", "wall": true},
+  {"tile": "g", "id": "fruit_wa", "src": "/img/c55re_w4/fruit_wa.png", "wall": true},
+  {"tile": "h", "id": "milk", "src": "/img/c55re_w4/milk.png", "wall": true},
+  {"tile": "i", "id": "fruit_pi", "src": "/img/c55re_w4/fruit_pi.png", "wall": true},
+
+  {"tile": "A", "id": "table1", "src": "/img/c55re_w4/table1.png", "wall": true},
+  {"tile": "B", "id": "table2", "src": "/img/c55re_w4/table2.png", "wall": true},
+  {"tile": "C", "id": "table3", "src": "/img/c55re_w4/table3.png", "wall": true},
+  {"tile": "D", "id": "table4", "src": "/img/c55re_w4/table4.png", "wall": true},
+
+  {"tile": "w", "id": "wall", "src": "/img/c55re_w1/wall.png", "obstacle": true}
+
+]
