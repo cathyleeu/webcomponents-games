@@ -428,6 +428,12 @@
     ["매미의 성장", "Life cycle of a cicada", "/mazeh#!a5_w3/1"],
     ["개구리의 성장", "Life cycle of a frog", "/mazeh#!a5_w4/1"]
   ],
+  "A-5-re":[
+    ["여름이 되었어요", "Summer has arrived", "/mazeh#!a5re_w1"],
+    ["캠핑을 가요", "Go camping", "/activity#!a5re_w2"],
+    ["매미는 땅속에서 자라요", "The cicada grows in the ground", "/activity#!a5re_w3"],
+    ["개구리는 물속에서 자라요", "The frog grows in the water", "/activity#!a5re_w4"]
+  ],
   "A-5-5-re":[
     ["옷을 알아보아요", "Let's see the clothes.", "/activity#!a55re_w1"],
     ["옷을 입어요", "Wearing clothes.", "/activity#!a55re_w2"],
@@ -649,7 +655,7 @@
     ["음식을 대접해요 : 음식을 대접해요", "Serve some food", "/mazeh#!c55_w4/index"]
   ],
   "C-5-5-re":[
-    ["우리나라 전통 돌잔치", "Tidy the house", "/mazeh#!c55re_w1/index"],
+    ["우리나라 전통 돌잔치", "Korean 1st birthday party", "/mazeh#!c55re_w1/index"],
     ["친구에게 초대장을 주러가요", "Send out invitations", "/mazeh#!c55re_w2/index"],
     ["선물을 준비해요", "Prepare a gift", "/mazeh#!c55re_w3/index"],
     ["음식을 대접해요", "Serve some food", "/mazeh#!c55re_w4/index"]
