@@ -1,0 +1,275 @@
+{
+  "type": "world",
+  "view_size": 8,
+  "tile_size": 128,
+  "toolbox": [],
+  "map": [
+    "#####EEEENNN######.",
+    "..r..%%%%%%%...%E.#",
+    ".#############.%E.#",
+    "##...#########.%E.#",
+    "..#............%E.#",
+    "##...%%%%%%.%%%...#",
+    "#####HHHHHH.NNN##."
+  ],
+  "extra": [{
+    "x": 5,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "상을 1개 얻을 수 있어",
+      "msg:en": "You can get one table at once",
+      "img": "/img/c55re_w4/table0.png"
+    }]
+  },{
+    "x": 6,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "상을 1개 얻을 수 있어",
+      "msg:en": "You can get one table at once",
+      "img": "/img/c55re_w4/table0.png"
+    }]
+  },{
+    "x": 7,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "상을 1개 얻을 수 있어",
+      "msg:en": "You can get one table at once",
+      "img": "/img/c55re_w4/table0.png"
+    }]
+  },{
+    "x": 8,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "상을 1개 얻을 수 있어",
+      "msg:en": "You can get one table at once",
+      "img": "/img/c55re_w4/table0.png"
+    }]
+  },{
+    "x": 9,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "상을 2개 얻을 수 있어",
+      "msg:en": "You can get two tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "상을 2개 얻을 수 있어",
+      "msg:en": "You can get two tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 11,
+    "y": 0,
+    "tutorial": [{
+      "msg:ko": "상을 2개 얻을 수 있어",
+      "msg:en": "You can get two tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 16,
+    "y": 1,
+    "tutorial": [{
+      "msg:ko": "상을 1개 얻을 수 있어",
+      "msg:en": "You can get one table at once",
+      "img": "/img/c55re_w4/table0.png"
+    }]
+  },{
+    "x": 16,
+    "y": 2,
+    "tutorial": [{
+      "msg:ko": "상을 1개 얻을 수 있어",
+      "msg:en": "You can get one table at once",
+      "img": "/img/c55re_w4/table0.png"
+    }]
+  },{
+    "x": 16,
+    "y": 3,
+    "tutorial": [{
+      "msg:ko": "상을 1개 얻을 수 있어",
+      "msg:en": "You can get one table at once",
+      "img": "/img/c55re_w4/table0.png"
+    }]
+  },{
+    "x": 16,
+    "y": 4,
+    "tutorial": [{
+      "msg:ko": "상을 1개 얻을 수 있어",
+      "msg:en": "You can get one table at once",
+      "img": "/img/c55re_w4/table0.png"
+    }]
+  },{
+    "x": 14,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "상을 2개 얻을 수 있어",
+      "msg:en": "You can get two tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 13,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "상을 2개 얻을 수 있어",
+      "msg:en": "You can get two tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 12,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "상을 2개 얻을 수 있어",
+      "msg:en": "You can get two tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 10,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "상을 3개 얻을 수 있어",
+      "msg:en": "You can get three tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 9,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "상을 3개 얻을 수 있어",
+      "msg:en": "You can get three tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 8,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "상을 3개 얻을 수 있어",
+      "msg:en": "You can get three tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 7,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "상을 3개 얻을 수 있어",
+      "msg:en": "You can get three tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  },{
+    "x": 6,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "상을 3개 얻을 수 있어",
+      "msg:en": "You can get three tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+  },{
+    "x": 5,
+    "y": 6,
+    "tutorial": [{
+      "msg:ko": "상을 3개 얻을 수 있어",
+      "msg:en": "You can get three tables at once",
+      "img": ["/img/c55re_w4/table0.png","/img/c55re_w4/table0.png","/img/c55re_w4/table0.png"]
+    }]
+  }]
+  },{
+    "x": 5,
+    "y": 1,
+    "link": "c55re_w4/1"
+  },{
+    "x": 6,
+    "y": 1,
+    "link": "c55re_w4/2"
+  },{
+    "x": 7,
+    "y": 1,
+    "link": "c55re_w4/3"
+  },{
+    "x": 8,
+    "y": 1,
+    "link": "c55re_w4/4"
+  },{
+    "x": 9,
+    "y": 1,
+    "link": "c55re_w4/5"
+  },{
+    "x": 10,
+    "y": 1,
+    "link": "c55re_w4/6"
+  },{
+    "x": 11,
+    "y": 1,
+    "link": "c55re_w4/7"
+  },{
+    "x": 15,
+    "y": 1,
+    "link": "c55re_w4/8"
+  },{
+    "x": 15,
+    "y": 2,
+    "link": "c55re_w4/9"
+  },{
+    "x": 15,
+    "y": 3,
+    "link": "c55re_w4/10"
+  },{
+    "x": 15,
+    "y": 4,
+    "link": "c55re_w4/11"
+  },{
+    "x": 14,
+    "y": 5,
+    "link": "c55re_w4/12"
+  },{
+    "x": 13,
+    "y": 5,
+    "link": "c55re_w4/13"
+  },{
+    "x": 12,
+    "y": 5,
+    "link": "c55re_w4/14"
+  },{
+    "x": 10,
+    "y": 5,
+    "link": "c55re_w4/15"
+  },{
+    "x": 9,
+    "y": 5,
+    "link": "c55re_w4/16"
+  },{
+    "x": 8,
+    "y": 5,
+    "link": "c55re_w4/17"
+  },{
+    "x": 7,
+    "y": 5,
+    "link": "c55re_w4/18"
+  },{
+    "x": 6,
+    "y": 5,
+    "link": "c55re_w4/19"
+  },{
+    "x": 5,
+    "y": 5,
+    "link": "c55re_w4/20"
+  },{
+    "img":"mother",
+    "x": 2,
+    "y": 4,
+    "obstacle": false,
+    "link": "c55re_w4/99",
+    "min_score": 21
+  }],
+
+  "tutorial": [{
+    "msg:ko": "음식을 대접하고 상을 모아요! 쉬운 문제는 1개, 보통은 2개, 어려운 문제는 3개를 주어요. ",
+    "msg:en": "Let's collect table by serving food! An easy problem gives you one table, a normal one gives you two and a hard one gives you three.",
+    "img": "/img/c55re_w4/table0.png"
+  }],
+
+  "goal": {
+    "msg:ko": "상을 21개 모은 후 엄마에게 가자!",
+    "msg:en": "Let's get 21 tables and go to mom!",
+    "img":  ["/img/c55re_w4/table0.png","/img/c55re_w4/mother.png"]
+  }
+}

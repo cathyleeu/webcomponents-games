@@ -1,0 +1,86 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "memi_step1",
+    "memi_step2",
+    "memi_step3",
+    "memi_step4",
+    "memi_step5"
+  ],
+  "map": [
+    "%....",
+    "&.&&@",
+    "..&..",
+    ".....",
+    "..&.."
+  ],
+  "extra":[{
+    "x": 0,
+    "y": 1,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg01_step5"
+      },{
+        "img": "invisibl"
+    }]
+  },{
+    "x": 2,
+    "y": 1,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg21_step4"
+      },{
+        "img": "invisibl"
+    }]
+  },{
+    "x": 3,
+    "y": 1,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg31_step1"
+      },{
+        "img": "invisibl"
+    }]
+  },{
+    "x": 2,
+    "y": 2,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg22_step3"
+      },{
+        "img": "invisibl"
+    }]
+  },{
+    "x": 2,
+    "y": 4,
+    "img": "invisibl",
+    "contents" : [{
+        "img": "bg24_step2"
+      },{
+        "img": "invisibl"
+    }]
+  }],
+  "tutorial": [{
+    "msg:ko": "매미의 성장 순서에 따라 블록을 조립해보자!",
+    "msg:jp": "セミの成長の順にブロックを組み立ててみよう。",
+    "msg:en": "Let's Assemble blocks to complete the life cycle of a cicada step by step!",
+    "img": "/img/a5_w3/memi_block.png"
+  }],
+  "goal": {
+    "msg:ko": "매미의 성장 순서에 따라 블록을 조립해보자!",
+    "msg:jp": "セミの成長の順にブロックを組み立ててみよう。",
+    "msg:en": "Let's Assemble blocks to complete the life cycle of a cicada step by step!",
+    "img": "/img/a5_w3/memi_block.png"
+  },
+  "success": [{
+    "msg:ko": "성공! 매미가 되었어요~",
+    "msg:jp": "成功！セミになりました。",
+    "msg:en": "Success! Became a cicada!",
+    "img": "/img/a5_w3/bg01_step5.png"
+  },{
+    "msg:ko": "3주차 콘텐츠가 끝났어요! 다음주에 봐요!!",
+    "msg:en": "Success! Good Job!"
+  }]
+}

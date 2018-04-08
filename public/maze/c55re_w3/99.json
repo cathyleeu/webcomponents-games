@@ -1,0 +1,42 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#...#",
+    "#%.l#",
+    "#...#",
+    ".###."
+  ],
+  "extra":[{
+    "x":1,
+    "y":2,
+    "img":"mos"
+  }],
+  "tutorial": [{
+    "msg:ko": "모스에게 가자",
+    "msg:en": "Go to Mos",
+    "img": ["/img/c55re_w2/todelana.png","/img/c55re_w3/mos.png"]
+  }],
+  "success": [{
+    "msg:ko": "모스야, 네 선물이야!",
+    "msg:en": "These are you presents, Mos!",
+    "img": ["/img/c55re_w2/todelana.png","/img/c55re_w3/gift.png"]
+  },{
+    "msg:ko": "고마워!",
+    "msg:en": "Thanks a lot!",
+    "img": ["/img/c55re_w3/mos.png"]
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/c55re_w2/todelana.png",
+    "link" : "c55re_w4/index"
+  }]
+}

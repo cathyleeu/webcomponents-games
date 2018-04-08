@@ -1,0 +1,48 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start", "repeat", "move_right", "get_item2", "repeat", "use_item2"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item2",
+    "use_item2",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "wd##..##w",
+    "w.#.....w",
+    "w.e.#.##w",
+    "w.)....%w",
+    "w.a#.#..w",
+    "w#....##w",
+    "w#.###..w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 2,
+    "y": 4,
+    "img":"fruit_st",
+     "itemImg":"fruit_st",
+     "disappear":true
+  },{
+    "x": 7,
+    "y": 4,
+    "img":"table0",
+    "useItem": true
+  }],
+  "tutorial": [{
+    "msg:ko": "셋 중에 작은 과일을 상으로 가지고가요!",
+    "msg:en": "Pick the smallest fruit and put it on the table!",
+    "img":  ["/img/c4_w3/smallest.png","/img/c55re_w4/table0.png"]
+  }],
+  "goal": {
+    "msg:ko": "셋 중에 작은 과일을 상에 가져다놓자!",
+    "msg:en": "Pick the smallest fruit and put it on the table!",
+    "img":  ["/img/c4_w3/smallest.png","/img/c55re_w4/table0.png"]
+  }
+}

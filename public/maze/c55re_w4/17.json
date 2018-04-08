@@ -1,0 +1,49 @@
+{
+  "tile_size": 128,
+  "score":3,
+  "workspace": ["start","repeat","repeat"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item2",
+    "use_item2",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.##d.##w",
+    "w.#..#..w",
+    "w#....#.w",
+    "w....##.w",
+    "w.#)%..#w",
+    "w.###..#w",
+    "w....##.w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 5,
+    "img":"table0",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 5,
+    "img":"juice",
+    "itemImg":"juice",
+    "disappear":true,
+    "itemCount": 6
+  }],
+  "tutorial": [{
+    "msg:ko": "주스 6잔을 상에 가져다주어요!",
+    "msg:en": "Take 6 glasses of juice and put them on the table.",
+    "img":  ["/img/c55re_w4/juice.png","/img/c55re_w4/table0.png"]
+  }],
+  "goal": {
+    "msg:ko": "주스 6잔을 상에 가져다주어요!",
+    "msg:en": "Take 6 glasses of juice and put them on the table.",
+    "img":  ["/img/c55re_w4/juice.png","/img/c55re_w4/table0.png"]
+  }
+}

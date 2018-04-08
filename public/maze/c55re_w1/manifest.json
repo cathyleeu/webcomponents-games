@@ -1,0 +1,44 @@
+[
+  {"book": "c5.5", "title": "1주차 : 우리나라 전통 돌잔치"},
+  {"id": "bg1", "src": "/img/c55re_w1/bg1.png"},
+  {"id": "bg2", "src": "/img/c55re_w1/bg2.png"},
+
+  {"id": "character", "src": "/img/c55re_w1/cos.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c55re_w1/cos0.png", "size": 256},
+  {"id": "food", "src": "/img/c55re_w1/box.png"},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"tile": "H", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "N", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "E", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "father", "src": "/img/c55re_w1/father.png", "obstacle": false},
+
+  {"tile": "a", "id": "ball1", "src": "/img/c55re_w1/ball1.png", "obstacle": false},
+  {"tile": "b", "id": "ball2", "src": "/img/c55re_w1/ball2.png", "obstacle": false},
+  {"tile": "c", "id": "ball3", "src": "/img/c55re_w1/ball3.png", "obstacle": false},
+  {"tile": "e", "id": "ball4", "src": "/img/c55re_w1/ball4.png", "obstacle": false},
+  {"tile": "f", "id": "ball5", "src": "/img/c55re_w1/ball5.png", "obstacle": false},
+  {"tile": "g", "id": "cylinder1", "src": "/img/c55re_w1/cylinder1.png", "obstacle": false},
+  {"tile": "h", "id": "cylinder2", "src": "/img/c55re_w1/cylinder2.png", "obstacle": false},
+  {"tile": "i", "id": "cylinder3", "src": "/img/c55re_w1/cylinder3.png", "obstacle": false},
+  {"tile": "j", "id": "cylinder4", "src": "/img/c55re_w1/cylinder4.png", "obstacle": false},
+  {"tile": "k", "id": "cylinder5", "src": "/img/c55re_w1/cylinder5.png", "obstacle": false},
+  {"tile": "m", "id": "rec1", "src": "/img/c55re_w1/rec1.png", "obstacle": false},
+  {"tile": "n", "id": "rec2", "src": "/img/c55re_w1/rec2.png", "obstacle": false},
+  {"tile": "o", "id": "rec3", "src": "/img/c55re_w1/rec3.png", "obstacle": false},
+  {"tile": "p", "id": "rec4", "src": "/img/c55re_w1/rec4.png", "obstacle": false},
+  {"tile": "q", "id": "rec5", "src": "/img/c55re_w1/rec5.png", "obstacle": false},
+  {"tile": "s", "id": "etc1", "src": "/img/c55re_w1/etc1.png", "wall": true},
+  {"tile": "t", "id": "etc2", "src": "/img/c55re_w1/etc2.png", "wall": true},
+  {"tile": "v", "id": "etc3", "src": "/img/c55re_w1/etc3.png", "wall": true},
+  {"tile": "x", "id": "etc4", "src": "/img/c55re_w1/etc4.png", "wall": true},
+
+  {"tile": "w", "id": "wall", "src": "/img/c55re_w1/wall.png", "obstacle": true}
+
+]

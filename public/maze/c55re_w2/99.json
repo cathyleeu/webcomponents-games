@@ -1,0 +1,39 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".###.",
+    "#.%.#",
+    "#...#",
+    "#.u.#",
+    ".###."
+  ],
+  "extra":[{
+    "x":2,
+    "y":1,
+    "img":"house"
+  }],
+  "tutorial": [{
+    "msg:ko": "집으로 가자",
+    "msg:en": "Go to the house",
+    "img": ["/img/c55re_w2/cos0.png","/img/c55re_w2/house.png"]
+  }],
+  "success": [{
+    "msg:ko": "초대장을 다 돌리고 집에 도착했어요~",
+    "msg:en": "I sent all invitations and arrived home.",
+    "img": ["/img/c55re_w2/invitation.png","/img/c55re_w2/house.png"]
+  },{
+    "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",
+    "msg:en": "You did a great job! See you again!",
+    "img": "/img/c7/cos0.png",
+    "link" : "c55re_w3/index"
+  }]
+}

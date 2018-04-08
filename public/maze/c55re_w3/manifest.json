@@ -1,0 +1,34 @@
+[
+  {"book": "c5.5", "title": "3주차 : 선물을 준비해요"},
+  {"id": "bg1", "src": "/img/c55re_w3/water0.png"},
+  {"id": "bg2", "src": "/img/c55re_w3/water1.png"},
+
+  {"id": "character", "src": "/img/c55re_w3/SpriteLana_256.png", "sprite": true, "size": 256},
+  {"id": "character2", "src": "/img/c55re_w3/SpriteToad4_256.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c55re_w3/lana0.png", "size": 256},
+  {"id": "message2", "src": "/img/c55re_w3/tode0.png", "size": 256},
+  {"id": "food", "src": "/img/c55re_w3/gift.png"},
+  {"tile": "I", "id": "invisible", "src": "/img/invisible.png", "obstacle" : false},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"tile": "H", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "N", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "E", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "tree1", "src": "/img/c55re_w3/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/c55re_w3/tree2.png", "obstacle": true},
+  {"id": "lotus1", "src": "/img/c55re_w3/lotus1.png", "wall": true},
+  {"id": "lotus2", "src": "/img/c55re_w3/lotus2.png", "wall": true},
+  {"id": "plant3", "src": "/img/c55re_w3/plant3.png", "obstacle": true},
+  {"id": "plant4", "src": "/img/c55re_w3/plant4.png", "obstacle": true},
+  {"id": "pondstone1", "src": "/img/c55re_w3/pondstone1.png", "obstacle": true},
+  {"id": "pondstone2", "src": "/img/c55re_w3/pondstone2.png", "obstacle": true},
+
+  {"id": "lotus_flower", "src": "/img/c55re_w3/lotus_flower.png", "obstacle": false},
+  {"id": "gift", "src": "/img/c55re_w3/gift.png", "obstacle": false},
+  {"id": "mos", "src": "/img/c55re_w3/mos.png", "obstacle": false}
+]

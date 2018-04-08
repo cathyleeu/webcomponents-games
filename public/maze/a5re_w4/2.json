@@ -1,0 +1,49 @@
+{
+  "tile_size": 128,
+  "score":5,
+  "workspace": ["start"],
+  "toolbox": [
+    "frog_left",
+    "frog_up",
+    "frog_right",
+    "frog_down"
+  ],
+  "map": [
+    ".#####.",
+    "#.#.#.#",
+    "#%...%#",
+    "#.#a#.#",
+    "#%.la.#",
+    "#.#a#%#",
+    ".#####."
+  ],
+  "extra":[{
+    "x": 5,
+    "y": 5,
+    "img": "lotus"
+  }],
+  "tutorial": [{
+    "msg:ko": "개구리의 성장 순서에 따라 블록을 조립해보자!",
+    "msg:jp": "かえるの成長の順にブロックを組み立ててみよう。",
+    "msg:en": "Let's Assemble blocks to complete the life cycle of a frog step by step!",
+    "img": "/img/a5_w4/frog_block.png"
+  }],
+  "goal": {
+    "msg:ko": "개구리의 성장 순서에 따라 블록을 조립해보자!",
+    "msg:jp": "かえるの成長の順にブロックを組み立ててみよう。",
+    "msg:en": "Let's Assemble blocks to complete the life cycle of a frog step by step!",
+    "img": "/img/a5_w4/frog_block.png"
+  },
+  "success": [{
+    "msg:ko": "성공! 개구리가 되었어요~",
+    "msg:jp": "成功！かえるになりました。",
+    "msg:en": "Success! The tadpole became a frog!"
+  },{
+    "msg:ko": "성공! 개구리가 되었어요~",
+    "msg:jp": "成功！かえるになりました。",
+    "msg:en": "Success! The tadpole became a frog!"
+  },{
+    "msg:ko": "5권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Success! Good Job!"
+  }]
+}

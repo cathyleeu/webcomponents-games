@@ -1,0 +1,38 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "repeat"
+  ],
+  "map": [
+    ".wwwwwww.",
+    "w.#v..##w",
+    "w...t#%.w",
+    "wm......w",
+    "w#......w",
+    "w.g....#w",
+    "w.#x..u#w",
+    "w....s#.w",
+    ".wwwwwww."
+  ],
+  "extra":[{
+    "x": 6,
+    "y": 2,
+    "img":"ball1"
+  }],
+  "tutorial": [{
+    "msg:ko": "공 모양의 물건으로 가보자!",
+    "msg:en": "Let's go to a ball-shaped thing.",
+    "img": "/img/c55re_w1/ball.png"
+  }],
+  "goal": {
+    "msg:ko": "공 모양의 물건으로 가보자!",
+    "msg:en": "Let's go to a ball-shaped thing.",
+    "img": "/img/c55re_w1/ball.png"
+  }
+}

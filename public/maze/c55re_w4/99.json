@@ -1,0 +1,41 @@
+{
+  "tile_size": 128,
+
+  "score":1,
+  "workspace": ["start"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left"
+  ],
+  "map": [
+    ".###.",
+    "#.d.#",
+    "#...#",
+    "#.%.#",
+    ".###."
+  ],
+  "extra":[{
+    "x":2,
+    "y":3,
+    "img":"mother"
+  }],
+  "tutorial": [{
+    "msg:ko": "엄마에게 가자",
+    "msg:en": "Go to mom",
+    "img": ["/img/c55re_w4/cos0.png","/img/c55re_w4/mother.png"]
+  }],
+  "success": [{
+    "msg:ko": "엄마! 음식을 다 대접했어요~",
+    "msg:en": "Mom! I served all.",
+    "img" : "/img/c55re_w4/cos0.png"
+  },{
+    "msg:ko": "수고했어, 코스야.",
+    "msg:en": "Thank you, Cos.",
+    "img": "/img/c55re_w4/mother.png"
+  },{
+    "msg:ko": "특별(상)권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",
+    "msg:en": "Book Special 1 is over! See you Book 6!"
+  }]
+}

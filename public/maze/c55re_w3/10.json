@@ -1,0 +1,46 @@
+{
+  "tile_size": 128,
+  "score":2,
+  "workspace": ["start", "repeat", "get_item", "repeat", "use_item"],
+  "mandatory": ["repeat"],
+  "toolbox": [
+    "move_up",
+    "move_down",
+    "move_right",
+    "move_left",
+    "get_item",
+    "use_item",
+    "repeat"
+  ],
+  "map": [
+    ".#######.",
+    "##......#",
+    "#.#....##",
+    "#....#..#",
+    "#%#...#d#",
+    "#..#.#..#",
+    "##..#..##",
+    "#.#.).###",
+    ".#######."
+  ],
+  "extra":[{
+    "x": 4,
+    "y": 7,
+    "img":"lotus_flower"
+  },{
+    "x": 1,
+    "y": 4,
+    "img":"gift",
+    "useItem": true
+  }],
+  "tutorial": [{
+    "msg:ko": "연꽃을 가지고 선물상자로 가서 포장하자",
+    "msg:en": "Take the lotus flower to the gift box and pack it.",
+    "img": ["/img/c55re_w3/lotus_flower.png", "/img/c55re_w3/gift.png"]
+  }],
+  "goal": {
+    "msg:ko": "연꽃을 가지고 선물상자에 가서 포장하자",
+    "msg:en": "Take the lotus flower to the gift box and pack it.",
+    "img":  ["/img/c55re_w3/lotus_flower.png","/img/c55re_w3/gift.png"]
+  }
+}
