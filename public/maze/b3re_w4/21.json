@@ -8,18 +8,17 @@
     "move_right",
     "move_left"
   ],
+  "tile": [
+    {"tile": "q", "img": "grandpa"},
+    {"tile": "g", "img": "grandma"},
+    {"tile": "e", "img": "deer"}
+  ],
   "map": [
     ".###.",
     "#.q.#",
     "#%ce#",
     "#.g.#",
     ".###."
-  ],
-  "tile": [
-    {"tile": "q", "img": "grandpa"},
-    {"tile": "g", "img": "grandma"},
-    {"tile": "e", "img": "deer"}
-
   ],
   "tutorial": [{
     "msg:ko": "디어 덕분에 무사히 집까지 왔어.\n고마워, 또 만나자.",

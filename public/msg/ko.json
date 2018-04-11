@@ -22,7 +22,7 @@
   "select_character": "캐릭터를 선택해 보세요.",
   "success": "성공!",
   "fail_wall": "갈 수 없는 곳이에요!",
-  "fail_done": "블럭을 다 썼지만 끝나지 않았어요",
+  "fail_done": "블럭을 다 썼지만 끝나지 않았어요.",
   "fail_noBlocks": "블럭이 하나도 없어요!",
   "fail_notEnough": "%1 개 이상 모아야 해요",
   "fail_mandatory": "'%1' 블록을 꼭 사용해야 해요",
