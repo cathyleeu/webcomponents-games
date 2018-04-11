@@ -8,6 +8,9 @@
     "move_right",
     "move_left"
   ],
+  "tile": [
+    {"tile": "i", "wall": true, "msg:ko": "물을 마시지 않으면 갈 수가 없어.", "msg:en": "I can't go any further without drinking water first."}
+  ],
   "map": [
     ".########.",
     "#.#....#.#",

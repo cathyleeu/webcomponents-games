@@ -21,7 +21,7 @@
   "next_stage": "Next Stage",
   "select_character": "Select your character.",
   "success": "Good Job!",
-  "fail_wall": "There is no way",
+  "fail_wall": "There is no way!",
   "fail_done": "Try it again.",
   "fail_noBlocks": "No blocks!",
   "fail_notEnough": "You need %1 points.",

@@ -1075,11 +1075,14 @@ function run(block, callback) {
           // jQuery's class manipulation functions do not work with the SVG elements
           // See: http://stackoverflow.com/questions/8638621/jquery-svg-why-cant-i-addclass
           var $svg = $(block.svgGroup_).find(".blocklyPath"),
-              className = $svg.attr("class");
+              className = $svg.attr("class"),
+              custom = kidscoding.tileFactory.custom_tiles[obj.tile] || {},
+              lang = store.session.get("lang", "ko"),
+              msg = custom["msg:" + lang] || custom["msg"] || messages.fail_wall;
           $svg.attr("class", className + " error");
           history.end(false);
           createjs.Sound.play("fail");
-          kidscoding.isHorizontal ? showModal(messages.fail_wall) : renderAlert(messages.fail_wall, {ruleErr: "wall"});
+          kidscoding.isHorizontal ? showModal(msg) : renderAlert(msg, {ruleErr: "wall"});
           return;
         }
         if( obj.role == "food" && !obj.useItem) {

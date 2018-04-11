@@ -47,7 +47,7 @@ TileFactory.prototype.init = function(maze, loader) {
           _this.tile2role[tile] = "letter";
         });
       } else {
-        _this.custom_tiles[item.tile] = item;
+        Object.assign(_this.custom_tiles[item.tile], item);
       }
     });
   }
