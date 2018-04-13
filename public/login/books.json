@@ -419,7 +419,7 @@
     ["방을 정리해요", "Tidy up", "/activity#!a4_w3"]
   ],
   "A-4-re":[
-    ["우리 동네에는 무엇이 있나요", "What is in my hometown", "/mazeh#!a4re_w1"],
+    ["우리 동네에는 무엇이 있나요", "What is in my hometown", "/mazeh#!a4re_w1/1"],
     ["친구와 놀아요", "Play with friends", "/activity#!a4re_w2"],
     ["이사를 왔어요", "I'm moving", "/activity#!a4re_w3"],
     ["화분을 키워요", "I raise pots.", "/activity#!a4re_w4"]
