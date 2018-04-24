@@ -25,7 +25,8 @@
     "img":"dog6"
   }],
   "tutorial": [{
-    "msg": "덧셈 결과로 이동하세요.",
+    "msg:ko": "덧셈 결과로 이동하세요.",
+    "msg:en": "Move to the result of the sum.",
     "img": ["/img/c3_w1/dog2.png","/img/c3_w1/plus.png","/img/c3_w1/dog4.png","/img/c3_w1/equal.png","/img/c3_w1/question.png"]
   }]
 }

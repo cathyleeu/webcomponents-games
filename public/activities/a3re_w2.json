@@ -56,7 +56,7 @@
     },
     "en": {
       "title": "Building a house",
-      "minor": "Match the tools and materials for building a house",
+      "minor": "Match the tools and materials for building a house.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

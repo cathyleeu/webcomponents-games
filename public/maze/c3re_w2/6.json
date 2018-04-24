@@ -31,8 +31,8 @@
     "itemCount": 2
   }],
   "tutorial": [{
-    "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자",
-    "msg:en": "Move to honey jar And then Use 'get item' Block",
+    "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자.",
+    "msg:en": "Move to the honey pod and then use the 'get items' block.",
     "img": ["/img/c3_w2/honey_pot.png","/img/blocks/bring.png"]
   }]
 }

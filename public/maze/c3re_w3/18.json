@@ -34,7 +34,7 @@
   }],
   "tutorial": [{
     "msg:ko": "가져오기, 사용하기 블록을 이용하여 동생 모스에게 쿠키를 전달하자!",
-    "msg:en": "Deliver Cookies to Mos with Bring & Use Blocks",
+    "msg:en": "Deliver cookies to Mos with the get & use items blocks.",
     "img": ["/img/c3_w4/cookie.png","/img/blocks/bring.png","/img/c3_w1/brother.png","/img/blocks/use.png"]
   }]
 }
