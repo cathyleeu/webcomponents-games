@@ -36,8 +36,8 @@
     "msg:ko": "집으로 꿀단지를 가져갈꺼야",
     "msg:en": "I'm going to take honey jars to my house"
   },{
-    "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자",
-    "msg:en": "Move to honey jar And then Use 'get item' Block",
+    "msg:ko": "꿀단지로 이동해 아이템 가져오기를 해보자.",
+    "msg:en": "Move to the honey pot and then use the 'get items' block.",
     "img": "/img/c3_w2/honey_pot.png"
   },{
     "msg:ko": "그리고나서 집으로 이동하고, 아이템 사용하기를 해보자",
