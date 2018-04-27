@@ -2394,6 +2394,19 @@ Actions.prototype.condition_movable = function(type, block, callback) {
   }, 100);
 };
 
+Actions.prototype.condition_shape = function(type, block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      target = this._getCanvasObject(character.px, character.py),
+      if_block = block.getInputTargetBlock("if_statements"),
+      else_block = block.getInputTargetBlock("else_statements"),
+      child = type == target.shape + "_" + target.color ? if_block : else_block;
+  setTimeout(function() {
+    block.removeSelect();
+    _this.run(child, callback);
+  }, 100);
+};
+
 Actions.prototype.define_x = function(type, block, callback) {
   var character = this.canvas.character,
       count = this._getFieldValue(block, "count"),

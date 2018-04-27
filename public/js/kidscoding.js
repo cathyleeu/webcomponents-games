@@ -406,8 +406,9 @@ KidsCoding.prototype = {
     var value_str = "",
         statements_str = "",
         child_str = "",
-        idx = 0;
-    Blocks[block.type].args0.forEach(function(arg) {
+        idx = 0,
+        args0 = Blocks[block.type].args0||[];
+    args0.forEach(function(arg) {
       var arg_type = arg.type,
           field_name = arg.name,
           field_value = args[idx] || (arg.options ? arg.options[0][1] || arg.options[0].value : ""),

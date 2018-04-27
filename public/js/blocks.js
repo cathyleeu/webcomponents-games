@@ -2266,6 +2266,36 @@ Blocks['repeat_until_numbot'] = {
   argsh1: null,
   action: ["repeat", "repeat_until"]
 };
+Blocks['repeat_until_box'] = {
+  rgbColor: "#2682C4",
+  message0: {
+    ko: "%1 만약에 반복",
+    en: "%1 Repeat if"
+  },
+  args0: [
+    {type: "field_image", src: "/img/c55re_w1/box.png"}
+  ],
+  message1: {
+    ko: "상자가 있다면",
+    en: "going to Numbot"
+  },
+  message2: "%1",
+  args2: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  messageh0: "%1 %2",
+  argsh0: [{
+    type: "input_statement",
+    name: "statements"
+  }, {
+    type: "field_image",
+    src: "/img/c55re_w1/box.png"
+  }],
+  messageh1: null,
+  argsh1: null,
+  action: ["repeat", "repeat_until"]
+};
 
 Blocks['repeat_until_sea'] = {
   rgbColor: "#2682C4",
@@ -3286,6 +3316,133 @@ Blocks['condition2_5_smaller'] = {
     name: "else_statements"
   }],
   action: ["conditioncheck2","food"]
+};
+Blocks['condition_shape_circle_white'] = {
+  name: {
+    ko: "만약에 동그라미 라면",
+    en: "If less than 5"
+  },
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 %1 라면",
+    en: "If less than %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_draw/circle_white_target.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_shape","circle_white"]
+};
+Blocks['condition_shape_circle_red'] = {
+  name: {
+    ko: "만약에 빨간 동그라미 라면",
+    en: "If less than 5"
+  },
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 %1 라면",
+    en: "If less than %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_draw/circle_red_target.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["condition_shape","circle_red"]
+};
+Blocks['condition2_recycle'] = {
+  name: {
+    ko: "만약에 재활용 가능하다면",
+    en: "If less than 5"
+  },
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 %1 라면",
+    en: "If less than %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/c8_w4/recycle.png"}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","food"]
+};
+Blocks['condition3_recycle'] = {
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 %1 라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/c8_w4/paper.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "만약에 %1 라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  args2: [
+    {type: "field_image", src: "/img/b9_w2/recycle4.png", width: 30, height: 30}
+  ],
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_if_statements"
+  }],
+  message4: {
+    ko: "아니라면",
+    en: "If %1",
+    cn: "如果 %1"
+  },
+  message5: "%1",
+  args5: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck3","trash"]
 };
 Blocks['condition_apple'] = {
   rgbColor: "#309E4A",

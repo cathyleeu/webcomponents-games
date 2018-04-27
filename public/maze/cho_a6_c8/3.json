@@ -1,0 +1,25 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "forloop_type3",
+    "repeat_x_num"
+  ],
+  "map": [
+    "......%",
+    ".######",
+    ".#...##",
+    ".#u#.##",
+    ".###.##",
+    ".....##",
+    "#######"
+  ],
+  "tutorial": [{
+    "msg:ko": "보물 상자를 모두 가져오자!",
+    "msg:en": "Let's get the chest boxs!"
+  }]
+}
