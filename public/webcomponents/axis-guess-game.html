@@ -1,0 +1,383 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+
+<dom-module id="axis-guess-game">
+
+  <template>
+    <style>
+      #axis_cont {
+        margin-top: 90px;
+        text-align: center;
+      }
+      .axis_box {
+        position: relative;
+        width: 60%;
+        left: -3px; /* 선 두깨가 3px 이기때문에 */
+        height: 50px;
+        display: inline-block;
+      }
+      .axis_line {
+        width: 100%;
+        border: 3px solid black;
+        display: inline-block;
+      }
+      .axis_nums::before {
+        content: "";
+        border: 3px solid black;
+        position: absolute;
+        height: 20px;
+        bottom: 25px;
+        left: 9.5px;
+      }
+      .axis_imgs {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -100px;
+        left: -10px;
+      }
+      .axis_nums {
+        height: 20px;
+        width: 25px;
+        text-align: center;
+        position: absolute;
+        top: 30px;
+        font-size: 25px;
+      }
+      .question_cont {
+        font-size: 25px;
+        padding-left: 15%;
+        margin-top: 50px;
+      }
+      .ques_text,
+      .axis_text {
+        -webkit-text-fill-color: white;
+        -webkit-text-stroke-color: black;
+        -webkit-text-stroke-width: 1.5px;
+        font-weight: 900;
+      }
+      .ques_head {
+        display: inline;
+        background-color: #7F2F7B;
+        width: 30px;
+        height: 40px;
+        border-radius: 20px;
+        padding: 0.3em 1em;
+        color: white;
+      }
+      .ques_text::after {
+        content: ",";
+        -webkit-text-stroke-width: initial;
+        -webkit-text-fill-color: black;
+      }
+      #ques_texts {
+        display: contents;
+      }
+      #ques_texts > span:last-of-type::after {
+        content: "";
+      }
+      .ques_text::after
+      .question_cont {
+        font-size: 25px;
+        margin-top: 40px;
+        padding-left: 15%;
+      }
+      .select_cont {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        text-align: center;
+      }
+      #select_box {
+        margin-top: 20px;
+        width: 70%;
+        display: inline-block;
+        background-color: #F2F1F1;
+      }
+      .select_imgs {
+        width: 70px;
+        height: 70px;
+      }
+      .btn_cont {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .submit {
+        width: 150px;
+        height: 50px;
+        background-color: #7F2F7B;
+        font-size: 20px;
+        color: white;
+        letter-spacing: 3px;
+        font-weight: 500;
+        border: none;
+        border-radius: 25px;
+      }
+      .submit:focus {
+        outline: none;
+      }
+      .submit:active{
+        background-color: #AC71A7;
+      }
+      .img_selected {
+        border-radius: 40px;
+        border: 3px solid #7F2F7B;
+      }
+    </style>
+    <status-bar
+      id="statusBar"
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      purpose="line"
+      fullscreen="{{localize('fullscreen')}}"
+      ></status-bar>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      total="{{total}}"
+      point="{{point}}"
+      stage={{stage}}
+      matched="{{matched}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="exceedModal"
+      purpose="retry"
+      headertext="{{localize('exceedHead')}}"
+      btmtext="{{localize('exceedBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="lackModal"
+      purpose="retry"
+      headertext="{{localize('lackHead')}}"
+      btmtext="{{localize('lackBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <minor-heading
+      id="minorHeading"
+      onclick="[[handleBoldStyle]]"
+      content={{localize('minor')}}></minor-heading>
+    <!-- 보기 좌표 -->
+    <div id="axis_cont">
+      <div class="axis_box">
+        <div class="axis_line"></div>
+      </div>
+    </div>
+    <!-- 문제 -->
+    <div class="question_cont">
+      <div class="ques_head">{{localize('quesHead')}}</div>
+      <div id="ques_texts"></div>
+      <span>{{localize('quesSub')}}</span>
+    </div>
+    <!-- 과일 나열 -->
+    <div class="select_cont">
+      <div id="select_box"></div>
+    </div>
+    <!-- submit button -->
+    <div class="btn_cont">
+      <button class="submit" on-click="filterStatus">{{localize('submit')}}</button>
+    </div>
+
+
+  </template>
+  <script>
+    class AxisGeussGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'axis-guess-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        this.set('ranNums', [])
+        this.set('selectedAnws', [])
+        this.set('currentStage', 1)
+        this.genAxisData()
+
+      }
+      reset(){
+
+        d3.select(this.$.axis_cont).select('div').selectAll('.axis_nums').remove()
+        d3.select(this.$.select_box).selectAll('img').remove()
+        d3.select(this.$.ques_texts).selectAll('span').remove()
+
+        this.set('currentStage', this.currentStage+1)
+        this.set('ranNums', [])
+        this.set('selectedAnws', [])
+        this.set('selectedNums', [])
+
+        this.genAxisData()
+        this.setData()
+
+      }
+      genAxisData(){
+        let nums = [1,2,3,4,5,6,7,8,9];
+        let imgNums = this.images.length;
+        let lists = [];
+
+        // generating this.lists and this.ranNums
+        for(let i = 0; i < imgNums; i++) {
+          let gen = Math.floor(Math.random() * (nums.length - 1) + 1);
+          let normal = +nums.splice(gen,1).join()
+          lists.push({
+            "src" : this.images[i],
+            "num" : normal
+          })
+          this.push('ranNums', normal)
+        }
+        let getRan = Math.floor(Math.random() * (4 - 2) + 2)
+        let shuffle = d3.shuffle(this.ranNums)
+        this.set('selectedNums', shuffle.slice(0,getRan))
+        this.set('lists', lists )
+
+        console.log("genAxisData");
+      }
+      genAxisDivs(node) {
+        this.lists.forEach(l => {
+        	if(l.num === node.__data__) {
+        		d3.select(node).append('img').attr('src', l.src).attr('class', 'axis_imgs')
+        	}
+        })
+      }
+      setData(data, manifest){
+        let nums = [1,2,3,4,5,6,7,8,9];
+
+        let axisDivs = d3.select(this.$.axis_cont).select('div')
+        .selectAll('div')
+        .exit()
+        .data(nums).enter()
+        .append('div')
+        .attr('class', "axis_nums")
+        .attr('data', (d,i) => d)
+        .style("left", (d, i) => `${(((this.offsetWidth*0.6)/8)*(i))-10}px`)
+
+        this.set('axisNodes', axisDivs.nodes())
+
+        this.axisNodes.forEach(l => this.genAxisDivs(l))
+
+        axisDivs.append('span')
+        .attr('class', "axis_text")
+        .text((d, i) => `${d}`)
+
+        d3.select(this.$.select_box)
+          .selectAll('img')
+          .data(d3.shuffle(this.lists)).enter()
+          .append('img').attr('src', (d,i) => d.src)
+          .attr('class', 'select_imgs')
+          .on('click', this.handleSelect )
+
+        d3.select(this.$.ques_texts)
+          .selectAll('span')
+          .data(this.selectedNums).enter()
+          .append('span')
+          .attr('class', 'ques_text')
+          .text((d, i) => d)
+      }
+      handleSelect(d) {
+        let self = d3.select(this.ownerDocument).select('#element').node();
+        let { selectedAnws, selectedNums } = self;
+        let exceed = selectedAnws.length+1 > selectedNums.length ? true : false;
+        let result = selectedAnws.indexOf(d.num) !== -1 ? false : true
+
+        if(exceed && result) {
+          self.$.exceedModal.modalAlert()
+          return;
+        }
+
+        if(result) {
+          self.push('selectedAnws', d.num)
+        } else {
+          self.set('selectedAnws', selectedAnws.filter(l => l !== d.num))
+        }
+
+        d3.select(this).classed("img_selected", result);
+
+      }
+      filterStatus(){
+        let anws = this.selectedAnws.length;
+        let rans = this.selectedNums.length;
+        let result = this.selectedAnws.every(l => this.selectedNums.includes(l))
+        switch (rans - anws) {
+          case 2:
+          case 1:
+            this.$.lackModal.modalAlert()
+            break;
+          case 0:
+            this.handleAnswer(result)
+            break;
+          default:
+            break;
+        }
+      }
+      handleAnswer(result){
+        if(!result) {
+          this.$.retryModal.modalAlert()
+          return;
+        }
+
+        let modalType = {
+         0 : "successModal",
+         1 : "finalStageModal"
+        }
+
+        let idx = this.currentStage < this.lastStage ? 0 : 1;
+
+        this.$[modalType[idx]].modalAlert()
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+    }
+    window.customElements.define(AxisGeussGame.is, AxisGeussGame);
+  </script>
+</dom-module>
