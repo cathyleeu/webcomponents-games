@@ -261,6 +261,10 @@ function getBook(classObj) {
   if(school == "B00171-K1") {
     book = [4];
   }
+  // 서부지사 보라매 꿈꾸는나무 원 5월에 1,2권
+  if(school == "C00192-K1") {
+    book = ["1-re", "2-re"];
+  }
   // 시범원 청아유치원, 숙명키즈
   if(school == "A00083-K1" || school == "A00083-K4") {
     book = ["4-re","5-re"];
