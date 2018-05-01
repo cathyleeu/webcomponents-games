@@ -1,0 +1,81 @@
+{
+  "element": "axis-guess-game",
+  "attributes": {
+    "nextlink" : "activity#!a4re_w3",
+    "lastStage" : 5,
+    "images" : [
+      "/img/a7_w2/fruit1.png",
+      "/img/a7_w2/fruit2.png",
+      "/img/a7_w2/fruit3.png",
+      "/img/a7_w2/fruit4.png",
+      "/img/a7_w2/fruit5.png",
+      "/img/a7_w2/fruit6.png"
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "가로선과 좌표",
+      "minor" : "가로선을 보고 숫자에 맞는 과일을 모두 표시하세요",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "다음 단계",
+      "fullscreen" : "풀스크린",
+      "quesHead": "문제",
+      "quesSub": "에 있는 과일을 좋아해",
+      "exceedHead": "선택 초과",
+      "exceedBtm": "더 이상 선택 할 수 없어요.",
+      "lackHead": "선택 부족",
+      "lackBtm": "더 선택해주세요.",
+      "retryHead": "오답이에요",
+      "retryBtm": "안타깝네요. 다시해볼까요?",
+      "retrybtn": "다시하기",
+      "submit":"제출하기"
+    },
+    "en": {
+      "title": "Matching Game",
+      "minor" : "Matching the matching traditional play tools.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutHead": "Log Out",
+      "logoutBtm": "Do you want to logout",
+      "previousHead" : "Back",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen",
+      "quesHead": "Quiz",
+      "quesSub": "those are what I like",
+      "exceedHead": "Exceed",
+      "exceedBtm": "Can't Select anymore",
+      "lackHead": "Lack",
+      "lackBtm": "Select more for answer",
+      "retryHead": "Failed",
+      "retryBtm": "Try Again",
+      "retrybtn": "OK",
+      "submit":"submit"
+    }
+  }
+}
