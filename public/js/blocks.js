@@ -1311,7 +1311,36 @@ Blocks["draw"] = {
   args0: [
     {type: "field_image", src: "/img/cho_draw/pen.png"}
   ],
-  action: ["draw"]
+  action: ["draw","normal"]
+};
+Blocks["draw_list_item"] = {
+  rgbColor: "#C1184A",
+  message0: {
+    ko: "%1 그림 # %2 그리기",
+    en: "%1 Draw # %2"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_draw/pen.png"},
+    {type: "field_dropdown",
+      name: "list_num",
+      options: [
+        ["1", 1],["2", 2],["3", 3],["4", 4],["5", 5]
+      ]
+    }
+  ],
+  action: ["draw","list"]
+};
+Blocks["draw_x_list_item"] = {
+  rgbColor: "#C1184A",
+  message0: {
+    ko: "%1 그림 # %2 그리기",
+    en: "%1 Draw # %2"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_draw/pen.png"},
+    {type: "field_image", src: "/img/kidsblocks/x_img.png"}
+  ],
+  action: ["draw","loop_x"]
 };
 Blocks["make_picture"] = {
   rgbColor: "#8B1C79",
@@ -1338,6 +1367,60 @@ Blocks["make_picture_func"] = {
 
   ],
   action: ["make_picture_func"],
+  previousStatement: false
+};
+Blocks["make_picture_list"] = {
+  rgbColor: "#8B1C79",
+  message0: {
+    ko: "%1 그림 리스트 정하기",
+    en: "%1 Make a picture list"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/list_icon.png"}
+  ],
+  action: ["func", "make_picture_list_func"]
+};
+Blocks["make_picture_list_func"] = {
+  rgbColor: "#9E4A8D",
+  message0: {
+    ko: "%2 %1 그림 리스트",
+    en: "%2 %1 Make a picture list"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/list_icon.png"},
+    {"type": "field_label",
+      "text": "정의",
+      "class": "style-define"}
+
+  ],
+  action: ["make_picture_list_func"],
+  previousStatement: false
+};
+Blocks["make_number_list"] = {
+  rgbColor: "#8B1C79",
+  message0: {
+    ko: "%1 숫자 리스트 정하기",
+    en: "%1 Make a number list"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/list_icon.png"}
+  ],
+  action: ["func", "make_number_list_func"]
+};
+Blocks["make_number_list_func"] = {
+  rgbColor: "#9E4A8D",
+  message0: {
+    ko: "%2 %1 숫자 리스트",
+    en: "%2 %1 Make a number list"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/list_icon.png"},
+    {"type": "field_label",
+      "text": "정의",
+      "class": "style-define"}
+
+  ],
+  action: ["make_number_list_func"],
   previousStatement: false
 };
 Blocks["define_shape"] = {
@@ -1381,6 +1464,249 @@ Blocks["define_color"] = {
   action: ["define_color","color"]
 };
 
+Blocks["list_shape_no1"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "그림 #1 모양 %1",en: "figure #1 shape %1"},
+  args0: [{
+    type: "field_iconmenu",    name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]}],
+  action: ["add_shape","shape"]
+};
+Blocks["list_shape_no2"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "그림 #2 모양 %1",en: "figure #2 shape %1"},
+  args0: [{
+    type: "field_iconmenu",    name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]}],
+  action: ["add_shape","shape"]
+};
+Blocks["list_shape_no3"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "그림 #3 모양 %1",en: "figure #3 shape %1"},
+  args0: [{
+    type: "field_iconmenu",    name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]}],
+  action: ["add_shape","shape"]
+};
+Blocks["list_shape_no4"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "그림 #4 모양 %1",en: "figure #4 shape %1"},
+  args0: [{
+    type: "field_iconmenu",    name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]}],
+  action: ["add_shape","shape"]
+};
+Blocks["list_shape_no5"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "그림 #5 모양 %1",en: "figure #5 shape %1"},
+  args0: [{
+    type: "field_iconmenu",    name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]}],
+  action: ["add_shape","shape"]
+};
+
+Blocks["list_shape_color_no1"] = {
+  rgbColor: "#65B492",
+  message0: {ko: "그림 #1 모양 %1 색깔 %2",en: "figure #1 shape %1 color %2"},
+  args0: [{
+    type: "field_iconmenu",name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]},
+    {type: "field_iconmenu",name: "color",
+    options: [
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
+    ]}],
+  action: ["add_shape_color","shape"]
+};
+Blocks["list_shape_color_no2"] = {
+  rgbColor: "#65B492",
+  message0: {ko: "그림 #2 모양 %1 색깔 %2",en: "figure #2 shape %1 color %2"},
+  args0: [{
+    type: "field_iconmenu",name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]},
+    {type: "field_iconmenu",name: "color",
+    options: [
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
+    ]}],
+  action: ["add_shape_color","shape"]
+};
+Blocks["list_shape_color_no3"] = {
+  rgbColor: "#65B492",
+  message0: {ko: "그림 #3 모양 %1 색깔 %2",en: "figure #3 shape %1 color %2"},
+  args0: [{
+    type: "field_iconmenu",name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]},
+    {type: "field_iconmenu",name: "color",
+    options: [
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
+    ]}],
+  action: ["add_shape_color","shape"]
+};
+Blocks["list_shape_color_no4"] = {
+  rgbColor: "#65B492",
+  message0: {ko: "그림 #4 모양 %1 색깔 %2",en: "figure #4 shape %1 color %2"},
+  args0: [{
+    type: "field_iconmenu",name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]},
+    {type: "field_iconmenu",name: "color",
+    options: [
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
+    ]}],
+  action: ["add_shape_color","shape"]
+};
+Blocks["list_shape_color_no5"] = {
+  rgbColor: "#65B492",
+  message0: {ko: "그림 #5 모양 %1 색깔 %2",en: "figure #5 shape %1 color %2"},
+  args0: [{
+    type: "field_iconmenu",name: "shape",
+    options: [
+      {src: '/img/cho_draw/circle_white.png', value: 'circle', width: 48, height: 48},
+      {src: '/img/cho_draw/moon_white.png', value: 'moon', width: 48, height: 48},
+      {src: '/img/cho_draw/square_white.png', value: 'square', width: 48, height: 48},
+      {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
+      {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
+      {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
+    ]},
+    {type: "field_iconmenu",name: "color",
+    options: [
+      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
+      {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
+    ]}],
+  action: ["add_shape_color","shape"]
+};
+
+Blocks["list_number1"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "숫자 #1 %1",en: "Number #1 %1"},
+  args0: [{type: "field_dropdown",
+    name: "number",
+    options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
+  }],
+  action: ["add_number","number"]
+};
+Blocks["list_number2"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "숫자 #2 %1",en: "Number #2 %1"},
+  args0: [{type: "field_dropdown",
+    name: "number",
+    options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
+  }],
+  action: ["add_number","number"]
+};
+Blocks["list_number3"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "숫자 #3 %1",en: "Number #3 %1"},
+  args0: [{type: "field_dropdown",
+    name: "number",
+    options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
+  }],
+  action: ["add_number","number"]
+};
+Blocks["list_number4"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "숫자 #4 %1",en: "Number #4 %1"},
+  args0: [{type: "field_dropdown",
+    name: "number",
+    options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
+  }],
+  action: ["add_number","number"]
+};
+Blocks["list_number5"] = {
+  rgbColor: "#A08879",
+  message0: {ko: "숫자 #5 %1",en: "Number #5 %1"},
+  args0: [{type: "field_dropdown",
+    name: "number",
+    options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
+  }],
+  action: ["add_number","number"]
+};
+
 Blocks["set_shape"] = {
   rgbColor: "#81644D",
   message0: {
@@ -1413,7 +1739,6 @@ Blocks["set_color"] = {
     options: [
       {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
       {src: '/img/cho_draw/ink_blue.png', value: 'blue', width: 48, height: 48},
-      {src: '/img/cho_draw/ink_green.png', value: 'green', width: 48, height: 48},
       {src: '/img/cho_draw/ink_orange.png', value: 'orange', width: 48, height: 48},
       {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
       {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
@@ -2101,6 +2426,59 @@ Blocks["repeat_x_num"] = {
     name: "statements"
   }],
   action: ["repeat_x_num"]
+};
+
+Blocks["repeat_list_num"] = {
+  name: {
+    ko: "리스트 숫자 반복",
+    en: "Repeat list number"
+  },
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1 숫자 #%2 만큼 반복",
+    en: "Repeat %1"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/kidsblocks/repeat.svg"
+  },{
+    type: "field_dropdown",
+    name: "list_num",
+    options: [
+      ["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"]
+    ]
+  }],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  action: ["repeat_list_num","normal"]
+};
+
+Blocks["repeat_x_list_num"] = {
+  name: {
+    ko: "리스트 숫자 반복",
+    en: "Repeat list number"
+  },
+  rgbColor: "#242786",
+  message0: {
+    ko: "%1 숫자 #%2 만큼 반복",
+    en: "Repeat %1"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/kidsblocks/repeat.svg"
+  },{
+    type: "field_image",
+    src: "/img/kidsblocks/x_img.png"
+  }],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "statements"
+  }],
+  action: ["repeat_list_num","loop_x"]
 };
 
 Blocks["forloop_type1"] = {
