@@ -2191,6 +2191,40 @@ Actions.prototype.make_picture_func = function(block, callback) {
 
 }
 
+Actions.prototype.make_picture_list_func = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      itemBitmap = character.itemBitmap;
+
+  setTimeout(function() {
+    character.draw_list= [];
+    var draw_item = new Object();
+    draw_item.shape = "none";
+    draw_item.color = "default";
+    character.draw_list.push(draw_item);
+    character.draw_shape = "none";
+    character.draw_color = "default";
+    callback();
+  }, 10);
+  return;
+}
+Actions.prototype.make_number_list_func = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      itemBitmap = character.itemBitmap;
+
+  setTimeout(function() {
+    character.number_list= [];
+    var list_item = new Object();
+    list_item.num = 0;
+    character.number_list.push(list_item);
+    callback();
+  }, 10);
+  return;
+}
+
 Actions.prototype.define_shape = function(type, block, callback) {
   this.canvas.character.draw_shape = this._getFieldValue(block, "shape");
   setTimeout(function() {
@@ -2200,6 +2234,33 @@ Actions.prototype.define_shape = function(type, block, callback) {
 
 Actions.prototype.define_color = function(type, block, callback) {
   this.canvas.character.draw_color = this._getFieldValue(block, "color");
+  setTimeout(function() {
+    callback();
+  }, 100);
+};
+
+Actions.prototype.add_shape = function(type, block, callback) {
+  var draw_item = new Object();
+  draw_item.shape = this._getFieldValue(block, "shape");
+  draw_item.color = "default";
+  this.canvas.character.draw_list.push(draw_item);
+  setTimeout(function() {
+    callback();
+  }, 100);
+};
+Actions.prototype.add_shape_color = function(type, block, callback) {
+  var draw_item = new Object();
+  draw_item.shape = this._getFieldValue(block, "shape");
+  draw_item.color = this._getFieldValue(block, "color");
+  this.canvas.character.draw_list.push(draw_item);
+  setTimeout(function() {
+    callback();
+  }, 100);
+};
+Actions.prototype.add_number = function(type, block, callback) {
+  var number_item = new Object();
+  number_item.num = this._getFieldValue(block, "number");
+  this.canvas.character.number_list.push(number_item);
   setTimeout(function() {
     callback();
   }, 100);
@@ -2227,24 +2288,56 @@ Actions.prototype.set_color = function(type, block, callback) {
   }, 100);
 };
 
-Actions.prototype.draw = function(block, callback) {
+Actions.prototype.draw = function(type, block, callback) {
   var _this = this,
       character = this.canvas.character,
       foods = this.canvas.foods,
-      itemBitmap = character.itemBitmap;
-  if(character.draw_shape=="none") {
+      itemBitmap = character.itemBitmap,
+      draw_item_shape,
+      draw_item_color;
+
+  if(type == "list"){
+    var list_num =  this._getFieldValue(block, "list_num");
+    if(character.draw_list.length <= list_num){
+      callback("정의되지 않는 그림 입니다.");
+      return;
+    }
+    draw_item_shape =character.draw_list[list_num].shape;
+    draw_item_color =character.draw_list[list_num].color;
+  }else if(type == "loop_x"){
+    if(character.x_num == 0) {
+      callback("일정하게 증가하면서 반복 블록 안에 조립되어야 합니다.");
+      return;
+    }
+    if(!character.x_num ) {
+      callback("X를 정하지 않았습니다.");
+      return;
+    }
+    var list_num =  character.x_num;
+    if(character.draw_list.length <= list_num){
+      callback("정의되지 않는 그림 입니다.");
+      return;
+    }
+    draw_item_shape =character.draw_list[list_num].shape;
+    draw_item_color =character.draw_list[list_num].color;
+  }else{
+    draw_item_shape = character.draw_shape;
+    draw_item_color = character.draw_color;
+  }
+
+  if(draw_item_shape=="none") {
     callback("그림을 그릴 모양을 정하지 않았어요.");
     return;
   }
-  if(character.draw_color == "default") {
-    character.draw_color = "white";
+  if(draw_item_color == "default") {
+    draw_item_color = "white";
   }
   // 목표 위에서 아이템 사용(패턴 매칭)
   var food = this._getCanvasObject(character.px, character.py, "food");
   if(food && food.useItem) {
     this._splitObjects(food, function() {
       var pImage = "";
-      if(food.shape == character.draw_shape && food.color == character.draw_color){
+      if(food.shape == draw_item_shape && food.color == draw_item_color){
         pImage = food.shape+"_"+food.color;
       }else{
         callback("그림이 일치하지 않아요");
@@ -2501,6 +2594,56 @@ Actions.prototype.repeat_x_num = function(block, callback) {
   }
 
   var count = character.x_num;
+  function proc() {
+    var tile = _this.map[character.py][character.px];
+    if(child && count > 0) {
+      _this.setTimeoutKey = setTimeout(function() {
+        block.removeSelect();
+        count--;
+        _this.delay = 50;
+        _this.run(child, function() {
+          block.addSelect();
+          proc();
+        });
+      }, 0);
+    } else {
+      block.addSelect();
+      _this.delay = 100;
+      _this.setTimeoutKey = setTimeout(callback, 0);
+    }
+  };
+  proc();
+};
+
+Actions.prototype.repeat_list_num = function(type, block, callback) {
+  var character = this.canvas.character,
+      child = block.getInputTargetBlock("statements"),
+      _this = this;
+
+  if(!child) {
+    callback("반복 블록이 비었어요");
+    return;
+  }
+  if(type == "loop_x"){
+    if(character.x_num == 0) {
+      callback("일정하게 증가하면서 반복 블록 안에 조립되어야 합니다.");
+      return;
+    }
+    if(!character.x_num ) {
+      callback("X를 정하지 않았습니다.");
+      return;
+    }
+    var list_num =  character.x_num;
+  }else{
+    var list_num =  this._getFieldValue(block, "list_num");
+  }
+
+  if(character.number_list.length <= list_num){
+    callback("정의되지 않는 숫자 입니다.");
+    return;
+  }
+
+  var count = character.number_list[list_num].num;
   function proc() {
     var tile = _this.map[character.py][character.px];
     if(child && count > 0) {
