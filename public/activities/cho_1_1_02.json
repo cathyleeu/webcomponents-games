@@ -1,0 +1,74 @@
+{
+  "element": "line-card",
+  "attributes": {
+    "limited" : true,
+    "max" : 4,
+    "horizontal" : true,
+    "lastStage" : 2,
+    "nextlink" : "activity#!cho_1_1_03"
+  },
+  "data": [
+    "computer1",
+    "computer2",
+    "computer3",
+    "computer4",
+
+    "person1",
+    "person2",
+    "person3",
+    "person4"
+  ],
+  "manifest": [
+    {"no": 0 , "set": 0, "id": "person1", "src": "/img/coding_a/5/A5_1.png"},
+    {"no": 1 , "set": 0, "id": "person2", "src": "/img/coding_a/5/A5_3.png"},
+    {"no": 2 , "set": 0, "id": "person3", "src": "/img/coding_a/5/A5_4.png"},
+    {"no": 3 , "set": 0, "id": "person4", "src": "/img/coding_a/5/A5_2.png"},
+
+    {"no": 0 , "set": 1, "id": "computer1", "src": "/img/renewed_c1/cpu.png"},
+    {"no": 1 , "set": 1, "id": "computer2", "src": "/img/renewed_c1/mic.png"},
+    {"no": 2 , "set": 1, "id": "computer3", "src": "/img/renewed_c1/camera.png"},
+    {"no": 3 , "set": 1, "id": "computer4", "src": "/img/renewed_c1/speaker.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "우리의 몸과 컴퓨터",
+      "minor": "우리의 신체와 서로 비슷한 역할을 하는 컴퓨터의 부속을 이어보아요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "다음 단계",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "the parts of Cos and the computer",
+      "minor": "Match the parts of Cos and the computer parts that play a similar role",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutHead": "Log Out",
+      "logoutBtm": "Do you want to logout",
+      "previousHead" : "Back",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

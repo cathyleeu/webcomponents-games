@@ -5,55 +5,82 @@
   <template>
     <style>
       #container {
-        display: flex;
-        flex-direction: column;
-        /* justify-content: center; */
-        padding: 10% 15% 15%;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        position: absolute;
+        top: 15%;
       }
-      .options,
-      .question{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+      .question {
+        /* border: 1px solid black; */
+        height: 100px;
+        clear: both;
+        width: 70%;
+        position: relative;
+        left: 50%;
+        margin-left: -35%;
+        border-bottom: 2px dashed #dbdbdb;
+        /* border-left: 5px solid purple; */
       }
-      img {
-        width: 12%;
-        height: 12%;
-        margin: 0 2%;
+      .question > img {
+        width: 100px;
+        height: 100px;
+        float: left;
       }
       .question > p {
+        font-size: 30px;
+        line-height: 100px;
+        float: left;
         margin: 0;
-        font-size: 250%;
-        font-weight: 200;
       }
       .options {
         margin-top: 30px;
       }
-      .options > div {
+      .wordStyle {
         height: 20%;
-        display: flex;
-        justify-content: center;
-        margin: 1em;
+        display: inline-block;
+        margin: 10% 10px;
         width: 150px;
         border: 5px solid gray;
         border-radius: 15px;
         padding: 5px;
       }
-      .options > div:hover {
+      .wordStyle:active {
         background: #dbdbdb;
         color: white;
         cursor: pointer;
       }
-      .options > div > img {
+      .wordStyle > img {
         width: 50%;
         height: 50%;
       }
-      .options > div > p {
+      .wordStyle > p {
         font-size: 150%;
         font-weight: 200;
-        /* width: 50%;
-        height: 50%; */
+        display: inline-block;
+      }
+      .sentenceStyle {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        margin: 5px 0;
+        font-size: 20px;
+        font-weight: 500;
+        color: #181818;
+      }
+      .sentenceStyle > p {
+        width: 60%;
+        display: inline-block;
+        border: 3px dashed #dbdbdb;
+        margin: 0;
+        padding: 15px;
+        border-radius: 30px;
+      }
+      .sentenceStyle > p:active {
+        border: 3px solid #772C73;
+        background-color: #772C73;
+        color: white;
       }
       .letter {
         font-size: 140px;
@@ -68,6 +95,7 @@
         border: 10px solid #2ECC98;
         border-radius: 15px;
         margin: 0.2em;
+        display: inline-block;
         cursor: pointer;
       }
       /* questionText */
@@ -123,6 +151,9 @@
       btmtext="{{localize('retryBtm')}}"
       retrybtn="{{localize('retrybtn')}}"
       ></toycode-modal>
+    <div class="header">
+      <p>{{localize('minor')}}</p>
+    </div>
     <div id="container"></div>
   </template>
   <script>
@@ -156,7 +187,13 @@
         }
       }
       replaceQuestion(text){
-        return text.replace("$", `</p><img src="${this.questions[this.stage].questionImg}"/><p>`)
+        let result = this.questions[this.stage].questionImg ? true : false;
+        if(result) {
+          text = text.replace("$", `<img src="${this.questions[this.stage].questionImg}"/>,`);
+          text = text.split(',');
+          return `${text[0]} <p>${text[1]}</p>`;
+        }
+        return `<p>${text}</p>`
       }
       renderOptions(op){
         let keyName = Object.keys(op)[0],
@@ -167,9 +204,8 @@
                         : `<img src="${op[keyName]}"/>`
       }
       handleClick(d){
-        let that = this.offsetParent;
-
-        if(that.gameType === "obj") {
+        let that = this.offsetParent.offsetParent;
+        if(that.gameType !== "ox") {
           let {answer} = d;
           if(answer) {
             console.log("성공");
@@ -203,21 +239,35 @@
         d3.select(this.$.container)
           .append('div')
           .attr('class', 'question')
-          .html(this.replaceQuestion(`<p>${question}</p>`))
+          .html(this.replaceQuestion(`${question}`))
 
-        if(this.gameType === "obj") {
-          d3.select(this.$.container)
-            .append('div').attr('class', 'options')
-            .selectAll('div').data(d3.shuffle(options)).enter()
-            .append('div').html((d, i) => this.renderOptions(d))
+       let objDivs = d3.select(this.$.container)
+                       .append('div').attr('class', 'options')
+
+        switch (this.gameType) {
+          case "word":
+            objDivs.selectAll('div')
+            .data(d3.shuffle(options)).enter()
+            .append('div').attr('class', 'wordStyle')
+            .html((d, i) => this.renderOptions(d))
             .on("click", this.handleClick)
-        } else {
-          d3.select(this.$.container)
-            .append('div').attr('class', 'options')
-            .selectAll('p').data(["O","X"]).enter()
+            break;
+          case "sentence":
+            objDivs.selectAll('div')
+            .data(d3.shuffle(options)).enter()
+            .append('div').attr('class', 'sentenceStyle')
+            .html((d, i) => this.renderOptions(d))
+            .on("click", this.handleClick)
+            break;
+          case "ox":
+            objDivs.selectAll('p')
+            .data(["O","X"]).enter()
             .append('p').attr('class', 'letter')
             .attr('data-answer', answer).text((d,i) => d)
             .on("click", this.handleClick)
+            break;
+          default:
+            break;
         }
       }
     }
