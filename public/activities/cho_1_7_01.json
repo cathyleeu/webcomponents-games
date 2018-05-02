@@ -12,22 +12,77 @@
         ]
       },
       {
-        "question": "디자인한 대로 가루나 액체 형태의 재료로 물건을 만들어 주는 기술은 무엇인가요?",
+        "question": "내가 가진 사과가 친구 사과보다 맛있다.",
+        "options" : [
+          { "text" : "명제가 아님", "answer": true},
+          { "text" : "거짓" },
+          { "text" : "참"}
+        ]
+      },
+      {
+        "question": "부산은 제 2의 수도이다.",
+        "options" : [
+          { "text" : "명제가 아님"},
+          { "text" : "거짓" },
+          { "text" : "참", "answer": true}
+        ]
+      },
+      {
+        "question": "나의 짝지는 잘생기고, 예쁘다.",
+        "options" : [
+          { "text" : "명제가 아님", "answer": true},
+          { "text" : "거짓" },
+          { "text" : "참"}
+        ]
+      },
+      {
+        "question": "서울에는 지하철이 3호선 이상 있다.",
+        "options" : [
+          { "text" : "명제가 아님"},
+          { "text" : "거짓" },
+          { "text" : "참", "answer": true}
+        ]
+      },
+      {
+        "question": "수박은 자두보다 크다.",
+        "options" : [
+          { "text" : "명제가 아님"},
+          { "text" : "거짓" },
+          { "text" : "참", "answer": true}
+        ]
+      },
+      {
+        "question": "우리반 선생님은 예쁘다.",
+        "options" : [
+          { "text" : "명제가 아님", "answer": true},
+          { "text" : "거짓" },
+          { "text" : "참"}
+        ]
+      },
+      {
+        "question": "2 + 5 = 8 이다.",
         "options" : [
           { "text" : "명제가 아님"},
           { "text" : "거짓" , "answer": true},
           { "text" : "참"}
         ]
       },
-    {
-      "question": "사진이나 영상을 찍는 장치",
-      "options" : [
-        { "text" : "명제가 아님"},
-        { "text" : "거짓" , "answer": true},
-        { "text" : "참"}
-      ]
-    },
-
+      {
+        "question": "영어는 외국어이다.",
+        "options" : [
+          { "text" : "명제가 아님"},
+          { "text" : "거짓"},
+          { "text" : "참" , "answer": true}
+        ]
+      },
+      {
+        "question": "수학은 쉬운 과목이다.",
+        "options" : [
+          { "text" : "명제가 아님", "answer": true},
+          { "text" : "거짓"},
+          { "text" : "참"}
+        ]
+      }
     ]
   },
   "data": [
