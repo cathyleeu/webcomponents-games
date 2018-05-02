@@ -2,49 +2,36 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "word",
-    "questions" : [{
-      "question": "아래의 보기 중 $ 는 어디에서 잠을 자나요?", "questionImg": "/img/renewed_a2/bear.png",
+    "questions" : [
+      {
+        "question": "10은 5보다 작다.",
+        "options" : [
+          { "text" : "명제가 아님"},
+          { "text" : "거짓" , "answer": true},
+          { "text" : "참"}
+        ]
+      },
+      {
+        "question": "디자인한 대로 가루나 액체 형태의 재료로 물건을 만들어 주는 기술은 무엇인가요?",
+        "options" : [
+          { "text" : "명제가 아님"},
+          { "text" : "거짓" , "answer": true},
+          { "text" : "참"}
+        ]
+      },
+    {
+      "question": "사진이나 영상을 찍는 장치",
       "options" : [
-        { "text" : "바다"},
-        { "img" : "/img/renewed_a2/fish.png"},
-        { "img" : "/img/renewed_a2/frog.png"},
-        { "text" : "육지", "answer": true }
+        { "text" : "명제가 아님"},
+        { "text" : "거짓" , "answer": true},
+        { "text" : "참"}
       ]
     },
-    {
-      "question": "아래의 보기 중 $ 는 어디에서 잠을 자나요?", "questionImg": "/img/renewed_a2/fish.png",
-      "options" : [
-        { "text" : "바다" , "answer": true },
-        { "img" : "/img/renewed_a2/fish.png" },
-        { "img" : "/img/renewed_a2/frog.png" },
-        { "text" : "육지" }
-      ]
-    },
-    {
-      "question": "아래의 보기 중 $ 는 어디에서 잠을 자나요?", "questionImg": "/img/renewed_a2/frog.png",
-      "options" : [
-        { "text" : "바다" },
-        { "img" : "/img/renewed_a2/fish.png" },
-        { "img" : "/img/renewed_a2/frog.png" },
-        { "text" : "육지", "answer": true }
-      ]
-    },
-    {
-      "question": "아래의 보기 중 다람쥐 는 어디에서 잠을 자나요?",
-      "options" : [
-        { "text" : "바다" },
-        { "img" : "/img/renewed_a2/fish.png" },
-        { "img" : "/img/renewed_a2/frog.png" },
-        { "text" : "육지", "answer": true }
-      ]
-    }]
+
+    ]
   },
   "data": [
-    "winter1",
-    "winter2",
-    "winter3",
-    "winter4",
-    "winter5"
+
   ],
   "manifest": [
 

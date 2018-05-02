@@ -1,0 +1,89 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "sentence",
+    "nextlink" : "activity#!cho_1_1_03",
+    "questions" : [
+      {
+        "question": "인공지능은 어떤 기술 인가요?",
+        "options" : [
+          { "text" : "많은 양의 데이터를 활용하여 컴퓨터가 스스로 학습하는 기술", "answer": true},
+          { "text" : "가루나 액체 형태의 재료로 물건을 만들어 주는 기술"},
+          { "text" : "인간이 수동으로 데이터를 입력하는 기술"},
+          { "text" : "시간이 지날 수록 처리기능이 느려지는 기술"}
+        ]
+      },
+      {
+        "question": "3D프린트는 무엇인가요?",
+        "options" : [
+          { "text" : "디자인한 대로 가루나 액체의 재료로 물건을 만드는 기술","answer": true},
+          { "text" : "많은 양의 데이터를 활용하여 컴퓨터가 스스로 학습하는 기술"},
+          { "text" : "원격 조정으로 움직이는 항공기술"},
+          { "text" : "컴퓨터에 저장된 데이터를 종이로 출력하는 기술"}
+        ]
+      },
+      {
+        "question": "정보화사회와 거리가 먼 것을 고르세요.",
+        "options" : [
+          { "text" : "친구에게 손편지를 보냈어요.","answer": true},
+          { "text" : "버스앱으로 버스가 언제 도착하는지 찾아봤어요."},
+          { "text" : "친구와 같이 찍은 사진을 SNS에 올렸어요."},
+          { "text" : "드론에 대해 궁금하여 인터넷에 검색했어요."}
+        ]
+      }
+    ]
+  },
+  "data": [
+
+  ],
+  "manifest": [
+
+  ],
+  "msg": {
+    "ko": {
+      "title": "객관식 문제",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
