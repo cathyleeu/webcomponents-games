@@ -4,7 +4,7 @@
     "limited" : true,
     "max" : 4,
     "horizontal" : true,
-    "lastStage" : 2,
+    "lastStage" : 1,
     "nextlink" : "activity#!cho_1_1_03"
   },
   "data": [
