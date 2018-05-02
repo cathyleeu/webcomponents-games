@@ -131,10 +131,56 @@
         this.$.logOutModal.modalAlert();
       }
     }
+    genItems(item, i){
+      let { targetSize, svgWidth } = this.size;
+      let node = d3.select(this.$.createSvg)
+                   .append('g').attr('data', item.id)
+                   .attr('x', `${svgWidth-(targetSize)}` )
+                   .attr('y', `${(targetSize*i)}` );
+      let tag = Object.keys(item).includes('src');
+
+      let textRect = targetSize-10;
+      let centerX = svgWidth-(targetSize/2);
+      let centerY = (targetSize*i)
+
+        switch (tag) {
+          case true:
+            node.append('image')
+            .attr("xlink:href", item.src)
+            .attr('width', `${targetSize}`).attr('height', `${targetSize}`)
+            .attr('x', `${svgWidth-(targetSize)}` )
+            .attr('y', `${(targetSize*i)}` )
+            break;
+          case false:
+            let rectNode = node.append('rect')
+              .attr('width', `${textRect}`)
+              .attr('x', `${svgWidth-(targetSize)+5}` )
+              .attr('y', `${(targetSize*i)+5}` )
+              .attr('rx', 5)
+              .attr('ry', 5)
+              .attr('style', "fill:white;stroke:purple;stroke-width:5;")
+
+            let textSize = item.text.length > 5 ? 15 : 20
+            let textNode = node.append('text').text(item.text)
+              .attr('x', `${centerX}` )
+              .attr('style', `font-size: ${textSize}px;text-anchor:middle`)
+
+            let textHeight = textNode.node().getBBox().height
+
+            rectNode.attr('height', textHeight*3)
+            textNode.attr('y', `${centerY+(textHeight*2)}` )
+            break;
+          default:
+            break;
+
+        }
+
+    }
     setData(data, manifest){
       manifest = manifest.filter(function(item) {
         return item.hasOwnProperty("match");
       });
+
       this.set('data', data)
       this.set('manifest', manifest)
 
@@ -156,7 +202,7 @@
       this.set('size.imageBoard', imageBoard)
       this.set('leftTargets', data.length)
 
-
+      // 각 그룹에 해당하는 이미지 수 설정
       for(var j = 0; j < data.length; j++) {
         this.set( `target_${j}` , 0 )
         manifest.forEach((img, i) => {
@@ -166,6 +212,7 @@
         })
       }
 
+      // 각 이미지들의 좌표 배열 설정
       for(var i = 0; i < dragItems; i++ ){
         for(var j = 0; j < dragItemsRange; j++ ) {
           if(this.axis.length >= dragItems) {
@@ -177,12 +224,10 @@
 
 
       let shuffleData = d3.shuffle(data)
-      let targets = svg.selectAll('image').data(shuffleData).enter()
-          .append('image')
-          .attr("xlink:href", (d, i) => d.src)
-          .attr('width', `${targetSize}`).attr('height', `${targetSize}`)
-          .attr('x', ( d, i ) => `${svgWidth-(targetSize)}` )
-          .attr('y', ( d, i ) => `${(targetSize*i)}` )
+      // 카테고리(그룹)에 해당하는 이미지
+
+      shuffleData.forEach((s,i) => this.genItems(s, i))
+
 
       let circleText = svg.selectAll('g').exit().data(shuffleData).enter()
                           .append('g')
@@ -211,8 +256,13 @@
 
 
 
-      this.set('targets', targets.nodes())
+      this.set('targets', svg.selectAll('g').nodes())
       this.set('circleTexts', circleText.nodes())
+
+      // TODO: text로 된 data는 g -> text, rect 로 수정하기
+      // d3.shuffle(manifest).forEach((s,i) => this.genItems(s, i))
+      // .append((d,i) => Boolean(d['src']) ? 'image' : 'g')
+      //itemNodes.append('g')
 
       svg.selectAll('image').exit().data(d3.shuffle(manifest)).enter()
           .append('image')
@@ -258,8 +308,10 @@
         }
       })
 
+
       let dragId = this.__data__.match,
-          targetId = targetEl ? targetEl.__data__.id : "";
+          targetId = targetEl ? +d3.select(targetEl).attr('data') : "";
+          //targetEl.__data__.id
 
       if(dragId === targetId){
 
