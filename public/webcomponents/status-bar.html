@@ -48,7 +48,7 @@
       <div class="logout has_name" on-click="handleModal" data-purpose="logout">{{logouthead}}</div>
       <div class="fullscreen" on-click="handleFullScreen">{{fullscreen}}</div>
       <div class="results">
-        <p class="score">{{score}} {{point}}</p>
+        <p class="score">{{scoreTitle}} {{point}}</p>
         <p class="match">({{matched}}/{{cards}})</p>
       </div>
       <h1 class="title">{{title}}</h1>
@@ -67,7 +67,11 @@
           cards: Number,
           purpose: String,
           fullscreen: String,
-          logouthead: String
+          logouthead: String,
+          scoreTitle: {
+            type: String,
+            computed: 'computeScoreTitle(score, point)'
+          }
         }
       }
       ready(){
@@ -80,6 +84,9 @@
             document.webkitFullscreenEnabled ||
             document.mozFullScreenEnabled ||
             document.msFullscreenEnabled )
+      }
+      computeScoreTitle(score, point) {
+        return point == undefined ? "" : score;
       }
       handleContext(){
         let target = {

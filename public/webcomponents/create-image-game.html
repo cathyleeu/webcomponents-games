@@ -53,6 +53,22 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
     <toycode-button button-Data="[[dispatchToChild()]]"></toycode-button>
       <div id="container">
         <p>{{localize('minor')}}</p>
@@ -79,7 +95,6 @@
         this.setSize()
         this.set('correct', [])
         this.set('unCorrect', [])
-        // debugger
         d3.select(window).on('resize', this.elementResize.bind(this) );
 
       }
