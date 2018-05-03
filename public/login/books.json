@@ -596,7 +596,7 @@
   ],
   "C-1-re":[
     ["주변의 컴퓨터와 컴퓨터 사용 예절", "Computers around us", "/activity#!stretch"],
-    ["9까지의 수와 로그인", "Learn numbers up to 9 and sign in", "/click"],
+    ["9까지의 수와 로그인", "Learn numbers up to 9 and sign in", "/activity#!c1re_w2"],
     ["분류하고 끌어다 놓아요", "Classify and drag and drop", "/activity#!c1re_w3_1"],
     ["우리의 몸과 컴퓨터", "My body and computer", "/activity#!c1re_w4_1"]
   ],
