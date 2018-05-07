@@ -1,0 +1,40 @@
+[
+  {"book": "c8", "title": "4주차 : 재활용을 해보아요"},
+  {"id": "bg1", "src": "/img/c8_w4/bg1.png"},
+  {"id": "bg2", "src": "/img/c8_w4/bg2.png"},
+
+  {"id": "character", "src": "/img/c8_w4/cos_bot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/c8_w4/cos_bot0.png", "size": 256},
+  {"id": "food", "src": "/img/c8_w4/recycle_can.png"},
+  {"id": "chest", "src": "/img/c8_w4/black_bag.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "bush1", "src": "/img/c8_w4/bush1.png","obstacle": true},
+  {"id": "bush2", "src": "/img/c8_w4/bush2.png","obstacle": true},
+  {"id": "flower1", "src": "/img/c8_w4/flower1.png","obstacle": true},
+  {"id": "flower2", "src": "/img/c8_w4/flower2.png","obstacle": true},
+  {"id": "lamp", "src": "/img/c8_w4/lamp.png","obstacle": true},
+  {"id": "bench", "src": "/img/c8_w4/bench.png","obstacle": true},
+  {"id": "tree1", "src": "/img/c8_w4/tree1.png","obstacle": true},
+  {"id": "tree2", "src": "/img/c8_w4/tree2.png","obstacle": true},
+  {"id": "tree3", "src": "/img/c8_w4/tree3.png","obstacle": true},
+
+  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
+
+  {"id": "new_cobot0", "src": "/img/c8_w3/new_cobot0.png"},
+  {"id": "recycle_can", "src": "/img/c8_w4/recycle_can.png"},
+  {"id": "tresh_can", "src": "/img/c8_w4/tresh_can.png"},
+
+  {"id": "bottle", "src": "/img/c8_w4/bottle.png"},
+  {"id": "can", "src": "/img/c8_w4/can.png"},
+  {"id": "paper", "src": "/img/c8_w4/paper.png"},
+  {"id": "bone", "src": "/img/c8_w4/bone.png"},
+  {"id": "egg", "src": "/img/c8_w4/egg.png"},
+  {"id": "trash", "src": "/img/c8_w4/trash.png"}
+]

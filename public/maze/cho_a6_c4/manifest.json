@@ -1,0 +1,42 @@
+[
+  {"book": "coding", "title": "초등교재"},
+  {"id": "bg1", "src": "/img/cho_a3/bg1.png"},
+  {"id": "bg2", "src": "/img/cho_a3/bg2.png"},
+
+  {"id": "character", "src": "/img/cho_a3/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a3/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/c8_w3/cobot_home.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "tree1", "src": "/img/cho_a3/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/cho_a3/tree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/cho_a3/tree3.png", "obstacle": true},
+  {"id": "bush1", "src": "/img/cho_a3/bush1.png", "obstacle": true},
+  {"id": "bush2", "src": "/img/cho_a3/bush2.png", "obstacle": true},
+  {"id": "flower1", "src": "/img/cho_a3/flower1.png"},
+  {"id": "flower2", "src": "/img/cho_a3/flower2.png"},
+  {"id": "lamp", "src": "/img/cho_a3/lamp.png", "obstacle": true},
+  {"id": "bench", "src": "/img/cho_a3/bench.png"},
+  {"id": "item", "src": "/img/c55re_w1/box.png"},
+
+  {"id": "empty", "src": "/img/cho_a3/empty.png"},
+  {"id": "up", "src": "/img/cho_a3/d_up.png"},
+  {"id": "down", "src": "/img/cho_a3/d_down.png"},
+  {"id": "left", "src": "/img/cho_a3/d_left.png"},
+  {"id": "right", "src": "/img/cho_a3/d_right.png"},
+
+  {"id": "hospital", "src": "/img/cho_a3/hospital.png"},
+  {"id": "mart", "src": "/img/cho_a3/mart.png"},
+  {"id": "school", "src": "/img/cho_a3/school.png"},
+  {"id": "policestation", "src": "/img/cho_a3/policestation.png"},
+  {"id": "playground", "src": "/img/cho_a3/playground.png"},
+  {"id": "servicecenter", "src": "/img/cho_a3/servicecenter.png"},
+
+  {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
+  {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
+  {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false}
+]
