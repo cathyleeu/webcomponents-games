@@ -1,48 +1,31 @@
 {
-  "element": "grouping-game",
+  "element": "grouping-game2",
   "attributes": {
-    "nextlink" : "activity#!c1re_w3_2"
+    "nextlink" : "activity#!c1re_w3_2",
+    "lastStage" : 2
   },
   "data": [
-    {"id": 0, "src": "/img/c1_w3/spring.png"},
-    {"id": 1, "src": "/img/c1_w3/summer.png"},
-    {"id": 2, "src": "/img/c1_w3/fall.png"},
-    {"id": 3, "src": "/img/c1_w3/winter.png"}
+    {"id": 0, "text": "자료"},
+    {"id": 1, "text": "자료의 처리 과정"},
+    {"id": 2, "text": "정보"}
   ],
   "manifest": [
-      {"src": "/img/c1_w3/spring.png"},
-      {"src": "/img/c1_w3/summer.png"},
-      {"src": "/img/c1_w3/fall.png"},
-      {"src": "/img/c1_w3/winter.png"},
+      {"text": "지하철 시간표", "id": 0},
+      {"text": "지하철 노선도", "id": 0},
+      {"text": "달력과 여행 날짜", "id": 0},
+      {"text": "여행 지역", "id": 0},
+      {"text": "일기 예보", "id": 0},
 
-      {"src": "/img/c1_w3/spring0.png", "match": 0},
-      {"src": "/img/c1_w3/spring1.png", "match": 0},
-      {"src": "/img/c1_w3/spring2.png", "match": 0},
-      {"src": "/img/c1_w3/spring3.png", "match": 0},
-      {"src": "/img/c1_w3/spring4.png", "match": 0},
+      {"text": "노선과 시간표를 보고 출발 시간 확인", "id": 1},
+      {"text": "여행 날짜의 여행 지역 일기예보 확인", "id": 1},
 
-      {"src": "/img/c1_w3/summer0.png", "match": 1},
-      {"src": "/img/c1_w3/summer1.png", "match": 1},
-      {"src": "/img/c1_w3/summer2.png", "match": 1},
-      {"src": "/img/c1_w3/summer3.png", "match": 1},
-      {"src": "/img/c1_w3/summer4.png", "match": 1},
-
-      {"src": "/img/c1_w3/fall0.png", "match": 2},
-      {"src": "/img/c1_w3/fall1.png", "match": 2},
-      {"src": "/img/c1_w3/fall2.png", "match": 2},
-      {"src": "/img/c1_w3/fall3.png", "match": 2},
-      {"src": "/img/c1_w3/fall4.png", "match": 2},
-
-      {"src": "/img/c1_w3/winter0.png", "match": 3},
-      {"src": "/img/c1_w3/winter1.png", "match": 3},
-      {"src": "/img/c1_w3/winter2.png", "match": 3},
-      {"src": "/img/c1_w3/winter3.png", "match": 3},
-      {"src": "/img/c1_w3/winter4.png", "match": 3}
+      {"text": "내가 탈 수 있는 지하철", "id": 2},
+      {"text": "여행을 갈 때 내가 입어야 할 옷", "id": 2}
   ],
   "msg": {
     "ko": {
-      "title": "사계절 퀴즈",
-      "minor": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
+      "title": "자료와 정보의 구분",
+      "minor": "왼쪽의 카드를 끌어서 분류해보자!",
       "introHead": "키즈씽킹",
       "introBtm": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
       "score": "점수",

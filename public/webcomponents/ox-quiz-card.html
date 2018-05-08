@@ -54,6 +54,13 @@
         justify-content: center;
         align-items: center;
       }
+      .quiz > p:first-child {
+        font-size: 28px;
+        border-radius: 14px;
+        border: 3px dashed #2ECC98;
+        padding: 6px 10px;
+        line-height: 45px;
+      }
       img {
         width: 150px;
         height: 150px;
@@ -171,6 +178,12 @@
           this.$.logOutModal.modalAlert();
         }
       }
+      genQuestion(ran, data) {
+        let target = this.manifest[ran] ,dataSubject = data[target.id]
+        let result = Object.keys(target).includes('src') ? true : false;
+        return result ? `<img id="main" src="${target.src}" data-subject="${dataSubject}"/>`
+                      : `<p id="main" data-subject="${dataSubject}">${target.text}</p>`
+      }
       setData( data , manifest){
         let textLang = this.resources[this.language],
             subject = textLang.subject,
@@ -187,9 +200,8 @@
         let quest = textLang.question;
 
         let quizCont = container.append('xhtml:div').attr('class', 'quiz')
-            quizCont.append('img')
-                    .attr('src', manifest[randomImgId].src )
-                    .attr('data-subject', data[manifest[randomImgId].id] )
+
+            quizCont.html(this.genQuestion(randomImgId, data))
 
             quizCont.append('p')
               .attr('id', 'val')
@@ -209,9 +221,10 @@
       }
       handleClickCard(d){
         let papa = d3.select(this.shadowRoot),
-            img = papa.select('img').attr('data-subject'),
+            main = papa.select('#main').attr('data-subject'),
             val = papa.select('#val').attr('data-subject'),
-            result = img === val ? 'o' : 'x';
+            result = main === val ? 'o' : 'x';
+
 
         if(this.lastStage === this.stage) {
           return this.$.finalStageModal.modalAlert()
