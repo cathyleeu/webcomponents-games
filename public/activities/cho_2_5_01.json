@@ -1,48 +1,36 @@
 {
-  "element": "grouping-game",
+  "element": "grouping-game2",
   "attributes": {
-    "nextlink" : "activity#!c1re_w3_2"
+    "nextlink" : "activity#!c1re_w3_2",
+    "lastStage" : 2
   },
   "data": [
-    {"id": 0, "src": "/img/c1_w3/spring.png"},
-    {"id": 1, "src": "/img/c1_w3/summer.png"},
-    {"id": 2, "src": "/img/c1_w3/fall.png"},
-    {"id": 3, "src": "/img/c1_w3/winter.png"}
+    {"id": 0, "text": "문자"},
+    {"id": 1, "text": "그림"},
+    {"id": 2, "text": "소리"},
+    {"id": 3, "text": "영상"}
   ],
   "manifest": [
-      {"src": "/img/c1_w3/spring.png"},
-      {"src": "/img/c1_w3/summer.png"},
-      {"src": "/img/c1_w3/fall.png"},
-      {"src": "/img/c1_w3/winter.png"},
+      {"text": "DOC", "id": 0},
+      {"text": "HWP", "id": 0},
+      {"text": "TXT", "id": 0},
 
-      {"src": "/img/c1_w3/spring0.png", "match": 0},
-      {"src": "/img/c1_w3/spring1.png", "match": 0},
-      {"src": "/img/c1_w3/spring2.png", "match": 0},
-      {"src": "/img/c1_w3/spring3.png", "match": 0},
-      {"src": "/img/c1_w3/spring4.png", "match": 0},
+      {"text": "BMP", "id": 1},
+      {"text": "PNG", "id": 1},
+      {"text": "JPG", "id": 1},
 
-      {"src": "/img/c1_w3/summer0.png", "match": 1},
-      {"src": "/img/c1_w3/summer1.png", "match": 1},
-      {"src": "/img/c1_w3/summer2.png", "match": 1},
-      {"src": "/img/c1_w3/summer3.png", "match": 1},
-      {"src": "/img/c1_w3/summer4.png", "match": 1},
+      {"text": "MP3", "id": 2},
+      {"text": "WAV", "id": 2},
+      {"text": "FLAC", "id": 2},
 
-      {"src": "/img/c1_w3/fall0.png", "match": 2},
-      {"src": "/img/c1_w3/fall1.png", "match": 2},
-      {"src": "/img/c1_w3/fall2.png", "match": 2},
-      {"src": "/img/c1_w3/fall3.png", "match": 2},
-      {"src": "/img/c1_w3/fall4.png", "match": 2},
-
-      {"src": "/img/c1_w3/winter0.png", "match": 3},
-      {"src": "/img/c1_w3/winter1.png", "match": 3},
-      {"src": "/img/c1_w3/winter2.png", "match": 3},
-      {"src": "/img/c1_w3/winter3.png", "match": 3},
-      {"src": "/img/c1_w3/winter4.png", "match": 3}
+      {"text": "AVI", "id": 3},
+      {"text": "MKV", "id": 3},
+      {"text": "MP4", "id": 3}
   ],
   "msg": {
     "ko": {
-      "title": "사계절 퀴즈",
-      "minor": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
+      "title": "여러 가지 정보",
+      "minor": "왼쪽의 카드를 끌어서 분류해보자!",
       "introHead": "키즈씽킹",
       "introBtm": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
       "score": "점수",
