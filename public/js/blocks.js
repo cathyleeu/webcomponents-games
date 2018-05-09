@@ -3849,7 +3849,7 @@ Blocks['condition2_5_smaller_for'] = {
     type: "input_statement",
     name: "else_statements"
   }],
-  action: ["conditioncheck2","food"]
+  action: ["conditioncheck2","andorcheck2"]
 };
 Blocks['condition2_odd_for'] = {
   name: {
@@ -3878,7 +3878,36 @@ Blocks['condition2_odd_for'] = {
     type: "input_statement",
     name: "else_statements"
   }],
-  action: ["conditioncheck2","food"]
+  action: ["conditioncheck2","andorcheck2"]
+};
+Blocks['condition2_even_for'] = {
+  name: {
+    ko: "만약에 짝수라면",
+    en: "If even"
+  },
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 짝수라면",
+    en: "If even"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","andorcheck2"]
 };
 Blocks['condition2_odd_and_5_smaller_for'] = {
   name: {
@@ -3907,7 +3936,36 @@ Blocks['condition2_odd_and_5_smaller_for'] = {
     type: "input_statement",
     name: "else_statements"
   }],
-  action: ["conditioncheck2","food"]
+  action: ["conditioncheck2","andorcheck2"]
+};
+Blocks['condition2_even_and_5_smaller_for'] = {
+  name: {
+    ko: "만약에 짝수라면 그리고 5보다 작다면",
+    en: "If even & less than 5"
+  },
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "짝수라면 그리고 %1 보다 작다면",
+    en: "If even & less than %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","andorcheck2"]
 };
 Blocks['condition2_odd_or_5_smaller_for'] = {
   name: {
@@ -3936,7 +3994,36 @@ Blocks['condition2_odd_or_5_smaller_for'] = {
     type: "input_statement",
     name: "else_statements"
   }],
-  action: ["conditioncheck2","food"]
+  action: ["conditioncheck2","andorcheck2"]
+};
+Blocks['condition2_even_or_5_smaller_for'] = {
+  name: {
+    ko: "만약에 짝수라면 또는 5보다 작다면",
+    en: "If even or less than 5"
+  },
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "짝수라면 또는 %1 보다 작다면",
+    en: "If even or less than %1"
+  },
+  args0: [
+    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+  ],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
+  message2: {
+    ko: "아니라면",
+    en: "Else"
+  },
+  message3: "%1",
+  args3: [{
+    type: "input_statement",
+    name: "else_statements"
+  }],
+  action: ["conditioncheck2","andorcheck2"]
 };
 Blocks['condition_apple'] = {
   rgbColor: "#309E4A",

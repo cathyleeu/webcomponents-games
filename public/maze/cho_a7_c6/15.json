@@ -21,10 +21,10 @@
     "##########"
   ],
   "tile": [
-    {"tile": "A", "img": "circle_red_target",
-     "shape": "circle", "color": "red", "useItem": true, "role": "food", "order": "if"},
-    {"tile": "B", "img": "square_blue_target",
-     "shape": "square", "color": "blue", "useItem": true, "role": "food", "order": "else"}
+    {"tile": "A", "img": "moon_green_target",
+     "shape": "moon", "color": "green", "useItem": true, "role": "food", "order": "if"},
+    {"tile": "B", "img": "triangle_red_target",
+     "shape": "triangle", "color": "red", "useItem": true, "role": "food", "order": "else"}
   ],
   "tutorial": [{
     "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",

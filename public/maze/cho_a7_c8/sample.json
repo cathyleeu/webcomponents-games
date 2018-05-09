@@ -1,0 +1,43 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start,make_picture,forloop_type1[move_forward1,condition2_even_or_5_smaller_for,draw]",
+  "workspace2": "make_picture_func,define_shape,define_color",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "set_shape",
+    "set_color",
+    "draw",
+    "forloop_type1",
+    "condition2_even_or_5_smaller_for"
+  ],
+  "map": [
+    "##########",
+    "#abcfghij#",
+    "rAAAAFAFA#",
+    ".FFFFAFAF#",
+    ".AAAABABA#",
+    ".CCCCGCGC#",
+    "##########"
+  ],
+  "tile": [
+    {"tile": "A", "img": "circle_orange_target",
+     "shape": "circle", "color": "orange", "useItem": true, "role": "food", "order": "if"},
+    {"tile": "B", "img": "triangle_blue_target",
+     "shape": "triangle", "color": "blue", "useItem": true, "role": "food", "order": "else"},
+    {"tile": "C", "img": "square_yellow_target",
+     "shape": "square", "color": "yellow", "useItem": true, "role": "food", "order": "else"},
+    {"tile": "G", "img": "star_sky_target",
+     "shape": "star", "color": "sky", "useItem": true, "role": "food", "order": "else"},
+    {"tile": "E", "img": "moon_red_target",
+      "shape": "moon", "color": "red", "useItem": true, "role": "food", "order": "if"},
+    {"tile": "F", "img": "triangle_green_target",
+     "shape": "triangle", "color": "green", "useItem": true, "role": "food", "order": "else"}
+  ],
+  "tutorial": [{
+    "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
+    "msg:en": "Try to draw a picture of the right shape in the given position."
+  }]
+}
