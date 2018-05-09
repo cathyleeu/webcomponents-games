@@ -12,21 +12,19 @@
   ],
   "map": [
     "######",
-    "#l..C#",
-    "#A..C#",
-    "#A..C#",
-    "#ABBB#",
+    "#d#..#",
+    "#.A#.#",
+    "##.B##",
+    "#.#.C#",
     "######"
   ],
   "tile": [
-    {"tile": "A", "img": "square_green_target",
-     "shape": "square", "color": "green", "useItem": true, "role": "food"},
-    {"tile": "B", "img": "moon_red_target",
-     "shape": "moon", "color": "red", "useItem": true, "role": "food"},
-    {"tile": "C", "img": "sun_blue_target",
-     "shape": "sun", "color": "blue", "useItem": true, "role": "food"},
-    {"tile": "D", "img": "circle_sky_target",
-     "shape": "circle", "color": "sky", "useItem": true, "role": "food"}
+    {"tile": "A", "img": "sun_white_target",
+     "shape": "sun", "color": "white", "useItem": true, "role": "food"},
+    {"tile": "B", "img": "moon_white_target",
+     "shape": "moon", "color": "white", "useItem": true, "role": "food"},
+    {"tile": "C", "img": "star_white_target",
+     "shape": "star", "color": "white", "useItem": true, "role": "food"}
   ],
   "tutorial": [{
     "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
