@@ -1,8 +1,7 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start",
-  "workspace2": "make_picture_list_func",
+  "workspace": "start,make_picture_list",
   "toolbox": [
     "move_forward1",
     "rotate_left",

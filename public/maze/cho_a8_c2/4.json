@@ -7,41 +7,41 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "make_picture_list",
     "draw_list_item",
-    "list_shape_color_no1",
-    "list_shape_color_no2",
-    "list_shape_color_no3",
-    "list_shape_color_no4",
-    "list_shape_color_no4"
+    "make_picture_list",
+    "list_shape_no1",
+    "list_shape_no2",
+    "list_shape_no3",
+    "list_shape_no4",
+    "list_shape_no5"
   ],
   "map": [
     "######",
-    "#....#",
-    "#r%%%#",
-    "#....#",
+    "#d#%.#",
+    "#.#..#",
+    "#%.%.#",
     "######"
   ],
   "extra":[{
-    "x": 2,
-    "y": 2,
-    "img": "circle_red_target",
+    "x": 3,
+    "y": 1,
+    "img": "moon_white_target",
     "shape": "circle",
-    "color": "red",
+    "color": "white",
     "useItem": true
   },{
     "x": 3,
-    "y": 2,
-    "img": "triangle_green_target",
-    "shape": "triangle",
-    "color": "green",
+    "y": 3,
+    "img": "star_white_target",
+    "shape": "star",
+    "color": "white",
     "useItem": true
   },{
-    "x": 4,
-    "y": 2,
-    "img": "square_blue_target",
+    "x": 1,
+    "y": 3,
+    "img": "square_white_target",
     "shape": "square",
-    "color": "blue",
+    "color": "white",
     "useItem": true
   }],
   "tutorial": [{

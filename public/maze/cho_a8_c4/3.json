@@ -18,15 +18,15 @@
   "map": [
     "######",
     "#....#",
-    "#r%%%#",
+    "#r%%.#",
     "#....#",
     "######"
   ],
   "extra":[{
     "x": 2,
     "y": 2,
-    "img": "circle_red_target",
-    "shape": "circle",
+    "img": "star_red_target",
+    "shape": "star",
     "color": "red",
     "useItem": true
   },{
@@ -39,9 +39,9 @@
   },{
     "x": 4,
     "y": 2,
-    "img": "square_blue_target",
-    "shape": "square",
-    "color": "blue",
+    "img": "circle_yellow_target",
+    "shape": "circle",
+    "color": "yellow",
     "useItem": true
   }],
   "tutorial": [{

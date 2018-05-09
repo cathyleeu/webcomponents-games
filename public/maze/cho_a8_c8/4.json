@@ -18,25 +18,32 @@
   ],
   "map": [
     "%######",
-    "#.r..)#",
-    "#####.#",
-    "#)...)#",
+    "#.#)..#",
+    "#.#...#",
+    "#.#...#",
+    "#)....l",
+    "#).)###",
     "#######"
   ],
   "extra":[{
-      "x": 5,
+      "x": 3,
       "y": 1,
-      "img": "acorn",
-      "itemCount": 1
-    },{
-      "x": 5,
-      "y": 3,
-      "img": "walnut",
+      "img": "blackbeans",
       "itemCount": 1
     },{
       "x": 1,
-      "y": 3,
+      "y": 4,
       "img": "pumkinseed",
+      "itemCount": 1
+    },{
+      "x": 1,
+      "y": 5,
+      "img": "rice",
+      "itemCount": 1
+    },{
+      "x": 3,
+      "y": 5,
+      "img": "walnut",
       "itemCount": 1
     }],
     "tutorial": [{

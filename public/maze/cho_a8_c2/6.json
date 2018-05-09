@@ -17,30 +17,51 @@
   ],
   "map": [
     "######",
-    "#....#",
-    "#r%%%#",
-    "#....#",
+    "#%%%.#",
+    "#%#%.#",
+    "#%#u.#",
     "######"
   ],
   "extra":[{
     "x": 2,
+    "y": 1,
+    "img": "moon_white_target",
+    "shape": "moon",
+    "color": "white",
+    "useItem": true
+  },{
+    "x": 1,
+    "y": 1,
+    "img": "moon_white_target",
+    "shape": "moon",
+    "color": "white",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 2,
+    "img": "star_white_target",
+    "shape": "star",
+    "color": "white",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 1,
+    "img": "star_white_target",
+    "shape": "star",
+    "color": "white",
+    "useItem": true
+  },{
+    "x": 1,
     "y": 2,
     "img": "circle_white_target",
     "shape": "circle",
     "color": "white",
     "useItem": true
   },{
-    "x": 3,
-    "y": 2,
-    "img": "triangle_white_target",
-    "shape": "triangle",
-    "color": "white",
-    "useItem": true
-  },{
-    "x": 4,
-    "y": 2,
-    "img": "square_white_target",
-    "shape": "square",
+    "x": 1,
+    "y": 3,
+    "img": "circle_white_target",
+    "shape": "circle",
     "color": "white",
     "useItem": true
   }],
