@@ -18,30 +18,30 @@
   "map": [
     "######",
     "#....#",
-    "#r%%%#",
-    "#....#",
+    "#.%%.#",
+    "#.r%.#",
     "######"
   ],
   "extra":[{
     "x": 2,
     "y": 2,
-    "img": "circle_red_target",
-    "shape": "circle",
-    "color": "red",
+    "img": "sun_yellow_target",
+    "shape": "sun",
+    "color": "yellow",
     "useItem": true
   },{
     "x": 3,
     "y": 2,
-    "img": "triangle_green_target",
-    "shape": "triangle",
-    "color": "green",
+    "img": "star_orange_target",
+    "shape": "star",
+    "color": "orange",
     "useItem": true
   },{
-    "x": 4,
-    "y": 2,
-    "img": "square_blue_target",
-    "shape": "square",
-    "color": "blue",
+    "x": 3,
+    "y": 3,
+    "img": "moon_sky_target",
+    "shape": "moon",
+    "color": "sky",
     "useItem": true
   }],
   "tutorial": [{

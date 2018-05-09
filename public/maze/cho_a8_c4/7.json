@@ -16,32 +16,53 @@
     "list_shape_color_no4"
   ],
   "map": [
-    "######",
-    "#....#",
-    "#r%%%#",
-    "#....#",
+    "#.%%##",
+    "#%.#.#",
+    "#%##.#",
+    "#.%%l#",
     "######"
   ],
   "extra":[{
-    "x": 2,
-    "y": 2,
-    "img": "circle_red_target",
-    "shape": "circle",
-    "color": "red",
+    "x": 1,
+    "y": 1,
+    "img": "circle_green_target",
+    "shape": "square",
+    "color": "yellow",
     "useItem": true
   },{
-    "x": 3,
+    "x": 1,
     "y": 2,
-    "img": "triangle_green_target",
-    "shape": "triangle",
+    "img": "circle_green_target",
+    "shape": "square",
+    "color": "yellow",
+    "useItem": true
+  },{
+    "x": 2,
+    "y": 3,
+    "img": "triangle_orange_target",
+    "shape": "moon",
     "color": "green",
     "useItem": true
   },{
-    "x": 4,
-    "y": 2,
-    "img": "square_blue_target",
+    "x": 3,
+    "y": 3,
+    "img": "triangle_orange_target",
+    "shape": "moon",
+    "color": "green",
+    "useItem": true
+  },{
+    "x": 2,
+    "y": 0,
+    "img": "triangle_yellow_target",
     "shape": "square",
-    "color": "blue",
+    "color": "yellow",
+    "useItem": true
+  },{
+    "x": 3,
+    "y": 0,
+    "img": "triangle_yellow_target",
+    "shape": "moon",
+    "color": "green",
     "useItem": true
   }],
   "tutorial": [{

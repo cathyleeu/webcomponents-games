@@ -1,11 +1,11 @@
 [
-  {"book": "초등 A8권", "title": "C8 : 배열의 응용"},
+  {"book": "초등 A8권", "title": "C8 : 배열의 이해4"},
   {"id": "bg1", "src": "/img/cho_a8/bg1.png"},
   {"id": "bg2", "src": "/img/cho_a8/bg2.png"},
 
   {"id": "character", "src": "/img/cho_a5/summer_cobot.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/cho_a5/summer_cobot0.png", "size": 256},
-  {"id": "food", "src": "/img/cho_a8/barket.png"},
+  {"id": "food", "src": "/img/cho_a8/reed.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
   {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
