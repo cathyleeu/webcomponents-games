@@ -1372,7 +1372,7 @@ Blocks["make_picture_func"] = {
 Blocks["make_picture_list"] = {
   rgbColor: "#8B1C79",
   message0: {
-    ko: "%1 그림 리스트 정하기",
+    ko: "%1 그림 배열 정하기",
     en: "%1 Make a picture list"
   },
   args0: [
@@ -1383,7 +1383,7 @@ Blocks["make_picture_list"] = {
 Blocks["make_picture_list_func"] = {
   rgbColor: "#9E4A8D",
   message0: {
-    ko: "%2 %1 그림 리스트",
+    ko: "%2 %1 그림 배열 정하기",
     en: "%2 %1 Make a picture list"
   },
   args0: [
@@ -1399,7 +1399,7 @@ Blocks["make_picture_list_func"] = {
 Blocks["make_number_list"] = {
   rgbColor: "#8B1C79",
   message0: {
-    ko: "%1 숫자 리스트 정하기",
+    ko: "%1 숫자 배열 정하기",
     en: "%1 Make a number list"
   },
   args0: [
@@ -1410,7 +1410,7 @@ Blocks["make_number_list"] = {
 Blocks["make_number_list_func"] = {
   rgbColor: "#9E4A8D",
   message0: {
-    ko: "%2 %1 숫자 리스트",
+    ko: "%2 %1 숫자 배열 정하기",
     en: "%2 %1 Make a number list"
   },
   args0: [
@@ -2387,7 +2387,7 @@ Blocks["define_x"] = {
   },
   rgbColor: "#D9629E",
   message0: {
-    ko: "%1을 %2 정하기",
+    ko: "%1를 %2 정하기",
     en: "Define the %1"
   },
   args0: [{
@@ -2430,7 +2430,7 @@ Blocks["repeat_x_num"] = {
 
 Blocks["repeat_list_num"] = {
   name: {
-    ko: "리스트 숫자 반복",
+    ko: "배열 숫자 반복",
     en: "Repeat list number"
   },
   rgbColor: "#242786",
@@ -2458,7 +2458,7 @@ Blocks["repeat_list_num"] = {
 
 Blocks["repeat_x_list_num"] = {
   name: {
-    ko: "리스트 숫자 반복",
+    ko: "배열 숫자 반복",
     en: "Repeat list number"
   },
   rgbColor: "#242786",
