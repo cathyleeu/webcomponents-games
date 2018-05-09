@@ -12,15 +12,18 @@
     "get_item3"
   ],
   "map": [
-    "%###.##",
-    "##...##",
-    "r.A...B",
-    "#swswsw",
-    "swswsws"
+    "%##A.l###",
+    "#.#....##",
+    "#....#..#",
+    "#swB...Cw",
+    "sws#...#s",
+    "swsw#.#ws",
+    "swswswsws"
   ],
   "tile": [
-    {"tile": "A", "img": "crab", "itemCount": 2, "role": "item"},
-    {"tile": "B", "img": "conch", "itemCount": 4, "role": "item"}
+    {"tile": "A", "img": "nakji", "itemCount": 2, "role": "item"},
+    {"tile": "B", "img": "fish", "itemCount": 3, "role": "item"},
+    {"tile": "C", "img": "clam", "itemCount": 4, "role": "item"}
   ],
   "tutorial": [{
     "msg:ko": "갯벌 생물을 모두 가져오자!",
