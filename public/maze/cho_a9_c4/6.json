@@ -12,14 +12,14 @@
   ],
   "map": [
     "#####",
+    "#r.A#",
     "#...#",
-    "#rAB#",
-    "#...#",
+    "#..B#",
     "#####"
   ],
   "tile": [
-    {"tile": "A", "img": "circle_green_target",
-     "shape": "circle", "color": "green", "useItem": true, "role": "food"},
+    {"tile": "A", "img": "moon_green_target",
+     "shape": "moon", "color": "green", "useItem": true, "role": "food"},
     {"tile": "B", "img": "triangle_red_target",
      "shape": "triangle", "color": "red", "useItem": true, "role": "food"}
   ],

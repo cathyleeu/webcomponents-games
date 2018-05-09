@@ -11,17 +11,18 @@
     "draw_x_list_item"
   ],
   "map": [
-    "#####",
-    "#...#",
-    "#rAB#",
-    "#...#",
-    "#####"
+    "######",
+    "#.#..#",
+    "##.B.#",
+    "#.A#.#",
+    "#u#..#",
+    "######"
   ],
   "tile": [
-    {"tile": "A", "img": "circle_green_target",
-     "shape": "circle", "color": "green", "useItem": true, "role": "food"},
-    {"tile": "B", "img": "triangle_red_target",
-     "shape": "triangle", "color": "red", "useItem": true, "role": "food"}
+    {"tile": "A", "img": "sun_sky_target",
+     "shape": "sun", "color": "sky", "useItem": true, "role": "food"},
+    {"tile": "B", "img": "circle_orange_target",
+     "shape": "circle", "color": "orange", "useItem": true, "role": "food"}
   ],
   "tutorial": [{
     "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
