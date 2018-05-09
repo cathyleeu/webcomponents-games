@@ -743,5 +743,11 @@
     ["초등A7_C4", "/mazev#!cho_a7_c4/1"],
     ["초등A7_C6", "/mazev#!cho_a7_c6/1"],
     ["초등A7_C8", "/mazev#!cho_a7_c8/1"]
+  ],
+  "CHO-A-9":[
+    ["초등A9_C2", "/mazev#!cho_a9_c2/1"],
+    ["초등A9_C4", "/mazev#!cho_a9_c4/1"],
+    ["초등A9_C6", "/mazev#!cho_a9_c6/1"],
+    ["초등A9_C8", "/mazev#!cho_a9_c8/1"]
   ]
 }
