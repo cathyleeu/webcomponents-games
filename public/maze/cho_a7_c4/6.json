@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start,make_picture,forloop_type1[move_forward1,condition2_odd_and_5_smaller_for,draw]",
+  "workspace": "start,make_picture,forloop_type1[move_forward1,condition2_5_smaller_for,draw]",
   "workspace2": "make_picture_func,define_shape,define_color",
   "toolbox": [
     "move_forward1",
@@ -11,20 +11,20 @@
     "set_color",
     "draw",
     "forloop_type1",
-    "condition2_odd_and_5_smaller_for"
+    "condition2_5_smaller_for"
   ],
   "map": [
     "##########",
     "#abcfghij#",
-    "rABABBBBB#",
+    "rAAAABBBB#",
     "#abcfghij#",
     "##########"
   ],
   "tile": [
-    {"tile": "A", "img": "circle_red_target",
-     "shape": "circle", "color": "red", "useItem": true, "role": "food", "order": "if"},
-    {"tile": "B", "img": "square_blue_target",
-     "shape": "square", "color": "blue", "useItem": true, "role": "food", "order": "else"}
+    {"tile": "A", "img": "star_green_target",
+     "shape": "star", "color": "green", "useItem": true, "role": "food", "order": "if"},
+    {"tile": "B", "img": "circle_sky_target",
+     "shape": "circle", "color": "sky", "useItem": true, "role": "food", "order": "else"}
   ],
   "tutorial": [{
     "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
