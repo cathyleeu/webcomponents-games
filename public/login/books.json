@@ -446,18 +446,18 @@
   ],
   "A-6":[
     ["땅에서 탈 수 있는 것을 알아보아요", "Learn about land transport", "/mazeh#!a6_w1/1"],
-    ["땅에서 탈 수 있는 것을 이용해보아요", "Use land transport", "/activity#!a6_w2"],
-    ["하늘에서 탈 수 있는 것을 알아보아요", "Learn about air transport", "/activity#!a6_w3"],
-    ["물에서 탈 수 있는 것을 알아보아요", "Learn about water transport", "/a6_w4"]
+    ["땅에서 탈 수 있는 것을 이용해보아요", "Use land transport", "/activity#!a6re_w2"],
+    ["하늘에서 탈 수 있는 것을 알아보아요", "Learn about air transport", "/activity#!a6re_w3"],
+    ["물에서 탈 수 있는 것을 알아보아요", "Learn about water transport", "/activity#!a6re_w4"]
   ],
   "A-7":[
-    ["가을이 되었어요", "Autumn has arrived", "/a7_w1"],
+    ["가을이 되었어요", "Autumn has arrived", "/activity#!a7re_w1"],
     ["가을 곡식과 열매을 알아보아요", "Learn about autumn fruits and grains", "/activity#!a7_w2_c1"],
     ["곡식이 자라요", "Grains are growing", "/mazeh#!a7_w3/1"],
     ["열매가 자라요", "Fruits are growing", "/activity#!a7_w4"]
   ],
   "A-8":[
-    ["우리 주변의 물", "Water sources around us", "/a8_w1"],
+    ["우리 주변의 물", "Water sources around us", "/a8re_w1"],
     ["물이 돌고 돌아요", "The water cycle", "/mazeh#!a8_w2/1"],
     ["수돗물의 여행", "The journey of tap water", "/mazeh#!a8_w3/1"],
     ["소중한 물", "Use water thoughtfully", "/mazeh#!a8_w4_c1/1"]
