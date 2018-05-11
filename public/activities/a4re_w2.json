@@ -28,7 +28,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "모래성을 꾸며보아요.",
+      "title": "친구와 놀아요",
+      "minor": "모래성을 꾸며보아요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -47,7 +48,8 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Let's decorate the sand castle.",
+      "title": "Play with Friends",
+      "minor": "Let's decorate the sand castle.",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",

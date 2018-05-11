@@ -36,7 +36,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "알맞는 옷찾기",
+      "title": "옷을 알아보아요",
       "minor": "날씨와 장소에 따라 어울리는 옷을 찾아서 끌어다 놓아요!",
       "introHead": "키즈씽킹",
       "introBtm": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
@@ -61,7 +61,7 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Find a suitable outfit",
+      "title": "Learn about clothes",
       "minor": "Drag a stuff from left and drop it on the right side.",
       "score": "score",
       "lefted": "matched",

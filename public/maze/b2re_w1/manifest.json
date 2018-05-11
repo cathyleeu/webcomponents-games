@@ -14,6 +14,7 @@
   {"id": "stone2", "src": "/img/b2_w1/PondStone2_256.png", "obstacle": true},
   {"id": "weed3", "src": "/img/b2_w1/Weed3_256.png", "obstacle": true},
   {"id": "weed4", "src": "/img/b2_w1/Weed4_256.png", "obstacle": true},
+
   {"id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
   {"id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
   {"id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
