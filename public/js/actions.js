@@ -1940,35 +1940,20 @@ Actions.prototype.conditioncheck3 = function(options, block, callback) {
   var character = this.canvas.character,
       foods = this.canvas.foods,
       items = this.canvas.items,
+      get_block_by = {
+        if: block.getInputTargetBlock("if_statements"),
+        else_if: block.getInputTargetBlock("else_if_statements"),
+        else: block.getInputTargetBlock("else_statements")
+      },
       _this = this;
 
   if(options == "trash"  || options == "guide"){
     var tileInfo = character.itemBitmap;
-    for(var i = 0; i<foods.length;i++){
-      if(tileInfo.order==foods[i].order){
-        foods.push(foods[i]);
-        foods.splice(0,foods.length-1);
-      }
-    }
-    if(tileInfo.order == "if"){
-      if_block = block.getInputTargetBlock("if_statements");
-      setTimeout(function() {
-        block.removeSelect();
-        _this.run(if_block, callback);
-      }, 500);
-    }else if(tileInfo.order == "else_if"){
-      if_block = block.getInputTargetBlock("else_if_statements");
-      setTimeout(function() {
-        block.removeSelect();
-        _this.run(if_block, callback);
-      }, 500);
-    }else{
-      else_block = block.getInputTargetBlock("else_statements");
-      setTimeout(function() {
-        block.removeSelect();
-        _this.run(else_block, callback);
-      }, 500);
-    }
+    this.setFoodOrder(tileInfo.order);
+    setTimeout(function() {
+      block.removeSelect();
+      _this.run(get_block_by[tileInfo.order], callback);
+    }, 500);
   } else if(options == "aClock" || options == "dClock"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
     this._splitObjects(tileInfo, function() {

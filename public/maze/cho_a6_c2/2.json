@@ -1,42 +1,30 @@
 {
   "tile_size":128,
   "score":1,
-  "workspace": "start,move_forward1,check,get_item2_split,move_forward1,condition2_recycle,move_forward1,use_item2",
+  "workspace": "start,move_forward1,check,get_item2_split,condition3_recycle,move_forward1,use_item2",
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
     "repeat",
     "check",
-    "condition2_recycle",
+    "condition3_recycle",
     "get_item2_split",
     "use_item2"
   ],
   "tile": [
     {"tile": "&", "contents" : [{
-        "img": "bottle",
-        "itemImg":"bottle",
+        "img": "paper",
+        "itemImg":"paper",
         "disappear":true,
         "role": "item",
         "order": "if"
       },{
-        "img": "can",
-        "itemImg":"can",
+        "img": "pet",
+        "itemImg":"pet",
         "disappear":true,
         "role": "item",
-        "order": "if"
-      },{
-        "img": "bone",
-        "itemImg":"bone",
-        "disappear":true,
-        "role": "item",
-        "order": "else"
-      },{
-        "img": "egg",
-        "itemImg":"egg",
-        "disappear":true,
-        "role": "item",
-        "order": "else"
+        "order": "else_if"
       },{
         "img": "trash",
         "itemImg":"trash",
@@ -45,15 +33,16 @@
         "order": "else"
     }]},
     {"tile": "A", "role": "food", "img": "recycle_can", "order": "if", "useItem": 1},
-    {"tile": "B", "role": "food", "img": "tresh_can", "order": "else", "useItem": 1}
+    {"tile": "B", "role": "food", "img": "recycle_can", "order": "else_if", "useItem": 1},
+    {"tile": "C", "role": "food", "img": "tresh_can", "order": "else", "useItem": 1}
   ],
   "map": [
     ".#######.",
     "#.#.###.#",
     "##....#.#",
-    "####.A#.#",
+    "####AB#.#",
     "##.r&.#.#",
-    "#.##.B#.#",
+    "#.##C.#.#",
     "#...#####",
     "#.......#",
     ".#######."
