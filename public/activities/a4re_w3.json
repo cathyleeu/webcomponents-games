@@ -19,7 +19,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "순서 맞추기",
+      "title": "이사를 왔어요",
       "minor" : "순서에 맞게 이미지를 맞춰보세요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
@@ -33,7 +33,7 @@
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
-      "flow": "순서 조립 화면",
+      "flow": "순서에 맞게 이미지를 맞춰보세요",
       "mixed": "사용 가능 한 이미지",
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
@@ -41,7 +41,7 @@
       "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "Arrange Game",
+      "title": "Moving home",
       "minor" : "Arrange the images with given images",
       "score": "score",
       "lefted": "matched",
@@ -55,7 +55,7 @@
       "nextbtn": "Back",
       "nobtn" : "No",
       "yesbtn" : "Yes",
-      "flow": "Work Space",
+      "flow": "Arrange the images with given images",
       "mixed": "Given images",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",

@@ -19,7 +19,8 @@
   ],
   "msg": {
     "ko": {
-      "title": "순서에 맞게 이미지를 맞춰보세요.",
+      "title": "화분을 키워요",
+      "minor": "순서에 맞게 이미지를 맞춰보세요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -32,11 +33,12 @@
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
-      "flow": "순서 조립 화면",
-      "mixed": "사용 가능 한 이미지"
+      "flow": "순서에 맞게 이미지를 맞춰보세요",
+      "mixed": "사용 가능한 이미지"
     },
     "en": {
-      "title": "Arrange the images with given images",
+      "title": "Growing flowers",
+      "minor": "Arrange the images with given images",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
@@ -49,7 +51,7 @@
       "nextbtn": "Back",
       "nobtn" : "No",
       "yesbtn" : "Yes",
-      "flow": "Work Space",
+      "flow": "Arrange the images with given images",
       "mixed": "Given images",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
