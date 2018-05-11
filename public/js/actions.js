@@ -113,28 +113,27 @@ Actions.prototype._splitObjects = function(spider, callback) {
   this.canvas.stage.addChild(spider);
   this.canvas.stage.removeChild(character);
   this.canvas.stage.addChild(character);
-  var tweens = [
-    createjs.Tween.get(character)
+  var tween1 = createjs.Tween.get(character)
         .wait(character.sprite ? 0 : _this.delay)
         .to({
           x: _this.tile_size*(px - 0.5) + _this.tile_size/2,
           y: _this.tile_size*py + _this.tile_size/2
-        }, 5 * _this.delay)
-        .call(callback)
-        .addEventListener("change", function(e) {
-          _this.canvas.stage.update();
-        }),
-    createjs.Tween.get(spider)
+        }, 5 * _this.delay),
+      tween2 = createjs.Tween.get(spider)
         .wait(character.sprite ? 0 : _this.delay)
         .to({
           x: _this.tile_size*(px + 0.5) + _this.tile_size/2,
           y: _this.tile_size*py + _this.tile_size/2
-        }, 5 * _this.delay)
-  ];
-  var timeline = new createjs.Timeline(tweens, "split", {
-    loop: false,
-    paused: false
-  });
+        }, 5 * _this.delay),
+      timeline = new createjs.Timeline({
+        loop: 0,
+        paused: false,
+        onChange: function(e) {
+          _this.canvas.stage.update();
+        },
+        onComplete: callback
+      });
+  timeline.addTween(tween1, tween2);
 };
 
 Actions.prototype._restoreObject = function(callback) {
@@ -146,29 +145,28 @@ Actions.prototype._restoreObject = function(callback) {
       character = this.canvas.character,
       px = character.px,
       py = character.py;
-      tweens = [
-        createjs.Tween.get(character)
-            .wait(character.sprite ? 0 : _this.delay)
-            .to({
-              x: _this.tile_size*px + _this.tile_size/2,
-              y: _this.tile_size*py + _this.tile_size/2
-            }, 5 * _this.delay)
-            .call(callback)
-            .addEventListener("change", function(e) {
-              _this.canvas.stage.update();
-            }),
-        createjs.Tween.get(character._splitObject)
-            .wait(character.sprite ? 0 : _this.delay)
-            .to({
-              x: _this.tile_size*px + _this.tile_size/2,
-              y: _this.tile_size*py + _this.tile_size/2
-            }, 5 * _this.delay)
-      ];
+      tween1 = createjs.Tween.get(character)
+        .wait(character.sprite ? 0 : _this.delay)
+        .to({
+          x: _this.tile_size*px + _this.tile_size/2,
+          y: _this.tile_size*py + _this.tile_size/2
+        }, 5 * _this.delay),
+      tween2 = createjs.Tween.get(character._splitObject)
+        .wait(character.sprite ? 0 : _this.delay)
+        .to({
+          x: _this.tile_size*px + _this.tile_size/2,
+          y: _this.tile_size*py + _this.tile_size/2
+        }, 5 * _this.delay),
+      timeline = new createjs.Timeline({
+        loop: 0,
+        paused: false,
+        onChange: function(e) {
+          _this.canvas.stage.update();
+        },
+        onComplete: callback
+      });
+  timeline.addTween(tween1, tween2);
   character._splitObject = null;
-  var timeline = new createjs.Timeline(tweens, "split", {
-    loop: false,
-    paused: false
-  });
 };
 
 
@@ -279,6 +277,18 @@ Actions.prototype._getFieldValue = function(block, name) {
   }
   return val;
 };
+
+Actions.prototype.setFoodOrder = function(order) {
+  var foods = this.canvas.foods;
+  for(var i = 0; i < foods.length; i++){
+    if(order == foods[i].order){
+      foods.push(foods[i]);
+      // others에 쓰지 않아야 하는 food를 넣어줘야 reset할때 지울수 있음
+      this.canvas.others = this.canvas.others.concat(foods.splice(0,foods.length-1));
+      break;
+    }
+  }
+}
 
 Actions.prototype.move = function(type, block, callback) {
   var _this = this,
@@ -740,7 +750,6 @@ Actions.prototype.getItem2split = function(block, callback) {
     callback("아이템을 가져올 수 없어요");
     return;
   }
-
   character.hasItem = true;
   var itemCount = this.getItemCount(item);
   this._splitObjects(item, function() {
@@ -1909,6 +1918,21 @@ Actions.prototype.conditioncheck2 = function(options, block, callback) {
         }, 500);
       }
     });
+  } else if(options == "recycle") {
+    var tileInfo = this._getCanvasObject(character.px, character.py),
+        order = null,
+        if_block = block.getInputTargetBlock("if_statements"),
+        else_block = block.getInputTargetBlock("else_statements");
+    if(tileInfo && tileInfo.role == "item") {
+      order = tileInfo.order;
+    } else {
+      order = character.itemList[0].order;
+    }
+    this.setFoodOrder(order);
+    setTimeout(function() {
+      block.removeSelect();
+      _this.run(order == "if" ? if_block : else_block, callback);
+    }, 500);
   }
 };
 

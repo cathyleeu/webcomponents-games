@@ -3780,7 +3780,7 @@ Blocks['condition2_recycle'] = {
     type: "input_statement",
     name: "else_statements"
   }],
-  action: ["conditioncheck2","food"]
+  action: ["conditioncheck2","recycle"]
 };
 Blocks['condition3_recycle'] = {
   rgbColor: "#309E4A",
