@@ -1,82 +1,74 @@
 {
-  "element": "ox-quiz-card",
+  "element": "grouping-flow-game",
   "attributes": {
-    "lastStage" : 5
+    "lastStage" : 1,
+    "nextlink" : "activity#!cho_2_1_03",
+    "step": 1,
+    "last" : 3
   },
   "data": {
-    "data": ["data0", "data1", "data2", "data3"],
-    "process": ["process0", "process1", "process2"],
-    "info": ["info0", "info1"]
+    "background" : false,
+    "steps" : 3,
+    "phases" : [
+      {"title": "자료", "num": 3},
+      {"title": "처리 과정", "num": 1},
+      {"title": "정보", "num": 1}
+    ],
+    "first" : 1,
+    "last" : 3
   },
   "manifest": [
-    {"id": "data0", "text": "지하철 시간표"},
-    {"id": "data1", "text": "지하철 노선도"},
-    {"id": "data2", "text": "여행 지역"},
-    {"id": "data3", "text": "상영 영화 목록"},
-    {"id": "process0", "text": "영화 목록과 시간표, 일정을 확인"},
-    {"id": "process1", "text": "여행 날짜와 지역 일기예보 확인"},
-    {"id": "process2", "text": "노선과 시간표를 보고 출발 시간 확인"},
-    {"id": "info0", "text": "내가 탈 수 있는 지하철"},
-    {"id": "info1", "text": "가족과 함께 볼 영화"}
+    {"text": "달력과 여행날짜", "step": 1},
+    {"text": "여행 지역", "step": 1},
+    {"text": "일기 예보 ", "step": 1},
+    {"text": "여행 날짜의 여행 지역 일기예보 확인", "step": 2},
+    {"text": "여행 갈 때 입어야 할 옷", "step": 3}
   ],
   "msg": {
     "ko": {
-      "title": "OX 퀴즈",
-      "subtitle": "O, X 중 맞는 답을 골라보아요.",
+      "title": "자료와 정보의 구분",
+      "minor" : "여행 상황에서 자료가 정보가 되는 순서를 맞춰보세요.",
       "score": "점수",
+      "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
       "successHead": "참 잘했어요!",
-      "successBtm" : "다음 단계로 넘어가시겠습니까?",
       "logoutHead": "로그아웃",
-      "logoutBtm": "로그아웃 하시겠습니까?",
       "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
       "previousBtm": "이전으로 돌아가시겠습니까?",
-      "retryHead": "참 아쉽네요!",
-      "retryBtm" : "다시 시도해 볼까요?",
       "nextbtn": "넘어가기",
-      "retrybtn": "다시하기",
-      "resultbtn": "결과보기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
+      "retryHead": "다시하기",
+      "retryBtm" : "$ 단계를 먼저 완성하세요.",
+      "flow": "순서 조립 화면",
+      "mixed": "사용 가능 한 이미지",
       "finalStageHead": "성공!",
-      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "다음 단계",
-      "noticeAlert" : "아직 선택할 것이 남았어요!",
-      "fullscreen" : "풀스크린",
-      "subject": {
-        "data" : "자료",
-        "process" : "처리 과정",
-        "info" : "정보"
-      },
-      "question": "는 $ 이에요."
+      "finalStageBtm":"참 잘했어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "풀스크린"
     },
     "en": {
-      "title": "OX Quiz",
-      "subtitle": "Choose correct answer in the between O and X",
+      "title": "Arrange the images with given images",
       "score": "score",
+      "lefted": "matched",
       "success": "Good job!",
       "successHead": "Success",
-      "successBtm" : "Do you want to move on to the next step?",
       "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
       "logoutBtm": "Do you want to logout",
-      "previousHead" : "Next",
       "previousBtm": "Do you want to move on to the previous step?",
-      "retryHead": "Failed",
-      "retryBtm" : "Do you want to retry?",
       "nextbtn": "Back",
-      "retrybtn": "Retry",
-      "resultbtn": "Result",
       "nobtn" : "No",
       "yesbtn" : "Yes",
+      "flow": "Work Space",
+      "mixed": "Given images",
       "finalStageHead": "Success",
-      "finalStageBtm":"All clear in this class!",
+      "finalStageBtm":"Success!",
       "finalbtn" : "Next Stage",
-      "noticeAlert" : "You need to select more!",
-      "fullscreen" : "fullscreen",
-      "subject": {
-        "sky" : "sky"
-      },
-      "question": "can use on $ "
+      "fullscreen" : "fullscreen"
     }
   }
 }

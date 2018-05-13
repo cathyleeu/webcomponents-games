@@ -1,0 +1,372 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+
+<dom-module id="axis-grid-game">
+
+  <template>
+    <style>
+      table, tr, td {
+        border-bottom: 1px solid black;
+        /* border-top: 1px solid black; */
+        border-collapse: collapse;
+      }
+      .grid_board {
+        position: relative;
+      }
+      td {
+      width: 30px;
+      height: 30px;
+      }
+      /* .grid_board > img {
+
+      } */
+      .grid_board > div {
+        display: inline-block;
+        position: absolute;
+      }
+      .triangle {
+        width: 0;
+      	height: 0;
+      	border-left: 50px solid transparent;
+      	border-right: 50px solid transparent;
+      	border-bottom: 100px solid purple;
+      }
+      .square {
+        width: 100px;
+      	height: 100px;
+      	background: purple;
+      }
+      .circle {
+        width: 100px;
+      	height: 100px;
+      	background: purple;
+      	-moz-border-radius: 50px;
+      	-webkit-border-radius: 50px;
+      	border-radius: 50px;
+      }
+    </style>
+    <status-bar
+      id="statusBar"
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      purpose="line"
+      fullscreen="{{localize('fullscreen')}}"
+      ></status-bar>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      total="{{total}}"
+      point="{{point}}"
+      stage={{stage}}
+      matched="{{matched}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <!-- <minor-heading
+      id="minorHeading"
+      onclick="[[handleBoldStyle]]"
+      content={{localize('minor')}}></minor-heading> -->
+   <div class="grid_board">
+     <table>
+       <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+     </table>
+     <!-- <img src="/img/renewed_c1/camera.png" />
+     <img src="/img/renewed_c1/monitor.png" /> -->
+     <div class="square"></div>
+     <div class="triangle"></div>
+     <div class="circle"></div>
+   </div>
+
+
+  </template>
+  <script>
+    class AxisGridGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'axis-grid-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        // this.set('currentStage', 1)
+        // this.set('ques_sub', this.resources[this.language].quesSub)
+        // this.set('tags', d3.shuffle(this.tags))
+        // this.genAxisData()
+
+      }
+      reset(){
+
+        // d3.select(this.$.axis_cont).select('div').selectAll('.axis_nums').remove()
+        // d3.select(this.$.question_cont).select('span').remove()
+        //
+        // this.set('currentStage', this.currentStage+1)
+        //
+        // this.set('ques_sub', this.resources[this.language].quesSub)
+        // this.set('tags', d3.shuffle(this.tags))
+        //
+        // this.genAxisData()
+        // this.setData()
+
+      }
+      // genRandom(max, min) {
+      //   return Math.floor(Math.random() * ( max - min) + min)
+      // }
+      // replaceText(txt, reTxt) {
+      //   this.set('ques_sub', this.ques_sub.replace(txt, reTxt))
+      // }
+      // genAxisData(){
+      //   let direction = {
+      //     0 : this.resources[this.language].directionRight,
+      //     1 : this.resources[this.language].directionLeft
+      //   }
+      //
+      //   // leftStep === nameIdx
+      //   let tagsLength = this.tags.length
+      //   let leftStep = this.genRandom(tagsLength, 1);
+      //   let directionIdx = this.genRandom(1, 0);
+      //   let stepIdx;
+      //
+      //   let rightStep = (tagsLength-1) - leftStep
+      //
+      //   switch (leftStep) {
+      //     case 0:
+      //       directionIdx = 0
+      //       break;
+      //     case 8:
+      //       directionIdx = 1
+      //       break;
+      //     default:
+      //       break;
+      //   }
+      //
+      //
+      //   let targetName = this.tags[leftStep];
+      //   let targetDirection = direction[directionIdx]
+      //   let targetStep = directionIdx ? this.genRandom(leftStep, 1) : this.genRandom(rightStep, 1)
+      //
+      //
+      //   this.replaceText(/\@/, targetName)
+      //   this.replaceText(/\#/, targetDirection)
+      //   this.replaceText(/\$/, targetStep)
+      //
+      //   let answerIdx = directionIdx ? leftStep-targetStep : leftStep+targetStep;
+      //   this.set('answerName', this.tags[answerIdx])
+      //
+      //   // console.log(leftStep, targetName,targetDirection, targetStep, this.ques_sub );
+      //
+      //   d3.select(this.$.question_cont)
+      //     .append('span')
+      //     .text(this.ques_sub)
+      //
+      // }
+      setData(data, manifest){
+
+        // let axisDivs = d3.select(this.$.axis_cont).select('div')
+        // .selectAll('div')
+        // .exit()
+        // .data(this.tags).enter()
+        // .append('div')
+        // .attr('class', "axis_nums")
+        // .attr('data', (d,i) => d)
+        // .style("left", (d, i) => `${(((this.offsetWidth*0.6)/8)*(i))}px`)
+        // .on('click', this.handleSelect )
+        //
+        // axisDivs.append('span')
+        // .attr('class', "axis_text")
+        // .text((d, i) => `${d}`)
+
+
+      }
+      // handleSelect(d) {
+      //   let self = d3.select(this.ownerDocument).select('#element').node();
+      //
+      //   let result = {
+      //     0 : "successModal",
+      //     1 : "finalStageModal"
+      //   }
+      //   let idx = self.currentStage < self.lastStage ? 0 : 1;
+      //
+      //   if(self.answerName !== d) {
+      //     self.$.retryModal.modalAlert()
+      //     return;
+      //   }
+      //
+      //   self.$[result[idx]].modalAlert()
+      //
+      // }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+    }
+    window.customElements.define(AxisGridGame.is, AxisGridGame);
+  </script>
+</dom-module>
