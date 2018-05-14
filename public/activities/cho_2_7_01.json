@@ -1,0 +1,108 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "sentence",
+    "nextlink" : "activity#!cho_1_1_02",
+    "questions" : [
+      {
+        "question": "'수박은 딸기보다 크다'의 부정명제는?",
+        "options" : [
+          { "text" : "수박은 딸기보다 크지 않다.", "answer": true},
+          { "text" : "딸기는 수박보다 크지 않다."},
+          { "text" : "딸기는 수박보다 작다."}
+        ]
+      },
+      {
+        "question": "'7은 5보다 작다.'의 부정명제는?",
+        "options" : [
+          { "text" : "6은 5보다 작다."},
+          { "text" : "7은 5보다 작지 않다.", "answer": true},
+          { "text" : "5는 7보다 작지 않다."}
+        ]
+      },
+      {
+        "question": "'대한민국의 수도는 제주도이다'의 부정명제는?",
+        "options" : [
+          { "text" : "대한민국의 수도는 대전이다"},
+          { "text" : "대한민국의 수도는 부산이다"},
+          { "text" : "대한민국의 수도는 제주도가 아니다", "answer": true}
+        ]
+      },
+      {
+        "question": "'중국의 영토는 한국의 영토보다 크다'의 부정명제는?",
+        "options" : [
+          { "text" : "중국의 영토는 한국의 영토보다 크지않다.", "answer": true},
+          { "text" : "한국의 영토는 중국의 영토보다 크지않다."},
+          { "text" : "한국의 영토는 중국의 영토보다 작다."}
+        ]
+      },
+      {
+        "question": "'일본인의 모국어는 일본어가 아니다.'의 부정명제는?",
+        "options" : [
+          { "text" : "일본인의 모국어는 영어다."},
+          { "text" : "일본인의 모국어는 한국어다."},
+          { "text" : "일본인의 모국어는 일본어다.", "answer": true}
+        ]
+      },
+      {
+        "question": "'지구는 달보다 크지않다.'의 부정명제는?",
+        "options" : [
+          { "text" : "지구는 달보다 크다.", "answer": true},
+          { "text" : "지구는 목성보다 크다."},
+          { "text" : "지구는 토성보다 크다."}
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "객관식 문제",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

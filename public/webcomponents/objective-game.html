@@ -29,13 +29,22 @@
         float: left;
       }
       .question > p {
-        font-size: 30px;
+        font-size: 26px;
         line-height: 100px;
         float: left;
         margin: 0;
       }
       .options {
         margin-top: 30px;
+        position: relative;
+        width: 70%;
+        left: 50%;
+        margin-left: -35%;
+      }
+      .options > img {
+        width: 40%;
+        float: left;
+        margin-left: 5%;
       }
       .wordStyle {
         height: 20%;
@@ -70,7 +79,7 @@
         color: #181818;
       }
       .sentenceStyle > p {
-        width: 60%;
+        width: 80%;
         display: inline-block;
         border: 3px dashed #dbdbdb;
         margin: 0;
@@ -80,6 +89,34 @@
       .sentenceStyle > p:active {
         border: 3px solid #772C73;
         background-color: #772C73;
+        color: white;
+      }
+      .reference {
+        width: 40%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        border-top: 3px solid lightgray;
+        border-bottom: 3px solid lightgray;
+      }
+      .sentences {
+        width: 60%;
+        right: 0;
+        position: absolute;
+        display: inline-block;
+      }
+      .reference > img {
+        max-width: 100%;
+        margin: 15% 0;
+      }
+      .reference > p {
+        position: absolute;
+        top: -20px;
+        margin: 0;
+        left: 40%;
+        font-size: 20px;
+        background-color: gray;
+        padding: 5px 10px;
         color: white;
       }
       .letter {
@@ -204,7 +241,7 @@
                         : `<img src="${op[keyName]}"/>`
       }
       handleClick(d){
-        let that = this.offsetParent.offsetParent;
+        let that = d3.select(this.ownerDocument).select('#element').node();
         if(that.gameType !== "ox") {
           let {answer} = d;
           if(answer) {
@@ -258,6 +295,22 @@
             .append('div').attr('class', 'sentenceStyle')
             .html((d, i) => this.renderOptions(d))
             .on("click", this.handleClick)
+            break;
+          case "reference":
+
+            let refNodes = objDivs.append('div').attr('class', 'reference')
+
+                refNodes.append('p').text('보기')
+                refNodes.append('img').attr('src', this.reference)
+
+            objDivs.append('div').attr('class', 'sentences')
+               .selectAll('div')
+               .data(d3.shuffle(options)).enter()
+               .append('div').attr('class', 'sentenceStyle')
+               .html((d, i) => this.renderOptions(d))
+               .on("click", this.handleClick)
+
+
             break;
           case "ox":
             objDivs.selectAll('p')
