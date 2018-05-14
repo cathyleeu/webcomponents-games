@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": ["start", "move_forward1", "repeat_until_box"],
+  "mandatory": [],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "get_item",
+    "use_item",
+    "repeat_until_box"
+  ],
+  "tile": [
+    {"tile": ")", "itemCount": 5},
+    {"tile": "%", "useItem": 5}
+  ],
+  "map": [
+    "#...#",
+    "..r).",
+    ".%...",
+    ".###.",
+    "#...#"
+  ],
+  "tutorial": [{
+    "msg:ko": "상자를 한 번에 한 개씩 가져와서 연구로소 옮기자.",
+    "msg:en": "Bring the boxes one by one and move them to the lab."
+  }]
+}

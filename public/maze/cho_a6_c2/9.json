@@ -1,0 +1,42 @@
+{
+  "tile_size":128,
+  "score":1,
+  "workspace": "start",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "check",
+    "condition2_recycle",
+    "get_item2_split",
+    "use_item2"
+  ],
+  "tile": [
+    {"tile": "&", "contents" : [
+      {"img": "paper1", "itemImg":"paper1", "disappear":true, "role": "item", "order": "if"},
+      {"img": "paper2", "itemImg":"paper2", "disappear":true, "role": "item", "order": "if"},
+      {"img": "paper3", "itemImg":"paper3", "disappear":true, "role": "item", "order": "if"},
+      {"img": "pet1", "itemImg":"pet1", "disappear":true, "role": "item", "order": "if"},
+      {"img": "pet2", "itemImg":"pet2", "disappear":true, "role": "item", "order": "if"},
+      {"img": "pet3", "itemImg":"pet3", "disappear":true, "role": "item", "order": "if"},
+      {"img": "trash1", "itemImg":"trash1", "disappear":true, "role": "item", "order": "else"},
+      {"img": "trash2", "itemImg":"trash2", "disappear":true, "role": "item", "order": "else"},
+      {"img": "trash3", "itemImg":"trash3", "disappear":true, "role": "item", "order": "else"}
+    ]},
+    {"tile": "A", "role": "food", "img": "recycle_can", "order": "if", "useItem": 1},
+    {"tile": "B", "role": "food", "img": "tresh_can", "order": "else", "useItem": 1}
+  ],
+  "map": [
+    "#...#",
+    "A##..",
+    "..&l.",
+    ".B#..",
+    "#...#"
+  ],
+  "tutorial": [{
+    "msg:ko": "검은 봉투를 확인하고, 재활용 가능하면 재활용 쓰레기통에, 재활용이 불가능하면 일반 쓰레기 통에 버려요 ",
+    "msg:en": "Let's check inside of black bag and if it was recyclable, Cobot is throwing out it to recycle can or if not, to trash can",
+    "img": ["/img/c8_w4/recycle.png","/img/c8_w4/recycle_can.png","/img/c8_w4/recycle_x.png","/img/c8_w4/tresh_can.png"]
+  }]
+}

@@ -23,19 +23,19 @@
   {"id": "tree2", "src": "/img/c8_w4/tree2.png","obstacle": true},
   {"id": "tree3", "src": "/img/c8_w4/tree3.png","obstacle": true},
 
-  {"tile": "h", "id": "hard", "src": "/img/guide/hard.png", "obstacle": false},
-  {"tile": "n", "id": "normal", "src": "/img/guide/normal.png", "obstacle": false},
-  {"tile": "e", "id": "easy", "src": "/img/guide/easy.png", "obstacle": false},
-
   {"id": "new_cobot0", "src": "/img/c8_w3/new_cobot0.png"},
   {"id": "recycle_can", "src": "/img/c8_w4/recycle_can.png"},
   {"id": "tresh_can", "src": "/img/c8_w4/tresh_can.png"},
+  {"id": "paper_can", "src": "/img/cho_a6/paper_can.png"},
+  {"id": "pet_can", "src": "/img/cho_a6/pet_can.png"},
 
-  {"id": "bottle", "src": "/img/c8_w4/bottle.png"},
-  {"id": "can", "src": "/img/c8_w4/can.png"},
-  {"id": "paper", "src": "/img/c8_w4/paper.png"},
-  {"id": "pet", "src": "/img/b9_w2/recycle4.png"},
-  {"id": "bone", "src": "/img/c8_w4/bone.png"},
-  {"id": "egg", "src": "/img/c8_w4/egg.png"},
-  {"id": "trash", "src": "/img/c8_w4/trash.png"}
+  {"id": "paper1", "src": "/img/c8_w4/paper.png"},
+  {"id": "paper2", "src": "/img/b9_w2/recycle5.png"},
+  {"id": "paper3", "src": "/img/b9_w2/recycle6.png"},
+  {"id": "pet1", "src": "/img/cho_a6/pet1.png"},
+  {"id": "pet2", "src": "/img/cho_a6/pet2.png"},
+  {"id": "pet3", "src": "/img/b9_w2/recycle4.png"},
+  {"id": "trash1", "src": "/img/c8_w4/trash.png"},
+  {"id": "trash2", "src": "/img/c8_w4/bone.png"},
+  {"id": "trash3", "src": "/img/c8_w4/egg.png"}
 ]

@@ -16,14 +16,14 @@
     {"tile": "%", "useItem": 3}
   ],
   "map": [
-    "%####",
+    "#####",
     "#...#",
     "#r).#",
     "#.%.#",
     "#####"
   ],
   "tutorial": [{
-    "msg:ko": "모든 상자를 연구소로 옮겨야 해!",
-    "msg:en": "Go a chest to make a unconditional winning game!"
+    "msg:ko": "상자를 한 번에 한 개씩 가져와서 연구로소 옮기자.",
+    "msg:en": "Bring the boxes one by one and move them to the lab."
   }]
 }

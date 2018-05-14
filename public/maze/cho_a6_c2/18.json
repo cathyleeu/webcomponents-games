@@ -1,0 +1,43 @@
+{
+  "tile_size":128,
+  "score":1,
+  "workspace": "start,move_forward1,check,get_item2_split,condition3_recycle,use_item2",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "check",
+    "condition3_recycle",
+    "get_item2_split",
+    "use_item2"
+  ],
+  "tile": [
+    {"tile": "&", "contents" : [
+      {"img": "paper1", "itemImg":"paper1", "disappear":true, "role": "item", "order": "if"},
+      {"img": "paper2", "itemImg":"paper2", "disappear":true, "role": "item", "order": "if"},
+      {"img": "paper3", "itemImg":"paper3", "disappear":true, "role": "item", "order": "if"},
+      {"img": "pet1", "itemImg":"pet1", "disappear":true, "role": "item", "order": "else_if"},
+      {"img": "pet2", "itemImg":"pet2", "disappear":true, "role": "item", "order": "else_if"},
+      {"img": "pet3", "itemImg":"pet3", "disappear":true, "role": "item", "order": "else_if"},
+      {"img": "trash1", "itemImg":"trash1", "disappear":true, "role": "item", "order": "else"},
+      {"img": "trash2", "itemImg":"trash2", "disappear":true, "role": "item", "order": "else"},
+      {"img": "trash3", "itemImg":"trash3", "disappear":true, "role": "item", "order": "else"}
+    ]},
+    {"tile": "A", "role": "food", "img": "paper_can", "order": "if", "useItem": 1},
+    {"tile": "B", "role": "food", "img": "pet_can", "order": "else_if", "useItem": 1},
+    {"tile": "C", "role": "food", "img": "tresh_can", "order": "else", "useItem": 1}
+  ],
+  "map": [
+    "#...#",
+    "..d..",
+    ".C&AB",
+    ".###.",
+    "#...#"
+  ],
+  "tutorial": [{
+    "msg:ko": "검은 봉투를 확인하고, 재활용하자.",
+    "msg:en": "Check the black plastic bag and let's recycle it.",
+    "img": ["/img/c8_w4/recycle.png","/img/c8_w4/recycle_can.png","/img/c8_w4/recycle_x.png","/img/c8_w4/tresh_can.png"]
+  }]
+}
