@@ -2314,7 +2314,7 @@ Actions.prototype.draw = function(type, block, callback) {
       draw_item_color;
 
   if(type == "list"){
-    var list_num =  this._getFieldValue(block, "list_num");
+    var list_num =  Number(this._getFieldValue(block, "list_num"));
     if(character.draw_list.length <= list_num){
       callback("정의되지 않는 그림 입니다.");
       return;

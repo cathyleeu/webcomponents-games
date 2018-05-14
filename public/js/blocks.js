@@ -1316,29 +1316,33 @@ Blocks["draw"] = {
 Blocks["draw_list_item"] = {
   rgbColor: "#C1184A",
   message0: {
-    ko: "%1 그림 # %2 그리기",
-    en: "%1 Draw # %2"
+    ko: "%2 그림 %1 그리기",
+    en: "%2 Draw %1"
   },
-  args0: [
-    {type: "field_image", src: "/img/cho_draw/pen.png"},
-    {type: "field_dropdown",
+  args0: [{
+      type: "field_iconmenu",
       name: "list_num",
       options: [
-        ["1", 1],["2", 2],["3", 3],["4", 4],["5", 5]
+        {src: '/img/cho_list/1.png', value: '1', width: 48, height: 48},
+        {src: '/img/cho_list/2.png', value: '2', width: 48, height: 48},
+        {src: '/img/cho_list/3.png', value: '3', width: 48, height: 48},
+        {src: '/img/cho_list/4.png', value: '4', width: 48, height: 48},
+        {src: '/img/cho_list/5.png', value: '5', width: 48, height: 48}
       ]
-    }
+    },
+    {type: "field_image", src: "/img/cho_draw/pen.png"}
   ],
   action: ["draw","list"]
 };
 Blocks["draw_x_list_item"] = {
   rgbColor: "#C1184A",
   message0: {
-    ko: "%1 그림 # %2 그리기",
-    en: "%1 Draw # %2"
+    ko: "%1 그림 %2 그리기",
+    en: "%1 Draw %2"
   },
   args0: [
     {type: "field_image", src: "/img/cho_draw/pen.png"},
-    {type: "field_image", src: "/img/kidsblocks/x_img.png"}
+    {type: "field_image", src: "/img/cho_list/c_x.png"}
   ],
   action: ["draw","loop_x"]
 };
@@ -1376,7 +1380,7 @@ Blocks["make_picture_list"] = {
     en: "%1 Make a picture list"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/list_icon.png"}
+    {type: "field_image", src: "/img/cho_list/list_icon.png"}
   ],
   action: ["func", "make_picture_list_func"]
 };
@@ -1387,7 +1391,7 @@ Blocks["make_picture_list_func"] = {
     en: "%2 %1 Make a picture list"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/list_icon.png"},
+    {type: "field_image", src: "/img/cho_list/list_icon.png"},
     {"type": "field_label",
       "text": "정의",
       "class": "style-define"}
@@ -1403,7 +1407,7 @@ Blocks["make_number_list"] = {
     en: "%1 Make a number list"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/list_icon.png"}
+    {type: "field_image", src: "/img/cho_list/list_icon.png"}
   ],
   action: ["func", "make_number_list_func"]
 };
@@ -1414,7 +1418,7 @@ Blocks["make_number_list_func"] = {
     en: "%2 %1 Make a number list"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/list_icon.png"},
+    {type: "field_image", src: "/img/cho_list/list_icon.png"},
     {"type": "field_label",
       "text": "정의",
       "class": "style-define"}
@@ -1466,7 +1470,7 @@ Blocks["define_color"] = {
 
 Blocks["list_shape_no1"] = {
   rgbColor: "#A08879",
-  message0: {ko: "그림 #1 모양 %1",en: "figure #1 shape %1"},
+  message0: {ko: "그림 %2 모양 %1",en: "figure %2 shape %1"},
   args0: [{
     type: "field_iconmenu",    name: "shape",
     options: [
@@ -1476,12 +1480,13 @@ Blocks["list_shape_no1"] = {
       {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
       {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
       {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/1.png"}],
   action: ["add_shape","shape"]
 };
 Blocks["list_shape_no2"] = {
   rgbColor: "#A08879",
-  message0: {ko: "그림 #2 모양 %1",en: "figure #2 shape %1"},
+  message0: {ko: "그림 %2 모양 %1",en: "figure %2 shape %1"},
   args0: [{
     type: "field_iconmenu",    name: "shape",
     options: [
@@ -1491,12 +1496,13 @@ Blocks["list_shape_no2"] = {
       {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
       {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
       {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/2.png"}],
   action: ["add_shape","shape"]
 };
 Blocks["list_shape_no3"] = {
   rgbColor: "#A08879",
-  message0: {ko: "그림 #3 모양 %1",en: "figure #3 shape %1"},
+  message0: {ko: "그림 %2 모양 %1",en: "figure %2 shape %1"},
   args0: [{
     type: "field_iconmenu",    name: "shape",
     options: [
@@ -1506,12 +1512,13 @@ Blocks["list_shape_no3"] = {
       {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
       {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
       {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/3.png"}],
   action: ["add_shape","shape"]
 };
 Blocks["list_shape_no4"] = {
   rgbColor: "#A08879",
-  message0: {ko: "그림 #4 모양 %1",en: "figure #4 shape %1"},
+  message0: {ko: "그림 %2 모양 %1",en: "figure %2 shape %1"},
   args0: [{
     type: "field_iconmenu",    name: "shape",
     options: [
@@ -1521,12 +1528,13 @@ Blocks["list_shape_no4"] = {
       {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
       {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
       {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/4.png"}],
   action: ["add_shape","shape"]
 };
 Blocks["list_shape_no5"] = {
   rgbColor: "#A08879",
-  message0: {ko: "그림 #5 모양 %1",en: "figure #5 shape %1"},
+  message0: {ko: "그림 %2 모양 %1",en: "figure %2 shape %1"},
   args0: [{
     type: "field_iconmenu",    name: "shape",
     options: [
@@ -1536,13 +1544,14 @@ Blocks["list_shape_no5"] = {
       {src: '/img/cho_draw/star_white.png', value: 'star', width: 48, height: 48},
       {src: '/img/cho_draw/sun_white.png', value: 'sun', width: 48, height: 48},
       {src: '/img/cho_draw/triangle_white.png', value: 'triangle', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/5.png"}],
   action: ["add_shape","shape"]
 };
 
 Blocks["list_shape_color_no1"] = {
   rgbColor: "#65B492",
-  message0: {ko: "그림 #1 모양 %1 색깔 %2",en: "figure #1 shape %1 color %2"},
+  message0: {ko: "그림 %3 모양 %1 색깔 %2",en: "figure %3 shape %1 color %2"},
   args0: [{
     type: "field_iconmenu",name: "shape",
     options: [
@@ -1561,12 +1570,13 @@ Blocks["list_shape_color_no1"] = {
       {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
       {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
       {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/1.png"}],
   action: ["add_shape_color","shape"]
 };
 Blocks["list_shape_color_no2"] = {
   rgbColor: "#65B492",
-  message0: {ko: "그림 #2 모양 %1 색깔 %2",en: "figure #2 shape %1 color %2"},
+  message0: {ko: "그림 %3 모양 %1 색깔 %2",en: "figure %3 shape %1 color %2"},
   args0: [{
     type: "field_iconmenu",name: "shape",
     options: [
@@ -1585,12 +1595,13 @@ Blocks["list_shape_color_no2"] = {
       {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
       {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
       {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/2.png"}],
   action: ["add_shape_color","shape"]
 };
 Blocks["list_shape_color_no3"] = {
   rgbColor: "#65B492",
-  message0: {ko: "그림 #3 모양 %1 색깔 %2",en: "figure #3 shape %1 color %2"},
+  message0: {ko: "그림 %3 모양 %1 색깔 %2",en: "figure %3 shape %1 color %2"},
   args0: [{
     type: "field_iconmenu",name: "shape",
     options: [
@@ -1609,12 +1620,13 @@ Blocks["list_shape_color_no3"] = {
       {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
       {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
       {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/3.png"}],
   action: ["add_shape_color","shape"]
 };
 Blocks["list_shape_color_no4"] = {
   rgbColor: "#65B492",
-  message0: {ko: "그림 #4 모양 %1 색깔 %2",en: "figure #4 shape %1 color %2"},
+  message0: {ko: "그림 %3 모양 %1 색깔 %2",en: "figure %3 shape %1 color %2"},
   args0: [{
     type: "field_iconmenu",name: "shape",
     options: [
@@ -1633,12 +1645,13 @@ Blocks["list_shape_color_no4"] = {
       {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
       {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
       {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/4.png"}],
   action: ["add_shape_color","shape"]
 };
 Blocks["list_shape_color_no5"] = {
   rgbColor: "#65B492",
-  message0: {ko: "그림 #5 모양 %1 색깔 %2",en: "figure #5 shape %1 color %2"},
+  message0: {ko: "그림 %3 모양 %1 색깔 %2",en: "figure %3 shape %1 color %2"},
   args0: [{
     type: "field_iconmenu",name: "shape",
     options: [
@@ -1657,53 +1670,59 @@ Blocks["list_shape_color_no5"] = {
       {src: '/img/cho_draw/ink_red.png', value: 'red', width: 48, height: 48},
       {src: '/img/cho_draw/ink_sky.png', value: 'sky', width: 48, height: 48},
       {src: '/img/cho_draw/ink_yellow.png', value: 'yellow', width: 48, height: 48}
-    ]}],
+    ]},
+  {type: "field_image", src: "/img/cho_list/5.png"}],
   action: ["add_shape_color","shape"]
 };
 
 Blocks["list_number1"] = {
   rgbColor: "#A08879",
-  message0: {ko: "숫자 #1 %1",en: "Number #1 %1"},
+  message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
     options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
-  }],
+  },
+{type: "field_image", src: "/img/cho_list/1.png"}],
   action: ["add_number","number"]
 };
 Blocks["list_number2"] = {
   rgbColor: "#A08879",
-  message0: {ko: "숫자 #2 %1",en: "Number #2 %1"},
+  message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
     options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
-  }],
+  },
+{type: "field_image", src: "/img/cho_list/2.png"}],
   action: ["add_number","number"]
 };
 Blocks["list_number3"] = {
   rgbColor: "#A08879",
-  message0: {ko: "숫자 #3 %1",en: "Number #3 %1"},
+  message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
     options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
-  }],
+  },
+{type: "field_image", src: "/img/cho_list/3.png"}],
   action: ["add_number","number"]
 };
 Blocks["list_number4"] = {
   rgbColor: "#A08879",
-  message0: {ko: "숫자 #4 %1",en: "Number #4 %1"},
+  message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
     options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
-  }],
+  },
+{type: "field_image", src: "/img/cho_list/4.png"}],
   action: ["add_number","number"]
 };
 Blocks["list_number5"] = {
   rgbColor: "#A08879",
-  message0: {ko: "숫자 #5 %1",en: "Number #5 %1"},
+  message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
     options: [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15]]
-  }],
+  },
+{type: "field_image", src: "/img/cho_list/5.png"}],
   action: ["add_number","number"]
 };
 
@@ -2435,19 +2454,23 @@ Blocks["repeat_list_num"] = {
   },
   rgbColor: "#242786",
   message0: {
-    ko: "%1 숫자 #%2 만큼 반복",
-    en: "Repeat %1"
+    ko: "%1 숫자 %2 만큼 반복",
+    en: "Repeat %2 "
   },
   args0: [{
     type: "field_image",
     src: "/img/kidsblocks/repeat.svg"
   },{
-    type: "field_dropdown",
-    name: "list_num",
-    options: [
-      ["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"]
-    ]
-  }],
+      type: "field_iconmenu",
+      name: "list_num",
+      options: [
+        {src: '/img/cho_list/1.png', value: '1', width: 48, height: 48},
+        {src: '/img/cho_list/2.png', value: '2', width: 48, height: 48},
+        {src: '/img/cho_list/3.png', value: '3', width: 48, height: 48},
+        {src: '/img/cho_list/4.png', value: '4', width: 48, height: 48},
+        {src: '/img/cho_list/5.png', value: '5', width: 48, height: 48}
+      ]
+    }],
   message1: "%1",
   args1: [{
     type: "input_statement",
@@ -2463,7 +2486,7 @@ Blocks["repeat_x_list_num"] = {
   },
   rgbColor: "#242786",
   message0: {
-    ko: "%1 숫자 #%2 만큼 반복",
+    ko: "%1 숫자 %2 만큼 반복",
     en: "Repeat %1"
   },
   args0: [{
@@ -2471,7 +2494,7 @@ Blocks["repeat_x_list_num"] = {
     src: "/img/kidsblocks/repeat.svg"
   },{
     type: "field_image",
-    src: "/img/kidsblocks/x_img.png"
+    src: "/img/cho_list/c_x.png"
   }],
   message1: "%1",
   args1: [{
@@ -2486,14 +2509,14 @@ Blocks["forloop_type1"] = {
     ko: "일정하게 증가하며 반복",
     en: "Increase repeatedly"
   },
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1가 1 부터 %2 까지, 1씩 증가",
     en: "%1 from 1 to %2, incrementing by 1"
   },
   args0: [{
     type: "field_image",
-    src: "/img/kidsblocks/x_img.png"
+    src: "/img/kidsblocks/x_loop_img.png"
   },{
     type: "field_dropdown",
     name: "end_num",
@@ -2514,14 +2537,14 @@ Blocks["forloop_type2"] = {
     ko: "일정하게 증가하며 반복",
     en: "Increase repeatedly"
   },
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1가 %2 부터 %3 까지, 1씩 증가",
     en: "%1 from %2 to %3, incrementing by 1"
   },
   args0: [{
     type: "field_image",
-    src: "/img/kidsblocks/x_img.png"
+    src: "/img/kidsblocks/x_loop_img.png"
   },{
     type: "field_dropdown",
     name: "start_num",
@@ -2548,14 +2571,14 @@ Blocks["forloop_type3"] = {
     ko: "일정하게 증가하며 반복",
     en: "Increase repeatedly"
   },
-  rgbColor: "#242786",
+  rgbColor: "#2682C4",
   message0: {
     ko: "%1가 %2 부터 %3 까지, %4씩 증가",
     en: "%1 from %2 to %3, incrementing by %4"
   },
   args0: [{
     type: "field_image",
-    src: "/img/kidsblocks/x_img.png"
+    src: "/img/kidsblocks/x_loop_img.png"
   },{
     type: "field_dropdown",
     name: "start_num",
