@@ -20,7 +20,7 @@
         ]
       },
       {
-        "question": "부산은 제 2의 수도이다.",
+        "question": "부산은 광역시이다.",
         "options" : [
           { "text" : "명제가 아님"},
           { "text" : "거짓" },
@@ -28,7 +28,7 @@
         ]
       },
       {
-        "question": "나의 짝지는 잘생기고, 예쁘다.",
+        "question": "나의 짝궁은 잘생기고, 예쁘다.",
         "options" : [
           { "text" : "명제가 아님", "answer": true},
           { "text" : "거짓" },
@@ -36,7 +36,7 @@
         ]
       },
       {
-        "question": "서울에는 지하철이 3호선 이상 있다.",
+        "question": "서울에는 지하철 노선이 3개 이상 있다.",
         "options" : [
           { "text" : "명제가 아님"},
           { "text" : "거짓" },
@@ -98,6 +98,9 @@
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
       "successHead": "참 잘했어요!",
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
       "logoutHead": "로그아웃",
       "previousHead" : "돌아가기",
       "successBtm" : "다음 단계로 넘어가시겠습니까?",

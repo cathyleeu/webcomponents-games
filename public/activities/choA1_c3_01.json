@@ -2,7 +2,7 @@
   "element": "axis-guess-game",
   "attributes": {
     "lastStage" : 5,
-    "nextlink" : "activity#!cho_1_2_02",
+    "nextlink" : "activity#!choA1_c3_02",
     "images" : [
       "/img/a7_w2/fruit1.png",
       "/img/a7_w2/fruit2.png",
@@ -15,6 +15,12 @@
   "data": [
   ],
   "manifest": [
+    {"src": "/img/a7_w2/fruit1.png"},
+    {"src": "/img/a7_w2/fruit2.png"},
+    {"src": "/img/a7_w2/fruit3.png"},
+    {"src": "/img/a7_w2/fruit4.png"},
+    {"src": "/img/a7_w2/fruit5.png"},
+    {"src": "/img/a7_w2/fruit6.png"}
   ],
   "msg": {
     "ko": {

@@ -5,7 +5,7 @@
     "max" : 4,
     "horizontal" : true,
     "lastStage" : 1,
-    "nextlink" : "activity#!cho_1_1_03"
+    "nextlink" : "activity#!choA1_c1_03"
   },
   "data": [
     "computer1",
@@ -25,9 +25,9 @@
     {"no": 3 , "set": 0, "id": "person4", "src": "/img/coding_a/5/A5_2.png"},
 
     {"no": 0 , "set": 1, "id": "computer1", "src": "/img/renewed_c1/cpu.png"},
-    {"no": 1 , "set": 1, "id": "computer2", "src": "/img/renewed_c1/mic.png"},
+    {"no": 1 , "set": 1, "id": "computer4", "src": "/img/renewed_c1/speaker.png"},
     {"no": 2 , "set": 1, "id": "computer3", "src": "/img/renewed_c1/camera.png"},
-    {"no": 3 , "set": 1, "id": "computer4", "src": "/img/renewed_c1/speaker.png"}
+    {"no": 3 , "set": 1, "id": "computer2", "src": "/img/renewed_c1/mic.png"}
   ],
   "msg": {
     "ko": {

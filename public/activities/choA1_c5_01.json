@@ -7,7 +7,7 @@
   "attributes": {
     "max" : 2,
     "lastStage" : 3,
-    "nextlink" : "activity#!cho_1_5_02"
+    "nextlink" : "activity#!choA1_c5_02"
   },
   "manifest": [
     {"id": "f_job01", "src": "/img/cho_activities/f_job01.png", "result": true},

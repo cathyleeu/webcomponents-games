@@ -2,7 +2,7 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "sentence",
-    "nextlink" : "activity#!cho_1_1_02",
+    "nextlink" : "activity#!choA1_c1_02",
     "questions" : [
       {
         "question": "소리와 관련된 내용은 무엇인가요?",

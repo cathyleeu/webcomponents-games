@@ -1,40 +1,43 @@
 {
   "element": "objective-game",
   "attributes": {
-    "gameType" : "word",
+    "gameType" : "sentence",
+    "nextlink" : "activity#!choA1_c5_03",
     "questions" : [
       {
-        "question": "$은 무슨 기술과 관련있나요?",
-        "questionImg": "/img/cho_activities/cho_1_5_02.png",
+        "question": "인공지능은 어떤 기술 인가요?",
         "options" : [
-          { "text" : "드론", "answer": true},
-          { "text" : "3D 프린팅"},
-          { "text" : "인공지능"}
+          { "text" : "많은 양의 데이터를 활용하여 컴퓨터가 스스로 학습하는 기술", "answer": true},
+          { "text" : "가루나 액체 형태의 재료로 물건을 만들어 주는 기술"},
+          { "text" : "인간이 수동으로 데이터를 입력하는 기술"},
+          { "text" : "시간이 지날 수록 처리기능이 느려지는 기술"}
         ]
       },
       {
-        "question": "$은 무슨 기술과 관련있나요?",
-        "questionImg": "/img/cho_activities/cho_1_5_03.png",
+        "question": "3D프린트는 무엇인가요?",
         "options" : [
-          { "text" : "드론"},
-          { "text" : "3D 프린팅"},
-          { "text" : "인공지능","answer": true}
+          { "text" : "디자인한 대로 가루나 액체의 재료로 물건을 만드는 기술","answer": true},
+          { "text" : "많은 양의 데이터를 활용하여 컴퓨터가 스스로 학습하는 기술"},
+          { "text" : "원격 조정으로 움직이는 항공기술"},
+          { "text" : "컴퓨터에 저장된 데이터를 종이로 출력하는 기술"}
         ]
       },
       {
-        "question": "$은 무슨 기술과 관련있나요?",
-        "questionImg": "/img/cho_activities/cho_1_5_01.png",
+        "question": "정보화사회와 거리가 먼 것을 고르세요.",
         "options" : [
-          { "text" : "드론"},
-          { "text" : "3D 프린팅", "answer": true},
-          { "text" : "인공지능"}
+          { "text" : "친구에게 손편지를 보냈어요.","answer": true},
+          { "text" : "버스앱으로 버스가 언제 도착하는지 찾아봤어요."},
+          { "text" : "친구와 같이 찍은 사진을 SNS에 올렸어요."},
+          { "text" : "드론에 대해 궁금하여 인터넷에 검색했어요."}
         ]
       }
     ]
   },
   "data": [
+
   ],
   "manifest": [
+
   ],
   "msg": {
     "ko": {

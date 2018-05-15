@@ -2,7 +2,7 @@
   "element": "grouping-flow-game",
   "attributes": {
     "lastStage" : 1,
-    "nextlink" : "activity#!cho_2_1_03",
+    "nextlink" : "activity#!choA2_c1_03",
     "step": 1,
     "last" : 3
   },
@@ -18,18 +18,16 @@
     "last" : 3
   },
   "manifest": [
-    {"text": "음식의 종류", "step": 1},
-    {"text": "음식의 가격", "step": 1},
-    {"text": "나의 용돈", "step": 1},
-    {"text": "용돈으로 주문할 수 있는 음식 종류 확인", "step": 2},
-    {"text": "내가 주문할 수 있는 음식", "step": 3},
-    {"text": "친구의 용돈"},
-    {"text": "직원의 성별"}
+    {"text": "달력과 여행날짜", "step": 1},
+    {"text": "여행 지역", "step": 1},
+    {"text": "일기 예보 ", "step": 1},
+    {"text": "여행 날짜의 여행 지역 일기예보 확인", "step": 2},
+    {"text": "여행 갈 때 입어야 할 옷", "step": 3}
   ],
   "msg": {
     "ko": {
       "title": "자료와 정보의 구분",
-      "minor" : "음식을 주문할 때, 자료가 정보가 되는 순서를 맞춰보세요.",
+      "minor" : "여행 상황에서 자료가 정보가 되는 순서를 맞춰보세요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",

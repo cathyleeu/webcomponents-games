@@ -2,7 +2,7 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "sentence",
-    "nextlink" : "activity#!cho_1_1_02",
+    "nextlink" : "activity#!choA1_c1_02",
     "questions" : [
       {
         "question": "$은 무슨 용도 인가요?",
@@ -15,7 +15,7 @@
         ]
       },
       {
-        "question": "영상, 음성 등 자료를 전달받아 처리하는 장치는?",
+        "question": "입력장치로부터 다양한 자료를 입력받아 처리하는 장치는 무엇인가요?",
         "options" : [
           { "text" : "본체", "answer": true},
           { "text" : "키보드"},
@@ -34,7 +34,7 @@
         ]
       },
       {
-        "question": "글자를 입력받는 장치는?",
+        "question": "글자를 입력받는 입력 장치는 무엇인가요?",
         "options" : [
           { "text" : "본체"},
           { "text" : "키보드", "answer": true},
@@ -57,6 +57,9 @@
   "data": [
   ],
   "manifest": [
+    {"src": "/img/renewed_c1/camera.png", "name": "camera"},
+    {"src": "/img/renewed_c1/monitor.png", "name": "monitor"},
+    {"src": "/img/renewed_c1/mic.png", "name": "mic"}
   ],
   "msg": {
     "ko": {

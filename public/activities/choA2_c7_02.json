@@ -2,7 +2,7 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "reference",
-    "nextlink" : "activity#!cho_1_1_02",
+    "nextlink" : "activity#!choA1_c1_02",
     "reference": "/img/cho_activities/cho_2_7_02.png",
     "questions" : [
       {
