@@ -1,39 +1,27 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start",
-  "workspace2": "make_number_list_func",
+  "workspace": "start,make_number_list",
+  "workspace2": "make_number_list_func,list_number1,list_number2,list_number3",
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
     "repeat_list_num",
-    "make_number_list",
-    "list_number1",
-    "list_number2",
-    "list_number3",
-    "list_number4",
-    "list_number5",
     "get_item3"
   ],
   "map": [
     "%####",
-    "#).##",
-    "##).#",
-    "##.l#",
+    "#...#",
+    "#rABC",
+    "#...#",
     "#####"
   ],
-  "extra":[{
-      "x": 1,
-      "y": 1,
-      "img": "walnut",
-      "itemCount": 4
-    },{
-      "x": 2,
-      "y": 2,
-      "img": "pumkinseed",
-      "itemCount": 2
-    }],
+  "tile": [
+    {"tile": "A", "img": "acorn", "itemCount": 3, "role": "item"},
+    {"tile": "B", "img": "walnut", "itemCount": 4, "role": "item"},
+    {"tile": "C", "img": "rice", "itemCount": 2, "role": "item"}
+  ],
   "tutorial": [{
     "msg:ko": "곡식을 모두 가져오자!",
     "msg:en": "Let's get all grain!"

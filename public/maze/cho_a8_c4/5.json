@@ -1,49 +1,29 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start",
-  "workspace2": "make_picture_list_func",
+  "workspace": "start,make_picture_list",
+  "workspace2": "make_picture_list_func,list_shape_color_no1,list_shape_color_no2,list_shape_color_no3",
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "make_picture_list",
-    "draw_list_item",
-    "list_shape_color_no1",
-    "list_shape_color_no2",
-    "list_shape_color_no3",
-    "list_shape_color_no4",
-    "list_shape_color_no4"
+    "draw_x_list_item"
   ],
   "map": [
-    "######",
-    "##r..#",
-    "#%#%.#",
-    "#.%..#",
-    "######"
+    "#####",
+    "#...#",
+    "#...#",
+    "rABC#",
+    "#####"
   ],
-  "extra":[{
-    "x": 2,
-    "y": 3,
-    "img": "square_yellow_target",
-    "shape": "square",
-    "color": "yellow",
-    "useItem": true
-  },{
-    "x": 3,
-    "y": 2,
-    "img": "moon_green_target",
-    "shape": "moon",
-    "color": "green",
-    "useItem": true
-  },{
-    "x": 1,
-    "y": 2,
-    "img": "circle_blue_target",
-    "shape": "circle",
-    "color": "blue",
-    "useItem": true
-  }],
+  "tile": [
+    {"tile": "A", "img": "square_sky_target",
+     "shape": "square", "color": "sky", "useItem": true, "role": "food"},
+    {"tile": "B", "img": "sun_orange_target",
+     "shape": "sun", "color": "orange", "useItem": true, "role": "food"},
+    {"tile": "C", "img": "star_yellow_target",
+     "shape": "star", "color": "yellow", "useItem": true, "role": "food"}
+  ],
   "tutorial": [{
     "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
     "msg:en": "Try to draw a picture of the right shape in the given position."

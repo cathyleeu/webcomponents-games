@@ -1,0 +1,33 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start,make_picture_list",
+  "workspace2": "make_picture_list_func,list_shape_no1,list_shape_no2,list_shape_no3",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "draw_x_list_item"
+  ],
+  "map": [
+    "######",
+    "#.BB.#",
+    "#A##C#",
+    "#A.#C#",
+    "#u#..#",
+    "######"
+  ],
+  "tile": [
+    {"tile": "A", "img": "square_white_target",
+     "shape": "square", "color": "white", "useItem": true, "role": "food"},
+    {"tile": "B", "img": "triangle_white_target",
+     "shape": "triangle", "color": "white", "useItem": true, "role": "food"},
+    {"tile": "C", "img": "star_white_target",
+     "shape": "star", "color": "white", "useItem": true, "role": "food"}
+  ],
+  "tutorial": [{
+    "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
+    "msg:en": "Try to draw a picture of the right shape in the given position."
+  }]
+}
