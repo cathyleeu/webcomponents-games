@@ -2,7 +2,7 @@
   "element": "grouping-flow-game",
   "attributes": {
     "lastStage" : 1,
-    "nextlink" : "activity#!cho_2_1_02",
+    "nextlink" : "activity#!choA2_c1_03",
     "step": 1,
     "last" : 3
   },
@@ -10,24 +10,26 @@
     "background" : false,
     "steps" : 3,
     "phases" : [
-      {"title": "1단계", "num": 1},
-      {"title": "2단계", "num": 1},
-      {"title": "3단계", "num": 1}
+      {"title": "자료", "num": 3},
+      {"title": "처리 과정", "num": 1},
+      {"title": "정보", "num": 1}
     ],
     "first" : 1,
     "last" : 3
   },
   "manifest": [
-    {"text": "자료", "step": 1},
-    {"text": "자료의 처리", "step": 2},
-    {"text": "정보", "step": 3},
-    {"text": "생산"},
-    {"text": "디지털"}
+    {"text": "음식의 종류", "step": 1},
+    {"text": "음식의 가격", "step": 1},
+    {"text": "나의 용돈", "step": 1},
+    {"text": "용돈으로 주문할 수 있는 음식 종류 확인", "step": 2},
+    {"text": "내가 주문할 수 있는 음식", "step": 3},
+    {"text": "친구의 용돈"},
+    {"text": "직원의 성별"}
   ],
   "msg": {
     "ko": {
       "title": "자료와 정보의 구분",
-      "minor" : "자료와 정보의 관계 순서를 맞춰보세요.",
+      "minor" : "음식을 주문할 때, 자료가 정보가 되는 순서를 맞춰보세요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",

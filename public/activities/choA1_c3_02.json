@@ -31,7 +31,7 @@
       "finalbtn" : "다음 단계",
       "fullscreen" : "풀스크린",
       "quesHead": "문제",
-      "quesSub": "@에서 #있는 쪽으로 $칸",
+      "quesSub": "@에서 #으로 $칸",
       "exceedHead": "선택 초과",
       "exceedBtm": "더 이상 선택 할 수 없어요.",
       "lackHead": "선택 부족",
