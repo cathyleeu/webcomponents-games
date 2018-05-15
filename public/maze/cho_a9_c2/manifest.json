@@ -14,6 +14,8 @@
 
   {"id": "seawall1", "src": "/img/cho_a9/seawall1.png","obstacle": true},
   {"id": "seawall2", "src": "/img/cho_a9/seawall2.png","obstacle": true},
+  {"tile": "s", "id": "sea1", "src": "/img/cho_a9/sea1.png", "wall": true},
+  {"tile": "w", "id": "sea2", "src": "/img/cho_a9/sea2.png", "wall": true},
 
   {"id": "circle_white", "src": "/img/cho_draw/circle_white.png"},
   {"id": "moon_white", "src": "/img/cho_draw/moon_white.png"},

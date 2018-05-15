@@ -15,7 +15,7 @@
     "#r.A#",
     "#...#",
     "#..B#",
-    "#####"
+    "swsws"
   ],
   "tile": [
     {"tile": "A", "img": "moon_green_target",

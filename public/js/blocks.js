@@ -3824,16 +3824,16 @@ Blocks['condition3_recycle'] = {
 };
 Blocks['condition2_5_smaller_for'] = {
   name: {
-    ko: "만약에 5 보다 작다면",
+    ko: "숫자가 5 보다 작다면",
     en: "If less than 5"
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "만약에 %1 보다 작다면",
+    ko: "숫자가 %1 보다 작다면",
     en: "If less than %1"
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -3853,16 +3853,16 @@ Blocks['condition2_5_smaller_for'] = {
 };
 Blocks['condition2_odd_for'] = {
   name: {
-    ko: "만약에 홀수라면",
+    ko: "숫자가 홀수라면",
     en: "If odd"
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "만약에 홀수라면",
+    ko: "숫자가 %1 라면",
     en: "If odd"
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/odd.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -3882,16 +3882,16 @@ Blocks['condition2_odd_for'] = {
 };
 Blocks['condition2_even_for'] = {
   name: {
-    ko: "만약에 짝수라면",
+    ko: "숫자가 짝수라면",
     en: "If even"
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "만약에 짝수라면",
+    ko: "숫자가 %1 라면",
     en: "If even"
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/even.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -3911,16 +3911,17 @@ Blocks['condition2_even_for'] = {
 };
 Blocks['condition2_odd_and_5_smaller_for'] = {
   name: {
-    ko: "만약에 홀수라면 그리고 5보다 작다면",
+    ko: "숫자가 홀수라면 그리고 5보다 작다면",
     en: "If odd & less than 5"
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "홀수라면 그리고 %1 보다 작다면",
-    en: "If odd & less than %1"
+    ko: "숫자가 %1 라면 그리고 %2 보다 작다면",
+    en: "If %1 & less than %2"
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/odd.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -3940,16 +3941,17 @@ Blocks['condition2_odd_and_5_smaller_for'] = {
 };
 Blocks['condition2_even_and_5_smaller_for'] = {
   name: {
-    ko: "만약에 짝수라면 그리고 5보다 작다면",
+    ko: "숫자가 짝수라면 그리고 5보다 작다면",
     en: "If even & less than 5"
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "짝수라면 그리고 %1 보다 작다면",
-    en: "If even & less than %1"
+    ko: "숫자가 %1 라면 그리고 %2 보다 작다면",
+    en: "If %1 & less than %2"
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/even.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -3974,11 +3976,12 @@ Blocks['condition2_odd_or_5_smaller_for'] = {
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "홀수라면 또는 %1 보다 작다면",
-    en: "If odd or less than %1"
+    ko: "숫자가 %1 라면 또는 %2 보다 작다면",
+    en: "If %1 & less than %2"
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/odd.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{
@@ -4003,11 +4006,12 @@ Blocks['condition2_even_or_5_smaller_for'] = {
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "짝수라면 또는 %1 보다 작다면",
-    en: "If even or less than %1"
+    ko: "숫자가 %1 라면 또는 %2 보다 작다면",
+    en: "If %1 & less than %2"
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a2/h5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/even.png", width: 30, height: 30},
+    {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
   ],
   message1: "%1",
   args1: [{

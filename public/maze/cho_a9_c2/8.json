@@ -15,7 +15,7 @@
     "#A.B#",
     "#...#",
     "#u.C#",
-    "#####"
+    "swsws"
   ],
   "tile": [
     {"tile": "A", "img": "star_white_target",

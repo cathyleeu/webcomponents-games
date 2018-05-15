@@ -15,7 +15,7 @@
     "#..d#",
     "#...#",
     "#B.A#",
-    "#####"
+    "swsws"
   ],
   "tile": [
     {"tile": "A", "img": "triangle_white_target",
