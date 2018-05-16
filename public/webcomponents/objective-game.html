@@ -224,7 +224,29 @@
         }
       }
       replaceQuestion(text){
-        let result = this.questions[this.stage].questionImg ? true : false;
+        // 타입에 따라서 문제 설정
+
+        let { questionImg, questType, detailType, color } = this.questions[this.stage]
+        if(questType === "gridCount" && detailType === "color"){
+          text = text.replace("$", `<p style="width:100px;height:100px;background-color:${color}"></p>,`);
+          text = text.split(',');
+          return `${text[0]} <p>${text[1]}</p>`;
+        }
+
+        if(questType === "gridCount" && detailType === "max"){
+          let textArr = ["max", "min", "middle"];
+          let textObj = {
+                "max" : "가장 큰",
+                "min" : "가장 작은",
+                "middle" : "중간"
+              }
+          let num = Math.floor(Math.random() * (textArr.length-1 - 0 + 1)) + 0;
+
+          this.set('selectedMax', textArr[num] )
+          text = text.replace("$", `${textObj[textArr[num]]}`);
+        }
+
+        let result = Boolean(questionImg);
         if(result) {
           text = text.replace("$", `<img src="${this.questions[this.stage].questionImg}"/>,`);
           text = text.split(',');
@@ -240,34 +262,69 @@
                         ? `<p ${answer ? `data-answer=true` : "" }>${op[keyName]}</p>`
                         : `<img src="${op[keyName]}"/>`
       }
+      renderOptionsForGridType(d){
+        let { questionImg, questType, detailType, color } = this.questions[this.stage];
+        let refGrid = d3.select(this.shadowRoot).select('axis-grid').node()
+        let answer;
+        switch (detailType) {
+          case "color":
+            answer = Boolean(color === d);
+            return `<p ${answer ? `data-answer=true` : "" }>${refGrid[`filled_${d}`]}</p>`
+          case "max":
+            return `<p data-answer=${refGrid[`filled_${d}`]} style="width:150px;height:50px;background-color:${d}"></p>`
+          default:
+            break;
+        }
+
+      }
       handleClick(d){
         let that = d3.select(this.ownerDocument).select('#element').node();
-        if(that.gameType !== "ox") {
-          let {answer} = d;
-          if(answer) {
-            console.log("성공");
-            if(that.LastStage === that.stage){
-              that.$.finalStageModal.modalAlert()
-            }else {
-              that.$.successModal.modalAlert()
+        let gridNode = d3.select(that.shadowRoot).select('axis-grid').node();
+        let answer, result;
+        let gameType = that.gameType;
+
+        if (gameType === "gridComp") {
+          gameType = that.questions[that.stage].detailType;
+        }
+
+        switch (gameType) {
+          case "ox":
+            answer = this.dataset.answer;
+            result = Boolean(answer === d);
+            break;
+          case "color":
+            answer = d3.select(this).select('p').node().dataset.answer;
+            result = String(answer) == "true";
+            break;
+          case "max":
+            // gridNode
+            answer = +d3.select(this).select('p').node().dataset.answer;
+            let arr = gridNode.setted;
+            let target;
+
+            if(that.selectedMax === "middle") {
+              target = arr.find(s => Math.min(...arr) !== s && Math.max(...arr) !== s)
+            } else {
+              target = Math[`${that.selectedMax}`](...arr)
             }
-          } else {
-            console.log("실패");
-            that.$.retryModal.modalAlert()
+            
+            result = Boolean(answer === target)
+            // debugger
+            break;
+          default:
+            result = d.answer;
+            break;
+        }
+        if(result) {
+          console.log("성공");
+          if(that.LastStage === that.stage){
+            that.$.finalStageModal.modalAlert()
+          }else {
+            that.$.successModal.modalAlert()
           }
         } else {
-            let { answer } = this.dataset;
-            if(answer === d) {
-              console.log("성공");
-              if(that.LastStage === that.stage){
-                that.$.finalStageModal.modalAlert()
-              }else {
-                that.$.successModal.modalAlert()
-              }
-            } else {
-              console.log("실패");
-              that.$.retryModal.modalAlert()
-            }
+          console.log("실패");
+          that.$.retryModal.modalAlert()
         }
       }
       setData(data , manifest){
@@ -310,7 +367,6 @@
                .html((d, i) => this.renderOptions(d))
                .on("click", this.handleClick)
 
-
             break;
           case "ox":
             objDivs.selectAll('p')
@@ -319,6 +375,16 @@
             .attr('data-answer', answer).text((d,i) => d)
             .on("click", this.handleClick)
             break;
+          case "gridComp":
+            objDivs.append('div').attr('class', 'reference')
+                   .append(this.component).attr('rows', this.rows)
+            objDivs.append('div').attr('class', 'sentences')
+               .selectAll('div')
+               .data(d3.shuffle(this.colors)).enter()
+               .append('div').attr('class', 'sentenceStyle')
+               .html((d, i) => this.renderOptionsForGridType(d))
+               .on("click", this.handleClick)
+
           default:
             break;
         }
