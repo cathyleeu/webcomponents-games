@@ -267,7 +267,7 @@ function getBook(classObj) {
   }
   // 시범원 청아유치원, 숙명키즈
   if(school == "A00083-K1" || school == "A00083-K4") {
-    book = ["4-re","5-re"];
+    book = ["5-re","5-5-re"];
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
@@ -279,7 +279,7 @@ function getBook(classObj) {
   }
   // 개발용(2017전권+2018리뉴얼)
   if(school == "A00083-K6") {
-    book = [1, 2, 3, 4, 5, "5-5", 6, 7, 8, 9, 10, "10-5","1-re", "2-re", "3-re"];
+    book = [6, 7, 8, 9, 10, "10-5","1-re", "2-re", "3-re", "4-re", "5-re", "5-5-re"];
   }
   // 영업용(시범교육 영문 3,5,7,8권)
   if(school == "A00083-K7") {
