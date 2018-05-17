@@ -297,11 +297,7 @@ function getBook(classObj) {
     book += "," + classObj.level + "-Test";
   }
   // 잉글루 본사 제공용
-<<<<<<< HEAD
   if(classObj.code == "A00083-K11-KC1") {
-=======
-  if(classObj.code == "A00083-K1-KC1") {
->>>>>>> a99f9849964538e9c2e5876dbebc0d1be8ed6b66
     book = "CHO-A-1,CHO-A-2";
   }
   return book;
