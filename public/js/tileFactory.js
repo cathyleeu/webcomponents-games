@@ -857,12 +857,10 @@ TileFactory.prototype.addItemImage = function(container, img, type) {
       px = type == "one" ? 2 : container.itemList.length % 3,
       py = type == "one" ? 0 : parseInt(container.itemList.length / 3, 10);
   bitmap.image = this.loader.getResult(img);
+  bitmap.scaleX = this.tile_size / bitmap.getBounds().width / 3;
+  bitmap.scaleY = this.tile_size / bitmap.getBounds().height / 3;
   bitmap.x = px * this.tile_size / 3 - this.tile_size / 2;
   bitmap.y = py * this.tile_size / 3 - this.tile_size / 2;
-  bitmap.scaleX = 1 / 3;
-  bitmap.scaleY = 1 / 3;
-  bitmap.regX = this.tile_size / 2;
-  bitmap.regY = this.tile_size / 2;
   container.addChild(bitmap);
   container.itemList.push(bitmap);
 };

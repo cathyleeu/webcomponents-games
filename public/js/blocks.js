@@ -2674,7 +2674,7 @@ Blocks['repeat_until_box'] = {
     en: "%1 Repeat if"
   },
   args0: [
-    {type: "field_image", src: "/img/c55re_w1/box.png"}
+    {type: "field_image", src: "/img/cho_a6/box_repeat.png", width: 40, height: 40}
   ],
   message1: {
     ko: "상자가 있다면",
@@ -2695,7 +2695,7 @@ Blocks['repeat_until_box'] = {
   }],
   messageh1: null,
   argsh1: null,
-  action: ["repeat", "repeat_until"]
+  action: ["repeat", "repeat_until_item"]
 };
 
 Blocks['repeat_until_sea'] = {
@@ -3803,7 +3803,7 @@ Blocks['condition2_recycle'] = {
     type: "input_statement",
     name: "else_statements"
   }],
-  action: ["conditioncheck2","food"]
+  action: ["conditioncheck2","recycle"]
 };
 Blocks['condition3_recycle'] = {
   rgbColor: "#309E4A",

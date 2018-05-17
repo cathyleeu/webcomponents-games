@@ -11,7 +11,7 @@
     "datatables": "~1.10.9",
     "jquery-ui": "~1.11.4",
     "PreloadJS": "^1.0.1",
-    "TweenJS": "~0.6.2",
+    "TweenJS": "^1.0.2",
     "SoundJS": "^0.6.2",
     "EaselJS": "^0.8.2",
     "font-awesome": "fontawesome#~4.4.0",

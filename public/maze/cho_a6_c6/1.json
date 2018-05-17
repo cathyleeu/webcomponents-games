@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start,make_picture,",
+  "workspace": "start,make_picture,repeat[move_forward1,condition_shape_circle_white,draw]",
   "workspace2": "make_picture_func,define_shape",
   "toolbox": [
     "move_forward1",
@@ -10,19 +10,18 @@
     "repeat",
     "condition_shape_circle_white",
     "set_shape",
-    "draw",
-    "condition_apple"
+    "draw"
   ],
   "tile": [
     {"tile": "A", "img": "circle_white_target", "shape": "circle", "color": "white", "role": "food", "useItem": true},
     {"tile": "B", "img": "square_white_target", "shape": "square", "color": "white", "role": "food", "useItem": true}
   ],
   "map": [
+    "#####",
     ".....",
+    ".rAB.",
     ".....",
-    "rAB..",
-    ".....",
-    "....."
+    "#####"
   ],
   "tutorial": [{
     "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",

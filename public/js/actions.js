@@ -13,6 +13,7 @@ Actions = function(kidscoding, loader, mazeInfo, run) {
   this.setItemCount = kidscoding.tileFactory.setItemCount;
   this.addItemImage = kidscoding.tileFactory.addItemImage;
   this.setCoord = kidscoding.tileFactory.setCoord;
+  this.setScale = kidscoding.tileFactory.setScale;
   this.delay = 0;
 };
 
@@ -113,28 +114,27 @@ Actions.prototype._splitObjects = function(spider, callback) {
   this.canvas.stage.addChild(spider);
   this.canvas.stage.removeChild(character);
   this.canvas.stage.addChild(character);
-  var tweens = [
-    createjs.Tween.get(character)
+  var tween1 = createjs.Tween.get(character)
         .wait(character.sprite ? 0 : _this.delay)
         .to({
           x: _this.tile_size*(px - 0.5) + _this.tile_size/2,
           y: _this.tile_size*py + _this.tile_size/2
-        }, 5 * _this.delay)
-        .call(callback)
-        .addEventListener("change", function(e) {
-          _this.canvas.stage.update();
-        }),
-    createjs.Tween.get(spider)
+        }, 5 * _this.delay),
+      tween2 = createjs.Tween.get(spider)
         .wait(character.sprite ? 0 : _this.delay)
         .to({
           x: _this.tile_size*(px + 0.5) + _this.tile_size/2,
           y: _this.tile_size*py + _this.tile_size/2
-        }, 5 * _this.delay)
-  ];
-  var timeline = new createjs.Timeline(tweens, "split", {
-    loop: false,
-    paused: false
-  });
+        }, 5 * _this.delay),
+      timeline = new createjs.Timeline({
+        loop: 0,
+        paused: false,
+        onChange: function(e) {
+          _this.canvas.stage.update();
+        },
+        onComplete: callback
+      });
+  timeline.addTween(tween1, tween2);
 };
 
 Actions.prototype._restoreObject = function(callback) {
@@ -146,29 +146,28 @@ Actions.prototype._restoreObject = function(callback) {
       character = this.canvas.character,
       px = character.px,
       py = character.py;
-      tweens = [
-        createjs.Tween.get(character)
-            .wait(character.sprite ? 0 : _this.delay)
-            .to({
-              x: _this.tile_size*px + _this.tile_size/2,
-              y: _this.tile_size*py + _this.tile_size/2
-            }, 5 * _this.delay)
-            .call(callback)
-            .addEventListener("change", function(e) {
-              _this.canvas.stage.update();
-            }),
-        createjs.Tween.get(character._splitObject)
-            .wait(character.sprite ? 0 : _this.delay)
-            .to({
-              x: _this.tile_size*px + _this.tile_size/2,
-              y: _this.tile_size*py + _this.tile_size/2
-            }, 5 * _this.delay)
-      ];
+      tween1 = createjs.Tween.get(character)
+        .wait(character.sprite ? 0 : _this.delay)
+        .to({
+          x: _this.tile_size*px + _this.tile_size/2,
+          y: _this.tile_size*py + _this.tile_size/2
+        }, 5 * _this.delay),
+      tween2 = createjs.Tween.get(character._splitObject)
+        .wait(character.sprite ? 0 : _this.delay)
+        .to({
+          x: _this.tile_size*px + _this.tile_size/2,
+          y: _this.tile_size*py + _this.tile_size/2
+        }, 5 * _this.delay),
+      timeline = new createjs.Timeline({
+        loop: 0,
+        paused: false,
+        onChange: function(e) {
+          _this.canvas.stage.update();
+        },
+        onComplete: callback
+      });
+  timeline.addTween(tween1, tween2);
   character._splitObject = null;
-  var timeline = new createjs.Timeline(tweens, "split", {
-    loop: false,
-    paused: false
-  });
 };
 
 
@@ -279,6 +278,18 @@ Actions.prototype._getFieldValue = function(block, name) {
   }
   return val;
 };
+
+Actions.prototype.setFoodOrder = function(order) {
+  var foods = this.canvas.foods;
+  for(var i = 0; i < foods.length; i++){
+    if(order == foods[i].order){
+      foods.push(foods[i]);
+      // others에 쓰지 않아야 하는 food를 넣어줘야 reset할때 지울수 있음
+      this.canvas.others = this.canvas.others.concat(foods.splice(0,foods.length-1));
+      break;
+    }
+  }
+}
 
 Actions.prototype.move = function(type, block, callback) {
   var _this = this,
@@ -465,10 +476,11 @@ Actions.prototype.memigrowing = function(type, block, callback) {
   var chest = this._getCanvasObject(character.px, character.py, "chest");
 
   if(chest) {
-    chest.bitmap.image = _this.loader.getResult(chest.contents[1].img);
-    _this.setCoord(chest, chest.px, chest.py);
+    chest.bitmap.image = this.loader.getResult(chest.contents[1].img);
+    this.setScale(chest.bitmap);
+    this.setCoord(chest, chest.px, chest.py);
     createjs.Sound.play("success");
-    _this.canvas.stage.update();
+    this.canvas.stage.update();
   }
 
   if(!character.step){
@@ -522,6 +534,7 @@ Actions.prototype.memigrowing = function(type, block, callback) {
     chest = _this._getCanvasObject(a, b, "chest");
     if(chest) {
       chest.bitmap.image = _this.loader.getResult(chest.contents[0].img);
+      _this.setScale(chest.bitmap);
       _this.setCoord(chest, chest.px, chest.py);
       createjs.Sound.play("success");
       _this.canvas.stage.update();
@@ -589,8 +602,9 @@ Actions.prototype.harvesting = function(type, block, callback) {
     chest = _this._getCanvasObject(a, b, "chest");
     if(chest) {
       chest.bitmap.image = _this.loader.getResult(chest.contents[0].img);
-      _this.addItemImage(character, chest.contents[1].img);
+      _this.setScale(chest.bitmap)
       _this.setCoord(chest, chest.px, chest.py);
+      _this.addItemImage(character, chest.contents[1].img);
       createjs.Sound.play("success");
       _this.canvas.stage.update();
     }
@@ -740,7 +754,6 @@ Actions.prototype.getItem2split = function(block, callback) {
     callback("아이템을 가져올 수 없어요");
     return;
   }
-
   character.hasItem = true;
   var itemCount = this.getItemCount(item);
   this._splitObjects(item, function() {
@@ -946,11 +959,9 @@ Actions.prototype.useItem2 = function(block, callback) {
       this._splitObjects(food, function() {
         food.visible = false;
         itemBitmap.bitmap.image = _this.loader.getResult(itemBitmap.itemImg);
+        _this.setScale(itemBitmap.bitmap);
+        _this.setCoord(itemBitmap, food.px, food.py);
         itemBitmap.visible = true;
-        itemBitmap.px = food.px;
-        itemBitmap.py = food.py;
-        itemBitmap.x = food.x;
-        itemBitmap.y = food.y;
         _this.canvas.stage.update();
         createjs.Sound.play("success");
         setTimeout(function() {
@@ -1051,13 +1062,11 @@ Actions.prototype.getout = function(type, block, callback) {
     }else if(itemBitmap){
       food.visible = false;
       itemBitmap.bitmap.image = _this.loader.getResult(itemBitmap.img);
+      _this.setScale(itemBitmap.bitmap);
+      _this.setCoord(itemBitmap, food.px, food.py);
       //자동차 위의 캐릭터 지우기
       character.removeChildAt(1);
       itemBitmap.visible = true;
-      itemBitmap.px = food.px;
-      itemBitmap.py = food.py;
-      itemBitmap.x = food.x;
-      itemBitmap.y = food.y;
       foods.splice(0,1);
       _this.canvas.stage.update();
       createjs.Sound.play("success");
@@ -1074,59 +1083,47 @@ Actions.prototype.getout = function(type, block, callback) {
 }
 
 Actions.prototype.check = function(block, callback) {
-  var _this = this,
-      foods = this.canvas.foods,
+  var foods = this.canvas.foods,
       character = this.canvas.character;
   // 바위 위에서 아이템 사용
   var chest = this._getCanvasObject(character.px, character.py, "chest");
   if(chest) {
     var ranNum = parseInt(Math.random()*chest.contents.length, 10);
     if(chest.contents[ranNum].role == "food"){
-      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = "food";
       chest.useItem = true;
       chest.order = chest.contents[ranNum].order;
       foods.push(chest);
       foods.shift();
-      _this.setCoord(chest, chest.px, chest.py);
     }
     else if(chest.contents[ranNum].role == "item") {
-      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = "item";
       chest.order = chest.contents[ranNum].order;
       if(chest.contents[ranNum].disappear){
         chest.itemImg = chest.contents[ranNum].itemImg;
         chest.disappear = true;
       }
-      _this.setCoord(chest, chest.px, chest.py);
     }else if(chest.contents[ranNum].role == "friend") {
-      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.img = chest.contents[ranNum].img;
       chest.role = "friend";
       chest.order = chest.contents[ranNum].order;
-      _this.setCoord(chest, chest.px, chest.py);
     }else if(chest.contents[ranNum].role == "spider") {
-      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = "spider";
       chest.order = chest.contents[ranNum].order;
-      _this.setCoord(chest, chest.px, chest.py);
     }else if(chest.contents[ranNum].role == "justmove") {
-      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.img = chest.contents[ranNum].img;
       chest.role = "justmove";
       chest.order = chest.contents[ranNum].order;
-      _this.setCoord(chest, chest.px, chest.py);
     }else if(chest.contents[ranNum].role == "clock") {
-      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       character.clock = chest.contents[ranNum].order;
-        _this.setCoord(chest, chest.px, chest.py);
     }else{
-      chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
       chest.role = chest.contents[ranNum].role;
-      _this.setCoord(chest, chest.px, chest.py);
     }
+    chest.bitmap.image = this.loader.getResult(chest.contents[ranNum].img);
+    this.setScale(chest.bitmap);
+    this.setCoord(chest, chest.px, chest.py);
     createjs.Sound.play("success");
-    _this.canvas.stage.update();
+    this.canvas.stage.update();
     setTimeout(function() {
       callback();
     }, 1000);
@@ -1136,8 +1133,7 @@ Actions.prototype.check = function(block, callback) {
 }
 
 Actions.prototype.check2 = function(block, callback) {
-  var _this = this,
-      foods = this.canvas.foods,
+  var foods = this.canvas.foods,
       character = this.canvas.character;
   // 바위 위에서 아이템 사용
   var chest = this._getCanvasObject(character.px, character.py, "chest");
@@ -1164,10 +1160,11 @@ Actions.prototype.check2 = function(block, callback) {
       var imgNum = parseInt(Math.random()*namesOfelse.length, 10);
       chest.bitmap.image = _this.loader.getResult(namesOfelse[imgNum]);
     }
-    _this.setCoord(chest, chest.px, chest.py);
+    this.setScale(chest.bitmap);
+    this.setCoord(chest, chest.px, chest.py);
 
     createjs.Sound.play("success");
-    _this.canvas.stage.update();
+    this.canvas.stage.update();
     setTimeout(function() {
       callback();
     }, 1000);
@@ -1186,6 +1183,7 @@ Actions.prototype.checkfinish = function(block, callback) {
     this._splitObjects(chest, function() {
       var ranNum = parseInt(Math.random()*chest.contents.length, 10);
       chest.bitmap.image = _this.loader.getResult(chest.contents[ranNum].img);
+      _this.setScale(chest.bitmap);
       createjs.Sound.play("success");
       _this.canvas.stage.update();
       setTimeout(function() {
@@ -1909,6 +1907,21 @@ Actions.prototype.conditioncheck2 = function(options, block, callback) {
         }, 500);
       }
     });
+  } else if(options == "recycle") {
+    var tileInfo = this._getCanvasObject(character.px, character.py),
+        order = null,
+        if_block = block.getInputTargetBlock("if_statements"),
+        else_block = block.getInputTargetBlock("else_statements");
+    if(tileInfo && tileInfo.role == "item") {
+      order = tileInfo.order;
+    } else {
+      order = character.itemList[0].order;
+    }
+    this.setFoodOrder(order);
+    setTimeout(function() {
+      block.removeSelect();
+      _this.run(order == "if" ? if_block : else_block, callback);
+    }, 500);
   }
 };
 
@@ -1916,35 +1929,20 @@ Actions.prototype.conditioncheck3 = function(options, block, callback) {
   var character = this.canvas.character,
       foods = this.canvas.foods,
       items = this.canvas.items,
+      get_block_by = {
+        if: block.getInputTargetBlock("if_statements"),
+        else_if: block.getInputTargetBlock("else_if_statements"),
+        else: block.getInputTargetBlock("else_statements")
+      },
       _this = this;
 
   if(options == "trash"  || options == "guide"){
     var tileInfo = character.itemBitmap;
-    for(var i = 0; i<foods.length;i++){
-      if(tileInfo.order==foods[i].order){
-        foods.push(foods[i]);
-        foods.splice(0,foods.length-1);
-      }
-    }
-    if(tileInfo.order == "if"){
-      if_block = block.getInputTargetBlock("if_statements");
-      setTimeout(function() {
-        block.removeSelect();
-        _this.run(if_block, callback);
-      }, 500);
-    }else if(tileInfo.order == "else_if"){
-      if_block = block.getInputTargetBlock("else_if_statements");
-      setTimeout(function() {
-        block.removeSelect();
-        _this.run(if_block, callback);
-      }, 500);
-    }else{
-      else_block = block.getInputTargetBlock("else_statements");
-      setTimeout(function() {
-        block.removeSelect();
-        _this.run(else_block, callback);
-      }, 500);
-    }
+    this.setFoodOrder(tileInfo.order);
+    setTimeout(function() {
+      block.removeSelect();
+      _this.run(get_block_by[tileInfo.order], callback);
+    }, 500);
   } else if(options == "aClock" || options == "dClock"){
     var tileInfo = this._getCanvasObject(character.px, character.py);
     this._splitObjects(tileInfo, function() {
@@ -2178,6 +2176,7 @@ Actions.prototype.present = function(block, callback) {
       else if(food.img == "house_y") pImage = "house_y_present";
       else pImage = "house_present";
       food.bitmap.image = _this.loader.getResult(pImage)
+      _this.setScale(food.bitmap);
       var idx = foods.indexOf(food);
       foods.splice(idx,1);
       _this.canvas.stage.update();
@@ -2364,6 +2363,7 @@ Actions.prototype.draw = function(type, block, callback) {
         _this._restoreObject(function() {
           createjs.Sound.play("success");
           food.bitmap.image = _this.loader.getResult(pImage)
+          _this.setScale(food.bitmap);
           food.complete = true;
           _this.canvas.stage.update();
           callback();
@@ -2383,6 +2383,7 @@ Actions.prototype.wait = function(block, callback) {
   if(stopInfo && stopInfo.role=="stop") {
     stopInfo.bitmap.image = this.loader.getResult(stopInfo.contents[0].img);
     stopInfo.role = stopInfo.contents[0].role;
+    this.setScale(stopInfo.bitmap);
     this.setCoord(stopInfo, stopInfo.px, stopInfo.py);
     var nextTileInfo;
     switch(stopInfo.position) {
@@ -2531,15 +2532,18 @@ Actions.prototype.define_x = function(type, block, callback) {
 Actions.prototype.repeat = function(type, block, callback) {
   var character = this.canvas.character,
       child = block.getInputTargetBlock("statements"),
-      count = type == "repeat_until" ? 0 : this._getFieldValue(block, "count"),
+      count = (type == "repeat_until" || type == "repeat_until_item") ? 0 : this._getFieldValue(block, "count"),
       _this = this;
   if(!child) {
     callback("반복 블록이 비었어요");
     return;
   }
   function proc() {
-    var tile = _this.map[character.py][character.px];
-    if(child && ((tile != "%" && type == "repeat_until") || count > 0)) {
+    var tile = _this.map[character.py][character.px],
+        item = _this._getCanvasObject(character.px, character.py, "item");
+    if( (type == "repeat_until" && tile != "%") ||
+        (type == "repeat_until_item" && item && item.itemCount > 0) ||
+        count > 0) {
       _this.setTimeoutKey = setTimeout(function() {
         block.removeSelect();
         count--;

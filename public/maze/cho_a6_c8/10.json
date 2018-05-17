@@ -1,0 +1,25 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "forloop_type3",
+    "repeat_x_num"
+  ],
+  "map": [
+    "#######",
+    ".....##",
+    ".###.##",
+    ".#d#.##",
+    ".#...##",
+    ".######",
+    "......%"
+  ],
+  "tutorial": [{
+    "msg:ko": "파라솔로 이동하자.",
+    "msg:en": "Move to the beach parasol."
+  }]
+}

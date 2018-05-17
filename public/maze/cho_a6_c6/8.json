@@ -1,0 +1,31 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start,make_picture,repeat(3)[move_forward1,condition_shape_circle_white,draw,rotate_left]",
+  "workspace2": "make_picture_func,define_shape(circle),define_shape(triangle),define_shape(star)",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "repeat",
+    "condition_shape_circle_white",
+    "set_shape",
+    "draw",
+    "condition_apple"
+  ],
+  "tile": [
+    {"tile": "A", "img": "circle_white_target", "shape": "circle", "color": "white", "role": "food", "useItem": true},
+    {"tile": "B", "img": "sun_white_target", "shape": "sun", "color": "white", "role": "food", "useItem": true}
+  ],
+  "map": [
+    "#####",
+    ".....",
+    ".Bl..",
+    ".AA..",
+    "#####"
+  ],
+  "tutorial": [{
+    "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
+    "msg:en": "Try to draw a picture of the right shape in the given position."
+  }]
+}

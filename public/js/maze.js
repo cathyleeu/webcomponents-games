@@ -1134,7 +1134,10 @@ function checkEnd() {
     }
   } else {
     for(var i = 0; i < foods.length; i++) {
-      if(foods[i].visible == true && !foods[i].complete) {
+      var isFailed = foods[i].useItem ?
+          kidscoding.tileFactory.getItemCount(foods[i]) < foods[i].useItem :
+          foods[i].visible == true && !foods[i].complete;
+      if(isFailed) {
         history.end(false);
         createjs.Sound.play("fail");
         kidscoding.isHorizontal ? showModal(messages.fail_done) : renderAlert(messages.fail_done, { blockErr : "shortage"});
