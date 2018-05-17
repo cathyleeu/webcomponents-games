@@ -296,6 +296,10 @@ function getBook(classObj) {
   if(school.slice(0,6) == "C00071" || school.slice(0,6) == "C00176") {
     book += "," + classObj.level + "-Test";
   }
+  // 잉글루 본사 제공용
+  if(classObj.code == "A00083-K11-K1") {
+    book = "CHO-A-1,CHO-A-2"
+  }
   return book;
 }
 
