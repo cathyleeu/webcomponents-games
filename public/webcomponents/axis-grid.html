@@ -1,0 +1,232 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="axis-grid">
+  <template>
+    <style>
+      table, tr, td {
+        /* border-bottom: 1px solid black; */
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .grid_board {
+        position: relative;
+      }
+      td {
+      width: 30px;
+      height: 30px;
+      }
+      /* .grid_board > img {
+
+      } */
+      .grid_board > div {
+        display: inline-block;
+        position: absolute;
+      }
+      .triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid purple;
+      }
+      .square {
+        width: 100px;
+        height: 100px;
+        background: purple;
+      }
+      .circle {
+        width: 100px;
+        height: 100px;
+        background: purple;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+      }
+    </style>
+    <div class="grid_board">
+      <table id="grid_table"></table>
+      <!-- <div class="square"></div>
+      <div class="triangle"></div>
+      <div class="circle"></div> -->
+    </div>
+  </template>
+  <script>
+    class AxisGrid extends Polymer.Element {
+      static get is() {
+        return "axis-grid";
+      }
+      static get properties() {
+        return {
+          rows: Number
+        }
+      }
+      ready(){
+        super.ready();
+        let parent = d3.select(this.ownerDocument).select('#element').node()
+        let { rows, colors } = parent, square = rows*rows;
+
+        this.set('filled', [])
+        this.set('setted', [])
+        this.set('rows', rows)
+        this.set('square', square)
+
+        this.generateGrid()
+        let gridNodes = d3.select(this.$.grid_table)
+
+        colors.forEach((color,i) => {
+          let current = this.genRandomNum(square, 1);
+          let limit = this.genRandomNum(rows, Math.floor(rows/2));
+
+          if(this.filled.includes(current)){
+            do {
+              current = this.genRandomNum(square, 1);
+            } while (this.filled.includes(current));
+          }
+
+          if(this.setted.includes(limit)){
+            do {
+              limit = this.genRandomNum(rows, Math.floor(rows/2))
+            } while (this.setted.includes(limit))
+
+          }
+          // console.log(color, current, limit);
+
+          this.set(`filled_${color}`, limit)
+          this.push('setted', limit)
+          this.genFilledColor(gridNodes, rows, limit, current, color)
+
+        })
+
+      }
+      genRandomNum(max, min){
+        return Math.floor(Math.random() * (max - min + 1)) + min
+      }
+      generateGrid(){
+        let gridNodes = d3.select(this.$.grid_table).append('tbody')
+        let {rows, square} = this;
+
+        //create grid
+        for(let i=0; i < rows; i++ ) {
+          let trNodes = gridNodes.append('tr')
+          for(let j=0; j < rows; j++ ) {
+            trNodes.append('td').attr('id', `t_${(i*rows)+(j+1)}`)
+          }
+        }
+      }
+      handleAllowaleRange(axisX, axisY, place, step, color){
+
+        let maxStep = step*step;
+        let ways = [ place-step, place+1, place+step, place-1 ];
+
+        // 0: axisX !== 1 && axisY === 0
+        // 1: axisX === 0 && axisY === 0
+        // 1: axisX === 0 && axisY !== 0
+        // 2: axisY === (step-1)
+        // 3: axisX === 1
+
+        // console.log("삭제 전", ways);
+        let del;
+        switch (true) {
+          case (axisX !== 1 && axisY === 0):
+              del = 0;
+              break;
+          case (axisX === 0 && axisY !== 0):
+          case (axisX === 0 && axisY === 0):
+              del = 1;
+              break;
+          case (axisY === (step-1)):
+              del = 2;
+              break;
+          case (axisX === 1):
+              del = 3;
+              break;
+          default:
+              del = 4;
+              break;
+        }
+
+        // 범위 넘어가는 수 삭제
+        ways.splice(del,1)
+        // console.log("삭제 전", del, ways);
+
+        // 0이하 max 이상 필터
+        ways = ways.filter(w => w < maxStep && w > 0 && w !== 0)
+
+        // 다 채워진 상황이라면...
+        let occupied = ways.every(w => this.filled.includes(w))
+
+        if(occupied) {
+
+          let occ = this[`${color}`][this.genRandomNum(this[`${color}`].length-1, 0)]
+          let newX = (occ)%step;
+          let newY = Math.floor((occ)/step);
+
+          let newResult = this.handleAllowaleRange(newX, newY, occ, step, color)
+
+          // console.log("occupied",newResult);
+
+          return newResult
+
+          // 원래 했던 것
+          // return this[`${color}`][this.genRandomNum(this[`${color}`].length-1, 0)]
+
+        }
+
+        return ways[this.genRandomNum(ways.length-1, 0)];
+
+      }
+      genFilledColor(targetNode, step, limit, current, color){
+
+        this.set(`${color}`, [])
+
+        for(let i=0; i < limit; i++){
+
+          // 이미 채워진 것은 아닌지 확인 , false 가 되어야하고
+          let include = this.filled.includes(current);
+
+          // console.log("include 확인 전", "current", current);
+
+          if(include){
+            // random에 문제가 있을 경우!
+
+            let prev = this[`${color}`][this[`${color}`].length-1]
+            let axisX = (prev)%step; // 0일 경우, 왼쪽 가장자리
+            let axisY = Math.floor((prev)/step); //0일 경우, 오른쪽 가장자리
+
+            do {
+
+              current = this.handleAllowaleRange(axisX, axisY, prev, step, color)
+              include = this.filled.includes(current);
+
+              if(typeof current !== "number" || current === NaN) {
+                include = true;
+              }
+
+            } while (include);
+
+            // console.log("do 실행 후", include, current);
+
+          }
+
+          // current 가 제대로 정의 된 후 next 찾음
+          let nextX = (current)%step; // 0일 경우, 왼쪽 가장자리
+          let nextY = Math.floor((current)/step); //0일 경우, 오른쪽 가장자리
+          let next = this.handleAllowaleRange(nextX, nextY, current, step, color)
+
+          this.push('filled', current)
+          this.push(`${color}`, current)
+          targetNode.select(`#t_${current}`).style('background-color', color)
+
+          current = next;
+
+          // console.log("current", current);
+          // console.log("next", next);
+          // console.log(this[`${color}`]);
+
+        }
+
+      }
+    }
+    window.customElements.define(AxisGrid.is, AxisGrid);
+  </script>
+</dom-module>

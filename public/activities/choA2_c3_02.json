@@ -2,58 +2,49 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "gridComp",
-    "nextlink" : "activity#!cho_A2_c3_02",
     "component": "axis-grid",
     "rows" : 8,
     "colors" : ["red", "purple", "green"],
     "questions" : [
       {
-        "question": "$의 칸 수는?",
+        "question": "$ 수의 칸을 가진 색은?",
         "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "red"
+        "detailType" : "max"
       },
       {
-        "question": "$의 칸 수는?",
+        "question": "$ 수의 칸을 가진 색은?",
         "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "purple"
+        "detailType" : "max"
       },
       {
-        "question": "$의 칸 수는?",
+        "question": "$ 수의 칸을 가진 색은?",
         "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "green"
+        "detailType" : "max"
       },
       {
-        "question": "$의 칸 수는?",
+        "question": "$ 수의 칸을 가진 색은?",
         "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "purple"
+        "detailType" : "max"
       },
       {
-        "question": "$의 칸 수는?",
+        "question": "$ 수의 칸을 가진 색은?",
         "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "red"
+        "detailType" : "max"
       },
       {
-        "question": "$의 칸 수는?",
+        "question": "$ 수의 칸을 가진 색은?",
         "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "green"
+        "detailType" : "max"
       },
       {
-        "question": "$의 칸 수는?",
+        "question": "$ 수의 칸을 가진 색은?",
         "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "red"
+        "detailType" : "max"
       },
       {
-        "question": "$의 칸 수는?",
+        "question": "$ 수의 칸을 가진 색은?",
         "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "green"
+        "detailType" : "max"
       }
     ]
   },
