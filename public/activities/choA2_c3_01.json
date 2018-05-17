@@ -2,7 +2,7 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "gridComp",
-    "nextlink" : "activity#!cho_A2_c3_02",
+    "nextlink" : "activity#!choA2_c3_02",
     "component": "axis-grid",
     "rows" : 8,
     "colors" : ["red", "purple", "green"],
