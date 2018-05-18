@@ -7,7 +7,7 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "draw_x_list_item"
+    "draw_list_item"
   ],
   "map": [
     "#####",
