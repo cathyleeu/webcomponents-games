@@ -1134,10 +1134,10 @@ function checkEnd() {
     }
   } else {
     for(var i = 0; i < foods.length; i++) {
-      var isFailed = foods[i].useItem ?
-          kidscoding.tileFactory.getItemCount(foods[i]) < foods[i].useItem :
-          foods[i].visible == true && !foods[i].complete;
-      if(isFailed) {
+      var isSuccess = foods[i].complete ||
+          foods[i].visible == false ||
+          (foods[i].useItem && kidscoding.tileFactory.getItemCount(foods[i]) >= foods[i].useItem);
+      if(!isSuccess) {
         history.end(false);
         createjs.Sound.play("fail");
         kidscoding.isHorizontal ? showModal(messages.fail_done) : renderAlert(messages.fail_done, { blockErr : "shortage"});
