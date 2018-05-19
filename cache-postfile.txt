@@ -28,6 +28,7 @@
 /GoogleBlockly/javascript_compressed.js
 /GoogleBlockly/ko.js
 /scratch-blocks/blockly_compressed_horizontal.js
+/scratch-blocks/blockly_compressed_vertical.js
 /scratch-blocks/blocks_compressed.js
 /scratch-blocks/msg/js/en.js
 /sound/complete.mp3
