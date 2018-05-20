@@ -620,7 +620,7 @@ Blocks["go_sea3"] = {
 };
 
 Blocks["go_filter"] = {
-  rgbColor: "red",
+  rgbColor: "#FF0000",
   message0: {
     ko: "%1 정수장으로",
     en: "%1 to purification plant"
@@ -632,7 +632,7 @@ Blocks["go_filter"] = {
 };
 
 Blocks["go_house"] = {
-  rgbColor: "orange",
+  rgbColor: "#FFA500",
   message0: {
     ko: "%1 정수장으로",
     en: "%1 to purification plant"
@@ -644,7 +644,7 @@ Blocks["go_house"] = {
 };
 
 Blocks["go_sewage"] = {
-  rgbColor: "green",
+  rgbColor: "#008000",
   message0: {
     ko: "%1 정수장으로",
     en: "%1 to purification plant"
@@ -656,7 +656,7 @@ Blocks["go_sewage"] = {
 };
 
 Blocks["go_dam"] = {
-  rgbColor: "blue",
+  rgbColor: "#0000FF",
   message0: {
     ko: "%1 정수장으로",
     en: "%1 to purification plant"
@@ -668,7 +668,7 @@ Blocks["go_dam"] = {
 };
 
 Blocks["go_dam_1"] = {
-  rgbColor: "blue",
+  rgbColor: "#0000FF",
   message0: {
     ko: "%1 정수장으로",
     en: "%1 to purification plant"
