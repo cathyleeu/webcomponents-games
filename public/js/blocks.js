@@ -2511,12 +2511,11 @@ Blocks["forloop_type1"] = {
   },
   rgbColor: "#2682C4",
   message0: {
-    ko: "%1가 1 부터 %2 까지, 1씩 증가",
-    en: "%1 from 1 to %2, incrementing by 1"
+    ko: "%1 1 부터 %2 까지",
+    en: "%1 Repeat from 1 to %2"
   },
   args0: [{
-    type: "field_image",
-    src: "/img/kidsblocks/x_loop_img.png"
+    type: "field_image", src: "/img/kidsblocks/x_loop_img.png", width: 40, height: 40
   },{
     type: "field_dropdown",
     name: "end_num",
@@ -2525,8 +2524,12 @@ Blocks["forloop_type1"] = {
       ,["12", "12"],["13", "13"],["14", "14"],["15", "15"],["16", "16"],["17", "17"],["18", "18"],["19", "19"],["20", "20"]
     ]
   }],
-  message1: "%1",
-  args1: [{
+  message1: {
+    ko: "1씩 증가하며 반복",
+    en: "incrementing by 1"
+  },
+  message2: "%1",
+  args2: [{
     type: "input_statement",
     name: "statements"
   }],
@@ -2539,12 +2542,11 @@ Blocks["forloop_type2"] = {
   },
   rgbColor: "#2682C4",
   message0: {
-    ko: "%1가 %2 부터 %3 까지, 1씩 증가",
-    en: "%1 from %2 to %3, incrementing by 1"
+    ko: "%1 %2 부터 %3 까지",
+    en: "%1 Repeat from %2 to %3"
   },
   args0: [{
-    type: "field_image",
-    src: "/img/kidsblocks/x_loop_img.png"
+    type: "field_image", src: "/img/kidsblocks/x_loop_img.png", width: 40, height: 40
   },{
     type: "field_dropdown",
     name: "start_num",
@@ -2559,8 +2561,12 @@ Blocks["forloop_type2"] = {
       ,["12", "12"],["13", "13"],["14", "14"],["15", "15"],["16", "16"],["17", "17"],["18", "18"],["19", "19"],["20", "20"]
     ]
   }],
-  message1: "%1",
-  args1: [{
+  message1: {
+    ko: "1씩 증가하며 반복",
+    en: "incrementing by 1"
+  },
+  message2: "%1",
+  args2: [{
     type: "input_statement",
     name: "statements"
   }],
@@ -2573,12 +2579,11 @@ Blocks["forloop_type3"] = {
   },
   rgbColor: "#2682C4",
   message0: {
-    ko: "%1가 %2 부터 %3 까지, %4씩 증가",
-    en: "%1 from %2 to %3, incrementing by %4"
+    ko: "%1 %2 부터 %3 까지",
+    en: "%1 Repeat from %2 to %3"
   },
   args0: [{
-    type: "field_image",
-    src: "/img/kidsblocks/x_loop_img.png"
+    type: "field_image", src: "/img/kidsblocks/x_loop_img.png", width: 40, height: 40
   },{
     type: "field_dropdown",
     name: "start_num",
@@ -2592,15 +2597,20 @@ Blocks["forloop_type3"] = {
       ["2", "2"],["3", "3"],["4", "4"],["5", "5"],["6", "6"],["7", "7"],["8", "8"],["9", "9"],["10", "10"],["11", "11"]
       ,["12", "12"],["13", "13"],["14", "14"],["15", "15"],["16", "16"],["17", "17"],["18", "18"],["19", "19"],["20", "20"]
     ]
-  },{
+  }],
+  message1: {
+    ko: "%1 씩 증가하며 반복",
+    en: "incrementing by %1"
+  },
+  args1: [{
     type: "field_dropdown",
     name: "increase_num",
     options: [
       ["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"]
     ]
   }],
-  message1: "%1",
-  args1: [{
+  message2: "%1",
+  args2: [{
     type: "input_statement",
     name: "statements"
   }],
@@ -2614,7 +2624,7 @@ Blocks['repeat_until_cos'] = {
     en: "%1 Repeat if"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/untilcos.png"}
+    {type: "field_image", src: "/img/kidsblocks/untilcos.png", width: 40, height: 40}
   ],
   message1: {
     ko: "코스에게 가는 중이라면",
@@ -2644,7 +2654,7 @@ Blocks['repeat_until_numbot'] = {
     en: "%1 Repeat if"
   },
   args0: [
-    {type: "field_image", src: "/img/kidsblocks/untilnumbot.png"}
+    {type: "field_image", src: "/img/kidsblocks/untilnumbot.png", width: 40, height: 40}
   ],
   message1: {
     ko: "넘봇에게 가는 중이라면",
