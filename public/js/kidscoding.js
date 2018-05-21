@@ -101,7 +101,21 @@ KidsCoding = function() {
 
     var renderDraw_ = Blockly.BlockSvg.prototype.renderDraw_,
         renderFields_ = Blockly.BlockSvg.prototype.renderFields_,
-        renderCompute_ = Blockly.BlockSvg.prototype.renderCompute_;
+        renderCompute_ = Blockly.BlockSvg.prototype.renderCompute_,
+        tighten_ = Blockly.RenderedConnection.prototype.tighten_;
+        getTranslateXY = function(el) {
+          var transform_value = el.getAttribute("transform") || "",
+              xy = transform_value.match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/) || [0, 0, 0];
+          return [+xy[1] || 0, +xy[2] || 0];
+        },
+        setTranslate = function(el, dx, dy) {
+          dx = dx === null ? "+0" : dx;
+          dy = dy === null ? "+0" : dy;
+          var xy = getTranslateXY(el),
+              x = typeof dx == "string" ? xy[0] + +dx : +dx,
+              y = typeof dy == "string" ? xy[1] + +dy : +dy;
+          el.setAttribute("transform", "translate(" + x + "," + y + ")");
+        };
     // input이 아닌 fieldrow의 높이 조정
     Blockly.BlockSvg.prototype.renderDraw_ = function(a, b) {
       var height = 0,
@@ -110,6 +124,9 @@ KidsCoding = function() {
               !!this.inputList[1].fieldRow[0] && !!this.inputList[1].fieldRow[0].textElement_;
       if(isDoubleFieldRow) {
         b[0].height = 70;
+      }
+      if(this.type == "forloop_type1" || this.type == "forloop_type2" || this.type == "forloop_type3") {
+        b[0].height = 80;
       }
       for(var i = 0; i < b.length; i++) {
         if(i > 0 && b[i].type == -1) {
@@ -122,32 +139,75 @@ KidsCoding = function() {
     }
     // 필드 이미지 세로 위치 조정
     Blockly.BlockSvg.prototype.renderFields_ = function(a, b, c) {
-      var ret = renderFields_.call(this, a, b, c),
-          isDouble = this.inputList.length >= 2 && !this.inputList[0].connection &&
+      if(this.type == "forloop_type3" && a[0] && a[0].argType_ && a[0].argType_[0] == "dropdown" && this.inputList[0].connection.targetConnection) {
+        var xy = getTranslateXY(this.inputList[0].connection.targetConnection.sourceBlock_.svgGroup_);
+        var ret = renderFields_.call(this, a, xy[0], c + 18) + 16;
+      } else {
+        var ret = renderFields_.call(this, a, b, c);
+      }
+      var isDouble = this.inputList.length >= 2 && !this.inputList[0].connection &&
               !!this.inputList[0].fieldRow[1] && !!this.inputList[0].fieldRow[1].textElement_ &&
               !!this.inputList[1].fieldRow[0] && !!this.inputList[1].fieldRow[0].textElement_,
           isFirstRow = isDouble && this.inputList[0].fieldRow == a,
           isSecondRow = isDouble && this.inputList[1].fieldRow == a;
+      // 일반적인 2줄 블록의 경우(이미지 하나와 텍스트 2줄)
       if(a.length > 0 && a[0].imageElement_) {
-        var svgRoot = a[0].getSvgRoot(),
-            xy = svgRoot.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/),
-            x = +xy[1] || 0,
-            y = +xy[2] || 0;
-        svgRoot.setAttribute("transform", "translate(" + x + "," + (y+3) + ")");
+        var svgRoot = a[0].getSvgRoot();
+        setTranslate(svgRoot, null, "+3");
         if(isFirstRow) {
-          xy = a[1].textElement_.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/),
-          x = +xy[1] || 0,
-          y = +xy[2] || 0;
-          a[1].textElement_.setAttribute("transform", "translate(" + x + "," + (y-10) + ")");
+          setTranslate(a[1].textElement_, null, "-10");
         }
       } else if(a.length > 0 && isSecondRow) {
-        var xy = this.inputList[0].fieldRow[1].textElement_.getAttribute("transform").match(/translate\(([+-]?\d*\.?\d*)[ ,]?([+-]?\d*\.?\d*)?\)/),
-            x = +xy[1] || 0,
-            y = +xy[2] || 0;
-        ret = Math.max(b, ret-b) + x;
-        a[0].textElement_.setAttribute("transform", "translate(" + x + "," + (y+20) + ")");
+        var xy = getTranslateXY(this.inputList[0].fieldRow[1].textElement_);
+        ret = Math.max(b, ret-b) + xy[0];
+        setTranslate(a[0].textElement_, xy[0], xy[1] + 20);
+      }
+      // 드랍박스를 포함한 forloop 처리
+      if(this.type == "forloop_type1" || this.type == "forloop_type2" || this.type == "forloop_type3") {
+        if(this.type == "forloop_type1") {
+          var isFirstRow = this.inputList[0].fieldRow == a || this.inputList[1].fieldRow == a,
+              isSecondRow = this.inputList[2].fieldRow == a,
+              firstText = this.inputList[0].fieldRow[1];
+        } else if(this.type == "forloop_type2") {
+          var isFirstRow = this.inputList[1].fieldRow == a || this.inputList[2].fieldRow == a,
+              isSecondRow = this.inputList[3].fieldRow == a,
+              firstText = this.inputList[1].fieldRow[0];
+        } else if(this.type == "forloop_type3") {
+          var isFirstRow = this.inputList[1].fieldRow == a || this.inputList[2].fieldRow == a,
+              isSecondRow = this.inputList[3].fieldRow == a,
+              firstText = this.inputList[1].fieldRow[0];
+        }
+        for(var i = 0; i < a.length; i++) {
+          if(isFirstRow && a[i].textElement_) {
+            setTranslate(a[i].textElement_, null, "-18");
+          } else if(isSecondRow && a[i].textElement_ && !a[0].argType_) {
+            var xy = getTranslateXY(firstText.textElement_);
+            ret = Math.max(b, ret-b);
+            if(this.type == "forloop_type2") {
+              xy[0] -= 58;
+            }
+            setTranslate(a[i].textElement_, xy[0], xy[1] + 36);
+          }
+        }
       }
       return ret;
+    };
+    // 드랍박스를 포함한 doubleRow에서 드랍박스 세로 위치 조정
+    Blockly.RenderedConnection.prototype.tighten_ = function() {
+      var restore = false;
+      if( this.sourceBlock_.type == "forloop_type1" ||
+          this.sourceBlock_.type == "forloop_type2" ||
+          this.sourceBlock_.type == "forloop_type3") {
+        var c = this.targetBlock().getSvgRoot();
+        if(c && c.getAttribute("data-argument-type") == "dropdown") {
+          this.y_ -= 18;
+          restore = true;
+        }
+      }
+      tighten_.call(this);
+      if(restore) {
+        this.y_ += 18;
+      }
     };
     // 필드 이미지 가로 위치 조정
     Blockly.BlockSvg.prototype.renderCompute_ = function(arg) {
