@@ -3949,24 +3949,30 @@ Blocks['condition2_odd_and_5_smaller_for'] = {
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "숫자가 %1 라면 그리고 %2 보다 작다면",
-    en: "If %1 & less than %2"
+    ko: "숫자가 %1 라면 ",
+    en: "If %1 "
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a7/odd.png", width: 30, height: 30},
-    {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/odd.png", width: 30, height: 30}
   ],
-  message1: "%1",
-  args1: [{
+  message1: {
+   ko: "그리고 %1 보다 작다면",
+   en: "& less than %2"
+   },
+   args1: [
+     {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
+   ],
+  message2: "%1",
+  args2: [{
     type: "input_statement",
     name: "if_statements"
   }],
-  message2: {
+  message3: {
     ko: "아니라면",
     en: "Else"
   },
-  message3: "%1",
-  args3: [{
+  message4: "%1",
+  args4: [{
     type: "input_statement",
     name: "else_statements"
   }],
@@ -3979,24 +3985,30 @@ Blocks['condition2_even_and_5_smaller_for'] = {
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "숫자가 %1 라면 그리고 %2 보다 작다면",
-    en: "If %1 & less than %2"
+    ko: "숫자가 %1 라면 ",
+    en: "If %1 "
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a7/even.png", width: 30, height: 30},
-    {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/even.png", width: 30, height: 30}
   ],
-  message1: "%1",
-  args1: [{
+  message1: {
+   ko: "그리고 %1 보다 작다면",
+   en: "& less than %2"
+   },
+   args1: [
+     {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
+   ],
+  message2: "%1",
+  args2: [{
     type: "input_statement",
     name: "if_statements"
   }],
-  message2: {
+  message3: {
     ko: "아니라면",
     en: "Else"
   },
-  message3: "%1",
-  args3: [{
+  message4: "%1",
+  args4: [{
     type: "input_statement",
     name: "else_statements"
   }],
@@ -4009,24 +4021,30 @@ Blocks['condition2_odd_or_5_smaller_for'] = {
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "숫자가 %1 라면 또는 %2 보다 작다면",
-    en: "If %1 & less than %2"
+    ko: "숫자가 %1 라면 ",
+    en: "If %1 "
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a7/odd.png", width: 30, height: 30},
-    {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/odd.png", width: 30, height: 30}
   ],
-  message1: "%1",
-  args1: [{
+  message1: {
+   ko: "또는 %1 보다 작다면",
+   en: "| less than %2"
+   },
+   args1: [
+     {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
+   ],
+  message2: "%1",
+  args2: [{
     type: "input_statement",
     name: "if_statements"
   }],
-  message2: {
+  message3: {
     ko: "아니라면",
     en: "Else"
   },
-  message3: "%1",
-  args3: [{
+  message4: "%1",
+  args4: [{
     type: "input_statement",
     name: "else_statements"
   }],
@@ -4039,24 +4057,30 @@ Blocks['condition2_even_or_5_smaller_for'] = {
   },
   rgbColor: "#309E4A",
   message0: {
-    ko: "숫자가 %1 라면 또는 %2 보다 작다면",
-    en: "If %1 & less than %2"
+    ko: "숫자가 %1 라면 ",
+    en: "If %1 "
   },
   args0: [
-    {type: "field_image", src: "/img/cho_a7/even.png", width: 30, height: 30},
-    {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
+    {type: "field_image", src: "/img/cho_a7/even.png", width: 30, height: 30}
   ],
-  message1: "%1",
-  args1: [{
+  message1: {
+   ko: "또는 %1 보다 작다면",
+   en: "| less than %2"
+   },
+   args1: [
+     {type: "field_image", src: "/img/cho_a7/no5.png", width: 30, height: 30}
+   ],
+  message2: "%1",
+  args2: [{
     type: "input_statement",
     name: "if_statements"
   }],
-  message2: {
+  message3: {
     ko: "아니라면",
     en: "Else"
   },
-  message3: "%1",
-  args3: [{
+  message4: "%1",
+  args4: [{
     type: "input_statement",
     name: "else_statements"
   }],
