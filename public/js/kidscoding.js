@@ -134,6 +134,9 @@ KidsCoding = function() {
         }
         height += b[i].height;
       }
+      if(this.type == "condition2_odd_and_5_smaller_for" || this.type == "condition2_even_and_5_smaller_for" || this.type == "condition2_odd_or_5_smaller_for" || this.type == "condition2_even_or_5_smaller_for") {
+        b[0].height = 80;
+      }
       b.bottomEdge = height;
       renderDraw_.call(this, a, b);
     }
@@ -162,6 +165,46 @@ KidsCoding = function() {
         ret = Math.max(b, ret-b) + xy[0];
         setTranslate(a[0].textElement_, xy[0], xy[1] + 20);
       }
+
+      //조건 블록에서 첫 번째 조건 부분을 2줄 처리
+      if(this.type == "condition2_odd_and_5_smaller_for" || this.type == "condition2_even_and_5_smaller_for" || this.type == "condition2_odd_or_5_smaller_for" || this.type == "condition2_even_or_5_smaller_for"){
+        var isFirstRow = this.inputList[0].fieldRow == a,
+            isSecondRow = this.inputList[1].fieldRow == a,
+            firstText = this.inputList[1].fieldRow[0];
+        for(var i = 0; i < a.length; i++) {
+          if(isFirstRow) {
+            if(a[i].imageElement_){
+              var svgRoot = a[i].getSvgRoot();
+              setTranslate(svgRoot, null, "-18");
+            }else if(a[i].textElement_){
+              setTranslate(a[i].textElement_, null, "-18");
+            }
+          } else if(isSecondRow && !a[i].argType_) {
+            if(i==0){//두번째 줄 초기 위치 세팅
+              var xy = getTranslateXY(firstText.textElement_);
+              ret = Math.max(b, ret-b)+10;
+              xy[0] -=135;
+            }
+            else{//이전 이미지 또는 텍스트의 가로길이를 불러와서 위치값을 변경하기
+              if(!a[(i-1)].textElement_){
+                var widtharray = a[(i-1)].imageElement_.getAttribute("width").split('px');
+                var secondx = Number(widtharray[0]);
+                xy[0]+=secondx;
+              }else{
+                var secondx = Number(a[(i-1)].textElement_.getAttribute("x"));
+                xy[0]+=secondx*2;
+              }
+            }
+            //이미지와 텍스트를 정해진 좌표값에 집어 넣기
+            if(a[i].imageElement_){
+              var svgRoot = a[i].getSvgRoot();
+              setTranslate(svgRoot, xy[0], xy[1]);
+            }else if(a[i].textElement_){
+              setTranslate(a[i].textElement_, xy[0], "+15");
+            }
+          }
+        }
+      }
       // 드랍박스를 포함한 forloop 처리
       if(this.type == "forloop_type1" || this.type == "forloop_type2" || this.type == "forloop_type3") {
         if(this.type == "forloop_type1") {
@@ -186,6 +229,7 @@ KidsCoding = function() {
             if(this.type == "forloop_type2") {
               xy[0] -= 58;
             }
+
             setTranslate(a[i].textElement_, xy[0], xy[1] + 36);
           }
         }
