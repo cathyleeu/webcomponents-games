@@ -14,7 +14,7 @@
         ]
       },
       {
-        "question": "3D프린트는 무엇인가요?",
+        "question": "3D프린터는 무엇인가요?",
         "options" : [
           { "text" : "디자인한 대로 가루나 액체의 재료로 물건을 만드는 기술","answer": true},
           { "text" : "많은 양의 데이터를 활용하여 컴퓨터가 스스로 학습하는 기술"},
@@ -67,7 +67,7 @@
       "nobtn" : "아니오",
       "yesbtn" : "예",
 
-      "fullscreen" : "풀스크린"
+      "fullscreen" : "전체화면"
     },
     "en": {
       "title": "Objective Game",

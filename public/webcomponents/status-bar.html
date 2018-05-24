@@ -49,7 +49,7 @@
       <div class="fullscreen" on-click="handleFullScreen">{{fullscreen}}</div>
       <div class="results">
         <p class="score">{{scoreTitle}} {{point}}</p>
-        <p class="match">({{matched}}/{{cards}})</p>
+        <p class="match">{{matchTitle}}</p>
       </div>
       <h1 class="title">{{title}}</h1>
     </div>
@@ -71,6 +71,10 @@
           scoreTitle: {
             type: String,
             computed: 'computeScoreTitle(score, point)'
+          },
+          matchTitle: {
+            type: String,
+            computed: 'computeMatchTitle(matched, cards)'
           }
         }
       }
@@ -87,6 +91,13 @@
       }
       computeScoreTitle(score, point) {
         return point == undefined ? "" : score;
+      }
+      computeMatchTitle(matched, cards) {
+        if(matched == undefined || cards == undefined) {
+          return "";
+        } else {
+          return "(" + matched + "/" + cards + ")";
+        }
       }
       handleContext(){
         let target = {
