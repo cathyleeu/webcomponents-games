@@ -8,7 +8,7 @@
         "questionImg": "/img/cho_activities/cho_1_5_02.png",
         "options" : [
           { "text" : "드론", "answer": true},
-          { "text" : "3D 프린팅"},
+          { "text" : "3D 프린터"},
           { "text" : "인공지능"}
         ]
       },
@@ -17,7 +17,7 @@
         "questionImg": "/img/cho_activities/cho_1_5_03.png",
         "options" : [
           { "text" : "드론"},
-          { "text" : "3D 프린팅"},
+          { "text" : "3D 프린터"},
           { "text" : "인공지능","answer": true}
         ]
       },
@@ -26,7 +26,7 @@
         "questionImg": "/img/cho_activities/cho_1_5_01.png",
         "options" : [
           { "text" : "드론"},
-          { "text" : "3D 프린팅", "answer": true},
+          { "text" : "3D 프린터", "answer": true},
           { "text" : "인공지능"}
         ]
       }
@@ -67,7 +67,7 @@
       "nobtn" : "아니오",
       "yesbtn" : "예",
 
-      "fullscreen" : "풀스크린"
+      "fullscreen" : "전체화면"
     },
     "en": {
       "title": "Objective Game",

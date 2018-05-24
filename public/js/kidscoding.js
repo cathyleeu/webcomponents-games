@@ -456,6 +456,13 @@ KidsCoding = function() {
       group: groupId,
       newParentId: target.id
     }, _this.workspace).run(true);
+    setTimeout(function() {
+      if(_this.blockType == "horizontal") {
+        _this.workspace.scrollbar.hScroll.set(1E9);
+      } else {
+        _this.workspace.scrollbar.vScroll.set(1E9);
+      }
+    }, 50);
   }
 
   // 가로블럭에서 드랍다운 메뉴가 화면 밖으로 나가는 현상 수정
