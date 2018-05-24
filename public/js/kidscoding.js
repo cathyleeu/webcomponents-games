@@ -37,53 +37,6 @@ KidsCoding = function() {
       return rect;
     }
 
-    var getMetrics = Blockly.WorkspaceSvg.getTopLevelWorkspaceMetrics_;
-    Blockly.WorkspaceSvg.getTopLevelWorkspaceMetrics_ = function() {
-      var metrics = getMetrics.call(this);
-      var svgSize = Blockly.svgSize(this.getParentSvg());
-      if (this.toolbox_) {
-        if (this.toolboxPosition == Blockly.TOOLBOX_AT_TOP ||
-            this.toolboxPosition == Blockly.TOOLBOX_AT_BOTTOM) {
-          svgSize.height -= this.toolbox_.getHeight();
-        } else if (this.toolboxPosition == Blockly.TOOLBOX_AT_LEFT ||
-            this.toolboxPosition == Blockly.TOOLBOX_AT_RIGHT) {
-          svgSize.width -= this.toolbox_.getWidth();
-        }
-      }
-      var MARGIN = Blockly.Flyout.prototype.CORNER_RADIUS - 1;
-      var viewWidth = svgSize.width - MARGIN;
-      var viewHeight = svgSize.height - MARGIN;
-      var blockBox = this.getBlocksBoundingBox();
-      var contentWidth = blockBox.width * this.scale;
-      var contentHeight = blockBox.height * this.scale;
-      var contentX = blockBox.x * this.scale;
-      var contentY = blockBox.y * this.scale;
-      var l_margin = 30,
-          r_margin = 250;
-      var display_height = $("#display").height();
-      leftEdge = contentX - l_margin;
-      rightEdge = contentX + viewWidth - l_margin;
-      topEdge = contentY - l_margin - display_height;
-      bottomEdge = contentY + viewHeight - l_margin - display_height;
-      if(contentWidth > rightEdge - r_margin) {
-        rightEdge = contentWidth + r_margin;
-      }
-      metrics.contentWidth = rightEdge - leftEdge - 1;
-      metrics.contentLeft = leftEdge;
-      metrics.contentHeight = bottomEdge - topEdge - 1;
-      metrics.contentTop = topEdge;
-      if(this.scrollbar) {
-        if(viewWidth <= metrics.contentWidth) {
-          this.scrollbar.hScroll.svgGroup_.setAttribute("display","block");
-        } else {
-          this.scrollbar.hScroll.svgGroup_.setAttribute("display","none");
-        }
-        this.scrollbar.vScroll.svgGroup_.setAttribute("display","none");
-      }
-
-      return metrics;
-    }
-
     var renderDraw_ = Blockly.BlockSvg.prototype.renderDraw_;
     // 필드 이미지 크기에 따른 가운데 정렬
     Blockly.BlockSvg.prototype.renderDraw_ = function(arg) {
@@ -336,6 +289,67 @@ KidsCoding = function() {
     };
   }
   if(this.blockType != "default") {
+    // 가로세로 스크롤 조정
+    var getMetrics = Blockly.WorkspaceSvg.getTopLevelWorkspaceMetrics_;
+    Blockly.WorkspaceSvg.getTopLevelWorkspaceMetrics_ = function() {
+      var metrics = getMetrics.call(this);
+      var svgSize = Blockly.svgSize(this.getParentSvg());
+      if (this.toolbox_) {
+        if (this.toolboxPosition == Blockly.TOOLBOX_AT_TOP ||
+            this.toolboxPosition == Blockly.TOOLBOX_AT_BOTTOM) {
+          svgSize.height -= this.toolbox_.getHeight();
+        } else if (this.toolboxPosition == Blockly.TOOLBOX_AT_LEFT ||
+            this.toolboxPosition == Blockly.TOOLBOX_AT_RIGHT) {
+          svgSize.width -= this.toolbox_.getWidth();
+        }
+      }
+      var MARGIN = Blockly.Flyout.prototype.CORNER_RADIUS - 1,
+          viewWidth = svgSize.width - MARGIN,
+          viewHeight = svgSize.height - MARGIN,
+          blockBox = this.getBlocksBoundingBox(),
+          contentWidth = blockBox.width * this.scale,
+          contentHeight = blockBox.height * this.scale,
+          contentX = blockBox.x * this.scale,
+          contentY = blockBox.y * this.scale,
+          left_margin = 30,
+          right_margin = 250,
+          top_margin = 20,
+          bottom_margin = 50,
+          display_height = $("#display").height(),
+          display_width = $("#display").width();
+      if(_this.blockType == "horizontal") {
+        leftEdge = contentX - left_margin;
+        rightEdge = contentX + viewWidth - left_margin;
+        topEdge = contentY - left_margin - display_height;
+        bottomEdge = contentY + viewHeight - left_margin - display_height;
+        if(contentWidth > rightEdge - right_margin) {
+          rightEdge = contentWidth + right_margin;
+        }
+      } else { // vertical
+        topEdge = contentY - top_margin;
+        bottomEdge = contentY + viewHeight - top_margin;
+        leftEdge = -this.getFlyout().getWidth();
+        rightEdge = viewWidth - this.getFlyout().getWidth();
+        if(contentHeight > bottomEdge - bottom_margin) {
+          bottomEdge = contentHeight + bottom_margin;
+        }
+      }
+      metrics.contentWidth = rightEdge - leftEdge - 1;
+      metrics.contentLeft = leftEdge;
+      metrics.contentHeight = bottomEdge - topEdge - 1;
+      metrics.contentTop = topEdge;
+      if(this.scrollbar) {
+        if(_this.blockType == "horizontal") {
+          this.scrollbar.hScroll.svgGroup_.setAttribute("display", viewWidth <= metrics.contentWidth ? "block" : "none");
+          this.scrollbar.vScroll.svgGroup_.setAttribute("display", "none");
+        } else { // vertical
+          this.scrollbar.vScroll.svgGroup_.setAttribute("display", viewHeight <= metrics.contentHeight ? "block" : "none");
+          this.scrollbar.hScroll.svgGroup_.setAttribute("display","none");
+        }
+      }
+      return metrics;
+    }
+
     var translateSurface = Blockly.DragSurfaceSvg.prototype.translateSurface;
     var isIE = !!(navigator.userAgent.match(/MSIE |Trident\/|Edge\//));
     Blockly.DragSurfaceSvg.prototype.translateSurface = function(x, y) {
@@ -712,10 +726,10 @@ KidsCoding.prototype = {
         wheel: true,
         startScale: 0.8,
         maxScale: 1.2,
-        minScale: 0.6,
+        minScale: 0.5,
         scaleSpeed: 1.2
       },
-      scrollbars: this.isHorizontal
+      scrollbars: true
     });
     var initXml = '<xml>' + this.createXml(workspace || "start", {uneditable:true, x:30, y:20}) + '</xml>';
   	Blockly.Xml.domToWorkspace($(initXml).get(0),this.workspace);
