@@ -419,10 +419,10 @@
     ["방을 정리해요", "Tidy up", "/activity#!a4_w3"]
   ],
   "A-4-re":[
-    ["우리 동네에는 무엇이 있나요", "What is in my hometown", "/mazeh#!a4re_w1/1"],
+    ["우리 동네를 구경해요", "Explore town", "/mazeh#!a4re_w1/1"],
     ["친구와 놀아요", "Play with friends", "/activity#!a4re_w2"],
-    ["이사를 왔어요", "I'm moving", "/activity#!a4re_w3"],
-    ["화분을 키워요", "I raise pots.", "/activity#!a4re_w4"]
+    ["이사를 왔어요", "Move house", "/activity#!a4re_w3"],
+    ["화분을 키워요", "Plant flowers and water them", "/activity#!a4re_w4"]
   ],
   "A-5":[
     ["매미의 성장", "Life cycle of a cicada", "/mazeh#!a5_w3/1"],
@@ -517,10 +517,10 @@
     ["이리 저리 움직여요:다 같이 집으로 가요", "Go Home Together", "/mazeh#!b3_w4/index"]
   ],
   "B-4-re":[
-    ["우리 동네를 알아보아요", "My village", "/mazeh#!b4re_w1/index"],
+    ["우리 동네를 알아보아요", "Explore town", "/mazeh#!b4re_w1/index"],
     ["보물을 가져와요", "Find the treasure", "/mazeh#!b4re_w2/index"],
-    ["가위바위보를 해요", "Rock, paper, scissors", "/mazeh#!b4re_w3/index"],
-    ["가위바위보를 이기고 보물을 가져와요", "Win to find the treasure", "/mazeh#!b4re_w4/index"]
+    ["가위바위보를 해요", "Play rock, paper, scissors", "/mazeh#!b4re_w3/index"],
+    ["가위바위보를 이기고 보물을 가져와요", "Win at rock, paper, scissors", "/mazeh#!b4re_w4/index"]
   ],
   "B-4":[
     ["공원으로 소풍을 가요:엄마가 보물을 숨겨요", "Mom hides the treasure", "/mazeh#!b4_w1/index"],
@@ -631,10 +631,10 @@
     ["반복 블록을 써보아요:집으로 돌아가요", "Go back home", "/mazeh#!c4_w4/index"]
   ],
   "C-4-re":[
-    ["우리 동네를 알아보아요", "Walk Around My Town", "/mazeh#!c4re_w1/index"],
-    ["숫자와 크기를 비교해요", "Compare Number and Size", "/mazeh#!c4re_w2_c1/index"],
-    ["반복 블록을 이해해요", "Understand Repeat Block", "/mazeh#!c4re_w3/index"],
-    ["반복 블록을 연습해요", "Practice Repeat Block", "/mazeh#!c4re_w4/index"]
+    ["우리 동네를 알아보아요", "Explore town", "/mazeh#!c4re_w1/index"],
+    ["숫자와 크기를 비교해요", "Compare numbers and sizes", "/mazeh#!c4re_w2_c1/index"],
+    ["반복 블록을 이해해요", "Learn to use the 'repeat' block", "/mazeh#!c4re_w3/index"],
+    ["반복 블록을 연습해요", "Practice using the 'repeat' block", "/mazeh#!c4re_w4/index"]
   ],
   "C-5-re":[
     ["여러 가지 규칙을 알아보아요", "Find the pattern", "/mazeh#!c5re_w1/index"],

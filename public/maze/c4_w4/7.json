@@ -28,7 +28,7 @@
   }],
   "tutorial": [{
     "msg:ko": "코스네 집은 가장 작은 숫자의 주소를 가지고 있어요!",
-    "msg:en": "The Address of Cos's house is the smallest number",
+    "msg:en": "Cos' home address is the smallest number.",
     "img": "/img/c4_w4/smallest_num.png"
   }],
   "goal": {

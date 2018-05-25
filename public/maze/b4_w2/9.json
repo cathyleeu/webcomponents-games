@@ -30,13 +30,13 @@
     "itemCount": 2
   }],
   "tutorial": [{
-    "msg:ko": "보물 상자 하나에 보물이 여러 개 있네. 보물상자에서 '가져오기'를 여러 번 사용해 봐.",
-    "msg:en": "There are more than one things in the chest. Try to use 'get items' block more than once on the chest.",
+    "msg:ko": "보물 상자 하나에 보물이 여러 개 있네.\n보물상자에서 '가져오기'를 여러 번 사용해 봐.",
+    "msg:en": "There are more than one things in the chest.\nTry to use the 'get items' block more than once on the chest.",
     "img": ["/img/b4/chest1.png","/img/blocks/bring.png"]
   }],
   "goal": {
     "msg:ko": "보물상자에서 '가져오기'를 여러 번 사용하자.",
-    "msg:en": "Let's use 'get items' block on the chest more than once.",
+    "msg:en": "Let's use the 'get items' block on the chest more than once.",
     "img": ["/img/b4/chest1.png","/img/blocks/bring.png"]
   }
 }

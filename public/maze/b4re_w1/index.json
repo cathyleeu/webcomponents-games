@@ -18,13 +18,13 @@
     "link": "b4re_w1/1"
   }],
   "tutorial": [{
-    "msg:ko": "오른쪽 깃발로 이동하여 '우리 동네를 알아보아요'를 완료하자",
-    "msg:en": "Go to the flag on the right and complete 'My village' stage",
+    "msg:ko": "오른쪽 깃발로 이동하여 '우리 동네를 알아보아요'를 완료하자.",
+    "msg:en": "Go to the flag on the right and complete the stage.",
     "img": "/img/renewed_b4/flag.png"
   }],
   "goal": {
     "msg:ko": "오른쪽 깃발로 이동해요",
-    "msg:en": "Go to the Flag on the right",
+    "msg:en": "Go to the Flag on the right.",
     "img": "/img/renewed_b4/flag.png"
   }
 }

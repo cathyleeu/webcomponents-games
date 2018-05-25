@@ -24,7 +24,7 @@
   ],
   "tutorial": [{
     "msg:ko": "주민센터로 가보자.",
-    "msg:en": "Go to the servicecenter.",
+    "msg:en": "Go to the service center.",
     "img": "/img/renewed_b4/servicecenter.png"
   }],
   "success": [{

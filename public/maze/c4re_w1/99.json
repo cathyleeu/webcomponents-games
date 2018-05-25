@@ -22,13 +22,13 @@
     "img":"house"
   }],
   "tutorial": [{
-    "msg:ko": "집으로 가자",
-    "msg:en": "Go to the house",
+    "msg:ko": "집으로 가자.",
+    "msg:en": "Go to the house.",
     "img": ["/img/c4re_w1/cos0.png","/img/c4re_w1/house.png"]
   }],
   "success": [{
     "msg:ko": "산책을 끝냈어! \n 집으로 돌아가자~",
-    "msg:en": "I took a walk! Let's go home.",
+    "msg:en": "I took a walk! \n Let's go home.",
     "img" : ["/img/c4re_w1/cos0.png", "/img/c4re_w1/house.png"]
   },{
     "msg:ko": "참 잘했어요. 다음 주에 또 만나요!",

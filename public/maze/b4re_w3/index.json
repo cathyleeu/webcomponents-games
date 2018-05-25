@@ -275,13 +275,13 @@
   }],
 
   "tutorial": [{
-    "msg:ko": "가위바위보를 해요! 쉬운 문제는 보물 상자 1개, 보통은 2개, 어려운 문제는 3개를 주어요.",
-    "msg:en": "Let's play rock, scissors, paper! An easy problem gives you one chest, a normal one gives you two and a hard one gives you three.",
+    "msg:ko": "가위바위보를 해요!\n쉬운 문제는 보물 상자 1개,\n보통은 2개, 어려운 문제는 3개를 주어요.",
+    "msg:en": "Let's play rock, scissors, paper!\nAn easy problem gives you one chest,\na normal one gives you two and a hard one gives you three.",
     "img": ["/img/renewed_b4/rock.png","/img/renewed_b4/scissors.png","/img/renewed_b4/paper.png","/img/renewed_b4/chest2.png"]
   }],
   "goal": {
     "msg:ko": "보물 상자를 15개 모아서 할아버지에게 가자!",
-    "msg:en": "Let's get eighteen chests and go to grandpa!",
+    "msg:en": "Let's get 15 chests and go to grandpa!",
     "img": ["/img/renewed_b4/chest2.png","/img/renewed_b4/f_grandpa.png"]
   }
 }

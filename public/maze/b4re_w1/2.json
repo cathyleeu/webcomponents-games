@@ -24,7 +24,7 @@
   ],
   "tutorial": [{
     "msg:ko": "마트로 가보자.",
-    "msg:en": "Go to the mart",
+    "msg:en": "Go to the mart.",
     "img": "/img/renewed_b4/mart.png"
   }],
   "success": [{

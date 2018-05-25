@@ -28,12 +28,12 @@
   }],
   "tutorial": [{
     "msg:ko": "주민센터로 가보자!",
-    "msg:en": "Go to the servicecenter!",
+    "msg:en": "Go to the service center!",
     "img": "/img/c4re_w1/servicecenter.png"
   }],
   "goal": {
     "msg:ko": "주민센터로 가보자!",
-    "msg:en": "Go to the servicecenter!",
+    "msg:en": "Go to the service center!",
     "img": "/img/c4re_w1/servicecenter.png"
   }
 }

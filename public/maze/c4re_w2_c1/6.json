@@ -28,12 +28,12 @@
   }],
   "tutorial": [{
     "msg:ko": "셋 중에 작은 과일을 사야해요!",
-    "msg:en": "'Cos' have to buy the smallest fruit",
+    "msg:en": "Take the smallest fruit.",
     "img": "/img/c4_w3/smallest.png"
   }],
   "goal": {
     "msg:ko": "셋 중에 작은 과일을 사보자!",
-    "msg:en": "Take the smallest fruit",
+    "msg:en": "Take the smallest fruit.",
     "img": "/img/c4_w3/smallest_goal.png"
   }
 }

@@ -28,7 +28,7 @@
   }],
   "tutorial": [{
     "msg:ko": "우유를 사요!",
-    "msg:en": "Buy the milk",
+    "msg:en": "Buy milk.",
     "img": "/img/c4re_w2_c1/milk.png"
   }]
 }

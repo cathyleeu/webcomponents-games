@@ -26,7 +26,7 @@
   }],
   "tutorial": [{
     "msg:ko": "코스네 집은 큰 숫자의 주소를 가지고 있어요!",
-    "msg:en": "The Address of Cos's house has the larger number",
+    "msg:en": "Cos' home address is a larger number.",
     "img": "/img/c4_w4/bigger_num.png"
   }],
   "goal": {
