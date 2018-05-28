@@ -11,15 +11,15 @@ toycode.org:
   only:
   - master
 
-dev.toycode.org:
-  script:
-  - "npm install --production"
-  - "bower install --production"
-  - "./node_modules/.bin/gulp build"
-  - "forever stop kidscoding || true"
-  - "forever start --uid \"kidscoding\" -a index.js --url=http://dev.toycode.org"
-  type: deploy
-  tags:
-  - dev
-  only:
-  - master
+# dev.toycode.org:
+#   script:
+#   - "npm install --production"
+#   - "bower install --production"
+#   - "./node_modules/.bin/gulp build"
+#   - "forever stop kidscoding || true"
+#   - "forever start --uid \"kidscoding\" -a index.js --url=http://dev.toycode.org"
+#   type: deploy
+#   tags:
+#   - dev
+#   only:
+#   - master

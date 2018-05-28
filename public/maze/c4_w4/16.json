@@ -28,7 +28,7 @@
   }],
   "tutorial": [{
     "msg:ko": "코스네 집은 2번째로 큰 숫자의 주소를 가지고 있어요!",
-    "msg:en": "The Address of Cos's house is the second largest number",
+    "msg:en": "Cos' home address is the second largest number.",
     "img": "/img/c4_w4/bigger_num.png"
   }],
   "goal": {

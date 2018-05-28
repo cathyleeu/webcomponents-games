@@ -27,14 +27,14 @@
   }],
   "tutorial": [{
     "msg:ko": "엄마에게 가요!",
-    "msg:en": "Let's go to the mom!",
+    "msg:en": "Let's go to mom!",
     "img": [{
       "src": "/img/c4_w4/mother.png"
     }]
   }],
   "goal": {
     "msg:ko": "엄마에게 가자!",
-    "msg:en": "Let's go to the mom!",
+    "msg:en": "Let's go to mom!",
     "img": [{
       "src": "/img/c4_w4/mother.png"
     }]

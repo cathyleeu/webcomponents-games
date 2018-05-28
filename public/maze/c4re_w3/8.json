@@ -28,7 +28,7 @@
   }],
   "tutorial": [{
     "msg:ko": "식빵을 사요!",
-    "msg:en": "Buy the bread",
+    "msg:en": "Buy bread.",
     "img": "/img/c4re_w3/bread.png"
   }]
 }
