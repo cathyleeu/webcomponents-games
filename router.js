@@ -252,18 +252,18 @@ function getKinder(kinderId) {
 
 function getBook(classObj) {
   var school = classObj.code.split("-").slice(0, 2).join("-"),
-      book = ["2-re", "3-re"];
+      book = ["3-re", "4-re"];
   // 청라ECC 초등반 2개는 3월에 C-6부터 시작
   if(classObj.code == "B00016-K1-KC6" || classObj.code == "B00016-K1-KC7") {
-    book = [7, 8];
+    book = [8, 9];
   }
   // 양주ECC 12월 1권부터 시작, 3월말에 4권, 6월에 5권
   if(school == "B00171-K1") {
-    book = [4];
+    book = [4, 5];
   }
   // 서부지사 보라매 꿈꾸는나무 원 5월에 1,2권
   if(school == "C00192-K1") {
-    book = ["1-re", "2-re"];
+    book = ["2-re", "3-re"];
   }
   // 시범원 청아유치원, 숙명키즈
   if(school == "A00083-K1" || school == "A00083-K4") {
@@ -271,11 +271,11 @@ function getBook(classObj) {
   }
   // YBM영업부(내부용)
   if(school == "A00083-K3") {
-    book = ["1-re", "2-re", "3-re", "4-re", "5-re", "5-5", 6, 7, 8, 9, 10, "10-5"];
+    book = ["1-re", "2-re", "3-re", "4-re", "5-re", "5-5-re", 6, 7, 8, 9, 10, "10-5"];
   }
   // 영업용(시범교육 1,3,5권)
   if(school == "A00083-K5") {
-    book = ["1-re", "3-re", 5];
+    book = ["1-re", "3-re", "5-re"];
   }
   // 개발용(2017전권+2018리뉴얼)
   if(school == "A00083-K6") {

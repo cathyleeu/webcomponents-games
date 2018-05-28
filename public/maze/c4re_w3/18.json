@@ -28,7 +28,7 @@
   }],
   "tutorial": [{
     "msg:ko": "핫도그를 사요!",
-    "msg:en": "Buy the hotdog",
+    "msg:en": "Buy a hotdog.",
     "img": "/img/c4re_w3/hotdog.png"
   }]
 }
