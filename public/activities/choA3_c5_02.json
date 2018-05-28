@@ -1,51 +1,23 @@
 {
-  "element": "objective-game",
+  "element": "select-option-game",
   "attributes": {
-    "gameType" : "gridComp",
-    "component": "axis-grid",
-    "gridType" : "number",
-    "rows" : 8,
-    "colors" : ["red", "purple", "green"],
+    "gameType" : "multiple",
+    "nextlink" : "activity#!choA3_c5_03",
     "questions" : [
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
+        "question": "이진수란? 숫자 === 과 === 을(를) 이용해 수를 나타내는 방법입니다.",
+        "optionType" : "fixed",
+        "screenType" : "full",
+        "options" : [
+          {
+            "answer" : "0",
+            "option" : ["0","2","-1"]
+          },
+          {
+            "answer" : "1",
+            "option" : ["-1","0","1"]
+          }
+        ]
       }
     ]
   },
@@ -55,9 +27,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "객관식 문제",
-      "score": "점수",
-      "lefted": "맞춘 갯수",
+      "title": "문장을 완성하세요.",
 
       "success": "참 잘했어요!",
       "successHead": "참 잘했어요!",

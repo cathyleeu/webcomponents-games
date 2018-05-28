@@ -4,6 +4,7 @@
     "gameType" : "gridComp",
     "nextlink" : "activity#!choA2_c3_02",
     "component": "axis-grid",
+    "gridType" : "number",
     "rows" : 8,
     "colors" : ["red", "purple", "green"],
     "questions" : [

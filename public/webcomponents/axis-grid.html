@@ -3,10 +3,13 @@
 <dom-module id="axis-grid">
   <template>
     <style>
-      table, tr, td {
-        /* border-bottom: 1px solid black; */
-        border: 1px solid black;
+    /* table, tr,  */
+      table {
+        border-spacing: 0px;
         border-collapse: collapse;
+      }
+      td {
+        border: 1px solid black;
       }
       .grid_board {
         position: relative;
@@ -15,9 +18,11 @@
       width: 30px;
       height: 30px;
       }
-      /* .grid_board > img {
-
-      } */
+      .td_hide {
+        border: none !important;
+        text-align: center;
+        font-weight: 700;
+      }
       .grid_board > div {
         display: inline-block;
         position: absolute;
@@ -42,12 +47,15 @@
         -webkit-border-radius: 50px;
         border-radius: 50px;
       }
+      td > img {
+        width: 30px;
+        height: 30px;
+      }
     </style>
     <div class="grid_board">
+
       <table id="grid_table"></table>
-      <!-- <div class="square"></div>
-      <div class="triangle"></div>
-      <div class="circle"></div> -->
+
     </div>
   </template>
   <script>
@@ -63,14 +71,25 @@
       ready(){
         super.ready();
         let parent = d3.select(this.ownerDocument).select('#element').node()
-        let { rows, colors } = parent, square = rows*rows;
+        let { rows, gridType, questions, stage } = parent, square = rows*rows;
+        let { questType } = parent || questions[stage];
 
-        this.set('filled', [])
-        this.set('setted', [])
         this.set('rows', rows)
         this.set('square', square)
 
-        this.generateGrid()
+        this.generateGrid(gridType)
+
+        this[`${questType}Board`](parent)
+
+
+      }
+      gridCountBoard(parent){
+
+        let { colors } = parent;
+
+        this.set('filled', [])
+        this.set('setted', [])
+
         let gridNodes = d3.select(this.$.grid_table)
 
         colors.forEach((color,i) => {
@@ -98,20 +117,87 @@
         })
 
       }
+      gridGuessBoard(parent){
+        console.log("gridGuessBoard");
+        let { images, rows } = parent;
+        let that = this;
+        let gridBoard = d3.select(this.$.grid_table);
+        let located = [];
+
+        images.reduce((acc, val, idx, arr) => {
+          let posX = String(that.genRandomNum(rows-1, 1 ));
+          let posY = String(that.genRandomNum(rows-1, 1 ));
+          let posXY = posX+posY;
+
+          if(located.find(l => l.pos === posXY)){
+            do {
+              posX = String(that.genRandomNum(rows-1, 1 ));
+              posY = String(that.genRandomNum(rows-1, 1 ));
+              posXY = posX+posY;
+            } while (located.find(l => l.pos === posXY))
+          }
+
+          gridBoard.select(`#xy${posXY}`).append('img').attr('src', val)
+          located.push({"pos": posXY, "src": val})
+
+
+        }, located)
+
+        this.set('located', located)
+      }
       genRandomNum(max, min){
         return Math.floor(Math.random() * (max - min + 1)) + min
       }
-      generateGrid(){
+      generateGrid(gridType){
         let gridNodes = d3.select(this.$.grid_table).append('tbody')
         let {rows, square} = this;
 
         //create grid
-        for(let i=0; i < rows; i++ ) {
-          let trNodes = gridNodes.append('tr')
-          for(let j=0; j < rows; j++ ) {
-            trNodes.append('td').attr('id', `t_${(i*rows)+(j+1)}`)
-          }
+
+        //gridType idType = gridType === "number" ?
+        switch (gridType) {
+          case "number":
+            for(let i=0; i < rows; i++ ) {
+              let trNodes = gridNodes.append('tr')
+              for(let j=0; j < rows; j++ ) {
+                trNodes.append('td').attr('id', `t_${(i*rows)+(j+1)}`)
+              }
+            }
+            break;
+          case "position":
+            let bottom = rows;
+            for(let i=0; i < rows; i++ ) {
+              let trNodes = gridNodes.append('tr')
+              for(let j=0; j < rows; j++ ) {
+
+                let getX = j
+                let getY = (rows-(i+1))
+                let getXY = getX*getY;
+                let text = getX === 0 ? getY : getX;
+
+                let getXs = String(getX)
+                let getYs = String(getY)
+                let getXYs = getXs+getYs
+
+                if(getX === getY) {
+                  text = ""
+                }
+                let target = trNodes.append('td')
+                                    .attr('data-x', getX).attr('data-y', getY)
+                                    .attr('id', `xy${getXYs}`)
+                if(getXY === 0){
+                  // console.log(getXY, "X:", j, "Y:", rows-(i+1));
+                  target.classed('td_hide', true)
+                  target.text(text)
+                }
+
+              }
+            }
+            break;
+          default:
+
         }
+
       }
       handleAllowaleRange(axisX, axisY, place, step, color){
 

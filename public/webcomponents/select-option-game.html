@@ -1,0 +1,279 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+
+<dom-module id="select-option-game">
+  <template>
+    <style>
+      #container {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+      }
+      .full_screen {
+        text-align: center;
+        font-size: 35px;
+        font-weight: 600;
+        display: inline-block;
+        width: 100%;
+        margin-top: 40px;
+      }
+      .full_screen > .sentence > span {
+        line-height: 70px;
+      }
+      .full_screen > .sentence {
+        width: 70%;
+        display: inline-block;
+      }
+      .custom_select {
+        position: relative;
+        display: inline-block;
+        width: 220px;
+        height: 60px;
+        vertical-align: middle;
+      }
+      .select_selected {
+        top: 0;
+      }
+      .select_items,
+      .select_selected {
+        display: inline-block;
+        position: absolute;
+        width: 200px;
+        border: 3px dashed purple;
+        color: purple;
+        background-color: white;
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select:none;
+        left: 0;
+      }
+      .select_items {
+        top: 42px;
+      }
+      .hide {
+        display: none;
+      }
+      button {
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+        color: white;
+        background-color: purple;
+        outline: none;
+        border: none;
+        margin-top: 20px;
+      }
+
+    </style>
+    <status-bar
+      title="{{localize('title')}}"
+      score="{{localize('score')}}"
+      lefted="{{localize('lefted')}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      purpose="select"
+      cards="{{cards}}"
+      on-modal="handleModal"
+      fullscreen="{{localize('fullscreen')}}"
+      logoutHead="{{localize('logoutHead')}}"
+      ></status-bar>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <div id="container">
+      <!-- <div class="full_screen">
+        <div class="sentence"> -->
+
+
+          <!-- <div class="custom_select">
+            <div class="select_selected" on-click="handleClick" data-answer="아날로그">OOO</div>
+            <div class="select_items hide">
+              <div on-click="handleOptions">아날로그</div>
+              <div on-click="handleOptions">디지털</div>
+            </div>
+          </div>
+          <span>은(는) 연속적으로 변화하는 값을 표현하는 것이고,</span>
+          <div class="custom_select">
+            <div class="select_selected" on-click="handleClick" data-answer="디지털">OOO</div>
+            <div class="select_items hide">
+              <div on-click="handleOptions">아날로그</div>
+              <div on-click="handleOptions">디지털</div>
+            </div>
+          </div>
+          <span>은(는) 불연속적인 값으로 표현한 것이다.</span> -->
+
+
+        <!-- </div>
+      </div> -->
+
+      <!-- <button on-click="handleAnswer">정답 확인</button> -->
+    </div>
+
+  </template>
+  <script>
+    //TODO: CSS
+    class SelectOptionGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'select-option-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      ready(){
+        super.ready();
+        this.set('stage', 0)
+        this.set("blanks", 0)
+      }
+      reset(){
+        this.set('stage', this.stage+1)
+        d3.select(this.$.container).selectAll('div').remove()
+        this.setData()
+      }
+      handleModal() {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+      handleClick(){
+        let brother = d3.select(this.parentElement).select(".select_items")
+            brother.classed("hide", !brother.classed("hide"))
+      }
+      handleOptions(txt) {
+
+        let that = d3.select(this.ownerDocument).select('#element').node();
+        let parent = d3.select(this.parentElement);
+            parent.classed("hide", !parent.classed("hide"))
+        let grand = d3.select(this.parentElement.parentElement)
+        let uncle = grand.select(".select_selected");
+        let idx = uncle.attr('data-idx');
+            uncle.text(txt)
+            that.set(`selected${idx}`, txt)
+            // debugger
+
+      }
+      handleAnswer(){
+        let that = d3.select(this.ownerDocument).select('#element').node()
+        let result = true;
+        for(let i = 0; i < that.blanks; i++){
+          if(that[`answer${i}`] !== that[`selected${i}`]){
+            result = false;
+          }
+        }
+
+        if(result) {
+          console.log("성공");
+          if(that.LastStage === that.stage){
+            that.$.finalStageModal.modalAlert()
+          }else {
+            that.$.successModal.modalAlert()
+          }
+        } else {
+          console.log("실패");
+          that.$.retryModal.modalAlert()
+        }
+      }
+      replaceQuestion(d, i){
+        let that = d3.select(this.ownerDocument).select('#element').node()
+        let parent = d3.select(this._parent)
+
+        if(d.includes("==")) {
+          let { answer, option } = that.questions[that.stage].options.shift();
+          let selectNode = parent.append('div').attr('class', "custom_select")
+
+          selectNode.append('div')
+                    .attr('class', "select_selected")
+                    .attr('data-answer', answer)
+                    .attr('data-idx', i)
+                    .on("click", that.handleClick)
+                    .text("OOO")
+
+
+          selectNode.append('div')
+                    .attr('class', "select_items hide")
+                    .selectAll('div')
+                    .data(option).enter()
+                    .append('div')
+                    .text((text, i) => text)
+                    .on('click', that.handleOptions)
+                    .exit()
+
+          that.set("blanks", that.blanks+1)
+          that.set(`answer${i}`, answer)
+          d = d.replace("==", "").trim()
+        }
+
+          parent.append('span').text(d)
+
+      }
+      setData(data , manifest){
+        let { question, options, optionType, screenType } = this.questions[this.stage];
+        let gameType = this.gameType;
+        this.set('LastStage', this.questions.length-1)
+
+        let blanks = question.split(" =").filter(f => f.trim())
+
+
+        d3.select(this.$.container)
+          .append('div').attr('class', 'full_screen')
+          .append('div').attr('class', 'sentence')
+          .selectAll('div')
+          .data(blanks).enter()
+          .html(this.replaceQuestion)
+
+        d3.select(this.$.container)
+          .append('div')
+          .append('button')
+          .on("click", this.handleAnswer)
+          .text('제출 하기')
+
+          // .html(this.replaceQuestion(`${question}`, gameType, optionType, screenType))
+
+      }
+    }
+    window.customElements.define(SelectOptionGame.is, SelectOptionGame);
+  </script>
+</dom-module>

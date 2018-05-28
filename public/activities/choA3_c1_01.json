@@ -1,51 +1,23 @@
 {
-  "element": "objective-game",
+  "element": "select-option-game",
   "attributes": {
-    "gameType" : "gridComp",
-    "component": "axis-grid",
-    "gridType" : "number",
-    "rows" : 8,
-    "colors" : ["red", "purple", "green"],
+    "gameType" : "multiple",
+    "nextlink" : "activity#!choA3_c1_02",
     "questions" : [
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
-      },
-      {
-        "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
-        "detailType" : "max"
+        "question": " === 은(는) 연속적으로 변화하는 값을 표현하는 것이고, === 은(는) 불연속적인 값으로 표현한 것이다.",
+        "optionType" : "fixed",
+        "screenType" : "full",
+        "options" : [
+          {
+            "answer" : "아날로그",
+            "option" : ["아날로그","디지털"]
+          },
+          {
+            "answer" : "디지털",
+            "option" : ["아날로그","디지털"]
+          }
+        ]
       }
     ]
   },
@@ -55,9 +27,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "객관식 문제",
-      "score": "점수",
-      "lefted": "맞춘 갯수",
+      "title": "문장을 완성하세요.",
 
       "success": "참 잘했어요!",
       "successHead": "참 잘했어요!",
