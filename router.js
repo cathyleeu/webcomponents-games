@@ -285,6 +285,11 @@ function getBook(classObj) {
   if(school == "A00083-K7") {
     book = [3, 5, 7, 8];
   }
+  // 영업부 시흥지사 낙원유치원, 영재유치원 2,3권으로 변경
+  if(school == "C00175-K3" || school == "C00175-K4"){
+    book = ["2-re", "3-re"];
+  }
+
   book = book.map(function(num) {
     return classObj.level + "-" + num;
   }).join(",");
