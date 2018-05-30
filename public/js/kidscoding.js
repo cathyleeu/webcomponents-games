@@ -751,7 +751,7 @@ KidsCoding.prototype = {
       block = block.getNextBlock();
     }
     if(workspace2) {
-      initXml = '<xml>' + this.createXml(workspace2, {uneditable:true, x:200, y:20}) + '</xml>';
+      initXml = '<xml>' + this.createXml(workspace2, {uneditable:true, x:300, y:20}) + '</xml>';
       Blockly.Xml.domToWorkspace($(initXml).get(0),this.workspace);
     }
     // flyout 내의 블럭들을 오른쪽으로 20px씩 이동
