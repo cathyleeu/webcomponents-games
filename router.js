@@ -855,6 +855,14 @@ public.post('/nav', function *(next) {
   });
 });
 
+public.get('/study/:book', function *(next) {
+  yield this.render('study', {
+    book: this.params.book,
+    week: "1,2,3,4,5,6,7,8",
+    contents: getContents(this.params.book, "1,2,3,4,5,6,7,8")
+  });
+});
+
 public.get('/login', function *(next) {
   yield this.render('login', {
     url: JSON.stringify(url_json),
