@@ -1,0 +1,79 @@
+{
+  "element": "select-card",
+  "data": [
+    "a1", "a2", "a3", "a4", "a5", "a6",
+    "d1", "d2", "d3", "d4", "d5", "d6"
+  ],
+  "attributes": {
+    "max" : 3,
+    "trick": 5,
+    "nextlink" : "activity#!choA3_c1_04",
+    "lastStage" : 2
+  },
+  "manifest": [
+    {"id": "a1", "src": "/img/cho_activities/choA3_c1_03_a1.png", "result": true},
+    {"id": "a2", "src": "/img/cho_activities/choA3_c1_03_a2.png", "result": true},
+    {"id": "a3", "src": "/img/cho_activities/choA3_c1_03_a3.png", "result": true},
+    {"id": "a4", "src": "/img/cho_activities/choA3_c1_03_a4.png", "result": true },
+    {"id": "a5", "src": "/img/cho_activities/choA3_c1_03_a5.png", "result": true },
+    {"id": "a6", "src": "/img/cho_activities/choA3_c1_03_a6.png", "result": true },
+    {"id": "d1", "src": "/img/cho_activities/choA3_c1_03_d1.png"},
+    {"id": "d2", "src": "/img/cho_activities/choA3_c1_03_d2.png"},
+    {"id": "d3", "src": "/img/cho_activities/choA3_c1_03_d3.png"},
+    {"id": "d4", "src": "/img/cho_activities/choA3_c1_03_d4.png"},
+    {"id": "d5", "src": "/img/cho_activities/choA3_c1_03_d5.png"},
+    {"id": "d6", "src": "/img/cho_activities/choA3_c1_03_d6.png"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "아날로그는 무엇인가요?",
+      "minor": "아래 중 정보를 연속적으로 표현하는 것을 선택하세요.",
+      "guide": "힌트! $ 가지가 있어요!",
+      "score": "점수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "다시 시도해 볼까요?",
+      "nextbtn": "넘어가기",
+      "retrybtn": "다시하기",
+      "resultbtn": "결과보기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "다음 단계",
+      "noticeAlert" : "아직 선택할 것이 남았어요!",
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "What are the ingredients of rice cake soup?",
+      "minor": "Click the ingredients in the below pictures",
+      "guide": "Hint! ingredients is $ in the below Pictures.",
+      "score": "score",
+      "success": "Good job!",
+      "successHead": "Success",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutHead": "Log Out",
+      "logoutBtm": "Do you want to logout",
+      "previousHead" : "Next",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "retryHead": "Failed",
+      "retryBtm" : "Do you want to retry?",
+      "nextbtn": "Back",
+      "retrybtn": "Retry",
+      "resultbtn": "Result",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "noticeAlert" : "You need to select more!",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

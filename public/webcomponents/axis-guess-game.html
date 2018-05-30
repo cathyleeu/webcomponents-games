@@ -5,7 +5,18 @@
 
   <template>
     <style>
-      #axis_cont {
+      #game_cont {
+
+      }
+      /* axisComp */
+      .gridComp {
+        /* width: 50% !important; */
+        display: inline-block;
+        vertical-align: text-top;
+        width: 30%;
+        margin-left: 100px;
+      }
+      .axisComp {
         margin-top: 90px;
         text-align: center;
       }
@@ -45,9 +56,16 @@
         font-size: 25px;
       }
       .question_cont {
+
+      }
+      .question_axisComp {
         font-size: 25px;
         padding-left: 15%;
         margin-top: 50px;
+      }
+      .question_gridComp {
+        margin: 20px 0;
+        font-size: 20px;
       }
       .ques_text,
       .axis_text {
@@ -83,20 +101,36 @@
         padding-left: 15%;
       }
       .select_cont {
+
+      }
+      .select_axisComp {
         width: 100%;
         height: 100px;
         margin-top: 10px;
         text-align: center;
       }
-      #select_box {
+      .select_axisComp > #select_box {
         margin-top: 20px;
         width: 70%;
         display: inline-block;
         background-color: #F2F1F1;
       }
+      .select_gridComp {
+        display: inline-block;
+      }
+      .select_gridComp > #select_box {
+        display: inline-block;
+        /* width: 70%; */
+        background-color: #F2F1F1;
+      }
       .select_imgs {
         width: 70px;
         height: 70px;
+      }
+      .grid_quests {
+        display: inline-block;
+        vertical-align: text-top;
+        margin-left: 20px;
       }
       .btn_cont {
         text-align: center;
@@ -197,21 +231,20 @@
       id="minorHeading"
       onclick="[[handleBoldStyle]]"
       content={{localize('minor')}}></minor-heading>
-    <!-- 보기 좌표 -->
-    <div id="axis_cont">
-      <div class="axis_box">
-        <div class="axis_line"></div>
+    <!-- TODO: 보기 좌표 : component 로 만들  -->
+    <div id="game_cont"></div>
+
+    <div class="grid_quests">
+      <!-- 문제 -->
+      <div class="question_cont">
+        <div class="ques_head">{{localize('quesHead')}}</div>
+        <div id="ques_texts"></div>
+        <span>{{localize('quesSub')}}</span>
       </div>
-    </div>
-    <!-- 문제 -->
-    <div class="question_cont">
-      <div class="ques_head">{{localize('quesHead')}}</div>
-      <div id="ques_texts"></div>
-      <span>{{localize('quesSub')}}</span>
-    </div>
-    <!-- 과일 나열 -->
-    <div class="select_cont">
-      <div id="select_box"></div>
+      <!-- 과일 나열 -->
+      <div class="select_cont">
+        <div id="select_box"></div>
+      </div>
     </div>
     <!-- submit button -->
     <div class="btn_cont">
@@ -238,12 +271,19 @@
         this.set('ranNums', [])
         this.set('selectedAnws', [])
         this.set('currentStage', 1)
-        this.genAxisData()
+
+        this[`${this.gameType}Game`]()
+        d3.select(this.$.game_cont).attr('class', `${this.gameType}`)
+
+        d3.select(this.shadowRoot).select('.question_cont').classed(`question_${this.gameType}`, true)
+        d3.select(this.shadowRoot).select('.select_cont').classed(`select_${this.gameType}`, true)
+
 
       }
       reset(){
 
-        d3.select(this.$.axis_cont).select('div').selectAll('.axis_nums').remove()
+        d3.select(this.$.game_cont).select('div').remove()
+        d3.select(this.$.game_cont).select(this.component).remove()
         d3.select(this.$.select_box).selectAll('img').remove()
         d3.select(this.$.ques_texts).selectAll('span').remove()
 
@@ -252,11 +292,43 @@
         this.set('selectedAnws', [])
         this.set('selectedNums', [])
 
-        this.genAxisData()
-        this.setData()
+        this[`${this.gameType}Game`]()
+        d3.select(this.$.game_cont).attr('class', `${this.gameType}`)
 
       }
-      genAxisData(){
+      gridCompGame() {
+          console.log("grid Game");
+        let component =  d3.select(this.$.game_cont).append(this.component)
+        let grid = component.node()
+        let { located } = grid;
+
+        let selectedNums = located.slice(0,3).map(l => l.pos)
+        let selectedText = selectedNums.map(l => `(${l.split("").join()})`)
+
+        d3.select(this.$.select_box)
+          .selectAll('img')
+          .data(d3.shuffle(located)).enter()
+          .append('img').attr('src', (d,i) => d.src)
+          .attr('data-axis', (d,i) => d.pos)
+          .attr('class', 'select_imgs')
+          .on('click', this.handleSelect )
+
+        d3.select(this.$.ques_texts)
+          .selectAll('span')
+          .data(selectedText).enter()
+          .append('span')
+          .attr('class', 'ques_text')
+          .text((d, i) => d)
+
+        this.set('selectedNums', selectedNums )
+
+      }
+      axisCompGame() {
+        console.log("axis Game");
+
+        d3.select(this.$.game_cont).append('div').attr('class', 'axis_box')
+          .append('div').attr('class', 'axis_line')
+
         let nums = [1,2,3,4,5,6,7,8,9];
         let imgNums = this.images.length;
         let lists = [];
@@ -267,28 +339,20 @@
           let normal = +nums.splice(gen,1).join()
           lists.push({
             "src" : this.images[i],
-            "num" : normal
+            "pos" : normal
           })
           this.push('ranNums', normal)
         }
+
         let getRan = Math.floor(Math.random() * (4 - 2) + 2)
         let shuffle = d3.shuffle(this.ranNums)
         this.set('selectedNums', shuffle.slice(0,getRan))
         this.set('lists', lists )
 
-        console.log("genAxisData");
-      }
-      genAxisDivs(node) {
-        this.lists.forEach(l => {
-        	if(l.num === node.__data__) {
-        		d3.select(node).append('img').attr('src', l.src).attr('class', 'axis_imgs')
-        	}
-        })
-      }
-      setData(data, manifest){
-        let nums = [1,2,3,4,5,6,7,8,9];
 
-        let axisDivs = d3.select(this.$.axis_cont).select('div')
+        nums = [1,2,3,4,5,6,7,8,9];
+
+        let axisDivs = d3.select(this.$.game_cont).select('div')
         .selectAll('div')
         .exit()
         .data(nums).enter()
@@ -305,6 +369,9 @@
         .attr('class', "axis_text")
         .text((d, i) => `${d}`)
 
+        //grid comp 추가로 바뀌는 css 제거
+        d3.select(this.shadowRoot).select('.grid_quests').classed('grid_quests',false)
+
         d3.select(this.$.select_box)
           .selectAll('img')
           .data(d3.shuffle(this.lists)).enter()
@@ -319,11 +386,24 @@
           .attr('class', 'ques_text')
           .text((d, i) => d)
       }
+      genAxisDivs(node) {
+        this.lists.forEach(l => {
+        	if(l.pos === node.__data__) {
+        		d3.select(node).append('img').attr('src', l.src).attr('class', 'axis_imgs')
+        	}
+        })
+      }
+      setData(data, manifest){
+        // 좌표를 그리는 부분, component를 끼워넣는 방식으로
+        // let nums = [1,2,3,4,5,6,7,8,9];
+
+
+      }
       handleSelect(d) {
         let self = d3.select(this.ownerDocument).select('#element').node();
         let { selectedAnws, selectedNums } = self;
         let exceed = selectedAnws.length+1 > selectedNums.length ? true : false;
-        let result = selectedAnws.indexOf(d.num) !== -1 ? false : true
+        let result = !selectedAnws.includes(d.pos); // !== -1 ? false : true
 
         if(exceed && result) {
           self.$.exceedModal.modalAlert()
@@ -331,11 +411,11 @@
         }
 
         if(result) {
-          self.push('selectedAnws', d.num)
+          self.push('selectedAnws', d.pos)
         } else {
-          self.set('selectedAnws', selectedAnws.filter(l => l !== d.num))
+          self.set('selectedAnws', selectedAnws.filter(l => l !== d.pos))
         }
-
+        // debugger
         d3.select(this).classed("img_selected", result);
 
       }

@@ -3,6 +3,7 @@
   "attributes": {
     "gameType" : "gridComp",
     "component": "axis-grid",
+    "gridType" : "number",
     "rows" : 8,
     "colors" : ["red", "purple", "green"],
     "questions" : [

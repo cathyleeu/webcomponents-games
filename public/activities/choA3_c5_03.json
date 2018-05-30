@@ -1,60 +1,57 @@
 {
   "element": "objective-game",
   "attributes": {
-    "gameType" : "gridComp",
+    "gameType" : "cardComp",
     "nextlink" : "activity#!choA2_c3_02",
-    "component": "axis-grid",
-    "gridType" : "number",
-    "rows" : 8,
-    "colors" : ["red", "purple", "green"],
+    "component": "binary-card",
     "questions" : [
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "red"
+        "question": "카드를 이진수로 올바르게 표현한 것은?",
+        "cardType" : "dots"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "purple"
+        "question": "카드를 이진수로 올바르게 표현한 것은?",
+        "cardType" : "dots"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "green"
+        "question": "카드를 이진수로 올바르게 표현한 것은?",
+        "cardType" : "dots"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "purple"
+        "question": "카드를 이진수로 올바르게 표현한 것은?",
+        "cardType" : "dots"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "red"
+        "question": "카드를 이진수로 올바르게 표현한 것은?",
+        "cardType" : "dots"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "green"
+        "question": "카드를 이진수로 올바르게 표현한 것은?",
+        "cardType" : "dots"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "red"
+        "question": "카드의 이진수를 수로 올바르게 표현한 것은?",
+        "cardType" : "binary"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "green"
+        "question": "카드의 이진수를 수로 올바르게 표현한 것은?",
+        "cardType" : "binary"
+      },
+      {
+        "question": "카드의 이진수를 수로 올바르게 표현한 것은?",
+        "cardType" : "binary"
+      },
+      {
+        "question": "카드의 이진수를 수로 올바르게 표현한 것은?",
+        "cardType" : "binary"
+      },
+      {
+        "question": "카드의 이진수를 수로 올바르게 표현한 것은?",
+        "cardType" : "binary"
+      },
+      {
+        "question": "카드의 이진수를 수로 올바르게 표현한 것은?",
+        "cardType" : "binary"
       }
     ]
   },
@@ -90,7 +87,7 @@
       "nobtn" : "아니오",
       "yesbtn" : "예",
 
-      "fullscreen" : "전체화면"
+      "fullscreen" : "풀스크린"
     },
     "en": {
       "title": "Objective Game",

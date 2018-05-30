@@ -1,60 +1,32 @@
 {
   "element": "objective-game",
   "attributes": {
-    "gameType" : "gridComp",
-    "nextlink" : "activity#!choA2_c3_02",
-    "component": "axis-grid",
-    "gridType" : "number",
-    "rows" : 8,
-    "colors" : ["red", "purple", "green"],
+    "gameType" : "ox",
+    "nextlink" : "activity#!choA3_c1_03",
     "questions" : [
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "red"
+        "question": "디지털은 연속적으로 변화하는 값으로 표현한다.",
+        "answer": "X"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "purple"
+        "question": "아날로그는 단위가 있다.",
+        "answer": "X"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "green"
+        "question": "디지털은 불연속적인 값으로 표현된다.",
+        "answer": "O"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "purple"
+        "question": "아날로그는 연속적으로 변화하는 값으로 표현한다.",
+        "answer": "O"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "red"
+        "question": "컴퓨터는 정보를 디지털로 저장한다.",
+        "answer": "O"
       },
       {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "green"
-      },
-      {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "red"
-      },
-      {
-        "question": "$의 칸 수는?",
-        "questType": "gridCount",
-        "detailType" : "color",
-        "color" : "green"
+        "question": "시계 바늘이 시간을 연속적으로 표현하는 것은 디지털이다.",
+        "answer": "X"
       }
     ]
   },
@@ -64,7 +36,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "객관식 문제",
+      "title": "이것은 무엇인가요?",
       "score": "점수",
       "lefted": "맞춘 갯수",
 
@@ -90,7 +62,7 @@
       "nobtn" : "아니오",
       "yesbtn" : "예",
 
-      "fullscreen" : "전체화면"
+      "fullscreen" : "풀스크린"
     },
     "en": {
       "title": "Objective Game",

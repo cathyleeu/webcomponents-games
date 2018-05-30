@@ -1,11 +1,13 @@
 {
   "element": "axis-guess-game",
   "attributes": {
+    "rows" : 7,
+    "gameType" : "gridComp",
+    "component": "axis-grid",
+    "gridType" : "position",
+    "questType": "gridGuess",
     "lastStage" : 5,
-    "gameType" : "axisComp",
-    "component": "axis-guess",
-    "axisType" : "position",
-    "nextlink" : "activity#!choA1_c3_02",
+    "nextlink" : "activity#!choA3_c1_02",
     "images" : [
       "/img/a7_w2/fruit1.png",
       "/img/a7_w2/fruit2.png",
@@ -18,12 +20,11 @@
   "data": [
   ],
   "manifest": [
-
   ],
   "msg": {
     "ko": {
       "title": "가로선과 좌표",
-      "minor" : "가로선을 보고 숫자에 맞는 과일을 모두 표시하세요",
+      "minor" : "격자를 보고 숫자에 맞는 과일을 모두 표시하세요",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -39,7 +40,7 @@
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "다음 단계",
-      "fullscreen" : "전체화면",
+      "fullscreen" : "풀스크린",
       "quesHead": "문제",
       "quesSub": "에 있는 과일을 좋아해",
       "exceedHead": "선택 초과",

@@ -28,9 +28,14 @@
         height: 100px;
         float: left;
       }
+      .textshort {
+        line-height: 100px;
+      }
+      .textlong {
+        line-height: 50px;
+      }
       .question > p {
         font-size: 26px;
-        line-height: 100px;
         float: left;
         margin: 0;
       }
@@ -91,19 +96,32 @@
         background-color: #772C73;
         color: white;
       }
+      .binary {
+        width: 50%;
+        padding: 1em 0;
+      }
+      .binary,
       .reference {
-        width: 40%;
         display: inline-block;
         position: absolute;
         left: 0;
         border-top: 3px solid lightgray;
         border-bottom: 3px solid lightgray;
       }
+      .reference {
+        width: 40%;
+      }
+      .binarys {
+        width: 40%;
+      }
+      .binarys,
       .sentences {
-        width: 60%;
         right: 0;
         position: absolute;
         display: inline-block;
+      }
+      .sentences {
+        width: 60%;
       }
       .reference > img {
         max-width: 100%;
@@ -226,11 +244,12 @@
       replaceQuestion(text){
         // 타입에 따라서 문제 설정
 
-        let { questionImg, questType, detailType, color } = this.questions[this.stage]
+        let { questionImg, questType, detailType, color } = this.questions[this.stage];
+        let textStyle = text.length > 28 ? "textlong" : "textshort"
         if(questType === "gridCount" && detailType === "color"){
-          text = text.replace("$", `<p style="width:100px;height:100px;background-color:${color}"></p>,`);
+          text = text.replace("$", `<p style="width:100px;height:100px;margin-right:10px;background-color:${color}"></p>,`);
           text = text.split(',');
-          return `${text[0]} <p>${text[1]}</p>`;
+          return `${text[0]} <p class="${textStyle}">${text[1]}</p>`;
         }
 
         if(questType === "gridCount" && detailType === "max"){
@@ -250,9 +269,10 @@
         if(result) {
           text = text.replace("$", `<img src="${this.questions[this.stage].questionImg}"/>,`);
           text = text.split(',');
-          return `${text[0]} <p>${text[1]}</p>`;
+          return `${text[0]} <p class="${textStyle}">${text[1]}</p>`;
         }
-        return `<p>${text}</p>`
+
+        return `<p class="${textStyle}">${text}</p>`
       }
       renderOptions(op){
         let keyName = Object.keys(op)[0],
@@ -307,9 +327,13 @@
             } else {
               target = Math[`${that.selectedMax}`](...arr)
             }
-            
+
             result = Boolean(answer === target)
-            // debugger
+
+            break;
+          case "cardComp":
+              answer = d3.select(this).node().dataset.answer;
+              result = String(answer) == "true";
             break;
           default:
             result = d.answer;
@@ -328,7 +352,7 @@
         }
       }
       setData(data , manifest){
-        let { question, options, answer } = this.questions[this.stage]
+        let { question, options, answer, cardType, reference } = this.questions[this.stage]
         this.set('LastStage', this.questions.length-1)
         d3.select(this.$.container)
           .append('div')
@@ -368,6 +392,19 @@
                .on("click", this.handleClick)
 
             break;
+          case "referenceEach":
+            let refNode = objDivs.append('div').attr('class', 'reference')
+
+                refNode.append('p').text('보기')
+                refNode.append('img').attr('src', reference)
+
+            objDivs.append('div').attr('class', 'sentences')
+               .selectAll('div')
+               .data(d3.shuffle(options)).enter()
+               .append('div').attr('class', 'sentenceStyle')
+               .html((d, i) => this.renderOptions(d))
+               .on("click", this.handleClick)
+            break;
           case "ox":
             objDivs.selectAll('p')
             .data(["O","X"]).enter()
@@ -384,7 +421,25 @@
                .append('div').attr('class', 'sentenceStyle')
                .html((d, i) => this.renderOptionsForGridType(d))
                .on("click", this.handleClick)
+            break;
+          case "cardComp":
+            let compNode = objDivs.append('div').attr('class', 'binary')
+                                   .append(this.component)
 
+            let comp = compNode.node()
+
+            let binaryOpts = d3.shuffle(comp.answers[cardType].filter(c => c !== comp.answer)).splice(0,3)
+            binaryOpts.push(comp.answer)
+
+            objDivs.append('div').attr('class', 'binarys')
+               .selectAll('div')
+               .data(d3.shuffle(binaryOpts)).enter()
+               .append('div').attr('class', 'sentenceStyle')
+               .append('p').text((d, i) => d)
+               .attr('data-answer', (d,i) => d === comp.answer ? "true" : "false")
+               .on("click", this.handleClick)
+
+            break;
           default:
             break;
         }
