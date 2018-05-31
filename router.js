@@ -855,11 +855,11 @@ public.post('/nav', function *(next) {
   });
 });
 
-public.get('/study/:book', function *(next) {
-  yield this.render('study', {
+public.get('/engloo/:book', function *(next) {
+  yield this.render('engloo', {
     book: this.params.book,
     week: "1,2,3,4,5,6,7,8",
-    contents: getContents(this.params.book, "1,2,3,4,5,6,7,8")
+    contents: getContents("CHO-" + this.params.book, "1,2,3,4,5,6,7,8")
   });
 });
 
