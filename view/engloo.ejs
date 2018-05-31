@@ -1,0 +1,200 @@
+<script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+<link href="//vjs.zencdn.net/7.0.3/video-js.min.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/7.0.3/video.min.js"></script>
+<script src="//unpkg.com/@videojs/http-streaming@1.0.2/dist/videojs-http-streaming.min.js"></script>
+<style>
+  body header .container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: capitalize !important;
+  }
+  .btn-default {
+    margin: 20px;
+  }
+  .btn-warning {
+    margin: 20px;
+    width: 130px;
+    padding: 10px;
+  }
+  .btn-warning.selected {
+    background-color: #E53;
+  }
+  .btn-outline {
+     width: 100%;
+     height: 60px;
+     line-height: 60px;
+     display: block;
+     margin: 10px auto;
+     padding: 0;
+  }
+  #characters {
+    margin-bottom: 50px;
+  }
+  .character {
+    width: 128px;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 5px;
+  }
+  .character.selected {
+    background-color: #E53;
+    border: 2px solid yellow;
+  }
+  h3 {
+    margin-bottom: 30px;
+  }
+  .book {
+    display: flex;
+    margin: 10px auto;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+    border: solid 2px white;
+    background: transparent;
+    border-radius: 6px;
+  }
+  .book-header {
+    padding: 0 10px;
+    border-right: 1px solid white;
+    font-weight: bold;
+    width: 40px;
+    line-height: 58px;
+  }
+  .book-title {
+    width: 240px;
+    text-align: center;
+    float: left;
+    border-right: 1px solid white;
+    padding-right: 10px;
+  }
+  .book-0 {
+    line-height: 32px;
+  }
+  .book-1 {
+    line-height: 24px;
+    font-size: 14px;
+  }
+  .book-list {
+    text-align: left;
+    flex: 1;
+    padding: 0 10px;
+  }
+  .book-problem {
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 0 8px;
+    height: 40px;
+    line-height: 40px;
+    margin: 9px 0;
+    min-width: 40px;
+    text-align: center;
+  }
+  .book-problem:hover {
+    background-color: white;
+    color: #18bc9c;
+    text-decoration: none;
+  }
+  .star-light {
+    margin: 50px auto 30px !important;
+  }
+</style>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand">KIDSCODING</a>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>키즈코딩 <%=book.split("-")[0]%>단계 <%=book.split("-")[1]%>권</h2>
+                <% for(i = 0; i < contents.length; i++) { %>
+                  <div class="book">
+                    <div class="book-header">
+                      <%=week.split(",")[i]%>
+                    </div>
+                    <div class="book-title">
+                      <div class="book-0"><%=contents[i].title%></div>
+                      <div class="book-1"><%=contents[i].subtitle ? contents[i].subtitle : ""%></div>
+                    </div>
+                    <div class="book-list">
+                      <a class="book-problem show-video" href="#" data-video="<%=book.split('-').join('') + '_' + (i+1)%>"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 교육영상 보기</a>
+                      <% if(i % 2 == 1) { %>
+                      <a class="book-problem show-video" href="#" data-video="<%=book.split('-').join('') + '_' + (i+1) + '_tutorial'%>"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></span> 실습영상 보기</a>
+                      <% } %>
+                      <a class="book-problem" rel="external" href="<%=contents[i].problems[0]%>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 문제 풀기</a>
+                    </div>
+                  </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; (주)토이코드 2015
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- video modal -->
+<div id="videoModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">키즈코딩 교육 동영상</h4>
+      </div>
+      <div class="modal-body">
+        <video-js id="vid1" class="vjs-big-play-centered" controls fluid="true">
+        </video-js>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var player = videojs('vid1', {
+  html5: {
+    nativeAudioTracks: false,
+    nativeVideoTracks: false,
+    hls: {
+      overrideNative: true
+    }
+  }
+});
+player.ready(function() {
+  $('.show-video').click(function(e) {
+    e.preventDefault();
+    var video = $(e.currentTarget).data('video');
+    $('#videoModal').modal('show').on('shown.bs.modal', function() {
+      player.src({
+        src: 'https://s3.ap-northeast-2.amazonaws.com/toycodeinc/kidscoding_' + video + '/prog_index.m3u8',
+        type: 'application/x-mpegURL',
+      });
+    }).on('hide.bs.modal', function() {
+      player.pause();
+    });
+  });
+});
+</script>
