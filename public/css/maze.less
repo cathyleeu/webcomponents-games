@@ -236,6 +236,24 @@ html {
   font-size: 20px;
 }
 
+@media(max-height:500px) {
+  #modal {
+    .modal-imgs img {
+      max-width: 150px !important;
+    }
+    .modal-header {
+      padding: 10px 15px;
+      .modal-title {
+        font-size: 20px;
+      }
+    }
+    .modal-footer .btn {
+      font-size: 20px;
+      padding: 5px 15px;
+    }
+  }
+}
+
 #modal {
   .modal-title {
     font-size: 24px;
@@ -252,7 +270,7 @@ html {
   }
   .modal-imgs {
     text-align: center;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     img {
       width: 100%;
       max-width: 200px;
