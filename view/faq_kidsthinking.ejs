@@ -1,0 +1,124 @@
+<div class="modal fade" id="faq" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">KidsThinking</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <% include faq_install_chrome.ejs %>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  교재나 실습 프로그램에 관해서 문의하고 싶어요.
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <ul>
+                  <li>카카오톡에서 "키즈씽킹" 친구를 추가해주세요.</li>
+                  <li>1:1채팅으로 궁금하신 점을 문의해주세요.</li>
+                  <li>교재나 실습 프로그램 화면을 카메라로 찍어서 전송해주시면 좀 더 빠르게 지원해드릴 수 있습니다.</li>
+                </ul>
+                <img src="/img/faq.png" class="img-responsive" style="margin: 0 auto;" />
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingWhichBrowser">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseWhichBrowser" aria-expanded="false" aria-controls="collapseWhichBrowser">
+                  현재 사용하고 있는 기기를 확인하고 싶어요.
+                </a>
+              </h4>
+            </div>
+            <div id="collapseWhichBrowser" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingWhichBrowser">
+              <div class="panel-body">
+                <ul>
+                  <li>실습 프로그램 문의시에 현재 사용하고 있는 기기를 확인하여야 할 경우가 있습니다.</li>
+                  <li>인터넷이 연결된 상태에서 아래의 링크를 클릭하시면 현재 사용하고 있는 기기의 정보가 출력됩니다.</li>
+                  <li>출력된 화면을 사진으로 찍어 카카오톡 "키즈씽킹" 친구에게 보내주시면 됩니다.</li>
+                  <li><a href="https://whichbrowser.net/" target="_blank">[현재 사용하고 있는 기기 확인하기]</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  실습 프로그램의 업데이트가 잘 되지 않아요.
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <ul>
+                  <li>업데이트에 문제가 있으신 경우 아래의 항목을 점검해보세요.</li>
+                </ul>
+                <ol>
+                  <li>
+                    <h4>인터넷 연결 확인</h4>
+                    <ul>
+                      <li>태블릿이 와이파이를 통해 인터넷에 연결이 되었는지 확인합니다.</li>
+                      <li>일반적인 무선공유기는 한번에 최대 7~10대 정도의 기기를 연결할 수 있습니다.</li>
+                      <li>한꺼번에 여러 기기를 업데이트 하실 경우, 업데이트가 끝난 태블릿의 인터넷 연결을 해제해주세요.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h4>현재 시각 확인</h4>
+                    <ul>
+                      <li>태블릿의 날짜와 시간이 현재 시각과 맞는지 확인합니다.</li>
+                      <li>날짜와 시간이 맞지 않는경우, 보안 위험성 문제로 브라우저가 업데이트를 진행 하지 못합니다.</li>
+                      <li>태블릿의 시간을 "인터넷 동기화"를 통해서 현재 시간으로 맞춰주세요.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h4>캐시 삭제하기</h4>
+                    <ul>
+                      <li>인터넷에 연결이 되어있고, 현재 시각도 맞는데 업데이트가 되지 않는 경우에는 캐시 삭제를 해주세요.</li>
+                      <li>브라우저의 메뉴를 열어 설정 페이지를 열고, 데이터 삭제를 진행해주세요.</li>
+                      <li>"저장된 데이터" 혹은 "캐시된 데이터"를 삭제해주시고 다시 업데이트를 진행해주세요.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h4>업데이트 완료 확인</h4>
+                    <ul>
+                      <li>업데이트 완료 후 페이지 오른쪽 위에서 '최신 업데이트 상태' 표시를 꼭 확인해주시기 바랍니다.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  반을 추가, 삭제하거나 로그인 할 때 사용되는 학생 이름을 변경하고 싶어요.
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                <ul>
+                  <li>설정 사이트(office.toycode.org)에서 반을 추가/삭제하거나, 로그인 아이디(학생 이름)를 변경할 수 있습니다.</li>
+                  <li>반을 추가/삭제할 수 있는 권한이 없는 경우 지사로 문의해주세요.</li>
+                  <li>어린이집/유치원의 아이디/비밀번호를 모르는 경우, 카카오톡으로 문의주시기 바랍니다.</li>
+                  <li>설정 사이트(office.toycode.org)는 데스크탑 컴퓨터에서 접속하셔야 하며, 모바일에서는 작동하지 않습니다.</li>
+                  <li>최신 브라우저(엣지, 크롬 브라우저 등)를 사용해주세요. 구형 브라우저에서 작동하지 않을 수 있습니다.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

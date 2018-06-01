@@ -1,0 +1,36 @@
+<div class="modal fade" id="faq" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">KidsThinking</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <% include faq_install_chrome.ejs %>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingWhichBrowser">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseWhichBrowser" aria-expanded="false" aria-controls="collapseWhichBrowser">
+                  현재 사용하고 있는 기기를 확인하고 싶어요.
+                </a>
+              </h4>
+            </div>
+            <div id="collapseWhichBrowser" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingWhichBrowser">
+              <div class="panel-body">
+                <ul>
+                  <li>실습 프로그램 문의시에 현재 사용하고 있는 기기를 확인하여야 할 경우가 있습니다.</li>
+                  <li>인터넷이 연결된 상태에서 아래의 링크를 클릭하시면 현재 사용하고 있는 기기의 정보가 출력됩니다.</li>
+                  <li><a href="https://whichbrowser.net/" target="_blank">[현재 사용하고 있는 기기 확인하기]</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

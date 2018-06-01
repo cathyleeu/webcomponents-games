@@ -377,7 +377,7 @@ function init() {
             document.webkitFullscreenElement ||
             document.mozFullScreenElement ||
             document.msFullscreenElement;
-    if(kidscoding.isHorizontal && fullscreen === null && fullscreenEnabled && !fullscreenElement) {
+    if((fullscreen === null || fullscreen === true) && fullscreenEnabled && !fullscreenElement) {
       showModal({
         msg: messages.ask_fullscreen,
         confirm: true,
@@ -934,6 +934,7 @@ function startDialogue(input_dialogue, input_callback) {
   if(kidscoding.isHorizontal) {
     runDialogue();
   } else {
+    $('#modal').modal('hide');
     var noti = $('.noti-guide');
     noti.empty();
     input_dialogue.map(function(txt) {
