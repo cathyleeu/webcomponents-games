@@ -28,7 +28,7 @@
 </div>
 <script>
   var white_list = /xxxxxxxx/,
-      black_list = /LC-TS08A/;
+      black_list = /LC-TS08A|YBMT01/;
 
   if($.ua.browser.name == "Android Browser" && !$.ua.ua.match(white_list)) {
     if(!store.get("hideAndroidHelp")) {
