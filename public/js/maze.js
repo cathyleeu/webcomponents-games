@@ -747,7 +747,7 @@ function addEvents() {
   $("#runCode").on("touchstart click", function(e) {
     e.preventDefault();
     e.stopPropagation();
-    if($(this).find("i:visible").hasClass("fa-play")) {
+    if($(this).find("span:visible").hasClass("glyphicon-play")) {
       var blocks = kidscoding.workspace.getAllBlocks(),
           startblock = blocks.filter(function(block) {
             return block.type === "start";

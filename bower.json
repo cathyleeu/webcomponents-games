@@ -14,7 +14,6 @@
     "TweenJS": "^1.0.2",
     "SoundJS": "^0.6.2",
     "EaselJS": "^0.8.2",
-    "font-awesome": "fontawesome#~4.4.0",
     "ejs": "^1.0.0",
     "es6-shim": "^0.35.3",
     "d3": "^4.12.2",

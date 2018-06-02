@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" data-msg="header">KIDSTHINKING</a>
+            <a class="navbar-brand" href="#" data-msg="header"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,16 +20,16 @@
                     <a href="/"></a>
                 </li>
                 <li id="fullScreen">
-                    <a><i class="fa fa-arrows-alt"></i><span data-msg="fullscreen">전체화면</span></a>
+                    <a href="#"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span><span data-msg="fullscreen">전체화면</span></a>
                 </li>
                 <li id="startTutorial" class="hidden">
-                    <a href="#"><i class="fa fa-question-circle"></i><span data-msg="tutorial">설명 다시보기</span></a>
+                    <a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-msg="tutorial">설명 다시보기</span></a>
                 </li>
                 <li id="playstop" class="hidden">
-                    <a href="#"><i class="fa fa-play"></i><span data-msg="bgm">배경음악 재생</span></a>
+                    <a href="#"><span class="glyphicon glyphicon-play" aria-hidden="true"></span><span data-msg="bgm">배경음악 재생</span></a>
                 </li>
                 <li id="logout" class="hidden">
-                    <a href="#"><i class="fa fa-sign-out"></i><span data-msg="logout">로그아웃</span></a>
+                    <a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span><span data-msg="logout">로그아웃</span></a>
                 </li>
                 <!--li class="page-scroll">
                     <a href="#about">문제 만들기</a>
@@ -45,7 +45,7 @@
 </nav>
 <div id="maze-rotateAlert" class="rotate-alert">
   <div>
-    <i class="fa fa-tablet fa-rotate-90" style="font-size: 200px;"></i>
+    <span class="glyphicon glyphicon-retweet" aria-hidden="true" style="transform: rotate(-90deg);margin-bottom: 40px;font-size: 200px;"></span>
     <p> 화면의 가로를 길게 해주세요! </p>
   </div>
 </div>
@@ -91,14 +91,14 @@
         <div class="food"></div> × <span class="score">0</span>
       </div>
       <!--a id="showCode" href="#" class="btn btn-lg btn-outline">
-        <i class="fa fa-file-text"></i> 코드 보기
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 코드 보기
       </a-->
       <a id="runCode" href="#" class="btn btn-lg btn-outline" style="display:none">
         <div class="start">
-          <i class="fa fa-play"></i> <span data-msg="start">시작</span>
+          <span class="glyphicon glyphicon-play" aria-hidden="true"></span> <span data-msg="start">시작</span>
         </div>
         <div class="reset" style="display:none">
-          <i class="fa fa-refresh"></i> <span data-msg="reset">처음상태로</span>
+          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> <span data-msg="reset">처음상태로</span>
         </div>
       </a>
     </div>
@@ -153,10 +153,10 @@
         <div></div>
         <button type="button" class="confirm-no btn btn-default" data-dismiss="modal" tabindex="0"><span data-msg="confirm_no">아니오</span></button>
         <button type="button" class="confirm-yes btn btn-primary" data-dismiss="modal" tabindex="0"><span data-msg="confirm_yes">네</span></button>
-        <button type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0"><i class="fa fa-times-circle-o"></i> <span data-msg="close">닫기</span></button>
-        <button type="button" class="reset-maze btn btn-default" data-dismiss="modal" tabindex="0"><i class="fa fa-repeat"></i> <span data-msg="retry">다시 해보기</span></button>
-        <button type="button" class="go-next btn btn-primary" data-dismiss="modal" tabindex="0"><span data-msg="next_stage">다음 단계로 이동</span> <i class="fa fa-chevron-right"></i></button>
-        <button type="button" class="dialogue-next btn btn-primary" tabindex="0"><span data-msg="next">다음</span> <i class="fa fa-chevron-right"></i></button>
+        <button type="button" class="close-modal btn btn-default" data-dismiss="modal" tabindex="0"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> <span data-msg="close">닫기</span></button>
+        <button type="button" class="reset-maze btn btn-default" data-dismiss="modal" tabindex="0"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> <span data-msg="retry">다시 해보기</span></button>
+        <button type="button" class="go-next btn btn-primary" data-dismiss="modal" tabindex="0"><span data-msg="next_stage">다음 단계로 이동</span> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+        <button type="button" class="dialogue-next btn btn-primary" tabindex="0"><span data-msg="next">다음</span> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

@@ -11,11 +11,6 @@
 /components/jquery/dist/jquery.min.js
 /components/jquery-ui/jquery-ui.min.js
 /components/bootstrap/dist/css/bootstrap.min.css
-/components/font-awesome/css/font-awesome.min.css
-/components/font-awesome/fonts/fontawesome-webfont.woff?v=4.4.0
-/components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.4.0
-/components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.4.0
-/components/font-awesome/fonts/fontawesome-webfont.svg?v=4.4.0
 /components/store2/dist/store2.min.js
 /components/bootstrap/dist/js/bootstrap.min.js
 /components/EaselJS/lib/easeljs-0.8.2.min.js
@@ -34,5 +29,3 @@
 /sound/complete.mp3
 /sound/success.mp3
 /sound/fail.mp3
-/fonts/DSEG7Classic-Bold.ttf
-/fonts/DSEG7Classic-Bold.woff
