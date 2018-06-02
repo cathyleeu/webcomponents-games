@@ -916,6 +916,7 @@ function FullScreen(el) {
 
   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
     requestFullScreen.call(docEl);
+    store.session.set('fullscreen', true);
   }
   else {
     cancelFullScreen.call(doc);

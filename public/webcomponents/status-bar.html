@@ -44,7 +44,7 @@
       }
     </style>
     <div class="bar_cont">
-      <div class="logo has_name" on-click="handleModal" data-purpose="previous">KIDSTHINKING</div>
+      <div class="logo has_name" on-click="handleModal" data-purpose="previous">{{programTitle}}</div>
       <div class="logout has_name" on-click="handleModal" data-purpose="logout">{{logouthead}}</div>
       <div class="fullscreen" on-click="handleFullScreen">{{fullscreen}}</div>
       <div class="results">
@@ -68,6 +68,7 @@
           purpose: String,
           fullscreen: String,
           logouthead: String,
+          programTitle: String,
           scoreTitle: {
             type: String,
             computed: 'computeScoreTitle(score, point)'
@@ -88,6 +89,7 @@
             document.webkitFullscreenEnabled ||
             document.mozFullScreenEnabled ||
             document.msFullscreenEnabled )
+        this.programTitle = store.session.get("showbook").match(/\/engloo/) ? "KIDSCODING" : "KIDSTHINKING";
       }
       computeScoreTitle(score, point) {
         return point == undefined ? "" : score;

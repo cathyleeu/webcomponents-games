@@ -860,11 +860,11 @@ public.post('/nav', function *(next) {
   });
 });
 
-public.get('/engloo/:book', function *(next) {
+public.get('/engloo', function *(next) {
   yield this.render('engloo', {
-    book: this.params.book,
+    book: "A-1",
     week: "1,2,3,4,5,6,7,8",
-    contents: getContents("CHO-" + this.params.book, "1,2,3,4,5,6,7,8")
+    contents: getContents("CHO-A-1", "1,2,3,4,5,6,7,8")
   });
 });
 
