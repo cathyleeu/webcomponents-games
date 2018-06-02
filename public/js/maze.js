@@ -96,10 +96,10 @@ page('*', function(ctx, next) {
     });
     var image_loader = new createjs.LoadQueue();
     var sound_loader = new createjs.LoadQueue();
-    var font_loader = new createjs.FontLoader({
-      src: ["/fonts/DSEG7Classic-Bold.woff", "/fonts/DSEG7Classic-Bold.ttf"],
-      type: "font"
-    }, true);
+    // var font_loader = new createjs.FontLoader({
+    //   src: ["/fonts/DSEG7Classic-Bold.woff", "/fonts/DSEG7Classic-Bold.ttf"],
+    //   type: "font"
+    // }, true);
 
     var getResult = image_loader.constructor.prototype.getResult;
     var newGetResult = function() {
