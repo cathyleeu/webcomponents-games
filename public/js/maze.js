@@ -148,10 +148,11 @@ page('*', function(ctx, next) {
     });
     sound_loader.getResult = newGetResult;
 
-    font_loader.on("complete", function() {
-      d3.resolve(font_loader);
-    });
-    font_loader.load();
+    // font_loader.on("complete", function() {
+    //   d3.resolve(font_loader);
+    // });
+    // font_loader.load();
+    d3.resolve();
   }).fail(function(jqXHR, msg, err) {
     throw( "[" + msg + " - " + manifest_url + "]\n" + err.name + ": " + err.message);
   });
