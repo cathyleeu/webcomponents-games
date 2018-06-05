@@ -8,6 +8,7 @@ var d1,
     kidscoding = new KidsCoding(),
     tileFactory = new TileFactory(),
     drawFactory = new DrawFactory(),
+    history = new History(),
     dialogue = null,
     dialogueIdx = 0,
     dialogueCallback = null,
@@ -165,58 +166,6 @@ page({
 
 addEvents();
 
-function loadData() {
-  var id = store.session.get("user", {id:null}).id,
-      local = id ? store.namespace(id) : store.session.namespace("anonymous");
-  return local.get(map_path[0], {score:0,complete:[],worldmap:null,data:{}});
-}
-
-function saveData(localData) {
-  var id = store.session.get("user", {id:null}).id,
-      local = id ? store.namespace(id) : store.session.namespace("anonymous");
-  local.set(map_path[0], localData);
-}
-
-function History() {
-  this.stdt = null;
-};
-History.prototype.start = function() {
-  this.stdt = new Date().getTime();
-};
-History.prototype.end = function(isSuccess) {
-  var duration = new Date().getTime() - this.stdt,
-      localData = loadData(),
-      count = countBlocks(),
-      data = localData.data[map_path[1]] || {
-        history: [],
-        date: this.stdt,
-        success: false,
-        score: maze.score || 1, // 문제의 점수
-        failed: 0,      // 첫 성공 이전에 실패 한 수
-        duration: 0,    // 첫 성공까지의 시간
-        block: 0        // 첫 성공시 블록 수
-      };
-  // 첫 성공인 경우
-  if(!data.success && isSuccess) {
-    data.success = true;
-    data.failed = data.history.length;
-    data.duration = duration + data.history.reduce(function(sum, item) {
-      return sum + item[1];
-    }, 0);
-    data.block = count;
-  }
-  data.history.push([isSuccess, duration, count]);
-  localData.data[map_path[1]] = data;
-  saveData(localData);
-  this.stdt = null;
-};
-History.prototype.reset = function() {
-  if(!this.stdt) {
-    this.start();
-  }
-};
-var history = new History();
-
 function preInit() {
   //캐릭터 선택 팝업
   if(maze.select_character && !store.session.has("character_id")) {
@@ -250,6 +199,7 @@ function init() {
   // 키즈씽킹 / 키즈코딩 타이틀 설정
   document.title = /^\w\d/.test(map_path[0]) ? messages.kidsthinking : messages.kidscoding;
 
+  history.init(map_path[0], map_path[1]);
   tileFactory.init(maze, loader);
   drawFactory.init(maze);
   if(store.session.get("character")) {
@@ -364,7 +314,7 @@ function init() {
       .appendTo(".goal-imgs");
   });
   $(".side_guide .goal-msg").html(goal_msg.replace(/\n/g, "<br/>"));
-  var localData = loadData();
+  var localData = history.loadData();
   if(maze.type == "world" && localData.worldmap) {
     // 월드맵이 있는 코스에서 한 스탭을 완료후 월드맵으로 돌아온 경우
     tileFactory.setCoord(mazeInfo.canvas.character, localData.worldmap.x, localData.worldmap.y);
@@ -512,7 +462,7 @@ function initMaze() {
 }
 
 function drawMaze() {
-  var localData = loadData(),
+  var localData = history.loadData(),
       canvas = mazeInfo.canvas;
   for(var i = 0; i < mazeInfo.height; i++) {
     for(var j = 0; j < mazeInfo.width; j++) {
@@ -703,7 +653,7 @@ function addEvents() {
     e.stopPropagation();
     $('#modal').modal('hide');
 
-    var localData = loadData(),
+    var localData = history.loadData(),
         step = map_path[map_path.length-1],
         dest = maze.success ? maze.success[maze.success.length-1].link : null;
     if(dest && maze.type != "world" && localData.worldmap) {
@@ -728,7 +678,7 @@ function addEvents() {
     if(localData.complete.indexOf(step) < 0) {
       localData.complete.push(step);
       localData.score += maze.score || 1;
-      saveData(localData);
+      history.saveData(localData);
     }
     if(dest.slice(0, 7) == "http://" || dest.slice(0, 1) == "/") {
       location.href = dest;
@@ -831,7 +781,7 @@ function addEvents() {
         addFood();
       }
       if(obj && obj.link) {
-        var localData = loadData();
+        var localData = history.loadData();
         if(!obj.min_score || localData.score >= obj.min_score) {
           if(obj.link.slice(-5) == "index") {
             // 새로운 index로 넘어갈때
@@ -844,7 +794,7 @@ function addEvents() {
               y: mazeInfo.canvas.character.py,
               path: map_path.join("/")
             };
-            saveData(localData);
+            history.saveData(localData);
             page(obj.link);
             return;
           }
@@ -1017,7 +967,7 @@ function gameMode(loader, type, tileFactory) {
   }
   $("#scoreBox .food").replaceWith(loader.getResult("food"));
 
-  var localData = loadData();
+  var localData = history.loadData();
   $("#scoreBox .score").text(localData.score);
 }
 
@@ -1043,7 +993,7 @@ function run(block, callback) {
         //성공이라는 단어를 callback했을 경우 바로 성공 메시지가 뜨도록하기
         if(obj.substring(0,2) == "성공"){
           var imgsrc = obj.split("#!");
-          history.end(true);
+          history.end(true, maze.score, countBlocks());
           createjs.Sound.play("complete");
           if(maze.success) {
             startDialogue(maze.success);
@@ -1067,7 +1017,7 @@ function run(block, callback) {
         var $svg = $(block.svgGroup_).find(".blocklyPath"),
             className = $svg.attr("class");
         $svg.attr("class", className + " error");
-        history.end(false);
+        history.end(false, maze.score, countBlocks());
         createjs.Sound.play("fail");
         kidscoding.isHorizontal ? showModal(obj) : renderAlert(obj, {ruleErr: "actions"});
         return;
@@ -1083,7 +1033,7 @@ function run(block, callback) {
               lang = store.session.get("lang", "ko"),
               msg = custom["msg:" + lang] || custom["msg"] || messages.fail_wall;
           $svg.attr("class", className + " error");
-          history.end(false);
+          history.end(false, maze.score, countBlocks());
           createjs.Sound.play("fail");
           kidscoding.isHorizontal ? showModal(msg) : renderAlert(msg, {ruleErr: "wall"});
           return;
@@ -1120,7 +1070,7 @@ function checkEnd() {
   if(foods.length == 1 && (foods[0].itemCountBitmap || foods[0].itemList)) {
     var itemCount = tileFactory.getItemCount(foods[0]);
     if(foods[0].useItem <= itemCount) {
-      history.end(true);
+      history.end(true, maze.score, countBlocks());
       createjs.Sound.play("complete");
       if(maze.success) {
         startDialogue(maze.success);
@@ -1131,7 +1081,7 @@ function checkEnd() {
         });
       }
     } else {
-      history.end(false);
+      history.end(false, maze.score, countBlocks());
       createjs.Sound.play("fail");
       kidscoding.isHorizontal ? showModal(messages.fail_done) : renderAlert(messages.fail_done, { blockErr : "default"});
     }
@@ -1141,7 +1091,7 @@ function checkEnd() {
           foods[i].visible == false ||
           (foods[i].useItem && kidscoding.tileFactory.getItemCount(foods[i]) >= foods[i].useItem);
       if(!isSuccess) {
-        history.end(false);
+        history.end(false, maze.score, countBlocks());
         createjs.Sound.play("fail");
         kidscoding.isHorizontal ? showModal(messages.fail_done) : renderAlert(messages.fail_done, { blockErr : "shortage"});
         break;
@@ -1151,11 +1101,11 @@ function checkEnd() {
       if( foods.length == 1 &&
           !(foods[0].px == mazeInfo.canvas.character.px &&
           foods[0].py == mazeInfo.canvas.character.py)) {
-        history.end(false);
+        history.end(false, maze.score, countBlocks());
         createjs.Sound.play("fail");
         kidscoding.isHorizontal ? showModal(messages.fail_done) : renderAlert(messages.fail_done, { blockErr : "exceed"});
       } else {
-        history.end(true);
+        history.end(true, maze.score, countBlocks());
         createjs.Sound.play("complete");
         if(maze.success) {
           startDialogue(maze.success);

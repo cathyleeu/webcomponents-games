@@ -861,10 +861,29 @@ public.post('/nav', function *(next) {
 });
 
 public.get('/engloo', function *(next) {
+  // 교육용 임시 페이지
   yield this.render('engloo', {
     book: "A-1",
     week: "1,2,3,4,5,6,7,8",
     contents: getContents("CHO-A-1", "1,2,3,4,5,6,7,8")
+  });
+});
+
+public.post('/engloo', function *(next) {
+  var curricd = this.request.body.curricd,
+      mstep = this.request.body.mstep,
+      level = {
+        "46" : "A",
+        "47" : "B"
+      }[curricd],
+      book = level + "-" + mstep;
+  yield this.render('engloo', {
+    book: book,
+    week: "1,2,3,4,5,6,7,8",
+    contents: getContents("CHO-" + book, "1,2,3,4,5,6,7,8"),
+    stuid: this.request.body.stuid,
+    camid: this.request.body.camid,
+    stunm: this.request.body.stunm
   });
 });
 

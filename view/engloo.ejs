@@ -213,5 +213,23 @@ player.ready(function() {
     });
   });
 });
+History.sendData({
+  success: function(result) {
+  },
+  error: function(e) {
+  }
+});
+<% if(typeof camid != "undefined" && typeof stuid != "undefined") { %>
+  store.session.set("user", {
+    kinder: "F00000-<%=camid%>",
+    classId: "F00000-<%=camid%>-KC1",
+    user: "<%=stuid%>",
+    id: "<%=stuid ? 'F00000-'+camid+'-KC1,'+stuid : 'anonymous'%>"
+  });
+<% } else { %>
+  store.session.set("user", {
+    id: "anonymous"
+  });
+<% } %>
 store.session.set("showbook", location.href);
 </script>
