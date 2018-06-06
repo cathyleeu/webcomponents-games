@@ -1,0 +1,96 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="figure-board">
+  <template>
+    <style>
+      #figures {
+        border: 1px solid black;
+        height: var(--figure-board-height, 100%);
+        text-align: center;
+        width: 75%;
+        padding: 15px;
+        display: inline-block;
+      }
+      #figures > div {
+        display: inline-block;
+        padding: 10px;
+      }
+      #figures > div > img {
+        height: 65px;
+      }
+      .selected {
+        border: 5px solid purple;
+        border-radius: 100%;
+      }
+    </style>
+    <div id="figures">
+    </div>
+  </template>
+  <script>
+    class FigureBoard extends Polymer.Element {
+      static get is() {
+        return "figure-board";
+      }
+      static get properties() {
+        return {
+
+        }
+      }
+      ready(){
+        super.ready();
+        let parent = d3.select(this.ownerDocument).select('#element').node()
+        // console.log('figure');
+        let figures = parent.figures.concat();
+
+        let target = this.genRandomNum(figures.length, 0);
+        let targetImg = figures[target];
+
+        figures.push(targetImg)
+
+
+        d3.select(this.$.figures).selectAll('div').data(d3.shuffle(figures)).enter()
+          .append('div')
+          .append('img').attr('src', (d,i) => `${d}.png`)
+          .on('click', this.handleClick.bind(this, parent))
+
+        this.set('selected', [])
+      }
+      genRandomNum(max, min){
+        return Math.floor(Math.random() * (max - min + 1)) + min
+      }
+      handleClick(parent, d, i, node) {
+        let leng = this.selected.length; //0
+        let target = node[i];
+
+        let classed = Boolean(d3.select(target.parentElement).classed('selected'))
+            d3.select(target.parentElement).classed('selected', !classed)
+
+        if(classed) {
+          this.set('selected', this.selected.filter(s => !d))
+          return;
+        }
+
+        this.push('selected', d)
+
+        if(leng === 1) {
+
+          let result = Boolean(this.selected[0] === this.selected[1]);
+          if(result) {
+            parent.$.successModal.modalAlert()
+            if(parent.lastStage === parent.stage) {
+              parent.$.finalStageModal.modalAlert()
+            }
+          } else {
+            parent.$.retryModal.modalAlert()
+            node.forEach(n => {
+              d3.select(n.parentElement).classed('selected', false)
+            })
+            this.set('selected', [])
+          }
+        }
+
+      }
+    }
+    window.customElements.define(FigureBoard.is, FigureBoard);
+  </script>
+</dom-module>
