@@ -1,0 +1,30 @@
+[
+  {"book": "초등 A10권", "title": "C6 : 함수의 사용"},
+  {"id": "bg1", "src": "/img/cho_a10/tile1.png"},
+  {"id": "bg2", "src": "/img/cho_a10/tile2.png"},
+
+  {"id": "character", "src": "/img/cho_a10/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a10/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a10/house1.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "old1", "src": "/img/cho_a10/arrow.png"},
+  {"id": "old2", "src": "/img/cho_a10/boys.png"},
+  {"id": "old3", "src": "/img/cho_a10/brush.png"},
+  {"id": "old4", "src": "/img/cho_a10/cigar.png"},
+  {"id": "old5", "src": "/img/cho_a10/coin.png"},
+  {"id": "old6", "src": "/img/cho_a10/coloredpaper.png"},
+  {"id": "old7", "src": "/img/cho_a10/handmill.png"},
+  {"id": "old8", "src": "/img/cho_a10/hat.png"},
+  {"id": "old9", "src": "/img/cho_a10/socks.png"},
+  {"id": "old10", "src": "/img/cho_a10/girls.png"},
+  {"id": "tree1", "src": "/img/cho_a10/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/cho_a10/tree2.png", "obstacle": true},
+  {"id": "tree3", "src": "/img/cho_a10/tree3.png", "obstacle": true},
+  {"id": "house1", "src": "/img/cho_a10/house1.png", "obstacle": true},
+  {"id": "house2", "src": "/img/cho_a10/house2.png", "obstacle": true}
+]

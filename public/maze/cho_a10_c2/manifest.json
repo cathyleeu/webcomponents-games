@@ -1,0 +1,39 @@
+[
+  {"book": "초등 A10권", "title": "C2 : 함수의 이해"},
+  {"id": "bg1", "src": "/img/cho_a10/bg1.png"},
+  {"id": "bg2", "src": "/img/cho_a10/bg2.png"},
+
+  {"id": "character", "src": "/img/cho_a10/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a10/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a10/busterminal.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "busterminal", "src": "/img/cho_a10/busterminal.png"},
+  {"id": "trainstation", "src": "/img/cho_a10/trainstation.png"},
+  {"id": "bd1", "src": "/img/cho_a10/bd1.png","obstacle": true},
+  {"id": "bd2", "src": "/img/cho_a10/bd2.png","obstacle": true},
+  {"id": "bd3", "src": "/img/cho_a10/bd3.png","obstacle": true},
+  {"id": "bd4", "src": "/img/cho_a10/bd4.png","obstacle": true},
+  {"id": "bd5", "src": "/img/cho_a10/bd5.png","obstacle": true},
+  {"id": "bd6", "src": "/img/cho_a10/bd6.png","obstacle": true},
+  {"id": "bd7", "src": "/img/cho_a10/bd7.png","obstacle": true},
+
+  {"tile": "a", "id": "road11", "src": "/img/cho_a10/road11.png", "wall": true},
+  {"tile": "b", "id": "road12", "src": "/img/cho_a10/road12.png", "wall": true},
+  {"tile": "c", "id": "street", "src": "/img/cho_a10/street.png", "wall": true},
+
+  {"tile": "q", "id": "road21", "src": "/img/cho_a10/road21.png", "wall": true},
+  {"tile": "w", "id": "road22", "src": "/img/cho_a10/road22.png", "wall": true},
+  {"tile": "e", "id": "road23", "src": "/img/cho_a10/road23.png", "wall": true},
+  {"tile": "g", "id": "road24", "src": "/img/cho_a10/road24.png", "wall": true},
+
+  {"tile": "z", "id": "crosswalk_col", "src": "/img/cho_a10/crosswalk_col.png"},
+  {"tile": "x", "id": "crosswalk_row", "src": "/img/cho_a10/crosswalk_row.png"},
+
+  {"tile": "i", "id": "railroad1", "src": "/img/cho_a10/railroad1.png", "wall": true},
+  {"tile": "j", "id": "railroad2", "src": "/img/cho_a10/railroad2.png", "wall": true}
+]

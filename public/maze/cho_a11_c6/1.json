@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "workspace2": "run_function_func,check,condition_fish_notuse",
+  "mandatory": ["run_function"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "run_function",
+    "repeat",
+    "check",
+    "condition_fish_notuse",
+    "get_item_notuse"
+  ],
+  "map": [
+    "%%..#.#.",
+    ".#.###..",
+    "#.#....#",
+    "#..#&.##",
+    "#..&.#.#",
+    "#.#.##.#",
+    "##.u..##",
+    "ssssssss"
+  ],
+  "tile": [
+    {"tile": "&","contents" : [{"img": "fish","role": "item"},{"img": "pet","role": "img"}]}
+  ],
+  "tutorial": [{
+    "msg:ko": "모든 얼음 구멍을 확인하고 물고기를 가져와요.",
+    "msg:en": "Check the all icehole and Bring the fish."
+  }]
+}

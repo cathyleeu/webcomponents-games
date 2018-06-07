@@ -1,0 +1,41 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start,run_function,move_forward1,run_function,get_item3",
+  "workspace2": "run_function_func",
+  "mandatory": ["run_function"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "run_function",
+    "get_item3"
+  ],
+  "map": [
+    ".%######.",
+    "#.......#",
+    "#.......#",
+    "##r..##.#",
+    "#..A....#",
+    "#...#B.##",
+    "#..###.##",
+    "#..#..###",
+    ".#######."
+  ],
+  "tile": [
+    {"tile": "A", "img": "old1","itemCount": 2, "role": "item"},
+    {"tile": "B", "img": "old2","itemCount": 3, "role": "item"},
+    {"tile": "C", "img": "old3","itemCount": 1, "role": "item"},
+    {"tile": "D", "img": "old4","itemCount": 1, "role": "item"},
+    {"tile": "E", "img": "old5","itemCount": 1, "role": "item"},
+    {"tile": "F", "img": "old6","itemCount": 2, "role": "item"},
+    {"tile": "G", "img": "old7","itemCount": 2, "role": "item"},
+    {"tile": "H", "img": "old8","itemCount": 1, "role": "item"},
+    {"tile": "I", "img": "old9","itemCount": 1, "role": "item"},
+    {"tile": "J", "img": "old10","itemCount": 1, "role": "item"}
+  ],
+  "tutorial": [{
+    "msg:ko": "옛날 물건을 가져와요.",
+    "msg:en": "Bring the old things."
+  }]
+}

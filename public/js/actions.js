@@ -1194,6 +1194,36 @@ Actions.prototype.checkfinish = function(block, callback) {
   }
   callback("확인할 것이 없어요");
 }
+Actions.prototype.checkfinish = function(block, callback) {
+  var foods = this.canvas.foods,
+      character = this.canvas.character;
+  // 바위 위에서 아이템 사용
+  var chest = this._getCanvasObject(character.px, character.py, "chest");
+  if(chest) {
+    var ranNum = parseInt(Math.random()*chest.contents.length, 10);
+    if(chest.contents[ranNum].role == "item") {
+      chest.role = "item";
+      chest.order = chest.contents[ranNum].order;
+      foods.push(foods[0]);
+      if(chest.contents[ranNum].disappear){
+        chest.itemImg = chest.contents[ranNum].itemImg;
+        chest.disappear = true;
+      }
+    }else{
+      chest.role = chest.contents[ranNum].role;
+    }
+    chest.bitmap.image = this.loader.getResult(chest.contents[ranNum].img);
+    this.setScale(chest.bitmap);
+    this.setCoord(chest, chest.px, chest.py);
+    createjs.Sound.play("success");
+    this.canvas.stage.update();
+    setTimeout(function() {
+      callback();
+    }, 1000);
+    return;
+  }
+  callback("확인할 것이 없어요");
+}
 
 Actions.prototype.action = function(hand, block, callback) {
   var character = this.canvas.character;
@@ -2241,6 +2271,20 @@ Actions.prototype.make_number_list_func = function(block, callback) {
   return;
 }
 
+Actions.prototype.run_function_func = function(block, callback) {
+  var _this = this,
+      character = this.canvas.character,
+      foods = this.canvas.foods,
+      itemBitmap = character.itemBitmap;
+
+  setTimeout(function() {
+    callback();
+  }, 10);
+
+  return;
+
+}
+
 Actions.prototype.define_shape = function(type, block, callback) {
   this.canvas.character.draw_shape = this._getFieldValue(block, "shape");
   setTimeout(function() {
@@ -2427,7 +2471,7 @@ Actions.prototype.condition = function(type, block, callback) {
   setTimeout(function() {
     block.removeSelect();
     _this.run(child, callback);
-  }, 500);
+  }, 100);
 };
 Actions.prototype.condition_nodirentio = function(type, block, callback) {
   var character = this.canvas.character,

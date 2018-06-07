@@ -1,0 +1,23 @@
+[
+  {"book": "초등 A11권", "title": "C6 : 함수와 조건1"},
+  {"id": "bg1", "src": "/img/cho_a11/snow1.png"},
+  {"id": "bg2", "src": "/img/cho_a11/snow2.png"},
+
+  {"id": "character", "src": "/img/cho_a11/winter_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a11/winter_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a11/icewall1.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+
+  {"id": "chest", "src": "/img/cho_a11/icehole.png"},
+  {"id": "icehole", "src": "/img/cho_a11/icehole.png"},
+  {"id": "fish", "src": "/img/cho_a11/fish.png"},
+  {"id": "pet", "src": "/img/cho_a11/pet.png"},
+  {"tile": "s", "id": "sea", "src": "/img/cho_a11/sea.png"},
+  {"id": "icewall1", "src": "/img/cho_a11/icewall1.png","obstacle": true},
+  {"id": "icewall2", "src": "/img/cho_a11/icewall2.png","obstacle": true}
+]

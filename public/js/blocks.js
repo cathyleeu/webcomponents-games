@@ -1254,6 +1254,21 @@ Blocks["check2"] = {
   ],
   action: ["check2"]
 };
+Blocks["check_multi"] = {
+  rgbColor: "#6699D0",
+  message0: {
+    ko: "%1 확인하기",
+    en: "%1 Inspect",
+    cn: "%1 检查"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/check.png"}
+  ],
+  argsh0: [
+    {type: "field_image", src: "/img/kidsblocks/check.png"}
+  ],
+  action: ["check_multi"]
+};
 Blocks["checkfinish"] = {
   rgbColor: "#6699D0",
   message0: {
@@ -1425,6 +1440,33 @@ Blocks["make_number_list_func"] = {
 
   ],
   action: ["make_number_list_func"],
+  previousStatement: false
+};
+Blocks["run_function"] = {
+  rgbColor: "#8B1C79",
+  message0: {
+    ko: "%1 함수 실행하기",
+    en: "%1 Run a function"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/f_icon.png"}
+  ],
+  action: ["func", "run_function_func"]
+};
+Blocks["run_function_func"] = {
+  rgbColor: "#9E4A8D",
+  message0: {
+    ko: "%2 %1 함수 정하기",
+    en: "%2 %1 Make a function"
+  },
+  args0: [
+    {type: "field_image", src: "/img/kidsblocks/f_icon.png"},
+    {"type": "field_label",
+      "text": "정의",
+      "class": "style-define"}
+
+  ],
+  action: ["run_function_func"],
   previousStatement: false
 };
 Blocks["define_shape"] = {
@@ -2881,20 +2923,28 @@ Blocks['repeat_until'] = {
   action: ["repeat", "repeat_until"]
 };
 Blocks['condition_ifMoveForward'] = {
-  rgbColor: "#E11376",
+  rgbColor: "#309E4A",
   message0: {
-    ko: "만약 앞으로 갈 수 있다면",
-    en: "If Move Forward"
+    ko: "%1앞으로 갈 수 있다면",
+    en: "If %1"
   },
+  args0: [{
+    type: "field_image",
+    src: "/img/kidsblocks/up_y.png"
+  }],
   message1: "%1",
   args1: [{
     type: "input_statement",
     name: "if_statements"
   }],
   message2: {
-    ko: "갈 수 없다면",
-    en: "Else"
+    ko: "%1 없다면",
+    en: "%1"
   },
+  args2: [{
+    type: "field_image",
+    src: "/img/kidsblocks/up_n.png"
+  }],
   message3: "%1",
   args3: [{
     type: "input_statement",
@@ -3566,6 +3616,27 @@ Blocks['condition_foodget_notuse'] = {
   }],
   messageh1: null,
   argsh1: null,
+  action: ["conditioncheck","item_notuse"]
+};
+Blocks['condition_fish_notuse'] = {
+  name: {
+    ko: "만약에 물고기가 나오면",
+    en: "If There is fish"
+  },
+  rgbColor: "#309E4A",
+  message0: {
+    ko: "만약에 %1가 나오면",
+    en: "If There is %1"
+  },
+  args0: [{
+    type: "field_image",
+    src: "/img/cho_a11/fish.png"
+  }],
+  message1: "%1",
+  args1: [{
+    type: "input_statement",
+    name: "if_statements"
+  }],
   action: ["conditioncheck","item_notuse"]
 };
 Blocks['condition_seedget_notuse'] = {

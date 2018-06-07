@@ -1,0 +1,34 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "character": "character2",
+  "message": "message2",
+  "workspace": "start,make_number_list,forloop_type1",
+  "workspace2": "make_number_list_func,list_number1,list_number2,list_number3,list_number4",
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "forloop_type1",
+    "repeat_x_list_num",
+    "get_item3"
+  ],
+  "map": [
+    "%D...#",
+    "#.C#.#",
+    "sw.B##",
+    "wsw.A#",
+    "swsw.l",
+    "wsws.."
+  ],
+  "tile": [
+    {"tile": "A", "img": "conch", "itemCount": 5, "role": "item"},
+    {"tile": "B", "img": "clam", "itemCount": 4, "role": "item"},
+    {"tile": "C", "img": "fish", "itemCount": 2, "role": "item"},
+    {"tile": "D", "img": "crab", "itemCount": 7, "role": "item"}
+  ],
+  "tutorial": [{
+    "msg:ko": "갯벌 생물을 모두 가져오자!",
+    "msg:en": "Let's get all seafood!"
+  }]
+}
