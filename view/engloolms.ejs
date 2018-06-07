@@ -151,7 +151,7 @@
                 <% } else { %>
                 <span class="glyphicon glyphicon-play-circle <%=tutorial ? 'done' : 'undone'%>" title="<%=tutorial ? '완료' : '미완료'%>"></span>
                 <span class="glyphicon glyphicon-pencil <%=maze>=20 ? 'done' : 'undone'%>" title="<%=maze + '/20'%>"></span><br/>
-                <span>(<%=maze%>/20)</span>
+                <span class="<%=maze>=20 ? 'done' : 'undone'%>">(<%=maze%>/20)</span>
                 <% } %>
             </td>
             <% } %>
