@@ -40,6 +40,15 @@ History.prototype.end = function(isSuccess, score, count) {
       return sum + item[1];
     }, 0);
     data.block = count;
+    if(store.session.get("engloo")) {
+      var id = store.session.get("user").id,
+          book = location.hash.split("/")[0].split("_")[1],
+          key = location.hash.split("/")[0].split("_")[2],
+          update = {};
+      update[key] = +this.problem;
+      History.updateHistory(id, book[0].toUpperCase() + "-" + book[1], update, function(e, res) {
+      });
+    }
   }
   data.history.push([isSuccess, duration, count]);
   localData.data[this.problem] = data;
@@ -113,6 +122,37 @@ History.sendData = function(options) {
     },
     error: function(e) {
       options.error(e);
+    }
+  });
+}
+History.getHistory = function(id, book, callback) {
+  $.ajax({
+    url: "/history/" + id + "/" + book,
+    method: "GET",
+    cache: false,
+    timeout: 1000,
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      callback(null, result);
+    },
+    error: function(e) {
+      callback(e);
+    }
+  });
+};
+History.updateHistory = function(id, book, data, callback) {
+  $.ajax({
+    url: "/history/" + id + "/" + book,
+    method: "PUT",
+    cache: false,
+    timeout: 1000,
+    contentType: "application/json; charset=utf-8",
+    data: JSON.stringify(data),
+    success: function(result) {
+      callback(null, result);
+    },
+    error: function(e) {
+      callback(e);
     }
   });
 }

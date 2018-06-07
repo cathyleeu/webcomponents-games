@@ -14,7 +14,7 @@ var public = require('koa-router')(),
     recursiveReadSync = require('recursive-readdir-sync'),
     siteUrl = argv.url || 'http://localhost:3000',
     config = require('./config.json'), //[argv.production ? 'production' : 'development'];
-    auth_db = pmongo(config.auth_db, ["user", "logins", "reports"]),
+    auth_db = pmongo(config.auth_db, ["user", "logins", "reports", "history"]),
     schools_json = require('./login/schools.json'),
     names_json = require('./public/login/names.json'),
     level_json = require('./public/login/level_pw.json'),
@@ -840,6 +840,14 @@ function getContents(book, week) {
   return contents;
 }
 
+public.get('/dev', function *(next) {
+  if(siteUrl != "http://localhost:3000") {
+    this.body = "<html><head><script>alert('잘못된 접근 입니다.');location.href='/';</script></head></html>";
+    return;
+  }
+  yield this.render('dev');
+})
+
 public.get('/nav/:book', function *(next) {
   if(siteUrl != "http://localhost:3000") {
     this.body = "<html><head><script>alert('잘못된 접근 입니다.');location.href='/';</script></head></html>";
@@ -884,6 +892,35 @@ public.post('/engloo', function *(next) {
     stuid: this.request.body.stuid,
     camid: this.request.body.camid,
     stunm: this.request.body.stunm
+  });
+});
+
+public.post('/engloolms', function *(next) {
+  var str = this.request.body.stuList,
+      stuList = str.trim().split("|").map(function(line) {
+        return line.split(",").map(function(item) {
+          return item.trim();
+        });
+      });
+  if(stuList[0][0] == "nodata") {
+    stuList = [];
+  } else {
+    stuList.shift();
+  }
+  for(var i = 0; i < stuList.length; i++) {
+    var result = yield auth_db.history.findOne({
+      kinder: "F00000-" + stuList[i][0],
+      userId: stuList[i][1],
+      book: {
+        "46" : "A",
+        "47" : "B"
+      }[stuList[i][3]] + "-" + stuList[i][4]
+    });
+    stuList[i].push(result || {});
+  }
+  yield this.render('engloolms', {
+    stuList: stuList,
+    week: "1,2,3,4,5,6,7,8"
   });
 });
 
@@ -1153,6 +1190,40 @@ public.get('/office', function *(next) {
 public.post('/reports', function*(next) {
   var result = yield auth_db.reports.insert(this.request.body);
   this.body = "success";
+});
+
+public.get('/history/:id/:book', function*(next) {
+  var id = this.params.id,
+      classId = this.params.id.split(",")[0],
+      tokens = classId.split("-"),
+      parentId = tokens[0],
+      kinder = tokens[0] + "-" + tokens[1],
+      userId = this.params.id.split(",")[1],
+      result = yield auth_db.history.findOne({
+        classId: classId,
+        userId: userId,
+        book: this.params.book
+      });
+  this.body = result || {};
+});
+
+public.put('/history/:id/:book', function*(next) {
+  var id = this.params.id,
+      classId = this.params.id.split(",")[0],
+      tokens = classId.split("-"),
+      result = yield auth_db.history.findAndModify({
+        query: {
+          parentId: tokens[0],
+          kinder: tokens[0] + "-" + tokens[1],
+          classId: classId,
+          userId: this.params.id.split(",")[1],
+          book: this.params.book
+        },
+        update: {$set: this.request.body},
+        new: true,
+        upsert: true
+      });
+  this.body = result.ok ? result.value : null;
 });
 
 module.exports = {
