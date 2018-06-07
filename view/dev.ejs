@@ -1,0 +1,206 @@
+<style>
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: capitalize !important;
+  }
+  .btn-default {
+    margin: 20px;
+  }
+  .btn-warning {
+    margin: 20px;
+    width: 130px;
+    padding: 10px;
+  }
+  .btn-warning.selected {
+    background-color: #E53;
+  }
+  .btn-outline {
+     width: 100%;
+     height: 60px;
+     line-height: 60px;
+     display: block;
+     margin: 10px auto;
+     padding: 0;
+  }
+  #characters {
+    margin-bottom: 50px;
+  }
+  .character {
+    width: 128px;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 5px;
+  }
+  .character.selected {
+    background-color: #E53;
+    border: 2px solid yellow;
+  }
+  h3 {
+    margin-bottom: 30px;
+  }
+  .book {
+    display: flex;
+    margin: 10px auto;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+    border: solid 2px white;
+    background: transparent;
+    border-radius: 6px;
+  }
+  .book-header {
+    padding: 0 10px;
+    border-right: 1px solid white;
+    font-weight: bold;
+    width: 40px;
+    line-height: 58px;
+  }
+  .book-title {
+    width: 240px;
+    text-align: center;
+    float: left;
+    border-right: 1px solid white;
+    padding-right: 10px;
+  }
+  .book-0 {
+    line-height: 32px;
+  }
+  .book-1 {
+    line-height: 24px;
+    font-size: 14px;
+  }
+  .book-list {
+    text-align: left;
+    flex: 1;
+    padding: 0 10px;
+  }
+  .book-problem {
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 0 8px;
+    height: 40px;
+    line-height: 40px;
+    margin: 9px 0;
+    min-width: 40px;
+    text-align: center;
+  }
+  .book-problem:hover {
+    background-color: white;
+    color: #18bc9c;
+    text-decoration: none;
+  }
+  .star-light {
+    margin: 50px auto 30px !important;
+  }
+</style>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand">toycode dev</a>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <h1>키즈코딩</h1>
+        <div>
+          <h2>잉글루</h2>
+          <div class="radio">
+            <label>
+              <input type="radio" name="serverRadios" id="server1" value="http://localhost:3000/engloo" checked>
+              http://localhost:3000/engloo
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="serverRadios" id="server2" value="https://toycode.org/engloo">
+              https://toycode.org/engloo
+            </label>
+          </div>
+          <form id="engloo" action="http://localhost:3000/engloo" method="POST" target="_blank">
+            <div class="form-group">
+              <label for="camid">캠퍼스 아이디</label>
+              <input type="input" class="form-control" id="camid" name="camid" value="1001" placeholder="캠퍼스 아이디">
+            </div>
+            <div class="form-group">
+              <label for="stuid">학생 아이디</label>
+              <input type="input" class="form-control" id="stuid" name="stuid" value="test001" placeholder="학생 아이디">
+            </div>
+            <div class="form-group">
+              <label for="stunm">학생 이름</label>
+              <input type="input" class="form-control" id="stunm" name="stunm" value="홍길동" placeholder="학생 이름">
+            </div>
+            <div class="form-group">
+              <label for="curricd">레벨</label>
+              <select class="form-control" id="curricd" name="curricd">
+                <option value="46">A</option>
+                <option value="47">B</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mstep">권</label>
+              <select class="form-control" id="mstep" name="mstep">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-default">열기</button>
+          </form>
+          <h2>잉글루LMS</h2>
+          <form id="engloolms" action="http://localhost:3000/engloolms" method="POST" target="_blank">
+            <div class="form-group">
+              <label for="stuList">수강 학생 정보</label>
+              <textarea class="form-control" id="stuList" name="stuList" placeholder="수강 학생 정보">
+success|
+1001,test001,가가,46,1|
+1001,bbdsff,가가,46,2|
+1001,asfsffsf,마허,46,3|
+1001,jenna1,장농아들,46,1|
+1001,jenna1,장농아들,46,2|
+1001,j6233,장농아들,46,2|
+1001,test0001,테스트일,46,8|
+1001,test0003,황황황,46,8</textarea>
+            </div>
+            <button type="submit" class="btn btn-default">열기</button>
+          </form>
+        </div>
+    </div>
+</header>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; (주)토이코드 2015
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+$("[name=serverRadios]").click(function(e) {
+  $("#engloo").prop("action", e.currentTarget.value);
+  $("#engloolms").prop("action", e.currentTarget.value + "lms");
+});
+</script>

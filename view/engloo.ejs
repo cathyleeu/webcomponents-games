@@ -67,14 +67,7 @@
     text-align: center;
     float: left;
     border-right: 1px solid white;
-    padding-right: 10px;
-  }
-  .book-0 {
-    line-height: 32px;
-  }
-  .book-1 {
-    line-height: 24px;
-    font-size: 14px;
+    line-height: 58px;
   }
   .book-list {
     text-align: left;
@@ -97,6 +90,11 @@
     background-color: white;
     color: #18bc9c;
     text-decoration: none;
+  }
+  .book-problem.done {
+    color: gray;
+    background-color: #ccc;
+    border-color: #ccc;
   }
   .star-light {
     margin: 50px auto 30px !important;
@@ -140,16 +138,15 @@
                     <div class="book-header">
                       <%=week.split(",")[i]%>
                     </div>
-                    <div class="book-title">
-                      <div class="book-0"><%=contents[i].title%></div>
-                      <div class="book-1"><%=contents[i].subtitle ? contents[i].subtitle : ""%></div>
-                    </div>
+                    <div class="book-title"><%=contents[i].title%></div>
                     <div class="book-list">
-                      <a class="book-problem show-video" href="#" data-video="<%=book.split('-').join('') + '_' + (i+1)%>"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 교육영상 보기</a>
+                      <a class="book-problem" href="#" data-type="video" data-num="<%=(i+1)%>"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 교육영상 보기</a>
                       <% if(i % 2 == 1) { %>
-                      <a class="book-problem show-video" href="#" data-video="<%=book.split('-').join('') + '_' + (i+1) + '_tutorial'%>"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></span> 실습영상 보기</a>
+                      <a class="book-problem" href="#" data-type="tutorial" data-num="<%=(i+1)%>"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></span> 실습영상 보기</a>
+                      <a class="book-problem" data-type="maze" data-num="<%=(i+1)%>" href="<%=contents[i].problems[0]%>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 문제 풀기</a>
+                      <% } else { %>
+                      <a class="book-problem" data-type="activity" data-num="<%=(i+1)%>" href="<%=contents[i].problems[0]%>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 문제 풀기</a>
                       <% } %>
-                      <a class="book-problem" rel="external" href="<%=contents[i].problems[0]%>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 문제 풀기</a>
                     </div>
                   </div>
                 <% } %>
@@ -190,27 +187,67 @@
 <% include faq_engloo.ejs %>
 
 <script>
-var player = videojs('vid1', {
-  html5: {
-    nativeAudioTracks: false,
-    nativeVideoTracks: false,
-    hls: {
-      overrideNative: true
-    }
-  }
-});
-player.ready(function() {
-  $('.show-video').click(function(e) {
-    e.preventDefault();
-    var video = $(e.currentTarget).data('video');
-    $('#videoModal').modal('show').on('shown.bs.modal', function() {
-      player.src({
-        src: 'https://s3.ap-northeast-2.amazonaws.com/toycodeinc/kidscoding_' + video + '/prog_index.m3u8',
-        type: 'application/x-mpegURL',
-      });
-    }).on('hide.bs.modal', function() {
-      player.pause();
+<% if(typeof camid != "undefined" && typeof stuid != "undefined") { %>
+  var id = "<%=stuid ? 'F00000-'+camid+'-KC1,'+stuid : 'anonymous'%>";
+  store.session.set("user", {
+    kinder: "F00000-<%=camid%>",
+    classId: "F00000-<%=camid%>-KC1",
+    user: "<%=stuid%>",
+    id: id
+  });
+  store.session.set("engloo", true);
+<% } else { %>
+  if(store.session.get("user") == null) {
+    var id = "anonymous";
+    store.session.set("user", {
+      id: "anonymous"
     });
+  } else {
+    var id = store.session.get("user").id;
+  }
+<% } %>
+var book = "<%=book%>",
+    player = videojs('vid1', {
+      html5: {
+        nativeAudioTracks: false,
+        nativeVideoTracks: false,
+        hls: {
+          overrideNative: true
+        }
+      }
+    });
+store.session.set("showbook", location.href);
+player.ready(function() {
+  $('.book-problem').click(function(e) {
+    e.preventDefault();
+    var type = $(e.currentTarget).data('type'),
+        num = $(e.currentTarget).data('num'),
+        href = $(e.currentTarget).attr('href'),
+        video = book.split("-").join("") + "_" + num + (type == "tutorial" ? "_tutorial" : ""),
+        key = (type == "video" || type == "tutorial" ? "v" : "c") + num + (type == "tutorial" ? "t" : ""),
+        update = {};
+    update[key] = 1;
+    if(type == "maze") {
+      // maze는 한 문제 풀때마다 업데이트
+      location.href = href;
+    } else {
+      // video, tutorial, activity는 클릭시 업데이트
+      History.updateHistory(id, book, update, function(e, res) {
+        markDone(res);
+        if(type == "video" || type == "tutorial") {
+          $('#videoModal').modal('show').on('shown.bs.modal', function() {
+            player.src({
+              src: 'https://s3.ap-northeast-2.amazonaws.com/toycodeinc/kidscoding_' + video + '/prog_index.m3u8',
+              type: 'application/x-mpegURL',
+            });
+          }).on('hide.bs.modal', function() {
+            player.pause();
+          });
+        } else {
+          location.href = href;
+        }
+      });
+    }
   });
 });
 History.sendData({
@@ -219,17 +256,29 @@ History.sendData({
   error: function(e) {
   }
 });
-<% if(typeof camid != "undefined" && typeof stuid != "undefined") { %>
-  store.session.set("user", {
-    kinder: "F00000-<%=camid%>",
-    classId: "F00000-<%=camid%>-KC1",
-    user: "<%=stuid%>",
-    id: "<%=stuid ? 'F00000-'+camid+'-KC1,'+stuid : 'anonymous'%>"
-  });
-<% } else { %>
-  store.session.set("user", {
-    id: "anonymous"
-  });
-<% } %>
-store.session.set("showbook", location.href);
+History.getHistory(id, book, function(e, res) {
+  markDone(res);
+});
+function markDone(history) {
+  var week = "<%=week%>".split(",");
+  for(var i = 0; i < week.length; i++) {
+    colorButton("video", week[i], !!history["v" + week[i]]);
+    if(week[i] % 2 == 0) {
+      colorButton("tutorial", week[i], !!history["v" + week[i] + "t"]);
+      colorButton("maze", week[i], history["c" + week[i]]);
+    } else {
+      colorButton("activity", week[i], !!history["c" + week[i]]);
+    }
+  }
+}
+function colorButton(type, num, done) {
+  var $button = $(".book-problem[data-type=" + type + "][data-num=" + num + "]");
+  if(type == "maze") {
+    var href = $button.attr("href").split("/");
+    $button.attr("href", href.slice(0,-1).concat([(done||0)+1]).join("/"));
+    $button.toggleClass("done", (done||0) >= 20);
+  } else {
+    $button.toggleClass("done", done);
+  }
+}
 </script>

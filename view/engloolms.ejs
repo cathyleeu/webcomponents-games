@@ -1,0 +1,166 @@
+<% week = week.split(","); %>
+<style>
+  body header .container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: capitalize !important;
+  }
+  .navbar {
+    position: relative !important;
+  }
+  .btn-default {
+    margin: 20px;
+  }
+  .btn-warning {
+    margin: 20px;
+    width: 130px;
+    padding: 10px;
+  }
+  .btn-warning.selected {
+    background-color: #E53;
+  }
+  .btn-outline {
+     width: 100%;
+     height: 60px;
+     line-height: 60px;
+     display: block;
+     margin: 10px auto;
+     padding: 0;
+  }
+  #characters {
+    margin-bottom: 50px;
+  }
+  .character {
+    width: 128px;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 5px;
+  }
+  .character.selected {
+    background-color: #E53;
+    border: 2px solid yellow;
+  }
+  h3 {
+    margin-bottom: 30px;
+  }
+  .book {
+    display: flex;
+    margin: 10px auto;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+    border: solid 2px white;
+    background: transparent;
+    border-radius: 6px;
+  }
+  .book-header {
+    padding: 0 10px;
+    border-right: 1px solid white;
+    font-weight: bold;
+    width: 40px;
+    line-height: 58px;
+  }
+  .book-title {
+    width: 240px;
+    text-align: center;
+    float: left;
+    border-right: 1px solid white;
+  }
+  .book-0 {
+    white-space: normal;
+  }
+  .book-1 {
+    font-size: 14px;
+    white-space: normal;
+  }
+  .book-list {
+    text-align: left;
+    flex: 1;
+    padding: 0 10px;
+  }
+  .book-problem {
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 0 8px;
+    height: 40px;
+    line-height: 40px;
+    margin: 9px 0;
+    min-width: 40px;
+    text-align: center;
+  }
+  .book-problem:hover {
+    background-color: white;
+    color: #18bc9c;
+    text-decoration: none;
+  }
+  .done {
+    color: #333;
+  }
+  .undone {
+    color: lightgray;
+  }
+  .star-light {
+    margin: 50px auto 30px !important;
+  }
+</style>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+          <span class="navbar-brand">KIDSCODING</span>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <div class="row">
+    <h2>키즈코딩 수강 학생 리스트</h2>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>번호</td>
+            <th>이름</th>
+            <th>아이디</th>
+            <th>교재</th>
+            <% for(var j = 0; j< week.length; j++) { %>
+              <th><%=week[j]+"단원"%></th>
+            <% } %>
+        </td>
+        <% for(var i = 0; i < stuList.length; i++) { %>
+        <tr>
+            <th><%=(i+1)%></th>
+            <td><%=stuList[i][2]%></td>
+            <td><%=stuList[i][1]%></td>
+            <td><%={"46":"A","47":"B"}[stuList[i][3]]+"-"+stuList[i][4]%></td>
+            <% for(var j = 0; j< week.length; j++) { %>
+            <td>
+                <% var video = stuList[i][5]['v'+week[j]]; %>
+                <% var tutorial = stuList[i][5]['v'+week[j]+'t']; %>
+                <% var activity = stuList[i][5]['c'+week[j]]; %>
+                <% var maze = stuList[i][5]['c'+week[j]] || 0; %>
+                <span class="glyphicon glyphicon-film <%=video ? 'done' : 'undone'%>" title="<%=video ? '완료' : '미완료'%>"></span>
+                <% if(week[j] % 2 == 1) { %>
+                <span class="glyphicon glyphicon-pencil <%=activity ? 'done' : 'undone'%>" title="<%=activity ? '완료' : '미완료'%>"></span>
+                <% } else { %>
+                <span class="glyphicon glyphicon-play-circle <%=tutorial ? 'done' : 'undone'%>" title="<%=tutorial ? '완료' : '미완료'%>"></span>
+                <span class="glyphicon glyphicon-pencil <%=maze>=20 ? 'done' : 'undone'%>" title="<%=maze + '/20'%>"></span><br/>
+                <span>(<%=maze%>/20)</span>
+                <% } %>
+            </td>
+            <% } %>
+        </tr>
+        <% } %>
+    </table>
+  </div>
+</div>
+
+<script>
+
+</script>
