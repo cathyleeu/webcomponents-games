@@ -1,0 +1,42 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "workspace2": "run_function_func,forloop_type1",
+  "mandatory": ["run_function"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "run_function",
+    "forloop_type1",
+    "repeat_x_num",
+    "get_item3"
+  ],
+  "map": [
+    ".%######.",
+    "#.##..###",
+    "##..###.#",
+    "##.##.#.#",
+    "#..CBAl##",
+    "#..A.##.#",
+    "###B###.#",
+    "#..C..###",
+    ".#######."
+  ],
+  "tile": [
+    {"tile": "A", "img": "fish","itemCount": 1, "role": "item"},
+    {"tile": "B", "img": "fish","itemCount": 2, "role": "item"},
+    {"tile": "C", "img": "fish","itemCount": 3, "role": "item"},
+    {"tile": "D", "img": "fish","itemCount": 4, "role": "item"},
+    {"tile": "E", "img": "fish","itemCount": 5, "role": "item"},
+    {"tile": "F", "img": "fish","itemCount": 6, "role": "item"},
+    {"tile": "G", "img": "fish","itemCount": 7, "role": "item"},
+    {"tile": "H", "img": "fish","itemCount": 8, "role": "item"},
+    {"tile": "I", "img": "fish","itemCount": 9, "role": "item"}
+  ],
+  "tutorial": [{
+    "msg:ko": "물고기를 모두 가져와요.",
+    "msg:en": "Bring the all fish."
+  }]
+}

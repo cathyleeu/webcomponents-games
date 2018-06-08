@@ -1,0 +1,29 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start,repeat_until_numbot",
+  "workspace2": "run_function_func",
+  "mandatory": ["run_function"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "run_function",
+    "repeat_until_numbot",
+    "condition_ifMoveForward"
+  ],
+  "map": [
+    "..###.##",
+    "##.#....",
+    "...#..#.",
+    "##....#.",
+    "...#.%#.",
+    ".##.###.",
+    "r.......",
+    "ssssssss"
+  ],
+  "tutorial": [{
+    "msg:ko": "장애물을 피해서 넘봇에게 가자",
+    "msg:en": "Let's go to Numbot, avoiding obstacles."
+  }]
+}

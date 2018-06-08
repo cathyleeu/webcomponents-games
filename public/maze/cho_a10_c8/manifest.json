@@ -1,0 +1,22 @@
+[
+  {"book": "초등 A10권", "title": "C8 : 함수의 응용"},
+  {"id": "bg1", "src": "/img/cho_a10/tile1.png"},
+  {"id": "bg2", "src": "/img/cho_a10/tile2.png"},
+
+  {"id": "character", "src": "/img/cho_a10/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a10/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a10/numbot.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "snack1", "src": "/img/cho_a10/chicken.png"},
+  {"id": "snack2", "src": "/img/cho_a10/dduck.png"},
+  {"id": "snack3", "src": "/img/cho_a10/donut.png"},
+  {"id": "snack4", "src": "/img/cho_a10/hotdog.png"},
+  {"id": "snack5", "src": "/img/cho_a10/prawn.png"},
+  {"id": "mkt1", "src": "/img/cho_a10/mkt1.png", "obstacle": true},
+  {"id": "mkt2", "src": "/img/cho_a10/mkt2.png", "obstacle": true}
+]

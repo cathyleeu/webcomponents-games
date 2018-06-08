@@ -1,0 +1,21 @@
+[
+  {"book": "초등 A11권", "title": "C4 : 함수와 반복2"},
+  {"id": "bg1", "src": "/img/cho_a11/bg1.png"},
+  {"id": "bg2", "src": "/img/cho_a11/bg2.png"},
+
+  {"id": "character", "src": "/img/cho_a11/winter_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a11/winter_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a11/winter_stone1.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "acorn", "src": "/img/cho_a11/acorn.png"},
+  {"id": "winter_stone1", "src": "/img/cho_a11/winter_stone1.png","obstacle": true},
+  {"id": "winter_stone2", "src": "/img/cho_a11/winter_stone2.png","obstacle": true},
+  {"id": "winter_tree1", "src": "/img/cho_a11/winter_tree1.png","obstacle": true},
+  {"id": "winter_tree2", "src": "/img/cho_a11/winter_tree2.png","obstacle": true},
+  {"id": "winter_tree3", "src": "/img/cho_a11/winter_tree3.png","obstacle": true}
+]

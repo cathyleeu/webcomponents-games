@@ -1,0 +1,37 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start",
+  "workspace2": "run_function_func,move_forward1,move_forward1,get_item3,get_item3",
+  "mandatory": ["run_function"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "run_function",
+    "get_item3"
+  ],
+  "map": [
+    ".%######.",
+    "#.#.....#",
+    "#.#.....#",
+    "#.#..##.#",
+    "#.Bl.#..#",
+    "#...C.D##",
+    "#.##.#.##",
+    "#.#...#.#",
+    ".#######."
+  ],
+  "tile": [
+    {"tile": "%", "img": "mkt1"},
+    {"tile": "A", "img": "snack1","itemImg":"snack1","disappear":true,"itemCount": 1, "role": "item"},
+    {"tile": "B", "img": "snack2","itemImg":"snack2","disappear":true,"itemCount": 3, "role": "item"},
+    {"tile": "C", "img": "snack3","itemImg":"snack3","disappear":true,"itemCount": 2, "role": "item"},
+    {"tile": "D", "img": "snack4","itemImg":"snack4","disappear":true,"itemCount": 2, "role": "item"},
+    {"tile": "E", "img": "snack5","itemImg":"snack5","disappear":true,"itemCount": 2, "role": "item"}
+  ],
+  "tutorial": [{
+    "msg:ko": "음식을 가져와요.",
+    "msg:en": "Bring the foods."
+  }]
+}

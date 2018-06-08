@@ -1,0 +1,30 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start,run_function,item_scissors,run_function",
+  "workspace2": "run_function_func",
+  "mandatory": ["run_function"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "run_function",
+    "item_rock",
+    "item_paper",
+    "item_scissors"
+  ],
+  "map": [
+    "########",
+    "#.....##",
+    "#r..#.##",
+    "#.#.#.##",
+    "wwwPwwww",
+    "###.####",
+    "#%...###",
+    "########"
+  ],
+  "tutorial": [{
+    "msg:ko": "아저씨를 이기고 문까지 가자.",
+    "msg:en": "Win the gatekeeper and go to Gate."
+  }]
+}

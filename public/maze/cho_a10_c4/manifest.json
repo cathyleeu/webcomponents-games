@@ -1,0 +1,29 @@
+[
+  {"book": "초등 A10권", "title": "C4 : 함수의 정의"},
+  {"id": "bg1", "src": "/img/cho_a10/tile1.png"},
+  {"id": "bg2", "src": "/img/cho_a10/tile2.png"},
+
+  {"id": "character", "src": "/img/cho_a10/new_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a10/new_cobot0.png", "size": 256},
+  {"id": "food", "src": "/img/cho_a10/skaeoans.png"},
+
+  {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
+  {"id": "success", "src": "/sound/success.mp3", "type": "sound"},
+  {"id": "fail", "src": "/sound/fail.mp3", "type": "sound"},
+  {"id": "hammer", "src": "/sound/hammer.mp3", "type": "sound"},
+
+  {"id": "keeper", "src": "/img/cho_a10/keeper.png"},
+  {"tile": "w", "id": "wall", "src": "/img/cho_a10/wall.png", "wall": true},
+  {"id": "tree1", "src": "/img/cho_a10/tree1.png", "obstacle": true},
+  {"id": "tree2", "src": "/img/cho_a10/tree2.png", "obstacle": true},
+  {"id": "tree1", "src": "/img/cho_a10/tree3.png", "obstacle": true},
+
+  {"id": "hr", "src": "/img/blocks/rock.png"},
+  {"id": "hp", "src": "/img/blocks/paper.png"},
+  {"id": "hs", "src": "/img/blocks/scissors.png"},
+
+  {"id": "hand_rock", "src": "/img/kidsblocks/Rock.png"},
+  {"id": "hand_paper", "src": "/img/kidsblocks/Paper.png"},
+  {"id": "hand_scissors", "src": "/img/kidsblocks/Scissors.png"},
+  {"id": "spider", "tile":"k", "src": "/img/cho_a10/keeper.png"}
+]
