@@ -86,7 +86,7 @@
     min-width: 40px;
     text-align: center;
   }
-  .book-problem:hover {
+  .book-problem:hover, .book-problem:focus {
     background-color: white;
     color: #18bc9c;
     text-decoration: none;
@@ -225,13 +225,22 @@ player.ready(function() {
         href = $(e.currentTarget).attr('href'),
         video = book.split("-").join("") + "_" + num + (type == "tutorial" ? "_tutorial" : ""),
         key = (type == "video" || type == "tutorial" ? "v" : "c") + num + (type == "tutorial" ? "t" : ""),
+        undones = $('.book-problem[data-num='+(num-1)+']').map(function(idx, el) {
+          return $(el).hasClass('done');
+        }).filter(function(idx, done) {
+          return !done;
+        }).toArray().length,
         update = {};
-    update[key] = 1;
+    if(undones > 0) {
+      alert(num + "단원을 먼저 끝내야 합니다.");
+      return;
+    }
     if(type == "maze") {
       // maze는 한 문제 풀때마다 업데이트
       location.href = href;
     } else {
       // video, tutorial, activity는 클릭시 업데이트
+      update[key] = 1;
       History.updateHistory(id, book, update, function(e, res) {
         markDone(res);
         if(type == "video" || type == "tutorial") {
@@ -276,7 +285,7 @@ function colorButton(type, num, done) {
   if(type == "maze") {
     var href = $button.attr("href").split("/");
     $button.attr("href", href.slice(0,-1).concat([(done||0)+1]).join("/"));
-    $button.toggleClass("done", (done||0) >= 20);
+    $button.toggleClass("done", (done||0) >= 5);
   } else {
     $button.toggleClass("done", done);
   }
