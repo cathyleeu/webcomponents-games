@@ -346,7 +346,7 @@ function init() {
           startDialogue(maze.tutorial, function() {history.start();});
         },
         onClose: function(e) {
-          history.start();
+          startDialogue(maze.tutorial, function() {history.start();});
         }
       });
     } else {
@@ -897,6 +897,7 @@ function startDialogue(input_dialogue, input_callback) {
     });
     noti.prop("scrollHeight") === noti.height() ? $('.noti-direct').css("display", "none") : $('.noti-direct').css("display", "");
     noti.scrollTop(10);
+    dialogueCallback();
   }
 }
 
