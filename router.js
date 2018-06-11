@@ -856,7 +856,7 @@ public.get('/nav/:book', function *(next) {
   yield this.render('nav', {
     book: this.params.book,
     week: "1,2,3,4",
-    contents: getContents(this.params.book, "1,2,3,4")
+    contents: getContents(this.params.book, "2,4,6,8")
   });
 });
 
