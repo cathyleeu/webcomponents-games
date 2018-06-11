@@ -861,10 +861,15 @@ public.get('/nav/:book', function *(next) {
 });
 
 public.post('/nav', function *(next) {
+  var book = this.request.body.book,
+      week = this.request.body.week,
+      contents = week.split(",").map(function(w) {
+        return 2*w;
+      }).join(",");
   yield this.render('nav', {
-    book: this.request.body.book,
-    week: this.request.body.week,
-    contents: getContents(this.request.body.book, this.request.body.week)
+    book: book,
+    week: week,
+    contents: getContents(book, contents)
   });
 });
 
