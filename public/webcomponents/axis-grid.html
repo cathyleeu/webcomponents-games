@@ -15,8 +15,16 @@
         position: relative;
       }
       td {
-      width: 30px;
-      height: 30px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+      }
+      .filledSeq {
+        background-color: purple;
+      }
+      .filledTd {
+        background-color: purple;
+        color: purple;
       }
       .td_hide {
         border: none !important;
@@ -53,9 +61,7 @@
       }
     </style>
     <div class="grid_board">
-
       <table id="grid_table"></table>
-
     </div>
   </template>
   <script>
@@ -76,11 +82,94 @@
 
         this.set('rows', rows)
         this.set('square', square)
+        this.set('gridType', gridType)
 
         this.generateGrid(gridType)
 
         this[`${questType}Board`](parent)
 
+
+      }
+      handleLogicTd(parent) {
+        if(this.blanks === 0) {
+          if(parent.LastStage === parent.stage){
+            parent.$.finalStageModal.modalAlert()
+          }else {
+            parent.$.successModal.modalAlert()
+          }
+        } else {
+          parent.$.retryModal.modalAlert()
+        }
+      }
+      handleFillColor(td, style, tdData) {
+
+        if(td.classed(style)) {
+          return;
+        }
+        let target;
+        switch (this.gridType) {
+          case "logic":
+            target = td.text() === "1" ? true : false;
+            break;
+          case "sequence":
+            target = Boolean(tdData.g);
+            break;
+          default:
+
+        }
+
+        if(target) {
+          td.classed(style, target)
+          this.set('blanks', this.blanks-1)
+        }
+      }
+      gridLogicBoard(parent) {
+
+        let { dots } = parent.questions[parent.stage];
+        let gridNode = d3.select(this.$.grid_table).select('tbody')
+
+        let tdSize = (parent.boardHeight*0.8)/dots.length;
+        this.set('blanks', 0)
+        dots.forEach((tr, i) => {
+          let trNodes = gridNode.append('tr')
+
+          tr.forEach((td, i) =>  {
+            let tdNode = trNodes.append('td')
+            this.set('blanks', td === 1 ? this.blanks+1 : this.blanks)
+            tdNode.attr('style', `height:${tdSize}px;width:${tdSize}px;font-size:${tdSize*0.9}px;`)
+                  .text(td).on('click', () => this.handleFillColor(tdNode, "filledTd"))
+
+          })
+        })
+
+        d3.select(parent.$.instruction)
+          .append('button').text('제출하기')
+          .on('click', () => this.handleLogicTd(parent))
+
+      }
+      gridSequenceBoard(parent) {
+        let { dots, answer } = parent.questions[parent.stage];
+        let gridNode = d3.select(this.$.grid_table).select('tbody')
+
+        let tdSize = (parent.boardHeight*0.8)/dots.length;
+
+        this.set('blanks', 0)
+        dots.forEach((tr, i) => {
+          let trNodes = gridNode.append('tr')
+
+          tr.forEach((td, i) =>  {
+            let tdNode = trNodes.append('td')
+            // debugger
+            this.set('blanks', Boolean(td.g) ? this.blanks+1 : this.blanks)
+            tdNode.attr('style', `height:${tdSize}px;width:${tdSize}px;font-size:${tdSize*0.9}px;`)
+                  .text(td.n).on('click', () => this.handleFillColor(tdNode, "filledSeq", td))
+
+          })
+        })
+
+        d3.select(parent.$.instruction)
+          .append('button').text('제출하기')
+          .on('click', () => this.handleLogicTd(parent))
 
       }
       gridCountBoard(parent){
@@ -151,10 +240,7 @@
       generateGrid(gridType){
         let gridNodes = d3.select(this.$.grid_table).append('tbody')
         let {rows, square} = this;
-
         //create grid
-
-        //gridType idType = gridType === "number" ?
         switch (gridType) {
           case "number":
             for(let i=0; i < rows; i++ ) {
@@ -195,6 +281,7 @@
             }
             break;
           default:
+            break;
 
         }
 

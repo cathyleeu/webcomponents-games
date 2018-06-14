@@ -1,0 +1,171 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+
+<dom-module id="component-game">
+<template>
+  <style>
+    .half,
+    .sequence,
+    .logic {
+      display: inline-block;
+      vertical-align: -webkit-baseline-middle;
+    }
+    .wide {
+      font-size: 24px;
+    }
+    .half {
+      font-size: 40px;
+    }
+    #instruction {
+      text-align: center;
+      /* width: var(--instruction-width, 100%); */
+    }
+    #instruction > button {
+      background-color: purple;
+      outline: none;
+      border: none;
+      padding: 15px;
+      font-size: 20px;
+      color: white;
+      font-weight: 400;
+    }
+    #component {
+      text-align: center;
+    }
+  </style>
+  <status-bar
+    id="statusBar"
+    title="{{localize('title')}}"
+    total="{{total}}"
+    point="{{point}}"
+    matched="{{matched}}"
+    cards="{{cards}}"
+    on-modal="handleModal"
+    purpose="line"
+    fullscreen="{{localize('fullscreen')}}"
+    logoutHead="{{localize('logoutHead')}}"
+    ></status-bar>
+  <toycode-modal
+    id="successModal"
+    purpose="nextStep"
+    headertext="{{localize('successHead')}}"
+    btmtext="{{localize('successBtm')}}"
+    total="{{total}}"
+    point="{{point}}"
+    stage={{stage}}
+    matched="{{matched}}"
+    nextbtn="{{localize('nextbtn')}}"
+    ></toycode-modal>
+  <toycode-modal
+    id="logOutModal"
+    headertext="{{localize('logoutHead')}}"
+    btmtext="{{localize('logoutBtm')}}"
+    yesbtn="{{localize('yesbtn')}}"
+    nobtn="{{localize('nobtn')}}"
+    purpose="logout"
+    ></toycode-modal>
+  <toycode-modal
+    id="previousModal"
+    headertext="{{localize('previousHead')}}"
+    btmtext="{{localize('previousBtm')}}"
+    yesbtn="{{localize('yesbtn')}}"
+    nobtn="{{localize('nobtn')}}"
+    purpose="previous"
+    ></toycode-modal>
+  <toycode-modal
+    id="retryModal"
+    purpose="retry"
+    headertext="{{localize('retryHead')}}"
+    btmtext="{{localize('retryBtm')}}"
+    retrybtn="{{localize('retrybtn')}}"
+    ></toycode-modal>
+  <toycode-modal
+    id="introModal"
+    purpose="intro"
+    headertext="{{localize('introHead')}}"
+    btmtext="{{localize('introBtm')}}"
+    nextbtn="{{localize('yesbtn')}}"
+    ></toycode-modal>
+  <toycode-modal
+    id="finalStageModal"
+    headertext="{{localize('finalStageHead')}}"
+    btmtext="{{localize('finalStageBtm')}}"
+    finalbtn="{{localize('finalbtn')}}"
+    purpose="finalStage"
+    nextlink="{{nextlink}}"
+    ></toycode-modal>
+  <div id="instruction"></div>
+  <div id="component"></div>
+
+</template>
+<script>
+  class ComponentGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+    static get is() { return 'component-game'; }
+    connectedCallback() {
+      super.connectedCallback();
+    }
+    static get properties() {
+      return {
+        language: {
+          value: "ko"
+        },
+        currentStage: {
+          value: 1
+        }
+      }
+    }
+    ready(){
+      super.ready()
+
+      let barHeight = this.$.statusBar.getBoundingClientRect().height
+      let boardHeight = this.offsetHeight - barHeight;
+      let boardWidth = this.offsetWidth;
+
+      this.set('stage', 0)
+      this.set('boardHeight', boardHeight)
+      this.set('boardWidth', boardWidth )
+      
+      this.set('LastStage', this.questions.length-1)
+
+      d3.select(this.$.instruction).classed( `${this.boardType}`,true)
+      if(this.boardType === "half") {
+        d3.select(this.$.instruction).attr('style', `width:${boardWidth/2}px;`)
+      }
+      // debugger
+      //TODO: updateStyles 적용시키기
+
+      // this.updateStyles({
+      //   '--component-game-instruction-width': `${boardWidth/2}px;`
+      // })
+
+      this.genComponent()
+
+    }
+    reset() {
+      this.set('stage', this.stage + 1)
+      d3.select(this.shadowRoot).select(this.component).remove()
+      d3.select(this.$.instruction).selectAll('*').remove()
+
+      this.genComponent()
+
+    }
+    genComponent(){
+      d3.select(this.$.instruction).append('p').text(this.resources[this.language].minor)
+      d3.select(this.$.component).classed( `${this.gridType}`,true).attr('style', `margin-top:${this.boardHeight*0.05}px;`)
+        .append(this.component)
+    }
+    setData(data, manifest){
+
+    }
+
+    handleModal(e) {
+      if(e.detail.purpose === "previous") {
+        this.$.previousModal.modalAlert();
+      } else {
+        this.$.logOutModal.modalAlert();
+      }
+    }
+  }
+  window.customElements.define(ComponentGame.is, ComponentGame);
+</script>
+</dom-module>

@@ -10,6 +10,13 @@
         height: 100%;
         margin: auto;
       }
+      .half_screen {
+        display: inline-block;
+        width: 50%;
+        height: 55%;
+        margin-top: 30px;
+        font-size: 35px;
+      }
       .full_screen {
         text-align: center;
         font-size: 35px;
@@ -21,6 +28,7 @@
       .full_screen > .sentence > span {
         line-height: 70px;
       }
+      /* .half_screen > .sentence, */
       .full_screen > .sentence {
         width: 70%;
         display: inline-block;
@@ -63,6 +71,16 @@
         outline: none;
         border: none;
         margin-top: 20px;
+      }
+      .reference {
+        display: inline-block;
+        height: 65%;
+        vertical-align: top;
+        /* border: 1px solid red; */
+      }
+      .reference > img {
+        width: 350px;
+        margin-top: 35px;
       }
 
     </style>
@@ -118,32 +136,6 @@
       retrybtn="{{localize('retrybtn')}}"
       ></toycode-modal>
     <div id="container">
-      <!-- <div class="full_screen">
-        <div class="sentence"> -->
-
-
-          <!-- <div class="custom_select">
-            <div class="select_selected" on-click="handleClick" data-answer="아날로그">OOO</div>
-            <div class="select_items hide">
-              <div on-click="handleOptions">아날로그</div>
-              <div on-click="handleOptions">디지털</div>
-            </div>
-          </div>
-          <span>은(는) 연속적으로 변화하는 값을 표현하는 것이고,</span>
-          <div class="custom_select">
-            <div class="select_selected" on-click="handleClick" data-answer="디지털">OOO</div>
-            <div class="select_items hide">
-              <div on-click="handleOptions">아날로그</div>
-              <div on-click="handleOptions">디지털</div>
-            </div>
-          </div>
-          <span>은(는) 불연속적인 값으로 표현한 것이다.</span> -->
-
-
-        <!-- </div>
-      </div> -->
-
-      <!-- <button on-click="handleAnswer">정답 확인</button> -->
     </div>
 
   </template>
@@ -183,7 +175,6 @@
             brother.classed("hide", !brother.classed("hide"))
       }
       handleOptions(txt) {
-
         let that = d3.select(this.ownerDocument).select('#element').node();
         let parent = d3.select(this.parentElement);
             parent.classed("hide", !parent.classed("hide"))
@@ -192,12 +183,13 @@
         let idx = uncle.attr('data-idx');
             uncle.text(txt)
             that.set(`selected${idx}`, txt)
-            // debugger
 
       }
       handleAnswer(){
+
         let that = d3.select(this.ownerDocument).select('#element').node()
         let result = true;
+
         for(let i = 0; i < that.blanks; i++){
           if(that[`answer${i}`] !== that[`selected${i}`]){
             result = false;
@@ -215,6 +207,69 @@
           console.log("실패");
           that.$.retryModal.modalAlert()
         }
+      }
+      genRandomNum(max, min){
+        return Math.floor(Math.random() * (max - min + 1)) + min
+      }
+      paramsQuestion(questNode, initial, params, clues, d) {
+        let quest = d[0];
+        let option = d[1];
+        let targets = quest.match(/[X]/gi);
+        let dumps = d3.shuffle([-10, -5, +5, +10]);
+        let targetTime = 0;
+            params = d3.shuffle(params)
+
+
+        params.reduce((acc, val, i, node) => {
+          let intIdx = i;
+          if(i === params.length-1) {
+            intIdx = 0;
+            i = i-1;
+          }
+
+          let ways = Object.values(clues).find(f => f.way.includes(initial[intIdx]) && f.way.includes(params[i]))
+
+
+          quest = quest.replace("X", params[i])
+          initial.push(params[i])
+          targetTime += ways.time;
+
+        }, initial)
+
+
+        let options = [];
+        dumps.slice(0,2).forEach(d => options.push(d+targetTime))
+        options.push(targetTime) //.sort()
+
+        console.log(quest, options, targetTime)
+        this.set('quest', quest + option)
+        this.set('options', options.sort())
+
+
+
+        questNode.append('span').text(quest)
+
+        let selectNode = questNode.append('div').attr('class', "custom_select")
+        selectNode.append('div')
+                  .attr('class', "select_selected")
+                  .attr('data-answer', targetTime)
+                  .attr('data-idx', 0)
+                  .on("click", this.handleClick)
+                  .text("OOO")
+
+        selectNode.append('div')
+                  .attr('class', "select_items hide")
+                  .selectAll('div')
+                  .data(options).enter()
+                  .append('div')
+                  .text((text, i) => text)
+                  .on('click', this.handleOptions)
+                  .exit()
+
+        questNode.append('span').text(option.replace("==", ""))
+        this.set("blanks", this.blanks+1)
+        this.set(`answer0`, targetTime)
+
       }
       replaceQuestion(d, i){
         let that = d3.select(this.ownerDocument).select('#element').node()
@@ -250,19 +305,42 @@
 
       }
       setData(data , manifest){
-        let { question, options, optionType, screenType } = this.questions[this.stage];
-        let gameType = this.gameType;
-        this.set('LastStage', this.questions.length-1)
+        let optionStage;
+
+        if(this.questionType === "repeat") {
+          optionStage = this.questions[0];
+        } else {
+          optionStage = this.questions[this.stage];
+          this.set('LastStage', this.questions.length-1)
+        }
+
+        let { question, options, optionType, screenType } = optionStage;
 
         let blanks = question.split(" =").filter(f => f.trim())
+        let questNode = d3.select(this.$.container)
+                          .append('div').attr('class', `${screenType}_screen`)
+                          .append('div').attr('class', 'sentence')
 
+        let gameType = this.gameType;
+        switch (gameType) {
+          case "multiple":
+            questNode.selectAll('div')
+              .data(blanks).enter()
+              .html(this.replaceQuestion)
+            break;
+          case "reference":
+            let { initial, params, clues } = optionStage;
 
-        d3.select(this.$.container)
-          .append('div').attr('class', 'full_screen')
-          .append('div').attr('class', 'sentence')
-          .selectAll('div')
-          .data(blanks).enter()
-          .html(this.replaceQuestion)
+            this.paramsQuestion(questNode, initial, params, clues, blanks)
+
+            d3.select(this.$.container)
+              .append('div').attr('class', "reference")
+              .append('img').attr('src', `${this.reference}`)
+
+            break;
+          default:
+
+        }
 
         d3.select(this.$.container)
           .append('div')
@@ -270,7 +348,6 @@
           .on("click", this.handleAnswer)
           .text('제출 하기')
 
-          // .html(this.replaceQuestion(`${question}`, gameType, optionType, screenType))
 
       }
     }

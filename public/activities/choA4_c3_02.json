@@ -1,0 +1,74 @@
+{
+  "element": "component-game",
+  "attributes": {
+    "gameType" : "multiple",
+    "nextlink" : "activity#!choA4_c3_02",
+    "component" : "figure-board",
+    "boardType" : "wide",
+    "lastStage" : 5,
+    "stageType" : "repeat",
+    "figures" : [
+      "/img/cho_draw/circle_blue",
+      "/img/cho_draw/circle_green",
+      "/img/cho_draw/circle_orange",
+      "/img/cho_draw/square_red",
+      "/img/cho_draw/square_sky",
+      "/img/cho_draw/square_white",
+      "/img/cho_draw/circle_yellow",
+      "/img/cho_draw/moon_red",
+      "/img/cho_draw/moon_sky",
+      "/img/cho_draw/moon_yellow",
+      "/img/cho_draw/star_red",
+      "/img/cho_draw/star_green"
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "같은 모양과 다른 모양",
+      "minor" : "완전히 같은 도형 한쌍을 찾으세요.",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "다시하기",
+      "retryBtm" : "모양이 다르네요! 다시 선택해볼까요?",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
