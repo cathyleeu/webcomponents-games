@@ -262,7 +262,7 @@ function getBook(classObj) {
     book = [4, 5];
   }
   // 서부지사 보라매 꿈꾸는나무, 제천지사 창의놀이유치원 영업부 시흥지사 낙원유치원, 영재유치원 5월에 1,2권
-  if(school == "C00192-K1" || school="C00204-K1" || school == "C00175-K3" || school == "C00175-K4") {
+  if(school == "C00192-K1" || school == "C00204-K1" || school == "C00175-K3" || school == "C00175-K4") {
     book = ["2-re", "3-re"];
   }
   // 시범원 청아유치원, 숙명키즈
