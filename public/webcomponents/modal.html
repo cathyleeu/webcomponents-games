@@ -214,7 +214,7 @@
       handleMoveStage(){
         var showBook = store.session.get("showbook");
         if(showBook) {
-          if(!store.session.get("engloo")) {
+          if(!store.session.get("externallogin")) {
             store.session.clear();
           }
           if(this.purpose === 'logout') {
