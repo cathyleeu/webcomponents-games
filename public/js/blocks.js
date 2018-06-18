@@ -1718,7 +1718,7 @@ Blocks["list_shape_color_no5"] = {
 };
 
 Blocks["list_number1"] = {
-  rgbColor: "#A08879",
+  rgbColor: "#59A5CA",
   message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
@@ -1728,7 +1728,7 @@ Blocks["list_number1"] = {
   action: ["add_number","number"]
 };
 Blocks["list_number2"] = {
-  rgbColor: "#A08879",
+  rgbColor: "#59A5CA",
   message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
@@ -1738,7 +1738,7 @@ Blocks["list_number2"] = {
   action: ["add_number","number"]
 };
 Blocks["list_number3"] = {
-  rgbColor: "#A08879",
+  rgbColor: "#59A5CA",
   message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
@@ -1748,7 +1748,7 @@ Blocks["list_number3"] = {
   action: ["add_number","number"]
 };
 Blocks["list_number4"] = {
-  rgbColor: "#A08879",
+  rgbColor: "#59A5CA",
   message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
@@ -1758,7 +1758,7 @@ Blocks["list_number4"] = {
   action: ["add_number","number"]
 };
 Blocks["list_number5"] = {
-  rgbColor: "#A08879",
+  rgbColor: "#59A5CA",
   message0: {ko: "숫자 %2 %1",en: "Number %2 %1"},
   args0: [{type: "field_dropdown",
     name: "number",
