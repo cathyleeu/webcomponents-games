@@ -4,49 +4,81 @@
     "gameType" : "word",
     "nextlink" : "activity#!a5re_w1",
     "questions" : [{
-      "question": "$ (여름)과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "question": {
+        "ko": "여름 $ 과 관련있는 것을 골라보아요",
+        "en": "$ Choose the image related to summer."
+      },
+      "questionImg": "/img/a5re_w1/bg_summer.png",
       "options" : [
         { "img" : "/img/a5re_w1/summer1.png", "answer": true},
         { "img" : "/img/a5re_w1/winter1.png"}
       ]
     },{
-      "question": "$ (여름)과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "question": {
+        "ko": "여름 $ 과 관련있는 것을 골라보아요",
+        "en": "$ Choose the image related to summer."
+      },
+      "questionImg": "/img/a5re_w1/bg_summer.png",
       "options" : [
         { "img" : "/img/a5re_w1/summer2.png", "answer": true},
         { "img" : "/img/a5re_w1/winter2.png"}
       ]
     },{
-      "question": "$ (여름)과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "question": {
+        "ko": "여름 $ 과 관련있는 것을 골라보아요",
+        "en": "$ Choose the image related to summer."
+      },
+      "questionImg": "/img/a5re_w1/bg_summer.png",
       "options" : [
         { "img" : "/img/a5re_w1/summer3.png", "answer": true},
         { "img" : "/img/a5re_w1/winter3.png"}
       ]
     },{
-      "question": "$ (여름)과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "question": {
+        "ko": "여름 $ 과 관련있는 것을 골라보아요",
+        "en": "$ Choose the image related to summer."
+      },
+      "questionImg": "/img/a5re_w1/bg_summer.png",
       "options" : [
         { "img" : "/img/a5re_w1/summer4.png", "answer": true},
         { "img" : "/img/a5re_w1/winter4.png"}
       ]
     },{
-      "question": "$ (여름)과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "question": {
+        "ko": "여름 $ 과 관련있는 것을 골라보아요",
+        "en": "$ Choose the image related to summer."
+      },
+      "questionImg": "/img/a5re_w1/bg_summer.png",
       "options" : [
         { "img" : "/img/a5re_w1/summer5.png", "answer": true},
         { "img" : "/img/a5re_w1/winter5.png"}
       ]
     },{
-      "question": "$ (여름)과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "question": {
+        "ko": "여름 $ 과 관련있는 것을 골라보아요",
+        "en": "$ Choose the image related to summer."
+      },
+      "questionImg": "/img/a5re_w1/bg_summer.png",
       "options" : [
         { "img" : "/img/a5re_w1/summer6.png", "answer": true},
         { "img" : "/img/a5re_w1/winter6.png"}
       ]
     },{
-      "question": "$ (여름)과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "question": {
+        "ko": "여름 $ 과 관련있는 것을 골라보아요",
+        "en": "$ Choose the image related to summer."
+      },
+      "questionImg": "/img/a5re_w1/bg_summer.png",
       "options" : [
         { "img" : "/img/a5re_w1/summer7.png", "answer": true},
         { "img" : "/img/a5re_w1/winter7.png"}
       ]
     },{
-      "question": "$ (여름)과 관련있는 것을 골라보아요", "questionImg": "/img/a5re_w1/bg_summer.png",
+      "question": {
+        "ko": "여름 $ 과 관련있는 것을 골라보아요",
+        "en": "$ Choose the image related to summer."
+      },
+      "questionImg": "/img/a5re_w1/bg_summer.png",
       "options" : [
         { "img" : "/img/a5re_w1/summer8.png", "answer": true},
         { "img" : "/img/a5re_w1/winter8.png"}

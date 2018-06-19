@@ -23,10 +23,10 @@
         border-bottom: 2px dashed #dbdbdb;
         /* border-left: 5px solid purple; */
       }
-      .question > img {
+      .question img {
         width: 100px;
         height: 100px;
-        float: left;
+        vertical-align: middle;
       }
       .textshort {
         line-height: 100px;
@@ -267,11 +267,8 @@
 
         let result = Boolean(questionImg);
         if(result) {
-          text = text.replace("$", `<img src="${this.questions[this.stage].questionImg}"/>,`);
-          text = text.split(',');
-          return `${text[0]} <p class="${textStyle}">${text[1]}</p>`;
+          text = text.replace("$", `<img src="${this.questions[this.stage].questionImg}"/>`);
         }
-
         return `<p class="${textStyle}">${text}</p>`
       }
       renderOptions(op){
@@ -354,6 +351,9 @@
       setData(data , manifest){
         let { question, options, answer, cardType, reference } = this.questions[this.stage]
         this.set('LastStage', this.questions.length-1)
+        if(typeof question == "object") {
+          question = question[this.language || "ko"];
+        }
         d3.select(this.$.container)
           .append('div')
           .attr('class', 'question')

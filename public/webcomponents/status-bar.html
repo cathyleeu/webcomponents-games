@@ -89,7 +89,7 @@
             document.webkitFullscreenEnabled ||
             document.mozFullScreenEnabled ||
             document.msFullscreenEnabled )
-        this.programTitle = store.session.get("showbook").match(/\/engloo/) ? "KIDSCODING" : "KIDSTHINKING";
+        this.programTitle = store.session.get("showbook", " ").match(/\/engloo/) ? "KIDSCODING" : "KIDSTHINKING";
       }
       computeScoreTitle(score, point) {
         return point == undefined ? "" : score;
