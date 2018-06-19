@@ -37,13 +37,13 @@
   },{
     "msg:ko": "'가져오기' 블록을 사용해 봐!",
     "msg:jp": "「アイテムゲット」ブロックを使用してみよう！",
-    "msg:en": "Try to use the Kidsblock, 'get items' block!",
+    "msg:en": "Try to use the 'get items' block!",
     "img": "/img/blocks/bring.png"
   }],
   "goal": {
     "msg:ko": "낚시대에서 '가져오기' 블록을 사용하자.",
     "msg:jp": "つりざおのところで「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the fishing rod",
+    "msg:en": "Let's use the 'get items' block on the fishing rod.",
     "img": ["/img/b5_w1/fishing_rod.png","/img/blocks/bring.png"]
   }
 }

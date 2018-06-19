@@ -37,13 +37,13 @@
   },{
     "msg:ko": "'가져오기' 블록을 사용해 봐!",
     "msg:jp": "「アイテムゲット」ブロックを使用してみよう！",
-    "msg:en": "Try to use the Kidsblock, 'get items' block!",
+    "msg:en": "Try to use the 'get items' block!",
     "img": "/img/blocks/bring.png"
   }],
   "goal": {
     "msg:ko": "고무보트에서 '가져오기' 블록을 사용하자.",
     "msg:jp": "ゴムボートのところで「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the Rubber boats",
+    "msg:en": "Let's use the 'get items' block on the rubber boat.",
     "img": ["/img/b5_w1/Rubber_boats.png","/img/blocks/bring.png"]
   }
 }

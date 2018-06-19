@@ -61,7 +61,7 @@
   "tutorial": [{
     "msg:ko": "시작버튼을 눌러 매미를 성장시켜보아요",
     "msg:jp": "セミに成長させるため、スタートボタンをクリックしてみよう。",
-    "msg:en": "Press the start button for the cicada's emergence",
+    "msg:en": "Press the start button to complete the life cycle of a cicada",
     "img": ["/img/a5_w3/start_block.png","/img/a5_w3/bg01_step5.png"]
   }],
   "success": [{
