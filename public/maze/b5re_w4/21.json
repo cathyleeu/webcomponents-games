@@ -24,12 +24,12 @@
   "tutorial": [{
     "msg:ko": "갯벌에서 잡은 것들을 엄마에게 가져다 주었어요",
     "msg:jp": "海辺でとった生き物を持って、お母さんのところに行きました。",
-    "msg:en": "I gave tidal creatures to my family.",
+    "msg:en": "I gave the creatures I took from the mudflat to Mom.",
     "img": ["/img/b5_w4/nakji.png","/img/b5_w4/clam.png","/img/b5_w4/conch.png","/img/b5_w4/crab.png"]
   },{
     "msg:ko": "가족 모두와 구워서 다같이 맛있게 먹었어요",
     "msg:jp": "家族みんなで、おいしく焼いて食べました。",
-    "msg:en": "I eat the baked things all together.",
+    "msg:en": "I ate delicious seafood with all my family.",
     "img": ["/img/b5_w1/father_summer.png","/img/b5_w1/cos_summer0.png","/img/b5_w2/mother_summer.png"]
   },{
     "msg:ko": "5권의 모든 콘텐츠가 끝났어요! 다음 권에서 봐요!!",

@@ -34,7 +34,7 @@
   }],
   "tutorial": [{
     "msg:ko": "'?'에 들어갈 물건을 가져와요'",
-    "msg:en": "Let's find something to fill the ? space and put it there",
+    "msg:en": "Let's find something to fill the ? and put it there.",
     "img": ["/img/b7_w2/question.png","/img/blocks/bring.png","/img/blocks/use.png"]
   }]
 }

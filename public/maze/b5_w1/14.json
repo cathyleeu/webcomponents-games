@@ -52,7 +52,7 @@
   "goal": {
     "msg:ko": "가져올 물건 위에서 '가져오기' 블록을 사용하자.",
     "msg:jp": "ゲットするアイテムの上で、「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the things",
+    "msg:en": "Let's use the 'get items' block on the things.",
     "img": ["/img/b5_w1/tube.png","/img/b5_w1/ice_box.png","/img/b5_w1/fishing_rod.png","/img/blocks/bring.png"]
   }
 }

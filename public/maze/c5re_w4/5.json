@@ -40,8 +40,8 @@
     "itemCount": 1
   }],
   "tutorial": [{
-    "msg:ko": "연꽃을 모아서 코스에게 가져가요'",
-    "msg:en": "Let's collect the lotus flower and give Cos!",
+    "msg:ko": "연꽃을 모아서 코스에게 가져가요.",
+    "msg:en": "Let's collect the lotus flowers and give them to Cos.",
     "img": ["/img/c5/lotus_flower.png","/img/blocks/bring.png","/img/c5/cos0.png","/img/blocks/use.png"]
   }]
 }

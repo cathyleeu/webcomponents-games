@@ -429,10 +429,10 @@
     ["개구리의 성장", "Life cycle of a frog", "/mazeh#!a5_w4/1"]
   ],
   "A-5-re":[
-    ["여름이 되었어요", "Summer has arrived", "/activity#!a5re_w1"],
-    ["캠핑을 가요", "Go camping", "/activity#!a5re_w2"],
-    ["매미는 땅속에서 자라요", "The cicada grows in the ground", "/activity#!a5re_w3"],
-    ["개구리는 물속에서 자라요", "The frog grows in the water", "/activity#!a5re_w4"]
+    ["여름이 되었어요", "Summer is here", "/activity#!a5re_w1"],
+    ["캠핑을 가요", "Let's go camping", "/activity#!a5re_w2"],
+    ["매미는 땅속에서 자라요", "Cicadas come from the ground", "/activity#!a5re_w3"],
+    ["개구리는 물속에서 자라요", "Frogs come from the water", "/activity#!a5re_w4"]
   ],
   "A-5-5-re":[
     ["옷을 알아보아요", "Let's see the clothes.", "/activity#!a55re_w1"],
@@ -530,9 +530,9 @@
   ],
   "B-5-re":[
     ["바다에 가요", "Let’s go to the beach", "/mazeh#!b5re_w1/index"],
-    ["가져오기와 사용하기를 이해해요", "Understand get & use", "/mazeh#!b5re_w2/index"],
-    ["가져오기와 사용하기를 연습해요", "Practice get & use", "/mazeh#!b5re_w3/index"],
-    ["갯벌에서 놀아요", "play on the tidal flat", "/mazeh#!b5re_w4/index"]
+    ["가져오기와 사용하기를 이해해요", "Learn to use the 'use items' blocks", "/mazeh#!b5re_w2/index"],
+    ["가져오기와 사용하기를 연습해요", "Practice using the 'get items' and 'use items' blocks", "/mazeh#!b5re_w3/index"],
+    ["갯벌에서 놀아요", "Play in the mudflat", "/mazeh#!b5re_w4/index"]
   ],
   "B-5":[
     ["무더운 여름, 바다에 가요:해변으로 놀러가요", "Let’s go to the beach", "/mazeh#!b5_w1/index"],
@@ -637,10 +637,10 @@
     ["반복 블록을 연습해요", "Practice using the 'repeat' block", "/mazeh#!c4re_w4/index"]
   ],
   "C-5-re":[
-    ["여러 가지 규칙을 알아보아요", "Find the pattern", "/mazeh#!c5re_w1/index"],
-    ["숫자 규칙을 알아보아요", "Find the number pattern", "/mazeh#!c5re_w2/index"],
-    ["규칙을 이용해요", "Use pattern", "/mazeh#!c5re_w3/index"],
-    ["연꽃을 가져다주어요", "Bring the flowers", "/mazeh#!c5re_w4/index"]
+    ["여러 가지 규칙을 알아보아요", "Find out what patterns are around us", "/mazeh#!c5re_w1/index"],
+    ["숫자 규칙을 알아보아요", "Find out patterns in numbers", "/mazeh#!c5re_w2/index"],
+    ["규칙을 이용해요", "Use patterns", "/mazeh#!c5re_w3/index"],
+    ["연꽃을 가져다주어요", "Get the lotus flowers", "/mazeh#!c5re_w4/index"]
   ],
   "C-5":[
     ["우리 주변의 규칙을 알아보아요:토드가 규칙 찾기 놀이를 해요", "Tod completes the pattern", "/mazeh#!c5_w1/index"],

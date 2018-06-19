@@ -35,7 +35,7 @@
   }],
   "tutorial": [{
     "msg:ko": "빈 곳에 들어갈 숫자을 가져와요",
-    "msg:en": "Let's find number to fill the space and put it there",
+    "msg:en": "Let's find the correct number to fill the empty space and put it there.",
     "img": ["/img/c5/lotus/nlotus0.png","/img/blocks/bring.png","/img/blocks/use.png"]
   }]
 }

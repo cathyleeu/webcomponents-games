@@ -42,13 +42,13 @@
   },{
     "msg:ko": "'가져오기' 블록을 여러 번 사용해 봐!",
     "msg:jp": "「アイテムゲット」ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get items' block more than once!",
+    "msg:en": "Try to use the 'get items' block more than once!",
     "img": "/img/blocks/bring.png"
   }],
   "goal": {
     "msg:ko": "아이스박스에서 '가져오기' 블록을 사용하자.",
     "msg:jp": "アイスボックスのところで「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the ice box",
+    "msg:en": "Let's use the 'get items' block on the ice box.",
     "img": ["/img/b5_w1/ice_box.png","/img/blocks/bring.png"]
   }
 }

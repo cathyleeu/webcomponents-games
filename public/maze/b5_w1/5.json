@@ -48,7 +48,7 @@
   "goal": {
     "msg:ko": "아이스박스에서 '가져오기' 블록을 사용하자.",
     "msg:jp": "アイスボックスのところで「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the ice box",
+    "msg:en": "Let's use the 'get items' block on the ice box.",
     "img": ["/img/b5_w1/ice_box.png","/img/blocks/bring.png"]
   }
 }

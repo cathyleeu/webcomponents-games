@@ -43,23 +43,23 @@
   "tutorial": [{
     "msg:ko": "바구니에 갯벌 생물들을 넣어야 해요",
     "msg:jp": "かごに海辺の生き物を入れるよ。",
-    "msg:en": "I'm going to take tidal creatures to basket",
+    "msg:en": "I'll put sea creatures in the basket.",
     "img": ["/img/b5_w4/basket.png","/img/b5_w4/conch.png","/img/b5_w4/crab.png"]
   },{
     "msg:ko": "가져와야할 갯벌 생물들이 여러 개 있어.",
     "msg:jp": "ゲットする海辺の生き物がいくつかいるよ。",
-    "msg:en": "There are several tidal creatures.",
+    "msg:en": "There are several sea creatures.",
     "img": ["/img/b5_w4/conch.png","/img/b5_w4/crab.png"]
   },{
     "msg:ko": "'가져오기'와 사용하기 블록을 여러 번 사용해 봐!",
     "msg:jp": "｢アイテムゲット｣と｢アイテム使用｣ブロックを何回も使ってみよう！",
-    "msg:en": "Try to use 'get and use items' block more than once!",
+    "msg:en": "Try to use the 'get items' and 'use items' blocks as many times as you need.",
     "img": ["/img/blocks/bring.png","/img/blocks/use.png"]
   }],
   "goal": {
     "msg:ko": "바구니에 갯벌 생물들을 넣어보자!",
     "msg:jp": "かごに海辺の生き物を入れてみよう！",
-    "msg:en": "Take tidal creatures to basket",
+    "msg:en": "Let's put the sea creatures in the basket.",
     "img": ["/img/b5_w4/basket.png","/img/b5_w4/conch.png","/img/b5_w4/crab.png"]
   }
 }

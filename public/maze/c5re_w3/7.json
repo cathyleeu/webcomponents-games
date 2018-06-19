@@ -39,7 +39,7 @@
   }],
   "tutorial": [{
     "msg:ko": "연꽃을 모아요",
-    "msg:en": "Let's collect the lotus_flower!",
+    "msg:en": "Let's collect the lotus flowers!",
     "img": [ "/img/c5/lotus_flower.png","/img/blocks/bring.png"]
   }]
 }

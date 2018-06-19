@@ -48,7 +48,7 @@
   "goal": {
     "msg:ko": "튜브에서 '가져오기' 블록을 사용하자.",
     "msg:jp": "うきわのところで「アイテムゲット」ブロックを使用してみよう。",
-    "msg:en": "Let's use 'get items' block on the tube",
+    "msg:en": "Let's use the 'get items' block on the tube.",
     "img": ["/img/b5_w1/tube.png","/img/blocks/bring.png"]
   }
 }
