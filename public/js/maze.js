@@ -616,7 +616,7 @@ function addEvents() {
       onConfirmYes: function() {
         var showBook = store.session.get("showbook");
         if(showBook) {
-          if(!store.session.get("engloo")) {
+          if(!store.session.get("externallogin")) {
             store.session.clear();
           }
           location.href = showBook.split("#")[0];

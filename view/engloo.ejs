@@ -195,7 +195,6 @@
     user: "<%=stuid%>",
     id: id
   });
-  store.session.set("engloo", true);
 <% } else { %>
   if(store.session.get("user") == null) {
     var id = "anonymous";
@@ -206,6 +205,8 @@
     var id = store.session.get("user").id;
   }
 <% } %>
+store.session.set("externallogin", true);
+store.session.set("showbook", location.href);
 var book = "<%=book%>",
     player = videojs('vid1', {
       html5: {
@@ -216,7 +217,6 @@ var book = "<%=book%>",
         }
       }
     });
-store.session.set("showbook", location.href);
 player.ready(function() {
   $('.book-problem').click(function(e) {
     e.preventDefault();
@@ -231,8 +231,8 @@ player.ready(function() {
           return !done;
         }).toArray().length,
         update = {};
-    if(undones > 0) {
-      alert(num + "단원을 먼저 끝내야 합니다.");
+    if(undones > 0 && id != "anonymous") {
+      alert("이전 단원을 완료한 후에 이용하실 수 있습니다.");
       return;
     }
     if(type == "maze") {
