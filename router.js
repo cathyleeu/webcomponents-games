@@ -860,7 +860,7 @@ public.post('/nav', function *(next) {
   var book = this.request.body.book,
       week = this.request.body.week,
       contents = week.split(",").map(function(w) {
-        return 2*w;
+        return book.slice(0, 4) == "CHO-" ? 2*w : w;
       }).join(",");
   yield this.render('nav', {
     book: book,
