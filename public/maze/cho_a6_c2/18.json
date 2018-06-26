@@ -6,11 +6,11 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "repeat",
     "check",
-    "condition3_recycle",
     "get_item2_split",
-    "use_item2"
+    "use_item2",
+    "repeat",
+    "condition3_recycle"
   ],
   "tile": [
     {"tile": "&", "contents" : [

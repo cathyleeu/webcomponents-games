@@ -18,11 +18,11 @@
     {"tile": "B", "img": "moon_green_target", "shape": "moon", "color": "green", "role": "food", "useItem": true}
   ],
   "map": [
-    ".....",
+    "#####",
     ".BAA.",
     ".B.B.",
     "rAAB.",
-    "....."
+    "#####"
   ],
   "tutorial": [{
     "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",

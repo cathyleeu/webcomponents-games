@@ -18,11 +18,11 @@
     {"tile": "B", "img": "star_yellow_target", "shape": "star", "color": "yellow", "role": "food", "useItem": true}
   ],
   "map": [
-    ".....",
+    "#####",
     "rAAA.",
     ".B.A.",
     ".BBB.",
-    "....."
+    "#####"
   ],
   "tutorial": [{
     "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",

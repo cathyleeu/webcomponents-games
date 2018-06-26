@@ -18,11 +18,11 @@
     {"tile": "B", "img": "triangle_sky_target", "shape": "triangle", "color": "sky", "role": "food", "useItem": true}
   ],
   "map": [
-    ".....",
-    ".BAA.",
-    ".A.A.",
-    ".AAB.",
-    "...u."
+    "#...#",
+    "#BAA#",
+    "#A.A#",
+    "#AAB#",
+    "#..u#"
   ],
   "tutorial": [{
     "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
