@@ -10,9 +10,6 @@
   .navbar {
     position: relative !important;
   }
-  .btn-default {
-    margin: 20px;
-  }
   .btn-warning {
     margin: 20px;
     width: 130px;
@@ -137,7 +134,7 @@
         <tr>
             <th><%=(i+1)%></th>
             <td><%=stuList[i][2]%><br/><%=stuList[i][1]%></td>
-            <td><button onclick="alert('준비중입니다.')">열기</button></td>
+            <td><a class="btn btn-default report" href="#" role="button" data-student="<%=stuList[i].slice(0,-1)%>">열기</a></td>
             <td><%={"46":"A","47":"B"}[stuList[i][3]]+"-"+stuList[i][4]%></td>
             <% for(var j = 0; j< week.length; j++) { %>
             <td>
@@ -162,5 +159,33 @@
 </div>
 
 <script>
+// http://office.toycode.org/reports?
+// code=49978
+// classId=A00083-K1-KC1
+// academyId=A00083-K1
+// parentId=A00083
+// school=잉글루
+// className=키즈코딩
+// level=A
+// students=홍길동
 
+// classId:"F00000-1001-KC1"
+// id:"F00000-1001-KC1,test001"
+// kinder:"F00000-1001"
+// user:"test001"
+
+$(".report").click(function(e) {
+  var url = "http://office.toycode.org/reports?",
+      data = $(e.currentTarget).data("student").split(","),
+      query = [
+        "code=engloo",
+        "classId=F00000-" + data[0] + "-KC1",
+        "school=" + encodeURIComponent("잉글루"),
+        "className=" + encodeURIComponent("키즈코딩"),
+        "level=cho_" + {"46":"a","47":"b"}[data[3]] + data[4],
+        "students=" + data[2],
+        "userId=" + data[1]
+      ];
+  window.open(url+query.join("&"), "_blank");
+});
 </script>
