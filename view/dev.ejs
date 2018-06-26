@@ -110,21 +110,22 @@
 <!-- Header -->
 <header>
     <div class="container">
+        <h1>서버</h1>
+        <div class="radio">
+          <label>
+            <input type="radio" name="serverRadios" id="server1" value="http://localhost:3000/" checked>
+            http://localhost:3000/
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="serverRadios" id="server2" value="https://toycode.org/">
+            https://toycode.org/
+          </label>
+        </div>
         <h1>키즈코딩</h1>
         <div>
           <h2>잉글루</h2>
-          <div class="radio">
-            <label>
-              <input type="radio" name="serverRadios" id="server1" value="http://localhost:3000/engloo" checked>
-              http://localhost:3000/engloo
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="serverRadios" id="server2" value="https://toycode.org/engloo">
-              https://toycode.org/engloo
-            </label>
-          </div>
           <form id="engloo" action="http://localhost:3000/engloo" method="POST" target="_blank">
             <div class="form-group">
               <label for="camid">캠퍼스 아이디</label>
@@ -200,7 +201,7 @@ success|
 
 <script>
 $("[name=serverRadios]").click(function(e) {
-  $("#engloo").prop("action", e.currentTarget.value);
-  $("#engloolms").prop("action", e.currentTarget.value + "lms");
+  $("#engloo").prop("action", e.currentTarget.value + "engloo");
+  $("#engloolms").prop("action", e.currentTarget.value + "engloolms");
 });
 </script>
