@@ -643,6 +643,10 @@ Actions.prototype.getItem = function(block, callback) {
       callback("아이템을 가져올 수 없어요");
       return;
     }
+    if(this.getItemCount(character) >= item.limitCount) {
+      callback("한번에 " + item.limitCount + "개의 아이템을 가져올 수 있어요.");
+      return;
+    }
     this._splitObjects(item, function() {
       if(itemCount - 1 == 0) {
         item.visible = false;
@@ -711,6 +715,10 @@ Actions.prototype.getItem2 = function(block, callback) {
       callback("아이템을 가져올 수 없어요");
       return;
     }
+    if(this.getItemCount(character) >= item.limitCount) {
+      callback("한번에 " + item.limitCount + "개의 아이템을 가져올 수 있어요.");
+      return;
+    }
     // 다수의 아이템
     //아이템의 소유 개수 감소
     this.setItemCount(item, itemCount - 1);
@@ -760,6 +768,10 @@ Actions.prototype.getItem2split = function(block, callback) {
     if(item.itemCount) {
       if(itemCount == 0) {
         callback("아이템을 가져올 수 없어요");
+        return;
+      }
+      if(this.getItemCount(character) >= item.limitCount) {
+        callback("한번에 " + item.limitCount + "개의 아이템을 가져올 수 있어요.");
         return;
       }
       // 다수의 아이템
@@ -823,6 +835,10 @@ Actions.prototype.getItem3 = function(block, callback) {
     var itemCount = this.getItemCount(item);
     if(itemCount == 0) {
       callback("아이템을 가져올 수 없어요");
+      return;
+    }
+    if(this.getItemCount(character) >= item.limitCount) {
+      callback("한번에 " + item.limitCount + "개의 아이템을 가져올 수 있어요.");
       return;
     }
     this._splitObjects(item, function() {

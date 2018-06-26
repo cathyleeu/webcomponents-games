@@ -12,7 +12,7 @@
     "repeat_until_box"
   ],
   "tile": [
-    {"tile": ")", "itemCount": 3},
+    {"tile": ")", "itemCount": 3, "limitCount": 1},
     {"tile": "%", "useItem": 3}
   ],
   "map": [
