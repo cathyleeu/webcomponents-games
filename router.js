@@ -266,8 +266,8 @@ function getBook(classObj) {
     book = ["3-re", "4-re"];
   }
   // 인천지사 참조은 유치원 7월에 1권
-  if(school == "B00171-K1") {
-    book = [5, 6];
+  if(school == "C00194-K1") {
+    book = ["1-re"];
   }
   // 시범원 청아유치원, 숙명키즈
   if(school == "A00083-K1" || school == "A00083-K4") {
