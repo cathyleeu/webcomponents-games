@@ -269,6 +269,10 @@ function getBook(classObj) {
   if(school == "C00194-K1") {
     book = ["1-re"];
   }
+  // 압구정 PSA는 3달치 제공
+  if(school == "D00121-K1") {
+    book = ["3-re", "4-re", "5-re"];
+  }
   // 시범원 청아유치원, 숙명키즈
   if(school == "A00083-K1" || school == "A00083-K4") {
     book = ["5-re","5-5-re"];
