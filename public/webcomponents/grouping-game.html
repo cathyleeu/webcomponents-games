@@ -76,6 +76,13 @@
     purpose="finalStage"
     nextlink="{{nextlink}}"
     ></toycode-modal>
+  <toycode-modal
+    id="fullScreenModal"
+    headertext="풀스크린"
+    btmtext="풀스크린 모드로 적용합니다."
+    yesbtn="확인"
+    purpose="fullScreen"
+    ></toycode-modal>
   <div id="container">
     <p>{{localize('minor')}}</p>
     <svg id="createSvg"></svg>
@@ -99,6 +106,9 @@
     }
     ready(){
       super.ready()
+
+      this.$.fullScreenModal.modalAlert()
+
       this.set('statusHeight' , this.$.statusBar.getBoundingClientRect().height)
       // this.$.introModal.modalAlert()
       let size = {

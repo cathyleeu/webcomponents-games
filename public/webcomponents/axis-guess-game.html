@@ -134,7 +134,7 @@
       }
       .btn_cont {
         text-align: center;
-        margin-top: 50px;
+        margin-top: 10px;
       }
       .submit {
         width: 150px;
@@ -171,6 +171,13 @@
       purpose="line"
       fullscreen="{{localize('fullscreen')}}"
       ></status-bar>
+    <toycode-modal
+      id="fullScreenModal"
+      headertext="풀스크린"
+      btmtext="풀스크린 모드로 적용합니다."
+      yesbtn="확인"
+      purpose="fullScreen"
+      ></toycode-modal>
     <toycode-modal
       id="successModal"
       purpose="nextStep"
@@ -268,6 +275,7 @@
       }
       ready() {
         super.ready();
+        this.$.fullScreenModal.modalAlert()
         this.set('ranNums', [])
         this.set('selectedAnws', [])
         this.set('currentStage', 1)

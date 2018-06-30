@@ -27,8 +27,8 @@
       .container > div {
         display: inline-flex;
         margin: 3px;
-        width: 110px;
-        height: 110px;
+        /* width: 110px;
+        height: 110px; */
         border-radius: 10px;
         cursor: pointer;
         border: 5px solid gray;
@@ -37,8 +37,8 @@
         border: 5px solid #2ECC98 !important;
       }
       img {
-        width: 110px;
-        height: 110px;
+        /* width: 110px;
+        height: 110px; */
         border-radius: 10px;
         background-position: center center;
         background-repeat: no-repeat;
@@ -63,6 +63,7 @@
 			}
     </style>
     <status-bar
+      id="statusBar"
       title="{{localize('title')}}"
       score="{{localize('score')}}"
       lefted="{{localize('lefted')}}"
@@ -80,6 +81,13 @@
       purpose="retry"
       headertext="{{localize('retryHead')}}"
       btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="lackModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('noticeAlert')}}"
       retrybtn="{{localize('retrybtn')}}"
       ></toycode-modal>
     <toycode-modal
@@ -104,6 +112,13 @@
       yesbtn="{{localize('yesbtn')}}"
       nobtn="{{localize('nobtn')}}"
       purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="fullScreenModal"
+      headertext="풀스크린"
+      btmtext="풀스크린 모드로 적용합니다."
+      yesbtn="확인"
+      purpose="fullScreen"
       ></toycode-modal>
     <toycode-modal
       id="finalStageModal"
@@ -141,11 +156,21 @@
       }
       ready(){
         super.ready();
+
+        this.$.fullScreenModal.modalAlert()
+
         this.set('clicked', 0)
         this.set('uncorrect', [])
         this.set('point', 0)
         this.set('total', 0)
         this.set('stage', 1)
+
+        let barHeight = this.$.statusBar.getBoundingClientRect().height
+        let boardHeight = this.offsetHeight - barHeight;
+        let imgHeight = boardHeight*0.2;
+
+        this.set('imgHeight', imgHeight)
+
       }
       reset(){
         this.set('clicked', 0)
@@ -177,9 +202,11 @@
 
         container.selectAll('div')
                  .data(wholeData).enter()
-                 .append('xhtml:div') //.attr('class', 'box')
+                 .append('xhtml:div').attr('style', `height:${this.imgHeight}px;width:${this.imgHeight}px`)
                  .on('click', this.handleClickCard)
                  .append('img').attr('src', (d, i) => d)
+                 .attr('style', `height:${this.imgHeight}px;width:${this.imgHeight}px`)
+
 
       }
       handleClickCard(d, i){
@@ -189,16 +216,21 @@
 
         d3.select(this).classed("clicked", !d3.select(this).classed("clicked"))
         if(d3.select(this).classed("clicked")){
-          !selected && that.push('uncorrect', d)
+          // 클릭을 했을때 정답이 아니면! uncorrect에 넣음
+          if(!selected){
+            that.push('uncorrect', d)
+          }
           that.set('clicked', that.clicked+1)
         } else {
-          uncorrect && that.pop('uncorrect', d )
+          if(uncorrect){
+            that.set('uncorrect', that.uncorrect.filter(f => f !== d))
+          }
           that.set('clicked', that.clicked-1)
         }
       }
       handleSubmit(){
         if(this.clicked < this.correct.length) {
-          alert(this.resources[this.language].noticeAlert)
+          this.$.lackModal.modalAlert()
           return false
         }
         this.uncorrect[0]

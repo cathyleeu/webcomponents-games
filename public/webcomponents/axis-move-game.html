@@ -96,6 +96,13 @@
       fullscreen="{{localize('fullscreen')}}"
       ></status-bar>
     <toycode-modal
+      id="fullScreenModal"
+      headertext="풀스크린"
+      btmtext="풀스크린 모드로 적용합니다."
+      yesbtn="확인"
+      purpose="fullScreen"
+      ></toycode-modal>
+    <toycode-modal
       id="successModal"
       purpose="nextStep"
       headertext="{{localize('successHead')}}"
@@ -177,6 +184,7 @@
       }
       ready() {
         super.ready();
+        this.$.fullScreenModal.modalAlert()
         this.set('currentStage', 1)
         this.set('ques_sub', this.resources[this.language].quesSub)
         this.set('tags', d3.shuffle(this.tags))
