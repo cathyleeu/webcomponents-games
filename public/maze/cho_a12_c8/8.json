@@ -25,6 +25,7 @@
     "##..###.#"
   ],
   "tile": [
+    {"tile": "%", "img": "icewall1"},
     {"tile": "A", "img": "fish","itemCount": 1, "role": "item"},
     {"tile": "B", "img": "fish","itemCount": 2, "role": "item"},
     {"tile": "C", "img": "fish","itemCount": 3, "role": "item"},
