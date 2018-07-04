@@ -5,8 +5,8 @@
 
   {"id": "character", "src": "/img/cho_a4/draw_cobot.png", "sprite": true, "size": 256},
   {"id": "message", "src": "/img/cho_a4/draw_cobot0.png", "size": 256},
-  {"id": "character2", "src": "/img/cho_a5/summer_cobot.png", "sprite": true, "size": 256},
-  {"id": "message2", "src": "/img/cho_a5/summer_cobot0.png", "size": 256},
+  {"id": "character2", "src": "/img/cho_a8/farm_cobot.png", "sprite": true, "size": 256},
+  {"id": "message2", "src": "/img/cho_a8/farm_cobot0.png", "size": 256},
   {"id": "food", "src": "/img/cho_a8/reed.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},

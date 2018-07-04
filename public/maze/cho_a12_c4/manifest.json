@@ -3,10 +3,10 @@
   {"id": "bg1", "src": "/img/cho_a9/tile1.png"},
   {"id": "bg2", "src": "/img/cho_a9/tile2.png"},
 
-  {"id": "character", "src": "/img/cho_draw/draw_cobot.png", "sprite": true, "size": 256},
-  {"id": "message", "src": "/img/cho_draw/draw_cobot0.png", "size": 256},
-  {"id": "character2", "src": "/img/cho_a5/summer_cobot.png", "sprite": true, "size": 256},
-  {"id": "message2", "src": "/img/cho_a5/summer_cobot0.png", "size": 256},
+  {"id": "character", "src": "/img/cho_a9/draw_b_cobot.png", "sprite": true, "size": 256},
+  {"id": "message", "src": "/img/cho_a9/draw_b_cobot0.png", "size": 256},
+  {"id": "character2", "src": "/img/cho_a9/fisher_cobot.png", "sprite": true, "size": 256},
+  {"id": "message2", "src": "/img/cho_a9/fisher_cobot0.png", "size": 256},
   {"id": "food", "src": "/img/cho_a9/hole1.png"},
 
   {"id": "complete", "src": "/sound/complete.mp3", "type": "sound"},
