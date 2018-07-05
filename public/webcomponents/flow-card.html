@@ -14,10 +14,10 @@
         position: absolute;
       }
       .container p {
-        font-size: 30px;
+        /* font-size: 30px; */
         position: absolute;
         font-weight: 600;
-        /*width: 500px;*/
+        z-index: -1;
         text-align: center;
         margin: 0;
       }
@@ -90,16 +90,24 @@
       ready() {
         // 미리 설정해 놓는 것....
         super.ready();
-        // this.set('total', 0)
-        // this.set('point', 0)
-        // this.set('matched', 0)
-        this.set('step', 1)
         this.set('currentStage', 1)
+
+        let barHeight = this.$.statusBar.getBoundingClientRect().height
+        let boardHeight = this.offsetHeight - barHeight;
+        let boardWidth = this.offsetWidth;
+
+        let headerSize = this.offsetHeight*0.05;
+        let imgSize = boardHeight*0.2;
+        this.set('boardHeight', boardHeight)
+        this.set('imgSize', imgSize)
+        this.set('headerSize', headerSize)
+        this.set('headerPadding', Math.ceil(headerSize*0.1))
+        this.set('headerBoard', headerSize+(this.headerPadding*2))
+        this.set('cardBoard', boardHeight/2)
+        this.set('centerBoard', ((this.cardBoard-this.imgSize)/2)+(this.headerBoard/2))
+
       }
       reset(){
-        // this.set('total', 0)
-        // this.set('matched', 0)
-        // this.set('point', this.point+5)
         this.set('step', 1)
         this.set('currentStage', this.currentStage+1)
         d3.select(this.shadowRoot).select('svg').remove()
@@ -125,10 +133,15 @@
         let self = d3.select('#element').node(),
             gap = self.flowWidth-self.mixedWidth,
             getX = d3.event.x, getY = d3.event.y;
-        // debugger
-        let targetEl, targetX, targetY, result,
-            flowItems = self.flowItems.slice(1, self.flowItems.length-1);
 
+        let targetEl, targetX, targetY, result, flowItems;
+
+        if(self.noGuide) {
+          flowItems = self.flowItems
+        } else {
+          flowItems = self.flowItems.slice(1, self.flowItems.length-1);
+        }
+        // debugger
         flowItems.forEach(el => {
           const getEl = el.getBBox();
           // 범위 확인
@@ -140,13 +153,18 @@
             targetY = getEl.y;
             // debugger
             // 순서가 맞는지 먼저 보아야 함
-            if(self.step+1 === d.step) {
-              // console.log("dragended step true", d.step);
-              result = targetEl.__data__.step === d.step && true;
+            if(self.noGuide && self.noStep) {
+              result = Boolean(targetEl.__data__ === d.text);
             } else {
-              // console.log("순서가 맞지 않습니다.");
-              result = false;
+              if(self.step+1 === d.step) {
+                // console.log("dragended step true", d.step);
+                result = targetEl.__data__.step === d.step && true;
+              } else {
+                // console.log("순서가 맞지 않습니다.");
+                result = false;
+              }
             }
+
 
           }
         });
@@ -159,6 +177,7 @@
               self.$.finalStageModal.modalAlert()
               return false
             }
+            //FIXME: alert 날려주는 것
             self.$.successModal.modalAlert()
           }
           // _this.set('matched', _this.matched+1)
@@ -172,11 +191,33 @@
         let _this = this,
             svg = d3.select(this.shadowRoot).append("svg")
               .attr('width', this.offsetWidth )
-              .attr('height', `${this.offsetHeight-60}`);
+              .attr('height', `${this.boardHeight}`);
 
-        let boardName = ["flow", "mixed"].map(n => ({"name": n, "header": this.resources[this.language][n]})),
-            flowData = manifest.filter( d => d.step),
-            mixedData = manifest.filter( d => !(data.first === d.step || data.last === d.step));
+        let boardName,
+            flowData,
+            mixedData;
+
+        // debugger
+
+        if(this.gameType === "repeat") {
+          boardName = [
+            { "name" : "flow", "header" : data.questions[this.currentStage-1].quest },
+            { "name" : "mixed", "header" : this.resources[this.language].mixed}
+          ];
+          flowData = data.questions[this.currentStage-1].answer.split("");
+        } else {
+          boardName = ["flow", "mixed"].map(n => ({"name": n, "header": this.resources[this.language][n]}));
+          flowData = manifest.filter( d => d.step);
+        }
+        if(this.noGuide) {
+          this.set('step', 0)
+          mixedData = manifest;
+        } else {
+          this.set('step', 1)
+          mixedData = manifest.filter( d => !(data.first === d.step || data.last === d.step));
+        }
+
+
 
 
         let defs = svg.append('defs')
@@ -201,7 +242,7 @@
                )
         flowImages.append('image')
           .attr("x", 5).attr("y", 5)
-          .attr("width", 100).attr("height", 100)
+          .attr("width", this.imgSize).attr("height", this.imgSize)
           .attr("xlink:href", d => `${d.src}`)
           .style('filter', (d , i) => {
             if(data.first === i+1 || data.last === i+1){
@@ -220,10 +261,21 @@
           .attr("x", 0).attr("y", 0)
           .attr("width", 1).attr("height", 1)
           .attr("patternUnits", "objectBoundingBox")
-          .append('image')
+
+
+        // text 상황에 따라서 변경
+        if(shuffledMix[0].text) {
+          mixedImages.append('text')
+            .text((d,i) => d.text)
+            .attr("font-size","50")
+            .attr("x", 16).attr("y", 57)
+        } else {
+          mixedImages.append('image')
           .attr("x", 5).attr("y", 5)
-          .attr("width", 100).attr("height", 100)
+          .attr("width", this.imgSize).attr("height", this.imgSize)
           .attr("xlink:href", (d, i) => `${d.src}`)
+        }
+
 
         // let center = (this.offsetWidth - (120*manifest.length))/2
         let rectGroup = svg.selectAll("g")
@@ -238,23 +290,21 @@
           .data(flowData).enter()
           .append('rect')
           .attr("rx", 5).attr("ry", 5)
-          .attr('x', (d, i) => (100*i) + (20*i)).attr('y', 100)
-          .attr("width", 110).attr("height", 110)
+          .attr('x', (d, i) => (this.imgSize*i) + (20*i)).attr('y', this.centerBoard)
+          .attr("width", this.imgSize+10).attr("height", this.imgSize+10)
           .style("fill", (d, i) => `url(#flow_${i})`)
           .style("stroke-width",8)
           .style("stroke","#2ECC98")
 
         this.set('flowItems', flowItems.nodes())
-        let space = (svg.node().clientHeight-220)/4;
-        this.set('space', space*2.5+110)
 
         let mixedItems = svg.select('.mixed')
             .selectAll("rect")
             .data(shuffledMix).enter()
             .append('rect')
             .attr("rx", 5).attr("ry", 5)
-            .attr('x', (d, i) => (100*i) + (20*i)).attr('y', this.space)
-            .attr("width", 110).attr("height", 110)
+            .attr('x', (d, i) => (this.imgSize*i) + (20*i)).attr('y', this.cardBoard+this.centerBoard)
+            .attr("width", this.imgSize+10).attr("height", this.imgSize+10)
             .style("fill", "#fff")
             .style("fill", (d,i) => `url(#mixed_${i})`)
             .style("stroke-width",8)
@@ -263,31 +313,32 @@
                 .on("start", this.dragstarted )
                 .on("drag", this.dragged )
                 .on("end", this.dragended ));
+
           this.handleSetCenter('.flow')
           this.handleSetCenter('.mixed')
 
-          // console.log(space);
 
           d3.select(this.shadowRoot).select('.container')
             .selectAll('p')
             .data(boardName).enter()
             .append("p")
             .text( (d, i) => `${d.header}`)
-            .attr('style', (d, i) => `top:${
-              d.name === "flow"
-                ? space-this.mixedHeight
-                : this.space-this.mixedHeight
-            }px;width:${this.offsetWidth}px;`)
+            .attr('style', (d, i) => `
+              top:${d.name === "flow" ? 0 : this.boardHeight/2}px;
+              background-color:${d.name === "flow" ? "lightblue" : "lightgrey"};
+              width:${this.offsetWidth}px;
+              font-size:${this.headerSize}px;
+              padding:${this.headerPadding}px;
+            `)
       }
       handleSetCenter(ele){
         let client = d3.select(this.shadowRoot).select("svg"),
             eleDom = client.select(ele).node().getBBox(),
-            { clientWidth, clientHeight } = client.node(),
-            eleWidth = (clientWidth - eleDom.width)/2,
-            eleHeight = (clientHeight - (eleDom.height*2+this.space))/2;
+            { clientWidth } = client.node(),
+            eleWidth = (clientWidth - eleDom.width)/2;
+
         this.set(`${ele.slice(1)}Width`, eleWidth)
-        this.set(`${ele.slice(1)}Height`, eleHeight)
-        client.select(ele).attr('transform', `translate(${eleWidth}, ${eleHeight})`)
+        client.select(ele).attr('transform', `translate(${eleWidth}, 0)`)
       }
     }
     window.customElements.define(FlowCard.is, FlowCard);

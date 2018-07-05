@@ -132,6 +132,7 @@
           <div class="button final" on-click="handleFinalStep">{{finalbtn}}</div>
           <div class="button stay" on-click="handleStayStage">{{nobtn}}</div>
           <div class="button retry" on-click="handleStayStage">{{retrybtn}}</div>
+          <div class="button full" on-click="handleFullScreen">{{yesbtn}}</div>
           <div class="button retryReset" on-click="handleNextStep">{{retrybtn}}</div>
           <div class="button move" on-click="handleMoveStage">{{yesbtn}}</div>
         </div>
@@ -163,6 +164,14 @@
       ready(){
         super.ready();
         this.set('element', this.shadowRoot.getElementById("modal-container"))
+
+        let document = window.document
+
+        this.set( "fullscreenEnabled" ,
+            document.fullscreenEnabled ||
+            document.webkitFullscreenEnabled ||
+            document.mozFullScreenEnabled ||
+            document.msFullscreenEnabled )
       }
 
       matchedRate(total, matched){
@@ -173,6 +182,7 @@
         let target = {
           finalStage : '.final',
           nextStep : '.done',
+          fullScreen : '.full',
           previous : '.stay, .move',
           logout : '.stay, .move',
           retry: '.retry',
@@ -206,6 +216,26 @@
 
         d3.select(this.element).classed("popup", "popup")
         // this.element.classList.add('popup')
+      }
+      handleFullScreen(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        // console.log("FullScreen");
+
+        let doc = window.document;
+        let docEl = doc.documentElement;
+
+        let requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+        let cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+        if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+          requestFullScreen.call(docEl);
+        }
+        else {
+          cancelFullScreen.call(doc);
+        };
+
+        d3.select(this.element).classed("popup", null)
       }
       handleNextStep(){
         d3.select(this.element).classed("popup", null)

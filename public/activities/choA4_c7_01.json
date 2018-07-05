@@ -2,7 +2,6 @@
   "element": "component-game",
   "attributes": {
     "gameType" : "multiple",
-    "nextlink" : "activity#!choA3_c1_02",
     "component" : "axis-grid",
     "gridType" : "sequence",
     "boardType" : "half",

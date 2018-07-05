@@ -1,0 +1,75 @@
+{
+  "element": "flow-card",
+  "attributes": {
+    "nextlink" : "mazeh#!a5re_w3/1",
+    "gameType" : "repeat",
+    "noGuide" : true
+  },
+  "data": {
+    "background" : false,
+    "questions" : [
+      {
+        "quest" : "가족과 비슷한 뜻을 가진 단어는?",
+        "answer" : "가문"
+      },{
+        "quest" : "가정에서 사용하는 전자기기라는 뜻을 가진 단어는?",
+        "answer" : "가전"
+      },{
+        "quest" : "그림을 직업으로 그리는 사람은?",
+        "answer" : "화가"
+      },{
+        "quest" : "멀리 있는 사람과 이야기를 할 수 있는 기기는?",
+        "answer" : "전화"
+      },{
+        "quest" : "한 분야에서 많은 지식을 가지고 있는 사람을 뜻하는 것은?",
+        "answer" : "전문"
+      }
+    ]
+  },
+  "manifest": [
+    {"text": "가"},
+    {"text": "문"},
+    {"text": "전"},
+    {"text": "화"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "정보의 구조화",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "flow": "매미의 성장과정을 순서대로 고르세요",
+      "mixed": "사용 가능한 글자"
+    },
+    "en": {
+      "title": "The cicada grows in the ground",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "flow": "Select the growth process of cicadas in order",
+      "mixed": "Available image"
+    }
+  }
+}
