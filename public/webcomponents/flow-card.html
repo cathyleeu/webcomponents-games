@@ -106,11 +106,13 @@
         this.set('cardBoard', boardHeight/2)
         this.set('centerBoard', ((this.cardBoard-this.imgSize)/2)+(this.headerBoard/2))
 
+
       }
       reset(){
         this.set('step', 1)
         this.set('currentStage', this.currentStage+1)
         d3.select(this.shadowRoot).select('svg').remove()
+        d3.select(this.shadowRoot).select('.container').selectAll('p').remove()
         this.setData(this.data, this.manifest)
       }
       handleModal(e) {
@@ -155,6 +157,7 @@
             // 순서가 맞는지 먼저 보아야 함
             if(self.noGuide && self.noStep) {
               result = Boolean(targetEl.__data__ === d.text);
+              self.set('flowCards', self.flowCards-1)
             } else {
               if(self.step+1 === d.step) {
                 // console.log("dragended step true", d.step);
@@ -171,6 +174,8 @@
         if (!result) {
           d3.select(this).attr("x", self.startX ).attr("y", self.startY );
         } else {
+          // game 형식에 따라 결과 변형
+
           self.set('step', d.step)
           if(self.step === self.data.last-1) {
             if(self.currentStage === self.lastStage){
@@ -180,9 +185,22 @@
             //FIXME: alert 날려주는 것
             self.$.successModal.modalAlert()
           }
+
+          if(self.noGuide && self.noStep) {
+            if(self.flowCards === 0) {
+              if(self.currentStage === self.lastStage){
+                self.$.finalStageModal.modalAlert()
+                return false
+              } else {
+                self.$.successModal.modalAlert()
+              }
+
+            }
+          }
           // _this.set('matched', _this.matched+1)
           d3.select(this).attr("x", targetX+gap ).attr("y", targetY )
             .call(d3.drag().on("start", null ))
+
         }
       }
       setData(data, manifest){
@@ -197,14 +215,13 @@
             flowData,
             mixedData;
 
-        // debugger
-
         if(this.gameType === "repeat") {
           boardName = [
             { "name" : "flow", "header" : data.questions[this.currentStage-1].quest },
             { "name" : "mixed", "header" : this.resources[this.language].mixed}
           ];
           flowData = data.questions[this.currentStage-1].answer.split("");
+          this.set('lastStage', data.questions.length)
         } else {
           boardName = ["flow", "mixed"].map(n => ({"name": n, "header": this.resources[this.language][n]}));
           flowData = manifest.filter( d => d.step);
@@ -297,6 +314,7 @@
           .style("stroke","#2ECC98")
 
         this.set('flowItems', flowItems.nodes())
+        this.set('flowCards', flowData.length)
 
         let mixedItems = svg.select('.mixed')
             .selectAll("rect")
