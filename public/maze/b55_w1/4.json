@@ -26,7 +26,7 @@
 }],
   "tutorial": [{
     "msg:ko": "N 서울 타워로 가보자.",
-    "msg:en": "Let's go to N-seoul tower.",
+    "msg:en": "Let's go to Seoul Tower.",
     "img": "/img/b55/ntower.png"
   }],
   "success": [{

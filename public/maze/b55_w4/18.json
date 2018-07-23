@@ -50,7 +50,7 @@
   }],
   "tutorial": [{
     "msg:ko": "먹거리를 가지고 아빠께 가요.",
-    "msg:en": "Go to father with foods.",
+    "msg:en": "Go to father with food.",
     "img": ["/img/b55/father.png","/img/b55/dduck.png","/img/b55/donut.png","/img/b55/hotdog.png"]
   }]
 }

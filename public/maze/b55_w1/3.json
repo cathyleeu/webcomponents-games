@@ -26,7 +26,7 @@
 }],
   "tutorial": [{
     "msg:ko": "한국 은행으로 가보자.",
-    "msg:en": "Let's go to Korea bank.",
+    "msg:en": "Let's go to the Bank of Korea.",
     "img": "/img/b55/bank.png"
   }],
   "success": [{

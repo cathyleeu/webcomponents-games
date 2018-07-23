@@ -26,7 +26,7 @@
 }],
   "tutorial": [{
     "msg:ko": "숭례문으로 가보자.",
-    "msg:en": "Let's go to Sungnyemun Gate",
+    "msg:en": "Let's go to Sungnyemun.",
     "img": "/img/b55/skaeoans.png"
   }],
   "success":[{

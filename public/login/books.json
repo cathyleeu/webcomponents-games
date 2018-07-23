@@ -435,10 +435,10 @@
     ["개구리는 물속에서 자라요", "Frogs come from the water", "/activity#!a5re_w4"]
   ],
   "A-5-5-re":[
-    ["옷을 알아보아요", "Let's see the clothes.", "/activity#!a55re_w1"],
-    ["옷을 입어요", "Wearing clothes.", "/activity#!a55re_w2"],
-    ["딱지치기를 해요", "Play hittinh scab game", "/activity#!a55re_w3_c1"],
-    ["몸을 씻어요", "Washing my body", "/activity#!a55re_w4"]
+    ["옷을 알아보아요", "Types of clothes", "/activity#!a55re_w1"],
+    ["옷을 입어요", "Get dressed", "/activity#!a55re_w2"],
+    ["딱지치기를 해요", "Play ddakji", "/activity#!a55re_w3_c1"],
+    ["몸을 씻어요", "Wash up", "/activity#!a55re_w4"]
   ],
   "A-5-5":[
     ["목욕용품 정리", "Tidy up after bathing", "/activity#!a5re_5_w3"],
@@ -541,10 +541,10 @@
     ["가져오기와 사용하기를 써보아요:갯벌 생물을 잡아요", "Catch the sea creatures", "/mazeh#!b5_w4/index"]
   ],
   "B-5-5-re":[
-    ["경복궁에 놀러 왔어요", "Look around Gyeongbok Palace", "/mazeh#!b55_w1/index"],
-    ["사대문을 알아보아요", "Understand four main door", "/mazeh#!b55_w2/index"],
-    ["옛날 물건을 알아보아요", "Find the household", "/mazeh#!b55_w3/index"],
-    ["시장을 구경해요", "Let's go to the market", "/mazeh#!b55_w4/index"]
+    ["경복궁에 놀러 왔어요", "Visiting Gyeongbokgung Palace", "/mazeh#!b55_w1/index"],
+    ["사대문을 알아보아요", "Learn about the Four Gates", "/mazeh#!b55_w2/index"],
+    ["옛날 물건을 알아보아요", "Learn about objects from the past", "/mazeh#!b55_w3/index"],
+    ["시장을 구경해요", "Buy some food at the market", "/mazeh#!b55_w4/index"]
   ],
   "B-5-5":[
     ["경복궁 근처에 무엇이 있나요:경복궁 주변을 구경해요", "Look around Gyeongbok Palace", "/mazeh#!b55_w1/index"],
@@ -655,7 +655,7 @@
     ["음식을 대접해요 : 음식을 대접해요", "Serve some food", "/mazeh#!c55_w4/index"]
   ],
   "C-5-5-re":[
-    ["우리나라 전통 돌잔치", "Korean 1st birthday party", "/mazeh#!c55re_w1/index"],
+    ["우리나라 전통 돌잔치", "Korean first birthday party", "/mazeh#!c55re_w1/index"],
     ["친구에게 초대장을 주러가요", "Send out invitations", "/mazeh#!c55re_w2/index"],
     ["선물을 준비해요", "Prepare a gift", "/mazeh#!c55re_w3/index"],
     ["음식을 대접해요", "Serve some food", "/mazeh#!c55re_w4/index"]
