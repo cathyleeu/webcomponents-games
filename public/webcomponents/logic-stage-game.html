@@ -1,0 +1,246 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+
+<dom-module id="logic-stage-game">
+  <template>
+    <style>
+      .comp {
+        text-align: center;
+        height:100%;
+      }
+      #reference, .question, #options {
+        width: 70%;
+        display: inline-block;
+      }
+      #reference {
+        background: lightgray;
+        margin: 20px;
+        /* text-align: center; */
+      }
+      .question > p {
+        display: inline;
+      }
+      .question {
+        text-align: left;
+        height: 50px;
+        line-height: 50px;
+        margin-bottom: 50px;
+      }
+      .badge {
+        background: purple;
+        padding: 10px;
+        border-radius: 20px;
+        color: white;
+      }
+      #options {
+        height: 30%;
+      }
+      #options > img {
+        width: 15%;
+      }
+      button {
+        width: 20%;
+        height: 40px;
+        background: purple;
+        border: none;
+        font-weight: 500;
+        color: white;
+        font-size: 15px;
+        outline: none;
+      }
+      .img_selected {
+        border-radius: 100%;
+        border: 3px solid #7F2F7B;
+      }
+    </style>
+    <status-bar
+      id="statusBar"
+      title="{{localize('title')}}"
+      on-modal="handleModal"
+      purpose="line"
+      fullscreen="{{localize('fullscreen')}}"
+      logoutHead="{{localize('logoutHead')}}"
+      ></status-bar>
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      stage={{stage}}
+      matched="{{matched}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="nextStageModal"
+      purpose="logicStage"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="introModal"
+      purpose="intro"
+      headertext="{{localize('introHead')}}"
+      btmtext="{{localize('introBtm')}}"
+      nextbtn="{{localize('yesbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+    <!-- <toycode-modal
+      id="fullScreenModal"
+      headertext="풀스크린"
+      btmtext="풀스크린 모드로 적용합니다."
+      yesbtn="확인"
+      purpose="fullScreen"
+      ></toycode-modal> -->
+    <div class="comp">
+      <div id="reference">
+        <!-- <p>삼각형의 모양입니다. 그리고 먹을 수 있습니다.</p> -->
+      </div>
+      <div class="question">
+        <p class="badge">문제</p>
+        <!-- 삼각형의 모양입니다. -->
+        <p id="body"></p>
+      </div>
+      <div id="options">
+        <!-- <img src="/img/b1_w4/crcl0.png">
+        <img src="/img/b1_w4/sqr6.png">
+        <img src="/img/b1_w4/tri1.png">
+        <img src="/img/b1_w4/tri2.png">
+        <img src="/img/b1_w4/sqr1.png"> -->
+      </div>
+      <div id="button">
+      </div>
+    </div>
+  </template>
+  <script>
+    // TODO
+    // 각 stage에 따라서 버튼 이벤트 변경하는 것 마무리
+    // 각 stage에서 선택한 이미지 초기화
+    // final stage 에서 다음 문제로 제대로 넘어가도록 마무리
+    // 이미지 선택해서 다음 문제 만들기
+    class LogicStageGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() {
+        return "logic-stage-game";
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          }
+        }
+      }
+      ready(){
+        super.ready();
+        this.set('gameStage', 0)
+        this.set('logicStage', 0)
+        this.set('selectedAnws', [])
+        this.set('clickEvents', ['handleStageResult','handleStageResult','handleFinalResult'])
+      }
+      nextStage() {
+        console.log("work");
+        // 문제안에서 다음 단계로 넘어가는 것
+
+        // d3.select(this.$.body)
+        d3.select(this.$.body).text(this.stages[this.logicStage].quiz)
+        this.set('answers', this.stages[this.logicStage].anws)
+
+        //버튼 이벤트 각 변경
+        d3.select(this.$.button).select('button')
+          .on('click', null)
+          .on('click', this[this.clickEvents[this.logicStage]])
+
+      }
+      reset() {
+        // 한 문제 세션이 넘어가는 것
+      }
+      setData(data, manifest) {
+        // debugger
+        this.set('data', data)
+        this.set('manifest', manifest)
+
+        this.set('mainQuest', data[this.gameStage].quest)
+        this.set('imgOpts', data[this.gameStage].imgs)
+        this.set('stages', data[this.gameStage].stages)
+
+        // 이것은 stage 마다 변경되어야 함.
+        this.set('answers', this.stages[this.logicStage].anws)
+
+        d3.select(this.$.reference).append('p').text(this.mainQuest)
+
+        // 이것은 stage 마다 변경되어야 함.
+        d3.select(this.$.body).text(this.stages[this.logicStage].quiz)
+
+        d3.select(this.$.options).selectAll('img')
+          .data(d3.shuffle(this.imgOpts)).enter()
+          .append('img').attr('src', (d, i) => d)
+          .on('click', this.handleClickCard)
+
+        d3.select(this.$.button).append('button')
+          .text('제출하기')
+          .on('click', this[this.clickEvents[this.logicStage]])
+
+      }
+      handleClickCard(img,b,c) {
+        let self = d3.select(this.ownerDocument).select('#element').node();
+        let { selectedAnws } = self;
+        let selected = !selectedAnws.includes(img);
+
+        d3.select(this).classed("img_selected", selected);
+
+        if(selected) {
+          self.push('selectedAnws', img)
+        } else {
+          self.set('selectedAnws', selectedAnws.filter(l => l !== img))
+        }
+
+      }
+      handleStageResult() {
+        let self = d3.select(this.ownerDocument).select('#element').node();
+        let { selectedAnws, answers } = self;
+        let result = selectedAnws.every(l => answers.includes(l))
+
+        if(result) {
+          self.set('logicStage', self.logicStage+1)
+          self.$.nextStageModal.modalAlert()
+          return;
+        }
+        console.log("handleStageResult");
+
+      }
+      handleFinalResult() {
+        console.log("handleFinalResult");
+      }
+    }
+    window.customElements.define(LogicStageGame.is, LogicStageGame);
+  </script>
+</dom-module>

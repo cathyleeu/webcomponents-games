@@ -129,6 +129,7 @@
           <div class="image final finalImg">
           </div>
           <div class="button done" on-click="handleNextStep">{{nextbtn}}</div>
+          <div class="button logicStage" on-click="handleLogicNextStep">{{nextbtn}}</div>
           <div class="button final" on-click="handleFinalStep">{{finalbtn}}</div>
           <div class="button stay" on-click="handleStayStage">{{nobtn}}</div>
           <div class="button retry" on-click="handleStayStage">{{retrybtn}}</div>
@@ -187,6 +188,7 @@
           logout : '.stay, .move',
           retry: '.retry',
           retryReset: '.retryReset',
+          logicStage: '.logicStage',
           unCorrect : '.retryReset, .uncorrect'
         };
 
@@ -240,6 +242,10 @@
       handleNextStep(){
         d3.select(this.element).classed("popup", null)
         document.getElementById("element").reset()
+      }
+      handleLogicNextStep(){
+        d3.select(this.element).classed("popup", null)
+        document.getElementById("element").nextStage()
       }
       handleMoveStage(){
         var showBook = store.session.get("showbook");
