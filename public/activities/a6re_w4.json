@@ -4,9 +4,9 @@
     "nextlink" : "activity#!a6re_w4"
   },
   "data": [
-    {"id": 0, "src": "/img/a6_w4/crcl.png"},
-    {"id": 1, "src": "/img/a6_w4/sqr.png"},
-    {"id": 2, "src": "/img/a6_w4/tri.png"}
+    {"id": 0, "src": "/img/a6_w4/ground.png"},
+    {"id": 1, "src": "/img/a6_w4/sky.png"},
+    {"id": 2, "src": "/img/a6_w4/water.png"}
   ],
   "manifest": [
       {"src": "/img/a6_w4/ground.png"},
@@ -37,10 +37,10 @@
   ],
   "msg": {
     "ko": {
-      "title": "운송수단을 분류해요",
-      "minor": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
+      "title": "물에서 탈 수 있는 것을 알아보아요",
+      "minor": "왼쪽의 탈 것을 끌어서 오른쪽에 알맞게 분류해보자!",
       "introHead": "키즈씽킹",
-      "introBtm": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
+      "introBtm": "왼쪽의 탈 것을 끌어서 오른쪽에 알맞게 분류해보자!",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
