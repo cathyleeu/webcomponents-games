@@ -7,8 +7,8 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "forloop_type1",
-    "draw_x_list_item"
+    "draw_x_list_item",
+    "forloop_type1"
   ],
   "map": [
     "#D####",

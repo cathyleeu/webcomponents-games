@@ -7,8 +7,8 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "forloop_type1",
-    "draw_x_list_item"
+    "draw_x_list_item",
+    "forloop_type1"
   ],
   "map": [
     "swsws",
@@ -26,7 +26,7 @@
      "shape": "triangle", "color": "white", "useItem": true, "role": "food"}
   ],
   "tutorial": [{
-    "msg:ko": "알맞은 모양과 색의 그림을 정해진 위치에 모두 그려보세요.",
+    "msg:ko": "알맞은 모양의 그림을 정해진 위치에 모두 그려보세요.",
     "msg:en": "Try to draw a picture of the right shape in the given position."
   }]
 }

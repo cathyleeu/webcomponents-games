@@ -7,9 +7,10 @@
     "move_forward1",
     "rotate_left",
     "rotate_right",
-    "forloop_type1",
+    "get_item3",
     "repeat_x_list_num",
-    "get_item3"
+    "forloop_type1"
+    
   ],
   "map": [
     "%########",
