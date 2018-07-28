@@ -877,6 +877,15 @@ public.post('/nav', function *(next) {
   });
 });
 
+public.get('/kc/:book', function *(next) {
+  // 교육용 임시 페이지
+  yield this.render('engloo', {
+    book: "A-" + this.params.book,
+    week: "1,2,3,4,5,6,7,8",
+    contents: getContents("CHO-A-" + this.params.book, "1,2,3,4,5,6,7,8")
+  });
+});
+
 public.get('/engloo', function *(next) {
   // 교육용 임시 페이지
   yield this.render('engloo', {
