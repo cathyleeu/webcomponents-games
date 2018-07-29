@@ -115,39 +115,24 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
-    <!-- <toycode-modal
+    <toycode-modal
       id="fullScreenModal"
       headertext="풀스크린"
       btmtext="풀스크린 모드로 적용합니다."
       yesbtn="확인"
       purpose="fullScreen"
-      ></toycode-modal> -->
+      ></toycode-modal>
     <div class="comp">
-      <div id="reference">
-        <!-- <p>삼각형의 모양입니다. 그리고 먹을 수 있습니다.</p> -->
-      </div>
+      <div id="reference"></div>
       <div class="question">
         <p class="badge">문제</p>
-        <!-- 삼각형의 모양입니다. -->
         <p id="body"></p>
       </div>
-      <div id="options">
-        <!-- <img src="/img/b1_w4/crcl0.png">
-        <img src="/img/b1_w4/sqr6.png">
-        <img src="/img/b1_w4/tri1.png">
-        <img src="/img/b1_w4/tri2.png">
-        <img src="/img/b1_w4/sqr1.png"> -->
-      </div>
-      <div id="button">
-      </div>
+      <div id="options"></div>
+      <div id="button"></div>
     </div>
   </template>
   <script>
-    // TODO
-    // 각 stage에 따라서 버튼 이벤트 변경하는 것 마무리
-    // 각 stage에서 선택한 이미지 초기화
-    // final stage 에서 다음 문제로 제대로 넘어가도록 마무리
-    // 이미지 선택해서 다음 문제 만들기
     class LogicStageGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
       static get is() {
         return "logic-stage-game";
@@ -163,8 +148,8 @@
         super.ready();
         this.set('gameStage', 0)
         this.set('logicStage', 0)
-        this.set('selectedAnws', [])
-        this.set('clickEvents', ['handleStageResult','handleStageResult','handleFinalResult'])
+        this.set('selectedStage', [])
+        this.set('clickEvents', ['stage','stage','final'])
       }
       nextStage() {
         console.log("work");
@@ -173,15 +158,34 @@
         // d3.select(this.$.body)
         d3.select(this.$.body).text(this.stages[this.logicStage].quiz)
         this.set('answers', this.stages[this.logicStage].anws)
-
+        this.set('selectedStage', [])
         //버튼 이벤트 각 변경
+
+        d3.select(this.$.options).selectAll('img').remove()
+
+        d3.select(this.$.options).selectAll('img')
+          .data(d3.shuffle(this.imgOpts)).enter()
+          .append('img').attr('src', (d, i) => d)
+          .on('click', this.handleClickCard)
+
         d3.select(this.$.button).select('button')
           .on('click', null)
-          .on('click', this[this.clickEvents[this.logicStage]])
+          .on('click', () => this.handleResult(`${this.clickEvents[this.logicStage]}`))
+
 
       }
       reset() {
         // 한 문제 세션이 넘어가는 것
+
+        let resetList = ["reference","body","options","button"]
+
+        this.set('gameStage', this.gameStage+1)
+        this.set('logicStage', 0)
+        this.set('selectedStage', [])
+
+        resetList.map(r => d3.select(this.$[r]).selectAll('*').remove())
+        this.setData(this.data, this.manifest)
+
       }
       setData(data, manifest) {
         // debugger
@@ -205,40 +209,56 @@
           .append('img').attr('src', (d, i) => d)
           .on('click', this.handleClickCard)
 
+        console.log("nextStage");
+
         d3.select(this.$.button).append('button')
           .text('제출하기')
-          .on('click', this[this.clickEvents[this.logicStage]])
+          .on('click', () => this.handleResult(`${this.clickEvents[this.logicStage]}`))
 
       }
-      handleClickCard(img,b,c) {
+      handleClickCard(img,idx,node) {
         let self = d3.select(this.ownerDocument).select('#element').node();
-        let { selectedAnws } = self;
-        let selected = !selectedAnws.includes(img);
+        let { selectedStage } = self;
+        let selected = !selectedStage.includes(img);
 
         d3.select(this).classed("img_selected", selected);
 
         if(selected) {
-          self.push('selectedAnws', img)
+          self.push('selectedStage', img)
         } else {
-          self.set('selectedAnws', selectedAnws.filter(l => l !== img))
+          self.set('selectedStage', selectedStage.filter(l => l !== img))
         }
 
       }
-      handleStageResult() {
+      handleResult(status) {
         let self = d3.select(this.ownerDocument).select('#element').node();
-        let { selectedAnws, answers } = self;
-        let result = selectedAnws.every(l => answers.includes(l))
+        let { selectedStage, answers } = self;
+        let result = selectedStage.every(l => answers.includes(l))
 
-        if(result) {
-          self.set('logicStage', self.logicStage+1)
-          self.$.nextStageModal.modalAlert()
-          return;
+        // 결과에 따라서 status 상태를 바꿔치기해서 모달 결과 나눠주기.
+            status = result === false ? "failed" : status;
+
+        console.log("Status", status);
+
+        switch (status) {
+          case "stage":
+              d3.select(self.$.options).selectAll('img').classed("img_selected", false)
+              self.set('logicStage', self.logicStage+1)
+              self.$.nextStageModal.modalAlert()
+              return;
+            break;
+          case "final":
+              if(self.data.length-1 === self.gameStage) {
+                self.$.finalStageModal.modalAlert()
+                return;
+              }
+              self.$.successModal.modalAlert()
+              return;
+            break;
+          default:
+              self.$.retryModal.modalAlert()
+            return;
         }
-        console.log("handleStageResult");
-
-      }
-      handleFinalResult() {
-        console.log("handleFinalResult");
       }
     }
     window.customElements.define(LogicStageGame.is, LogicStageGame);
