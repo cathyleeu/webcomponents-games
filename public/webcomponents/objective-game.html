@@ -24,7 +24,7 @@
         /* border-left: 5px solid purple; */
       }
       .question img {
-        width: 100px;
+        /* width: 100px; */
         height: 100px;
         vertical-align: middle;
       }
@@ -206,6 +206,13 @@
       btmtext="{{localize('retryBtm')}}"
       retrybtn="{{localize('retrybtn')}}"
       ></toycode-modal>
+    <toycode-modal
+      id="fullScreenModal"
+      headertext="풀스크린"
+      btmtext="풀스크린 모드로 적용합니다."
+      yesbtn="확인"
+      purpose="fullScreen"
+      ></toycode-modal>
     <!-- <div class="header">
       <p>{{localize('minor')}}</p>
     </div> -->
@@ -227,6 +234,7 @@
       }
       ready(){
         super.ready();
+        this.$.fullScreenModal.modalAlert()
         this.set('stage', 0)
       }
       reset(){

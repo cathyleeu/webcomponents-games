@@ -1,0 +1,83 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "sentence",
+    "questions" : [
+      {
+        "question": "순차형 구조화는 어떤 정보전달 목적에 알맞나요?",
+        "options" : [
+          { "text" : "자료와 정보의 전후 관계를 알아야만 의미를 파악할 수 있는 경우", "answer": true},
+          { "text" : "자료와 정보 사이의 연관성을 다이어그램으로 나타내어 정보를 도출할 경우"},
+          { "text" : "자료와 정보를 계층적으로 무리화 하여, 자료와 정보 사이의 관계를 표현할 경우"}
+        ]
+      },
+      {
+        "question": "관계형 구조화는 어떤 정보전달 목적에 알맞나요?",
+        "options" : [
+          { "text" : "자료와 정보 사이의 연관성을 다이어그램으로 나타내어 정보를 도출할 경우", "answer": true},
+          { "text" : "자료와 정보의 전후 관계를 알아야만 의미를 파악할 수 있는 경우"},
+          { "text" : "자료와 정보를 계층적으로 무리화 하여, 자료와 정보 사이의 관계를 표현할 경우"}
+        ]
+      },
+      {
+        "question": "계층형 구조화는 어떤 정보전달 목적에 알맞나요?",
+        "options" : [
+          { "text" : "자료와 정보 사이의 연관성을 다이어그램으로 나타내어 정보를 도출할 경우"},
+          { "text" : "자료와 정보를 계층적으로 무리화 하여, 자료와 정보 사이의 관계를 표현할 경우", "answer": true},
+          { "text" : "자료와 정보의 전후 관계를 알아야만 의미를 파악할 수 있는 경우"}
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "객관식 문제",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "전체화면"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

@@ -1,9 +1,10 @@
 {
   "element": "flow-card",
   "attributes": {
-    "nextlink" : "mazeh#!a5re_w3/1",
+    "nextlink" : "activity#!choA5_c3_01",
     "gameType" : "repeat",
-    "noGuide" : true
+    "noGuide" : true,
+    "noStep" : true
   },
   "data": {
     "background" : false,
@@ -22,7 +23,7 @@
         "answer" : "전화"
       },{
         "quest" : "한 분야에서 많은 지식을 가지고 있는 사람을 뜻하는 것은?",
-        "answer" : "전문"
+        "answer" : "전문가"
       }
     ]
   },
