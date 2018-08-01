@@ -3,6 +3,7 @@
   "attributes": {
     "gameType" : "gridComp",
     "nextlink" : "activity#!choA2_c3_02",
+    "questType": "gridCount",
     "component": "axis-grid",
     "gridType" : "number",
     "rows" : 8,
@@ -10,49 +11,41 @@
     "questions" : [
       {
         "question": "$의 칸 수는?",
-        "questType": "gridCount",
         "detailType" : "color",
         "color" : "red"
       },
       {
         "question": "$의 칸 수는?",
-        "questType": "gridCount",
         "detailType" : "color",
         "color" : "purple"
       },
       {
         "question": "$의 칸 수는?",
-        "questType": "gridCount",
         "detailType" : "color",
         "color" : "green"
       },
       {
         "question": "$의 칸 수는?",
-        "questType": "gridCount",
         "detailType" : "color",
         "color" : "purple"
       },
       {
         "question": "$의 칸 수는?",
-        "questType": "gridCount",
         "detailType" : "color",
         "color" : "red"
       },
       {
         "question": "$의 칸 수는?",
-        "questType": "gridCount",
         "detailType" : "color",
         "color" : "green"
       },
       {
         "question": "$의 칸 수는?",
-        "questType": "gridCount",
         "detailType" : "color",
         "color" : "red"
       },
       {
         "question": "$의 칸 수는?",
-        "questType": "gridCount",
         "detailType" : "color",
         "color" : "green"
       }

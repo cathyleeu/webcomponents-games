@@ -2,6 +2,7 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "gridComp",
+    "questType": "gridCount",
     "component": "axis-grid",
     "gridType" : "number",
     "rows" : 8,
@@ -9,42 +10,34 @@
     "questions" : [
       {
         "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
         "detailType" : "max"
       },
       {
         "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
         "detailType" : "max"
       },
       {
         "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
         "detailType" : "max"
       },
       {
         "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
         "detailType" : "max"
       },
       {
         "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
         "detailType" : "max"
       },
       {
         "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
         "detailType" : "max"
       },
       {
         "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
         "detailType" : "max"
       },
       {
         "question": "$ 수의 칸을 가진 색은?",
-        "questType": "gridCount",
         "detailType" : "max"
       }
     ]
