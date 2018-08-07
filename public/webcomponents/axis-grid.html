@@ -78,7 +78,8 @@
         super.ready();
         let parent = d3.select(this.ownerDocument).select('#element').node()
         let { rows, gridType, questions, stage } = parent, square = rows*rows;
-        let { questType } = parent || questions[stage];
+        let { questType } = parent;
+
 
         this.set('rows', rows)
         this.set('square', square)
@@ -159,7 +160,6 @@
 
           tr.forEach((td, i) =>  {
             let tdNode = trNodes.append('td')
-            // debugger
             this.set('blanks', Boolean(td.g) ? this.blanks+1 : this.blanks)
             tdNode.attr('style', `height:${tdSize}px;width:${tdSize}px;font-size:${tdSize*0.9}px;`)
                   .text(td.n).on('click', () => this.handleFillColor(tdNode, "filledSeq", td))
@@ -173,8 +173,8 @@
 
       }
       gridCountBoard(parent){
-
         let { colors } = parent;
+        let {rows, square} = this;
 
         this.set('filled', [])
         this.set('setted', [])
