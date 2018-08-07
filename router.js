@@ -261,6 +261,10 @@ function getBook(classObj) {
   if(school == "B00171-K1") {
     book = ["5-5-re", 6];
   }
+  // 양주ECC 여름 특강반 8월에 9,10권
+  if(classObj.code == "B00171-K1-KC2") {
+    book = [9, 10];
+  }
   // 서부지사 보라매 꿈꾸는나무, 제천지사 창의놀이유치원 영업부 시흥지사 낙원유치원, 영재유치원, 서초PSA 5월에 1,2권
   if(school == "C00192-K1" || school == "C00204-K1" || school == "C00175-K3" || school == "C00175-K4" || school == "D00127-K1") {
     book = ["4-re", "5-re"];
