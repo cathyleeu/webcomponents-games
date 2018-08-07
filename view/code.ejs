@@ -464,13 +464,20 @@ if(location.pathname == "/code" && location.hash) {
           return acc;
         }, []);
     book_titles.forEach(function(book_title) {
+      var book_title_modified = book_title,
+          isEnTitle = (info.lang == "en" || info.lang == "cn" || info.lang == "jp");
+      if(book_title_modified.indexOf("-5-5") >= 0) {
+        book_title_modified = book_title_modified.replace("-5-5", isEnTitle ? "-Special1" : "-특별상");
+      }
+      if(book_title_modified.indexOf("-10-5") >= 0) {
+        book_title_modified = book_title_modified.replace("-10-5", isEnTitle ? "-Special2" : "-특별하");
+      }
       $(".contents")
           .append('<hr class="star-light">')
-          .append('<h3><span data-msg="kidsthinking">' + msg.kidsthinking + '</span> <span class="book">' + book_title + '</span></h3>');
+          .append('<h3><span data-msg="kidsthinking">' + msg.kidsthinking + '</span> <span class="book">' + book_title_modified + '</span></h3>');
       var lang_str = info.lang ? "lang=" + info.lang : "";
       books[book_title].forEach(function(item, idx) {
-        var isEnTitle = (info.lang == "en" || info.lang == "cn" || info.lang == "jp") && item.length == 3,
-            title = isEnTitle ? item[1] : item[0],
+        var title = (isEnTitle && item.length == 3) ? item[1] : item[0],
             link = item[item.length - 1],
             conn = link.indexOf("#!") >= 0 ? "?" : "#",
             $el = $('<a class="btn btn-lg btn-outline book-item" rel="external">').appendTo(".contents");

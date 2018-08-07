@@ -463,22 +463,22 @@
     ["소중한 물", "Use water thoughtfully", "/mazeh#!a8_w4_c1/1"]
   ],
   "A-9":[
-    ["겨울이 왔어요", "/activity#!a9_w1"],
-    ["남극과 북극을 알아보아요", "/activity#!a9_w2"],
-    ["오른쪽, 왼쪽으로 움직여요", "/mazeh#!a9_w3/1"],
-    ["위쪽, 아래쪽으로 움직여요", "/mazeh#!a9_w4/1"]
+    ["겨울이 왔어요", "The arrival of winter", "/activity#!a9_w1"],
+    ["남극과 북극을 알아보아요", "Learn about the North and South Poles", "/activity#!a9_w2"],
+    ["오른쪽, 왼쪽으로 움직여요", "Move right and left", "/mazeh#!a9_w3/1"],
+    ["위쪽, 아래쪽으로 움직여요", "Move up and down", "/mazeh#!a9_w4/1"]
   ],
   "A-10":[
-    ["옛날과 현대 물건", "/activity#!a10_w1"],
-    ["옛날 집을 구경해요", "/mazeh#!a10_w2/1"],
-    ["옛날과 현대 마을", "/mazeh#!a10_w3/1"],
-    ["장터에 가요", "/mazeh#!a10_w4/1"]
+    ["옛날과 현대 물건", "Household objects in the past and present", "/activity#!a10_w1"],
+    ["옛날 집을 구경해요", "Learn about rooms in houses of the past", "/mazeh#!a10_w2/1"],
+    ["옛날과 현대 마을", "Past and present towns", "/mazeh#!a10_w3/1"],
+    ["장터에 가요", "Go to the market", "/mazeh#!a10_w4/1"]
   ],
   "A-10-5":[
-    ["설날이 되었어요", "/activity#!a105_w1"],
-    ["떡국을 만들어요", "/activity#!a105_w2"],
-    ["전통 놀이를 해요", "/activity#!a105_w3"],
-    ["새 친구를 사귀어요", "/mazeh#!a105_w4/1"]
+    ["설날이 되었어요", "It’s Seollal", "/activity#!a105_w1"],
+    ["떡국을 만들어요", "Make Tteokguk", "/activity#!a105_w2"],
+    ["전통 놀이를 해요", "Play Traditional games", "/activity#!a105_w3"],
+    ["새 친구를 사귀어요", "Make new friends", "/mazeh#!a105_w4/1"]
   ],
   "B-1":[
     ["컴퓨터와 언어:엘리베이터 놀이", "Elevator", "/a1_w2"],
@@ -577,16 +577,16 @@
     ["음식을 만들어요", "Let’s cook", "/mazeh#!b9_w4/index"]
   ],
   "B-10":[
-    ["겨울이 왔어요", "/mazeh#!b10_w1/index"],
-    ["복합블록을 이해해요", "/mazeh#!b10_w2/index"],
-    ["복합블록을 연습해요", "/mazeh#!b10_w3/index"],
-    ["복합블록을 써보아요", "/mazeh#!b10_w4/index"]
+    ["겨울이 왔어요", "Winter has arrived", "/mazeh#!b10_w1/index"],
+    ["복합블록을 이해해요", "Learn to use the ‘complex’ block", "/mazeh#!b10_w2/index"],
+    ["복합블록을 연습해요", "Use the ‘complex’ block", "/mazeh#!b10_w3/index"],
+    ["복합블록을 써보아요", "Use several ‘complex’ blocks", "/mazeh#!b10_w4/index"]
   ],
   "B-10-5":[
-    ["새해가 왔어요", "/mazeh#!b105_w1/index"],
-    ["규칙을 이해해요", "/mazeh#!b105_w2/index"],
-    ["규칙을 연습해요", "/mazeh#!b105_w3/index"],
-    ["규칙을 써보아요", "/mazeh#!b105_w4/index"]
+    ["새해가 왔어요", "It’s New Year’s Day!", "/mazeh#!b105_w1/index"],
+    ["규칙을 이해해요", "Find the pattern", "/mazeh#!b105_w2/index"],
+    ["규칙을 연습해요", "Use the ‘repeat’ block with the pattern", "/mazeh#!b105_w3/index"],
+    ["규칙을 써보아요", "Use the ‘complex’ block with the pattern", "/mazeh#!b105_w4/index"]
   ],
   "C-1":[
     ["컴퓨터의 언어:자판기 놀이&엘리베이터 놀이", "Vending Machine", "/c1_w2"],
@@ -691,10 +691,10 @@
     ["만약에 반복 블록을 써보아요", "/mazeh#!c10_w4/index"]
   ],
   "C-10-5":[
-    ["설날 풍경을 알아보아요", "/mazeh#!c105_w1/index"],
-    ["99까지 세어보아요", "/mazeh#!c105_w2/index"],
-    ["덧셈 뺄셈을 하고 시계를 읽어요", "/mazeh#!c105_w3/index"],
-    ["조건과 반복을 응용해요", "/mazeh#!c105_w4/index"]
+    ["설날 풍경을 알아보아요", "Learn about the South Pole", "/mazeh#!c105_w1/index"],
+    ["99까지 세어보아요", "Learn to add and subtract", "/mazeh#!c105_w2/index"],
+    ["덧셈 뺄셈을 하고 시계를 읽어요", "Learn to use the ‘repeat until’ block", "/mazeh#!c105_w3/index"],
+    ["조건과 반복을 응용해요", "Use the ‘repeat until’ block", "/mazeh#!c105_w4/index"]
   ],
   "A-Test": [
     ["A-Test", "/mazeh#!a0_w0_c3/1"]
