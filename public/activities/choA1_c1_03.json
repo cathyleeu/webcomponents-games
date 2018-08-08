@@ -1,6 +1,7 @@
 {
   "element": "grouping-game",
   "attributes": {
+    "lastStage" : 3
   },
   "data": [
     {"id": 0, "src": "/img/cho_activities/role1.png"},
