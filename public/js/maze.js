@@ -68,6 +68,7 @@ page('*', function(ctx, next) {
       });
       $("[data-msg=title]").text(/^\w\d/.test(map_path[0]) ? messages.kidsthinking : messages.kidscoding);
       $("[data-msg=header]").text(/^\w\d/.test(map_path[0]) ? messages.header_kidsthinking : messages.header_kidscoding);
+      $(".navbar-progress").text((/^\w\d/.test(map_path[0]) || map_path[1] == "21") ? "" : map_path[1] + " / 20");
       // TODO: 이어하기 기능
       // if(last_path && last_path != ctx.path) {
       //   showModal({
@@ -595,6 +596,7 @@ function handle_resize(e) {
 function addEvents() {
   if(store.session.has("showbook")) {
     $("#logout").removeClass("hidden");
+    $(".navbar-progress").removeClass("hidden");
   }
   $(".noti-arrow").click(function(e){
     e.preventDefault();
