@@ -856,6 +856,11 @@ public.get('/dev', function *(next) {
   yield this.render('dev');
 })
 
+public.get('/contents/:book', function *(next) {
+  var contents = yield getContents(this.params.book, "1,2,3,4,5,6,7,8");
+  this.body = JSON.stringify(contents, null, 2);
+});
+
 public.get('/nav/:book', function *(next) {
   if(siteUrl != "http://localhost:3000") {
     this.body = "<html><head><script>alert('잘못된 접근 입니다.');location.href='/';</script></head></html>";
