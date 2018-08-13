@@ -252,15 +252,15 @@
       replaceQuestion(text){
         // 타입에 따라서 문제 설정
 
-        let { questionImg, questType, detailType, color } = this.questions[this.stage];
+        let { questionImg, detailType, color } = this.questions[this.stage];
         let textStyle = text.length > 20 ? "textlong" : "textshort";
-        if(questType === "gridCount" && detailType === "color"){
+        if(this.questType === "gridCount" && detailType === "color"){
           text = text.replace("$", `<p style="width:100px;height:100px;margin-right:10px;background-color:${color}"></p>,`);
           text = text.split(',');
           return `${text[0]} <p class="${textStyle}">${text[1]}</p>`;
         }
 
-        if(questType === "gridCount" && detailType === "max"){
+        if(this.questType === "gridCount" && detailType === "max"){
           let textArr = ["max", "min", "middle"];
           let textObj = {
                 "max" : "가장 큰",
@@ -288,7 +288,7 @@
                         : `<img src="${op[keyName]}"/>`
       }
       renderOptionsForGridType(d){
-        let { questionImg, questType, detailType, color } = this.questions[this.stage];
+        let { questionImg, detailType, color } = this.questions[this.stage];
         let refGrid = d3.select(this.shadowRoot).select('axis-grid').node()
         let answer;
         switch (detailType) {
