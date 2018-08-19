@@ -10,24 +10,24 @@
     {
        "imgs" : [
         "/img/b1_w4/crcl0.png",
-        "/img/b1_w4/sqr6.png",
+        "/img/b1_w4/crcl3.png",
         "/img/b1_w4/tri1.png",
         "/img/b1_w4/tri2.png",
         "/img/b1_w4/sqr1.png"
        ],
-       "quest" : "삼각형 모양에 먹을 수 있습니다.",
+       "quest" : "사각형 모양이거나 먹을 수 있습니다.",
        "stages" : [
          {
-           "quiz" : "삼각형의 모양을 찾아보세요.",
-           "anws" : ["/img/b1_w4/tri1.png","/img/b1_w4/tri2.png"]
+           "quiz" : "사각형의 모양을 찾아보세요.",
+           "anws" : ["/img/b1_w4/sqr1.png"]
          },
          {
            "quiz" : "먹을 수 있는 것을 찾아보세요.",
            "anws" : ["/img/b1_w4/crcl0.png", "/img/b1_w4/tri1.png"]
          },
          {
-           "quiz" : "삼각형이며, 먹을 수 있는 것은 무엇인가요?",
-           "anws" : ["/img/b1_w4/tri1.png"]
+           "quiz" : "사각형이거나, 먹을 수 있는 것은 무엇인가요?",
+           "anws" : ["/img/b1_w4/sqr1.png","/img/b1_w4/crcl0.png", "/img/b1_w4/tri1.png"]
          }
        ]
     },
@@ -39,7 +39,7 @@
         "/img/a5re_w2/insect1.png",
         "/img/a9_w3/icebear0.png"
        ],
-       "quest" : "전기를 사용하고, 여름과 관련되었어요.",
+       "quest" : "전기를 사용하거나, 여름과 관련되었어요.",
        "stages" : [
          {
            "quiz" : "전기를 사용하는 것을 찾아보세요.",
@@ -50,8 +50,8 @@
            "anws" : ["/img/a5re_w1/summer5.png", "/img/a5re_w2/insect1.png"]
          },
          {
-           "quiz" : "전기를 사용하고, 여름과 관련 것은 무엇인가요?",
-           "anws" : ["/img/a5re_w1/summer5.png"]
+           "quiz" : "전기를 사용하거나, 여름과 관련 것은 무엇인가요?",
+           "anws" : ["/img/a5re_w1/summer5.png","/img/a5re_w1/winter5.png", "/img/a5re_w2/insect1.png"]
          }
        ]
     },
@@ -63,7 +63,7 @@
         "/img/b55/prawn.png",
         "/img/a9_w3/icebear0.png"
        ],
-       "quest" : "바다에서 볼 수 있고, 사람이 탈 수 있어요.",
+       "quest" : "바다에서 볼 수 있거나, 사람이 탈 수 있어요.",
        "stages" : [
          {
            "quiz" : "바다에서 볼 수 있어요.",
@@ -74,8 +74,8 @@
            "anws" : ["/img/a6_w2/ship6.png", "/img/a6_w2/airplane1.png"]
          },
          {
-           "quiz" : "바다에서 볼 수 있고, 사람이 탈 수 있는 것은 무엇인가요?",
-           "anws" : ["/img/a6_w2/ship6.png"]
+           "quiz" : "바다에서 볼 수 있거나, 사람이 탈 수 있는 것은 무엇인가요?",
+           "anws" : ["/img/a6_w2/ship6.png","/img/b5_w4/crab.png", "/img/a6_w2/airplane1.png"]
          }
        ]
     },
