@@ -1,0 +1,177 @@
+{
+  "element": "logic-stage-game",
+  "attributes": {
+    "nextlink" : "activity#!choA4_c3_01",
+    "questions" : [
+
+    ]
+  },
+  "data": [
+    {
+       "imgs" : [
+        "/img/b1_w4/crcl0.png",
+        "/img/b1_w4/sqr6.png",
+        "/img/b1_w4/tri1.png",
+        "/img/b1_w4/tri2.png",
+        "/img/b1_w4/sqr1.png"
+       ],
+       "quest" : "삼각형 모양에 먹을 수 있습니다.",
+       "stages" : [
+         {
+           "quiz" : "삼각형의 모양을 찾아보세요.",
+           "anws" : ["/img/b1_w4/tri1.png","/img/b1_w4/tri2.png"]
+         },
+         {
+           "quiz" : "먹을 수 있는 것을 찾아보세요.",
+           "anws" : ["/img/b1_w4/crcl0.png", "/img/b1_w4/tri1.png"]
+         },
+         {
+           "quiz" : "삼각형이며, 먹을 수 있는 것은 무엇인가요?",
+           "anws" : ["/img/b1_w4/tri1.png"]
+         }
+       ]
+    },
+    {
+       "imgs" : [
+        "/img/a5re_w1/summer5.png",
+        "/img/a5re_w1/winter6.png",
+        "/img/a5re_w1/winter5.png",
+        "/img/a5re_w2/insect1.png",
+        "/img/a9_w3/icebear0.png"
+       ],
+       "quest" : "전기를 사용하고, 여름과 관련되었어요.",
+       "stages" : [
+         {
+           "quiz" : "전기를 사용하는 것을 찾아보세요.",
+           "anws" : ["/img/a5re_w1/winter5.png","/img/a5re_w1/summer5.png"]
+         },
+         {
+           "quiz" : "여름과 관련된 것을 찾아보세요.",
+           "anws" : ["/img/a5re_w1/summer5.png", "/img/a5re_w2/insect1.png"]
+         },
+         {
+           "quiz" : "전기를 사용하고, 여름과 관련 것은 무엇인가요?",
+           "anws" : ["/img/a5re_w1/summer5.png"]
+         }
+       ]
+    },
+    {
+       "imgs" : [
+        "/img/a6_w2/ship6.png",
+        "/img/a6_w2/airplane1.png",
+        "/img/b5_w4/crab.png",
+        "/img/b55/prawn.png",
+        "/img/a9_w3/icebear0.png"
+       ],
+       "quest" : "바다에서 볼 수 있고, 사람이 탈 수 있어요.",
+       "stages" : [
+         {
+           "quiz" : "바다에서 볼 수 있어요.",
+           "anws" : ["/img/a6_w2/ship6.png","/img/b5_w4/crab.png"]
+         },
+         {
+           "quiz" : "사람이 탈 수 있어요.",
+           "anws" : ["/img/a6_w2/ship6.png", "/img/a6_w2/airplane1.png"]
+         },
+         {
+           "quiz" : "바다에서 볼 수 있고, 사람이 탈 수 있는 것은 무엇인가요?",
+           "anws" : ["/img/a6_w2/ship6.png"]
+         }
+       ]
+    },
+    {
+       "imgs" : [
+        "/img/c10/n2.png",
+        "/img/c10/n3.png",
+        "/img/c10/n6.png",
+        "/img/c10/n7.png",
+        "/img/c10/n8.png"
+       ],
+       "quest" : "이 수는 홀수입니다. 또는 5보다 작습니다.",
+       "stages" : [
+         {
+           "quiz" : "이 수는 홀수입니다.",
+           "anws" : ["/img/c10/n3.png","/img/c10/n7.png"]
+         },
+         {
+           "quiz" : "5보다 작습니다.",
+           "anws" : ["/img/c10/n2.png", "/img/c10/n3.png"]
+         },
+         {
+           "quiz" : "홀수이거나, 5보다 작은것은 무엇일까요?",
+           "anws" : ["/img/c10/n2.png","/img/c10/n3.png","/img/c10/n7.png"]
+         }
+       ]
+    },
+    {
+       "imgs" : [
+        "/img/c10/n2.png",
+        "/img/c10/n3.png",
+        "/img/c10/n6.png",
+        "/img/c10/n7.png",
+        "/img/c10/n9.png"
+       ],
+       "quest" : "이 수는 짝수입니다. 그리고 7보다 큽니다.",
+       "stages" : [
+         {
+           "quiz" : "이 수는 짝수입니다.",
+           "anws" : ["/img/c10/n2.png","/img/c10/n6.png"]
+         },
+         {
+           "quiz" : "7보다 큽니다.",
+           "anws" : ["/img/c10/n9.png"]
+         },
+         {
+           "quiz" : "짝수이거나, 7보다 큰 것은 무엇일까요?",
+           "anws" : ["/img/c10/n2.png","/img/c10/n6.png","/img/c10/n9.png"]
+         }
+       ]
+    }
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "논리합을 활용해요",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "다시하기",
+      "retryBtm" : "올바른 답을 다시 골라보세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
