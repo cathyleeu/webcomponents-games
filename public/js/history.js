@@ -109,7 +109,7 @@ History.sendData = function(options) {
         return item.split("-").join("").toLowerCase();
       });
       keys.forEach(function(key) {
-        var content = key.split(/[,.]/)[2].split("_")[0];
+        var content = key.split(/[,.]/).splice(-1)[0].split("_")[0];
         if(contents.indexOf(content) >= 0) {
           var item = store.get(key);
           item.data = {};
