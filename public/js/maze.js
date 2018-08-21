@@ -619,6 +619,18 @@ function addEvents() {
         var showBook = store.session.get("showbook");
         if(showBook) {
           if(!store.session.get("externallogin")) {
+            // 용인지사 요청으로 logout시에는 data 빼고 정보를 날려서 처음부터 풀 수 있도록 수정
+            var id = store.session.get("user", {id:null}).id,
+                local = id ? store.namespace(id) : store.session.namespace("anonymous"),
+                keys = local.keys(),
+                temp;
+            for(var i = 0; i < keys.length; i++) {
+              temp = local.get(keys[i]);
+              temp.complete = [];
+              temp.score = 0;
+              temp.worldmap = null;
+              local.set(keys[i], temp);
+            }
             store.session.clear();
           }
           location.href = showBook.split("#")[0];
