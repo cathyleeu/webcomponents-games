@@ -4,11 +4,11 @@ module.exports = function(classObj) {
       book = [5.5, 6];
 
   // 초록나라 사랑샘유치원 8월말 5호 오픈 요청
-    if(classCode == "C00175-K2") {
+  if(classCode == "C00175-K2") {
     book = [5, 5.5];
   } 
   // 안산지사 엠에스에듀 8월말 4호 오픈 요청
-   if(classCode == "C00188-K2") {
+  if(classCode == "C00188-K2") {
     book = [4, 5];
   } 
   // 청라ECC 초등반 2개는 3월에 C-6부터 시작
