@@ -6,7 +6,11 @@ module.exports = function(classObj) {
   // 초록나라 사랑샘유치원 8월말 5호 오픈 요청
   if(schoolCode == "C00175-K2") {
     book = [5, 5.5];
-  } 
+  }
+  // 초록나라 영재유치원 8월말 3호 오픈 요청
+  if(schoolCode == "C00175-K4") {
+    book = [2, 3];
+  }
   // 안산지사 엠에스에듀 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2") {
     book = [4, 5];
