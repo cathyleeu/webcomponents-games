@@ -2,6 +2,10 @@ module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
       book = [5.5, 6];
+  // 안산지사 엠에스에듀 3개반 8월말 4호 오픈 요청
+   if(classCode == "C00188-K2") {
+    book = [4, 5.5, 6];
+  } 
   // 청라ECC 초등반 2개는 3월에 C-6부터 시작
   if(classCode == "B00016-K1-KC6" || classCode == "B00016-K1-KC7") {
     book = [10.5];
