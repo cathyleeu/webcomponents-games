@@ -9,7 +9,7 @@ module.exports = function(classObj) {
   }
   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
-    book = [2, 3];
+    book = [3, 4];
   }
   // 안산지사 엠에스에듀 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2") {
