@@ -224,7 +224,7 @@ var player = videojs('vid1', {
       }
     });
 player.ready(function() {
-  $('.book-problem').click(function(e) {
+  $('.book-title .book-problem').click(function(e) {
     e.preventDefault();
     var type = $(e.currentTarget).data('type'),
         num = +$(e.currentTarget).data('num') * 2,
