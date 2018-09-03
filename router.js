@@ -801,10 +801,15 @@ public.get('/nav/:book', function *(next) {
     this.body = "<html><head><script>alert('잘못된 접근 입니다.');location.href='/';</script></head></html>";
     return;
   }
+  var book = this.params.book,
+      week = "1,2,3,4",
+      contents = week.split(",").map(function(w) {
+        return book.slice(0, 4) == "CHO-" ? 2*w : w;
+      }).join(",");
   yield this.render('nav', {
-    book: this.params.book,
-    week: "1,2,3,4",
-    contents: getContents(this.params.book, "2,4,6,8")
+    book: book,
+    week: week,
+    contents: getContents(this.params.book, contents)
   });
 });
 
