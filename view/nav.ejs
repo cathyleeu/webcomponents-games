@@ -186,7 +186,9 @@ if(book.split("-")[0] == "CHO") {
   // 4권까지 비디오가 만들어져 있음
   if(+book.split("-")[2] <= 4) {
     for(i = 0; i < contents.length; i++) {
-      $(".container .book:eq("+i+") .book-title").append('<a class="book-problem" href="#" data-type="video" data-num="' + (i+1) + '"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 교육영상 보기</a>');
+      $(".container .book:eq("+i+") .book-title")
+          .append('<a class="book-problem" href="#" data-type="video" data-num="' + (i+1) + '"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 교육영상 보기</a>')
+          .append('<a class="book-problem" href="#" data-type="tutorial" data-num="' + (i+1) + '"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></span> 실습영상 보기</a>');
     }
   }
 } else {
@@ -229,7 +231,6 @@ player.ready(function() {
         href = $(e.currentTarget).attr('href'),
         video = book.split("-").slice(-2).join("") + "_" + num + (type == "tutorial" ? "_tutorial" : "");
     $('#videoModal').modal('show').on('shown.bs.modal', function() {
-      console.log(video)
       player.src({
         src: 'https://s3.ap-northeast-2.amazonaws.com/toycodeinc/kidscoding_' + video + '/prog_index.m3u8',
         type: 'application/x-mpegURL',
