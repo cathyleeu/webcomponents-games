@@ -14,9 +14,13 @@ module.exports = function(classObj) {
   // 안산지사 엠에스에듀 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2") {
     book = [4, 5];
-  } 
+  }
   // 청라ECC 초등반 2개는 3월에 C-6부터 시작
   if(classCode == "B00016-K1-KC6" || classCode == "B00016-K1-KC7") {
+    book = [10.5];
+  }
+  // 청라ECC 브라운반 9월에 1권부터 시작
+  if(classCode == "B00016-K1-KC8") {
     book = [1, 2];
   }
   // 양주ECC 여름 특강반 8월에 9,10권
