@@ -17,7 +17,7 @@ module.exports = function(classObj) {
   } 
   // 청라ECC 초등반 2개는 3월에 C-6부터 시작
   if(classCode == "B00016-K1-KC6" || classCode == "B00016-K1-KC7") {
-    book = [10.5];
+    book = [10.5, 1];
   }
   // 양주ECC 여름 특강반 8월에 9,10권
   if(classCode == "B00171-K1-KC2") {
