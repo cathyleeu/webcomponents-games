@@ -187,8 +187,9 @@ if(book.split("-")[0] == "CHO") {
   if(+book.split("-")[2] <= 4) {
     for(i = 0; i < contents.length; i++) {
       $(".container .book:eq("+i+") .book-title")
-          .append('<a class="book-problem" href="#" data-type="video" data-num="' + (i+1) + '"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 교육영상 보기</a>')
-          .append('<a class="book-problem" href="#" data-type="tutorial" data-num="' + (i+1) + '"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></span> 실습영상 보기</a>');
+          .append('<a class="book-problem" href="#" data-type="video" data-num="' + (i*2+1) + '"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 교육영상 보기 1</a>')
+          .append('<a class="book-problem" href="#" data-type="video" data-num="' + (i*2+2) + '"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 교육영상 보기 2</a>')
+          .append('<a class="book-problem" href="#" data-type="tutorial" data-num="' + (i*2+2) + '"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></span> 실습영상 보기</a>');
     }
   }
 } else {
@@ -227,7 +228,7 @@ player.ready(function() {
   $('.book-title .book-problem').click(function(e) {
     e.preventDefault();
     var type = $(e.currentTarget).data('type'),
-        num = +$(e.currentTarget).data('num') * 2,
+        num = +$(e.currentTarget).data('num'),
         href = $(e.currentTarget).attr('href'),
         video = book.split("-").slice(-2).join("") + "_" + num + (type == "tutorial" ? "_tutorial" : "");
     $('#videoModal').modal('show').on('shown.bs.modal', function() {
