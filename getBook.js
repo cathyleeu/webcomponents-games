@@ -31,9 +31,13 @@ module.exports = function(classObj) {
   if(schoolCode == "B00171-K1") {
     book = [6, 7];
   }
-  // 서부지사 보라매 꿈꾸는나무, 제천지사 창의놀이유치원 영업부 시흥지사 낙원유치원, 서초PSA 5월에 1,2권
-  if(schoolCode == "C00192-K1" || schoolCode == "C00204-K1" || schoolCode == "C00175-K3" || schoolCode == "D00127-K1") {
+  // 제천지사 창의놀이유치원 영업부 시흥지사 낙원유치원, 서초PSA 5월에 1,2권
+  if(schoolCode == "C00204-K1" || schoolCode == "C00175-K3" || schoolCode == "D00127-K1") {
     book = [5, 5.5];
+  }
+  // 서부지사 보라매 꿈꾸는나무 9월에 6권
+  if(schoolCode == "C00192-K1") {
+    book = [5.5, 6];
   }
   // 인천지사 참조은 유치원 7월에 1권
   if(schoolCode == "C00194-K1") {
