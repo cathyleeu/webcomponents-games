@@ -3,6 +3,10 @@ module.exports = function(classObj) {
       classCode = classObj.code,
       book = [5.5, 6];
 
+  // 인천 동심유치원 9월 5호 오픈 요청
+  if(schoolCode == "C00194-K4") {
+    book = [4, 5];
+  }
   // 초록나라 사랑샘유치원 8월말 5호 오픈 요청
   if(schoolCode == "C00175-K2") {
     book = [5, 5.5];
