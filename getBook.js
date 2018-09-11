@@ -4,7 +4,7 @@ module.exports = function(classObj) {
       book = [5.5, 6];
 
   // 마포ECC 스페인반 9월에 1권 시작
-  if(classCode == "B00130-K1-KC8") {
+  if(classCode == "B00130-K1-KC6") {
     book = [1, 2];
   }
   // 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
