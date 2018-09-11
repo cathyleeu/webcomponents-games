@@ -3,6 +3,10 @@ module.exports = function(classObj) {
       classCode = classObj.code,
       book = [5.5, 6];
 
+  // 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
+  if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
+    book = [5.5];
+  }
   // 인천 동심유치원 9월 5호 오픈 요청
   if(schoolCode == "C00194-K4") {
     book = [4, 5];
