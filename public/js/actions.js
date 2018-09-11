@@ -1210,7 +1210,7 @@ Actions.prototype.checkfinish = function(block, callback) {
   }
   callback("확인할 것이 없어요");
 }
-Actions.prototype.checkfinish = function(block, callback) {
+Actions.prototype.check_multi = function(block, callback) {
   var foods = this.canvas.foods,
       character = this.canvas.character;
   // 바위 위에서 아이템 사용
