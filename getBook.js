@@ -8,7 +8,7 @@ module.exports = function(classObj) {
     book = [1, 2];
   }
   // 영통ECC 오렌지반 9월에 1권 시작
-  if(classCode == "B00041-K1-KC7") {
+  if(classCode == "B00041-K1-KC8") {
     book = [1, 2];
   }
   // 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
@@ -103,7 +103,7 @@ module.exports = function(classObj) {
   }
     // 키즈코딩 테스트 0917
   if(schoolCode == "A00083-K12") {
-    book = "CHO-A-1,CHO-A-2";
+    book = "CHO-A-1,CHO-A-2,CHO-A-3,CHO-A-4,CHO-A-5,CHO-A-6";
   }
   return book;
 }
