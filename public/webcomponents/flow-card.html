@@ -37,6 +37,13 @@
       logoutHead="{{localize('logoutHead')}}"
       ></status-bar>
     <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{retryMsg}}"
+      retrybtn="{{localize('finalbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
       id="successModal"
       purpose="nextStep"
       headertext="{{localize('successHead')}}"
@@ -97,15 +104,16 @@
         let boardWidth = this.offsetWidth;
 
         let headerSize = this.offsetHeight*0.05;
-        let imgSize = boardHeight*0.2;
+        let imgSize = boardWidth*0.11;
+
         this.set('boardHeight', boardHeight)
-        this.set('imgSize', imgSize)
+        this.set('boardWidth', boardWidth)
         this.set('headerSize', headerSize)
         this.set('headerPadding', Math.ceil(headerSize*0.1))
         this.set('headerBoard', headerSize+(this.headerPadding*2))
         this.set('cardBoard', boardHeight/2)
+        this.set('imgSize', imgSize)
         this.set('centerBoard', ((this.cardBoard-this.imgSize)/2)+(this.headerBoard/2))
-
 
       }
       reset(){
@@ -173,11 +181,13 @@
         });
         if (!result) {
           d3.select(this).attr("x", self.startX ).attr("y", self.startY );
+          self.$.retryModal.modalAlert()
         } else {
           // game 형식에 따라 결과 변형
-
           self.set('step', d.step)
-          if(self.step === self.data.last-1) {
+
+          // step guide가 있는 상황
+          if(self.step === self.lastStep) {
             if(self.currentStage === self.lastStage){
               self.$.finalStageModal.modalAlert()
               return false
@@ -185,6 +195,7 @@
             //FIXME: alert 날려주는 것
             self.$.successModal.modalAlert()
           }
+
 
           if(self.noGuide && self.noStep) {
             if(self.flowCards === 0) {
@@ -206,6 +217,17 @@
       setData(data, manifest){
         this.set('data', data )
         this.set('manifest', manifest )
+
+        let stepMax = Object.assign(...manifest.map((o, i) => ({[i]: o.step})));
+        let arr = Object.values(stepMax).filter(ar => ar);
+        let lastMax = Math.max(...arr);
+        let lastStep = data.last ? data.last-1 : lastMax;
+
+        this.set('lastStep', lastStep)
+
+        // debugger
+        // this.set('imgSize', this.imgSize*(manifest.length*0.1))
+
         let _this = this,
             svg = d3.select(this.shadowRoot).append("svg")
               .attr('width', this.offsetWidth )

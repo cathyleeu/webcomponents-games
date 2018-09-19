@@ -168,7 +168,7 @@
     }
     ready(){
       super.ready()
-      this.$.fullScreenModal.modalAlert()
+      // this.$.fullScreenModal.modalAlert()
       this.set('leftTargets', 0)
       this.set('currentStage', 1)
     }
@@ -222,20 +222,24 @@
     dragstarted(a,b) {
       let {x, y} = d3.event,
           {width, height} = this.getBoundingClientRect();
+      //
       this.style.position = "absolute"
-      this.style.top = `${y}px`
+      this.style.top = `${y+100}px`
       // this.style.left = `${x}px`
       this.style.left = `${x-(width/2)}px`
-
+      
+//
+  console.log("x",x, "y",y, this.style.left, this.style.top);
     }
     dragged(d){
 
       let {x, y, dx, dy} = d3.event,
           {width, height} = this.getBoundingClientRect();
       this.style.position = "absolute"
-      this.style.top = `${(y-dy)}px`
+      this.style.top = `${(y-dy)+100}px`
       // this.style.left = `${(x-dx)}px`
       this.style.left = `${(x-dx)-(width/2)}px`
+
 
     }
     dragended(d){
@@ -245,7 +249,7 @@
 
       let {width, height} = this.getBoundingClientRect(),
           getX = d3.event.x,
-          getY = d3.event.y+(height/2);
+          getY = d3.event.y+(height/2)+100;
 
 
       targetNodes.forEach(el => {

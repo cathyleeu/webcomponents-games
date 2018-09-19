@@ -2,7 +2,6 @@
   "element": "grouping-flow-game",
   "attributes": {
     "lastStage" : 1,
-    "nextlink" : "activity#!choA2_c1_03",
     "step": 1,
     "last" : 3
   },
