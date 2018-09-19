@@ -10,9 +10,10 @@
         text-align: center;
         padding: 0.5em;
         box-sizing: border-box;
+        z-index: -1;
       }
       #container > p {
-        font-size: 150%;
+        font-size: 100%;
       }
     </style>
     <status-bar
@@ -69,12 +70,11 @@
       nobtn="{{localize('nobtn')}}"
       purpose="previous"
       ></toycode-modal>
-    <toycode-button button-Data="[[dispatchToChild()]]"></toycode-button>
+      <div id="button"></div>
       <div id="container">
         <p>{{localize('minor')}}</p>
       </div>
       <svg id="createSvg"></svg>
-
       <canvas id="canvas" style="display:none;"></canvas>
   </template>
   <script>
@@ -87,6 +87,23 @@
         return {
           language: {
             value: "ko"
+          },
+          buttons : {
+            value : {
+              "cho" : [
+                { text: "완성하기", method: 'handleStageClear' }
+              ],
+              "ko" : [
+                { text: "출력하기", method: 'exportImage' },
+                { text: "다시하기", method: 'reset' },
+                { text: "완성하기", method: 'handleStageClear' }
+              ],
+              "en" : [
+                { text: "Print", method: 'exportImage' },
+                { text: "Retry", method: 'reset' },
+                { text: "Submit", method: 'handleStageClear' }
+              ]
+            }
           }
         }
       }
@@ -96,6 +113,8 @@
         this.set('correct', [])
         this.set('unCorrect', [])
         d3.select(window).on('resize', this.elementResize.bind(this) );
+
+        d3.select(this.$.button).append('toycode-button')
 
       }
       reset(){
@@ -123,11 +142,12 @@
             size["originImgSize"] = (size.boardSize/7);
             size["imageItemSize"] = size.originImgSize*size.multiple;
             size["svgHeight"] = size.boardSize;
+            size["imageMargin"] = size.boardSize/4;
             size["boardImageCenter"] = (size.svgHeight-size.boardSize)/2;
             size["reAxis"] = size.boardSize/100;
             size["dragItemsRange"] = Math.floor((size.resWidth*0.8)/size.originImgSize);
 
-        d3.select(this.$.container).attr('style', `width: ${size.resWidth}px`)
+        d3.select(this.$.container).attr('style', `width: ${size.resWidth}px; height:${size.svgHeight}px; `)
 
         this.set("size", size)
         this.updateStyles({
@@ -138,7 +158,7 @@
       }
       elementResize(){
         this.setSize()
-        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis, originImgSize, dragItemsRange } = this.size,
+        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis, originImgSize, dragItemsRange, imageMargin } = this.size,
             svg = d3.select(this.$.createSvg).attr('width', innerWidth).attr('height', svgHeight),
             dragItems = this.items.length;
 
@@ -201,7 +221,7 @@
               .attr('x', this.handleSettleItem(this.items[i], i) )
               .attr('y', this.items[i].axis
                   ? this.items[i].axis[1]*reAxis-(originImgSize/2)
-                  : this.dragItemHorizontalMargin+(this.axis[i][0]*(originImgSize))+150
+                  : this.dragItemHorizontalMargin+(this.axis[i][0]*(originImgSize))+imageMargin
               )
           }
 
@@ -218,21 +238,6 @@
               .on("end", this.dragended))
           }
         }
-      }
-      dispatchToChild(){
-        let button = {
-          "ko" : [
-            { text: "출력하기", method: this.exportImage },
-            { text: "다시하기", method: this.reset },
-            { text: "완성하기", method: this.handleStageClear }
-          ],
-          "en" : [
-            { text: "Print", method: this.exportImage },
-            { text: "Retry", method: this.reset },
-            { text: "Submit", method: this.handleStageClear }
-          ]
-        }
-        return button[this.language]
       }
       exportImage(){
         // FIXME: 이미지 크기 조정
@@ -425,7 +430,7 @@
         this.set('data', data)
         this.set('manifest', manifest)
 
-        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis, originImgSize } = this.size,
+        let { boardSize, imageItemSize, resWidth, svgHeight, boardImageCenter, reAxis, originImgSize, imageMargin } = this.size,
             svg = d3.select(this.$.createSvg)
                     .attr('width', innerWidth).attr('height', svgHeight);
 
@@ -489,6 +494,8 @@
           }
         }
         // 위에서 똑같이 data를 부르고 있을때, 새로운 data를 입력할때 전 data 에서 빠져나온후 (exit()) 후 새로운 data().enter()
+
+        // debugger
         let appendImages = svg.selectAll('image').exit()
              .data(resImagesData).enter().append('image')
              .attr("xlink:href", (d, i) => d.src)
@@ -499,7 +506,7 @@
              .attr('y', ( d, i ) =>
                d.axis
                ? d.axis[1]*reAxis-(originImgSize/2)
-               : this.dragItemHorizontalMargin+(this.axis[i][0]*(originImgSize))+150
+               : this.dragItemHorizontalMargin+(this.axis[i][0]*(originImgSize))+imageMargin
              );
 
           appendImages.nodes().forEach(el => {

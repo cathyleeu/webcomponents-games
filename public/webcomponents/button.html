@@ -35,17 +35,19 @@
       }
       static get properties() {
         return {
-          buttonData : Array
         }
       }
       ready(){
         super.ready();
-        // debugger
+
+        let parent = d3.select(this.ownerDocument).select('#element').node();
+        let status = parent.target ? parent.target : parent.language
+
         d3.select(this.$.container).selectAll('button')
-          .data(this.buttonData).enter()
+          .data(parent.buttons[status]).enter()
           .append('button').attr('class','custom')
           .text((d,i) => `${d.text}`)
-          .on("click", (d, i) => d.method())
+          .on("click", (d, i) => parent[d.method]())
       }
     }
     window.customElements.define(Button.is, Button);
