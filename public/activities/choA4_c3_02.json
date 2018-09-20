@@ -2,10 +2,9 @@
   "element": "component-game",
   "attributes": {
     "gameType" : "multiple",
-    "nextlink" : "activity#!choA4_c3_02",
     "component" : "figure-board",
     "boardType" : "wide",
-    "lastStage" : 5,
+    "lastStage" : 4,
     "stageType" : "repeat",
     "figures" : [
       "/img/cho_draw/circle_blue",

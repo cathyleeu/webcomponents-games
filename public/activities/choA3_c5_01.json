@@ -2,7 +2,7 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "sentence",
-    "nextlink" : "activity#!choA3_c5_01",
+    "nextlink" : "activity#!choA3_c5_02",
     "questions" : [
       {
         "question": "컴퓨터의 자료 저장을 위해, 두 가지의 수로 나타내는 방법입니다.",

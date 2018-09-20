@@ -24,7 +24,7 @@
         text-align: left;
         height: 50px;
         line-height: 50px;
-        margin-bottom: 50px;
+        margin: 40px;
       }
       .badge {
         background: purple;
@@ -123,7 +123,7 @@
       purpose="fullScreen"
       ></toycode-modal>
     <div class="comp">
-      <div id="reference"></div>
+      <!-- <div id="reference"></div> -->
       <div class="question">
         <p class="badge">문제</p>
         <p id="body"></p>
@@ -192,14 +192,14 @@
         this.set('data', data)
         this.set('manifest', manifest)
 
-        this.set('mainQuest', data[this.gameStage].quest)
+        // this.set('mainQuest', data[this.gameStage].quest)
         this.set('imgOpts', data[this.gameStage].imgs)
         this.set('stages', data[this.gameStage].stages)
 
         // 이것은 stage 마다 변경되어야 함.
         this.set('answers', this.stages[this.logicStage].anws)
 
-        d3.select(this.$.reference).append('p').text(this.mainQuest)
+        // d3.select(this.$.reference).append('p').text(this.mainQuest)
 
         // 이것은 stage 마다 변경되어야 함.
         d3.select(this.$.body).text(this.stages[this.logicStage].quiz)

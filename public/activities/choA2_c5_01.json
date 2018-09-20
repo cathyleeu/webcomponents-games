@@ -2,7 +2,7 @@
   "element": "grouping-game2",
   "attributes": {
     "nextlink" : "activity#!choA2_c5_02",
-    "lastStage" : 2
+    "lastStage" : 1
   },
   "data": [
     {"id": 0, "text": "문자"},

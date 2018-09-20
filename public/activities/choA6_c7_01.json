@@ -1,7 +1,6 @@
 {
   "element": "logic-stage-game",
   "attributes": {
-    "nextlink" : "activity#!choA4_c3_01",
     "questions" : [
 
     ]

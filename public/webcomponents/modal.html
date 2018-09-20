@@ -269,7 +269,10 @@
           if(showBook){
             window.open(href, "_self");
           }
+
           d3.select(this.element).classed("popup", null)
+
+          this.handleMoveStage()
           return false
         }
         d3.select(this.element).classed("popup", null)

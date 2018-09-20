@@ -1,27 +1,26 @@
 {
   "element": "flow-card",
   "attributes": {
-    "lastStage" : 2,
-    "nextlink" : "mazeh#!a5re_w3/1"
+    "lastStage" : 1
   },
   "data": {
     "background" : false,
     "first" : 1,
-    "last" : 5
+    "last" : 7
   },
   "manifest": [
-    {"src": "/img/a5re_w34/cicada_flow1.png", "step": 1},
-    {"src": "/img/a5re_w34/cicada_flow2.png", "step": 2},
-    {"src": "/img/a5re_w34/cicada_flow3.png", "step": 3},
-    {"src": "/img/a5re_w34/cicada_flow4.png", "step": 4},
-    {"src": "/img/a5re_w34/cicada_flow5.png", "step": 5},
-    {"src": "/img/a5re_w34/frog_flow1.png"},
-    {"src": "/img/a5re_w34/frog_flow3.png"},
-    {"src": "/img/a5re_w34/frog_flow5.png"}
+    {"src": "/img/a4re_w4/step1.png", "step": 1},
+    {"src": "/img/a4re_w4/step2.png", "step": 2},
+    {"src": "/img/a4re_w4/step3.png", "step": 3},
+    {"src": "/img/a4re_w4/step4.png", "step": 4},
+    {"src": "/img/a4re_w4/step5.png", "step": 5},
+    {"src": "/img/a4re_w4/step6.png", "step": 6},
+    {"src": "/img/a4re_w4/step7.png", "step": 7}
   ],
   "msg": {
     "ko": {
-      "title": "매미는 땅속에서 자라요",
+      "title": "정보의 구조화",
+      "minor": "순서에 맞게 이미지를 맞춰보세요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -34,37 +33,40 @@
       "retryHead": "다시하기",
       "retryBtm" : "순서를 다시 확인하세요",
       "retrybtn": "확인",
-      "finalStageHead": "성공!",
-      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "확인",
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
-      "flow": "매미의 성장과정을 순서대로 고르세요",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "flow": "순서에 맞게 이미지를 맞춰보세요",
       "mixed": "사용 가능한 이미지"
+
     },
     "en": {
-      "title": "Cicadas come from the ground",
+      "title": "Growing flowers",
+      "minor": "Arrange the images with given images",
       "score": "score",
       "lefted": "matched",
       "success": "Good job!",
       "successHead": "Success",
       "logoutHead": "Log Out",
       "previousHead" : "Back",
+      "retryHead": "Miss",
+      "retryBtm" : "Try Again.",
+      "retrybtn": "Yes",
       "successBtm" : "Do you want to move on to the next step?",
       "logoutBtm": "Do you want to logout",
       "previousBtm": "Do you want to move on to the previous step?",
       "nextbtn": "Back",
-      "retryHead": "Miss",
-      "retryBtm" : "Try Again.",
-      "retrybtn": "Yes",
       "nobtn" : "No",
       "yesbtn" : "Yes",
+      "flow": "Arrange the images with given images",
+      "mixed": "Given images",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
       "finalbtn" : "Next Stage",
-      "flow": "Complete the life cycle of cicadas.",
-      "mixed": "Available image"
+      "fullscreen" : "FullScreen"
     }
   }
 }
