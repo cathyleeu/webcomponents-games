@@ -1,7 +1,6 @@
 {
   "element": "component-game",
   "attributes": {
-    "nextlink" : "activity#!choA6_c3_01",
     "component" : "table-match",
     "lastStage" : 3,
     "items" : ["피자", "햄버거", "김밥", "떡볶이"],

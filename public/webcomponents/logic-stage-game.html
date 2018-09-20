@@ -94,6 +94,13 @@
       retrybtn="{{localize('retrybtn')}}"
       ></toycode-modal>
     <toycode-modal
+      id="lackModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('lackBtm')}}"
+      retrybtn="{{localize('retrybtn')}}"
+      ></toycode-modal>
+    <toycode-modal
       id="nextStageModal"
       purpose="logicStage"
       headertext="{{localize('successHead')}}"
@@ -233,11 +240,21 @@
       handleResult(status) {
         let self = d3.select(this.ownerDocument).select('#element').node();
         let { selectedStage, answers } = self;
-        let result = selectedStage.every(l => answers.includes(l))
+        let result = answers.every(l => selectedStage.includes(l))
 
+        let sNum = selectedStage.length;
+        let aNum = answers.length;
+        let opposed = selectedStage.every(l => answers.includes(l))
+        // debugger
         // 결과에 따라서 status 상태를 바꿔치기해서 모달 결과 나눠주기.
-            status = result === false ? "failed" : status;
 
+        if(sNum < aNum &&  opposed ) {
+          self.$.lackModal.modalAlert()
+          return;
+        }
+
+
+        status = result === false ? "failed" : status;
         console.log("Status", status);
 
         switch (status) {
@@ -258,6 +275,13 @@
           default:
               self.$.retryModal.modalAlert()
             return;
+        }
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
         }
       }
     }
