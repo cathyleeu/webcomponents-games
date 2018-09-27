@@ -77,23 +77,6 @@
     flex: 1;
     padding: 0 10px;
   }
-  .book-problem {
-    color: white;
-    border: 1px solid white;
-    border-radius: 20px;
-    display: inline-block;
-    padding: 0 8px;
-    height: 40px;
-    line-height: 40px;
-    margin: 9px 0;
-    min-width: 40px;
-    text-align: center;
-  }
-  .book-problem:hover {
-    background-color: white;
-    color: #18bc9c;
-    text-decoration: none;
-  }
   .done {
     color: #333;
   }
@@ -131,7 +114,7 @@
             <% } %>
         </td>
         <% for(var i = 0; i < stuList.length; i++) { %>
-        <tr>
+        <tr data-id="<%='F00000-'+stuList[i][0]+'-KC1,'+stuList[i][1]%>" data-book="<%={"46":"A","47":"B"}[stuList[i][3]]+"-"+stuList[i][4]%>">
             <th><%=(i+1)%></th>
             <td><%=stuList[i][2]%><br/><%=stuList[i][1]%></td>
             <td><a class="btn btn-default report" href="#" role="button" data-student="<%=stuList[i].slice(0,-1)%>">열기</a></td>
@@ -142,13 +125,13 @@
                 <% var tutorial = stuList[i][5]['v'+week[j]+'t']; %>
                 <% var activity = stuList[i][5]['c'+week[j]]; %>
                 <% var maze = stuList[i][5]['c'+week[j]] || 0; %>
-                <span class="glyphicon glyphicon-film <%=video ? 'done' : 'undone'%>" title="<%=video ? '교육영상 완료' : '교육영상 미완료'%>"></span>
+                <span data-type="video" data-num="<%=(j+1)%>" class="book-problem glyphicon glyphicon-film <%=video ? 'done' : 'undone'%>" title="<%=video ? '교육영상 완료' : '교육영상 미완료'%>"></span>
                 <% if(week[j] % 2 == 1) { %>
-                <span class="glyphicon glyphicon-pencil <%=activity ? 'done' : 'undone'%>" title="<%=activity ? '문제풀기 완료' : '문제풀기 미완료'%>"></span>
+                <span data-type="activity" data-num="<%=(j+1)%>" class="book-problem glyphicon glyphicon-pencil <%=activity ? 'done' : 'undone'%>" title="<%=activity ? '문제풀기 완료' : '문제풀기 미완료'%>"></span>
                 <% } else { %>
-                <span class="glyphicon glyphicon-play-circle <%=tutorial ? 'done' : 'undone'%>" title="<%=tutorial ? '실습영상 완료' : '실습영상 미완료'%>"></span>
-                <span class="glyphicon glyphicon-pencil <%=maze>=5 ? 'done' : 'undone'%>" title="문제풀기 (<%=maze + '/20'%>)"></span><br/>
-                <span class="<%=maze>=5 ? 'done' : 'undone'%>">(<%=maze%>/20)</span>
+                <span data-type="tutorial" data-num="<%=(j+1)%>" class="book-problem glyphicon glyphicon-play-circle <%=tutorial ? 'done' : 'undone'%>" title="<%=tutorial ? '실습영상 완료' : '실습영상 미완료'%>"></span>
+                <span data-type="maze" data-num="<%=(j+1)%>" class="book-problem glyphicon glyphicon-pencil <%=maze>=5 ? 'done' : 'undone'%>" title="문제풀기 (<%=maze + '/20'%>)"></span><br/>
+                <span class="maze-label <%=maze>=5 ? 'done' : 'undone'%>">(<%=maze%>/20)</span>
                 <% } %>
             </td>
             <% } %>
@@ -187,5 +170,42 @@ $(".report").click(function(e) {
         "userId=" + data[1]
       ];
   window.open(url+query.join("&"), "_blank");
+});
+
+$('.book-problem').click(function(e) {
+  e.preventDefault();
+  var $target = $(e.currentTarget),
+      type = $target.data('type'),
+      num = $target.data('num'),
+      key = (type == "video" || type == "tutorial" ? "v" : "c") + num + (type == "tutorial" ? "t" : ""),
+      value = +$target.hasClass("done"),
+      id = $target.closest('tr').data('id'),
+      book = $target.closest('tr').data('book'),
+      update = {};
+  if(type == "maze") {
+    // maze는 바꿀 숫자를 입력
+    value = Number(prompt("변경 할 값을 입력해주세요(0~20)"));
+    if(!isNaN(value) && value == parseInt(value) && 0 <= value && value <= 20) {
+      update[key] = value;
+      History.updateHistory(id, book, update, function(e, res) {
+        if(value >= 5) {
+          $target.addClass('done').removeClass('undone');
+        } else {
+          $target.addClass('undone').removeClass('done');
+        }
+        $target.closest('td').find('.maze-label').text('(' + value + '/20)');
+      });
+    } else {
+      alert("0~20 사이의 숫자만 입력해주세요.");
+    }
+  } else {
+    // video, tutorial, activity는 클릭시 토글
+    update[key] = !value;
+    if(confirm("상태를 변경하시겠습니까?")) {
+      History.updateHistory(id, book, update, function(e, res) {
+        $target.toggleClass("done undone");
+      });
+    }
+  }
 });
 </script>
