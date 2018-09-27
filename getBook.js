@@ -23,6 +23,10 @@ module.exports = function(classObj) {
   if(schoolCode == "C00175-K4") {
     book = [4, 5];
   }
+  // 초록나라 예원유치원 9월말 6호 오픈 요청
+  if(schoolCode == "C00175-K1") {
+    book = [5.5, 6];
+  }
   // 안산지사 엠에스에듀 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2") {
     book = [5, 5.5];
