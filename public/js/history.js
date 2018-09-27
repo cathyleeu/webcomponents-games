@@ -48,6 +48,18 @@ History.prototype.end = function(isSuccess, score, count) {
       update[key] = +this.problem;
       History.updateHistory(id, book[0].toUpperCase() + "-" + book[1], update, function(e, res) {
       });
+    } else if(store.session.get("edu")) {
+      var edu = store.session.get("edu"),
+          book = edu.split(",")[0],
+          week = edu.split(",")[1],
+          edu = store.namespace("edu"),
+          eduData = edu.get(book, {}),
+          problem = location.hash.slice(2);
+      eduData[week] = eduData[week] || [];
+      if(eduData[week].indexOf(problem) < 0) {
+        eduData[week].push(problem);
+        edu.set(book, eduData);
+      }
     }
   }
   data.history.push([isSuccess, duration, count]);
