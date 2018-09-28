@@ -47,9 +47,9 @@
     border: none;
   }
   .item > p{
-    background: purple;
+    /* background: purple; */
     color: white;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     font-size: 14px;
     max-width: 150px;
     line-height: 30px;
@@ -66,6 +66,8 @@
     display: inline-block;
     vertical-align: middle;
     margin: 5px;
+    background: purple;
+    width: 60px;
     user-select:none;
   }
   img {
@@ -227,7 +229,7 @@
       this.style.top = `${y+100}px`
       // this.style.left = `${x}px`
       this.style.left = `${x-(width/2)}px`
-      
+
 //
   console.log("x",x, "y",y, this.style.left, this.style.top);
     }

@@ -143,8 +143,10 @@
       "previousBtm": "이전으로 돌아가시겠습니까?",
 
       "retryHead": "다시하기",
-      "retryBtm" : "올바른 답을 다시 골라보세요.",
+      "retryBtm" : "틀린 카드를 선택했네요. 다시 골라보세요.",
       "retrybtn": "확인",
+
+      "lackBtm" : "선택할 것이 남았네요. 더 찾아보아요.",
 
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",

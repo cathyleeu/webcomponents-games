@@ -4,8 +4,7 @@
     "limited" : true,
     "max" : 4,
     "horizontal" : true,
-    "lastStage" : 1,
-    "nextlink" : "activity#!choA6_c5_04"
+    "lastStage" : 1
   },
   "data": [
     "pictogram1",

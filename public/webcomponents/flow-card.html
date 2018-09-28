@@ -304,10 +304,19 @@
 
         // text 상황에 따라서 변경
         if(shuffledMix[0].text) {
+          //TODO: text size 변경및
+          // debugger
+          mixedImages.append('rect')
+            .attr("x", 0).attr("y", 0)
+            .attr("width", this.imgSize+10).attr("height", this.imgSize+10)
+            .attr('fill', '#dbdbdb')
+
           mixedImages.append('text')
             .text((d,i) => d.text)
-            .attr("font-size","50")
-            .attr("x", 16).attr("y", 57)
+            .attr("font-size", this.imgSize*0.7)
+            .attr("x", this.imgSize*0.2).attr("y", this.imgSize*0.8)
+
+
         } else {
           mixedImages.append('image')
           .attr("x", 5).attr("y", 5)
@@ -345,7 +354,6 @@
             .attr("rx", 5).attr("ry", 5)
             .attr('x', (d, i) => (this.imgSize*i) + (20*i)).attr('y', this.cardBoard+this.centerBoard)
             .attr("width", this.imgSize+10).attr("height", this.imgSize+10)
-            .style("fill", "#fff")
             .style("fill", (d,i) => `url(#mixed_${i})`)
             .style("stroke-width",8)
             .style("stroke","#2ECC98")
@@ -353,6 +361,15 @@
                 .on("start", this.dragstarted )
                 .on("drag", this.dragged )
                 .on("end", this.dragended ));
+
+        // if(shuffledMix[0].text) {
+        //   mixedItems.append('text')
+        //     .text((d,i) => d.text)
+        //     .attr("font-size", this.imgSize*0.7)
+        //     .attr("x", this.imgSize*0.2).attr("y", this.imgSize*0.8)
+        //     .attr("font-color", "black")
+        // }
+
 
           this.handleSetCenter('.flow')
           this.handleSetCenter('.mixed')

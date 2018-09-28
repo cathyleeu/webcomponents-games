@@ -1,38 +1,37 @@
 {
-  "element": "grouping-game2",
+  "element": "grouping-game",
   "attributes": {
-    "nextlink" : "activity#!choA2_c5_02",
-    "lastStage" : 1
+    "lastStage" : 1,
+    "nextlink" : "activity#!choA2_c5_02"
   },
   "data": [
-    {"id": 0, "text": "문자"},
-    {"id": 1, "text": "그림"},
-    {"id": 2, "text": "소리"},
-    {"id": 3, "text": "영상"}
+    {"id": 0, "src": "/img/cho_activities/A2_c5_01_t.png"},
+    {"id": 1, "src": "/img/cho_activities/A2_c5_01_i.png"},
+    {"id": 2, "src": "/img/cho_activities/A2_c5_01_m.png"},
+    {"id": 3, "src": "/img/cho_activities/A2_c5_01_s.png"}
   ],
   "manifest": [
-      {"text": "DOC", "id": 0},
-      {"text": "HWP", "id": 0},
-      {"text": "TXT", "id": 0},
 
-      {"text": "BMP", "id": 1},
-      {"text": "PNG", "id": 1},
-      {"text": "JPG", "id": 1},
+    {"src": "/img/cho_activities/A2_c5_01_t1.png", "match": 0},
+    {"src": "/img/cho_activities/A2_c5_01_t2.png", "match": 0},
+    {"src": "/img/cho_activities/A2_c5_01_t3.png", "match": 0},
 
-      {"text": "MP3", "id": 2},
-      {"text": "WAV", "id": 2},
-      {"text": "FLAC", "id": 2},
+    {"src": "/img/cho_activities/A2_c5_01_i1.png", "match": 1},
+    {"src": "/img/cho_activities/A2_c5_01_i2.png", "match": 1},
+    {"src": "/img/cho_activities/A2_c5_01_i3.png", "match": 1},
 
-      {"text": "AVI", "id": 3},
-      {"text": "MKV", "id": 3},
-      {"text": "MP4", "id": 3}
+    {"src": "/img/cho_activities/A2_c5_01_m1.png", "match": 2},
+    {"src": "/img/cho_activities/A2_c5_01_m2.png", "match": 2},
+    {"src": "/img/cho_activities/A2_c5_01_m3.png", "match": 2},
+
+    {"src": "/img/cho_activities/A2_c5_01_s1.png", "match": 3},
+    {"src": "/img/cho_activities/A2_c5_01_s2.png", "match": 3},
+    {"src": "/img/cho_activities/A2_c5_01_s3.png", "match": 3}
   ],
   "msg": {
     "ko": {
       "title": "여러 가지 정보",
       "minor": "왼쪽의 카드를 끌어서 분류해보자!",
-      "introHead": "키즈씽킹",
-      "introBtm": "왼쪽의 물건들을 끌어서 오른쪽으로 이동해보자!",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
