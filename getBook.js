@@ -107,7 +107,7 @@ module.exports = function(classObj) {
   }
     // 키즈코딩 테스트 0917
   if(schoolCode == "A00083-K12") {
-    book = "CHO-A-1,CHO-A-2,CHO-A-3,CHO-A-4,CHO-A-5,CHO-A-6";
+    book = "CHO-A-1,CHO-A-2,CHO-A-3,CHO-A-4,CHO-A-5,CHO-A-6,CHO-A-7,CHO-A-8,CHO-A-9,CHO-A-10,CHO-A-11,CHO-A-12";
   }
   return book;
 }
