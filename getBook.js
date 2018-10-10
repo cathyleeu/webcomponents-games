@@ -15,6 +15,10 @@ module.exports = function(classObj) {
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
     book = [7];
   }
+  // 울산 경희이마레스 10월 설명회주간 3권 요청
+  if(schoolCode == "A00072-K11") {
+    book = [5.5, 6, 7];
+  }
   // 인천 동심유치원 9월 5호 오픈 요청
   if(schoolCode == "C00194-K4") {
     book = [5, 5.5];
