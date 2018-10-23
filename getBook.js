@@ -19,9 +19,9 @@ module.exports = function(classObj) {
   if(schoolCode == "A00072-K11") {
     book = [5.5, 6, 7];
   }
-  // 인천 동심유치원 9월 5호 오픈 요청
+  // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
-    book = [5, 5.5];
+    book = [5.5, 6];
   }
   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
