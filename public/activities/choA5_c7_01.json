@@ -1,6 +1,7 @@
 {
   "element": "logic-stage-game",
   "attributes": {
+    "clickEvents" : ["stage","stage","final"],
     "questions" : [
 
     ]

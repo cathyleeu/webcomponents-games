@@ -14,7 +14,7 @@
       }
       .question {
         /* border: 1px solid black; */
-        height: 100px;
+        height: 70px;
         clear: both;
         width: 70%;
         position: relative;
@@ -24,27 +24,28 @@
         /* border-left: 5px solid purple; */
       }
       .question img {
-        /* width: 100px; */
-        height: 100px;
+        height: 70px;
         vertical-align: middle;
       }
       .textshort {
-        line-height: 100px;
+        font-size: 24px;
+        line-height: 70px;
       }
       .textlong {
+        font-size: 16px;
         line-height: 50px;
       }
       .question > p {
-        font-size: 26px;
         float: left;
         margin: 0;
       }
       .options {
-        margin-top: 30px;
+        margin-top: 20px;
         position: relative;
         width: 70%;
         left: 50%;
         margin-left: -35%;
+        height: 58%;
       }
       .options > img {
         width: 40%;
@@ -52,13 +53,11 @@
         margin-left: 5%;
       }
       .wordStyle {
-        height: 20%;
         display: inline-block;
-        margin: 10% 10px;
-        width: 150px;
+        margin: 5% 10px;
+        width: 25%;
         border: 5px solid gray;
         border-radius: 15px;
-        padding: 5px;
       }
       .wordStyle:active {
         background: #dbdbdb;
@@ -66,12 +65,12 @@
         cursor: pointer;
       }
       .wordStyle > img {
-        width: 50%;
-        height: 50%;
+        width: 70%;
       }
       .wordStyle > p {
-        font-size: 150%;
-        font-weight: 200;
+        font-size: 130%;
+        font-weight: 500;
+        margin: 10px;
         display: inline-block;
       }
       .sentenceStyle {
@@ -84,11 +83,12 @@
         color: #181818;
       }
       .sentenceStyle > p {
-        width: 80%;
+        width: 90%;
+        font-size: 16px;
         display: inline-block;
         border: 3px dashed #dbdbdb;
         margin: 0;
-        padding: 15px;
+        padding: 8px;
         border-radius: 30px;
       }
       .sentenceStyle > p:active {
@@ -152,6 +152,99 @@
         margin: 0.2em;
         display: inline-block;
         cursor: pointer;
+      }
+      .multiSelectStyle,
+      .multiSelectGroup {
+        position: relative;
+      }
+      .multiSelectStyle {
+        display: inline-block;
+        width: 28%;
+        margin: 0 1%;
+        vertical-align: top;
+      }
+
+      .multiSelectGroup {
+        border: 1px solid yellowgreen;
+        padding: 5px;
+        margin: 5px 0;
+        border-radius: 5px;
+      }
+      .multiSelectStyle > p {
+        border: 3px solid #263647;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: lightsteelblue;
+        font-weight: 700;
+      }
+      .multiSelectGroup > p{
+        width: 60%;
+        margin: 0;
+        display: inline-block;
+        vertical-align: -webkit-baseline-middle;
+      }
+      .multiSelectGroup > img {
+        width: 20%;
+        vertical-align: baseline;
+        vertical-align: -webkit-baseline-middle;
+      }
+      .multiSelectStyle > .clicked {
+        border: 5px solid yellowgreen;
+        font-weight: 900;
+        font-size: 20px;
+        padding: 0px;
+
+      }
+      .bubble {
+        right: -12%;
+        position: absolute;
+        display: inline-block;
+        padding: 11px 5px;
+        border: 5px solid #7F2F7B;
+        text-align: center;
+        width: fit-content;
+        /* 글에 맞춰서 잡힘*/
+        color: #333;
+        background: #fff;
+        font-size: 13px;
+        border-radius: 50%;
+        font-weight: 700;
+      }
+      .bubble::before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        bottom: -25px;
+        right: 50%;
+        width: 50px;
+        height: 20px;
+        border-style: solid;
+        border-width: 0 5px 5px 0;
+        border-color: #7F2F7B;
+        margin-right: -10px;
+        background: transparent;
+        -webkit-border-bottom-right-radius: 80px 50px;
+        -moz-border-radius-bottomright: 80px 50px;
+        border-bottom-right-radius: 80px 50px;
+        display: block;
+      }
+      .bubble::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        bottom: -23px;
+        right: 50%;
+        width: 20px;
+        height: 21px;
+        border-style: solid;
+        border-width: 0 5px 5px 0;
+        border-color: #7F2F7B;
+        margin-right: 20px;
+        background: transparent;
+        -webkit-border-bottom-right-radius: 40px 50px;
+        -moz-border-radius-bottomright: 40px 50px;
+        border-bottom-right-radius: 40px 50px;
+        display: block;
       }
       /* questionText */
     </style>
@@ -249,13 +342,12 @@
           this.$.logOutModal.modalAlert();
         }
       }
-      replaceQuestion(text){
+      replaceQuestion(text,b,node){
         // 타입에 따라서 문제 설정
-
         let { questionImg, detailType, color } = this.questions[this.stage];
         let textStyle = text.length > 20 ? "textlong" : "textshort";
         if(this.questType === "gridCount" && detailType === "color"){
-          text = text.replace("$", `<p style="width:100px;height:100px;margin-right:10px;background-color:${color}"></p>,`);
+          text = text.replace("$", `<p style="width:70px;height:70px;margin-right:10px;background-color:${color}"></p>,`);
           text = text.split(',');
           return `${text[0]} <p class="${textStyle}">${text[1]}</p>`;
         }
@@ -277,15 +369,30 @@
         if(result) {
           text = text.replace("$", `<img src="${this.questions[this.stage].questionImg}"/>`);
         }
+
+        if(textStyle === "textlong" && !result) {
+          d3.select(node).attr("style", "height:40px;")
+        }
         return `<p class="${textStyle}">${text}</p>`
       }
       renderOptions(op){
-        let keyName = Object.keys(op)[0],
-            answer = Object.keys(op)[1]
+        let { text, src, answer } = op, keyName;
+        switch (this.gameType) {
+          case "multiSelect":
+            return src
+                    ? `<p>${text}</p> <img src="${src}"/>`
+                    : `<p>${text}</p>`
+            break;
+          default:
+            keyName = Object.keys(op)[0];
+            answer = Object.keys(op)[1];
 
-        return keyName === "text"
-                        ? `<p ${answer ? `data-answer=true` : "" }>${op[keyName]}</p>`
-                        : `<img src="${op[keyName]}"/>`
+            return keyName === "text"
+                          ? `<p ${answer ? `data-answer=true` : "" }>${op[keyName]}</p>`
+                          : `<img src="${op[keyName]}"/>`
+            break;
+        }
+
       }
       renderOptionsForGridType(d){
         let { questionImg, detailType, color } = this.questions[this.stage];
@@ -346,9 +453,16 @@
         }
         if(result) {
           console.log("성공");
-          if(that.LastStage === that.stage){
-            that.$.finalStageModal.modalAlert()
-          }else {
+          if (gameType === "multiSelect") {
+            d3.select(this).classed("clicked", true)
+            let clickedNodes = d3.select(this.parentElement.parentElement).selectAll(".clicked").nodes()
+            if(clickedNodes.length === that.ansNum) {
+                that.$.finalStageModal.modalAlert()
+                return
+            }
+          } else if(that.LastStage === that.stage){
+             that.$.finalStageModal.modalAlert()
+          } else {
             that.$.successModal.modalAlert()
           }
         } else {
@@ -357,7 +471,7 @@
         }
       }
       setData(data , manifest){
-        let { question, options, answer, cardType, reference } = this.questions[this.stage]
+        let { question, options, answer, cardType, reference, referenceImg } = this.questions[this.stage]
         this.set('LastStage', this.questions.length-1)
         if(typeof question == "object") {
           question = question[this.language || "ko"];
@@ -365,25 +479,52 @@
         d3.select(this.$.container)
           .append('div')
           .attr('class', 'question')
-          .html(this.replaceQuestion(`${question}`))
+          .html((a, b, node) => this.replaceQuestion(`${question}`, b, node[0])) //`${question}`
 
        let objDivs = d3.select(this.$.container)
                        .append('div').attr('class', 'options')
 
         switch (this.gameType) {
           case "word":
-            objDivs.selectAll('div')
-            .data(d3.shuffle(options)).enter()
-            .append('div').attr('class', 'wordStyle')
-            .html((d, i) => this.renderOptions(d))
-            .on("click", this.handleClick)
-            break;
+            if(referenceImg) {
+              objDivs.append('img').attr('style', `width:${window.innerWidth*0.6}px;`)
+              .attr('src', referenceImg)
+            }
+          case "word":
           case "sentence":
             objDivs.selectAll('div')
             .data(d3.shuffle(options)).enter()
-            .append('div').attr('class', 'sentenceStyle')
+            .append('div').attr('class', `${this.gameType}Style`)
             .html((d, i) => this.renderOptions(d))
             .on("click", this.handleClick)
+            break;
+          case "multiSelect":
+
+          let suffled = d3.shuffle(options);
+          let multiNodes = objDivs.selectAll('div').data(options).enter()
+                            .append('div').attr('data-name', (d,i) => `cate${i}`)
+                            .attr('class', `${this.gameType}Style`)
+
+            multiNodes.append('p').text((d,i) => d.main)
+            this.set("ansNum", 0)
+
+            objDivs.append('div').attr('class', "bubble").text("클릭해요.")
+
+            options.forEach((o,i) => {
+              o.options.forEach((d) => {
+                if(d.answer) {
+                  this.set("ansNum", this.ansNum+1)
+                }
+              })
+              d3.select(multiNodes.nodes()[i]).selectAll('div').exit()
+              .data(d3.shuffle(o.options)).enter()
+              .append('div').attr('data-name', (d,i) => d.text)
+              .attr('data-answer', (d,i) => d.answer ? d.answer : false )
+              .attr('class', `${this.gameType}Group`)
+              .html((d, i) => this.renderOptions(d))
+              .on('click', this.handleClick)
+            })
+
             break;
           case "reference":
 

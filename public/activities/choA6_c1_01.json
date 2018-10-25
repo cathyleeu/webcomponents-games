@@ -2,11 +2,13 @@
   "element": "component-game",
   "attributes": {
     "nextlink" : "activity#!choA6_c1_02",
-    "component" : "table-match",
-    "lastStage" : 3,
+    "component" : "table-click",
+    "lastStage" : 4,
     "items" : ["맑음", "비", "흐림", "구름조금"],
-    "title" : "날씨",
-    "max" : 5
+    "range" : [1,2,3,4,5],
+    "supTitle" : "날씨",
+    "infTitle" : "개수",
+    "gameType" : "table-match"
   },
   "data": [
   ],

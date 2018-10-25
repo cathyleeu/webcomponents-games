@@ -1,0 +1,87 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "multiSelect",
+    "questions" : [
+      {
+        "question": "$맛있는 피자에는 어떤 재료(구성요소)가 들어있을까요?",
+        "questionImg": "/img/cho_activities/choA7_c1_008.png",
+        "options" : [
+          {
+            "main" : "도우",
+            "options" : [
+              {"text" : "검은깨", "src":"/img/cho_activities/choA7_c1_009.png"},
+              {"text" : "치즈 크러스트", "src":"/img/cho_activities/choA7_c1_011.png", "answer": true}
+            ]
+          },
+          {
+            "main" : "메인토핑",
+            "options" : [
+              {"text" : "페퍼로니", "src":"/img/cho_activities/choA7_c1_013.png", "answer": true},
+              {"text" : "새우", "src":"/img/cho_activities/choA7_c1_014.png"}
+            ]
+          },
+          {
+            "main" : "야채토핑",
+            "options" : [
+              {"text" : "올리브", "src":"/img/cho_activities/choA7_c1_015.png", "answer": true},
+              {"text" : "버섯", "src":"/img/cho_activities/choA7_c1_016.png", "answer": true},
+              {"text" : "루꼴라", "src":"/img/cho_activities/choA7_c1_017.png"}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "추상화와 모델링",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm": "다음 단계로 넘어가시겠습니까?",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "전체화면"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "element": "create-image-game",
+  "attributes": {
+    "limited" : true,
+    "useAll": true,
+    "group" : ["one", "thr"],
+    "multiple": 1.3,
+    "target" : "cho"
+  },
+  "data": {
+    "one": [[35.63,36.76],[9.47,63.82],[35.41,77.58]],
+    "thr": [[65.85,35.86],[89.08,53.68],[65.85,75.55]]
+  },
+  "manifest": [
+    {"src": "/img/cho_activities/choA7_c3_03.png", "background": true},
+    {"src": "/img/b7_w3/red1.png", "name":"one1", "group":"one"},
+    {"src": "/img/b7_w3/red3.png", "name":"one2", "group":"one"},
+    {"src": "/img/cho_activities/choA7_c3_07.png", "name":"thr1", "group":"thr"},
+    {"src": "/img/cho_activities/choA7_c3_05.png", "name":"thr2", "group":"thr"},
+    {"src": "/img/cho_activities/choA7_c3_06.png", "name":"thr3", "group":"thr"},
+    {"src": "/img/b7_w3/skyblue4.png", "name":"one3", "group":"one"}
+  ],
+  "msg": {
+    "ko": {
+      "title": "분류",
+      "minor": "공통되는 특징을 찾아 분류해서 옮겨보세요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "아이템 모두 사용해주세요.",
+      "retrybtn": "다시하기",
+      "unCorrect" : "다시 시도해 볼까요?",
+      "fullscreen" : "전체화면"
+    },
+    "en": {
+      "title": "Classify the body organs of cos.",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Next",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

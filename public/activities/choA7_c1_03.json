@@ -1,0 +1,73 @@
+{
+  "element": "drag-game",
+  "attributes": {
+    "nextlink" : "activity#!choA7_c1_04",
+    "gameType" : "specificStepDrags",
+    "data": {
+      "stepImgs" : [
+        "/img/cho_activities/choA7_c1_001.png",
+        "/img/cho_activities/choA7_c1_002.png",
+        "/img/cho_activities/choA7_c1_003.png",
+        "/img/cho_activities/choA7_c1_004.png"
+      ],
+      "specificSteps" : ["분해", "추상화", "모델링"],
+      "items" : [
+        {"text": "분해", "result" : true },
+        {"text": "추상화", "result" : true},
+        {"text": "모델링", "result" : true}
+      ]
+    }
+
+  },
+  "data": {
+  },
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "추상화와 모델링",
+      "minor" : "[보기]에서 알맞은 단어를 찾아 ? 로 옮겨보세요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "retryHead": "다시하기",
+      "retryBtm" : "$",
+      "flow": "순서 조립 화면",
+      "mixed": "사용 가능 한 이미지",
+      "finalStageHead": "성공!",
+      "finalStageBtm":"참 잘했어요!",
+      "finalbtn" : "확인",
+      "fullscreen" : "전체화면"
+    },
+    "en": {
+      "title": "Arrange the images with given images",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "flow": "Work Space",
+      "mixed": "Given images",
+      "finalStageHead": "Success",
+      "finalStageBtm":"Success!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

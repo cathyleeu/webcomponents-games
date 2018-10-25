@@ -40,7 +40,7 @@
       id="retryModal"
       purpose="retry"
       headertext="{{localize('retryHead')}}"
-      btmtext="{{retryMsg}}"
+      btmtext="{{localize('retryBtm')}}"
       retrybtn="{{localize('finalbtn')}}"
       ></toycode-modal>
     <toycode-modal
@@ -142,16 +142,22 @@
       dragended(d){
         let self = d3.select('#element').node(),
             gap = self.flowWidth-self.mixedWidth,
-            getX = d3.event.x, getY = d3.event.y;
+            getX = d3.event.x, getY = d3.event.y,
+            flowNum = self.flowItems.length;
 
         let targetEl, targetX, targetY, result, flowItems;
 
         if(self.noGuide) {
           flowItems = self.flowItems
         } else {
-          flowItems = self.flowItems.slice(1, self.flowItems.length-1);
+          flowItems = self.flowItems.slice(1, flowNum-1);
         }
-        // debugger
+
+        if(self.gameType === "guess") {
+          flowItems = self.flowItems.slice(flowNum-1, flowNum);
+        }
+
+
         flowItems.forEach(el => {
           const getEl = el.getBBox();
           // 범위 확인
@@ -174,6 +180,9 @@
                 // console.log("순서가 맞지 않습니다.");
                 result = false;
               }
+            }
+            if(self.gameType === "guess") {
+              result = d.guess ? true :false;
             }
 
 
@@ -225,8 +234,6 @@
 
         this.set('lastStep', lastStep)
 
-        // debugger
-        // this.set('imgSize', this.imgSize*(manifest.length*0.1))
 
         let _this = this,
             svg = d3.select(this.shadowRoot).append("svg")
@@ -248,6 +255,7 @@
           boardName = ["flow", "mixed"].map(n => ({"name": n, "header": this.resources[this.language][n]}));
           flowData = manifest.filter( d => d.step);
         }
+
         if(this.noGuide) {
           this.set('step', 0)
           mixedData = manifest;
@@ -256,8 +264,9 @@
           mixedData = manifest.filter( d => !(data.first === d.step || data.last === d.step));
         }
 
-
-
+        if(this.gameType === "guess") {
+          mixedData = manifest.filter( d => !d.setted)
+        }
 
         let defs = svg.append('defs')
               			.selectAll('pattern')
@@ -284,13 +293,15 @@
           .attr("width", this.imgSize).attr("height", this.imgSize)
           .attr("xlink:href", d => `${d.src}`)
           .style('filter', (d , i) => {
-            if(data.first === i+1 || data.last === i+1){
+            if(this.gameType === "guess") {
+              return d.setted ? false : "url(#desaturate)"
+            } else if(data.first === i+1 || data.last === i+1){
               return false
             } else {
               return "url(#desaturate)"
             }
           })
-
+        // debugger
 
         let shuffledMix = d3.shuffle(mixedData)
         //

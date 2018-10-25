@@ -17,6 +17,13 @@
         margin-top: 30px;
         font-size: 35px;
       }
+      .horizon_screen {
+        display: inline-block;
+        width: 100%;
+        font-size: 16px;
+        height: 30%;
+        /* border: 1px solid black; */
+      }
       .full_screen {
         text-align: center;
         font-size: 35px;
@@ -25,6 +32,19 @@
         width: 100%;
         margin-top: 40px;
       }
+
+      .horizon_screen > .sentence > span {
+        line-height: 70px;
+      }
+      .horizon_screen > .sentence {
+        width: 70%;
+        margin: 3%;
+        display: inline-block;
+      }
+      .horizon_btn {
+        display: inline-block;
+      }
+
       .full_screen > .sentence > span {
         line-height: 70px;
       }
@@ -32,6 +52,16 @@
       .full_screen > .sentence {
         width: 70%;
         display: inline-block;
+      }
+      .horizon_select {
+        position: relative;
+        display: inline-block;
+        width: 220px;
+        height: 40px;
+        line-height: 35px;
+        margin-top: -10px;
+        font-size: 20px;
+        vertical-align: middle;
       }
       .custom_select {
         position: relative;
@@ -82,6 +112,14 @@
         width: 350px;
         margin-top: 35px;
       }
+      .referenceImgs > img:last-child{
+        width: 50%;
+        margin: 1% 10%;
+      }
+      .referenceImgs > img:first-child {
+        width: 35%;
+        margin: 0% 10%;
+      }
 
     </style>
     <status-bar
@@ -128,13 +166,13 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
-    <toycode-modal
+    <!-- <toycode-modal
       id="fullScreenModal"
       headertext="풀스크린"
       btmtext="풀스크린 모드로 적용합니다."
       yesbtn="확인"
       purpose="fullScreen"
-      ></toycode-modal>
+      ></toycode-modal> -->
     <toycode-modal
       id="retryModal"
       purpose="retry"
@@ -162,12 +200,13 @@
       }
       ready(){
         super.ready();
-        this.$.fullScreenModal.modalAlert()
+        // this.$.fullScreenModal.modalAlert()
 
         this.set('stage', 0)
         this.set("blanks", 0)
       }
       reset(){
+        // debugger
         this.set('stage', this.stage+1)
         d3.select(this.$.container).selectAll('div').remove()
         this.setData()
@@ -191,7 +230,16 @@
         let uncle = grand.select(".select_selected");
         let idx = uncle.attr('data-idx');
             uncle.text(txt)
+
+        switch (that.gameType) {
+          case "referenceEach":
+            that.set("selected", txt)
+            break;
+          default:
             that.set(`selected${idx}`, txt)
+            break;
+        }
+
 
       }
       handleAnswer(){
@@ -199,11 +247,20 @@
         let that = d3.select(this.ownerDocument).select('#element').node()
         let result = true;
 
-        for(let i = 0; i < that.blanks; i++){
-          if(that[`answer${i}`] !== that[`selected${i}`]){
-            result = false;
-          }
+
+        switch (that.gameType) {
+          case "referenceEach":
+            result = that.answer !== that.selected ? false : true;
+            break;
+          default:
+            for(let i = 0; i < that.blanks; i++){
+              if(that[`answer${i}`] !== that[`selected${i}`]){
+                result = false;
+              }
+            }
+            break;
         }
+
 
         if(result) {
           console.log("성공");
@@ -316,6 +373,7 @@
       setData(data , manifest){
         let optionStage;
 
+        //TODO: referenceEach 단계 넘어가도록 작업하기
         if(this.questionType === "repeat") {
           optionStage = this.questions[0];
         } else {
@@ -347,12 +405,45 @@
               .append('img').attr('src', `${this.reference}`)
 
             break;
+          case "referenceEach":
+            let space = d3.select(this.$.container).select(`.${screenType}_screen`);
+            let { reference, option, answer } = options;
+            questNode.text(question)
+            space.append('div').attr('class', 'referenceImgs')
+            .selectAll('img')
+            .data(reference).enter()
+            .append('img').attr('src', (d, i) => d)
+
+
+            let custom = d3.select(this.$.container).append('div').attr('class', `${screenType}_select`)
+
+            custom.append('div')
+                      .attr('class', "select_selected")
+                      .attr('data-answer', answer)
+                      // .attr('data-idx', i)
+                      .on("click", this.handleClick)
+                      .text("OOO")
+
+
+            custom.append('div')
+                      .attr('class', "select_items hide")
+                      .selectAll('div')
+                      .data(option).enter()
+                      .append('div')
+                      .text((text, i) => text)
+                      .on('click', this.handleOptions)
+                      .exit()
+
+            this.set('answer', answer)
+            break;
+            // debugger
           default:
 
         }
 
         d3.select(this.$.container)
           .append('div')
+          .attr('class', `${screenType}_btn`)
           .append('button')
           .on("click", this.handleAnswer)
           .text('제출 하기')

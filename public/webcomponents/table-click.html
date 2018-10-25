@@ -1,0 +1,376 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+
+<dom-module id="table-click">
+  <template>
+    <style>
+      table {
+        border-spacing: inherit;
+        border: 1px solid;
+        border-collapse: collapse;
+        position: relative;
+        /* left: 50%; */
+        margin: 10px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      thead, tfoot {
+        background: purple;
+      }
+      th, td {
+        /* width: 50px; */
+        border: 1px solid;
+      }
+      td {
+        padding: 8px 4px;
+      }
+      th {
+        position: relative;
+      }
+      th p {
+        margin: 8px 0;
+      }
+      th > img {
+        height: 50%;
+      }
+      span {
+        color: white;
+        padding: 0 10px;
+      }
+      .category > .sup{
+        display: block;
+        position: relative;
+        float: left;
+
+        line-height: 100%;
+        text-align: center;
+        z-index: 1;
+      }
+      .category > .sup.thead {
+        color: black;
+        bottom: -10px;
+      }
+      .category > .sup.tfoot {
+        color: black;
+      }
+
+      .category > .inf{
+        display: block;
+        position: relative;
+        width: 120%;
+        float: left;
+        line-height: 100%;
+        text-align: center;
+        z-index: 1;
+      }
+
+      .category > .inf.thead {
+        top: -10px;
+      }
+
+      table .category::after{
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #77C2A0;
+        background-size: cover;
+        /* clip-path: polygon(100% 0%, 0% 0%, 0% 100%); */
+      }
+      table .tfoot::after {
+        clip-path: polygon(100% 0%, 0% 0%, 0% 100%);
+      }
+      table .thead::after {
+        clip-path: polygon(100% 100%, 0% 0%, 0% 100%);
+
+      }
+      .filled {
+        background-color: #CA494A;
+      }
+      button {
+        position: relative;
+        top: -25px;
+        width: 150px;
+        height: 40px;
+        background-color: #7F2F7B;
+        font-size: 15px;
+        color: white;
+        letter-spacing: 3px;
+        font-weight: 500;
+        border: none;
+        border-radius: 25px;
+      }
+      #reference > img {
+        width: 70%;
+      }
+      #reference > table {
+        left: 50%;
+      }
+      #answer {
+        display: inline-block;
+      }
+      .bubble {
+        position: absolute;
+        display: inline-block;
+        padding: 11px 5px;
+        border: 5px solid #7F2F7B;
+        text-align: center;
+        color: #333;
+        background: #fff;
+        font-size: 13px;
+        border-radius: 50%;
+        font-weight: 700;
+      }
+      .bubble::before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        bottom: -25px;
+        right: 50%;
+        width: 50px;
+        height: 20px;
+        border-style: solid;
+        border-width: 0 5px 5px 0;
+        border-color: #7F2F7B;
+        margin-right: -10px;
+        background: transparent;
+        -webkit-border-bottom-right-radius: 80px 50px;
+        -moz-border-radius-bottomright: 80px 50px;
+        border-bottom-right-radius: 80px 50px;
+        display: block;
+      }
+      .bubble::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        bottom: -23px;
+        right: 50%;
+        width: 20px;
+        height: 21px;
+        border-style: solid;
+        border-width: 0 5px 5px 0;
+        border-color: #7F2F7B;
+        margin-right: 20px;
+        background: transparent;
+        -webkit-border-bottom-right-radius: 40px 50px;
+        -moz-border-radius-bottomright: 40px 50px;
+        border-bottom-right-radius: 40px 50px;
+        display: block;
+      }
+    </style>
+    <div class="grid_board">
+      <div id="reference"></div>
+      <div id="answer"></div>
+      <div class="bubble"><p>칸을 클릭해요.</p></div>
+      <!-- <table id="answer" cellspacing="0" cellpadding="0"></table> -->
+      <button onclick="{{handleAnswer}}">제출하기</button>
+    </div>
+  </template>
+  <script>
+    class TableClick extends Polymer.Element {
+      static get is() {
+        return "table-click";
+      }
+      static get properties() {
+        return {
+          pastel : {
+            value : [
+              "A03333", "CA494A", "E29EBE", "488A5A", "855C99",
+              "EAB364", "684225", "E0764D", "5BB9D3", "4A5B5C"
+            ]
+          }
+        }
+      }
+      ready(){
+        super.ready();
+        this.set('pastel', d3.shuffle(this.pastel))
+        let parent = d3.select(this.ownerDocument).select('#element').node();
+        let refNode = d3.select(this.shadowRoot).select('#reference');
+        let direct, attr;
+        switch (parent.gameType) {
+          case "table-match":
+            direct = "tfoot";
+            attr = parent;
+            this.renderRefTable(parent, attr, refNode)
+            break;
+          case "referenceEach":
+            direct = "thead";
+            attr = parent.questions[parent.stage]
+            this.renderRefImg(parent, refNode, attr)
+            break;
+          default:
+            break;
+        }
+
+        this.renderTables(parent, attr, direct)
+      }
+      renderRefTable(parent, attr, refNode){
+        refNode = refNode.append('table');
+        let questNodeTbody = refNode.append('tbody').append('tr')
+        let { items, supTitle, infTitle, range } = attr;
+
+          questNodeTbody.append('th').text(infTitle)
+          questNodeTbody.selectAll('td').data(items).enter()
+          .append('td').attr('id', (d,i) => `quest${i}`)
+          .text((d,i) => Math.floor(Math.random() * (range.length - 1 + 1)) + 1)
+
+          questNodeTbody.selectAll('td').nodes().forEach( (ele, i) => {
+            this.set(`quest${i}`, +ele.innerText)
+          })
+
+        let questNodeTR = refNode.append('thead').append('tr')
+
+          questNodeTR.append('th').append('span').text(supTitle)
+          questNodeTR.selectAll('td').data(items).enter()
+          .append('td').append('span').text(d => d)
+
+        let questCenter = refNode.node().getBoundingClientRect().width/2
+
+          refNode.attr('style', `margin-left: -${questCenter}px`)
+      }
+      renderRefImg(parent, refNode, attr){
+        let { reference, items } = attr;
+        refNode.append('img').attr("src", reference)
+
+        items.forEach((d,i) => {
+          parent.set(`answer${i}`, d.answer)
+          parent.set(`clicked${i}`, [])
+        })
+
+        d3.select(parent.shadowRoot).select("#instruction").select('p').text(attr.title)
+
+      }
+      genItems(data, idx, node, parent) {
+
+        let { gameType, questions, stage } = parent;
+
+        if(gameType === "referenceEach") {
+          let result = questions[stage].img;
+          if(result) {
+            d3.select(node[idx]).attr('style', "background-color: white")
+            return `<img src="${data.src}" />`
+          }
+          return `<p>${data.text}</p>`
+        }
+
+        // debugger
+        return `<p>${data}</p>`
+        // TODO : gameType으로 text, img 넣을 것을 구분해야함!
+        // .text((d,i) => d).exit()
+      }
+      renderTables(parent, attr, direct) {
+        let anwNode = d3.select(this.shadowRoot).select('#answer').append('table');
+        let { items, range, supTitle, infTitle, gameType } = attr;
+
+        // 답안지 부분ㄴㄴㄴㄴ/...
+        let anwNodeTr = anwNode.append('tbody').selectAll('tr').data(items).enter()
+                               .append('tr').attr('id', (d,i) => `answer${i}`)
+                               .attr('data-idx', (d,i) => i)
+
+
+         anwNodeTr.append('th').attr('style', "background-color: #77C2A0")
+         .html((d,i,node) => this.genItems(d, i, node, parent))
+
+
+        anwNodeTr.nodes().forEach( (ele, i) => {
+          d3.select(ele).selectAll('td').data(range).enter()
+          .append('td').attr('data-name', (d,i) => d)
+          .on('click', (d, i, node) => this.handleClickTable(d, i, node, parent, attr))
+        })
+
+        let anwNodeTF = anwNode.append(direct)
+        let anwNodeTH = anwNodeTF.append('th').attr('class', `category ${direct}`)
+
+        anwNodeTH.append('span').attr('class', `sup ${direct}`).text(supTitle)
+        anwNodeTH.append('span').attr('class', `inf ${direct}`).text(infTitle)
+
+        anwNodeTF.selectAll('td').data(range).enter()
+            .append('td').append('span').text((d,i) => d)
+
+        // let anwCenter = anwNode.node().getBoundingClientRect().width/2
+        // anwNode.attr('style', `margin-left: -${anwCenter}px`)
+
+
+      }
+      handleClickTable(d, i, node, parent, attr) {
+        node = node[i];
+        let num = (+node.parentElement.dataset.idx);
+        let filled = node.className;
+        let prev = node.previousElementSibling;
+
+        if(parent.gameType === "table-match") {
+          if(prev.localName === "td" && prev.className === "") {
+            alert("차례로 완성해주세요.")
+            return
+          }
+        }
+
+        if(filled === "") {
+          node.style.backgroundColor = `#${this.pastel[num]}`
+          if(parent.gameType === "referenceEach") {
+            parent.push(`clicked${num}`, node.dataset.name)
+          }
+        } else {
+          if(parent.gameType === "referenceEach") {
+            let nclicked = parent[`clicked${num}`].filter(d => d !== node.dataset.name)
+            parent.set(`clicked${num}`, nclicked)
+          }
+          node.style.backgroundColor = ""
+        }
+
+          node.classList.toggle('filled')
+
+      }
+      handleAnswer(a,b,c){
+        // debugger
+        let parent = d3.select(this.ownerDocument).select('#element').node();
+        let self = d3.select(parent.shadowRoot).select("table-click").node();
+        let result = true;
+        let ansNodes = d3.select(self.shadowRoot).select('#answer').select('table').select('tbody').selectAll('tr').nodes()
+
+        ansNodes.forEach((ele, i) => {
+            if(parent.gameType === "table-match") {
+              // 클릭된 수를 체크하여
+              let length = d3.select(ele).selectAll('.filled').nodes().length;
+              // gameType === "table-match" 에서 설정한 것과 맞으면 오케이!
+              if(self[`quest${i}`] !== length) {
+                result = false;
+                parent.$.retryModal.modalAlert()
+              }
+            } else if (parent.gameType === "referenceEach") {
+              let an = parent[`answer${i}`];
+              let cik = parent[`clicked${i}`];
+
+              if(an.length !== cik.length) {
+                // 칸이 맞지 않는 경우
+                result = false;
+                return
+              }
+
+              // 안에 있는 내용
+              let check = cik.every(c => an.includes(c))
+              if(!check) {
+                result = false;
+              }
+            }
+
+        })
+        console.log(result);
+        if(!result) {
+          parent.$.retryModal.modalAlert()
+          parent.set('result', true)
+        } else {
+          if(parent.lastStage === parent.stage){
+            parent.$.finalStageModal.modalAlert()
+          }else {
+            parent.$.successModal.modalAlert()
+          }
+        }
+
+      }
+    }
+    window.customElements.define(TableClick.is, TableClick);
+  </script>
+</dom-module>
