@@ -1,11 +1,14 @@
 {
   "element": "component-game",
   "attributes": {
-    "component" : "table-match",
-    "lastStage" : 3,
+    "nextlink" : "activity#!choA6_c3_01",
+    "component" : "table-click",
+    "lastStage" : 4,
     "items" : ["피자", "햄버거", "김밥", "떡볶이"],
-    "title" : "음식",
-    "max" : 8
+    "range" : [1,2,3,4,5,6,7,8],
+    "supTitle" : "음식",
+    "infTitle" : "개수",
+    "gameType" : "table-match"
   },
   "data": [
   ],

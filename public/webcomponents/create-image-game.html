@@ -334,8 +334,6 @@
             { imageItemSize, originImgSize } = self.size,
             getX = d3.event.x, getY = d3.event.y;
 
-
-
         let targetEl, targetX, targetY, result;
 
         self.circleDom.forEach(el => {
@@ -437,7 +435,7 @@
 
         let mainImg = manifest.find(d => d.background),
             backgroundImg = mainImg[`${this.language}_src`] || mainImg.src,
-            resImagesData = manifest.filter(d => !d.background)
+            resImagesData = d3.shuffle(manifest.filter(d => !d.background))
 
         this.set('items', resImagesData)
         this.set('backgroundImg', backgroundImg)

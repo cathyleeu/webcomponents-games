@@ -129,12 +129,12 @@
       let boardHeight = this.offsetHeight - barHeight;
       let boardWidth = this.offsetWidth;
 
-      this.set('stage', 1)
+      this.set('stage', 0)
       this.set('boardHeight', boardHeight)
       this.set('boardWidth', boardWidth )
 
       if(!this.lastStage) {
-        this.set('LastStage', this.questions.length-1)
+        this.set('lastStage', this.questions.length-1)
       }
 
 

@@ -1,0 +1,469 @@
+<link rel="import" href="../components/polymer/polymer-element.html">
+<link rel="import" href="../components/app-localize-behavior/app-localize-behavior.html">
+
+<dom-module id="drag-game">
+  <template>
+    <style>
+      :host {
+        overflow: hidden;
+      }
+      .container {
+        width: 100%;
+        text-align: center;
+      }
+      header {
+        width: 80%;
+        font-size: 16px;
+        margin: 10px 0;
+        display: inline-block;
+        position: relative;
+        text-align-last: left;
+      }
+      header::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: purple;
+        position: absolute;
+        /* border-radius: 100%; */
+        left: -30px;
+        top: 5px;
+      }
+      .generalDrag {
+        width: 40%;
+        height: 90%;
+        border: 5px dashed lightgray;
+        display: inline-block;
+        position: relative;
+        margin: 0 20px;
+      }
+      .arrow {
+        width: 40px;
+        height: 15px;
+        position: relative;
+        background-color: gray;
+        display: inline-block;
+        margin-right: 25px;
+      }
+      .arrow::after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 35px;
+        top: -24px;
+        border-top: 30px solid transparent;
+        border-left: 30px solid gray;
+        border-bottom: 30px solid transparent;
+      }
+      #board {
+        /* height: 220px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #board > img {
+        height: 70%;
+      }
+      #board > button {
+        position: relative;
+        height: 30%;
+        background-color: #7F2F7B;
+        font-size: 80%;
+        color: white;
+        letter-spacing: 3px;
+        font-weight: 500;
+        border: none;
+        border-radius: 25px;
+      }
+      #item_box {
+        border: 5px dashed lightgray;
+        border-radius: 30px;
+        position: relative;
+        width: 70%;
+        display: inline-block;
+        padding: 3% 0;
+        margin-top: 30px;
+      }
+      #item_box > p:first-child {
+        position: absolute;
+        font-size: 16px;
+        font-weight: 700;
+        background-color: purple;
+        padding: 5px 10px;
+        border-radius: 40px;
+        color: white;
+        margin: 0;
+        display: inline-block;
+        top: -17px;
+        left: 50%;
+        width: 100px;
+        margin-left: -50px;
+      }
+      .generalDrag > p {
+        background-color: lightslategray;
+        font-size: 15px;
+        display: inline-block;
+        padding: 10px;
+        font-weight: 700;
+        color: white;
+        border-radius: 14px;
+        position: absolute;
+        left: 5%;
+        top: -40px;
+      }
+      .items {
+        display: inline-block;
+        margin: 2px 5px;
+      }
+      .items > p {
+        font-size: 80%;
+        max-width: 100px;
+        font-weight: 600;
+        user-select: none;
+        cursor: pointer;
+        margin: 0;
+        background-color: lightslategray;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+      }
+      .items > img {
+        border: 3px solid lightslategray;
+        width: 100px;
+        vertical-align: -webkit-baseline-middle;
+        vertical-align: middle;
+        user-drag: none;
+        -webkit-user-drag: none;
+      }
+      .title {
+        position: absolute;
+        padding: 10px;
+        font-size: 12px;
+        font-weight: 800;
+        top: -5px;
+        left: -5px;
+        color: white;
+        background: lightslategray;
+      }
+      .title > p {
+        margin: 0;
+      }
+
+      .specificStepDrags {
+        position: relative;
+      }
+      .specificStepDrags > div {
+        display: inline-block;
+        position: relative;
+      }
+      .specificSteps {
+        /* position: relative; */
+      }
+      .specificSteps::before,
+      .specificSteps::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        display: inline-block;
+        width: 5px;
+        height: 24px;
+        background: darkgray;
+      }
+      .specificSteps::before {
+        left: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      .specificSteps::after {
+        right: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .specificItems {
+        width: 50%;
+        height: 40px;
+        line-height: 40px;
+        /* 높이가 변경 되어야 할 것 같음*/
+        border: 5px solid darkgray;
+        display: inline-block;
+        position: relative;
+      }
+      .specificItems::before,
+      .specificItems::after {
+        content: "";
+        height: 5px;
+        width: 25px;
+        position: absolute;
+        top: 6px;
+        background: darkgray;
+      }
+      .specificItems::before {
+        left: -25px;
+      }
+      .specificItems::after {
+        right: -25px;
+      }
+    </style>
+    <status-bar
+      id="statusBar"
+      title="{{localize('title')}}"
+      on-modal="handleModal"
+      purpose="range"
+      fullscreen="{{localize('fullscreen')}}"
+      logoutHead="{{localize('logoutHead')}}"
+      ></status-bar>
+    <!-- <toycode-modal
+      id="fullScreenModal"
+      headertext="풀스크린"
+      btmtext="풀스크린 모드로 적용합니다."
+      yesbtn="확인"
+      purpose="fullScreen"
+      ></toycode-modal> -->
+    <toycode-modal
+      id="successModal"
+      purpose="nextStep"
+      headertext="{{localize('successHead')}}"
+      btmtext="{{localize('successBtm')}}"
+      total="{{total}}"
+      point="{{point}}"
+      matched="{{matched}}"
+      nextbtn="{{localize('nextbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="retryModal"
+      purpose="retryReset"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{retryMsg}}"
+      retrybtn="{{localize('finalbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="logOutModal"
+      headertext="{{localize('logoutHead')}}"
+      btmtext="{{localize('logoutBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="logout"
+      ></toycode-modal>
+    <toycode-modal
+      id="previousModal"
+      headertext="{{localize('previousHead')}}"
+      btmtext="{{localize('previousBtm')}}"
+      yesbtn="{{localize('yesbtn')}}"
+      nobtn="{{localize('nobtn')}}"
+      purpose="previous"
+      ></toycode-modal>
+    <toycode-modal
+      id="finalStageModal"
+      headertext="{{localize('finalStageHead')}}"
+      btmtext="{{localize('finalStageBtm')}}"
+      finalbtn="{{localize('finalbtn')}}"
+      purpose="finalStage"
+      nextlink="{{nextlink}}"
+      ></toycode-modal>
+    <div class="container">
+      <header>{{localize('minor')}}</header>
+      <div id="board"></div>
+      <div id="item_box">
+        <p>보기</p>
+      </div>
+    </div>
+  </template>
+  <script>
+    class DragGame extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      static get is() { return 'drag-game'; }
+      connectedCallback() {
+        super.connectedCallback();
+      }
+      static get properties() {
+        return {
+          language: {
+            value: "ko"
+          },
+          retryMsg : {
+            value: "$"
+          }
+        }
+      }
+      ready() {
+        super.ready();
+
+        // this.$.fullScreenModal.modalAlert()
+
+        this.set('currentStage', 1)
+        this.set('answers', [])
+      }
+      reset(){
+
+        d3.select(this.$.board).selectAll('*').remove()
+        d3.select(this.$.item_box).selectAll('div').remove()
+        this.set('answers', [])
+        this.setData()
+      }
+      handleMessage(newMsg){
+        this.set('retryMsg', this.retryMsg.replace('$', newMsg))
+        this.$.retryModal.modalAlert()
+      }
+      dragstarted(a,b) {
+        let {x, y} = d3.event,
+            {width, height} = this.getBoundingClientRect();
+        this.style.position = "absolute"
+        this.style.top = `${y}px`
+        // this.style.left = `${x}px`
+        this.style.left = `${x-(width/2)}px`
+
+      }
+      dragged(d){
+
+        let {x, y, dx, dy} = d3.event,
+            {width, height} = this.getBoundingClientRect();
+        this.style.position = "absolute"
+        this.style.top = `${(y-dy)}px`
+        // this.style.left = `${(x-dx)}px`
+        this.style.left = `${(x-dx)-(width/2)}px`
+
+      }
+      dragended(d){
+        let targetEl, result, getName; //targetX, targetY,
+        let self = d3.select(this.ownerDocument).select('#element').node();
+        let targetNodes = d3.select(self.$.board).selectAll('.specificItems').nodes();
+        let setName = d.text;
+
+
+        let {width, height, x, y} = this.getBoundingClientRect(),
+            getX = x,
+            getY = y+(height/2);
+
+        targetNodes.forEach(el => {
+          const getEl = el.getBoundingClientRect();
+
+          let left = getEl.x < getX,
+              right = getX < getEl.x + getEl.width,
+              top = getEl.y < getY,
+              bottom = getY < getEl.y + getEl.height;
+
+          if(left && right && top && bottom) {
+            targetEl = el;
+            getName = el.__data__;
+          }
+
+        })
+
+        if(!targetEl){
+          this.style.position = ""
+          this.style.top = ``
+          this.style.left = ``
+          return;
+        }
+        switch (self.gameType) {
+          case "specificStepDrags":
+            if(getName !== setName) {
+              this.style.position = ""
+              this.style.top = ``
+              this.style.left = ``
+              return;
+            } else {
+              self.push('answers', d.result)
+            }
+            if(self.answers.length === self.data.items.length) {
+              self.$.finalStageModal.modalAlert()
+            }
+            break;
+          case "generalDrag":
+            self.push('answers', d.result)
+            break;
+          default:
+            break;
+        }
+
+        // self.push('answers', d.result)
+
+      }
+      genItems(item,i) {
+        let result = Object.keys(item).includes('src') ? true : false;
+        return result ? `<img src="${item.src}" />` : `<p>${item.text}</p>`
+      }
+      handleAnswer(){
+
+        let { data, answers } = this;
+        let anw = data.items.filter(d => d.result);
+        let Clength = Boolean(answers.length === anw.length);
+        let Canswer = answers.includes(false);
+
+        if(!Clength) {
+          this.handleMessage("정답 갯수와 맞지 않아요")
+          return
+        } else if(Canswer) {
+          this.handleMessage("오답이 있어요.")
+          return
+        } else {
+          this.$.finalStageModal.modalAlert()
+        }
+
+      }
+      generalDrag(boardNode) {
+        let { img, items, title } = this.data;
+        boardNode.attr('style', `height:${window.innerHeight*0.3}px`)
+        boardNode.append('img').attr('src', img)
+        boardNode.append('div').attr("class", "generalDrag").append('div').attr('class','title').append('p').text(title)
+        boardNode.append('button').text("정답 확인").on('click', () => this.handleAnswer())
+
+        this.genReference(items)
+      }
+      specificStepDrags(boardNode) {
+
+        let { stepImgs, specificSteps, items } = this.data;
+
+        let refNodes = boardNode.append('div').attr('class', "specificStepDrags")
+
+        refNodes.selectAll('div').data(stepImgs).enter()
+                .append('div').attr('class', 'stepImgs')
+                .attr('style', `width:${(100/stepImgs.length)-2}%;`)
+                .append('img').attr('style', `width:50%;`)
+                .attr('src', (d,i) => d)
+
+
+        refNodes.selectAll('div').exit().data(specificSteps).enter()
+                .append('div').attr('class', 'specificSteps')
+                .attr('style', `width:${(100/stepImgs.length)-2}%;`)
+                .append('div').attr('class', 'specificItems')
+                .attr('data-name', (d,i) => d)
+                .text((d,i) => "?")
+                .exit()
+
+        this.genReference(items)
+
+      }
+      genReference(items){
+        d3.select(this.$.item_box)
+          .selectAll('div')
+          .data(d3.shuffle(items)).enter()
+          .append('div').attr('class', "items")
+          .call(d3.drag()
+            .on("start", this.dragstarted)
+            .on("drag", this.dragged)
+            .on("end", this.dragended))
+          .html(this.genItems)
+      }
+      setData(data, manifest){
+
+        let boardNode = d3.select(this.$.board)
+
+        switch (this.gameType) {
+          case "generalDrag" :
+          case "specificStepDrags" :
+            this[this.gameType](boardNode)
+            break;
+          default:
+            break;
+        }
+      }
+      handleModal(e) {
+        if(e.detail.purpose === "previous") {
+          this.$.previousModal.modalAlert();
+        } else {
+          this.$.logOutModal.modalAlert();
+        }
+      }
+    }
+    window.customElements.define(DragGame.is, DragGame);
+  </script>
+</dom-module>

@@ -1,0 +1,119 @@
+{
+  "element": "component-game",
+  "attributes": {
+    "nextlink" : "activity#!choA7_c5_02",
+    "component" : "table-click",
+    "gameType" : "referenceEach",
+    "questions" : [
+      {
+        "title" : "친구들이 다녀올 곳을 표로 정리해 보세요. 가장 많이 갈 장소는 어디일까요?",
+        "reference" : "/img/cho_activities/choA7_c5_001.png",
+        "supTitle" : "친구",
+        "infTitle" : "기준",
+        "img" : true,
+        "items" : [
+          {
+            "src" : "/img/cho_activities/choA7_c5_013.png",
+            "answer" : ["키즈 병원","코봇 마트"]
+          },{
+            "src" : "/img/cho_activities/choA7_c5_014.png",
+            "answer" : ["좋은 서점","코봇 마트"]
+          },{
+            "src" : "/img/cho_activities/choA7_c5_015.png",
+            "answer" : ["키즈 병원","코봇 마트"]
+          }
+        ],
+        "range" : ["키즈 병원", "좋은 서점", "코봇 마트"]
+      },
+      {
+        "title" : "선물의 종류를 보고, 선물의 특징을 표로 정리해 보세요.",
+        "reference" : "/img/cho_activities/choA7_c5_002.png",
+        "supTitle" : "선물",
+        "infTitle" : "기준",
+        "img" : false,
+        "items" : [
+          {
+            "text" : "기차놀이",
+            "answer" : ["조립할 수 있다", "움직인다"]
+          },{
+            "text" : "미니블록",
+            "answer" : ["조립할 수 있다", "동물이다"]
+          },{
+            "text" : "춤추는 인형",
+            "answer" : ["움직인다", "동물이다"]
+          }
+        ],
+        "range" : ["조립할 수 있다", "움직인다", "동물이다"]
+      },
+      {
+        "title" : "친구들이 어떤 선물을 좋아하는지 특징을 표로 정리해 보세요.",
+        "reference" : "/img/cho_activities/choA7_c5_003.png",
+        "supTitle" : "친구",
+        "infTitle" : "기준",
+        "img" : true,
+        "items" : [
+          {
+            "src" : "/img/cho_activities/choA7_c5_013.png",
+            "answer" : ["조립할 수 있다", "동물이다"]
+          },{
+            "src" : "/img/cho_activities/choA7_c5_014.png",
+            "answer" : ["조립할 수 있다", "움직인다"]
+          },{
+            "src" : "/img/cho_activities/choA7_c5_015.png",
+            "answer" : ["움직인다", "동물이다"]
+          }
+        ],
+        "range" : ["조립할 수 있다", "움직인다", "동물이다"]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "표와 그래프",
+      "minor" : "날씨 별로 분류한 수를 보고, 그래프를 완성하세요.",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "다시하기",
+      "retryBtm" : "칸을 다시 세워보아요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
