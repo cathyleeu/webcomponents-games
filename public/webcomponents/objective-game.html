@@ -16,10 +16,10 @@
         /* border: 1px solid black; */
         height: 70px;
         clear: both;
-        width: 70%;
+        width: 80%;
         position: relative;
         left: 50%;
-        margin-left: -35%;
+        margin-left: -40%;
         border-bottom: 2px dashed #dbdbdb;
         /* border-left: 5px solid purple; */
       }
@@ -42,9 +42,9 @@
       .options {
         margin-top: 20px;
         position: relative;
-        width: 70%;
+        width: 80%;
         left: 50%;
-        margin-left: -35%;
+        margin-left: -40%;
         height: 58%;
       }
       .options > img {
@@ -99,6 +99,7 @@
       .binary {
         width: 50%;
         padding: 1em 0;
+        border-bottom: 3px solid lightgray;
       }
       .binary,
       .reference {
@@ -106,10 +107,11 @@
         position: absolute;
         left: 0;
         border-top: 3px solid lightgray;
-        border-bottom: 3px solid lightgray;
+
       }
       .reference {
-        width: 40%;
+        width: 55%;
+        height: 100%;
       }
       .binarys {
         width: 40%;
@@ -121,18 +123,19 @@
         display: inline-block;
       }
       .sentences {
-        width: 60%;
+        width: 43%;
       }
       .reference > img {
         max-width: 100%;
-        margin: 15% 0;
+        max-height: 100%;
+        margin: 10% 0;
       }
       .reference > p {
         position: absolute;
-        top: -20px;
+        top: -14px;
         margin: 0;
-        left: 40%;
-        font-size: 20px;
+        left: 44%;
+        font-size: 14px;
         background-color: gray;
         padding: 5px 10px;
         color: white;
@@ -345,7 +348,7 @@
       replaceQuestion(text,b,node){
         // 타입에 따라서 문제 설정
         let { questionImg, detailType, color } = this.questions[this.stage];
-        let textStyle = text.length > 20 ? "textlong" : "textshort";
+        let textStyle = "textlong";
         if(this.questType === "gridCount" && detailType === "color"){
           text = text.replace("$", `<p style="width:70px;height:70px;margin-right:10px;background-color:${color}"></p>,`);
           text = text.split(',');

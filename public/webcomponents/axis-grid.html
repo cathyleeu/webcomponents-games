@@ -101,7 +101,7 @@
       }
       handleLogicTd(parent) {
         if(this.blanks === 0) {
-          if(parent.LastStage === parent.stage){
+          if(parent.lastStage === parent.stage){
             parent.$.finalStageModal.modalAlert()
           }else {
             parent.$.successModal.modalAlert()
