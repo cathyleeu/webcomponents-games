@@ -29,8 +29,8 @@
     "x": 2,
     "y": 1,
     "img": "circle_sky_target",
-    "shape": "circle",
-    "color": "sky",
+    "shape": "star",
+    "color": "green",
     "useItem": true
   }],
   "tutorial": [{
