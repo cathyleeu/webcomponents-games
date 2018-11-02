@@ -22,15 +22,15 @@
     "x": 1,
     "y": 1,
     "img": "star_green_target",
-    "shape": "circle",
-    "color": "red",
+    "shape": "star",
+    "color": "green",
     "useItem": true
   },{
     "x": 2,
     "y": 1,
     "img": "circle_sky_target",
-    "shape": "star",
-    "color": "green",
+    "shape": "circle",
+    "color": "sky",
     "useItem": true
   }],
   "tutorial": [{
