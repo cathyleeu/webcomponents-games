@@ -71,6 +71,10 @@ module.exports = function(classObj) {
   if(schoolCode == "A00083-K5") {
     book = [1, 3, 5, 7];
   }
+  // 영업용(2018 설명회용 1권)
+  if(schoolCode == "C00224-K1") {
+    book = [1];
+  }
   // 개발용(2017전권+2018리뉴얼)
   if(schoolCode == "A00083-K6") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
