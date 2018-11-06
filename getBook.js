@@ -72,7 +72,7 @@ module.exports = function(classObj) {
     book = [1, 3, 5, 7];
   }
   // 영업용(2018 설명회용 1권)
-  if(schoolCode == "C00224-K1") {
+  if(schoolCode == "C00224-K67") {
     book = [1];
   }
   // 개발용(2017전권+2018리뉴얼)
