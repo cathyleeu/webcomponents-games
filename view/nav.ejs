@@ -191,8 +191,8 @@ var book = "<%=book%>",
 if(book.split("-")[0] == "CHO") {
   $("#program").text("키즈코딩");
   $("#book").text(book.split("-")[1] + "단계 " + book.split("-")[2] + "권");
-  // 5권까지 비디오가 만들어져 있음
-  if(+book.split("-")[2] <= 5) {
+  // 6권까지 비디오가 만들어져 있음
+  if(+book.split("-")[2] <= 6) {
     for(i = 0; i < contents.length; i++) {
       $(".container .book:eq("+i+") .book-title")
           .append('<a class="book-problem" href="#" data-type="video" data-num="' + (i*2+1) + '"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 교육영상 보기 1</a>')
