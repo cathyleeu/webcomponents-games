@@ -43,9 +43,9 @@
       "retryBtm" : "올바른 답을 다시 선택하세요.",
       "retrybtn": "확인",
 
-      "finalStageHead": "성공!",
-      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "확인",
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm": "다음 단계로 넘어가시겠습니까?",
+      "finalbtn" : "넘어가기",
 
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",

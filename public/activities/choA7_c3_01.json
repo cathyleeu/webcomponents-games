@@ -85,6 +85,8 @@
       "retryBtm" : "올바른 답을 다시 골라보세요.",
       "retrybtn": "확인",
 
+      "lackBtm" : "답의 수가 맞지 않아요.",
+
       "finalStageHead": "참 잘했어요!",
       "finalStageBtm": "다음 단계로 넘어가시겠습니까?",
       "finalbtn" : "확인",
