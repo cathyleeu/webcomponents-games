@@ -1,0 +1,66 @@
+{
+  "element": "drag-game",
+  "attributes": {
+    "nextlink" : "activity#!choA8_c5_04",
+    "gameType" : "generalDrags",
+    "data": {
+      "cateSteps" : ["앞에 장애물이 없음", "앞에 장애물이 있음", "청소 시간이 지남"],
+      "subHeading" : "1단계: 먼지 청소를 시작합니다.",
+      "items" : [
+        {"text": "중지합니다", "result" : 2},
+        {"text": "회전합니다", "result" : 1},
+        {"text": "앞으로 이동합니다", "result" : 0}
+      ]
+    }
+
+  },
+  "data": {
+  },
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "알고리즘의 이해",
+      "minor" : "로봇 청소기가 장애물을 피해 청소를 마칠 수 있도록 나열해 보세요.",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "logoutHead": "로그아웃",
+      "previousHead" : "돌아가기",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm": "다음 단계로 넘어가시겠습니까?",
+      "finalbtn" : "확인",
+      "fullscreen" : "전체화면"
+    },
+    "en": {
+      "title": "Arrange the images with given images",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "flow": "Work Space",
+      "mixed": "Given images",
+      "finalStageHead": "Success",
+      "finalStageBtm":"Success!",
+      "finalbtn" : "Next Stage",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

@@ -130,7 +130,8 @@
       }
       .items > img {
         border: 3px solid lightslategray;
-        width: 100px;
+        width: 70px;
+        height: 70px;
         vertical-align: -webkit-baseline-middle;
         vertical-align: middle;
         user-drag: none;
@@ -202,6 +203,38 @@
       .specificItems::after {
         right: -25px;
       }
+      .generalItems > p {
+        position: absolute;
+        top: -8px;
+        left: -3px;
+        font-size: 12px;
+        margin: 0;
+        background: darkgray;
+        padding: 2px;
+        font-weight: 700;
+      }
+      .generalItems {
+        position: relative;
+        width : 140px;
+        height: 70px;
+      }
+      .generalItems,
+      .generalSteps {
+        margin: 0 10px;
+        border: 3px solid gray;
+        display: inline-block;
+      }
+      .generalSteps {
+        width: 100px;
+        height: 100px;
+      }
+      .generalDrags {
+        margin-top : 15px;
+      }
+      #subHead > p {
+        margin: 0 0 5px 0;
+        font-size: 12px;
+      }
     </style>
     <status-bar
       id="statusBar"
@@ -229,10 +262,17 @@
       nextbtn="{{localize('nextbtn')}}"
       ></toycode-modal>
     <toycode-modal
-      id="retryModal"
+      id="retryResetModal"
       purpose="retryReset"
       headertext="{{localize('retryHead')}}"
       btmtext="{{retryMsg}}"
+      retrybtn="{{localize('finalbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
       retrybtn="{{localize('finalbtn')}}"
       ></toycode-modal>
     <toycode-modal
@@ -261,6 +301,7 @@
       ></toycode-modal>
     <div class="container">
       <header>{{localize('minor')}}</header>
+      <div id="subHead"></div>
       <div id="board"></div>
       <div id="item_box">
         <p>보기</p>
@@ -300,7 +341,7 @@
       }
       handleMessage(newMsg){
         this.set('retryMsg', this.retryMsg.replace('$', newMsg))
-        this.$.retryModal.modalAlert()
+        this.$.retryResetModal.modalAlert()
       }
       dragstarted(a,b) {
         let {x, y} = d3.event,
@@ -321,14 +362,14 @@
         this.style.left = `${(x-dx)-(width/2)}px`
 
       }
-      dragended(d){
+      dragended(d,node,name){
         let targetEl, result, getName; //targetX, targetY,
-        let self = d3.select(this.ownerDocument).select('#element').node();
-        let targetNodes = d3.select(self.$.board).selectAll('.specificItems').nodes();
+        //let self = d3.select(this.ownerDocument).select('#element').node();
+        let targetNodes = d3.select(this.$.board).selectAll(`.${name}`).nodes();
         let setName = d.text;
 
 
-        let {width, height, x, y} = this.getBoundingClientRect(),
+        let {width, height, x, y} = node.getBoundingClientRect(),
             getX = x,
             getY = y+(height/2);
 
@@ -348,33 +389,80 @@
         })
 
         if(!targetEl){
-          this.style.position = ""
-          this.style.top = ``
-          this.style.left = ``
+          node.style.position = ""
+          node.style.top = ``
+          node.style.left = ``
           return;
         }
-        switch (self.gameType) {
+        switch (this.gameType) {
           case "specificStepDrags":
             if(getName !== setName) {
-              this.style.position = ""
-              this.style.top = ``
-              this.style.left = ``
+              node.style.position = ""
+              node.style.top = ``
+              node.style.left = ``
               return;
             } else {
-              self.push('answers', d.result)
+              this.push('answers', d.result)
             }
-            if(self.answers.length === self.data.items.length) {
-              self.$.finalStageModal.modalAlert()
+            if(this.answers.length === this.data.items.length) {
+              this.$.finalStageModal.modalAlert()
             }
             break;
           case "generalDrag":
-            self.push('answers', d.result)
+            this.push('answers', d.result)
+            break;
+          case "generalStepDrags":
+            if(this.steps !== getName.result) {
+              alert("순서에 맞게 옮겨주세요")
+              node.style.position = ""
+              node.style.top = ``
+              node.style.left = ``
+              return;
+            }
+            if(getName.result !== node.__data__.result) {
+              this.$.retryModal.modalAlert()
+              node.style.position = ""
+              node.style.top = ``
+              node.style.left = ``
+              return;
+            } else {
+              if(this.steps === this.data.steps) {
+                this.$.finalStageModal.modalAlert()
+                return
+              }
+              d3.select(node)
+                .call(d3.drag().on("start", null))
+
+              this.set("steps", this.steps+1)
+            }
+            console.log(this.steps);
+
+
+            break;
+          case "generalDrags" :
+          //debugger
+          let targetR = +targetEl.dataset.step;
+          let dragR = node.__data__.result;
+          if(targetR !== dragR) {
+            this.$.retryModal.modalAlert()
+            node.style.position = ""
+            node.style.top = ``
+            node.style.left = ``
+            return;
+          } else {
+            d3.select(targetEl).classed("filled", true)
+            d3.select(node)
+              .call(d3.drag().on("start", null))
+
+            let filledL = d3.select(this.$.board).selectAll(".filled").nodes().length;
+            if(filledL === this.data.cateSteps.length) {
+              this.$.finalStageModal.modalAlert()
+            }
+          }
             break;
           default:
             break;
         }
-
-        // self.push('answers', d.result)
 
       }
       genItems(item,i) {
@@ -406,7 +494,23 @@
         boardNode.append('div').attr("class", "generalDrag").append('div').attr('class','title').append('p').text(title)
         boardNode.append('button').text("정답 확인").on('click', () => this.handleAnswer())
 
-        this.genReference(items)
+        this.genReference(items, "generalDrag")
+      }
+      generalDrags(boardNode) {
+
+        let { items, subHeading, cateSteps } = this.data;
+        let stepBoard = boardNode.append('div').attr('class', "generalDrags")
+
+        d3.select(this.$.subHead).append('p').text(subHeading)
+        //debugger
+        stepBoard.selectAll('div').data(cateSteps).enter()
+                 .append('div').attr('class', 'generalItems')
+                 .attr('data-step', (d,i) => i)
+                 .append('p').text((d, i) => d)
+
+        this.genReference(d3.shuffle(items), "generalItems")
+        //debugger
+
       }
       specificStepDrags(boardNode) {
 
@@ -429,10 +533,27 @@
                 .text((d,i) => "?")
                 .exit()
 
-        this.genReference(items)
+        this.genReference(items, "specificItems")
 
       }
-      genReference(items){
+      generalStepDrags(boardNode){
+
+        let { steps, strict, subHeading, items } = this.data;
+        let stepBoard = boardNode.append('div').attr('class', "generalStepDrags")
+
+        d3.select(this.$.subHead).append('p').text(subHeading)
+
+        stepBoard.selectAll('div').data(items).enter()
+                 .append('div').attr('class', 'generalSteps')
+                 .attr('data-step', (d,i) => d.result)
+
+        this.set('steps', 0)
+        // [...Array(steps+1).keys()]
+        //.append('img').attr('src', (d, i) => d.src)
+        this.genReference(d3.shuffle(items), "generalSteps")
+
+      }
+      genReference(items, target){
         d3.select(this.$.item_box)
           .selectAll('div')
           .data(d3.shuffle(items)).enter()
@@ -440,7 +561,7 @@
           .call(d3.drag()
             .on("start", this.dragstarted)
             .on("drag", this.dragged)
-            .on("end", this.dragended))
+            .on("end", (d,i,node) => this.dragended(d ,node[i], target)))
           .html(this.genItems)
       }
       setData(data, manifest){
@@ -449,7 +570,9 @@
 
         switch (this.gameType) {
           case "generalDrag" :
+          case "generalDrags" :
           case "specificStepDrags" :
+          case "generalStepDrags" :
             this[this.gameType](boardNode)
             break;
           default:

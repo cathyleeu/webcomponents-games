@@ -1,24 +1,35 @@
 {
   "element": "objective-game",
   "attributes": {
-    "gameType" : "referenceEach",
+    "gameType" : "sentence",
+    "nextlink" : "activity#!choA7_c1_05",
+    "subHeading" : "다음 문장에 들어갈 알맞은 단어는 무엇일까요?",
     "questions" : [
       {
-        "question": "? 에는 어떤 숫자를 써야하나요?",
-        "reference": "/img/cho_activities/choA8_c3_020.png",
+        "question": "? 이란 문제를 해결하기 위한 순서와 방법을 말합니다.",
+        "questionType" : "subHeading",
         "options" : [
-          { "text" : "0"},
-          { "text" : "1", "answer": true},
-          { "text" : "11"}
+          { "text" : "추상화"},
+          { "text" : "모델링"},
+          { "text" : "알고리즘", "answer": true}
         ]
       },
       {
-        "question": "? 에는 어떤 숫자를 써야하나요?",
-        "reference": "/img/cho_activities/choA8_c3_006.png",
+        "question": "문제 해결 과정을 잘게 쪼개서 ? 대로 나열하면 기계가 문제를 자동으로 처리할 수 있습니다.",
+        "questionType" : "subHeading",
         "options" : [
-          { "text" : "2", "answer": true},
-          { "text" : "5"},
-          { "text" : "7"}
+          { "text" : "문제"},
+          { "text" : "순서"},
+          { "text" : "알고리즘", "answer": true}
+        ]
+      },
+      {
+        "question": "알고리즘은 ? 를 해결하는 목적에 맞게 작성합니다.",
+        "questionType" : "subHeading",
+        "options" : [
+          { "text" : "문제", "answer": true},
+          { "text" : "순서"},
+          { "text" : "컴퓨터"}
         ]
       }
     ]
@@ -29,10 +40,9 @@
   ],
   "msg": {
     "ko": {
-      "title": "여러 가지 규칙",
+      "title": "알고리즘의 이해",
       "score": "점수",
       "lefted": "맞춘 갯수",
-
       "success": "참 잘했어요!",
       "successHead": "참 잘했어요!",
       "successBtm" : "다음 단계로 넘어가시겠습니까?",
@@ -47,15 +57,15 @@
       "retryBtm" : "올바른 답을 다시 선택하세요.",
       "retrybtn": "확인",
 
-      "finalStageHead": "성공!",
-      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm": "다음 단계로 넘어가시겠습니까?",
       "finalbtn" : "확인",
 
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
 
-      "fullscreen" : "풀스크린"
+      "fullscreen" : "전체화면"
     },
     "en": {
       "title": "Objective Game",

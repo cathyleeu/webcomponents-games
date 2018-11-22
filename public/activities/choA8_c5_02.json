@@ -1,24 +1,15 @@
 {
   "element": "objective-game",
   "attributes": {
-    "gameType" : "referenceEach",
+    "gameType" : "reference",
+    "reference": "/img/cho_activities/choA8_c5_001.png",
     "questions" : [
       {
-        "question": "? 에는 어떤 숫자를 써야하나요?",
-        "reference": "/img/cho_activities/choA8_c3_020.png",
+        "question": "자동문이 어떻게 동작하는지 빈칸에 알맞은 말을 골라보세요.",
         "options" : [
-          { "text" : "0"},
-          { "text" : "1", "answer": true},
-          { "text" : "11"}
-        ]
-      },
-      {
-        "question": "? 에는 어떤 숫자를 써야하나요?",
-        "reference": "/img/cho_activities/choA8_c3_006.png",
-        "options" : [
-          { "text" : "2", "answer": true},
-          { "text" : "5"},
-          { "text" : "7"}
+          { "text" : "A: 자동문이 열리기 시작합니다. \n B: 자동문이 열리지 않습니다."},
+          { "text" : "A: 자동문이 열리지 않습니다. \n B: 자동문이 열리기 시작합니다.", "answer": true},
+          { "text" : "A: 자동문이 열리기 시작합니다. \n B: 자동문이 열리기 시작합니다."}
         ]
       }
     ]
@@ -29,7 +20,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "여러 가지 규칙",
+      "title": "알고리즘의 이해",
       "score": "점수",
       "lefted": "맞춘 갯수",
 
@@ -55,7 +46,7 @@
       "nobtn" : "아니오",
       "yesbtn" : "예",
 
-      "fullscreen" : "풀스크린"
+      "fullscreen" : "전체화면"
     },
     "en": {
       "title": "Objective Game",

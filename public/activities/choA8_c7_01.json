@@ -2,23 +2,16 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "referenceEach",
+    "nextlink" : "activity#!choA8_c7_02",
     "questions" : [
       {
-        "question": "? 에는 어떤 숫자를 써야하나요?",
-        "reference": "/img/cho_activities/choA8_c3_020.png",
+        "question": "순서쌍 좌표를 보고 기호로 바르게 표현한 것은 무엇일까요?",
+        "reference": "/img/cho_activities/choA8_c7_001.png",
+        "optionsType" : "both",
         "options" : [
-          { "text" : "0"},
-          { "text" : "1", "answer": true},
-          { "text" : "11"}
-        ]
-      },
-      {
-        "question": "? 에는 어떤 숫자를 써야하나요?",
-        "reference": "/img/cho_activities/choA8_c3_006.png",
-        "options" : [
-          { "text" : "2", "answer": true},
-          { "text" : "5"},
-          { "text" : "7"}
+          { "text" : "(가, 1)", "src" : "/img/cho_activities/choA8_c7_002.png"},
+          { "text" : "(다, 3)", "src" : "/img/cho_activities/choA8_c7_003.png", "answer": true},
+          { "text" : "(라, 4)", "src" : "/img/cho_activities/choA8_c7_004.png"}
         ]
       }
     ]
@@ -29,7 +22,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "여러 가지 규칙",
+      "title": "순서쌍 좌표의 활용",
       "score": "점수",
       "lefted": "맞춘 갯수",
 
@@ -47,9 +40,9 @@
       "retryBtm" : "올바른 답을 다시 선택하세요.",
       "retrybtn": "확인",
 
-      "finalStageHead": "성공!",
-      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "확인",
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm":"다음 단계로 넘어가시겠습니까?",
+      "finalbtn" : "넘어가기",
 
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
