@@ -73,8 +73,8 @@
         margin: 10px;
         display: inline-block;
       }
+      .subHeadingStyle,
       .sentenceStyle {
-        width: 100%;
         display: inline-block;
         text-align: center;
         margin: 5px 0;
@@ -82,6 +82,13 @@
         font-weight: 500;
         color: #181818;
       }
+      .subHeadingStyle {
+        width : 70%;
+      }
+      .sentenceStyle {
+        width: 100%;
+      }
+      .subHeadingStyle > p ,
       .sentenceStyle > p {
         width: 90%;
         font-size: 16px;
@@ -95,6 +102,17 @@
         border: 3px solid #772C73;
         background-color: #772C73;
         color: white;
+      }
+      .bothStyle {
+        margin : 10% 5%;
+        border-radius: 30px;
+        border: 3px dashed #dbdbdb;
+      }
+      .bothStyle > p {
+        display : inline-block;
+      }
+      .bothStyle > img {
+        vertical-align: middle;
       }
       .binary {
         width: 50%;
@@ -127,7 +145,7 @@
       }
       .reference > img {
         max-width: 100%;
-        max-height: 100%;
+        max-height: 180px;
         margin: 10% 0;
       }
       .reference > p {
@@ -249,7 +267,37 @@
         border-bottom-right-radius: 40px 50px;
         display: block;
       }
-      /* questionText */
+      .subHeading {
+        margin: 0.5em 0;
+        width: 70%;
+        margin-left: -10%;
+        display: inline-block;
+      }
+      .qstBox {
+        border: 1px solid darkslategrey;
+        padding: 0 1em;
+        border-radius: 5px;
+      }
+      .refHorizonOptsItems > img,
+      .refHorizon > img {
+        max-height: 70px;
+      }
+      .refHorizonOpts {
+        height: 50%;
+        width: 90%;
+        display: inline-block;
+      }
+      .refHorizonOpts > p {
+        text-align: left;
+      }
+      .refHorizonOptsStyle {
+        padding: 3%;
+        background: gainsboro;
+      }
+      .refHorizonOptsItems {
+        display: inline-block;
+        margin: 0 10px;
+      }
     </style>
     <status-bar
       title="{{localize('title')}}"
@@ -347,14 +395,32 @@
       }
       replaceQuestion(text,b,node){
         // 타입에 따라서 문제 설정
-        let { questionImg, detailType, color } = this.questions[this.stage];
+        let { questionImg, detailType, color, questionType, question } = this.questions[this.stage];
         let textStyle = "textlong";
+
         if(this.questType === "gridCount" && detailType === "color"){
           text = text.replace("$", `<p style="width:70px;height:70px;margin-right:10px;background-color:${color}"></p>,`);
           text = text.split(',');
           return `${text[0]} <p class="${textStyle}">${text[1]}</p>`;
         }
 
+        // 소제목으로 문제가 들어갈 경우
+
+        if(questionType === "subHeading") {
+
+          text = this.subHeading;
+
+          // gameType 에 따라서 소제목이 어디에 들어가야하는지 또 변형
+          switch (this.gameType) {
+            case "sentence":
+              question = question.replace("?", `<span class="qstBox">?</span>`)
+              d3.select(this.$.container).append('div').attr('class', "subHeading").html(() => question)
+              break;
+            default:
+
+          }
+
+        }
         if(this.questType === "gridCount" && detailType === "max"){
           let textArr = ["max", "min", "middle"];
           let textObj = {
@@ -380,12 +446,22 @@
       }
       renderOptions(op){
         let { text, src, answer } = op, keyName;
-        switch (this.gameType) {
+
+        let gameType = this.gameType;
+        let optionsType = this.questions[this.stage].optionsType;
+
+        if(optionsType === "both") {
+          gameType = optionsType;
+        }
+        
+        switch (gameType) {
           case "multiSelect":
             return src
                     ? `<p>${text}</p> <img src="${src}"/>`
                     : `<p>${text}</p>`
             break;
+          case "both":
+            return `<img src="${src}"/> <p>${text}</p>`
           default:
             keyName = Object.keys(op)[0];
             answer = Object.keys(op)[1];
@@ -474,11 +550,12 @@
         }
       }
       setData(data , manifest){
-        let { question, options, answer, cardType, reference, referenceImg } = this.questions[this.stage]
+        let { question, options, answer, cardType, reference, referenceImg, subHead } = this.questions[this.stage]
         this.set('LastStage', this.questions.length-1)
         if(typeof question == "object") {
           question = question[this.language || "ko"];
         }
+
         d3.select(this.$.container)
           .append('div')
           .attr('class', 'question')
@@ -495,9 +572,13 @@
             }
           case "word":
           case "sentence":
+          let gameBoard = this.gameType;
+          if(this.subHeading) {
+            gameBoard = "subHeading"
+          }
             objDivs.selectAll('div')
             .data(d3.shuffle(options)).enter()
-            .append('div').attr('class', `${this.gameType}Style`)
+            .append('div').attr('class', `${gameBoard}Style`)
             .html((d, i) => this.renderOptions(d))
             .on("click", this.handleClick)
             break;
@@ -547,15 +628,37 @@
           case "referenceEach":
             let refNode = objDivs.append('div').attr('class', 'reference')
 
+            // 옵션에 이미지와 텍스트가 같이들어가는 경우 both 라고 명
+            let optStyle = this.questions[this.stage].optionsType === "both" ? "both" : "sentence";
+
                 refNode.append('p').text('보기')
                 refNode.append('img').attr('src', reference)
 
             objDivs.append('div').attr('class', 'sentences')
                .selectAll('div')
                .data(d3.shuffle(options)).enter()
-               .append('div').attr('class', 'sentenceStyle')
+               .append('div').attr('class', `${optStyle}Style`)
                .html((d, i) => this.renderOptions(d))
                .on("click", this.handleClick)
+            break;
+          case "refHorizonEach":
+            // d3.select(this.$.container).append('div').attr('class', 'refHorizon')
+            let refHorNode = objDivs.append('div').attr('class', 'refHorizon')
+                refHorNode.append('img').attr('src', reference)
+
+                subHead = subHead.replace("$", `<span class="qstBox">?</span>`)
+
+            let refHorizonOpts = objDivs.append('div').attr('class', 'refHorizonOpts')
+
+                   refHorizonOpts.append('p').html(() => subHead)
+
+                   refHorizonOpts.append('div').attr('class', `refHorizonOptsStyle`)
+                   .selectAll('div')
+                   .data(d3.shuffle(options)).enter()
+                   .append('div').attr('class', `refHorizonOptsItems`)
+                   .html((d, i) => this.renderOptions(d))
+                   .on("click", this.handleClick)
+              //  debugger
             break;
           case "ox":
             objDivs.selectAll('p')

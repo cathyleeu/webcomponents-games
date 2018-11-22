@@ -1,25 +1,27 @@
 {
-  "element": "objective-game",
+  "element": "select-option-game",
   "attributes": {
     "gameType" : "referenceEach",
     "questions" : [
       {
-        "question": "? 에는 어떤 숫자를 써야하나요?",
-        "reference": "/img/cho_activities/choA8_c3_020.png",
-        "options" : [
-          { "text" : "0"},
-          { "text" : "1", "answer": true},
-          { "text" : "11"}
-        ]
+        "question": "코봇이 이동하면서 만나지 않는 동물은 무엇일까요?",
+        "optionType" : "fixed",
+        "screenType" : "horizon",
+        "options" : {
+          "answer" : "닭",
+          "reference": ["/img/cho_activities/choA8_c7_017.png", "/img/cho_activities/choA8_c7_016.png"],
+          "option" : ["돼지","말","닭"]
+        }
       },
       {
-        "question": "? 에는 어떤 숫자를 써야하나요?",
-        "reference": "/img/cho_activities/choA8_c3_006.png",
-        "options" : [
-          { "text" : "2", "answer": true},
-          { "text" : "5"},
-          { "text" : "7"}
-        ]
+        "question": "유라는 무슨 요일에 어떤 운동을 했을까요?",
+        "optionType" : "fixed",
+        "screenType" : "horizon",
+        "options" : {
+          "answer" : "수, 풋살",
+          "reference": ["/img/cho_activities/choA8_c7_018.png", "/img/cho_activities/choA8_c7_013.png"],
+          "option" : ["화, 농구","수, 풋살","금, 검도"]
+        }
       }
     ]
   },
@@ -29,7 +31,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "여러 가지 규칙",
+      "title": "순서쌍 좌표의 활용",
       "score": "점수",
       "lefted": "맞춘 갯수",
 
@@ -55,7 +57,7 @@
       "nobtn" : "아니오",
       "yesbtn" : "예",
 
-      "fullscreen" : "풀스크린"
+      "fullscreen" : "전체화면"
     },
     "en": {
       "title": "Objective Game",

@@ -19,16 +19,23 @@
       circle {
         cursor: pointer;
       }
-      image {
-        width: 200px;
-        height: 150px;
+      #subHeading {
+        text-align: center;
+      }
+      #subHeading > p {
+        text-align: center;
+        border-bottom-width: 3px;
+        border-bottom-style: dashed;
+        display: inline-block;
+        position: relative;
+        border-bottom-color: cornflowerblue;
+        padding: 0 6px 6px;
+        margin : 1em 0 0 0;
       }
     </style>
     <status-bar
       id="statusBar"
       title="{{localize('title')}}"
-      score="{{localize('score')}}"
-      lefted="{{localize('lefted')}}"
       total="{{total}}"
       point="{{point}}"
       matched="{{matched}}"
@@ -58,6 +65,13 @@
       purpose="logout"
       ></toycode-modal>
     <toycode-modal
+      id="retryModal"
+      purpose="retry"
+      headertext="{{localize('retryHead')}}"
+      btmtext="{{localize('retryBtm')}}"
+      retrybtn="{{localize('finalbtn')}}"
+      ></toycode-modal>
+    <toycode-modal
       id="previousModal"
       headertext="{{localize('previousHead')}}"
       btmtext="{{localize('previousBtm')}}"
@@ -73,10 +87,8 @@
       purpose="finalStage"
       nextlink="{{nextlink}}"
       ></toycode-modal>
-    <minor-heading
-      id="minorHeading"
-      onclick="[[handleBoldStyle]]"
-      content={{localize('minor')}}></minor-heading>
+      <div id="subHeading"><p>{{localize('minor')}}</p></div>
+      <svg></svg>
   </template>
   <script>
     class MultiLineCard extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
@@ -93,18 +105,40 @@
       }
       ready() {
         super.ready();
-        this.set('total', 0)
-        this.set('point', 0)
-        this.set('matched', 0)
-        this.set('stage', 1)
-        this.set('minorHeight' , this.$.minorHeading.getBoundingClientRect().height)
-        this.set('statusHeight' , this.$.statusBar.getBoundingClientRect().height)
+        /*
+          header bar
+          sub head height
+          svg height
+          img size
+          center position
+        */
+
+        let headbar = this.$.statusBar.getBoundingClientRect().height;
+        let subhead = this.$.subHeading.getBoundingClientRect().height;
+
+        let { leftSide, rightSide } = this.data;
+        let rItems = rightSide.length;
+        let lItems = leftSide.length;
+
+        let size = {
+          "headerH" : headbar+subhead,
+          "svgWidth" : this.offsetWidth,
+          "svgHeight" : this.offsetHeight-(headbar+subhead),
+          "svgHalf" : this.offsetWidth/2
+        }
+        size["svgPadding"] = size.svgHeight * 0.05;
+        size["oneMultiHeight"] = size.svgHeight * 0.90;
+        size["panelMargin"] = size.svgHalf/5
+        size["rightItemH"] = size.oneMultiHeight/(rItems + (rItems-1));
+        size["rightItemW"] = (size.svgHalf - size.panelMargin) * 0.8;
+        size["leftItemH"] = size.oneMultiHeight/(lItems + (lItems-1));
+        size["rightPanel"] = Math.floor(size.svgHalf + size.panelMargin);
+
+        this.set('size', size)
+        this.set('targetN', rItems)
+
       }
       reset(){
-        this.set('total', 0)
-        this.set('matched', 0)
-        this.set('point', this.point+5)
-        this.set('stage', this.stage+1)
         d3.select(this.shadowRoot).select('svg').remove()
         this.setData(this.data, this.manifest)
       }
@@ -115,195 +149,170 @@
           this.$.logOutModal.modalAlert();
         }
       }
+      pencilingStart (d, i, e, pos) {
+        this.set("dragId", d.no)
 
-      // handleTrimData(data, maxIdx) {
-      //   let list = [],
-      //       result = maxIdx.map( dataIdx => data.find(idx => idx.no === dataIdx.no))
-      //   result.map(d => {
-      //       let source = d.src ? d.src : d.text,
-      //           img = d.src ? true : false;
-      //       return list.push({ ["no"]: d.no, ["source"]: source, ['img']: img })
-      //   })
-      //   return d3.shuffle(list)
-      // }
-      setData(data, manifest){
-        let _this = this,
-            containerHeight = this.offsetHeight - (this.minorHeight+this.statusHeight),
-            svg = d3.select(this.shadowRoot).append('svg')
-              .attr('width', this.offsetWidth)
-              .attr('height', containerHeight ),
-            boardName = ["bef_board", "af_board"],
-            maxIdx = d3.shuffle(manifest.filter(l => !l.set)),
-            before = manifest.filter(l => !l.set),
-            after = manifest.filter(l => l.set);
+        let dragId = d.no
+        let svg = d3.select(this.shadowRoot).select('svg');
+        let getXY = d3.select(e[i]).attr('transform').match(/\d+/g)
+        let startX = +getXY[0], startY = +getXY[1];
 
-            this.set('data', data )
-            this.set('manifest', manifest )
+        let line = svg.append("line")
+              .attr("x1", startX).attr("y1", startY)
+              .attr("x2", startX).attr("y2", startY)
+              .attr("data-pos", pos)
+              .attr("id", (d, i) => `line${dragId}`);
+        this.set("dotNode", e[i])
+        this.set('line', line)
+      }
 
+      pencilingMove(svg) {
+        if(this.dragId) {
+          const m = d3.mouse(svg);
+          this.line.attr("x2", m[0]).attr("y2", m[1]);
+        }
+      }
 
-        let defs = svg.append('defs').selectAll('pattern');
+      pencilingEnd(svg) {
+        let { dragId, line } = this;
+        let dropId, targetEl, targetLeft, targetTop, targetW, targetX, targetY;
 
-        let rectGroup = svg.selectAll("g")
-          .data(boardName).enter()
-          .append("g")
-          .attr("class", d => `${d}`);
-
-        let be_axisX = this.horizontal ? (d, i) => (110*i+10) + (30*i) : 10,
-            be_axisY = this.horizontal ? 10 : (d, i) => (110*i+10) + (30*i);
-
-        let bef_side = svg.select('.bef_board');
-
-
-        let bef_group = bef_side.selectAll("image")
-              .data(before).enter()
-              .append('image')
-              .attr("xlink:href", (d, i) => d.src)
-              .attr('x', (d, i) => 0 ).attr('y', (d, i) => 65+200*i )
-
-        // let bef_trans = this.horizontal ? (d, i) => `translate(${65+300*i}, 180)` : (d, i) => `translate(180, ${65+300*i})`
-        let bef_cir = bef_side.selectAll("g.node")
-          .data(before).enter()
-          .append('g')
-          .attr("transform", "translate(300, 200)" )
-          .attr("id", (d, i) => `bef_cir${d.no}`)
-
-
-        bef_cir.append("circle").attr("r", 5)
-        let selectedCircle = bef_cir.append("circle")
-              .attr("r", 60).attr("opacity", 0.0)
-              .attr("data-line", "bef")
-              .attr('id', (d) => `bef_line${d.no}`)
-
-        selectedCircle.on("mousedown touchstart", (d, i) => pencilingStart(d, i, "bef_") )
-
-
-        svg.on("mouseup touchend", pencilingEnd)
-
-
-        let af_axisX = this.horizontal ? (d, i) => (110*i+10) + (30*i) : 450,
-            af_axisY = this.horizontal ? 350 : (d, i) => (110*i+10) + (30*i);
-
-        let af_side = svg.select('.af_board');
-        let af_group = af_side.selectAll("image")
-              .data(after).enter()
-              .append('image')
-              .attr("xlink:href", (d, i) => d.src)
-              .attr('x', (d, i) => 500 ).attr('y', (d, i) => 150*i )
-
-        af_side.selectAll("g").data(after).enter()
-
-        // let af_trans = this.horizontal ? (d, i) => `translate(${65+150*i}, 330)` : (d, i) => `translate(430, ${65+150*i})`
-        let af_cir = af_side.selectAll("g.node")
-          .data(after).enter()
-          .append('g')
-          .attr("transform", "translate(405, 0)" )
-          .attr("id", (d, i) => `af_cir${d.no}`)
-
-        // 라인이 매칭되는 포인트
-        af_cir.append("circle").attr("r", 5).attr('pointer-events', 'none');
-        af_cir.append("circle")
-              .attr("r", 60).attr("opacity", 0.0)
-              .attr('id', (d) => `af_line${d.no}`)
-              .on("mousedown touchstart", (d, i) => pencilingStart(d, i, "af_") )
-        // 라인이 매칭되는 범위를 지정하는 포인트
-
-
-        let getWidth = this.horizontal ? svg.select('g').node().getBBox().width : 560,
-            getHeight = svg.select('g.af_board').node().getBoundingClientRect().bottom,
-            getSubTitle = this.minorHeight ? 70 : 30,
-            resultWidth = (this.offsetWidth - getWidth)/2,
-            resultHeight = ((this.offsetHeight - getHeight)/2)-getSubTitle;
-
-        if(resultHeight < 0) {
-          resultHeight = 0;
+        if (!dragId) {
+          return false
         }
 
-        rectGroup.attr("transform", (d, i) => `translate(${resultWidth}, ${resultHeight})`);
+        let pos = line.attr('data-pos');
+        let targetB = ["right", "left"].find( d => pos !== d);
 
-        var line;
-        let dragId, dropId, startX, startY;
+        let dropItems = svg.select(`.${targetB}Board`).selectAll(".circles").nodes();
+        let getArrow = svg.select(`#line${dragId}`);
 
-        function pencilingStart (d, i, pos) {
-          console.log("pencilingStart", d, i, pos)
-          let getXY = svg.select(`#${pos}cir${d.no}`).attr("transform").match(/\d+/g),
-              startX = resultWidth+(+getXY[0]), startY = resultHeight+(+getXY[1]);
+        dropItems.forEach(el => {
+          let { left, right, top, bottom, width } = el.getBoundingClientRect();
+          let { headerH } = this.size;
+          let getX = +getArrow.attr('x2'),
+              getY = +getArrow.attr('y2')+headerH,
+              targetRange = left < getX && getX < right && top < getY && getY < bottom;
 
-
-          dragId = d.no;
-          line = svg.append("line")
-                .attr("x1", startX).attr("y1", startY)
-                .attr("x2", startX).attr("y2", startY)
-                .attr("data-pos", pos)
-                .attr("id", (d, i) => `line${dragId}`);
-          svg.on("mousemove touchmove", pencilingMove);
-        }
-
-        function pencilingMove(d) {
-          let m = d3.mouse(this);
-          line.attr("x2", m[0]).attr("y2", m[1]);
-        }
-
-        function pencilingEnd() {
-          let pos = line.attr('data-pos')
-          let oppos = pos === "af_" ? "bef_" : "af_"
-          if (dragId === undefined) return false
-          let filterItems = svg.select(`.${oppos}board`).node().childNodes,
-              dropItems = [];
-
-          filterItems.forEach(el => {
-            if(oppos === "af_"){
-              if(el.firstChild.tagName === "rect") dropItems.push(el)
-            } else {
-              if(el.tagName === "rect") dropItems.push(el)
-            }
-          })
-
-
-
-          let getArrow = svg.select(`#line${dragId}`);
-          dropItems.forEach(el => {
-            const getEl = el.getBoundingClientRect();
-            let getX = +getArrow.attr('x2'),
-                getY = +getArrow.attr('y2')+_this.minorHeight,
-                setX = _this.horizontal ? getX : getX+getEl.width/2,
-                setY = _this.horizontal ? getY : getY+getEl.height/2,
-                getTB = pos === "bef_" ? getEl.top : getEl.bottom,
-                getR = pos === "bef_" ? getEl.right : getEl.right+getEl.width,
-                getL = pos === "bef_" ? getEl.left : getEl.left+getEl.width,
-                horizontalRange = getEl.left < setX && setX < getEl.right && getTB-(getEl.width) < setY && setY < getTB,
-                verticalRange = getL < setX && setX < getR && getEl.top < setY && setY < getEl.bottom,
-                setRange = _this.horizontal ? horizontalRange : verticalRange ;
-
-            // 범위 확인
-            if(setRange) {
-              dropId = el.__data__.no;
-            }
-          });
-
-          if(dragId === dropId) {
-            let getXY = svg.select(`#${oppos}cir${dropId}`).attr("transform").match(/\d+/g),
-                numX = resultWidth+(+getXY[0]), numY = resultHeight+(+getXY[1]);
-
-            line.attr("x2", numX ).attr("y2", numY );
-            console.log("its matched!!!", dragId, dropId)
-            svg.select(`#${oppos}line${dragId}`).on("mousedown touchstart", false )
-            svg.select(`#${pos}line${dragId}`).on("mousedown touchstart", false )
-            _this.set('matched', _this.matched+1)
-            _this.set('point', _this.point+2)
-
-          } else {
-
-            console.log("itsnt matched!!!", dragId, dropId)
-            line.remove();
+          // 범위 확인
+          if(targetRange) {
+            targetEl = el;
+            targetLeft = left;
+            targetTop = top;
+            targetW = width;
+            targetX = left+width/2;
+            targetY = top-width;
+            dropId = el.__data__.no;
           }
-           _this.set('total', _this.total+1)
-           dragId = undefined;
-           svg.on("mousemove touchmove", null);
+        });
 
-           if(_this.matched === _this.cards) {
-             _this.stage === _this.lastStage ? _this.$.finalStageModal.modalAlert() : _this.$.successModal.modalAlert()
-           }
+        if(dragId === dropId) {
+          line.attr("x2", targetX ).attr("y2", targetY );
+
+          // 매칭된 닷들 이벤트 제거
+          d3.select(this.dotNode).on("mousedown touchstart", false )
+          d3.select(targetEl).on("mousedown touchstart", false )
+          this.set("targetN", this.targetN-1)
+
+          console.log("its matched!!!", dragId, dropId)
+
+        } else {
+
+          console.log("itsnt matched!!!", dragId, dropId)
+          this.$.retryModal.modalAlert()
+          line.remove();
         }
+         // reset
+         this.set("dotNode", null)
+         this.set("dragId", null)
+
+         if(!this.targetN) {
+          this.stage === this.lastStage ? this.$.finalStageModal.modalAlert() : this.$.successModal.modalAlert()
+         }
+      }
+      setData(data, manifest){
+        console.log("multi line");
+        let { leftSide, rightSide } = this.data;
+        let {
+          svgHeight,
+          svgWidth,
+          rightItemH,
+          rightItemW,
+          leftItemH,
+          svgPadding,
+          rightPanel,
+          panelMargin
+        } = this.size;
+        let mainSvg = d3.select(this.shadowRoot).select('svg')
+                        .attr('width', svgWidth )
+                        .attr('height', svgHeight )
+
+        let defs = mainSvg.append('defs').selectAll('pattern');
+        let mixedRight = d3.shuffle(rightSide)
+
+        defs.data(leftSide).enter()
+          .append('pattern')
+          .attr("id", (d, i) => `bef_${i}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox")
+          .append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("width", rightItemW )
+          .attr("height", leftItemH )
+          .attr("xlink:href", d => `${d.src}`)
+
+        defs.data(mixedRight).enter()
+          .append('pattern')
+          .attr("id", (d, i) => `right_${d.no}`)
+          .attr("x", 0).attr("y", 0)
+          .attr("width", 1).attr("height", 1)
+          .attr("patternUnits", "objectBoundingBox")
+          .append('image')
+          .attr("x", 5).attr("y", 5)
+          .attr("xlink:href", d => `${d.src}`)
+          .attr("width", rightItemW )
+          .attr("height", rightItemH)
+
+          let leftGroup = mainSvg.append('g').attr('class', "leftBoard")
+          let rightGroup = mainSvg.append('g').attr('class', "rightBoard")
+
+          leftGroup.append('rect')
+                  .attr("rx", 5).attr("ry", 5)
+                  .attr('x', panelMargin ).attr('y', 0 )
+                  .attr("width", rightItemW ).attr("height", leftItemH )
+                  .style("fill", `url(#bef_0)`)
+
+
+          rightGroup.append('g').selectAll('rect')
+                  .data(mixedRight).enter()
+                  .append('rect')
+                  .attr('x', rightPanel ).attr('y', (d, i) => `${ svgPadding + ((i+(i/2))*rightItemH)}` )
+                  .style("fill", (d,i) => `url(#right_${d.no})`)
+                  .attr("width", rightItemW ).attr("height", rightItemH)
+
+          let leftCircles = leftGroup.selectAll('g.node')
+                .data(leftSide[0].dots).enter().append('g')
+                .attr('class', "circles")
+                .attr("transform", (d, i) => `translate( ${Math.floor((((rightItemW+panelMargin) * ((d.axis[0])/100))) + (rightItemW+panelMargin)*0.05)} , ${Math.floor((leftItemH * (d.axis[1]/100)))})` )
+
+          leftCircles.append('circle').attr("r", 5)
+          leftCircles.append('circle').attr("r", 30).attr("opacity", 0.0)
+          leftCircles.on("mousedown touchstart", (d, i, e) => this.pencilingStart(d, i, e, "left") )
+
+          mainSvg.on("mousemove touchmove", this.pencilingMove.bind(this, mainSvg.node()))
+          mainSvg.on("mouseup touchend", this.pencilingEnd.bind(this, mainSvg))
+
+          let rightCircles = rightGroup.selectAll('g.node')
+                .data(mixedRight).enter().append('g')
+                .attr('class', "circles")
+                .attr("transform", (d, i) => `translate(${rightPanel}, ${ Math.floor(((i+(i/2))*(rightItemH)) + rightItemH - svgPadding) })` )
+
+          rightCircles.append('circle').attr("r", 5)
+          rightCircles.append('circle').attr("r", 30).attr("opacity", 0.0)
+          rightCircles.on("mousedown touchstart", (d, i, e) => this.pencilingStart(d, i, e, "right") )
+
+
       }
     }
     window.customElements.define(MultiLineCard.is, MultiLineCard);
