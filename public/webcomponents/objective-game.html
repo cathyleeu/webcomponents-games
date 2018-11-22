@@ -682,7 +682,8 @@
                                    .append(this.component)
 
             let comp = compNode.node()
-
+            debugger
+            
             let binaryOpts = d3.shuffle(comp.answers[cardType].filter(c => c !== comp.answer)).splice(0,3)
             binaryOpts.push(comp.answer)
 

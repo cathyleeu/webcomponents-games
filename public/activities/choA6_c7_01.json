@@ -147,6 +147,8 @@
       "retryBtm" : "올바른 답을 다시 골라보세요.",
       "retrybtn": "확인",
 
+      "lackBtm" : "답의 수가 초과하거나 부족해요.",
+
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "확인",

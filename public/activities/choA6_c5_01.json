@@ -4,7 +4,6 @@
     "limited" : true,
     "group" : ["gr1", "gr2", "gr3"],
     "nextlink" : "activity#!choA6_c5_02",
-    "useAll": true,
     "target" : "cho"
   },
   "data": {
@@ -22,7 +21,7 @@
   "msg": {
     "ko": {
       "title": "추상화",
-      "minor": "알맞는 픽토그램 찾아 추상화를 완성하세요.",
+      "minor": "알맞은 픽토그램을 찾아 추상화를 완성하세요.",
       "score": "점수",
       "lefted": "맞춘 갯수",
       "success": "참 잘했어요!",
@@ -35,9 +34,9 @@
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
-      "finalStageHead": "성공!",
-      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
-      "finalbtn" : "확인",
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm": "다음 단계로 넘어가시겠습니까?",
+      "finalbtn" : "넘어가기",
       "retryHead": "참 아쉽네요!",
       "retryBtm" : "아이템 모두 사용해주세요.",
       "retrybtn": "다시하기",

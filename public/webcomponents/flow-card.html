@@ -313,15 +313,14 @@
           .attr("patternUnits", "objectBoundingBox")
 
 
+        let backRect = mixedImages.append('rect')
+              .attr("x", 0).attr("y", 0)
+              .attr("width", this.imgSize+10).attr("height", this.imgSize+10)
         // text 상황에 따라서 변경
         if(shuffledMix[0].text) {
           //TODO: text size 변경및
-          // debugger
-          mixedImages.append('rect')
-            .attr("x", 0).attr("y", 0)
-            .attr("width", this.imgSize+10).attr("height", this.imgSize+10)
-            .attr('fill', '#dbdbdb')
 
+          backRect.attr('fill', '#dbdbdb')
           mixedImages.append('text')
             .text((d,i) => d.text)
             .attr("font-size", this.imgSize*0.7)
@@ -329,6 +328,9 @@
 
 
         } else {
+
+          backRect.attr('fill', 'white')
+
           mixedImages.append('image')
           .attr("x", 5).attr("y", 5)
           .attr("width", this.imgSize).attr("height", this.imgSize)

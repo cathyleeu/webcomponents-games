@@ -246,6 +246,7 @@
       gridNonoBoard(parent){
         console.log("gridNonoBoard");
         // debugger
+        //lastStage
         let { dots } = parent.questions[parent.stage];
         let gridNode = d3.select(this.$.grid_table).select('tbody')
         let tdSize = (parent.boardWidth*0.35)/dots.length;
@@ -324,7 +325,7 @@
         let reOrdi = parent.ordiAns.every((ev, i) => ev === parent.ordi[i]);
 
         if(reAbsc && reOrdi) {
-          if(parent.LastStage === parent.stage){
+          if(parent.lastStage === parent.stage){
             parent.$.finalStageModal.modalAlert()
           }else {
             parent.$.successModal.modalAlert()

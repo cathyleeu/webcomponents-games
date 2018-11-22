@@ -2,7 +2,6 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "cardComp",
-    "nextlink" : "activity#!choA2_c3_02",
     "component": "binary-card",
     "questions" : [
       {

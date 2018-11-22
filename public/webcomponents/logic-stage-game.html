@@ -242,15 +242,18 @@
         let { selectedStage, answers } = self;
         let result = answers.every(l => selectedStage.includes(l))
 
+
         let sNum = selectedStage.length;
         let aNum = answers.length;
         let opposed = selectedStage.every(l => answers.includes(l))
-        // debugger
+
+
+        debugger
         // 결과에 따라서 status 상태를 바꿔치기해서 모달 결과 나눠주기.
 
-        if(sNum < aNum &&  opposed ) {
+        if(sNum !== aNum) {
           self.$.lackModal.modalAlert()
-          return;
+          return
         }
 
 
