@@ -11,6 +11,10 @@ module.exports = function(classObj) {
   if(classCode == "B00041-K1-KC8") {
     book = [4, 5];
   }
+  // 송도ECC 11월말 7권 수업 중
+  if(schoolCode == "B00039-K1" || schoolCode == "B00136-K1") {
+    book = [7, 8];
+  }
   // 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
     book = [8];
