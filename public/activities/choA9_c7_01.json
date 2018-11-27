@@ -1,0 +1,120 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "referenceEach",
+    "questions" : [
+      {
+        "question": "네모의 수를 모두 더한 값은 무엇일까요?",
+        "reference": "/img/cho_activities/choA9_c7_01.png",
+        "options" : [
+          { "text" : "5"},
+          { "text" : "6", "answer": true},
+          { "text" : "7"}
+        ]
+      },
+      {
+        "question": "네모의 수를 모두 더한 값은 무엇일까요?",
+        "reference": "/img/cho_activities/choA9_c7_02.png",
+        "options" : [
+          { "text" : "7"},
+          { "text" : "8"},
+          { "text" : "9", "answer": true}
+        ]
+      },
+      {
+        "question": "네모의 수를 모두 더한 값은 무엇일까요?",
+        "reference": "/img/cho_activities/choA9_c7_03.png",
+        "options" : [
+          { "text" : "8"},
+          { "text" : "12"},
+          { "text" : "16", "answer": true}
+        ]
+      },
+      {
+        "question": "네모의 수를 모두 더한 값은 무엇일까요?",
+        "reference": "/img/cho_activities/choA9_c7_04.png",
+        "options" : [
+          { "text" : "10"},
+          { "text" : "20"},
+          { "text" : "25", "answer": true}
+        ]
+      },
+      {
+        "question": "네모의 수를 모두 더한 값은 무엇일까요?",
+        "reference": "/img/cho_activities/choA9_c7_05.png",
+        "options" : [
+          { "text" : "8"},
+          { "text" : "10", "answer": true},
+          { "text" : "12"}
+        ]
+      },
+      {
+        "question": "네모의 수를 모두 더한 값은 무엇일까요?",
+        "reference": "/img/cho_activities/choA9_c7_06.png",
+        "options" : [
+          { "text" : "18"},
+          { "text" : "21", "answer": true},
+          { "text" : "25"}
+        ]
+      },
+      {
+        "question": "‘?’에 들어가는 공통 숫자는 무엇일까요?",
+        "reference": "/img/cho_activities/choA9_c7_07.png",
+        "options" : [
+          { "text" : "6", "answer": true},
+          { "text" : "12"},
+          { "text" : "18"}
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "정렬 네트워크",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

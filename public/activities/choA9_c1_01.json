@@ -1,0 +1,69 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "sentence",
+    "nextlink" : "activity#!choA9_c1_02",
+    "subHeading" : "다음 문장에 들어갈 알맞은 단어는 무엇일까요?",
+    "questions" : [
+      {
+        "question": "? 은 여러 종류의 상자와 상자를 이어주는 화살표를 이용해 문제 해결 순서를 나타냅니다.",
+        "questionType" : "subHeading",
+        "options" : [
+          { "text" : "알고리즘"},
+          { "text" : "기호"},
+          { "text" : "순서도", "answer": true}
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "알고리즘의 이해",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm": "다음 단계로 넘어가시겠습니까?",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "전체화면"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
