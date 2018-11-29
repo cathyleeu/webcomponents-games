@@ -2,7 +2,7 @@
   "tile_size": 128,
   "score":1,
   "workspace": "start,make_picture_list",
-  "workspace2": "make_picture_list_func,list_shape_no1,list_shape_no2,list_shape_no3",
+  "workspace2": "make_picture_list_func,list_shape_color_no1,list_shape_color_no2,list_shape_color_no3",
   "toolbox": [
     "move_forward1",
     "rotate_left",
