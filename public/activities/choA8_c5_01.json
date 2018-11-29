@@ -2,7 +2,7 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "sentence",
-    "nextlink" : "activity#!choA7_c1_05",
+    "nextlink" : "activity#!choA8_c5_02",
     "subHeading" : "다음 문장에 들어갈 알맞은 단어는 무엇일까요?",
     "questions" : [
       {
@@ -19,8 +19,8 @@
         "questionType" : "subHeading",
         "options" : [
           { "text" : "문제"},
-          { "text" : "순서"},
-          { "text" : "알고리즘", "answer": true}
+          { "text" : "순서", "answer": true},
+          { "text" : "알고리즘"}
         ]
       },
       {

@@ -363,19 +363,17 @@
 
       }
       dragended(d,node,name){
-        let targetEl, result, getName; //targetX, targetY,
-        //let self = d3.select(this.ownerDocument).select('#element').node();
+        let targetEl, result, getName, getEls, nodeEl; //targetX, targetY,
         let targetNodes = d3.select(this.$.board).selectAll(`.${name}`).nodes();
         let setName = d.text;
 
-        debugger
+        nodeEl = node.getBoundingClientRect();
 
-        let {width, height, x, y} = node.getBoundingClientRect(),
-            getX = x,
-            getY = y+(height/2);
+        let getX = nodeEl.x,
+            getY = nodeEl.y+(nodeEl.height/2);
 
         targetNodes.forEach(el => {
-          const getEl = el.getBoundingClientRect();
+          let getEl = el.getBoundingClientRect();
 
           let left = getEl.x < getX,
               right = getX < getEl.x + getEl.width,
@@ -384,6 +382,7 @@
 
           if(left && right && top && bottom) {
             targetEl = el;
+            getEls = getEl;
             getName = el.__data__;
           }
 
@@ -427,12 +426,20 @@
               node.style.left = ``
               return;
             } else {
+
+              d3.select(node)
+                .call(d3.drag().on("start", null))
+
+              let centerH = getEls.top+(getEls.height-nodeEl.height);
+              let centerW = getEls.left-(nodeEl.width)-((getEls.width-nodeEl.width)/2)+6;
+
+              node.style.top = `-${centerH}px`;
+              node.style.left = `${centerW}px`;
+
               if(this.steps === this.data.steps) {
                 this.$.finalStageModal.modalAlert()
                 return
               }
-              d3.select(node)
-                .call(d3.drag().on("start", null))
 
               this.set("steps", this.steps+1)
             }

@@ -15,7 +15,7 @@
         ]
       },
       {
-        "question": "$ 코스와 가장 가까이 있는 위치는 어디일까요?",
+        "question": "$ 코스와 가장 멀리 있는 위치는 어디일까요?",
         "questionImg": "/img/cho_activities/choA8_c7_007.png",
         "reference": "/img/cho_activities/choA8_c7_015.png",
         "options" : [
