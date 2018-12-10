@@ -381,6 +381,7 @@
               bottom = getY < getEl.y + getEl.height;
 
           if(left && right && top && bottom) {
+            console.log(getEl);
             targetEl = el;
             getEls = getEl;
             getName = el.__data__;
@@ -430,11 +431,12 @@
               d3.select(node)
                 .call(d3.drag().on("start", null))
 
+              // parent div의 width :70%
               let centerH = getEls.top+(getEls.height-nodeEl.height);
-              let centerW = getEls.left-(nodeEl.width)-((getEls.width-nodeEl.width)/2)+6;
+              let centerW = (getEls.left+((getEls.width-nodeEl.width)/2))-(window.innerWidth-(window.innerWidth*0.7))/2;
 
               node.style.top = `-${centerH}px`;
-              node.style.left = `${centerW}px`;
+              node.style.left = `${centerW-5}px`;
 
               if(this.steps === this.data.steps) {
                 this.$.finalStageModal.modalAlert()

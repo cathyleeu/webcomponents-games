@@ -98,6 +98,7 @@
         padding: 8px;
         border-radius: 30px;
       }
+      .multi_selected > p,
       .sentenceStyle > p:active {
         border: 3px solid #772C73;
         background-color: #772C73;
@@ -453,7 +454,7 @@
         if(optionsType === "both") {
           gameType = optionsType;
         }
-        
+
         switch (gameType) {
           case "multiSelect":
             return src
@@ -549,6 +550,22 @@
           that.$.retryModal.modalAlert()
         }
       }
+      handleMultiClick(d,idx,nodes) {
+        let that = d3.select(this.ownerDocument).select('#element').node();
+
+        d3.select(nodes[idx]).classed("multi_selected", !d3.select(nodes[idx]).classed("multi_selected"))
+
+        let selected = d3.select(nodes[idx].parentElement).selectAll('.multi_selected').size()
+
+        if(that.multiAnswers === selected) {
+          if(that.LastStage === that.stage){
+             that.$.finalStageModal.modalAlert()
+          } else {
+            that.$.successModal.modalAlert()
+          }
+        }
+
+      }
       setData(data , manifest){
         let { question, options, answer, cardType, reference, referenceImg, subHead } = this.questions[this.stage]
         this.set('LastStage', this.questions.length-1)
@@ -627,9 +644,15 @@
             break;
           case "referenceEach":
             let refNode = objDivs.append('div').attr('class', 'reference')
+            let { optionsType, answerType } = this.questions[this.stage];
 
             // 옵션에 이미지와 텍스트가 같이들어가는 경우 both 라고 명
-            let optStyle = this.questions[this.stage].optionsType === "both" ? "both" : "sentence";
+            let optStyle = optionsType === "both" ? "both" : "sentence";
+            // 답이 여러개일 경우
+            let handleEvent = answerType === "multi" ? "handleMultiClick" : "handleClick";
+            if(answerType==="multi") {
+              this.set('multiAnswers', options.filter(o => o.answer).length)
+            }
 
                 refNode.append('p').text('보기')
                 refNode.append('img').attr('src', reference)
@@ -639,7 +662,7 @@
                .data(d3.shuffle(options)).enter()
                .append('div').attr('class', `${optStyle}Style`)
                .html((d, i) => this.renderOptions(d))
-               .on("click", this.handleClick)
+               .on("click", this[`${handleEvent}`])
             break;
           case "refHorizonEach":
             // d3.select(this.$.container).append('div').attr('class', 'refHorizon')
@@ -683,7 +706,7 @@
 
             let comp = compNode.node()
             debugger
-            
+
             let binaryOpts = d3.shuffle(comp.answers[cardType].filter(c => c !== comp.answer)).splice(0,3)
             binaryOpts.push(comp.answer)
 
