@@ -1,0 +1,113 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "word",
+    "questions" : [
+      {
+        "question": "$",
+        "questionImg": "/img/cho_activities/choA9_c3_001.png",
+        "options" : [
+          { "img" : "/img/cho_activities/choA9_c3_002.png"},
+          { "img" : "/img/cho_activities/choA9_c3_003.png"},
+          { "img" : "/img/cho_activities/choA9_c3_004.png", "answer": true}
+        ]
+      },
+      {
+        "question": "$",
+        "questionImg": "/img/cho_activities/choA9_c3_005.png",
+        "options" : [
+          { "img" : "/img/cho_activities/choA9_c3_006.png"},
+          { "img" : "/img/cho_activities/choA9_c3_007.png"},
+          { "img" : "/img/cho_activities/choA9_c3_008.png", "answer": true}
+        ]
+      },
+      {
+        "question": "$",
+        "questionImg": "/img/cho_activities/choA9_c3_009.png",
+        "options" : [
+          { "img" : "/img/cho_activities/choA9_c3_010.png"},
+          { "img" : "/img/cho_activities/choA9_c3_011.png"},
+          { "img" : "/img/cho_activities/choA9_c3_012.png", "answer": true}
+        ]
+      },
+      {
+        "question": "$",
+        "questionImg": "/img/cho_activities/choA9_c3_013.png",
+        "options" : [
+          { "img" : "/img/cho_activities/choA9_c3_014.png"},
+          { "img" : "/img/cho_activities/choA9_c3_016.png", "answer": true},
+          { "img" : "/img/cho_activities/choA9_c3_017.png"}
+        ]
+      },
+      {
+        "question": "$",
+        "questionImg": "/img/cho_activities/choA9_c3_018.png",
+        "options" : [
+          { "img" : "/img/cho_activities/choA9_c3_019.png"},
+          { "img" : "/img/cho_activities/choA9_c3_020.png", "answer": true},
+          { "img" : "/img/cho_activities/choA9_c3_021.png"}
+        ]
+      },
+      {
+        "question": "$",
+        "questionImg": "/img/cho_activities/choA9_c3_022.png",
+        "options" : [
+          { "img" : "/img/cho_activities/choA9_c3_023.png"},
+          { "img" : "/img/cho_activities/choA9_c3_024.png"},
+          { "img" : "/img/cho_activities/choA9_c3_025.png", "answer": true}
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "규칙적인 배치",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "전체화면"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

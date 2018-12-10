@@ -298,6 +298,12 @@
         display: inline-block;
         margin: 0 10px;
       }
+      .sentenceStyle > img {
+        border: 2px solid gainsboro;
+        padding: 0.2em 0.4em;
+        width: 120px;
+        border-radius: 0.4em;
+      }
     </style>
     <status-bar
       title="{{localize('title')}}"
@@ -453,7 +459,7 @@
         if(optionsType === "both") {
           gameType = optionsType;
         }
-        
+
         switch (gameType) {
           case "multiSelect":
             return src
@@ -683,7 +689,7 @@
 
             let comp = compNode.node()
             debugger
-            
+
             let binaryOpts = d3.shuffle(comp.answers[cardType].filter(c => c !== comp.answer)).splice(0,3)
             binaryOpts.push(comp.answer)
 

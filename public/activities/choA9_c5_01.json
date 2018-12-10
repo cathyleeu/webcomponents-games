@@ -1,0 +1,129 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "referenceEach",
+    "questions" : [
+      {
+        "question": "비교해서 작은 수를 위칸에 넣어보세요. ‘?’는 무엇인가요?",
+        "reference": "/img/cho_activities/choA9_c5_001.png",
+        "options" : [
+          { "text" : "1"},
+          { "text" : "9", "answer": true},
+          { "text" : "21"}
+        ]
+      },
+      {
+        "question": "가나다 순으로 정렬해요. ‘?’에는 어떤 동물을 써야하나요?",
+        "reference": "/img/cho_activities/choA9_c5_002.png",
+        "options" : [
+          { "text" : "사자", "answer": true},
+          { "text" : "호랑이"},
+          { "text" : "원숭이"}
+        ]
+      },
+      {
+        "question": "비교해서 큰 수를 아래 칸에 넣어보세요. ‘?’는 무엇인가요?",
+        "reference": "/img/cho_activities/choA9_c5_003.png",
+        "options" : [
+          { "text" : "3"},
+          { "text" : "7"},
+          { "text" : "9", "answer": true}
+        ]
+      },
+      {
+        "question": "비교해서 큰 수를 아래 칸에 넣어보세요. ‘?’는 무엇인가요?",
+        "reference": "/img/cho_activities/choA9_c5_004.png",
+        "options" : [
+          { "text" : "3"},
+          { "text" : "7"},
+          { "text" : "9", "answer": true}
+        ]
+      },
+      {
+        "question": "비교해서 큰 수를 아래 칸에 넣어보세요. ‘?’는 무엇인가요?",
+        "reference": "/img/cho_activities/choA9_c5_005.png",
+        "options" : [
+          { "text" : "3"},
+          { "text" : "7", "answer": true},
+          { "text" : "9"}
+        ]
+      },
+      {
+        "question": "가나다 순으로 정렬해요. ‘?’는 무엇인가요?",
+        "reference": "/img/cho_activities/choA9_c5_006.png",
+        "options" : [
+          { "text" : "제레미", "answer": true},
+          { "text" : "찰스"},
+          { "text" : "리차드"}
+        ]
+      },
+      {
+        "question": "가나다 순으로 정렬해요. ‘?’는 무엇인가요?",
+        "reference": "/img/cho_activities/choA9_c5_007.png",
+        "options" : [
+          { "text" : "제레미"},
+          { "text" : "찰스"},
+          { "text" : "리차드", "answer": true}
+        ]
+      },
+      {
+        "question": "가나다 순으로 정렬해요. ‘?’는 무엇인가요?",
+        "reference": "/img/cho_activities/choA9_c5_008.png",
+        "options" : [
+          { "text" : "제레미"},
+          { "text" : "찰스", "answer": true},
+          { "text" : "리차드"}
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "정렬 네트워크",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
