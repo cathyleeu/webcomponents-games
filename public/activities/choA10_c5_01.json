@@ -1,0 +1,102 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "referenceEach",
+    "questions" : [
+      {
+        "question": "순서도에 따라 이름을 바꾸었을 때 결과로 알맞는 것은 무엇일까요?",
+        "reference": "/img/cho_activities/choA10_c5_001.png",
+        "options" : [
+          { "text" : "이미*"},
+          { "text" : "김*우", "answer": true},
+          { "text" : "*지선"}
+        ]
+      },
+      {
+        "question": "순서도에 따라 전화번호를 바꾸었을 때 결과로 알맞는 것은 무엇일까요?",
+        "reference": "/img/cho_activities/choA10_c5_002.png",
+        "options" : [
+          { "text" : "***-123-4567"},
+          { "text" : "010-***-4567"},
+          { "text" : "010-123-****", "answer": true}
+        ]
+      },
+      {
+        "question": "변환되어서 출력된 단어의 특징을 바르게 설명한 것은 무엇인가요?",
+        "reference": "/img/cho_activities/choA10_c5_003.png",
+        "options" : [
+          { "text" : "글자의 순서를 바꾸고 있다."},
+          { "text" : "짝수 글자를 지우고 있다."},
+          { "text" : "가운데 글자를 출력하고 있다.", "answer": true}
+        ]
+      },
+      {
+        "question": "순서도에 따라 영어 문자를 바꾸었을 때 결과로 알맞는 것은 무엇일까요?",
+        "reference": "/img/cho_activities/choA10_c5_004.png",
+        "options" : [
+          { "text" : "BC"},
+          { "text" : "CD", "answer": true},
+          { "text" : "DF"}
+        ]
+      },
+      {
+        "question": "순서도에 따라 영어 문자를 바꾸었을 때 결과로 알맞는 것은 무엇일까요?",
+        "reference": "/img/cho_activities/choA10_c5_005.png",
+        "options" : [
+          { "text" : "BE"},
+          { "text" : "DH"},
+          { "text" : "EI", "answer": true}
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "알고리즘의 체험2",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "성공!",
+      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}
