@@ -789,43 +789,43 @@
     ["배열의 이해 4", "/mazev#!cho_a8_c8/1"]
   ],
   "CHO-A-9":[
-    ["A9 C1", "/activity#!choA9_c1_01"],
-    ["A9 C2", "/mazev#!cho_a9_c2/1"],
-    ["A9 C3", "/activity#!choA9_c3_01"],
-    ["A9 C4", "/mazev#!cho_a9_c4/1"],
-    ["A9 C5", "/activity#!choA9_c5_01"],
-    ["A9 C6", "/mazev#!cho_a9_c6/1"],
-    ["A9 C7", "/activity#!choA9_c7_01"],
-    ["A9 C8", "/mazev#!cho_a9_c8/1"]
+    ["알고리즘과 순서도", "/activity#!choA9_c1_01"],
+    ["배열과 증가 조건 1", "/mazev#!cho_a9_c2/1"],
+    ["규칙적인 배치", "/activity#!choA9_c3_01"],
+    ["배열과 증가 조건 2", "/mazev#!cho_a9_c4/1"],
+    ["정렬 네트워크", "/activity#!choA9_c5_01"],
+    ["배열과 증가 조건 3", "/mazev#!cho_a9_c6/1"],
+    ["그림으로 덧셈", "/activity#!choA9_c7_01"],
+    ["배열과 증가 조건 4", "/mazev#!cho_a9_c8/1"]
   ],
   "CHO-A-10":[
-    ["A10 C1", "/activity#!choA10_c1_01"],
-    ["A10 C2", "/mazev#!cho_a10_c2/1"],
-    ["A10 C3", "/activity#!choA10_c3_01"],
-    ["A10 C4", "/mazev#!cho_a10_c4/1"],
-    ["A10 C5", "/activity#!choA10_c5_01"],
-    ["A10 C6", "/mazev#!cho_a10_c6/1"],
-    ["A10 C7", "/activity#!choA10_c7_01"],
-    ["A10 C8", "/mazev#!cho_a10_c8/1"]
+    ["알고리즘의 체험 1", "/activity#!choA10_c1_01"],
+    ["함수의 이해", "/mazev#!cho_a10_c2/1"],
+    ["도형과 연산", "/activity#!choA10_c3_01"],
+    ["함수의 정의", "/mazev#!cho_a10_c4/1"],
+    ["알고리즘의 체험 2", "/activity#!choA10_c5_01"],
+    ["함수의 사용", "/mazev#!cho_a10_c6/1"],
+    ["한붓그리기 문제", "/activity#!choA10_c7_01"],
+    ["함수의 응용", "/mazev#!cho_a10_c8/1"]
   ],
   "CHO-A-11":[
-    ["A11 C1", "/activity#!choA11_c1_01"],
-    ["A11 C2", "/mazev#!cho_a11_c2/1"],
-    ["A11 C3", "/activity#!choA11_c3_01"],
-    ["A11 C4", "/mazev#!cho_a11_c4/1"],
-    ["A11 C5", "/activity#!choA11_c5_01"],
-    ["A11 C6", "/mazev#!cho_a11_c6/1"],
-    ["A11 C7", "/activity#!choA11_c7_01"],
-    ["A11 C8", "/mazev#!cho_a11_c8/1"]
+    ["프로그래밍의 이해", "/activity#!choA11_c1_01"],
+    ["함수와 반복", "/mazev#!cho_a11_c2/1"],
+    ["함수 상자", "/activity#!choA11_c3_01"],
+    ["함수와 증가하며 반복", "/mazev#!cho_a11_c4/1"],
+    ["제어 구조", "/activity#!choA11_c5_01"],
+    ["함수와 만약에 반복 1", "/mazev#!cho_a11_c6/1"],
+    ["프랙탈과 피보나치 수", "/activity#!choA11_c7_01"],
+    ["함수와 만약에 반복 2", "/mazev#!cho_a11_c8/1"]
   ],
   "CHO-A-12":[
-    ["A12 C1", "/activity#!choA12_c1_01"],
-    ["A12 C2", "/mazev#!cho_a12_c2/1"],
-    ["A12 C3", "/activity#!choA12_c3_01"],
-    ["A12 C4", "/mazev#!cho_a12_c4/1"],
-    ["A12 C5", "/activity#!choA12_c5_01"],
-    ["A12 C6", "/mazev#!cho_a12_c6/1"],
-    ["A12 C7", "/activity#!choA12_c7_01"],
-    ["A12 C8", "/mazev#!cho_a12_c8/1"]
+    ["하드웨어", "/activity#!choA12_c1_01"],
+    ["배열의 기본", "/mazev#!cho_a12_c2/1"],
+    ["조건에 맞는 수", "/activity#!choA12_c3_01"],
+    ["배열의 심화", "/mazev#!cho_a12_c4/1"],
+    ["소프트웨어", "/activity#!choA12_c5_01"],
+    ["함수의 기본", "/mazev#!cho_a12_c6/1"],
+    ["단계적 문제해결", "/activity#!choA12_c7_01"],
+    ["함수의 심화", "/mazev#!cho_a12_c8/1"]
   ]
 }
