@@ -58,6 +58,8 @@
         width: 25%;
         border: 5px solid gray;
         border-radius: 15px;
+        vertical-align: -webkit-baseline-middle;
+        vertical-align: middle;
       }
       .wordStyle:active {
         background: #dbdbdb;
@@ -66,6 +68,7 @@
       }
       .wordStyle > img {
         width: 70%;
+        max-height: 85px;
       }
       .wordStyle > p {
         font-size: 130%;
@@ -119,14 +122,13 @@
         width: 50%;
         padding: 1em 0;
         border-bottom: 3px solid lightgray;
+        border-top: 3px solid lightgray;
       }
       .binary,
       .reference {
         display: inline-block;
         position: absolute;
         left: 0;
-        border-top: 3px solid lightgray;
-
       }
       .reference {
         width: 55%;
@@ -660,7 +662,7 @@
               this.set('multiAnswers', options.filter(o => o.answer).length)
             }
 
-                refNode.append('p').text('보기')
+                // refNode.append('p').text('보기')
                 refNode.append('img').attr('src', reference)
 
             objDivs.append('div').attr('class', 'sentences')
