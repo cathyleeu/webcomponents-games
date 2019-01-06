@@ -1,0 +1,87 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "sentence",
+    "nextlink" : "activity#!choA12_c1_02",
+    "questions" : [
+      {
+        "question": "컴퓨터의 ‘입력장치’에 대한 설명으로 바르지 않는 것을 선택하세요.",
+        "options" : [
+          { "text" : "컴퓨터가 외부의 정보를 받아들이기 위한 장치이다."},
+          { "text" : "사람의 눈, 코, 피부와 같은 감각기관 역할을 한다."},
+          { "text" : "모니터와 본체는 대표적인 입력 장치이다.", "answer": true},
+          { "text" : "입력장치인 키보드는 문자 정보를 컴퓨터에 전달한다."}
+        ]
+      },
+      {
+        "question": "다음 중 출력장치가 아닌 것을 선택하세요.",
+        "options" : [
+          { "text" : "스피커"},
+          { "text" : "마이크", "answer": true},
+          { "text" : "모니터"},
+          { "text" : "프린트" }
+        ]
+      },
+      {
+        "question": "컴퓨터의 ‘기억장치’에 대한 설명으로 바른 것을 선택하세요.",
+        "options" : [
+          { "text" : "컴퓨터 하드웨어 장치에 동작을 지시한다."},
+          { "text" : "컴퓨터의 계산 결과를 보여준다."},
+          { "text" : "사칙 연산, 논리 연산과 같은 계산을 한다."},
+          { "text" : "컴퓨터가 처리할 데이터와 처리한 결과물을 저장한다.","answer": true}
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "하드웨어",
+      "score": "점수",
+      "lefted": "맞춘 갯수",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm":"다음 단계로 넘어가시겠습니까?",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "전체화면"
+    },
+    "en": {
+      "title": "Objective Game",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "element": "objective-game",
+  "attributes": {
+    "gameType" : "referenceEach",
+    "nextlink" : "activity#!choA11_c5_02",
+    "questions" : [
+      {
+        "question": "아래 그림은 프로그램 제어 구조 중 무엇에 해당하는지 선택하세요.",
+        "reference": "/img/cho_activities/choA11_c5_001.png",
+        "options" : [
+          { "text" : "순차", "answer": true},
+          { "text" : "선택"},
+          { "text" : "반복"}
+        ]
+      },
+      {
+        "question": "아래 그림은 프로그램 제어 구조 중 무엇에 해당하는지 선택하세요.",
+        "reference": "/img/cho_activities/choA11_c5_002.png",
+        "options" : [
+          { "text" : "순차"},
+          { "text" : "선택", "answer": true},
+          { "text" : "반복"}
+        ]
+      },
+      {
+        "question": "아래 그림은 프로그램 제어 구조 중 무엇에 해당하는지 선택하세요.",
+        "reference": "/img/cho_activities/choA11_c5_003.png",
+        "options" : [
+          { "text" : "순차"},
+          { "text" : "선택"},
+          { "text" : "반복", "answer": true}
+        ]
+      }
+    ]
+  },
+  "data": [
+  ],
+  "manifest": [
+  ],
+  "msg": {
+    "ko": {
+      "title": "제어 구조",
+
+      "success": "참 잘했어요!",
+      "successHead": "참 잘했어요!",
+      "successBtm" : "다음 단계로 넘어가시겠습니까?",
+
+      "logoutHead": "로그아웃",
+      "logoutBtm": "로그아웃 하시겠습니까?",
+
+      "previousHead" : "돌아가기",
+      "previousBtm": "이전으로 돌아가시겠습니까?",
+
+      "retryHead": "맞지 않아요",
+      "retryBtm" : "올바른 답을 다시 선택하세요.",
+      "retrybtn": "확인",
+
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm":"다음 단계로 넘어가시겠습니까?",
+      "finalbtn" : "확인",
+
+      "nextbtn": "넘어가기",
+      "nobtn" : "아니오",
+      "yesbtn" : "예",
+
+      "fullscreen" : "풀스크린"
+    },
+    "en": {
+      "title": "제어 구조",
+      "score": "score",
+      "lefted": "matched",
+      "success": "Good job!",
+      "successHead": "Success",
+      "logoutHead": "Log Out",
+      "previousHead" : "Back",
+      "successBtm" : "Do you want to move on to the next step?",
+      "logoutBtm": "Do you want to logout",
+      "previousBtm": "Do you want to move on to the previous step?",
+      "nextbtn": "Back",
+      "nobtn" : "No",
+      "yesbtn" : "Yes",
+      "fullscreen" : "fullscreen"
+    }
+  }
+}

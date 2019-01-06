@@ -57,9 +57,9 @@
         border-bottom: 30px solid transparent;
       }
       #board {
-        /* height: 220px; */
+        height: 100px;
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         justify-content: center;
       }
       #board > img {
@@ -82,15 +82,15 @@
         position: relative;
         width: 70%;
         display: inline-block;
-        padding: 3% 0;
+        padding: 2% 0 1% 0;
         margin-top: 30px;
       }
       #item_box > p:first-child {
         position: absolute;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 700;
         background-color: purple;
-        padding: 5px 10px;
+        padding: 5px 5px;
         border-radius: 40px;
         color: white;
         margin: 0;
@@ -98,7 +98,7 @@
         top: -17px;
         left: 50%;
         width: 100px;
-        margin-left: -50px;
+        margin-left: -55px;
       }
       .generalDrag > p {
         background-color: lightslategray;
@@ -130,8 +130,8 @@
       }
       .items > img {
         border: 3px solid lightslategray;
-        width: 70px;
-        height: 70px;
+        /* width: 70px;
+        height: 70px; */
         vertical-align: -webkit-baseline-middle;
         vertical-align: middle;
         user-drag: none;
@@ -223,10 +223,6 @@
         margin: 0 10px;
         border: 3px solid gray;
         display: inline-block;
-      }
-      .generalSteps {
-        width: 100px;
-        height: 100px;
       }
       .generalDrags {
         margin-top : 15px;
@@ -432,8 +428,17 @@
                 .call(d3.drag().on("start", null))
 
               // parent div의 width :70%
-              let centerH = getEls.top+(getEls.height-nodeEl.height);
-              let centerW = (getEls.left+((getEls.width-nodeEl.width)/2))-(window.innerWidth-(window.innerWidth*0.7))/2;
+
+              // 48: border, padding 빈 공간
+
+              let isText = d3.select(this.$.subHead).select('p').node().textContent;
+
+              let centerH = getEls.top+48;
+              if(isText) {
+                centerH = centerH-15;
+              }
+
+              let centerW = getEls.left-(window.innerWidth-(window.innerWidth*0.7))/2;
 
               node.style.top = `-${centerH}px`;
               node.style.left = `${centerW-5}px`;
@@ -553,14 +558,43 @@
 
         d3.select(this.$.subHead).append('p').text(subHeading)
 
-        stepBoard.selectAll('div').data(items).enter()
+        let stepBoards = stepBoard.selectAll('div').data(items).enter()
                  .append('div').attr('class', 'generalSteps')
                  .attr('data-step', (d,i) => d.result)
 
         this.set('steps', 0)
-        // [...Array(steps+1).keys()]
-        //.append('img').attr('src', (d, i) => d.src)
+
         this.genReference(d3.shuffle(items), "generalSteps")
+        // debugger
+
+        if(items[0].src) {
+          items.forEach( (item, i) => {
+            let img = new Image();
+            img.src = item.src;
+            img.onload = () => {
+
+              let imgNW = img.naturalWidth;
+              let imgNH = img.naturalHeight;
+              let imgRate = 90/imgNW;
+
+                  imgNW = Math.floor(imgNW*imgRate);
+                  imgNH = Math.floor(imgNH*imgRate);
+
+              if(imgNW < imgNH) {
+                // height bigger
+                imgRate = 90/imgNH;
+                imgNW = Math.floor(imgNW*imgRate);
+                imgNH = Math.floor(imgNH*imgRate);
+
+              }
+
+              stepBoards.attr('style', `width:${imgNW}px;height:${imgNH}px`)
+              d3.select(this.$.item_box).selectAll('img').attr('style', `width:${imgNW}px;height:${imgNH}px`)
+
+            }
+          })
+
+        }
 
       }
       genReference(items, target){
