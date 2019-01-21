@@ -22,7 +22,7 @@
         ]
       },
       {
-        "question": "열차의 출발 시간을 알아보는 순서도입니다. ‘?’의 답은 무엇인가요?",
+        "question": "부산과 목포행 열차 출발시간을 알기 위해 빈칸에 들어갈 답은?",
         "reference": "/img/cho_activities/choA10_c1_005.png",
         "options" : [
           { "src" : "/img/cho_activities/choA10_c1_031.png", "answer": true},

@@ -32,7 +32,8 @@
       "finalStageHead": "참 잘했어요!",
       "finalStageBtm":"다음 단계로 넘어가시겠습니까?",
       "finalbtn" : "확인",
-      "yesbtn" : "예"
+      "yesbtn" : "예",
+      "fullscreen" : "풀스크린"
     },
     "en": {
       "title": "Matching similar role each other",

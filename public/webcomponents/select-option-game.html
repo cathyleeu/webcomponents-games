@@ -217,7 +217,7 @@
         d3.select(this.$.container).selectAll('div').remove()
         this.setData()
       }
-      handleModal() {
+      handleModal(e) {
         if(e.detail.purpose === "previous") {
           this.$.previousModal.modalAlert();
         } else {
@@ -291,7 +291,7 @@
         let targetTime = 0;
             params = d3.shuffle(params)
 
-
+        // FIXME: : 다음 2번째 문제에서도 계속 acc 가 쌓인다 한번 더 찾아보기
         params.reduce((acc, val, i, node) => {
           let intIdx = i;
           if(i === params.length-1) {
@@ -300,7 +300,7 @@
           }
 
           let ways = Object.values(clues).find(f => f.way.includes(initial[intIdx]) && f.way.includes(params[i]))
-
+          // debugger
 
           quest = quest.replace("X", params[i])
           initial.push(params[i])
@@ -312,6 +312,7 @@
         let options = [];
         dumps.slice(0,2).forEach(d => options.push(d+targetTime))
         options.push(targetTime) //.sort()
+
 
         console.log(quest, options, targetTime)
         this.set('quest', quest + option)

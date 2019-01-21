@@ -1,44 +1,79 @@
 {
   "element": "objective-game",
   "attributes": {
-    "gameType" : "gridComp",
-    "questType": "gridCount",
-    "component": "axis-grid",
-    "gridType" : "number",
-    "rows" : 8,
-    "colors" : ["red", "purple", "green"],
+    "gameType" : "referenceEach",
     "questions" : [
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "detailType" : "max"
+        "question": "가장 큰 수의 칸을 가진 색은?",
+        "reference": "/img/cho_activities/choA2_c3_004.png",
+        "options" : [
+          { "src" : "/img/cho_activities/choA2_c3_001.png"},
+          { "src" : "/img/cho_activities/choA2_c3_002.png", "answer": true},
+          { "src" : "/img/cho_activities/choA2_c3_003.png"}
+        ]
       },
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "detailType" : "max"
+        "question": "가장 작은 수의 칸을 가진 색은?",
+        "reference": "/img/cho_activities/choA2_c3_005.png",
+        "options" : [
+          { "src" : "/img/cho_activities/choA2_c3_001.png"},
+          { "src" : "/img/cho_activities/choA2_c3_002.png", "answer": true},
+          { "src" : "/img/cho_activities/choA2_c3_003.png"}
+        ]
       },
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "detailType" : "max"
+        "question": "가장 큰 수의 칸을 가진 색은?",
+        "reference": "/img/cho_activities/choA2_c3_006.png",
+        "options" : [
+          { "src" : "/img/cho_activities/choA2_c3_001.png", "answer": true},
+          { "src" : "/img/cho_activities/choA2_c3_002.png"},
+          { "src" : "/img/cho_activities/choA2_c3_003.png"}
+        ]
       },
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "detailType" : "max"
+        "question": "가장 작은 수의 칸을 가진 색은?",
+        "reference": "/img/cho_activities/choA2_c3_004.png",
+        "options" : [
+          { "src" : "/img/cho_activities/choA2_c3_001.png"},
+          { "src" : "/img/cho_activities/choA2_c3_002.png"},
+          { "src" : "/img/cho_activities/choA2_c3_003.png", "answer": true}
+        ]
       },
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "detailType" : "max"
+        "question": "가장 큰 수의 칸을 가진 색은?",
+        "reference": "/img/cho_activities/choA2_c3_007.png",
+        "options" : [
+          { "src" : "/img/cho_activities/choA2_c3_001.png", "answer": true},
+          { "src" : "/img/cho_activities/choA2_c3_002.png"},
+          { "src" : "/img/cho_activities/choA2_c3_003.png"}
+        ]
       },
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "detailType" : "max"
+        "question": "가장 큰 수의 칸을 가진 색은?",
+        "reference": "/img/cho_activities/choA2_c3_005.png",
+        "options" : [
+          { "src" : "/img/cho_activities/choA2_c3_001.png"},
+          { "src" : "/img/cho_activities/choA2_c3_002.png"},
+          { "src" : "/img/cho_activities/choA2_c3_003.png", "answer": true}
+        ]
       },
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "detailType" : "max"
+        "question": "가장 큰 수의 칸을 가진 색은?",
+        "reference": "/img/cho_activities/choA2_c3_008.png",
+        "options" : [
+          { "src" : "/img/cho_activities/choA2_c3_001.png", "answer": true},
+          { "src" : "/img/cho_activities/choA2_c3_002.png"},
+          { "src" : "/img/cho_activities/choA2_c3_003.png"}
+        ]
       },
       {
-        "question": "$ 수의 칸을 가진 색은?",
-        "detailType" : "max"
+        "question": "가장 큰 수의 칸을 가진 색은?",
+        "reference": "/img/cho_activities/choA2_c3_009.png",
+        "options" : [
+          { "src" : "/img/cho_activities/choA2_c3_001.png"},
+          { "src" : "/img/cho_activities/choA2_c3_002.png"},
+          { "src" : "/img/cho_activities/choA2_c3_003.png", "answer": true}
+        ]
       }
     ]
   },
@@ -48,7 +83,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "객관식 문제",
+      "title": "수의 크기 비교2",
       "score": "점수",
       "lefted": "맞춘 갯수",
 
@@ -74,7 +109,7 @@
       "nobtn" : "아니오",
       "yesbtn" : "예",
 
-      "fullscreen" : "전체화면"
+      "fullscreen" : "풀스크린"
     },
     "en": {
       "title": "Objective Game",

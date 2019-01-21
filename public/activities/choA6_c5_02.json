@@ -45,8 +45,8 @@
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
-      "finalStageHead": "성공!",
-      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm":"다음 단계로 넘어가시겠습니까?",
       "finalbtn" : "다음 단계",
       "fullscreen" : "전체화면"
     },

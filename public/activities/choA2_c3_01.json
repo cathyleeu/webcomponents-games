@@ -1,53 +1,78 @@
 {
   "element": "objective-game",
   "attributes": {
-    "gameType" : "gridComp",
+    "gameType" : "referenceEach",
     "nextlink" : "activity#!choA2_c3_02",
-    "questType": "gridCount",
-    "component": "axis-grid",
-    "gridType" : "number",
-    "rows" : 8,
-    "colors" : ["red", "purple", "green"],
     "questions" : [
       {
         "question": "$의 칸 수는?",
-        "detailType" : "color",
-        "color" : "red"
+        "questionImg": "/img/cho_activities/choA2_c3_002.png",
+        "reference": "/img/cho_activities/choA2_c3_004.png",
+        "options" : [
+          { "text" : "6"},
+          { "text" : "4"},
+          { "text" : "7", "answer": true}
+        ]
       },
       {
         "question": "$의 칸 수는?",
-        "detailType" : "color",
-        "color" : "purple"
+        "questionImg": "/img/cho_activities/choA2_c3_001.png",
+        "reference": "/img/cho_activities/choA2_c3_005.png",
+        "options" : [
+          { "text" : "5"},
+          { "text" : "6", "answer": true},
+          { "text" : "7"}
+        ]
       },
       {
         "question": "$의 칸 수는?",
-        "detailType" : "color",
-        "color" : "green"
+        "questionImg": "/img/cho_activities/choA2_c3_003.png",
+        "reference": "/img/cho_activities/choA2_c3_006.png",
+        "options" : [
+          { "text" : "8"},
+          { "text" : "4"},
+          { "text" : "6", "answer": true}
+        ]
       },
       {
         "question": "$의 칸 수는?",
-        "detailType" : "color",
-        "color" : "purple"
+        "questionImg": "/img/cho_activities/choA2_c3_002.png",
+        "reference": "/img/cho_activities/choA2_c3_007.png",
+        "options" : [
+          { "text" : "6", "answer": true},
+          { "text" : "8"},
+          { "text" : "5"}
+        ]
       },
       {
         "question": "$의 칸 수는?",
-        "detailType" : "color",
-        "color" : "red"
+        "questionImg": "/img/cho_activities/choA2_c3_001.png",
+        "reference": "/img/cho_activities/choA2_c3_004.png",
+        "options" : [
+          { "text" : "6", "answer": true},
+          { "text" : "4"},
+          { "text" : "7"}
+        ]
       },
       {
         "question": "$의 칸 수는?",
-        "detailType" : "color",
-        "color" : "green"
+        "questionImg": "/img/cho_activities/choA2_c3_002.png",
+        "reference": "/img/cho_activities/choA2_c3_008.png",
+        "options" : [
+          { "text" : "4", "answer": true},
+          { "text" : "7"},
+          { "text" : "8"}
+        ]
       },
       {
         "question": "$의 칸 수는?",
-        "detailType" : "color",
-        "color" : "red"
-      },
-      {
-        "question": "$의 칸 수는?",
-        "detailType" : "color",
-        "color" : "green"
+        "questionImg": "/img/cho_activities/choA2_c3_003.png",
+        "reference": "/img/cho_activities/choA2_c3_009.png",
+        "options" : [
+          { "text" : "6"},
+          { "text" : "5"},
+          { "text" : "7", "answer": true}
+        ]
       }
     ]
   },
@@ -57,7 +82,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "객관식 문제",
+      "title": "수의 크기 비교1",
       "score": "점수",
       "lefted": "맞춘 갯수",
 
@@ -75,15 +100,15 @@
       "retryBtm" : "올바른 답을 다시 선택하세요.",
       "retrybtn": "확인",
 
-      "finalStageHead": "성공!",
-      "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
+      "finalStageHead": "참 잘했어요!",
+      "finalStageBtm":"다음 단계로 넘어가시겠습니까?",
       "finalbtn" : "확인",
 
       "nextbtn": "넘어가기",
       "nobtn" : "아니오",
       "yesbtn" : "예",
 
-      "fullscreen" : "전체화면"
+      "fullscreen" : "풀스크린"
     },
     "en": {
       "title": "Objective Game",

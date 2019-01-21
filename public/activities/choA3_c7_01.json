@@ -34,7 +34,7 @@
         ]
       },
       {
-        "question": "합을 보고, 도형들이 나타내지 옳은 수를 고르세요.",
+        "question": "합을 보고, 도형들이 나타내는 수를 고르세요.",
         "reference": "/img/cho_activities/choA3_c7_01_3.png",
         "options" : [
           { "text" : "1+2", "answer": true},
@@ -44,7 +44,7 @@
         ]
       },
       {
-        "question": "합을 보고, 도형들이 나타내지 옳은 수를 고르세요.",
+        "question": "합을 보고, 도형들이 나타내는 수를 고르세요.",
         "reference": "/img/cho_activities/choA3_c7_01_5.png",
         "options" : [
           { "text" : "2+4"},
@@ -54,7 +54,7 @@
         ]
       },
       {
-        "question": "합을 보고, 도형들이 나타내지 옳은 수를 고르세요.",
+        "question": "합을 보고, 도형들이 나타내는 수를 고르세요.",
         "reference": "/img/cho_activities/choA3_c7_01_8.png",
         "options" : [
           { "text" : "2+5"},
@@ -71,7 +71,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "객관식 문제",
+      "title": "도형이 나타내는 수",
       "score": "점수",
       "lefted": "맞춘 갯수",
 
