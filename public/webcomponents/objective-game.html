@@ -40,7 +40,7 @@
         margin: 0;
       }
       .options {
-        margin-top: 20px;
+        margin-top: 10px;
         position: relative;
         width: 80%;
         left: 50%;
@@ -149,8 +149,8 @@
       }
       .reference > img {
         max-width: 100%;
-        max-height: 180px;
-        margin: 5% 0;
+        max-height: 249px;
+        margin-top: -9px;
       }
       .reference > p {
         position: absolute;
@@ -305,7 +305,7 @@
       .sentenceStyle > img {
         border: 2px solid gainsboro;
         padding: 0.2em 0.4em;
-        width: 120px;
+        max-width: 200px;
         border-radius: 0.4em;
       }
     </style>
@@ -714,7 +714,7 @@
                                    .append(this.component)
 
             let comp = compNode.node()
-            debugger
+            // debugger
 
             let binaryOpts = d3.shuffle(comp.answers[cardType].filter(c => c !== comp.answer)).splice(0,3)
             binaryOpts.push(comp.answer)

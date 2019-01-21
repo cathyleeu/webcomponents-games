@@ -20,8 +20,8 @@
       {
         "question": "두 모양을 보고 한붓으로 그릴 수 있는 것을 선택하세요.",
         "options" : [
-          { "src" : "/img/cho_activities/choA10_c7_012.png", "answer": true},
-          { "src" : "/img/cho_activities/choA10_c7_013.png"}
+          { "src" : "/img/cho_activities/choA10_c7_012.png"},
+          { "src" : "/img/cho_activities/choA10_c7_013.png", "answer": true}
         ]
       },
       {
@@ -49,7 +49,7 @@
   ],
   "msg": {
     "ko": {
-      "title": "객관식 문제",
+      "title": "한붓 그리기",
       "score": "점수",
       "lefted": "맞춘 갯수",
 

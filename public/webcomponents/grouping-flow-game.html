@@ -210,7 +210,7 @@
         // 미리 설정해 놓는 것....
         super.ready();
 
-        this.$.fullScreenModal.modalAlert()
+        // this.$.fullScreenModal.modalAlert()
 
         this.set('step', 1)
         this.set('currentStage', 1)
@@ -262,10 +262,10 @@
           const getEl = el.getBoundingClientRect();
 
           let left = getEl.x < getX,
-              right = getX < getEl.x + getEl.height,
+              right = getX < getEl.x + getEl.width,
               top = getEl.y < getY,
               bottom = getY < getEl.y + getEl.height;
-
+        
           if(left && right && top && bottom) {
             targetEl = el;
             // targetId = el.__data__.id;

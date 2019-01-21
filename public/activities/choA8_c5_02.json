@@ -8,9 +8,9 @@
       {
         "question": "자동문이 어떻게 동작하는지 빈칸에 알맞은 말을 골라보세요.",
         "options" : [
-          { "text" : "A: 자동문이 열리기 시작합니다. \n B: 자동문이 열리지 않습니다."},
-          { "text" : "A: 자동문이 열리지 않습니다. \n B: 자동문이 열리기 시작합니다.", "answer": true},
-          { "text" : "A: 자동문이 열리기 시작합니다. \n B: 자동문이 열리기 시작합니다."}
+          { "src" : "/img/cho_activities/choA8_c5_002.png"},
+          { "src" : "/img/cho_activities/choA8_c5_003.png", "answer": true},
+          { "src" : "/img/cho_activities/choA8_c5_004.png"}
         ]
       }
     ]

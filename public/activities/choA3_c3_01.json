@@ -7,7 +7,6 @@
     "gridType" : "position",
     "questType": "gridGuess",
     "lastStage" : 5,
-    "nextlink" : "activity#!choA3_c1_02",
     "images" : [
       "/img/a7_w2/fruit1.png",
       "/img/a7_w2/fruit2.png",

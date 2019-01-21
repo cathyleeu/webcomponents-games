@@ -1,47 +1,63 @@
 {
   "element": "objective-game",
   "attributes": {
-    "gameType" : "word",
+    "gameType" : "gridComp",
+    "nextlink" : "activity#!choA2_c3_02",
+    "questType": "gridCount",
+    "component": "axis-grid",
+    "gridType" : "number",
+    "rows" : 8,
+    "colors" : ["red", "purple", "green"],
     "questions" : [
       {
-        "question": "$은 무슨 기술과 관련있나요?",
-        "questionImg": "/img/cho_activities/cho_1_5_02.png",
-        "options" : [
-          { "text" : "드론", "answer": true},
-          { "text" : "3D 프린터"},
-          { "text" : "인공지능"}
-        ]
+        "question": "$의 칸 수는?",
+        "detailType" : "color",
+        "color" : "red"
       },
       {
-        "question": "$은 무슨 기술과 관련있나요?",
-        "questionImg": "/img/cho_activities/cho_1_5_03.png",
-        "options" : [
-          { "text" : "드론"},
-          { "text" : "3D 프린터"},
-          { "text" : "인공지능","answer": true}
-        ]
+        "question": "$의 칸 수는?",
+        "detailType" : "color",
+        "color" : "purple"
       },
       {
-        "question": "$은 무슨 기술과 관련있나요?",
-        "questionImg": "/img/cho_activities/cho_1_5_01.png",
-        "options" : [
-          { "text" : "드론"},
-          { "text" : "3D 프린터", "answer": true},
-          { "text" : "인공지능"}
-        ]
+        "question": "$의 칸 수는?",
+        "detailType" : "color",
+        "color" : "green"
+      },
+      {
+        "question": "$의 칸 수는?",
+        "detailType" : "color",
+        "color" : "purple"
+      },
+      {
+        "question": "$의 칸 수는?",
+        "detailType" : "color",
+        "color" : "red"
+      },
+      {
+        "question": "$의 칸 수는?",
+        "detailType" : "color",
+        "color" : "green"
+      },
+      {
+        "question": "$의 칸 수는?",
+        "detailType" : "color",
+        "color" : "red"
+      },
+      {
+        "question": "$의 칸 수는?",
+        "detailType" : "color",
+        "color" : "green"
       }
     ]
   },
   "data": [
   ],
   "manifest": [
-    {"src": "/img/cho_activities/cho_1_5_02.png"},
-    {"src": "/img/cho_activities/cho_1_5_03.png"},
-    {"src": "/img/cho_activities/cho_1_5_01.png"}
   ],
   "msg": {
     "ko": {
-      "title": "정보사회와 기술2",
+      "title": "수의 크기 비교1",
       "score": "점수",
       "lefted": "맞춘 갯수",
 

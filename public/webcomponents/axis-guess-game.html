@@ -276,7 +276,9 @@
       }
       ready() {
         super.ready();
-        this.$.fullScreenModal.modalAlert()
+
+        //FIXME: 키즈씽킹, 키즈코딩 구분해서 풀스크린
+        // this.$.fullScreenModal.modalAlert()
         this.set('ranNums', [])
         this.set('selectedAnws', [])
         this.set('currentStage', 1)

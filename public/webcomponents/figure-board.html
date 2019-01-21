@@ -76,9 +76,10 @@
 
           let result = Boolean(this.selected[0] === this.selected[1]);
           if(result) {
-            parent.$.successModal.modalAlert()
             if(parent.lastStage === parent.stage) {
               parent.$.finalStageModal.modalAlert()
+            } else {
+              parent.$.successModal.modalAlert()
             }
           } else {
             parent.$.retryModal.modalAlert()

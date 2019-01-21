@@ -43,18 +43,18 @@
         "question": "함수 상자를 보고, 입력 값에 따른 알맞은 출력 값을 선택하세요.",
         "reference": "/img/cho_activities/choA11_c3_005.png",
         "options" : [
-          { "text" : "2,4"},
-          { "text" : "6,8", "answer": true},
-          { "text" : "5,10"}
+          { "text" : "2, 4"},
+          { "text" : "6, 8", "answer": true},
+          { "text" : "5, 10"}
         ]
       },
       {
         "question": "함수 상자를 보고, 입력 값에 따른 알맞은 출력 값을 선택하세요.",
         "reference": "/img/cho_activities/choA11_c3_006.png",
         "options" : [
-          { "text" : "6,3", "answer": true},
-          { "text" : "7,4"},
-          { "text" : "8,5"}
+          { "text" : "6, 3", "answer": true},
+          { "text" : "7, 4"},
+          { "text" : "8, 5"}
         ]
       }
     ]

@@ -94,6 +94,7 @@
       on-modal="handleModal"
       purpose="line"
       fullscreen="{{localize('fullscreen')}}"
+      logoutHead="{{localize('logoutHead')}}"
       ></status-bar>
     <toycode-modal
       id="fullScreenModal"
@@ -184,7 +185,7 @@
       }
       ready() {
         super.ready();
-        this.$.fullScreenModal.modalAlert()
+        // this.$.fullScreenModal.modalAlert()
         this.set('currentStage', 1)
         this.set('ques_sub', this.resources[this.language].quesSub)
         this.set('tags', d3.shuffle(this.tags))

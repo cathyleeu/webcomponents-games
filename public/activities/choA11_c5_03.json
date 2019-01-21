@@ -5,7 +5,7 @@
     "questions" : [
       {
         "question": "순서도의 A와 B에 대한 설명으로 바른 것을 선택하세요.",
-        "reference": "/img/cho_activities/choA11_c3_005.png",
+        "reference": "/img/cho_activities/choA11_c5_005.png",
         "options" : [
           { "text" : "B는 7보다 크다"},
           { "text" : "A는 7보다 작다"},
