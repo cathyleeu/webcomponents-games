@@ -265,7 +265,7 @@
               right = getX < getEl.x + getEl.width,
               top = getEl.y < getY,
               bottom = getY < getEl.y + getEl.height;
-        
+
           if(left && right && top && bottom) {
             targetEl = el;
             // targetId = el.__data__.id;
@@ -348,6 +348,11 @@
             .on("drag", this.dragged)
             .on("end", this.dragended))
           .html(this.genItems)
+
+
+        d3.select(this.$.item_box).selectAll('div').nodes().forEach((d, i)=> {
+          d3.select(d).attr('style',`width:${d.getBoundingClientRect().width}px;`)
+        })
 
       }
       handleModal(e) {

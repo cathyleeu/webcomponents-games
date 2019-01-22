@@ -12,10 +12,16 @@
       }
       .half_screen {
         display: inline-block;
-        width: 50%;
-        height: 55%;
+        width: 40%;
+        height: 45%;
         margin-top: 30px;
-        font-size: 35px;
+        font-size: 26px;
+      }
+      .half_screen .custom_select {
+        height: 46px;
+      }
+      .half_screen .select_items {
+        top: 34px;
       }
       .horizon_screen {
         display: inline-block;
@@ -212,7 +218,6 @@
         this.set("blanks", 0)
       }
       reset(){
-        // debugger
         this.set('stage', this.stage+1)
         d3.select(this.$.container).selectAll('div').remove()
         this.setData()
@@ -253,7 +258,6 @@
         let that = d3.select(this.ownerDocument).select('#element').node()
         let result = true;
 
-
         switch (that.gameType) {
           case "referenceEach":
             result = that.answer !== that.selected ? false : true;
@@ -283,6 +287,7 @@
       genRandomNum(max, min){
         return Math.floor(Math.random() * (max - min + 1)) + min
       }
+      //THINKING : whyyyy...
       paramsQuestion(questNode, initial, params, clues, d) {
         let quest = d[0];
         let option = d[1];
@@ -377,25 +382,56 @@
           parent.append('span').text(d)
 
       }
+      replaceRefQuestion(data, node){
+        let { question, options } = data;
+        let { answer, option} = options;
+        let texts = data.question.split("===");
+
+        node.append('span').text(texts[0])
+
+        let selectNode = node.append('div').attr('class', "custom_select")
+
+        selectNode.append('div')
+                  .attr('class', "select_selected")
+                  .attr('data-answer', answer)
+                  .attr('data-idx', 0)
+                  .on("click", this.handleClick)
+                  .text("OOO")
+
+
+        selectNode.append('div')
+                  .attr('class', "select_items hide")
+                  .selectAll('div')
+                  .data(option).enter()
+                  .append('div')
+                  .text((text, i) => text)
+                  .on('click', this.handleOptions)
+                  .exit()
+
+        node.append('span').text(texts[1])
+        this.set("blanks", this.blanks+1)
+        this.set(`answer0`, answer)
+
+      }
       setData(data , manifest){
-        let optionStage;
+        let gameType = this.gameType;
+        let optionStage = this.questions[this.stage];
+            this.set('LastStage', this.questions.length-1)
 
         //TODO: referenceEach 단계 넘어가도록 작업하기
-        if(this.questionType === "repeat") {
-          optionStage = this.questions[0];
-        } else {
-          optionStage = this.questions[this.stage];
-          this.set('LastStage', this.questions.length-1)
-        }
 
         let { question, options, optionType, screenType } = optionStage;
+
+        if(gameType === "reference") {
+          screenType = this.screenType;
+        }
 
         let blanks = question.split(" =").filter(f => f.trim())
         let questNode = d3.select(this.$.container)
                           .append('div').attr('class', `${screenType}_screen`)
                           .append('div').attr('class', 'sentence')
 
-        let gameType = this.gameType;
+
         switch (gameType) {
           case "multiple":
             questNode.selectAll('div')
@@ -403,13 +439,12 @@
               .html(this.replaceQuestion)
             break;
           case "reference":
-            let { initial, params, clues } = optionStage;
 
-            this.paramsQuestion(questNode, initial, params, clues, blanks)
+            d3.select(this.$.container).append('div').attr('class', 'reference')
+                     .append('img').attr('src', `${this.reference}`)
 
-            d3.select(this.$.container)
-              .append('div').attr('class', "reference")
-              .append('img').attr('src', `${this.reference}`)
+            this.replaceRefQuestion(optionStage, questNode)
+
 
             break;
           case "referenceEach":
@@ -443,7 +478,6 @@
 
             this.set('answer', answer)
             break;
-            // debugger
           default:
 
         }
