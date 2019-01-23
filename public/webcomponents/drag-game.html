@@ -332,6 +332,7 @@
 
         d3.select(this.$.board).selectAll('*').remove()
         d3.select(this.$.item_box).selectAll('div').remove()
+        this.set('retryMsg', "$")
         this.set('answers', [])
         this.setData()
       }
@@ -389,6 +390,12 @@
           node.style.position = ""
           node.style.top = ``
           node.style.left = ``
+
+          if(this.gameType === "generalDrag") {
+            if(this.answers.find(s => s.text === d.text)) {
+              this.set('answers', this.answers.filter(s => s.text !== d.text))
+            }
+          }
           return;
         }
         switch (this.gameType) {
@@ -399,6 +406,8 @@
               node.style.left = ``
               return;
             } else {
+              d3.select(node)
+                .call(d3.drag().on("start", null))
               this.push('answers', d.result)
             }
             if(this.answers.length === this.data.items.length) {
@@ -406,8 +415,7 @@
             }
             break;
           case "generalDrag":
-            // debugger
-            this.push('answers', d.result)
+            this.push('answers', d)
             break;
           case "generalStepDrags":
             if(this.steps !== getName.result) {
@@ -429,7 +437,6 @@
                 .call(d3.drag().on("start", null))
 
               // parent div의 width :70%
-
               // 48: border, padding 빈 공간
 
               let isText = d3.select(this.$.subHead).select('p').node().textContent;
@@ -456,7 +463,6 @@
 
             break;
           case "generalDrags" :
-          //debugger
           let targetR = +targetEl.dataset.step;
           let dragR = node.__data__.result;
           if(targetR !== dragR) {
@@ -489,8 +495,16 @@
 
         let { data, answers } = this;
         let anw = data.items.filter(d => d.result);
-        let Clength = Boolean(answers.length === anw.length);
-        let Canswer = answers.includes(false);
+        let Clength = Boolean(answers.length === anw.length), Canswer;
+        // type에 따라서 변경해주기
+        switch (this.gameType) {
+          case "generalDrag":
+            Canswer = answers.map(s => s.result).includes(false)
+            break;
+          default:
+            Canswer = answers.includes(false);
+            break;
+        }
 
         if(!Clength) {
           this.handleMessage("정답 갯수와 맞지 않아요")
@@ -501,6 +515,7 @@
         } else {
           this.$.finalStageModal.modalAlert()
         }
+
 
       }
       generalDrag(boardNode) {
@@ -550,6 +565,8 @@
                 .exit()
 
         this.genReference(items, "specificItems")
+        boardNode.attr('style','height:140px')
+
 
       }
       generalStepDrags(boardNode){
