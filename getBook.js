@@ -1,15 +1,15 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [9, 10];
+      book = [10, 10.5];
 
   // 마포ECC 스페인반 9월에 1권 시작
   if(classCode == "B00130-K1-KC6") {
-    book = [5, 5.5];
+    book = [5.5, 6];
   }
   // 영통ECC 오렌지반 9월에 1권 시작
   if(classCode == "B00041-K1-KC8") {
-    book = [5, 5.5];
+    book = [5.5, 6];
   }
   // 송도ECC 1월 중순 진도 조정 요청
   if(schoolCode == "B00039-K1" || schoolCode == "B00136-K1") {
@@ -21,19 +21,19 @@ module.exports = function(classObj) {
   }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
-    book = [8, 9];
+    book = [9, 10];
   }
   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
-    book = [6, 7];
+    book = [7, 8];
   }
   // 초록나라 예원유치원 9월말 6호 오픈 요청
   if(schoolCode == "C00175-K1") {
-    book = [8, 9];
+    book = [9, 10];
   }
   // 안산지사 엠에스에듀 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2") {
-    book = [7, 8];
+    book = [8, 9];
   }
   // 청라ECC 초등반 2개는 3월에 C-6부터 시작
   if(classCode == "B00016-K1-KC6" || classCode == "B00016-K1-KC7") {
@@ -41,27 +41,27 @@ module.exports = function(classObj) {
   }
   // 청라ECC 브라운반 9월에 1권부터 시작
   if(classCode == "B00016-K1-KC8") {
-    book = [5, 5.5];
+    book = [5.5, 6];
   }
   // 양주ECC 여름 특강반 8월에 9,10권
   if(classCode == "B00171-K1-KC2") {
-    book = [10, 10.5];
+    book = [9, 10];
   }
   // 양주ECC 12월 1권부터 시작, 3월말에 4권, 6월에 5권
   if(schoolCode == "B00171-K1") {
-    book = [10, 10.5];
+    book = [10.5, 1];
   }
   // 제천지사 창의놀이유치원 영업부 시흥지사 낙원유치원, 서초PSA 5월에 1,2권
   if(schoolCode == "C00204-K1" || schoolCode == "C00175-K3" || schoolCode == "D00127-K1") {
-    book = [8, 9];
+    book = [9, 10];
   }
   // 인천지사 참조은 유치원 7월에 1권 11월 중순에 3권 요청함
   if(schoolCode == "C00194-K1") {
-    book = [4, 5];
+    book = [5, 5.5];
   }
   // 압구정 PSA는 3달치 제공
   if(schoolCode == "D00121-K1") {
-    book = [8, 9, 10];
+    book = [9, 10, 10.5];
   }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
@@ -77,7 +77,7 @@ module.exports = function(classObj) {
   }
   // 영업용(시범교육 1,3,5권)
   if(schoolCode == "A00083-K5") {
-    book = [1, 3, 5, 7];
+    book = [1, 3, 5];
   }
   // 개발용(2017전권+2018리뉴얼)
   if(schoolCode == "A00083-K6") {
