@@ -23,6 +23,10 @@ module.exports = function(classObj) {
   if(schoolCode == "C00194-K4") {
     book = [9, 10];
   }
+  // 부산 키즈클럽 롯데어학원 19년2월까지 9권 요청
+  if(schoolCode == "A00066-K1") {
+    book = [9];
+  }
   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
     book = [7, 8];
