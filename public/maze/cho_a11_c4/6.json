@@ -1,27 +1,27 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start",
-  "workspace2": "run_function_func,forloop_type1",
+  "workspace": "start,run_function,rotate_left,run_function",
+  "workspace2": "run_function_func,forloop_type3",
   "mandatory": ["run_function"],
   "toolbox": [
     "move_forward1",
     "rotate_left",
     "rotate_right",
     "run_function",
-    "forloop_type1",
+    "forloop_type3",
     "repeat_x_num",
     "get_item3"
   ],
   "map": [
-    ".#######.",
-    "#.......#",
-    "#.B.D...#",
-    "#..#rB..#",
-    "#..#....#",
-    "#.F.FD..#",
-    "#.......#",
-    "#.......#",
+    ".%######.",
+    "#..d#.#.#",
+    "#.....###",
+    "#..C....#",
+    "##..#...#",
+    "#..F.C.F#",
+    "###.#.#.#",
+    "#..#..#.#",
     ".#######."
   ],
   "tile": [

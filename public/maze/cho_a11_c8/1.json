@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start",
+  "workspace": "start,repeat_until_numbot[run_function]",
   "workspace2": "run_function_func,condition_ifMoveForward",
   "mandatory": ["run_function"],
   "toolbox": [

@@ -1,0 +1,42 @@
+{
+  "tile_size": 128,
+  "score":1,
+  "workspace": "start,run_function,rotate_right,move_forward1,move_forward1,rotate_right,run_function",
+  "workspace2": "run_function_func,forloop_type3",
+  "mandatory": ["run_function"],
+  "toolbox": [
+    "move_forward1",
+    "rotate_left",
+    "rotate_right",
+    "run_function",
+    "forloop_type3",
+    "repeat_x_num",
+    "get_item3"
+  ],
+  "map": [
+    ".%######.",
+    "#..E....#",
+    "##..#...#",
+    "#..B.B..#",
+    "###.#.#.#",
+    "#..u.E#.#",
+    "#...#.#.#",
+    "#.....###",
+    ".#######."
+  ],
+  "tile": [
+    {"tile": "A", "img": "acorn","itemCount": 1, "role": "item"},
+    {"tile": "B", "img": "acorn","itemCount": 2, "role": "item"},
+    {"tile": "C", "img": "acorn","itemCount": 3, "role": "item"},
+    {"tile": "D", "img": "acorn","itemCount": 4, "role": "item"},
+    {"tile": "E", "img": "acorn","itemCount": 5, "role": "item"},
+    {"tile": "F", "img": "acorn","itemCount": 6, "role": "item"},
+    {"tile": "G", "img": "acorn","itemCount": 7, "role": "item"},
+    {"tile": "H", "img": "acorn","itemCount": 8, "role": "item"},
+    {"tile": "I", "img": "acorn","itemCount": 9, "role": "item"}
+  ],
+  "tutorial": [{
+    "msg:ko": "도토리를 모두 가져와요.",
+    "msg:en": "Bring the all acorns."
+  }]
+}

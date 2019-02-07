@@ -1,8 +1,8 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start",
-  "workspace2": "run_function_func,condition_ifMoveForward",
+  "workspace": "start,repeat_until_numbot",
+  "workspace2": "run_function_func",
   "mandatory": ["run_function"],
   "toolbox": [
     "move_forward1",
@@ -13,13 +13,13 @@
     "condition_ifMoveForward"
   ],
   "map": [
-    ".##..##.",
-    ".#.###..",
-    "#..%#..#",
-    "#..#.l##",
-    "#....#.#",
-    "#.#.##.#",
-    "##....##",
+    ".#####.#",
+    "##.....#",
+    "r....#%s",
+    ".##..#.#",
+    ".......#",
+    "###..#.s",
+    "sss##sss",
     "ssssssss"
   ],
   "tutorial": [{
