@@ -1,7 +1,7 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start,move_forward1,rotate_right,run_function,rotate_right,move_forward1,move_forward1,run_function",
+  "workspace": "start,repeat(2)[run_function,run_function,rotate_left]",
   "workspace2": "run_function_func",
   "mandatory": ["run_function"],
   "toolbox": [
@@ -16,13 +16,13 @@
   ],
   "map": [
     "ssssssss",
-    "%%%%ssss",
-    "#.&.&.ss",
-    "#.u#..##",
-    "#...&#.#",
-    "#.#..#..",
-    ".##.&.##",
-    "...##..."
+    "%%%####.",
+    "#.#....#",
+    "#..&&&##",
+    "#....&.#",
+    "#.#..u..",
+    ".##.#.##",
+    "#..#.#.#"
   ],
   "tile": [
     {"tile": "&","contents" : [{"img": "fish","role": "item"},{"img": "pet","role": "img"}]}

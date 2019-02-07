@@ -1,8 +1,8 @@
 {
   "tile_size": 128,
   "score":1,
-  "workspace": "start,run_function",
-  "workspace2": "run_function_func",
+  "workspace": "start",
+  "workspace2": "run_function_func,check,condition_fish_notuse",
   "mandatory": ["run_function"],
   "toolbox": [
     "move_forward1",
@@ -15,14 +15,14 @@
     "get_item_notuse"
   ],
   "map": [
-    "ssssssss",
-    "%%%####.",
-    "#.#d...#",
-    "#..&..##",
-    "#..&.#.#",
-    "#.#&##..",
-    ".##.#.##",
-    "#..#.#.#"
+    "%%..#.#.",
+    ".#.###..",
+    "#.#....#",
+    "##..#.##",
+    "#.r.&#.#",
+    "#.#.&.&#",
+    "#...##.#",
+    "ssssssss"
   ],
   "tile": [
     {"tile": "&","contents" : [{"img": "fish","role": "item"},{"img": "pet","role": "img"}]}
