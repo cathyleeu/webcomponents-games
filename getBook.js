@@ -17,7 +17,7 @@ module.exports = function(classObj) {
   }
   // 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
-    book = [10];
+    book = [10.5];
   }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
