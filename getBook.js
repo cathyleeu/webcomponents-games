@@ -87,9 +87,9 @@ module.exports = function(classObj) {
   if(schoolCode == "A00083-K6") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
   }
-  // 영업용(시범교육 영문 3,5,7,8권)
+  // 영업용(시범교육 영문 1,3,5권)
   if(schoolCode == "A00083-K7") {
-    book = [3, 5, 7, 8];
+    book = [1, 3, 5];
   }
 
   book = book.map(function(num) {
