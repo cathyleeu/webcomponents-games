@@ -72,7 +72,7 @@ module.exports = function(classObj) {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
   }
   // 영문전차시(내부용)
-  if(schoolCode == "A00083-K14") {
+  if(schoolCode == "B00230-K1") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
   }
   // 영문데모(1,5권)
