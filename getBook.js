@@ -71,6 +71,14 @@ module.exports = function(classObj) {
   if(schoolCode == "A00083-K3") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
   }
+  // 영문전차시(내부용)
+  if(schoolCode == "A00083-K14") {
+    book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
+  }
+  // 영문데모(1,5권)
+  if(schoolCode == "A00083-K15") {
+    book = [1, 5];
+  }
   // 설명회용 7세 샘플(인천지사 요청)
   if(schoolCode == "C00224-K67") {
     book = [5, 7, 9];
