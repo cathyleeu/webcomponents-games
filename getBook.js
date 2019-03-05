@@ -20,7 +20,7 @@ module.exports = function(classObj) {
     book = [1];
   }
   // 3월 신규원 1권만, 4월 진도 조정 시 삭제 예정
-  if(schoolCode == "B00240-K1" || schoolCode == "C00175-K5" || schoolCode == "C00231-K3") {
+  if(schoolCode == "B00240-K1" || schoolCode == "C00175-K5" || schoolCode == "C00175-K3"|| schoolCode == "B00246-K1"|| schoolCode == "C00231-K3") {
     book = [1];
   }
   // 인천 동심유치원 10월 6호 오픈 요청
@@ -59,8 +59,8 @@ module.exports = function(classObj) {
   if(schoolCode == "B00171-K1") {
     book = [1, 2];
   }
-  // 제천지사 창의놀이유치원 영업부 시흥지사 낙원유치원, 서초PSA 5월에 1,2권
-  if(schoolCode == "C00204-K1" || schoolCode == "C00175-K3" || schoolCode == "D00127-K1") {
+  // 제천지사 창의놀이유치원 
+  if(schoolCode == "C00204-K1") {
     book = [10, 10.5];
   }
   // 인천지사 참조은 유치원 7월에 1권 11월 중순에 3권 요청함
