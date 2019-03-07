@@ -20,7 +20,7 @@ module.exports = function(classObj) {
     book = [1];
   }
   // 3월 신규원 1권만, 4월 진도 조정 시 삭제 예정
-  if(schoolCode == "B00240-K1" || schoolCode == "C00175-K5" || schoolCode == "C00175-K3"|| schoolCode == "B00246-K1"|| schoolCode == "C00231-K3") {
+  if(schoolCode == "B00240-K1" || schoolCode == "C00175-K6" || schoolCode == "B00252-K1" || schoolCode == "C00175-K3"|| schoolCode == "B00246-K1"|| schoolCode == "C00231-K3") {
     book = [1];
   }
   // 인천 동심유치원 10월 6호 오픈 요청
