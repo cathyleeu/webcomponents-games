@@ -11,9 +11,9 @@ module.exports = function(classObj) {
   if(classCode == "B00041-K1-KC8") {
     book = [6, 7];
   }
-  // 송도ECC 1월 중순 진도 조정 요청
-  if(schoolCode == "B00039-K1" || schoolCode == "B00136-K1") {
-    book = [10, 10.5];
+  // 송도ECC 3월 중순 진도 조정 요청
+  if(schoolCode == "C00270-K1") {
+    book = [1, 2];
   }
   // 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
