@@ -62,11 +62,29 @@
   float:left;
   visibility: hidden;
 }
-
+.logo{
+  height: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 1em;
+  float: left;
+}
+.logout, .fullscreen {
+  height: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  float: right;
+  margin-right: 1em;
+}
 </style>
 <div id="container">
   <div class="head">
-    <div class="instruction" data-msg="instruction">숨어있는 컴퓨터를 찾아요:자판기 놀이</div>
+    <div class="instruction">
+      <div class="logo has_name" data-msg="logo"></div>
+      <div class="logout has_name" data-msg="logout"></div>
+      <div class="fullscreen" data-msg="fullscreen"></div>
+      <span data-msg="instruction">숨어있는 컴퓨터를 찾아요:자판기 놀이</span>
+    </div>
     <div class="hint" data-msg="hint">음료수를 뽑기 위해서 돈을 넣어봐요!</div>
   </div>
   <div class="workspace">
@@ -79,8 +97,13 @@
 <script>
 var hash = location.hash,
     lang = hash.indexOf("lang=en") >= 0 ? "en" : "ko",
+    programTitle = store.session.get("showbook", " ").match(/\/engloo/) ? "KIDSCODING" : "KIDSTHINKING",
     msg = {
       ko: {
+        logo: programTitle,
+        logout: "로그아웃",
+        fullscreen: "전체화면",
+        previous: "이전으로 돌아가시겠습니까?",
         instruction: "숨어있는 컴퓨터를 찾아요:자판기 놀이",
         hint: "음료수를 뽑기 위해서 동전을 넣어봐요!",
         hint1: "동전이 들어 갔어요! 불이 들어온 버튼을 눌러봐요!",
@@ -89,6 +112,10 @@ var hash = location.hash,
         success: "성공!"
       },
       en: {
+        logo: programTitle,
+        logout: "Log Out",
+        fullscreen: "fullscreen",
+        previous: "Do you want to move on to the previous step?",
         instruction: "Vending Machine Practice",
         hint: "Try to put a coin to pull out a drink!",
         hint1: "A coin went in! Press the button that lights up!",
@@ -156,4 +183,33 @@ var hash = location.hash,
 	   }
 	}
 
+  if(!store.session.get("showbook")){
+    $(".has_name").hide();
+  }
+  $(".logo,.logout").click(function(e) {
+    var result = confirm(msg[lang].previous);
+    var showBook = store.session.get("showbook");
+    if (result && showBook) {
+      if (!store.session.get("externallogin")) {
+        store.session.clear();
+      }
+      if ($(this).hasClass("logout")) {
+        showBook = showBook.split("#")[0];
+      }
+      location.href = showBook;
+    }
+  });
+  $(".fullscreen").click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var doc = window.document;
+    var docEl = doc.documentElement;
+    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+    if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+      requestFullScreen.call(docEl);
+    } else {
+      cancelFullScreen.call(doc);
+    };
+  });
 </script>
