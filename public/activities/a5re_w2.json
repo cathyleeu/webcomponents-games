@@ -1,8 +1,7 @@
 {
   "element": "grouping-game",
   "attributes": {
-    "lastStage" : 3,
-    "nextlink" : "activity#!a5re_w3"
+    "lastStage" : 3
   },
   "data": [
     {"id": 0, "src": "/img/a5re_w2/insect0.png"},
@@ -71,7 +70,7 @@
       "successBtm" : "Do you want to move on to the next step?",
       "logoutBtm": "Do you want to logout",
       "previousBtm": "Do you want to move on to the previous step?",
-      "nextbtn": "Back",
+      "nextbtn": "Move to Next",
       "nobtn" : "No",
       "yesbtn" : "Yes",
       "retryHead": "Miss",

@@ -38,7 +38,7 @@
       "retryBtm" : "Do you want to retry?",
       "logoutBtm": "Do you want to logout",
       "previousBtm": "Do you want to move on to the previous step?",
-      "nextbtn": "Back",
+      "nextbtn": "Move to Next",
       "retrybtn": "Retry",
       "resultbtn": "Result",
       "nobtn" : "No",

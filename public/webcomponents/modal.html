@@ -277,7 +277,8 @@
           return false
         }
         d3.select(this.element).classed("popup", null)
-        location.href = `${location.origin}/${this.nextlink}`;
+        var lang = location.hash.match(/lang=../);
+        location.href = `${location.origin}/${this.nextlink}` + (lang ? '?' + lang[0] : '');
         // IE에서는 location.href 변경시 #!부분만 바뀌면 refresh가 일어나지 않음
         // 반대로, 모던 브라우저에서는 reload를 바로 하면 location.href가 먹히지 않아 setTimeout 처리
         setTimeout(function() {

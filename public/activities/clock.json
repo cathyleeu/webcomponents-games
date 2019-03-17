@@ -58,7 +58,7 @@
       "logoutBtm": "Do you want to logout",
       "previousBtm": "Do you want to move on to the previous step?",
       "finalStageBtm":"All clear in this class!",
-      "nextbtn": "Back",
+      "nextbtn": "Move to Next",
       "nobtn" : "No",
       "yesbtn" : "Yes",
       "finalbtn" : "Next Stage"

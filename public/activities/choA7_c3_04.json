@@ -56,12 +56,16 @@
       "successBtm" : "Do you want to move on to the next step?",
       "logoutBtm": "Do you want to logout",
       "previousBtm": "Do you want to move on to the previous step?",
-      "nextbtn": "Back",
+      "nextbtn": "Move to Next",
       "nobtn" : "No",
       "yesbtn" : "Yes",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
       "finalbtn" : "Next Stage",
+      "retryHead": "Miss",
+      "retryBtm" : "Use all given images",
+      "retrybtn": "Retry",
+      "unCorrect" : "다시 시도해 볼까요?",
       "fullscreen" : "fullscreen"
     }
   }

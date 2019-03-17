@@ -13,7 +13,7 @@
 },
 
   "manifest": [
-    {"src": "/img/renewed_c1/categorize_new.png", "en_src": "/img/renewed_c1/space.png", "background": true},
+    {"src": "/img/renewed_c1/categorize_new.png", "en_src": "/img/renewed_c1/categorize_new_en.png", "background": true},
     {"src": "/img/renewed_c1/camera.png", "name": "camera","group":"in"},
     {"src": "/img/renewed_c1/cpu.png", "name": "cpu", "group":"cpu" },
     {"src": "/img/renewed_c1/keyboard.png", "name": "keyboard","group":"in" },
@@ -45,6 +45,10 @@
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "확인",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "아이템 모두 사용해주세요.",
+      "retrybtn": "다시하기",
+      "unCorrect" : "다시 시도해 볼까요?",
       "fullscreen" : "전체화면"
     },
     "en": {
@@ -58,12 +62,16 @@
       "successBtm" : "Do you want to move on to the next step?",
       "logoutBtm": "Do you want to logout",
       "previousBtm": "Do you want to move on to the previous step?",
-      "nextbtn": "Back",
+      "nextbtn": "Move to Next",
       "nobtn" : "No",
       "yesbtn" : "Yes",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
       "finalbtn" : "Next Stage",
+      "retryHead": "Miss",
+      "retryBtm" : "Use all given images",
+      "retrybtn": "Retry",
+      "unCorrect" : "다시 시도해 볼까요?",
       "fullscreen" : "fullscreen"
     }
   }
