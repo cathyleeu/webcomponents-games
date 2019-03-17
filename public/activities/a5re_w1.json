@@ -2,7 +2,6 @@
   "element": "objective-game",
   "attributes": {
     "gameType" : "word",
-    "nextlink" : "activity#!a5re_w1",
     "questions" : [{
       "question": {
         "ko": "여름 $ 과 관련있는 것을 골라보아요",
@@ -121,12 +120,18 @@
       "lefted": "matched",
       "success": "Good job!",
       "successHead": "Success",
+      "retryHead": "Miss",
+      "retryBtm" : "Try again",
+      "retrybtn": "Retry",
       "logoutHead": "Log Out",
       "previousHead" : "Back",
       "successBtm" : "Do you want to move on to the next step?",
       "logoutBtm": "Do you want to logout",
       "previousBtm": "Do you want to move on to the previous step?",
-      "nextbtn": "Back",
+      "finalStageHead": "Success",
+      "finalStageBtm":"All clear in this class!",
+      "finalbtn" : "Next Stage",
+      "nextbtn": "Move to Next",
       "nobtn" : "No",
       "yesbtn" : "Yes",
       "fullscreen" : "fullscreen"

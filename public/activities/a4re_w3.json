@@ -1,8 +1,7 @@
 {
   "element": "flow-card",
   "attributes": {
-    "nextlink" : "activity#!a4re_w3",
-    "lastStage" : 1
+    "lastStage" : 5
   },
   "data": {
     "background" : false,
@@ -58,7 +57,7 @@
       "successBtm" : "Do you want to move on to the next step?",
       "logoutBtm": "Do you want to logout",
       "previousBtm": "Do you want to move on to the previous step?",
-      "nextbtn": "Back",
+      "nextbtn": "Move to Next",
       "nobtn" : "No",
       "yesbtn" : "Yes",
       "flow": "Arrange the images with given images",

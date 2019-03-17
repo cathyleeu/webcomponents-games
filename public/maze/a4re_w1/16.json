@@ -31,5 +31,9 @@
     "msg:ko": "블록을 조립해서 유치원에 가요.",
     "msg:en": "Assemble a block to move kindergarden.",
     "img": ["/img/a4re_w1/block_kindergarten.png","/img/a4re_w1/kindergarten.png"]
+  }],
+  "success": [{
+    "msg:ko": "성공! 우리동네의 모든 건물들을 가보았어요.",
+    "msg:en": "Success! Cos had visited all the building in town."
   }]
 }

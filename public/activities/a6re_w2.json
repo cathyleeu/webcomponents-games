@@ -8,7 +8,6 @@
   "attributes": {
     "max" : 4,
     "trick": 4,
-    "nextlink" : "activity#!a6_w2",
     "lastStage" : 2
   },
   "manifest": [
@@ -71,7 +70,7 @@
       "previousBtm": "Do you want to move on to the previous step?",
       "retryHead": "Failed",
       "retryBtm" : "Do you want to retry?",
-      "nextbtn": "Back",
+      "nextbtn": "Move to Next",
       "retrybtn": "Retry",
       "resultbtn": "Result",
       "nobtn" : "No",

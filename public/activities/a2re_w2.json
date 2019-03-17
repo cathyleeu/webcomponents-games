@@ -1,7 +1,8 @@
 {
   "element": "create-image-game",
   "attributes": {
-    "limited" : true
+    "limited" : true,
+    "useAll": true
   },
   "data": [
     [9.35,43.2],[29.76,33.67],[61.22,41.5],[88.27,36.73],
@@ -40,6 +41,10 @@
       "finalStageHead": "성공!",
       "finalStageBtm":"이번 시간의 모든 문제를 해결하였어요!",
       "finalbtn" : "확인",
+      "retryHead": "참 아쉽네요!",
+      "retryBtm" : "아이템 모두 사용해주세요.",
+      "retrybtn": "다시하기",
+      "unCorrect" : "다시 시도해 볼까요?",
       "fullscreen" : "전체화면"
     },
     "en": {
@@ -54,12 +59,16 @@
       "successBtm" : "Do you want to move on to the next step?",
       "logoutBtm": "Do you want to logout",
       "previousBtm": "Do you want to move on to the previous step?",
-      "nextbtn": "Back",
+      "nextbtn": "Move to Next",
       "nobtn" : "No",
       "yesbtn" : "Yes",
       "finalStageHead": "Success",
       "finalStageBtm":"All clear in this class!",
       "finalbtn" : "Next Stage",
+      "retryHead": "Miss",
+      "retryBtm" : "Use all given images",
+      "retrybtn": "Retry",
+      "unCorrect" : "다시 시도해 볼까요?",
       "fullscreen" : "FullScreen"
     }
   }

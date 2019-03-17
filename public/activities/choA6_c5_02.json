@@ -62,7 +62,7 @@
       "logoutBtm": "Do you want to logout",
       "previousHead" : "Back",
       "previousBtm": "Do you want to move on to the previous step?",
-      "nextbtn": "Back",
+      "nextbtn": "Move to Next",
       "nobtn" : "No",
       "yesbtn" : "Yes",
       "finalStageHead": "Success",
