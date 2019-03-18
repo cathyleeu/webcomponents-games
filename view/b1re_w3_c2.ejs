@@ -1,3 +1,4 @@
+<!-- imageDir:b1_w3 -->
 <style>
 #container {
   position: relative;
@@ -172,7 +173,8 @@ var hash = location.hash,
         $(".hint").text(msg[lang].success);
         setTimeout( function () {
           alert(msg[lang].success);
-          document.location.href = '/b1re_w3_c1#lang=' + lang;
+          var showBook = store.session.get("showbook");
+          document.location.href = showBook;
         }, 2000);
       }, 8000);
     }
