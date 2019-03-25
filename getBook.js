@@ -1,7 +1,7 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [10.5, 1];
+      book = [1, 2];
 
   // 마포ECC 스페인반, 영통ECC 오렌지반, 청라ECC 브라운반 9월에 1권 시작
   if(classCode == "B00130-K1-KC6" || classCode == "B00041-K1-KC8" || classCode == "B00016-K1-KC8") {
