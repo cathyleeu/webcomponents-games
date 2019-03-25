@@ -3,13 +3,9 @@ module.exports = function(classObj) {
       classCode = classObj.code,
       book = [10.5, 1];
 
-  // 마포ECC 스페인반 9월에 1권 시작
-  if(classCode == "B00130-K1-KC6") {
-    book = [6, 7];
-  }
-  // 영통ECC 오렌지반 9월에 1권 시작
-  if(classCode == "B00041-K1-KC8") {
-    book = [6, 7];
+  // 마포ECC 스페인반, 영통ECC 오렌지반, 청라ECC 브라운반 9월에 1권 시작
+  if(classCode == "B00130-K1-KC6" || classCode == "B00041-K1-KC8" || classCode == "B00016-K1-KC8") {
+    book = [7, 8];
   }
   // 송도ECC 3월 중순 진도 조정 요청
   if(schoolCode == "C00270-K1") {
@@ -19,37 +15,29 @@ module.exports = function(classObj) {
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
     book = [1];
   }
-  // 3월 신규원 1권만, 4월 진도 조정 시 삭제 예정
-  if(schoolCode == "B00240-K1" || schoolCode == "C00175-K6" || schoolCode == "B00252-K1" || schoolCode == "C00175-K3"|| schoolCode == "B00246-K1"|| schoolCode == "C00231-K3") {
-    book = [1];
-  }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
-    book = [10, 10.5];
+    book = [10.5, 1];
   }
   // 부산 키즈클럽 롯데어학원 19년2월까지 9권 요청
   if(schoolCode == "A00066-K1") {
-    book = [9, 10];
+    book = [10, 10.5];
   }
   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
-    book = [8, 9];
+    book = [9, 10];
   }
   // 초록나라 예원유치원 9월말 6호 오픈 요청
   if(schoolCode == "C00175-K1") {
-    book = [10, 10.5];
+    book = [10.5, 1];
   }
   // 안산지사 엠에스에듀 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2") {
-    book = [9, 10];
+    book = [10, 10.5];
   }
   // 청라ECC 초등반 2개는 3월에 C-6부터 시작
   if(classCode == "B00016-K1-KC6" || classCode == "B00016-K1-KC7") {
     book = [10.5];
-  }
-  // 청라ECC 브라운반 9월에 1권부터 시작
-  if(classCode == "B00016-K1-KC8") {
-    book = [6, 7];
   }
   // 양주ECC 여름 특강반 8월에 9,10권
   if(classCode == "B00171-K1-KC2") {
@@ -57,15 +45,15 @@ module.exports = function(classObj) {
   }
   // 양주ECC 12월 1권부터 시작, 3월말에 4권, 6월에 5권
   if(schoolCode == "B00171-K1") {
-    book = [1, 2];
+    book = [2, 3];
   }
   // 제천지사 창의놀이유치원 
   if(schoolCode == "C00204-K1") {
-    book = [10, 10.5];
+    book = [10.5, 1];
   }
   // 인천지사 참조은 유치원 7월에 1권 11월 중순에 3권 요청함
   if(schoolCode == "C00194-K1") {
-    book = [5.5, 6];
+    book = [6, 7];
   }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
