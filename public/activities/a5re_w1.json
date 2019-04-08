@@ -87,6 +87,23 @@
   "data": [
   ],
   "manifest": [
+    {"src":"/img/a5re_w1/bg_summer.png"},
+    {"src":"/img/a5re_w1/summer1.png"},
+    {"src":"/img/a5re_w1/summer2.png"},
+    {"src":"/img/a5re_w1/summer3.png"},
+    {"src":"/img/a5re_w1/summer4.png"},
+    {"src":"/img/a5re_w1/summer5.png"},
+    {"src":"/img/a5re_w1/summer6.png"},
+    {"src":"/img/a5re_w1/summer7.png"},
+    {"src":"/img/a5re_w1/summer8.png"},
+    {"src":"/img/a5re_w1/winter1.png"},
+    {"src":"/img/a5re_w1/winter2.png"},
+    {"src":"/img/a5re_w1/winter3.png"},
+    {"src":"/img/a5re_w1/winter4.png"},
+    {"src":"/img/a5re_w1/winter5.png"},
+    {"src":"/img/a5re_w1/winter6.png"},
+    {"src":"/img/a5re_w1/winter7.png"},
+    {"src":"/img/a5re_w1/winter8.png"}
   ],
   "msg": {
     "ko": {

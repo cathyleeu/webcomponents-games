@@ -531,6 +531,46 @@ public.get('/cache/:manifest', function *(next) {
       });
     });
   });
+  // activity의 manifest 로드
+  activities.forEach(function(activity) {
+    var file_path = path.join("/activities", activity + ".json");
+    if(page_manifests.indexOf(file_path) < 0) {
+      page_manifests.push(file_path);
+    }
+    var activity = JSON.parse(fs.readFileSync(path.join("public", file_path)));
+    if(activity.manifest) {
+      activity.manifest.forEach(function(obj) {
+        if(!!obj.src && page_manifests.indexOf(obj.src) < 0) {
+          page_manifests.push(obj.src);
+        }
+        if(!!obj.en_src && page_manifests.indexOf(obj.en_src) < 0) {
+          page_manifests.push(obj.en_src);
+        }
+      });
+    }
+    // activity의 nextlink로 maze가 포함됨 경우 처리
+    if(activity.attributes && activity.attributes.nextlink) {
+      var maniPath = activity.attributes.nextlink.match(/^mazeh?#!(.*)/);
+      if(maniPath) {
+        maniPath = maniPath[1].slice(0, maniPath.lastIndexOf("/"));
+        if(maniPath && manifests.indexOf(maniPath) < 0) {
+          manifests.push(maniPath);
+          var maniTokens = maniPath.split("_"),
+              maniHeading = maniTokens.slice(0,2).join("_");
+          // c3_w1_c1이 있다면 c3_w1_c2도 추가
+          if(maniTokens.length == 2 || maniTokens.length == 3) {
+            mazeDirs.forEach(function(dir) {
+              if(maniPath != dir &&
+                  maniHeading == dir.split("_").slice(0,2).join("_") &&
+                  manifests.indexOf(dir) < 0) {
+                manifests.push(dir);
+              }
+            });
+          }
+        }
+      }
+    }
+  })
   // 각 index.json의 경우 link에서 다른 폴더가 필요한지 체크
   manifests.forEach(function(maniPath) {
     var index_path = path.join("public/maze", maniPath, "index.json"),
@@ -647,25 +687,6 @@ public.get('/cache/:manifest', function *(next) {
       }
     });
   });
-
-  // activity의 manifest 로드
-  activities.forEach(function(activity) {
-    var file_path = path.join("/activities", activity + ".json");
-    if(page_manifests.indexOf(file_path) < 0) {
-      page_manifests.push(file_path);
-    }
-    var activity = JSON.parse(fs.readFileSync(path.join("public", file_path)));
-    if(activity.manifest) {
-      activity.manifest.forEach(function(obj) {
-        if(!!obj.src && page_manifests.indexOf(obj.src) < 0) {
-          page_manifests.push(obj.src);
-        }
-        if(!!obj.en_src && page_manifests.indexOf(obj.en_src) < 0) {
-          page_manifests.push(obj.en_src);
-        }
-      });
-    }
-  })
 
   // imgs에 속한 이미지중 cache에 속한 이미지는 제거
   imgs = imgs.filter(function(item) {
