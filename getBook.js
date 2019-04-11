@@ -3,11 +3,11 @@ module.exports = function(classObj) {
       classCode = classObj.code,
       book = [1, 2];
 
-  // 마포ECC 스페인반, 영통ECC 오렌지반, 청라ECC 브라운반 9월에 1권 시작
-  if(classCode == "B00130-K1-KC6" || classCode == "B00041-K1-KC8" || classCode == "B00016-K1-KC8") {
+  // 마포ECC 스페인반, 청라ECC 브라운반 18년9월에 1권 시작
+  if(classCode == "B00130-K1-KC6" || classCode == "B00016-K1-KC8") {
     book = [7, 8];
   }
-  // 송도ECC 3월 중순 진도 조정 요청
+  // 송도ECC 19년 3월 중순 진도 조정 요청
   if(schoolCode == "C00270-K1") {
     book = [1, 2];
   }
