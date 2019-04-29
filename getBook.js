@@ -1,7 +1,7 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [1, 2];
+      book = [2, 3];
 
   // 마포ECC 스페인반, 청라ECC 브라운반 18년9월에 1권 시작
   if(classCode == "B00130-K1-KC6" || classCode == "B00016-K1-KC8") {
@@ -17,23 +17,23 @@ module.exports = function(classObj) {
   }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
-    book = [10.5, 1];
+    book = [1, 2];
   }
   // 부산 키즈클럽 롯데어학원 19년2월까지 9권 요청
   if(schoolCode == "A00066-K1") {
-    book = [10, 10.5];
+    book = [10.5, 1];
   }
   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
-    book = [9, 10];
+    book = [10, 10.5];
   }
   // 초록나라 예원유치원 9월말 6호 오픈 요청
   if(schoolCode == "C00175-K1") {
-    book = [10.5, 1];
+    book = [1, 2];
   }
   // 안산지사 엠에스에듀 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2") {
-    book = [10, 10.5];
+    book = [10.5, 1];
   }
   // 청라ECC 초등반 2개는 3월에 C-6부터 시작
   if(classCode == "B00016-K1-KC6" || classCode == "B00016-K1-KC7") {
@@ -45,15 +45,15 @@ module.exports = function(classObj) {
   }
   // 양주ECC 12월 1권부터 시작, 3월말에 4권, 6월에 5권
   if(schoolCode == "B00171-K1") {
-    book = [2, 3];
+    book = [3, 4];
   }
   // 제천지사 창의놀이유치원 
   if(schoolCode == "C00204-K1") {
-    book = [10.5, 1];
+    book = [1, 2];
   }
   // 인천지사 참조은 유치원 7월에 1권 11월 중순에 3권 요청함
   if(schoolCode == "C00194-K1") {
-    book = [6, 7];
+    book = [7, 8];
   }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
