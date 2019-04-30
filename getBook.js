@@ -3,17 +3,9 @@ module.exports = function(classObj) {
       classCode = classObj.code,
       book = [2, 3];
 
-  // 마포ECC 스페인반, 청라ECC 브라운반 18년9월에 1권 시작
-  if(classCode == "B00130-K1-KC6" || classCode == "B00016-K1-KC8") {
-    book = [7, 8];
-  }
-  // 송도ECC 19년 3월 중순 진도 조정 요청
-  if(schoolCode == "C00270-K1") {
-    book = [1, 2];
-  }
   // 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
-    book = [2];
+    book = [3];
   }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
@@ -34,18 +26,6 @@ module.exports = function(classObj) {
   // 안산지사 엠에스에듀 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2") {
     book = [10.5, 1];
-  }
-  // 청라ECC 초등반 2개는 3월에 C-6부터 시작
-  if(classCode == "B00016-K1-KC6" || classCode == "B00016-K1-KC7") {
-    book = [10.5];
-  }
-  // 양주ECC 여름 특강반 8월에 9,10권
-  if(classCode == "B00171-K1-KC2") {
-    book = [9, 10];
-  }
-  // 양주ECC 12월 1권부터 시작, 3월말에 4권, 6월에 5권
-  if(schoolCode == "B00171-K1") {
-    book = [3, 4];
   }
   // 제천지사 창의놀이유치원 
   if(schoolCode == "C00204-K1") {
