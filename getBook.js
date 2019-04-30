@@ -27,6 +27,10 @@ module.exports = function(classObj) {
   if(schoolCode == "C00188-K2") {
     book = [10.5, 1];
   }
+  // 양주 ECC 
+  if(schoolCode == "B00171-K1") {
+    book = [3, 4];
+  }
   // 제천지사 창의놀이유치원 
   if(schoolCode == "C00204-K1") {
     book = [1, 2];
