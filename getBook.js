@@ -35,9 +35,9 @@ module.exports = function(classObj) {
   if(schoolCode == "C00204-K1") {
     book = [2, 3];
   }
-  // 인천지사 참조은 유치원 7월에 1권 11월 중순에 3권 요청함
+  // 인천지사 참조은 유치원 19년 6월에 1권 요청함
   if(schoolCode == "C00194-K1") {
-    book = [8, 9];
+    book = [1];
   }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
