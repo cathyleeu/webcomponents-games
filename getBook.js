@@ -43,6 +43,10 @@ module.exports = function(classObj) {
   if(schoolCode == "B00286-K1") {
     book = [1];
   }
+  // 서초LIA 19년 6월에 도입검토용 샘플 요청함
+  if(schoolCode == "A00083-K16") {
+    book = [1, 2, 3];
+  }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
