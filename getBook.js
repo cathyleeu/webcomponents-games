@@ -47,9 +47,9 @@ module.exports = function(classObj) {
   if(schoolCode == "A00088-K1") {
     book = [4, 5];
   }
-  // 서초LIA 19년 6월에 도입검토용 샘플 요청함
-  if(schoolCode == "A00083-K16") {
-    book = [1, 2, 3];
+  // 서초LIA 19년 여름캠프용
+  if(schoolCode == "A00083-K17") {
+    book = [2];
   }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
