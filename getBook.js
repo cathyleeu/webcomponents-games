@@ -43,10 +43,6 @@ module.exports = function(classObj) {
   if(schoolCode == "B00286-K1") {
     book = [2, 3];
   }
-  // 노블 19년 7월에 4권 요청함
-  if(schoolCode == "A00088-K1") {
-    book = [4, 5];
-  }
   // 서초LIA 19년 여름캠프용
   if(schoolCode == "A00083-K17") {
     book = [2];
