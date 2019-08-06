@@ -47,6 +47,14 @@ module.exports = function(classObj) {
   if(schoolCode == "A00083-K17") {
     book = [2];
   }
+  // 보라매 꿈꾸는 나무 19년 8월 5.5권 생략  
+  if(schoolCode == "C00192-K2") {
+    book = [5, 6];
+  }
+  // 명지국제ECC 19년 8월 4권 추가 요청
+  if(schoolCode == "B00031-K1") {
+    book = [4, 5, 5.5];  
+  }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
