@@ -7,9 +7,9 @@ module.exports = function(classObj) {
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
     book = [5.5];
   }
-  // 대구 햇살어린이집 방학권 미사용
-  if(schoolCode == "C00071-K13") {
-    book = [6];
+  // 대구 햇살어린이집, 하남SLP 방학권 미사용
+  if(schoolCode == "C00071-K13" || schoolCode == "C00231-K2") {
+    book = [5, 6];
   }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
