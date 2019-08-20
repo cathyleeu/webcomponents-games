@@ -27,8 +27,8 @@ module.exports = function(classObj) {
   if(schoolCode == "C00175-K1") {
     book = [4, 5];
   }
-  // 안산지사 엠에스에듀 8월말 4호 오픈 요청
-  if(schoolCode == "C00188-K2") {
+  // 엠에스에듀 안산지사, 경서유치원 8월말 4호 오픈 요청
+  if(schoolCode == "C00188-K2" || schoolCode == "C00188-K4") {
     book = [3, 4];
   }
   // 양주 ECC 
