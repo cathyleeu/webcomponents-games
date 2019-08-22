@@ -1,7 +1,7 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [5, 5.5];
+      book = [5.5, 6];
 
   // 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
@@ -13,19 +13,19 @@ module.exports = function(classObj) {
   }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
-    book = [4, 5];
+    book = [5, 5.5];
   }
   // 부산 키즈클럽 롯데어학원 19년2월까지 9권 요청
   if(schoolCode == "A00066-K1") {
-    book = [3, 4];
+    book = [4, 5];
   }
   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
-    book = [2, 3];
+    book = [3, 4];
   }
   // 초록나라 예원유치원 9월말 6호 오픈 요청
   if(schoolCode == "C00175-K1") {
-    book = [4, 5];
+    book = [5, 5.5];
   }
   // 엠에스에듀 안산지사, 경서유치원 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2" || schoolCode == "C00188-K4") {
@@ -33,19 +33,15 @@ module.exports = function(classObj) {
   }
   // 양주 ECC 
   if(schoolCode == "B00171-K1") {
-    book = [5.5, 6];
+    book = [6, 7];
   }
   // 제천지사 창의놀이유치원 
   if(schoolCode == "C00204-K1") {
-    book = [4, 5];
+    book = [5, 5.5];
   }
-  // 인천지사 참조은 유치원 19년 6월에 1권 요청함
-  if(schoolCode == "C00194-K1") {
-    book = [2, 3];
-  }
-  // 동대문ECC 19년 6월에 1권 요청함
-  if(schoolCode == "B00286-K1") {
-    book = [2, 3];
+  // 인천지사 참조은 유치원, 동대문ECC 19년 6월에 1권 요청함
+  if(schoolCode == "C00194-K1" || schoolCode == "B00286-K1") {
+    book = [3, 4];
   }
   // 서초LIA 19년 여름캠프용
   if(schoolCode == "A00083-K17") {
@@ -53,7 +49,7 @@ module.exports = function(classObj) {
   }
   // 보라매 꿈꾸는 나무 19년 8월 5.5권 생략  
   if(schoolCode == "C00192-K2") {
-    book = [5, 6];
+    book = [6, 7];
   }
   // 명지국제ECC 19년 8월 4권 추가 요청
   if(schoolCode == "B00031-K1") {
