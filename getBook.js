@@ -39,8 +39,12 @@ module.exports = function(classObj) {
   if(schoolCode == "C00204-K1") {
     book = [5, 5.5];
   }
-  // 인천지사 참조은 유치원, 동대문ECC 19년 6월에 1권 요청함
-  if(schoolCode == "C00194-K1" || schoolCode == "B00286-K1") {
+  // 인천지사 참조은 유치원 8월에 2권 요청함
+  if(schoolCode == "C00194-K1") {
+    book = [2, 3];
+  }
+  // 동대문ECC 19년 6월에 1권 요청함
+  if(schoolCode == "B00286-K1") {
     book = [3, 4];
   }
   // 서초LIA 19년 여름캠프용
