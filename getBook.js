@@ -60,8 +60,8 @@ module.exports = function(classObj) {
     book = [4, 5, 5.5];  
   }
   // 청라ECC 8월말 1호 오픈 요청
-  if(classCode == "B00016-K1-KC9" || classCode == "B00016-K1-KC10") {
-    book = [1];
+  if(schoolCode == "B00016-K1") {
+    book = [1, 5.5, 6];
   }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
