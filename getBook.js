@@ -13,7 +13,7 @@ module.exports = function(classObj) {
   }
   // 대구 햇살어린이집, 하남SLP 방학권 미사용
   if(schoolCode == "C00071-K13" || schoolCode == "C00231-K2") {
-    book = [5, 6];
+    book = [6, 7];
   }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
@@ -33,7 +33,7 @@ module.exports = function(classObj) {
   }
   // 엠에스에듀 안산지사, 경서유치원 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2" || schoolCode == "C00188-K4") {
-    book = [3, 4];
+    book = [4, 5];
   }
   // 양주 ECC 
   if(schoolCode == "B00171-K1") {
