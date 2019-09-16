@@ -41,7 +41,7 @@ module.exports = function(classObj) {
   }
   // 제천지사 창의놀이유치원 
   if(schoolCode == "C00204-K1") {
-    book = [5, 5.5];
+    book = [7, 8];
   }
   // 인천지사 참조은 유치원 8월에 2권 요청함
   if(schoolCode == "C00194-K1") {
