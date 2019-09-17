@@ -40,7 +40,7 @@ module.exports = function(classObj) {
     book = [6, 7];
   }
   // 제천지사 창의놀이유치원 
-  if(schoolCode == "C00204-K1") {
+  if(schoolCode == "C00204-K2") {
     book = [7, 8];
   }
   // 인천지사 참조은 유치원 8월에 2권 요청함
