@@ -5,7 +5,7 @@ module.exports = function(classObj) {
 
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
-    book = [6];
+    book = [7];
   }
   // 수원 은솔어린이집 특별상 생략
   if(schoolCode == "A00059-K8") {
@@ -59,8 +59,8 @@ module.exports = function(classObj) {
   if(schoolCode == "C00192-K2") {
     book = [5.5, 7];
   }
-  // 청라ECC, 광명ECC 2학기 신규 1권
-  if(schoolCode == "B00016-K1" || schoolCode == "B00022-K1") {
+  // 청라ECC, 광명ECC, 마포서대문ECC 2학기 신규 1권
+  if(schoolCode == "B00016-K1" || schoolCode == "B00022-K1" || schoolCode == "B00243-K1") {
     book = [1, 2, 6, 7];
   }
   // YBM영업부(내부용)
