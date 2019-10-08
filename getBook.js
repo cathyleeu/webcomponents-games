@@ -63,6 +63,10 @@ module.exports = function(classObj) {
   if(schoolCode == "B00016-K1" || schoolCode == "B00022-K1" || schoolCode == "B00243-K1") {
     book = [1, 2, 6, 7];
   }
+  // 동탄1ECC 10월 신규 1권
+  if(classCode == "B00240-K1-KC3" || classCode == "B00240-K1-KC4" || classCode == "B00240-K1-KC5") {
+    book = [1];
+  }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
