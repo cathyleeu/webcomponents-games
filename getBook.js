@@ -64,7 +64,7 @@ module.exports = function(classObj) {
     book = [1, 2, 6, 7];
   }
   // 동탄1ECC 10월 신규 1권
-  if(classCode == "B00240-K1-KC3" || classCode == "B00240-K1-KC4" || classCode == "B00240-K1-KC5") {
+  if(schoolCode == "B00240-K1") {
     book = [1, 6, 7];
   }
   // YBM영업부(내부용)
