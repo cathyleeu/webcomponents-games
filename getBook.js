@@ -33,7 +33,7 @@ module.exports = function(classObj) {
   }
   // 엠에스에듀 안산지사, 경서유치원 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2" || schoolCode == "C00188-K4") {
-    book = [5.5, 6];
+    book = [5, 5.5];
   }
   // 양주 ECC 
   if(schoolCode == "B00171-K1") {
