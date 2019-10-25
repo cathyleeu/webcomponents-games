@@ -45,7 +45,7 @@ module.exports = function(classObj) {
   }
   // 인천지사 참조은 유치원 8월에 2권 요청함
   if(schoolCode == "C00194-K1") {
-    book = [4, 5];
+    book = [3, 4];
   }
   // 동대문ECC 19년 6월에 1권 요청함
   if(schoolCode == "B00286-K1") {
