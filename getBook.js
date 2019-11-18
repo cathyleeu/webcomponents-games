@@ -1,7 +1,7 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [7, 8];
+      book = [8, 9];
 
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
@@ -9,47 +9,47 @@ module.exports = function(classObj) {
   }
   // 수원 은솔어린이집 특별상 생략
   if(schoolCode == "A00059-K8") {
-    book = [8, 9];
+    book = [9, 10];
   }
   // 대구 햇살어린이집, 하남SLP 방학권 미사용
   if(schoolCode == "C00071-K13" || schoolCode == "C00231-K2") {
-    book = [8, 9];
+    book = [9, 10];
   }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
-    book = [6, 7];
+    book = [7, 8];
   }
   // 부산 키즈클럽 롯데어학원 19년2월까지 9권 요청
   if(schoolCode == "A00066-K1") {
-    book = [5.5, 6];
+    book = [6, 7];
   }
   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
-    book = [5, 5.5];
+    book = [5.5, 6];
   }
   // 초록나라 예원유치원 9월말 6호 오픈 요청
   if(schoolCode == "C00175-K1") {
-    book = [6, 7];
+    book = [7, 8];
   }
   // 엠에스에듀 안산지사, 경서유치원 8월말 4호 오픈 요청
   if(schoolCode == "C00188-K2" || schoolCode == "C00188-K4") {
-    book = [5, 5.5];
+    book = [5.5, 6];
   }
   // 양주 ECC 
   if(schoolCode == "B00171-K1") {
-    book = [8, 9];
+    book = [9, 10];
   }
   // 제천지사 창의놀이유치원 
   if(schoolCode == "C00204-K2") {
-    book = [8, 9];
+    book = [9, 10];
   }
   // 인천지사 참조은 유치원 8월에 2권 요청함
   if(schoolCode == "C00194-K1") {
-    book = [3, 4];
+    book = [4, 5];
   }
   // 동대문ECC 19년 6월에 1권 요청함
   if(schoolCode == "B00286-K1") {
-    book = [5, 5.5];
+    book = [5.5, 6];
   }
   // 서초LIA 19년 여름캠프용
   if(schoolCode == "A00083-K17") {
@@ -57,11 +57,11 @@ module.exports = function(classObj) {
   }
   // 청라ECC, 광명ECC, 마포서대문ECC 2학기 신규 1권
   if(schoolCode == "B00016-K1" || schoolCode == "B00022-K1" || schoolCode == "B00243-K1") {
-    book = [2, 3, 7, 8];
+    book = [3, 4, 8, 9];
   }
   // 동탄1ECC 10월 신규 1권
   if(schoolCode == "B00240-K1") {
-    book = [1, 2, 7, 8];
+    book = [2, 3, 8, 9];
   }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
