@@ -11,8 +11,8 @@ module.exports = function(classObj) {
   if(schoolCode == "A00059-K8") {
     book = [9, 10];
   }
-  // 대구 햇살어린이집, 하남SLP 방학권 미사용
-  if(schoolCode == "C00071-K13" || schoolCode == "C00231-K2") {
+  // 대구 햇살어린이집 방학권 미사용
+  if(schoolCode == "C00071-K13") {
     book = [9, 10];
   }
   // 인천 동심유치원 10월 6호 오픈 요청
