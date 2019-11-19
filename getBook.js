@@ -63,6 +63,10 @@ module.exports = function(classObj) {
   if(schoolCode == "B00240-K1") {
     book = [2, 3, 8, 9];
   }
+  // 설리번 11월 3주 7권 요청
+  if(schoolCode == "E00250-K1") {
+    book = [7, 8, 9];
+  }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
