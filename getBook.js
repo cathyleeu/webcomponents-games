@@ -67,6 +67,10 @@ module.exports = function(classObj) {
   if(schoolCode == "E00250-K1") {
     book = [7, 8, 9];
   }
+  // 오산라이즈어학원 12월 1권 요청
+  if(schoolCode == "A00059-K12") {
+    book = [1];
+  }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
