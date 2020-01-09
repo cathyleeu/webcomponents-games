@@ -53,7 +53,7 @@ module.exports = function(classObj) {
   }
   // 청라ECC, 광명ECC, 마포서대문ECC 2학기 신규 1권
   if(schoolCode == "B00016-K1" || schoolCode == "B00022-K1" || schoolCode == "B00243-K1") {
-    book = [4, 5, 9, 10];
+    book = [4, 5, 9, 10, 10.5];
   }
   // 동탄1ECC 10월 신규 1권
   if(schoolCode == "B00240-K1") {
