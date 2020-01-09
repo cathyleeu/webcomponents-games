@@ -67,6 +67,10 @@ module.exports = function(classObj) {
   if(schoolCode == "A00059-K12") {
     book = [1, 2];
   }
+  // 마포서대문ECC 1월 특강반 10.5권 요청
+  if(schoolCode == "A00083-K18") {
+    book = [10.5];
+  }
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
