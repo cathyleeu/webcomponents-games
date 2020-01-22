@@ -3,7 +3,6 @@
 /login/books.json
 /login/level_pw.json
 /book
-/components/tui-code-snippet/dist/tui-code-snippet.min.js
 /components/ua-parser-js/dist/ua-parser.min.js
 /components/tui-app-loader/dist/tui-app-loader.min.js
 /components/es6-shim/es6-shim.min.js
