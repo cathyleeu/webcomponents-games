@@ -63,9 +63,9 @@ module.exports = function(classObj) {
   if(schoolCode == "B00240-K1") {
     book = [5.5, 6, 1, 2];
   }
-  // 설리번 11월 3주 7권 요청
-  if(schoolCode == "E00250-K1") {
-    book = [1, 2];
+  // 설리번 2020년도
+  if(schoolCode == "E00371-K1") {
+    book = [2, 3];
   }
   // 오산라이즈어학원 12월 1권 요청
   if(schoolCode == "A00059-K12") {
