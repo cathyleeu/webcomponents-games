@@ -1,7 +1,7 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [1, 2, 3];
+      book = [1, 2, 3, 4];
 
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
