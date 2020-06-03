@@ -63,8 +63,8 @@ module.exports = function(classObj) {
   if(schoolCode == "B00240-K1") {
     book = [5.5, 6, 1, 2];
   }
-  // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도, 사하 ECC
-  if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1" || schoolCode == "B00384-K1") {
+  // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도, 사하 ECC(삭제)
+  if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
     book = [2, 3];
   }
   // 오산라이즈어학원 12월 1권 요청
