@@ -65,7 +65,7 @@ module.exports = function(classObj) {
   }
   // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도, 사하 ECC(삭제)
   if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
-    book = [2, 3];
+    book = [2, 3, 4];
   }  
   // 오산라이즈어학원 12월 1권 요청
   if(schoolCode == "A00059-K12") {
