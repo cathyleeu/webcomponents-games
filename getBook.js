@@ -21,7 +21,7 @@ module.exports = function(classObj) {
   }
   // 부산 키즈클럽 --> 송도로 변경함
   if(schoolCode == "B00387-K1") {
-    book = [1, 3];
+    book = [3, 4];
   }
   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
