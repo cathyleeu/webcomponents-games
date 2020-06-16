@@ -7,9 +7,9 @@ module.exports = function(classObj) {
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
     book = [1];
   }
-  // 수원 은솔어린이집 특별상 생략
-  if(schoolCode == "A00059-K8") {
-    book = [1, 2];
+  // 사랑샘유치원용인(20년도)
+  if(schoolCode == "C00175-K12") {
+    book = [1];
   }
   // 대구 햇살어린이집 여름방학권 1월 말에 신청
   if(schoolCode == "C00071-K13") {
