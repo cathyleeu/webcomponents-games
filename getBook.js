@@ -1,29 +1,33 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [1, 2, 3, 4];
+      book = [2, 3, 4, 5];
 
+    // 사랑샘유치원용인(20년도), 참조은 유치원(20년도), 노블원(20년)
+  if(schoolCode == "C00175-K12" || schoolCode == "C00194-K1" || schoolCode == "A00088-K7") {
+    book = [1, 2];
+  }
+   // 무안하얀어린이집(20년)
+  if(schoolCode == "A00049-K2") {
+    book = [2, 3];
+  }
+  // 송도ECC(20년), 마포서대문ECC(20년), 사하ECC(20년)
+  if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1") {
+    book = [4, 5];
+  }
+    // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도
+  if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
+    book = [4, 5];
+  }  
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
     book = [1];
-  }
-  // 사랑샘유치원용인(20년도)
-  if(schoolCode == "C00175-K12") {
-    book = [1];
-  }
-  // 대구 햇살어린이집 여름방학권 1월 말에 신청
-  if(schoolCode == "C00071-K13") {
-    book = [5.5, 1];
   }
   // 인천 동심유치원 10월 6호 오픈 요청
   if(schoolCode == "C00194-K4") {
     book = [10.5, 1];
   }
-  // 부산 키즈클럽 --> 송도로 변경함
-  if(schoolCode == "B00387-K1") {
-    book = [3, 4];
-  }
-  // 초록나라 영재유치원 8월말 3호 오픈 요청
+   // 초록나라 영재유치원 8월말 3호 오픈 요청
   if(schoolCode == "C00175-K4") {
     book = [8, 9];
   }
@@ -43,30 +47,22 @@ module.exports = function(classObj) {
   if(schoolCode == "C00204-K2") {
     book = [1, 2];
   }
-  // 인천지사 참조은 유치원 8월에 2권 요청함
-  // if(schoolCode == "C00194-K1") {
-  //    book = [7, 8];
-  // }
   // 동대문ECC 19년 6월에 1권 요청함
   if(schoolCode == "B00286-K1") {
-    book = [9, 10];
+    book = [1];
   }
   // 청라ECC, 광명ECC 2학기 신규 1권
   if(schoolCode == "B00016-K1" || schoolCode == "B00022-K1") {
-    book = [6, 7, 1, 2];
+    book = [1];
   }
   // 마포서대문ECC 2학기 신규 1권, 방학상권 안함
   if(schoolCode == "B00243-K1") {
-    book = [7, 8, 1, 2];
+    book = [1];
   }
   // 동탄1ECC 10월 신규 1권
   if(schoolCode == "B00240-K1") {
-    book = [5.5, 6, 1, 2];
+    book = [1];
   }
-  // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도, 사하 ECC(삭제)
-  if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
-    book = [2, 3, 4];
-  }  
   // 오산라이즈어학원 12월 1권 요청
   if(schoolCode == "A00059-K12") {
     book = [4, 5];
