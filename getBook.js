@@ -7,8 +7,8 @@ module.exports = function(classObj) {
   if(schoolCode == "C00175-K12" || schoolCode == "C00194-K1" || schoolCode == "A00088-K7") {
     book = [1, 2];
   }
-  // 시흥 낙원 유치원 - 7월 1권
-  if(schoolCode == "C00175-K11") {
+  // 시흥 낙원 유치원 - 7월 1권, 용인한아름 6,7월 (1권)   
+  if(schoolCode == "C00175-K11" || schoolCode == "A00088-K6") {
     book = [1];
   }
   // 노블 학부모 - 6월 1권
