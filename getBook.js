@@ -15,8 +15,8 @@ module.exports = function(classObj) {
   if(schoolCode == "C00224-K23") {
     book = [1, 2];
   }
-   // 무안하얀어린이집(20년)
-  if(schoolCode == "A00049-K2") {
+   // 무안하얀어린이집(20년), 한별유치원(7월 2권)
+  if(schoolCode == "A00049-K2" || schoolCode == "A00059-K6") {
     book = [2, 3];
   }
   // 송도ECC(20년), 마포서대문ECC(20년), 사하ECC(20년)
