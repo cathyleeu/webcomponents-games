@@ -19,8 +19,8 @@ module.exports = function(classObj) {
   if(schoolCode == "A00049-K2" || schoolCode == "A00059-K6") {
     book = [2, 3];
   }
-  // 송도ECC(20년), 마포서대문ECC(20년), 사하ECC(20년)
-  if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1") {
+  // 송도ECC(20년), 마포서대문ECC(20년), 사하ECC(20년), 판교ECC(8월에 변경하면 안됨)
+  if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1" || schoolCode == "B00374-K1") {
     book = [4, 5];
   }
     // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도
