@@ -4,15 +4,15 @@ module.exports = function(classObj) {
       book = [2, 3, 4, 5];
 
     // 사랑샘유치원용인(20년도), 참조은 유치원(20년도), 노블원(20년)
-  if(schoolCode == "C00175-K12" || schoolCode == "C00194-K1" || schoolCode == "A00088-K7") {
+  if(schoolCode == "C00175-K12" || schoolCode == "C00194-K1") {
     book = [1, 2];
   }
   // 시흥 낙원 유치원 - 7월 1권, 용인한아름 6,7월 (1권)   
   if(schoolCode == "C00175-K11" || schoolCode == "A00088-K6") {
     book = [1];
   }
-  // 노블 학부모 - 6월 1권
-  if(schoolCode == "C00224-K23") {
+  // 노블 학부모, 노블 원 - 6월 1권
+  if(schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
     book = [2, 3];
   }
    // 무안하얀어린이집(20년), 한별유치원(7월 2권)
