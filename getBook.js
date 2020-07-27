@@ -13,7 +13,7 @@ module.exports = function(classObj) {
   }
   // 노블 학부모 - 6월 1권
   if(schoolCode == "C00224-K23") {
-    book = [1, 2];
+    book = [2, 3];
   }
    // 무안하얀어린이집(20년), 한별유치원(7월 2권)
   if(schoolCode == "A00049-K2" || schoolCode == "A00059-K6") {
