@@ -1,15 +1,15 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [2, 3, 4, 5];
+      book = [4, 5, 5.5];
 
     // 사랑샘유치원용인(20년도), 참조은 유치원(20년도), 노블원(20년)
   if(schoolCode == "C00175-K12" || schoolCode == "C00194-K1") {
-    book = [1, 2];
+    book = [2, 3];
   }
   // 시흥 낙원 유치원 - 7월 1권, 용인한아름 6,7월 (1권)   
   if(schoolCode == "C00175-K11" || schoolCode == "A00088-K6") {
-    book = [1];
+    book = [1, 2];
   }
   // 노블 학부모, 노블 원 - 6월 1권
   if(schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
@@ -17,15 +17,19 @@ module.exports = function(classObj) {
   }
    // 무안하얀어린이집(20년), 한별유치원(7월 2권)
   if(schoolCode == "A00049-K2" || schoolCode == "A00059-K6") {
-    book = [2, 3];
+    book = [3, 4];
+  }
+   // 판교 ECC, 하남 SLP
+  if(schoolCode == "B00374-K1" || schoolCode == "C00231-K4") {
+    book = [4, 5];
   }
   // 송도ECC(20년), 마포서대문ECC(20년), 사하ECC(20년), 판교ECC(8월에 변경하면 안됨)
-  if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1" || schoolCode == "B00374-K1") {
-    book = [4, 5];
+  if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1") {
+    book = [5, 5.5];
   }
     // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도
   if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
-    book = [4, 5];
+    book = [5, 5.5];
   }  
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
