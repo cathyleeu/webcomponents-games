@@ -3,8 +3,8 @@ module.exports = function(classObj) {
       classCode = classObj.code,
       book = [4, 5, 5.5];
 
-    // 사랑샘유치원용인(20년도), 참조은 유치원(20년도), 노블원(20년)
-  if(schoolCode == "C00175-K12" || schoolCode == "C00194-K1") {
+    // 사랑샘유치원용인(20년도), 참조은 유치원(20년도), 수원(재크와콩나무 - 20년)
+  if(schoolCode == "C00175-K12" || schoolCode == "C00194-K1" || schoolCode == "A00059-K7") {
     book = [2, 3];
   }
   // 시흥 낙원 유치원 - 7월 1권, 용인한아름 6,7월 (1권)   
