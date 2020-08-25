@@ -7,6 +7,14 @@ module.exports = function(classObj) {
   if(schoolCode == "C00175-K12" || schoolCode == "A00059-K7") {
     book = [2, 3, 4];
   }
+    // 안양(서현2어린이집) 9월 1호 오픈 요청
+  if(schoolCode == "A00043-K4") {
+    book = [1];
+  }
+    // 반석코딩학원 9월 2호 오픈 요청
+  if(schoolCode == "C00175-K10") {
+    book = [2];
+  }
   // 용인한아름 6,7월 (1권), 참조은 유치원(20년도),   
   if(schoolCode == "A00088-K6" || schoolCode == "C00194-K1") {
     book = [1, 2];
