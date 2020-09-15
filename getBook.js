@@ -39,9 +39,13 @@ module.exports = function(classObj) {
   if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
     book = [5.5, 6];
   }  
-  // 동대문 ECC - 9월부터 1권 추가(20년)
-  if(schoolCode == "B00388-K1") {
+  // 동대문 ECC - 9월부터 1권 추가, 명지국제ECC - 9월 1권 추가, 청라ECC - 9월 1권 추가
+  if(schoolCode == "B00388-K1"|| schoolCode == "B00031-K1" || schoolCode == "B00370-K1") {
     book = [1, 5.5, 6];
+  }
+   // 제주국제 ECC - 9월부터 1권 추가
+  if(schoolCode == "B00285-K1") {
+    book = [1, 5.5, 7];
   }
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
