@@ -40,7 +40,7 @@ module.exports = function(classObj) {
     book = [5.5, 6];
   }  
   // 동대문 ECC - 9월부터 1권 추가, 명지국제ECC - 9월 1권 추가, 청라ECC - 9월 1권 추가
-  if(schoolCode == "B00388-K1"|| schoolCode == "B00031-K1" || schoolCode == "B00370-K1") {
+  if(schoolCode == "B00388-K1"|| schoolCode == "B00393-K1" || schoolCode == "B00370-K1") {
     book = [1, 5.5, 6];
   }
    // 제주국제 ECC - 9월부터 1권 추가
