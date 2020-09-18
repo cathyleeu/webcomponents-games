@@ -9,7 +9,7 @@ module.exports = function(classObj) {
   }
     // 안양(서현2어린이집) 9월 1호 오픈 요청
   if(schoolCode == "A00043-K4") {
-    book = [1];
+    book = [1, 2];
   }
     // 반석코딩학원 9월 2호 오픈 요청
   if(schoolCode == "C00175-K10") {
