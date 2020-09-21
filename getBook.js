@@ -19,9 +19,13 @@ module.exports = function(classObj) {
   if(schoolCode == "A00088-K6" || schoolCode == "C00194-K1") {
     book = [1, 2];
   }
-  // 시흥 낙원 유치원 - 7월 1권, 노블 학부모, 노블 원 - 6월 1권
-  if(schoolCode == "C00175-K11" || schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
+  // 시흥 낙원 유치원 - 7월 1권
+  if(schoolCode == "C00175-K11") {
     book = [2, 3];
+  }
+  // 노블 학부모, 노블 원 - 6월 1권
+  if(schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
+    book = [3, 4];
   }
    // 무안하얀어린이집(20년), 한별유치원(7월 2권)
   if(schoolCode == "A00049-K2" || schoolCode == "A00059-K6") {
