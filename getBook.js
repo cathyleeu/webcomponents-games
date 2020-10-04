@@ -1,27 +1,27 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [5, 5.5, 6];
+      book = [5.5, 6, 7];
 
     //  사랑샘유치원용인(20년도), 수원(재크와콩나무 - 20년)
   if(schoolCode == "C00175-K12" || schoolCode == "A00059-K7") {
-    book = [2, 3, 4];
+    book = [3, 4, 5];
   }
     // 안양(서현2어린이집) 9월 1호 오픈 요청
   if(schoolCode == "A00043-K4") {
     book = [1, 2];
   }
-    // 반석코딩학원 9월 2호 오픈 요청
-  if(schoolCode == "C00175-K10") {
-    book = [2];
+    // 용인한아름 6,7월 (1권), 반석코딩학원 9월 2호 오픈 요청
+  if(schoolCode == "A00088-K6" || schoolCode == "C00175-K10") {
+    book = [2, 3];
   }
-  // 용인한아름 6,7월 (1권), 참조은 유치원(20년도),   
-  if(schoolCode == "A00088-K6" || schoolCode == "C00194-K1") {
+  // 참조은 유치원(20년도),   
+  if(schoolCode == "C00194-K1") {
     book = [1, 2];
   }
   // 시흥 낙원 유치원 - 7월 1권
   if(schoolCode == "C00175-K11") {
-    book = [2, 3];
+    book = [3, 4];
   }
   // 노블 학부모, 노블 원 - 6월 1권
   if(schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
@@ -29,27 +29,27 @@ module.exports = function(classObj) {
   }
    // 무안하얀어린이집(20년), 한별유치원(7월 2권)
   if(schoolCode == "A00049-K2" || schoolCode == "A00059-K6") {
-    book = [4, 5];
+    book = [5, 6];
   }
    // 판교 ECC, 하남 SLP
   if(schoolCode == "B00374-K1" || schoolCode == "C00231-K4") {
-    book = [4, 5, 5.5];
+    book = [5, 5.5, 6];
   }
   // 송도ECC(20년), 마포서대문ECC(20년), 사하ECC(20년)
   if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1") {
-    book = [5.5, 6];
+    book = [6, 7];
   }
     // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도
   if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
-    book = [5.5, 6];
+    book = [6, 7];
   }  
   // 동대문 ECC - 9월부터 1권 추가, 명지국제ECC - 9월 1권 추가, 청라ECC - 9월 1권 추가
   if(schoolCode == "B00388-K1"|| schoolCode == "B00393-K1" || schoolCode == "B00370-K1") {
-    book = [1, 5.5, 6];
+    book = [2, 6, 7];
   }
    // 제주국제 ECC - 9월부터 1권 추가
   if(schoolCode == "B00285-K1") {
-    book = [1, 5.5, 7];
+    book = [2, 6, 8];
   }
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
