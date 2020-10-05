@@ -31,12 +31,12 @@ module.exports = function(classObj) {
   if(schoolCode == "A00049-K2" || schoolCode == "A00059-K6") {
     book = [5, 6];
   }
-   // 판교 ECC, 하남 SLP
-  if(schoolCode == "B00374-K1" || schoolCode == "C00231-K4") {
+   // 판교 ECC
+  if(schoolCode == "B00374-K1") {
     book = [5, 5.5, 6];
   }
-  // 송도ECC(20년), 마포서대문ECC(20년), 사하ECC(20년)
-  if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1") {
+  // 송도ECC(20년), 마포서대문ECC(20년), 사하ECC(20년), 하남 SLP
+  if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1" || schoolCode == "C00231-K4") {
     book = [6, 7];
   }
     // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도
@@ -49,7 +49,7 @@ module.exports = function(classObj) {
   }
    // 제주국제 ECC - 9월부터 1권 추가
   if(schoolCode == "B00285-K1") {
-    book = [2, 6, 8];
+    book = [2, 6, 7, 8];
   }
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
