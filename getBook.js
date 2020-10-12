@@ -43,8 +43,12 @@ module.exports = function(classObj) {
   if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
     book = [6, 7];
   }  
-  // 동대문 ECC - 9월부터 1권 추가, 명지국제ECC - 9월 1권 추가, 청라ECC - 9월 1권 추가
-  if(schoolCode == "B00388-K1"|| schoolCode == "B00393-K1" || schoolCode == "B00370-K1") {
+  // 동대문 ECC - 9월부터 1권 추가
+  if(schoolCode == "B00388-K1") {
+    book = [2, 5, 6, 7];
+  }
+  // 명지국제ECC - 9월 1권 추가, 청라ECC - 9월 1권 추가
+  if(schoolCode == "B00393-K1" || schoolCode == "B00370-K1") {
     book = [2, 6, 7];
   }
    // 제주국제 ECC - 9월부터 1권 추가
