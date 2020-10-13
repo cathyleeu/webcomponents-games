@@ -35,8 +35,8 @@ module.exports = function(classObj) {
   if(schoolCode == "B00374-K1") {
     book = [5, 5.5, 6];
   }
-  // 송도ECC(20년), 마포서대문ECC(20년), 사하ECC(20년), 하남 SLP
-  if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1" || schoolCode == "C00231-K4") {
+  // 송도ECC(20년), 사하ECC(20년), 하남 SLP
+  if(schoolCode == "B00387-K1" || schoolCode == "B00384-K1" || schoolCode == "C00231-K4") {
     book = [6, 7];
   }
    // 마포서대문ECC(20년)
