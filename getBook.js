@@ -39,6 +39,10 @@ module.exports = function(classObj) {
   if(schoolCode == "B00387-K1" || schoolCode == "B00368-K1" || schoolCode == "B00384-K1" || schoolCode == "C00231-K4") {
     book = [6, 7];
   }
+   // 마포서대문ECC(20년)
+  if(schoolCode == "B00368-K1") {
+    book = [2, 6, 7];
+  }
     // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도
   if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
     book = [6, 7];
