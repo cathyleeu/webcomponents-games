@@ -27,8 +27,12 @@ module.exports = function(classObj) {
   if(schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
     book = [3, 4];
   }
-   // 무안하얀어린이집(20년), 한별유치원(7월 2권)
-  if(schoolCode == "A00049-K2" || schoolCode == "A00059-K6") {
+   // 무안하얀어린이집(20년)
+  if(schoolCode == "A00049-K2") {
+    book = [4, 5];
+  }
+    // 한별유치원(7월 2권)
+  if(schoolCode == "A00059-K6") {
     book = [5, 6];
   }
    // 판교 ECC
