@@ -16,7 +16,7 @@ module.exports = function(classObj) {
     book = [2, 3];
   }
   // 참조은 유치원(20년도), 연세유치원(20년 10월 2권), 신촌시립어린이집2020(20년 10월 1권)    
-  if(schoolCode == "C00194-K6" || schoolCode == "A00088-K5" || schoolCode == "C00353-K2") {
+  if(schoolCode == "C00194-K6" || schoolCode == "A00088-K5" || schoolCode == "C00353-K2" || schoolCode == "A00088-K8") {
     book = [1, 2];
   }
   // 시흥 낙원 유치원 - 7월 1권
