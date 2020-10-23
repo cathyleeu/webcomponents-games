@@ -63,6 +63,10 @@ module.exports = function(classObj) {
   if(schoolCode == "B00285-K1") {
     book = [2, 6, 7, 8];
   }
+   // 성동ECC - 11월부터 1권 추가
+  if(schoolCode == "B00357-K1") {
+    book = [1, 6, 7, 8];
+  }
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
     book = [1];
