@@ -11,12 +11,12 @@ module.exports = function(classObj) {
   if(schoolCode == "A00043-K4") {
     book = [2, 3];
   }
-    // 용인한아름 6,7월 (1권), 반석코딩학원 9월 2호 오픈 요청
-  if(schoolCode == "A00088-K6" || schoolCode == "C00175-K10") {
+    // 용인한아름 6,7월 (1권), 반석코딩학원 9월 2호 오픈 요청, 연세유치원(20년 10월 2권)
+  if(schoolCode == "A00088-K6" || schoolCode == "C00175-K10" || schoolCode == "A00088-K5") {
     book = [2, 3];
   }
-  // 참조은 유치원(20년도), 연세유치원(20년 10월 2권), 신촌시립어린이집2020(20년 10월 1권), 리틀즈월드(10월 21일 1권)    
-  if(schoolCode == "C00194-K6" || schoolCode == "A00088-K5" || schoolCode == "C00353-K2" || schoolCode == "A00088-K8") {
+  // 참조은 유치원(20년도), 신촌시립어린이집2020(20년 10월 1권), 리틀즈월드(10월 21일 1권)    
+  if(schoolCode == "C00194-K6" || schoolCode == "C00353-K2" || schoolCode == "A00088-K8") {
     book = [1, 2];
   }
   // 시흥 낙원 유치원 - 7월 1권
