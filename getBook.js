@@ -1,30 +1,26 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [5.5, 6, 7];
+      book = [6, 7, 8];
 
     //  사랑샘유치원용인(20년도), 수원(재크와콩나무 - 20년)
   if(schoolCode == "C00175-K12" || schoolCode == "A00059-K7") {
-    book = [3, 4, 5];
+    book = [4, 5, 6];
   }
-    // 안양(서현2어린이집) 9월 1호 오픈 요청
-  if(schoolCode == "A00043-K4") {
-    book = [2, 3];
-  }
-    // 용인한아름 6,7월 (1권), 반석코딩학원 9월 2호 오픈 요청, 연세유치원(20년 10월 2권)
-  if(schoolCode == "A00088-K6" || schoolCode == "C00175-K10" || schoolCode == "A00088-K5") {
-    book = [2, 3];
-  }
-  // 참조은 유치원(20년도), 신촌시립어린이집2020(20년 10월 1권), 리틀즈월드(10월 21일 1권)    
-  if(schoolCode == "C00194-K6" || schoolCode == "C00353-K2" || schoolCode == "A00088-K8") {
-    book = [1, 2];
-  }
-  // 시흥 낙원 유치원 - 7월 1권
-  if(schoolCode == "C00175-K11") {
+    // 안양(서현2어린이집) 9월 1호 오픈 요청, 반석코딩학원 9월 2호 오픈 요청
+  if(schoolCode == "A00043-K4" || schoolCode == "C00175-K10") {
     book = [3, 4];
   }
-  // 노블 학부모, 노블 원 - 6월 1권
-  if(schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
+    // 한아름 6,7월 (1권), 참조은 유치원(20년도), 연세유치원(20년 10월 2권)
+  if(schoolCode == "A00088-K6" || schoolCode == "C00194-K6" || schoolCode == "A00088-K5") {
+    book = [2, 3];
+  }
+  // 신촌시립어린이집2020(20년 10월 1권), 리틀즈월드(10월 21일 1권)    
+  if(schoolCode == "C00353-K2" || schoolCode == "A00088-K8") {
+    book = [1, 2];
+  }
+  // 시흥 낙원 유치원 - 7월 1권, 노블 학부모, 노블 원 - 6월 1권
+  if(schoolCode == "C00175-K11" || schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
     book = [4, 5];
   }
    // 무안하얀어린이집(20년)
@@ -33,37 +29,37 @@ module.exports = function(classObj) {
   }
     // 한별유치원(7월 2권)
   if(schoolCode == "A00059-K6") {
-    book = [5, 6];
+    book = [6, 7];
   }
    // 판교 ECC
   if(schoolCode == "B00374-K1") {
-    book = [5, 5.5, 6];
+    book = [5.5, 6, 7];
   }
   // 송도ECC(20년), 사하ECC(20년), 하남 SLP
   if(schoolCode == "B00387-K1" || schoolCode == "B00384-K1" || schoolCode == "C00231-K4") {
-    book = [6, 7];
+    book = [7, 8];
   }
    // 마포서대문ECC(20년)
   if(schoolCode == "B00368-K1") {
-    book = [2, 6, 7];
+    book = [2, 3, 7, 8];
   }
     // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도
   if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
-    book = [6, 7];
+    book = [7, 8];
   }  
   // 동대문 ECC - 9월부터 1권 추가
   if(schoolCode == "B00388-K1") {
-    book = [2, 5, 6, 7];
+    book = [3, 5, 7, 8];
   }
   // 명지국제ECC - 9월 1권 추가, 청라ECC - 9월 1권 추가
   if(schoolCode == "B00393-K1" || schoolCode == "B00370-K1") {
-    book = [2, 6, 7];
+    book = [3, 7, 8];
   }
    // 제주국제 ECC - 9월부터 1권 추가
   if(schoolCode == "B00285-K1") {
-    book = [2, 6, 7, 8];
+    book = [3, 7, 8, 9];
   }
-   // 성동ECC - 11월부터 1권 추가
+   // 성북ECC - 11월부터 1권 추가
   if(schoolCode == "B00357-K1") {
     book = [1, 6, 7, 8];
   }
