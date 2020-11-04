@@ -15,9 +15,13 @@ module.exports = function(classObj) {
   if(schoolCode == "A00088-K6" || schoolCode == "C00194-K6" || schoolCode == "A00088-K5") {
     book = [2, 3];
   }
-  // 신촌시립어린이집2020(20년 10월 1권), 리틀즈월드(10월 21일 1권)    
+  // 신촌시립어린이집2020(20년 10월 1권), 리틀즈월드(10월 21일 1권) 
   if(schoolCode == "C00353-K2" || schoolCode == "A00088-K8") {
     book = [1, 2];
+  }
+    // 은솔어린이집(11월 1권)    
+  if(schoolCode == "A00059-K8") {
+    book = [2];
   }
   // 시흥 낙원 유치원 - 7월 1권, 노블 학부모, 노블 원 - 6월 1권
   if(schoolCode == "C00175-K11" || schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
@@ -62,6 +66,10 @@ module.exports = function(classObj) {
    // 성북ECC - 11월부터 1권 추가
   if(schoolCode == "B00357-K1") {
     book = [1, 6, 7, 8];
+  }
+   // 제2동탄ECC  
+  if(schoolCode == "B00377-K1") {
+    book = [7,9];
   }
   // 수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만
   if(schoolCode == "A00059-K1" || schoolCode == "A00059-K2") {
