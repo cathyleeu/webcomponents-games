@@ -44,7 +44,7 @@ module.exports = function(classObj) {
     book = [2, 3, 7, 8];
   }
     // 설리번 2020년도, 진주 ECC 20년도, 진주 ECC 19년도
-  if(schoolCode == "E00371-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
+  if(schoolCode == "E00250-K1" || schoolCode == "B00397-K1" || schoolCode == "B00143-K1") {
     book = [7, 8];
   }  
   // 동대문 ECC - 9월부터 1권 추가
