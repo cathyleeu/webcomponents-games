@@ -7,8 +7,8 @@ module.exports = function(classObj) {
   if(schoolCode == "C00175-K12" || schoolCode == "A00059-K7") {
     book = [4, 5, 6];
   }
-    // 안양(서현2어린이집) 9월 1호 오픈 요청, 반석코딩학원 9월 2호 오픈 요청
-  if(schoolCode == "A00043-K4" || schoolCode == "C00175-K10") {
+    // 안양(서현2어린이집) 9월 1호 오픈 요청 
+  if(schoolCode == "A00043-K4") {
     book = [3, 4];
   }
     // 한아름 6,7월 (1권), 참조은 유치원(20년도), 연세유치원(20년 10월 2권)
@@ -23,8 +23,8 @@ module.exports = function(classObj) {
   if(schoolCode == "A00059-K8") {
     book = [2];
   }
-  // 시흥 낙원 유치원 - 7월 1권, 노블 학부모, 노블 원 - 6월 1권
-  if(schoolCode == "C00175-K11" || schoolCode == "C00224-K23" || schoolCode == "A00088-K7") {
+  // 시흥 낙원 유치원 - 7월 1권, 노블 학부모, 노블 원 - 6월 1권, 반석코딩학원 9월 2호 오픈 요청
+  if(schoolCode == "C00175-K11" || schoolCode == "C00224-K23" || schoolCode == "A00088-K7" || schoolCode == "C00175-K10") {
     book = [4, 5];
   }
    // 무안하얀어린이집(20년)
