@@ -3,12 +3,12 @@ module.exports = function(classObj) {
       classCode = classObj.code,
       book = [6, 7, 8];
 
-    //  사랑샘유치원용인(20년도), 수원(재크와콩나무 - 20년)
-  if(schoolCode == "C00175-K12" || schoolCode == "A00059-K7") {
+    //  사랑샘유치원용인(20년도)
+  if(schoolCode == "C00175-K12") {
     book = [4, 5, 6];
   }
-    // 안양(서현2어린이집) 9월 1호 오픈 요청 
-  if(schoolCode == "A00043-K4") {
+    // 안양(서현2어린이집) 9월 1호 오픈 요청, 한별유치원(7월 2권) 
+  if(schoolCode == "A00043-K4" || schoolCode == "A00059-K6") {
     book = [3, 4];
   }
     // 한아름 6,7월 (1권), 참조은 유치원(20년도), 연세유치원(20년 10월 2권)
@@ -27,15 +27,11 @@ module.exports = function(classObj) {
   if(schoolCode == "C00175-K11" || schoolCode == "C00224-K23" || schoolCode == "A00088-K7" || schoolCode == "C00175-K10") {
     book = [4, 5];
   }
-   // 무안하얀어린이집(20년)
-  if(schoolCode == "A00049-K2") {
+   // 무안하얀어린이집(20년), 수원(재크와콩나무 - 20년)
+  if(schoolCode == "A00049-K2" || schoolCode == "A00059-K7") {
     book = [4, 5];
   }
-    // 한별유치원(7월 2권)
-  if(schoolCode == "A00059-K6") {
-    book = [6, 7];
-  }
-   // 판교 ECC
+  // 판교 ECC
   if(schoolCode == "B00374-K1") {
     book = [5.5, 6, 7];
   }
