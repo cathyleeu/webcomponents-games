@@ -7,6 +7,10 @@ module.exports = function(classObj) {
   if(schoolCode == "C00175-K12") {
     book = [4, 5, 6];
   }
+    // 큰사랑 어린이집(1권, 20년 11월)
+  if(schoolCode == "C00071-K14") {
+    book = [1];
+  }
     // 안양(서현2어린이집) 9월 1호 오픈 요청, 한별유치원(7월 2권) 
   if(schoolCode == "A00043-K4" || schoolCode == "A00059-K6") {
     book = [3, 4];
