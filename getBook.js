@@ -89,6 +89,12 @@ module.exports = function(classObj) {
     book = [9, 10.5];
   }
 
+ //광명 ECC
+   if(schoolCode == "B00385-K1") {
+    book = [3, 4, 5, 8, 9, 10];
+  }
+
+
 
   
   //수원 참사랑어린이집, 꽃내음어린이집 늑대와여우 태블릿(IE) 용량 문제로 본 진도 한권씩만 // // // // // //
