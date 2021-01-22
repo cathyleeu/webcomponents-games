@@ -72,10 +72,18 @@ module.exports = function(classObj) {
   if(schoolCode == "B00388-K1") {
     book = [5, 8, 9, 10];
   }
-  // 명지국제ECC - 9월 1권 추가, 청라ECC - 9월 1권 추가
-  if(schoolCode == "B00393-K1" || schoolCode == "B00370-K1") {
+  // 명지국제ECC - 9월 1권 추가
+  if(schoolCode == "B00393-K1") {
     book = [5, 9, 10];
   }
+
+  // 청라ECC - 9월 1권 추가
+  if(schoolCode == "B00370-K1") {
+    book = [4, 5, 9, 10];
+  }
+
+
+  
    // 제주국제 ECC - 9월부터 1권 추가
   if(schoolCode == "B00285-K1") {
     book = [5, 9, 10, 10.5];
