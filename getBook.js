@@ -95,7 +95,7 @@ module.exports = function(classObj) {
   }
    // 성북ECC - 11월부터 1권 추가
   if(schoolCode == "B00357-K1") {
-    book = [4, 9, 10, 10.5];
+    book = [3, 4, 9, 10, 10.5];
   }
    // 제2동탄ECC  
   if(schoolCode == "B00377-K1") {
