@@ -45,10 +45,17 @@ module.exports = function(classObj) {
   if(schoolCode == "A00059-K8") {
     book = [4, 5];
   }
-  // 시흥 낙원 유치원 - 7월 1권, 노블 학부모, 노블 원 - 6월 1권, 반석코딩학원 9월 2호 오픈 요청
-  if(schoolCode == "C00175-K11" || schoolCode == "C00224-K23" || schoolCode == "A00088-K7" || schoolCode == "C00175-K10") {
+  // 시흥 낙원 유치원 - 7월 1권, 반석코딩학원 9월 2호 오픈 요청
+  if(schoolCode == "C00175-K11" || schoolCode == "C00175-K10") {
     book = [7, 8];
   }
+
+  // 노블 학부모, 노블 원 - 6월 1권, 
+  if(schoolCode == "C00224-K23" || schoolCode == "A00088-K7" ) {
+    book = [6, 7, 8];
+  }
+
+
    // 무안하얀어린이집(20년)
   if(schoolCode == "A00049-K2") {
     book = [7, 8];
@@ -91,7 +98,7 @@ module.exports = function(classObj) {
   
    // 제주국제 ECC - 9월부터 1권 추가
   if(schoolCode == "B00285-K1") {
-    book = [6, 10, 10.5];
+    book = [1, 6, 9, 10];
   }
    // 성북ECC - 11월부터 1권 추가
   if(schoolCode == "B00357-K1") {
