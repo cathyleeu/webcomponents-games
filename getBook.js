@@ -50,6 +50,12 @@ module.exports = function(classObj) {
     book = [7, 8];
   }
 
+  // 반석코딩학원 2021 2월 1호 오픈 요청
+  if(schoolCode == "C00175-K13") {
+    book = [1];
+  }
+
+
   // 노블 학부모, 노블 원 - 6월 1권, 
   if(schoolCode == "C00224-K23" || schoolCode == "A00088-K7" ) {
     book = [6, 7, 8];
