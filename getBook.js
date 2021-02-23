@@ -7,6 +7,13 @@ module.exports = function(classObj) {
     if(schoolCode == "C00175-K12") {
     book = [7, 8, 9];
   }
+
+    //  사랑샘유치원용인(21년도)
+    if(schoolCode == "C00175-K14") {
+    book = [1];
+  }
+
+
     // 큰사랑 어린이집(1권, 20년 11월)
   if(schoolCode == "C00071-K14") {
     book = [1];
