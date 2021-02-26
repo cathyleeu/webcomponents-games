@@ -1,8 +1,11 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [9, 10, 10.5];
+      book = [1];
 
+
+
+/*
     //  사랑샘유치원용인(20년도)
     if(schoolCode == "C00175-K12") {
     book = [7, 8, 9];
@@ -182,6 +185,9 @@ module.exports = function(classObj) {
   if(schoolCode == "A00083-K18") {
     book = [10.5];
   }
+*/
+
+
   // YBM영업부(내부용)
   if(schoolCode == "A00083-K3") {
     book = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 10.5];
