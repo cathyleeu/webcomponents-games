@@ -8,7 +8,10 @@ module.exports = function(classObj) {
     book = [1, 5.5, 2];
   }
 
-
+//라이즈어학원 A00059-K10
+if(schoolCode == "A00059-K10") {
+    book = [1, 2];
+  }
 /*
     //  사랑샘유치원용인(20년도)
     if(schoolCode == "C00175-K12") {
