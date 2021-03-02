@@ -3,6 +3,10 @@ module.exports = function(classObj) {
       classCode = classObj.code,
       book = [1];
 
+   // 제주국제 ECC - 3/2적용
+  if(schoolCode == "B00285-K1") {
+    book = [1, 5.5, 2];
+  }
 
 
 /*
