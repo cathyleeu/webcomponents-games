@@ -12,6 +12,12 @@ module.exports = function(classObj) {
 if(schoolCode == "A00059-K10") {
     book = [1, 2];
   }
+
+  //마포서대문 ECC B00368-K1
+if(schoolCode == "B00368-K1") {
+    book = [1, 7, 10.5];
+  }
+
 /*
     //  사랑샘유치원용인(20년도)
     if(schoolCode == "C00175-K12") {
