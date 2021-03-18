@@ -18,7 +18,10 @@ if(schoolCode == "B00368-K1") {
     book = [1, 7, 10.5];
   }
 
-
+  //연세유치원(용인) A00088-K5
+if(schoolCode == "A00088-K5") {
+    book = [4];
+  }
 
 
 
