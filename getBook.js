@@ -1,28 +1,32 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [1];
+      book = [1, 2, 3];
 
    // 제주국제 ECC - 3/2적용
   if(schoolCode == "B00285-K1") {
-    book = [1, 5.5, 2];
+    book = [2, 3];
   }
 
 //라이즈어학원 A00059-K10
 if(schoolCode == "A00059-K10") {
-    book = [1, 2];
+    book = [2, 3];
   }
 
   //마포서대문 ECC B00368-K1
 if(schoolCode == "B00368-K1") {
-    book = [1, 7, 10.5];
+    book = [2, 8];
   }
 
   //연세유치원(용인) A00088-K5
 if(schoolCode == "A00088-K5") {
-    book = [4];
+    book = [4, 5];
   }
 
+  //21년 리틀즈월드 A00088-K10
+if(schoolCode == "A00088-K10") {
+    book = [4];
+  }
 
 
 
