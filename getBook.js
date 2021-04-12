@@ -5,7 +5,7 @@ module.exports = function(classObj) {
 
    // 제주국제 ECC - 3/2적용
   if(schoolCode == "B00285-K1") {
-    book = [2, 3];
+    book = [2, 3, 7];
   }
 
 //라이즈어학원 A00059-K10
@@ -28,7 +28,10 @@ if(schoolCode == "A00088-K10") {
     book = [4];
   }
 
-
+  //21년 재크와콩나무어린이집/21년 A00059-K7
+if(schoolCode == "A00059-K7") {
+    book = [1, 2];
+  }
 
 
 
