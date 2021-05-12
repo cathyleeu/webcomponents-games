@@ -157,7 +157,7 @@ if(schoolCode == "C00421-K10") {
   }
     // 은솔어린이집(11월 1권)    
   if(schoolCode == "A00059-K8") {
-    book = [4, 5];
+    book = [2, 3];
   }
   // 시흥 낙원 유치원 - 7월 1권, 반석코딩학원 9월 2호 오픈 요청
   if(schoolCode == "C00175-K11" || schoolCode == "C00175-K10") {
