@@ -155,7 +155,7 @@ if(schoolCode == "C00421-K10") {
   if(schoolCode == "A00088-K8" || schoolCode == "C00194-K6") {
     book = [3, 4];
   }
-    // 은솔어린이집(11월 1권)    
+  // 은솔어린이집(11월 1권)    
   if(schoolCode == "A00059-K8") {
     book = [2, 3];
   }
