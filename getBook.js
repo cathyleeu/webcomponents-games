@@ -43,6 +43,10 @@ if(schoolCode == "B00384-K1") {
     book = [1, 2, 3, 4];
   }
 
+// 은솔어린이집   
+if(schoolCode == "A00059-K8") {
+    book = [2, 3];
+  }
 
 
 
