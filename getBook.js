@@ -48,7 +48,10 @@ if(schoolCode == "A00059-K8") {
     book = [2, 3];
   }
 
-
+// 월드컵유아예체능단
+  if(schoolCode == "A00059-K5") {
+    book = [2, 3];
+  }
 
 
 
