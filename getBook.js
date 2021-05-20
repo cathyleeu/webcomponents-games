@@ -53,6 +53,10 @@ if(schoolCode == "A00059-K8") {
     book = [2, 3];
   }
 
+// 신촌어린이집(C00437-K1) 05.20 요청
+  if(schoolCode == "C00437-K1") {
+    book = [1];
+  }
 
 
 
