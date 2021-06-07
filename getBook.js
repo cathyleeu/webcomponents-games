@@ -10,7 +10,7 @@ module.exports = function(classObj) {
 
 //라이즈어학원 A00059-K10
 if(schoolCode == "A00059-K10") {
-    book = [5.5, 6, 7];
+    book = [5, 5.5];
   }
 
   //마포서대문 ECC B00368-K1
@@ -62,6 +62,15 @@ if(schoolCode == "A00059-K8") {
   if(schoolCode == "B00419-K1") {
     book = [3];
   }
+
+// 반석코딩학원2021(C00175-K13)  6/7요청
+  if(schoolCode == "C00175-K13") {
+    book = [3, 4];
+  }
+
+
+
+
 
 
 
