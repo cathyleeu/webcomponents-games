@@ -1,71 +1,71 @@
 module.exports = function(classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
       classCode = classObj.code,
-      book = [4, 5, 5.5];
+      book = [5.5, 6];
 
    // 제주국제 ECC - 3/2적용
   if(schoolCode == "B00285-K1") {
-    book = [2, 4, 5, 9];
+    book = [3, 5.5, 10];
   }
 
 //라이즈어학원 A00059-K10
 if(schoolCode == "A00059-K10") {
-    book = [5, 5.5];
+    book = [6, 7];
   }
 
   //마포서대문 ECC B00368-K1
 if(schoolCode == "B00368-K1") {
-    book = [3, 4, 9, 10];
+    book = [4, 5, 10, 10.5];
   }
 
   //연세유치원(용인) A00088-K5
 if(schoolCode == "A00088-K5") {
-    book = [5.5, 6, 7];
+    book = [7, 8];
   }
 
   //21년 리틀즈월드 A00088-K10
 if(schoolCode == "A00088-K10") {
-    book = [6, 7];
+    book = [6, 7, 8];
   }
 
   //21년 재크와콩나무어린이집/21년 A00059-K7
 if(schoolCode == "A00059-K7") {
-    book = [3, 4];
+    book = [4, 5];
   }
 
   //광교느티나무어린이집 A00043-K1
 if(schoolCode == "A00043-K1") {
-    book = [3, 4, 5];
+    book = [5, 5.5];
   }
 
 //사하ECC(B00384-K1) 
 if(schoolCode == "B00384-K1") {
-    book = [3, 4, 5];
+    book = [5, 5.5];
   }
 
 // 은솔어린이집   
 if(schoolCode == "A00059-K8") {
-    book = [2, 3, 4];
+    book = [4, 5];
   }
 
 // 월드컵유아예체능단
   if(schoolCode == "A00059-K5") {
-    book = [2, 3, 4];
+    book = [4, 5];
   }
 
 // 신촌어린이집(C00437-K1) 05.20 요청
   if(schoolCode == "C00437-K1") {
-    book = [1, 2];
+    book = [2, 3];
   }
 
 // (주) 와이비엠넷성북이씨씨어학원(B00419-K1) 6/3요청 두달에 한권 1-3-5-6-8-10
   if(schoolCode == "B00419-K1") {
-    book = [3];
+    book = [3, 5];
   }
 
 // 반석코딩학원2021(C00175-K13)  6/7요청
   if(schoolCode == "C00175-K13") {
-    book = [3, 4];
+    book = [3, 4, 5];
   }
 
 
