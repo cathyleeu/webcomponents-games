@@ -35,7 +35,7 @@ if(schoolCode == "A00059-K7") {
 
   //광교느티나무어린이집 A00043-K1
 if(schoolCode == "A00043-K1") {
-    book = [5, 5.5];
+    book = [4, 5, 5.5];
   }
 
 //사하ECC(B00384-K1) 
