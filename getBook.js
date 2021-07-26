@@ -68,6 +68,10 @@ if(schoolCode == "A00059-K8") {
     book = [3, 4, 5];
   }
 
+// YBM ECC 문경(B00438-K1)  7/26요청
+  if(schoolCode == "B00438-K1") {
+    book = [2];
+  }
 
 
 
