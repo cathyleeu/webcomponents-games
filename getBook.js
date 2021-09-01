@@ -45,7 +45,7 @@ if(schoolCode == "B00384-K1") {
 
 // 은솔어린이집   
 if(schoolCode == "A00059-K8") {
-    book = [5.5, 6];
+    book = [4];
   }
 
 // 월드컵유아예체능단
