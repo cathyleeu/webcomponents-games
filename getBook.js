@@ -15,7 +15,7 @@ if(schoolCode == "A00059-K10") {
 
   //마포서대문 ECC B00368-K1
 if(schoolCode == "B00368-K1") {
-    book = [6, 7];
+    book = [1, 6, 7];
   }
 
   //연세유치원(용인) A00088-K5
