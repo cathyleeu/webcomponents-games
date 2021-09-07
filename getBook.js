@@ -13,8 +13,8 @@ if(schoolCode == "A00059-K10") {
     book = [7, 8];
   }
 
-  //마포서대문 ECC B00368-K1
-if(schoolCode == "B00368-K1") {
+  //마포서대문 ECC B00409-K1
+if(schoolCode == "B00409-K1") {
     book = [1, 6, 7];
   }
 
