@@ -8,9 +8,9 @@ module.exports = function(classObj) {
     book = [1, 5.5];
   }
 
-//라이즈어학원 A00059-K10
+//라이즈어학원 동탄1캠퍼스 A00059-K10
 if(schoolCode == "A00059-K10") {
-    book = [7, 8];
+    book = [9, 10];
   }
 
   //마포서대문 ECC B00409-K1
@@ -30,7 +30,7 @@ if(schoolCode == "A00088-K10") {
 
   //21년 재크와콩나무어린이집/21년 A00059-K7
 if(schoolCode == "A00059-K7") {
-    book = [4, 5];
+    book = [6, 7];
   }
 
   //광교느티나무어린이집 A00043-K1
@@ -45,7 +45,7 @@ if(schoolCode == "B00384-K1") {
 
 // 은솔어린이집   
 if(schoolCode == "A00059-K8") {
-    book = [4];
+    book = [6, 7];
   }
 
 // 월드컵유아예체능단
