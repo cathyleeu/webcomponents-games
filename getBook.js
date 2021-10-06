@@ -74,6 +74,10 @@ if(schoolCode == "A00059-K8") {
   }
 
 
+// 청라 ECC 문경(B00420-K1)  10/06요청
+  if(schoolCode == "B00420-K1") {
+    book = [6, 7];
+  }
 
 
 
