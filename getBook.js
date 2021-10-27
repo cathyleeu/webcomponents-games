@@ -40,7 +40,7 @@ if(schoolCode == "A00043-K1") {
 
 //사하ECC(B00384-K1) 
 if(schoolCode == "B00384-K1") {
-    book = [7, 8];
+    book = [6, 8];
   }
 
 // 은솔어린이집   
