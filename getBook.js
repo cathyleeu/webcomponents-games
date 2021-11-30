@@ -40,7 +40,7 @@ if(schoolCode == "A00043-K1") {
 
 //사하ECC(B00384-K1) 
 if(schoolCode == "B00384-K1") {
-    book = [7, 10];
+    book = [6, 7, 10];
   }
 
 // 은솔어린이집   
@@ -70,7 +70,7 @@ if(schoolCode == "A00059-K8") {
 
 // YBM ECC 문경(B00438-K1)  7/26요청
   if(schoolCode == "B00438-K1") {
-    book = [4, 5];
+    book = [2];
   }
 
 
