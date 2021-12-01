@@ -71,7 +71,7 @@ if(schoolCode == "A00059-K8") {
 // YBM ECC 문경(B00438-K1)  7/26요청
   if(schoolCode == "B00438-K1") {
     book = [2];
-  }
+  } 
 
 
 // 청라 ECC (B00420-K1)  10/06요청
