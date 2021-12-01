@@ -40,7 +40,7 @@ module.exports = function (classObj) {
 
   //사하ECC(B00384-K1)
   if (schoolCode == "B00384-K1") {
-    book = [6, 7, 10];
+    book = [6, 7, 10]; 
   }
 
   // 은솔어린이집
