@@ -60,7 +60,7 @@ module.exports = function (classObj) {
 
   // 성북이씨씨어학원(B00419-K1) 6/3요청 두달에 한권 1-3-5-6-8-10
   if (schoolCode == "B00419-K1") {
-    book = [3, 8];
+    book = [2, 7];
   }
 
   // 반석코딩학원2021(C00175-K13)  6/7요청
