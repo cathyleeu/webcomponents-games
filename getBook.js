@@ -1,7 +1,7 @@
 module.exports = function (classObj) {
   var schoolCode = classObj.code.split("-").slice(0, 2).join("-"),
     classCode = classObj.code,
-    book = [9, 10];
+    book = [10, 10.5];
 
   // 제주국제 ECC - 3/2적용 / 9/1적용
   if (schoolCode == "B00285-K1") {
