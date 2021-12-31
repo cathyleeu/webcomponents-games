@@ -5,27 +5,27 @@ module.exports = function (classObj) {
 
   // 제주국제 ECC - 3/2적용 / 9/1적용
   if (schoolCode == "B00285-K1") {
-    book = [4, 5, 6, 8];
+    book = [6, 7, 8, 9];
   }
 
   //라이즈어학원 동탄1캠퍼스 A00059-K10
   if (schoolCode == "A00059-K10") {
-    book = [10, 10.5];
+    book = [10.5, 1];
   }
 
   //마포서대문 ECC B00409-K1
   if (schoolCode == "B00409-K1") {
-    book = [3, 4, 9, 10];
+    book = [4, 5, 10, 10.5];
   }
 
   //연세유치원(용인) A00088-K5
   if (schoolCode == "A00088-K5") {
-    book = [8];
+    book = [8, 9];
   }
 
   //21년 리틀즈월드 A00088-K10
   if (schoolCode == "A00088-K10") {
-    book = [10.5];
+    book = [1];
   }
 
   //21년 재크와콩나무어린이집/21년 A00059-K7
@@ -35,58 +35,58 @@ module.exports = function (classObj) {
 
   //광교느티나무어린이집 A00043-K1
   if (schoolCode == "A00043-K1") {
-    book = [9, 10];
+    book = [10, 10.5];
   }
 
   //사하ECC(B00384-K1)
   if (schoolCode == "B00384-K1") {
-    book = [6, 7, 9]; 
+    book = [8, 10.5]; 
   }
 
   // 은솔어린이집
   if (schoolCode == "A00059-K8") {
-    book = [7, 8];
+    book = [8, 9];
   }
 
   // 월드컵유아예체능단
   if (schoolCode == "A00059-K5") {
-    book = [6, 7];
+    book = [7, 8];
   }
 
   // 신촌어린이집(C00437-K1) 05.20 요청
   if (schoolCode == "C00437-K1") {
-    book = [7, 8];
+    book = [8, 9];
   }
 
   // 성북이씨씨어학원(B00419-K1) 6/3요청 두달에 한권 1-3-5-6-8-10
   if (schoolCode == "B00419-K1") {
-    book = [2, 7];
+    book = [3, 8];
   }
 
   // 반석코딩학원2021(C00175-K13)  6/7요청
   if (schoolCode == "C00175-K13") {
-    book = [9, 10];
+    book = [10, 10.5];
   }
 
   // YBM ECC 문경(B00438-K1)  7/26요청
   if (schoolCode == "B00438-K1") {
-    book = [2];
+    book = [2, 3];
   }
 
 
   // 청라 ECC (B00420-K1)  10/06요청
   if (schoolCode == "B00420-K1") {
-    book = [8, 9];
+    book = [9, 10];
   }
 
   // 시흥 사랑샘유치원(C00175-K14)  10/07요청
   if (schoolCode == "C00175-K14") {
-    book = [7, 8];
+    book = [8, 9];
   }
 
   // 재크와콩나무어린이집(6세)(A00059-K11) 재크와콩나무어린이집(7세)(A00059-K12)    10/15요청
   if (schoolCode == "A00059-K11" || schoolCode == "A00059-K12") {
-    book = [7, 8];
+    book = [8, 9];
   }
 
 
