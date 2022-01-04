@@ -806,7 +806,7 @@ function getContents(book, week) {
 
 public.get('/dev', function *(next) {
   if(siteUrl != "http://localhost:3000") {
-    this.body = "<html><head><script>alert('잘못된 접근 입니다.');location.href='/';</script></head></html>";
+    this.body = "<html><head><script>alert('잘못된 접근 입니다.1'+siteUrl);location.href='/';</script></head></html>";
     return;
   }
   yield this.render('dev');
@@ -819,7 +819,7 @@ public.get('/contents/:book', function *(next) {
 
 public.get('/nav/:book', function *(next) {
   if(siteUrl != "http://localhost:3000") {
-    this.body = "<html><head><script>alert('잘못된 접근 입니다.');location.href='/';</script></head></html>";
+    this.body = "<html><head><script>alert('잘못된 접근 입니다.2'+siteUrl);location.href='/';</script></head></html>";
     return;
   }
   var book = this.params.book,
