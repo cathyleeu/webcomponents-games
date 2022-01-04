@@ -10,7 +10,7 @@ module.exports = function (classObj) {
 
   //라이즈어학원 동탄1캠퍼스 A00059-K10
   if (schoolCode == "A00059-K10") {
-    book = [10.5, 1];
+    book = [5.5, 1];
   }
 
   //마포서대문 ECC B00409-K1
