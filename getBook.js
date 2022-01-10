@@ -90,7 +90,10 @@ module.exports = function (classObj) {
   }
 
 
-
+  //명지국제ECC (B00031-K1) 1/10요청
+   if (schoolCode == "B00031-K1") {
+    book = [7];
+  }
 
 
 
