@@ -95,6 +95,10 @@ module.exports = function (classObj) {
     book = [7];
   }
 
+  //은행유치원2022(C00175-K16)
+   if (schoolCode == "C00175-K16") {
+    book = [1];
+  }
 
 
 
