@@ -65,7 +65,7 @@ module.exports = function (classObj) {
 
   // 반석코딩학원2021(C00175-K13)  6/7요청
   if (schoolCode == "C00175-K13") {
-    book = [9, 10];
+    book = [10, 10.5];
   }
 
   // YBM ECC 문경(B00438-K1)  7/26요청
